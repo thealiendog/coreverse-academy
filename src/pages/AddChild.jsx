@@ -39,7 +39,7 @@ export default function AddChild() {
   function validateStep1() {
     const e = {};
     if (!form.name.trim()) e.name = 'Child name is required';
-    if (!form.age || +form.age < 3 || +form.age > 18) e.age = 'Age must be between 3 and 18';
+    if (!form.age || +form.age < 3 || +form.age > 12) e.age = 'Age must be between 3 and 12';
     return e;
   }
 
@@ -107,7 +107,7 @@ export default function AddChild() {
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-white/70">Age</label>
               <select value={form.age} onChange={e=>setForm(f=>({...f,age:e.target.value}))} className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#7C3AED] transition-all">
-                {Array.from({length:16},(_,i)=>i+3).map(a=>(
+                {Array.from({length:10},(_,i)=>i+3).map(a=>(
                   <option key={a} value={a} className="bg-[#0F0B2E]">{a} years old</option>
                 ))}
               </select>

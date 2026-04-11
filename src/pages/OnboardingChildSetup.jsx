@@ -118,7 +118,7 @@ export default function OnboardingChildSetup() {
               onChange={e => setForm(f => ({ ...f, age: e.target.value }))}
               className={SELECT}
             >
-              {Array.from({ length: 16 }, (_, i) => i + 3).map(a => (
+              {Array.from({ length: 10 }, (_, i) => i + 3).map(a => (
                 <option key={a} value={String(a)} className="bg-[#0F0B2E]">
                   {a} years old
                 </option>

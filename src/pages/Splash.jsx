@@ -81,7 +81,7 @@ export default function Splash() {
 
         {/* Trust badges */}
         <div className="flex items-center justify-center gap-2 mb-10 flex-wrap">
-          {['Ages 3–18', 'AI-Powered', 'State Compliant'].map((badge, i, arr) => (
+          {['State Compliant', 'Expert-Designed', 'Family Adventures Included'].map((badge, i, arr) => (
             <div key={badge} className="flex items-center gap-2">
               <span className="text-white/50 text-xs font-medium tracking-wide">{badge}</span>
               {i < arr.length - 1 && (
