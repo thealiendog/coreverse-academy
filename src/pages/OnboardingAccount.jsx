@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getOnboardingDraft, clearOnboardingDraft } from '../lib/onboardingStorage';
 import { getParentByEmail, saveParent, setCurrentParent, addChildToParent, genId } from '../lib/storage';
+import { getSubject } from '../lib/constants';
+import { sendWelcomeEmail } from '../lib/email';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import Logo from '../components/Logo';
@@ -81,6 +83,17 @@ export default function OnboardingAccount() {
         createdAt:    Date.now(),
       };
       addChildToParent(parent.id, childRecord);
+
+      // Fire welcome email (non-blocking)
+      sendWelcomeEmail({
+        parentName:    form.name.trim(),
+        parentEmail:   form.email.trim(),
+        childName:     childRecord.name,
+        childAge:      childRecord.age,
+        subjectLabels: subjects.map(id => getSubject(id).label),
+        state:         child.state || '',
+      });
+
       clearOnboardingDraft();
       navigate('/parent/dashboard');
     }, 700);

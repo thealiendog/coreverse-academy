@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getCurrentChild, getCurrentParent, updateChildProgress, awardBadge } from '../lib/storage';
 import { getAvatar, getSubject } from '../lib/constants';
+import { sendLessonCompleteEmail } from '../lib/email';
 import { getLesson } from '../data/lessons';
 import { getLevel2Lesson } from '../data/lessons_level2';
 import { getLevel3Lesson } from '../data/lessons_level3';
 import { getLevel4Lesson } from '../data/lessons_level4';
+import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
 
@@ -74,6 +76,16 @@ export default function LessonPlayer() {
         if (parent) {
           updateChildProgress(parent.id, child.id, progressKey, idx);
           awardBadge(parent.id, child.id, lesson.badge);
+          // Fire lesson complete email (non-blocking)
+          sendLessonCompleteEmail({
+            parentEmail:  parent.email,
+            parentName:   parent.name,
+            childName:    child.name,
+            lessonTitle:  lesson.title,
+            subjectLabel: subject.label,
+            badge:        lesson.badge,
+            explore:      lesson.explore || '',
+          });
         }
         setBadgeAwarded(true);
       }
@@ -413,6 +425,9 @@ export default function LessonPlayer() {
           </div>
         )}
       </div>
+
+      {/* Nova AI tutor — floats in the bottom-right during the lesson */}
+      <NovaChat child={child} lesson={lesson} subject={subject} />
     </div>
   );
 }
