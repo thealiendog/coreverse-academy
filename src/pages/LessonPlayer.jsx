@@ -426,8 +426,8 @@ export default function LessonPlayer() {
         )}
       </div>
 
-      {/* Nova AI tutor — floats in the bottom-right during the lesson */}
-      <NovaChat child={child} lesson={lesson} subject={subject} />
+      {/* Nova AI tutor — voice companion, floats bottom-right */}
+      <NovaChat child={child} lesson={lesson} subject={subject} section={section} quizCurrent={quizCurrent} />
     </div>
   );
 }

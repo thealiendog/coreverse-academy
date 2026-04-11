@@ -1,220 +1,253 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { getAvatar } from '../lib/constants';
 import { askNova } from '../lib/nova';
 
-export default function NovaChat({ child, lesson, subject }) {
-  const [open, setOpen]       = useState(false);
-  const [messages, setMessages] = useState([]);
-  const [input, setInput]     = useState('');
-  const [loading, setLoading] = useState(false);
+// Text Nova reads aloud when each lesson section loads
+function sectionScript(lesson, section, childName) {
+  const name = (childName || 'friend').split(' ')[0];
+  switch (section) {
+    case 0: return lesson?.arrival?.replace(/\{\{name\}\}/g, name) || '';
+    case 1: return lesson?.spark || '';
+    case 2: {
+      const first = lesson?.learn?.[0] || '';
+      return `Here's what we're learning today. ${first}`;
+    }
+    case 3: return lesson?.explore || '';
+    case 4: return `Quick check! ${lesson?.quickCheck?.question || ''}`;
+    case 5: return ''; // quiz — skip auto-read so child can focus
+    case 6: return `Amazing work, ${name}! You earned the ${lesson?.badge || 'lesson'} badge. I'm so proud of you!`;
+    default: return '';
+  }
+}
 
-  const bottomRef = useRef(null);
-  const inputRef  = useRef(null);
+// Pick a warm, clear voice for children
+function pickVoice() {
+  const voices = window.speechSynthesis.getVoices();
+  return (
+    voices.find(v => v.name === 'Samantha') ||
+    voices.find(v => v.name.includes('Google US English')) ||
+    voices.find(v => v.lang === 'en-US' && v.localService) ||
+    voices.find(v => v.lang === 'en-US') ||
+    null
+  );
+}
 
-  const avatar     = getAvatar(child?.avatar);
-  const firstName  = (child?.name || 'friend').split(' ')[0];
+export default function NovaChat({ child, lesson, subject, section, quizCurrent }) {
+  const [speaking, setSpeaking]   = useState(false);
+  const [listening, setListening] = useState(false);
+  const [thinking, setThinking]   = useState(false);
+  const [bubble, setBubble]       = useState('');
+  const [canListen, setCanListen] = useState(false);
+
+  const avatar      = getAvatar(child?.avatar);
+  const recognRef   = useRef(null);
+  const bubbleTimer = useRef(null);
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
+  // Detect SpeechRecognition support once on mount
   useEffect(() => {
-    if (open) {
-      bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
-  }, [open]);
+    setCanListen(!!(window.SpeechRecognition || window.webkitSpeechRecognition));
+  }, []);
 
+  // Speak text via the browser's Web Speech API
+  const speak = useCallback((text) => {
+    if (!text || !window.speechSynthesis) return;
+    clearTimeout(bubbleTimer.current);
+    window.speechSynthesis.cancel();
+
+    function doSpeak() {
+      const utt = new SpeechSynthesisUtterance(text);
+      utt.rate  = 0.92;
+      utt.pitch = 1.05;
+      utt.lang  = 'en-US';
+      const voice = pickVoice();
+      if (voice) utt.voice = voice;
+
+      // Show truncated text in the speech bubble
+      setBubble(text.length > 110 ? text.slice(0, 107) + '…' : text);
+
+      utt.onstart = () => setSpeaking(true);
+      utt.onend   = () => {
+        setSpeaking(false);
+        bubbleTimer.current = setTimeout(() => setBubble(''), 3000);
+      };
+      utt.onerror = () => {
+        setSpeaking(false);
+        setBubble('');
+      };
+
+      window.speechSynthesis.speak(utt);
+    }
+
+    // Voices load asynchronously in Chrome — wait for them if needed
+    if (window.speechSynthesis.getVoices().length > 0) {
+      doSpeak();
+    } else {
+      window.speechSynthesis.addEventListener('voiceschanged', doSpeak, { once: true });
+    }
+  }, []);
+
+  // Auto-read when the lesson section changes
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, loading]);
+    const text = sectionScript(lesson, section, child?.name);
+    if (!text) return;
+    const delay = setTimeout(() => speak(text), 700);
+    return () => clearTimeout(delay);
+  }, [section, lesson, child?.name, speak]);
 
-  async function handleSend() {
-    if (!input.trim() || loading) return;
-    const question = input.trim();
-    setInput('');
+  // Stop everything on unmount
+  useEffect(() => {
+    return () => {
+      clearTimeout(bubbleTimer.current);
+      window.speechSynthesis?.cancel();
+      recognRef.current?.abort();
+    };
+  }, []);
 
-    const history = messages.slice(-8);
-    setMessages(m => [...m, { role: 'user', content: question }]);
-    setLoading(true);
+  function startListening() {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) return;
 
-    try {
-      const reply = await askNova({
-        childName:    child?.name || 'friend',
-        childAge:     child?.age  || 8,
-        avatarId:     child?.avatar || 'nova',
-        subjectLabel: subject?.label || '',
-        lessonTitle:  lesson?.title  || '',
-        learnContent,
-        history,
-        question,
-      });
-      setMessages(m => [...m, { role: 'assistant', content: reply }]);
-    } catch {
-      setMessages(m => [...m, {
-        role:    'assistant',
-        content: `Hmm, I'm having a little trouble thinking right now. Try asking me again in a moment, ${firstName}!`,
-      }]);
-    } finally {
-      setLoading(false);
-    }
+    window.speechSynthesis.cancel();
+    setSpeaking(false);
+    setBubble('');
+    clearTimeout(bubbleTimer.current);
+
+    const recog = new SR();
+    recog.lang             = 'en-US';
+    recog.interimResults   = false;
+    recog.maxAlternatives  = 1;
+    recognRef.current      = recog;
+
+    recog.onstart  = () => setListening(true);
+    recog.onend    = () => setListening(false);
+    recog.onerror  = () => { setListening(false); };
+
+    recog.onresult = async (e) => {
+      const question = e.results[0][0].transcript;
+      setListening(false);
+      setThinking(true);
+      setBubble('Hmm, let me think…');
+
+      try {
+        const reply = await askNova({
+          childName:    child?.name  || 'friend',
+          childAge:     child?.age   || 8,
+          avatarId:     child?.avatar || 'nova',
+          subjectLabel: subject?.label || '',
+          lessonTitle:  lesson?.title  || '',
+          learnContent,
+          history:      [],
+          question,
+        });
+        setThinking(false);
+        speak(reply);
+      } catch {
+        setThinking(false);
+        speak('Hmm, I had a little trouble with that. Try asking me again!');
+      }
+    };
+
+    recog.start();
   }
 
-  function handleKeyDown(e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
+  function stopListening() {
+    recognRef.current?.stop();
+    setListening(false);
   }
+
+  function replaySection() {
+    const text = sectionScript(lesson, section, child?.name);
+    if (text) speak(text);
+  }
+
+  // Ring colour signals state: purple = speaking, green = listening, amber = thinking
+  const ringColor = listening ? '#10B981' : thinking ? '#F59E0B' : avatar.accent;
+  const isActive  = speaking || listening || thinking;
 
   return (
-    <>
-      {/* Floating avatar button */}
-      <button
-        onClick={() => setOpen(o => !o)}
-        aria-label={`Ask ${avatar.name}`}
-        className="fixed bottom-6 right-6 z-[60] w-14 h-14 rounded-full overflow-hidden transition-all duration-200 hover:scale-110 active:scale-95"
-        style={{
-          boxShadow: `0 4px 24px ${avatar.accent}70, 0 0 0 3px ${avatar.accent}40`,
-        }}
-      >
-        <img src={avatar.image} alt={avatar.name} className="w-full h-full object-cover" />
-        {/* Pulse ring when closed */}
-        {!open && (
-          <span
-            className="absolute inset-0 rounded-full animate-ping opacity-20"
-            style={{ background: avatar.accent }}
+    <div className="fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-2 pointer-events-none">
+
+      {/* Speech bubble */}
+      {bubble && (
+        <div className="relative pointer-events-auto mb-1 max-w-[220px]">
+          <div
+            className="bg-[#0F0B2E] rounded-2xl px-4 py-2.5 shadow-2xl"
+            style={{ border: `1px solid ${avatar.accent}45` }}
+          >
+            <p className="text-white/85 text-sm leading-relaxed">{bubble}</p>
+          </div>
+          {/* Bubble tail pointing toward avatar */}
+          <div
+            className="absolute right-7 -bottom-[7px] w-3.5 h-3.5 bg-[#0F0B2E] rotate-45"
+            style={{
+              borderRight:  `1px solid ${avatar.accent}45`,
+              borderBottom: `1px solid ${avatar.accent}45`,
+            }}
           />
-        )}
-      </button>
-
-      {/* Chat panel */}
-      {open && (
-        <div
-          className="fixed bottom-24 right-6 z-[60] w-[360px] max-w-[calc(100vw-3rem)] rounded-3xl flex flex-col overflow-hidden shadow-2xl"
-          style={{
-            background:  '#0F0B2E',
-            border:      `1px solid ${avatar.accent}35`,
-            boxShadow:   `0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px ${avatar.accent}20`,
-            maxHeight:   'min(520px, calc(100vh - 8rem))',
-          }}
-        >
-          {/* Header */}
-          <div className="flex items-center gap-3 px-4 py-3 border-b border-white/8 flex-shrink-0">
-            <div
-              className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0"
-              style={{ boxShadow: `0 0 0 2px ${avatar.accent}50` }}
-            >
-              <img src={avatar.image} alt={avatar.name} className="w-full h-full object-cover" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-white text-sm font-semibold leading-tight">{avatar.name} the {avatar.animal}</p>
-              <p className="text-white/40 text-xs">Ask anything about this lesson</p>
-            </div>
-            <button
-              onClick={() => setOpen(false)}
-              className="text-white/25 hover:text-white/60 transition-colors p-1"
-              aria-label="Close"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 6L6 18M6 6l12 12"/>
-              </svg>
-            </button>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-3 min-h-0">
-            {/* Welcome message */}
-            {messages.length === 0 && (
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 mt-0.5">
-                  <img src={avatar.image} alt="" className="w-full h-full object-cover" />
-                </div>
-                <div className="bg-white/6 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[84%]">
-                  <p className="text-white/80 text-sm leading-relaxed">
-                    Hey {firstName}! I'm {avatar.name}. What do you want to know about <strong className="text-white">{lesson?.title}</strong>?
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {messages.map((msg, i) =>
-              msg.role === 'user' ? (
-                <div key={i} className="flex justify-end">
-                  <div
-                    className="px-3 py-2 rounded-2xl rounded-tr-sm max-w-[84%]"
-                    style={{
-                      background: `${avatar.accent}18`,
-                      border:     `1px solid ${avatar.accent}35`,
-                    }}
-                  >
-                    <p className="text-sm leading-relaxed" style={{ color: avatar.accent }}>
-                      {msg.content}
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 mt-0.5">
-                    <img src={avatar.image} alt="" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="bg-white/6 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[84%]">
-                    <p className="text-white/80 text-sm leading-relaxed">{msg.content}</p>
-                  </div>
-                </div>
-              )
-            )}
-
-            {/* Typing indicator */}
-            {loading && (
-              <div className="flex items-start gap-2">
-                <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0 mt-0.5">
-                  <img src={avatar.image} alt="" className="w-full h-full object-cover" />
-                </div>
-                <div className="bg-white/6 rounded-2xl rounded-tl-sm px-4 py-3">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="block w-1.5 h-1.5 rounded-full bg-white/50 animate-bounce"
-                      style={{ animationDelay: '0ms' }}
-                    />
-                    <span
-                      className="block w-1.5 h-1.5 rounded-full bg-white/50 animate-bounce"
-                      style={{ animationDelay: '120ms' }}
-                    />
-                    <span
-                      className="block w-1.5 h-1.5 rounded-full bg-white/50 animate-bounce"
-                      style={{ animationDelay: '240ms' }}
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <div ref={bottomRef} />
-          </div>
-
-          {/* Input row */}
-          <div className="px-4 py-3 border-t border-white/8 flex gap-2 flex-shrink-0">
-            <input
-              ref={inputRef}
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder={`Ask ${avatar.name}…`}
-              disabled={loading}
-              className="flex-1 bg-white/6 border border-white/10 rounded-xl px-3 py-2 text-white text-sm placeholder-white/25 focus:outline-none focus:border-white/25 disabled:opacity-50 transition-colors"
-            />
-            <button
-              onClick={handleSend}
-              disabled={!input.trim() || loading}
-              aria-label="Send"
-              className="w-9 h-9 rounded-xl flex items-center justify-center transition-all hover:scale-105 active:scale-95 disabled:opacity-25 flex-shrink-0"
-              style={{ background: avatar.accent }}
-            >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
-              </svg>
-            </button>
-          </div>
         </div>
       )}
-    </>
+
+      {/* Avatar + mic row */}
+      <div className="flex items-end gap-3 pointer-events-auto">
+
+        {/* Microphone button */}
+        {canListen && (
+          <button
+            onClick={listening ? stopListening : startListening}
+            disabled={thinking}
+            aria-label={listening ? 'Stop listening' : 'Ask Nova a question'}
+            className="w-11 h-11 rounded-full flex items-center justify-center transition-all hover:scale-110 active:scale-95 disabled:opacity-30"
+            style={{
+              background:  listening ? '#10B981' : 'rgba(124,58,237,0.18)',
+              border:      `2px solid ${listening ? '#10B981' : avatar.accent}55`,
+              boxShadow:   listening ? '0 0 20px #10B98155' : `0 0 12px ${avatar.accent}30`,
+            }}
+          >
+            {listening ? (
+              /* Stop square */
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
+                <rect x="6" y="6" width="12" height="12" rx="2"/>
+              </svg>
+            ) : (
+              /* Mic */
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8"  y1="23" x2="16" y2="23"/>
+              </svg>
+            )}
+          </button>
+        )}
+
+        {/* Nova avatar — tap to replay */}
+        <button
+          onClick={replaySection}
+          aria-label={`${avatar.name} — tap to hear again`}
+          className="relative w-20 h-20 rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95"
+          style={{
+            boxShadow: `0 0 0 3px ${ringColor}70, 0 6px 28px ${ringColor}45`,
+          }}
+        >
+          <img src={avatar.image} alt={avatar.name} className="w-full h-full object-cover" />
+
+          {/* Animated ring when speaking / listening / thinking */}
+          {isActive && (
+            <span
+              className="absolute inset-0 rounded-full animate-ping opacity-25"
+              style={{ background: ringColor }}
+            />
+          )}
+        </button>
+      </div>
+
+      {/* Subtle hint */}
+      {!isActive && !bubble && (
+        <p className="text-white/18 text-[10px] tracking-wide pointer-events-none">
+          tap to replay
+        </p>
+      )}
+    </div>
   );
 }
