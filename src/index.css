@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #080618;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.transition-page {
+  animation: fadeUp 0.3s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-hover {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.3);
+  border-color: rgba(124,58,237,0.6) !important;
+}
+
+/* Progress bar fill animation */
+@keyframes growBar {
+  from { width: 0; }
+}
+.progress-fill {
+  animation: growBar 0.8s ease both;
+}
+
+/* Glow pulse for child dashboard */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(124,58,237,0.3); }
+  50%       { box-shadow: 0 0 40px rgba(124,58,237,0.6); }
+}
+.glow-pulse { animation: glowPulse 3s ease-in-out infinite; }
