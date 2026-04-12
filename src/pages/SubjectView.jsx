@@ -20,6 +20,7 @@ import FUTURESKILLS_UPPEREXPLORERS from '../data/futureskills_upperexplorers_ada
 import SOCIALLEADERSHIP_UPPEREXPLORERS from '../data/socialleadership_upperexplorers_adapter';
 import LIFEWELLNESS_UPPEREXPLORERS from '../data/lifewellness_upperexplorers_adapter';
 import CREATIVEARTS_UPPEREXPLORERS from '../data/creativearts_upperexplorers_adapter';
+import HISTORYWORLD_UPPEREXPLORERS from '../data/historyworld_upperexplorers_adapter';
 import MONEYBUSINESS_UPPEREXPLORERS from '../data/moneybusiness_upperexplorers_adapter';
 
 export default function SubjectView() {
@@ -54,6 +55,7 @@ export default function SubjectView() {
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_UPPEREXPLORERS
     : subjectId === 'wellness'       ? LIFEWELLNESS_UPPEREXPLORERS
     : subjectId === 'creative-arts'  ? CREATIVEARTS_UPPEREXPLORERS
+    : subjectId === 'history'        ? HISTORYWORLD_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);
 
