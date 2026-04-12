@@ -16,6 +16,7 @@ import CREATIVEARTS_EXPLORERS from '../data/creativearts_explorers_adapter';
 import HISTORYWORLD_EXPLORERS from '../data/historyworld_explorers_adapter';
 import INNERWORLD_UPPEREXPLORERS from '../data/innerworld_upperexplorers_adapter';
 import COSMOS_UPPEREXPLORERS from '../data/cosmos_upperexplorers_adapter';
+import MONEYBUSINESS_UPPEREXPLORERS from '../data/moneybusiness_upperexplorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -44,6 +45,7 @@ export default function SubjectView() {
   // Subject-specific Upper Explorers curricula override level 3
   const l3Lessons = subjectId === 'inner-world' ? INNERWORLD_UPPEREXPLORERS
     : subjectId === 'cosmos'      ? COSMOS_UPPEREXPLORERS
+    : subjectId === 'money'       ? MONEYBUSINESS_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);
 
