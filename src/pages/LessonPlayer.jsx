@@ -115,8 +115,7 @@ export default function LessonPlayer() {
   const levelGetters = { 1: getLesson, 2: getLevel2Lesson, 3: getLevel3Lesson, 4: getLevel4Lesson };
   const lesson    = (levelGetters[level] || getLesson)(subjectId, idx);
   const subject   = getSubject(subjectId);
-  const childAvatar = getAvatar(child?.avatar);
-  const guideAvatar = lesson ? getAvatar(lesson.guide) : childAvatar;
+  const guideAvatar = getAvatar(child?.avatar);
 
   const [section,       setSection]       = useState(0);
   const [sparkAnswer,   setSparkAnswer]   = useState('');
