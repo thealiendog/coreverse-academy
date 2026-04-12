@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentParent, addChildToParent, genId } from '../lib/storage';
-import { AVATARS, SUBJECTS, GRADE_LEVELS } from '../lib/constants';
+import { AVATARS, SUBJECTS, GRADE_LEVELS, ageToAgeBand } from '../lib/constants';
 import Button from '../components/Button';
 import Input from '../components/Input';
 
@@ -61,6 +61,7 @@ export default function AddChild() {
       name: form.name,
       age: +form.age,
       grade: form.grade,
+      ageBand: ageToAgeBand(+form.age || 8).id,
       avatar: form.avatar,
       subjects: form.subjects,
       pin: form.pin || '1234',

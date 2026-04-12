@@ -1,6 +1,6 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
-import { getAvatar, getSubject } from '../lib/constants';
+import { getAvatar, getSubject, ageToAgeBand } from '../lib/constants';
 
 const BG_GRADIENTS = [
   'from-indigo-900/60 to-violet-900/40',
@@ -21,6 +21,7 @@ export default function ChildDashboard() {
 
   const av = getAvatar(child.avatar);
   const progress = child.progress || {};
+  const band = ageToAgeBand(child.age);
 
   function logout() {
     clearCurrentChild();
@@ -63,7 +64,8 @@ export default function ChildDashboard() {
           <p className="text-base font-medium mb-1" style={{ color: av.accent }}>
             Your guide is <strong>{av.name} the {av.animal}</strong>
           </p>
-          <p className="text-white/25 text-sm mb-4">{child.grade}</p>
+          <p className="text-sm font-medium mb-0.5" style={{ color: av.accent + '99' }}>{band.shortLabel}</p>
+          <p className="text-white/25 text-xs mb-4">{child.grade}</p>
 
           {/* Change guide button */}
           <button

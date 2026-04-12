@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getOnboardingDraft, clearOnboardingDraft } from '../lib/onboardingStorage';
 import { getParentByEmail, saveParent, setCurrentParent, addChildToParent, genId } from '../lib/storage';
-import { getSubject } from '../lib/constants';
+import { getSubject, ageToAgeBand } from '../lib/constants';
 import { sendWelcomeEmail } from '../lib/email';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -69,11 +69,13 @@ export default function OnboardingAccount() {
       setCurrentParent(parent);
 
       // Create child from onboarding draft
+      const childAge = parseInt(child.age, 10) || 8;
       const childRecord = {
         id:           genId(),
         name:         child.name  || 'My Child',
-        age:          parseInt(child.age, 10) || 8,
+        age:          childAge,
         grade:        ageToGrade(child.age),
+        ageBand:      ageToAgeBand(childAge).id,
         avatar:       'nova',
         subjects,
         level:        child.level || 'on',

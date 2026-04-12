@@ -22,15 +22,18 @@ function clamp(text, max = 90) {
 }
 
 export default function NovaChat({ child, lesson, subject, section }) {
-  const [speaking, setSpeaking]   = useState(false);
-  const [listening, setListening] = useState(false);
-  const [thinking, setThinking]   = useState(false);
-  const [bubble, setBubble]       = useState('');
-  const [canListen, setCanListen] = useState(false);
+  const [speaking, setSpeaking]       = useState(false);
+  const [listening, setListening]     = useState(false);
+  const [thinking, setThinking]       = useState(false);
+  const [bubble, setBubble]           = useState('');
+  const [canListen, setCanListen]     = useState(false);
+  const [micPromptKey, setMicPromptKey] = useState(0);
+  const [showMicPrompt, setShowMicPrompt] = useState(false);
 
-  const audioRef    = useRef(null);
-  const recognRef   = useRef(null);
-  const bubbleTimer = useRef(null);
+  const audioRef      = useRef(null);
+  const recognRef     = useRef(null);
+  const bubbleTimer   = useRef(null);
+  const micPromptTimer = useRef(null);
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
   // Map to NovaSVG state
@@ -42,6 +45,13 @@ export default function NovaChat({ child, lesson, subject, section }) {
     setCanListen(!!(window.SpeechRecognition || window.webkitSpeechRecognition));
   }, []);
 
+  function showPromptBriefly() {
+    clearTimeout(micPromptTimer.current);
+    setShowMicPrompt(true);
+    setMicPromptKey(k => k + 1);
+    micPromptTimer.current = setTimeout(() => setShowMicPrompt(false), 3600);
+  }
+
   function stopAudio() {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -49,6 +59,8 @@ export default function NovaChat({ child, lesson, subject, section }) {
       audioRef.current = null;
     }
     setSpeaking(false);
+    clearTimeout(micPromptTimer.current);
+    setShowMicPrompt(false);
   }
 
   const speak = useCallback(async (text) => {
@@ -72,6 +84,9 @@ export default function NovaChat({ child, lesson, subject, section }) {
         setSpeaking(false);
         audioRef.current = null;
         bubbleTimer.current = setTimeout(() => setBubble(''), 3500);
+        if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+          showPromptBriefly();
+        }
       };
       el.onerror = () => {
         setSpeaking(false);
@@ -96,6 +111,7 @@ export default function NovaChat({ child, lesson, subject, section }) {
   useEffect(() => {
     return () => {
       clearTimeout(bubbleTimer.current);
+      clearTimeout(micPromptTimer.current);
       stopAudio();
       recognRef.current?.abort();
     };
@@ -107,6 +123,8 @@ export default function NovaChat({ child, lesson, subject, section }) {
     if (!SR) return;
     stopAudio();
     clearTimeout(bubbleTimer.current);
+    clearTimeout(micPromptTimer.current);
+    setShowMicPrompt(false);
     setBubble('');
 
     const recog = new SR();
@@ -249,6 +267,26 @@ export default function NovaChat({ child, lesson, subject, section }) {
       >
         {stateLabel}
       </p>
+
+      {/* ── Mic invitation prompt ───────────────────────── */}
+      {showMicPrompt && canListen && (
+        <p
+          key={micPromptKey}
+          className="pointer-events-none text-center"
+          style={{
+            fontSize:      11,
+            color:         'rgba(167,139,250,0.72)',
+            letterSpacing: '0.01em',
+            marginTop:     -2,
+            marginBottom:  -4,
+            maxWidth:      160,
+            lineHeight:    1.4,
+            animation:     'nova-mic-prompt 3.5s ease forwards',
+          }}
+        >
+          Curious about something?<br />Tap the mic ✦
+        </p>
+      )}
 
       {/* ── Microphone button ───────────────────────────── */}
       {canListen && (

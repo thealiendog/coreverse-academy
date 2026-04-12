@@ -1,25 +1,29 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../lib/storage';
-import { getSubject, getAvatar } from '../lib/constants';
+import { getSubject, getAvatar, AGE_BANDS, ageToAgeBand } from '../lib/constants';
 import { getLessons } from '../data/lessons';
 import { getLevel2Lessons } from '../data/lessons_level2';
 import { getLevel3Lessons } from '../data/lessons_level3';
 import { getLevel4Lessons } from '../data/lessons_level4';
+import { INNERWORLD_EXPLORERS } from '../data/innerworld_explorers';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
   const navigate = useNavigate();
   const child = getCurrentChild();
   const s = getSubject(subjectId);
-  const [level, setLevel] = useState(1);
+  // Default to child's age band; fallback to Explorers (level 2) if no child
+  const childBand = child ? ageToAgeBand(child.age) : AGE_BANDS[1];
+  const [level, setLevel] = useState(childBand.level);
 
   // child may be null (parent browsing) — show preview with no progress
   const av = child ? getAvatar(child.avatar) : getAvatar('nova');
   const progress = child?.progress || {};
 
   const l1Lessons = getLessons(subjectId);
-  const l2Lessons = getLevel2Lessons(subjectId);
+  // Inner World level 2 → use real Explorers curriculum
+  const l2Lessons = subjectId === 'inner-world' ? INNERWORLD_EXPLORERS : getLevel2Lessons(subjectId);
   const l3Lessons = getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);
 
@@ -28,6 +32,7 @@ export default function SubjectView() {
   const progressKey = level === 1 ? subjectId : `${subjectId}__${level}`;
   const doneLessons = progress[progressKey] || 0;
   const hasContent = lessonData.length > 0;
+  const activeBand = AGE_BANDS.find(b => b.level === level) || AGE_BANDS[1];
 
   function handleLessonClick(i) {
     if (!hasContent) return;
@@ -89,36 +94,45 @@ export default function SubjectView() {
           </div>
         </div>
 
-        {/* Level tabs */}
-        <div className="flex gap-1.5 mb-6 bg-white/4 rounded-2xl p-1">
-          {[
-            { lv: 1, label: 'L1', available: l1Lessons.length > 0 },
-            { lv: 2, label: 'L2', available: l2Lessons.length > 0 },
-            { lv: 3, label: 'L3', available: l3Lessons.length > 0 },
-            { lv: 4, label: 'L4', available: l4Lessons.length > 0 },
-          ].map(({ lv, label, available }) => (
-            <button
-              key={lv}
-              onClick={() => available && setLevel(lv)}
-              disabled={!available}
-              className={`flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200
-                ${level === lv
-                  ? 'bg-[#0F0B2E] text-white shadow-sm'
-                  : available
-                    ? 'text-white/35 hover:text-white/60'
-                    : 'text-white/12 cursor-not-allowed'}`}
-            >
-              {label}
-            </button>
-          ))}
+        {/* Age band tabs */}
+        <div className="flex gap-1 mb-6 bg-white/4 rounded-2xl p-1">
+          {AGE_BANDS.map(band => {
+            const available = (lessonsByLevel[band.level] || []).length > 0;
+            const isActive  = level === band.level;
+            const isChildBand = band.level === childBand.level;
+            return (
+              <button
+                key={band.id}
+                onClick={() => available && setLevel(band.level)}
+                disabled={!available}
+                className={`flex-1 py-2 rounded-xl transition-all duration-200 text-center relative
+                  ${isActive
+                    ? 'bg-[#0F0B2E] text-white shadow-sm'
+                    : available
+                      ? 'text-white/35 hover:text-white/60'
+                      : 'text-white/12 cursor-not-allowed'}`}
+              >
+                <span className="block text-[9px] font-medium opacity-70 leading-tight">Ages {band.ages}</span>
+                <span className="block text-[11px] font-semibold leading-tight mt-0.5">{band.label}</span>
+                {isChildBand && !isActive && (
+                  <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#A78BFA]" />
+                )}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Unit label */}
-        {lessonData.length > 0 && lessonData[0].unit && (
-          <p className="text-white/30 text-xs font-semibold tracking-widest uppercase text-center mb-4">
-            {lessonData[0].unit}
+        {/* Active band label */}
+        <div className="flex items-center justify-between mb-4">
+          <p className="text-white/30 text-xs font-semibold tracking-widest uppercase">
+            {activeBand.label} · {lessonData.length} lessons
           </p>
-        )}
+          {childBand.level === level && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: 'rgba(167,139,250,0.12)', color: '#A78BFA' }}>
+              {child ? `${child.name}'s band` : 'Your band'}
+            </span>
+          )}
+        </div>
 
         {/* Lesson list */}
         {hasContent ? (

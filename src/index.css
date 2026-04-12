@@ -362,6 +362,14 @@ h1, h2, h3, h4 {
 }
 .lesson-explore-glow { animation: lesson-explore-border-kf 2.8s ease-in-out infinite; }
 
+/* Nova mic invitation prompt — fades in, holds, fades out */
+@keyframes nova-mic-prompt {
+  0%   { opacity: 0; transform: translateY(5px); }
+  12%  { opacity: 1; transform: translateY(0); }
+  72%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-3px); }
+}
+
 /* Celebration floating star */
 @keyframes lesson-star-float-kf {
   0%, 100% { opacity: 0.2; transform: scale(0.7) translateY(0px); }

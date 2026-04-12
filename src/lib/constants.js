@@ -14,6 +14,22 @@ export function getAvatar(id) {
   return AVATARS.find(a => a.id === id) || AVATARS[0];
 }
 
+// ── Age Bands ─────────────────────────────────────────────────────────────────
+export const AGE_BANDS = [
+  { id: 'little-stars',    label: 'Little Stars',    shortLabel: 'Little Star',    ages: '3–5',   level: 1 },
+  { id: 'explorers',       label: 'Explorers',       shortLabel: 'Explorer',       ages: '6–8',   level: 2 },
+  { id: 'upper-explorers', label: 'Upper Explorers', shortLabel: 'Upper Explorer', ages: '9–10',  level: 3 },
+  { id: 'voyagers',        label: 'Voyagers',        shortLabel: 'Voyager',        ages: '11–12', level: 4 },
+];
+
+export function ageToAgeBand(age) {
+  const n = parseInt(age, 10) || 8;
+  if (n <= 5)  return AGE_BANDS[0];
+  if (n <= 8)  return AGE_BANDS[1];
+  if (n <= 10) return AGE_BANDS[2];
+  return AGE_BANDS[3];
+}
+
 // ── Subjects ─────────────────────────────────────────────────────────────────
 export const SUBJECTS = [
   { id: 'inner-world',   label: 'Inner World',           color: '#10B981', lessons: ['Breathing & Meditation', 'Self-Love & Confidence', 'Consciousness & Awareness'] },
