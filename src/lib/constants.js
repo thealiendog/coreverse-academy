@@ -32,7 +32,7 @@ export function ageToAgeBand(age) {
 
 // ── Subjects ─────────────────────────────────────────────────────────────────
 export const SUBJECTS = [
-  { id: 'inner-world',   label: 'Inner World & Consciousness', icon: '🌿', color: '#10B981', lessons: ['Breathing & Meditation', 'Self-Love & Confidence', 'Consciousness & Awareness'] },
+  { id: 'inner-world',   label: 'Inner World & Consciousness', icon: '🌿', color: '#10B981', lessons: ['The Emotion Wheel','The Feeling Body','Riding the Wave','The Quiet Mind','The Thinking Trap','Gratitude','Self-Compassion','Inner Strength','Growth Mindset','Setting Boundaries','Forgiveness','Courage','Curiosity','Visualization','Loving-Kindness','The Present Moment','Values','Connection','The Observer Self','Your Inner World'] },
   { id: 'cosmos',        label: 'Cosmos & Science',            icon: '🔭', color: '#6366F1', lessons: ['Our Solar System', 'Biology & Living Things', 'Earth & Geology'] },
   { id: 'math',          label: 'Mathematics',                 icon: '🔢', color: '#8B5CF6', lessons: ['Patterns & Numbers', 'Multiplication Magic', 'Fractions Are Fun'] },
   { id: 'language-arts', label: 'Language Arts',               icon: '📖', color: '#F59E0B', lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
