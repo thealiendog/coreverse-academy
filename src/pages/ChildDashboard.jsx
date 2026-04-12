@@ -63,7 +63,24 @@ export default function ChildDashboard() {
           <p className="text-base font-medium mb-1" style={{ color: av.accent }}>
             Your guide is <strong>{av.name} the {av.animal}</strong>
           </p>
-          <p className="text-white/25 text-sm">{child.grade}</p>
+          <p className="text-white/25 text-sm mb-4">{child.grade}</p>
+
+          {/* Change guide button */}
+          <button
+            onClick={() => navigate('/child/avatar-select')}
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium transition-all hover:scale-105 active:scale-95"
+            style={{
+              color:       av.accent,
+              background:  av.accent + '14',
+              border:      `1px solid ${av.accent}30`,
+            }}
+          >
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            Change guide
+          </button>
         </div>
 
         {/* Subject cards heading */}

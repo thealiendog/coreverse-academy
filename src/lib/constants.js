@@ -1,13 +1,13 @@
 // ── Avatars ───────────────────────────────────────────────────────────────────
 export const AVATARS = [
-  { id: 'nova',  name: 'Nova',  animal: 'Owl',       emoji: '🦉', image: '/avatars/nova.png',  color: '#312E81', accent: '#818CF8' },
-  { id: 'sage',  name: 'Sage',  animal: 'Deer',      emoji: '🦌', image: '/avatars/sage.png',  color: '#064E3B', accent: '#34D399' },
-  { id: 'byte',  name: 'Byte',  animal: 'Fox',       emoji: '🦊', image: '/avatars/byte.png',  color: '#1E3A5F', accent: '#60A5FA' },
-  { id: 'ace',   name: 'Ace',   animal: 'Eagle',     emoji: '🦅', image: '/avatars/ace.png',   color: '#451A03', accent: '#FCD34D' },
-  { id: 'muse',  name: 'Muse',  animal: 'Butterfly', emoji: '🦋', image: '/avatars/muse.png',  color: '#4A044E', accent: '#E879F9' },
-  { id: 'valor', name: 'Valor', animal: 'Lion',      emoji: '🦁', image: '/avatars/valor.png', color: '#450A0A', accent: '#FCA5A5' },
-  { id: 'terra', name: 'Terra', animal: 'Wolf',      emoji: '🐺', image: '/avatars/terra.png', color: '#14532D', accent: '#86EFAC' },
-  { id: 'lyra',  name: 'Lyra',  animal: 'Elephant',  emoji: '🐘', image: '/avatars/lyra.png',  color: '#1C1917', accent: '#FDE68A' },
+  { id: 'nova',  name: 'Nova',  animal: 'Owl',       emoji: '🦉', image: '/avatars/nova.png',  color: '#312E81', accent: '#818CF8', specialty: 'Space & Cosmos' },
+  { id: 'sage',  name: 'Sage',  animal: 'Deer',      emoji: '🦌', image: '/avatars/sage.png',  color: '#064E3B', accent: '#34D399', specialty: 'Mindfulness & Nature' },
+  { id: 'byte',  name: 'Byte',  animal: 'Fox',       emoji: '🦊', image: '/avatars/byte.png',  color: '#1E3A5F', accent: '#60A5FA', specialty: 'Coding & Technology' },
+  { id: 'ace',   name: 'Ace',   animal: 'Eagle',     emoji: '🦅', image: '/avatars/ace.png',   color: '#451A03', accent: '#FCD34D', specialty: 'Adventure & Discovery' },
+  { id: 'muse',  name: 'Muse',  animal: 'Butterfly', emoji: '🦋', image: '/avatars/muse.png',  color: '#4A044E', accent: '#E879F9', specialty: 'Arts & Creativity' },
+  { id: 'valor', name: 'Valor', animal: 'Lion',      emoji: '🦁', image: '/avatars/valor.png', color: '#450A0A', accent: '#FCA5A5', specialty: 'Bravery & Leadership' },
+  { id: 'terra', name: 'Terra', animal: 'Wolf',      emoji: '🐺', image: '/avatars/terra.png', color: '#14532D', accent: '#86EFAC', specialty: 'Nature & Environment' },
+  { id: 'lyra',  name: 'Lyra',  animal: 'Elephant',  emoji: '🐘', image: '/avatars/lyra.png',  color: '#1C1917', accent: '#FDE68A', specialty: 'History & Stories' },
 ];
 
 export function getAvatar(id) {

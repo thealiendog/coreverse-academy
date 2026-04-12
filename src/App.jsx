@@ -16,6 +16,7 @@ import StateCompliance from './pages/StateCompliance';
 import Account         from './pages/Account';
 import ChildSelect     from './pages/ChildSelect';
 import ChildDashboard  from './pages/ChildDashboard';
+import AvatarSelect    from './pages/AvatarSelect';
 import SubjectView     from './pages/SubjectView';
 import LessonPlayer    from './pages/LessonPlayer';
 
@@ -46,6 +47,7 @@ export default function App() {
         {/* Child flow */}
         <Route path="/child/select"             element={<ChildSelect />} />
         <Route path="/child/dashboard"          element={<ChildDashboard />} />
+        <Route path="/child/avatar-select"      element={<AvatarSelect />} />
         <Route path="/child/subject/:subjectId" element={<SubjectView />} />
         <Route path="/child/lesson/:subjectId/:lessonIdx" element={<LessonPlayer />} />
 

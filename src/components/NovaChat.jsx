@@ -169,7 +169,7 @@ export default function NovaChat({ child, lesson, subject, section }) {
 
   return (
     <div
-      className="fixed bottom-2 right-2 z-[60] flex flex-col items-center pointer-events-none select-none"
+      className="fixed bottom-2 right-6 z-[60] flex flex-col items-center pointer-events-none select-none"
       style={{ gap: 8, animation: 'nova-enter-from-right 0.9s cubic-bezier(0.34,1.56,0.64,1) 0.8s both' }}
     >
       {/* ── Speech bubble ───────────────────────────────── */}

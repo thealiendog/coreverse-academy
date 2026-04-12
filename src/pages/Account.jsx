@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { getCurrentParent, clearCurrentParent } from '../lib/storage';
+import { getCurrentParent, clearCurrentParent, setCurrentChild } from '../lib/storage';
+import { getAvatar } from '../lib/constants';
 
 const TIERS = [
   {
@@ -99,6 +100,47 @@ export default function Account() {
           <p className="text-white/20 text-xs mt-0.5">{parent.state}</p>
         </div>
       </div>
+
+      {/* Children's Guides */}
+      {parent.children?.length > 0 && (
+        <div className="mb-10 pb-8 border-b border-white/5">
+          <h2 className="text-xs tracking-widest uppercase text-white/30 font-normal mb-5">Children's Guides</h2>
+          <div className="space-y-3">
+            {parent.children.map(child => {
+              const av = getAvatar(child.avatar);
+              return (
+                <div
+                  key={child.id}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl"
+                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  <div
+                    className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0"
+                    style={{ boxShadow: `0 0 0 1.5px ${av.accent}40` }}
+                  >
+                    <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white text-sm font-medium">{child.name}</p>
+                    <p className="text-xs truncate" style={{ color: av.accent + 'aa' }}>
+                      {av.name} the {av.animal} · {av.specialty}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setCurrentChild(child);
+                      navigate('/child/avatar-select?back=/parent/account');
+                    }}
+                    className="text-xs text-white/30 hover:text-white/65 transition-colors flex-shrink-0"
+                  >
+                    Change
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Plans heading */}
       <div className="flex items-baseline justify-between mb-8">
