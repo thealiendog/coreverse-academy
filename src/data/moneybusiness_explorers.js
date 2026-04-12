@@ -1,1154 +1,1188 @@
-// Money & Business — Ages 6–8 (Explorers Band)
-// 20 lessons · Ace the Eagle guides
+// Money & Business — Ages 6-8 (Explorers)
+// Guide: Ace the Eagle 🦅
+// 20 lessons · Version 1.0 · April 2026
 
-export const MONEYBUSINESS_EXPLORERS = [
-  // ── Lesson 1 ──────────────────────────────────────────────────────────────
+export const moneyBusinessExplorers = [
   {
-    title: 'What Is Money? — And Why We Need It',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Money Explorer',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Find three different coins at home. What do they look like? Can you figure out their value? Talk about what you could buy with each one.',
-    arrival: 'Hey there, {{name}}! I\'m Ace, and I am SO excited you\'re here today — because we\'re about to begin one of the most useful adventures of your life. We\'re going to explore the world of money and business. Ready? Let\'s start at the very beginning: what is money, anyway?',
-    spark: 'Imagine you baked the best cookies in the world. Your neighbor has fresh eggs from their chickens. You need eggs, they want cookies. How would you make that trade fair?',
-    learn: [
-      'Money is anything that people agree to use for buying and selling things. Today we use coins and paper bills — but throughout history, people have used shells, beads, salt, stones, and even cattle as money. What made them all "money" was simple: people agreed they had value.',
-      'Before money existed, people used barter — trading one thing directly for another. A farmer might trade vegetables for a pair of shoes. But barter had a big problem: what if the shoemaker didn\'t want vegetables that day? Money solved this problem by becoming something everyone would always accept.',
-      'Money has three main jobs. First, it\'s a medium of exchange — it makes trading easy. Second, it\'s a store of value — you can save it and use it later. Third, it\'s a unit of measure — it tells us what things are worth compared to each other. A book might cost $10, a bicycle $200, and a car $20,000.',
-      'In the United States, our money is called dollars and cents. 100 cents make one dollar. We have coins — penny (1¢), nickel (5¢), dime (10¢), quarter (25¢) — and bills — $1, $5, $10, $20, and more. The government makes all official money and controls how much exists in the country.',
+    id: "mb-6-8-01",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 1,
+    title: "How Money Is Made",
+    duration: "10–15 min",
+    hook: "Have you ever wondered who makes money? Like, who actually prints dollar bills? It's not just some machine running all day — there's a whole system behind it, and it's pretty wild.",
+    bigIdea: "Money is created and managed by the government. It takes a lot of work to design, print, and protect money from being faked.",
+    sections: [
+      {
+        title: "Who Makes Money?",
+        emoji: "🖨️",
+        content: "In the United States, the government makes all official money. The U.S. Mint makes coins — pennies, nickels, dimes, and quarters. The Bureau of Engraving and Printing makes paper bills — the ones and fives and twenties you see every day. They print billions of bills every year!"
+      },
+      {
+        title: "Why Is Money So Hard to Fake?",
+        emoji: "🔐",
+        content: "Paper money has lots of secret features to stop counterfeiting (making fake copies). A $20 bill has: color-shifting ink that changes from gold to green when tilted, a security strip hidden inside that glows pink under special light, tiny microprinting you need a magnifying glass to read, and a watermark portrait visible only when held to light."
+      },
+      {
+        title: "What About Coins?",
+        emoji: "💰",
+        content: "Coins are stamped out of metal using giant machines. A penny is mostly zinc with a tiny bit of copper on the outside. Quarters are made of a sandwich of copper and nickel. The U.S. Mint makes about 14 billion coins every year!"
+      },
+      {
+        title: "Digital Money",
+        emoji: "💻",
+        content: "Most money today doesn't exist as paper or coins — it lives on computers. When your parents get paid, numbers just move from their employer's bank to their bank account. No truck delivers bags of cash! This is called digital currency, and it's how most money moves around the world today."
+      }
     ],
-    explore: 'Draw your own "Ace Money" — design a coin or bill that represents something you value. What image would go on it? What would it be worth? What could you trade it for?',
-    quickCheck: {
-      question: 'What are the three main jobs of money?',
-      options: [
-        'Earning, spending, hiding',
-        'Medium of exchange, store of value, unit of measure',
-        'Buying, selling, collecting',
-        'Saving, giving, borrowing',
-      ],
-      correct: 1,
+    activity: {
+      title: "Money Detective",
+      instructions: "Look at a dollar bill with a grown-up. Try to find 3 of the security features. Can you spot the security strip? Hold it up to the light — do you see a face in the watermark?"
     },
     quiz: [
       {
-        question: 'What is barter?',
-        options: ['Using coins to buy things', 'Trading one thing directly for another', 'Saving money in a bank', 'Counting your pennies'],
-        correct: 1,
+        question: "Who makes paper money in the United States?",
+        answer: "The Bureau of Engraving and Printing",
+        options: ["The White House", "The Bureau of Engraving and Printing", "Amazon", "The Post Office"]
       },
       {
-        question: 'What was a problem with barter?',
-        options: ['Things were too expensive', 'The other person might not want what you had to trade', 'Coins were too heavy to carry', 'Banks refused to accept it'],
-        correct: 1,
+        question: "What is counterfeiting?",
+        answer: "Making fake copies of money",
+        options: ["Saving money in a bank", "Making fake copies of money", "Spending too much", "Trading coins for bills"]
       },
       {
-        question: 'How many cents are in one dollar?',
-        options: ['10', '50', '100', '1000'],
-        correct: 2,
-      },
-      {
-        question: 'Which of these have people used as money throughout history?',
-        options: ['Only gold and silver', 'Only paper bills', 'Shells, salt, beads, and stones', 'Only coins'],
-        correct: 2,
-      },
-      {
-        question: 'What does "store of value" mean?',
-        options: ['A shop where things are sold', 'You can save money and use it later', 'The government prints money', 'Counting your total savings'],
-        correct: 1,
-      },
+        question: "What is digital money?",
+        answer: "Money stored as numbers on computers in banks",
+        options: ["Money made of metal", "Money you can only spend online", "Money stored as numbers on computers in banks", "Cryptocurrency only"]
+      }
     ],
-    celebrationText: 'Amazing, {{name}}! You just learned where money comes from and why it matters. You\'re already thinking like a financial explorer. Ace is so proud of you — this is just the beginning!',
+    familyAdventure: "Go on a coin hunt around your home! Collect any coins you find, sort them by type, and examine each one closely. Can you find the year it was made? Which coin is the oldest in your collection?",
+    badge: "Money Detective",
+    nextLesson: "mb-6-8-02"
   },
-
-  // ── Lesson 2 ──────────────────────────────────────────────────────────────
   {
-    title: 'Earning Money — The Value of Work',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Earner',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Ask a family member: "What do you do to earn money?" and "Why did you choose that kind of work?" Listen to their answer and share one thing that surprised you.',
-    arrival: '{{name}}, welcome back! Today we\'re going to talk about something every single person in the world has to understand: earning money. Where does money actually come from for most people? The answer might be simpler than you think — it comes from work.',
-    spark: 'If you could create any job in the world — doing something you love every single day — what would it be? What would you make, do, or help people with?',
-    learn: [
-      'Earning money means receiving money in exchange for work, skills, or goods you provide. When you mow a lawn, tutor a friend, or sell lemonade, you are trading your time and effort for money. Adults do the same thing in their careers — they trade their skills and time for a paycheck.',
-      'There are two main ways to earn money. The first is a job: you work for someone else and they pay you. The second is a business: you create something valuable and sell it yourself. Both are ways of offering something the world needs. The secret to earning well is getting really good at something people value.',
-      'The amount someone earns often depends on three things: the skill required (doctors train for many years and earn more than entry-level jobs), the demand (people pay more for things they really need), and how rare your skill is (the fewer people who can do it, the more it pays). Learning valuable skills is one of the best investments you can make.',
-      'Even as a kid, you can earn money. You might earn an allowance for chores, get paid for helping neighbors, sell crafts or baked goods, or start a small service like pet-sitting. Every time you earn money, you are learning one of the most important life skills: how to create value for others.',
+    id: "mb-6-8-02",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 2,
+    title: "Earning, Spending, Saving & Giving",
+    duration: "10–15 min",
+    hook: "What do you do when you get money? Maybe you spend it right away. But did you know there are four things you can do with money — and the most powerful people with money do ALL four?",
+    bigIdea: "Smart people divide their money into four buckets: Earn, Spend, Save, and Give. Using all four builds good money habits that last your whole life.",
+    sections: [
+      {
+        title: "Earning",
+        emoji: "💼",
+        content: "Money comes from doing work. Adults earn money from jobs. Kids can earn money by doing chores, helping neighbors, selling lemonade, or walking dogs. The key idea: you trade your time and effort for money. This is why people say 'time is money.'"
+      },
+      {
+        title: "Spending",
+        emoji: "🛍️",
+        content: "Spending is exchanging money for things you want or need. Smart spenders think before they buy. They ask: Do I need this or just want it? Is this the best price? Will this make me happy tomorrow, not just today?"
+      },
+      {
+        title: "Saving",
+        emoji: "🏦",
+        content: "Saving means keeping some money for later. A simple rule: save at least 20% of any money you get. That means if you earn $10, put $2 in savings before you do anything else. This is how you afford bigger things over time."
+      },
+      {
+        title: "Giving",
+        emoji: "🎁",
+        content: "Giving money away might sound strange — why give away something valuable? But giving is one of the most powerful things money can do. Research shows that giving money actually makes people feel happier than spending it on themselves!"
+      }
     ],
-    explore: 'Make a list of three ways you could earn money this week using your skills or time. What could you offer? Who might pay for it? How much would you charge? Pick your favorite idea and write a one-sentence plan.',
-    quickCheck: {
-      question: 'What does "earning money" mean?',
-      options: [
-        'Finding coins on the street',
-        'Receiving money in exchange for work, skills, or goods you provide',
-        'Borrowing money from a friend',
-        'Getting money as a birthday gift',
-      ],
-      correct: 1,
+    activity: {
+      title: "The Four Jars",
+      instructions: "With a grown-up's help, decorate four small jars or containers. Label them: EARN, SPEND, SAVE, GIVE. Next time you receive money, divide it between your jars. Even putting just 10 cents in each teaches your brain a powerful money habit."
     },
     quiz: [
       {
-        question: 'What are the two main ways to earn money?',
-        options: ['Saving and spending', 'Working a job or running a business', 'Finding and stealing', 'Borrowing and lending'],
-        correct: 1,
+        question: "What are the four things you can do with money?",
+        answer: "Earn, Spend, Save, and Give",
+        options: ["Buy, Trade, Sell, Borrow", "Earn, Spend, Save, and Give", "Save, Invest, Donate, Loan", "Work, Play, Save, Spend"]
       },
       {
-        question: 'Why might a doctor earn more than someone in an entry-level job?',
-        options: ['Doctors are always older', 'Doctors work longer hours', 'Doctors train for many years and have rare, high-demand skills', 'Doctors wear special clothes'],
-        correct: 2,
+        question: "What percentage should you try to save?",
+        answer: "At least 20%",
+        options: ["At least 5%", "At least 10%", "At least 20%", "At least 50%"]
       },
       {
-        question: 'What does "demand" mean when it comes to earning?',
-        options: ['How much you want to be paid', 'How many people want what you offer', 'How long you have been working', 'How much things cost at the store'],
-        correct: 1,
-      },
-      {
-        question: 'Which of these is an example of a kid earning money?',
-        options: ['Finding a $5 bill on the sidewalk', 'Getting a gift from grandma', 'Selling homemade bookmarks to classmates', 'Borrowing from a piggy bank'],
-        correct: 2,
-      },
-      {
-        question: 'The secret to earning well is...',
-        options: ['Asking for more money', 'Getting lucky', 'Getting really good at something people value', 'Working as many hours as possible'],
-        correct: 2,
-      },
+        question: "Why is giving money away good even though it sounds strange?",
+        answer: "It helps others and makes you happier than spending on yourself",
+        options: ["You get it back double", "It helps others and makes you happier than spending on yourself", "The government requires it", "It makes you famous"]
+      }
     ],
-    celebrationText: '{{name}}, you\'re already thinking like an entrepreneur! You now know that money starts with value — and that YOU can create value. Every great business person started exactly where you are. Keep going!',
+    familyAdventure: "Pick a cause your family cares about — animal shelters, food banks, planting trees. Collect any loose change around the house this week and donate it. Notice how it feels to give!",
+    badge: "Wise Spender",
+    nextLesson: "mb-6-8-03"
   },
-
-  // ── Lesson 3 ──────────────────────────────────────────────────────────────
   {
-    title: 'Needs vs. Wants — Choosing What Matters',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Smart Chooser',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Walk through your home and find three things that are "needs" and three things that are "wants." Talk about how your family decided to buy the wants.',
-    arrival: 'Hi {{name}}! Here\'s one of the most important questions in all of money: if you only had $20 and needed to buy food AND wanted to buy a video game, what would you choose? This lesson is all about understanding the difference between needs and wants — and why it matters so much.',
-    spark: 'Make a quick mental list of five things you want right now. Now circle the ones you truly cannot live without. How many are left?',
-    learn: [
-      'A need is something you must have to survive and stay healthy. Food, clean water, shelter (a home), clothing for warmth, and healthcare are needs. Without these, a person cannot live safely. Needs come first — always.',
-      'A want is something you would enjoy having but could live without. Video games, new shoes when old ones still fit, candy, the latest phone, and toys are wants. Wants make life fun and comfortable, but they are not essential for survival.',
-      'Here\'s the tricky part: the line between needs and wants can blur. You need shoes (need) — but do you need the $150 sneakers (want)? You need food (need) — but do you need pizza from a restaurant every night (want)? Smart money management means telling the difference clearly and honestly.',
-      'Every dollar you spend is a choice. When you buy a want before covering your needs, you can run into serious trouble. Smart people — both kids and adults — always cover their needs first, then use what\'s left over for wants. This simple rule prevents a lot of financial stress.',
+    id: "mb-6-8-03",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 3,
+    title: "Banks: Where Money Lives",
+    duration: "10–15 min",
+    hook: "Where does your family keep their money? Not in a mattress, right? It lives at a bank. But have you ever wondered what a bank actually IS and how it works? Banks are one of the most important inventions in human history.",
+    bigIdea: "Banks keep your money safe, let you use it whenever you need it, and even pay you extra money called interest just for keeping your money there.",
+    sections: [
+      {
+        title: "What Is a Bank?",
+        emoji: "🏦",
+        content: "A bank is a business that stores money, keeps it safe, and helps move it around. When you put money in a bank, it's called a deposit. When you take money out, it's called a withdrawal. Your money is tracked in an account — like a scoreboard of how much you have."
+      },
+      {
+        title: "How Banks Make Money",
+        emoji: "💸",
+        content: "Banks don't just sit on your money. They lend it to other people who need it — for cars, homes, and businesses. Those people pay back the money plus extra called interest. The bank keeps some of that interest and gives you a little bit too, just for keeping your money there."
+      },
+      {
+        title: "Is Your Money Safe?",
+        emoji: "🔒",
+        content: "Yes! In the U.S., the government protects your money through FDIC insurance. Even if a bank has problems, the government guarantees up to $250,000 per account. That's why banks are much safer than keeping cash at home."
+      },
+      {
+        title: "Modern Banking",
+        emoji: "📱",
+        content: "Today you don't even need to go to a bank building. Mobile banking apps let you check your balance, move money, and even deposit checks by taking a picture of them. Your parents probably use their phone to handle most of their banking."
+      }
     ],
-    explore: 'Make two columns: NEEDS and WANTS. List five things in each column from your own life. Then look at your WANTS list — if you had to pick just one to save up for, which would it be and why?',
-    quickCheck: {
-      question: 'Which of these is a NEED?',
-      options: [
-        'A new video game',
-        'A pair of running shoes (when you already have shoes that fit)',
-        'Clean drinking water',
-        'A trip to an amusement park',
-      ],
-      correct: 2,
+    activity: {
+      title: "Bank Visit or App Explore",
+      instructions: "Ask a parent to show you your family's banking app, or visit a bank together. Look for: your account balance, recent transactions (money coming in and going out), and your account number. Notice how it's all just numbers on a screen."
     },
     quiz: [
       {
-        question: 'What is a "need"?',
-        options: ['Something you really want', 'Something you must have to survive and stay healthy', 'Something that costs a lot of money', 'Something your friends have'],
-        correct: 1,
+        question: "What do you call putting money into a bank?",
+        answer: "A deposit",
+        options: ["A withdrawal", "A deposit", "A transfer", "An investment"]
       },
       {
-        question: 'Which of these is a WANT?',
-        options: ['Food', 'Shelter', 'The newest smartphone', 'Clean water'],
-        correct: 2,
+        question: "How do banks make money?",
+        answer: "They lend money to other people and charge interest",
+        options: ["They print extra money", "They charge fees only", "They lend money to other people and charge interest", "The government pays them"]
       },
       {
-        question: 'Why can needs and wants be hard to tell apart?',
-        options: ['Because they cost the same amount', 'Because some things (like clothing) can be either, depending on the version', 'Because stores mix them together', 'Because parents decide for you'],
-        correct: 1,
-      },
-      {
-        question: 'Smart money management means...',
-        options: ['Always buying what you want first', 'Never buying wants at all', 'Covering needs first, then using what\'s left for wants', 'Spending all your money right away'],
-        correct: 2,
-      },
-      {
-        question: 'If you only had $10 left and needed bus fare home, what should you do?',
-        options: ['Buy a snack first', 'Use it for bus fare — that\'s a need', 'Save it all and walk home', 'Give it to a friend'],
-        correct: 1,
-      },
+        question: "What is FDIC insurance?",
+        answer: "Government protection that keeps your bank money safe, up to $250,000",
+        options: ["A type of savings account", "Government protection that keeps your bank money safe, up to $250,000", "A credit card benefit", "A bank's profit system"]
+      }
     ],
-    celebrationText: '{{name}}, you\'ve learned one of the most powerful money skills that adults struggle with every day! Knowing the difference between needs and wants means you\'re already ahead of the game. Ace is impressed!',
+    familyAdventure: "Visit a bank branch together this week. Talk to a real banker and ask: What's the difference between a checking account and a savings account? What interest rate do you pay on savings accounts right now?",
+    badge: "Bank Explorer",
+    nextLesson: "mb-6-8-04"
   },
-
-  // ── Lesson 4 ──────────────────────────────────────────────────────────────
   {
-    title: 'The Power of Saving — Your Money\'s Best Superpower',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Super Saver',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Set up a "savings jar" this week. Decorate it with your savings goal written on it. Put whatever money you have toward that goal — even one coin counts!',
-    arrival: 'Welcome, {{name}}! Today I want to tell you about a superpower that every rich person in history has used — and it\'s completely free. It\'s called saving. Saving money might sound boring, but I promise you — it\'s one of the most exciting and powerful things you\'ll ever learn to do.',
-    spark: 'If you wanted to buy something that costs $50 and you get $5 a week, how many weeks would it take if you saved it ALL? Now what if you spent $3 each week and only saved $2?',
-    learn: [
-      'Saving means setting aside money instead of spending it right away. When you save, you\'re giving your future self a gift. Every dollar saved is a dollar available when you really need or want it later. Savers have choices; people who spend everything have none.',
-      'Saving works by building up over time. Even small amounts add up. If you save $2 every week, after one year you\'ll have over $100. After 5 years, over $500. The key is doing it consistently — a little, regularly, over time. This is one of the biggest secrets of wealthy people.',
-      'A savings goal makes saving easier. Instead of saving "just because," you\'re saving FOR something — a new book, a game, a trip, or even just an emergency fund. Write your goal down and put it where you can see it. Every time you want to spend, you\'ll remember what you\'re working toward.',
-      'Financial experts often suggest the "3 Jar System" for kids: one jar for Saving (for big goals), one for Spending (for small, everyday wants), and one for Giving (to help others). When you receive any money, split it — for example, 60% save, 30% spend, 10% give. This simple habit, started young, builds lifelong financial health.',
+    id: "mb-6-8-04",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 4,
+    title: "Budgeting: Planning What to Spend",
+    duration: "10–15 min",
+    hook: "Have you ever run out of money before you could buy something you really wanted? That's what happens without a budget. A budget is just a plan — and it's the single most powerful money tool there is.",
+    bigIdea: "A budget is a plan for where your money goes before you spend it. People who use budgets end up with more money, not less.",
+    sections: [
+      {
+        title: "What Is a Budget?",
+        emoji: "📋",
+        content: "A budget is a written plan that says: here is how much money I have, and here is where I plan to spend it. Professional athletes, movie stars, and billionaires all use budgets. Having a lot of money doesn't mean you don't need a plan."
+      },
+      {
+        title: "Income vs Expenses",
+        emoji: "➕",
+        content: "A budget has two sides. Income is money coming IN — your allowance, birthday money, money you earn. Expenses are money going OUT — snacks, toys, saving, giving. The golden rule: your income must always be bigger than your expenses."
+      },
+      {
+        title: "A Simple Budget Example",
+        emoji: "📊",
+        content: "Say you get $10 a week. Your budget might look like: $2 to savings, $1 to giving, $3 for snacks or fun, $4 toward a savings goal. That adds up to exactly $10. Every dollar has a job. This is called a zero-based budget."
+      },
+      {
+        title: "Budgeting for a Goal",
+        emoji: "🎯",
+        content: "Figure out how much something costs. Divide it by how much you can save each week. That tells you exactly how many weeks until you can afford it. Math becomes your superpower!"
+      }
     ],
-    explore: 'Choose a savings goal right now — something you genuinely want. Find out how much it costs. Calculate how many weeks it will take to save up if you save a specific amount each week. Write your plan in three sentences.',
-    quickCheck: {
-      question: 'What is the main benefit of saving money?',
-      options: [
-        'It makes your piggy bank heavier',
-        'It gives you choices and resources when you need or want them later',
-        'It impresses your friends',
-        'It means you never have to work again',
-      ],
-      correct: 1,
+    activity: {
+      title: "My First Budget",
+      instructions: "Make a simple budget for your next week or month. Write down how much money you expect to get (income). Then list where you want it to go (expenses). Make sure the two sides are equal. Show it to a parent!"
     },
     quiz: [
       {
-        question: 'What does saving money mean?',
-        options: ['Spending money quickly', 'Hiding money so no one finds it', 'Setting aside money instead of spending it right away', 'Giving money to others'],
-        correct: 2,
+        question: "What is a budget?",
+        answer: "A plan for where your money goes before you spend it",
+        options: ["A list of things you want to buy", "A plan for where your money goes before you spend it", "A type of bank account", "Money you save for emergencies"]
       },
       {
-        question: 'If you save $2 every week, approximately how much will you have after one year?',
-        options: ['$24', '$52', '$100', '$200'],
-        correct: 2,
+        question: "What is the golden rule of budgeting?",
+        answer: "Your income must always be bigger than your expenses",
+        options: ["Always spend your full budget", "Save everything you earn", "Your income must always be bigger than your expenses", "Never buy anything that's not on sale"]
       },
       {
-        question: 'Why does a savings goal help you save?',
-        options: ['It makes saving feel automatic', 'It gives you something specific to work toward, making it easier to resist spending', 'It tells you exactly when to stop saving', 'It earns you extra money'],
-        correct: 1,
-      },
-      {
-        question: 'In the 3 Jar System, what are the three jars for?',
-        options: ['Big, medium, and small purchases', 'Monday, Wednesday, Friday', 'Saving, spending, and giving', 'Food, toys, and clothes'],
-        correct: 2,
-      },
-      {
-        question: 'What is the key to saving successfully?',
-        options: ['Saving huge amounts all at once', 'Doing it consistently — a little, regularly, over time', 'Only saving when you feel like it', 'Waiting until you have a lot of money first'],
-        correct: 1,
-      },
+        question: "What does zero-based budgeting mean?",
+        answer: "Every dollar is assigned to a specific purpose",
+        options: ["Spending zero dollars", "Having zero savings", "Every dollar is assigned to a specific purpose", "Starting your budget from zero each month"]
+      }
     ],
-    celebrationText: 'Incredible, {{name}}! Saving is a superpower — and now you know how to use it. Even one coin saved today is the beginning of something big. Ace believes in you. Start your jar today!',
+    familyAdventure: "Ask a parent to share your family's grocery budget for the week. Go to the grocery store together and try to stay under budget. Notice how planning ahead changes how you shop!",
+    badge: "Budget Boss",
+    nextLesson: "mb-6-8-05"
   },
-
-  // ── Lesson 5 ──────────────────────────────────────────────────────────────
   {
-    title: 'Counting Money — Know What You Have',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Money Counter',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Empty your piggy bank or wallet. Count all your coins and bills. Figure out the exact total. Set a small goal for what you\'d like to save up to next.',
-    arrival: 'Hey {{name}}! Before you can manage money, spend it wisely, or save it — you have to know how much you have. Today we\'re going to master the skill of counting money. This is one of those practical skills that you\'ll use literally every day of your life.',
-    spark: 'If you had 3 quarters, 2 dimes, 1 nickel, and 4 pennies — how much money would that be? Take a guess before we learn how to figure it out!',
-    learn: [
-      'In the United States, coins have specific values. A penny is worth 1 cent (¢). A nickel is worth 5 cents. A dime is worth 10 cents — it\'s smaller than a nickel but worth twice as much! A quarter is worth 25 cents. Half-dollars are 50 cents. Remember: size doesn\'t always mean more value in coins.',
-      'To count coins, start with the highest value coins first and count down. Start with quarters (25¢ each), then dimes (10¢), then nickels (5¢), then pennies (1¢). Counting from highest to lowest makes it much easier and faster to reach the total.',
-      'Paper bills also have specific values: $1, $2 (rare), $5, $10, $20, $50, and $100. When counting a mix of bills and coins, count all bills first (from highest to lowest), then add your coins on top. Always double-check your count — even experienced cashiers make mistakes.',
-      'Making change is when you give back the difference between what someone paid and what something costs. If something costs $3.50 and a customer pays with a $5 bill, the change is $1.50. A great trick: count up from the price to the amount paid. "$3.50... $4.00... $5.00 — that\'s $1.50 back."',
+    id: "mb-6-8-05",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 5,
+    title: "What Is a Business?",
+    duration: "10–15 min",
+    hook: "Everything around you came from a business. Your shoes, your phone, your lunch, your bed. But what exactly IS a business? And could YOU start one someday? Spoiler: yes, absolutely.",
+    bigIdea: "A business solves a problem for people and gets paid for doing it. Anyone — including kids — can start a business.",
+    sections: [
+      {
+        title: "What Makes Something a Business?",
+        emoji: "🏢",
+        content: "A business is any organization that offers something valuable — a product or a service — to people in exchange for money. A lemonade stand is a business. So is a hospital, a restaurant, an app, and a million-dollar company. What they all have in common: they solve a problem for customers and get paid for it."
+      },
+      {
+        title: "The Three Parts of Every Business",
+        emoji: "🧩",
+        content: "Every business has three things: a value proposition (what problem do you solve?), customers (who needs your solution?), and a revenue model (how do you get paid?). If you have these three things figured out, you have a business idea."
+      },
+      {
+        title: "Different Types of Businesses",
+        emoji: "🏪",
+        content: "Businesses come in every shape and size. A sole proprietorship is just one person working for themselves. A partnership is two or more people working together. A corporation is a big business with many employees and owners. Most businesses start tiny and grow over time."
+      },
+      {
+        title: "Kid Entrepreneurs",
+        emoji: "💡",
+        content: "Kids start real businesses all the time. Mikaila Ulmer started a lemonade business at age 4 and now sells in major grocery stores. Moziah Bridges started making bow ties at age 9 and got a deal on Shark Tank. Age doesn't determine whether you can solve a problem for people."
+      }
     ],
-    explore: 'Go find some real coins (ask a parent if needed). Make the following amounts three different ways using different coins: 35¢, 60¢, and $1.00. Which way uses the fewest coins?',
-    quickCheck: {
-      question: 'A dime is worth how many cents?',
-      options: ['5 cents', '10 cents', '15 cents', '25 cents'],
-      correct: 1,
+    activity: {
+      title: "Business Idea Generator",
+      instructions: "Think of a problem you see around you. Write down: What's the problem? Who has this problem? How could you solve it? How would people pay you? Congratulations — you just created a business idea!"
     },
     quiz: [
       {
-        question: 'A penny is worth...',
-        options: ['5 cents', '10 cents', '1 cent', '25 cents'],
-        correct: 2,
+        question: "What is the core of every business?",
+        answer: "Solving a problem for people and getting paid for it",
+        options: ["Making as much money as possible", "Solving a problem for people and getting paid for it", "Having lots of employees", "Selling in a big store"]
       },
       {
-        question: 'When counting a mix of coins, what should you count first?',
-        options: ['The smallest coins first', 'The biggest coins first', 'The highest-value coins first', 'However you feel like it'],
-        correct: 2,
+        question: "What are the three parts of every business?",
+        answer: "Value proposition, customers, and revenue model",
+        options: ["Logo, website, and social media", "Value proposition, customers, and revenue model", "Owner, employees, and profits", "Product, price, and packaging"]
       },
       {
-        question: 'Something costs $2.75. A customer pays with a $5 bill. How much change do they get?',
-        options: ['$1.50', '$2.25', '$2.75', '$3.25'],
-        correct: 1,
-      },
-      {
-        question: 'Which coin is worth more — a dime or a nickel?',
-        options: ['Nickel, because it\'s bigger', 'Dime, because it\'s worth 10 cents', 'They are equal', 'It depends on the year'],
-        correct: 1,
-      },
-      {
-        question: 'What is "making change"?',
-        options: ['Switching coins for bills', 'Giving back the difference between what was paid and what something costs', 'Sorting money by type', 'Adding up prices'],
-        correct: 1,
-      },
+        question: "How old was Mikaila Ulmer when she started her lemonade business?",
+        answer: "4 years old",
+        options: ["4 years old", "8 years old", "12 years old", "16 years old"]
+      }
     ],
-    celebrationText: '{{name}}, you can count money like a pro! This skill will serve you everywhere — shops, markets, restaurants. Ace is excited to see you put this to use in real life. Next lesson, we\'ll go even bigger!',
+    familyAdventure: "Go to a local small business — a coffee shop, bakery, or store. Ask the owner: What problem does your business solve? How did you get started? What was the hardest part? Business owners love talking about how they started.",
+    badge: "Business Builder",
+    nextLesson: "mb-6-8-06"
   },
-
-  // ── Lesson 6 ──────────────────────────────────────────────────────────────
   {
-    title: 'Your First Budget — A Plan for Your Money',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Budget Boss',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Ask a parent to show you a household budget or grocery list. How did they decide what to include? What had to be left out? What did you learn?',
-    arrival: '{{name}}, welcome! Today we\'re going to learn something that millionaires, presidents, and world-class businesses all do — they make a budget. A budget is just a plan for how you\'re going to use your money. And guess what? You can make one too, starting today.',
-    spark: 'Imagine you receive $20 for your birthday. You want to buy a book ($8), save for a game ($10 so far, need $15 more), and also donate to an animal shelter. How would you split the $20?',
-    learn: [
-      'A budget is a plan that shows how much money you have coming in (income) and how much you plan to spend and save (expenses). A budget doesn\'t restrict your life — it gives your money a purpose. Without a budget, money tends to disappear without you even noticing where it went.',
-      'The simplest budget for kids has three categories: Save (money set aside for goals), Spend (money for everyday wants and small purchases), and Give (money set aside for helping others). Many kids find that a 60-30-10 split works well: 60% save, 30% spend, 10% give. But you can adjust these percentages to fit your goals.',
-      'To make a budget, follow these steps: First, write down how much money you have or earn in a week. Second, list what you want to do with it (save, spend, give). Third, assign dollar amounts to each category. Fourth, check that the total doesn\'t exceed what you have. Fifth, stick to the plan — that\'s the hard part!',
-      'When you track where your money goes, something powerful happens: you start making intentional choices instead of spending by habit. Even top financial experts say that tracking spending is the single most effective thing people can do to improve their finances. A simple notebook or app works perfectly.',
+    id: "mb-6-8-06",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 6,
+    title: "Products vs Services",
+    duration: "10–15 min",
+    hook: "When you buy a candy bar, you're buying a product. When you get a haircut, you're buying a service. These are two totally different things — and understanding the difference is one of the first steps to thinking like a business person.",
+    bigIdea: "Businesses sell either products (physical or digital things) or services (work done for people). Many businesses sell both.",
+    sections: [
+      {
+        title: "What Is a Product?",
+        emoji: "📦",
+        content: "A product is a thing — something you can hold, use, eat, or download. Physical products include food, clothes, toys, and cars. Digital products include apps, songs, e-books, and video games. Products can be made once and sold over and over again. That's what makes them powerful for businesses."
+      },
+      {
+        title: "What Is a Service?",
+        emoji: "🔧",
+        content: "A service is work done for someone else. Haircuts, tutoring, dog walking, house cleaning, dentistry — all services. Every time you pay someone to do something for you, you're buying a service. Services are personal: a dentist can only clean one person's teeth at a time."
+      },
+      {
+        title: "When Businesses Combine Both",
+        emoji: "🔄",
+        content: "Smart businesses often combine products and services. A restaurant sells food (product) but also sells cooking and serving (service). Apple sells iPhones (product) and iCloud storage (service). When you bundle both, customers have more reasons to stay with your business."
+      },
+      {
+        title: "Which Is Better to Sell?",
+        emoji: "📈",
+        content: "Products can scale — you can sell thousands without working thousands of extra hours. Services are harder to scale because they take your time. Many entrepreneurs start with services (to earn money fast) and then create products (to earn money while they sleep)."
+      }
     ],
-    explore: 'Create your first budget! Write down: (1) How much money you have or typically receive each week. (2) How much you\'ll put in each jar: Save, Spend, Give. (3) What you\'re saving FOR. This is your personal money plan.',
-    quickCheck: {
-      question: 'What is a budget?',
-      options: [
-        'A type of wallet',
-        'A plan that shows how much money you have and how you plan to use it',
-        'A bank account for kids',
-        'A list of things you want to buy',
-      ],
-      correct: 1,
+    activity: {
+      title: "Sort It Out",
+      instructions: "Look around your home and list 10 things your family has paid for recently. Sort each one into PRODUCT or SERVICE. Which category has more? Are there any that are both?"
     },
     quiz: [
       {
-        question: 'What are the three categories in the simple kid\'s budget?',
-        options: ['Food, toys, clothes', 'Save, spend, and give', 'Income, expenses, profit', 'Short-term, medium-term, long-term'],
-        correct: 1,
+        question: "What is the difference between a product and a service?",
+        answer: "A product is a thing you can use or hold. A service is work done for you.",
+        options: ["Products are expensive, services are cheap", "A product is a thing you can use or hold. A service is work done for you.", "Products come from stores, services come from people", "Products last forever, services don't"]
       },
       {
-        question: 'What is "income"?',
-        options: ['Money you spend', 'Money coming in', 'Money you owe', 'Money in a bank'],
-        correct: 1,
+        question: "Why can products scale better than services?",
+        answer: "You can sell thousands without working extra hours",
+        options: ["Products are cheaper to make", "You can sell thousands without working extra hours", "Products are more popular", "Services require licenses"]
       },
       {
-        question: 'In a 60-30-10 budget split, what percentage goes to giving?',
-        options: ['60%', '30%', '10%', '20%'],
-        correct: 2,
-      },
-      {
-        question: 'What is the HARDEST part of making a budget?',
-        options: ['Writing it down', 'Adding up the numbers', 'Sticking to the plan', 'Choosing a notebook'],
-        correct: 2,
-      },
-      {
-        question: 'What happens when you track where your money goes?',
-        options: ['Your money grows automatically', 'You start making intentional choices instead of spending by habit', 'You spend more money', 'You need a bank account'],
-        correct: 1,
-      },
+        question: "Is a restaurant a product, a service, or both?",
+        answer: "Both — food is the product, cooking and serving is the service",
+        options: ["Product only", "Service only", "Both — food is the product, cooking and serving is the service", "Neither — it's a building"]
+      }
     ],
-    celebrationText: '{{name}}, you just made your first budget — something most adults never learn to do properly! A plan for your money is the foundation of financial freedom. Ace is so proud of this step!',
+    familyAdventure: "Walk through your neighborhood or a shopping area. Point out businesses and decide: product, service, or both? Try to find at least one example of each. Bonus: find a business that turned a service into a product!",
+    badge: "Product Pro",
+    nextLesson: "mb-6-8-07"
   },
-
-  // ── Lesson 7 ──────────────────────────────────────────────────────────────
   {
-    title: 'Banks — Where Money Lives and Grows',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Bank Explorer',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Ask a parent to show you a bank statement or tell you about where your family keeps its savings. See if you can visit a bank branch together this week.',
-    arrival: '{{name}}, question: where does money go when it\'s not in your pocket? For most people, it goes to the bank. Today we\'re going to look inside what a bank is, how it works, and why using one is smarter than hiding money under your mattress.',
-    spark: 'If you saved $100 and kept it in a box in your room for 10 years — how much would you have? Now what if a bank paid you a little extra for letting them keep it safe? Which sounds better?',
-    learn: [
-      'A bank is a business that keeps money safe and lends it to people who need it. When you deposit (put in) money at a bank, the bank keeps it safe for you. You can withdraw (take out) your money whenever you need it. Banks are insured by the government, which means your money is protected even if the bank has problems.',
-      'Banks pay you interest for keeping your money there. Interest is extra money the bank pays you — a small percentage of what you\'ve saved. For example, if you have $100 in a savings account and the bank pays 2% interest per year, they\'ll add $2 to your account. It\'s not much, but over many years it really adds up — especially with compound interest (we\'ll cover that later!).',
-      'Banks also offer checking accounts, which are for everyday spending. Unlike savings accounts (meant for keeping money), checking accounts come with a debit card you can use to pay for things directly from your account. When you\'re older, you might also get a credit card, which is like borrowing money you promise to pay back.',
-      'For kids, many banks offer youth savings accounts with no fees and special features. Some even have apps where you can watch your savings grow. Opening a bank account is one of the most important first steps to managing money well. Many parents are happy to open a joint account with their child — you might want to ask!',
+    id: "mb-6-8-07",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 7,
+    title: "Supply and Demand: Why Prices Change",
+    duration: "10–15 min",
+    hook: "Why does a PlayStation cost more than a board game? Why do plane tickets cost more on holidays? One big idea explains all of this: supply and demand.",
+    bigIdea: "When something is rare and many people want it, prices go up. When something is plentiful and fewer people want it, prices go down. This is the law of supply and demand.",
+    sections: [
+      {
+        title: "What Is Demand?",
+        emoji: "📊",
+        content: "Demand is how much people WANT something. When lots of people want something, demand is high. During a big storm, everyone rushes to buy water and flashlights — demand shoots up. When a new video game releases, demand is very high at first, then usually drops as the excitement fades."
+      },
+      {
+        title: "What Is Supply?",
+        emoji: "🏭",
+        content: "Supply is how much of something is AVAILABLE. If there are only 100 concert tickets for a show 10,000 people want to attend, supply is low. When supply is low and demand is high, sellers can charge more because people are willing to pay it."
+      },
+      {
+        title: "How They Work Together",
+        emoji: "⚖️",
+        content: "Imagine a balance. When supply and demand are equal, prices stay stable. When demand goes up or supply goes down, prices rise. When demand drops or supply goes up, prices fall. This is why gas prices change almost every week."
+      },
+      {
+        title: "Real-Life Examples",
+        emoji: "🎢",
+        content: "Plane tickets are cheapest when few people fly (low demand) and most expensive during holidays (high demand, same supply of seats). Strawberries are cheap in summer (lots of supply) and expensive in winter (low supply). Limited edition sneakers cost more on resale because supply is tiny but demand is huge."
+      }
     ],
-    explore: 'Research one bank or credit union near your home. Find out: (1) Do they have a youth savings account? (2) What is their interest rate? (3) What is the minimum amount to open an account? Share what you learned with a family member.',
-    quickCheck: {
-      question: 'What is interest?',
-      options: [
-        'A fee you pay to the bank for keeping your money',
-        'Extra money the bank pays you for keeping your savings there',
-        'The cost of a checking account',
-        'The amount you deposit each month',
-      ],
-      correct: 1,
+    activity: {
+      title: "Price Detective",
+      instructions: "Pick three items your family buys regularly. Look up their prices online. Then find out if there's a time of year when they're cheaper or more expensive. Can you figure out the supply and demand reason behind the price change?"
     },
     quiz: [
       {
-        question: 'What does it mean to "deposit" money at a bank?',
-        options: ['Take money out of the bank', 'Pay a fee to the bank', 'Put money into the bank', 'Transfer money to a friend'],
-        correct: 2,
+        question: "What does demand mean in economics?",
+        answer: "How much people want something",
+        options: ["How much something costs", "How much people want something", "How many stores sell it", "How long it takes to make"]
       },
       {
-        question: 'Why is a bank safer than hiding money at home?',
-        options: ['Banks pay you to store money and are insured by the government', 'Banks never lose money', 'Banks give you free stuff', 'Banks are always nearby'],
-        correct: 0,
+        question: "What happens to prices when supply goes down but demand stays high?",
+        answer: "Prices go up",
+        options: ["Prices go down", "Prices stay the same", "Prices go up", "The product disappears"]
       },
       {
-        question: 'What is a savings account for?',
-        options: ['Everyday spending', 'Keeping money safe and growing over time', 'Paying bills only', 'Getting a debit card'],
-        correct: 1,
-      },
-      {
-        question: 'What is a checking account typically used for?',
-        options: ['Long-term savings', 'Earning interest only', 'Everyday spending and payments', 'Storing gold'],
-        correct: 2,
-      },
-      {
-        question: 'If you have $200 and the bank pays 2% interest yearly, how much interest will you earn in one year?',
-        options: ['$2', '$4', '$20', '$40'],
-        correct: 1,
-      },
+        question: "Why are plane tickets more expensive during holidays?",
+        answer: "Demand goes up but supply stays the same",
+        options: ["Airlines are greedier on holidays", "Fuel costs more on holidays", "Demand goes up but supply stays the same", "Pilots get paid more on holidays"]
+      }
     ],
-    celebrationText: '{{name}}, you now understand one of the most important financial tools in the world — the bank! Opening a savings account is one of the best things you can do. Talk to your family about starting one soon. Ace believes you\'re ready!',
+    familyAdventure: "Next time you shop, play the supply and demand game. Look at sale items — why are they on sale? (Too much supply, not enough demand.) Look at expensive limited things — why do they cost more? Prices are telling a story.",
+    badge: "Market Watcher",
+    nextLesson: "mb-6-8-08"
   },
-
-  // ── Lesson 8 ──────────────────────────────────────────────────────────────
   {
-    title: 'Smart Spending — Getting the Most from Every Dollar',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Smart Spender',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Next time your family goes grocery shopping, help compare prices on two similar products. Which is the better deal? How did you decide?',
-    arrival: 'Hi {{name}}! Let\'s talk about spending — because spending is something almost everyone does, but almost nobody does it strategically. The difference between people who build wealth and people who run out of money often comes down to how they spend. Today, we master smart spending.',
-    spark: 'Two backpacks: one costs $60 and will last 3 years. The other costs $25 and will last 1 year. Which is actually cheaper? How did you figure that out?',
-    learn: [
-      'Smart spending means getting the most value for every dollar you spend. Value isn\'t just about price — it\'s about quality, how long something lasts, how often you\'ll use it, and how much you truly need it. Sometimes the cheaper option costs more in the long run because you have to replace it sooner.',
-      'Comparing prices is one of the easiest ways to save money. Before buying something, check if another store or brand sells something similar for less. This is called being a "comparison shopper." Online shopping has made this very easy — you can check prices from many sellers in seconds.',
-      'Impulse buying is when you buy something without planning it, just because you suddenly want it in the moment. Stores are designed to trigger impulse buying with sales signs, bright colors, and placing tempting items near checkout. A good rule: wait 24 hours before buying anything that costs more than a certain amount (for kids, maybe $5–$10). You\'ll often find you don\'t want it as much the next day.',
-      'Sales and discounts can save you real money — but only if you were going to buy the thing anyway. A 50% off sale on something you don\'t need is still spending money. The best deal is not buying things you don\'t need at any price. Smart spenders ask: "Do I truly need this? Have I waited and thought about it? Is this the best price?"',
+    id: "mb-6-8-08",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 8,
+    title: "The Lemonade Stand Business",
+    duration: "10–15 min",
+    hook: "A lemonade stand sounds simple. Squeeze lemons, add sugar, sell cups. But running a lemonade stand is actually a complete business — with real costs, real customers, real decisions, and real profit. Let's break it down like a CEO would.",
+    bigIdea: "Even the simplest business has costs, revenue, and profit. Understanding these three numbers is the foundation of all business thinking.",
+    sections: [
+      {
+        title: "Costs: What You Have to Spend",
+        emoji: "💸",
+        content: "Before you make a single dollar, you have to spend money. These are called costs or expenses. For a lemonade stand: lemons $3, sugar $1, cups $2, a sign $1. That's $7 in total costs before you've sold anything. If you don't account for your costs, you might think you're making money when you're actually losing it."
+      },
+      {
+        title: "Revenue: Money That Comes In",
+        emoji: "💰",
+        content: "Revenue is all the money you collect from selling your product. If you sell 20 cups at 50 cents each, your revenue is $10. Revenue is not the same as profit. Revenue is everything you bring in. Profit is what's left after you pay your costs."
+      },
+      {
+        title: "Profit: The Goal",
+        emoji: "🏆",
+        content: "Profit = Revenue minus Costs. In our example: $10 revenue minus $7 costs = $3 profit. That $3 is yours to keep, save, or reinvest. Most businesses try to maximize profit by bringing in more revenue, cutting costs, or both. This is the core game of business."
+      },
+      {
+        title: "How to Grow Your Lemonade Stand",
+        emoji: "📈",
+        content: "Once you understand the numbers, you can make smart decisions. Could you charge 75 cents instead of 50 cents? That's 25 more cents per cup. Sell 20 cups and that's $5 more profit. Could you set up near more customers? Every business decision is about improving your numbers."
+      }
     ],
-    explore: 'Think of something you want to buy. Go online or look at ads to find it in at least two different places or sizes. Which is the better value? How did you decide? Write three sentences explaining your comparison.',
-    quickCheck: {
-      question: 'What is "impulse buying"?',
-      options: [
-        'Buying things on sale',
-        'Buying something without planning it because you suddenly want it in the moment',
-        'Comparing prices before buying',
-        'Saving up for something you want',
-      ],
-      correct: 1,
+    activity: {
+      title: "Lemonade Stand Math",
+      instructions: "You want to open a lemonade stand. Lemons: $4. Sugar: $1.50. Cups: $2.50. You plan to sell cups for $1.00. Calculate: Total costs? Revenue if you sell 15 cups? Revenue if you sell 25 cups? Profit in each case? At what number of cups do you break even?"
     },
     quiz: [
       {
-        question: 'Smart spending means...',
-        options: ['Buying the cheapest thing available', 'Spending as little as possible always', 'Getting the most value for every dollar you spend', 'Never buying anything'],
-        correct: 2,
+        question: "What is the difference between revenue and profit?",
+        answer: "Revenue is all money collected. Profit is what's left after subtracting costs.",
+        options: ["They are the same thing", "Revenue is all money collected. Profit is what's left after subtracting costs.", "Revenue is smaller than profit", "Profit is what you earn, revenue is what you save"]
       },
       {
-        question: 'A backpack costs $60 and lasts 3 years. Another costs $25 and lasts 1 year. Which is cheaper per year?',
-        options: ['The $25 one, because it costs less', 'The $60 one, at $20/year vs. $25/year', 'They cost exactly the same per year', 'You cannot compare them'],
-        correct: 1,
+        question: "If your lemonade stand costs $8 to start and you make $15, what is your profit?",
+        answer: "$7",
+        options: ["$8", "$15", "$7", "$23"]
       },
       {
-        question: 'What is a "comparison shopper"?',
-        options: ['Someone who compares what friends have', 'Someone who checks prices at different places before buying', 'A type of store employee', 'Someone who shops very quickly'],
-        correct: 1,
-      },
-      {
-        question: 'A good rule for avoiding impulse buys is to...',
-        options: ['Buy immediately before you change your mind', 'Wait 24 hours before buying non-essential items', 'Only shop at one store', 'Never look at sale signs'],
-        correct: 1,
-      },
-      {
-        question: 'When is a 50%-off sale NOT a good deal?',
-        options: ['When the item is low quality', 'When you weren\'t going to buy it anyway', 'When the item is out of stock', 'When you already have a coupon'],
-        correct: 1,
-      },
+        question: "Name two ways you could increase profit.",
+        answer: "Raise prices, lower costs, or sell more",
+        options: ["Buy more lemons and hire a friend", "Raise prices, lower costs, or sell more", "Close earlier and open a new stand", "Give free samples and hope for tips"]
+      }
     ],
-    celebrationText: '{{name}}, you\'re thinking like a savvy consumer! Smart spending means your money works harder for you. Ace is so proud — you\'re already ahead of most adults when it comes to this skill!',
+    familyAdventure: "Run a real mini-business this weekend! A lemonade stand, baked goods, or anything you can sell. Track ALL your costs. Count your revenue. Calculate your profit. Treat it as a real business experiment, not just a fun activity.",
+    badge: "Young CEO",
+    nextLesson: "mb-6-8-09"
   },
-
-  // ── Lesson 9 ──────────────────────────────────────────────────────────────
   {
-    title: 'The Joy of Giving — Why Generosity Is Good for Everyone',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Generous Heart',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'As a family, pick one cause or charity that matters to you. Even if it\'s just $1 or $5, donate together. Talk about why you chose that cause.',
-    arrival: '{{name}}, here\'s something surprising about money: research shows that spending money on OTHER people actually makes you happier than spending it on yourself. Today we talk about one of the most important — and most joyful — things you can do with money: giving.',
-    spark: 'Think of a time you gave something to someone — a gift, your time, help with something — and they were really grateful. How did that make you feel?',
-    learn: [
-      'Giving means choosing to share what you have with others. This could be donating money to a cause you care about, buying a gift for someone you love, or contributing to your community. Giving is a choice — and it\'s one that almost always makes the giver feel good, not just the receiver.',
-      'Scientists who study happiness have found something fascinating: people who regularly give report feeling more fulfilled, less stressed, and more connected to others than people who don\'t. When you give, your brain releases chemicals that create feelings of warmth and satisfaction. Generosity is literally good for your brain.',
-      'There are many ways to give, and money is just one of them. You can give your time (volunteering), your talents (helping a neighbor with something you\'re good at), your attention (truly listening to someone who needs it), or your possessions (donating books, toys, or clothes). All forms of giving create positive ripple effects.',
-      'Many wealthy and successful people are also deeply generous. Warren Buffett, one of the richest people in the world, has pledged to give away 99% of his fortune. He and Bill Gates started something called the "Giving Pledge" — a commitment by billionaires to donate most of their wealth. They believe that money used to help others creates more lasting value than money spent on personal luxuries.',
+    id: "mb-6-8-09",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 9,
+    title: "Marketing: How Businesses Find Customers",
+    duration: "10–15 min",
+    hook: "You could make the most amazing product in the world. The best lemonade ever created. But if nobody knows it exists... you won't sell a single one. That's why marketing exists. And it's way more interesting than it sounds.",
+    bigIdea: "Marketing is how businesses let people know they exist, why their product matters, and why customers should choose them over competitors.",
+    sections: [
+      {
+        title: "What Is Marketing?",
+        emoji: "📣",
+        content: "Marketing is everything a business does to attract customers. Advertising is part of marketing, but so is your logo, your packaging, your price, your social media, and your store's design. Every time a business makes an impression on you, that's marketing."
+      },
+      {
+        title: "Knowing Your Customer",
+        emoji: "🎯",
+        content: "Great marketing starts with understanding WHO you're selling to. A company selling skateboards markets very differently than a company selling baby shoes. Marketers call this a target audience — the specific group of people you most want to reach."
+      },
+      {
+        title: "The Message",
+        emoji: "💬",
+        content: "The best marketing messages answer one question for the customer: What's in it for me? Nike doesn't say 'we sell shoes.' They say 'Just Do It.' That message is about YOU being powerful, not about their shoes. The customer's dream is the message."
+      },
+      {
+        title: "Where Marketing Lives Today",
+        emoji: "📱",
+        content: "Marketing used to mean TV commercials and billboards. Today it also means YouTube ads, TikTok videos, Instagram posts, email newsletters, and influencer partnerships. The internet let small businesses reach huge audiences without spending millions."
+      }
     ],
-    explore: 'Choose one cause you care about (animals, environment, people in need, children, arts — anything!). Research one organization that helps that cause. Write three sentences: what the cause is, why it matters to you, and one way you could support it.',
-    quickCheck: {
-      question: 'What did scientists discover about giving?',
-      options: [
-        'Giving makes you poor',
-        'Giving rarely affects how you feel',
-        'People who regularly give report feeling more fulfilled and connected',
-        'Only giving money counts as real generosity',
-      ],
-      correct: 2,
+    activity: {
+      title: "Marketing Detective",
+      instructions: "Pick your three favorite brands or products. For each one, find one example of their marketing (an ad, a social media post, their logo, their slogan). Ask: Who is their target audience? What is their message? Why does it work on you?"
     },
     quiz: [
       {
-        question: 'What is one thing your brain releases when you give?',
-        options: ['Chemicals that create stress', 'Chemicals that create feelings of warmth and satisfaction', 'Nothing — the brain doesn\'t notice giving', 'Chemicals that make you tired'],
-        correct: 1,
+        question: "What is marketing?",
+        answer: "Everything a business does to attract customers",
+        options: ["Just TV commercials and billboards", "Everything a business does to attract customers", "The price of a product", "The process of making a product"]
       },
       {
-        question: 'Which of these is a form of giving that does NOT involve money?',
-        options: ['Donating to charity', 'Volunteering your time', 'Buying gifts', 'Sending a check'],
-        correct: 1,
+        question: "What is a target audience?",
+        answer: "The specific group of people a business most wants to reach",
+        options: ["Every person on earth", "People who already bought the product", "The specific group of people a business most wants to reach", "The business's employees"]
       },
       {
-        question: 'What is the "Giving Pledge"?',
-        options: ['A school fundraiser', 'A commitment by billionaires to donate most of their wealth', 'A promise to always tip at restaurants', 'A government tax program'],
-        correct: 1,
-      },
-      {
-        question: 'Warren Buffett has pledged to give away what percentage of his fortune?',
-        options: ['10%', '50%', '75%', '99%'],
-        correct: 3,
-      },
-      {
-        question: 'Why do many experts recommend including "giving" in your budget?',
-        options: ['It reduces your taxes automatically', 'It makes you look generous to others', 'It creates happiness and connection — benefits beyond just the recipient', 'It is required by law'],
-        correct: 2,
-      },
+        question: "What question does great marketing answer for the customer?",
+        answer: "What's in it for me?",
+        options: ["How much does this cost?", "What's in it for me?", "Where can I buy this?", "Who made this?"]
+      }
     ],
-    celebrationText: '{{name}}, you have such a generous heart! Giving is one of the most powerful things money can do — and you understand that better than most. Ace is deeply proud of you for this lesson.',
+    familyAdventure: "Watch TV or browse online together for 15 minutes and count the marketing messages you see. For each one, identify: Who is the target audience? What feeling are they trying to create? Does it work? Rate each ad from 1-10.",
+    badge: "Marketing Mind",
+    nextLesson: "mb-6-8-10"
   },
-
-  // ── Lesson 10 ──────────────────────────────────────────────────────────────
   {
-    title: 'Buying and Selling — How Markets Work',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Market Maker',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Visit a local market, farmers\' market, or store. Watch how prices are displayed. Ask a seller why something costs what it costs if you get the chance. What did you learn?',
-    arrival: 'Hey {{name}}! Ever wonder how the price of things gets decided? Who says a pizza costs $12 or a toy costs $25? Today we\'re going inside the invisible engine that runs the economy: markets. Understanding markets is like understanding the rules of a game — once you know them, everything makes sense.',
-    spark: 'If there was only ONE lemonade stand in your whole neighborhood on the hottest day of the year, could the seller charge more? What if there were ten lemonade stands? What would happen to the price?',
-    learn: [
-      'A market is any place where buyers and sellers come together to exchange goods or services. A farmers\' market, a grocery store, an online shop, and a stock exchange are all markets. In a market, buyers want to pay the lowest price possible, and sellers want to charge the highest price possible. The actual price is where they agree.',
-      'When lots of people want something and there isn\'t much of it available, the price goes up. This is high demand and low supply. When something is plentiful and few people want it, the price goes down. This is low demand and high supply. This push and pull between supply (how much is available) and demand (how much people want it) sets most prices in the world.',
-      'Competition keeps prices fair. When many sellers offer the same thing, they compete for buyers — which drives prices down. That\'s why having more stores in an area usually means lower prices for everyone. When there\'s only ONE seller (called a monopoly), they can charge whatever they want because you have nowhere else to go.',
-      'Prices also carry information. A high price signals that something is valuable or hard to get. A low price signals that something is common or that sellers are trying to attract buyers. Smart shoppers and entrepreneurs both pay attention to prices as signals — they tell you a lot about what people want and what the market needs.',
+    id: "mb-6-8-10",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 10,
+    title: "What Is a Job and How Do You Get One?",
+    duration: "10–15 min",
+    hook: "Every adult you know has or had a job. But how does someone actually GET a job? What are employers looking for? And here's a bigger question — is a job the only way to earn money?",
+    bigIdea: "A job is trading your time and skills for money paid by someone else. Getting a job requires showing an employer that you can solve a problem they have.",
+    sections: [
+      {
+        title: "What Is a Job?",
+        emoji: "💼",
+        content: "A job is an agreement: you do work for a person or company, and they pay you money. Most jobs pay by the hour (hourly wage) or a set amount per year (salary). When you have a job, the person or company paying you is your employer. You are their employee."
+      },
+      {
+        title: "How Do You Get a Job?",
+        emoji: "📝",
+        content: "To get a job, you usually: write a resume (a document listing your skills and experience), write a cover letter (explaining why you want the job), go through an interview (a conversation where they ask you questions), and if they like you, get an offer. This whole process is called applying for a job."
+      },
+      {
+        title: "What Employers Actually Look For",
+        emoji: "🌟",
+        content: "Employers look for: reliability (will you show up?), skills (can you do the work?), attitude (are you easy to work with?), and problem-solving (can you think for yourself?). A person with a great attitude often beats a person with more experience."
+      },
+      {
+        title: "Beyond Jobs: Other Ways to Earn",
+        emoji: "🚀",
+        content: "A job isn't the only way to earn money. You can start a business (be your own boss). You can freelance (do jobs for many companies instead of one). You can invest money so it grows on its own. You can create things — music, art, courses, books — and sell them."
+      }
     ],
-    explore: 'Go online or look at ads and find three similar products at different prices. What do you think explains the price difference? Is it quality? Brand? Scarcity? Write your analysis in three sentences.',
-    quickCheck: {
-      question: 'What is a "market"?',
-      options: [
-        'Only a physical building where things are sold',
-        'Any place where buyers and sellers come together to exchange goods or services',
-        'A type of bank',
-        'A government program',
-      ],
-      correct: 1,
+    activity: {
+      title: "Interview Practice",
+      instructions: "Ask a parent or trusted adult if you can interview them about their job. Ask: How did you get your job? What do you do every day? What skills do you need? What do you like most? What would you change? Take notes like a real journalist."
     },
     quiz: [
       {
-        question: 'What happens to a price when demand is HIGH and supply is LOW?',
-        options: ['Price goes down', 'Price stays the same', 'Price goes up', 'Price becomes free'],
-        correct: 2,
+        question: "What is the difference between an employer and an employee?",
+        answer: "The employer pays for work. The employee does the work.",
+        options: ["The employer works more hours", "The employer pays for work. The employee does the work.", "Employers are older than employees", "Employees own the company"]
       },
       {
-        question: 'What is supply?',
-        options: ['How much people want something', 'How much of something is available', 'The price of something', 'The profit a seller makes'],
-        correct: 1,
+        question: "Name three things employers look for when hiring.",
+        answer: "Reliability, skills, attitude, and problem-solving",
+        options: ["Age, height, and favorite color", "Reliability, skills, attitude, and problem-solving", "How many friends you have", "Where you went to school only"]
       },
       {
-        question: 'Why do more sellers competing usually mean lower prices?',
-        options: ['Sellers become friends and share profit', 'Competition forces sellers to attract buyers with better prices', 'The government sets prices when there\'s competition', 'More sellers means less quality'],
-        correct: 1,
-      },
-      {
-        question: 'What is a monopoly?',
-        options: ['A board game only', 'When there is only one seller of something', 'When a product goes on sale', 'When too many buyers want something'],
-        correct: 1,
-      },
-      {
-        question: 'What does a HIGH price signal to buyers and sellers?',
-        options: ['That something is on clearance', 'That something is common and easy to find', 'That something is valuable or scarce', 'That the store is having a bad day'],
-        correct: 2,
-      },
+        question: "Besides getting a job, what is one other way to earn money?",
+        answer: "Starting a business, freelancing, investing, or creating and selling things",
+        options: ["Waiting for someone to give it to you", "Starting a business, freelancing, investing, or creating and selling things", "Winning the lottery", "Finding money on the ground"]
+      }
     ],
-    celebrationText: '{{name}}, you just learned how the whole economy works at its most basic level! Supply, demand, competition — these forces shape prices everywhere. Ace is amazed by how quickly you\'re growing!',
+    familyAdventure: "Visit a local business with a parent and ask if you can talk to the owner or manager for 5 minutes. Ask what jobs they have, what they look for in employees, and what advice they'd give a young person who wants to work someday.",
+    badge: "Career Explorer",
+    nextLesson: "mb-6-8-11"
   },
-
-  // ── Lesson 11 ──────────────────────────────────────────────────────────────
   {
-    title: 'Starting a Kid Business — Your First Enterprise',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Junior Entrepreneur',
-    duration: '14–18 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Brainstorm three kid-friendly business ideas with your family. Evaluate each one: what would it cost to start? Who are the customers? How much could you earn?',
-    arrival: '{{name}}, this is one of my favorite lessons — because today, you\'re going to think like an entrepreneur! An entrepreneur is someone who starts a business by solving a problem or meeting a need. Some of the most successful businesses in the world were started by people who were just kids with a great idea. Could you be next?',
-    spark: 'Look around your neighborhood, school, or home. What problem exists that nobody has solved yet? What do people need that isn\'t being provided well? That gap — that need — is where businesses are born.',
-    learn: [
-      'A business is any activity where you provide a product or service in exchange for money. Products are physical things you make or sell — cookies, artwork, handmade jewelry. Services are things you do for others — dog walking, lawn mowing, tutoring, babysitting. Both can be successful businesses for kids.',
-      'Every successful business starts by answering four questions: (1) What problem am I solving or what need am I meeting? (2) Who are my customers? (3) What will I charge? (4) How much will it cost me to provide my product or service? The money left over after costs is called profit — that\'s what you actually earn.',
-      'To start, choose something you\'re good at or enjoy, something people around you need, and something you can do without spending too much upfront. Then take three steps: Make a simple plan (product, price, customers), Get your first customer (start small — maybe a neighbor or family friend), and Deliver great service so they come back and tell others.',
-      'The best young entrepreneurs are not afraid to start small and learn as they go. Many famous companies — Apple, Amazon, Disney — started in garages or small spaces with very little money. What they had was a clear vision, persistence, and the willingness to learn from mistakes. You have all of that too.',
+    id: "mb-6-8-11",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 11,
+    title: "Taxes: What They Are and Why We Pay Them",
+    duration: "10–15 min",
+    hook: "Adults earn money, but then some of it goes to the government. Why? Did the government steal it? Taxes are actually one of the most important — and most argued about — things in any country.",
+    bigIdea: "Taxes are money collected by the government to pay for things everyone uses, like schools, roads, fire stations, and hospitals.",
+    sections: [
+      {
+        title: "What Are Taxes?",
+        emoji: "🏛️",
+        content: "Taxes are money that people and businesses are required by law to pay to the government. In return, the government provides services that benefit everyone — roads, schools, police, libraries, parks, fire stations. Think of it like everyone chipping in to pay for shared things."
+      },
+      {
+        title: "Types of Taxes",
+        emoji: "💰",
+        content: "There are several kinds of taxes. Income tax is taken from money you earn from working. Sales tax is added to things you buy at a store. Property tax is paid by homeowners based on the value of their house. Payroll tax helps fund Social Security and Medicare, which support older and sick people."
+      },
+      {
+        title: "How Much Do People Pay?",
+        emoji: "📊",
+        content: "In the U.S., income tax is progressive — the more you earn, the higher percentage you pay. Someone earning $30,000 might pay 12% in federal taxes. Someone earning $300,000 might pay 35%. This is designed so wealthier people contribute more."
+      },
+      {
+        title: "Why Do People Complain About Taxes?",
+        emoji: "🤔",
+        content: "Taxes are one of the most debated topics in politics. Some people think taxes should be lower because people should keep more of their own money. Others think taxes should be higher so the government can provide more services. It's a genuine values debate that societies keep having."
+      }
     ],
-    explore: 'Design your own kid business right now. Name it, describe what you offer, list your target customers, set a price, and estimate what it would cost to start. Write your mini business plan in 5–8 sentences.',
-    quickCheck: {
-      question: 'What is "profit" in a business?',
-      options: [
-        'The total amount you charge customers',
-        'The money left over after costs — what you actually earn',
-        'The cost to start your business',
-        'The number of customers you have',
-      ],
-      correct: 1,
+    activity: {
+      title: "Tax Treasure Hunt",
+      instructions: "Look around your community for five things paid for by taxes. Schools, roads, fire stations, parks, libraries, public transit — they're everywhere once you look. List what you find and think: how much would each one cost if you had to pay for it yourself?"
     },
     quiz: [
       {
-        question: 'What is an entrepreneur?',
-        options: ['Someone who works for a big company', 'Someone who starts a business by solving a problem or meeting a need', 'A type of bank employee', 'Someone who invests in the stock market'],
-        correct: 1,
+        question: "What are taxes and why do we pay them?",
+        answer: "Money paid to the government to fund shared services like schools, roads, and hospitals",
+        options: ["Money the government takes unfairly", "A fee to use the internet", "Money paid to the government to fund shared services like schools, roads, and hospitals", "A penalty for working too much"]
       },
       {
-        question: 'What is the difference between a product and a service?',
-        options: ['Products cost more; services are free', 'Products are physical things; services are things you do for others', 'Products are for adults; services are for kids', 'There is no difference'],
-        correct: 1,
+        question: "What is income tax?",
+        answer: "Tax taken from money you earn from working",
+        options: ["Tax added to store purchases", "Tax paid by homeowners", "Tax taken from money you earn from working", "Tax on imported goods"]
       },
       {
-        question: 'Which of the four questions does every successful business answer?',
-        options: ['What color is my logo?', 'What problem am I solving and who are my customers?', 'How many employees do I need?', 'When do I get to retire?'],
-        correct: 1,
-      },
-      {
-        question: 'Where did companies like Apple and Amazon start?',
-        options: ['In fancy office buildings', 'With millions of dollars in funding', 'Small — in garages or small spaces with little money', 'In universities only'],
-        correct: 2,
-      },
-      {
-        question: 'If you spend $5 making lemonade and sell it for $15, what is your profit?',
-        options: ['$5', '$15', '$10', '$20'],
-        correct: 2,
-      },
+        question: "What does 'progressive tax' mean?",
+        answer: "The more money you earn, the higher percentage of taxes you pay",
+        options: ["Taxes that go up every year", "The more money you earn, the higher percentage of taxes you pay", "A new type of tax", "Tax that rewards good behavior"]
+      }
     ],
-    celebrationText: '{{name}}, you\'re an entrepreneur now! You have the mindset, the knowledge, and the plan. The only thing left is to start. Ace believes this could be the beginning of something truly amazing for you.',
+    familyAdventure: "Ask a parent to show you a pay stub or explain how taxes work on their paycheck. See what percentage goes to federal tax, state tax, and Social Security. Calculate: if they earn $1,000, how much do they actually take home?",
+    badge: "Tax Tracker",
+    nextLesson: "mb-6-8-12"
   },
-
-  // ── Lesson 12 ──────────────────────────────────────────────────────────────
   {
-    title: 'Jobs and Careers — Turning Skills Into a Living',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Career Dreamer',
-    duration: '12–14 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Interview a family member or neighbor about their career. Ask: How did you get this job? What skills do you use? What do you love about it? What would you change?',
-    arrival: '{{name}}, most people spend 40+ years of their lives working. That\'s a HUGE amount of time — which means choosing work you enjoy and are good at is one of the most important decisions you\'ll ever make. Today, let\'s explore the world of jobs and careers!',
-    spark: 'Imagine your perfect work day 20 years from now. Where are you? Who are you helping? What are you creating or doing? What are you good at that you\'re using?',
-    learn: [
-      'A job is work you do for pay. A career is a long-term path of related jobs and experiences that build on each other. For example, someone might start as a junior teacher, become a lead teacher, then a school principal, then a superintendent — that\'s a career in education. Careers usually require building skills and experience over many years.',
-      'There are thousands of types of careers — from doctors and engineers to artists and chefs, from programmers to plumbers. What unites all successful career people is this: they became really good at something the world needed. Finding the intersection of what you love, what you\'re good at, and what people will pay for is the key to a fulfilling career.',
-      'Different careers require different education paths. Some jobs (like electricians and plumbers) require apprenticeships and trade school. Others (like doctors and lawyers) require university plus professional school. And some (like content creators, programmers, and artists) can be built through self-learning and practice. There\'s no single "right" path.',
-      'It\'s also important to know that today\'s children will likely work in many jobs throughout their lives — and many of those jobs don\'t even exist yet! The skills that will matter most: the ability to learn new things quickly, communicate well, solve problems, work with others, and think creatively. These skills work in every career.',
+    id: "mb-6-8-12",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 12,
+    title: "Credit Cards vs Cash",
+    duration: "10–15 min",
+    hook: "Adults pay with a small plastic card instead of cash. It looks like magic — swipe and you have things! But credit cards have a hidden catch that has gotten millions of people into serious money trouble.",
+    bigIdea: "Credit cards let you spend money you don't have yet — but if you don't pay it back quickly, you pay much more than what you originally spent.",
+    sections: [
+      {
+        title: "How Cash Works",
+        emoji: "💵",
+        content: "Cash is simple. You have $10. You spend $8. You have $2 left. You can't spend more than you have because the money is right there in your hand. This is why cash is a great way to learn money management — it makes spending real and visible."
+      },
+      {
+        title: "How Credit Cards Work",
+        emoji: "💳",
+        content: "A credit card is a loan that resets every month. When you swipe it, the bank pays for your purchase on your behalf. Then at the end of the month, you get a bill. If you pay the full bill, you owe nothing extra. But if you only pay part, the bank charges you interest — typically 20-25% per year."
+      },
+      {
+        title: "The Danger of Minimum Payments",
+        emoji: "⚠️",
+        content: "Credit card bills show a 'minimum payment' — a small amount you can pay instead of the full balance. This sounds helpful but it's a trap. If you spend $1,000 and only pay the minimum each month, you could end up paying back $1,400 or more over years."
+      },
+      {
+        title: "When Credit Cards Are Useful",
+        emoji: "✅",
+        content: "Used responsibly, credit cards are great tools. They protect you from fraud. They often have rewards like cashback or travel points. They help build your credit score, which determines if you can borrow money for a house someday. The trick: pay the full balance every month, always."
+      }
     ],
-    explore: 'Research a career that interests you. Find out: (1) What does someone in this job do every day? (2) What skills and education do they need? (3) How much do they typically earn? Write five sentences about what you discovered.',
-    quickCheck: {
-      question: 'What is the difference between a job and a career?',
-      options: [
-        'A job pays more than a career',
-        'A career is a long-term path of related experiences; a job is just one work position',
-        'Careers are for adults; jobs are for kids',
-        'There is no difference',
-      ],
-      correct: 1,
+    activity: {
+      title: "Credit Card Calculator",
+      instructions: "Imagine you charged $500 on a credit card with a 24% interest rate. If you only made the minimum payment of $15 per month, look up an online credit card calculator with a parent and see how long it would take to pay off. The answer will shock you."
     },
     quiz: [
       {
-        question: 'What unites most successful career people?',
-        options: ['They were lucky', 'They became really good at something the world needed', 'They went to the most expensive schools', 'They worked the most hours'],
-        correct: 1,
+        question: "What happens if you don't pay your full credit card bill each month?",
+        answer: "The bank charges you interest and you end up paying back more than you spent",
+        options: ["Nothing happens", "Your card gets canceled", "The bank charges you interest and you end up paying back more than you spent", "You get a warning only"]
       },
       {
-        question: 'What is an apprenticeship?',
-        options: ['A type of college degree', 'Learning a trade by working alongside experienced professionals', 'A government job program', 'A way to earn money without working'],
-        correct: 1,
+        question: "What is one advantage of using a credit card responsibly?",
+        answer: "Fraud protection, rewards, or building credit score",
+        options: ["You never have to pay it back", "You can spend unlimited money", "Fraud protection, rewards, or building credit score", "Banks give you free money"]
       },
       {
-        question: 'What skills will matter most in future careers?',
-        options: ['Memorizing facts and formulas', 'Learning to operate one specific machine', 'Learning quickly, communicating, solving problems, and thinking creatively', 'Only technical computer skills'],
-        correct: 2,
-      },
-      {
-        question: 'Today\'s children will likely...',
-        options: ['Have one job their whole life', 'Never need to work because of robots', 'Work many different jobs, some that don\'t exist yet', 'Only work in technology fields'],
-        correct: 2,
-      },
-      {
-        question: 'The "sweet spot" for a fulfilling career is the intersection of...',
-        options: ['What pays the most, is closest to home, and requires the least school', 'What you love, what you\'re good at, and what people will pay for', 'What your parents did and what your school offers', 'What is most popular and easiest to get into'],
-        correct: 1,
-      },
+        question: "What is the smart rule for using a credit card?",
+        answer: "Always pay the full balance every month",
+        options: ["Pay the minimum to save money", "Never use one", "Always pay the full balance every month", "Use it only for big purchases"]
+      }
     ],
-    celebrationText: '{{name}}, you\'re already thinking about your future — and that\'s one of the most powerful things you can do. Your curiosity, your love of learning, your heart — those are the foundations of a great career. Ace sees something special in you!',
+    familyAdventure: "Look at a parent's credit card bill together (just the top-line numbers). Find the interest rate, the minimum payment, and the full balance. Calculate how much interest you'd pay in one year if you only made minimum payments. Then celebrate that your family pays it off!",
+    badge: "Smart Spender",
+    nextLesson: "mb-6-8-13"
   },
-
-  // ── Lesson 13 ──────────────────────────────────────────────────────────────
   {
-    title: 'Advertising — Why You Want What You See',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Ad Detective',
-    duration: '12–14 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Watch 15 minutes of TV or scroll a website together and count every ad you see. What techniques did they use? Did any of them make you want something? What was the strategy?',
-    arrival: '{{name}}, here\'s a question: have you ever wanted something right after seeing it in an ad — even though you didn\'t know it existed five minutes before? If so, advertising worked on you. Today, we\'re going to look INSIDE how ads work so they never trick you again.',
-    spark: 'Think about the most memorable commercial or ad you\'ve ever seen. What made it stick in your memory? What did it make you feel?',
-    learn: [
-      'Advertising is any message designed to persuade you to buy something, believe something, or take action. Businesses spend enormous amounts of money on advertising — the global advertising industry is worth over $700 billion per year. Why? Because it works. Ads create awareness, build desire, and drive purchases.',
-      'Advertisers use powerful techniques to make their products seem irresistible. Emotional appeal makes you feel that owning the product will make you happy, cool, or loved. Celebrity endorsement makes you think "If my favorite star uses this, it must be great." Scarcity creates urgency: "Limited time only!" "Only 3 left!" Fear of missing out is real — and advertisers know it.',
-      'Social proof is another big technique — showing lots of people using and loving a product so you feel left out if you don\'t have it. Repetition works too: seeing something many times makes it feel familiar and trustworthy, even if you have no actual reason to trust it. Being aware of these tricks helps you make better choices.',
-      'Media literacy means understanding and critically evaluating the messages you see. Ask yourself: Who made this ad? What do they want me to do? What am I feeling right now — and is that feeling real or created? Is this product actually what I need? Being an informed consumer doesn\'t mean never buying anything — it means buying on purpose, not by manipulation.',
+    id: "mb-6-8-13",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 13,
+    title: "Entrepreneurship: Starting Your Own Business",
+    duration: "10–15 min",
+    hook: "An entrepreneur sees a problem and decides to solve it — and build a business around that solution. Entrepreneurs don't wait for someone to give them a job. They create their own opportunity. And the world needs more of them.",
+    bigIdea: "Entrepreneurship is about seeing problems as opportunities and having the courage to try to solve them. Failure is part of the process, not the end.",
+    sections: [
+      {
+        title: "What Is an Entrepreneur?",
+        emoji: "🚀",
+        content: "An entrepreneur is a person who starts a business, taking on financial risk in hopes of making a profit. Famous entrepreneurs include Steve Jobs (Apple), Oprah Winfrey (media empire), and Elon Musk (Tesla, SpaceX) — but most entrepreneurs run successful small local businesses you'll never hear about."
+      },
+      {
+        title: "The Entrepreneur's Mindset",
+        emoji: "💡",
+        content: "Entrepreneurs see the world differently. Where others see problems, entrepreneurs see opportunities. Where others see failure, entrepreneurs see data. When something doesn't work, an entrepreneur asks: what did I learn from that? This mindset — called a growth mindset — is something anyone can develop."
+      },
+      {
+        title: "Steps to Starting a Business",
+        emoji: "🛤️",
+        content: "Starting a business follows a process: find a problem worth solving, come up with a solution, test your idea with real people, build a simple version (called an MVP — minimum viable product), get feedback, improve, and repeat. Most successful businesses look very different from their original idea."
+      },
+      {
+        title: "Failure is Data",
+        emoji: "💪",
+        content: "Every entrepreneur fails. James Dyson made 5,127 prototypes before his vacuum worked. Walt Disney was fired for 'lacking imagination.' Sara Blakely's father asked his kids at dinner: 'What did you fail at this week?' He wanted them to try hard things. Failure just means you're in the game."
+      }
     ],
-    explore: 'Find one advertisement — from TV, a magazine, or online. Analyze it: (1) What is it selling? (2) What emotions does it try to make you feel? (3) What techniques does it use? (4) Is this something you actually need? Write your ad analysis.',
-    quickCheck: {
-      question: 'What does "social proof" mean in advertising?',
-      options: [
-        'Providing legal evidence that a product works',
-        'Showing lots of people using and loving a product so you feel left out without it',
-        'A government test of product safety',
-        'Reviews written by scientists',
-      ],
-      correct: 1,
+    activity: {
+      title: "MVP Challenge",
+      instructions: "Design the smallest, simplest version of a business idea you could actually test this week. What's the ONE thing you could do to test if people like your idea? Maybe it's asking 10 people if they'd buy it. Maybe it's making one of your product and seeing if someone will pay. Test it!"
     },
     quiz: [
       {
-        question: 'How much is the global advertising industry worth per year?',
-        options: ['$1 million', '$100 million', '$700 billion', '$1 trillion'],
-        correct: 2,
+        question: "What is an entrepreneur?",
+        answer: "A person who starts a business, taking on risk in hopes of making a profit",
+        options: ["Someone who works for a big company", "A person who starts a business, taking on risk in hopes of making a profit", "A professional investor", "Anyone who earns money"]
       },
       {
-        question: 'What is "emotional appeal" in advertising?',
-        options: ['Using real data to prove a product works', 'Making you feel that owning the product will make you happy, cool, or loved', 'Having an emotional celebrity cry in the ad', 'Showing sad images to get donations'],
-        correct: 1,
+        question: "What does MVP stand for?",
+        answer: "Minimum Viable Product",
+        options: ["Most Valuable Player", "Minimum Viable Product", "Maximum Value Proposition", "Main Value Provider"]
       },
       {
-        question: 'Why does repetition make ads more effective?',
-        options: ['Repetition proves a product works', 'Seeing something many times makes it feel familiar and trustworthy', 'Repetition makes ads cheaper to produce', 'People only remember what they see ten times'],
-        correct: 1,
-      },
-      {
-        question: 'What is "media literacy"?',
-        options: ['Reading advertising copy quickly', 'Understanding and critically evaluating the messages you see in media', 'Knowing how to make your own advertisements', 'Blocking all ads online'],
-        correct: 1,
-      },
-      {
-        question: 'A good question to ask yourself when you see an ad is...',
-        options: ['"How can I get this right now?"', '"What is this selling and what do they want me to do?"', '"How many stars does it have?"', '"Do my friends have this?"'],
-        correct: 1,
-      },
+        question: "How do entrepreneurs think about failure?",
+        answer: "As data and learning, not as the end",
+        options: ["As something to hide", "As a reason to quit", "As data and learning, not as the end", "As someone else's fault"]
+      }
     ],
-    celebrationText: '{{name}}, you\'re now an advertising detective! You can see the tricks, understand the techniques, and make truly free choices about what you buy. That\'s a superpower most adults don\'t fully have. Ace is so impressed!',
+    familyAdventure: "Watch one episode of Shark Tank together. Notice how entrepreneurs explain their business: What problem do they solve? Who is their customer? What makes them different? What have they learned from failures? Decide as a family: would you invest?",
+    badge: "Entrepreneur",
+    nextLesson: "mb-6-8-14"
   },
-
-  // ── Lesson 14 ──────────────────────────────────────────────────────────────
   {
-    title: 'Supply and Demand — Why Prices Change',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Economics Explorer',
-    duration: '12–14 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Look up the price of something your family buys regularly (like eggs, gas, or concert tickets) from a few years ago compared to today. Why do you think the price changed?',
-    arrival: '{{name}}, welcome back! Today we\'re going deeper into economics — the science of how people make choices with scarce resources. Specifically, we\'re exploring supply and demand: the two invisible forces that set the price of almost everything in the world.',
-    spark: 'Why do umbrellas cost more outside a stadium right after a surprise rainstorm starts? Why does the price of airline tickets go up near the holidays? What force is at work?',
-    learn: [
-      'Demand is how much of something people want to buy at a given price. When something is very popular or essential, demand is high. When fewer people want something, demand is low. Here\'s an important rule: when prices go up, most people demand less of something (because it costs more). When prices go down, people demand more (because it\'s a better deal).',
-      'Supply is how much of something sellers are willing to provide at a given price. When prices go up, sellers want to produce and sell MORE (because they earn more). When prices go down, sellers produce and sell LESS (because the profit isn\'t worth it). Supply and demand work in opposite directions — and where they meet determines the actual price.',
-      'The equilibrium price is where supply and demand are balanced — where the amount sellers want to sell exactly matches the amount buyers want to buy. Real prices are always moving toward equilibrium. When demand suddenly jumps (umbrella during rainstorm), prices rise. When supply suddenly increases (great harvest), prices fall.',
-      'This law of supply and demand affects everything: the price of food, concert tickets, housing, jobs, and even your allowance. Countries with more workers available for jobs tend to have lower wages; places with fewer workers but lots of demand tend to pay more. Understanding this law helps you predict how prices will change — and make smarter financial decisions.',
+    id: "mb-6-8-14",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 14,
+    title: "Profit and Loss",
+    duration: "10–15 min",
+    hook: "Every business in the world — from a lemonade stand to Apple — is playing the same game. Make more money than you spend. When you do that, you have a profit. When you don't, you have a loss.",
+    bigIdea: "Profit means your revenue was more than your costs. Loss means the opposite. Every business works to maximize profit by managing both sides of this equation.",
+    sections: [
+      {
+        title: "Profit: The Goal",
+        emoji: "📈",
+        content: "Profit = Revenue - Costs. If you sell $500 worth of cookies and it cost $200 to make them, your profit is $300. Profit is the lifeblood of business — without it, a business can't survive long-term."
+      },
+      {
+        title: "Loss: Not Always Bad",
+        emoji: "📉",
+        content: "A loss means you spent more than you made. New businesses almost always run at a loss in the beginning. Even Amazon lost money for years before becoming hugely profitable. A loss isn't always failure — sometimes it's investment. But persistent losses with no plan equals real trouble."
+      },
+      {
+        title: "Break-Even Point",
+        emoji: "⚖️",
+        content: "The break-even point is when you've sold exactly enough to cover all your costs — profit is zero, but so is your loss. This is a key milestone for new businesses. Once you break even, every additional sale starts generating real profit."
+      },
+      {
+        title: "Profit Margin",
+        emoji: "📊",
+        content: "Profit margin is your profit as a percentage of revenue. Formula: (Profit ÷ Revenue) × 100. If you made $100 selling things that cost $70, your profit is $30 and your margin is 30%. Grocery stores have thin margins (2-3%) but sell huge volumes. Software companies have high margins (70-80%+)."
+      }
     ],
-    explore: 'Think of something whose price has gone up recently (you\'ve probably heard a parent mention it). Using what you know about supply and demand, come up with one possible reason WHY the price increased. Write your economic explanation.',
-    quickCheck: {
-      question: 'What is the "equilibrium price"?',
-      options: [
-        'The lowest possible price for something',
-        'The price the government sets for all products',
-        'The price where supply and demand are balanced',
-        'The average price across all stores',
-      ],
-      correct: 2,
+    activity: {
+      title: "P&L Statement",
+      instructions: "Create a mini profit and loss statement for an imaginary business for one month. List all revenue sources. List all costs. Calculate profit or loss. Calculate your profit margin. Would a bank lend this business money? Why or why not?"
     },
     quiz: [
       {
-        question: 'When demand for something is HIGH and supply is LOW, what happens to the price?',
-        options: ['Price stays the same', 'Price goes down', 'Price goes up', 'The product becomes free'],
-        correct: 2,
+        question: "What is the profit formula?",
+        answer: "Profit = Revenue minus Costs",
+        options: ["Profit = Costs minus Revenue", "Profit = Revenue minus Costs", "Profit = Revenue plus Costs", "Profit = Sales minus Taxes"]
       },
       {
-        question: 'Why do sellers want to produce MORE when prices go up?',
-        options: ['They want to help buyers', 'They earn more profit, so it\'s worth the effort', 'The government requires it', 'It\'s cheaper to produce at higher prices'],
-        correct: 1,
+        question: "What is the break-even point?",
+        answer: "When total revenue exactly equals total costs",
+        options: ["When you make your first dollar of profit", "When total revenue exactly equals total costs", "When you stop losing money forever", "When your business is one year old"]
       },
       {
-        question: 'When there is a huge harvest of apples (lots of supply), what usually happens to apple prices?',
-        options: ['Prices go up', 'Prices stay the same', 'Prices fall because supply exceeds demand', 'Stores stop selling apples'],
-        correct: 2,
-      },
-      {
-        question: 'Why do airline tickets cost more during the holidays?',
-        options: ['Planes are heavier with luggage', 'Demand is much higher while the number of seats stays the same', 'Airlines are trying to be unfair', 'Fuel is more expensive in December'],
-        correct: 1,
-      },
-      {
-        question: 'How does understanding supply and demand help you?',
-        options: ['It helps you avoid paying taxes', 'It helps you predict how prices will change and make smarter financial decisions', 'It helps you get things for free', 'It only matters if you own a business'],
-        correct: 1,
-      },
+        question: "What is profit margin?",
+        answer: "Profit as a percentage of revenue",
+        options: ["The amount of profit you make", "Profit as a percentage of revenue", "The difference between two competitors' profits", "How much your business grew this year"]
+      }
     ],
-    celebrationText: '{{name}}, you now understand one of the foundational laws of economics! This invisible force shapes the entire world around you — and now you can see it. Ace is so excited about how you\'re growing!',
+    familyAdventure: "Look at a restaurant menu together. Pick three items and guess: what do the ingredients probably cost? What does the restaurant charge? What's their rough profit margin? Most restaurants aim for 3-5% net profit margin — see how close your guesses get!",
+    badge: "Numbers Master",
+    nextLesson: "mb-6-8-15"
   },
-
-  // ── Lesson 15 ──────────────────────────────────────────────────────────────
   {
-    title: 'Money Around the World — Currencies and Exchange',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Global Citizen',
-    duration: '12–14 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Look up what your country\'s currency can buy in a different country. If you have $10, how much would that be in Japanese yen? Mexican pesos? Euros? What surprised you?',
-    arrival: '{{name}}, here\'s something wild: there are over 180 different currencies used around the world today. A euro in France, a yen in Japan, a peso in Mexico, a rupee in India — all different kinds of money. Today we\'re going global to understand how the world\'s money systems work!',
-    spark: 'If you had $10 in US dollars and traveled to Japan, would you automatically be able to spend it? How do you think people pay for things in other countries?',
-    learn: [
-      'A currency is a type of money used in a particular country or region. The US uses the dollar ($), Europe uses the euro (€), Japan uses the yen (¥), the UK uses the pound (£), and Mexico uses the peso. Every country has (or shares) a currency that is issued and controlled by its central bank or government.',
-      'To use money from one country in another, you need to exchange it. The exchange rate tells you how much one currency is worth compared to another. For example, if the exchange rate is 1 dollar = 110 yen, then $10 = 1,100 yen. Exchange rates change every day based on global trade, economic strength, and supply and demand for each currency.',
-      'When a country\'s economy is strong and people around the world trust it, its currency tends to be worth more. When an economy struggles, the currency can weaken. This is why currency exchange matters in global business — a company that earns money in one currency and pays workers in another must track exchange rates carefully.',
-      'The euro is unique — it\'s shared by 20 European countries. Using one currency across many nations makes trading much simpler (no exchange needed between member countries). Some economists argue that a global currency could benefit the whole world, but others say different currencies give countries important control over their own economies.',
+    id: "mb-6-8-15",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 15,
+    title: "Famous Young Entrepreneurs",
+    duration: "10–15 min",
+    hook: "You might think you need to be a grown-up to run a real business. These kids prove otherwise. They built companies, earned real money, appeared on national TV, and in some cases changed industries — all before finishing school.",
+    bigIdea: "Age is not a barrier to entrepreneurship. Young people have unique advantages: fresh thinking, no fear of looking silly, and the energy to try again and again.",
+    sections: [
+      {
+        title: "Mikaila Ulmer — Me & the Bees Lemonade",
+        emoji: "🍋",
+        content: "Mikaila started her lemonade business at age 4 after getting stung by bees twice in one week. Instead of being scared, she got curious, learned how important bees are, and created lemonade sweetened with honey — with part of every sale going to bee conservation. By age 11, she had a deal with Whole Foods and a $60,000 investment from Shark Tank."
+      },
+      {
+        title: "Moziah Bridges — Mo's Bows",
+        emoji: "👔",
+        content: "At age 9, Moziah was frustrated that he couldn't find cool bow ties he actually liked. His grandmother taught him to sew and he made his own. By age 13 he was on Shark Tank, earning over $200,000 per year. The NBA signed him to design bow ties for their draft — at age 14."
+      },
+      {
+        title: "Evan of EvanTubeHD",
+        emoji: "🎥",
+        content: "Evan started reviewing toys on YouTube at age 8, just for fun. His honest, enthusiastic reviews attracted millions of subscribers. By age 10, his channel was earning more than most adult salaries. He taught himself video editing, analytics, and content strategy — all before middle school."
+      },
+      {
+        title: "What They Have in Common",
+        emoji: "💡",
+        content: "Every young entrepreneur shares a few things: they started with a genuine interest or problem (not just wanting money), they weren't afraid to start small, they asked for help from adults around them, and they kept going when things got hard. None of them waited until they were ready. They just started."
+      }
     ],
-    explore: 'Pick two countries you\'d love to visit. Look up their currencies and today\'s exchange rates against the US dollar. If you had $50 to spend, how much would you have in each country? What could you buy? Write your findings.',
-    quickCheck: {
-      question: 'What is an exchange rate?',
-      options: [
-        'The fee for exchanging money',
-        'A measurement of how much one currency is worth compared to another',
-        'The rate at which banks print money',
-        'The price of imported goods',
-      ],
-      correct: 1,
+    activity: {
+      title: "Your Entrepreneur Profile",
+      instructions: "Write a short bio of yourself as if you were already a successful young entrepreneur. What's your business? What problem do you solve? What's your backstory? How old were you when you started? Make it sound real — then work backward and figure out the first real step to make it true."
     },
     quiz: [
       {
-        question: 'What is a currency?',
-        options: ['An international type of coin', 'A type of money used in a particular country or region', 'A bank account for businesses', 'A form of digital payment only'],
-        correct: 1,
+        question: "What inspired Mikaila Ulmer to start Me & the Bees Lemonade?",
+        answer: "Getting stung by bees, which led her to learn about bee conservation",
+        options: ["She loved drinking lemonade", "Getting stung by bees, which led her to learn about bee conservation", "Her parents owned a lemonade company", "She won a school business contest"]
       },
       {
-        question: 'If 1 dollar = 110 yen, how many yen would you get for $5?',
-        options: ['22 yen', '105 yen', '550 yen', '1,100 yen'],
-        correct: 2,
+        question: "How old was Moziah Bridges when he started Mo's Bows?",
+        answer: "9 years old",
+        options: ["6 years old", "9 years old", "13 years old", "16 years old"]
       },
       {
-        question: 'What makes a country\'s currency stronger (worth more)?',
-        options: ['Having colorful bills', 'A strong, trusted economy', 'More coins in circulation', 'Charging higher prices in stores'],
-        correct: 1,
-      },
-      {
-        question: 'What is special about the euro?',
-        options: ['It is the oldest currency in the world', 'It is the most valuable currency', 'It is shared by 20 European countries', 'It can be used everywhere in the world'],
-        correct: 2,
-      },
-      {
-        question: 'Why do exchange rates change every day?',
-        options: ['Because governments set new rates each morning', 'Based on global trade, economic strength, and supply and demand for currencies', 'Because prices in stores change daily', 'They don\'t really change — it\'s just an illusion'],
-        correct: 1,
-      },
+        question: "What do all successful young entrepreneurs have in common?",
+        answer: "They started with genuine interest, weren't afraid to start small, and kept going",
+        options: ["They all had rich parents", "They all won a competition first", "They started with genuine interest, weren't afraid to start small, and kept going", "They all appeared on Shark Tank"]
+      }
     ],
-    celebrationText: '{{name}}, you\'re now thinking globally! Understanding currencies gives you a window into how connected the entire world really is. Every business that trades across borders needs to understand this — and now you do too. Ace is proud!',
+    familyAdventure: "Research one more young entrepreneur online that isn't in this lesson. Find out: How old were they when they started? What problem did they solve? What obstacle did they overcome? Share what you learned at dinner.",
+    badge: "Inspired",
+    nextLesson: "mb-6-8-16"
   },
-
-  // ── Lesson 16 ──────────────────────────────────────────────────────────────
   {
-    title: 'Trading and Barter — Before Money Existed',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Ancient Trader',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Have a family barter session! Each person picks one item or skill to trade. Can you find a fair trade? What made it fair or difficult?',
-    arrival: '{{name}}, let\'s take a trip back thousands of years — before coins, before banks, before digital payments. How did people trade? The answer is: they bartered. And understanding barter teaches us something profound about what makes economies work.',
-    spark: 'You have a basket of apples. Your neighbor has fresh milk. Neither of you has any coins. How would you make a fair trade? What problems might come up?',
-    learn: [
-      'Barter is the direct exchange of goods or services without using money. If you grow wheat and need meat, you trade your wheat directly with a hunter for meat. Barter was the world\'s first economy — humans have been trading goods for at least 100,000 years. Many ancient civilizations, including the Mesopotamians and Egyptians, had complex barter systems.',
-      'Barter worked well in small communities where everyone knew each other and had complementary needs. But it had a fundamental problem: the "double coincidence of wants." For a barter to work, both people had to have exactly what the other wanted AT THE SAME TIME. If you had apples and wanted shoes, you had to find a shoemaker who also wanted apples — right now.',
-      'Money solved this problem by becoming a universal medium of exchange — something everyone would accept, so you could trade your apples for money, then use that money to buy shoes from anyone, anytime. Early forms of money (shells, salt, metal) were chosen because they were durable, divisible (you could break them into pieces), and widely accepted.',
-      'Barter still exists today! Online communities have barter exchanges where people trade services — a web designer might trade work with a photographer, for example. And during economic crises (when money loses value), communities sometimes return to barter. Understanding barter reminds us that the TRUE foundation of any economy isn\'t money — it\'s the exchange of real value between people.',
+    id: "mb-6-8-16",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 16,
+    title: "What Problem Does Your Business Solve?",
+    duration: "10–15 min",
+    hook: "Here's the most important question in all of business. Not 'how do I make money.' The most important question is: what PROBLEM am I solving? Every great business answers this clearly. The ones that don't, fail.",
+    bigIdea: "Businesses exist to solve problems. The bigger and more common the problem you solve, the bigger the potential business. Always start with the problem, not the product.",
+    sections: [
+      {
+        title: "Problem First, Solution Second",
+        emoji: "🔍",
+        content: "Most people think about starting a business backwards — 'I want to sell X' before they know who needs it or why. Smart entrepreneurs flip this. They find a problem first, then design a solution. The solution is the product. The problem is the foundation."
+      },
+      {
+        title: "How Big Is the Problem?",
+        emoji: "📏",
+        content: "Not all problems are business opportunities. The best business problems are: common (lots of people have this problem), annoying (people actively want it solved), and unsolved or poorly solved (nobody's doing it well yet). If millions of people share a painful problem and no one has a great solution, that's a golden opportunity."
+      },
+      {
+        title: "Talk to Real People",
+        emoji: "🗣️",
+        content: "The biggest mistake new entrepreneurs make is assuming they know what people want without asking. Go talk to potential customers. Ask: What's the most frustrating part of your day? What do you wish someone would invent? What do you spend money on that you hate spending money on?"
+      },
+      {
+        title: "Your Unique Angle",
+        emoji: "💎",
+        content: "Once you know the problem, ask: what's your unique angle? Maybe it's solving it faster, cheaper, or with better quality. Maybe it's solving it for a specific group others ignore. Successful entrepreneurs find their unique value proposition — why customers should choose them over everyone else."
+      }
     ],
-    explore: 'Identify three skills or things you have that others might want. For each one, think of what you could trade it for. Is there someone in your life you could propose a real barter with? Write out your trade idea.',
-    quickCheck: {
-      question: 'What is the "double coincidence of wants" problem with barter?',
-      options: [
-        'Both traders wanting double the amount',
-        'Both people needing exactly what the other has at the same time',
-        'Prices being too high in barter',
-        'Not having enough goods to trade',
-      ],
-      correct: 1,
+    activity: {
+      title: "Problem Hunt",
+      instructions: "For 24 hours, carry a small notebook. Every time you feel frustrated or think 'someone should make something that...' — write it down. By the end of the day, you'll have a list of real problems. Pick the one that bothers you most. Does a solution already exist? If not, what would YOUR solution look like?"
     },
     quiz: [
       {
-        question: 'What is barter?',
-        options: ['Trading using digital currency', 'The direct exchange of goods or services without using money', 'Selling things at a discount', 'A type of bank account'],
-        correct: 1,
+        question: "Why should entrepreneurs start with the problem instead of the product?",
+        answer: "Because if you don't know what problem you're solving, you might build something nobody needs",
+        options: ["Products are boring", "Because if you don't know what problem you're solving, you might build something nobody needs", "Problems are easier to find than products", "Products cost too much to make first"]
       },
       {
-        question: 'Why did barter fail in large societies?',
-        options: ['People were dishonest', 'The double coincidence of wants was too hard to achieve at scale', 'Goods were too heavy to carry', 'There were no laws protecting traders'],
-        correct: 1,
+        question: "What three characteristics make a problem a good business opportunity?",
+        answer: "Common, annoying, and unsolved (or poorly solved)",
+        options: ["Rare, expensive, and technical", "Common, annoying, and unsolved (or poorly solved)", "Fun, creative, and profitable", "Simple, cheap, and popular"]
       },
       {
-        question: 'What made early forms of money (like shells and salt) good for trading?',
-        options: ['They were pretty to look at', 'They were durable, divisible, and widely accepted', 'They were easy to counterfeit', 'They were controlled by governments'],
-        correct: 1,
-      },
-      {
-        question: 'Barter still exists today. What is one modern example?',
-        options: ['Using credit cards', 'Professionals exchanging services (like a designer swapping work with a photographer)', 'Digital cryptocurrency', 'Bank transfers'],
-        correct: 1,
-      },
-      {
-        question: 'What is the TRUE foundation of any economy?',
-        options: ['Gold and silver', 'Government regulations', 'Banks and interest rates', 'The exchange of real value between people'],
-        correct: 3,
-      },
+        question: "What is a unique value proposition?",
+        answer: "Why customers should choose your business over everyone else's",
+        options: ["The price of your product", "Your business name and logo", "Why customers should choose your business over everyone else's", "How many employees you have"]
+      }
     ],
-    celebrationText: '{{name}}, you just explored the roots of all human commerce! Thousands of years of economic history live in this lesson. Understanding where money came from helps you understand where it\'s going. Ace loved adventuring through time with you today!',
+    familyAdventure: "Go to a busy place — a mall, a park, a grocery store. Watch people for 20 minutes. Notice moments of frustration, awkwardness, or struggle. What problems do you see? Talk as a family about which one seems most worth solving and how you'd do it.",
+    badge: "Problem Solver",
+    nextLesson: "mb-6-8-17"
   },
-
-  // ── Lesson 17 ──────────────────────────────────────────────────────────────
   {
-    title: 'Setting Money Goals — The Power of a Plan',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Goal Setter',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Share your money goal with a family member. Ask them: "What is a money goal you set and achieved? What helped you do it?" Listen carefully to their story.',
-    arrival: '{{name}}, every great achievement starts with a goal. Athletes visualize winning before the race. Architects draw the building before it\'s built. And smart money managers set clear financial goals before they start saving or spending. Today, you\'re going to set real money goals — and learn the system that makes them work.',
-    spark: 'What is one thing you would love to have, experience, or give to someone in the next year — something that costs money? How would you feel when you achieve it?',
-    learn: [
-      'A goal is a specific outcome you\'re working toward. Financial goals are goals that require money to achieve. They come in different time frames: short-term goals (things you want in days to weeks, like a new book), medium-term goals (things you want in months, like a bicycle), and long-term goals (things that take years, like a trip or college fund). Having goals for all three time frames keeps you motivated.',
-      'The best goals are SMART: Specific (I want to save $30 for roller skates), Measurable (I\'ll track it in a jar), Achievable (I can save $5/week), Relevant (I really want to skate with friends), and Time-bound (I\'ll have it in 6 weeks). Vague goals like "I want to save more money" rarely work. Specific goals like "I will save $5 every Saturday" do.',
-      'A goal without a plan is just a wish. Once you set your goal, break it down: How much do you need? How much can you save each week? How many weeks will it take? Write it down and put it somewhere visible. Every week, check your progress and update your tracker. Visual progress — like a savings thermometer you color in — is incredibly motivating.',
-      'Setbacks happen. You might miss a savings week, or something unexpected might cost you money. Don\'t give up — just adjust your timeline and keep going. The goal isn\'t to be perfect; it\'s to keep moving forward. Every savings champion has had setbacks. What separates them is that they restart.',
+    id: "mb-6-8-17",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 17,
+    title: "Making a Simple Business Plan",
+    duration: "10–15 min",
+    hook: "A business plan sounds like something only serious adults in suits write. But the truth is, a business plan is just answering a few key questions about your business idea — before you spend any time or money.",
+    bigIdea: "A business plan is a document that answers the most important questions about your business. It helps you think clearly and spot problems before they cost you money.",
+    sections: [
+      {
+        title: "Why Write a Business Plan?",
+        emoji: "📋",
+        content: "A business plan forces you to think through every part of your idea. What are you selling? Who will buy it? How will you reach them? How much will it cost? Writing the answers down reveals gaps in your thinking. It's better to discover problems on paper than after you've spent your savings."
+      },
+      {
+        title: "The Key Sections of a Business Plan",
+        emoji: "🗂️",
+        content: "A simple business plan covers: Business Idea (what you sell and the problem you solve), Target Market (who your customers are), Competition (who else does this and what makes you different), Marketing Plan (how you'll find customers), Financial Plan (startup costs, price, expected revenue), and Action Steps (what you'll do first, second, and third)."
+      },
+      {
+        title: "Test Before You Invest",
+        emoji: "🧪",
+        content: "The best business plans include a testing phase. Before spending money on inventory or a website, test your idea. Make 5 of your product. Offer your service to 3 friends. Get real feedback. The plan should be a living document — update it as you learn."
+      },
+      {
+        title: "Keep It Simple",
+        emoji: "📊",
+        content: "A great business plan doesn't have to be long. Some of the best startups were built from plans that fit on one page. If you can explain your business idea clearly in 5 minutes to someone who knows nothing about it, your plan is solid enough to start."
+      }
     ],
-    explore: 'Set a SMART money goal right now. Write it out with all five SMART elements: What exactly do you want? How will you track it? Is it realistic? Why does it matter to you? When will you reach it? Create a simple tracker to put somewhere you\'ll see every day.',
-    quickCheck: {
-      question: 'What does the "T" in SMART goals stand for?',
-      options: ['Tremendous', 'Trackable', 'Time-bound', 'Total'],
-      correct: 2,
+    activity: {
+      title: "My Business Plan",
+      instructions: "Write a one-page business plan for your best business idea. Cover: what you sell, who your customer is, what makes you different, how you'll find customers, what it costs to start, what you'll charge, and your first three action steps. Keep it to one page. Simple wins."
     },
     quiz: [
       {
-        question: 'What is a "short-term" financial goal?',
-        options: ['Saving for retirement', 'Something you want in days to weeks', 'A goal you set years in advance', 'A goal about lowering your spending only'],
-        correct: 1,
+        question: "What is the main purpose of a business plan?",
+        answer: "To think through every part of your idea and spot problems before they cost you money",
+        options: ["To impress investors with fancy writing", "To think through every part of your idea and spot problems before they cost you money", "To show the government your idea", "To guarantee your business will succeed"]
       },
       {
-        question: 'Which of these is the BEST SMART goal?',
-        options: ['I want to save money', 'I will save $5 every Saturday until I have $30 for roller skates in 6 weeks', 'I\'m going to try to spend less', 'I hope to buy something cool someday'],
-        correct: 1,
+        question: "Why should you test your idea before spending money on it?",
+        answer: "To get real feedback and avoid building something nobody wants",
+        options: ["Because testing is free", "To get real feedback and avoid building something nobody wants", "Because it's required by law", "To delay spending money as long as possible"]
       },
       {
-        question: 'Why is a visual tracker (like a savings thermometer) helpful?',
-        options: ['It earns you extra interest', 'Visual progress is incredibly motivating and keeps you on track', 'It is required for a bank account', 'It shows others how much money you have'],
-        correct: 1,
-      },
-      {
-        question: 'What should you do if you miss a savings week?',
-        options: ['Give up on the goal', 'Feel terrible and start over from zero', 'Adjust your timeline and keep going — setbacks are normal', 'Never set goals again'],
-        correct: 2,
-      },
-      {
-        question: 'A goal without a plan is...',
-        options: ['Totally fine — spontaneity works', 'Just a wish', 'The best kind of goal', 'Only a problem for adults'],
-        correct: 1,
-      },
+        question: "How long should a good simple business plan be?",
+        answer: "As short as one page if it covers all the key questions",
+        options: ["At least 50 pages", "Exactly 10 pages", "As short as one page if it covers all the key questions", "It must include charts and graphs"]
+      }
     ],
-    celebrationText: '{{name}}, you\'ve set a real goal today — and that\'s the first step toward achieving it! Every champion, every entrepreneur, every successful person uses goal-setting. You\'re now one of them. Ace believes in you completely!',
+    familyAdventure: "Write your one-page business plan and pitch it to your family. Give yourself 5 minutes to present it. Your family's job is to ask tough questions: Who would really buy this? What if a big company did the same thing? How long until you make money? Treat it like a real investor meeting.",
+    badge: "Planner",
+    nextLesson: "mb-6-8-18"
   },
-
-  // ── Lesson 18 ──────────────────────────────────────────────────────────────
   {
-    title: 'Investing — Making Your Money Work for You',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Young Investor',
-    duration: '14–16 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Ask a family member if they have any investments (retirement account, stocks, real estate). Ask them to explain what it is and why they chose it. What did you learn?',
-    arrival: '{{name}}, here\'s the most exciting money concept we\'ve covered so far: investing. When you invest, your money doesn\'t just sit there — it GROWS, even while you sleep. The earlier you understand investing, the more powerful it becomes for you. Let\'s dive in!',
-    spark: 'Would you rather have $1,000 right now — or $1 that doubles every week for 20 weeks? Take a guess before we reveal the answer.',
-    learn: [
-      'Investing means putting your money to work so it can grow over time. When you save, money sits still. When you invest, money grows. There are many types of investments: stocks (owning a small piece of a company), bonds (lending money to a government or company for interest), real estate (owning property), and even starting a business. All investments involve some risk — but also the potential for growth.',
-      'The magic of investing comes from compound growth. When your investment earns money, that earned money also earns money. Over time, this creates exponential growth. That\'s why starting to invest young is so powerful: time is the most valuable ingredient. A dollar invested at age 10 is worth FAR more at age 60 than a dollar invested at age 40.',
-      'A stock is a small share of ownership in a company. When you buy a stock in a company like Apple or Nike, you own a tiny piece of it. If the company does well and grows, your stock is worth more. If it struggles, your stock loses value. Over the long history of the stock market, it has grown at an average of about 7–10% per year — much better than keeping money in a savings account.',
-      'The Rule of 72 is a simple way to estimate how long it takes for an investment to double. Just divide 72 by the interest or growth rate. At 6% growth: 72 ÷ 6 = 12 years to double. At 9% growth: 72 ÷ 9 = 8 years. This rule shows why higher returns matter so much over time — and why starting early is everything.',
+    id: "mb-6-8-18",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 18,
+    title: "The Stock Market: Basics",
+    duration: "10–15 min",
+    hook: "People talk about 'the stock market going up' or 'crashing' like it's some mysterious force. But the stock market is actually a pretty simple idea — it's just a giant market where people buy and sell tiny pieces of companies.",
+    bigIdea: "The stock market is where people buy and sell ownership shares in companies. Over long periods, the stock market has been one of the most powerful wealth-building tools in history.",
+    sections: [
+      {
+        title: "What Is a Stock?",
+        emoji: "📈",
+        content: "A stock (also called a share) is a tiny piece of ownership in a company. If a company has issued 1,000,000 shares and you own 1, you own one one-millionth of that company. If the company grows and becomes more valuable, your share becomes worth more. If you own stock in Apple, you are technically part owner of Apple."
+      },
+      {
+        title: "What Is the Stock Market?",
+        emoji: "🏛️",
+        content: "The stock market is the place where buyers and sellers trade stocks. The biggest stock markets in the U.S. are the New York Stock Exchange (NYSE) and NASDAQ. Prices change constantly — millions of trades happen every minute — based on supply and demand for each company's shares."
+      },
+      {
+        title: "Why Do Stocks Go Up and Down?",
+        emoji: "💹",
+        content: "Stock prices move based on what investors think a company is worth. If a company reports great profits, its stock often goes up. If bad news hits, prices can drop. In the short term, stocks are unpredictable. In the long term (10, 20, 30 years), the overall market has always gone up."
+      },
+      {
+        title: "Why Young People Should Care",
+        emoji: "🌱",
+        content: "The earlier you start investing, the more time your money has to grow through compound interest. $1,000 invested at age 10 with a 10% average annual return becomes about $28,000 by age 55, without adding another dollar. The stock market rewards patience more than skill."
+      }
     ],
-    explore: 'Use the Rule of 72 to answer this: If your money grows at 8% per year, how many years will it take to double? If you invest $100 today and it doubles three times, how much will you have? Write your calculations.',
-    quickCheck: {
-      question: 'What is "compound growth"?',
-      options: [
-        'When money sits in a savings account earning nothing',
-        'When your investment earns money, and that earned money also earns money over time',
-        'When you invest in many companies at once',
-        'The fee you pay to invest in stocks',
-      ],
-      correct: 1,
+    activity: {
+      title: "Stock Tracker",
+      instructions: "Pick 3 companies you know well — brands you use or love. Look up their stock price today with a parent. Write them down. Check again in 2 weeks. Did any go up or down? See if you can find the news reason why."
     },
     quiz: [
       {
-        question: 'What does it mean to "invest" money?',
-        options: ['To spend money on things you enjoy', 'To put money to work so it can grow over time', 'To give money to charity', 'To keep money in a piggy bank'],
-        correct: 1,
+        question: "What is a stock?",
+        answer: "A tiny piece of ownership in a company",
+        options: ["A type of savings account", "A tiny piece of ownership in a company", "A government bond", "Money you lend to a bank"]
       },
       {
-        question: 'What is a stock?',
-        options: ['Money in a savings account', 'A small share of ownership in a company', 'A type of bank loan', 'A government bond'],
-        correct: 1,
+        question: "Why do stock prices go up and down?",
+        answer: "Based on what investors think the company is worth, company news, and global events",
+        options: ["The government controls the prices", "Based on what investors think the company is worth, company news, and global events", "Prices are set once a year and don't change", "Only rich people can make prices change"]
       },
       {
-        question: 'Using the Rule of 72, if your money grows at 9% per year, how many years to double?',
-        options: ['9 years', '8 years', '12 years', '72 years'],
-        correct: 1,
-      },
-      {
-        question: 'Why is starting to invest young so powerful?',
-        options: ['Young people pay less in fees', 'Time is the most valuable ingredient — money has more time to grow', 'Young people make better choices', 'Banks offer special rates for kids'],
-        correct: 1,
-      },
-      {
-        question: 'What has the stock market averaged in annual growth over its long history?',
-        options: ['1–2%', '3–4%', '7–10%', '20–30%'],
-        correct: 2,
-      },
+        question: "Why does starting to invest young matter so much?",
+        answer: "Because of compound interest — time in the market dramatically grows your money",
+        options: ["Young people get discounts on stocks", "Because of compound interest — time in the market dramatically grows your money", "Stocks are cheaper when you're young", "Young investors are smarter"]
+      }
     ],
-    celebrationText: 'Wow, {{name}}! You now understand investing — a concept that most adults don\'t fully grasp until they\'re in their 30s or 40s! The earlier you start, the more time your money has to grow. Ace is absolutely impressed by how far you\'ve come!',
+    familyAdventure: "Open a stock market app together (Robinhood, Yahoo Finance, or Google Finance — all free). Look up 3 companies. Check their price, how much they've changed this year, and read one piece of recent news about each. Act like analysts: would you invest? Why?",
+    badge: "Stock Tracker",
+    nextLesson: "mb-6-8-19"
   },
-
-  // ── Lesson 19 ──────────────────────────────────────────────────────────────
   {
-    title: 'Taxes — How Communities Share Costs',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Community Builder',
-    duration: '10–12 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'Take a walk or drive around your community. Count five things that taxes help pay for (roads, parks, schools, fire stations, libraries). Talk about why these things matter.',
-    arrival: '{{name}}, here\'s a word that most adults find complicated — but I\'m going to make it simple: taxes. Taxes are one of the oldest ideas in human civilization, and they exist because some things are too big and too important for any one person to pay for alone. Let\'s figure out what taxes are and why they actually matter.',
-    spark: 'Your neighborhood has a huge pothole in the road. It would cost $50,000 to fix. No one person can afford it. But if 1,000 people each paid $50, the road could be fixed for everyone. Does that sound fair? That\'s basically what taxes do.',
-    learn: [
-      'Taxes are money that people and businesses pay to the government. In return, the government uses that money to provide public services — things that everyone uses and benefits from. Roads, public schools, libraries, fire departments, police, hospitals, parks, and the military are all funded by taxes. Without taxes, none of these could exist.',
-      'There are different types of taxes. Income tax is a percentage of what you earn (adults pay this on their salaries). Sales tax is added to things you buy at a store. Property tax is paid by people who own homes or land. All of these collect money from different activities and funnel it into public services.',
-      'Not everyone pays the same amount in taxes. Most income tax systems are "progressive" — meaning people who earn more pay a higher percentage. Someone earning $20,000 per year might pay 10% in income tax ($2,000). Someone earning $200,000 might pay 25% ($50,000). The idea is that those who benefit most from a functioning society contribute more to running it.',
-      'People have strong opinions about taxes — how much they should be, who should pay them, and what they should fund. This is a huge part of politics in every country. Understanding taxes helps you become an informed citizen. The key insight: taxes aren\'t taken from you — they\'re invested in the shared infrastructure and services that make the society everyone lives in possible.',
+    id: "mb-6-8-19",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 19,
+    title: "Investing: Making Money Work for You",
+    duration: "10–15 min",
+    hook: "Here's one of the most powerful money secrets: you don't have to trade your time for money. You can make your money work FOR you while you sleep, go to school, play outside. This is called investing.",
+    bigIdea: "Investing means putting money to work so it grows over time. The earlier you start and the longer you wait, the more powerful it becomes.",
+    sections: [
+      {
+        title: "What Does Investing Mean?",
+        emoji: "🌱",
+        content: "Investing is using money to buy something that will hopefully grow in value or produce income over time. You can invest in stocks (pieces of companies), bonds (loans to governments or companies), real estate (land and buildings), or businesses. The goal: your investment is eventually worth more than what you paid."
+      },
+      {
+        title: "The Superpower: Compound Interest",
+        emoji: "⏰",
+        content: "Compound interest is the most powerful force in personal finance. You earn returns not just on your original money, but on your previous returns too. $100 earns 10% = $110 in year 1. Year 2: $110 earns 10% = $121. Year 3: $133. Over 40 years, that $100 becomes $4,526 — without adding another dollar."
+      },
+      {
+        title: "What About Risk?",
+        emoji: "📉",
+        content: "All investments carry some risk. Stocks can go down in value. Businesses can fail. Smart investors don't avoid risk — they manage it. They spread their money across different types of investments (this is called diversification) so that if one goes down, others can hold steady."
+      },
+      {
+        title: "Start Small, Start Now",
+        emoji: "🎯",
+        content: "You don't need a lot of money to start investing. Some apps let you invest with as little as $1. A 12-year-old who invests $50 per month will have a massive head start on a 30-year-old starting from zero. Time is the ingredient that can't be bought — only used."
+      }
     ],
-    explore: 'List five public services you personally used this week (school, roads, parks, library, etc.). For each one, write one sentence about what life might be like without it. How does this change how you feel about taxes?',
-    quickCheck: {
-      question: 'What are taxes used for?',
-      options: [
-        'Paying politicians\' personal salaries only',
-        'Funding public services like roads, schools, parks, and fire departments',
-        'Paying for private businesses',
-        'Reducing the price of things in stores',
-      ],
-      correct: 1,
+    activity: {
+      title: "Compound Interest Calculator",
+      instructions: "Go to investor.gov/compound-interest-calculator with a parent. Enter: $1,000 starting amount, 7% annual return, 40 years. See what it grows to. Then try $5,000. Then try $1,000 with $100 added monthly. See the power of time and consistency."
     },
     quiz: [
       {
-        question: 'What is income tax?',
-        options: ['A tax on things you buy at stores', 'A percentage of what you earn that goes to the government', 'A tax on property you own', 'A fee for using public parks'],
-        correct: 1,
+        question: "What is investing?",
+        answer: "Using money to buy something that grows in value or produces income over time",
+        options: ["Spending money on expensive things", "Keeping money under your mattress", "Using money to buy something that grows in value or produces income over time", "Giving money to a bank to hold"]
       },
       {
-        question: 'What is a "progressive" tax system?',
-        options: ['One that gets higher every year', 'One where everyone pays the same flat amount', 'One where people who earn more pay a higher percentage', 'One that only taxes businesses'],
-        correct: 2,
+        question: "What is compound interest?",
+        answer: "Earning returns on both your original money AND your previous returns",
+        options: ["Interest charged on credit cards", "Earning returns on both your original money AND your previous returns", "A type of savings account fee", "Interest the government pays you"]
       },
       {
-        question: 'Which of these is funded by taxes?',
-        options: ['Private restaurants', 'Personal cars', 'Public schools and libraries', 'Individual houses'],
-        correct: 2,
-      },
-      {
-        question: 'What is sales tax?',
-        options: ['Tax on what you earn at work', 'Tax on property you own', 'Extra money added to things you buy at a store', 'A fee charged by banks'],
-        correct: 2,
-      },
-      {
-        question: 'A key insight about taxes is that they are...',
-        options: ['Money taken away from you forever', 'An investment in shared infrastructure everyone benefits from', 'Only important when you\'re an adult', 'Always unfair'],
-        correct: 1,
-      },
+        question: "What is diversification and why does it matter?",
+        answer: "Spreading money across different investments to reduce risk",
+        options: ["Investing only in one great company", "Buying different things at a store", "Spreading money across different investments to reduce risk", "A strategy to pick the best stocks"]
+      }
     ],
-    celebrationText: '{{name}}, you now understand one of the foundations of how society works! Taxes are how communities cooperate to build things no one person could build alone. That\'s powerful knowledge — and Ace is so proud you\'ve learned it.',
+    familyAdventure: "Open a custodial investment account (with a parent as guardian) — Fidelity, Vanguard, or Schwab. Even if you only put in $25, it's real. Watch how the value changes over the coming months. This is your first investment!",
+    badge: "Investor",
+    nextLesson: "mb-6-8-20"
   },
-
-  // ── Lesson 20 ──────────────────────────────────────────────────────────────
   {
-    title: 'Money and Values — What Really Matters',
-    guide: 'ace',
-    avatar: 'ace',
-    badge: 'Money Wise',
-    duration: '12–15 min',
-    unit: 'Money & Business · Ages 6–8',
-    familyAdventure: 'As a family, answer this: "What is one experience or thing our family values more than money?" Share a story about a time you chose something important over money.',
-    arrival: '{{name}}, we\'ve reached the final lesson of your Money & Business journey — and I\'ve saved the most important one for last. We\'ve talked about earning, saving, spending, and investing. But today we\'re going to ask the deepest question of all: what is money actually FOR? And what truly makes a person rich?',
-    spark: 'Think of the happiest moment of your life so far. Did it involve something you bought? Or something else entirely? What made it meaningful?',
-    learn: [
-      'Money is a tool — powerful, useful, and important. But it is not a goal in itself. Research on happiness consistently shows that beyond a certain income level (enough to cover needs and basic comforts), having more money does not make people significantly happier. What actually drives long-term happiness are: strong relationships, purposeful work, good health, and a sense of meaning and contribution.',
-      'The way you relate to money often reflects your deeper values. Do you spend money on experiences (travel, concerts, time with friends) or on things (clothes, gadgets, decorations)? Research shows that experiences tend to bring more lasting happiness than possessions — because experiences become part of who you are, while things eventually get used up or feel ordinary.',
-      'Financial freedom is the goal most money-wise people point to — not being rich, but having enough that money isn\'t a constant stress, and having choices about how to spend your time. Financial freedom means your savings and investments cover your needs, so you can choose work you love rather than work you must do just to survive.',
-      'The richest life isn\'t the one with the most money — it\'s the one where money serves your values. Decide what you care about most: family, creativity, adventure, helping others, health, learning. Then use money as a tool to build more of that into your life. That is the ultimate money wisdom — and you are beginning this journey right now.',
+    id: "mb-6-8-20",
+    subject: "Money & Business",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Ace",
+    guideAnimal: "Eagle",
+    lessonNumber: 20,
+    title: "Financial Goals: Saving for Something Special",
+    duration: "10–15 min",
+    hook: "Money is just a tool. The real question is: what do you want your money to DO? When you have a specific goal — something you're saving toward — money gets a purpose. And purposeful saving is a completely different feeling than just watching numbers sit in a jar.",
+    bigIdea: "Setting a specific financial goal — with a number, a deadline, and a plan — dramatically increases your chances of actually achieving it.",
+    sections: [
+      {
+        title: "Why Goals Work",
+        emoji: "🎯",
+        content: "Psychologists have studied goal-setting for decades. People who set specific, written goals achieve dramatically more than people with vague intentions. 'I want to save money' is not a goal. 'I will save $75 for a telescope by July 1 by saving $15 per week' is a goal. Specificity, a number, and a deadline make all the difference."
+      },
+      {
+        title: "The SMART Goal Framework",
+        emoji: "📐",
+        content: "A SMART financial goal is: Specific (what exactly do I want?), Measurable (how much does it cost?), Achievable (is this realistic?), Relevant (do I really want this?), and Time-bound (by when?). Example: 'I will save $120 for a new keyboard by October 1st by saving $20 per month from my allowance.'"
+      },
+      {
+        title: "Short, Medium, and Long-Term Goals",
+        emoji: "📊",
+        content: "Not all goals are the same time scale. Short-term goals take weeks to a few months — a book, a game. Medium-term goals take several months to a couple years — a laptop, a trip. Long-term goals take years — a car, college, starting a business. Having goals at all three levels keeps your savings working on something meaningful all the time."
+      },
+      {
+        title: "Celebrate Milestones",
+        emoji: "🏆",
+        content: "Saving toward a goal means choosing NOT to spend money on other things right now. That deserves recognition! Set milestones — celebrate when you hit 25%, 50%, 75% of your goal. The feeling of accomplishment fuels you to keep going."
+      }
     ],
-    explore: 'Write your "Money Values Statement" — three sentences that describe what money means to you and what you want to use it for in your life. What matters most to you? How will money help you create that life?',
-    quickCheck: {
-      question: 'What does research show makes people most happy long-term?',
-      options: [
-        'Having as much money as possible',
-        'Strong relationships, purposeful work, good health, and meaning',
-        'Owning the most possessions',
-        'Never having to work',
-      ],
-      correct: 1,
+    activity: {
+      title: "My Financial Goal",
+      instructions: "Set a real financial goal right now. Write it in SMART format: I will save $____ for _____________ by _____________ by saving $____ per ____________. Post it somewhere you see every day. Track your progress with a chart. Tell one person your goal — accountability makes you 65% more likely to achieve it."
     },
     quiz: [
       {
-        question: 'Beyond covering needs, does having more money make people much happier?',
-        options: ['Yes — more money always equals more happiness', 'No — research shows the effect levels off quickly', 'Only if you earn it yourself', 'Only for people under 30'],
-        correct: 1,
+        question: "What makes a goal SMART?",
+        answer: "Specific, Measurable, Achievable, Relevant, and Time-bound",
+        options: ["Short, Meaningful, Achievable, Realistic, Timed", "Specific, Measurable, Achievable, Relevant, and Time-bound", "Simple, Money-based, Attainable, Real, Trackable", "Strong, Motivated, Active, Rewarding, True"]
       },
       {
-        question: 'Why do experiences tend to make people happier than possessions?',
-        options: ['Experiences are always free', 'Experiences become part of who you are; things get used up or feel ordinary', 'Experiences last longer than things do', 'Possessions always break'],
-        correct: 1,
+        question: "What is the difference between a short-term and a long-term financial goal?",
+        answer: "Short-term takes weeks to months; long-term takes years",
+        options: ["Short-term goals are smaller amounts of money", "Short-term takes weeks to months; long-term takes years", "Long-term goals are more important", "There is no real difference"]
       },
       {
-        question: 'What is "financial freedom"?',
-        options: ['Having billions of dollars', 'Never having to think about money', 'Having enough that money isn\'t a constant stress and you have choices about your time', 'Not paying taxes'],
-        correct: 2,
-      },
-      {
-        question: 'What is the best way to use money wisely?',
-        options: ['Save every penny and never spend anything', 'Spend it all as soon as you get it', 'Use it as a tool to build more of what you truly value in your life', 'Always give it all away'],
-        correct: 2,
-      },
-      {
-        question: 'What is the ultimate money wisdom, according to this lesson?',
-        options: ['Learn to invest in stocks early', 'Make money serve your values — not the other way around', 'Always earn more than you spend', 'Get rich as quickly as possible'],
-        correct: 1,
-      },
+        question: "Why should you celebrate milestones when saving toward a goal?",
+        answer: "To recognize hard work, feel proud, and stay motivated to keep going",
+        options: ["Because you deserve a reward for saving", "To tell your friends how much money you have", "To recognize hard work, feel proud, and stay motivated to keep going", "Because the lesson tells you to"]
+      }
     ],
-    celebrationText: '{{name}}, you\'ve completed all 20 Money & Business lessons — and you\'ve done something incredible. You now understand how money works, how to manage it, and most importantly, what it\'s truly for. Ace has loved every second of this journey with you. Go build something wonderful.',
-  },
+    familyAdventure: "Each family member sets ONE financial goal using the SMART framework. Share them at dinner. Post them all somewhere visible. Check in monthly on how everyone is progressing. Celebrate together when anyone hits their goal!",
+    badge: "Goal Getter",
+    nextLesson: null
+  }
 ];
+
+export default moneyBusinessExplorers;
