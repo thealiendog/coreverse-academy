@@ -29,6 +29,41 @@ function WordReveal({ text, baseDelay = 0, speed = 0.065, className = '' }) {
   );
 }
 
+// ── Floating stars for celebration ───────────────────────────────────────────
+function StarField() {
+  const stars = useMemo(() =>
+    Array.from({ length: 22 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: 5 + Math.random() * 85,
+      size: 3 + Math.random() * 7,
+      delay: Math.random() * 4,
+      duration: 2.2 + Math.random() * 3.2,
+      color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    })), []
+  );
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[54] overflow-hidden">
+      {stars.map(s => (
+        <div
+          key={s.id}
+          style={{
+            position: 'absolute',
+            left: `${s.x}%`,
+            top: `${s.y}%`,
+            width: s.size,
+            height: s.size,
+            background: s.color,
+            borderRadius: '50%',
+            boxShadow: `0 0 ${s.size * 2}px ${s.color}`,
+            animation: `lesson-star-float-kf ${s.duration}s ease-in-out ${s.delay}s infinite`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 // ── Confetti rain for celebration ─────────────────────────────────────────────
 function Confetti() {
   const pieces = useMemo(() =>
@@ -66,15 +101,21 @@ function Confetti() {
 }
 
 // ── Option card helper for QC and Quiz ───────────────────────────────────────
-function OptionCard({ label, text, delay, isCorrect, isWrong, isReveal, onClick, disabled }) {
+// variant: 'quiz' (gold correct) | 'qc' (green correct)
+function OptionCard({ label, text, delay, isCorrect, isWrong, isReveal, onClick, disabled, variant = 'quiz' }) {
   let bg    = 'rgba(255,255,255,0.04)';
   let border = 'rgba(255,255,255,0.10)';
   let color  = 'rgba(255,255,255,0.82)';
   let anim   = `lesson-option-up 0.42s cubic-bezier(0.16,1,0.3,1) ${delay}s both`;
 
   if (isCorrect) {
-    bg = 'rgba(245,158,11,0.12)'; border = '#F59E0B'; color = '#FCD34D';
-    anim += ', lesson-correct-pulse 0.6s ease-out 0.05s both';
+    if (variant === 'qc') {
+      bg = 'rgba(16,185,129,0.12)'; border = '#10B981'; color = '#6EE7B7';
+      anim += ', lesson-correct-green-pulse 0.6s ease-out 0.05s both';
+    } else {
+      bg = 'rgba(245,158,11,0.12)'; border = '#F59E0B'; color = '#FCD34D';
+      anim += ', lesson-correct-pulse 0.6s ease-out 0.05s both';
+    }
   } else if (isWrong) {
     bg = 'rgba(239,68,68,0.12)'; border = '#EF4444'; color = '#FCA5A5';
     anim += ', lesson-shake 0.45s ease both';
@@ -353,26 +394,36 @@ export default function LessonPlayer() {
             {lesson.title}
           </h2>
 
-          {/* Each paragraph = its own card, staggered slide-in */}
+          {/* Each paragraph = its own card, slides in from right with 300ms stagger */}
           <div className="space-y-4 mb-10">
             {lesson.learn.map((para, i) => (
               <div
                 key={i}
-                className="flex gap-4 rounded-2xl p-5"
+                className="rounded-2xl p-5 relative overflow-hidden"
                 style={{
-                  background: 'rgba(15,11,46,0.75)',
-                  border: `1px solid ${subject.color}22`,
-                  boxShadow: `0 4px 28px ${subject.color}08`,
-                  animation: `lesson-slide-up-kf 0.52s cubic-bezier(0.16,1,0.3,1) ${0.08 + i * 0.11}s both`,
+                  background: 'rgba(15,11,46,0.80)',
+                  border: `1px solid ${subject.color}28`,
+                  boxShadow: `0 4px 28px ${subject.color}0a`,
+                  animation: `lesson-slide-from-right-kf 0.50s cubic-bezier(0.16,1,0.3,1) ${0.05 + i * 0.30}s both`,
                 }}
               >
+                {/* Subject icon — top right */}
                 <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
-                  style={{ background: `${subject.color}28`, color: subject.color }}
+                  className="absolute top-4 right-4 w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold flex-shrink-0"
+                  style={{ background: `${subject.color}22`, color: subject.color, letterSpacing: 0 }}
                 >
-                  {i + 1}
+                  {subject.label.slice(0, 2)}
                 </div>
-                <p className="text-white/80 leading-relaxed">{para}</p>
+
+                <div className="flex gap-3 pr-8">
+                  <div
+                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
+                    style={{ background: `${subject.color}28`, color: subject.color }}
+                  >
+                    {i + 1}
+                  </div>
+                  <p className="text-white/82 leading-relaxed text-sm">{para}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -399,30 +450,59 @@ export default function LessonPlayer() {
               Explore
             </p>
 
-            {/* Mission briefing card */}
-            <div
-              className="rounded-2xl p-7 mb-8 lesson-zoom-in"
-              style={{
-                background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
-                border: '1px solid rgba(124,58,237,0.42)',
-                boxShadow: '0 0 48px rgba(124,58,237,0.10), inset 0 1px 0 rgba(167,139,250,0.06)',
-                animationDelay: '0.04s',
-              }}
-            >
-              <div className="flex items-center gap-3 mb-5">
+            {/* Mission briefing card — animated purple border */}
+            {(() => {
+              const bullets = lesson.explore
+                .replace(/\. /g, '.\n')
+                .split(/\n+/)
+                .map(s => s.trim().replace(/\.$/, ''))
+                .filter(Boolean);
+              return (
                 <div
-                  className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0"
-                  style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}
+                  className="rounded-2xl p-7 mb-8 lesson-zoom-in lesson-explore-glow"
+                  style={{
+                    background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
+                    border: '1px solid rgba(124,58,237,0.42)',
+                    animationDelay: '0.04s',
+                  }}
                 >
-                  <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
+                  <div className="flex items-center gap-3 mb-5">
+                    <div
+                      className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0"
+                      style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}
+                    >
+                      <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
+                      <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
+                    </div>
+                  </div>
+                  {bullets.length > 1 ? (
+                    <ul className="space-y-2.5">
+                      {bullets.map((bullet, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2.5 text-white/75 text-sm leading-relaxed"
+                          style={{
+                            animation: `lesson-slide-from-right-kf 0.44s cubic-bezier(0.16,1,0.3,1) ${0.18 + i * 0.18}s both`,
+                            opacity: 0,
+                          }}
+                        >
+                          <span
+                            className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                            style={{ background: '#A78BFA' }}
+                          />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-white/75 leading-relaxed text-sm">{lesson.explore}</p>
+                  )}
                 </div>
-                <div>
-                  <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
-                  <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
-                </div>
-              </div>
-              <p className="text-white/75 leading-relaxed text-sm">{lesson.explore}</p>
-            </div>
+              );
+            })()}
 
             {/* Response area */}
             <div className="lesson-slide-up" style={{ animationDelay: '0.32s' }}>
@@ -493,6 +573,7 @@ export default function LessonPlayer() {
                     isReveal={showResult && !isSelected}
                     onClick={() => handleQcSelect(i)}
                     disabled={qcSelected !== null}
+                    variant="qc"
                   />
                 );
               })}
@@ -522,13 +603,14 @@ export default function LessonPlayer() {
 
             {/* Keyed on quizCurrent — remounts & re-animates per question */}
             <div key={quizCurrent}>
-              {/* Question zooms in */}
+              {/* Question slides in from top */}
               <div
-                className="rounded-2xl p-7 mb-6 lesson-zoom-in"
+                className="rounded-2xl p-7 mb-6"
                 style={{
                   background: 'rgba(15,11,46,0.88)',
                   border: `1px solid ${subject.color}28`,
                   boxShadow: `0 0 52px ${subject.color}12`,
+                  animation: 'lesson-slide-from-top-kf 0.45s cubic-bezier(0.16,1,0.3,1) both',
                 }}
               >
                 <p className="text-xl font-semibold text-white leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
@@ -571,6 +653,7 @@ export default function LessonPlayer() {
           {score >= 3 ? (
             <>
               <Confetti />
+              <StarField />
 
               {/* Badge drops in */}
               <div
@@ -594,10 +677,10 @@ export default function LessonPlayer() {
               </div>
 
               <h1
-                className="text-3xl font-semibold text-white mb-2 lesson-slide-up"
+                className="text-5xl font-semibold text-white mb-2 lesson-slide-up leading-tight"
                 style={{ fontFamily: 'Georgia, serif', animationDelay: '0.55s' }}
               >
-                You did it, {name}!
+                You did it,<br />{name}!
               </h1>
               <p
                 className="text-base mb-2 lesson-fade-in"
