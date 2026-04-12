@@ -169,7 +169,7 @@ export default function NovaChat({ child, lesson, subject, section }) {
 
   return (
     <div
-      className="fixed bottom-4 right-4 z-[60] flex flex-col items-center pointer-events-none select-none"
+      className="fixed bottom-2 right-2 z-[60] flex flex-col items-center pointer-events-none select-none"
       style={{ gap: 8 }}
     >
       {/* ── Speech bubble ───────────────────────────────── */}
@@ -224,8 +224,8 @@ export default function NovaChat({ child, lesson, subject, section }) {
           speaking ? 'nova-speaking' : listening ? 'nova-listening' : thinking ? 'nova-thinking' : 'nova-idle'
         }`}
         style={{
-          width:      260,
-          height:     260,
+          width:      300,
+          height:     300,
           display:    'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -233,7 +233,7 @@ export default function NovaChat({ child, lesson, subject, section }) {
           willChange: 'box-shadow',
         }}
       >
-        <NovaSVG state={svgState} size={260} />
+        <NovaSVG state={svgState} size={300} />
       </button>
 
       {/* ── State label ─────────────────────────────────── */}

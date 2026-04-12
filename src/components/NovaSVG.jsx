@@ -1,5 +1,5 @@
 // Nova — animated mystical SVG owl character
-// ViewBox: 240×240  |  Default render: 260px
+// ViewBox: 240×240  |  Default render: 300px
 
 // Tiny glowing cosmic dust particle
 function Dust({ cx, cy, r = 1.5, delay, celebrating }) {
@@ -34,7 +34,7 @@ function Sparkle({ cx, cy, r, delay, celebrating }) {
   );
 }
 
-export default function NovaSVG({ state = 'idle', size = 260 }) {
+export default function NovaSVG({ state = 'idle', size = 300 }) {
   const speaking    = state === 'speaking';
   const listening   = state === 'listening';
   const thinking    = state === 'thinking';
