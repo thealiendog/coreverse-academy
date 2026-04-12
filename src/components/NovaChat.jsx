@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { askNova } from '../lib/nova';
+import { getAvatar } from '../lib/constants';
 import NovaSVG from './NovaSVG';
 
 // Text Nova reads aloud when each lesson section loads
@@ -21,7 +22,7 @@ function clamp(text, max = 90) {
   return text.length > max ? text.slice(0, max - 1) + '…' : text;
 }
 
-export default function NovaChat({ child, lesson, subject, section }) {
+export default function NovaChat({ child, lesson, subject, section, guide }) {
   const [speaking, setSpeaking]       = useState(false);
   const [listening, setListening]     = useState(false);
   const [thinking, setThinking]       = useState(false);
@@ -35,6 +36,11 @@ export default function NovaChat({ child, lesson, subject, section }) {
   const bubbleTimer   = useRef(null);
   const micPromptTimer = useRef(null);
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
+
+  // Determine which guide to show
+  const guideId  = guide || lesson?.guide || lesson?.avatar || 'nova';
+  const isNova   = guideId === 'nova';
+  const guideAv  = getAvatar(guideId);
 
   // Map to NovaSVG state
   const charState = listening ? 'listening' : thinking ? 'thinking' : speaking ? 'speaking' : 'idle';
@@ -178,7 +184,7 @@ export default function NovaChat({ child, lesson, subject, section }) {
   // Ring color matches state
   const ringColor = listening ? '#10B981' : thinking ? '#F59E0B' : '#7C3AED';
 
-  const stateLabel = charState === 'idle'      ? 'Nova'
+  const stateLabel = charState === 'idle'      ? guideAv.name
                    : charState === 'speaking'  ? 'speaking'
                    : charState === 'listening' ? 'listening…'
                    : 'thinking…';
@@ -251,7 +257,24 @@ export default function NovaChat({ child, lesson, subject, section }) {
           willChange: 'box-shadow',
         }}
       >
-        <NovaSVG state={svgState} size={300} />
+        {isNova ? (
+          <NovaSVG state={svgState} size={300} />
+        ) : (
+          <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div
+              className={speaking ? 'nova-char-bob' : ''}
+              style={{
+                width: 192,
+                height: 192,
+                borderRadius: '50%',
+                overflow: 'hidden',
+                boxShadow: `0 0 64px ${guideAv.accent}55, 0 0 0 3px ${guideAv.accent}35`,
+              }}
+            >
+              <img src={guideAv.image} alt={guideAv.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+          </div>
+        )}
       </button>
 
       {/* ── State label ─────────────────────────────────── */}

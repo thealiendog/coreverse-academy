@@ -159,7 +159,7 @@ export default function LessonPlayer() {
     ? (INNERWORLD_EXPLORERS[idx] || null)
     : (levelGetters[level] || getLesson)(subjectId, idx);
   const subject   = getSubject(subjectId);
-  const guideAvatar = getAvatar(child?.avatar);
+  const guideAvatar = getAvatar(lesson?.guide || lesson?.avatar || child?.avatar);
 
   const [section,       setSection]       = useState(0);
   const [sparkAnswer,   setSparkAnswer]   = useState('');
@@ -794,7 +794,7 @@ export default function LessonPlayer() {
       )}
 
       {/* Nova AI companion — floats bottom-right */}
-      <NovaChat child={child} lesson={lesson} subject={subject} section={section} quizCurrent={quizCurrent} />
+      <NovaChat child={child} lesson={lesson} subject={subject} section={section} quizCurrent={quizCurrent} guide={lesson?.guide || lesson?.avatar} />
     </div>
   );
 }
