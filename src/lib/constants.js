@@ -32,18 +32,18 @@ export function ageToAgeBand(age) {
 
 // ── Subjects ─────────────────────────────────────────────────────────────────
 export const SUBJECTS = [
-  { id: 'inner-world',   label: 'Inner World',           color: '#10B981', lessons: ['Breathing & Meditation', 'Self-Love & Confidence', 'Consciousness & Awareness'] },
-  { id: 'cosmos',        label: 'Cosmos & Science',      color: '#6366F1', lessons: ['Our Solar System', 'Biology & Living Things', 'Earth & Geology'] },
-  { id: 'math',          label: 'Mathematics',           color: '#8B5CF6', lessons: ['Patterns & Numbers', 'Multiplication Magic', 'Fractions Are Fun'] },
-  { id: 'language-arts', label: 'Language Arts',         color: '#F59E0B', lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
-  { id: 'history',       label: 'History & World',       color: '#D97706', lessons: ['Ancient Civilizations', 'World Cultures', 'US History'] },
-  { id: 'future-skills', label: 'Future Skills',         color: '#3B82F6', lessons: ['What Is AI?', 'Coding Basics', 'Building With Technology'] },
-  { id: 'money',         label: 'Money & Business',      color: '#FCD34D', lessons: ['What Is Money?', 'Saving vs Spending', 'Your First Business'] },
-  { id: 'creative-arts', label: 'Creative Arts',         color: '#E879F9', lessons: ['Drawing & Color', 'Music & Rhythm', 'Film & Photography'] },
-  { id: 'wellness',      label: 'Life & Wellness',       color: '#86EFAC', lessons: ['Healthy Food & Cooking', 'Movement & Exercise', 'Gardening & Nature'] },
-  { id: 'leadership',    label: 'Social & Leadership',   color: '#FCA5A5', lessons: ['Communication Skills', 'Team Building', 'Public Speaking'] },
-  { id: 'languages',     label: 'Languages',             color: '#34D399', lessons: ['Hola! Greetings', 'Colors & Numbers', 'My Family in Spanish'] },
-  { id: 'frontier',      label: 'Frontier & Philosophy', color: '#A78BFA', lessons: ['Big Questions', 'Quantum World', 'Ancient Wisdom & Lost History'] },
+  { id: 'inner-world',   label: 'Inner World & Consciousness', icon: '🌿', color: '#10B981', lessons: ['Breathing & Meditation', 'Self-Love & Confidence', 'Consciousness & Awareness'] },
+  { id: 'cosmos',        label: 'Cosmos & Science',            icon: '🔭', color: '#6366F1', lessons: ['Our Solar System', 'Biology & Living Things', 'Earth & Geology'] },
+  { id: 'math',          label: 'Mathematics',                 icon: '🔢', color: '#8B5CF6', lessons: ['Patterns & Numbers', 'Multiplication Magic', 'Fractions Are Fun'] },
+  { id: 'language-arts', label: 'Language Arts',               icon: '📖', color: '#F59E0B', lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
+  { id: 'history',       label: 'History & World',             icon: '🗺️', color: '#D97706', lessons: ['Ancient Civilizations', 'World Cultures', 'US History'] },
+  { id: 'future-skills', label: 'Future Skills',               icon: '🚀', color: '#3B82F6', lessons: ['What Is AI?', 'Coding Basics', 'Building With Technology'] },
+  { id: 'money',         label: 'Money & Business',            icon: '💡', color: '#FCD34D', lessons: ['What Is Money?', 'Saving vs Spending', 'Your First Business'] },
+  { id: 'creative-arts', label: 'Creative Arts',               icon: '🎨', color: '#E879F9', lessons: ['Drawing & Color', 'Music & Rhythm', 'Film & Photography'] },
+  { id: 'wellness',      label: 'Life & Wellness',             icon: '🌱', color: '#86EFAC', lessons: ['Healthy Food & Cooking', 'Movement & Exercise', 'Gardening & Nature'] },
+  { id: 'leadership',    label: 'Social & Leadership',         icon: '🤝', color: '#FCA5A5', lessons: ['Communication Skills', 'Team Building', 'Public Speaking'] },
+  { id: 'languages',     label: 'Languages (Spanish)',         icon: '🌎', color: '#34D399', lessons: ['Hola! Greetings', 'Colors & Numbers', 'My Family in Spanish'] },
+  { id: 'frontier',      label: 'Frontier & Philosophy',       icon: '✨', color: '#A78BFA', lessons: ['Big Questions', 'Quantum World', 'Ancient Wisdom & Lost History'] },
 ];
 
 export function getSubject(id) {

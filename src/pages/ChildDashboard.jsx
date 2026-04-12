@@ -1,6 +1,6 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
-import { getAvatar, getSubject, ageToAgeBand } from '../lib/constants';
+import { getAvatar, getSubject, ageToAgeBand, SUBJECTS } from '../lib/constants';
 
 const BG_GRADIENTS = [
   'from-indigo-900/60 to-violet-900/40',
@@ -90,54 +90,53 @@ export default function ChildDashboard() {
           Your learning adventures
         </h2>
 
-        {(!child.subjects || child.subjects.length === 0) ? (
-          <div className="text-center text-white/40 py-12">
-            <p>No subjects set up yet. Ask a parent to add some!</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {child.subjects.map((sid, idx) => {
-              const s = getSubject(sid);
-              const done = progress[sid] || 0;
-              const total = s?.lessons?.length || 3;
-              const pct = Math.round((done / total) * 100);
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {SUBJECTS.map((s, idx) => {
+            const enrolled = child.subjects?.includes(s.id);
+            const done  = progress[s.id] || 0;
+            const total = s.lessons?.length || 3;
+            const pct   = Math.round((done / total) * 100);
 
+            if (enrolled) {
               return (
                 <button
-                  key={sid}
-                  onClick={() => navigate(`/child/subject/${sid}`)}
-                  className={`text-left rounded-3xl p-6 border border-white/10 bg-gradient-to-br ${BG_GRADIENTS[idx % BG_GRADIENTS.length]} hover:border-white/25 hover:scale-[1.02] transition-all duration-200 group`}
-                  style={{ boxShadow: `0 4px 24px ${s.color}15` }}
+                  key={s.id}
+                  onClick={() => navigate(`/child/subject/${s.id}`)}
+                  className={`text-left rounded-2xl p-4 border border-white/10 bg-gradient-to-br ${BG_GRADIENTS[idx % BG_GRADIENTS.length]} hover:border-white/25 hover:scale-[1.02] transition-all duration-200 group`}
+                  style={{ boxShadow: `0 4px 20px ${s.color}18` }}
                 >
-                  {/* Subject name + lesson count */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div
-                      className="w-3 h-3 rounded-full mt-1 flex-shrink-0"
-                      style={{ background: s.color }}
-                    />
-                    <span className="text-xs font-semibold text-white/35">{done}/{total}</span>
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-2xl leading-none">{s.icon}</span>
+                    <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
                   </div>
-
-                  <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                  <h3 className="text-sm font-bold text-white mb-3 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
                     {s.label}
                   </h3>
-
-                  {/* Progress bar */}
-                  <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full progress-fill"
-                      style={{ width: `${pct}%`, background: s.color }}
-                    />
+                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full progress-fill" style={{ width: `${pct}%`, background: s.color }} />
                   </div>
-                  <div className="flex justify-between mt-2 text-xs text-white/30">
-                    <span>{pct === 0 ? "Let's start!" : pct === 100 ? 'Complete!' : `${pct}% done`}</span>
-                    <span className="group-hover:text-white/55 transition-colors">Explore →</span>
-                  </div>
+                  <p className="text-[10px] text-white/30 mt-1.5 group-hover:text-white/50 transition-colors">
+                    {pct === 0 ? "Let's start!" : pct === 100 ? 'Complete!' : `${pct}% done`}
+                  </p>
                 </button>
               );
-            })}
-          </div>
-        )}
+            }
+
+            // Not enrolled — show as locked/coming soon
+            return (
+              <div
+                key={s.id}
+                className="rounded-2xl p-4 border border-white/5 bg-white/[0.015] opacity-40"
+              >
+                <span className="text-2xl leading-none mb-3 block grayscale opacity-50">{s.icon}</span>
+                <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                  {s.label}
+                </h3>
+                <p className="text-[10px] text-white/20">Ask a parent to add</p>
+              </div>
+            );
+          })}
+        </div>
 
         {/* Badges section */}
         <div className="mt-10">
