@@ -9,7 +9,7 @@ import { getLevel3Lesson } from '../data/lessons_level3';
 import { getLevel4Lesson } from '../data/lessons_level4';
 import { INNERWORLD_EXPLORERS } from '../data/innerworld_explorers';
 import MONEYBUSINESS_EXPLORERS from '../data/moneybusiness_explorers';
-import COSMOS_EXPLORERS from '../data/cosmos_explorers';
+import COSMOS_EXPLORERS from '../data/cosmos_explorers_adapter';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -185,6 +185,7 @@ export default function LessonPlayer() {
     );
   }
 
+  const passScore   = Math.max(2, Math.ceil((lesson.quiz?.length || 5) * 0.6));
   const name        = child.name;
   const arrivalText = lesson.arrival.replace(/\{\{name\}\}/g, name);
   const ctaDelay    = Math.min(0.6 + arrivalText.split(' ').length * 0.058 + 0.4, 4.0);
@@ -222,7 +223,7 @@ export default function LessonPlayer() {
     } else {
       const finalScore = newAnswers.filter(Boolean).length;
       setScore(finalScore);
-      if (finalScore >= 3 && !badgeAwarded) {
+      if (finalScore >= passScore && !badgeAwarded) {
         if (parent) {
           updateChildProgress(parent.id, child.id, progressKey, idx);
           awardBadge(parent.id, child.id, lesson.badge);
@@ -656,7 +657,7 @@ export default function LessonPlayer() {
       {/* ══════════════════════════════════════════════════════════ */}
       {section === 6 && (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44 text-center">
-          {score >= 3 ? (
+          {score >= passScore ? (
             <>
               <Confetti />
               <StarField />
@@ -760,7 +761,7 @@ export default function LessonPlayer() {
                 Almost there, {name}!
               </h1>
               <p className="text-white/50 mb-2 lesson-fade-in" style={{ animationDelay: '0.22s' }}>
-                You got {score}/{lesson.quiz.length} — you need 3 to earn the badge.
+                You got {score}/{lesson.quiz.length} — you need {passScore} to earn the badge.
               </p>
               <p
                 className="text-sm mb-8 lesson-fade-in"
