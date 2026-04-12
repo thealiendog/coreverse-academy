@@ -38,7 +38,7 @@ export const SUBJECTS = [
   { id: 'language-arts', label: 'Language Arts',               icon: '📖', color: '#F59E0B', lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
   { id: 'history',       label: 'History & World',             icon: '🗺️', color: '#D97706', lessons: ['Ancient Civilizations', 'World Cultures', 'US History'] },
   { id: 'future-skills', label: 'Future Skills',               icon: '🚀', color: '#3B82F6', lessons: ['What Is AI?', 'Coding Basics', 'Building With Technology'] },
-  { id: 'money',         label: 'Money & Business',            icon: '💡', color: '#FCD34D', lessons: ['What Is Money?', 'Saving vs Spending', 'Your First Business'] },
+  { id: 'money',         label: 'Money & Business',            icon: '💡', color: '#FCD34D', lessons: ['What Is Money?','Earning Money','Needs vs Wants','The Power of Saving','Counting Money','Your First Budget','Banks','Smart Spending','The Joy of Giving','Buying and Selling','Starting a Kid Business','Jobs and Careers','Advertising','Supply and Demand','Money Around the World','Barter','Setting Money Goals','Investing','Taxes','Money and Values'] },
   { id: 'creative-arts', label: 'Creative Arts',               icon: '🎨', color: '#E879F9', lessons: ['Drawing & Color', 'Music & Rhythm', 'Film & Photography'] },
   { id: 'wellness',      label: 'Life & Wellness',             icon: '🌱', color: '#86EFAC', lessons: ['Healthy Food & Cooking', 'Movement & Exercise', 'Gardening & Nature'] },
   { id: 'leadership',    label: 'Social & Leadership',         icon: '🤝', color: '#FCA5A5', lessons: ['Communication Skills', 'Team Building', 'Public Speaking'] },

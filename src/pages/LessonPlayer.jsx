@@ -8,6 +8,7 @@ import { getLevel2Lesson } from '../data/lessons_level2';
 import { getLevel3Lesson } from '../data/lessons_level3';
 import { getLevel4Lesson } from '../data/lessons_level4';
 import { INNERWORLD_EXPLORERS } from '../data/innerworld_explorers';
+import { MONEYBUSINESS_EXPLORERS } from '../data/moneybusiness_explorers';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -155,8 +156,9 @@ export default function LessonPlayer() {
   const level     = parseInt(searchParams.get('level') || '1', 10);
   const progressKey = level === 1 ? subjectId : `${subjectId}__${level}`;
   const levelGetters = { 1: getLesson, 2: getLevel2Lesson, 3: getLevel3Lesson, 4: getLevel4Lesson };
-  const lesson = (level === 2 && subjectId === 'inner-world')
-    ? (INNERWORLD_EXPLORERS[idx] || null)
+  const explorerOverrides = { 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS };
+  const lesson = (level === 2 && explorerOverrides[subjectId])
+    ? (explorerOverrides[subjectId][idx] || null)
     : (levelGetters[level] || getLesson)(subjectId, idx);
   const subject   = getSubject(subjectId);
   const guideAvatar = getAvatar(lesson?.guide || lesson?.avatar || child?.avatar);

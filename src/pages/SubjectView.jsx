@@ -7,6 +7,7 @@ import { getLevel2Lessons } from '../data/lessons_level2';
 import { getLevel3Lessons } from '../data/lessons_level3';
 import { getLevel4Lessons } from '../data/lessons_level4';
 import { INNERWORLD_EXPLORERS } from '../data/innerworld_explorers';
+import { MONEYBUSINESS_EXPLORERS } from '../data/moneybusiness_explorers';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -22,8 +23,10 @@ export default function SubjectView() {
   const progress = child?.progress || {};
 
   const l1Lessons = getLessons(subjectId);
-  // Inner World level 2 → use real Explorers curriculum
-  const l2Lessons = subjectId === 'inner-world' ? INNERWORLD_EXPLORERS : getLevel2Lessons(subjectId);
+  // Subject-specific Explorers curricula override level 2
+  const l2Lessons = subjectId === 'inner-world' ? INNERWORLD_EXPLORERS
+    : subjectId === 'money'      ? MONEYBUSINESS_EXPLORERS
+    : getLevel2Lessons(subjectId);
   const l3Lessons = getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);
 
