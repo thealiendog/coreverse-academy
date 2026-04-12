@@ -9,6 +9,7 @@ import { getLevel4Lessons } from '../data/lessons_level4';
 import { INNERWORLD_EXPLORERS } from '../data/innerworld_explorers';
 import MONEYBUSINESS_EXPLORERS from '../data/moneybusiness_explorers_adapter';
 import COSMOS_EXPLORERS from '../data/cosmos_explorers_adapter';
+import FUTURESKILLS_EXPLORERS from '../data/futureskills_explorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -27,7 +28,8 @@ export default function SubjectView() {
   // Subject-specific Explorers curricula override level 2
   const l2Lessons = subjectId === 'inner-world' ? INNERWORLD_EXPLORERS
     : subjectId === 'money'      ? MONEYBUSINESS_EXPLORERS
-    : subjectId === 'cosmos'     ? COSMOS_EXPLORERS
+    : subjectId === 'cosmos'        ? COSMOS_EXPLORERS
+    : subjectId === 'future-skills' ? FUTURESKILLS_EXPLORERS
     : getLevel2Lessons(subjectId);
   const l3Lessons = getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);
