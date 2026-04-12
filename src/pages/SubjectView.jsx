@@ -7,7 +7,7 @@ import { getLevel2Lessons } from '../data/lessons_level2';
 import { getLevel3Lessons } from '../data/lessons_level3';
 import { getLevel4Lessons } from '../data/lessons_level4';
 import { INNERWORLD_EXPLORERS } from '../data/innerworld_explorers';
-import MONEYBUSINESS_EXPLORERS from '../data/moneybusiness_explorers';
+import MONEYBUSINESS_EXPLORERS from '../data/moneybusiness_explorers_adapter';
 import COSMOS_EXPLORERS from '../data/cosmos_explorers_adapter';
 
 export default function SubjectView() {
