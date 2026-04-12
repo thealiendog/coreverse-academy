@@ -588,7 +588,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Mindset Audit',\n      instructions: 'Honestly evaluate your current mindset across five dimensions. For each, rate yourself 1-5 and give a specific example: (1) Long-term thinking — do you sacrifice current pleasure for future gain regularly? (2) Abundance mindset — do you celebrate others' success or feel threatened by it? (3) Responsibility — do you attribute your outcomes to your choices or to external factors? (4) Continuous learning — how many hours per week do you invest in self-education outside of school? (5) Action orientation — when you identify a problem or opportunity, do you act or do you wait? For your lowest score: design a specific practice to develop that quality over the next 30 days.',
+      title: "Mindset Audit",
       instructions: "Honestly evaluate your current mindset across five dimensions. For each, rate yourself 1-5 and give a specific example: (1) Long-term thinking — do you sacrifice current pleasure for future gain regularly? (2) Abundance mindset — do you celebrate others' success or feel threatened by it? (3) Responsibility — do you attribute your outcomes to your choices or to external factors? (4) Continuous learning — how many hours per week do you invest in self-education outside of school? (5) Action orientation — when you identify a problem or opportunity, do you act or do you wait? For your lowest score: design a specific practice to develop that quality over the next 30 days."
     },
     quiz: [
