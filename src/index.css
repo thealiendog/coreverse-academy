@@ -151,6 +151,40 @@ h1, h2, h3, h4 {
 .nova-idle      { animation: nova-ring-idle   3s   ease-in-out infinite; }
 .nova-mic-active { animation: nova-mic-ping 1.1s ease-out infinite; }
 
+/* ── Nova mystical atmosphere animations ─────────────────────────────────── */
+
+@keyframes nova-aura-breathe {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 0.82; transform: scale(1.06); }
+}
+@keyframes nova-orb-drift-1 {
+  0%, 100% { transform: translate(0px, 0px);    opacity: 0.65; }
+  33%      { transform: translate(-13px,-16px); opacity: 0.9; }
+  66%      { transform: translate(8px,  -9px);  opacity: 0.5; }
+}
+@keyframes nova-orb-drift-2 {
+  0%, 100% { transform: translate(0px,  0px);   opacity: 0.55; }
+  40%      { transform: translate(12px,-14px);  opacity: 0.82; }
+  75%      { transform: translate(-8px,-17px);  opacity: 0.45; }
+}
+@keyframes nova-orb-drift-3 {
+  0%, 100% { transform: translate(0px,  0px);   opacity: 0.62; }
+  30%      { transform: translate(-11px,14px);  opacity: 0.88; }
+  70%      { transform: translate(13px,  7px);  opacity: 0.48; }
+}
+@keyframes nova-orb-drift-4 {
+  0%, 100% { transform: translate(0px, 0px);    opacity: 0.5; }
+  50%      { transform: translate(11px,16px);   opacity: 0.78; }
+}
+@keyframes nova-shimmer-ring {
+  0%, 100% { opacity: 0.14; }
+  50%      { opacity: 0.40; }
+}
+@keyframes nova-moon-glow {
+  0%, 100% { opacity: 0.72; }
+  50%      { opacity: 1; }
+}
+
 /* ── Nova Owl character animations ───────────────────────────────────────── */
 
 /* Eyelids — scaleY(0) = open, scaleY(1) = closed */
