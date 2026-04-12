@@ -251,3 +251,87 @@ h1, h2, h3, h4 {
   100% { transform: translateY(0)    rotate(0deg)   scale(1);    }
 }
 .nova-celebrate { animation: nova-celebrate 0.9s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+/* ── LessonPlayer cinematic animations ───────────────────────────────────── */
+
+/* Word-by-word text reveal */
+@keyframes lesson-word-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.lesson-word {
+  display: inline-block;
+  opacity: 0;
+  animation: lesson-word-in 0.45s ease forwards;
+}
+
+/* Generic fade in */
+@keyframes lesson-fade-in-kf {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.lesson-fade-in { animation: lesson-fade-in-kf 0.55s ease both; }
+
+/* Slide up from below */
+@keyframes lesson-slide-up-kf {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.lesson-slide-up { animation: lesson-slide-up-kf 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* Zoom in from slightly smaller */
+@keyframes lesson-zoom-in-kf {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.lesson-zoom-in { animation: lesson-zoom-in-kf 0.45s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* Option cards slide up (used inline with delay) */
+@keyframes lesson-option-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Correct answer gold burst */
+@keyframes lesson-correct-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(245,158,11,0.85), 0 0 0 0 rgba(245,158,11,0.4); }
+  60%  { box-shadow: 0 0 0 18px rgba(245,158,11,0), 0 0 50px rgba(245,158,11,0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(245,158,11,0), 0 0 0 rgba(245,158,11,0); }
+}
+
+/* Wrong answer shake */
+@keyframes lesson-shake {
+  0%, 100% { transform: translateX(0); }
+  15%       { transform: translateX(-10px); }
+  35%       { transform: translateX(9px); }
+  55%       { transform: translateX(-7px); }
+  75%       { transform: translateX(5px); }
+}
+
+/* Spark question pulsing glow */
+@keyframes lesson-spark-glow-kf {
+  0%, 100% { box-shadow: 0 0 20px rgba(124,58,237,0.30), 0 0 0 1px rgba(124,58,237,0.20); }
+  50%       { box-shadow: 0 0 60px rgba(124,58,237,0.70), 0 0 0 1px rgba(124,58,237,0.50), 0 0 110px rgba(124,58,237,0.18); }
+}
+.lesson-spark-glow { animation: lesson-spark-glow-kf 2.6s ease-in-out infinite; }
+
+/* Badge bounces in from above */
+@keyframes lesson-badge-drop {
+  0%   { opacity: 0; transform: translateY(-80px) scale(0.55) rotate(-10deg); }
+  55%  { transform: translateY(14px) scale(1.10) rotate(4deg); }
+  75%  { transform: translateY(-8px) scale(0.96) rotate(-2deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+.lesson-badge-drop { animation: lesson-badge-drop 0.95s cubic-bezier(0.34,1.56,0.64,1) 0.2s both; }
+
+/* Confetti particle fall */
+@keyframes lesson-confetti-fall {
+  0%   { transform: translateY(-30px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* Nova entrance from right on lesson load */
+@keyframes nova-enter-from-right {
+  from { opacity: 0; transform: translateX(100px) scale(0.80); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
