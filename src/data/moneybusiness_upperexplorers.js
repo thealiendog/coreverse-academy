@@ -657,7 +657,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Social Enterprise Design',\n      instructions: 'Design a social enterprise to address a real problem in your community. Define: the social problem (be specific — who is affected, how many, what are the consequences?), your solution (how specifically does your enterprise address the problem?), your business model (how does the enterprise generate revenue to be financially sustainable?), your theory of change (how does each unit of revenue and each customer transaction connect to the social outcome?), and your impact metrics (how will you know if you're succeeding socially, not just financially?). Present your social enterprise as a business pitch that could attract both investors and impact-focused donors.',
+      title: "Social Enterprise Design",
       instructions: "Design a social enterprise to address a real problem in your community. Define: the social problem (be specific — who is affected, how many, what are the consequences?), your solution (how specifically does your enterprise address the problem?), your business model (how does the enterprise generate revenue to be financially sustainable?), your theory of change (how does each unit of revenue and each customer transaction connect to the social outcome?), and your impact metrics (how will you know if you're succeeding socially, not just financially?). Present your social enterprise as a business pitch that could attract both investors and impact-focused donors."
     },
     quiz: [
@@ -726,7 +726,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Cash Flow Scenario',\n      instructions: 'Run through this business scenario month by month and track the cash position. Start: a bakery launches with $10,000 cash. Month 1: buys $3,000 in equipment, $2,000 supplies, earns $4,000 revenue (all cash). Month 2: $2,000 supplies, $1,500 rent, earns $6,000 revenue — but $2,000 of it is from a catering contract paid in 60 days. Month 3: $2,000 supplies, $1,500 rent, earns $8,000 revenue — but $3,000 from catering contract still unpaid, plus $2,000 collected from Month 2 contract. Draw the cash balance at end of each month. When does the bakery come closest to running out of cash? Despite being profitable, is this business cash flow safe? What would you advise the owner to do?',
+      title: "Cash Flow Scenario",
       instructions: "Run through this business scenario month by month and track the cash position. Start: a bakery launches with $10,000 cash. Month 1: buys $3,000 in equipment, $2,000 supplies, earns $4,000 revenue (all cash). Month 2: $2,000 supplies, $1,500 rent, earns $6,000 revenue — but $2,000 of it is from a catering contract paid in 60 days. Month 3: $2,000 supplies, $1,500 rent, earns $8,000 revenue — but $3,000 from catering contract still unpaid, plus $2,000 collected from Month 2 contract. Draw the cash balance at end of each month. When does the bakery come closest to running out of cash? Despite being profitable, is this business cash flow safe? What would you advise the owner to do?"
     },
     quiz: [
@@ -795,7 +795,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Gig Economy Analysis',\n      instructions: 'Interview a gig worker or freelancer in your family, neighborhood, or community (or research a gig worker's story online). Find out: what platform or method do they use? What do they earn per hour vs what they'd earn as an employee? What benefits did they give up? What financial preparations have they made (taxes, insurance, retirement)? What do they love about the arrangement? What are the hardest parts? What would they tell someone considering gig work? Write a one-page assessment: is gig work financially smart for this person given their specific situation? What would make it more financially sustainable?',
+      title: "Gig Economy Analysis",
       instructions: "Interview a gig worker or freelancer in your family, neighborhood, or community (or research a gig worker's story online). Find out: what platform or method do they use? What do they earn per hour vs what they'd earn as an employee? What benefits did they give up? What financial preparations have they made (taxes, insurance, retirement)? What do they love about the arrangement? What are the hardest parts? What would they tell someone considering gig work? Write a one-page assessment: is gig work financially smart for this person given their specific situation? What would make it more financially sustainable?"
     },
     quiz: [
@@ -864,7 +864,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Crypto Debate',\n      instructions: 'Research and prepare for a structured debate on Bitcoin as an investment. Half the group argues FOR (Bitcoin is a sound investment for a small portion of a portfolio — 1-5%). Half argues AGAINST (Bitcoin is purely speculative and inappropriate for responsible investment). Each side prepares: three strongest arguments for their position, two strongest counter-arguments, and data to support their claims. After the debate, both sides must acknowledge the two strongest points from the opposing side. Then write a personal conclusion: what portion of a hypothetical $10,000 portfolio, if any, would you put in Bitcoin, and why?',
+      title: "Crypto Debate",
       instructions: "Research and prepare for a structured debate on Bitcoin as an investment. Half the group argues FOR (Bitcoin is a sound investment for a small portion of a portfolio — 1-5%). Half argues AGAINST (Bitcoin is purely speculative and inappropriate for responsible investment). Each side prepares: three strongest arguments for their position, two strongest counter-arguments, and data to support their claims. After the debate, both sides must acknowledge the two strongest points from the opposing side. Then write a personal conclusion: what portion of a hypothetical $10,000 portfolio, if any, would you put in Bitcoin, and why?"
     },
     quiz: [
@@ -933,7 +933,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Company Origin Research',\n      instructions: 'Research the full origin story of one company you use regularly. Find out: what was the founder's original problem or observation? What did the first version of the product look like? When did they find product-market fit and how did they know? What was their growth strategy? What nearly killed them? What key decisions or pivots changed everything? What does their current business look like compared to the original idea? Write a one-page case study: what are the three most important lessons this company's history teaches about business building?',
+      title: "Company Origin Research",
       instructions: "Research the full origin story of one company you use regularly. Find out: what was the founder's original problem or observation? What did the first version of the product look like? When did they find product-market fit and how did they know? What was their growth strategy? What nearly killed them? What key decisions or pivots changed everything? What does their current business look like compared to the original idea? Write a one-page case study: what are the three most important lessons this company's history teaches about business building?"
     },
     quiz: [
@@ -1002,7 +1002,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Salary Negotiation Role Play',\n      instructions: 'Role play a salary negotiation. Scenario: you have been offered a job at $50,000 salary. You know the market range is $48,000-$62,000 for this role. You have one other offer at $47,000. The company has said this is their \"best offer.\" Prepare: what is your BATNA? What is your target? What is your first offer anchor? What interests might the company have beyond just minimizing salary? What non-salary elements could be part of the negotiation (vacation, remote work, professional development budget, signing bonus, review date)? Run the negotiation. Then: research real salary negotiation data and scripts online — what specific language do effective negotiators use?',
+      title: "Salary Negotiation Role Play",
       instructions: "Role play a salary negotiation. Scenario: you have been offered a job at $50,000 salary. You know the market range is $48,000-$62,000 for this role. You have one other offer at $47,000. The company has said this is their 'best offer.' Prepare: what is your BATNA? What is your target? What is your first offer anchor? What interests might the company have beyond just minimizing salary? What non-salary elements could be part of the negotiation (vacation, remote work, professional development budget, signing bonus, review date)? Run the negotiation. Then: research real salary negotiation data and scripts online — what specific language do effective negotiators use?"
     },
     quiz: [
@@ -1071,7 +1071,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Network Map',\n      instructions: 'Create a network map of your current relationships. Draw yourself at the center. Around you, add everyone you know who might eventually be relevant to your professional life: teachers, coaches, parents' colleagues, family friends, community leaders, local business owners, doctors, etc. Draw connections between them where they know each other. Analyze: how diverse is your network across industries, ages, and backgrounds? Where are there gaps? Then: identify three people in your network you'd like to strengthen your relationship with and three people outside your current network you'd like to meet. Design a specific, low-pressure action for each.',
+      title: "Network Map",
       instructions: "Create a network map of your current relationships. Draw yourself at the center. Around you, add everyone you know who might eventually be relevant to your professional life: teachers, coaches, parents' colleagues, family friends, community leaders, local business owners, doctors, etc. Draw connections between them where they know each other. Analyze: how diverse is your network across industries, ages, and backgrounds? Where are there gaps? Then: identify three people in your network you'd like to strengthen your relationship with and three people outside your current network you'd like to meet. Design a specific, low-pressure action for each."
     },
     quiz: [
@@ -1140,7 +1140,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Personal Brand Audit',\n      instructions: 'Conduct a personal brand audit. (1) Ask three trusted people: what three words would you use to describe me? What do you think I'm especially good at? What's something I could improve? (2) Google yourself — what comes up? Is it positive, neutral, or problematic? (3) Review your social media presence with the eyes of a future employer. Would you hire the person represented by that content? (4) Define your intended brand: what three words do you want people to use to describe you in 5 years? What skills or experiences will you need to make that brand real and credible? Design three specific actions to start building that brand this month.',
+      title: "Personal Brand Audit",
       instructions: "Conduct a personal brand audit. (1) Ask three trusted people: what three words would you use to describe me? What do you think I'm especially good at? What's something I could improve? (2) Google yourself — what comes up? Is it positive, neutral, or problematic? (3) Review your social media presence with the eyes of a future employer. Would you hire the person represented by that content? (4) Define your intended brand: what three words do you want people to use to describe you in 5 years? What skills or experiences will you need to make that brand real and credible? Design three specific actions to start building that brand this month."
     },
     quiz: [
@@ -1209,7 +1209,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "FI Number Calculator',\n      instructions: 'Calculate your hypothetical FI number. First, research and estimate the annual expenses you'd want as an adult — be specific about housing, food, transportation, healthcare, entertainment, travel, and any other categories. Calculate your FI number (annual expenses × 25). Then: using a compound interest calculator, determine how long it would take to reach your FI number if you: started investing at age 18 with $0 and invested 50% of a $50,000 salary at 7% return? 30% of $75,000 salary? 20% of $60,000 salary? Which scenario reaches FI fastest? What does this teach you about the relative importance of savings rate vs income level?',
+      title: "FI Number Calculator",
       instructions: "Calculate your hypothetical FI number. First, research and estimate the annual expenses you'd want as an adult — be specific about housing, food, transportation, healthcare, entertainment, travel, and any other categories. Calculate your FI number (annual expenses × 25). Then: using a compound interest calculator, determine how long it would take to reach your FI number if you: started investing at age 18 with $0 and invested 50% of a $50,000 salary at 7% return? 30% of $75,000 salary? 20% of $60,000 salary? Which scenario reaches FI fastest? What does this teach you about the relative importance of savings rate vs income level?"
     },
     quiz: [
@@ -1278,7 +1278,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "Passive Income Brainstorm',\n      instructions: 'Design your passive income strategy for the next 10 years in three stages. Stage 1 (ages 10-18): what passive income foundations can you build now? Consider: what skill or knowledge do you have that others want? Is there a simple digital product you could create? What investment habits will you establish? Stage 2 (ages 18-25): with early career income, what passive income will you build? Stage 3 (ages 25+): with established career and savings, how will you scale passive income toward financial independence? Make it specific — what specifically will you create, invest in, or build at each stage? Calculate the potential income from each stream at its target scale.',
+      title: "Passive Income Brainstorm",
       instructions: "Design your passive income strategy for the next 10 years in three stages. Stage 1 (ages 10-18): what passive income foundations can you build now? Consider: what skill or knowledge do you have that others want? Is there a simple digital product you could create? What investment habits will you establish? Stage 2 (ages 18-25): with early career income, what passive income will you build? Stage 3 (ages 25+): with established career and savings, how will you scale passive income toward financial independence? Make it specific — what specifically will you create, invest in, or build at each stage? Calculate the potential income from each stream at its target scale."
     },
     quiz: [
@@ -1347,7 +1347,7 @@ export const moneyBusinessUpperExplorers = [
       }
     ],
     activity: {
-      title: "My 5-Year Financial Plan',\n      instructions: 'Write your complete 5-year financial plan. It should be detailed enough to serve as an actual reference document. Include all nine components from the lesson: current situation, income goals, savings targets, investment strategy, passive income plan, debt elimination (if applicable), net worth trajectory, human capital investment, and first 30-day actions. Make it specific — dollar amounts, percentages, timelines. Keep it in a notebook or document and commit to reviewing it quarterly. Then: take the first specific action from your plan this week — open an account, make a first investment, create a tracker, or take the first step on a passive income project.',
+      title: "My 5-Year Financial Plan",
       instructions: "Write your complete 5-year financial plan. It should be detailed enough to serve as an actual reference document. Include all nine components from the lesson: current situation, income goals, savings targets, investment strategy, passive income plan, debt elimination (if applicable), net worth trajectory, human capital investment, and first 30-day actions. Make it specific — dollar amounts, percentages, timelines. Keep it in a notebook or document and commit to reviewing it quarterly. Then: take the first specific action from your plan this week — open an account, make a first investment, create a tracker, or take the first step on a passive income project."
     },
     quiz: [
