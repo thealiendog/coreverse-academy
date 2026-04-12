@@ -20,9 +20,9 @@ function WordReveal({ text, baseDelay = 0, speed = 0.065, className = '' }) {
         <span
           key={i}
           className="lesson-word"
-          style={{ animationDelay: `${baseDelay + i * speed}s` }}
+          style={{ animationDelay: `${baseDelay + i * speed}s`, marginRight: '0.28em' }}
         >
-          {word}{' '}
+          {word}
         </span>
       ))}
     </span>
