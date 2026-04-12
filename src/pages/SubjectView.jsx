@@ -11,6 +11,7 @@ import MONEYBUSINESS_EXPLORERS from '../data/moneybusiness_explorers_adapter';
 import COSMOS_EXPLORERS from '../data/cosmos_explorers_adapter';
 import FUTURESKILLS_EXPLORERS from '../data/futureskills_explorers_adapter';
 import SOCIALLEADERSHIP_EXPLORERS from '../data/socialleadership_explorers_adapter';
+import LIFEWELLNESS_EXPLORERS from '../data/lifewellness_explorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -32,6 +33,7 @@ export default function SubjectView() {
     : subjectId === 'cosmos'         ? COSMOS_EXPLORERS
     : subjectId === 'future-skills'  ? FUTURESKILLS_EXPLORERS
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_EXPLORERS
+    : subjectId === 'wellness'       ? LIFEWELLNESS_EXPLORERS
     : getLevel2Lessons(subjectId);
   const l3Lessons = getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);

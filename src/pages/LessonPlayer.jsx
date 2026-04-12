@@ -12,6 +12,7 @@ import MONEYBUSINESS_EXPLORERS from '../data/moneybusiness_explorers_adapter';
 import COSMOS_EXPLORERS from '../data/cosmos_explorers_adapter';
 import FUTURESKILLS_EXPLORERS from '../data/futureskills_explorers_adapter';
 import SOCIALLEADERSHIP_EXPLORERS from '../data/socialleadership_explorers_adapter';
+import LIFEWELLNESS_EXPLORERS from '../data/lifewellness_explorers_adapter';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -159,7 +160,7 @@ export default function LessonPlayer() {
   const level     = parseInt(searchParams.get('level') || '1', 10);
   const progressKey = level === 1 ? subjectId : `${subjectId}__${level}`;
   const levelGetters = { 1: getLesson, 2: getLevel2Lesson, 3: getLevel3Lesson, 4: getLevel4Lesson };
-  const explorerOverrides = { 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': COSMOS_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS };
+  const explorerOverrides = { 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': COSMOS_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS, 'wellness': LIFEWELLNESS_EXPLORERS };
   const lesson = (level === 2 && explorerOverrides[subjectId])
     ? (explorerOverrides[subjectId][idx] || null)
     : (levelGetters[level] || getLesson)(subjectId, idx);
