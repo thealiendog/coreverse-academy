@@ -224,8 +224,8 @@ export default function NovaChat({ child, lesson, subject, section }) {
           speaking ? 'nova-speaking' : listening ? 'nova-listening' : thinking ? 'nova-thinking' : 'nova-idle'
         }`}
         style={{
-          width:      220,
-          height:     220,
+          width:      260,
+          height:     260,
           display:    'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -233,7 +233,7 @@ export default function NovaChat({ child, lesson, subject, section }) {
           willChange: 'box-shadow',
         }}
       >
-        <NovaSVG state={svgState} size={220} />
+        <NovaSVG state={svgState} size={260} />
       </button>
 
       {/* ── State label ─────────────────────────────────── */}

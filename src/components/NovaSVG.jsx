@@ -1,5 +1,5 @@
 // Nova — animated mystical SVG owl character
-// ViewBox: 240×240  |  Default render: 220px
+// ViewBox: 240×240  |  Default render: 260px
 
 // Tiny glowing cosmic dust particle
 function Dust({ cx, cy, r = 1.5, delay, celebrating }) {
@@ -34,7 +34,7 @@ function Sparkle({ cx, cy, r, delay, celebrating }) {
   );
 }
 
-export default function NovaSVG({ state = 'idle', size = 220 }) {
+export default function NovaSVG({ state = 'idle', size = 260 }) {
   const speaking    = state === 'speaking';
   const listening   = state === 'listening';
   const thinking    = state === 'thinking';
@@ -55,12 +55,21 @@ export default function NovaSVG({ state = 'idle', size = 220 }) {
     >
       <defs>
         {/* ── Gradients ──────────────────────────────────────── */}
+        {/* Strong inner purple aura */}
         <radialGradient id="ng-aura" cx="50%" cy="40%" r="55%">
           <stop offset="0%"   stopColor="#7C3AED" stopOpacity="0" />
-          <stop offset="52%"  stopColor="#7C3AED" stopOpacity="0.07" />
-          <stop offset="78%"  stopColor="#A78BFA" stopOpacity="0.11" />
-          <stop offset="92%"  stopColor="#4C1D95" stopOpacity="0.13" />
-          <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.05" />
+          <stop offset="32%"  stopColor="#7C3AED" stopOpacity="0.22" />
+          <stop offset="58%"  stopColor="#A78BFA" stopOpacity="0.30" />
+          <stop offset="80%"  stopColor="#4C1D95" stopOpacity="0.26" />
+          <stop offset="92%"  stopColor="#7C3AED" stopOpacity="0.18" />
+          <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.12" />
+        </radialGradient>
+        {/* Outer gold corona aura */}
+        <radialGradient id="ng-aura-gold" cx="50%" cy="48%" r="50%">
+          <stop offset="0%"   stopColor="#F59E0B" stopOpacity="0" />
+          <stop offset="50%"  stopColor="#F59E0B" stopOpacity="0.04" />
+          <stop offset="78%"  stopColor="#F59E0B" stopOpacity="0.13" />
+          <stop offset="100%" stopColor="#FCD34D" stopOpacity="0.20" />
         </radialGradient>
 
         <radialGradient id="ng-body" cx="34%" cy="24%" r="72%">
@@ -126,16 +135,40 @@ export default function NovaSVG({ state = 'idle', size = 220 }) {
         <filter id="ng-glow-lg" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="18" />
         </filter>
+        {/* Moon soft bloom — wide, layered glow */}
+        <filter id="ng-glow-moon" x="-150%" y="-150%" width="400%" height="400%">
+          <feGaussianBlur stdDeviation="11" result="blur" />
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
       </defs>
 
       {/* ═══════════════════════════════════════════════════════ */}
       {/* LAYER 1 — Aura / energy field (deepest, behind all)   */}
       {/* ═══════════════════════════════════════════════════════ */}
+
+      {/* Gold outer corona — wide and slow */}
       <circle
-        cx="120" cy="108" r="108"
+        cx="120" cy="116" r="118"
+        fill="url(#ng-aura-gold)"
+        filter="url(#ng-glow-lg)"
+        style={{ animation: 'nova-aura-breathe 5.8s ease-in-out 1.1s infinite', transformOrigin: '120px 116px' }}
+      />
+      {/* Purple inner aura — main energy field */}
+      <circle
+        cx="120" cy="108" r="104"
         fill="url(#ng-aura)"
         filter="url(#ng-glow-lg)"
         style={{ animation: 'nova-aura-breathe 4.5s ease-in-out infinite', transformOrigin: '120px 108px' }}
+      />
+      {/* Tight purple halo ring directly around the character */}
+      <ellipse
+        cx="120" cy="140" rx="80" ry="88"
+        fill="none"
+        stroke="#7C3AED"
+        strokeWidth="6"
+        opacity="0.18"
+        filter="url(#ng-glow-md)"
+        style={{ animation: 'nova-aura-breathe 3.8s ease-in-out 0.4s infinite', transformOrigin: '120px 140px' }}
       />
 
       {/* ═══════════════════════════════════════════════════════ */}
@@ -166,6 +199,27 @@ export default function NovaSVG({ state = 'idle', size = 220 }) {
         <circle cx="212" cy="33" r="12.5" fill="#080618" />
         {/* Rim glow */}
         <circle cx="205" cy="36" r="18" fill="none" stroke="#F59E0B" strokeWidth="0.8" opacity="0.38" filter="url(#ng-glow-sm)" />
+      </g>
+
+      {/* ── Large crescent moon — right side of body ─────── */}
+      {/* Positioned at the owl's right shoulder/body level  */}
+      <g style={{ animation: 'nova-moon-glow 3.6s ease-in-out 0.6s infinite', transformOrigin: '218px 160px' }}>
+        {/* Wide outer bloom */}
+        <circle cx="218" cy="160" r="40" fill="#F59E0B" opacity="0.05" filter="url(#ng-glow-lg)" />
+        {/* Medium glow halo */}
+        <circle cx="218" cy="160" r="30" fill="#FCD34D" opacity="0.10" filter="url(#ng-glow-moon)" />
+        {/* Moon body */}
+        <circle cx="218" cy="160" r="24" fill="#FCD34D" opacity="0.92" filter="url(#ng-glow-moon)" />
+        {/* Cutout to form crescent — offset right+up, leaving thick left-facing crescent */}
+        <circle cx="229" cy="155" r="20" fill="#080618" />
+        {/* Warm rim glow */}
+        <circle cx="218" cy="160" r="26" fill="none" stroke="#F59E0B" strokeWidth="1.8" opacity="0.55" filter="url(#ng-glow-sm)" />
+        {/* Upper crescent tip spark */}
+        <circle cx="206" cy="147" r="2.2" fill="white" opacity="0.80" />
+        {/* Lower crescent tip spark */}
+        <circle cx="208" cy="174" r="1.8" fill="white" opacity="0.65" />
+        {/* Inner sheen — bright patch on lit face */}
+        <circle cx="210" cy="158" r="6" fill="white" opacity="0.10" />
       </g>
 
       {/* Constellation (4 stars, connected) */}

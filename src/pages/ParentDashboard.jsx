@@ -80,7 +80,7 @@ export default function ParentDashboard() {
         </div>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {children.map(rawChild => {
+          {children.map((rawChild, idx) => {
             const child = normalizeChild(rawChild);
             const av = getAvatar(child.avatar);
             const progress = child.progress;
@@ -93,9 +93,9 @@ export default function ParentDashboard() {
 
             return (
               <button
-                key={child.id}
+                key={rawChild.id || idx}
                 className="bg-[#0F0B2E] border border-white/5 rounded-2xl p-6 cursor-pointer hover:border-white/15 transition-colors text-left w-full"
-                onClick={() => { setCurrentChild(child); navigate('/child/dashboard'); }}
+                onClick={() => { setCurrentChild(rawChild); navigate('/child/dashboard'); }}
               >
                 <div className="flex items-start gap-4 mb-5">
                   <div

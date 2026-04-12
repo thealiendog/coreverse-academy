@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
 import { getAvatar, getSubject } from '../lib/constants';
 
@@ -17,7 +17,7 @@ export default function ChildDashboard() {
   const navigate = useNavigate();
   const child = getCurrentChild();
 
-  if (!child) { navigate('/child/select'); return null; }
+  if (!child) return <Navigate to="/child/select" replace />;
 
   const av = getAvatar(child.avatar);
   const progress = child.progress || {};
