@@ -13,6 +13,7 @@ import FUTURESKILLS_EXPLORERS from '../data/futureskills_explorers_adapter';
 import SOCIALLEADERSHIP_EXPLORERS from '../data/socialleadership_explorers_adapter';
 import LIFEWELLNESS_EXPLORERS from '../data/lifewellness_explorers_adapter';
 import CREATIVEARTS_EXPLORERS from '../data/creativearts_explorers_adapter';
+import HISTORYWORLD_EXPLORERS from '../data/historyworld_explorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -36,6 +37,7 @@ export default function SubjectView() {
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_EXPLORERS
     : subjectId === 'wellness'       ? LIFEWELLNESS_EXPLORERS
     : subjectId === 'creative-arts'  ? CREATIVEARTS_EXPLORERS
+    : subjectId === 'history'        ? HISTORYWORLD_EXPLORERS
     : getLevel2Lessons(subjectId);
   const l3Lessons = getLevel3Lessons(subjectId);
   const l4Lessons = getLevel4Lessons(subjectId);
