@@ -27,6 +27,7 @@ import FUTURESKILLS_VOYAGERS from '../data/futureskills_voyagers_adapter';
 import SOCIALLEADERSHIP_VOYAGERS from '../data/socialleadership_voyagers_adapter';
 import LIFEWELLNESS_VOYAGERS from '../data/lifewellness_voyagers_adapter';
 import CREATIVEARTS_VOYAGERS from '../data/creativearts_voyagers_adapter';
+import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -68,6 +69,7 @@ export default function SubjectView() {
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_VOYAGERS
     : subjectId === 'wellness'       ? LIFEWELLNESS_VOYAGERS
     : subjectId === 'creative-arts'  ? CREATIVEARTS_VOYAGERS
+    : subjectId === 'history'        ? HISTORYWORLD_VOYAGERS
     : getLevel4Lessons(subjectId);
 
   const lessonsByLevel = { 1: l1Lessons, 2: l2Lessons, 3: l3Lessons, 4: l4Lessons };
