@@ -30,6 +30,7 @@ import CREATIVEARTS_VOYAGERS from '../data/creativearts_voyagers_adapter';
 import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
 import INNERWORLD_VOYAGERS from '../data/innerworld_voyagers_adapter';
 import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
+import MATH_VOYAGERS from '../data/math_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -68,6 +69,7 @@ export default function SubjectView() {
   // Subject-specific Voyagers curricula override level 4
   const l4Lessons = subjectId === 'inner-world'    ? INNERWORLD_VOYAGERS
     : subjectId === 'cosmos'         ? COSMOS_VOYAGERS
+    : subjectId === 'math'           ? MATH_VOYAGERS
     : subjectId === 'money'          ? MONEYBUSINESS_VOYAGERS
     : subjectId === 'future-skills'  ? FUTURESKILLS_VOYAGERS
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_VOYAGERS
