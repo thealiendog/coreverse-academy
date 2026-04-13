@@ -123,7 +123,7 @@ export default function OnboardingAccount() {
         <div className="text-center mb-8">
           <Logo size="sm" className="justify-center mb-6" />
           <h1 className="text-2xl font-semibold text-white mb-2" style={{ fontFamily: 'Georgia, serif' }}>
-            Welcome to Innerverse Academy
+            Welcome to Coreverse
           </h1>
           {child.name ? (
             <p className="text-white/50 text-sm">

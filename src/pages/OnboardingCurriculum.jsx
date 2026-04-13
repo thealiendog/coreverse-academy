@@ -126,11 +126,11 @@ export default function OnboardingCurriculum() {
           </div>
         </div>
 
-        {/* Innerverse Originals — optional */}
+        {/* Coreverse Originals — optional */}
         <div className="mb-10">
           <div className="flex items-center gap-2 mb-1">
             <p className="text-xs font-semibold tracking-widest text-[#A78BFA]/70 uppercase">
-              Innerverse Originals
+              Coreverse Originals
             </p>
             <div className="flex-1 h-px bg-[#7C3AED]/20" />
           </div>

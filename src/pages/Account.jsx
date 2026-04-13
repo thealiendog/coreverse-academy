@@ -40,7 +40,7 @@ const TIERS = [
     id: 'Homeschool Premium',
     price: '$79',
     period: '/mo',
-    description: 'The full Innerverse experience with live learning and curated materials.',
+    description: 'The full Coreverse experience with live learning and curated materials.',
     children: 'Unlimited children',
     subjects: 'All 12 subjects',
     features: [

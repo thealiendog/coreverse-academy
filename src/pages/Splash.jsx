@@ -71,7 +71,7 @@ export default function Splash() {
             backgroundClip: 'text',
           }}
         >
-          Innerverse<br/>Academy
+          Coreverse<br/>Academy
         </h1>
 
         {/* Tagline */}
