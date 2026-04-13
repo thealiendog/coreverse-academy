@@ -69,12 +69,12 @@ function buildHtml({ parentName, childName, totalLessons, badges, subjects }) {
       <p style="color:#ffffff;font-size:15px;font-family:Georgia,serif;margin:0 0 10px;line-height:1.7;">
         "${firstName}, every lesson ${childName} completes is a seed planted. You're not just teaching — you're shaping a mind that will change something in this world."
       </p>
-      <p style="color:#A78BFA;font-size:13px;font-family:Arial,sans-serif;margin:0;">— Innerverse Academy</p>
+      <p style="color:#A78BFA;font-size:13px;font-family:Arial,sans-serif;margin:0;">— Coreverse Academy</p>
     `)}
 
-    ${ctaButton('Open This Week\'s Lessons', 'https://innerverseacademy.ai')}
+    ${ctaButton('Open This Week\'s Lessons', 'https://coreverseacademy.ai')}
 
-    ${signOff('See you next week.', '— The Innerverse Academy Team')}`;
+    ${signOff('See you next week.', '— The Coreverse Academy Team')}`;
 
   return emailBase(`${childName}'s Weekly Progress Report`, content);
 }
@@ -88,9 +88,9 @@ exports.handler = async (event) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { error } = await resend.emails.send({
-      from: 'Innerverse Academy <hello@innerverseacademy.ai>',
+      from: 'Coreverse Academy <hello@coreverseacademy.ai>',
       to:   [body.parentEmail],
-      subject: `${body.childName}'s weekly progress at Innerverse Academy`,
+      subject: `${body.childName}'s weekly progress at Coreverse Academy`,
       html:  buildHtml(body),
     });
 

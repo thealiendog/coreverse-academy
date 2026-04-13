@@ -59,14 +59,14 @@ function buildHtml({ parentName, childName, childAge, subjectLabels, state }) {
       </p>
     `, { green: true })}
 
-    ${ctaButton('Open Innerverse Academy', 'https://innerverseacademy.ai')}
+    ${ctaButton('Open Coreverse Academy', 'https://coreverseacademy.ai')}
 
     ${signOff(
       `We're honoured to walk alongside ${childName}'s education.`,
-      '— The Innerverse Academy Team'
+      '— The Coreverse Academy Team'
     )}`;
 
-  return emailBase(`Welcome to Innerverse Academy`, content);
+  return emailBase(`Welcome to Coreverse Academy`, content);
 }
 
 exports.handler = async (event) => {
@@ -79,9 +79,9 @@ exports.handler = async (event) => {
     const firstName = (body.parentName || '').split(' ')[0] || 'there';
 
     const { error } = await resend.emails.send({
-      from: 'Innerverse Academy <hello@innerverseacademy.ai>',
+      from: 'Coreverse Academy <hello@coreverseacademy.ai>',
       to:   [body.parentEmail],
-      subject: `Welcome to Innerverse Academy, ${firstName}!`,
+      subject: `Welcome to Coreverse Academy, ${firstName}!`,
       html:  buildHtml(body),
     });
 

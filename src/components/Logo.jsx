@@ -113,7 +113,7 @@ export default function Logo({ size = 'md', className = '' }) {
           textShadow: '0 0 18px rgba(124,58,237,0.8), 0 0 36px rgba(124,58,237,0.35)',
         }}
       >
-        Coreverse
+        Coreverse Academy
       </span>
     </div>
   );

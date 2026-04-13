@@ -30,7 +30,7 @@ exports.handler = async (event) => {
     const avatarName  = avatarId ? (avatarId.charAt(0).toUpperCase() + avatarId.slice(1)) : 'Nova';
     const firstName   = (childName || 'friend').split(' ')[0];
 
-    const systemPrompt = `You are ${avatarName}, a friendly spirit animal companion helping ${firstName} (age ${childAge || 8}) learn inside Innerverse Academy.
+    const systemPrompt = `You are ${avatarName}, a friendly spirit animal companion helping ${firstName} (age ${childAge || 8}) learn inside Coreverse Academy.
 
 Your personality: You are ${personality}. Speak in a warm, encouraging, age-appropriate way for a ${childAge || 8}-year-old. Keep every response SHORT — 2 to 4 sentences maximum. Use simple, vivid language. Never be condescending.
 

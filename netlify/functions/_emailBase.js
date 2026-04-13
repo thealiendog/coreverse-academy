@@ -8,7 +8,7 @@ function logoMark() {
           <span style="color:#ffffff;font-size:22px;font-weight:bold;font-family:Georgia,serif;line-height:44px;">I</span>
         </td>
         <td style="padding-left:12px;vertical-align:middle;">
-          <span style="color:#ffffff;font-size:19px;font-weight:bold;font-family:Georgia,serif;">Innerverse Academy</span>
+          <span style="color:#ffffff;font-size:19px;font-weight:bold;font-family:Georgia,serif;">Coreverse Academy</span>
         </td>
       </tr>
     </table>`;
@@ -95,11 +95,11 @@ function emailBase(title, content) {
         <tr>
           <td align="center" style="padding-top:28px;">
             <p style="color:rgba(255,255,255,0.2);font-size:12px;font-family:Arial,sans-serif;margin:0 0 6px;">
-              Innerverse Academy &nbsp;·&nbsp;
-              <a href="https://innerverseacademy.ai" style="color:#7C3AED;text-decoration:none;">innerverseacademy.ai</a>
+              Coreverse Academy &nbsp;·&nbsp;
+              <a href="https://coreverseacademy.ai" style="color:#7C3AED;text-decoration:none;">coreverseacademy.ai</a>
             </p>
             <p style="color:rgba(255,255,255,0.1);font-size:11px;font-family:Arial,sans-serif;margin:0;">
-              You're receiving this as an Innerverse Academy family.
+              You're receiving this as an Coreverse Academy family.
             </p>
           </td>
         </tr>
