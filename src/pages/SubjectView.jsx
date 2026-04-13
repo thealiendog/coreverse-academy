@@ -28,6 +28,8 @@ import SOCIALLEADERSHIP_VOYAGERS from '../data/socialleadership_voyagers_adapter
 import LIFEWELLNESS_VOYAGERS from '../data/lifewellness_voyagers_adapter';
 import CREATIVEARTS_VOYAGERS from '../data/creativearts_voyagers_adapter';
 import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
+import INNERWORLD_VOYAGERS from '../data/innerworld_voyagers_adapter';
+import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -64,7 +66,9 @@ export default function SubjectView() {
     : subjectId === 'history'        ? HISTORYWORLD_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
-  const l4Lessons = subjectId === 'money'         ? MONEYBUSINESS_VOYAGERS
+  const l4Lessons = subjectId === 'inner-world'    ? INNERWORLD_VOYAGERS
+    : subjectId === 'cosmos'         ? COSMOS_VOYAGERS
+    : subjectId === 'money'          ? MONEYBUSINESS_VOYAGERS
     : subjectId === 'future-skills'  ? FUTURESKILLS_VOYAGERS
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_VOYAGERS
     : subjectId === 'wellness'       ? LIFEWELLNESS_VOYAGERS
