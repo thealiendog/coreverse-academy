@@ -2105,7 +2105,7 @@ The same techniques that build powerful brands can be used to manipulate. Target
 - What is the gap between their brand identity and your actual experience of using their product?
 - What would cause you to switch to a competitor?
 
-2. Create a brand for Coreverse (or a business you've been developing):
+2. Create a brand for Coreverse Academy (or a business you've been developing):
 - Name and logo concept (describe it)
 - Tagline
 - Brand story (2-3 sentences on the mission and why it matters)
@@ -3068,7 +3068,7 @@ The E-Myth (Michael Gerber): Most small businesses fail because founders work IN
 
 2. McDonald's vs. a great local restaurant: McDonald's can replicate its product in 100 countries with minimal training. A great local restaurant can't be easily replicated. What does McDonald's have that the restaurant doesn't? Is what McDonald's has actually better? What was lost?
 
-3. If you were building Coreverse as an organization, design:
+3. If you were building Coreverse Academy as an organization, design:
 - The core team structure (who does what)
 - One key feedback mechanism that would tell you whether the product is working
 - The culture you'd want to build (what 3 core values would drive everything?)

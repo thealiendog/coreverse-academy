@@ -99,7 +99,7 @@ function emailBase(title, content) {
               <a href="https://coreverseacademy.ai" style="color:#7C3AED;text-decoration:none;">coreverseacademy.ai</a>
             </p>
             <p style="color:rgba(255,255,255,0.1);font-size:11px;font-family:Arial,sans-serif;margin:0;">
-              You're receiving this as an Coreverse Academy family.
+              You're receiving this as a Coreverse Academy family.
             </p>
           </td>
         </tr>

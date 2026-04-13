@@ -3859,7 +3859,7 @@ Does hard determinism make ethics impossible, or does it transform rather than e
     badge: "Philosopher",
     duration: "20-25 min",
     sections: {
-      arrival: `"[child's name] — this is the final lesson of the entire Coreverse curriculum. Level 4, Lesson 36 of 36. Every subject, every level, every lesson has been building toward this moment: the construction of your own philosophy of life. Not a borrowed one. Not a received one. Yours — examined, chosen, and owned. Congratulations on making it to Level 4. Now let's use everything we've learned."`,
+      arrival: `"[child's name] — this is the final lesson of the entire Coreverse Academy curriculum. Level 4, Lesson 36 of 36. Every subject, every level, every lesson has been building toward this moment: the construction of your own philosophy of life. Not a borrowed one. Not a received one. Yours — examined, chosen, and owned. Congratulations on making it to Level 4. Now let's use everything we've learned."`,
       spark: `"Socrates said 'The unexamined life is not worth living' — and died rather than stop philosophizing. Epictetus was born a slave, became one of the most influential philosophers in history, and taught that freedom is entirely internal — no one can take from you what you choose to think and value. Simone de Beauvoir argued that existence precedes essence — we are not born with a nature that determines us, but we create ourselves through our choices. Each of these thinkers built a philosophy of life through their actual lives — through suffering, thought, and the willingness to take their own conclusions seriously. What would it mean to take your own philosophy seriously — not just as ideas, but as a way of living?"`,
       learn: `"A philosophy of life is a coherent set of beliefs and values about what matters, how to live, and what kind of person to be. It is not a religious creed (though it may draw from religious wisdom) and not an ideology (though it has political implications). It is deeply personal — and it changes as you grow.
 
@@ -3907,7 +3907,7 @@ Service — philosophy tested against the needs of others
 The final insight: philosophy is not for having opinions. It is for living differently."`,
       explore: `"Your philosophy of life — the capstone:
 
-This is your final exercise in Coreverse. Take as much time as you need.
+This is your final exercise in Coreverse Academy. Take as much time as you need.
 
 1. Synthesis: Looking back across every Level 4 subject — consciousness, physics, ethics, economics, leadership, longevity, art, language — what are the three or four insights that have most changed how you think about the world and your place in it? Write a paragraph on each.
 
@@ -3921,7 +3921,7 @@ f) How you handle uncertainty — about the big questions you can't fully answer
 
 3. The commitment: Choose one insight from your philosophy that you are not currently living — a gap between what you believe and how you actually live. Write the specific change you will make. Not someday. Starting this week.
 
-Congratulations, [child's name]. Level 4 complete. Coreverse complete. Now live the philosophy."`,
+Congratulations, [child's name]. Level 4 complete. Coreverse Academy complete. Now live the philosophy."`,
       quickcheck: {
         question: "Epictetus's 'dichotomy of control' — the central Stoic insight — holds that:",
         options: ["A) Wisdom requires controlling both internal and external circumstances", "B) Nothing is truly in our control — acceptance of fate is the path to peace", "C) Some things are in our power (thoughts, values, responses); some are not — wisdom is focusing on the former ✅", "D) Control of external circumstances is more important than internal states"],
@@ -3961,7 +3961,7 @@ You know how the cell works and how DNA codes life. You understand quantum mecha
 
 But more than any of that: you have learned to think. To question. To sit with difficult truths. To build your own understanding rather than borrow someone else's.
 
-That is the gift of Coreverse. Not the facts — the thinking. Not the answers — the capacity to ask better questions.
+That is the gift of Coreverse Academy. Not the facts — the thinking. Not the answers — the capacity to ask better questions.
 
 You're a Philosopher — in the original sense: a lover of wisdom.
 
