@@ -22,6 +22,7 @@ import LIFEWELLNESS_UPPEREXPLORERS from '../data/lifewellness_upperexplorers_ada
 import CREATIVEARTS_UPPEREXPLORERS from '../data/creativearts_upperexplorers_adapter';
 import HISTORYWORLD_UPPEREXPLORERS from '../data/historyworld_upperexplorers_adapter';
 import MONEYBUSINESS_UPPEREXPLORERS from '../data/moneybusiness_upperexplorers_adapter';
+import MONEYBUSINESS_VOYAGERS from '../data/moneybusiness_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -57,7 +58,9 @@ export default function SubjectView() {
     : subjectId === 'creative-arts'  ? CREATIVEARTS_UPPEREXPLORERS
     : subjectId === 'history'        ? HISTORYWORLD_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
-  const l4Lessons = getLevel4Lessons(subjectId);
+  // Subject-specific Voyagers curricula override level 4
+  const l4Lessons = subjectId === 'money' ? MONEYBUSINESS_VOYAGERS
+    : getLevel4Lessons(subjectId);
 
   const lessonsByLevel = { 1: l1Lessons, 2: l2Lessons, 3: l3Lessons, 4: l4Lessons };
   const lessonData = lessonsByLevel[level] || [];

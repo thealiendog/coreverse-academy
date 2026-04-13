@@ -23,6 +23,7 @@ import LIFEWELLNESS_UPPEREXPLORERS from '../data/lifewellness_upperexplorers_ada
 import CREATIVEARTS_UPPEREXPLORERS from '../data/creativearts_upperexplorers_adapter';
 import HISTORYWORLD_UPPEREXPLORERS from '../data/historyworld_upperexplorers_adapter';
 import MONEYBUSINESS_UPPEREXPLORERS from '../data/moneybusiness_upperexplorers_adapter';
+import MONEYBUSINESS_VOYAGERS from '../data/moneybusiness_voyagers_adapter';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -172,11 +173,14 @@ export default function LessonPlayer() {
   const levelGetters = { 1: getLesson, 2: getLevel2Lesson, 3: getLevel3Lesson, 4: getLevel4Lesson };
   const explorerOverrides = { 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': COSMOS_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS, 'wellness': LIFEWELLNESS_EXPLORERS, 'creative-arts': CREATIVEARTS_EXPLORERS, 'history': HISTORYWORLD_EXPLORERS };
   const upperExplorerOverrides = { 'inner-world': INNERWORLD_UPPEREXPLORERS, 'cosmos': COSMOS_UPPEREXPLORERS, 'money': MONEYBUSINESS_UPPEREXPLORERS, 'future-skills': FUTURESKILLS_UPPEREXPLORERS, 'leadership': SOCIALLEADERSHIP_UPPEREXPLORERS, 'wellness': LIFEWELLNESS_UPPEREXPLORERS, 'creative-arts': CREATIVEARTS_UPPEREXPLORERS, 'history': HISTORYWORLD_UPPEREXPLORERS };
+  const voyagerOverrides = { 'money': MONEYBUSINESS_VOYAGERS };
   const lesson = (level === 2 && explorerOverrides[subjectId])
     ? (explorerOverrides[subjectId][idx] || null)
     : (level === 3 && upperExplorerOverrides[subjectId])
       ? (upperExplorerOverrides[subjectId][idx] || null)
-      : (levelGetters[level] || getLesson)(subjectId, idx);
+      : (level === 4 && voyagerOverrides[subjectId])
+        ? (voyagerOverrides[subjectId][idx] || null)
+        : (levelGetters[level] || getLesson)(subjectId, idx);
   const subject   = getSubject(subjectId);
   const guideAvatar = getAvatar(lesson?.guide || lesson?.avatar || child?.avatar);
 
