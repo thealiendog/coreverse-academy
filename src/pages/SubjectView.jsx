@@ -24,6 +24,7 @@ import HISTORYWORLD_UPPEREXPLORERS from '../data/historyworld_upperexplorers_ada
 import MONEYBUSINESS_UPPEREXPLORERS from '../data/moneybusiness_upperexplorers_adapter';
 import MONEYBUSINESS_VOYAGERS from '../data/moneybusiness_voyagers_adapter';
 import FUTURESKILLS_VOYAGERS from '../data/futureskills_voyagers_adapter';
+import SOCIALLEADERSHIP_VOYAGERS from '../data/socialleadership_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -61,7 +62,8 @@ export default function SubjectView() {
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
   const l4Lessons = subjectId === 'money'         ? MONEYBUSINESS_VOYAGERS
-    : subjectId === 'future-skills' ? FUTURESKILLS_VOYAGERS
+    : subjectId === 'future-skills'  ? FUTURESKILLS_VOYAGERS
+    : subjectId === 'leadership'     ? SOCIALLEADERSHIP_VOYAGERS
     : getLevel4Lessons(subjectId);
 
   const lessonsByLevel = { 1: l1Lessons, 2: l2Lessons, 3: l3Lessons, 4: l4Lessons };
