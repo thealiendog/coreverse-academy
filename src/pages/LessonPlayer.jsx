@@ -32,6 +32,7 @@ import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
 import INNERWORLD_VOYAGERS from '../data/innerworld_voyagers_adapter';
 import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
 import MATH_VOYAGERS from '../data/math_voyagers_adapter';
+import ELA_LITTLESTARS from '../data/ela_littlestars_adapter';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -179,16 +180,19 @@ export default function LessonPlayer() {
   const level     = parseInt(searchParams.get('level') || '1', 10);
   const progressKey = level === 1 ? subjectId : `${subjectId}__${level}`;
   const levelGetters = { 1: getLesson, 2: getLevel2Lesson, 3: getLevel3Lesson, 4: getLevel4Lesson };
+  const littleStarsOverrides = { 'language-arts': ELA_LITTLESTARS };
   const explorerOverrides = { 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': COSMOS_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS, 'wellness': LIFEWELLNESS_EXPLORERS, 'creative-arts': CREATIVEARTS_EXPLORERS, 'history': HISTORYWORLD_EXPLORERS };
   const upperExplorerOverrides = { 'inner-world': INNERWORLD_UPPEREXPLORERS, 'cosmos': COSMOS_UPPEREXPLORERS, 'money': MONEYBUSINESS_UPPEREXPLORERS, 'future-skills': FUTURESKILLS_UPPEREXPLORERS, 'leadership': SOCIALLEADERSHIP_UPPEREXPLORERS, 'wellness': LIFEWELLNESS_UPPEREXPLORERS, 'creative-arts': CREATIVEARTS_UPPEREXPLORERS, 'history': HISTORYWORLD_UPPEREXPLORERS };
   const voyagerOverrides = { 'inner-world': INNERWORLD_VOYAGERS, 'cosmos': COSMOS_VOYAGERS, 'math': MATH_VOYAGERS, 'money': MONEYBUSINESS_VOYAGERS, 'future-skills': FUTURESKILLS_VOYAGERS, 'leadership': SOCIALLEADERSHIP_VOYAGERS, 'wellness': LIFEWELLNESS_VOYAGERS, 'creative-arts': CREATIVEARTS_VOYAGERS, 'history': HISTORYWORLD_VOYAGERS };
-  const lesson = (level === 2 && explorerOverrides[subjectId])
-    ? (explorerOverrides[subjectId][idx] || null)
-    : (level === 3 && upperExplorerOverrides[subjectId])
-      ? (upperExplorerOverrides[subjectId][idx] || null)
-      : (level === 4 && voyagerOverrides[subjectId])
-        ? (voyagerOverrides[subjectId][idx] || null)
-        : (levelGetters[level] || getLesson)(subjectId, idx);
+  const lesson = (level === 1 && littleStarsOverrides[subjectId])
+    ? (littleStarsOverrides[subjectId][idx] || null)
+    : (level === 2 && explorerOverrides[subjectId])
+      ? (explorerOverrides[subjectId][idx] || null)
+      : (level === 3 && upperExplorerOverrides[subjectId])
+        ? (upperExplorerOverrides[subjectId][idx] || null)
+        : (level === 4 && voyagerOverrides[subjectId])
+          ? (voyagerOverrides[subjectId][idx] || null)
+          : (levelGetters[level] || getLesson)(subjectId, idx);
   const subject   = getSubject(subjectId);
   const guideAvatar = getAvatar(lesson?.guide || lesson?.avatar || child?.avatar);
 

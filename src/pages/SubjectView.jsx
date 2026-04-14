@@ -31,6 +31,7 @@ import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
 import INNERWORLD_VOYAGERS from '../data/innerworld_voyagers_adapter';
 import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
 import MATH_VOYAGERS from '../data/math_voyagers_adapter';
+import ELA_LITTLESTARS from '../data/ela_littlestars_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -45,7 +46,9 @@ export default function SubjectView() {
   const av = child ? getAvatar(child.avatar) : getAvatar('nova');
   const progress = child?.progress || {};
 
-  const l1Lessons = getLessons(subjectId);
+  // Subject-specific Little Stars curricula override level 1
+  const l1Lessons = subjectId === 'language-arts' ? ELA_LITTLESTARS
+    : getLessons(subjectId);
   // Subject-specific Explorers curricula override level 2
   const l2Lessons = subjectId === 'inner-world' ? INNERWORLD_EXPLORERS
     : subjectId === 'money'          ? MONEYBUSINESS_EXPLORERS
