@@ -39,6 +39,7 @@ import ELA_VOYAGERS from '../data/ela_voyagers_adapter';
 import SCI_LITTLESTARS from '../data/sci_littlestars_adapter';
 import SCI_EXPLORERS from '../data/sci_explorers_adapter';
 import SCI_UPPEREXPLORERS from '../data/sci_upperexplorers_adapter';
+import SCI_VOYAGERS from '../data/sci_voyagers_adapter';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -189,7 +190,7 @@ export default function LessonPlayer() {
   const littleStarsOverrides = { 'language-arts': ELA_LITTLESTARS, 'cosmos': SCI_LITTLESTARS };
   const explorerOverrides = { 'language-arts': ELA_EXPLORERS, 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': SCI_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS, 'wellness': LIFEWELLNESS_EXPLORERS, 'creative-arts': CREATIVEARTS_EXPLORERS, 'history': HISTORYWORLD_EXPLORERS };
   const upperExplorerOverrides = { 'language-arts': ELA_UPPEREXPLORERS, 'inner-world': INNERWORLD_UPPEREXPLORERS, 'cosmos': SCI_UPPEREXPLORERS, 'money': MONEYBUSINESS_UPPEREXPLORERS, 'future-skills': FUTURESKILLS_UPPEREXPLORERS, 'leadership': SOCIALLEADERSHIP_UPPEREXPLORERS, 'wellness': LIFEWELLNESS_UPPEREXPLORERS, 'creative-arts': CREATIVEARTS_UPPEREXPLORERS, 'history': HISTORYWORLD_UPPEREXPLORERS };
-  const voyagerOverrides = { 'language-arts': ELA_VOYAGERS, 'inner-world': INNERWORLD_VOYAGERS, 'cosmos': COSMOS_VOYAGERS, 'math': MATH_VOYAGERS, 'money': MONEYBUSINESS_VOYAGERS, 'future-skills': FUTURESKILLS_VOYAGERS, 'leadership': SOCIALLEADERSHIP_VOYAGERS, 'wellness': LIFEWELLNESS_VOYAGERS, 'creative-arts': CREATIVEARTS_VOYAGERS, 'history': HISTORYWORLD_VOYAGERS };
+  const voyagerOverrides = { 'language-arts': ELA_VOYAGERS, 'inner-world': INNERWORLD_VOYAGERS, 'cosmos': SCI_VOYAGERS, 'math': MATH_VOYAGERS, 'money': MONEYBUSINESS_VOYAGERS, 'future-skills': FUTURESKILLS_VOYAGERS, 'leadership': SOCIALLEADERSHIP_VOYAGERS, 'wellness': LIFEWELLNESS_VOYAGERS, 'creative-arts': CREATIVEARTS_VOYAGERS, 'history': HISTORYWORLD_VOYAGERS };
   const lesson = (level === 1 && littleStarsOverrides[subjectId])
     ? (littleStarsOverrides[subjectId][idx] || null)
     : (level === 2 && explorerOverrides[subjectId])

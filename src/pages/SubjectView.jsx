@@ -38,6 +38,7 @@ import ELA_VOYAGERS from '../data/ela_voyagers_adapter';
 import SCI_LITTLESTARS from '../data/sci_littlestars_adapter';
 import SCI_EXPLORERS from '../data/sci_explorers_adapter';
 import SCI_UPPEREXPLORERS from '../data/sci_upperexplorers_adapter';
+import SCI_VOYAGERS from '../data/sci_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -81,7 +82,7 @@ export default function SubjectView() {
   // Subject-specific Voyagers curricula override level 4
   const l4Lessons = subjectId === 'language-arts'  ? ELA_VOYAGERS
     : subjectId === 'inner-world'    ? INNERWORLD_VOYAGERS
-    : subjectId === 'cosmos'         ? COSMOS_VOYAGERS
+    : subjectId === 'cosmos'         ? SCI_VOYAGERS
     : subjectId === 'math'           ? MATH_VOYAGERS
     : subjectId === 'money'          ? MONEYBUSINESS_VOYAGERS
     : subjectId === 'future-skills'  ? FUTURESKILLS_VOYAGERS
