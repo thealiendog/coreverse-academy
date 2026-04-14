@@ -36,6 +36,7 @@ import ELA_EXPLORERS from '../data/ela_explorers_adapter';
 import ELA_UPPEREXPLORERS from '../data/ela_upperexplorers_adapter';
 import ELA_VOYAGERS from '../data/ela_voyagers_adapter';
 import SCI_LITTLESTARS from '../data/sci_littlestars_adapter';
+import SCI_EXPLORERS from '../data/sci_explorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -58,7 +59,7 @@ export default function SubjectView() {
   const l2Lessons = subjectId === 'language-arts' ? ELA_EXPLORERS
     : subjectId === 'inner-world' ? INNERWORLD_EXPLORERS
     : subjectId === 'money'          ? MONEYBUSINESS_EXPLORERS
-    : subjectId === 'cosmos'         ? COSMOS_EXPLORERS
+    : subjectId === 'cosmos'         ? SCI_EXPLORERS
     : subjectId === 'future-skills'  ? FUTURESKILLS_EXPLORERS
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_EXPLORERS
     : subjectId === 'wellness'       ? LIFEWELLNESS_EXPLORERS
