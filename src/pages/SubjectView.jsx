@@ -40,6 +40,7 @@ import SCI_EXPLORERS from '../data/sci_explorers_adapter';
 import SCI_UPPEREXPLORERS from '../data/sci_upperexplorers_adapter';
 import SCI_VOYAGERS from '../data/sci_voyagers_adapter';
 import SS_EXPLORERS from '../data/ss_explorers_adapter';
+import SS_UPPEREXPLORERS from '../data/ss_upperexplorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -78,7 +79,7 @@ export default function SubjectView() {
     : subjectId === 'leadership'     ? SOCIALLEADERSHIP_UPPEREXPLORERS
     : subjectId === 'wellness'       ? LIFEWELLNESS_UPPEREXPLORERS
     : subjectId === 'creative-arts'  ? CREATIVEARTS_UPPEREXPLORERS
-    : subjectId === 'history'        ? HISTORYWORLD_UPPEREXPLORERS
+    : subjectId === 'history'        ? SS_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
   const l4Lessons = subjectId === 'language-arts'  ? ELA_VOYAGERS
