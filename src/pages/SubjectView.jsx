@@ -34,6 +34,7 @@ import MATH_VOYAGERS from '../data/math_voyagers_adapter';
 import ELA_LITTLESTARS from '../data/ela_littlestars_adapter';
 import ELA_EXPLORERS from '../data/ela_explorers_adapter';
 import ELA_UPPEREXPLORERS from '../data/ela_upperexplorers_adapter';
+import ELA_VOYAGERS from '../data/ela_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -74,7 +75,8 @@ export default function SubjectView() {
     : subjectId === 'history'        ? HISTORYWORLD_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
-  const l4Lessons = subjectId === 'inner-world'    ? INNERWORLD_VOYAGERS
+  const l4Lessons = subjectId === 'language-arts'  ? ELA_VOYAGERS
+    : subjectId === 'inner-world'    ? INNERWORLD_VOYAGERS
     : subjectId === 'cosmos'         ? COSMOS_VOYAGERS
     : subjectId === 'math'           ? MATH_VOYAGERS
     : subjectId === 'money'          ? MONEYBUSINESS_VOYAGERS
