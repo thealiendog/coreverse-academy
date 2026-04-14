@@ -35,6 +35,7 @@ import ELA_LITTLESTARS from '../data/ela_littlestars_adapter';
 import ELA_EXPLORERS from '../data/ela_explorers_adapter';
 import ELA_UPPEREXPLORERS from '../data/ela_upperexplorers_adapter';
 import ELA_VOYAGERS from '../data/ela_voyagers_adapter';
+import SCI_LITTLESTARS from '../data/sci_littlestars_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -51,6 +52,7 @@ export default function SubjectView() {
 
   // Subject-specific Little Stars curricula override level 1
   const l1Lessons = subjectId === 'language-arts' ? ELA_LITTLESTARS
+    : subjectId === 'cosmos'        ? SCI_LITTLESTARS
     : getLessons(subjectId);
   // Subject-specific Explorers curricula override level 2
   const l2Lessons = subjectId === 'language-arts' ? ELA_EXPLORERS
