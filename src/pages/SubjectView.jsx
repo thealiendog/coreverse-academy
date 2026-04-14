@@ -33,6 +33,7 @@ import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
 import MATH_VOYAGERS from '../data/math_voyagers_adapter';
 import ELA_LITTLESTARS from '../data/ela_littlestars_adapter';
 import ELA_EXPLORERS from '../data/ela_explorers_adapter';
+import ELA_UPPEREXPLORERS from '../data/ela_upperexplorers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -62,7 +63,8 @@ export default function SubjectView() {
     : subjectId === 'history'        ? HISTORYWORLD_EXPLORERS
     : getLevel2Lessons(subjectId);
   // Subject-specific Upper Explorers curricula override level 3
-  const l3Lessons = subjectId === 'inner-world' ? INNERWORLD_UPPEREXPLORERS
+  const l3Lessons = subjectId === 'language-arts' ? ELA_UPPEREXPLORERS
+    : subjectId === 'inner-world' ? INNERWORLD_UPPEREXPLORERS
     : subjectId === 'cosmos'        ? COSMOS_UPPEREXPLORERS
     : subjectId === 'money'         ? MONEYBUSINESS_UPPEREXPLORERS
     : subjectId === 'future-skills'  ? FUTURESKILLS_UPPEREXPLORERS
