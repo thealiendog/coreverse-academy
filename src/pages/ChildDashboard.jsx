@@ -1,6 +1,6 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
-import { getAvatar, getSubject, ageToAgeBand, SUBJECTS } from '../lib/constants';
+import { getAvatar, getSubject, ageToAgeBand, ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
 
 const BG_GRADIENTS = [
   'from-indigo-900/60 to-violet-900/40',
@@ -85,13 +85,14 @@ export default function ChildDashboard() {
           </button>
         </div>
 
-        {/* Subject cards heading */}
+        {/* Coreverse Originals */}
         <h2 className="text-lg font-semibold text-white mb-4 text-center" style={{ fontFamily: 'Georgia, serif' }}>
           Your learning adventures
         </h2>
+        <p className="text-xs font-semibold text-white/25 tracking-widest uppercase mb-3 text-center">Coreverse Originals</p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {SUBJECTS.map((s, idx) => {
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+          {ORIGINALS.map((s, idx) => {
             const enrolled = child.subjects?.includes(s.id);
             const done  = progress[s.id] || 0;
             const total = s.lessons?.length || 3;
@@ -122,7 +123,6 @@ export default function ChildDashboard() {
               );
             }
 
-            // Not enrolled — show as locked/coming soon
             return (
               <div
                 key={s.id}
@@ -132,6 +132,73 @@ export default function ChildDashboard() {
                 <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
                   {s.label}
                 </h3>
+                <p className="text-[10px] text-white/20">Ask a parent to add</p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Core Academics */}
+        <div className="flex items-center gap-3 mb-3">
+          <div className="flex-1 h-px bg-white/8" />
+          <p className="text-xs font-semibold text-white/25 tracking-widest uppercase whitespace-nowrap">Core Academics</p>
+          <div className="flex-1 h-px bg-white/8" />
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {CORE_ACADEMICS.map((s, idx) => {
+            const enrolled = child.subjects?.includes(s.id);
+            const done  = progress[s.id] || 0;
+            const total = s.lessons?.length || 3;
+            const pct   = Math.round((done / total) * 100);
+
+            if (enrolled) {
+              return (
+                <button
+                  key={s.id}
+                  onClick={() => navigate(`/child/subject/${s.id}`)}
+                  className={`text-left rounded-2xl p-4 border border-white/10 bg-gradient-to-br ${BG_GRADIENTS[(idx + 4) % BG_GRADIENTS.length]} hover:border-white/25 hover:scale-[1.02] transition-all duration-200 group`}
+                  style={{ boxShadow: `0 4px 20px ${s.color}18` }}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <span className="text-2xl leading-none">{s.icon}</span>
+                    <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
+                  </div>
+                  <h3 className="text-sm font-bold text-white mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                    {s.label}
+                  </h3>
+                  {s.standard && (
+                    <span
+                      className="inline-block text-[9px] font-semibold px-1.5 py-0.5 rounded-full mb-2"
+                      style={{ background: s.color + '20', color: s.color }}
+                    >
+                      {s.standard}
+                    </span>
+                  )}
+                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full rounded-full progress-fill" style={{ width: `${pct}%`, background: s.color }} />
+                  </div>
+                  <p className="text-[10px] text-white/30 mt-1.5 group-hover:text-white/50 transition-colors">
+                    {pct === 0 ? "Let's start!" : pct === 100 ? 'Complete!' : `${pct}% done`}
+                  </p>
+                </button>
+              );
+            }
+
+            return (
+              <div
+                key={s.id}
+                className="rounded-2xl p-4 border border-white/5 bg-white/[0.015] opacity-40"
+              >
+                <span className="text-2xl leading-none mb-2 block grayscale opacity-50">{s.icon}</span>
+                <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                  {s.label}
+                </h3>
+                {s.standard && (
+                  <span className="inline-block text-[9px] font-semibold px-1.5 py-0.5 rounded-full mb-1 bg-white/5 text-white/20">
+                    {s.standard}
+                  </span>
+                )}
                 <p className="text-[10px] text-white/20">Ask a parent to add</p>
               </div>
             );

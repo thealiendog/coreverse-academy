@@ -6,30 +6,30 @@ import Button from '../components/Button';
 
 // State → required subject IDs (simplified from actual standards)
 const CORE_BY_STATE = {
-  California:   ['language-arts', 'math', 'history', 'cosmos', 'creative-arts', 'wellness'],
-  Texas:        ['language-arts', 'math', 'history', 'leadership'],
-  Florida:      ['language-arts', 'math', 'history', 'cosmos', 'wellness'],
-  'New York':   ['language-arts', 'math', 'history', 'cosmos', 'wellness', 'creative-arts'],
-  Virginia:     ['language-arts', 'math', 'history', 'cosmos'],
-  Washington:   ['language-arts', 'math', 'history', 'cosmos', 'wellness'],
-  Colorado:     ['language-arts', 'math', 'history', 'cosmos', 'wellness'],
-  Oregon:       ['language-arts', 'math', 'history', 'cosmos', 'wellness'],
-  Pennsylvania: ['language-arts', 'math', 'history', 'cosmos', 'wellness', 'creative-arts'],
-  Illinois:     ['language-arts', 'math', 'history', 'cosmos', 'wellness'],
-  Georgia:      ['language-arts', 'math', 'history', 'cosmos', 'wellness'],
+  California:   ['ela', 'math', 'ss', 'sci', 'creative-arts', 'wellness'],
+  Texas:        ['ela', 'math', 'ss', 'leadership'],
+  Florida:      ['ela', 'math', 'ss', 'sci', 'wellness'],
+  'New York':   ['ela', 'math', 'ss', 'sci', 'wellness', 'creative-arts'],
+  Virginia:     ['ela', 'math', 'ss', 'sci'],
+  Washington:   ['ela', 'math', 'ss', 'sci', 'wellness'],
+  Colorado:     ['ela', 'math', 'ss', 'sci', 'wellness'],
+  Oregon:       ['ela', 'math', 'ss', 'sci', 'wellness'],
+  Pennsylvania: ['ela', 'math', 'ss', 'sci', 'wellness', 'creative-arts'],
+  Illinois:     ['ela', 'math', 'ss', 'sci', 'wellness'],
+  Georgia:      ['ela', 'math', 'ss', 'sci', 'wellness'],
 };
-const DEFAULT_CORE = ['language-arts', 'math', 'history', 'cosmos', 'wellness'];
+const DEFAULT_CORE = ['ela', 'math', 'ss', 'sci', 'wellness'];
 const ALL_IDS = SUBJECTS.map(s => s.id);
 
 // Labels for state subjects (plain English for the UI)
 const SUBJECT_STATE_LABELS = {
-  'language-arts': 'English Language Arts',
-  'math':          'Mathematics',
-  'history':       'History & Social Studies',
-  'cosmos':        'Science',
-  'wellness':      'Health & Physical Education',
-  'creative-arts': 'Fine Arts',
-  'leadership':    'Citizenship & Social Skills',
+  'ela':          'English Language Arts',
+  'math':         'Mathematics',
+  'ss':           'Social Studies',
+  'sci':          'Science',
+  'wellness':     'Health & Physical Education',
+  'creative-arts':'Fine Arts',
+  'leadership':   'Citizenship & Social Skills',
 };
 
 export default function OnboardingCurriculum() {

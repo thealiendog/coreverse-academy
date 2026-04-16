@@ -41,6 +41,7 @@ import SCI_UPPEREXPLORERS from '../data/sci_upperexplorers_adapter';
 import SCI_VOYAGERS from '../data/sci_voyagers_adapter';
 import SS_EXPLORERS from '../data/ss_explorers_adapter';
 import SS_UPPEREXPLORERS from '../data/ss_upperexplorers_adapter';
+import SS_VOYAGERS from '../data/ss_voyagers_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -56,42 +57,48 @@ export default function SubjectView() {
   const progress = child?.progress || {};
 
   // Subject-specific Little Stars curricula override level 1
-  const l1Lessons = subjectId === 'language-arts' ? ELA_LITTLESTARS
-    : subjectId === 'cosmos'        ? SCI_LITTLESTARS
+  const l1Lessons = subjectId === 'ela'  ? ELA_LITTLESTARS
+    : subjectId === 'sci'                ? SCI_LITTLESTARS
     : getLessons(subjectId);
   // Subject-specific Explorers curricula override level 2
-  const l2Lessons = subjectId === 'language-arts' ? ELA_EXPLORERS
-    : subjectId === 'inner-world' ? INNERWORLD_EXPLORERS
-    : subjectId === 'money'          ? MONEYBUSINESS_EXPLORERS
-    : subjectId === 'cosmos'         ? SCI_EXPLORERS
-    : subjectId === 'future-skills'  ? FUTURESKILLS_EXPLORERS
-    : subjectId === 'leadership'     ? SOCIALLEADERSHIP_EXPLORERS
-    : subjectId === 'wellness'       ? LIFEWELLNESS_EXPLORERS
-    : subjectId === 'creative-arts'  ? CREATIVEARTS_EXPLORERS
-    : subjectId === 'history'        ? SS_EXPLORERS
+  const l2Lessons = subjectId === 'ela'          ? ELA_EXPLORERS
+    : subjectId === 'inner-world'                ? INNERWORLD_EXPLORERS
+    : subjectId === 'money'                      ? MONEYBUSINESS_EXPLORERS
+    : subjectId === 'cosmos'                     ? COSMOS_EXPLORERS
+    : subjectId === 'sci'                        ? SCI_EXPLORERS
+    : subjectId === 'future-skills'              ? FUTURESKILLS_EXPLORERS
+    : subjectId === 'leadership'                 ? SOCIALLEADERSHIP_EXPLORERS
+    : subjectId === 'wellness'                   ? LIFEWELLNESS_EXPLORERS
+    : subjectId === 'creative-arts'              ? CREATIVEARTS_EXPLORERS
+    : subjectId === 'history'                    ? HISTORYWORLD_EXPLORERS
+    : subjectId === 'ss'                         ? SS_EXPLORERS
     : getLevel2Lessons(subjectId);
   // Subject-specific Upper Explorers curricula override level 3
-  const l3Lessons = subjectId === 'language-arts' ? ELA_UPPEREXPLORERS
-    : subjectId === 'inner-world' ? INNERWORLD_UPPEREXPLORERS
-    : subjectId === 'cosmos'        ? SCI_UPPEREXPLORERS
-    : subjectId === 'money'         ? MONEYBUSINESS_UPPEREXPLORERS
-    : subjectId === 'future-skills'  ? FUTURESKILLS_UPPEREXPLORERS
-    : subjectId === 'leadership'     ? SOCIALLEADERSHIP_UPPEREXPLORERS
-    : subjectId === 'wellness'       ? LIFEWELLNESS_UPPEREXPLORERS
-    : subjectId === 'creative-arts'  ? CREATIVEARTS_UPPEREXPLORERS
-    : subjectId === 'history'        ? SS_UPPEREXPLORERS
+  const l3Lessons = subjectId === 'ela'          ? ELA_UPPEREXPLORERS
+    : subjectId === 'inner-world'                ? INNERWORLD_UPPEREXPLORERS
+    : subjectId === 'cosmos'                     ? COSMOS_UPPEREXPLORERS
+    : subjectId === 'sci'                        ? SCI_UPPEREXPLORERS
+    : subjectId === 'money'                      ? MONEYBUSINESS_UPPEREXPLORERS
+    : subjectId === 'future-skills'              ? FUTURESKILLS_UPPEREXPLORERS
+    : subjectId === 'leadership'                 ? SOCIALLEADERSHIP_UPPEREXPLORERS
+    : subjectId === 'wellness'                   ? LIFEWELLNESS_UPPEREXPLORERS
+    : subjectId === 'creative-arts'              ? CREATIVEARTS_UPPEREXPLORERS
+    : subjectId === 'history'                    ? HISTORYWORLD_UPPEREXPLORERS
+    : subjectId === 'ss'                         ? SS_UPPEREXPLORERS
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
-  const l4Lessons = subjectId === 'language-arts'  ? ELA_VOYAGERS
-    : subjectId === 'inner-world'    ? INNERWORLD_VOYAGERS
-    : subjectId === 'cosmos'         ? SCI_VOYAGERS
-    : subjectId === 'math'           ? MATH_VOYAGERS
-    : subjectId === 'money'          ? MONEYBUSINESS_VOYAGERS
-    : subjectId === 'future-skills'  ? FUTURESKILLS_VOYAGERS
-    : subjectId === 'leadership'     ? SOCIALLEADERSHIP_VOYAGERS
-    : subjectId === 'wellness'       ? LIFEWELLNESS_VOYAGERS
-    : subjectId === 'creative-arts'  ? CREATIVEARTS_VOYAGERS
-    : subjectId === 'history'        ? HISTORYWORLD_VOYAGERS
+  const l4Lessons = subjectId === 'ela'          ? ELA_VOYAGERS
+    : subjectId === 'inner-world'                ? INNERWORLD_VOYAGERS
+    : subjectId === 'cosmos'                     ? COSMOS_VOYAGERS
+    : subjectId === 'sci'                        ? SCI_VOYAGERS
+    : subjectId === 'math'                       ? MATH_VOYAGERS
+    : subjectId === 'money'                      ? MONEYBUSINESS_VOYAGERS
+    : subjectId === 'future-skills'              ? FUTURESKILLS_VOYAGERS
+    : subjectId === 'leadership'                 ? SOCIALLEADERSHIP_VOYAGERS
+    : subjectId === 'wellness'                   ? LIFEWELLNESS_VOYAGERS
+    : subjectId === 'creative-arts'              ? CREATIVEARTS_VOYAGERS
+    : subjectId === 'history'                    ? HISTORYWORLD_VOYAGERS
+    : subjectId === 'ss'                         ? SS_VOYAGERS
     : getLevel4Lessons(subjectId);
 
   const lessonsByLevel = { 1: l1Lessons, 2: l2Lessons, 3: l3Lessons, 4: l4Lessons };

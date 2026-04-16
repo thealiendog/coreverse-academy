@@ -21,7 +21,7 @@ export default function OnboardingAccount() {
   const navigate = useNavigate();
   const draft    = getOnboardingDraft();
   const child    = draft.child    || {};
-  const subjects = draft.subjects || ['math', 'language-arts'];
+  const subjects = draft.subjects || ['math', 'ela'];
 
   const [form, setForm]     = useState({ name: '', email: '', password: '', confirm: '' });
   const [errors, setErrors] = useState({});

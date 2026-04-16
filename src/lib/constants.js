@@ -31,11 +31,9 @@ export function ageToAgeBand(age) {
 }
 
 // ── Subjects ─────────────────────────────────────────────────────────────────
-export const SUBJECTS = [
+export const ORIGINALS = [
   { id: 'inner-world',   label: 'Inner World & Consciousness', icon: '🌿', color: '#10B981', lessons: ['The Emotion Wheel','The Feeling Body','Riding the Wave','The Quiet Mind','The Thinking Trap','Gratitude','Self-Compassion','Inner Strength','Growth Mindset','Setting Boundaries','Forgiveness','Courage','Curiosity','Visualization','Loving-Kindness','The Present Moment','Values','Connection','The Observer Self','Your Inner World'] },
   { id: 'cosmos',        label: 'Cosmos & Science',            icon: '🔭', color: '#6366F1', lessons: ['Our Solar System', 'Biology & Living Things', 'Earth & Geology'] },
-  { id: 'math',          label: 'Mathematics',                 icon: '🔢', color: '#8B5CF6', lessons: ['Patterns & Numbers', 'Multiplication Magic', 'Fractions Are Fun'] },
-  { id: 'language-arts', label: 'Language Arts',               icon: '📖', color: '#F59E0B', lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
   { id: 'history',       label: 'History & World',             icon: '🗺️', color: '#D97706', lessons: ['Ancient Civilizations', 'World Cultures', 'US History'] },
   { id: 'future-skills', label: 'Future Skills',               icon: '🚀', color: '#3B82F6', lessons: ['What Is AI?', 'Coding Basics', 'Building With Technology'] },
   { id: 'money',         label: 'Money & Business',            icon: '💡', color: '#FCD34D', lessons: ['What Is Money?','Earning Money','Needs vs Wants','The Power of Saving','Counting Money','Your First Budget','Banks','Smart Spending','The Joy of Giving','Buying and Selling','Starting a Kid Business','Jobs and Careers','Advertising','Supply and Demand','Money Around the World','Barter','Setting Money Goals','Investing','Taxes','Money and Values'] },
@@ -45,6 +43,15 @@ export const SUBJECTS = [
   { id: 'languages',     label: 'Languages (Spanish)',         icon: '🌎', color: '#34D399', lessons: ['Hola! Greetings', 'Colors & Numbers', 'My Family in Spanish'] },
   { id: 'frontier',      label: 'Frontier & Philosophy',       icon: '✨', color: '#A78BFA', lessons: ['Big Questions', 'Quantum World', 'Ancient Wisdom & Lost History'] },
 ];
+
+export const CORE_ACADEMICS = [
+  { id: 'math', label: 'Mathematics',          icon: '📐', color: '#8B5CF6', standard: 'CCSS Aligned',   lessons: ['Patterns & Numbers', 'Multiplication Magic', 'Fractions Are Fun'] },
+  { id: 'ela',  label: 'English Language Arts', icon: '📖', color: '#F59E0B', standard: 'CCSS Aligned',   lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
+  { id: 'sci',  label: 'Science',               icon: '🔬', color: '#06B6D4', standard: 'NGSS Aligned',   lessons: ['Life Science', 'Earth Science', 'Physical Science'] },
+  { id: 'ss',   label: 'Social Studies',        icon: '🌍', color: '#84CC16', standard: 'C3 Framework',   lessons: ['Civics & Government', 'Geography', 'US History'] },
+];
+
+export const SUBJECTS = [...ORIGINALS, ...CORE_ACADEMICS];
 
 export function getSubject(id) {
   return SUBJECTS.find(s => s.id === id) || SUBJECTS[0];
