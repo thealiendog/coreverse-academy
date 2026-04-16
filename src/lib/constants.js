@@ -45,10 +45,10 @@ export const ORIGINALS = [
 ];
 
 export const CORE_ACADEMICS = [
-  { id: 'math', label: 'Mathematics',          icon: '📐', color: '#8B5CF6', standard: 'CCSS Aligned',   lessons: ['Patterns & Numbers', 'Multiplication Magic', 'Fractions Are Fun'] },
-  { id: 'ela',  label: 'English Language Arts', icon: '📖', color: '#F59E0B', standard: 'CCSS Aligned',   lessons: ['Reading Comprehension', 'Creative Writing', 'Grammar Basics'] },
-  { id: 'sci',  label: 'Science',               icon: '🔬', color: '#06B6D4', standard: 'NGSS Aligned',   lessons: ['Life Science', 'Earth Science', 'Physical Science'] },
-  { id: 'ss',   label: 'Social Studies',        icon: '🌍', color: '#84CC16', standard: 'C3 Framework',   lessons: ['Civics & Government', 'Geography', 'US History'] },
+  { id: 'math', label: 'Mathematics',          icon: '📐', color: '#8B5CF6', standard: 'CCSS Aligned', guide: 'Remi',  guideAnimal: 'Raccoon',   lessonCount: 20, lessons: [] },
+  { id: 'ela',  label: 'English Language Arts', icon: '📖', color: '#F59E0B', standard: 'CCSS Aligned', guide: 'Quill', guideAnimal: 'Porcupine', lessonCount: 20, lessons: [] },
+  { id: 'sci',  label: 'Science',               icon: '🔬', color: '#06B6D4', standard: 'NGSS Aligned', guide: 'Cosmo', guideAnimal: 'Otter',     lessonCount: 20, lessons: [] },
+  { id: 'ss',   label: 'Social Studies',        icon: '🌍', color: '#84CC16', standard: 'C3 Framework', guide: 'Atlas', guideAnimal: 'Bear',      lessonCount: 20, lessons: [] },
 ];
 
 export const SUBJECTS = [...ORIGINALS, ...CORE_ACADEMICS];

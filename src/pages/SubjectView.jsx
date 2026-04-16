@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../lib/storage';
-import { getSubject, getAvatar, AGE_BANDS, ageToAgeBand } from '../lib/constants';
+import { getSubject, getAvatar, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS } from '../lib/constants';
 import { getLessons } from '../data/lessons';
 import { getLevel2Lessons } from '../data/lessons_level2';
 import { getLevel3Lessons } from '../data/lessons_level3';
@@ -55,6 +55,7 @@ export default function SubjectView() {
   // child may be null (parent browsing) — show preview with no progress
   const av = child ? getAvatar(child.avatar) : getAvatar('nova');
   const progress = child?.progress || {};
+  const academicSubject = CORE_ACADEMICS.find(a => a.id === subjectId);
 
   // Subject-specific Little Stars curricula override level 1
   const l1Lessons = subjectId === 'ela'  ? ELA_LITTLESTARS
@@ -146,9 +147,23 @@ export default function SubjectView() {
           <h1 className="text-4xl font-semibold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
             {s.label}
           </h1>
-          <p className="text-base mb-4" style={{ color: av.accent }}>
-            {av.name} is your guide
-          </p>
+          {academicSubject ? (
+            <div className="flex flex-col items-center gap-2 mb-4">
+              <p className="text-base" style={{ color: s.color }}>
+                {academicSubject.guide} the {academicSubject.guideAnimal} is your guide
+              </p>
+              <span
+                className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full"
+                style={{ background: s.color + '20', color: s.color }}
+              >
+                {academicSubject.standard}
+              </span>
+            </div>
+          ) : (
+            <p className="text-base mb-4" style={{ color: av.accent }}>
+              {av.name} is your guide
+            </p>
+          )}
           <div className="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-1.5">
             <div className="w-2 h-2 rounded-full" style={{ background: s.color }}/>
             <span className="text-white/50 text-sm">
@@ -157,13 +172,24 @@ export default function SubjectView() {
           </div>
         </div>
 
-        {/* Avatar speech bubble */}
+        {/* Speech bubble — avatar for Originals, guide info for Core Academics */}
         <div className="flex gap-4 mb-6 bg-[#0F0B2E] rounded-2xl p-5 border border-white/8">
-          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${av.accent}30` }}>
-            <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
-          </div>
+          {academicSubject ? (
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl"
+              style={{ background: s.color + '20', border: `1.5px solid ${s.color}40` }}
+            >
+              {s.icon}
+            </div>
+          ) : (
+            <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${av.accent}30` }}>
+              <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
+            </div>
+          )}
           <div>
-            <p className="text-xs font-semibold mb-1" style={{ color: av.accent }}>{av.name} says:</p>
+            <p className="text-xs font-semibold mb-1" style={{ color: academicSubject ? s.color : av.accent }}>
+              {academicSubject ? `${academicSubject.guide} says:` : `${av.name} says:`}
+            </p>
             <p className="text-white/65 text-sm leading-relaxed">{getAvatarSpeech(av.id, s.label)}</p>
           </div>
         </div>

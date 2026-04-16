@@ -95,7 +95,7 @@ export default function ChildDashboard() {
           {ORIGINALS.map((s, idx) => {
             const enrolled = child.subjects?.includes(s.id);
             const done  = progress[s.id] || 0;
-            const total = s.lessons?.length || 3;
+            const total = s.lessonCount || s.lessons?.length || 3;
             const pct   = Math.round((done / total) * 100);
 
             if (enrolled) {
@@ -149,7 +149,7 @@ export default function ChildDashboard() {
           {CORE_ACADEMICS.map((s, idx) => {
             const enrolled = child.subjects?.includes(s.id);
             const done  = progress[s.id] || 0;
-            const total = s.lessons?.length || 3;
+            const total = s.lessonCount || s.lessons?.length || 3;
             const pct   = Math.round((done / total) * 100);
 
             if (enrolled) {
