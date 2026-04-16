@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../lib/storage';
 import { getSubject, getAvatar, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS } from '../lib/constants';
+import AnimalIcon from '../components/AnimalIcon';
 import { getLessons } from '../data/lessons';
 import { getLevel2Lessons } from '../data/lessons_level2';
 import { getLevel3Lessons } from '../data/lessons_level3';
@@ -143,7 +144,9 @@ export default function SubjectView() {
 
         {/* Subject header */}
         <div className="text-center mb-10">
-          <div className="w-3 h-3 rounded-full mx-auto mb-4" style={{ background: s.color }}/>
+          <div className="mb-4 flex justify-center" style={{ filter: `drop-shadow(0 0 8px ${s.color}60)` }}>
+            <AnimalIcon subjectId={subjectId} color={s.color} size={40} />
+          </div>
           <h1 className="text-4xl font-semibold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
             {s.label}
           </h1>

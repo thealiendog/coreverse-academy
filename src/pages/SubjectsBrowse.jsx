@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
 import { getSubjectLessons } from '../data/subjectLessons';
+import AnimalIcon from '../components/AnimalIcon';
 
 const AGE_BANDS = [
   { level: 1, emoji: '⭐', label: 'Little Stars',    ages: '3–5'   },
@@ -121,7 +122,10 @@ function SubjectRow({ subject: s, expandedSubject, expandedBand, onToggleSubject
         className="w-full text-left px-5 py-4 flex items-center justify-between group"
       >
         <div className="flex items-center gap-3 min-w-0">
-          <span className="text-lg leading-none flex-shrink-0">{s.icon}</span>
+          <span className="flex-shrink-0 opacity-80 group-hover:opacity-100 transition-opacity"
+            style={{ filter: `drop-shadow(0 0 5px ${s.color}55)` }}>
+            <AnimalIcon subjectId={s.id} color={s.color} size={22} />
+          </span>
           <span className="font-semibold text-white truncate" style={{ fontFamily: 'Georgia, serif' }}>
             {s.label}
           </span>

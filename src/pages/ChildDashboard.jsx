@@ -1,6 +1,7 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
 import { getAvatar, getSubject, ageToAgeBand, ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
+import AnimalIcon from '../components/AnimalIcon';
 
 const BG_GRADIENTS = [
   'from-indigo-900/60 to-violet-900/40',
@@ -107,7 +108,9 @@ export default function ChildDashboard() {
                   style={{ boxShadow: `0 4px 20px ${s.color}18` }}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <span className="text-2xl leading-none">{s.icon}</span>
+                    <span style={{ filter: `drop-shadow(0 0 6px ${s.color}50)` }}>
+                      <AnimalIcon subjectId={s.id} color={s.color} size={28} />
+                    </span>
                     <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
                   </div>
                   <h3 className="text-sm font-bold text-white mb-3 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
@@ -128,7 +131,7 @@ export default function ChildDashboard() {
                 key={s.id}
                 className="rounded-2xl p-4 border border-white/5 bg-white/[0.015] opacity-40"
               >
-                <span className="text-2xl leading-none mb-3 block grayscale opacity-50">{s.icon}</span>
+                <span className="mb-3 block opacity-25"><AnimalIcon subjectId={s.id} color={s.color} size={28} /></span>
                 <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
                   {s.label}
                 </h3>
@@ -161,7 +164,9 @@ export default function ChildDashboard() {
                   style={{ boxShadow: `0 4px 20px ${s.color}18` }}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <span className="text-2xl leading-none">{s.icon}</span>
+                    <span style={{ filter: `drop-shadow(0 0 6px ${s.color}50)` }}>
+                      <AnimalIcon subjectId={s.id} color={s.color} size={28} />
+                    </span>
                     <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
@@ -190,7 +195,7 @@ export default function ChildDashboard() {
                 key={s.id}
                 className="rounded-2xl p-4 border border-white/5 bg-white/[0.015] opacity-40"
               >
-                <span className="text-2xl leading-none mb-2 block grayscale opacity-50">{s.icon}</span>
+                <span className="mb-2 block opacity-25"><AnimalIcon subjectId={s.id} color={s.color} size={28} /></span>
                 <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
                   {s.label}
                 </h3>
