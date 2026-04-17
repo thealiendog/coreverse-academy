@@ -43,13 +43,27 @@ import SCI_VOYAGERS from './sci_voyagers_adapter';
 import SS_EXPLORERS from './ss_explorers_adapter';
 import SS_UPPEREXPLORERS from './ss_upperexplorers_adapter';
 import SS_VOYAGERS from './ss_voyagers_adapter';
+import SS_LITTLESTARS from './ss_littlestars_adapter';
+import INNERWORLD_LITTLESTARS from './innerworld_littlestars_adapter';
+import COSMOS_LITTLESTARS from './cosmos_littlestars_adapter';
+import MONEYBUSINESS_LITTLESTARS from './moneybusiness_littlestars_adapter';
+import FUTURESKILLS_LITTLESTARS from './futureskills_littlestars_adapter';
+import MATH_UPPEREXPLORERS from './math_upperexplorers_adapter';
+import MATH_LITTLESTARS from './math_littlestars_adapter';
+import MATH_EXPLORERS from './math_explorers_adapter';
 
 // Subjects that should never use generic fallback content for missing bands
 const ACADEMIC_IDS = new Set(['math', 'ela', 'sci', 'ss']);
 
 const L1_MAP = {
-  'ela': ELA_LITTLESTARS,
-  'sci': SCI_LITTLESTARS,
+  'ela':           ELA_LITTLESTARS,
+  'sci':           SCI_LITTLESTARS,
+  'ss':            SS_LITTLESTARS,
+  'inner-world':   INNERWORLD_LITTLESTARS,
+  'cosmos':        COSMOS_LITTLESTARS,
+  'money':         MONEYBUSINESS_LITTLESTARS,
+  'future-skills': FUTURESKILLS_LITTLESTARS,
+  'math':          MATH_LITTLESTARS,
 };
 
 const L2_MAP = {
@@ -64,6 +78,7 @@ const L2_MAP = {
   'creative-arts': CREATIVEARTS_EXPLORERS,
   'history':       HISTORYWORLD_EXPLORERS,
   'ss':            SS_EXPLORERS,
+  'math':          MATH_EXPLORERS,
 };
 
 const L3_MAP = {
@@ -78,6 +93,7 @@ const L3_MAP = {
   'creative-arts': CREATIVEARTS_UPPEREXPLORERS,
   'history':       HISTORYWORLD_UPPEREXPLORERS,
   'ss':            SS_UPPEREXPLORERS,
+  'math':          MATH_UPPEREXPLORERS,
 };
 
 const L4_MAP = {
