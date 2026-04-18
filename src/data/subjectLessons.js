@@ -51,6 +51,18 @@ import FUTURESKILLS_LITTLESTARS from './futureskills_littlestars_adapter';
 import MATH_UPPEREXPLORERS from './math_upperexplorers_adapter';
 import MATH_LITTLESTARS from './math_littlestars_adapter';
 import MATH_EXPLORERS from './math_explorers_adapter';
+import SOCIALLEADERSHIP_LITTLESTARS from './socialleadership_littlestars_adapter';
+import LIFEWELLNESS_LITTLESTARS from './lifewellness_littlestars_adapter';
+import CREATIVEARTS_LITTLESTARS from './creativearts_littlestars_adapter';
+import SPANISH_LITTLESTARS from './spanish_littlestars_adapter';
+import HISTORYWORLD_LITTLESTARS from './historyworld_littlestars_adapter';
+import FRONTIER_LITTLESTARS from './frontier_littlestars_adapter';
+import SPANISH_EXPLORERS from './spanish_explorers_adapter';
+import SPANISH_UPPEREXPLORERS from './spanish_upperexplorers_adapter';
+import SPANISH_VOYAGERS from './spanish_voyagers_adapter';
+import FRONTIER_EXPLORERS from './frontier_explorers_adapter';
+import FRONTIER_UPPEREXPLORERS from './frontier_upperexplorers_adapter';
+import FRONTIER_VOYAGERS from './frontier_voyagers_adapter';
 
 // Subjects that should never use generic fallback content for missing bands
 const ACADEMIC_IDS = new Set(['math', 'ela', 'sci', 'ss']);
@@ -64,6 +76,12 @@ const L1_MAP = {
   'money':         MONEYBUSINESS_LITTLESTARS,
   'future-skills': FUTURESKILLS_LITTLESTARS,
   'math':          MATH_LITTLESTARS,
+  'leadership':    SOCIALLEADERSHIP_LITTLESTARS,
+  'wellness':      LIFEWELLNESS_LITTLESTARS,
+  'creative-arts': CREATIVEARTS_LITTLESTARS,
+  'languages':     SPANISH_LITTLESTARS,
+  'history':       HISTORYWORLD_LITTLESTARS,
+  'frontier':      FRONTIER_LITTLESTARS,
 };
 
 const L2_MAP = {
@@ -79,6 +97,8 @@ const L2_MAP = {
   'history':       HISTORYWORLD_EXPLORERS,
   'ss':            SS_EXPLORERS,
   'math':          MATH_EXPLORERS,
+  'languages':     SPANISH_EXPLORERS,
+  'frontier':      FRONTIER_EXPLORERS,
 };
 
 const L3_MAP = {
@@ -94,6 +114,8 @@ const L3_MAP = {
   'history':       HISTORYWORLD_UPPEREXPLORERS,
   'ss':            SS_UPPEREXPLORERS,
   'math':          MATH_UPPEREXPLORERS,
+  'languages':     SPANISH_UPPEREXPLORERS,
+  'frontier':      FRONTIER_UPPEREXPLORERS,
 };
 
 const L4_MAP = {
@@ -109,6 +131,8 @@ const L4_MAP = {
   'creative-arts': CREATIVEARTS_VOYAGERS,
   'history':       HISTORYWORLD_VOYAGERS,
   'ss':            SS_VOYAGERS,
+  'languages':     SPANISH_VOYAGERS,
+  'frontier':      FRONTIER_VOYAGERS,
 };
 
 export function getSubjectLessons(subjectId) {

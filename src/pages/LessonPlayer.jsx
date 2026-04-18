@@ -51,6 +51,18 @@ import FUTURESKILLS_LITTLESTARS from '../data/futureskills_littlestars_adapter';
 import MATH_UPPEREXPLORERS from '../data/math_upperexplorers_adapter';
 import MATH_LITTLESTARS from '../data/math_littlestars_adapter';
 import MATH_EXPLORERS from '../data/math_explorers_adapter';
+import SOCIALLEADERSHIP_LITTLESTARS from '../data/socialleadership_littlestars_adapter';
+import LIFEWELLNESS_LITTLESTARS from '../data/lifewellness_littlestars_adapter';
+import CREATIVEARTS_LITTLESTARS from '../data/creativearts_littlestars_adapter';
+import SPANISH_LITTLESTARS from '../data/spanish_littlestars_adapter';
+import HISTORYWORLD_LITTLESTARS from '../data/historyworld_littlestars_adapter';
+import FRONTIER_LITTLESTARS from '../data/frontier_littlestars_adapter';
+import SPANISH_EXPLORERS from '../data/spanish_explorers_adapter';
+import SPANISH_UPPEREXPLORERS from '../data/spanish_upperexplorers_adapter';
+import SPANISH_VOYAGERS from '../data/spanish_voyagers_adapter';
+import FRONTIER_EXPLORERS from '../data/frontier_explorers_adapter';
+import FRONTIER_UPPEREXPLORERS from '../data/frontier_upperexplorers_adapter';
+import FRONTIER_VOYAGERS from '../data/frontier_voyagers_adapter';
 import NovaChat from '../components/NovaChat';
 
 const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
@@ -198,10 +210,10 @@ export default function LessonPlayer() {
   const level     = parseInt(searchParams.get('level') || '1', 10);
   const progressKey = level === 1 ? subjectId : `${subjectId}__${level}`;
   const levelGetters = { 1: getLesson, 2: getLevel2Lesson, 3: getLevel3Lesson, 4: getLevel4Lesson };
-  const littleStarsOverrides = { 'ela': ELA_LITTLESTARS, 'sci': SCI_LITTLESTARS, 'ss': SS_LITTLESTARS, 'inner-world': INNERWORLD_LITTLESTARS, 'cosmos': COSMOS_LITTLESTARS, 'money': MONEYBUSINESS_LITTLESTARS, 'future-skills': FUTURESKILLS_LITTLESTARS, 'math': MATH_LITTLESTARS };
-  const explorerOverrides = { 'ela': ELA_EXPLORERS, 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': COSMOS_EXPLORERS, 'sci': SCI_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS, 'wellness': LIFEWELLNESS_EXPLORERS, 'creative-arts': CREATIVEARTS_EXPLORERS, 'history': HISTORYWORLD_EXPLORERS, 'ss': SS_EXPLORERS, 'math': MATH_EXPLORERS };
-  const upperExplorerOverrides = { 'ela': ELA_UPPEREXPLORERS, 'inner-world': INNERWORLD_UPPEREXPLORERS, 'cosmos': COSMOS_UPPEREXPLORERS, 'sci': SCI_UPPEREXPLORERS, 'money': MONEYBUSINESS_UPPEREXPLORERS, 'future-skills': FUTURESKILLS_UPPEREXPLORERS, 'leadership': SOCIALLEADERSHIP_UPPEREXPLORERS, 'wellness': LIFEWELLNESS_UPPEREXPLORERS, 'creative-arts': CREATIVEARTS_UPPEREXPLORERS, 'history': HISTORYWORLD_UPPEREXPLORERS, 'ss': SS_UPPEREXPLORERS, 'math': MATH_UPPEREXPLORERS };
-  const voyagerOverrides = { 'ela': ELA_VOYAGERS, 'inner-world': INNERWORLD_VOYAGERS, 'cosmos': COSMOS_VOYAGERS, 'sci': SCI_VOYAGERS, 'math': MATH_VOYAGERS, 'money': MONEYBUSINESS_VOYAGERS, 'future-skills': FUTURESKILLS_VOYAGERS, 'leadership': SOCIALLEADERSHIP_VOYAGERS, 'wellness': LIFEWELLNESS_VOYAGERS, 'creative-arts': CREATIVEARTS_VOYAGERS, 'history': HISTORYWORLD_VOYAGERS, 'ss': SS_VOYAGERS };
+  const littleStarsOverrides = { 'ela': ELA_LITTLESTARS, 'sci': SCI_LITTLESTARS, 'ss': SS_LITTLESTARS, 'inner-world': INNERWORLD_LITTLESTARS, 'cosmos': COSMOS_LITTLESTARS, 'money': MONEYBUSINESS_LITTLESTARS, 'future-skills': FUTURESKILLS_LITTLESTARS, 'math': MATH_LITTLESTARS, 'leadership': SOCIALLEADERSHIP_LITTLESTARS, 'wellness': LIFEWELLNESS_LITTLESTARS, 'creative-arts': CREATIVEARTS_LITTLESTARS, 'languages': SPANISH_LITTLESTARS, 'history': HISTORYWORLD_LITTLESTARS, 'frontier': FRONTIER_LITTLESTARS };
+  const explorerOverrides = { 'ela': ELA_EXPLORERS, 'inner-world': INNERWORLD_EXPLORERS, 'money': MONEYBUSINESS_EXPLORERS, 'cosmos': COSMOS_EXPLORERS, 'sci': SCI_EXPLORERS, 'future-skills': FUTURESKILLS_EXPLORERS, 'leadership': SOCIALLEADERSHIP_EXPLORERS, 'wellness': LIFEWELLNESS_EXPLORERS, 'creative-arts': CREATIVEARTS_EXPLORERS, 'history': HISTORYWORLD_EXPLORERS, 'ss': SS_EXPLORERS, 'math': MATH_EXPLORERS, 'languages': SPANISH_EXPLORERS, 'frontier': FRONTIER_EXPLORERS };
+  const upperExplorerOverrides = { 'ela': ELA_UPPEREXPLORERS, 'inner-world': INNERWORLD_UPPEREXPLORERS, 'cosmos': COSMOS_UPPEREXPLORERS, 'sci': SCI_UPPEREXPLORERS, 'money': MONEYBUSINESS_UPPEREXPLORERS, 'future-skills': FUTURESKILLS_UPPEREXPLORERS, 'leadership': SOCIALLEADERSHIP_UPPEREXPLORERS, 'wellness': LIFEWELLNESS_UPPEREXPLORERS, 'creative-arts': CREATIVEARTS_UPPEREXPLORERS, 'history': HISTORYWORLD_UPPEREXPLORERS, 'ss': SS_UPPEREXPLORERS, 'math': MATH_UPPEREXPLORERS, 'languages': SPANISH_UPPEREXPLORERS, 'frontier': FRONTIER_UPPEREXPLORERS };
+  const voyagerOverrides = { 'ela': ELA_VOYAGERS, 'inner-world': INNERWORLD_VOYAGERS, 'cosmos': COSMOS_VOYAGERS, 'sci': SCI_VOYAGERS, 'math': MATH_VOYAGERS, 'money': MONEYBUSINESS_VOYAGERS, 'future-skills': FUTURESKILLS_VOYAGERS, 'leadership': SOCIALLEADERSHIP_VOYAGERS, 'wellness': LIFEWELLNESS_VOYAGERS, 'creative-arts': CREATIVEARTS_VOYAGERS, 'history': HISTORYWORLD_VOYAGERS, 'ss': SS_VOYAGERS, 'languages': SPANISH_VOYAGERS, 'frontier': FRONTIER_VOYAGERS };
   const lesson = (level === 1 && littleStarsOverrides[subjectId])
     ? (littleStarsOverrides[subjectId][idx] || null)
     : (level === 2 && explorerOverrides[subjectId])

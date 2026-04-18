@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../lib/storage';
-import { getSubject, getAvatar, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS } from '../lib/constants';
+import { getSubject, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS } from '../lib/constants';
 import AnimalIcon from '../components/AnimalIcon';
 import { getLessons } from '../data/lessons';
 import { getLevel2Lessons } from '../data/lessons_level2';
@@ -53,8 +53,6 @@ export default function SubjectView() {
   const childBand = child ? ageToAgeBand(child.age) : AGE_BANDS[1];
   const [level, setLevel] = useState(childBand.level);
 
-  // child may be null (parent browsing) — show preview with no progress
-  const av = child ? getAvatar(child.avatar) : getAvatar('nova');
   const progress = child?.progress || {};
   const academicSubject = CORE_ACADEMICS.find(a => a.id === subjectId);
 
@@ -150,23 +148,19 @@ export default function SubjectView() {
           <h1 className="text-4xl font-semibold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
             {s.label}
           </h1>
-          {academicSubject ? (
-            <div className="flex flex-col items-center gap-2 mb-4">
-              <p className="text-base" style={{ color: s.color }}>
-                {academicSubject.guide} the {academicSubject.guideAnimal} is your guide
-              </p>
+          <div className="flex flex-col items-center gap-2 mb-4">
+            <p className="text-base" style={{ color: s.color }}>
+              {s.guide} the {s.guideAnimal} is your guide
+            </p>
+            {academicSubject?.standard && (
               <span
                 className="text-[10px] font-semibold px-2.5 py-0.5 rounded-full"
                 style={{ background: s.color + '20', color: s.color }}
               >
                 {academicSubject.standard}
               </span>
-            </div>
-          ) : (
-            <p className="text-base mb-4" style={{ color: av.accent }}>
-              {av.name} is your guide
-            </p>
-          )}
+            )}
+          </div>
           <div className="inline-flex items-center gap-2 bg-white/5 rounded-full px-4 py-1.5">
             <div className="w-2 h-2 rounded-full" style={{ background: s.color }}/>
             <span className="text-white/50 text-sm">
@@ -175,25 +169,19 @@ export default function SubjectView() {
           </div>
         </div>
 
-        {/* Speech bubble — avatar for Originals, guide info for Core Academics */}
+        {/* Speech bubble */}
         <div className="flex gap-4 mb-6 bg-[#0F0B2E] rounded-2xl p-5 border border-white/8">
-          {academicSubject ? (
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl"
-              style={{ background: s.color + '20', border: `1.5px solid ${s.color}40` }}
-            >
-              {s.icon}
-            </div>
-          ) : (
-            <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${av.accent}30` }}>
-              <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
-            </div>
-          )}
+          <div
+            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+            style={{ background: s.color + '18', border: `1.5px solid ${s.color}35`, filter: `drop-shadow(0 0 6px ${s.color}30)` }}
+          >
+            <AnimalIcon subjectId={subjectId} color={s.color} size={26} />
+          </div>
           <div>
-            <p className="text-xs font-semibold mb-1" style={{ color: academicSubject ? s.color : av.accent }}>
-              {academicSubject ? `${academicSubject.guide} says:` : `${av.name} says:`}
+            <p className="text-xs font-semibold mb-1" style={{ color: s.color }}>
+              {s.guide} says:
             </p>
-            <p className="text-white/65 text-sm leading-relaxed">{getAvatarSpeech(av.id, s.label)}</p>
+            <p className="text-white/65 text-sm leading-relaxed">{getGuideIntro(subjectId, s.label)}</p>
           </div>
         </div>
 
@@ -314,16 +302,22 @@ export default function SubjectView() {
   );
 }
 
-function getAvatarSpeech(avatarId, subjectLabel) {
-  const speeches = {
-    nova:  `Ready to explore? ${subjectLabel} is one of the most fascinating things you'll ever study. Let's discover it together!`,
-    sage:  `Take a gentle breath. In ${subjectLabel}, we slow down and listen to the wisdom that lives inside you.`,
-    byte:  `Every expert was once a beginner. In ${subjectLabel}, we build step by step — you'll amaze yourself.`,
-    ace:   `${subjectLabel} is a tool, and knowing how to use it changes everything. Let's build something real.`,
-    muse:  `Expression is your superpower. ${subjectLabel} is where your imagination leads. There are no wrong answers here.`,
-    valor: `Every great journey starts where you are. In ${subjectLabel}, we build courage, character, and heart.`,
-    terra: `The world is alive and full of stories. ${subjectLabel} teaches us to listen and understand.`,
-    lyra:  `Words and ideas are magic. In ${subjectLabel}, you'll find your voice and discover ideas worth sharing.`,
+function getGuideIntro(subjectId, subjectLabel) {
+  const intros = {
+    'inner-world':   "Take a gentle breath. Your inner world is full of wisdom — we just slow down and listen to it together.",
+    'cosmos':        "Ready to explore? The universe is vast and full of wonder. Let's discover its secrets together!",
+    'history':       "Every civilization has a story worth knowing. Let's travel through time and meet the people who shaped our world.",
+    'future-skills': "Every expert was once a beginner. We build skills step by step — and you'll amaze yourself.",
+    'money':         "Money is a tool, and knowing how to use it changes everything. Let's build real-world wisdom.",
+    'creative-arts': "Expression is your superpower. Here, your imagination leads — there are no wrong answers.",
+    'wellness':      "Your body and mind are extraordinary. Let's learn how to take care of them every single day.",
+    'leadership':    "Every great journey starts where you are. We'll build courage, character, and heart together.",
+    'languages':     "¡Hola! Language opens doors to new worlds and new friends. Let's start our adventure in Spanish!",
+    'frontier':      "The biggest questions have the most interesting answers. Let's explore the edge of what's known.",
+    'math':          "Every number tells a story. Together we'll uncover the patterns and logic that make math beautiful.",
+    'ela':           "Words and ideas are magic. Here you'll find your voice and discover ideas worth sharing.",
+    'sci':           "Science is how we ask questions and find real answers. Let's investigate the world around us!",
+    'ss':            "Understanding people, places, and history helps us understand ourselves. Let's explore together.",
   };
-  return speeches[avatarId] || `Welcome to ${subjectLabel}! Let's learn something wonderful today.`;
+  return intros[subjectId] || `Welcome to ${subjectLabel}! Let's learn something wonderful today.`;
 }

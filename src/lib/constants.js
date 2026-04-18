@@ -32,16 +32,16 @@ export function ageToAgeBand(age) {
 
 // ── Subjects ─────────────────────────────────────────────────────────────────
 export const ORIGINALS = [
-  { id: 'inner-world',   label: 'Inner World & Consciousness', icon: '🌿', color: '#10B981', lessons: ['The Emotion Wheel','The Feeling Body','Riding the Wave','The Quiet Mind','The Thinking Trap','Gratitude','Self-Compassion','Inner Strength','Growth Mindset','Setting Boundaries','Forgiveness','Courage','Curiosity','Visualization','Loving-Kindness','The Present Moment','Values','Connection','The Observer Self','Your Inner World'] },
-  { id: 'cosmos',        label: 'Cosmos & Science',            icon: '🔭', color: '#6366F1', lessons: ['Our Solar System', 'Biology & Living Things', 'Earth & Geology'] },
-  { id: 'history',       label: 'History & World',             icon: '🗺️', color: '#D97706', lessons: ['Ancient Civilizations', 'World Cultures', 'US History'] },
-  { id: 'future-skills', label: 'Future Skills',               icon: '🚀', color: '#3B82F6', lessons: ['What Is AI?', 'Coding Basics', 'Building With Technology'] },
-  { id: 'money',         label: 'Money & Business',            icon: '💡', color: '#FCD34D', lessons: ['What Is Money?','Earning Money','Needs vs Wants','The Power of Saving','Counting Money','Your First Budget','Banks','Smart Spending','The Joy of Giving','Buying and Selling','Starting a Kid Business','Jobs and Careers','Advertising','Supply and Demand','Money Around the World','Barter','Setting Money Goals','Investing','Taxes','Money and Values'] },
-  { id: 'creative-arts', label: 'Creative Arts',               icon: '🎨', color: '#E879F9', lessons: ['Drawing & Color', 'Music & Rhythm', 'Film & Photography'] },
-  { id: 'wellness',      label: 'Life & Wellness',             icon: '🌱', color: '#86EFAC', lessons: ['Healthy Food & Cooking', 'Movement & Exercise', 'Gardening & Nature'] },
-  { id: 'leadership',    label: 'Social & Leadership',         icon: '🤝', color: '#FCA5A5', lessons: ['Communication Skills', 'Team Building', 'Public Speaking'] },
-  { id: 'languages',     label: 'Languages (Spanish)',         icon: '🌎', color: '#34D399', lessons: ['Hola! Greetings', 'Colors & Numbers', 'My Family in Spanish'] },
-  { id: 'frontier',      label: 'Frontier & Philosophy',       icon: '✨', color: '#A78BFA', lessons: ['Big Questions', 'Quantum World', 'Ancient Wisdom & Lost History'] },
+  { id: 'inner-world',   label: 'Inner World & Consciousness', icon: '🌿', color: '#10B981', guide: 'Sage',  guideAnimal: 'Deer',     lessons: ['The Emotion Wheel','The Feeling Body','Riding the Wave','The Quiet Mind','The Thinking Trap','Gratitude','Self-Compassion','Inner Strength','Growth Mindset','Setting Boundaries','Forgiveness','Courage','Curiosity','Visualization','Loving-Kindness','The Present Moment','Values','Connection','The Observer Self','Your Inner World'] },
+  { id: 'cosmos',        label: 'Cosmos & Science',            icon: '🔭', color: '#6366F1', guide: 'Nova',  guideAnimal: 'Owl',      lessons: ['Our Solar System', 'Biology & Living Things', 'Earth & Geology'] },
+  { id: 'history',       label: 'History & World',             icon: '🗺️', color: '#D97706', guide: 'Lyra',  guideAnimal: 'Elephant', lessons: ['Ancient Civilizations', 'World Cultures', 'US History'] },
+  { id: 'future-skills', label: 'Future Skills',               icon: '🚀', color: '#3B82F6', guide: 'Byte',  guideAnimal: 'Fox',      lessons: ['What Is AI?', 'Coding Basics', 'Building With Technology'] },
+  { id: 'money',         label: 'Money & Business',            icon: '💡', color: '#FCD34D', guide: 'Ace',   guideAnimal: 'Eagle',    lessons: ['What Is Money?','Earning Money','Needs vs Wants','The Power of Saving','Counting Money','Your First Budget','Banks','Smart Spending','The Joy of Giving','Buying and Selling','Starting a Kid Business','Jobs and Careers','Advertising','Supply and Demand','Money Around the World','Barter','Setting Money Goals','Investing','Taxes','Money and Values'] },
+  { id: 'creative-arts', label: 'Creative Arts',               icon: '🎨', color: '#E879F9', guide: 'Muse',  guideAnimal: 'Butterfly', lessons: ['Drawing & Color', 'Music & Rhythm', 'Film & Photography'] },
+  { id: 'wellness',      label: 'Life & Wellness',             icon: '🌱', color: '#86EFAC', guide: 'Terra', guideAnimal: 'Wolf',     lessons: ['Healthy Food & Cooking', 'Movement & Exercise', 'Gardening & Nature'] },
+  { id: 'leadership',    label: 'Social & Leadership',         icon: '🤝', color: '#FCA5A5', guide: 'Valor', guideAnimal: 'Lion',     lessons: ['Communication Skills', 'Team Building', 'Public Speaking'] },
+  { id: 'languages',     label: 'Languages (Spanish)',         icon: '🌎', color: '#34D399', guide: 'Luna',  guideAnimal: 'Parrot',   lessons: ['Hola! Greetings', 'Colors & Numbers', 'My Family in Spanish'] },
+  { id: 'frontier',      label: 'Frontier & Philosophy',       icon: '✨', color: '#A78BFA', guide: 'Orion', guideAnimal: 'Phoenix',  lessons: ['Big Questions', 'Quantum World', 'Ancient Wisdom & Lost History'] },
 ];
 
 export const CORE_ACADEMICS = [

@@ -12,11 +12,11 @@ import ParentDashboard from './pages/ParentDashboard';
 import ChildrenList    from './pages/ChildrenList';
 import AddChild        from './pages/AddChild';
 import SubjectsBrowse  from './pages/SubjectsBrowse';
+import MeetTheGuides  from './pages/MeetTheGuides';
 import StateCompliance from './pages/StateCompliance';
 import Account         from './pages/Account';
 import ChildSelect     from './pages/ChildSelect';
 import ChildDashboard  from './pages/ChildDashboard';
-import AvatarSelect    from './pages/AvatarSelect';
 import SubjectView     from './pages/SubjectView';
 import LessonPlayer    from './pages/LessonPlayer';
 
@@ -37,6 +37,7 @@ export default function App() {
         <Route path="/parent" element={<ParentLayout />}>
           <Route index element={<Navigate to="/parent/dashboard" replace />} />
           <Route path="dashboard"      element={<ParentDashboard />} />
+          <Route path="guides"         element={<MeetTheGuides />} />
           <Route path="children"       element={<ChildrenList />} />
           <Route path="children/add"   element={<AddChild />} />
           <Route path="subjects"       element={<SubjectsBrowse />} />
@@ -47,7 +48,6 @@ export default function App() {
         {/* Child flow */}
         <Route path="/child/select"             element={<ChildSelect />} />
         <Route path="/child/dashboard"          element={<ChildDashboard />} />
-        <Route path="/child/avatar-select"      element={<AvatarSelect />} />
         <Route path="/child/subject/:subjectId" element={<SubjectView />} />
         <Route path="/child/lesson/:subjectId/:lessonIdx" element={<LessonPlayer />} />
 

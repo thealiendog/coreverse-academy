@@ -1,29 +1,18 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentParent, addChildToParent, genId } from '../lib/storage';
-import { AVATARS, SUBJECTS, GRADE_LEVELS, ageToAgeBand } from '../lib/constants';
+import { SUBJECTS, GRADE_LEVELS, ageToAgeBand } from '../lib/constants';
 import Button from '../components/Button';
 import Input from '../components/Input';
-
-const AVATAR_VIBES = {
-  nova:  'Curious & wise',
-  sage:  'Calm & peaceful',
-  byte:  'Clever & playful',
-  ace:   'Bold & visionary',
-  muse:  'Creative & free',
-  valor: 'Brave & warm',
-  terra: 'Grounded & loyal',
-  lyra:  'Wise & storytelling',
-};
 
 export default function AddChild() {
   const navigate = useNavigate();
   const parent = getCurrentParent();
   if (!parent) { navigate('/parent/login'); return null; }
 
-  const [step, setStep] = useState(1); // 1=info, 2=avatar, 3=subjects
+  const [step, setStep] = useState(1); // 1=info, 2=subjects
   const [form, setForm] = useState({
-    name: '', age: '8', grade: 'Kindergarten', avatar: '', subjects: [], pin: '1234',
+    name: '', age: '8', grade: 'Kindergarten', subjects: [], pin: '1234',
   });
   const [errors, setErrors] = useState({});
 
@@ -49,8 +38,6 @@ export default function AddChild() {
       if (Object.keys(e).length) { setErrors(e); return; }
       setErrors({});
     }
-    if (step === 2 && !form.avatar) { setErrors({ avatar: 'Please choose an avatar' }); return; }
-    setErrors({});
     setStep(s => s + 1);
   }
 
@@ -62,7 +49,6 @@ export default function AddChild() {
       age: +form.age,
       grade: form.grade,
       ageBand: ageToAgeBand(+form.age || 8).id,
-      avatar: form.avatar,
       subjects: form.subjects,
       pin: form.pin || '1234',
       progress: {},
@@ -72,7 +58,7 @@ export default function AddChild() {
     navigate('/parent/dashboard');
   }
 
-  const steps = ['Info', 'Avatar', 'Subjects'];
+  const steps = ['Info', 'Subjects'];
 
   return (
     <div className="transition-page max-w-2xl mx-auto">
@@ -139,52 +125,11 @@ export default function AddChild() {
         </div>
       )}
 
-      {/* Step 2: Avatar */}
+      {/* Step 2: Subjects */}
       {step === 2 && (
         <div className="bg-[#0F0B2E] border border-white/8 rounded-2xl p-8">
-          <h2 className="text-xl font-semibold text-white mb-2" style={{fontFamily:'Georgia,serif'}}>Choose a spirit guide</h2>
-          <p className="text-white/40 text-sm mb-6">Your child's personal AI companion for every subject and lesson — one guide, all subjects</p>
-          {errors.avatar && <p className="text-red-400 text-sm mb-4">{errors.avatar}</p>}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            {AVATARS.map(av => (
-              <button
-                key={av.id}
-                onClick={() => setForm(f=>({...f,avatar:av.id}))}
-                className={`rounded-2xl p-4 flex flex-col items-center gap-2 border-2 transition-all duration-200 cursor-pointer
-                  ${form.avatar === av.id
-                    ? 'border-[#7C3AED] bg-[#7C3AED]/15 scale-105'
-                    : 'border-white/8 bg-white/3 hover:border-white/20 hover:bg-white/5'}`}
-              >
-                <img
-                  src={av.image}
-                  alt={av.name}
-                  className="w-20 h-20 rounded-full object-cover"
-                  style={{ boxShadow: `0 0 0 2px ${av.color}60` }}
-                />
-                <div className="text-center">
-                  <p className="font-semibold text-white text-sm">{av.name}</p>
-                  <p className="text-xs text-white/40 mt-0.5">{AVATAR_VIBES[av.id]}</p>
-                </div>
-                {form.avatar === av.id && (
-                  <div className="w-5 h-5 rounded-full bg-[#7C3AED] flex items-center justify-center">
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </div>
-                )}
-              </button>
-            ))}
-          </div>
-          <div className="flex gap-3">
-            <Button variant="secondary" onClick={()=>setStep(1)}>Back</Button>
-            <Button onClick={next} className="flex-1">Continue</Button>
-          </div>
-        </div>
-      )}
-
-      {/* Step 3: Subjects */}
-      {step === 3 && (
-        <div className="bg-[#0F0B2E] border border-white/8 rounded-2xl p-8">
           <h2 className="text-xl font-semibold text-white mb-2" style={{fontFamily:'Georgia,serif'}}>Pick their subjects</h2>
-          <p className="text-white/40 text-sm mb-6">Select all that {form.name || 'your child'} will explore</p>
+          <p className="text-white/40 text-sm mb-6">Select all that {form.name || 'your child'} will explore — they'll meet each subject's guide when they open it</p>
           {errors.subjects && <p className="text-red-400 text-sm mb-4">{errors.subjects}</p>}
           <div className="grid grid-cols-2 gap-3 mb-8">
             {SUBJECTS.map(s => {
@@ -208,7 +153,7 @@ export default function AddChild() {
             })}
           </div>
           <div className="flex gap-3">
-            <Button variant="secondary" onClick={()=>setStep(2)}>Back</Button>
+            <Button variant="secondary" onClick={()=>setStep(1)}>Back</Button>
             <Button onClick={handleSubmit} className="flex-1">
               Save Profile ({form.subjects.length} subjects)
             </Button>

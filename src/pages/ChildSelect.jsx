@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentParent, setCurrentChild } from '../lib/storage';
-import { getAvatar } from '../lib/constants';
 import Button from '../components/Button';
 
 export default function ChildSelect() {
@@ -68,27 +67,23 @@ export default function ChildSelect() {
         {/* Child cards */}
         {!selected ? (
           <div className="grid grid-cols-2 gap-4">
-            {children.map(child => {
-              const av = getAvatar(child.avatar);
-              return (
-                <button
-                  key={child.id}
-                  onClick={() => { setSelected(child); setPin(''); setError(''); }}
-                  className="flex flex-col items-center gap-3 p-6 rounded-3xl border border-white/10 hover:border-white/25 bg-[#0F0B2E]/80 backdrop-blur transition-all duration-200 hover:scale-105 hover:shadow-2xl group"
+            {children.map(child => (
+              <button
+                key={child.id}
+                onClick={() => { setSelected(child); setPin(''); setError(''); }}
+                className="flex flex-col items-center gap-3 p-6 rounded-3xl border border-white/10 hover:border-white/25 bg-[#0F0B2E]/80 backdrop-blur transition-all duration-200 hover:scale-105 hover:shadow-2xl group"
+              >
+                <div
+                  className="w-24 h-24 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+                  style={{ background: 'rgba(124,58,237,0.18)', border: '2px solid rgba(124,58,237,0.30)' }}
                 >
-                  <div
-                    className="w-24 h-24 rounded-full overflow-hidden transition-transform duration-200 group-hover:scale-110"
-                    style={{ boxShadow: `0 8px 32px ${av.accent}30, 0 0 0 2px ${av.accent}25` }}
-                  >
-                    <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-white font-semibold text-lg leading-tight">{child.name}</p>
-                    <p className="text-sm mt-0.5" style={{ color: av.accent }}>{av.name}</p>
-                  </div>
-                </button>
-              );
-            })}
+                  <span className="text-4xl font-semibold text-white/90" style={{ fontFamily: 'Georgia, serif' }}>
+                    {child.name.charAt(0).toUpperCase()}
+                  </span>
+                </div>
+                <p className="text-white font-semibold text-lg leading-tight">{child.name}</p>
+              </button>
+            ))}
           </div>
         ) : (
           // PIN entry
@@ -96,10 +91,12 @@ export default function ChildSelect() {
             {/* Selected child */}
             <div className="flex flex-col items-center mb-8">
               <div
-                className="w-24 h-24 rounded-full overflow-hidden mb-3"
-                style={{ boxShadow: `0 0 0 2px ${getAvatar(selected.avatar).accent}30` }}
+                className="w-24 h-24 rounded-full flex items-center justify-center mb-3"
+                style={{ background: 'rgba(124,58,237,0.18)', border: '2px solid rgba(124,58,237,0.35)' }}
               >
-                <img src={getAvatar(selected.avatar).image} alt={selected.name} className="w-full h-full object-cover" />
+                <span className="text-4xl font-semibold text-white/90" style={{ fontFamily: 'Georgia, serif' }}>
+                  {selected.name.charAt(0).toUpperCase()}
+                </span>
               </div>
               <p className="text-white font-semibold text-xl">{selected.name}</p>
               <p className="text-white/40 text-sm">Enter your 4-digit PIN</p>

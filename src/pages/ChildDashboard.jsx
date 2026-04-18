@@ -1,6 +1,6 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
-import { getAvatar, getSubject, ageToAgeBand, ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
+import { getSubject, ageToAgeBand, ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
 import AnimalIcon from '../components/AnimalIcon';
 
 const BG_GRADIENTS = [
@@ -20,7 +20,6 @@ export default function ChildDashboard() {
 
   if (!child) return <Navigate to="/child/select" replace />;
 
-  const av = getAvatar(child.avatar);
   const progress = child.progress || {};
   const band = ageToAgeBand(child.age);
 
@@ -33,7 +32,7 @@ export default function ChildDashboard() {
     <div className="min-h-screen bg-[#080618] transition-page">
       {/* Background glow */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse 70% 50% at 50% -10%, ${av.accent}20 0%, transparent 70%)` }}/>
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% -10%, #7C3AED18 0%, transparent 70%)' }}/>
         <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-[#080618] to-transparent"/>
       </div>
 
@@ -46,44 +45,13 @@ export default function ChildDashboard() {
           </button>
         </div>
 
-        {/* Avatar greeting — the hero section */}
+        {/* Greeting */}
         <div className="text-center mb-12">
-          {/* Large avatar orb */}
-          <div
-            className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-5 glow-pulse"
-            style={{ boxShadow: `0 0 48px ${av.accent}35, 0 0 0 3px ${av.accent}30` }}
-          >
-            <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
-          </div>
-
-          {/* Child name */}
           <h1 className="text-4xl font-semibold text-white mb-2 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
             Welcome back, {child.name}
           </h1>
-
-          {/* Guide attribution — prominent */}
-          <p className="text-base font-medium mb-1" style={{ color: av.accent }}>
-            Your guide is <strong>{av.name} the {av.animal}</strong>
-          </p>
-          <p className="text-sm font-medium mb-0.5" style={{ color: av.accent + '99' }}>{band.shortLabel}</p>
-          <p className="text-white/25 text-xs mb-4">{child.grade}</p>
-
-          {/* Change guide button */}
-          <button
-            onClick={() => navigate('/child/avatar-select')}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-medium transition-all hover:scale-105 active:scale-95"
-            style={{
-              color:       av.accent,
-              background:  av.accent + '14',
-              border:      `1px solid ${av.accent}30`,
-            }}
-          >
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
-              <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
-            </svg>
-            Change guide
-          </button>
+          <p className="text-sm font-medium text-white/40 mb-0.5">{band.shortLabel}</p>
+          <p className="text-white/25 text-xs">{child.grade}</p>
         </div>
 
         {/* Coreverse Originals */}

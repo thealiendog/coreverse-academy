@@ -78,18 +78,6 @@ export function updateChildProgress(parentId, childId, subject, lessonIdx) {
   if (stored && stored.id === childId) setCurrentChild(child);
 }
 
-export function updateChildAvatar(parentId, childId, avatar) {
-  const parent = getParentById(parentId);
-  if (!parent) return;
-  const child = parent.children.find(c => c.id === childId);
-  if (!child) return;
-  child.avatar = avatar;
-  saveParent(parent);
-  setCurrentParent(parent);
-  const stored = getCurrentChild();
-  if (stored && stored.id === childId) setCurrentChild({ ...stored, avatar });
-}
-
 export function awardBadge(parentId, childId, badge) {
   const parent = getParentById(parentId);
   if (!parent) return;
