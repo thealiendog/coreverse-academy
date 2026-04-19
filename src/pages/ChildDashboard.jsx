@@ -1,7 +1,6 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { getCurrentChild, clearCurrentChild } from '../lib/storage';
-import { getSubject, ageToAgeBand, ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
-import AnimalIcon from '../components/AnimalIcon';
+import { ageToAgeBand, ORIGINALS, CORE_ACADEMICS } from '../lib/constants';
 
 const BG_GRADIENTS = [
   'from-indigo-900/60 to-violet-900/40',
@@ -14,6 +13,23 @@ const BG_GRADIENTS = [
   'from-yellow-900/60 to-amber-900/40',
 ];
 
+function GuideAvatar({ guide, color, size = 28 }) {
+  return (
+    <img
+      src={`/avatars/${guide.toLowerCase()}.png`}
+      alt={guide}
+      style={{
+        width: size,
+        height: size,
+        borderRadius: '50%',
+        objectFit: 'cover',
+        boxShadow: `0 0 10px ${color}60`,
+        border: `1.5px solid ${color}50`,
+      }}
+    />
+  );
+}
+
 export default function ChildDashboard() {
   const navigate = useNavigate();
   const child = getCurrentChild();
@@ -22,10 +38,51 @@ export default function ChildDashboard() {
 
   const progress = child.progress || {};
   const band = ageToAgeBand(child.age);
+  // Use band-aware progress key: level 1 = subjectId, others = subjectId__level
+  const progressKey = (id) => band.level === 1 ? id : `${id}__${band.level}`;
 
   function logout() {
     clearCurrentChild();
     navigate('/child/select');
+  }
+
+  function SubjectCard({ s, idx, variant = 'originals' }) {
+    const done  = progress[progressKey(s.id)] || 0;
+    const total = s.lessonCount || 20;
+    const pct   = Math.round((done / total) * 100);
+    const gradientIdx = variant === 'academics' ? (idx + 4) % BG_GRADIENTS.length : idx % BG_GRADIENTS.length;
+
+    return (
+      <button
+        onClick={() => navigate(`/child/subject/${s.id}`)}
+        className={`text-left rounded-2xl p-4 border border-white/10 bg-gradient-to-br ${BG_GRADIENTS[gradientIdx]} hover:border-white/25 hover:scale-[1.02] transition-all duration-200 group`}
+        style={{ boxShadow: `0 4px 20px ${s.color}18` }}
+      >
+        <div className="flex items-start justify-between mb-3">
+          <span style={{ filter: `drop-shadow(0 0 6px ${s.color}50)` }}>
+            <GuideAvatar guide={s.guide} color={s.color} size={28} />
+          </span>
+          <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
+        </div>
+        <h3 className="text-sm font-bold text-white mb-3 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+          {s.label}
+        </h3>
+        {s.standard && (
+          <span
+            className="inline-block text-[9px] font-semibold px-1.5 py-0.5 rounded-full mb-2"
+            style={{ background: s.color + '20', color: s.color }}
+          >
+            {s.standard}
+          </span>
+        )}
+        <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+          <div className="h-full rounded-full progress-fill" style={{ width: `${pct}%`, background: s.color }} />
+        </div>
+        <p className="text-[10px] text-white/30 mt-1.5 group-hover:text-white/50 transition-colors">
+          {pct === 0 ? "Let's start!" : pct === 100 ? 'Complete!' : `${pct}% done`}
+        </p>
+      </button>
+    );
   }
 
   return (
@@ -61,52 +118,9 @@ export default function ChildDashboard() {
         <p className="text-xs font-semibold text-white/25 tracking-widest uppercase mb-3 text-center">Coreverse Originals</p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-          {ORIGINALS.map((s, idx) => {
-            const enrolled = child.subjects?.includes(s.id);
-            const done  = progress[s.id] || 0;
-            const total = s.lessonCount || s.lessons?.length || 3;
-            const pct   = Math.round((done / total) * 100);
-
-            if (enrolled) {
-              return (
-                <button
-                  key={s.id}
-                  onClick={() => navigate(`/child/subject/${s.id}`)}
-                  className={`text-left rounded-2xl p-4 border border-white/10 bg-gradient-to-br ${BG_GRADIENTS[idx % BG_GRADIENTS.length]} hover:border-white/25 hover:scale-[1.02] transition-all duration-200 group`}
-                  style={{ boxShadow: `0 4px 20px ${s.color}18` }}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <span style={{ filter: `drop-shadow(0 0 6px ${s.color}50)` }}>
-                      <AnimalIcon subjectId={s.id} color={s.color} size={28} />
-                    </span>
-                    <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
-                  </div>
-                  <h3 className="text-sm font-bold text-white mb-3 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-                    {s.label}
-                  </h3>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full rounded-full progress-fill" style={{ width: `${pct}%`, background: s.color }} />
-                  </div>
-                  <p className="text-[10px] text-white/30 mt-1.5 group-hover:text-white/50 transition-colors">
-                    {pct === 0 ? "Let's start!" : pct === 100 ? 'Complete!' : `${pct}% done`}
-                  </p>
-                </button>
-              );
-            }
-
-            return (
-              <div
-                key={s.id}
-                className="rounded-2xl p-4 border border-white/5 bg-white/[0.015] opacity-40"
-              >
-                <span className="mb-3 block opacity-25"><AnimalIcon subjectId={s.id} color={s.color} size={28} /></span>
-                <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-                  {s.label}
-                </h3>
-                <p className="text-[10px] text-white/20">Ask a parent to add</p>
-              </div>
-            );
-          })}
+          {ORIGINALS.map((s, idx) => (
+            <SubjectCard key={s.id} s={s} idx={idx} variant="originals" />
+          ))}
         </div>
 
         {/* Core Academics */}
@@ -117,65 +131,9 @@ export default function ChildDashboard() {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          {CORE_ACADEMICS.map((s, idx) => {
-            const enrolled = child.subjects?.includes(s.id);
-            const done  = progress[s.id] || 0;
-            const total = s.lessonCount || s.lessons?.length || 3;
-            const pct   = Math.round((done / total) * 100);
-
-            if (enrolled) {
-              return (
-                <button
-                  key={s.id}
-                  onClick={() => navigate(`/child/subject/${s.id}`)}
-                  className={`text-left rounded-2xl p-4 border border-white/10 bg-gradient-to-br ${BG_GRADIENTS[(idx + 4) % BG_GRADIENTS.length]} hover:border-white/25 hover:scale-[1.02] transition-all duration-200 group`}
-                  style={{ boxShadow: `0 4px 20px ${s.color}18` }}
-                >
-                  <div className="flex items-start justify-between mb-2">
-                    <span style={{ filter: `drop-shadow(0 0 6px ${s.color}50)` }}>
-                      <AnimalIcon subjectId={s.id} color={s.color} size={28} />
-                    </span>
-                    <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
-                  </div>
-                  <h3 className="text-sm font-bold text-white mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-                    {s.label}
-                  </h3>
-                  {s.standard && (
-                    <span
-                      className="inline-block text-[9px] font-semibold px-1.5 py-0.5 rounded-full mb-2"
-                      style={{ background: s.color + '20', color: s.color }}
-                    >
-                      {s.standard}
-                    </span>
-                  )}
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full rounded-full progress-fill" style={{ width: `${pct}%`, background: s.color }} />
-                  </div>
-                  <p className="text-[10px] text-white/30 mt-1.5 group-hover:text-white/50 transition-colors">
-                    {pct === 0 ? "Let's start!" : pct === 100 ? 'Complete!' : `${pct}% done`}
-                  </p>
-                </button>
-              );
-            }
-
-            return (
-              <div
-                key={s.id}
-                className="rounded-2xl p-4 border border-white/5 bg-white/[0.015] opacity-40"
-              >
-                <span className="mb-2 block opacity-25"><AnimalIcon subjectId={s.id} color={s.color} size={28} /></span>
-                <h3 className="text-sm font-bold text-white/40 mb-1 leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-                  {s.label}
-                </h3>
-                {s.standard && (
-                  <span className="inline-block text-[9px] font-semibold px-1.5 py-0.5 rounded-full mb-1 bg-white/5 text-white/20">
-                    {s.standard}
-                  </span>
-                )}
-                <p className="text-[10px] text-white/20">Ask a parent to add</p>
-              </div>
-            );
-          })}
+          {CORE_ACADEMICS.map((s, idx) => (
+            <SubjectCard key={s.id} s={s} idx={idx} variant="academics" />
+          ))}
         </div>
 
         {/* Badges section */}
@@ -193,9 +151,9 @@ export default function ChildDashboard() {
                 <div
                   key={i}
                   className="flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold"
-                  style={{ borderColor: av.accent + '50', color: av.accent, background: av.accent + '10' }}
+                  style={{ borderColor: '#A78BFA50', color: '#A78BFA', background: '#A78BFA10' }}
                 >
-                  <div className="w-1.5 h-1.5 rounded-full" style={{ background: av.accent }}/>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#A78BFA]"/>
                   {badge}
                 </div>
               ))}
@@ -203,11 +161,7 @@ export default function ChildDashboard() {
           )}
         </div>
 
-        <div className="text-center mt-10 pb-8">
-          <p className="text-white/15 text-xs tracking-wide">
-            {av.name} is with you every step of the way
-          </p>
-        </div>
+        <div className="pb-8" />
       </div>
     </div>
   );

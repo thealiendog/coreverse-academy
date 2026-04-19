@@ -32,6 +32,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   const [showMicPrompt, setShowMicPrompt] = useState(false);
 
   const audioRef      = useRef(null);
+  const utterRef      = useRef(null);
   const recognRef     = useRef(null);
   const bubbleTimer   = useRef(null);
   const micPromptTimer = useRef(null);
@@ -64,6 +65,10 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
       audioRef.current.src = '';
       audioRef.current = null;
     }
+    if (utterRef.current) {
+      window.speechSynthesis?.cancel();
+      utterRef.current = null;
+    }
     setSpeaking(false);
     clearTimeout(micPromptTimer.current);
     setShowMicPrompt(false);
@@ -81,7 +86,11 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ text }),
       });
-      if (!res.ok) throw new Error('unavailable');
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        console.error('[nova-speak] function error:', res.status, err);
+        throw new Error('unavailable');
+      }
       const { audio } = await res.json();
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
@@ -100,9 +109,30 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
         setBubble('');
       };
       await el.play();
-    } catch {
-      setSpeaking(false);
-      setBubble('');
+    } catch (err) {
+      console.warn('[nova-speak] falling back to browser TTS:', err?.message);
+      // Fallback: browser Web Speech API (works locally without Netlify functions)
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+        const utt = new SpeechSynthesisUtterance(text);
+        utt.rate  = 0.88;
+        utt.pitch = 1.05;
+        utterRef.current = utt;
+        utt.onstart = () => setSpeaking(true);
+        utt.onend   = () => {
+          setSpeaking(false);
+          utterRef.current = null;
+          bubbleTimer.current = setTimeout(() => setBubble(''), 3500);
+          if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+            showPromptBriefly();
+          }
+        };
+        utt.onerror = () => { setSpeaking(false); utterRef.current = null; };
+        window.speechSynthesis.speak(utt);
+      } else {
+        setSpeaking(false);
+        setBubble('');
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
