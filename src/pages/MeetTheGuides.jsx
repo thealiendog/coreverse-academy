@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AnimalIcon from '../components/AnimalIcon';
 
-// 14 guides — 8 have Midjourney images, 6 keep emoji placeholder until images are ready
+// 14 guides — all with Midjourney portrait images from /public/avatars/
 const GUIDES = [
   {
     id: 'sage',  name: 'Sage',  animal: 'Deer',      subjectId: 'inner-world',

@@ -1,4 +1,30 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Component } from 'react';
+
+class ErrorBoundary extends Component {
+  constructor(props) { super(props); this.state = { error: null }; }
+  static getDerivedStateFromError(err) { return { error: err }; }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{ minHeight: '100vh', background: '#080618', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+          <div style={{ background: '#1a0a2e', border: '1px solid #7C3AED', borderRadius: '16px', padding: '24px', maxWidth: '600px', width: '100%' }}>
+            <p style={{ color: '#EF4444', fontWeight: 'bold', marginBottom: '12px' }}>Error caught:</p>
+            <pre style={{ color: '#FCA5A5', fontSize: '13px', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+              {this.state.error?.message}
+              {'\n\n'}
+              {this.state.error?.stack}
+            </pre>
+            <button onClick={() => this.setState({ error: null })} style={{ marginTop: '16px', padding: '8px 16px', background: '#7C3AED', color: 'white', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+              Try again
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 import Splash                  from './pages/Splash';
 import OnboardingHowItWorks    from './pages/OnboardingHowItWorks';
@@ -48,8 +74,8 @@ export default function App() {
         {/* Child flow */}
         <Route path="/child/select"             element={<ChildSelect />} />
         <Route path="/child/dashboard"          element={<ChildDashboard />} />
-        <Route path="/child/subject/:subjectId" element={<SubjectView />} />
-        <Route path="/child/lesson/:subjectId/:lessonIdx" element={<LessonPlayer />} />
+        <Route path="/child/subject/:subjectId" element={<ErrorBoundary><SubjectView /></ErrorBoundary>} />
+        <Route path="/child/lesson/:subjectId/:lessonIdx" element={<ErrorBoundary><LessonPlayer /></ErrorBoundary>} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

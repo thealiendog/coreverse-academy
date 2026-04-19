@@ -249,7 +249,7 @@ export default function LessonPlayer() {
 
   const passScore   = Math.max(2, Math.ceil((lesson.quiz?.length || 5) * 0.6));
   const name        = child.name;
-  const arrivalText = lesson.arrival.replace(/\{\{name\}\}/g, name);
+  const arrivalText = (lesson.arrival || '').replace(/\{\{name\}\}/g, name);
   const ctaDelay    = Math.min(0.6 + arrivalText.split(' ').length * 0.058 + 0.4, 4.0);
 
   function advance() { setSection(s => s + 1); }
@@ -465,7 +465,7 @@ export default function LessonPlayer() {
 
           {/* Each paragraph = its own card, slides in from right with 300ms stagger */}
           <div className="space-y-4 mb-10">
-            {lesson.learn.map((para, i) => (
+            {(Array.isArray(lesson.learn) ? lesson.learn : [lesson.learn]).map((para, i) => (
               <div
                 key={i}
                 className="rounded-2xl p-5 relative overflow-hidden"
@@ -497,7 +497,7 @@ export default function LessonPlayer() {
             ))}
           </div>
 
-          <div className="lesson-fade-in" style={{ animationDelay: `${0.12 + lesson.learn.length * 0.11}s` }}>
+          <div className="lesson-fade-in" style={{ animationDelay: `${0.12 + (Array.isArray(lesson.learn) ? lesson.learn.length : 1) * 0.11}s` }}>
             <button
               onClick={advance}
               className="w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl"
