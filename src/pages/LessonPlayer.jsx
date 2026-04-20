@@ -860,7 +860,7 @@ export default function LessonPlayer() {
       )}
 
       {/* Nova AI companion — floats bottom-right */}
-      <NovaChat child={child} lesson={lesson} subject={subject} section={section} quizCurrent={quizCurrent} guide={lesson?.guide || lesson?.avatar} />
+      <NovaChat child={child} lesson={lesson} subject={subject} section={section} quizCurrent={quizCurrent} guide={lesson?.guide || lesson?.avatar || subject?.guide} />
     </div>
   );
 }
