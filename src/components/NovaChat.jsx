@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { askNova } from '../lib/nova';
 import { getAvatar } from '../lib/constants';
-import NovaSVG from './NovaSVG';
 
 // Text Nova reads aloud when each lesson section loads
 function sectionScript(lesson, section, childName) {
@@ -39,14 +38,8 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
   // Determine which guide to show — normalize to lowercase to handle mixed-case data files
-  const guideId  = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
-  const isNova   = guideId === 'nova';
-  const guideAv  = getAvatar(guideId);
-
-  // Map to NovaSVG state
-  const charState = listening ? 'listening' : thinking ? 'thinking' : speaking ? 'speaking' : 'idle';
-  // Map section 6 (celebration) to celebrating in SVG
-  const svgState  = section === 6 && (speaking || charState === 'idle') ? 'celebrating' : charState;
+  const guideId = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
+  const guideAv = getAvatar(guideId);
 
   useEffect(() => {
     setCanListen(!!(window.SpeechRecognition || window.webkitSpeechRecognition));
@@ -287,10 +280,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
           willChange: 'box-shadow',
         }}
       >
-        {isNova ? (
-          <NovaSVG state={svgState} size={300} />
-        ) : (
-          <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+        <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
             {/* Glow aura — pulsing radial behind the portrait */}
             <div
               style={{
@@ -332,7 +322,6 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
               </div>
             </div>
           </div>
-        )}
       </button>
 
       {/* ── State label ─────────────────────────────────── */}
