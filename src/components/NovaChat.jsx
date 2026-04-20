@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { askNova } from '../lib/nova';
 import { getAvatar } from '../lib/constants';
 import NovaSVG from './NovaSVG';
+import SageSVG from './SageSVG';
 
 // Text Nova reads aloud when each lesson section loads
 function sectionScript(lesson, section, childName) {
@@ -41,6 +42,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   // Determine which guide to show
   const guideId  = guide || lesson?.guide || lesson?.avatar || 'nova';
   const isNova   = guideId === 'nova';
+  const isSage   = guideId === 'sage';
   const guideAv  = getAvatar(guideId);
 
   // Map to NovaSVG state
@@ -289,6 +291,8 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
       >
         {isNova ? (
           <NovaSVG state={svgState} size={300} />
+        ) : isSage ? (
+          <SageSVG state={svgState} size={300} />
         ) : (
           <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div
