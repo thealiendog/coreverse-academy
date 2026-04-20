@@ -290,25 +290,46 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
         {isNova ? (
           <NovaSVG state={svgState} size={300} />
         ) : (
-          <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+            {/* Glow aura — pulsing radial behind the portrait */}
             <div
-              className={speaking ? 'nova-char-bob' : ''}
               style={{
-                width: 210,
-                height: 210,
+                position: 'absolute',
+                width: 226,
+                height: 226,
                 borderRadius: '50%',
-                overflow: 'hidden',
-                boxShadow: speaking
-                  ? `0 0 72px ${guideAv.accent}80, 0 0 0 3px ${guideAv.accent}90`
-                  : listening
-                  ? `0 0 56px #10B98180, 0 0 0 3px #10B98190`
-                  : thinking
-                  ? `0 0 56px #F59E0B80, 0 0 0 3px #F59E0B90`
-                  : `0 0 40px ${guideAv.accent}45, 0 0 0 2px ${guideAv.accent}40`,
-                transition: 'box-shadow 0.4s ease',
+                background: `radial-gradient(circle, ${guideAv.accent}${speaking ? '38' : '16'} 0%, transparent 68%)`,
+                filter: `blur(${speaking ? 20 : 10}px)`,
+                transition: 'background 0.4s ease, filter 0.4s ease',
+                animation: speaking
+                  ? 'nova-aura-breathe 0.92s ease-in-out infinite'
+                  : 'nova-aura-breathe 3.6s ease-in-out infinite',
+                transformOrigin: '50% 50%',
+                pointerEvents: 'none',
               }}
-            >
-              <img src={guideAv.image} alt={guideAv.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            />
+            {/* Bob wrapper (translateY only) */}
+            <div className={speaking ? 'nova-char-bob' : ''} style={{ position: 'relative' }}>
+              {/* Image circle — scale-breathe when speaking */}
+              <div
+                className={speaking ? 'guide-portrait-speaking' : ''}
+                style={{
+                  width: 210,
+                  height: 210,
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  boxShadow: speaking
+                    ? `0 0 72px ${guideAv.accent}80, 0 0 0 3px ${guideAv.accent}90`
+                    : listening
+                    ? `0 0 56px #10B98180, 0 0 0 3px #10B98190`
+                    : thinking
+                    ? `0 0 56px #F59E0B80, 0 0 0 3px #F59E0B90`
+                    : `0 0 40px ${guideAv.accent}45, 0 0 0 2px ${guideAv.accent}40`,
+                  transition: 'box-shadow 0.4s ease',
+                }}
+              >
+                <img src={guideAv.image} alt={guideAv.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
             </div>
           </div>
         )}
