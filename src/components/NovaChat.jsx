@@ -2,34 +2,30 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { askNova } from '../lib/nova';
 import { getAvatar } from '../lib/constants';
 
-// Personalized guide intro — spoken at section 0 when lesson.arrival is not set
+// Guide intro — spoken once when lesson first loads, BEFORE section content
 const GUIDE_INTROS = {
-  nova:  'Hi {{name}}! I\'m Nova — ready to explore the cosmos together?',
-  sage:  'Hello, {{name}}. I\'m Sage. Take a breath — you\'re exactly where you need to be.',
-  byte:  'Hey {{name}}! I\'m Byte. Let\'s build something awesome today!',
-  ace:   'Welcome, {{name}}! I\'m Ace. Ready to learn how money really works?',
-  muse:  'Hello, {{name}}! I\'m Muse — let\'s make something beautiful together.',
-  valor: 'Hey {{name}}! I\'m Valor. Courage starts right here, right now.',
-  terra: 'Hi {{name}}! I\'m Terra. Let\'s explore the living world around us.',
-  lyra:  'Greetings, {{name}}! I\'m Lyra — every great journey starts with a story.',
-  luna:  '¡Hola, {{name}}! I\'m Luna. Let\'s discover a whole new language together!',
-  orion: 'Hello, {{name}}. I\'m Orion. Today we explore the biggest questions.',
-  remi:  'Hey {{name}}! I\'m Remi — let\'s crack some math together!',
-  quill: 'Hi {{name}}! I\'m Quill. Words have power, and today we\'ll find yours.',
-  cosmo: 'Hello, {{name}}! I\'m Cosmo. Science is everywhere — let\'s discover it!',
-  atlas: 'Welcome, {{name}}! I\'m Atlas. Our world has incredible stories to share.',
+  nova:  (name) => `Hello, ${name}! I'm Nova, and together we're going to explore the universe!`,
+  sage:  (name) => `Hello, ${name}! I'm Sage, and I'm so glad you're here.`,
+  byte:  (name) => `Hey ${name}! I'm Byte — ready to build something awesome?`,
+  ace:   (name) => `Welcome, ${name}! I'm Ace. Let's talk about building your future.`,
+  muse:  (name) => `Hi ${name}! I'm Muse — let's create something beautiful together!`,
+  valor: (name) => `Hello ${name}! I'm Valor. Leaders show up — and here you are.`,
+  terra: (name) => `Hey there, ${name}! I'm Terra. Let's take care of that amazing body of yours.`,
+  lyra:  (name) => `Welcome, ${name}! I'm Lyra. Every great story starts with someone willing to listen.`,
+  remi:  (name) => `Hi ${name}! I'm Remi. Ready to crack some numbers?`,
+  quill: (name) => `Hello, ${name}! I'm Quill. Words have power — let's discover yours.`,
+  cosmo: (name) => `Hey ${name}! I'm Cosmo — let's experiment!`,
+  atlas: (name) => `Welcome, ${name}! I'm Atlas. The world is bigger than you think.`,
+  luna:  (name) => `Hola, ${name}! I'm Luna. Vamos a aprender juntos!`,
+  orion: (name) => `Hello, ${name}. I'm Orion. The biggest questions have no final answers — only deeper ones.`,
 };
 
 // Text the guide reads aloud when each lesson section loads
-function sectionScript(lesson, section, childName, guideId) {
+// Guide intro is handled separately (mount effect) — not included here
+function sectionScript(lesson, section, childName) {
   const name = (childName || 'friend').split(' ')[0];
   switch (section) {
-    case 0: {
-      const arrival = lesson?.arrival?.replace(/\{\{name\}\}/g, name);
-      if (arrival) return arrival;
-      const intro = GUIDE_INTROS[guideId] || GUIDE_INTROS.nova;
-      return intro.replace(/\{\{name\}\}/g, name);
-    }
+    case 0: return lesson?.arrival?.replace(/\{\{name\}\}/g, name) || '';
     case 1: return lesson?.spark || '';
     case 2: return `Here's what we're learning today. ${lesson?.learn?.[0] || ''}`;
     case 3: return lesson?.explore || '';
@@ -53,11 +49,13 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   const [micPromptKey, setMicPromptKey] = useState(0);
   const [showMicPrompt, setShowMicPrompt] = useState(false);
 
-  const audioRef      = useRef(null);
-  const utterRef      = useRef(null);
-  const recognRef     = useRef(null);
-  const bubbleTimer   = useRef(null);
-  const micPromptTimer = useRef(null);
+  const audioRef           = useRef(null);
+  const utterRef           = useRef(null);
+  const recognRef          = useRef(null);
+  const bubbleTimer        = useRef(null);
+  const micPromptTimer     = useRef(null);
+  const introSpoken        = useRef(false); // guard: intro plays once per mount
+  const initialSection0    = useRef(true);  // guard: longer delay on first section 0
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
   // Determine which guide to show — normalize to lowercase to handle mixed-case data files
@@ -154,10 +152,26 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Speak guide intro once on lesson load — fires before section content
   useEffect(() => {
-    const text = sectionScript(lesson, section, child?.name, guideId);
+    if (introSpoken.current) return;
+    introSpoken.current = true;
+    const introFn = GUIDE_INTROS[guideId] || GUIDE_INTROS.nova;
+    const name = (child?.name || 'friend').split(' ')[0];
+    const t = setTimeout(() => speak(introFn(name)), 400);
+    return () => clearTimeout(t);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Speak section content — section 0 gets a longer delay on first load
+  // so the guide intro has time to finish before lesson content begins
+  useEffect(() => {
+    const text = sectionScript(lesson, section, child?.name);
     if (!text) return;
-    const t = setTimeout(() => speak(text), 700);
+    const isFirstSection0 = section === 0 && initialSection0.current;
+    if (section === 0) initialSection0.current = false;
+    const delay = isFirstSection0 ? 5000 : 700;
+    const t = setTimeout(() => speak(text), delay);
     return () => clearTimeout(t);
   }, [section, lesson, child?.name, speak]);
 
@@ -224,7 +238,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   }
 
   function replaySection() {
-    const text = sectionScript(lesson, section, child?.name, guideId);
+    const text = sectionScript(lesson, section, child?.name);
     if (text) speak(text);
   }
 
