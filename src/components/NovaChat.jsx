@@ -89,7 +89,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
     setShowMicPrompt(false);
   }
 
-  const speak = useCallback(async (text) => {
+  const speak = useCallback(async (text, onComplete) => {
     if (!text) return;
     stopAudio();
     clearTimeout(bubbleTimer.current);
@@ -117,6 +117,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
         if (window.SpeechRecognition || window.webkitSpeechRecognition) {
           showPromptBriefly();
         }
+        onComplete?.();
       };
       el.onerror = () => {
         setSpeaking(false);
@@ -141,37 +142,47 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
           if (window.SpeechRecognition || window.webkitSpeechRecognition) {
             showPromptBriefly();
           }
+          onComplete?.();
         };
         utt.onerror = () => { setSpeaking(false); utterRef.current = null; };
         window.speechSynthesis.speak(utt);
       } else {
         setSpeaking(false);
         setBubble('');
+        onComplete?.();
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Speak guide intro once on lesson load — fires before section content
+  // Speak guide intro once on lesson load.
+  // When the intro finishes (onended), immediately speak section 0 content.
+  // If the user navigates away before the intro ends, speak() cancels the audio
+  // and onended never fires — section content plays via the section effect instead.
   useEffect(() => {
     if (introSpoken.current) return;
     introSpoken.current = true;
     const introFn = GUIDE_INTROS[guideId] || GUIDE_INTROS.nova;
     const name = (child?.name || 'friend').split(' ')[0];
-    const t = setTimeout(() => speak(introFn(name)), 400);
+    const section0Text = sectionScript(lesson, 0, child?.name);
+    const t = setTimeout(() => {
+      speak(introFn(name), section0Text ? () => speak(section0Text) : undefined);
+    }, 400);
     return () => clearTimeout(t);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Speak section content — section 0 gets a longer delay on first load
-  // so the guide intro has time to finish before lesson content begins
+  // Speak section content on section change.
+  // Section 0 is skipped on first load — the intro's onComplete handles it.
+  // If the user navigates to section 0 again later it plays normally.
   useEffect(() => {
+    if (section === 0 && initialSection0.current) {
+      initialSection0.current = false;
+      return; // handled by intro onComplete
+    }
     const text = sectionScript(lesson, section, child?.name);
     if (!text) return;
-    const isFirstSection0 = section === 0 && initialSection0.current;
-    if (section === 0) initialSection0.current = false;
-    const delay = isFirstSection0 ? 5000 : 700;
-    const t = setTimeout(() => speak(text), delay);
+    const t = setTimeout(() => speak(text), 700);
     return () => clearTimeout(t);
   }, [section, lesson, child?.name, speak]);
 
