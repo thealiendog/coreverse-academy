@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { askNova } from '../lib/nova';
 import { getAvatar } from '../lib/constants';
 import NovaSVG from './NovaSVG';
-import SageSVG from './SageSVG';
 
 // Text Nova reads aloud when each lesson section loads
 function sectionScript(lesson, section, childName) {
@@ -42,7 +41,6 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   // Determine which guide to show — normalize to lowercase to handle mixed-case data files
   const guideId  = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
   const isNova   = guideId === 'nova';
-  const isSage   = guideId === 'sage';
   const guideAv  = getAvatar(guideId);
 
   // Map to NovaSVG state
@@ -291,18 +289,23 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
       >
         {isNova ? (
           <NovaSVG state={svgState} size={300} />
-        ) : isSage ? (
-          <SageSVG state={svgState} size={300} />
         ) : (
           <div style={{ width: 300, height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div
               className={speaking ? 'nova-char-bob' : ''}
               style={{
-                width: 192,
-                height: 192,
+                width: 210,
+                height: 210,
                 borderRadius: '50%',
                 overflow: 'hidden',
-                boxShadow: `0 0 64px ${guideAv.accent}55, 0 0 0 3px ${guideAv.accent}35`,
+                boxShadow: speaking
+                  ? `0 0 72px ${guideAv.accent}80, 0 0 0 3px ${guideAv.accent}90`
+                  : listening
+                  ? `0 0 56px #10B98180, 0 0 0 3px #10B98190`
+                  : thinking
+                  ? `0 0 56px #F59E0B80, 0 0 0 3px #F59E0B90`
+                  : `0 0 40px ${guideAv.accent}45, 0 0 0 2px ${guideAv.accent}40`,
+                transition: 'box-shadow 0.4s ease',
               }}
             >
               <img src={guideAv.image} alt={guideAv.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
