@@ -39,8 +39,8 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   const micPromptTimer = useRef(null);
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
-  // Determine which guide to show
-  const guideId  = guide || lesson?.guide || lesson?.avatar || 'nova';
+  // Determine which guide to show — normalize to lowercase to handle mixed-case data files
+  const guideId  = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
   const isNova   = guideId === 'nova';
   const isSage   = guideId === 'sage';
   const guideAv  = getAvatar(guideId);
