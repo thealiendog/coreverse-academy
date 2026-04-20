@@ -2,11 +2,34 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { askNova } from '../lib/nova';
 import { getAvatar } from '../lib/constants';
 
-// Text Nova reads aloud when each lesson section loads
-function sectionScript(lesson, section, childName) {
+// Personalized guide intro — spoken at section 0 when lesson.arrival is not set
+const GUIDE_INTROS = {
+  nova:  'Hi {{name}}! I\'m Nova — ready to explore the cosmos together?',
+  sage:  'Hello, {{name}}. I\'m Sage. Take a breath — you\'re exactly where you need to be.',
+  byte:  'Hey {{name}}! I\'m Byte. Let\'s build something awesome today!',
+  ace:   'Welcome, {{name}}! I\'m Ace. Ready to learn how money really works?',
+  muse:  'Hello, {{name}}! I\'m Muse — let\'s make something beautiful together.',
+  valor: 'Hey {{name}}! I\'m Valor. Courage starts right here, right now.',
+  terra: 'Hi {{name}}! I\'m Terra. Let\'s explore the living world around us.',
+  lyra:  'Greetings, {{name}}! I\'m Lyra — every great journey starts with a story.',
+  luna:  '¡Hola, {{name}}! I\'m Luna. Let\'s discover a whole new language together!',
+  orion: 'Hello, {{name}}. I\'m Orion. Today we explore the biggest questions.',
+  remi:  'Hey {{name}}! I\'m Remi — let\'s crack some math together!',
+  quill: 'Hi {{name}}! I\'m Quill. Words have power, and today we\'ll find yours.',
+  cosmo: 'Hello, {{name}}! I\'m Cosmo. Science is everywhere — let\'s discover it!',
+  atlas: 'Welcome, {{name}}! I\'m Atlas. Our world has incredible stories to share.',
+};
+
+// Text the guide reads aloud when each lesson section loads
+function sectionScript(lesson, section, childName, guideId) {
   const name = (childName || 'friend').split(' ')[0];
   switch (section) {
-    case 0: return lesson?.arrival?.replace(/\{\{name\}\}/g, name) || '';
+    case 0: {
+      const arrival = lesson?.arrival?.replace(/\{\{name\}\}/g, name);
+      if (arrival) return arrival;
+      const intro = GUIDE_INTROS[guideId] || GUIDE_INTROS.nova;
+      return intro.replace(/\{\{name\}\}/g, name);
+    }
     case 1: return lesson?.spark || '';
     case 2: return `Here's what we're learning today. ${lesson?.learn?.[0] || ''}`;
     case 3: return lesson?.explore || '';
@@ -132,7 +155,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   }, []);
 
   useEffect(() => {
-    const text = sectionScript(lesson, section, child?.name);
+    const text = sectionScript(lesson, section, child?.name, guideId);
     if (!text) return;
     const t = setTimeout(() => speak(text), 700);
     return () => clearTimeout(t);
@@ -201,7 +224,7 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   }
 
   function replaySection() {
-    const text = sectionScript(lesson, section, child?.name);
+    const text = sectionScript(lesson, section, child?.name, guideId);
     if (text) speak(text);
   }
 
