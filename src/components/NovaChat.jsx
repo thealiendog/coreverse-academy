@@ -38,8 +38,9 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
   const learnContent = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
   // Determine which guide to show — normalize to lowercase to handle mixed-case data files
-  const guideId = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
-  const guideAv = getAvatar(guideId);
+  const guideId   = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
+  const guideAv   = getAvatar(guideId);
+  const charState = listening ? 'listening' : thinking ? 'thinking' : speaking ? 'speaking' : 'idle';
 
   useEffect(() => {
     setCanListen(!!(window.SpeechRecognition || window.webkitSpeechRecognition));
