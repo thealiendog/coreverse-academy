@@ -8,6 +8,12 @@ export const AVATARS = [
   { id: 'valor', name: 'Valor', animal: 'Lion',      emoji: '🦁', image: '/avatars/valor.png', color: '#450A0A', accent: '#FCA5A5', specialty: 'Bravery & Leadership' },
   { id: 'terra', name: 'Terra', animal: 'Wolf',      emoji: '🐺', image: '/avatars/terra.png', color: '#14532D', accent: '#86EFAC', specialty: 'Nature & Environment' },
   { id: 'lyra',  name: 'Lyra',  animal: 'Elephant',  emoji: '🐘', image: '/avatars/lyra.png',  color: '#1C1917', accent: '#FDE68A', specialty: 'History & Stories' },
+  { id: 'luna',  name: 'Luna',  animal: 'Parrot',    emoji: '🦜', image: '/avatars/luna.png',  color: '#065F46', accent: '#6EE7B7', specialty: 'Languages & Spanish' },
+  { id: 'remi',  name: 'Remi',  animal: 'Raccoon',   emoji: '🦝', image: '/avatars/remi.png',  color: '#2E1065', accent: '#C4B5FD', specialty: 'Mathematics' },
+  { id: 'quill', name: 'Quill', animal: 'Porcupine', emoji: '🦔', image: '/avatars/quill.png', color: '#78350F', accent: '#FDE68A', specialty: 'English Language Arts' },
+  { id: 'cosmo', name: 'Cosmo', animal: 'Otter',     emoji: '🦦', image: '/avatars/cosmo.png', color: '#164E63', accent: '#67E8F9', specialty: 'Science' },
+  { id: 'atlas', name: 'Atlas', animal: 'Bear',      emoji: '🐻', image: '/avatars/atlas.png', color: '#365314', accent: '#BEF264', specialty: 'Social Studies' },
+  { id: 'orion', name: 'Orion', animal: 'Phoenix',   emoji: '🔥', image: '/avatars/orion.png', color: '#1E1B4B', accent: '#A5B4FC', specialty: 'Philosophy & Frontier' },
 ];
 
 export function getAvatar(id) {

@@ -1005,7 +1005,7 @@ export default function LessonPlayer() {
         stepType={stepType}
         learnBlock={currentLearnBlock}
         quizCurrent={quizCurrent}
-        guide={lesson?.guide || lesson?.avatar || subject?.guide}
+        guide={subject?.guide || lesson?.guide}
         tfStatement={tfData?.statement || null}
         tfFeedback={tfFeedback}
         onFeedbackEnd={() => setTimeout(advance, 800)}
