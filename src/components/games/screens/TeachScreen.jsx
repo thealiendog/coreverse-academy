@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 
-// Emoji fallbacks when no image is provided
-const EMOJI_VISUALS = {
-  clouds:  '☀️ 🌤️ ⛅ 🌧️',
-  hearts:  '💛 🧡 ❤️ 💙 💚 💜',
-  body:    '🧍',
-  star:    '⭐ 🌟 ✨',
-  brain:   '🧠',
-  growth:  '🌱 🌿 🌳',
-  money:   '💰 💵 🪙',
-  globe:   '🌍 🌎 🌏',
-  science: '🔬 ⚗️ 🧪',
-  music:   '🎵 🎶 🎼',
-  book:    '📚 📖',
-  art:     '🎨 🖼️ ✏️',
+// Text label fallbacks when no image is provided (no emoji)
+const TEXT_VISUALS = {
+  clouds:  'Feelings change like weather',
+  hearts:  'All feelings are okay',
+  body:    'Listen to your body',
+  star:    'You are a star',
+  brain:   'Your amazing brain',
+  growth:  'Keep growing',
+  money:   'Save and spend wisely',
+  globe:   'Our big world',
+  science: 'Ask questions',
+  music:   'Express yourself',
+  book:    'Words have power',
+  art:     'Create something beautiful',
 };
 
 export default function TeachScreen({ step, childName, guideAvatar, onComplete, speaking }) {
@@ -33,7 +33,7 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
     }
   }, [speaking, onComplete]);
 
-  const emojiVisual = !step.image && step.visual ? (EMOJI_VISUALS[step.visual] || step.visual) : null;
+  const textVisual = !step.image && step.visual ? (TEXT_VISUALS[step.visual] || step.visual) : null;
   const text = (step.guideText || '').replace(/\{name\}/g, childName || 'friend');
 
   return (
@@ -66,18 +66,20 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
         />
       )}
 
-      {/* Emoji fallback */}
-      {emojiVisual && (
+      {/* Text visual fallback (no image) */}
+      {textVisual && (
         <div style={{
-          fontSize: '3rem',
-          textAlign: 'center',
-          letterSpacing: 8,
           padding: '16px 24px',
           background: 'rgba(255,255,255,0.04)',
           borderRadius: 20,
+          textAlign: 'center',
+          color: guideAvatar?.accent || '#A78BFA',
+          fontWeight: 800,
+          fontSize: '1.1rem',
+          letterSpacing: '0.02em',
           animation: 'teach-pulse 2s ease-in-out infinite',
         }}>
-          {emojiVisual}
+          {textVisual}
         </div>
       )}
 

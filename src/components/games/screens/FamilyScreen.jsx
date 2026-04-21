@@ -45,10 +45,6 @@ export default function FamilyScreen({ step, childName, guideAvatar, onComplete 
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* decorative corner stars */}
-        <span style={{ position:'absolute', top:12, left:14, fontSize:'1.4rem', opacity:0.5 }}>🏡</span>
-        <span style={{ position:'absolute', top:12, right:14, fontSize:'1.4rem', opacity:0.5 }}>❤️</span>
-
         <p style={{ color: '#60A5FA', fontWeight: 800, fontSize: '0.85rem', letterSpacing: '0.1em', margin: '0 0 12px', textTransform: 'uppercase' }}>
           Family Adventure
         </p>
@@ -77,7 +73,7 @@ export default function FamilyScreen({ step, childName, guideAvatar, onComplete 
           boxShadow: '0 6px 24px rgba(96,165,250,0.4)',
         }}
       >
-        Awesome! 👨‍👩‍👧
+        Awesome!
       </button>
     </div>
   );

@@ -6,15 +6,19 @@ function FloatingStars({ triggerKey }) {
   if (!triggerKey) return null;
   return (
     <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 60, overflow: 'hidden' }}>
-      <style>{`@keyframes ttr-star{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-120px) scale(1.4);opacity:0}}`}</style>
+      <style>{`@keyframes ttr-star{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-120px) scale(1.6);opacity:0}}`}</style>
       {[20, 50, 80].map((x, i) => (
         <div key={i} style={{
           position: 'absolute',
           left: `${x}%`,
           bottom: '40%',
-          fontSize: '2rem',
+          width: 20,
+          height: 20,
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg,#FCD34D,#F59E0B)',
+          boxShadow: '0 0 12px rgba(252,211,77,0.8)',
           animation: `ttr-star 1s ease-out ${i * 0.1}s both`,
-        }}>⭐</div>
+        }} />
       ))}
     </div>
   );
@@ -167,7 +171,18 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
                 </span>
               )}
               {isCorrect && (
-                <span style={{ color: '#34D399', fontSize: '1.2rem' }}>✓</span>
+                <div style={{
+                  width: 22, height: 22, borderRadius: '50%',
+                  background: '#34D399',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <div style={{
+                    width: 10, height: 6,
+                    borderLeft: '2.5px solid #fff',
+                    borderBottom: '2.5px solid #fff',
+                    transform: 'rotate(-45deg) translate(1px,-1px)',
+                  }} />
+                </div>
               )}
             </button>
           );

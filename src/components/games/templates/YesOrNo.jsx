@@ -73,8 +73,8 @@ export default function YesOrNo({ step, onComplete, onWrong }) {
       {/* Yes / No buttons */}
       <div style={{ display:'flex', gap:20, width:'100%', maxWidth:380 }}>
         {[
-          { val: true,  label: 'Yes', emoji: '👍', color: '#34D399', glow: 'rgba(52,211,153,0.5)' },
-          { val: false, label: 'No',  emoji: '👎', color: '#EF4444', glow: 'rgba(239,68,68,0.5)'  },
+          { val: true,  label: 'Yes', color: '#34D399', glow: 'rgba(52,211,153,0.5)' },
+          { val: false, label: 'No',  color: '#EF4444', glow: 'rgba(239,68,68,0.5)'  },
         ].map(btn => {
           const isChosen  = chosen === btn.val;
           const isCorrect = isChosen && (btn.val === step.correctAnswer);
@@ -101,8 +101,14 @@ export default function YesOrNo({ step, onComplete, onWrong }) {
                 animation: isCorrect ? 'yn-correct 0.5s ease' : isWrong ? 'yn-wrong 0.5s ease' : 'none',
               }}
             >
-              <span style={{ fontSize:'3.5rem', lineHeight:1 }}>{btn.emoji}</span>
-              <span style={{ color: isChosen ? btn.color : 'rgba(255,255,255,0.7)', fontWeight:900, fontSize:'1.3rem' }}>
+              <span style={{
+                color: isChosen ? btn.color : 'rgba(255,255,255,0.25)',
+                fontWeight: 900,
+                fontSize: 'clamp(2.2rem, 8vw, 3rem)',
+                letterSpacing: '0.04em',
+                lineHeight: 1,
+                transition: 'color 0.2s',
+              }}>
                 {btn.label}
               </span>
             </button>

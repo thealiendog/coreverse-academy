@@ -1,45 +1,76 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-// Built-in cause-effect cycles used if none provided
+// CSS-only shape for default cycles — no emoji
+function DefaultShape({ color, label }) {
+  return (
+    <div style={{
+      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10,
+    }}>
+      <div style={{
+        width: 80, height: 80, borderRadius: '50%',
+        background: color,
+        boxShadow: `0 0 24px ${color}88`,
+      }} />
+      <span style={{ color: '#fff', fontWeight: 800, fontSize: '1rem' }}>{label}</span>
+    </div>
+  );
+}
+
+// Default cycles — fully image/CSS driven, no emoji
 const DEFAULT_CYCLES = [
   {
-    prompt:    'Tap the seed to plant it!',
-    before:    '🌱',
-    after:     '🌸',
+    prompt:    'Tap the button to plant the seed!',
+    beforeEl:  <DefaultShape color="#86EFAC" label="Seed" />,
+    afterEl:   <DefaultShape color="#34D399" label="Flower" />,
     action:    'Plant it!',
-    narration: 'You planted the seed and a flower grew!',
+    narration: 'You planted the seed and it grew!',
   },
   {
-    prompt:    'Tap the coin to save it!',
-    before:    '🪙',
-    after:     '💰',
+    prompt:    'Tap the button to save the coin!',
+    beforeEl:  <DefaultShape color="#FCD34D" label="Coin" />,
+    afterEl:   <DefaultShape color="#F59E0B" label="Saved!" />,
     action:    'Save it!',
     narration: 'You saved the coin and built a treasure!',
   },
   {
-    prompt:    'Tap the sad face to help it smile!',
-    before:    '😢',
-    after:     '😊',
+    prompt:    'Tap the button to cheer them up!',
+    beforeEl:  <DefaultShape color="#60A5FA" label="Sad" />,
+    afterEl:   <DefaultShape color="#34D399" label="Happy" />,
     action:    'Help it!',
-    narration: 'You helped the sad face feel happy!',
+    narration: 'You helped and now they feel better!',
   },
 ];
 
 export default function CauseAndEffect({ step, onComplete, onNarrate }) {
   const cycles = step.cycles || DEFAULT_CYCLES;
 
-  const [cycleIdx,  setCycleIdx]  = useState(0);
-  const [phase,     setPhase]     = useState('before'); // 'before' | 'animating' | 'after'
-  const [narrating, setNarrating] = useState(false);
+  const [cycleIdx, setCycleIdx] = useState(0);
+  const [phase,    setPhase]    = useState('before'); // 'before' | 'animating' | 'after'
 
   useEffect(() => {
     setCycleIdx(0);
     setPhase('before');
-    setNarrating(false);
   }, [step]);
 
   const cycle = cycles[cycleIdx];
+
+  // Resolve what to show — supports legacy `before`/`after` strings (images/text)
+  // and new `beforeEl`/`afterEl` React elements
+  function SceneContent({ which, anim }) {
+    const el = cycle[which + 'El'];
+    const src = cycle[which]; // legacy: image path or text
+    if (el) return <div style={{ animation: anim }}>{el}</div>;
+    if (src && (src.startsWith('/') || src.startsWith('http'))) {
+      return (
+        <img src={src} alt="" style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: 16, animation: anim }} draggable={false} />
+      );
+    }
+    if (src) {
+      return <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.2rem', animation: anim }}>{src}</span>;
+    }
+    return null;
+  }
 
   function trigger() {
     if (phase !== 'before') return;
@@ -48,10 +79,8 @@ export default function CauseAndEffect({ step, onComplete, onNarrate }) {
     setTimeout(() => {
       setPhase('after');
       sfx.sparkle();
-      setNarrating(true);
       onNarrate?.(cycle.narration);
       setTimeout(() => {
-        setNarrating(false);
         const next = cycleIdx + 1;
         if (next >= cycles.length) {
           sfx.fanfare();
@@ -85,48 +114,30 @@ export default function CauseAndEffect({ step, onComplete, onNarrate }) {
         ))}
       </div>
 
-      {/* Prompt */}
+      {/* Prompt / narration */}
       <p style={{ color:'#fff', fontWeight:800, fontSize:'clamp(1.1rem,3.5vw,1.4rem)', textAlign:'center', margin:0 }}>
         {phase === 'after' ? cycle.narration : cycle.prompt}
       </p>
 
-      {/* Scene */}
+      {/* Scene canvas */}
       <div style={{
-        width: 200,
-        height: 160,
+        width: 200, height: 170,
         background: 'rgba(255,255,255,0.05)',
         borderRadius: 24,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
         border: '1.5px solid rgba(255,255,255,0.12)',
       }}>
-        {phase === 'before' && (
-          <span style={{ fontSize:'5rem', animation:'cae-pulse 1.5s ease-in-out infinite' }}>
-            {cycle.before}
-          </span>
-        )}
-        {phase === 'animating' && (
-          <span style={{ fontSize:'5rem', animation:'cae-spin 0.8s ease-in-out' }}>
-            {cycle.before}
-          </span>
-        )}
-        {phase === 'after' && (
-          <span style={{ fontSize:'5rem', animation:'cae-appear 0.6s cubic-bezier(0.34,1.56,0.64,1) both' }}>
-            {cycle.after}
-          </span>
-        )}
+        {phase === 'before'    && <SceneContent which="before" anim="cae-pulse 1.5s ease-in-out infinite" />}
+        {phase === 'animating' && <SceneContent which="before" anim="cae-spin 0.8s ease-in-out" />}
+        {phase === 'after'     && <SceneContent which="after"  anim="cae-appear 0.6s cubic-bezier(0.34,1.56,0.64,1) both" />}
       </div>
 
-      {/* Action button */}
+      {/* Action / next button */}
       <button
         onClick={trigger}
         disabled={phase !== 'before'}
         style={{
-          background: phase === 'before'
-            ? 'linear-gradient(135deg,#7C3AED,#A78BFA)'
-            : 'rgba(255,255,255,0.08)',
+          background: phase === 'before' ? 'linear-gradient(135deg,#7C3AED,#A78BFA)' : 'rgba(255,255,255,0.08)',
           color: '#fff',
           border: 'none',
           borderRadius: 100,
@@ -139,7 +150,9 @@ export default function CauseAndEffect({ step, onComplete, onNarrate }) {
           opacity: phase === 'before' ? 1 : 0.5,
         }}
       >
-        {phase === 'after' ? (cycleIdx < cycles.length - 1 ? '✓ Next →' : '✓ Done!') : cycle.action}
+        {phase === 'after'
+          ? (cycleIdx < cycles.length - 1 ? 'Next' : 'Done!')
+          : cycle.action}
       </button>
     </div>
   );

@@ -3,8 +3,8 @@ import { sfx } from '../sounds';
 
 export default function SortIntoBuckets({ step, onComplete }) {
   const buckets = step.buckets || [
-    { label: 'Living',     color: '#34D399', emoji: '🌱' },
-    { label: 'Non-living', color: '#60A5FA', emoji: '🪨' },
+    { label: 'Living',     color: '#34D399' },
+    { label: 'Non-living', color: '#60A5FA' },
   ];
   const items   = step.items || [];
 
@@ -61,7 +61,7 @@ export default function SortIntoBuckets({ step, onComplete }) {
 
       {/* Instruction */}
       <p style={{ color:'#fff', fontWeight:800, fontSize:'clamp(1.1rem,3.5vw,1.4rem)', textAlign:'center', margin:0 }}>
-        {done ? 'Great sorting! 🎉' : (step.instruction || 'Sort each item into the right bucket!')}
+        {done ? 'Great sorting!' : (step.instruction || 'Sort each item into the right bucket!')}
       </p>
 
       {/* Current item to sort */}
@@ -117,7 +117,8 @@ export default function SortIntoBuckets({ step, onComplete }) {
               boxShadow: flash === bi ? `0 0 20px ${bucket.color}55` : 'none',
             }}
           >
-            <span style={{ fontSize:'2rem' }}>{bucket.emoji}</span>
+            {/* Colored dot instead of emoji */}
+            <div style={{ width:20, height:20, borderRadius:'50%', background:bucket.color, boxShadow:`0 0 10px ${bucket.color}88` }} />
             <span style={{ color: bucket.color, fontWeight:800, fontSize:'0.95rem' }}>{bucket.label}</span>
             <span style={{ color:'rgba(255,255,255,0.5)', fontSize:'0.8rem' }}>{counts[bi]} items</span>
           </button>
@@ -126,7 +127,7 @@ export default function SortIntoBuckets({ step, onComplete }) {
 
       {done && (
         <p style={{ color:'#FCD34D', fontWeight:900, fontSize:'1.2rem', margin:0 }}>
-          You sorted everything! 🌟
+          You sorted everything!
         </p>
       )}
     </div>
