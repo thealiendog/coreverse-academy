@@ -135,6 +135,7 @@ export default function GameLessonPlayer() {
   const [isPortrait,        setIsPortrait]        = useState(false);
   const [canAdvance,        setCanAdvance]        = useState(false);
   const [isPaused,          setIsPaused]          = useState(false);
+  const [winPulse,          setWinPulse]          = useState(false);
 
   // Detect portrait orientation on tablet-sized screens
   useEffect(() => {
@@ -286,18 +287,24 @@ export default function GameLessonPlayer() {
     setInteractionLocked(false);
   }, []);
 
-  // ── How long each non-game screen stays before auto-advancing ────────────
-  // These timers fire regardless of TTS — reliable on all devices/browsers.
-  // Values are generous enough that ElevenLabs audio finishes first on good
-  // connections; on bad connections the screen still advances predictably.
-  const AUTO_ADVANCE_MS = {
-    welcome: 5000,
-    story:   7000,
-    teach:   7000,
-    family:  9000,
-  };
+  // ── Dead-simple auto-advance — completely independent of TTS ─────────────
+  // One useEffect, one timer, no closures over audio state.
+  // Fires unconditionally after the delay for non-interactive screen types.
+  useEffect(() => {
+    if (!gameSequence) return;
+    const step = gameSequence[screenIdx];
+    if (!step) return;
+    const AUTO_TYPES = ['welcome', 'story', 'teach', 'family'];
+    if (!AUTO_TYPES.includes(step.type)) return;
+    const delay = step.type === 'family' ? 8000 : 5000;
+    const timer = setTimeout(() => {
+      setScreenIdx(prev => Math.min(prev + 1, gameSequence.length - 1));
+    }, delay);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screenIdx]);
 
-  // ── Speak + auto-advance when screen changes ───────────────────────────────
+  // ── Speak + interaction lock when screen changes ───────────────────────────
   useEffect(() => {
     if (!gameSequence) return;
     const step = gameSequence[screenIdx];
@@ -312,15 +319,12 @@ export default function GameLessonPlayer() {
 
     if (GAME_TYPES.has(step.type)) {
       // Game templates call speak(text, handleUnlock) on mount.
-      // Interaction is gated on correct answer, not a timer.
       return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
     }
 
-    // Non-game screens: enable forward arrow immediately so child can skip.
+    // Non-game screens: forward arrow available immediately.
     setCanAdvance(true);
 
-    // Fire-and-forget TTS — plays audio when it works, silent when it doesn't.
-    // Auto-advance is NOT gated on TTS completing.
     if (text) {
       speak(text, () => {
         if (cancelled) return;
@@ -332,17 +336,9 @@ export default function GameLessonPlayer() {
       setInteractionLocked(false);
     }
 
-    // Timer-based auto-advance — runs regardless of TTS outcome.
-    const delay = AUTO_ADVANCE_MS[step.type];
-    let advanceTimer;
-    if (delay !== undefined) {
-      advanceTimer = setTimeout(() => { if (!cancelled) advance(); }, delay);
-    }
-
     return () => {
       cancelled = true;
       clearTimeout(fallbackTimerRef.current);
-      clearTimeout(advanceTimer);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
@@ -371,6 +367,12 @@ export default function GameLessonPlayer() {
   // enables the forward arrow so the child can tap to proceed.
   function handleReady() {
     setCanAdvance(true);
+  }
+
+  // Called by templates on correct answer — briefly pulses the guide avatar.
+  function handleWin() {
+    setWinPulse(true);
+    setTimeout(() => setWinPulse(false), 600);
   }
 
   function handleWrong(message) {
@@ -403,10 +405,10 @@ export default function GameLessonPlayer() {
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
@@ -460,6 +462,12 @@ export default function GameLessonPlayer() {
           0%,100% { opacity: 0.45; transform: scale(1); }
           50%      { opacity: 1;   transform: scale(1.14); }
         }
+        @keyframes guide-win-pulse {
+          0%   { transform: scale(1); }
+          40%  { transform: scale(1.32); }
+          70%  { transform: scale(0.95); }
+          100% { transform: scale(1); }
+        }
         @keyframes screen-enter {
           from { opacity:0; transform: translateY(18px) }
           to   { opacity:1; transform: translateY(0) }
@@ -504,6 +512,7 @@ export default function GameLessonPlayer() {
             flexShrink: 0,
             cursor: 'pointer',
             touchAction: 'manipulation',
+            animation: winPulse ? 'guide-win-pulse 0.6s cubic-bezier(0.34,1.56,0.64,1) both' : 'none',
           }}
         >
           {/* Animated pulse ring — separate from avatar so inline styles don't conflict */}

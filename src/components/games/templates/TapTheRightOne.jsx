@@ -1,33 +1,11 @@
 import { useState, useEffect } from 'react';
-import { sfx } from '../sounds';
+import WinCelebration from '../WinCelebration';
 
-// 3 floating stars on correct tap
-function FloatingStars({ triggerKey }) {
-  if (!triggerKey) return null;
-  return (
-    <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 60, overflow: 'hidden' }}>
-      <style>{`@keyframes ttr-star{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-120px) scale(1.6);opacity:0}}`}</style>
-      {[20, 50, 80].map((x, i) => (
-        <div key={i} style={{
-          position: 'absolute',
-          left: `${x}%`,
-          bottom: '40%',
-          width: 20,
-          height: 20,
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg,#FCD34D,#F59E0B)',
-          boxShadow: '0 0 12px rgba(252,211,77,0.8)',
-          animation: `ttr-star 1s ease-out ${i * 0.1}s both`,
-        }} />
-      ))}
-    </div>
-  );
-}
 
-export default function TapTheRightOne({ step, onComplete, onReady, onWrong, disabled, speak, onUnlock }) {
+export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, speak, onUnlock }) {
   const [selected,  setSelected]  = useState(null);
   const [wrong,     setWrong]     = useState(null);
-  const [starKey,   setStarKey]   = useState(null);
+  const [showWin,   setShowWin]   = useState(false);
   const [locked,    setLocked]    = useState(false);
 
   const items = step.items || [];
@@ -35,7 +13,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, dis
   useEffect(() => {
     setSelected(null);
     setWrong(null);
-    setStarKey(null);
+    setShowWin(false);
     setLocked(false);
     // Speak instruction + guideText when this screen appears.
     // onUnlock fires when audio ends — releases the interaction lock.
@@ -50,11 +28,9 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, dis
     if (item?.correct) {
       setSelected(idx);
       setLocked(true);
-      sfx.chime();
-      sfx.sparkle();
-      setStarKey(Date.now());
+      setShowWin(true);
+      onWin?.();   // pulse guide avatar
       onReady?.(); // enable forward arrow immediately
-      setTimeout(() => onComplete?.(), 1500); // auto-advance after celebration
     } else {
       setWrong(idx);
       sfx.buzz();
@@ -65,7 +41,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, dis
 
   return (
     <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-      <FloatingStars triggerKey={starKey} />
+      {showWin && <WinCelebration onDone={() => { setShowWin(false); onComplete?.(); }} />}
 
       {/* Instruction */}
       <p style={{

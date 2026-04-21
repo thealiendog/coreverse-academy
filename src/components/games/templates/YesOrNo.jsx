@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
+import WinCelebration from '../WinCelebration';
 
-export default function YesOrNo({ step, onComplete, onReady, onWrong, disabled, speak, onUnlock }) {
-  const [chosen,  setChosen]  = useState(null); // true=yes, false=no
-  const [locked,  setLocked]  = useState(false);
+export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, disabled, speak, onUnlock }) {
+  const [chosen,   setChosen]  = useState(null); // true=yes, false=no
+  const [locked,   setLocked]  = useState(false);
+  const [showWin,  setShowWin] = useState(false);
 
   useEffect(() => {
     setChosen(null);
     setLocked(false);
+    setShowWin(false);
     // Speak scenario + tap prompt — one call, no duplicates.
     // question/guideText are intentionally excluded: the scenario already
     // contains the full question ("Should you give them a hug?").
@@ -25,9 +28,9 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, disabled, 
     setLocked(true);
     const correct = (val === step.correctAnswer);
     if (correct) {
-      sfx.fanfare();
+      setShowWin(true);
+      onWin?.();   // pulse guide avatar
       onReady?.(); // enable forward arrow immediately
-      setTimeout(() => onComplete?.(), 1500); // auto-advance after celebration
     } else {
       sfx.buzz();
       const explanation = step.explanation || `Not quite! The right answer is ${step.correctAnswer ? 'Yes' : 'No'}.`;
@@ -43,6 +46,7 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, disabled, 
 
   return (
     <div style={{ padding: '16px 16px 24px', display:'flex', flexDirection:'column', alignItems:'center', gap:20 }}>
+      {showWin && <WinCelebration onDone={() => { setShowWin(false); onComplete?.(); }} />}
       <style>{`
         @keyframes yn-correct { 0%{transform:scale(1)}30%{transform:scale(1.18)}70%{transform:scale(0.97)}100%{transform:scale(1)} }
         @keyframes yn-wrong   { 0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)} }
