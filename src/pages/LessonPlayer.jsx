@@ -68,19 +68,56 @@ import { askNova } from '../lib/nova';
 
 const CONFETTI_COLORS = ['#7C3AED', '#A78BFA', '#F59E0B', '#FCD34D', '#10B981', '#60A5FA', '#F472B6'];
 
-// ── Word-by-word animated text reveal ────────────────────────────────────────
-function WordReveal({ text, baseDelay = 0, speed = 0.065, className = '' }) {
+// ── Karaoke word highlighting ─────────────────────────────────────────────────
+// displayText: the text shown on screen
+// spokenWords: array of words the guide is currently speaking
+// spokenIdx:   index of the word being spoken right now (-1 = not speaking)
+// className/style: passed to outer span
+function KaraokeText({ displayText, spokenWords, spokenIdx, className = '', style = {} }) {
+  if (!displayText) return null;
+  const words = displayText.split(/\s+/);
+
+  // Find where displayText starts within spokenWords (to handle spoken prefixes
+  // like "Here's the big idea: …" when the screen only shows the text after)
+  let offset = 0;
+  if (spokenWords.length && words.length) {
+    const clean = w => w.toLowerCase().replace(/[^a-z0-9]/g, '');
+    for (let i = 0; i <= spokenWords.length - words.length; i++) {
+      if (clean(spokenWords[i]) === clean(words[0]) &&
+          clean(spokenWords[Math.min(i + 1, spokenWords.length - 1)]) === clean(words[Math.min(1, words.length - 1)])) {
+        offset = i;
+        break;
+      }
+    }
+  }
+
+  const isSpeaking = spokenIdx >= 0;
+
   return (
-    <span className={className}>
-      {text.split(' ').map((word, i) => (
-        <span
-          key={i}
-          className="lesson-word"
-          style={{ animationDelay: `${baseDelay + i * speed}s`, marginRight: '0.28em' }}
-        >
-          {word}
-        </span>
-      ))}
+    <span className={className} style={style}>
+      {words.map((word, i) => {
+        const gi       = i + offset; // global index in spoken word stream
+        const isCur    = isSpeaking && spokenIdx === gi;
+        const isPast   = isSpeaking && spokenIdx > gi;
+        const isFuture = isSpeaking && spokenIdx < gi;
+        return (
+          <span
+            key={i}
+            style={{
+              display: 'inline',
+              color: isCur    ? '#ffffff'
+                   : isPast   ? 'rgba(255,255,255,0.75)'
+                   : isFuture ? 'rgba(255,255,255,0.4)'
+                   :            'rgba(255,255,255,0.85)',
+              textShadow: isCur ? '0 0 10px rgba(124,58,237,0.6)' : 'none',
+              fontWeight: isCur ? 700 : 'inherit',
+              transition: 'color 0.12s ease, text-shadow 0.12s ease',
+            }}
+          >
+            {word}{' '}
+          </span>
+        );
+      })}
     </span>
   );
 }
@@ -251,9 +288,9 @@ export default function LessonPlayer() {
   const [tappedEmoji,  setTappedEmoji] = useState(null); // index of tapped emoji button
 
   // ── Karaoke highlight ─────────────────────────────────────────────────────
-  const [karaokeIdx,   setKaraokeIdx]  = useState(-1);   // currently highlighted word index
-  const karaokeRef     = useRef(null);                   // interval handle
-  const currentLearnRef = useRef('');                    // tracks latest learn block text
+  const [karaokeWords, setKaraokeWords] = useState([]); // words of currently spoken text
+  const [karaokeIdx,   setKaraokeIdx]  = useState(-1);  // index of active word in spoken stream
+  const karaokeRef     = useRef(null);                  // interval handle
 
   // ── Derived step info ──────────────────────────────────────────────────────
   const isLearnStep = step >= 2 && step < 2 + N;
@@ -267,26 +304,29 @@ export default function LessonPlayer() {
                     : step === 5 + N         ? 'explore'
                     :                          'badge';
   const currentLearnBlock = isLearnStep ? learnItems[learnIdx] : '';
-  currentLearnRef.current = currentLearnBlock;
   const passScore = Math.max(2, Math.ceil((lesson?.quiz?.length || 5) * 0.6));
   const name      = child?.name || 'friend';
   const arrivalText = (lesson?.arrival || '').replace(/\{\{name\}\}/g, name);
 
-  // Karaoke: start word-by-word highlight when guide begins speaking the learn block
+  // Fires whenever the guide starts speaking any text.
+  // Splits the spoken text into words, then advances karaokeIdx every msPerWord.
+  // KaraokeText components use karaokeWords + karaokeIdx to highlight their text.
   const handleSpeakStart = useCallback((text, duration) => {
     clearInterval(karaokeRef.current);
     setKaraokeIdx(-1);
-    if (text !== currentLearnRef.current || !text) return;
-    const words = text.split(/\s+/);
+    if (!text || !duration || duration <= 0) return;
+    const words = text.split(/\s+/).filter(Boolean);
     if (words.length < 2) return;
-    const msPerWord = Math.max(80, (duration * 1000) / words.length);
+    setKaraokeWords(words);
+    const msPerWord = Math.max(60, (duration * 1000) / words.length);
     let idx = 0;
     setKaraokeIdx(0);
     karaokeRef.current = setInterval(() => {
       idx += 1;
       if (idx >= words.length) {
         clearInterval(karaokeRef.current);
-        setKaraokeIdx(-1);
+        // keep last word lit briefly before clearing
+        setTimeout(() => setKaraokeIdx(-1), 400);
       } else {
         setKaraokeIdx(idx);
       }
@@ -296,12 +336,14 @@ export default function LessonPlayer() {
   const handleSpeakEnd = useCallback(() => {
     clearInterval(karaokeRef.current);
     setKaraokeIdx(-1);
+    setKaraokeWords([]);
   }, []);
 
   // Reset per-step transient state when step changes
   useEffect(() => {
     clearInterval(karaokeRef.current);
     setKaraokeIdx(-1);
+    setKaraokeWords([]);
     setTfAnswered(null);
     setTfFeedback(null);
     setTappedEmoji(null);
@@ -616,9 +658,12 @@ export default function LessonPlayer() {
                   {guideAvatar.name} says
                 </p>
               </div>
-              <p className="text-white/85 leading-relaxed text-base">
-                {arrivalText}
-              </p>
+              <KaraokeText
+                displayText={arrivalText}
+                spokenWords={karaokeWords}
+                spokenIdx={karaokeIdx}
+                className="leading-relaxed text-base"
+              />
             </div>
 
             <div className="lesson-slide-up" style={{ animationDelay: '0.5s' }}>
@@ -662,21 +707,12 @@ export default function LessonPlayer() {
                 >
                   {learnIdx + 1}
                 </div>
-                <p className="leading-relaxed text-sm">
-                  {currentLearnBlock.split(/\s+/).map((word, i) => (
-                    <span
-                      key={i}
-                      className={karaokeIdx === i ? 'karaoke-active' : ''}
-                      style={{ marginRight: '0.28em', display: 'inline-block',
-                        color: karaokeIdx === i ? subject.color : 'rgba(255,255,255,0.85)',
-                        fontWeight: karaokeIdx === i ? 700 : 400,
-                        transition: 'color 0.08s, font-weight 0.08s',
-                      }}
-                    >
-                      {word}
-                    </span>
-                  ))}
-                </p>
+                <KaraokeText
+                  displayText={currentLearnBlock}
+                  spokenWords={karaokeWords}
+                  spokenIdx={karaokeIdx}
+                  className="leading-relaxed text-sm"
+                />
               </div>
             </div>
 
@@ -706,8 +742,12 @@ export default function LessonPlayer() {
               }}
             >
               <div className="w-2 h-2 rounded-full mx-auto mb-6" style={{ background: subject.color }} />
-              <p className="text-2xl font-semibold text-white leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-                <WordReveal text={lesson.spark} baseDelay={0.18} speed={0.07} />
+              <p className="text-2xl font-semibold leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                <KaraokeText
+                  displayText={lesson.spark}
+                  spokenWords={karaokeWords}
+                  spokenIdx={karaokeIdx}
+                />
               </p>
             </div>
 
@@ -751,8 +791,12 @@ export default function LessonPlayer() {
                 animationDelay: '0.04s',
               }}
             >
-              <p className="text-xl font-semibold text-white leading-snug text-center" style={{ fontFamily: 'Georgia, serif' }}>
-                {lesson.quickCheck.question}
+              <p className="text-xl font-semibold leading-snug text-center" style={{ fontFamily: 'Georgia, serif' }}>
+                <KaraokeText
+                  displayText={lesson.quickCheck.question}
+                  spokenWords={karaokeWords}
+                  spokenIdx={karaokeIdx}
+                />
               </p>
             </div>
 
@@ -818,8 +862,12 @@ export default function LessonPlayer() {
                   animation: 'lesson-slide-from-top-kf 0.45s cubic-bezier(0.16,1,0.3,1) both',
                 }}
               >
-                <p className="text-xl font-semibold text-white leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
-                  {lesson.quiz[quizCurrent].question}
+                <p className="text-xl font-semibold leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                  <KaraokeText
+                    displayText={lesson.quiz[quizCurrent].question}
+                    spokenWords={karaokeWords}
+                    spokenIdx={karaokeIdx}
+                  />
                 </p>
               </div>
 
@@ -900,7 +948,12 @@ export default function LessonPlayer() {
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-white/75 leading-relaxed text-sm">{lesson.explore}</p>
+                    <KaraokeText
+                      displayText={lesson.explore}
+                      spokenWords={karaokeWords}
+                      spokenIdx={karaokeIdx}
+                      className="leading-relaxed text-sm"
+                    />
                   )}
                 </div>
               );

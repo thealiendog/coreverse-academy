@@ -105,11 +105,15 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
       const { audio } = await res.json();
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
+      let cachedDur = null;
+      el.onloadedmetadata = () => { cachedDur = el.duration; };
       el.onplay  = () => {
         setSpeaking(true);
-        const dur = Number.isFinite(el.duration) && el.duration > 0
-          ? el.duration
-          : text.split(/\s+/).length * 0.28;
+        // Use loadedmetadata value, fallback to checking el.duration at play time,
+        // final fallback: estimate from word count (~150 WPM → 0.40s/word)
+        const dur = cachedDur
+          || (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null)
+          || text.split(/\s+/).length * 0.40;
         onSpeakStart?.(text, dur);
       };
       el.onended = () => {
@@ -131,7 +135,7 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
         utterRef.current = utt;
         utt.onstart = () => {
           setSpeaking(true);
-          const dur = text.split(/\s+/).length * 0.28;
+          const dur = text.split(/\s+/).length * 0.40;
           onSpeakStart?.(text, dur);
         };
         utt.onend   = () => {
