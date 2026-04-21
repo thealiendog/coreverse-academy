@@ -562,74 +562,82 @@ export default function GameLessonPlayer() {
       {/* ── Pause overlay ── */}
       {isPaused && (
         <div style={{
-          position: 'absolute',
+          position: 'fixed',
           inset: 0,
           zIndex: 40,
-          background: 'rgba(8,6,24,0.94)',
+          background: 'rgba(8,6,24,0.85)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 28,
+          gap: 20,
         }}>
           {/* Guide avatar */}
           <img
             src={guideAvatar?.image || '/avatars/sage.png'}
             alt={guideAvatar?.name}
             style={{
-              width: 110,
-              height: 110,
+              width: 100,
+              height: 100,
               borderRadius: '50%',
               objectFit: 'cover',
               border: `3px solid ${accent}`,
-              boxShadow: `0 0 28px ${accent}55`,
+              boxShadow: `0 0 20px ${accent}44`,
             }}
             draggable={false}
           />
 
-          {/* Resume button (play icon) */}
-          <button
-            onClick={handlePause}
-            style={{
-              width: 88,
-              height: 88,
-              borderRadius: '50%',
-              border: `3px solid ${accent}`,
-              background: `${accent}22`,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              touchAction: 'manipulation',
-              boxShadow: `0 0 24px ${accent}44`,
-            }}
-          >
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <polygon points="8,4 32,18 8,32" fill="white" />
-            </svg>
-          </button>
+          {/* "Paused" label */}
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', fontWeight: 700, margin: 0, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            Paused
+          </p>
 
-          {/* Home button */}
-          <button
-            onClick={() => navigate('/child/dashboard')}
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: '50%',
-              border: '2px solid rgba(255,255,255,0.2)',
-              background: 'rgba(255,255,255,0.07)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              touchAction: 'manipulation',
-            }}
-          >
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M15 3L2 13h3v14h8v-8h4v8h8V13h3L15 3z" fill="rgba(255,255,255,0.75)" />
-            </svg>
-          </button>
-        </div>
+          {/* Play + Home buttons side by side */}
+          <div style={{ display: 'flex', gap: 24, alignItems: 'center' }}>
+            {/* Resume (play) */}
+            <button
+              onClick={handlePause}
+              style={{
+                width: 80,
+                height: 80,
+                borderRadius: '50%',
+                border: '3px solid #34D399',
+                background: 'rgba(52,211,153,0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                touchAction: 'manipulation',
+                boxShadow: '0 0 20px rgba(52,211,153,0.3)',
+              }}
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <polygon points="7,3 29,16 7,29" fill="#34D399" />
+              </svg>
+            </button>
+
+            {/* Home */}
+            <button
+              onClick={() => navigate('/child/dashboard')}
+              style={{
+                width: 80,
+                height: 80,
+                borderRadius: '50%',
+                border: '2px solid rgba(255,255,255,0.25)',
+                background: 'rgba(255,255,255,0.08)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                touchAction: 'manipulation',
+              }}
+            >
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M15 3L2 13h3v14h8v-8h4v8h8V13h3L15 3z" fill="rgba(255,255,255,0.8)" />
+              </svg>
+            </button>
+          </div>{/* end side-by-side buttons */}
+        </div>{/* end overlay */}
       )}
     </div>
   );

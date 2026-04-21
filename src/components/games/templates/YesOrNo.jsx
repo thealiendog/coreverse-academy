@@ -8,21 +8,14 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, disabled, 
   useEffect(() => {
     setChosen(null);
     setLocked(false);
-    // Speak scenario + question/guideText + tap prompt — deduplicated so that
-    // steps where question === guideText don't say the same phrase twice.
-    const seen = new Set();
-    const parts = [
+    // Speak scenario + tap prompt — one call, no duplicates.
+    // question/guideText are intentionally excluded: the scenario already
+    // contains the full question ("Should you give them a hug?").
+    const text = [
       step.scenario,
-      step.question,
-      step.guideText,
       'Tap the green check for yes, or the red X for no.',
-    ].filter(t => {
-      if (!t) return false;
-      if (seen.has(t)) return false;
-      seen.add(t);
-      return true;
-    });
-    if (parts.length) speak?.(parts.join(' '), onUnlock);
+    ].filter(Boolean).join(' ');
+    if (text) speak?.(text, onUnlock);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
