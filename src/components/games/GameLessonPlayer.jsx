@@ -277,63 +277,90 @@ export default function GameLessonPlayer() {
     return buildSpeechText(step);
   }
 
-  // ── Game screen types that handle their own TTS on mount ──────────────────
+  // ── Screen type sets ──────────────────────────────────────────────────────
+  // Game templates handle their own TTS and call onUnlock when ready.
   const GAME_TYPES = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect']);
+  // Auto-advance screens: advance automatically after speech ends (+ 2s pause).
+  const AUTO_ADVANCE_TYPES = new Set(['welcome', 'story', 'teach', 'family']);
+  // Fallback delay per type — fires if audio onended never comes (TTS failure / silence).
+  const AUTO_FALLBACK_MS = { welcome: 8000, story: 12000, teach: 10000, family: 12000 };
 
   // ── Stable unlock callback passed to game templates ───────────────────────
-  // Called when a template's speak() finishes — clears safety timer, releases lock.
   const handleUnlock = useCallback(() => {
     clearTimeout(fallbackTimerRef.current);
     setInteractionLocked(false);
   }, []);
 
-  // ── Dead-simple auto-advance — completely independent of TTS ─────────────
-  // One useEffect, one timer, no closures over audio state.
-  // Fires unconditionally after the delay for non-interactive screen types.
-  useEffect(() => {
-    if (!gameSequence) return;
-    const step = gameSequence[screenIdx];
-    if (!step) return;
-    const AUTO_TYPES = ['welcome', 'story', 'teach', 'family'];
-    if (!AUTO_TYPES.includes(step.type)) return;
-    const delay = step.type === 'family' ? 8000 : 5000;
-    const timer = setTimeout(() => {
-      setScreenIdx(prev => Math.min(prev + 1, gameSequence.length - 1));
-    }, delay);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [screenIdx]);
-
-  // ── Speak + interaction lock when screen changes ───────────────────────────
+  // ── Speak + interaction lock + auto-advance ────────────────────────────────
+  // Auto-advance screens:
+  //   PRIMARY  — audio onended fires → wait 2s → advance
+  //   FALLBACK — if onended never fires (TTS failure) → advance after AUTO_FALLBACK_MS
+  // Game screens: templates call speak() + onUnlock themselves.
   useEffect(() => {
     if (!gameSequence) return;
     const step = gameSequence[screenIdx];
     const text = buildSpeechText(step);
+
     setInteractionLocked(true);
     setCanAdvance(false);
 
     let cancelled = false;
     clearTimeout(fallbackTimerRef.current);
-    // 12s safety net — unlocks interaction if TTS fails completely.
-    fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
 
     if (GAME_TYPES.has(step.type)) {
-      // Game templates call speak(text, handleUnlock) on mount.
+      // Game templates manage their own TTS; give them a 12s safety net.
+      fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
       return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
     }
 
     // Non-game screens: forward arrow available immediately.
     setCanAdvance(true);
 
-    if (text) {
-      speak(text, () => {
+    if (AUTO_ADVANCE_TYPES.has(step.type)) {
+      const fallbackMs = AUTO_FALLBACK_MS[step.type] || 10000;
+      let advanced = false;
+
+      // doAdvance is idempotent — only fires once even if both primary and fallback race.
+      const doAdvance = () => {
+        if (advanced || cancelled) return;
+        advanced = true;
+        clearTimeout(fallbackTimerRef.current);
+        if (!cancelled) {
+          setInteractionLocked(false);
+          setScreenIdx(prev => Math.min(prev + 1, gameSequence.length - 1));
+        }
+      };
+
+      // Fallback: advance even if onended never fires (TTS error, silence, etc.)
+      fallbackTimerRef.current = setTimeout(doAdvance, fallbackMs);
+
+      // Primary: when speech ends naturally, wait 2s so child can absorb content.
+      const onAudioDone = () => {
         if (cancelled) return;
+        setInteractionLocked(false);
+        clearTimeout(fallbackTimerRef.current);
+        fallbackTimerRef.current = setTimeout(doAdvance, 2000);
+      };
+
+      if (text) {
+        speak(text, onAudioDone);
+      } else {
+        // No text: skip straight to the 2s post-silence pause then advance.
+        fallbackTimerRef.current = setTimeout(doAdvance, 2000);
+      }
+    } else {
+      // Non-auto, non-game (e.g. celebration): just unlock after TTS, no auto-advance.
+      fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
+      if (text) {
+        speak(text, () => {
+          if (cancelled) return;
+          clearTimeout(fallbackTimerRef.current);
+          setInteractionLocked(false);
+        });
+      } else {
         clearTimeout(fallbackTimerRef.current);
         setInteractionLocked(false);
-      });
-    } else {
-      clearTimeout(fallbackTimerRef.current);
-      setInteractionLocked(false);
+      }
     }
 
     return () => {
