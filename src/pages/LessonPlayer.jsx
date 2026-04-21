@@ -241,10 +241,8 @@ export default function LessonPlayer() {
   const [qcSelected,    setQcSelected]   = useState(null);
   const [qcWrong,       setQcWrong]      = useState(false);
 
-  // Engagement per learn block: 0=got-it · 1=emoji-reactions · 2=true-false
-  const engagementTypes = useMemo(() => learnItems.map(() => Math.floor(Math.random() * 3)), []);
-  // Emoji set per learn block: 0=set-A (🚀🧠⚡) · 1=set-B (🔥💡🤩)
-  const reactionSets    = useMemo(() => learnItems.map(() => Math.floor(Math.random() * 2)), []);
+  // Even learn blocks (0,2,4…) → emoji reactions; odd (1,3,5…) → True/False
+  // Emoji set A (🚀🧠⚡) for even blocks, Set B (🔥💡🤩) for odd blocks (fallback)
   const [tfData,       setTfData]      = useState(null); // { statement, isTrue }
   const [tfLoading,    setTfLoading]   = useState(false);
   const [tfAnswered,   setTfAnswered]  = useState(null); // null | true | false (was answer correct)
@@ -276,9 +274,9 @@ export default function LessonPlayer() {
     setQcWrong(false);
   }, [step]);
 
-  // Generate T/F question when entering a T/F learn step
+  // Generate T/F question for odd learn blocks (1, 3, 5…)
   useEffect(() => {
-    if (!isLearnStep || engagementTypes[learnIdx] !== 2) return;
+    if (!isLearnStep || learnIdx % 2 === 0) return;
     setTfData(null);
     setTfLoading(true);
     askNova({
@@ -376,125 +374,100 @@ export default function LessonPlayer() {
   const pct = Math.round((step / (TOTAL_STEPS - 1)) * 100);
 
   // ── Engagement component for learn steps ──────────────────────────────────
-  const engType = engagementTypes[learnIdx];
-  // If T/F failed to generate, fall back to emoji reactions
-  const effectiveEngType = (engType === 2 && !tfLoading && tfData === null) ? 1 : engType;
+  // Even blocks (0,2,4…): emoji reactions — Odd blocks (1,3,5…): True/False
+  const isTfBlock = learnIdx % 2 !== 0;
+
+  const EMOJI_SET_A = [{ emoji: '🚀', label: 'Wow!' }, { emoji: '🧠', label: 'Big brain!' }, { emoji: '⚡', label: 'So cool!' }];
+  const EMOJI_SET_B = [{ emoji: '🔥', label: 'Fire!' }, { emoji: '💡', label: 'I get it!' }, { emoji: '🤩', label: 'Amazing!' }];
 
   function EngagementBlock() {
-    if (engType === 2 && tfLoading) {
-      return (
-        <div className="flex items-center gap-2 justify-center py-4">
-          <div className="nova-dot-1 w-1.5 h-1.5 rounded-full bg-white/30" />
-          <div className="nova-dot-2 w-1.5 h-1.5 rounded-full bg-white/30" />
-          <div className="nova-dot-3 w-1.5 h-1.5 rounded-full bg-white/30" />
-        </div>
-      );
-    }
-
-    // True / False
-    if (effectiveEngType === 2 && tfData) {
-      function handleTfAnswer(answeredTrue) {
-        const correct = answeredTrue === tfData.isTrue;
-        setTfAnswered(correct);
-        setTfFeedback(correct
-          ? "That's right! Nice job!"
-          : `Not quite! The answer is ${tfData.isTrue ? 'True' : 'False'}. Let's keep going!`
+    // Odd blocks (1, 3, 5…) → True/False
+    if (isTfBlock) {
+      if (tfLoading) {
+        return (
+          <div className="flex items-center gap-2 justify-center py-4">
+            <div className="nova-dot-1 w-1.5 h-1.5 rounded-full bg-white/30" />
+            <div className="nova-dot-2 w-1.5 h-1.5 rounded-full bg-white/30" />
+            <div className="nova-dot-3 w-1.5 h-1.5 rounded-full bg-white/30" />
+          </div>
         );
       }
-      return (
-        <div className="space-y-4">
-          <div
-            className="rounded-xl p-5 text-center"
-            style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.25)' }}
-          >
-            <p className="text-xs font-semibold tracking-widest uppercase text-white/35 mb-2">True or False?</p>
-            <p className="text-white/90 text-sm leading-relaxed font-medium">{tfData.statement}</p>
-          </div>
-
-          {tfAnswered === null ? (
-            <div className="flex gap-3">
-              <button
-                onClick={() => handleTfAnswer(true)}
-                className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
-                style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.40)', color: '#6EE7B7' }}
-              >
-                True ✓
-              </button>
-              <button
-                onClick={() => handleTfAnswer(false)}
-                className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
-                style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)', color: '#FCA5A5' }}
-              >
-                False ✗
-              </button>
-            </div>
-          ) : (
-            // Visual feedback shown while guide speaks — auto-advances via onFeedbackEnd
+      if (tfData) {
+        const handleTfAnswer = (answeredTrue) => {
+          const correct = answeredTrue === tfData.isTrue;
+          setTfAnswered(correct);
+          setTfFeedback(correct
+            ? "That's right! Nice job!"
+            : `Not quite! The answer is ${tfData.isTrue ? 'True' : 'False'}. Let's keep going!`
+          );
+        };
+        return (
+          <div className="space-y-4">
             <div
-              className="rounded-xl px-5 py-4 text-center text-sm font-semibold lesson-zoom-in"
-              style={tfAnswered
-                ? { background: 'rgba(16,185,129,0.14)', border: '1px solid #10B981', color: '#6EE7B7' }
-                : { background: 'rgba(239,68,68,0.12)', border: '1px solid #EF4444', color: '#FCA5A5' }}
+              className="rounded-xl p-5 text-center"
+              style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.25)' }}
             >
-              {tfAnswered ? '🎉 Correct!' : `The answer was ${tfData.isTrue ? 'True' : 'False'}`}
+              <p className="text-xs font-semibold tracking-widest uppercase text-white/35 mb-2">True or False?</p>
+              <p className="text-white/90 text-sm leading-relaxed font-medium">{tfData.statement}</p>
             </div>
-          )}
-        </div>
-      );
-    }
-
-    // Emoji reactions
-    if (effectiveEngType === 1) {
-      const SETS = [
-        [{ emoji: '🚀', label: 'Wow!' }, { emoji: '🧠', label: 'Big brain!' }, { emoji: '⚡', label: 'So cool!' }],
-        [{ emoji: '🔥', label: 'Fire!'  }, { emoji: '💡', label: 'I get it!' }, { emoji: '🤩', label: 'Amazing!' }],
-      ];
-      const reactions = SETS[reactionSets[learnIdx] ?? 0];
-      return (
-        <div className="space-y-4">
-          <p className="text-white/35 text-xs text-center tracking-widest uppercase">How do you feel about that?</p>
-          <div className="flex gap-4 justify-center">
-            {reactions.map((r, i) => (
-              <button
-                key={r.label}
-                onClick={() => {
-                  setTappedEmoji(i);
-                  setTimeout(advance, 480);
-                }}
-                disabled={tappedEmoji !== null}
-                className={`flex flex-col items-center gap-2 px-5 py-4 rounded-2xl disabled:cursor-default
-                  ${tappedEmoji === i ? 'lesson-emoji-bounce' : 'hover:scale-105 active:scale-95 transition-transform'}`}
-                style={{
-                  background: tappedEmoji === i
-                    ? `rgba(124,58,237,0.22)`
-                    : 'rgba(255,255,255,0.07)',
-                  border: tappedEmoji === i
-                    ? '1px solid rgba(124,58,237,0.55)'
-                    : '1px solid rgba(255,255,255,0.14)',
-                  minWidth: 80,
-                }}
+            {tfAnswered === null ? (
+              <div className="flex gap-3">
+                <button
+                  onClick={() => handleTfAnswer(true)}
+                  className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
+                  style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.40)', color: '#6EE7B7' }}
+                >
+                  True ✓
+                </button>
+                <button
+                  onClick={() => handleTfAnswer(false)}
+                  className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
+                  style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)', color: '#FCA5A5' }}
+                >
+                  False ✗
+                </button>
+              </div>
+            ) : (
+              <div
+                className="rounded-xl px-5 py-4 text-center text-sm font-semibold lesson-zoom-in"
+                style={tfAnswered
+                  ? { background: 'rgba(16,185,129,0.14)', border: '1px solid #10B981', color: '#6EE7B7' }
+                  : { background: 'rgba(239,68,68,0.12)', border: '1px solid #EF4444', color: '#FCA5A5' }}
               >
-                <span style={{ fontSize: 34, lineHeight: 1 }}>{r.emoji}</span>
-                <span className="text-white/60 text-xs font-semibold whitespace-nowrap">{r.label}</span>
-              </button>
-            ))}
+                {tfAnswered ? '🎉 Correct!' : `The answer was ${tfData.isTrue ? 'True' : 'False'}`}
+              </div>
+            )}
           </div>
-        </div>
-      );
+        );
+      }
+      // T/F generation failed — fall through to Set B emoji reactions
     }
 
-    // Got it (default)
+    // Even blocks (0, 2, 4…) → Set A  |  odd fallback → Set B
+    const reactions = isTfBlock ? EMOJI_SET_B : EMOJI_SET_A;
     return (
-      <button
-        onClick={advance}
-        className="w-full py-4 rounded-2xl font-semibold text-white text-base transition-all hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
-        style={{
-          background: `linear-gradient(135deg, ${subject.color}ee, ${subject.color}99)`,
-          boxShadow: `0 4px 32px ${subject.color}40`,
-        }}
-      >
-        Got it! 👍
-      </button>
+      <div className="space-y-4">
+        <p className="text-white/35 text-xs text-center tracking-widest uppercase">How do you feel about that?</p>
+        <div className="flex gap-4 justify-center">
+          {reactions.map((r, i) => (
+            <button
+              key={r.label}
+              onClick={() => { setTappedEmoji(i); setTimeout(advance, 480); }}
+              disabled={tappedEmoji !== null}
+              className={`flex flex-col items-center gap-2 px-5 py-4 rounded-2xl disabled:cursor-default
+                ${tappedEmoji === i ? 'lesson-emoji-bounce' : 'hover:scale-105 active:scale-95 transition-transform'}`}
+              style={{
+                background: tappedEmoji === i ? 'rgba(124,58,237,0.22)' : 'rgba(255,255,255,0.07)',
+                border:     tappedEmoji === i ? '1px solid rgba(124,58,237,0.55)' : '1px solid rgba(255,255,255,0.14)',
+                minWidth: 80,
+              }}
+            >
+              <span style={{ fontSize: 34, lineHeight: 1 }}>{r.emoji}</span>
+              <span className="text-white/60 text-xs font-semibold whitespace-nowrap">{r.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
     );
   }
 
