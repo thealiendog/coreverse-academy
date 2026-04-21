@@ -250,7 +250,18 @@ export default function GameLessonPlayer() {
     setInteractionLocked(false);
   }, []);
 
-  // ── Speak when screen changes, lock interaction until done ─────────────────
+  // ── How long each non-game screen stays before auto-advancing ────────────
+  // These timers fire regardless of TTS — reliable on all devices/browsers.
+  // Values are generous enough that ElevenLabs audio finishes first on good
+  // connections; on bad connections the screen still advances predictably.
+  const AUTO_ADVANCE_MS = {
+    welcome: 5000,
+    story:   7000,
+    teach:   7000,
+    family:  9000,
+  };
+
+  // ── Speak + auto-advance when screen changes ───────────────────────────────
   useEffect(() => {
     if (!gameSequence) return;
     const step = gameSequence[screenIdx];
@@ -260,38 +271,43 @@ export default function GameLessonPlayer() {
 
     let cancelled = false;
     clearTimeout(fallbackTimerRef.current);
-    // 12s safety net — covers total TTS failure for any step type.
+    // 12s safety net — unlocks interaction if TTS fails completely.
     fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
 
     if (GAME_TYPES.has(step.type)) {
       // Game templates call speak(text, handleUnlock) on mount.
-      // We only set the safety timer here; the template drives TTS.
+      // Interaction is gated on correct answer, not a timer.
       return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
     }
 
-    if (!text) {
+    // Non-game screens: enable forward arrow immediately so child can skip.
+    setCanAdvance(true);
+
+    // Fire-and-forget TTS — plays audio when it works, silent when it doesn't.
+    // Auto-advance is NOT gated on TTS completing.
+    if (text) {
+      speak(text, () => {
+        if (cancelled) return;
+        clearTimeout(fallbackTimerRef.current);
+        setInteractionLocked(false);
+      });
+    } else {
       clearTimeout(fallbackTimerRef.current);
       setInteractionLocked(false);
-      if (step.type === 'welcome' || step.type === 'family') setCanAdvance(true);
-      return () => { cancelled = true; };
     }
 
-    speak(text, () => {
-      if (cancelled) return;
-      clearTimeout(fallbackTimerRef.current);
-      setInteractionLocked(false);
-      setCanAdvance(true);
-      // Auto-advance after audio ends — delay gives time to absorb content.
-      if (['welcome', 'story', 'teach'].includes(step.type)) {
-        setTimeout(advance, 2000);
-      }
-      // Family: longer pause so parents can read the activity card.
-      if (step.type === 'family') {
-        setTimeout(advance, 3000);
-      }
-    });
+    // Timer-based auto-advance — runs regardless of TTS outcome.
+    const delay = AUTO_ADVANCE_MS[step.type];
+    let advanceTimer;
+    if (delay !== undefined) {
+      advanceTimer = setTimeout(() => { if (!cancelled) advance(); }, delay);
+    }
 
-    return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
+    return () => {
+      cancelled = true;
+      clearTimeout(fallbackTimerRef.current);
+      clearTimeout(advanceTimer);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
