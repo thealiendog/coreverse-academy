@@ -24,7 +24,7 @@ function FloatingStars({ triggerKey }) {
   );
 }
 
-export default function TapTheRightOne({ step, onReady, onWrong, disabled, speak }) {
+export default function TapTheRightOne({ step, onReady, onWrong, disabled, speak, onUnlock }) {
   const [selected,  setSelected]  = useState(null);
   const [wrong,     setWrong]     = useState(null);
   const [starKey,   setStarKey]   = useState(null);
@@ -37,6 +37,11 @@ export default function TapTheRightOne({ step, onReady, onWrong, disabled, speak
     setWrong(null);
     setStarKey(null);
     setLocked(false);
+    // Speak instruction + guideText when this screen appears.
+    // onUnlock fires when audio ends — releases the interaction lock.
+    const text = [step.instruction, step.guideText].filter(Boolean).join('. ');
+    if (text) speak?.(text, onUnlock);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   function handleTap(idx) {

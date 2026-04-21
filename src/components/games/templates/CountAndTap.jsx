@@ -5,7 +5,7 @@ import { sfx } from '../sounds';
 const DEFAULT_OBJECTS = ['A','B','C','D','E'];
 const DEFAULT_COLORS  = ['#7C3AED','#F59E0B','#10B981','#60A5FA','#F472B6'];
 
-export default function CountAndTap({ step, onReady, disabled }) {
+export default function CountAndTap({ step, onReady, disabled, speak, onUnlock }) {
   const raw     = step.objects || DEFAULT_OBJECTS;
   const N       = raw.length;
   const isImage = typeof raw[0] === 'object' && raw[0]?.image;
@@ -19,6 +19,9 @@ export default function CountAndTap({ step, onReady, disabled }) {
     setTapped(new Set());
     setNumbers({});
     setDone(false);
+    const text = step.instruction || `Tap all ${N} items!`;
+    if (text) speak?.(text, onUnlock);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   function handleTap(idx) {

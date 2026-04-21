@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function SortIntoBuckets({ step, onReady, disabled }) {
+export default function SortIntoBuckets({ step, onReady, disabled, speak, onUnlock }) {
   const buckets = step.buckets || [
     { label: 'Living',     color: '#34D399' },
     { label: 'Non-living', color: '#60A5FA' },
@@ -19,6 +19,9 @@ export default function SortIntoBuckets({ step, onReady, disabled }) {
     setCurrentIdx(0);
     setCounts(Array(buckets.length).fill(0));
     setDone(false);
+    const text = step.instruction || 'Sort each item into the right bucket!';
+    if (text) speak?.(text, onUnlock);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   const currentItem = items[currentIdx];

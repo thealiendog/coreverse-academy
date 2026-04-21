@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 // Text label fallbacks when no image is provided (no emoji)
 const TEXT_VISUALS = {
@@ -16,28 +16,16 @@ const TEXT_VISUALS = {
   art:     'Create something beautiful',
 };
 
-export default function TeachScreen({ step, childName, guideAvatar, onComplete, speaking, disabled }) {
+// Auto-advance is driven by GameLessonPlayer via the speak() onDone callback —
+// this screen just displays content and fades in.
+export default function TeachScreen({ step, childName, guideAvatar }) {
   const [visible, setVisible] = useState(false);
-  const hasSpoken = useRef(false);
 
   useEffect(() => {
     setVisible(false);
-    hasSpoken.current = false;
     const t = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(t);
   }, [step]);
-
-  useEffect(() => {
-    if (speaking) hasSpoken.current = true;
-  }, [speaking]);
-
-  // Auto-advance 1.5s after audio FULLY ends
-  useEffect(() => {
-    if (!speaking && hasSpoken.current) {
-      const t = setTimeout(onComplete, 1500);
-      return () => clearTimeout(t);
-    }
-  }, [speaking, onComplete]);
 
   const textVisual = !step.image && step.visual ? (TEXT_VISUALS[step.visual] || step.visual) : null;
   const text = (step.guideText || '').replace(/\{name\}/g, childName || 'friend');
@@ -110,7 +98,6 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
           {text}
         </p>
       </div>
-
     </div>
   );
 }

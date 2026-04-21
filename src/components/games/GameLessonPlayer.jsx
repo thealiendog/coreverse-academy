@@ -152,8 +152,9 @@ export default function GameLessonPlayer() {
     };
   }, []);
 
-  const audioRef    = useRef(null);
-  const bubbleTimer = useRef(null);
+  const audioRef        = useRef(null);
+  const bubbleTimer     = useRef(null);
+  const fallbackTimerRef = useRef(null);
 
   // ── Speak ──────────────────────────────────────────────────────────────────
   const speak = useCallback(async (text, onDone) => {
@@ -239,18 +240,15 @@ export default function GameLessonPlayer() {
     return parts.join(' ');
   }
 
-  // ── Game screen types that require explicit interaction to enable forward ──
+  // ── Game screen types that handle their own TTS on mount ──────────────────
   const GAME_TYPES = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect']);
 
-  // ── Enable forward arrow for non-game screens once audio finishes ──────────
-  useEffect(() => {
-    if (!gameSequence || !gameSequence[screenIdx]) return;
-    const step = gameSequence[screenIdx];
-    if (!GAME_TYPES.has(step.type) && !interactionLocked) {
-      setCanAdvance(true);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [interactionLocked, screenIdx]);
+  // ── Stable unlock callback passed to game templates ───────────────────────
+  // Called when a template's speak() finishes — clears safety timer, releases lock.
+  const handleUnlock = useCallback(() => {
+    clearTimeout(fallbackTimerRef.current);
+    setInteractionLocked(false);
+  }, []);
 
   // ── Speak when screen changes, lock interaction until done ─────────────────
   useEffect(() => {
@@ -259,16 +257,38 @@ export default function GameLessonPlayer() {
     const text = buildSpeechText(step);
     setInteractionLocked(true);
     setCanAdvance(false);
-    // Fallback: unlock after 12s — covers long audio + network delay.
-    // Only fires if el.play() never resolved AND SpeechSynthesis also failed silently.
-    const fallback = setTimeout(() => setInteractionLocked(false), 12000);
-    if (text) {
-      speak(text, () => { clearTimeout(fallback); setInteractionLocked(false); });
-    } else {
-      clearTimeout(fallback);
-      setInteractionLocked(false);
+
+    let cancelled = false;
+    clearTimeout(fallbackTimerRef.current);
+    // 12s safety net — covers total TTS failure for any step type.
+    fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
+
+    if (GAME_TYPES.has(step.type)) {
+      // Game templates call speak(text, handleUnlock) on mount.
+      // We only set the safety timer here; the template drives TTS.
+      return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
     }
-    return () => clearTimeout(fallback);
+
+    if (!text) {
+      clearTimeout(fallbackTimerRef.current);
+      setInteractionLocked(false);
+      if (step.type === 'welcome' || step.type === 'family') setCanAdvance(true);
+      return () => { cancelled = true; };
+    }
+
+    speak(text, () => {
+      if (cancelled) return;
+      clearTimeout(fallbackTimerRef.current);
+      setInteractionLocked(false);
+      setCanAdvance(true);
+      // Story and teach screens auto-advance 1.5s after audio fully ends.
+      // This fires from the real onended event — no premature advance.
+      if (step.type === 'story' || step.type === 'teach') {
+        setTimeout(advance, 1500);
+      }
+    });
+
+    return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
@@ -332,11 +352,11 @@ export default function GameLessonPlayer() {
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
-      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} />;
-      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} />;
-      case 'yes-no':       return <YesOrNo         step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'yes-no':       return <YesOrNo         step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>

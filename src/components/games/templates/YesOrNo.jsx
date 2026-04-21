@@ -1,13 +1,23 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function YesOrNo({ step, onReady, onWrong, disabled, speak }) {
+export default function YesOrNo({ step, onReady, onWrong, disabled, speak, onUnlock }) {
   const [chosen,  setChosen]  = useState(null); // true=yes, false=no
   const [locked,  setLocked]  = useState(false);
 
   useEffect(() => {
     setChosen(null);
     setLocked(false);
+    // Speak scenario + question + guideText + tap prompt when this screen appears.
+    // onUnlock fires when audio ends — releases the interaction lock.
+    const parts = [
+      step.scenario,
+      step.question,
+      step.guideText,
+      'Tap the green check for yes, or the red X for no.',
+    ].filter(Boolean);
+    if (parts.length) speak?.(parts.join(' '), onUnlock);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   function choose(val) {
