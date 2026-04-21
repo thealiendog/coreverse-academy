@@ -217,7 +217,8 @@ export default function LessonPlayer() {
           ? (voyagerOverrides[subjectId][idx] || null)
           : (levelGetters[level] || getLesson)(subjectId, idx);
   const subject     = getSubject(subjectId);
-  const guideAvatar = getAvatar(lesson?.guide || lesson?.avatar || child?.avatar);
+  const guideId     = (subject?.guide || lesson?.guide || 'nova').toLowerCase();
+  const guideAvatar = getAvatar(guideId);
 
   // ── Step system ────────────────────────────────────────────────────────────
   // 0=intro · 1=hook · 2…N+1=learn blocks · N+2=spark · N+3=quickcheck
@@ -282,7 +283,7 @@ export default function LessonPlayer() {
     askNova({
       childName:    child?.name    || 'friend',
       childAge:     child?.age     || 8,
-      avatarId:     lesson?.guide  || 'nova',
+      avatarId:     guideId,
       subjectLabel: subject?.label || '',
       lessonTitle:  lesson?.title  || '',
       learnContent: currentLearnBlock,
@@ -1005,7 +1006,7 @@ export default function LessonPlayer() {
         stepType={stepType}
         learnBlock={currentLearnBlock}
         quizCurrent={quizCurrent}
-        guide={subject?.guide || lesson?.guide}
+        guide={guideId}
         tfStatement={tfData?.statement || null}
         tfFeedback={tfFeedback}
         onFeedbackEnd={() => setTimeout(advance, 800)}
