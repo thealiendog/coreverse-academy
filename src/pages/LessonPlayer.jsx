@@ -347,6 +347,11 @@ export default function LessonPlayer() {
   const [karaokeIdx,   setKaraokeIdx]  = useState(-1);  // index of active word in spoken stream
   const karaokeRef     = useRef([]);                    // array of scheduled timeout IDs
 
+  // ── Little Stars AI activities ────────────────────────────────────────────
+  const [lsActivities,    setLsActivities]    = useState({}); // keyed by `${subjectId}_${idx}_${learnIdx}`
+  const [lsActivityTapped, setLsActivityTapped] = useState(null); // index tapped on current activity
+  const [lsActivityShake,  setLsActivityShake]  = useState(null); // index shaking on wrong tap
+
   // ── Little Stars mode ─────────────────────────────────────────────────────
   const isLittleStars = level === 1;
   const [lsSentenceIdx, setLsSentenceIdx] = useState(0); // current sentence-pair index
@@ -370,16 +375,32 @@ export default function LessonPlayer() {
   const name      = child?.name || 'friend';
   const arrivalText = (lesson?.arrival || '').replace(/\{\{name\}\}/g, name);
 
-  // Little Stars sentence-pair logic
-  const lsSentences   = (isLittleStars && isLearnStep) ? splitSentences(currentLearnBlock) : [];
+  // Little Stars sentence-pair logic — applies to ALL text steps (hook, learn, spark, explore)
+  const lsStepText = isLittleStars ? (
+    stepType === 'hook'    ? arrivalText :
+    stepType === 'learn'   ? currentLearnBlock :
+    stepType === 'spark'   ? (lesson?.spark || '') :
+    stepType === 'explore' ? (lesson?.explore || '') :
+    ''
+  ) : '';
+  const lsSentences   = lsStepText ? splitSentences(lsStepText) : [];
   const lsPairs       = [];
   for (let i = 0; i < lsSentences.length; i += 2)
     lsPairs.push(lsSentences.slice(i, i + 2).join(' '));
-  const lsCurrentPair  = (isLittleStars && isLearnStep && lsPairs.length)
-    ? (lsPairs[Math.min(lsSentenceIdx, lsPairs.length - 1)] || currentLearnBlock)
-    : currentLearnBlock;
-  const lsIsLastPair   = !isLittleStars || !isLearnStep || lsSentenceIdx >= lsPairs.length - 1;
+  const lsCurrentPair  = (isLittleStars && lsStepText && lsPairs.length)
+    ? (lsPairs[Math.min(lsSentenceIdx, lsPairs.length - 1)] || lsStepText)
+    : (isLearnStep ? currentLearnBlock : lsStepText);
+  const lsIsLastPair   = !isLittleStars || !lsStepText || lsSentenceIdx >= lsPairs.length - 1;
   const lsShowEngagement = lsIsLastPair; // engagement only on last pair (or for non-LS)
+
+  // Little Stars AI activity — fetched eagerly when a LS learn step starts
+  const lsActivityKey  = isLittleStars && isLearnStep ? `${subjectId}_${idx}_${learnIdx}` : null;
+  const lsActivityEntry = lsActivityKey ? (lsActivities[lsActivityKey] ?? null) : null;
+  // lsActivityEntry is null (not fetched), 'loading', 'error', or the activity object
+  const lsActivity     = (lsActivityEntry && lsActivityEntry !== 'loading' && lsActivityEntry !== 'error')
+    ? lsActivityEntry : null;
+  const lsActivityInstruction = (isLittleStars && isLearnStep && lsIsLastPair && lsActivity)
+    ? lsActivity.instruction : null;
 
   // Fires whenever the guide starts speaking any text.
   // Schedules one setTimeout per word, with duration proportional to character count.
@@ -429,6 +450,8 @@ export default function LessonPlayer() {
     setLsSentenceIdx(0);
     clearTimeout(lsAutoRef.current);
     lsHasSpokenRef.current = false;
+    setLsActivityTapped(null);
+    setLsActivityShake(null);
   }, [step]);
 
   // Cleanup karaoke timeouts on unmount
@@ -444,11 +467,43 @@ export default function LessonPlayer() {
     clearTimeout(lsAutoRef.current);
   }, [lsSentenceIdx, step]);
 
+  // Little Stars: fetch AI activity eagerly when a LS learn step starts
+  useEffect(() => {
+    if (!isLittleStars || !isLearnStep) return;
+    const key = `${subjectId}_${idx}_${learnIdx}`;
+    if (lsActivities[key] !== undefined) return; // already fetched or loading
+    // Check localStorage cache first
+    const cacheKey = `ls_activity_${key}`;
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        setLsActivities(prev => ({ ...prev, [key]: parsed }));
+        return;
+      }
+    } catch { /* ignore cache errors */ }
+    // Fetch from API
+    setLsActivities(prev => ({ ...prev, [key]: 'loading' }));
+    fetch('/.netlify/functions/ls-activity', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ sectionText: currentLearnBlock }),
+    })
+      .then(r => r.json())
+      .then(data => {
+        if (data.error) throw new Error(data.error);
+        try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch { /* storage full */ }
+        setLsActivities(prev => ({ ...prev, [key]: data }));
+      })
+      .catch(() => setLsActivities(prev => ({ ...prev, [key]: 'error' })));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
+
   // Little Stars: when guide finishes reading a non-last pair, auto-advance to next pair
   useEffect(() => {
     if (karaokeIdx >= 0) { lsHasSpokenRef.current = true; return; }
-    if (!lsHasSpokenRef.current) return;        // speech hasn't started yet
-    if (!isLittleStars || !isLearnStep) return; // not a LS learn step
+    if (!lsHasSpokenRef.current) return;         // speech hasn't started yet
+    if (!isLittleStars || !lsStepText) return;  // not a LS text step
     if (lsIsLastPair) return;                   // last pair — wait for engagement
     lsAutoRef.current = setTimeout(() => {
       setLsSentenceIdx(i => i + 1);
@@ -569,6 +624,66 @@ export default function LessonPlayer() {
   }
 
   const pct = Math.round((step / (TOTAL_STEPS - 1)) * 100);
+
+  // ── Little Stars AI activity block ───────────────────────────────────────
+  function LsActivityBlock({ activity }) {
+    const choices = activity.emojis || activity.options;
+    const isCount = activity.type === 'tap_count';
+    return (
+      <div className="space-y-5">
+        <p className="text-white/90 font-bold text-center" style={{ fontSize: '1.35rem', lineHeight: 1.4 }}>
+          {activity.instruction}
+        </p>
+        <div className="flex gap-4 justify-center flex-wrap">
+          {choices.map((choice, i) => {
+            const isTapped  = lsActivityTapped === i;
+            const isShaking = lsActivityShake === i;
+            const isCorrect = isTapped && i === activity.correctIndex;
+            const isWrong   = isTapped && i !== activity.correctIndex;
+            return (
+              <button
+                key={i}
+                onClick={() => {
+                  if (lsActivityTapped !== null) return;
+                  setLsActivityTapped(i);
+                  if (i === activity.correctIndex) {
+                    playChime();
+                    triggerStars(5);
+                    setTimeout(advance, 2000);
+                  } else {
+                    playPop();
+                    setLsActivityShake(i);
+                    setTimeout(() => {
+                      setLsActivityTapped(null);
+                      setLsActivityShake(null);
+                    }, 800);
+                  }
+                }}
+                disabled={lsActivityTapped !== null && !isShaking}
+                className={`flex items-center justify-center rounded-2xl font-bold transition-all
+                  ${isShaking ? 'lesson-shake' : ''}
+                  ${isCorrect ? 'lesson-correct-green-pulse' : ''}
+                  ${!isTapped ? 'hover:scale-105 active:scale-95' : ''}`}
+                style={{
+                  width: 120, height: 120, fontSize: isCount ? '2rem' : '3rem',
+                  background: isCorrect ? 'rgba(16,185,129,0.25)' : isWrong ? 'rgba(239,68,68,0.18)' : 'rgba(255,255,255,0.07)',
+                  border: isCorrect ? '2px solid #10B981' : isWrong ? '2px solid #EF4444' : '2px solid rgba(255,255,255,0.14)',
+                }}
+              >
+                {choice}
+              </button>
+            );
+          })}
+        </div>
+        {lsActivityTapped !== null && lsActivityTapped !== activity.correctIndex && lsActivityShake === null && (
+          <p className="text-red-400 text-center font-semibold text-sm lesson-fade-in">Try again! 🌟</p>
+        )}
+        {lsActivity && lsActivityTapped === activity.correctIndex && (
+          <p className="text-emerald-400 text-center font-bold text-base lesson-fade-in">🎉 That's right!</p>
+        )}
+      </div>
+    );
+  }
 
   // ── Engagement component for learn steps ──────────────────────────────────
   // Even blocks (0,2,4…): emoji reactions — Odd blocks (1,3,5…): True/False
@@ -772,17 +887,25 @@ export default function LessonPlayer() {
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
           <div className="max-w-lg w-full">
             <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
-              Today's Lesson
+              {isLittleStars && lsPairs.length > 1 ? `Part ${lsSentenceIdx + 1} of ${lsPairs.length}` : "Today's Lesson"}
             </p>
 
             <div
-              className="lesson-zoom-in rounded-2xl p-7 mb-8 text-left"
+              key={`hook-${lsSentenceIdx}`}
+              onClick={isLittleStars && !lsIsLastPair ? () => {
+                clearTimeout(lsAutoRef.current);
+                setLsSentenceIdx(i => i + 1);
+              } : undefined}
+              className="lesson-zoom-in rounded-2xl mb-8 text-left"
               style={{
                 animationDelay: '0.12s',
                 background: 'rgba(15,11,46,0.88)',
                 border: `1px solid ${subject.color}28`,
                 backdropFilter: 'blur(16px)',
                 boxShadow: `0 4px 40px ${subject.color}12`,
+                padding: isLittleStars ? '2rem' : '1.75rem',
+                cursor: isLittleStars && !lsIsLastPair ? 'pointer' : 'default',
+                animation: 'lesson-slide-from-right-kf 0.50s cubic-bezier(0.16,1,0.3,1) both',
               }}
             >
               {/* Guide mini-badge inside card */}
@@ -794,27 +917,41 @@ export default function LessonPlayer() {
                   {guideAvatar.name} says
                 </p>
               </div>
-              <KaraokeText
-                displayText={arrivalText}
-                spokenWords={karaokeWords}
-                spokenIdx={karaokeIdx}
-                className="leading-relaxed text-base"
-              />
+              {isLittleStars ? (
+                <KaraokeText
+                  displayText={lsCurrentPair}
+                  spokenWords={karaokeWords}
+                  spokenIdx={karaokeIdx}
+                  style={{ fontSize: '1.5rem', lineHeight: 2, fontWeight: 500, display: 'block' }}
+                />
+              ) : (
+                <KaraokeText
+                  displayText={arrivalText}
+                  spokenWords={karaokeWords}
+                  spokenIdx={karaokeIdx}
+                  className="leading-relaxed text-base"
+                />
+              )}
+              {isLittleStars && !lsIsLastPair && (
+                <p className="text-white/20 text-xs text-center mt-6">Tap to continue →</p>
+              )}
             </div>
 
-            <div className="lesson-slide-up" style={{ animationDelay: '0.5s' }}>
-              <button
-                onClick={advance}
-                className="w-full rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl active:scale-[0.99]"
-                style={{
-                  background: `linear-gradient(135deg, ${subject.color}ee, ${subject.color}99)`,
-                  height: isLittleStars ? 70 : 56,
-                  fontSize: isLittleStars ? '1.2rem' : '1rem',
-                }}
-              >
-                Continue →
-              </button>
-            </div>
+            {lsIsLastPair && (
+              <div className="lesson-slide-up" style={{ animationDelay: '0.5s' }}>
+                <button
+                  onClick={advance}
+                  className="w-full rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl active:scale-[0.99]"
+                  style={{
+                    background: `linear-gradient(135deg, ${subject.color}ee, ${subject.color}99)`,
+                    height: isLittleStars ? 70 : 56,
+                    fontSize: isLittleStars ? '1.2rem' : '1rem',
+                  }}
+                >
+                  Continue →
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -886,7 +1023,21 @@ export default function LessonPlayer() {
             {/* Engagement — only shown on last sentence pair (or always for non-LS) */}
             {lsShowEngagement && (
               <div className="lesson-slide-up" style={{ animationDelay: '0.8s' }}>
-                <EngagementBlock />
+                {isLittleStars ? (
+                  lsActivityEntry === 'loading' ? (
+                    <div className="flex items-center gap-2 justify-center py-6">
+                      <div className="nova-dot-1 w-2 h-2 rounded-full bg-white/30" />
+                      <div className="nova-dot-2 w-2 h-2 rounded-full bg-white/30" />
+                      <div className="nova-dot-3 w-2 h-2 rounded-full bg-white/30" />
+                    </div>
+                  ) : lsActivity ? (
+                    <LsActivityBlock activity={lsActivity} />
+                  ) : (
+                    <EngagementBlock />
+                  )
+                ) : (
+                  <EngagementBlock />
+                )}
               </div>
             )}
           </div>
@@ -900,43 +1051,65 @@ export default function LessonPlayer() {
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
           <div className="max-w-lg w-full">
             <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
-              Big Idea ✦
+              {isLittleStars && lsPairs.length > 1 ? `Part ${lsSentenceIdx + 1} of ${lsPairs.length}` : 'Big Idea ✦'}
             </p>
 
             <div
-              className="rounded-3xl p-8 mb-8 text-center lesson-zoom-in lesson-spark-glow"
+              key={`spark-${lsSentenceIdx}`}
+              onClick={isLittleStars && !lsIsLastPair ? () => {
+                clearTimeout(lsAutoRef.current);
+                setLsSentenceIdx(i => i + 1);
+              } : undefined}
+              className="rounded-3xl mb-8 text-center lesson-zoom-in lesson-spark-glow"
               style={{
                 background: 'linear-gradient(135deg, rgba(124,58,237,0.14) 0%, rgba(76,29,149,0.08) 100%)',
                 border: '1px solid rgba(124,58,237,0.38)',
+                padding: isLittleStars ? '2rem' : '2rem',
+                cursor: isLittleStars && !lsIsLastPair ? 'pointer' : 'default',
+                animation: 'lesson-slide-from-right-kf 0.50s cubic-bezier(0.16,1,0.3,1) both',
               }}
             >
               <div className="w-2 h-2 rounded-full mx-auto mb-6" style={{ background: subject.color }} />
-              <p className="text-2xl font-semibold leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+              {isLittleStars ? (
                 <KaraokeText
-                  displayText={lesson.spark}
+                  displayText={lsCurrentPair}
                   spokenWords={karaokeWords}
                   spokenIdx={karaokeIdx}
+                  style={{ fontSize: '1.5rem', lineHeight: 2, fontWeight: 500, display: 'block' }}
                 />
-              </p>
+              ) : (
+                <p className="text-2xl font-semibold leading-snug" style={{ fontFamily: 'Georgia, serif' }}>
+                  <KaraokeText
+                    displayText={lesson.spark}
+                    spokenWords={karaokeWords}
+                    spokenIdx={karaokeIdx}
+                  />
+                </p>
+              )}
+              {isLittleStars && !lsIsLastPair && (
+                <p className="text-white/20 text-xs text-center mt-6">Tap to continue →</p>
+              )}
             </div>
 
-            <div className="lesson-slide-up" style={{ animationDelay: '0.45s' }}>
-              <p className="text-white/40 text-sm mb-3">What do you think? Share your ideas:</p>
-              <textarea
-                value={sparkAnswer}
-                onChange={e => setSparkAnswer(e.target.value)}
-                placeholder="Write anything that comes to mind..."
-                rows={5}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#7C3AED]/55 focus:ring-2 focus:ring-[#7C3AED]/18 resize-none text-sm leading-relaxed transition-all"
-              />
-              <button
-                onClick={advance}
-                className="mt-5 w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl active:scale-[0.99]"
-                style={{ background: subject.color }}
-              >
-                {sparkAnswer.trim() ? 'Continue →' : 'Skip for now'}
-              </button>
-            </div>
+            {lsIsLastPair && (
+              <div className="lesson-slide-up" style={{ animationDelay: '0.45s' }}>
+                <p className="text-white/40 text-sm mb-3">What do you think? Share your ideas:</p>
+                <textarea
+                  value={sparkAnswer}
+                  onChange={e => setSparkAnswer(e.target.value)}
+                  placeholder="Write anything that comes to mind..."
+                  rows={5}
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#7C3AED]/55 focus:ring-2 focus:ring-[#7C3AED]/18 resize-none text-sm leading-relaxed transition-all"
+                />
+                <button
+                  onClick={advance}
+                  className="mt-5 w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl active:scale-[0.99]"
+                  style={{ background: subject.color }}
+                >
+                  {sparkAnswer.trim() ? 'Continue →' : 'Skip for now'}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -1073,78 +1246,117 @@ export default function LessonPlayer() {
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
           <div className="max-w-lg w-full">
             <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
-              Your Mission
+              {isLittleStars && lsPairs.length > 1 ? `Part ${lsSentenceIdx + 1} of ${lsPairs.length}` : 'Your Mission'}
             </p>
 
-            {(() => {
-              const bullets = (lesson.explore || '')
-                .replace(/\. /g, '.\n')
-                .split(/\n+/)
-                .map(s => s.trim().replace(/\.$/, ''))
-                .filter(Boolean);
-              return (
-                <div
-                  className="rounded-2xl p-7 mb-8 lesson-zoom-in lesson-explore-glow"
-                  style={{
-                    background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
-                    border: '1px solid rgba(124,58,237,0.42)',
-                    animationDelay: '0.04s',
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}>
-                      <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
-                      <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
-                    </div>
-                  </div>
-                  {bullets.length > 1 ? (
-                    <ul className="space-y-2.5">
-                      {bullets.map((bullet, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2.5 text-white/75 text-sm leading-relaxed"
-                          style={{
-                            animation: `lesson-slide-from-right-kf 0.44s cubic-bezier(0.16,1,0.3,1) ${0.18 + i * 0.18}s both`,
-                            opacity: 0,
-                          }}
-                        >
-                          <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#A78BFA' }} />
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <KaraokeText
-                      displayText={lesson.explore}
-                      spokenWords={karaokeWords}
-                      spokenIdx={karaokeIdx}
-                      className="leading-relaxed text-sm"
-                    />
-                  )}
-                </div>
-              );
-            })()}
-
-            <div className="lesson-slide-up" style={{ animationDelay: '0.32s' }}>
-              <p className="text-white/40 text-sm mb-3">Your response:</p>
-              <textarea
-                value={exploreAnswer}
-                onChange={e => setExploreAnswer(e.target.value)}
-                placeholder="Take your time with this one..."
-                rows={6}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#7C3AED]/55 focus:ring-2 focus:ring-[#7C3AED]/18 resize-none text-sm leading-relaxed transition-all"
-              />
-              <button
-                onClick={advance}
-                className="mt-5 w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl"
-                style={{ background: subject.color }}
+            {isLittleStars ? (
+              <div
+                key={`explore-${lsSentenceIdx}`}
+                onClick={!lsIsLastPair ? () => {
+                  clearTimeout(lsAutoRef.current);
+                  setLsSentenceIdx(i => i + 1);
+                } : undefined}
+                className="rounded-2xl mb-8 lesson-zoom-in lesson-explore-glow"
+                style={{
+                  background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
+                  border: '1px solid rgba(124,58,237,0.42)',
+                  padding: '2rem',
+                  cursor: !lsIsLastPair ? 'pointer' : 'default',
+                  animation: 'lesson-slide-from-right-kf 0.50s cubic-bezier(0.16,1,0.3,1) both',
+                }}
               >
-                {exploreAnswer.trim() ? 'Done! →' : 'Skip for now'}
-              </button>
-            </div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}>
+                    <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
+                    <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
+                  </div>
+                </div>
+                <KaraokeText
+                  displayText={lsCurrentPair}
+                  spokenWords={karaokeWords}
+                  spokenIdx={karaokeIdx}
+                  style={{ fontSize: '1.5rem', lineHeight: 2, fontWeight: 500, display: 'block' }}
+                />
+                {!lsIsLastPair && (
+                  <p className="text-white/20 text-xs text-center mt-6">Tap to continue →</p>
+                )}
+              </div>
+            ) : (
+              (() => {
+                const bullets = (lesson.explore || '')
+                  .replace(/\. /g, '.\n')
+                  .split(/\n+/)
+                  .map(s => s.trim().replace(/\.$/, ''))
+                  .filter(Boolean);
+                return (
+                  <div
+                    className="rounded-2xl p-7 mb-8 lesson-zoom-in lesson-explore-glow"
+                    style={{
+                      background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
+                      border: '1px solid rgba(124,58,237,0.42)',
+                      animationDelay: '0.04s',
+                    }}
+                  >
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}>
+                        <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
+                        <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
+                      </div>
+                    </div>
+                    {bullets.length > 1 ? (
+                      <ul className="space-y-2.5">
+                        {bullets.map((bullet, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start gap-2.5 text-white/75 text-sm leading-relaxed"
+                            style={{
+                              animation: `lesson-slide-from-right-kf 0.44s cubic-bezier(0.16,1,0.3,1) ${0.18 + i * 0.18}s both`,
+                              opacity: 0,
+                            }}
+                          >
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#A78BFA' }} />
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <KaraokeText
+                        displayText={lesson.explore}
+                        spokenWords={karaokeWords}
+                        spokenIdx={karaokeIdx}
+                        className="leading-relaxed text-sm"
+                      />
+                    )}
+                  </div>
+                );
+              })()
+            )}
+
+            {lsIsLastPair && (
+              <div className="lesson-slide-up" style={{ animationDelay: '0.32s' }}>
+                <p className="text-white/40 text-sm mb-3">Your response:</p>
+                <textarea
+                  value={exploreAnswer}
+                  onChange={e => setExploreAnswer(e.target.value)}
+                  placeholder="Take your time with this one..."
+                  rows={6}
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#7C3AED]/55 focus:ring-2 focus:ring-[#7C3AED]/18 resize-none text-sm leading-relaxed transition-all"
+                />
+                <button
+                  onClick={advance}
+                  className="mt-5 w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl"
+                  style={{ background: subject.color }}
+                >
+                  {exploreAnswer.trim() ? 'Done! →' : 'Skip for now'}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -1278,6 +1490,9 @@ export default function LessonPlayer() {
         subject={subject}
         stepType={stepType}
         learnBlock={isLittleStars && isLearnStep ? lsCurrentPair : currentLearnBlock}
+        speakOverride={isLittleStars && lsStepText && stepType !== 'learn' ? lsCurrentPair : undefined}
+        suppressChain={isLittleStars && !lsIsLastPair}
+        lsActivityInstruction={lsActivityInstruction}
         quizCurrent={quizCurrent}
         guide={guideId}
         tfStatement={isLittleStars ? null : (tfData?.statement || null)}
