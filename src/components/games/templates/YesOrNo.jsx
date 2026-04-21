@@ -8,14 +8,20 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, disabled, 
   useEffect(() => {
     setChosen(null);
     setLocked(false);
-    // Speak scenario + question + guideText + tap prompt when this screen appears.
-    // onUnlock fires when audio ends — releases the interaction lock.
+    // Speak scenario + question/guideText + tap prompt — deduplicated so that
+    // steps where question === guideText don't say the same phrase twice.
+    const seen = new Set();
     const parts = [
       step.scenario,
       step.question,
       step.guideText,
       'Tap the green check for yes, or the red X for no.',
-    ].filter(Boolean);
+    ].filter(t => {
+      if (!t) return false;
+      if (seen.has(t)) return false;
+      seen.add(t);
+      return true;
+    });
     if (parts.length) speak?.(parts.join(' '), onUnlock);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
