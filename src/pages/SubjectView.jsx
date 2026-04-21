@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../lib/storage';
 import { getSubject, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS } from '../lib/constants';
@@ -52,6 +52,8 @@ export default function SubjectView() {
   // Default to child's age band; fallback to Explorers (level 2) if no child
   const childBand = child ? ageToAgeBand(child.age) : AGE_BANDS[1];
   const [level, setLevel] = useState(childBand.level);
+
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const progress = child?.progress || {};
   const academicSubject = CORE_ACADEMICS.find(a => a.id === subjectId);
@@ -110,7 +112,6 @@ export default function SubjectView() {
 
   function handleLessonClick(i) {
     if (!hasContent) return;
-    if (i > doneLessons) return;
     if (!child) { navigate('/child/select'); return; }
     const url = level === 1
       ? `/child/lesson/${subjectId}/${i}`
@@ -230,7 +231,7 @@ export default function SubjectView() {
           <div className="space-y-3">
             {lessonData.map((lesson, i) => {
               const isDone     = i < doneLessons;
-              const isUnlocked = i <= doneLessons;
+              const isUnlocked = true; // beta: all lessons unlocked
               const isCurrent  = i === doneLessons;
 
               return (
