@@ -64,6 +64,7 @@ import FRONTIER_EXPLORERS from '../data/frontier_explorers_adapter';
 import FRONTIER_UPPEREXPLORERS from '../data/frontier_upperexplorers_adapter';
 import FRONTIER_VOYAGERS from '../data/frontier_voyagers_adapter';
 import NovaChat from '../components/NovaChat';
+import { LsVisualFrame, detectVisual, VISUAL_INSTRUCTIONS } from '../components/LsVisuals';
 import { askNova } from '../lib/nova';
 
 const CONFETTI_COLORS = ['#7C3AED', '#A78BFA', '#F59E0B', '#FCD34D', '#10B981', '#60A5FA', '#F472B6'];
@@ -352,6 +353,9 @@ export default function LessonPlayer() {
   const [lsActivityTapped, setLsActivityTapped] = useState(null); // index tapped on current activity
   const [lsActivityShake,  setLsActivityShake]  = useState(null); // index shaking on wrong tap
 
+  // ── Little Stars visual illustrations ────────────────────────────────────
+  const [lsVisualTaps, setLsVisualTaps] = useState(0); // tap count for current visual
+
   // ── Little Stars mode ─────────────────────────────────────────────────────
   const isLittleStars = level === 1;
   const [lsSentenceIdx, setLsSentenceIdx] = useState(0); // current sentence-pair index
@@ -401,6 +405,9 @@ export default function LessonPlayer() {
     ? lsActivityEntry : null;
   const lsActivityInstruction = (isLittleStars && isLearnStep && lsIsLastPair && lsActivity)
     ? lsActivity.instruction : null;
+
+  // Visual illustration: shown after each LS sentence pair (replaces auto-advance + engagement)
+  const lsVisualName = (isLittleStars && isLearnStep) ? detectVisual(lsCurrentPair) : null;
 
   // Fires whenever the guide starts speaking any text.
   // Schedules one setTimeout per word, with duration proportional to character count.
@@ -452,6 +459,7 @@ export default function LessonPlayer() {
     lsHasSpokenRef.current = false;
     setLsActivityTapped(null);
     setLsActivityShake(null);
+    setLsVisualTaps(0);
   }, [step]);
 
   // Cleanup karaoke timeouts on unmount
@@ -461,10 +469,11 @@ export default function LessonPlayer() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Little Stars: reset hasSpoken ref when sentence pair changes
+  // Little Stars: reset hasSpoken ref and visual tap count when sentence pair changes
   useEffect(() => {
     lsHasSpokenRef.current = false;
     clearTimeout(lsAutoRef.current);
+    setLsVisualTaps(0);
   }, [lsSentenceIdx, step]);
 
   // Little Stars: fetch AI activity eagerly when a LS learn step starts
@@ -500,11 +509,14 @@ export default function LessonPlayer() {
   }, [step]);
 
   // Little Stars: when guide finishes reading a non-last pair, auto-advance to next pair
+  // For learn steps: visual taps are the advancement mechanism (no auto-timer)
+  // For other steps (hook, spark, explore): auto-advance after 1.5s
   useEffect(() => {
     if (karaokeIdx >= 0) { lsHasSpokenRef.current = true; return; }
     if (!lsHasSpokenRef.current) return;         // speech hasn't started yet
     if (!isLittleStars || !lsStepText) return;  // not a LS text step
-    if (lsIsLastPair) return;                   // last pair — wait for engagement
+    if (lsIsLastPair) return;                   // last pair — wait for child action
+    if (isLearnStep) return;                    // learn steps: visual taps handle advancement
     lsAutoRef.current = setTimeout(() => {
       setLsSentenceIdx(i => i + 1);
     }, 1500);
@@ -568,6 +580,21 @@ export default function LessonPlayer() {
   function triggerStars(count) {
     if (!isLittleStars) return;
     setStarBurst(b => ({ count, key: (b?.key || 0) + 1 }));
+  }
+
+  function handleLsVisualTap() {
+    const next = lsVisualTaps + 1;
+    setLsVisualTaps(next);
+    if (next >= 3) {
+      playChime();
+      triggerStars(5);
+      if (lsIsLastPair) {
+        setTimeout(advance, 1500);
+      } else {
+        clearTimeout(lsAutoRef.current);
+        setTimeout(() => setLsSentenceIdx(i => i + 1), 1500);
+      }
+    }
   }
 
   function handleQcSelect(optIdx) {
@@ -1020,24 +1047,24 @@ export default function LessonPlayer() {
               )}
             </div>
 
-            {/* Engagement — only shown on last sentence pair (or always for non-LS) */}
-            {lsShowEngagement && (
+            {/* LS: visual illustration after each sentence pair (replaces engagement + auto-timer) */}
+            {isLittleStars && lsVisualName && lsVisualTaps < 3 && (
+              <div className="lesson-slide-up" style={{ animationDelay: '0.6s' }}>
+                <p className="text-white/70 font-bold text-center mb-3" style={{ fontSize: '1.1rem' }}>
+                  {VISUAL_INSTRUCTIONS[lsVisualName]}
+                </p>
+                <LsVisualFrame
+                  name={lsVisualName}
+                  tapCount={lsVisualTaps}
+                  onTap={handleLsVisualTap}
+                />
+              </div>
+            )}
+
+            {/* Non-LS engagement — only shown on last sentence pair */}
+            {!isLittleStars && lsShowEngagement && (
               <div className="lesson-slide-up" style={{ animationDelay: '0.8s' }}>
-                {isLittleStars ? (
-                  lsActivityEntry === 'loading' ? (
-                    <div className="flex items-center gap-2 justify-center py-6">
-                      <div className="nova-dot-1 w-2 h-2 rounded-full bg-white/30" />
-                      <div className="nova-dot-2 w-2 h-2 rounded-full bg-white/30" />
-                      <div className="nova-dot-3 w-2 h-2 rounded-full bg-white/30" />
-                    </div>
-                  ) : lsActivity ? (
-                    <LsActivityBlock activity={lsActivity} />
-                  ) : (
-                    <EngagementBlock />
-                  )
-                ) : (
-                  <EngagementBlock />
-                )}
+                <EngagementBlock />
               </div>
             )}
           </div>
