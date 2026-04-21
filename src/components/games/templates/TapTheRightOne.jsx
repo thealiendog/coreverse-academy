@@ -24,7 +24,7 @@ function FloatingStars({ triggerKey }) {
   );
 }
 
-export default function TapTheRightOne({ step, onComplete, onWrong, disabled }) {
+export default function TapTheRightOne({ step, onComplete, onWrong, disabled, speak }) {
   const [selected,  setSelected]  = useState(null);
   const [wrong,     setWrong]     = useState(null);
   const [starKey,   setStarKey]   = useState(null);
@@ -104,6 +104,7 @@ export default function TapTheRightOne({ step, onComplete, onWrong, disabled }) 
                     ? 'rgba(239,68,68,0.15)'
                     : 'rgba(255,255,255,0.06)',
                 cursor: locked ? 'default' : 'pointer',
+                touchAction: 'manipulation',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function YesOrNo({ step, onComplete, onWrong, disabled }) {
+export default function YesOrNo({ step, onComplete, onWrong, disabled, speak }) {
   const [chosen,  setChosen]  = useState(null); // true=yes, false=no
   const [locked,  setLocked]  = useState(false);
 
@@ -119,6 +119,7 @@ export default function YesOrNo({ step, onComplete, onWrong, disabled }) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                touchAction: 'manipulation',
                 transition: 'all 0.25s ease',
                 boxShadow: isCorrect ? `0 0 36px ${btn.glow}` : isChosen ? `0 0 18px ${btn.glow}` : 'none',
                 animation: isCorrect ? 'yn-correct 0.5s ease' : isWrong ? 'yn-wrong 0.5s ease' : 'none',

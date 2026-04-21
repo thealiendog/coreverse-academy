@@ -157,29 +157,45 @@ export default function GameLessonPlayer() {
   const speak = useCallback(async (text, onDone) => {
     if (!text) { onDone?.(); return; }
 
-    // Stop previous audio
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.src = '';
       audioRef.current = null;
     }
+    window.speechSynthesis?.cancel();
     clearTimeout(bubbleTimer.current);
 
     const resolved = text.replace(/\{name\}/g, childName);
-    setBubble(resolved.slice(0, 100) + (resolved.length > 100 ? '…' : ''));
+    setBubble(resolved.slice(0, 120) + (resolved.length > 120 ? '…' : ''));
     setSpeaking(true);
 
-    // Guard: if onDone hasn't been called within 6s, force unlock anyway.
-    // This handles iOS Safari autoplay block + silent SpeechSynthesis failures.
     let done = false;
     const finish = () => {
       if (done) return;
       done = true;
       setSpeaking(false);
-      bubbleTimer.current = setTimeout(() => setBubble(''), 2500);
+      bubbleTimer.current = setTimeout(() => setBubble(''), 3000);
       onDone?.();
     };
-    const safetyTimer = setTimeout(finish, 6000);
+    // Safety: unlock interaction after 3s if TTS never completes
+    const safetyTimer = setTimeout(finish, 3000);
+
+    // SpeechSynthesis fallback — called when ElevenLabs fails or play() is blocked
+    const trySpeechSynthesis = () => {
+      try {
+        if (!window.speechSynthesis) { clearTimeout(safetyTimer); finish(); return; }
+        window.speechSynthesis.cancel();
+        const utt = new SpeechSynthesisUtterance(resolved);
+        utt.rate  = 0.92;
+        utt.onend   = () => { clearTimeout(safetyTimer); finish(); };
+        utt.onerror = () => { clearTimeout(safetyTimer); finish(); };
+        window.speechSynthesis.speak(utt);
+        // iOS SpeechSynthesis may still silently fail — safetyTimer covers this
+      } catch {
+        clearTimeout(safetyTimer);
+        finish();
+      }
+    };
 
     try {
       const res = await fetch('/.netlify/functions/nova-speak', {
@@ -192,21 +208,19 @@ export default function GameLessonPlayer() {
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
       el.onended = () => { clearTimeout(safetyTimer); audioRef.current = null; finish(); };
-      el.onerror = () => { clearTimeout(safetyTimer); audioRef.current = null; finish(); };
-      // play() can throw on mobile before a user gesture — catch it and fall through
-      await el.play().catch(() => null);
-    } catch {
-      // ElevenLabs unavailable — try browser SpeechSynthesis
-      try {
-        const utt = new SpeechSynthesisUtterance(resolved);
-        utt.onend   = () => { clearTimeout(safetyTimer); finish(); };
-        utt.onerror = () => { clearTimeout(safetyTimer); finish(); };
-        window.speechSynthesis?.speak(utt);
-        // SpeechSynthesis doesn't throw even if blocked — safetyTimer will fire
-      } catch {
-        clearTimeout(safetyTimer);
-        finish();
+      el.onerror = () => { clearTimeout(safetyTimer); audioRef.current = null; trySpeechSynthesis(); };
+
+      // Detect iOS autoplay block: play() rejects instead of throwing
+      const playErr = await el.play().catch(err => err);
+      if (playErr instanceof Error) {
+        // Autoplay was blocked — immediately try SpeechSynthesis instead of waiting 3s
+        audioRef.current = null;
+        trySpeechSynthesis();
       }
+      // If play() succeeded, el.onended will call finish()
+    } catch {
+      // ElevenLabs network error — try SpeechSynthesis
+      trySpeechSynthesis();
     }
   }, [childName]);
 
@@ -227,8 +241,8 @@ export default function GameLessonPlayer() {
     const step = gameSequence[screenIdx];
     const text = buildSpeechText(step);
     setInteractionLocked(true);
-    // Absolute fallback: unlock after 7s even if speak() never resolves
-    const fallback = setTimeout(() => setInteractionLocked(false), 7000);
+    // Fallback: unlock after 3.5s if speak() never resolves
+    const fallback = setTimeout(() => setInteractionLocked(false), 3500);
     if (text) {
       speak(text, () => { clearTimeout(fallback); setInteractionLocked(false); });
     } else {
@@ -269,18 +283,18 @@ export default function GameLessonPlayer() {
 
   // ── Render screen ─────────────────────────────────────────────────────────
   function renderScreen(step) {
-    const common = { step, childName, guideAvatar, onComplete: advance, speaking, disabled: interactionLocked };
+    const common = { step, childName, guideAvatar, onComplete: advance, speaking, disabled: interactionLocked, speak };
     switch (step.type) {
       case 'welcome':      return <WelcomeScreen     {...common} />;
       case 'story':        return <StoryScreen       {...common} />;
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} />;
-      case 'count':        return <CountAndTap     step={step} onComplete={advance} disabled={interactionLocked} />;
-      case 'sort':         return <SortIntoBuckets step={step} onComplete={advance} disabled={interactionLocked} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
+      case 'count':        return <CountAndTap     step={step} onComplete={advance} disabled={interactionLocked} speak={speak} />;
+      case 'sort':         return <SortIntoBuckets step={step} onComplete={advance} disabled={interactionLocked} speak={speak} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>
@@ -309,15 +323,15 @@ export default function GameLessonPlayer() {
       userSelect: 'none',
     }}>
       <style>{`
-        /* Prevent scroll bounce on iOS without breaking touch */
         body { overscroll-behavior: none; touch-action: manipulation; }
-        /* Remove iOS tap flash on all interactive elements */
-        button, [role="button"], a { -webkit-tap-highlight-color: transparent; }
-        /* Active tap feedback — no hover */
+        button, [role="button"], a {
+          -webkit-tap-highlight-color: transparent;
+          touch-action: manipulation;
+        }
         button:active { opacity: 0.82 !important; }
-        @keyframes guide-pulse {
-          0%,100% { box-shadow: 0 0 0 2px ${accent}55 }
-          50%      { box-shadow: 0 0 0 6px ${accent}33 }
+        @keyframes guide-ring {
+          0%,100% { opacity: 0.45; transform: scale(1); }
+          50%      { opacity: 1;   transform: scale(1.14); }
         }
         @keyframes screen-enter {
           from { opacity:0; transform: translateY(18px) }
@@ -356,25 +370,42 @@ export default function GameLessonPlayer() {
         <div
           onClick={() => speak(buildSpeechText(currentStep))}
           style={{
-            width: 64,
-            height: 64,
-            borderRadius: '50%',
-            overflow: 'hidden',
+            position: 'relative',
+            width: 80,
+            height: 80,
             flexShrink: 0,
             cursor: 'pointer',
-            border: `3px solid ${accent}`,
-            boxShadow: speaking
-              ? `0 0 0 4px ${accent}55, 0 0 28px ${accent}66`
-              : `0 0 0 2px ${accent}33`,
-            transition: 'box-shadow 0.3s ease',
-            animation: speaking ? 'guide-pulse 1.4s ease-in-out infinite' : 'none',
+            touchAction: 'manipulation',
           }}
         >
-          <img
-            src={guideAvatar?.image || '/avatars/sage.png'}
-            alt={guideAvatar?.name}
-            style={{ width:'100%', height:'100%', objectFit:'cover' }}
-          />
+          {/* Animated pulse ring — separate from avatar so inline styles don't conflict */}
+          {speaking && (
+            <div style={{
+              position: 'absolute',
+              inset: -5,
+              borderRadius: '50%',
+              border: `3px solid ${accent}`,
+              animation: 'guide-ring 1.2s ease-in-out infinite',
+              pointerEvents: 'none',
+              boxShadow: `0 0 16px ${accent}88`,
+            }} />
+          )}
+          {/* Avatar circle */}
+          <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: `3px solid ${speaking ? accent : accent + '66'}`,
+            boxShadow: speaking ? `0 0 20px ${accent}55` : `0 0 8px ${accent}22`,
+            transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+          }}>
+            <img
+              src={guideAvatar?.image || '/avatars/sage.png'}
+              alt={guideAvatar?.name}
+              style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }}
+            />
+          </div>
         </div>
 
         {/* Speech bubble */}
