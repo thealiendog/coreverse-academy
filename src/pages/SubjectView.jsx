@@ -137,9 +137,7 @@ export default function SubjectView() {
   function handleLessonClick(i) {
     if (!hasContent) return;
     if (!child) { navigate('/child/select'); return; }
-    const url = level === 1
-      ? `/child/lesson/${subjectId}/${i}`
-      : `/child/lesson/${subjectId}/${i}?level=${level}`;
+    const url = `/child/lesson/${subjectId}/${i}?level=${level}`;
     navigate(url);
   }
 

@@ -51,7 +51,10 @@ import GameLessonPlayer from './components/games/GameLessonPlayer';
 // that have a gameSequence; falls back to LessonPlayer otherwise.
 function LessonDispatcher() {
   const [searchParams] = useSearchParams();
-  const level = parseInt(searchParams.get('level') || '1', 10);
+  // Only route to GameLessonPlayer when ?level=1 is EXPLICITLY present.
+  // Defaulting to 1 caused GameLessonPlayer to render LessonPlayer (with NovaChat) as a fallback,
+  // creating the NovaChat overlap bug.
+  const level = parseInt(searchParams.get('level'), 10);
   if (level === 1) return <GameLessonPlayer />;
   return <LessonPlayer />;
 }

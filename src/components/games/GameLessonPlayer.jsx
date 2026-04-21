@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../../lib/storage';
-import LessonPlayer from '../../pages/LessonPlayer';
 import { getAvatar } from '../../lib/constants';
 
 // Screen types
@@ -59,9 +58,9 @@ function GuideBubble({ text, speaking, guideAvatar }) {
       background: 'rgba(255,255,255,0.08)',
       border: `1.5px solid ${guideAvatar?.accent || '#7C3AED'}44`,
       borderRadius: 16,
-      padding: '10px 16px',
-      maxWidth: 280,
-      fontSize: '0.95rem',
+      padding: '8px 14px',
+      maxWidth: 'min(260px, calc(100vw - 130px))',
+      fontSize: '0.88rem',
       color: 'rgba(255,255,255,0.9)',
       fontWeight: 600,
       lineHeight: 1.4,
@@ -116,6 +115,7 @@ function ProgressBar({ current, total, accent }) {
 // ── Main component ────────────────────────────────────────────────────────────
 export default function GameLessonPlayer() {
   const { subjectId, lessonIdx } = useParams();
+  const navigate = useNavigate();
 
   const child   = getCurrentChild();
   const idx     = parseInt(lessonIdx, 10);
@@ -259,9 +259,10 @@ export default function GameLessonPlayer() {
     clearTimeout(bubbleTimer.current);
   }, []);
 
-  // ── No game sequence → fall back to regular LessonPlayer ─────────────────
+  // ── No game sequence → navigate to regular LessonPlayer (no ?level=1 so no loop) ───
   if (!lesson || !gameSequence) {
-    return <LessonPlayer />;
+    navigate(`/child/lesson/${subjectId}/${lessonIdx}`, { replace: true });
+    return null;
   }
 
   const currentStep = gameSequence[screenIdx];
@@ -362,9 +363,10 @@ export default function GameLessonPlayer() {
       <div style={{
         display: 'flex',
         alignItems: 'center',
-        gap: 12,
-        padding: '10px 20px',
+        gap: 10,
+        padding: '8px 16px',
         flexShrink: 0,
+        minHeight: 0,
       }}>
         {/* Avatar — tap to replay audio */}
         <div
