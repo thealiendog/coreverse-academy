@@ -155,10 +155,15 @@ export default function GameLessonPlayer() {
   const audioRef        = useRef(null);
   const bubbleTimer     = useRef(null);
   const fallbackTimerRef = useRef(null);
+  const speakGenRef     = useRef(0); // incremented on every speak() call; stale fetches bail out
 
   // ── Speak ──────────────────────────────────────────────────────────────────
   const speak = useCallback(async (text, onDone) => {
     if (!text) { onDone?.(); return; }
+
+    // Increment generation — any in-flight fetch from a previous call will see
+    // a stale gen and discard its audio, preventing the double-speech race.
+    const gen = ++speakGenRef.current;
 
     if (audioRef.current) {
       audioRef.current.pause();
@@ -183,10 +188,10 @@ export default function GameLessonPlayer() {
 
     // Dead-man's switch: if onended never fires (mobile Audio API quirk),
     // force completion after 20s so the screen never gets permanently stuck.
-    // Under normal conditions onended fires well before this and clears it.
     const deadman = setTimeout(finish, 20000);
 
     function trySpeechSynthesis() {
+      if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
       const synthTimer = setTimeout(finish, 12000);
       try {
         if (!window.speechSynthesis) { clearTimeout(synthTimer); finish(); return; }
@@ -210,6 +215,10 @@ export default function GameLessonPlayer() {
       });
       if (!res.ok) throw new Error('tts-unavailable');
       const { audio } = await res.json();
+
+      // Bail out if a newer speak() call has already started — discard this audio.
+      if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
+
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
       el.onended = () => { clearTimeout(deadman); audioRef.current = null; finish(); };
@@ -238,6 +247,23 @@ export default function GameLessonPlayer() {
     if (step.guideText)   parts.push(r(step.guideText));
     if (step.type === 'yes-no') parts.push('Tap the green check for yes, or the red X for no!');
     return parts.join(' ');
+  }
+
+  // ── Replay text when child taps the avatar ────────────────────────────────
+  // For game-type steps, replay ONLY what the template originally spoke
+  // (scenario for yes-no, instruction for tap-right/count/sort) — never
+  // include guideText which would duplicate speech the template already gave.
+  function buildReplayText(step) {
+    const r = t => (t || '').replace(/\{name\}/g, childName);
+    if (step.type === 'yes-no') {
+      return [r(step.scenario), 'Tap the green check for yes, or the red X for no.'].filter(Boolean).join(' ');
+    }
+    if (GAME_TYPES.has(step.type)) {
+      // tap-right, count, sort, cause-effect
+      return [r(step.instruction), r(step.guideText)].filter(Boolean).join('. ');
+    }
+    // Non-game screens: full text is fine
+    return buildSpeechText(step);
   }
 
   // ── Game screen types that handle their own TTS on mount ──────────────────
@@ -464,7 +490,7 @@ export default function GameLessonPlayer() {
       }}>
         {/* Avatar — tap to replay audio */}
         <div
-          onClick={() => speak(buildSpeechText(currentStep))}
+          onClick={() => speak(buildReplayText(currentStep))}
           style={{
             position: 'relative',
             width: 80,
