@@ -156,16 +156,30 @@ export default function GameLessonPlayer() {
   // ── Speak ──────────────────────────────────────────────────────────────────
   const speak = useCallback(async (text, onDone) => {
     if (!text) { onDone?.(); return; }
-    // Stop previous
+
+    // Stop previous audio
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.src = '';
       audioRef.current = null;
     }
     clearTimeout(bubbleTimer.current);
+
     const resolved = text.replace(/\{name\}/g, childName);
     setBubble(resolved.slice(0, 100) + (resolved.length > 100 ? '…' : ''));
     setSpeaking(true);
+
+    // Guard: if onDone hasn't been called within 6s, force unlock anyway.
+    // This handles iOS Safari autoplay block + silent SpeechSynthesis failures.
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      setSpeaking(false);
+      bubbleTimer.current = setTimeout(() => setBubble(''), 2500);
+      onDone?.();
+    };
+    const safetyTimer = setTimeout(finish, 6000);
 
     try {
       const res = await fetch('/.netlify/functions/nova-speak', {
@@ -173,31 +187,25 @@ export default function GameLessonPlayer() {
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ text: resolved }),
       });
-      if (!res.ok) throw new Error('unavailable');
+      if (!res.ok) throw new Error('tts-unavailable');
       const { audio } = await res.json();
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
-      el.onended = () => {
-        setSpeaking(false);
-        audioRef.current = null;
-        bubbleTimer.current = setTimeout(() => setBubble(''), 3000);
-        onDone?.();
-      };
-      el.onerror = () => { setSpeaking(false); audioRef.current = null; setBubble(''); onDone?.(); };
-      await el.play();
+      el.onended = () => { clearTimeout(safetyTimer); audioRef.current = null; finish(); };
+      el.onerror = () => { clearTimeout(safetyTimer); audioRef.current = null; finish(); };
+      // play() can throw on mobile before a user gesture — catch it and fall through
+      await el.play().catch(() => null);
     } catch {
-      // Fallback to speech synthesis
-      setSpeaking(false);
+      // ElevenLabs unavailable — try browser SpeechSynthesis
       try {
         const utt = new SpeechSynthesisUtterance(resolved);
-        utt.onend = () => {
-          bubbleTimer.current = setTimeout(() => setBubble(''), 2500);
-          onDone?.();
-        };
+        utt.onend   = () => { clearTimeout(safetyTimer); finish(); };
+        utt.onerror = () => { clearTimeout(safetyTimer); finish(); };
         window.speechSynthesis?.speak(utt);
+        // SpeechSynthesis doesn't throw even if blocked — safetyTimer will fire
       } catch {
-        bubbleTimer.current = setTimeout(() => setBubble(''), 3000);
-        onDone?.();
+        clearTimeout(safetyTimer);
+        finish();
       }
     }
   }, [childName]);
@@ -219,11 +227,15 @@ export default function GameLessonPlayer() {
     const step = gameSequence[screenIdx];
     const text = buildSpeechText(step);
     setInteractionLocked(true);
+    // Absolute fallback: unlock after 7s even if speak() never resolves
+    const fallback = setTimeout(() => setInteractionLocked(false), 7000);
     if (text) {
-      speak(text, () => setInteractionLocked(false));
+      speak(text, () => { clearTimeout(fallback); setInteractionLocked(false); });
     } else {
+      clearTimeout(fallback);
       setInteractionLocked(false);
     }
+    return () => clearTimeout(fallback);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
