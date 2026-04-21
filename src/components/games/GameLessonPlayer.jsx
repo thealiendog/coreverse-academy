@@ -284,22 +284,25 @@ export default function GameLessonPlayer() {
 
   return (
     <div style={{
-      width: '100vw',
-      height: '100dvh',
+      width: '100%',
+      minHeight: '100dvh',
+      maxHeight: '100dvh',
       background: '#080618',
       display: 'flex',
       flexDirection: 'column',
       fontFamily: 'system-ui, -apple-system, sans-serif',
       overflow: 'hidden',
-      position: 'fixed',
-      inset: 0,
       touchAction: 'manipulation',
+      WebkitUserSelect: 'none',
+      userSelect: 'none',
     }}>
       <style>{`
-        /* Prevent scroll bounce on iOS */
-        html, body { overflow: hidden; overscroll-behavior: none; }
-        /* Active tap feedback — replaces hover */
-        button:active { opacity: 0.82; transform: scale(0.97); }
+        /* Prevent scroll bounce on iOS without breaking touch */
+        body { overscroll-behavior: none; touch-action: manipulation; }
+        /* Remove iOS tap flash on all interactive elements */
+        button, [role="button"], a { -webkit-tap-highlight-color: transparent; }
+        /* Active tap feedback — no hover */
+        button:active { opacity: 0.82 !important; }
         @keyframes guide-pulse {
           0%,100% { box-shadow: 0 0 0 2px ${accent}55 }
           50%      { box-shadow: 0 0 0 6px ${accent}33 }
@@ -353,7 +356,6 @@ export default function GameLessonPlayer() {
               : `0 0 0 2px ${accent}33`,
             transition: 'box-shadow 0.3s ease',
             animation: speaking ? 'guide-pulse 1.4s ease-in-out infinite' : 'none',
-            WebkitTapHighlightColor: 'transparent',
           }}
         >
           <img
