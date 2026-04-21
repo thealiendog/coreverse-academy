@@ -11,7 +11,7 @@ export const LESSONS = {
       title: 'Our Solar System',
       guide: 'nova',
       badge: 'Star Seeker',
-      arrival: `Greetings, explorer! I'm Nova, your guide through the cosmos. I've spent countless hours watching the stars and I have to tell you — there is nothing quite as awe-inspiring as realizing how vast and beautiful the universe truly is. And the most wonderful part? You are part of it. Today, we begin our journey right here in our own solar system.`,
+      arrival: `Greetings, explorer! I've spent countless hours watching the stars and I have to tell you — there is nothing quite as awe-inspiring as realizing how vast and beautiful the universe truly is. And the most wonderful part? You are part of it. Today, we begin our journey right here in our own solar system.`,
       spark: `Here's a fact that might change how you see the world: if the Sun were the size of a basketball, Earth would be the size of a tiny peppercorn — and it would be 26 meters away. What does that make you think or feel about our place in space?`,
       learn: [
         `Our solar system is home to 8 planets, dozens of moons, millions of asteroids, and billions of comets — all orbiting a single star we call the Sun. That star is so massive that over 1 million Earths could fit inside it.`,
@@ -38,7 +38,7 @@ export const LESSONS = {
       title: 'Stars & Galaxies',
       guide: 'nova',
       badge: 'Galaxy Mind',
-      arrival: `Welcome back, stargazer! I'm Nova, and today we're going to zoom out. Way out. Past our solar system, past our neighborhood of stars, and into the breathtaking scale of the universe itself. What we're about to discover might be the most awe-inspiring knowledge a human mind can hold. Ready?`,
+      arrival: `Welcome back, stargazer! Way out. Past our solar system, past our neighborhood of stars, and into the breathtaking scale of the universe itself. What we're about to discover might be the most awe-inspiring knowledge a human mind can hold. Ready?`,
       spark: `On a clear night, you can see about 5,000 stars with your naked eye. Our galaxy — the Milky Way — contains between 200 and 400 billion stars. Sit with that number for a moment. What does it make you wonder?`,
       learn: [
         `Stars are not just points of light — they are enormous nuclear furnaces. Inside a star, hydrogen atoms are smashed together under incredible pressure and heat, fusing into helium and releasing an almost unimaginable amount of energy. This is called nuclear fusion, and it's what makes stars shine for billions of years.`,
@@ -65,7 +65,7 @@ export const LESSONS = {
       title: 'What Is a Black Hole?',
       guide: 'nova',
       badge: 'Void Walker',
-      arrival: `You've made it to one of my favorite topics in all of astronomy. I'm Nova, and today we're going to investigate something that sounds like science fiction but is completely real — an object so incredibly dense that not even light can escape its gravity. How do you study something invisible? That's exactly the question that drives some of the greatest scientists alive today.`,
+      arrival: `You've made it to one of my favorite topics in all of astronomy. How do you study something invisible? That's exactly the question that drives some of the greatest scientists alive today.`,
       spark: `Here's a puzzle for you: How would you prove that something completely invisible exists? What clues would you look for? What would count as proof?`,
       learn: [
         `A black hole forms when a star far more massive than our Sun runs out of fuel and collapses under its own gravity. The collapse is so extreme that it creates a region in space where gravity is so powerful that nothing — not matter, not light, not any signal — can escape.`,
@@ -96,7 +96,7 @@ export const LESSONS = {
       title: 'Patterns & Numbers',
       guide: 'nova',
       badge: 'Pattern Finder',
-      arrival: `Hello, {{name}}! I'm Nova, and I am genuinely excited about today's lesson. Here's a secret that most people never discover: mathematics isn't about memorizing rules — it's about seeing the hidden patterns that run through everything. The universe runs on patterns, and once you learn to spot them, you'll see them everywhere you look.`,
+      arrival: `Hello, {{name}}! Here's a secret that most people never discover: mathematics isn't about memorizing rules — it's about seeing the hidden patterns that run through everything. The universe runs on patterns, and once you learn to spot them, you'll see them everywhere you look.`,
       spark: `Sunflowers have 34 spirals going one way and 55 spirals going the other. Seashells grow in perfect spirals. Galaxies spiral outward. Pine cones, hurricanes, and even the human face follow the same hidden pattern. What do you think connects all of these?`,
       learn: [
         `Numbers come in two types: even and odd. Even numbers (2, 4, 6, 8, 10...) can always be split into two equal groups — they're "fair" numbers. Odd numbers (1, 3, 5, 7, 9...) always have one left over when you try to split them evenly. Even numbers always end in 0, 2, 4, 6, or 8. Odd numbers always end in 1, 3, 5, 7, or 9.`,
@@ -123,7 +123,7 @@ export const LESSONS = {
       title: 'Multiplication Magic',
       guide: 'nova',
       badge: 'Times Tables Titan',
-      arrival: `Welcome back, {{name}}! I'm Nova, and today we're going to transform how you see multiplication forever. Most people think of it as a table to memorize — but it's actually a superpower that lets your brain do enormous calculations with ease. By the end of this lesson, you'll have tricks that make multiplication feel like magic.`,
+      arrival: `Welcome back, {{name}}! Most people think of it as a table to memorize — but it's actually a superpower that lets your brain do enormous calculations with ease. By the end of this lesson, you'll have tricks that make multiplication feel like magic.`,
       spark: `What's faster: adding 7 nine times (7+7+7+7+7+7+7+7+7) or doing 7 × 9? Both give the same answer — but which gets you there faster? What does that tell you about what multiplication really is?`,
       learn: [
         `Multiplication is repeated addition — a shortcut for adding the same number many times. 6 × 4 means "add 6 together 4 times" (6+6+6+6 = 24). But multiplication is much faster because once you know the pattern, you don't need to add at all. Your brain stores the answer directly.`,
@@ -181,7 +181,7 @@ export const LESSONS = {
       title: 'What Is Money?',
       guide: 'ace',
       badge: 'Money Wise',
-      arrival: `Hello, future entrepreneur! I'm Ace, and I've spent a lot of time thinking about money — not just how to make it, but what it actually IS and why it matters so much. Here's what I want you to know right from the start: money is a tool. And like any tool, the people who understand it use it far more powerfully than those who don't. Let's begin.`,
+      arrival: `Hello, future entrepreneur! Here's what I want you to know right from the start: money is a tool. And like any tool, the people who understand it use it far more powerfully than those who don't. Let's begin.`,
       spark: `Why can't we just trade things directly instead of using money? Imagine you wanted lunch but only had a pair of old sneakers to trade. What problems can you think of that would make trading really difficult?`,
       learn: [
         `Long before money existed, people used barter — trading goods and services directly for other goods and services. If you had fish and needed grain, you found someone with grain who wanted fish. Sounds simple, right? But it had a massive problem: both people had to want exactly what the other had, at the exact same time. Economists call this the "double coincidence of wants." It made trade incredibly difficult.`,
@@ -235,7 +235,7 @@ export const LESSONS = {
       title: 'Your First Business Idea',
       guide: 'ace',
       badge: 'Young Founder',
-      arrival: `Welcome to my favorite lesson! I'm Ace. Here's what I want you to know: every major company you've ever heard of started with one person who saw a problem and decided to solve it. Apple. Google. Airbnb. They weren't created by special, magical people — they were created by curious people who thought differently. Today, that person is you.`,
+      arrival: `Welcome to my favorite lesson! Here's what I want you to know: every major company you've ever heard of started with one person who saw a problem and decided to solve it. Apple. Google. Airbnb. They weren't created by special, magical people — they were created by curious people who thought differently. Today, that person is you.`,
       spark: `What do you think entrepreneurs have that other people might not? Is it money? The right connections? Extraordinary intelligence? Or something else entirely?`,
       learn: [
         `Here is the simplest business formula ever created: Find a Problem → Create a Solution → Find People Who Have That Problem (your customers) → Get Paid for Your Solution. That's the entire blueprint. Every business, from lemonade stands to trillion-dollar companies, follows this exact formula.`,
@@ -265,7 +265,7 @@ export const LESSONS = {
       title: 'Reading Comprehension',
       guide: 'lyra',
       badge: 'Deep Reader',
-      arrival: `Hello, {{name}}! I'm Lyra, and words are my absolute passion. I believe reading is the closest thing we have to a time machine — it lets you enter the mind of someone who lived 3,000 years ago or 500 years in the future. But to really travel, you have to know how to read beneath the surface. Today I'll show you how.`,
+      arrival: `Hello, {{name}}! I believe reading is the closest thing we have to a time machine — it lets you enter the mind of someone who lived 3,000 years ago or 500 years in the future. But to really travel, you have to know how to read beneath the surface. Today I'll show you how.`,
       spark: `Imagine reading this sentence: "Maria slammed her bedroom door so hard the pictures rattled on the wall." The author never says Maria is angry. So how do you know? What clues are you using? Where did you learn to do that?`,
       learn: [
         `There are three levels of reading. Surface reading is what the text literally says — the facts and events you can point to directly on the page. Reading between the lines is inference — using the text's clues plus your own knowledge to figure out things the author never stated directly. Reading beyond the text is making connections — linking the book to your own life, other books, or the wider world. Great readers move between all three levels constantly.`,
@@ -292,7 +292,7 @@ export const LESSONS = {
       title: 'Creative Writing',
       guide: 'lyra',
       badge: 'Storyteller',
-      arrival: `Welcome back, {{name}}! I'm Lyra, and today we're going to do something I love deeply — write stories. Here's what I want you to understand before we begin: there is no such thing as someone who "isn't a writer." Writing is thinking made visible. And you've been thinking rich, interesting thoughts your whole life. Today, we put them on the page.`,
+      arrival: `Welcome back, {{name}}! Here's what I want you to understand before we begin: there is no such thing as someone who "isn't a writer." Writing is thinking made visible. And you've been thinking rich, interesting thoughts your whole life. Today, we put them on the page.`,
       spark: `Every story ever told — from ancient myths to your favorite movie — follows the same invisible shape. A character wants something desperately. An obstacle gets in the way. They fight to overcome it. They're changed by the struggle. Can you think of a story that doesn't follow this pattern?`,
       learn: [
         `Every story has five essential elements:\n\n① Character — who the story is about (give them a specific want, a flaw, and something to lose)\n② Setting — when and where it happens (time period, location, atmosphere, season)\n③ Conflict — the problem or obstacle that drives everything\n④ Plot — the sequence of events that move the character through the conflict\n⑤ Theme — the deeper truth or meaning beneath the surface story`,
@@ -350,7 +350,7 @@ export const LESSONS = {
       title: 'What is AI?',
       guide: 'byte',
       badge: 'AI Aware',
-      arrival: `Hey there, {{name}}! I'm Byte, and I am so excited about today's lesson. We're talking about one of the most important technologies of your lifetime — artificial intelligence. And before we begin, I want to say this: you're growing up in the most fascinating moment in human history. AI isn't coming in the future — it's already here, reshaping everything. Understanding it puts you ahead.`,
+      arrival: `Hey there, {{name}}! We're talking about one of the most important technologies of your lifetime — artificial intelligence. And before we begin, I want to say this: you're growing up in the most fascinating moment in human history. AI isn't coming in the future — it's already here, reshaping everything. Understanding it puts you ahead.`,
       spark: `Here's a puzzle: a calculator is not AI. A phone that recognizes your face is. A spell-checker isn't AI. A system that writes essays is. What's the difference? What do you think separates something that just follows instructions from something that actually "thinks"?`,
       learn: [
         `A traditional computer follows exact rules written by a programmer. Tell it to add 2 + 2, it does exactly that. Tell it to recognize a photo of a cat, it has no idea what to do. AI is different: instead of following specific rules, AI learns from data. You show it millions of photos labeled "cat" and "not cat" until it figures out the patterns on its own. No programmer writes a rule for every whisker.`,
@@ -435,7 +435,7 @@ export const LESSONS = {
       title: 'Communication Skills',
       guide: 'valor',
       badge: 'Clear Communicator',
-      arrival: `Hello, {{name}}. I'm Valor, and I want to start with a simple truth: the most important skill you will ever develop is your ability to communicate. Not intelligence. Not talent. Not connections. Communication. It determines your relationships, your opportunities, and your ability to bring your ideas into the world. Today, we build this skill.`,
+      arrival: `Hello, {{name}}. Not intelligence. Not talent. Not connections. Communication. It determines your relationships, your opportunities, and your ability to bring your ideas into the world. Today, we build this skill.`,
       spark: `Imagine two people both say the exact same idea — but one says it looking down, voice trailing off, shoulders hunched. The other says it making eye contact, voice clear, posture open. Which person gets their idea chosen? What does that tell you about communication?`,
       learn: [
         `Communication comes in three forms:\n\n① Verbal — the words you choose (vocabulary, clarity, tone)\n② Nonverbal — your body language (posture, eye contact, facial expression, gestures)\n③ Written — how you express ideas on paper or screen\n\nAll three must be consistent. If you say "I'm fine" while your face shows pain, people believe your face. Your nonverbal communication is more powerful than your words.`,
@@ -520,7 +520,7 @@ export const LESSONS = {
       title: 'Healthy Food & Cooking',
       guide: 'terra',
       badge: 'Kitchen Scientist',
-      arrival: `Hello, {{name}}! I'm Terra, and today we're talking about something so fundamental that most people never stop to think about it: food. Not just what tastes good, or what's quick to grab — but what food actually does inside your body. By the end of this lesson, you'll never look at a meal the same way again. Your food is information.`,
+      arrival: `Hello, {{name}}! Not just what tastes good, or what's quick to grab — but what food actually does inside your body. By the end of this lesson, you'll never look at a meal the same way again. Your food is information.`,
       spark: `Your brain is only 2% of your body's weight. But it uses 20% of all the energy your body produces. That means your brain is ten times more energy-hungry than the average organ. Knowing that — does what you eat feel more important?`,
       learn: [
         `Food is not just fuel — it's information. Every bite you eat sends chemical signals throughout your body, influencing your energy, mood, focus, immune system, and even your genes. The food you eat today is literally building the version of you that will exist tomorrow.`,
@@ -547,7 +547,7 @@ export const LESSONS = {
       title: 'Movement & Exercise',
       guide: 'terra',
       badge: 'Body Mover',
-      arrival: `Hello again, {{name}}! Terra here. Today's lesson might change how you feel about exercise forever — because I'm not going to talk about it as something you should do to look a certain way. I'm going to tell you something that researchers now know beyond any doubt: exercise is literally brain-building medicine. The most powerful natural drug known to science. And it's free.`,
+      arrival: `Hello again, {{name}}! Today's lesson might change how you feel about exercise forever — because I'm not going to talk about it as something you should do to look a certain way. I'm going to tell you something that researchers now know beyond any doubt: exercise is literally brain-building medicine. The most powerful natural drug known to science. And it's free.`,
       spark: `Scientists call it "Miracle-Gro for the brain." When you exercise, your brain releases a chemical called BDNF — Brain-Derived Neurotrophic Factor — that actually helps grow new brain cells and strengthen the connections between existing ones. Knowing this — does exercise feel like a different kind of choice?`,
       learn: [
         `Exercise triggers the release of three key brain chemicals:\n\n🔵 Dopamine — improves motivation, focus, and the feeling of reward\n🟡 Serotonin — regulates mood, reduces anxiety and depression\n🟣 Norepinephrine — improves attention, focus, and working memory\n\nThese three chemicals together explain why exercise is one of the most effective treatments for depression and ADHD ever studied. Many psychiatrists now prescribe exercise alongside medication.`,
@@ -574,7 +574,7 @@ export const LESSONS = {
       title: 'Gardening & Nature',
       guide: 'terra',
       badge: 'Earth Keeper',
-      arrival: `Welcome, {{name}}. I'm Terra, and this is one of my favorite conversations to have. We're going to talk about something that humans did for thousands of years — and then mostly stopped. Growing things. Connecting with the living world. And I want to share something remarkable that scientists recently discovered about dirt — actual dirt — and why getting your hands into the earth makes you genuinely happier.`,
+      arrival: `Welcome, {{name}}. We're going to talk about something that humans did for thousands of years — and then mostly stopped. Growing things. Connecting with the living world. And I want to share something remarkable that scientists recently discovered about dirt — actual dirt — and why getting your hands into the earth makes you genuinely happier.`,
       spark: `Scientists discovered that a specific bacteria in soil — Mycobacterium vaccae — triggers serotonin production in the human brain when we breathe it in or touch it. In plain terms: dirt makes you happier. Humans evolved around soil for 10,000 years. What does it mean that we've almost entirely disconnected from it?`,
       learn: [
         `Photosynthesis is the miracle at the foundation of almost all life on Earth. Plants take in sunlight, water, and carbon dioxide from the air, and convert them into glucose (their food) and oxygen (their waste product). Every breath you take is made possible by plants doing this. The oxygen in your blood right now was recently inside a leaf.`,
@@ -605,7 +605,7 @@ export const LESSONS = {
       title: 'Drawing & Color',
       guide: 'muse',
       badge: 'Color Explorer',
-      arrival: `Hello, beautiful soul! I'm Muse, and I am so glad you're here for this lesson. Let me ask you something first: do you ever say "I can't draw"? I want to challenge that idea today. Drawing isn't a talent you're born with. It's a skill you build by learning to see differently. Picasso saw it. Da Vinci saw it. And after today, you'll start to see it too.`,
+      arrival: `Hello, beautiful soul! Let me ask you something first: do you ever say "I can't draw"? I want to challenge that idea today. Drawing isn't a talent you're born with. It's a skill you build by learning to see differently. Picasso saw it. Da Vinci saw it. And after today, you'll start to see it too.`,
       spark: `Pablo Picasso once said: "Every child is an artist. The problem is how to remain an artist once we grow up." Children draw freely without judging themselves. Somewhere along the way, most people stop. When did you stop? What happened? What would it mean to start again?`,
       learn: [
         `Drawing is not about talent — it's about learning to observe. Most people draw what they think things look like rather than what they actually see. A beginner draws a round circle for an eye. An artist draws the specific eyelid shape, the reflection of light on the iris, the shadow cast by the brow. The physical skill of drawing is mostly the mental skill of truly seeing.`,
@@ -690,7 +690,7 @@ export const LESSONS = {
       title: 'Ancient Civilizations',
       guide: 'lyra',
       badge: 'Time Traveler',
-      arrival: `Hello, {{name}}! I'm Lyra, and I want to take you somewhere extraordinary today — backward through time, to the people who built the world we live in. Everything you see around you — cities, writing, laws, calendars, mathematics — was invented by humans who lived thousands of years ago. And they were just as intelligent as you are. Today, we meet them.`,
+      arrival: `Hello, {{name}}! Everything you see around you — cities, writing, laws, calendars, mathematics — was invented by humans who lived thousands of years ago. And they were just as intelligent as you are. Today, we meet them.`,
       spark: `12,000 years ago, all humans on Earth were nomads — wandering groups of hunter-gatherers who followed food. Then something changed. Some humans began planting seeds and staying in one place. Within a few thousand years, civilization began. What do you think made farming different from hunting? What did staying in one place make possible that moving around did not?`,
       learn: [
         `The Agricultural Revolution (beginning around 10,000 BCE) was arguably the most consequential event in human history. When humans began farming, they produced more food than they needed to survive immediately — a surplus. Food surplus meant not everyone needed to farm. Some people could specialize in other things: building, trading, governing, creating art, developing knowledge. Cities became possible. Civilization followed.`,
@@ -775,7 +775,7 @@ export const LESSONS = {
       title: 'Hola — Spanish Greetings',
       guide: 'lyra',
       badge: 'First Words',
-      arrival: `¡Hola, {{name}}! I'm Lyra, and I'm so excited to be your guide into the beautiful world of Spanish. Before we learn a single word, I want to tell you something encouraging: you already know more Spanish than you think. Today we start with the most natural thing in the world — how to say hello.`,
+      arrival: `¡Hola, {{name}}! Before we learn a single word, I want to tell you something encouraging: you already know more Spanish than you think. Today we start with the most natural thing in the world — how to say hello.`,
       spark: `How many of these words do you recognize: animal, tropical, guitar, patio, tornado, chocolate, vanilla, mosquito, alligator, avocado? All of them came directly from Spanish or through Spanish to English. You already have a secret vocabulary of hundreds of Spanish words — and most English speakers don't even realize it.`,
       learn: [
         `Spanish is a Romance language — it evolved from Latin, the language of the Roman Empire. It's spoken by more than 500 million people as a first language, making it the second most spoken language in the world by native speakers. Spanish is the official language of 20 countries across Latin America, Spain, and Equatorial Guinea.`,
@@ -860,7 +860,7 @@ export const LESSONS = {
       title: 'Big Questions',
       guide: 'nova',
       badge: 'Deep Thinker',
-      arrival: `Hello, {{name}}. I'm Nova, and I have to say — this is my favorite kind of lesson. No formulas to memorize. No one right answer. Just the most interesting questions humans have ever asked, and the extraordinary thinkers who wrestled with them. Philosophy is the love of wisdom — and today, we practice it together. Prepare to be uncomfortable in the best possible way.`,
+      arrival: `Hello, {{name}}. No formulas to memorize. No one right answer. Just the most interesting questions humans have ever asked, and the extraordinary thinkers who wrestled with them. Philosophy is the love of wisdom — and today, we practice it together. Prepare to be uncomfortable in the best possible way.`,
       spark: `Here's the Ship of Theseus paradox: A ship's wooden planks are replaced one by one as they rot, until eventually every single plank has been replaced. Is it still the same ship? Now consider: the cells in your body are replaced continuously — scientists estimate that most of your cells are replaced every 7–10 years. Are you the same person you were then?`,
       learn: [
         `Philosophy asks the questions that other subjects assume are already answered. Science tells us how the world works — but philosophy asks: how do we know? What counts as knowledge? Can we trust our senses? These questions fall under epistemology — the study of knowledge itself.`,
@@ -914,7 +914,7 @@ export const LESSONS = {
       title: 'Ancient Wisdom & Lost History',
       guide: 'nova',
       badge: 'Mystery Seeker',
-      arrival: `Welcome, {{name}}. Nova here, and I want to start this lesson with a confession: what I'm about to share with you is not fully settled history. Some of it is mainstream archaeology. Some of it is controversial hypothesis. All of it is genuinely fascinating. Today we practice one of the most important skills a mind can develop: the ability to evaluate competing claims with evidence, and to sit comfortably with uncertainty. That's not weakness — it's intellectual integrity.`,
+      arrival: `Welcome, {{name}}. What I'm about to share with you is not fully settled history. Some of it is mainstream archaeology. Some of it is controversial hypothesis. All of it is genuinely fascinating. Today we practice one of the most important skills a mind can develop: the ability to evaluate competing claims with evidence, and to sit comfortably with uncertainty. That's not weakness — it's intellectual integrity.`,
       spark: `In 1994, archaeologists discovered Göbekli Tepe in Turkey — a massive, sophisticated stone temple complex with elaborately carved pillars, built around 10,000 BCE. That's 6,000 years before Stonehenge. 7,000 years before the Egyptian pyramids. Built by people we previously assumed were simple nomadic hunter-gatherers. How does one discovery rewrite everything we thought we knew?`,
       learn: [
         `Göbekli Tepe is the most significant archaeological discovery of the 20th century. Built around 10,000–9,000 BCE, it features T-shaped stone pillars up to 6 meters tall, weighing 10–20 tonnes, elaborately carved with animals and symbols. Before its discovery, archaeology's dominant model held that complex organized construction required agriculture and settled civilization first. Göbekli Tepe preceded agriculture — hunter-gatherers built it. Everything had to be reconsidered.`,

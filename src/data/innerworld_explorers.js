@@ -11,7 +11,7 @@ export const INNERWORLD_EXPLORERS = [
     duration: '12–15 min',
     unit: 'Inner World & Consciousness · Ages 6–8',
     familyAdventure: 'At dinner tonight, each person names one emotion they felt today and where they noticed it in their body.',
-    arrival: 'Hello, {{name}}! I\'m Sage, and I\'m so glad you\'re here. Today we\'re opening a door to the most fascinating place in the world — the world inside you — and we\'re starting with a big discovery: all your feelings have names.',
+    arrival: 'Today we\'re opening a door to the most fascinating place in the world — the world inside you — and we\'re starting with a big discovery: all your feelings have names.',
     spark: 'Think of a time you felt something really big inside, but you weren\'t sure exactly what to call it. What was happening?',
     learn: [
       'Humans have hundreds of different feelings. Scientists who study emotions say we start with a few basic ones — happiness, sadness, anger, fear, surprise, and disgust — and from those, many more feelings grow, like branches on a tree.',
