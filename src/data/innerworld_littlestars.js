@@ -147,10 +147,10 @@ export const innerworldLittleStars = [
       { type: 'story', guideText: 'When you are happy, your body feels light. When you are scared, your tummy feels funny. Your body always knows!', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'tap-right', instruction: 'Where do you feel happy?', guideText: 'Where do you feel happy in your body?',
         items: [
-          { image: '/game-assets/inner-world/happy-face.png',  label: 'In your heart', correct: true },
-          { image: '/game-assets/inner-world/scared-face.png', label: 'In your feet' },
-          { image: '/game-assets/inner-world/angry-face.png',  label: 'In your elbow' },
-          { image: '/game-assets/inner-world/sad-face.png',    label: 'In your knee' },
+          { image: '/game-assets/inner-world/body-heart.png', label: 'In your heart', correct: true },
+          { image: '/game-assets/inner-world/body-fists.png', label: 'In your fists' },
+          { image: '/game-assets/inner-world/body-tummy.png', label: 'In your tummy' },
+          { image: '/game-assets/inner-world/body-tears.png', label: 'Behind your eyes' },
         ]
       },
       { type: 'teach', guideText: 'Happy feels warm in your chest. Like sunshine inside you!', image: '/game-assets/inner-world/glowing-heart.png' },
@@ -158,10 +158,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Your body is your friend. It tells you how you feel before your brain even knows!', image: '/game-assets/inner-world/brain-pathways.png' },
       { type: 'tap-right', instruction: 'What happens when you are angry?', guideText: 'What does your body do when you are angry?',
         items: [
-          { image: '/game-assets/inner-world/angry-face.png',  label: 'Face gets hot',   correct: true },
-          { image: '/game-assets/inner-world/happy-face.png',  label: 'You float away' },
-          { image: '/game-assets/inner-world/sad-face.png',    label: 'You shrink' },
-          { image: '/game-assets/inner-world/scared-face.png', label: 'You turn blue' },
+          { image: '/game-assets/inner-world/body-fists.png', label: 'Fists get tight', correct: true },
+          { image: '/game-assets/inner-world/body-heart.png', label: 'Heart feels warm' },
+          { image: '/game-assets/inner-world/body-tummy.png', label: 'Tummy tickles' },
+          { image: '/game-assets/inner-world/body-tears.png', label: 'Eyes water softly' },
         ]
       },
       { type: 'family', guideText: 'Ask your family: where do YOU feel happy in your body?', image: '/game-assets/inner-world/family-circle.png' },
@@ -248,10 +248,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'The calm-down jar shows you that all big feelings settle down if you give them time.', image: '/game-assets/inner-world/feelings-weather.png' },
       { type: 'tap-right', instruction: 'What happens to the glitter?', guideText: 'What happens to the glitter in the jar?',
         items: [
-          { image: '/game-assets/inner-world/calm-jar.png',    label: 'It settles down', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',  label: 'It disappears' },
-          { image: '/game-assets/inner-world/scared-face.png', label: 'It gets bigger' },
-          { image: '/game-assets/inner-world/sad-face.png',    label: 'It turns blue' },
+          { image: '/game-assets/inner-world/calm-jar.png',           label: 'It settles down', correct: true },
+          { image: '/game-assets/inner-world/feelings-weather.png',   label: 'It disappears' },
+          { image: '/game-assets/inner-world/breathing-balloon.png',  label: 'It gets bigger' },
+          { image: '/game-assets/inner-world/glowing-heart.png',      label: 'It turns pink' },
         ]
       },
       { type: 'family', guideText: 'Make a real calm-down jar with water, glitter, and glue. Shake it when big feelings come!', image: '/game-assets/inner-world/family-circle.png' },
@@ -281,12 +281,12 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about something beautiful. LOVE!' },
       { type: 'story', guideText: 'Love is all around you. Your family loves you. Your friends love you. Love fills your heart like a warm glow.', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'tap-right', instruction: 'Who loves you?', guideText: 'Who loves you?',
+      { type: 'tap-right', instruction: 'What shows LOVE?', guideText: 'Which one shows love?',
         items: [
-          { image: '/game-assets/inner-world/family-circle.png', label: 'Your family', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Nobody' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'Only strangers' },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'Only pets' },
+          { image: '/game-assets/inner-world/hug-scene.png',     label: 'Giving a hug', correct: true },
+          { image: '/game-assets/inner-world/angry-face.png',    label: 'Yelling' },
+          { image: '/game-assets/inner-world/scared-face.png',   label: 'Running away' },
+          { image: '/game-assets/inner-world/sad-face.png',      label: 'Ignoring someone' },
         ]
       },
       { type: 'teach', guideText: 'Love is in hugs. Love is in bedtime stories. Love is in someone making you breakfast.', image: '/game-assets/inner-world/hug-scene.png' },

@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import WinCelebration from '../WinCelebration';
 
-
 export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, speak, onUnlock }) {
-  const [selected,  setSelected]  = useState(null);
-  const [wrong,     setWrong]     = useState(null);
-  const [showWin,   setShowWin]   = useState(false);
-  const [locked,    setLocked]    = useState(false);
+  const [selected,   setSelected]   = useState(null);
+  const [wrong,      setWrong]      = useState(null);
+  const [showWin,    setShowWin]    = useState(false);
+  const [locked,     setLocked]     = useState(true);   // stays true until all options are read
+  const [readingIdx, setReadingIdx] = useState(-1);     // which option card is currently highlighted
 
   const items = step.items || [];
 
@@ -14,11 +14,39 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
     setSelected(null);
     setWrong(null);
     setShowWin(false);
-    setLocked(false);
-    // Speak instruction + guideText when this screen appears.
-    // onUnlock fires when audio ends — releases the interaction lock.
-    const text = [step.instruction, step.guideText].filter(Boolean).join('. ');
-    if (text) speak?.(text, onUnlock);
+    setLocked(true);
+    setReadingIdx(-1);
+
+    let cancelled = false;
+
+    // Read each option label aloud in sequence, highlighting the card while speaking.
+    function readOption(idx) {
+      if (cancelled) return;
+      if (idx >= items.length) {
+        // All options read — release both locks
+        setReadingIdx(-1);
+        setLocked(false);
+        onUnlock?.();
+        return;
+      }
+      setReadingIdx(idx);
+      const label = items[idx]?.label || '';
+      speak?.(label, () => {
+        if (!cancelled) setTimeout(() => readOption(idx + 1), 350);
+      });
+    }
+
+    // 1. Read instruction + guideText, then read each option.
+    const intro = [step.instruction, step.guideText].filter(Boolean).join('. ');
+    if (intro) {
+      speak?.(intro, () => {
+        if (!cancelled) setTimeout(() => readOption(0), 400);
+      });
+    } else {
+      setTimeout(() => { if (!cancelled) readOption(0); }, 200);
+    }
+
+    return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
@@ -29,12 +57,12 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
       setSelected(idx);
       setLocked(true);
       setShowWin(true);
-      onWin?.();   // pulse guide avatar
-      onReady?.(); // enable forward arrow immediately
+      onWin?.();
+      onReady?.();
     } else {
       setWrong(idx);
-      sfx.buzz();
-      onWrong?.(`Try again! That's ${item?.label || 'not right'}.`);
+      sfxBuzz();
+      onWrong?.(`Try again! That is not quite right.`);
       setTimeout(() => setWrong(null), 700);
     }
   }
@@ -66,8 +94,9 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
         boxSizing: 'border-box',
       }}>
         {items.map((item, idx) => {
-          const isCorrect = selected === idx;
-          const isWrong   = wrong    === idx;
+          const isCorrect  = selected === idx;
+          const isWrong    = wrong    === idx;
+          const isReading  = readingIdx === idx;
 
           return (
             <button
@@ -79,13 +108,17 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
                   ? '3px solid #34D399'
                   : isWrong
                     ? '3px solid #EF4444'
-                    : '2px solid rgba(255,255,255,0.15)',
+                    : isReading
+                      ? '3px solid #FCD34D'
+                      : '2px solid rgba(255,255,255,0.15)',
                 background: isCorrect
                   ? 'rgba(52,211,153,0.18)'
                   : isWrong
                     ? 'rgba(239,68,68,0.15)'
-                    : 'rgba(255,255,255,0.06)',
-                cursor: locked ? 'default' : 'pointer',
+                    : isReading
+                      ? 'rgba(252,211,77,0.14)'
+                      : 'rgba(255,255,255,0.06)',
+                cursor: (locked || disabled) ? 'default' : 'pointer',
                 touchAction: 'manipulation',
                 display: 'flex',
                 flexDirection: 'column',
@@ -99,12 +132,16 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
                   ? 'scale(1.06)'
                   : isWrong
                     ? 'scale(0.96)'
-                    : 'scale(1)',
+                    : isReading
+                      ? 'scale(1.04)'
+                      : 'scale(1)',
                 boxShadow: isCorrect
                   ? '0 0 24px rgba(52,211,153,0.5)'
                   : isWrong
                     ? '0 0 16px rgba(239,68,68,0.4)'
-                    : 'none',
+                    : isReading
+                      ? '0 0 22px rgba(252,211,77,0.55)'
+                      : 'none',
                 animation: isWrong ? 'ttr-shake 0.5s ease' : isCorrect ? 'ttr-bounce 0.5s ease' : 'none',
               }}
             >
@@ -142,7 +179,13 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
               )}
               {item.label && (
                 <span style={{
-                  color: isCorrect ? '#34D399' : isWrong ? '#FCA5A5' : 'rgba(255,255,255,0.8)',
+                  color: isCorrect
+                    ? '#34D399'
+                    : isWrong
+                      ? '#FCA5A5'
+                      : isReading
+                        ? '#FCD34D'
+                        : 'rgba(255,255,255,0.8)',
                   fontSize: '0.9rem',
                   fontWeight: 700,
                 }}>
@@ -169,4 +212,18 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
       </div>
     </div>
   );
+}
+
+// Inline buzz so we don't need the sfx import just for wrong-answer sound
+function sfxBuzz() {
+  try {
+    const ctx  = new (window.AudioContext || window.webkitAudioContext)();
+    const osc  = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.type = 'sawtooth'; osc.frequency.value = 200;
+    gain.gain.setValueAtTime(0.14, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
+    osc.start(); osc.stop(ctx.currentTime + 0.18);
+  } catch { /* no audio */ }
 }
