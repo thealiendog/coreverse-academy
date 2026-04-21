@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useSearchParams } from 'react-router-dom';
 import { Component } from 'react';
 
 class ErrorBoundary extends Component {
@@ -45,6 +45,17 @@ import ChildSelect     from './pages/ChildSelect';
 import ChildDashboard  from './pages/ChildDashboard';
 import SubjectView     from './pages/SubjectView';
 import LessonPlayer    from './pages/LessonPlayer';
+import GameLessonPlayer from './components/games/GameLessonPlayer';
+
+// Dispatches to GameLessonPlayer for Little Stars (?level=1) lessons
+// that have a gameSequence; falls back to LessonPlayer otherwise.
+function LessonDispatcher() {
+  const [searchParams] = useSearchParams();
+  const level = parseInt(searchParams.get('level') || '1', 10);
+  if (level === 1) return <GameLessonPlayer />;
+  return <LessonPlayer />;
+}
+
 
 export default function App() {
   return (
@@ -75,7 +86,7 @@ export default function App() {
         <Route path="/child/select"             element={<ChildSelect />} />
         <Route path="/child/dashboard"          element={<ChildDashboard />} />
         <Route path="/child/subject/:subjectId" element={<ErrorBoundary><SubjectView /></ErrorBoundary>} />
-        <Route path="/child/lesson/:subjectId/:lessonIdx" element={<ErrorBoundary><LessonPlayer /></ErrorBoundary>} />
+        <Route path="/child/lesson/:subjectId/:lessonIdx" element={<ErrorBoundary><LessonDispatcher /></ErrorBoundary>} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

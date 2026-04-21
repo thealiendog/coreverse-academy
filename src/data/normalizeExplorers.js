@@ -37,6 +37,8 @@ export function normalizeLesson(lesson) {
         })),
     celebrationText: lesson.celebrationText
       || `Great work, {{name}}! You completed "${lesson.title}". Keep exploring!`,
+    // Pass through game sequence if present (used by GameLessonPlayer)
+    ...(lesson.gameSequence ? { gameSequence: lesson.gameSequence } : {}),
   };
 }
 

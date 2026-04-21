@@ -64,7 +64,7 @@ import FRONTIER_EXPLORERS from '../data/frontier_explorers_adapter';
 import FRONTIER_UPPEREXPLORERS from '../data/frontier_upperexplorers_adapter';
 import FRONTIER_VOYAGERS from '../data/frontier_voyagers_adapter';
 import NovaChat from '../components/NovaChat';
-import { LsVisualFrame, detectVisual, VISUAL_INSTRUCTIONS } from '../components/LsVisuals';
+import { LsSceneFrame } from '../components/ls-scenes';
 import { askNova } from '../lib/nova';
 
 const CONFETTI_COLORS = ['#7C3AED', '#A78BFA', '#F59E0B', '#FCD34D', '#10B981', '#60A5FA', '#F472B6'];
@@ -353,8 +353,9 @@ export default function LessonPlayer() {
   const [lsActivityTapped, setLsActivityTapped] = useState(null); // index tapped on current activity
   const [lsActivityShake,  setLsActivityShake]  = useState(null); // index shaking on wrong tap
 
-  // ── Little Stars visual illustrations ────────────────────────────────────
-  const [lsVisualTaps, setLsVisualTaps] = useState(0); // tap count for current visual
+  // ── Little Stars visual illustrations (scene system) ─────────────────────
+  const [lsVisualTaps, setLsVisualTaps] = useState(0); // tap count for current scene
+  const [lsScenes,     setLsScenes]     = useState({}); // keyed by `${step}-${lsSentenceIdx}`
 
   // ── Little Stars mode ─────────────────────────────────────────────────────
   const isLittleStars = level === 1;
@@ -406,8 +407,9 @@ export default function LessonPlayer() {
   const lsActivityInstruction = (isLittleStars && isLearnStep && lsIsLastPair && lsActivity)
     ? lsActivity.instruction : null;
 
-  // Visual illustration: shown after each LS sentence pair (replaces auto-advance + engagement)
-  const lsVisualName = (isLittleStars && isLearnStep) ? detectVisual(lsCurrentPair) : null;
+  // Scene illustration: shown after each LS learn sentence pair
+  const lsSceneKey  = (isLittleStars && isLearnStep) ? `${step}-${lsSentenceIdx}` : null;
+  const lsSceneName = lsSceneKey ? (lsScenes[lsSceneKey] ?? 'BubblePop') : null;
 
   // Fires whenever the guide starts speaking any text.
   // Schedules one setTimeout per word, with duration proportional to character count.
@@ -507,6 +509,35 @@ export default function LessonPlayer() {
       .catch(() => setLsActivities(prev => ({ ...prev, [key]: 'error' })));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
+
+  // Little Stars: fetch scene name from API when a LS learn pair changes
+  useEffect(() => {
+    if (!lsSceneKey) return;
+    if (lsScenes[lsSceneKey]) return; // already fetched
+    // Immediately set BubblePop as fallback (shown while request is in flight)
+    setLsScenes(s => ({ ...s, [lsSceneKey]: 'BubblePop' }));
+    const cacheKey = `ls_scene_${subjectId}_${idx}_${step}_${lsSentenceIdx}`;
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        setLsScenes(s => ({ ...s, [lsSceneKey]: cached }));
+        return;
+      }
+    } catch { /* ignore */ }
+    fetch('/api/ls-scene-select', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: lsCurrentPair }),
+    })
+      .then(r => r.json())
+      .then(data => {
+        const name = data?.scene || 'BubblePop';
+        try { localStorage.setItem(cacheKey, name); } catch { /* storage full */ }
+        setLsScenes(s => ({ ...s, [lsSceneKey]: name }));
+      })
+      .catch(() => { /* keep BubblePop */ });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lsSceneKey]);
 
   // Little Stars: when guide finishes reading a non-last pair, auto-advance to next pair
   // For learn steps: visual taps are the advancement mechanism (no auto-timer)
@@ -1047,14 +1078,11 @@ export default function LessonPlayer() {
               )}
             </div>
 
-            {/* LS: visual illustration after each sentence pair (replaces engagement + auto-timer) */}
-            {isLittleStars && lsVisualName && lsVisualTaps < 3 && (
+            {/* LS: scene illustration after each sentence pair (replaces engagement + auto-timer) */}
+            {isLittleStars && lsSceneName && lsVisualTaps < 3 && (
               <div className="lesson-slide-up" style={{ animationDelay: '0.6s' }}>
-                <p className="text-white/70 font-bold text-center mb-3" style={{ fontSize: '1.1rem' }}>
-                  {VISUAL_INSTRUCTIONS[lsVisualName]}
-                </p>
-                <LsVisualFrame
-                  name={lsVisualName}
+                <LsSceneFrame
+                  name={lsSceneName}
                   tapCount={lsVisualTaps}
                   onTap={handleLsVisualTap}
                 />
