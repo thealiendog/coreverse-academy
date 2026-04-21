@@ -132,6 +132,23 @@ export default function GameLessonPlayer() {
   const [speaking,          setSpeaking]          = useState(false);
   const [bubble,            setBubble]            = useState('');
   const [interactionLocked, setInteractionLocked] = useState(true);
+  const [isPortrait,        setIsPortrait]        = useState(false);
+
+  // Detect portrait orientation on tablet-sized screens
+  useEffect(() => {
+    function check() {
+      const portrait = window.matchMedia('(orientation: portrait)').matches;
+      const wide     = window.innerWidth >= 768 || window.innerHeight >= 768;
+      setIsPortrait(portrait && wide);
+    }
+    check();
+    window.addEventListener('resize',          check);
+    window.addEventListener('orientationchange', check);
+    return () => {
+      window.removeEventListener('resize',          check);
+      window.removeEventListener('orientationchange', check);
+    };
+  }, []);
 
   const audioRef    = useRef(null);
   const bubbleTimer = useRef(null);
@@ -263,42 +280,80 @@ export default function GameLessonPlayer() {
     }
   }
 
+  const accent = guideAvatar?.accent || '#7C3AED';
+
   return (
     <div style={{
-      minHeight: '100dvh',
+      width: '100vw',
+      height: '100dvh',
       background: '#080618',
       display: 'flex',
       flexDirection: 'column',
       fontFamily: 'system-ui, -apple-system, sans-serif',
-      overflowX: 'hidden',
+      overflow: 'hidden',
+      position: 'fixed',
+      inset: 0,
+      touchAction: 'manipulation',
     }}>
+      <style>{`
+        /* Prevent scroll bounce on iOS */
+        html, body { overflow: hidden; overscroll-behavior: none; }
+        /* Active tap feedback — replaces hover */
+        button:active { opacity: 0.82; transform: scale(0.97); }
+        @keyframes guide-pulse {
+          0%,100% { box-shadow: 0 0 0 2px ${accent}55 }
+          50%      { box-shadow: 0 0 0 6px ${accent}33 }
+        }
+        @keyframes screen-enter {
+          from { opacity:0; transform: translateY(18px) }
+          to   { opacity:1; transform: translateY(0) }
+        }
+      `}</style>
+
+      {/* Portrait orientation nudge (tablet only) */}
+      {isPortrait && (
+        <div style={{
+          position: 'absolute', top: 0, left: 0, right: 0, zIndex: 50,
+          background: 'rgba(124,58,237,0.92)',
+          color: '#fff',
+          textAlign: 'center',
+          padding: '10px 16px',
+          fontSize: '0.9rem',
+          fontWeight: 700,
+          letterSpacing: '0.02em',
+        }}>
+          Turn your tablet sideways for the best experience
+        </div>
+      )}
+
       {/* Progress bar */}
-      <ProgressBar current={screenIdx} total={total} accent={guideAvatar?.accent} />
+      <ProgressBar current={screenIdx} total={total} accent={accent} />
 
       {/* Guide panel */}
       <div style={{
         display: 'flex',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         gap: 12,
-        padding: '12px 20px',
-        minHeight: 90,
+        padding: '10px 20px',
+        flexShrink: 0,
       }}>
-        {/* Avatar */}
+        {/* Avatar — tap to replay audio */}
         <div
-          onClick={() => { if (currentStep?.guideText) speak(currentStep.guideText); }}
+          onClick={() => speak(buildSpeechText(currentStep))}
           style={{
-            width: 72,
-            height: 72,
+            width: 64,
+            height: 64,
             borderRadius: '50%',
             overflow: 'hidden',
             flexShrink: 0,
             cursor: 'pointer',
-            border: `3px solid ${guideAvatar?.accent || '#7C3AED'}`,
+            border: `3px solid ${accent}`,
             boxShadow: speaking
-              ? `0 0 0 4px ${guideAvatar?.accent || '#7C3AED'}55, 0 0 28px ${guideAvatar?.accent || '#7C3AED'}66`
-              : `0 0 0 2px ${guideAvatar?.accent || '#7C3AED'}33`,
+              ? `0 0 0 4px ${accent}55, 0 0 28px ${accent}66`
+              : `0 0 0 2px ${accent}33`,
             transition: 'box-shadow 0.3s ease',
             animation: speaking ? 'guide-pulse 1.4s ease-in-out infinite' : 'none',
+            WebkitTapHighlightColor: 'transparent',
           }}
         >
           <img
@@ -306,24 +361,24 @@ export default function GameLessonPlayer() {
             alt={guideAvatar?.name}
             style={{ width:'100%', height:'100%', objectFit:'cover' }}
           />
-          <style>{`@keyframes guide-pulse{0%,100%{box-shadow:0 0 0 2px ${guideAvatar?.accent || '#7C3AED'}55}50%{box-shadow:0 0 0 6px ${guideAvatar?.accent || '#7C3AED'}33}}`}</style>
         </div>
 
         {/* Speech bubble */}
         <GuideBubble text={bubble} speaking={speaking} guideAvatar={guideAvatar} />
       </div>
 
-      {/* Main game area */}
-      <div style={{ flex: 1, display:'flex', flexDirection:'column', overflow:'hidden' }}>
+      {/* Main game area — fills remaining space, scrollable only inside */}
+      <div style={{ flex: 1, display:'flex', flexDirection:'column', overflow:'hidden', minHeight: 0 }}>
         <div
           key={screenIdx}
           style={{
             flex: 1,
-            animation: 'screen-enter 0.4s ease both',
+            animation: 'screen-enter 0.35s ease both',
             overflowY: 'auto',
+            overscrollBehavior: 'contain',
+            WebkitOverflowScrolling: 'touch',
           }}
         >
-          <style>{`@keyframes screen-enter{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}`}</style>
           {renderScreen(currentStep)}
         </div>
       </div>
