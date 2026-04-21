@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function SortIntoBuckets({ step, onComplete, disabled }) {
+export default function SortIntoBuckets({ step, onReady, disabled }) {
   const buckets = step.buckets || [
     { label: 'Living',     color: '#34D399' },
     { label: 'Non-living', color: '#60A5FA' },
@@ -39,7 +39,7 @@ export default function SortIntoBuckets({ step, onComplete, disabled }) {
       if (next >= items.length) {
         setDone(true);
         sfx.fanfare();
-        setTimeout(onComplete, 2000);
+        setTimeout(() => onReady?.(), 1000);
       } else {
         setCurrentIdx(next);
       }

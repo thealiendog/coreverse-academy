@@ -133,6 +133,8 @@ export default function GameLessonPlayer() {
   const [bubble,            setBubble]            = useState('');
   const [interactionLocked, setInteractionLocked] = useState(true);
   const [isPortrait,        setIsPortrait]        = useState(false);
+  const [canAdvance,        setCanAdvance]        = useState(false);
+  const [isPaused,          setIsPaused]          = useState(false);
 
   // Detect portrait orientation on tablet-sized screens
   useEffect(() => {
@@ -237,12 +239,26 @@ export default function GameLessonPlayer() {
     return parts.join(' ');
   }
 
+  // ── Game screen types that require explicit interaction to enable forward ──
+  const GAME_TYPES = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect']);
+
+  // ── Enable forward arrow for non-game screens once audio finishes ──────────
+  useEffect(() => {
+    if (!gameSequence || !gameSequence[screenIdx]) return;
+    const step = gameSequence[screenIdx];
+    if (!GAME_TYPES.has(step.type) && !interactionLocked) {
+      setCanAdvance(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [interactionLocked, screenIdx]);
+
   // ── Speak when screen changes, lock interaction until done ─────────────────
   useEffect(() => {
     if (!gameSequence) return;
     const step = gameSequence[screenIdx];
     const text = buildSpeechText(step);
     setInteractionLocked(true);
+    setCanAdvance(false);
     // Fallback: unlock after 12s — covers long audio + network delay.
     // Only fires if el.play() never resolved AND SpeechSynthesis also failed silently.
     const fallback = setTimeout(() => setInteractionLocked(false), 12000);
@@ -274,7 +290,16 @@ export default function GameLessonPlayer() {
   function advance() {
     const next = screenIdx + 1;
     if (next < total) setScreenIdx(next);
-    // CelebrationScreen handles its own navigation
+  }
+
+  function goBack() {
+    if (screenIdx > 0) setScreenIdx(screenIdx - 1);
+  }
+
+  // Called by game templates when interaction is successfully completed —
+  // enables the forward arrow so the child can tap to proceed.
+  function handleReady() {
+    setCanAdvance(true);
   }
 
   function handleWrong(message) {
@@ -283,6 +308,19 @@ export default function GameLessonPlayer() {
 
   function handleNarrate(message) {
     if (message) speak(message);
+  }
+
+  function handlePause() {
+    if (!isPaused) {
+      // Pause audio
+      if (audioRef.current) audioRef.current.pause();
+      window.speechSynthesis?.pause?.();
+    } else {
+      // Resume audio
+      if (audioRef.current) audioRef.current.play().catch(() => {});
+      window.speechSynthesis?.resume?.();
+    }
+    setIsPaused(p => !p);
   }
 
   // ── Render screen ─────────────────────────────────────────────────────────
@@ -294,23 +332,36 @@ export default function GameLessonPlayer() {
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
-      case 'count':        return <CountAndTap     step={step} onComplete={advance} disabled={interactionLocked} speak={speak} />;
-      case 'sort':         return <SortIntoBuckets step={step} onComplete={advance} disabled={interactionLocked} speak={speak} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
+      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} />;
+      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} />;
+      case 'yes-no':       return <YesOrNo         step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>
-          <button onClick={advance} style={{ color:'white', background:'#7C3AED', border:'none', padding:'12px 24px', borderRadius:12, cursor:'pointer', marginTop:16 }}>
-            Next →
-          </button>
         </div>
       );
     }
   }
 
   const accent = guideAvatar?.accent || '#7C3AED';
+
+  const isCelebration = currentStep.type === 'celebration';
+  const navBtnBase = {
+    width: 60,
+    height: 60,
+    borderRadius: '50%',
+    border: 'none',
+    background: 'transparent',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    touchAction: 'manipulation',
+    WebkitTapHighlightColor: 'transparent',
+    padding: 0,
+  };
 
   return (
     <div style={{
@@ -325,6 +376,7 @@ export default function GameLessonPlayer() {
       touchAction: 'manipulation',
       WebkitUserSelect: 'none',
       userSelect: 'none',
+      position: 'relative',
     }}>
       <style>{`
         body { overscroll-behavior: none; touch-action: manipulation; }
@@ -432,6 +484,133 @@ export default function GameLessonPlayer() {
           {renderScreen(currentStep)}
         </div>
       </div>
+
+      {/* ── Icon nav bar ── */}
+      <div style={{
+        height: 70,
+        flexShrink: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        background: 'rgba(8,6,24,0.88)',
+        borderTop: '1px solid rgba(255,255,255,0.07)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+      }}>
+        {/* Back arrow */}
+        <button
+          onClick={goBack}
+          style={{
+            ...navBtnBase,
+            opacity: screenIdx > 0 ? 0.75 : 0.2,
+            pointerEvents: screenIdx > 0 ? 'auto' : 'none',
+          }}
+        >
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <polygon points="24,4 8,16 24,28" fill="rgba(255,255,255,0.9)" />
+          </svg>
+        </button>
+
+        {/* Pause / resume */}
+        <button onClick={handlePause} style={{ ...navBtnBase, opacity: 0.85 }}>
+          {isPaused ? (
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <polygon points="6,3 30,16 6,29" fill="rgba(255,255,255,0.9)" />
+            </svg>
+          ) : (
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect x="6"  y="5" width="7" height="22" rx="2.5" fill="rgba(255,255,255,0.9)" />
+              <rect x="19" y="5" width="7" height="22" rx="2.5" fill="rgba(255,255,255,0.9)" />
+            </svg>
+          )}
+        </button>
+
+        {/* Forward arrow */}
+        <button
+          onClick={() => { if (canAdvance && !isCelebration) advance(); }}
+          style={{
+            ...navBtnBase,
+            opacity: canAdvance && !isCelebration ? 1 : 0.2,
+            pointerEvents: canAdvance && !isCelebration ? 'auto' : 'none',
+          }}
+        >
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <polygon points="8,4 24,16 8,28" fill={canAdvance && !isCelebration ? accent : 'rgba(255,255,255,0.9)'} />
+          </svg>
+        </button>
+      </div>
+
+      {/* ── Pause overlay ── */}
+      {isPaused && (
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 40,
+          background: 'rgba(8,6,24,0.94)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 28,
+        }}>
+          {/* Guide avatar */}
+          <img
+            src={guideAvatar?.image || '/avatars/sage.png'}
+            alt={guideAvatar?.name}
+            style={{
+              width: 110,
+              height: 110,
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: `3px solid ${accent}`,
+              boxShadow: `0 0 28px ${accent}55`,
+            }}
+            draggable={false}
+          />
+
+          {/* Resume button (play icon) */}
+          <button
+            onClick={handlePause}
+            style={{
+              width: 88,
+              height: 88,
+              borderRadius: '50%',
+              border: `3px solid ${accent}`,
+              background: `${accent}22`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              touchAction: 'manipulation',
+              boxShadow: `0 0 24px ${accent}44`,
+            }}
+          >
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <polygon points="8,4 32,18 8,32" fill="white" />
+            </svg>
+          </button>
+
+          {/* Home button */}
+          <button
+            onClick={() => navigate('/child/dashboard')}
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: '50%',
+              border: '2px solid rgba(255,255,255,0.2)',
+              background: 'rgba(255,255,255,0.07)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              touchAction: 'manipulation',
+            }}
+          >
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+              <path d="M15 3L2 13h3v14h8v-8h4v8h8V13h3L15 3z" fill="rgba(255,255,255,0.75)" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

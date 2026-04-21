@@ -100,23 +100,6 @@ export default function StoryScreen({ step, childName, guideAvatar, onComplete, 
         </p>
       </div>
 
-      {/* Tap to continue hint */}
-      <button
-        onClick={() => { if (!disabled) onComplete(); }}
-        style={{
-          background: 'rgba(255,255,255,0.08)',
-          color: disabled ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.5)',
-          border: '1px solid rgba(255,255,255,0.15)',
-          borderRadius: 100,
-          padding: '10px 28px',
-          fontSize: '0.9rem',
-          fontWeight: 600,
-          cursor: disabled ? 'default' : 'pointer',
-          pointerEvents: disabled ? 'none' : 'auto',
-        }}
-      >
-        Continue →
-      </button>
     </div>
   );
 }

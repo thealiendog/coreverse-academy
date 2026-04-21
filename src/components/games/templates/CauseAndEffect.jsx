@@ -42,7 +42,7 @@ const DEFAULT_CYCLES = [
   },
 ];
 
-export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }) {
+export default function CauseAndEffect({ step, onReady, onNarrate, disabled }) {
   const cycles = step.cycles || DEFAULT_CYCLES;
 
   const [cycleIdx, setCycleIdx] = useState(0);
@@ -84,7 +84,7 @@ export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }
         const next = cycleIdx + 1;
         if (next >= cycles.length) {
           sfx.fanfare();
-          setTimeout(onComplete, 1200);
+          setTimeout(() => onReady?.(), 1200);
         } else {
           setCycleIdx(next);
           setPhase('before');
@@ -132,28 +132,26 @@ export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }
         {phase === 'after'     && <SceneContent which="after"  anim="cae-appear 0.6s cubic-bezier(0.34,1.56,0.64,1) both" />}
       </div>
 
-      {/* Action / next button */}
-      <button
-        onClick={trigger}
-        disabled={phase !== 'before'}
-        style={{
-          background: phase === 'before' ? 'linear-gradient(135deg,#7C3AED,#A78BFA)' : 'rgba(255,255,255,0.08)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: 100,
-          padding: '16px 44px',
-          fontSize: '1.2rem',
-          fontWeight: 900,
-          cursor: phase === 'before' ? 'pointer' : 'default',
-          boxShadow: phase === 'before' ? '0 6px 24px rgba(124,58,237,0.5)' : 'none',
-          transition: 'all 0.3s ease',
-          opacity: phase === 'before' ? 1 : 0.5,
-        }}
-      >
-        {phase === 'after'
-          ? (cycleIdx < cycles.length - 1 ? 'Next' : 'Done!')
-          : cycle.action}
-      </button>
+      {/* Action button — only shown when child can interact (before phase) */}
+      {phase === 'before' && (
+        <button
+          onClick={trigger}
+          style={{
+            background: 'linear-gradient(135deg,#7C3AED,#A78BFA)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 100,
+            padding: '16px 44px',
+            fontSize: '1.2rem',
+            fontWeight: 900,
+            cursor: 'pointer',
+            boxShadow: '0 6px 24px rgba(124,58,237,0.5)',
+            touchAction: 'manipulation',
+          }}
+        >
+          {cycle.action}
+        </button>
+      )}
     </div>
   );
 }

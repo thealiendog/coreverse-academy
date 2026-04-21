@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { sfx } from '../sounds';
 
-export default function FamilyScreen({ step, childName, guideAvatar, onComplete, disabled }) {
+export default function FamilyScreen({ step, childName, guideAvatar }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -59,24 +58,6 @@ export default function FamilyScreen({ step, childName, guideAvatar, onComplete,
         </p>
       </div>
 
-      <button
-        onClick={() => { if (!disabled) { sfx.chime(); onComplete(); } }}
-        style={{
-          background: disabled ? 'rgba(96,165,250,0.2)' : 'linear-gradient(135deg, #60A5FA, #3B82F6)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: 100,
-          padding: '16px 44px',
-          fontSize: '1.2rem',
-          fontWeight: 900,
-          cursor: disabled ? 'default' : 'pointer',
-          boxShadow: disabled ? 'none' : '0 6px 24px rgba(96,165,250,0.4)',
-          opacity: disabled ? 0.4 : 1,
-          transition: 'all 0.3s ease',
-        }}
-      >
-        Awesome!
-      </button>
     </div>
   );
 }

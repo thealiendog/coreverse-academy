@@ -46,8 +46,10 @@ export default function CelebrationScreen({ step, childName, guideAvatar }) {
     sfx.fanfare();
     const t1 = setTimeout(() => setPhase(1), 700);
     const t2 = setTimeout(() => setPhase(2), 1500);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, []);
+    // Auto-navigate to dashboard after celebration plays out (no text button needed)
+    const t3 = setTimeout(() => navigate('/child/dashboard'), 5500);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
+  }, [navigate]);
 
   const badgeName = step.badge || 'Champion';
   const text = (step.guideText || `You did it, ${childName || 'friend'}!`)
@@ -154,26 +156,6 @@ export default function CelebrationScreen({ step, childName, guideAvatar }) {
         </p>
       </div>
 
-      {/* Keep going button */}
-      <button
-        onClick={() => navigate('/child/dashboard')}
-        style={{
-          opacity: phase >= 2 ? 1 : 0,
-          transform: phase >= 2 ? 'scale(1)' : 'scale(0.85)',
-          transition: 'all 0.5s cubic-bezier(0.34,1.56,0.64,1)',
-          background: 'linear-gradient(135deg, #FCD34D, #F59E0B)',
-          color: '#1a0a2e',
-          border: 'none',
-          borderRadius: 100,
-          padding: '18px 52px',
-          fontSize: '1.3rem',
-          fontWeight: 900,
-          cursor: 'pointer',
-          boxShadow: '0 8px 32px rgba(252,211,77,0.4)',
-        }}
-      >
-        Keep going!
-      </button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function YesOrNo({ step, onComplete, onWrong, disabled, speak }) {
+export default function YesOrNo({ step, onReady, onWrong, disabled, speak }) {
   const [chosen,  setChosen]  = useState(null); // true=yes, false=no
   const [locked,  setLocked]  = useState(false);
 
@@ -17,7 +17,7 @@ export default function YesOrNo({ step, onComplete, onWrong, disabled, speak }) 
     const correct = (val === step.correctAnswer);
     if (correct) {
       sfx.fanfare();
-      setTimeout(onComplete, 1800);
+      setTimeout(() => onReady?.(), 800);
     } else {
       sfx.buzz();
       const explanation = step.explanation || `Not quite! The right answer is ${step.correctAnswer ? 'Yes' : 'No'}.`;
