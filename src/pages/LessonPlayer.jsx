@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getCurrentChild, getCurrentParent, updateChildProgress, awardBadge } from '../lib/storage';
 import { getAvatar, getSubject } from '../lib/constants';
@@ -64,8 +64,8 @@ import FRONTIER_EXPLORERS from '../data/frontier_explorers_adapter';
 import FRONTIER_UPPEREXPLORERS from '../data/frontier_upperexplorers_adapter';
 import FRONTIER_VOYAGERS from '../data/frontier_voyagers_adapter';
 import NovaChat from '../components/NovaChat';
+import { askNova } from '../lib/nova';
 
-const SECTIONS = ['Arrival', 'Spark', 'Learn', 'Explore', 'Quick Check', 'Quiz', 'Celebration'];
 const CONFETTI_COLORS = ['#7C3AED', '#A78BFA', '#F59E0B', '#FCD34D', '#10B981', '#60A5FA', '#F472B6'];
 
 // ── Word-by-word animated text reveal ────────────────────────────────────────
@@ -184,16 +184,9 @@ function OptionCard({ label, text, delay, isCorrect, isWrong, isReveal, onClick,
       onClick={onClick}
       disabled={disabled}
       className="w-full text-left px-6 py-4 rounded-xl text-sm font-medium transition-colors duration-200 disabled:cursor-default hover:enabled:brightness-110"
-      style={{
-        background: bg,
-        border: `1px solid ${border}`,
-        color,
-        animation: anim,
-      }}
+      style={{ background: bg, border: `1px solid ${border}`, color, animation: anim }}
     >
-      <span className="font-bold mr-3" style={{ color: 'rgba(255,255,255,0.35)' }}>
-        {label}.
-      </span>
+      <span className="font-bold mr-3" style={{ color: 'rgba(255,255,255,0.35)' }}>{label}.</span>
       {text}
     </button>
   );
@@ -223,20 +216,94 @@ export default function LessonPlayer() {
         : (level === 4 && voyagerOverrides[subjectId])
           ? (voyagerOverrides[subjectId][idx] || null)
           : (levelGetters[level] || getLesson)(subjectId, idx);
-  const subject   = getSubject(subjectId);
+  const subject     = getSubject(subjectId);
   const guideAvatar = getAvatar(lesson?.guide || lesson?.avatar || child?.avatar);
 
-  const [section,       setSection]       = useState(0);
-  const [sparkAnswer,   setSparkAnswer]   = useState('');
-  const [exploreAnswer, setExploreAnswer] = useState('');
-  const [qcSelected,    setQcSelected]    = useState(null);
-  const [qcWrong,       setQcWrong]       = useState(false);
-  const [quizAnswers,   setQuizAnswers]   = useState([]);
-  const [quizCurrent,   setQuizCurrent]   = useState(0);
-  const [score,         setScore]         = useState(null);
-  const [badgeAwarded,  setBadgeAwarded]  = useState(false);
-  const [quizSelected,  setQuizSelected]  = useState(null);
-  const [quizWrongIdx,  setQuizWrongIdx]  = useState(null);
+  // ── Step system ────────────────────────────────────────────────────────────
+  // 0=intro · 1=hook · 2…N+1=learn blocks · N+2=spark · N+3=quickcheck
+  // N+4=quiz · N+5=explore · N+6=badge   (N = learnItems.length)
+  const learnItems = useMemo(() => {
+    const l = lesson?.learn;
+    return Array.isArray(l) ? l.filter(Boolean) : (l ? [l] : []);
+  }, [lesson]);
+  const N = learnItems.length;
+  const TOTAL_STEPS = 7 + N;
+
+  const [step,          setStep]         = useState(0);
+  const [sparkAnswer,   setSparkAnswer]  = useState('');
+  const [exploreAnswer, setExploreAnswer]= useState('');
+  const [quizAnswers,   setQuizAnswers]  = useState([]);
+  const [quizCurrent,   setQuizCurrent]  = useState(0);
+  const [score,         setScore]        = useState(null);
+  const [badgeAwarded,  setBadgeAwarded] = useState(false);
+  const [quizSelected,  setQuizSelected] = useState(null);
+  const [quizWrongIdx,  setQuizWrongIdx] = useState(null);
+  const [qcSelected,    setQcSelected]   = useState(null);
+  const [qcWrong,       setQcWrong]      = useState(false);
+
+  // Engagement per learn block: 0=got-it · 1=emoji-reactions · 2=true-false
+  const engagementTypes = useMemo(() => learnItems.map(() => Math.floor(Math.random() * 3)), []);
+  const [tfData,     setTfData]     = useState(null); // { statement, isTrue }
+  const [tfLoading,  setTfLoading]  = useState(false);
+  const [tfAnswered, setTfAnswered] = useState(null); // null | true | false
+
+  // ── Derived step info ──────────────────────────────────────────────────────
+  const isLearnStep = step >= 2 && step < 2 + N;
+  const learnIdx    = isLearnStep ? step - 2 : 0;
+  const stepType    = step === 0             ? 'intro'
+                    : step === 1             ? 'hook'
+                    : isLearnStep            ? 'learn'
+                    : step === 2 + N         ? 'spark'
+                    : step === 3 + N         ? 'quickcheck'
+                    : step === 4 + N         ? 'quiz'
+                    : step === 5 + N         ? 'explore'
+                    :                          'badge';
+  const currentLearnBlock = isLearnStep ? learnItems[learnIdx] : '';
+  const passScore = Math.max(2, Math.ceil((lesson?.quiz?.length || 5) * 0.6));
+  const name      = child?.name || 'friend';
+  const arrivalText = (lesson?.arrival || '').replace(/\{\{name\}\}/g, name);
+
+  // Reset per-step transient state when step changes
+  useEffect(() => {
+    setTfAnswered(null);
+    setQcSelected(null);
+    setQcWrong(false);
+  }, [step]);
+
+  // Generate T/F question when entering a T/F learn step
+  useEffect(() => {
+    if (!isLearnStep || engagementTypes[learnIdx] !== 2) return;
+    setTfData(null);
+    setTfLoading(true);
+    askNova({
+      childName:    child?.name    || 'friend',
+      childAge:     child?.age     || 8,
+      avatarId:     lesson?.guide  || 'nova',
+      subjectLabel: subject?.label || '',
+      lessonTitle:  lesson?.title  || '',
+      learnContent: currentLearnBlock,
+      history:      [],
+      question:     `Based only on the content above, write a true or false question. Reply with EXACTLY two lines — nothing else:\nLine 1: a simple, clear statement (one sentence)\nLine 2: the single word True or False`,
+    }).then(reply => {
+      const lines = reply.trim().split('\n').filter(l => l.trim());
+      if (lines.length >= 2) {
+        const last = lines[lines.length - 1].trim().toLowerCase();
+        const stmt = lines.slice(0, -1).join(' ').trim();
+        if ((last === 'true' || last === 'false') && stmt) {
+          setTfData({ statement: stmt, isTrue: last === 'true' });
+        } else {
+          setTfData(null); // fall back to emoji engagement
+        }
+      } else {
+        setTfData(null);
+      }
+      setTfLoading(false);
+    }).catch(() => {
+      setTfLoading(false);
+      setTfData(null);
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
   if (!child) { navigate('/child/select'); return null; }
   if (!lesson) {
@@ -247,12 +314,7 @@ export default function LessonPlayer() {
     );
   }
 
-  const passScore   = Math.max(2, Math.ceil((lesson.quiz?.length || 5) * 0.6));
-  const name        = child.name;
-  const arrivalText = (lesson.arrival || '').replace(/\{\{name\}\}/g, name);
-  const ctaDelay    = Math.min(0.6 + arrivalText.split(' ').length * 0.058 + 0.4, 4.0);
-
-  function advance() { setSection(s => s + 1); }
+  function advance() { setStep(s => s + 1); }
 
   function handleQcSelect(optIdx) {
     if (qcSelected !== null) return;
@@ -267,7 +329,7 @@ export default function LessonPlayer() {
 
   function handleQuizSelect(optIdx) {
     if (quizSelected !== null) return;
-    const isCorrect  = optIdx === lesson.quiz[quizCurrent].correct;
+    const isCorrect = optIdx === lesson.quiz[quizCurrent].correct;
     setQuizSelected(optIdx);
     if (!isCorrect) {
       setQuizWrongIdx(optIdx);
@@ -305,7 +367,117 @@ export default function LessonPlayer() {
     }
   }
 
-  const pct = Math.round((section / (SECTIONS.length - 1)) * 100);
+  const pct = Math.round((step / (TOTAL_STEPS - 1)) * 100);
+
+  // ── Engagement component for learn steps ──────────────────────────────────
+  const engType = engagementTypes[learnIdx];
+  // If T/F failed to generate, fall back to emoji reactions
+  const effectiveEngType = (engType === 2 && !tfLoading && tfData === null) ? 1 : engType;
+
+  function EngagementBlock() {
+    if (engType === 2 && tfLoading) {
+      return (
+        <div className="flex items-center gap-2 justify-center py-4">
+          <div className="nova-dot-1 w-1.5 h-1.5 rounded-full bg-white/30" />
+          <div className="nova-dot-2 w-1.5 h-1.5 rounded-full bg-white/30" />
+          <div className="nova-dot-3 w-1.5 h-1.5 rounded-full bg-white/30" />
+        </div>
+      );
+    }
+
+    // True / False
+    if (effectiveEngType === 2 && tfData) {
+      return (
+        <div className="space-y-4">
+          <div
+            className="rounded-xl p-5 text-center"
+            style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.25)' }}
+          >
+            <p className="text-xs font-semibold tracking-widest uppercase text-white/35 mb-2">True or False?</p>
+            <p className="text-white/90 text-sm leading-relaxed font-medium">{tfData.statement}</p>
+          </div>
+
+          {tfAnswered === null ? (
+            <div className="flex gap-3">
+              <button
+                onClick={() => setTfAnswered(tfData.isTrue)}
+                className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
+                style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.40)', color: '#6EE7B7' }}
+              >
+                True ✓
+              </button>
+              <button
+                onClick={() => setTfAnswered(!tfData.isTrue)}
+                className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
+                style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)', color: '#FCA5A5' }}
+              >
+                False ✗
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <div
+                className="rounded-xl px-5 py-3 text-center text-sm font-semibold"
+                style={tfAnswered
+                  ? { background: 'rgba(16,185,129,0.14)', border: '1px solid #10B981', color: '#6EE7B7' }
+                  : { background: 'rgba(239,68,68,0.12)', border: '1px solid #EF4444', color: '#FCA5A5' }}
+              >
+                {tfAnswered ? '🎉 Correct!' : `Not quite — the answer is ${tfData.isTrue ? 'True' : 'False'}!`}
+              </div>
+              <button
+                onClick={advance}
+                className="w-full py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-[1.01]"
+                style={{ background: subject.color }}
+              >
+                Continue →
+              </button>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Emoji reactions
+    if (effectiveEngType === 1) {
+      const reactions = [
+        { emoji: '🤯', label: 'Mind = Blown!' },
+        { emoji: '🤔', label: 'Hmm, interesting' },
+        { emoji: '😎', label: 'So cool!' },
+      ];
+      return (
+        <div className="space-y-3">
+          <p className="text-white/35 text-xs text-center tracking-widest uppercase">How do you feel about that?</p>
+          <div className="flex gap-3 justify-center">
+            {reactions.map(r => (
+              <button
+                key={r.label}
+                onClick={advance}
+                className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl transition-all hover:scale-110 active:scale-95"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              >
+                <span style={{ fontSize: 26 }}>{r.emoji}</span>
+                <span className="text-white/50 text-[10px] font-medium whitespace-nowrap">{r.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // Got it (default)
+    return (
+      <button
+        onClick={advance}
+        className="w-full py-4 rounded-2xl font-semibold text-white text-base transition-all hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
+        style={{
+          background: `linear-gradient(135deg, ${subject.color}ee, ${subject.color}99)`,
+          boxShadow: `0 4px 32px ${subject.color}40`,
+        }}
+      >
+        Got it! 👍
+      </button>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#080618] flex flex-col overflow-hidden">
@@ -331,17 +503,16 @@ export default function LessonPlayer() {
             </div>
           </div>
           <span className="text-white/25 text-xs flex-shrink-0 tabular-nums">
-            {section + 1}/{SECTIONS.length}
+            {step + 1}/{TOTAL_STEPS}
           </span>
         </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 0 — ARRIVAL                                       */}
+      {/* STEP 0 — INTRO                                            */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {section === 0 && (
+      {stepType === 'intro' && (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44 relative">
-          {/* Subject color wash */}
           <div className="fixed inset-0 pointer-events-none" style={{
             background: `
               radial-gradient(ellipse 75% 55% at 28% 22%, ${subject.color}28 0%, transparent 60%),
@@ -350,43 +521,27 @@ export default function LessonPlayer() {
           }} />
 
           <div className="relative z-10 max-w-lg w-full text-center">
-            {/* Guide identity */}
-            <div className="lesson-fade-in mb-8" style={{ animationDelay: '0.1s' }}>
+            {/* Guide portrait */}
+            <div className="lesson-zoom-in mb-6" style={{ animationDelay: '0.1s' }}>
               <div
-                className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-3 glow-pulse"
-                style={{ boxShadow: `0 0 48px ${guideAvatar.accent}45, 0 0 0 2px ${guideAvatar.accent}30` }}
+                className="w-36 h-36 rounded-full overflow-hidden mx-auto mb-4 glow-pulse"
+                style={{ boxShadow: `0 0 72px ${guideAvatar.accent}55, 0 0 0 3px ${guideAvatar.accent}40` }}
               >
                 <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
               </div>
-              <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: guideAvatar.accent }}>
-                {guideAvatar.name} the {guideAvatar.animal}
+              <p className="text-sm font-semibold tracking-widest uppercase mb-1" style={{ color: guideAvatar.accent }}>
+                {guideAvatar.name}
               </p>
               <span className="text-white/25 text-xs">Lesson {idx + 1} · {subject.label}</span>
             </div>
 
-            {/* Lesson title — word by word */}
-            <h1 className="text-4xl font-semibold text-white mb-8 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
-              <WordReveal text={lesson.title} baseDelay={0.28} speed={0.075} />
+            {/* Lesson title */}
+            <h1 className="text-4xl font-semibold text-white mb-10 leading-tight lesson-slide-up" style={{ fontFamily: 'Georgia, serif', animationDelay: '0.3s' }}>
+              {lesson.title}
             </h1>
 
-            {/* Arrival text card */}
-            <div
-              className="lesson-slide-up rounded-2xl p-6 mb-10 text-left"
-              style={{
-                animationDelay: '0.5s',
-                background: 'rgba(15,11,46,0.88)',
-                border: `1px solid ${subject.color}28`,
-                backdropFilter: 'blur(16px)',
-                boxShadow: `0 4px 40px ${subject.color}10`,
-              }}
-            >
-              <p className="text-white/78 leading-relaxed text-base">
-                <WordReveal text={arrivalText} baseDelay={0.62} speed={0.056} />
-              </p>
-            </div>
-
-            {/* CTA — fades in after text finishes */}
-            <div className="lesson-fade-in" style={{ animationDelay: `${ctaDelay}s` }}>
+            {/* Let's begin button */}
+            <div className="lesson-fade-in" style={{ animationDelay: '0.9s' }}>
               <button
                 onClick={advance}
                 className="px-12 py-4 rounded-2xl font-semibold text-white text-lg transition-all hover:scale-105 hover:shadow-2xl active:scale-95"
@@ -395,7 +550,7 @@ export default function LessonPlayer() {
                   boxShadow: `0 4px 44px ${subject.color}48`,
                 }}
               >
-                Let's begin
+                Let's begin ✦
               </button>
             </div>
           </div>
@@ -403,16 +558,102 @@ export default function LessonPlayer() {
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 1 — SPARK                                         */}
+      {/* STEP 1 — HOOK                                             */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {section === 1 && (
+      {stepType === 'hook' && (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
           <div className="max-w-lg w-full">
             <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
-              Spark
+              Today's Lesson
             </p>
 
-            {/* Pulsing question card */}
+            <div
+              className="lesson-zoom-in rounded-2xl p-7 mb-8 text-left"
+              style={{
+                animationDelay: '0.12s',
+                background: 'rgba(15,11,46,0.88)',
+                border: `1px solid ${subject.color}28`,
+                backdropFilter: 'blur(16px)',
+                boxShadow: `0 4px 40px ${subject.color}12`,
+              }}
+            >
+              {/* Guide mini-badge inside card */}
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}>
+                  <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
+                </div>
+                <p className="text-xs font-semibold tracking-widest uppercase" style={{ color: guideAvatar.accent }}>
+                  {guideAvatar.name} says
+                </p>
+              </div>
+              <p className="text-white/85 leading-relaxed text-base">
+                {arrivalText}
+              </p>
+            </div>
+
+            <div className="lesson-slide-up" style={{ animationDelay: '0.5s' }}>
+              <button
+                onClick={advance}
+                className="w-full py-4 rounded-2xl font-semibold text-white text-base transition-all hover:scale-[1.01] hover:shadow-xl active:scale-[0.99]"
+                style={{ background: `linear-gradient(135deg, ${subject.color}ee, ${subject.color}99)` }}
+              >
+                Continue →
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* LEARN STEPS (one block per screen)                        */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {isLearnStep && (
+        <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
+          <div className="max-w-lg w-full">
+            <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
+              Learn · {learnIdx + 1} of {N}
+            </p>
+
+            {/* Content card — slides in fresh on each step */}
+            <div
+              key={step}
+              className="rounded-2xl p-6 mb-6"
+              style={{
+                background: 'rgba(15,11,46,0.88)',
+                border: `1px solid ${subject.color}28`,
+                boxShadow: `0 4px 28px ${subject.color}0a`,
+                animation: 'lesson-slide-from-right-kf 0.50s cubic-bezier(0.16,1,0.3,1) both',
+              }}
+            >
+              <div className="flex gap-3">
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
+                  style={{ background: `${subject.color}28`, color: subject.color }}
+                >
+                  {learnIdx + 1}
+                </div>
+                <p className="text-white/85 leading-relaxed text-sm">{currentLearnBlock}</p>
+              </div>
+            </div>
+
+            {/* Engagement — slides in after content settles */}
+            <div className="lesson-slide-up" style={{ animationDelay: '0.8s' }}>
+              <EngagementBlock />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* SPARK — BIG IDEA                                          */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {stepType === 'spark' && (
+        <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
+          <div className="max-w-lg w-full">
+            <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
+              Big Idea ✦
+            </p>
+
             <div
               className="rounded-3xl p-8 mb-8 text-center lesson-zoom-in lesson-spark-glow"
               style={{
@@ -426,7 +667,6 @@ export default function LessonPlayer() {
               </p>
             </div>
 
-            {/* Answer input */}
             <div className="lesson-slide-up" style={{ animationDelay: '0.45s' }}>
               <p className="text-white/40 text-sm mb-3">What do you think? Share your ideas:</p>
               <textarea
@@ -449,163 +689,15 @@ export default function LessonPlayer() {
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 2 — LEARN                                         */}
+      {/* QUICK CHECK                                               */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {section === 2 && (
-        <div className="min-h-screen px-6 pt-24 pb-44 max-w-2xl mx-auto w-full">
-          <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-3 text-center lesson-fade-in">
-            Learn
-          </p>
-          <h2
-            className="text-2xl font-semibold text-white mb-10 text-center lesson-zoom-in"
-            style={{ fontFamily: 'Georgia, serif', animationDelay: '0.08s' }}
-          >
-            {lesson.title}
-          </h2>
-
-          {/* Each paragraph = its own card, slides in from right with 300ms stagger */}
-          <div className="space-y-4 mb-10">
-            {(Array.isArray(lesson.learn) ? lesson.learn : [lesson.learn]).map((para, i) => (
-              <div
-                key={i}
-                className="rounded-2xl p-5 relative overflow-hidden"
-                style={{
-                  background: 'rgba(15,11,46,0.80)',
-                  border: `1px solid ${subject.color}28`,
-                  boxShadow: `0 4px 28px ${subject.color}0a`,
-                  animation: `lesson-slide-from-right-kf 0.50s cubic-bezier(0.16,1,0.3,1) ${0.05 + i * 0.30}s both`,
-                }}
-              >
-                {/* Subject icon — top right */}
-                <div
-                  className="absolute top-4 right-4 w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold flex-shrink-0"
-                  style={{ background: `${subject.color}22`, color: subject.color, letterSpacing: 0 }}
-                >
-                  {subject.label.slice(0, 2)}
-                </div>
-
-                <div className="flex gap-3 pr-8">
-                  <div
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5"
-                    style={{ background: `${subject.color}28`, color: subject.color }}
-                  >
-                    {i + 1}
-                  </div>
-                  <p className="text-white/82 leading-relaxed text-sm">{para}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="lesson-fade-in" style={{ animationDelay: `${0.12 + (Array.isArray(lesson.learn) ? lesson.learn.length : 1) * 0.11}s` }}>
-            <button
-              onClick={advance}
-              className="w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl"
-              style={{ background: subject.color }}
-            >
-              I've read this ✓
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 3 — EXPLORE                                       */}
-      {/* ══════════════════════════════════════════════════════════ */}
-      {section === 3 && (
-        <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
-          <div className="max-w-lg w-full">
-            <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
-              Explore
-            </p>
-
-            {/* Mission briefing card — animated purple border */}
-            {(() => {
-              const bullets = lesson.explore
-                .replace(/\. /g, '.\n')
-                .split(/\n+/)
-                .map(s => s.trim().replace(/\.$/, ''))
-                .filter(Boolean);
-              return (
-                <div
-                  className="rounded-2xl p-7 mb-8 lesson-zoom-in lesson-explore-glow"
-                  style={{
-                    background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
-                    border: '1px solid rgba(124,58,237,0.42)',
-                    animationDelay: '0.04s',
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-5">
-                    <div
-                      className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0"
-                      style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}
-                    >
-                      <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
-                      <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
-                    </div>
-                  </div>
-                  {bullets.length > 1 ? (
-                    <ul className="space-y-2.5">
-                      {bullets.map((bullet, i) => (
-                        <li
-                          key={i}
-                          className="flex items-start gap-2.5 text-white/75 text-sm leading-relaxed"
-                          style={{
-                            animation: `lesson-slide-from-right-kf 0.44s cubic-bezier(0.16,1,0.3,1) ${0.18 + i * 0.18}s both`,
-                            opacity: 0,
-                          }}
-                        >
-                          <span
-                            className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                            style={{ background: '#A78BFA' }}
-                          />
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-white/75 leading-relaxed text-sm">{lesson.explore}</p>
-                  )}
-                </div>
-              );
-            })()}
-
-            {/* Response area */}
-            <div className="lesson-slide-up" style={{ animationDelay: '0.32s' }}>
-              <p className="text-white/40 text-sm mb-3">Your response:</p>
-              <textarea
-                value={exploreAnswer}
-                onChange={e => setExploreAnswer(e.target.value)}
-                placeholder="Take your time with this one..."
-                rows={6}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#7C3AED]/55 focus:ring-2 focus:ring-[#7C3AED]/18 resize-none text-sm leading-relaxed transition-all"
-              />
-              <button
-                onClick={advance}
-                className="mt-5 w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl"
-                style={{ background: subject.color }}
-              >
-                {exploreAnswer.trim() ? 'Mission complete →' : 'Skip for now'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 4 — QUICK CHECK                                   */}
-      {/* ══════════════════════════════════════════════════════════ */}
-      {section === 4 && (
+      {stepType === 'quickcheck' && lesson.quickCheck && (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
           <div className="max-w-lg w-full">
             <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
               Quick Check
             </p>
 
-            {/* Big question display */}
             <div
               className="rounded-2xl p-8 mb-6 lesson-zoom-in"
               style={{
@@ -652,13 +744,15 @@ export default function LessonPlayer() {
         </div>
       )}
 
+      {/* Quick check skipped if lesson has none */}
+      {stepType === 'quickcheck' && !lesson.quickCheck && (() => { advance(); return null; })()}
+
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 5 — QUIZ                                          */}
+      {/* QUIZ (one question per screen)                            */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {section === 5 && score === null && (
+      {stepType === 'quiz' && score === null && (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
           <div className="max-w-lg w-full">
-            {/* Quiz header stays stable */}
             <div className="flex items-center justify-between mb-5">
               <p className="text-xs font-semibold text-white/30 tracking-widest uppercase">Quiz</p>
               <span className="text-white/30 text-xs tabular-nums">{quizCurrent + 1} / {lesson.quiz.length}</span>
@@ -670,9 +764,7 @@ export default function LessonPlayer() {
               />
             </div>
 
-            {/* Keyed on quizCurrent — remounts & re-animates per question */}
             <div key={quizCurrent}>
-              {/* Question slides in from top */}
               <div
                 className="rounded-2xl p-7 mb-6"
                 style={{
@@ -687,12 +779,11 @@ export default function LessonPlayer() {
                 </p>
               </div>
 
-              {/* Options slide up with stagger */}
               <div className="space-y-3">
                 {lesson.quiz[quizCurrent].options.map((opt, i) => {
-                  const isSelected = quizSelected === i;
-                  const isCorrect  = i === lesson.quiz[quizCurrent].correct;
-                  const isWrong    = i === quizWrongIdx;
+                  const isSelected  = quizSelected === i;
+                  const isCorrect   = i === lesson.quiz[quizCurrent].correct;
+                  const isWrong     = i === quizWrongIdx;
                   const showCorrect = quizSelected !== null && isCorrect && !isSelected;
                   return (
                     <OptionCard
@@ -715,16 +806,93 @@ export default function LessonPlayer() {
       )}
 
       {/* ══════════════════════════════════════════════════════════ */}
-      {/* SECTION 6 — CELEBRATION                                   */}
+      {/* EXPLORE — ACTIVITY                                        */}
       {/* ══════════════════════════════════════════════════════════ */}
-      {section === 6 && (
+      {stepType === 'explore' && (
+        <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44">
+          <div className="max-w-lg w-full">
+            <p className="text-xs font-semibold text-white/30 tracking-widest uppercase mb-8 text-center lesson-fade-in">
+              Your Mission
+            </p>
+
+            {(() => {
+              const bullets = (lesson.explore || '')
+                .replace(/\. /g, '.\n')
+                .split(/\n+/)
+                .map(s => s.trim().replace(/\.$/, ''))
+                .filter(Boolean);
+              return (
+                <div
+                  className="rounded-2xl p-7 mb-8 lesson-zoom-in lesson-explore-glow"
+                  style={{
+                    background: 'linear-gradient(145deg, rgba(124,58,237,0.12) 0%, rgba(15,11,46,0.96) 65%)',
+                    border: '1px solid rgba(124,58,237,0.42)',
+                    animationDelay: '0.04s',
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0" style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}38` }}>
+                      <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-semibold tracking-widest uppercase text-white/35 mb-0.5">Your Mission</p>
+                      <p className="text-sm font-semibold" style={{ color: guideAvatar.accent }}>{guideAvatar.name} says:</p>
+                    </div>
+                  </div>
+                  {bullets.length > 1 ? (
+                    <ul className="space-y-2.5">
+                      {bullets.map((bullet, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2.5 text-white/75 text-sm leading-relaxed"
+                          style={{
+                            animation: `lesson-slide-from-right-kf 0.44s cubic-bezier(0.16,1,0.3,1) ${0.18 + i * 0.18}s both`,
+                            opacity: 0,
+                          }}
+                        >
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#A78BFA' }} />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-white/75 leading-relaxed text-sm">{lesson.explore}</p>
+                  )}
+                </div>
+              );
+            })()}
+
+            <div className="lesson-slide-up" style={{ animationDelay: '0.32s' }}>
+              <p className="text-white/40 text-sm mb-3">Your response:</p>
+              <textarea
+                value={exploreAnswer}
+                onChange={e => setExploreAnswer(e.target.value)}
+                placeholder="Take your time with this one..."
+                rows={6}
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#7C3AED]/55 focus:ring-2 focus:ring-[#7C3AED]/18 resize-none text-sm leading-relaxed transition-all"
+              />
+              <button
+                onClick={advance}
+                className="mt-5 w-full py-4 rounded-2xl font-semibold text-white transition-all hover:scale-[1.01] hover:shadow-xl"
+                style={{ background: subject.color }}
+              >
+                {exploreAnswer.trim() ? 'Done! →' : 'Skip for now'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ══════════════════════════════════════════════════════════ */}
+      {/* BADGE — CELEBRATION                                       */}
+      {/* ══════════════════════════════════════════════════════════ */}
+      {stepType === 'badge' && (
         <div className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-44 text-center">
           {score >= passScore ? (
             <>
               <Confetti />
               <StarField />
 
-              {/* Badge drops in */}
               <div
                 className="lesson-badge-drop w-40 h-40 rounded-full flex items-center justify-center mb-7"
                 style={{
@@ -745,23 +913,14 @@ export default function LessonPlayer() {
                 <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
               </div>
 
-              <h1
-                className="text-5xl font-semibold text-white mb-2 lesson-slide-up leading-tight"
-                style={{ fontFamily: 'Georgia, serif', animationDelay: '0.55s' }}
-              >
+              <h1 className="text-5xl font-semibold text-white mb-2 lesson-slide-up leading-tight" style={{ fontFamily: 'Georgia, serif', animationDelay: '0.55s' }}>
                 You did it,<br />{name}!
               </h1>
-              <p
-                className="text-base mb-2 lesson-fade-in"
-                style={{ color: guideAvatar.accent, animationDelay: '0.72s' }}
-              >
+              <p className="text-base mb-2 lesson-fade-in" style={{ color: guideAvatar.accent, animationDelay: '0.72s' }}>
                 {guideAvatar.name} is so proud of you
               </p>
 
-              <div
-                className="flex items-center gap-2 bg-white/5 rounded-full px-5 py-2 mb-8 lesson-fade-in"
-                style={{ animationDelay: '0.88s' }}
-              >
+              <div className="flex items-center gap-2 bg-white/5 rounded-full px-5 py-2 mb-8 lesson-fade-in" style={{ animationDelay: '0.88s' }}>
                 <div className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span className="text-emerald-300 text-sm font-semibold">{score}/{lesson.quiz.length} correct</span>
               </div>
@@ -777,10 +936,7 @@ export default function LessonPlayer() {
                 </div>
               )}
 
-              <div
-                className="bg-[#0F0B2E] border border-white/8 rounded-2xl p-5 mb-8 max-w-sm w-full lesson-slide-up"
-                style={{ animationDelay: '1.05s' }}
-              >
+              <div className="bg-[#0F0B2E] border border-white/8 rounded-2xl p-5 mb-8 max-w-sm w-full lesson-slide-up" style={{ animationDelay: '1.05s' }}>
                 <p className="text-white/55 text-sm">Badge earned:</p>
                 <p className="font-bold text-lg mt-1" style={{ color: guideAvatar.accent }}>{lesson.badge}</p>
               </div>
@@ -803,32 +959,22 @@ export default function LessonPlayer() {
             </>
           ) : (
             <>
-              {/* Retry screen */}
               <div
                 className="w-28 h-28 rounded-full flex items-center justify-center mb-6 lesson-zoom-in"
                 style={{ background: `${subject.color}20`, border: `2px solid ${subject.color}40` }}
               >
-                <div
-                  className="w-20 h-20 rounded-full overflow-hidden"
-                  style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}30` }}
-                >
+                <div className="w-20 h-20 rounded-full overflow-hidden" style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}30` }}>
                   <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
                 </div>
               </div>
 
-              <h1
-                className="text-2xl font-semibold text-white mb-3 lesson-slide-up"
-                style={{ fontFamily: 'Georgia, serif', animationDelay: '0.1s' }}
-              >
+              <h1 className="text-2xl font-semibold text-white mb-3 lesson-slide-up" style={{ fontFamily: 'Georgia, serif', animationDelay: '0.1s' }}>
                 Almost there, {name}!
               </h1>
               <p className="text-white/50 mb-2 lesson-fade-in" style={{ animationDelay: '0.22s' }}>
                 You got {score}/{lesson.quiz.length} — you need {passScore} to earn the badge.
               </p>
-              <p
-                className="text-sm mb-8 lesson-fade-in"
-                style={{ color: guideAvatar.accent, animationDelay: '0.34s' }}
-              >
+              <p className="text-sm mb-8 lesson-fade-in" style={{ color: guideAvatar.accent, animationDelay: '0.34s' }}>
                 {guideAvatar.name} believes in you. Try reviewing and retaking the quiz.
               </p>
 
@@ -840,7 +986,7 @@ export default function LessonPlayer() {
                     setScore(null);
                     setQuizSelected(null);
                     setQuizWrongIdx(null);
-                    setSection(2);
+                    setStep(2); // back to first learn block
                   }}
                   className="w-full py-4 rounded-2xl font-semibold text-white text-lg mb-3 transition-all hover:scale-[1.02]"
                   style={{ background: `linear-gradient(135deg, ${subject.color}, ${subject.color}bb)` }}
@@ -859,8 +1005,16 @@ export default function LessonPlayer() {
         </div>
       )}
 
-      {/* Nova AI companion — floats bottom-right */}
-      <NovaChat child={child} lesson={lesson} subject={subject} section={section} quizCurrent={quizCurrent} guide={lesson?.guide || lesson?.avatar || subject?.guide} />
+      {/* Guide companion — floats bottom-right throughout */}
+      <NovaChat
+        child={child}
+        lesson={lesson}
+        subject={subject}
+        stepType={stepType}
+        learnBlock={currentLearnBlock}
+        quizCurrent={quizCurrent}
+        guide={lesson?.guide || lesson?.avatar || subject?.guide}
+      />
     </div>
   );
 }
