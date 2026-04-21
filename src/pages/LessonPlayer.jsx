@@ -290,7 +290,7 @@ export default function LessonPlayer() {
   // ── Karaoke highlight ─────────────────────────────────────────────────────
   const [karaokeWords, setKaraokeWords] = useState([]); // words of currently spoken text
   const [karaokeIdx,   setKaraokeIdx]  = useState(-1);  // index of active word in spoken stream
-  const karaokeRef     = useRef(null);                  // interval handle
+  const karaokeRef     = useRef([]);                    // array of scheduled timeout IDs
 
   // ── Derived step info ──────────────────────────────────────────────────────
   const isLearnStep = step >= 2 && step < 2 + N;
@@ -309,39 +309,43 @@ export default function LessonPlayer() {
   const arrivalText = (lesson?.arrival || '').replace(/\{\{name\}\}/g, name);
 
   // Fires whenever the guide starts speaking any text.
-  // Splits the spoken text into words, then advances karaokeIdx every msPerWord.
-  // KaraokeText components use karaokeWords + karaokeIdx to highlight their text.
+  // Schedules one setTimeout per word, with duration proportional to character count.
+  // Longer words get more time; minimum 150ms per word.
   const handleSpeakStart = useCallback((text, duration) => {
-    clearInterval(karaokeRef.current);
+    karaokeRef.current.forEach(id => clearTimeout(id));
+    karaokeRef.current = [];
     setKaraokeIdx(-1);
     if (!text || !duration || duration <= 0) return;
     const words = text.split(/\s+/).filter(Boolean);
     if (words.length < 2) return;
     setKaraokeWords(words);
-    const msPerWord = Math.max(60, (duration * 1000) / words.length);
-    let idx = 0;
-    setKaraokeIdx(0);
-    karaokeRef.current = setInterval(() => {
-      idx += 1;
-      if (idx >= words.length) {
-        clearInterval(karaokeRef.current);
-        // keep last word lit briefly before clearing
-        setTimeout(() => setKaraokeIdx(-1), 400);
-      } else {
-        setKaraokeIdx(idx);
-      }
-    }, msPerWord);
+
+    // avgTimePerChar distributes total audio duration across characters
+    const totalChars = words.reduce((sum, w) => sum + w.length, 0);
+    const avgTimePerChar = (duration * 1000) / totalChars; // ms per character
+
+    let cumMs = 0;
+    const ids = words.map((word, i) => {
+      const id = setTimeout(() => setKaraokeIdx(i), cumMs);
+      cumMs += Math.max(150, word.length * avgTimePerChar);
+      return id;
+    });
+    // Dim after last word finishes
+    ids.push(setTimeout(() => setKaraokeIdx(-1), cumMs + 300));
+    karaokeRef.current = ids;
   }, []);
 
   const handleSpeakEnd = useCallback(() => {
-    clearInterval(karaokeRef.current);
+    karaokeRef.current.forEach(id => clearTimeout(id));
+    karaokeRef.current = [];
     setKaraokeIdx(-1);
     setKaraokeWords([]);
   }, []);
 
   // Reset per-step transient state when step changes
   useEffect(() => {
-    clearInterval(karaokeRef.current);
+    karaokeRef.current.forEach(id => clearTimeout(id));
+    karaokeRef.current = [];
     setKaraokeIdx(-1);
     setKaraokeWords([]);
     setTfAnswered(null);
@@ -351,8 +355,8 @@ export default function LessonPlayer() {
     setQcWrong(false);
   }, [step]);
 
-  // Cleanup karaoke interval on unmount
-  useEffect(() => () => clearInterval(karaokeRef.current), []);
+  // Cleanup karaoke timeouts on unmount
+  useEffect(() => () => karaokeRef.current.forEach(id => clearTimeout(id)), []);
 
   // Generate T/F question for odd learn blocks (1, 3, 5…)
   useEffect(() => {
