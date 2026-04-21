@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 // Text label fallbacks when no image is provided (no emoji)
 const TEXT_VISUALS = {
@@ -18,17 +18,23 @@ const TEXT_VISUALS = {
 
 export default function TeachScreen({ step, childName, guideAvatar, onComplete, speaking, disabled }) {
   const [visible, setVisible] = useState(false);
+  const hasSpoken = useRef(false);
 
   useEffect(() => {
     setVisible(false);
+    hasSpoken.current = false;
     const t = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(t);
   }, [step]);
 
-  // Auto-advance 3s after speaking ends, or 6s fallback
   useEffect(() => {
-    if (!speaking) {
-      const t = setTimeout(onComplete, 3000);
+    if (speaking) hasSpoken.current = true;
+  }, [speaking]);
+
+  // Auto-advance 1.5s after audio FULLY ends
+  useEffect(() => {
+    if (!speaking && hasSpoken.current) {
+      const t = setTimeout(onComplete, 1500);
       return () => clearTimeout(t);
     }
   }, [speaking, onComplete]);
