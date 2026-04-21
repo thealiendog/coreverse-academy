@@ -698,8 +698,8 @@ export default function GameLessonPlayer() {
                 <path d="M15 3L2 13h3v14h8v-8h4v8h8V13h3L15 3z" fill="rgba(255,255,255,0.8)" />
               </svg>
             </button>
-          </div>{/* end side-by-side buttons */}
-        </div>{/* end overlay */}
+          </div>
+        </div>
       )}
     </div>
   );
