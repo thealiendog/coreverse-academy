@@ -28,7 +28,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about FEELINGS!' },
       { type: 'story',
-        guideText: 'Everyone has feelings inside. Happy, sad, angry, scared. These are the Big Four!',
+        guideText: 'You have MANY feelings inside you! But four of them are the biggest ones to learn first. Happy, sad, angry, and scared. These are called the Big Four!',
         images: [
           '/game-assets/inner-world/happy-face.png',
           '/game-assets/inner-world/sad-face.png',
@@ -98,7 +98,7 @@ export const innerworldLittleStars = [
     badge: "Big Four Expert", nextLesson: "iw-3-5-03",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Let us explore the Big Four feelings!' },
-      { type: 'story', guideText: 'There are four big feelings everyone has. Happy, sad, angry, and scared. Let us learn about each one!', image: '/game-assets/inner-world/feelings-weather.png' },
+      { type: 'story', guideText: 'There are MANY feelings inside you! But four of them are extra big and important. Happy, sad, angry, and scared. These are called the Big Four!', image: '/game-assets/inner-world/feelings-weather.png' },
       { type: 'tap-right', instruction: 'Which face is ANGRY?', guideText: 'Find the angry face!',
         items: [
           { image: '/game-assets/inner-world/happy-face.png',  label: 'Happy' },
