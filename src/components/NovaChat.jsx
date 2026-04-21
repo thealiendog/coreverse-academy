@@ -26,7 +26,7 @@ function sectionScript(lesson, section, childName) {
   const name = (childName || 'friend').split(' ')[0];
   switch (section) {
     case 0: return lesson?.arrival?.replace(/\{\{name\}\}/g, name) || '';
-    case 1: return lesson?.spark || '';
+    case 1: return lesson?.spark ? `Here's the big idea: ${lesson.spark}` : '';
     case 2: return `Here's what we're learning today. ${lesson?.learn?.[0] || ''}`;
     case 3: return lesson?.explore || '';
     case 4: return `Quick check! ${lesson?.quickCheck?.question || ''}`;
@@ -40,7 +40,7 @@ function clamp(text, max = 90) {
   return text.length > max ? text.slice(0, max - 1) + '…' : text;
 }
 
-export default function NovaChat({ child, lesson, subject, section, guide }) {
+export default function NovaChat({ child, lesson, subject, section, quizCurrent, guide }) {
   const [speaking, setSpeaking]       = useState(false);
   const [listening, setListening]     = useState(false);
   const [thinking, setThinking]       = useState(false);
@@ -185,6 +185,16 @@ export default function NovaChat({ child, lesson, subject, section, guide }) {
     const t = setTimeout(() => speak(text), 700);
     return () => clearTimeout(t);
   }, [section, lesson, child?.name, speak]);
+
+  // Read each quiz question aloud as the child reaches it
+  useEffect(() => {
+    if (section !== 5) return;
+    const q = lesson?.quiz?.[quizCurrent];
+    if (!q) return;
+    const text = `Question ${quizCurrent + 1}: ${q.question}`;
+    const t = setTimeout(() => speak(text), 700);
+    return () => clearTimeout(t);
+  }, [section, quizCurrent, lesson, speak]);
 
   useEffect(() => {
     return () => {
