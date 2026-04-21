@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../lib/storage';
-import { getSubject, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS } from '../lib/constants';
+import { getSubject, AGE_BANDS, ageToAgeBand, CORE_ACADEMICS, getAvatar } from '../lib/constants';
 import AnimalIcon from '../components/AnimalIcon';
 import { getLessons } from '../data/lessons';
 import { getLevel2Lessons } from '../data/lessons_level2';
@@ -49,9 +49,10 @@ export default function SubjectView() {
   const navigate = useNavigate();
   const child = getCurrentChild();
   const s = getSubject(subjectId);
-  // Default to child's age band; fallback to Explorers (level 2) if no child
+  const guideAvatar = getAvatar((s.guide || 'nova').toLowerCase());
+  // Age band is fixed to the child's age — not selectable
   const childBand = child ? ageToAgeBand(child.age) : AGE_BANDS[1];
-  const [level, setLevel] = useState(childBand.level);
+  const level = childBand.level;
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -108,7 +109,6 @@ export default function SubjectView() {
   const progressKey = level === 1 ? subjectId : `${subjectId}__${level}`;
   const doneLessons = progress[progressKey] || 0;
   const hasContent = lessonData.length > 0;
-  const activeBand = AGE_BANDS.find(b => b.level === level) || AGE_BANDS[1];
 
   function handleLessonClick(i) {
     if (!hasContent) return;
@@ -173,55 +173,27 @@ export default function SubjectView() {
         {/* Speech bubble */}
         <div className="flex gap-4 mb-6 bg-[#0F0B2E] rounded-2xl p-5 border border-white/8">
           <div
-            className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={{ background: s.color + '18', border: `1.5px solid ${s.color}35`, filter: `drop-shadow(0 0 6px ${s.color}30)` }}
+            className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0"
+            style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}55` }}
           >
-            <AnimalIcon subjectId={subjectId} color={s.color} size={26} />
+            <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />
           </div>
           <div>
-            <p className="text-xs font-semibold mb-1" style={{ color: s.color }}>
-              {s.guide} says:
+            <p className="text-xs font-semibold mb-1" style={{ color: guideAvatar.accent }}>
+              {guideAvatar.name} says:
             </p>
             <p className="text-white/65 text-sm leading-relaxed">{getGuideIntro(subjectId, s.label)}</p>
           </div>
         </div>
 
-        {/* Age band tabs */}
-        <div className="flex gap-1 mb-6 bg-white/4 rounded-2xl p-1">
-          {AGE_BANDS.map(band => {
-            const available = (lessonsByLevel[band.level] || []).length > 0;
-            const isActive  = level === band.level;
-            const isChildBand = band.level === childBand.level;
-            return (
-              <button
-                key={band.id}
-                onClick={() => available && setLevel(band.level)}
-                disabled={!available}
-                className={`flex-1 py-2 rounded-xl transition-all duration-200 text-center relative
-                  ${isActive
-                    ? 'bg-[#0F0B2E] text-white shadow-sm'
-                    : available
-                      ? 'text-white/35 hover:text-white/60'
-                      : 'text-white/12 cursor-not-allowed'}`}
-              >
-                <span className="block text-[9px] font-medium opacity-70 leading-tight">Ages {band.ages}</span>
-                <span className="block text-[11px] font-semibold leading-tight mt-0.5">{band.label}</span>
-                {isChildBand && !isActive && (
-                  <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-[#A78BFA]" />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Active band label */}
+        {/* Band label (read-only) */}
         <div className="flex items-center justify-between mb-4">
           <p className="text-white/30 text-xs font-semibold tracking-widest uppercase">
-            {activeBand.label} · {lessonData.length} lessons
+            {childBand.label} · Ages {childBand.ages} · {lessonData.length} lessons
           </p>
-          {childBand.level === level && (
-            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: 'rgba(167,139,250,0.12)', color: '#A78BFA' }}>
-              {child ? `${child.name}'s band` : 'Your band'}
+          {!child?.age && (
+            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: 'rgba(251,191,36,0.12)', color: '#FBBF24' }}>
+              Set age in settings
             </span>
           )}
         </div>
