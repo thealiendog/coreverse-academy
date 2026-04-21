@@ -138,26 +138,20 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
                 }
               `}</style>
               {item.image ? (
-                <div style={{
-                  width: 88,
-                  height: 88,
-                  flexShrink: 0,
-                  borderRadius: 14,
-                  overflow: 'hidden',
-                }}>
-                  <img
-                    src={item.image}
-                    alt={item.label || ''}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block',
-                      filter: isWrong ? 'brightness(0.7)' : 'none',
-                    }}
-                    draggable={false}
-                  />
-                </div>
+                <img
+                  src={item.image}
+                  alt={item.label || ''}
+                  style={{
+                    width: '100%',
+                    height: '140px',
+                    objectFit: 'cover',
+                    borderRadius: '12px',
+                    display: 'block',
+                    filter: isWrong ? 'brightness(0.7)' : 'none',
+                    flexShrink: 0,
+                  }}
+                  draggable={false}
+                />
               ) : (
                 <span style={{ fontSize: '3rem', lineHeight: 1 }}>{item.emoji}</span>
               )}
