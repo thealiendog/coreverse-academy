@@ -1,15 +1,35 @@
 import { useNavigate } from 'react-router-dom';
 import { getCurrentParent, setCurrentChild, genId } from '../lib/storage';
-import { getAvatar, getSubject, SUBJECTS } from '../lib/constants';
+import { getSubject, SUBJECTS } from '../lib/constants';
 import Button from '../components/Button';
+
+// US typical grade from age (approximate — birthday cutoffs vary)
+function ageToGrade(age) {
+  const n = parseInt(age, 10);
+  if (!n || n < 3) return '';
+  if (n <= 4) return 'Pre-K';
+  if (n === 5) return 'Kindergarten';
+  if (n === 6) return '1st Grade';
+  if (n === 7) return '2nd Grade';
+  if (n === 8) return '3rd Grade';
+  if (n === 9) return '4th Grade';
+  if (n === 10) return '5th Grade';
+  if (n === 11) return '6th Grade';
+  return '7th Grade';
+}
+
+// Deterministic color from name so each child gets a consistent color
+const INITIAL_COLORS = ['#7C3AED','#2563EB','#059669','#D97706','#DC2626','#7C3AED','#0891B2'];
+function initialColor(name = '') {
+  const code = [...name].reduce((a, c) => a + c.charCodeAt(0), 0);
+  return INITIAL_COLORS[code % INITIAL_COLORS.length];
+}
 
 function normalizeChild(c) {
   return {
     id:       c.id       || genId(),
     name:     c.name     || 'Unknown',
-    grade:    c.grade    || '',
     age:      c.age      || '',
-    avatar:   c.avatar   || 'nova',
     subjects: Array.isArray(c.subjects) ? c.subjects : [],
     progress: (c.progress && typeof c.progress === 'object' && !Array.isArray(c.progress)) ? c.progress : {},
     badges:   Array.isArray(c.badges)   ? c.badges   : [],
@@ -82,14 +102,11 @@ export default function ParentDashboard() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {children.map((rawChild, idx) => {
             const child = normalizeChild(rawChild);
-            const av = getAvatar(child.avatar);
+            const color = initialColor(child.name);
+            const initial = (child.name || '?')[0].toUpperCase();
+            const grade = ageToGrade(child.age);
             const progress = child.progress;
-            const totalLessons = (child.subjects || []).reduce((a, sid) => {
-              const s = getSubject(sid);
-              return a + (s?.lessons?.length || 3);
-            }, 0);
             const completedLessons = Object.values(progress).reduce((a,v) => a+v, 0);
-            const pct = totalLessons ? Math.round((completedLessons / totalLessons) * 100) : 0;
 
             return (
               <button
@@ -99,15 +116,16 @@ export default function ParentDashboard() {
               >
                 <div className="flex items-start gap-4 mb-5">
                   <div
-                    className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0"
-                    style={{ boxShadow: `0 0 0 2px ${av.color}60` }}
+                    className="w-14 h-14 rounded-full flex-shrink-0 flex items-center justify-center text-white text-2xl font-bold"
+                    style={{ background: color + '30', border: `2px solid ${color}60` }}
                   >
-                    <img src={av.image} alt={av.name} className="w-full h-full object-cover" />
+                    {initial}
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg leading-tight">{child.name}</h3>
-                    <p className="text-white/40 text-sm">{child.grade} · Age {child.age}</p>
-                    <p className="text-xs mt-1" style={{ color: av.accent }}>{av.name}</p>
+                    <p className="text-white/40 text-sm">
+                      {grade ? `${grade} · ` : ''}Age {child.age}
+                    </p>
                   </div>
                 </div>
 
@@ -115,12 +133,11 @@ export default function ParentDashboard() {
                 <div className="space-y-3">
                   <div className="flex justify-between text-xs text-white/40">
                     <span>{completedLessons} lessons completed</span>
-                    <span>{pct}%</span>
                   </div>
                   <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full progress-fill"
-                      style={{ width: `${pct}%`, background: av.accent }}
+                      style={{ width: `${Math.min(completedLessons * 5, 100)}%`, background: color }}
                     />
                   </div>
                 </div>

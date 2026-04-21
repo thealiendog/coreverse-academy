@@ -1,9 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getCurrentParent, addChildToParent, genId } from '../lib/storage';
-import { SUBJECTS, GRADE_LEVELS, ageToAgeBand } from '../lib/constants';
+import { SUBJECTS, ageToAgeBand } from '../lib/constants';
 import Button from '../components/Button';
 import Input from '../components/Input';
+
+function ageToGrade(age) {
+  const n = parseInt(age, 10);
+  if (!n || n < 3) return 'Pre-K';
+  if (n <= 4) return 'Pre-K';
+  if (n === 5) return 'Kindergarten';
+  if (n === 6) return '1st Grade';
+  if (n === 7) return '2nd Grade';
+  if (n === 8) return '3rd Grade';
+  if (n === 9) return '4th Grade';
+  if (n === 10) return '5th Grade';
+  if (n === 11) return '6th Grade';
+  return '7th Grade';
+}
 
 export default function AddChild() {
   const navigate = useNavigate();
@@ -12,7 +26,7 @@ export default function AddChild() {
 
   const [step, setStep] = useState(1); // 1=info, 2=subjects
   const [form, setForm] = useState({
-    name: '', age: '8', grade: 'Kindergarten', subjects: [], pin: '1234',
+    name: '', age: '8', grade: ageToGrade(8), subjects: [], pin: '1234',
   });
   const [errors, setErrors] = useState({});
 
@@ -93,7 +107,7 @@ export default function AddChild() {
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-white/70">Age</label>
-              <select value={form.age} onChange={e=>setForm(f=>({...f,age:e.target.value}))} className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#7C3AED] transition-all">
+              <select value={form.age} onChange={e=>setForm(f=>({...f,age:e.target.value,grade:ageToGrade(e.target.value)}))} className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#7C3AED] transition-all">
                 {Array.from({length:10},(_,i)=>i+3).map(a=>(
                   <option key={a} value={a} className="bg-[#0F0B2E]">{a} years old</option>
                 ))}
@@ -102,11 +116,9 @@ export default function AddChild() {
             </div>
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-white/70">Grade Level</label>
-              <select value={form.grade} onChange={e=>setForm(f=>({...f,grade:e.target.value}))} className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#7C3AED] transition-all">
-                {GRADE_LEVELS.map(g=>(
-                  <option key={g} value={g} className="bg-[#0F0B2E]">{g}</option>
-                ))}
-              </select>
+              <div className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white/60 text-sm">
+                {form.grade} <span className="text-white/25 text-xs">(auto-calculated)</span>
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-1.5">
