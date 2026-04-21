@@ -73,8 +73,33 @@ export default function YesOrNo({ step, onComplete, onWrong }) {
       {/* Yes / No buttons */}
       <div style={{ display:'flex', gap:20, width:'100%', maxWidth:380 }}>
         {[
-          { val: true,  label: 'Yes', color: '#34D399', glow: 'rgba(52,211,153,0.5)' },
-          { val: false, label: 'No',  color: '#EF4444', glow: 'rgba(239,68,68,0.5)'  },
+          {
+            val: true,
+            color: '#34D399',
+            glow: 'rgba(52,211,153,0.5)',
+            icon: (
+              <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline
+                  points="18,58 44,84 92,26"
+                  stroke="#34D399"
+                  strokeWidth="12"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            ),
+          },
+          {
+            val: false,
+            color: '#EF4444',
+            glow: 'rgba(239,68,68,0.5)',
+            icon: (
+              <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="24" y1="24" x2="86" y2="86" stroke="#EF4444" strokeWidth="12" strokeLinecap="round" />
+                <line x1="86" y1="24" x2="24" y2="86" stroke="#EF4444" strokeWidth="12" strokeLinecap="round" />
+              </svg>
+            ),
+          },
         ].map(btn => {
           const isChosen  = chosen === btn.val;
           const isCorrect = isChosen && (btn.val === step.correctAnswer);
@@ -86,31 +111,27 @@ export default function YesOrNo({ step, onComplete, onWrong }) {
               onClick={() => choose(btn.val)}
               style={{
                 flex: 1,
-                height: 130,
+                height: 160,
                 borderRadius: 24,
                 border: `3px solid ${isChosen ? btn.color : btn.color + '44'}`,
                 background: isChosen ? `${btn.color}22` : `${btn.color}0a`,
                 cursor: locked ? 'default' : 'pointer',
                 display: 'flex',
-                flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 8,
                 transition: 'all 0.25s ease',
-                boxShadow: isCorrect ? `0 0 28px ${btn.glow}` : 'none',
+                boxShadow: isCorrect ? `0 0 36px ${btn.glow}` : isChosen ? `0 0 18px ${btn.glow}` : 'none',
                 animation: isCorrect ? 'yn-correct 0.5s ease' : isWrong ? 'yn-wrong 0.5s ease' : 'none',
+                opacity: isChosen ? 1 : 0.7,
               }}
             >
-              <span style={{
-                color: isChosen ? btn.color : 'rgba(255,255,255,0.25)',
-                fontWeight: 900,
-                fontSize: 'clamp(2.2rem, 8vw, 3rem)',
-                letterSpacing: '0.04em',
-                lineHeight: 1,
-                transition: 'color 0.2s',
+              <div style={{
+                opacity: isChosen ? 1 : 0.55,
+                transition: 'opacity 0.2s',
+                filter: isChosen ? `drop-shadow(0 0 12px ${btn.color}88)` : 'none',
               }}>
-                {btn.label}
-              </span>
+                {btn.icon}
+              </div>
             </button>
           );
         })}
