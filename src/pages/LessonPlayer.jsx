@@ -243,10 +243,13 @@ export default function LessonPlayer() {
 
   // Engagement per learn block: 0=got-it · 1=emoji-reactions · 2=true-false
   const engagementTypes = useMemo(() => learnItems.map(() => Math.floor(Math.random() * 3)), []);
-  const [tfData,     setTfData]     = useState(null); // { statement, isTrue }
-  const [tfLoading,  setTfLoading]  = useState(false);
-  const [tfAnswered, setTfAnswered] = useState(null); // null | true | false (was answer correct)
-  const [tfFeedback, setTfFeedback] = useState(null); // text for guide to speak after answer
+  // Emoji set per learn block: 0=set-A (🚀🧠⚡) · 1=set-B (🔥💡🤩)
+  const reactionSets    = useMemo(() => learnItems.map(() => Math.floor(Math.random() * 2)), []);
+  const [tfData,       setTfData]      = useState(null); // { statement, isTrue }
+  const [tfLoading,    setTfLoading]   = useState(false);
+  const [tfAnswered,   setTfAnswered]  = useState(null); // null | true | false (was answer correct)
+  const [tfFeedback,   setTfFeedback]  = useState(null); // text for guide to speak after answer
+  const [tappedEmoji,  setTappedEmoji] = useState(null); // index of tapped emoji button
 
   // ── Derived step info ──────────────────────────────────────────────────────
   const isLearnStep = step >= 2 && step < 2 + N;
@@ -268,6 +271,7 @@ export default function LessonPlayer() {
   useEffect(() => {
     setTfAnswered(null);
     setTfFeedback(null);
+    setTappedEmoji(null);
     setQcSelected(null);
     setQcWrong(false);
   }, [step]);
@@ -441,24 +445,37 @@ export default function LessonPlayer() {
 
     // Emoji reactions
     if (effectiveEngType === 1) {
-      const reactions = [
-        { emoji: '🤯', label: 'Mind = Blown!' },
-        { emoji: '🤔', label: 'Hmm, interesting' },
-        { emoji: '😎', label: 'So cool!' },
+      const SETS = [
+        [{ emoji: '🚀', label: 'Wow!' }, { emoji: '🧠', label: 'Big brain!' }, { emoji: '⚡', label: 'So cool!' }],
+        [{ emoji: '🔥', label: 'Fire!'  }, { emoji: '💡', label: 'I get it!' }, { emoji: '🤩', label: 'Amazing!' }],
       ];
+      const reactions = SETS[reactionSets[learnIdx] ?? 0];
       return (
-        <div className="space-y-3">
+        <div className="space-y-4">
           <p className="text-white/35 text-xs text-center tracking-widest uppercase">How do you feel about that?</p>
-          <div className="flex gap-3 justify-center">
-            {reactions.map(r => (
+          <div className="flex gap-4 justify-center">
+            {reactions.map((r, i) => (
               <button
                 key={r.label}
-                onClick={advance}
-                className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl transition-all hover:scale-110 active:scale-95"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+                onClick={() => {
+                  setTappedEmoji(i);
+                  setTimeout(advance, 480);
+                }}
+                disabled={tappedEmoji !== null}
+                className={`flex flex-col items-center gap-2 px-5 py-4 rounded-2xl disabled:cursor-default
+                  ${tappedEmoji === i ? 'lesson-emoji-bounce' : 'hover:scale-105 active:scale-95 transition-transform'}`}
+                style={{
+                  background: tappedEmoji === i
+                    ? `rgba(124,58,237,0.22)`
+                    : 'rgba(255,255,255,0.07)',
+                  border: tappedEmoji === i
+                    ? '1px solid rgba(124,58,237,0.55)'
+                    : '1px solid rgba(255,255,255,0.14)',
+                  minWidth: 80,
+                }}
               >
-                <span style={{ fontSize: 26 }}>{r.emoji}</span>
-                <span className="text-white/50 text-[10px] font-medium whitespace-nowrap">{r.label}</span>
+                <span style={{ fontSize: 34, lineHeight: 1 }}>{r.emoji}</span>
+                <span className="text-white/60 text-xs font-semibold whitespace-nowrap">{r.label}</span>
               </button>
             ))}
           </div>
