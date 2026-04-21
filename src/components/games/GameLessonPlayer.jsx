@@ -128,9 +128,10 @@ export default function GameLessonPlayer() {
 
   const gameSequence = lesson?.gameSequence || null;
 
-  const [screenIdx, setScreenIdx] = useState(0);
-  const [speaking,  setSpeaking]  = useState(false);
-  const [bubble,    setBubble]    = useState('');
+  const [screenIdx,         setScreenIdx]         = useState(0);
+  const [speaking,          setSpeaking]          = useState(false);
+  const [bubble,            setBubble]            = useState('');
+  const [interactionLocked, setInteractionLocked] = useState(true);
 
   const audioRef    = useRef(null);
   const bubbleTimer = useRef(null);
@@ -184,11 +185,28 @@ export default function GameLessonPlayer() {
     }
   }, [childName]);
 
-  // ── Speak when screen changes ──────────────────────────────────────────────
+  // ── Build full speech text for a step ─────────────────────────────────────
+  function buildSpeechText(step) {
+    const r = t => (t || '').replace(/\{name\}/g, childName);
+    const parts = [];
+    if (step.scenario)    parts.push(r(step.scenario));
+    if (step.instruction) parts.push(r(step.instruction));
+    if (step.guideText)   parts.push(r(step.guideText));
+    if (step.type === 'yes-no') parts.push('Tap the green check for yes, or the red X for no!');
+    return parts.join(' ');
+  }
+
+  // ── Speak when screen changes, lock interaction until done ─────────────────
   useEffect(() => {
     if (!gameSequence) return;
     const step = gameSequence[screenIdx];
-    if (step?.guideText) speak(step.guideText);
+    const text = buildSpeechText(step);
+    setInteractionLocked(true);
+    if (text) {
+      speak(text, () => setInteractionLocked(false));
+    } else {
+      setInteractionLocked(false);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
@@ -222,18 +240,18 @@ export default function GameLessonPlayer() {
 
   // ── Render screen ─────────────────────────────────────────────────────────
   function renderScreen(step) {
-    const common = { step, childName, guideAvatar, onComplete: advance, speaking };
+    const common = { step, childName, guideAvatar, onComplete: advance, speaking, disabled: interactionLocked };
     switch (step.type) {
       case 'welcome':      return <WelcomeScreen     {...common} />;
       case 'story':        return <StoryScreen       {...common} />;
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onWrong={handleWrong} />;
-      case 'count':        return <CountAndTap     step={step} onComplete={advance} />;
-      case 'sort':         return <SortIntoBuckets step={step} onComplete={advance} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onWrong={handleWrong} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} />;
+      case 'count':        return <CountAndTap     step={step} onComplete={advance} disabled={interactionLocked} />;
+      case 'sort':         return <SortIntoBuckets step={step} onComplete={advance} disabled={interactionLocked} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onWrong={handleWrong} disabled={interactionLocked} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>

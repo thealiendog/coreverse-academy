@@ -24,7 +24,7 @@ function FloatingStars({ triggerKey }) {
   );
 }
 
-export default function TapTheRightOne({ step, onComplete, onWrong }) {
+export default function TapTheRightOne({ step, onComplete, onWrong, disabled }) {
   const [selected,  setSelected]  = useState(null);
   const [wrong,     setWrong]     = useState(null);
   const [starKey,   setStarKey]   = useState(null);
@@ -40,7 +40,7 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
   }, [step]);
 
   function handleTap(idx) {
-    if (locked || selected !== null) return;
+    if (locked || selected !== null || disabled) return;
     const item = items[idx];
     if (item?.correct) {
       setSelected(idx);

@@ -16,7 +16,7 @@ const TEXT_VISUALS = {
   art:     'Create something beautiful',
 };
 
-export default function TeachScreen({ step, childName, guideAvatar, onComplete, speaking }) {
+export default function TeachScreen({ step, childName, guideAvatar, onComplete, speaking, disabled }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -106,16 +106,17 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
       </div>
 
       <button
-        onClick={onComplete}
+        onClick={() => { if (!disabled) onComplete(); }}
         style={{
           background: 'rgba(255,255,255,0.07)',
-          color: 'rgba(255,255,255,0.45)',
+          color: disabled ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.45)',
           border: '1px solid rgba(255,255,255,0.12)',
           borderRadius: 100,
           padding: '8px 24px',
           fontSize: '0.85rem',
           fontWeight: 600,
-          cursor: 'pointer',
+          cursor: disabled ? 'default' : 'pointer',
+          pointerEvents: disabled ? 'none' : 'auto',
         }}
       >
         Got it →

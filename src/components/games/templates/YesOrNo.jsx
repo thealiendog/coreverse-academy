@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function YesOrNo({ step, onComplete, onWrong }) {
+export default function YesOrNo({ step, onComplete, onWrong, disabled }) {
   const [chosen,  setChosen]  = useState(null); // true=yes, false=no
   const [locked,  setLocked]  = useState(false);
 
@@ -11,7 +11,7 @@ export default function YesOrNo({ step, onComplete, onWrong }) {
   }, [step]);
 
   function choose(val) {
-    if (locked) return;
+    if (locked || disabled) return;
     setChosen(val);
     setLocked(true);
     const correct = (val === step.correctAnswer);

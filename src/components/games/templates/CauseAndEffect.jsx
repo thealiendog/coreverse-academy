@@ -42,7 +42,7 @@ const DEFAULT_CYCLES = [
   },
 ];
 
-export default function CauseAndEffect({ step, onComplete, onNarrate }) {
+export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }) {
   const cycles = step.cycles || DEFAULT_CYCLES;
 
   const [cycleIdx, setCycleIdx] = useState(0);
@@ -73,7 +73,7 @@ export default function CauseAndEffect({ step, onComplete, onNarrate }) {
   }
 
   function trigger() {
-    if (phase !== 'before') return;
+    if (phase !== 'before' || disabled) return;
     sfx.chime();
     setPhase('animating');
     setTimeout(() => {

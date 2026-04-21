@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function SortIntoBuckets({ step, onComplete }) {
+export default function SortIntoBuckets({ step, onComplete, disabled }) {
   const buckets = step.buckets || [
     { label: 'Living',     color: '#34D399' },
     { label: 'Non-living', color: '#60A5FA' },
@@ -24,7 +24,7 @@ export default function SortIntoBuckets({ step, onComplete }) {
   const currentItem = items[currentIdx];
 
   function sort(bucketIdx) {
-    if (done || !currentItem) return;
+    if (done || !currentItem || disabled) return;
     const correct = currentItem.bucket === bucketIdx;
     if (correct) {
       sfx.plop();

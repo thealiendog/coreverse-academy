@@ -5,7 +5,7 @@ import { sfx } from '../sounds';
 const DEFAULT_OBJECTS = ['A','B','C','D','E'];
 const DEFAULT_COLORS  = ['#7C3AED','#F59E0B','#10B981','#60A5FA','#F472B6'];
 
-export default function CountAndTap({ step, onComplete }) {
+export default function CountAndTap({ step, onComplete, disabled }) {
   const raw     = step.objects || DEFAULT_OBJECTS;
   const N       = raw.length;
   const isImage = typeof raw[0] === 'object' && raw[0]?.image;
@@ -22,7 +22,7 @@ export default function CountAndTap({ step, onComplete }) {
   }, [step]);
 
   function handleTap(idx) {
-    if (tapped.has(idx) || done) return;
+    if (tapped.has(idx) || done || disabled) return;
     const newTapped = new Set(tapped);
     newTapped.add(idx);
     const count = newTapped.size;

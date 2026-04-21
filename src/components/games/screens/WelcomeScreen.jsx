@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function WelcomeScreen({ step, childName, guideAvatar, onComplete }) {
+export default function WelcomeScreen({ step, childName, guideAvatar, onComplete, disabled }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -109,10 +109,10 @@ export default function WelcomeScreen({ step, childName, guideAvatar, onComplete
 
       {/* Let's go button */}
       <button
-        onClick={() => { sfx.chime(); onComplete(); }}
+        onClick={() => { if (!disabled) { sfx.chime(); onComplete(); } }}
         style={{
-          opacity: ready ? 1 : 0,
-          transform: ready ? 'scale(1)' : 'scale(0.8)',
+          opacity: ready && !disabled ? 1 : 0,
+          transform: ready && !disabled ? 'scale(1)' : 'scale(0.8)',
           transition: 'all 0.55s cubic-bezier(0.34,1.56,0.64,1) 0.38s',
           background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
           color: '#fff',
@@ -121,7 +121,7 @@ export default function WelcomeScreen({ step, childName, guideAvatar, onComplete
           padding: '18px 52px',
           fontSize: '1.35rem',
           fontWeight: 900,
-          cursor: 'pointer',
+          cursor: disabled ? 'default' : 'pointer',
           boxShadow: `0 8px 32px ${accent}66`,
           letterSpacing: '0.02em',
         }}
