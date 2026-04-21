@@ -38,7 +38,7 @@ function clamp(text, max = 90) {
   return text.length > max ? text.slice(0, max - 1) + '…' : text;
 }
 
-export default function NovaChat({ child, lesson, subject, stepType, learnBlock, quizCurrent, guide, tfStatement, tfFeedback, onFeedbackEnd }) {
+export default function NovaChat({ child, lesson, subject, stepType, learnBlock, quizCurrent, guide, tfStatement, tfFeedback, onFeedbackEnd, onSpeakStart, onSpeakEnd }) {
   const [speaking, setSpeaking]         = useState(false);
   const [listening, setListening]       = useState(false);
   const [thinking, setThinking]         = useState(false);
@@ -105,15 +105,22 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
       const { audio } = await res.json();
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
-      el.onplay  = () => setSpeaking(true);
+      el.onplay  = () => {
+        setSpeaking(true);
+        const dur = Number.isFinite(el.duration) && el.duration > 0
+          ? el.duration
+          : text.split(/\s+/).length * 0.28;
+        onSpeakStart?.(text, dur);
+      };
       el.onended = () => {
         setSpeaking(false);
         audioRef.current = null;
+        onSpeakEnd?.();
         bubbleTimer.current = setTimeout(() => setBubble(''), 3500);
         if (window.SpeechRecognition || window.webkitSpeechRecognition) showPromptBriefly();
         onComplete?.();
       };
-      el.onerror = () => { setSpeaking(false); audioRef.current = null; setBubble(''); };
+      el.onerror = () => { setSpeaking(false); audioRef.current = null; setBubble(''); onSpeakEnd?.(); };
       await el.play();
     } catch {
       if (window.speechSynthesis) {
@@ -122,15 +129,20 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
         utt.rate  = 0.88;
         utt.pitch = 1.05;
         utterRef.current = utt;
-        utt.onstart = () => setSpeaking(true);
+        utt.onstart = () => {
+          setSpeaking(true);
+          const dur = text.split(/\s+/).length * 0.28;
+          onSpeakStart?.(text, dur);
+        };
         utt.onend   = () => {
           setSpeaking(false);
           utterRef.current = null;
+          onSpeakEnd?.();
           bubbleTimer.current = setTimeout(() => setBubble(''), 3500);
           if (window.SpeechRecognition || window.webkitSpeechRecognition) showPromptBriefly();
           onComplete?.();
         };
-        utt.onerror = () => { setSpeaking(false); utterRef.current = null; };
+        utt.onerror = () => { setSpeaking(false); utterRef.current = null; onSpeakEnd?.(); };
         window.speechSynthesis.speak(utt);
       } else {
         setSpeaking(false);

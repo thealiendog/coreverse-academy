@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { getCurrentChild, getCurrentParent, updateChildProgress, awardBadge } from '../lib/storage';
 import { getAvatar, getSubject } from '../lib/constants';
@@ -250,6 +250,11 @@ export default function LessonPlayer() {
   const [tfFeedback,   setTfFeedback]  = useState(null); // text for guide to speak after answer
   const [tappedEmoji,  setTappedEmoji] = useState(null); // index of tapped emoji button
 
+  // ── Karaoke highlight ─────────────────────────────────────────────────────
+  const [karaokeIdx,   setKaraokeIdx]  = useState(-1);   // currently highlighted word index
+  const karaokeRef     = useRef(null);                   // interval handle
+  const currentLearnRef = useRef('');                    // tracks latest learn block text
+
   // ── Derived step info ──────────────────────────────────────────────────────
   const isLearnStep = step >= 2 && step < 2 + N;
   const learnIdx    = isLearnStep ? step - 2 : 0;
@@ -262,18 +267,50 @@ export default function LessonPlayer() {
                     : step === 5 + N         ? 'explore'
                     :                          'badge';
   const currentLearnBlock = isLearnStep ? learnItems[learnIdx] : '';
+  currentLearnRef.current = currentLearnBlock;
   const passScore = Math.max(2, Math.ceil((lesson?.quiz?.length || 5) * 0.6));
   const name      = child?.name || 'friend';
   const arrivalText = (lesson?.arrival || '').replace(/\{\{name\}\}/g, name);
 
+  // Karaoke: start word-by-word highlight when guide begins speaking the learn block
+  const handleSpeakStart = useCallback((text, duration) => {
+    clearInterval(karaokeRef.current);
+    setKaraokeIdx(-1);
+    if (text !== currentLearnRef.current || !text) return;
+    const words = text.split(/\s+/);
+    if (words.length < 2) return;
+    const msPerWord = Math.max(80, (duration * 1000) / words.length);
+    let idx = 0;
+    setKaraokeIdx(0);
+    karaokeRef.current = setInterval(() => {
+      idx += 1;
+      if (idx >= words.length) {
+        clearInterval(karaokeRef.current);
+        setKaraokeIdx(-1);
+      } else {
+        setKaraokeIdx(idx);
+      }
+    }, msPerWord);
+  }, []);
+
+  const handleSpeakEnd = useCallback(() => {
+    clearInterval(karaokeRef.current);
+    setKaraokeIdx(-1);
+  }, []);
+
   // Reset per-step transient state when step changes
   useEffect(() => {
+    clearInterval(karaokeRef.current);
+    setKaraokeIdx(-1);
     setTfAnswered(null);
     setTfFeedback(null);
     setTappedEmoji(null);
     setQcSelected(null);
     setQcWrong(false);
   }, [step]);
+
+  // Cleanup karaoke interval on unmount
+  useEffect(() => () => clearInterval(karaokeRef.current), []);
 
   // Generate T/F question for odd learn blocks (1, 3, 5…)
   useEffect(() => {
@@ -625,7 +662,21 @@ export default function LessonPlayer() {
                 >
                   {learnIdx + 1}
                 </div>
-                <p className="text-white/85 leading-relaxed text-sm">{currentLearnBlock}</p>
+                <p className="leading-relaxed text-sm">
+                  {currentLearnBlock.split(/\s+/).map((word, i) => (
+                    <span
+                      key={i}
+                      className={karaokeIdx === i ? 'karaoke-active' : ''}
+                      style={{ marginRight: '0.28em', display: 'inline-block',
+                        color: karaokeIdx === i ? subject.color : 'rgba(255,255,255,0.85)',
+                        fontWeight: karaokeIdx === i ? 700 : 400,
+                        transition: 'color 0.08s, font-weight 0.08s',
+                      }}
+                    >
+                      {word}
+                    </span>
+                  ))}
+                </p>
               </div>
             </div>
 
@@ -1010,6 +1061,8 @@ export default function LessonPlayer() {
         tfStatement={tfData?.statement || null}
         tfFeedback={tfFeedback}
         onFeedbackEnd={() => setTimeout(advance, 800)}
+        onSpeakStart={handleSpeakStart}
+        onSpeakEnd={handleSpeakEnd}
       />
     </div>
   );
