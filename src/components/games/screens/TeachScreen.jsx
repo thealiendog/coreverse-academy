@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const VISUALS = {
+// Emoji fallbacks when no image is provided
+const EMOJI_VISUALS = {
   clouds:  '☀️ 🌤️ ⛅ 🌧️',
   hearts:  '💛 🧡 ❤️ 💙 💚 💜',
   body:    '🧍',
@@ -32,7 +33,7 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
     }
   }, [speaking, onComplete]);
 
-  const visual = step.visual ? (VISUALS[step.visual] || step.visual) : null;
+  const emojiVisual = !step.image && step.visual ? (EMOJI_VISUALS[step.visual] || step.visual) : null;
   const text = (step.guideText || '').replace(/\{name\}/g, childName || 'friend');
 
   return (
@@ -41,13 +42,32 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
       flexDirection: 'column',
       alignItems: 'center',
       gap: 20,
-      padding: '24px 20px',
+      padding: '20px 20px',
       opacity: visible ? 1 : 0,
       transform: visible ? 'translateY(0)' : 'translateY(16px)',
       transition: 'all 0.45s ease',
     }}>
-      {/* Visual reinforcement */}
-      {visual && (
+      <style>{`@keyframes teach-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}`}</style>
+
+      {/* Midjourney image */}
+      {step.image && (
+        <img
+          src={step.image}
+          alt=""
+          style={{
+            width: '100%',
+            maxWidth: 360,
+            maxHeight: 240,
+            objectFit: 'cover',
+            borderRadius: 20,
+            animation: 'teach-pulse 3s ease-in-out infinite',
+          }}
+          draggable={false}
+        />
+      )}
+
+      {/* Emoji fallback */}
+      {emojiVisual && (
         <div style={{
           fontSize: '3rem',
           textAlign: 'center',
@@ -57,8 +77,7 @@ export default function TeachScreen({ step, childName, guideAvatar, onComplete, 
           borderRadius: 20,
           animation: 'teach-pulse 2s ease-in-out infinite',
         }}>
-          {visual}
-          <style>{`@keyframes teach-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}`}</style>
+          {emojiVisual}
         </div>
       )}
 

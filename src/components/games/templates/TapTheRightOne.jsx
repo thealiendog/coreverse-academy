@@ -133,11 +133,27 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
                   100%{transform:scale(1.06)}
                 }
               `}</style>
-              <span style={{ fontSize: '3rem', lineHeight: 1 }}>{item.emoji}</span>
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.label || ''}
+                  style={{
+                    width: 76,
+                    height: 76,
+                    objectFit: 'cover',
+                    borderRadius: 12,
+                    display: 'block',
+                    filter: isWrong ? 'brightness(0.7)' : 'none',
+                  }}
+                  draggable={false}
+                />
+              ) : (
+                <span style={{ fontSize: '3rem', lineHeight: 1 }}>{item.emoji}</span>
+              )}
               {item.label && (
                 <span style={{
                   color: isCorrect ? '#34D399' : isWrong ? '#FCA5A5' : 'rgba(255,255,255,0.8)',
-                  fontSize: '0.95rem',
+                  fontSize: '0.9rem',
                   fontWeight: 700,
                 }}>
                   {item.label}

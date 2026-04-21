@@ -1,35 +1,27 @@
 import { useEffect, useState } from 'react';
 
-// Simple emoji-based illustrations keyed by name
-const ILLUSTRATIONS = {
-  'four-faces': () => (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, justifyItems: 'center' }}>
-      {['😊 Happy', '😢 Sad', '😠 Angry', '😨 Scared'].map((f, i) => (
+// Image grid — used when step.images is an array of paths
+function ImageGrid({ images, labels }) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+      {images.map((src, i) => (
         <div key={i} style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '3.5rem', lineHeight: 1 }}>{f.split(' ')[0]}</div>
-          <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: 6, fontWeight: 700 }}>{f.split(' ')[1]}</div>
+          <img
+            src={src}
+            alt={labels?.[i] || ''}
+            style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', borderRadius: 14, display: 'block' }}
+            draggable={false}
+          />
+          {labels?.[i] && (
+            <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.85rem', fontWeight: 700, margin: '5px 0 0' }}>
+              {labels[i]}
+            </p>
+          )}
         </div>
       ))}
     </div>
-  ),
-  'clouds': () => (
-    <div style={{ textAlign: 'center' }}>
-      <div style={{ fontSize: '3rem', letterSpacing: 8 }}>☀️🌤️⛅🌧️</div>
-      <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginTop: 8 }}>Feelings change like weather!</p>
-    </div>
-  ),
-  'hearts': () => (
-    <div style={{ textAlign: 'center', fontSize: '3rem', letterSpacing: 6 }}>
-      💛 🧡 ❤️ 💙 💚 💜
-    </div>
-  ),
-  'body': () => (
-    <div style={{ textAlign: 'center', fontSize: '4rem' }}>🧍</div>
-  ),
-  'star': () => (
-    <div style={{ textAlign: 'center', fontSize: '4rem' }}>⭐</div>
-  ),
-};
+  );
+}
 
 export default function StoryScreen({ step, childName, guideAvatar, onComplete, speaking }) {
   const [visible, setVisible] = useState(false);
@@ -48,7 +40,6 @@ export default function StoryScreen({ step, childName, guideAvatar, onComplete, 
     }
   }, [speaking, onComplete]);
 
-  const Illustration = step.illustration ? ILLUSTRATIONS[step.illustration] : null;
   const text = (step.guideText || '').replace(/\{name\}/g, childName || 'friend');
 
   return (
@@ -56,23 +47,27 @@ export default function StoryScreen({ step, childName, guideAvatar, onComplete, 
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: 24,
-      padding: '20px 20px',
+      gap: 20,
+      padding: '16px 20px',
       opacity: visible ? 1 : 0,
       transform: visible ? 'translateY(0)' : 'translateY(20px)',
       transition: 'all 0.5s ease',
     }}>
-      {/* Illustration */}
-      {Illustration && (
-        <div style={{
-          background: 'rgba(255,255,255,0.05)',
-          borderRadius: 20,
-          padding: '24px 32px',
-          width: '100%',
-          maxWidth: 380,
-        }}>
-          <Illustration />
+      {/* Image grid (multiple images) */}
+      {step.images?.length > 0 && (
+        <div style={{ width: '100%', maxWidth: 360 }}>
+          <ImageGrid images={step.images} labels={step.imageLabels} />
         </div>
+      )}
+
+      {/* Single image */}
+      {!step.images && step.image && (
+        <img
+          src={step.image}
+          alt=""
+          style={{ width: '100%', maxWidth: 360, borderRadius: 20, objectFit: 'cover', maxHeight: 220 }}
+          draggable={false}
+        />
       )}
 
       {/* Story text */}

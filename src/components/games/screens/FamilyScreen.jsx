@@ -22,6 +22,16 @@ export default function FamilyScreen({ step, childName, guideAvatar, onComplete 
       transform: visible ? 'scale(1)' : 'scale(0.95)',
       transition: 'all 0.5s cubic-bezier(0.34,1.56,0.64,1)',
     }}>
+      {/* Family illustration */}
+      {step.image && (
+        <img
+          src={step.image}
+          alt=""
+          style={{ width:'100%', maxWidth:360, maxHeight:200, objectFit:'cover', borderRadius:20 }}
+          draggable={false}
+        />
+      )}
+
       {/* Family activity card */}
       <div style={{
         background: 'linear-gradient(135deg, #1a2a4a, #0d1a2e)',

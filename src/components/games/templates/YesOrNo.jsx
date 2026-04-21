@@ -38,12 +38,22 @@ export default function YesOrNo({ step, onComplete, onWrong }) {
         @keyframes yn-wrong   { 0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)} }
       `}</style>
 
-      {/* Scenario */}
+      {/* Scenario image */}
+      {step.image && (
+        <img
+          src={step.image}
+          alt=""
+          style={{ width:'100%', maxWidth:360, maxHeight:200, objectFit:'cover', borderRadius:20 }}
+          draggable={false}
+        />
+      )}
+
+      {/* Scenario text */}
       <div style={{
         background: 'rgba(255,255,255,0.06)',
         border: '1.5px solid rgba(255,255,255,0.15)',
         borderRadius: 20,
-        padding: '20px 22px',
+        padding: '16px 20px',
         maxWidth: 400,
         width: '100%',
         textAlign: 'center',
