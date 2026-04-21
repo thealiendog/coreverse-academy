@@ -28,7 +28,7 @@ function sectionScript(lesson, section, childName) {
     case 0: return lesson?.arrival?.replace(/\{\{name\}\}/g, name) || '';
     case 1: return lesson?.spark ? `Here's the big idea: ${lesson.spark}` : '';
     case 2: return `Here's what we're learning today. ${lesson?.learn?.[0] || ''}`;
-    case 3: return lesson?.explore || '';
+    case 3: return lesson?.explore ? `Here's your mission: ${lesson.explore}` : '';
     case 4: return `Quick check! ${lesson?.quickCheck?.question || ''}`;
     case 5: return ''; // quiz — child needs to focus
     case 6: return `Amazing work, ${name}! You earned the ${lesson?.badge || 'lesson'} badge. I'm so proud of you!`;
@@ -182,6 +182,14 @@ export default function NovaChat({ child, lesson, subject, section, quizCurrent,
     }
     const text = sectionScript(lesson, section, child?.name);
     if (!text) return;
+    if (section === 1) {
+      const t = setTimeout(() => speak(text, () => speak("What do you think about that? Share your ideas in the box below!")), 700);
+      return () => clearTimeout(t);
+    }
+    if (section === 3) {
+      const t = setTimeout(() => speak(text, () => speak("Write your response in the box below when you're ready.")), 700);
+      return () => clearTimeout(t);
+    }
     const t = setTimeout(() => speak(text), 700);
     return () => clearTimeout(t);
   }, [section, lesson, child?.name, speak]);
@@ -191,7 +199,8 @@ export default function NovaChat({ child, lesson, subject, section, quizCurrent,
     if (section !== 5) return;
     const q = lesson?.quiz?.[quizCurrent];
     if (!q) return;
-    const text = `Question ${quizCurrent + 1}: ${q.question}`;
+    const prefix = quizCurrent === 0 ? "Let's see what you learned! " : '';
+    const text = `${prefix}Question ${quizCurrent + 1}: ${q.question}`;
     const t = setTimeout(() => speak(text), 700);
     return () => clearTimeout(t);
   }, [section, quizCurrent, lesson, speak]);
