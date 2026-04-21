@@ -32,17 +32,29 @@ import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
 import INNERWORLD_VOYAGERS from '../data/innerworld_voyagers_adapter';
 import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
 import MATH_VOYAGERS from '../data/math_voyagers_adapter';
-import ELA_LITTLESTARS from '../data/ela_littlestars_adapter';
-import ELA_EXPLORERS from '../data/ela_explorers_adapter';
-import ELA_UPPEREXPLORERS from '../data/ela_upperexplorers_adapter';
-import ELA_VOYAGERS from '../data/ela_voyagers_adapter';
-import SCI_LITTLESTARS from '../data/sci_littlestars_adapter';
-import SCI_EXPLORERS from '../data/sci_explorers_adapter';
-import SCI_UPPEREXPLORERS from '../data/sci_upperexplorers_adapter';
-import SCI_VOYAGERS from '../data/sci_voyagers_adapter';
-import SS_EXPLORERS from '../data/ss_explorers_adapter';
-import SS_UPPEREXPLORERS from '../data/ss_upperexplorers_adapter';
-import SS_VOYAGERS from '../data/ss_voyagers_adapter';
+import ELA_LITTLESTARS               from '../data/ela_littlestars_adapter';
+import ELA_EXPLORERS                 from '../data/ela_explorers_adapter';
+import ELA_UPPEREXPLORERS            from '../data/ela_upperexplorers_adapter';
+import ELA_VOYAGERS                  from '../data/ela_voyagers_adapter';
+import SCI_LITTLESTARS               from '../data/sci_littlestars_adapter';
+import SCI_EXPLORERS                 from '../data/sci_explorers_adapter';
+import SCI_UPPEREXPLORERS            from '../data/sci_upperexplorers_adapter';
+import SCI_VOYAGERS                  from '../data/sci_voyagers_adapter';
+import SS_LITTLESTARS                from '../data/ss_littlestars_adapter';
+import SS_EXPLORERS                  from '../data/ss_explorers_adapter';
+import SS_UPPEREXPLORERS             from '../data/ss_upperexplorers_adapter';
+import SS_VOYAGERS                   from '../data/ss_voyagers_adapter';
+import INNERWORLD_LITTLESTARS        from '../data/innerworld_littlestars_adapter';
+import COSMOS_LITTLESTARS            from '../data/cosmos_littlestars_adapter';
+import MATH_LITTLESTARS              from '../data/math_littlestars_adapter';
+import MONEYBUSINESS_LITTLESTARS     from '../data/moneybusiness_littlestars_adapter';
+import FUTURESKILLS_LITTLESTARS      from '../data/futureskills_littlestars_adapter';
+import SOCIALLEADERSHIP_LITTLESTARS  from '../data/socialleadership_littlestars_adapter';
+import LIFEWELLNESS_LITTLESTARS      from '../data/lifewellness_littlestars_adapter';
+import CREATIVEARTS_LITTLESTARS      from '../data/creativearts_littlestars_adapter';
+import HISTORYWORLD_LITTLESTARS      from '../data/historyworld_littlestars_adapter';
+import SPANISH_LITTLESTARS           from '../data/spanish_littlestars_adapter';
+import FRONTIER_LITTLESTARS          from '../data/frontier_littlestars_adapter';
 
 export default function SubjectView() {
   const { subjectId } = useParams();
@@ -60,8 +72,20 @@ export default function SubjectView() {
   const academicSubject = CORE_ACADEMICS.find(a => a.id === subjectId);
 
   // Subject-specific Little Stars curricula override level 1
-  const l1Lessons = subjectId === 'ela'  ? ELA_LITTLESTARS
-    : subjectId === 'sci'                ? SCI_LITTLESTARS
+  const l1Lessons = subjectId === 'ela'          ? ELA_LITTLESTARS
+    : subjectId === 'sci'                        ? SCI_LITTLESTARS
+    : subjectId === 'ss'                         ? SS_LITTLESTARS
+    : subjectId === 'inner-world'                ? INNERWORLD_LITTLESTARS
+    : subjectId === 'cosmos'                     ? COSMOS_LITTLESTARS
+    : subjectId === 'math'                       ? MATH_LITTLESTARS
+    : subjectId === 'money'                      ? MONEYBUSINESS_LITTLESTARS
+    : subjectId === 'future-skills'              ? FUTURESKILLS_LITTLESTARS
+    : subjectId === 'leadership'                 ? SOCIALLEADERSHIP_LITTLESTARS
+    : subjectId === 'wellness'                   ? LIFEWELLNESS_LITTLESTARS
+    : subjectId === 'creative-arts'              ? CREATIVEARTS_LITTLESTARS
+    : subjectId === 'history'                    ? HISTORYWORLD_LITTLESTARS
+    : subjectId === 'languages'                  ? SPANISH_LITTLESTARS
+    : subjectId === 'frontier'                   ? FRONTIER_LITTLESTARS
     : getLessons(subjectId);
   // Subject-specific Explorers curricula override level 2
   const l2Lessons = subjectId === 'ela'          ? ELA_EXPLORERS
