@@ -282,10 +282,10 @@ export default function GameLessonPlayer() {
       setInteractionLocked(false);
       setCanAdvance(true);
       // Auto-advance after audio ends — delay gives time to absorb content.
-      if (step.type === 'story' || step.type === 'teach') {
-        setTimeout(advance, 1500);
+      if (['welcome', 'story', 'teach'].includes(step.type)) {
+        setTimeout(advance, 2000);
       }
-      // Family screen: longer pause (3s) so parents can read the activity card.
+      // Family: longer pause so parents can read the activity card.
       if (step.type === 'family') {
         setTimeout(advance, 3000);
       }
