@@ -24,7 +24,7 @@ function FloatingStars({ triggerKey }) {
   );
 }
 
-export default function TapTheRightOne({ step, onReady, onWrong, disabled, speak, onUnlock }) {
+export default function TapTheRightOne({ step, onComplete, onReady, onWrong, disabled, speak, onUnlock }) {
   const [selected,  setSelected]  = useState(null);
   const [wrong,     setWrong]     = useState(null);
   const [starKey,   setStarKey]   = useState(null);
@@ -53,8 +53,8 @@ export default function TapTheRightOne({ step, onReady, onWrong, disabled, speak
       sfx.chime();
       sfx.sparkle();
       setStarKey(Date.now());
-      // Short celebration pause, then enable the forward arrow
-      setTimeout(() => onReady?.(), 800);
+      onReady?.(); // enable forward arrow immediately
+      setTimeout(() => onComplete?.(), 1500); // auto-advance after celebration
     } else {
       setWrong(idx);
       sfx.buzz();

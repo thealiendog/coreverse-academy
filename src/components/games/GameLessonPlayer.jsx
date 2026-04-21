@@ -352,10 +352,10 @@ export default function GameLessonPlayer() {
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
-      case 'yes-no':       return <YesOrNo         step={step} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
