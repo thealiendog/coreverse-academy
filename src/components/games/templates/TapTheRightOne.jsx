@@ -77,9 +77,11 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
       <div style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gap: 14,
+        gap: 24,
         width: '100%',
         maxWidth: 380,
+        padding: '20px',
+        boxSizing: 'border-box',
       }}>
         {items.map((item, idx) => {
           const isCorrect = selected === idx;
@@ -90,7 +92,6 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
               key={idx}
               onClick={() => handleTap(idx)}
               style={{
-                height: 130,
                 borderRadius: 20,
                 border: isCorrect
                   ? '3px solid #34D399'
@@ -106,8 +107,10 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
                 gap: 8,
+                padding: '8px 8px 12px',
+                overflow: 'hidden',
                 transition: 'all 0.2s ease',
                 transform: isCorrect
                   ? 'scale(1.06)'
@@ -143,12 +146,11 @@ export default function TapTheRightOne({ step, onComplete, onWrong }) {
                   alt={item.label || ''}
                   style={{
                     width: '100%',
-                    height: '140px',
+                    height: '110px',
                     objectFit: 'cover',
                     borderRadius: '12px',
                     display: 'block',
                     filter: isWrong ? 'brightness(0.7)' : 'none',
-                    flexShrink: 0,
                   }}
                   draggable={false}
                 />
