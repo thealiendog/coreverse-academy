@@ -178,10 +178,13 @@ export default function GameLessonPlayer() {
       onDone?.();
     };
 
-    // trySpeechSynthesis — used when ElevenLabs audio is unavailable or play() blocked.
-    // Has its own 10s timeout so long sentences have time to complete.
+    // Dead-man's switch: if onended never fires (mobile Audio API quirk),
+    // force completion after 20s so the screen never gets permanently stuck.
+    // Under normal conditions onended fires well before this and clears it.
+    const deadman = setTimeout(finish, 20000);
+
     function trySpeechSynthesis() {
-      const synthTimer = setTimeout(finish, 10000);
+      const synthTimer = setTimeout(finish, 12000);
       try {
         if (!window.speechSynthesis) { clearTimeout(synthTimer); finish(); return; }
         window.speechSynthesis.cancel();
@@ -190,7 +193,6 @@ export default function GameLessonPlayer() {
         utt.onend   = () => { clearTimeout(synthTimer); finish(); };
         utt.onerror = () => { clearTimeout(synthTimer); finish(); };
         window.speechSynthesis.speak(utt);
-        // SpeechSynthesis may silently fail on iOS — synthTimer covers this
       } catch {
         clearTimeout(synthTimer);
         finish();
@@ -207,19 +209,19 @@ export default function GameLessonPlayer() {
       const { audio } = await res.json();
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
-      // onended is the ONLY way to complete when play succeeds — no fixed timer
-      el.onended = () => { audioRef.current = null; finish(); };
-      el.onerror = () => { audioRef.current = null; trySpeechSynthesis(); };
+      el.onended = () => { clearTimeout(deadman); audioRef.current = null; finish(); };
+      el.onerror = () => { clearTimeout(deadman); audioRef.current = null; trySpeechSynthesis(); };
 
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) {
-        // Autoplay blocked (iOS) — fall back to SpeechSynthesis
+        // Autoplay blocked (iOS Safari before first user gesture)
+        clearTimeout(deadman);
         audioRef.current = null;
         trySpeechSynthesis();
       }
-      // play() succeeded: onended is the gate — no safety timer needed
+      // play() succeeded: onended will fire and clear deadman — no premature timeout
     } catch {
-      // ElevenLabs network/fetch error
+      clearTimeout(deadman);
       trySpeechSynthesis();
     }
   }, [childName]);
