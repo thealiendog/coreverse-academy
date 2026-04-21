@@ -38,7 +38,7 @@ function clamp(text, max = 90) {
   return text.length > max ? text.slice(0, max - 1) + '…' : text;
 }
 
-export default function NovaChat({ child, lesson, subject, stepType, learnBlock, quizCurrent, guide }) {
+export default function NovaChat({ child, lesson, subject, stepType, learnBlock, quizCurrent, guide, tfStatement, tfFeedback, onFeedbackEnd }) {
   const [speaking, setSpeaking]         = useState(false);
   const [listening, setListening]       = useState(false);
   const [thinking, setThinking]         = useState(false);
@@ -53,6 +53,10 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
   const bubbleTimer    = useRef(null);
   const micPromptTimer = useRef(null);
   const introSpoken    = useRef(false); // fires once on mount (intro step)
+  // T/F chaining: learn block speech may finish before or after T/F is generated
+  const tfStatementRef = useRef(null);  // latest tfStatement value
+  const pendingTfRef   = useRef(false); // learn block done, waiting for T/F to arrive
+  const learnEndedRef  = useRef(false); // learn block speech has finished
   const learnContent   = (lesson?.learn || []).map((p, i) => `${i + 1}. ${p}`).join('\n');
 
   const guideId  = (guide || lesson?.guide || lesson?.avatar || 'nova').toLowerCase();
@@ -151,8 +155,27 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
   // Speak content when step changes — skip intro (handled above)
   useEffect(() => {
     if (stepType === 'intro') return;
+
+    // Reset T/F chaining state on every step change
+    tfStatementRef.current = tfStatement;
+    pendingTfRef.current   = false;
+    learnEndedRef.current  = false;
+
     const text = stepScript(lesson, stepType, learnBlock, child?.name);
     if (!text) return;
+
+    if (stepType === 'learn') {
+      // After learn block, speak T/F if available; else mark as pending
+      const t = setTimeout(() => speak(text, () => {
+        learnEndedRef.current = true;
+        if (tfStatementRef.current) {
+          speak(`Quick check! True or false: ${tfStatementRef.current}`);
+        } else {
+          pendingTfRef.current = true; // T/F not ready yet — handled in tfStatement effect
+        }
+      }), 700);
+      return () => clearTimeout(t);
+    }
 
     // Chain a follow-up prompt for reflection/response steps
     let chain = null;
@@ -162,6 +185,23 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
     const t = setTimeout(() => speak(text, chain ? () => speak(chain) : undefined), 700);
     return () => clearTimeout(t);
   }, [stepType, learnBlock, lesson, child?.name, speak]);
+
+  // When T/F statement arrives after learn block has already finished
+  useEffect(() => {
+    tfStatementRef.current = tfStatement;
+    if (!tfStatement || stepType !== 'learn') return;
+    if (pendingTfRef.current) {
+      pendingTfRef.current = false;
+      speak(`Quick check! True or false: ${tfStatement}`);
+    }
+  }, [tfStatement, stepType, speak]);
+
+  // Speak answer feedback and auto-advance via onFeedbackEnd
+  useEffect(() => {
+    if (!tfFeedback) return;
+    speak(tfFeedback, onFeedbackEnd);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tfFeedback]);
 
   // Read each quiz question aloud as the child reaches it
   useEffect(() => {

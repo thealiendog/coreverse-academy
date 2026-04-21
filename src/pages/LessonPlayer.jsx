@@ -245,7 +245,8 @@ export default function LessonPlayer() {
   const engagementTypes = useMemo(() => learnItems.map(() => Math.floor(Math.random() * 3)), []);
   const [tfData,     setTfData]     = useState(null); // { statement, isTrue }
   const [tfLoading,  setTfLoading]  = useState(false);
-  const [tfAnswered, setTfAnswered] = useState(null); // null | true | false
+  const [tfAnswered, setTfAnswered] = useState(null); // null | true | false (was answer correct)
+  const [tfFeedback, setTfFeedback] = useState(null); // text for guide to speak after answer
 
   // ── Derived step info ──────────────────────────────────────────────────────
   const isLearnStep = step >= 2 && step < 2 + N;
@@ -266,6 +267,7 @@ export default function LessonPlayer() {
   // Reset per-step transient state when step changes
   useEffect(() => {
     setTfAnswered(null);
+    setTfFeedback(null);
     setQcSelected(null);
     setQcWrong(false);
   }, [step]);
@@ -387,6 +389,14 @@ export default function LessonPlayer() {
 
     // True / False
     if (effectiveEngType === 2 && tfData) {
+      function handleTfAnswer(answeredTrue) {
+        const correct = answeredTrue === tfData.isTrue;
+        setTfAnswered(correct);
+        setTfFeedback(correct
+          ? "That's right! Nice job!"
+          : `Not quite! The answer is ${tfData.isTrue ? 'True' : 'False'}. Let's keep going!`
+        );
+      }
       return (
         <div className="space-y-4">
           <div
@@ -400,14 +410,14 @@ export default function LessonPlayer() {
           {tfAnswered === null ? (
             <div className="flex gap-3">
               <button
-                onClick={() => setTfAnswered(tfData.isTrue)}
+                onClick={() => handleTfAnswer(true)}
                 className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
                 style={{ background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.40)', color: '#6EE7B7' }}
               >
                 True ✓
               </button>
               <button
-                onClick={() => setTfAnswered(!tfData.isTrue)}
+                onClick={() => handleTfAnswer(false)}
                 className="flex-1 py-3 rounded-xl font-semibold text-sm transition-all hover:scale-[1.03] active:scale-[0.97]"
                 style={{ background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.35)', color: '#FCA5A5' }}
               >
@@ -415,22 +425,14 @@ export default function LessonPlayer() {
               </button>
             </div>
           ) : (
-            <div className="space-y-3">
-              <div
-                className="rounded-xl px-5 py-3 text-center text-sm font-semibold"
-                style={tfAnswered
-                  ? { background: 'rgba(16,185,129,0.14)', border: '1px solid #10B981', color: '#6EE7B7' }
-                  : { background: 'rgba(239,68,68,0.12)', border: '1px solid #EF4444', color: '#FCA5A5' }}
-              >
-                {tfAnswered ? '🎉 Correct!' : `Not quite — the answer is ${tfData.isTrue ? 'True' : 'False'}!`}
-              </div>
-              <button
-                onClick={advance}
-                className="w-full py-3 rounded-xl font-semibold text-white text-sm transition-all hover:scale-[1.01]"
-                style={{ background: subject.color }}
-              >
-                Continue →
-              </button>
+            // Visual feedback shown while guide speaks — auto-advances via onFeedbackEnd
+            <div
+              className="rounded-xl px-5 py-4 text-center text-sm font-semibold lesson-zoom-in"
+              style={tfAnswered
+                ? { background: 'rgba(16,185,129,0.14)', border: '1px solid #10B981', color: '#6EE7B7' }
+                : { background: 'rgba(239,68,68,0.12)', border: '1px solid #EF4444', color: '#FCA5A5' }}
+            >
+              {tfAnswered ? '🎉 Correct!' : `The answer was ${tfData.isTrue ? 'True' : 'False'}`}
             </div>
           )}
         </div>
@@ -1014,6 +1016,9 @@ export default function LessonPlayer() {
         learnBlock={currentLearnBlock}
         quizCurrent={quizCurrent}
         guide={lesson?.guide || lesson?.avatar || subject?.guide}
+        tfStatement={tfData?.statement || null}
+        tfFeedback={tfFeedback}
+        onFeedbackEnd={() => setTimeout(advance, 800)}
       />
     </div>
   );
