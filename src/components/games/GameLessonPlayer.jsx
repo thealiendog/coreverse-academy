@@ -281,10 +281,13 @@ export default function GameLessonPlayer() {
       clearTimeout(fallbackTimerRef.current);
       setInteractionLocked(false);
       setCanAdvance(true);
-      // Story and teach screens auto-advance 1.5s after audio fully ends.
-      // This fires from the real onended event — no premature advance.
+      // Auto-advance after audio ends — delay gives time to absorb content.
       if (step.type === 'story' || step.type === 'teach') {
         setTimeout(advance, 1500);
+      }
+      // Family screen: longer pause (3s) so parents can read the activity card.
+      if (step.type === 'family') {
+        setTimeout(advance, 3000);
       }
     });
 
@@ -544,19 +547,30 @@ export default function GameLessonPlayer() {
           )}
         </button>
 
-        {/* Forward arrow */}
-        <button
-          onClick={() => { if (canAdvance && !isCelebration) advance(); }}
-          style={{
-            ...navBtnBase,
-            opacity: canAdvance && !isCelebration ? 1 : 0.2,
-            pointerEvents: canAdvance && !isCelebration ? 'auto' : 'none',
-          }}
-        >
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <polygon points="8,4 24,16 8,28" fill={canAdvance && !isCelebration ? accent : 'rgba(255,255,255,0.9)'} />
-          </svg>
-        </button>
+        {/* Forward arrow — becomes home icon on celebration screen */}
+        {isCelebration ? (
+          <button
+            onClick={() => navigate('/child/dashboard')}
+            style={{ ...navBtnBase, opacity: 0.9 }}
+          >
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M16 3L2 14h3v15h8v-9h6v9h8V14h3L16 3z" fill="rgba(255,255,255,0.9)" />
+            </svg>
+          </button>
+        ) : (
+          <button
+            onClick={() => { if (canAdvance) advance(); }}
+            style={{
+              ...navBtnBase,
+              opacity: canAdvance ? 1 : 0.2,
+              pointerEvents: canAdvance ? 'auto' : 'none',
+            }}
+          >
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <polygon points="8,4 24,16 8,28" fill={canAdvance ? accent : 'rgba(255,255,255,0.9)'} />
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* ── Pause overlay ── */}

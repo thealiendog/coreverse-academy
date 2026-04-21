@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
-import { useNavigate } from 'react-router-dom';
 
 const CONFETTI_COLORS = ['#FCD34D', '#F59E0B', '#7C3AED', '#A78BFA', '#10B981', '#60A5FA', '#F472B6', '#34D399'];
 
@@ -39,17 +38,14 @@ function Confetti() {
 }
 
 export default function CelebrationScreen({ step, childName, guideAvatar }) {
-  const [phase, setPhase] = useState(0); // 0=avatar, 1=text+badge, 2=button
-  const navigate = useNavigate();
+  const [phase, setPhase] = useState(0); // 0=avatar, 1=text+badge
 
   useEffect(() => {
     sfx.fanfare();
     const t1 = setTimeout(() => setPhase(1), 700);
     const t2 = setTimeout(() => setPhase(2), 1500);
-    // Auto-navigate to dashboard after celebration plays out (no text button needed)
-    const t3 = setTimeout(() => navigate('/child/dashboard'), 5500);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, [navigate]);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, []);
 
   const badgeName = step.badge || 'Champion';
   const text = (step.guideText || `You did it, ${childName || 'friend'}!`)
