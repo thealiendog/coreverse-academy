@@ -156,6 +156,16 @@ export default function GameLessonPlayer() {
   const bubbleTimer     = useRef(null);
   const fallbackTimerRef = useRef(null);
   const speakGenRef     = useRef(0); // incremented on every speak() call; stale fetches bail out
+  const totalRef        = useRef(0); // kept in sync with gameSequence.length; read by advance()
+
+  // ── Stable advance — uses functional setScreenIdx so setTimeout closures
+  //    always read current state, not a stale render's screenIdx. ────────────
+  const advance = useCallback(() => {
+    setScreenIdx(prev => {
+      const next = prev + 1;
+      return next < totalRef.current ? next : prev;
+    });
+  }, []);
 
   // ── Speak ──────────────────────────────────────────────────────────────────
   const speak = useCallback(async (text, onDone) => {
@@ -351,11 +361,7 @@ export default function GameLessonPlayer() {
 
   const currentStep = gameSequence[screenIdx];
   const total       = gameSequence.length;
-
-  function advance() {
-    const next = screenIdx + 1;
-    if (next < total) setScreenIdx(next);
-  }
+  totalRef.current  = total; // keep ref in sync on every render for advance()
 
   function goBack() {
     if (screenIdx > 0) setScreenIdx(screenIdx - 1);
