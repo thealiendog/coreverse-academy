@@ -394,11 +394,17 @@ export default function GameLessonPlayer() {
       }
     };
 
-    // Set the top-level fallback timer.
-    const fallbackMs = AUTO_FALLBACK_MS[step.type] || 20000;
-    fallbackTimerRef.current = isAuto
-      ? setTimeout(doAdvance, fallbackMs)
-      : setTimeout(() => { if (!cancelled) { setReadingIdx(-1); setInteractionLocked(false); } }, fallbackMs);
+    // For game screens: set a short fallback so the screen unlocks even if speech fails.
+    // For auto-advance screens: NO fallback timer — speak()'s internal 20s deadman already
+    // guarantees onIntroDone fires. A competing timer racing against a long ElevenLabs
+    // clip was the root cause of mid-sentence cutoffs: the timer fires, doAdvance() runs,
+    // the new screen's speak() pauses the still-playing audio element.
+    if (!isAuto) {
+      const fallbackMs = AUTO_FALLBACK_MS[step.type] || 20000;
+      fallbackTimerRef.current = setTimeout(() => {
+        if (!cancelled) { setReadingIdx(-1); setInteractionLocked(false); }
+      }, fallbackMs);
+    }
 
     // Called once the intro speech finishes (or immediately if no text).
     const onIntroDone = () => {
