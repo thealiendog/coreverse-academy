@@ -299,10 +299,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'You are loved just because you are YOU. Not because of anything you do.', image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What does love feel like?', guideText: 'What does love feel like inside?',
         items: [
-          { image: '/game-assets/inner-world/glowing-heart.png', label: 'Warm and safe', correct: true },
+          { image: '/game-assets/inner-world/glowing-heart.png', label: 'Warm and safe',  correct: true },
           { image: '/game-assets/inner-world/angry-face.png',    label: 'Hot and angry' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'Cold and shaky' },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'Heavy and dark' },
+          { image: '/game-assets/inner-world/cold-shaky.png',    label: 'Cold and shaky' },
+          { image: '/game-assets/inner-world/heavy-dark.png',    label: 'Heavy and dark' },
         ]
       },
       { type: 'family', guideText: 'Tell every person in your family one thing you love about them tonight!', image: '/game-assets/inner-world/family-circle.png' },
