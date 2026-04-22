@@ -1,32 +1,36 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import KaraokeText from '../KaraokeText';
 
 // Fully automatic guided breathing exercise — no tapping required.
 //
 // Flow (per cycle):
 //   onNarrate("Breathe in!") + balloon grows over 3s
-//   → 1s hold
+//   → 4s total (grow + 1s hold) → next phase
 //   → onNarrate("Breathe out!") + balloon shrinks over 3s
-//   → 1s hold
-//   → next cycle (repeat)
+//   → 4s total (shrink + 1s hold) → next cycle
 //
 // After all cycles: onNarrate(finalMessage, onComplete) — advance when speech ends
 //
-// The sequence starts automatically when `disabled` goes false
-// (i.e., GameLessonPlayer has finished speaking the intro guideText).
+// Pause/resume: isPaused prop cancels the current pending timer and saves its
+// remaining time. On resume, the timer is recreated with the saved time.
+// The audio element is paused/resumed by GameLessonPlayer independently.
+// CSS transitions freeze naturally (no new setScale calls while paused).
 
-const GROW_MS  = 3000; // balloon expand duration (matches CSS transition)
+const GROW_MS   = 3000; // balloon expand duration (matches CSS transition)
 const SHRINK_MS = 3000; // balloon shrink duration
 const HOLD_MS   = 1000; // pause between phases
 
-export default function CauseAndEffect({ step, onComplete, onNarrate, disabled, karaokeWords = [], karaokeIdx = -1 }) {
-  const cycles     = step.cycles || [];
-  const finalMsg   = step.finalMessage || 'Great job! You feel so calm!';
-  const hasImage   = !!step.image;
+export default function CauseAndEffect({ step, onComplete, onNarrate, disabled, isPaused = false, karaokeWords = [], karaokeIdx = -1 }) {
+  const cycles   = step.cycles || [];
+  const finalMsg = step.finalMessage || 'Great job! You feel so calm!';
+  const hasImage = !!step.image;
 
   const [scale,   setScale]   = useState(0.85);
   const [label,   setLabel]   = useState('');
   const [isDone,  setIsDone]  = useState(false);
+
+  const cancelledRef    = useRef(false);
+  const pendingTimerRef = useRef(null); // { id, fn, startedAt, ms } — current scheduled phase timer
 
   // Reset when step changes (new screen).
   useEffect(() => {
@@ -35,50 +39,102 @@ export default function CauseAndEffect({ step, onComplete, onNarrate, disabled, 
     setIsDone(false);
   }, [step]);
 
+  // Pause / resume the internal timer chain.
+  // When isPaused becomes true: cancel the pending timer, save remaining time.
+  // When isPaused becomes false: restore the timer with the saved remaining time.
+  useEffect(() => {
+    if (isPaused) {
+      if (pendingTimerRef.current?.id != null) {
+        clearTimeout(pendingTimerRef.current.id);
+        const elapsed   = Date.now() - pendingTimerRef.current.startedAt;
+        const remaining = Math.max(0, pendingTimerRef.current.ms - elapsed);
+        pendingTimerRef.current = { ...pendingTimerRef.current, id: null, remaining };
+      }
+    } else {
+      // Restore timer if one was saved on pause (id === null is the sentinel).
+      const saved = pendingTimerRef.current;
+      if (saved && saved.id === null && saved.remaining !== undefined) {
+        const ms        = saved.remaining;
+        const fn        = saved.fn;
+        const startedAt = Date.now();
+        const id        = setTimeout(() => {
+          if (cancelledRef.current) return;
+          pendingTimerRef.current = null;
+          fn();
+        }, ms);
+        pendingTimerRef.current = { id, fn, startedAt, ms };
+      }
+    }
+  }, [isPaused]);
+
   // Start the automatic sequence once the intro speech finishes (disabled → false).
   useEffect(() => {
     if (disabled) return;
     if (!cycles.length) { onComplete?.(); return; }
 
-    let cancelled = false;
-    const timers  = [];
-    const after   = (ms, fn) => { const t = setTimeout(() => { if (!cancelled) fn(); }, ms); timers.push(t); };
+    cancelledRef.current = false;
 
-    let t = 0;
+    // Schedule a phase timer and track it for pause/resume.
+    function schedulePhase(fn, ms) {
+      if (cancelledRef.current) return;
+      const startedAt = Date.now();
+      const id = setTimeout(() => {
+        if (cancelledRef.current) return;
+        pendingTimerRef.current = null;
+        fn();
+      }, ms);
+      pendingTimerRef.current = { id, fn, startedAt, ms };
+    }
 
-    cycles.forEach(cycle => {
+    // Build sequential phase list — each phase fires after the previous one completes.
+    // Phase delays are relative (each delay starts counting when the previous phase fires).
+    let phaseIdx = 0;
+    const phases = [];
+
+    for (let i = 0; i < cycles.length; i++) {
+      const cycle   = cycles[i];
       const inText  = cycle.in  || 'Breathe in!';
       const outText = cycle.out || 'Breathe out!';
 
-      // ── Breathe IN ──────────────────────────────────────────────
-      after(t, () => {
-        setScale(1.3);
-        setLabel(inText);
-        onNarrate?.(inText);
+      // Breathe IN: delay=0 for first cycle; SHRINK+HOLD for subsequent cycles
+      // (delay from the previous breathe-out phase completing).
+      phases.push({
+        delay:  i === 0 ? 0 : (SHRINK_MS + HOLD_MS),
+        action: () => { setScale(1.3); setLabel(inText);  onNarrate?.(inText);  },
       });
-      t += GROW_MS + HOLD_MS; // grow finishes + 1s hold
 
-      // ── Breathe OUT ─────────────────────────────────────────────
-      after(t, () => {
-        setScale(0.65);
-        setLabel(outText);
-        onNarrate?.(outText);
+      // Breathe OUT: GROW+HOLD delay after breathe-in fires.
+      phases.push({
+        delay:  GROW_MS + HOLD_MS,
+        action: () => { setScale(0.65); setLabel(outText); onNarrate?.(outText); },
       });
-      t += SHRINK_MS + HOLD_MS; // shrink finishes + 1s hold
+    }
+
+    // Final phase: closing message — advance only when speech ends via callback.
+    phases.push({
+      delay:  SHRINK_MS + HOLD_MS,
+      action: () => { setScale(0.9); setLabel(finalMsg); setIsDone(true); onNarrate?.(finalMsg, onComplete); },
     });
 
-    // ── Finished ────────────────────────────────────────────────
-    after(t, () => {
-      setScale(0.9);
-      setLabel(finalMsg);
-      setIsDone(true);
-      // Pass onComplete as the speech callback so the screen advances only
-      // when the closing line has fully finished playing — not after a fixed
-      // timer that races against ElevenLabs fetch latency + audio duration.
-      onNarrate?.(finalMsg, onComplete);
-    });
+    function runNext() {
+      if (cancelledRef.current) return;
+      if (phaseIdx >= phases.length) return;
+      const phase = phases[phaseIdx++];
+      schedulePhase(() => {
+        phase.action();
+        runNext(); // schedule the next phase after this one fires
+      }, phase.delay);
+    }
 
-    return () => { cancelled = true; timers.forEach(clearTimeout); };
+    runNext();
+
+    return () => {
+      cancelledRef.current = true;
+      if (pendingTimerRef.current?.id != null) {
+        clearTimeout(pendingTimerRef.current.id);
+      }
+      pendingTimerRef.current = null;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [disabled]);
 

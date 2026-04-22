@@ -183,6 +183,9 @@ export default function GameLessonPlayer() {
   const lastSpokenText           = useRef('');
   const karaokeRef               = useRef([]); // scheduled karaoke timeout IDs
   const blobUrlRef               = useRef(null); // active blob URL — revoked only when replaced or component unmounts
+  const isPausedRef              = useRef(false); // closure-accessible mirror of isPaused — read inside callbacks where state is stale
+  const pendingOnDoneRef         = useRef(null);  // onDone deferred if finish() fires while paused
+  const timerInfoRef             = useRef(null);  // { fn, ms, startedAt } tracks fallbackTimerRef for pause/resume
 
   // ── Stable advance — uses functional setScreenIdx so setTimeout closures
   //    always read current state, not a stale render's screenIdx. ────────────
@@ -245,7 +248,12 @@ export default function GameLessonPlayer() {
       console.log(`[audio ${ts()}] FINISH reason=${reason} gen=${gen}`);
       setSpeaking(false);
       bubbleTimer.current = setTimeout(() => setBubble(''), 3000);
-      onDone?.();
+      if (isPausedRef.current) {
+        // Paused — defer onDone so auto-advance can't fire while frozen.
+        pendingOnDoneRef.current = onDone;
+      } else {
+        onDone?.();
+      }
     };
 
     // Dead-man's switch: if onended never fires (mobile Audio API quirk),
@@ -511,13 +519,27 @@ export default function GameLessonPlayer() {
 
     let cancelled  = false;
     let advanceDone = false;
-    clearTimeout(fallbackTimerRef.current);
+    clearTimeout(fallbackTimerRef.current); timerInfoRef.current = null;
+
+    // Helper: set fallbackTimerRef AND record timing info so handlePause can
+    // cancel + restore it with the correct remaining time.
+    const setFallbackTimer = (fn, ms) => {
+      clearTimeout(fallbackTimerRef.current);
+      timerInfoRef.current  = { fn, ms, startedAt: Date.now() };
+      fallbackTimerRef.current = setTimeout(fn, ms);
+    };
+    const clearFallbackTimer = () => {
+      clearTimeout(fallbackTimerRef.current);
+      fallbackTimerRef.current = null;
+      timerInfoRef.current = null;
+    };
 
     // Idempotent advance — whichever of primary/fallback fires first wins.
+    // Gated on !isPausedRef.current so a restored timer can't fire mid-pause.
     const doAdvance = () => {
-      if (advanceDone || cancelled) return;
+      if (advanceDone || cancelled || isPausedRef.current) return;
       advanceDone = true;
-      clearTimeout(fallbackTimerRef.current);
+      clearFallbackTimer();
       if (!cancelled) {
         setInteractionLocked(false);
         setScreenIdx(prev => Math.min(prev + 1, gameSequence.length - 1));
@@ -531,7 +553,7 @@ export default function GameLessonPlayer() {
     // the new screen's speak() pauses the still-playing audio element.
     if (!isAuto) {
       const fallbackMs = AUTO_FALLBACK_MS[step.type] || 20000;
-      fallbackTimerRef.current = setTimeout(() => {
+      setFallbackTimer(() => {
         if (!cancelled) { setReadingIdx(-1); setInteractionLocked(false); }
       }, fallbackMs);
     }
@@ -548,7 +570,7 @@ export default function GameLessonPlayer() {
         function readOption() {
           if (cancelled) return;
           if (idx >= items.length) {
-            clearTimeout(fallbackTimerRef.current);
+            clearFallbackTimer();
             setReadingIdx(-1);
             setInteractionLocked(false);
             return;
@@ -562,11 +584,11 @@ export default function GameLessonPlayer() {
       } else if (isAuto) {
         // Speech finished naturally — wait 2s then advance.
         setInteractionLocked(false);
-        clearTimeout(fallbackTimerRef.current);
-        fallbackTimerRef.current = setTimeout(doAdvance, 2000);
+        clearFallbackTimer();
+        setFallbackTimer(doAdvance, 2000);
       } else {
         // Other game types (no readOptions) and celebration — just unlock.
-        clearTimeout(fallbackTimerRef.current);
+        clearFallbackTimer();
         setInteractionLocked(false);
       }
     };
@@ -579,7 +601,7 @@ export default function GameLessonPlayer() {
 
     return () => {
       cancelled = true;
-      clearTimeout(fallbackTimerRef.current);
+      clearFallbackTimer();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
@@ -664,13 +686,44 @@ export default function GameLessonPlayer() {
 
   function handlePause() {
     if (!isPaused) {
-      // Pause audio
-      if (persistentAudioRef.current) persistentAudioRef.current.pause();
+      // ── PAUSE ─────────────────────────────────────────────────────────────
+      isPausedRef.current = true;   // set before state so closures see it immediately
+      setIsPaused(true);
+
+      // Stop audio immediately — onended won't fire so auto-advance stays frozen.
+      persistentAudioRef.current?.pause();
+
+      // Cancel any pending advance/unlock timer; record remaining time for resume.
+      if (fallbackTimerRef.current && timerInfoRef.current) {
+        clearTimeout(fallbackTimerRef.current);
+        fallbackTimerRef.current = null;
+        const elapsed = Date.now() - timerInfoRef.current.startedAt;
+        timerInfoRef.current = {
+          ...timerInfoRef.current,
+          remaining: Math.max(0, timerInfoRef.current.ms - elapsed),
+        };
+      }
     } else {
-      // Resume audio
-      if (persistentAudioRef.current) persistentAudioRef.current.play().catch(() => {});
+      // ── RESUME ────────────────────────────────────────────────────────────
+      isPausedRef.current = false;  // clear before anything fires so callbacks aren't re-deferred
+      setIsPaused(false);
+
+      // Resume audio from where it paused — onended will fire normally.
+      persistentAudioRef.current?.play().catch(() => {});
+
+      // Restore any advance/unlock timer that was cancelled on pause.
+      if (timerInfoRef.current?.remaining !== undefined) {
+        const { fn, remaining } = timerInfoRef.current;
+        timerInfoRef.current = null;
+        fallbackTimerRef.current = setTimeout(fn, remaining);
+      }
+
+      // Fire any onDone that finish() deferred while paused (e.g. if audio ended
+      // for a non-playback reason like PLAY_BLOCKED or fetch-error while paused).
+      const deferred = pendingOnDoneRef.current;
+      pendingOnDoneRef.current = null;
+      deferred?.();
     }
-    setIsPaused(p => !p);
   }
 
   // ── Render screen ─────────────────────────────────────────────────────────
@@ -682,11 +735,11 @@ export default function GameLessonPlayer() {
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} readingIdx={readingIdx} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
-      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
-      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} readingIdx={readingIdx} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} isPaused={isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
@@ -771,7 +824,7 @@ export default function GameLessonPlayer() {
       }}>
         {/* Avatar — tap to replay audio */}
         <div
-          onClick={() => speak(buildReplayText(currentStep))}
+          onClick={() => { if (!isPaused) speak(buildReplayText(currentStep)); }}
           style={{
             position: 'relative',
             width: 80,
@@ -896,8 +949,8 @@ export default function GameLessonPlayer() {
               onClick={goBack}
               style={{
                 ...navBtnBase,
-                opacity: screenIdx > 0 ? 0.75 : 0.2,
-                pointerEvents: screenIdx > 0 ? 'auto' : 'none',
+                opacity: (screenIdx > 0 && !isPaused) ? 0.75 : 0.2,
+                pointerEvents: (screenIdx > 0 && !isPaused) ? 'auto' : 'none',
               }}
             >
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -921,11 +974,11 @@ export default function GameLessonPlayer() {
 
             {/* Forward arrow */}
             <button
-              onClick={() => { if (canAdvance) advance(); }}
+              onClick={() => { if (canAdvance && !isPaused) advance(); }}
               style={{
                 ...navBtnBase,
-                opacity: canAdvance ? 1 : 0.2,
-                pointerEvents: canAdvance ? 'auto' : 'none',
+                opacity: (canAdvance && !isPaused) ? 1 : 0.2,
+                pointerEvents: (canAdvance && !isPaused) ? 'auto' : 'none',
               }}
             >
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
