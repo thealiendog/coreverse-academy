@@ -252,8 +252,17 @@ export default function GameLessonPlayer() {
 
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
+      let playStarted = false;
       el.onended = () => { clearTimeout(deadman); audioRef.current = null; finish(); };
-      el.onerror = () => { clearTimeout(deadman); audioRef.current = null; trySpeechSynthesis(); };
+      // Only fall back to speech synthesis if ElevenLabs never started playing.
+      // If playStarted=true, onerror is a mid-stream glitch — just finish() cleanly
+      // rather than layering speech synthesis on top of a partially-playing audio.
+      el.onerror = () => {
+        clearTimeout(deadman);
+        audioRef.current = null;
+        if (playStarted) finish();
+        else trySpeechSynthesis();
+      };
 
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) {
@@ -261,6 +270,8 @@ export default function GameLessonPlayer() {
         clearTimeout(deadman);
         audioRef.current = null;
         trySpeechSynthesis();
+      } else {
+        playStarted = true; // ElevenLabs audio is now playing — no speech synthesis fallback
       }
       // play() succeeded: onended will fire and clear deadman — no premature timeout
     } catch {

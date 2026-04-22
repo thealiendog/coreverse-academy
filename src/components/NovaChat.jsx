@@ -107,6 +107,7 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
       const { audio } = await res.json();
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
+      let playStarted = false;
       let cachedDur = null;
       el.onloadedmetadata = () => { cachedDur = el.duration; };
       el.onplay  = () => {
@@ -126,8 +127,17 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
         if (window.SpeechRecognition || window.webkitSpeechRecognition) showPromptBriefly();
         onComplete?.();
       };
-      el.onerror = () => { setSpeaking(false); audioRef.current = null; setBubble(''); onSpeakEnd?.(); };
+      // Only fall back to speech synthesis if ElevenLabs never started — mid-stream
+      // errors should not trigger a second voice on top of playing audio.
+      el.onerror = () => {
+        setSpeaking(false);
+        audioRef.current = null;
+        setBubble('');
+        onSpeakEnd?.();
+        if (!playStarted) throw new Error('audio-error'); // re-enter catch → speech synthesis
+      };
       await el.play();
+      playStarted = true;
     } catch {
       if (window.speechSynthesis) {
         window.speechSynthesis.cancel();
