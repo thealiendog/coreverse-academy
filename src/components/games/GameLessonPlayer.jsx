@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getCurrentChild } from '../../lib/storage';
+import { getCurrentChild, getCurrentParent, updateChildProgress } from '../../lib/storage';
 import { getAvatar } from '../../lib/constants';
 
 // Screen types
@@ -313,6 +313,14 @@ export default function GameLessonPlayer() {
     const text   = buildSpeechText(step);
     const isGame = GAME_TYPES.has(step.type);
     const isAuto = AUTO_ADVANCE_TYPES.has(step.type);
+
+    // Save lesson completion when the celebration screen is reached.
+    if (step.type === 'celebration') {
+      const parent = getCurrentParent();
+      if (parent && child) {
+        updateChildProgress(parent.id, child.id, subjectId, idx);
+      }
+    }
 
     setInteractionLocked(true);
     setCanAdvance(!isGame); // game screens: arrow disabled until template calls onReady
