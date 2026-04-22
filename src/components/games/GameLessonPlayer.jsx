@@ -173,8 +173,11 @@ export default function GameLessonPlayer() {
     // before any audio or fetch is started.
     const now = Date.now();
     if (text === lastSpokenText.current && now - lastSpeakTime.current < 3000) {
-      console.log('[speak] BLOCKED duplicate:', text.slice(0, 60));
-      return; // don't call onDone — the original invocation's onDone owns the flow
+      // Duplicate detected — skip the audio but still call onDone so the screen
+      // can advance. This handles StrictMode double-invoke, back/forward within
+      // 3s, and any other re-entry that would produce double audio.
+      onDone?.();
+      return;
     }
     lastSpokenText.current = text;
     lastSpeakTime.current  = now;
@@ -235,7 +238,8 @@ export default function GameLessonPlayer() {
       const { audio } = await res.json();
 
       // Bail out if a newer speak() call has already started — discard this audio.
-      if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
+      // Still call onDone so the screen isn't left waiting with no callback.
+      if (gen !== speakGenRef.current) { clearTimeout(deadman); onDone?.(); return; }
 
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
