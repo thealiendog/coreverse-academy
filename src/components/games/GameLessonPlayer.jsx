@@ -268,38 +268,37 @@ export default function GameLessonPlayer() {
     }
   }, [childName]);
 
-  // ── Build full speech text for a step ─────────────────────────────────────
+  // ── Build speech text — ONE field spoken per screen type ─────────────────
+  //
+  //   welcome / story / teach / family / cause-effect → guideText only
+  //   tap-right / count / sort                        → instruction only
+  //   yes-no                                          → scenario + tap cue
+  //   celebration                                     → "You did it!" + guideText
+  //
+  // This is the only place TTS text is assembled. Never concatenate multiple
+  // fields — that is what caused the double-speech bug.
   function buildSpeechText(step) {
     const r = t => (t || '').replace(/\{name\}/g, childName);
-    if (step.type === 'celebration') {
-      const guide = r(step.guideText);
-      return guide ? `You did it, ${childName}! Amazing job! ${guide}` : `You did it, ${childName}! Amazing job!`;
+    switch (step.type) {
+      case 'celebration':
+        return r(step.guideText)
+          ? `You did it, ${childName}! Amazing job! ${r(step.guideText)}`
+          : `You did it, ${childName}! Amazing job!`;
+      case 'yes-no':
+        return [r(step.scenario), 'Tap the green check for yes, or the red X for no!']
+          .filter(Boolean).join(' ');
+      case 'tap-right':
+      case 'count':
+      case 'sort':
+        return r(step.instruction);
+      default:
+        // welcome, story, teach, family, cause-effect — guideText only
+        return r(step.guideText);
     }
-    const parts = [];
-    if (step.scenario)    parts.push(r(step.scenario));
-    if (step.instruction) parts.push(r(step.instruction));
-    if (step.guideText)   parts.push(r(step.guideText));
-    if (step.type === 'yes-no') parts.push('Tap the green check for yes, or the red X for no!');
-    // Cause-and-effect: only include the guideText — the template narrates each
-    // breath cycle at the correct moment via onNarrate, so we don't prepend any
-    // cycle text here (timing would be wrong: this speech plays before the animation).
-    return parts.join(' ');
   }
 
-  // ── Replay text when child taps the avatar ────────────────────────────────
-  // For game-type steps, replay ONLY what the template originally spoke
-  // (scenario for yes-no, instruction for tap-right/count/sort) — never
-  // include guideText which would duplicate speech the template already gave.
+  // ── Replay text (avatar tap) — same one-field rule ────────────────────────
   function buildReplayText(step) {
-    const r = t => (t || '').replace(/\{name\}/g, childName);
-    if (step.type === 'yes-no') {
-      return [r(step.scenario), 'Tap the green check for yes, or the red X for no.'].filter(Boolean).join(' ');
-    }
-    if (GAME_TYPES.has(step.type)) {
-      // tap-right, count, sort, cause-effect
-      return [r(step.instruction), r(step.guideText)].filter(Boolean).join('. ');
-    }
-    // Non-game screens: full text is fine
     return buildSpeechText(step);
   }
 
