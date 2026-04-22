@@ -358,7 +358,7 @@ export const innerworldLittleStars = [
       { type: 'story', guideText: 'Being brave does not mean you are not scared. Being brave means you TRY even when you feel scared.', image: '/game-assets/inner-world/bravery-slide.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What is being brave?', guideText: 'What does brave mean?',
         items: [
-          { image: '/game-assets/inner-world/bravery-slide.png',        label: 'Trying when scared', correct: true },
+          { image: '/game-assets/inner-world/brave-step-forward.png',       label: 'Trying when scared', correct: true },
           { image: '/game-assets/inner-world/brave-invincible-shield.png', label: 'Never being scared' },
           { image: '/game-assets/inner-world/running-away.png',            label: 'Running away' },
           { image: '/game-assets/inner-world/brave-tears-puddle.png',      label: 'Crying a lot' },
@@ -369,10 +369,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'You have been brave many times already. Think of all the new things you have tried!', image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'tap-right', readOptions: true, instruction: 'Which is an example of being brave?', guideText: 'Which shows bravery?',
         items: [
-          { image: '/game-assets/inner-world/bravery-slide.png', label: 'Trying the slide', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Pushing someone' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'Hiding forever' },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'Giving up' },
+          { image: '/game-assets/inner-world/brave-slide-try.png',  label: 'Trying the slide', correct: true },
+          { image: '/game-assets/inner-world/brave-pushing.png',  label: 'Pushing someone' },
+          { image: '/game-assets/inner-world/brave-hiding.png',   label: 'Hiding forever' },
+          { image: '/game-assets/inner-world/brave-giving-up.png', label: 'Giving up' },
         ]
       },
       { type: 'family', guideText: 'Tell your family about one brave thing you did this week!', image: '/game-assets/inner-world/family-circle.png' },
