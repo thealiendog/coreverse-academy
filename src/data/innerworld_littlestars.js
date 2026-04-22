@@ -204,10 +204,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Three deep breaths can change everything. In through your nose, out through your mouth.', image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What does deep breathing do?', guideText: 'What does deep breathing do?',
         items: [
-          { image: '/game-assets/inner-world/breathing-balloon.png', label: 'Calms you down', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',        label: 'Makes you angry' },
-          { image: '/game-assets/inner-world/scared-face.png',       label: 'Makes you scared' },
-          { image: '/game-assets/inner-world/sad-face.png',          label: 'Makes you sad' },
+          { image: '/game-assets/inner-world/breathing-balloon.png', label: 'Calms you down',   correct: true },
+          { image: '/game-assets/inner-world/breath-angry.png',     label: 'Makes you angry' },
+          { image: '/game-assets/inner-world/breath-scared.png',    label: 'Makes you scared' },
+          { image: '/game-assets/inner-world/breath-sad.png',       label: 'Makes you sad' },
         ]
       },
       { type: 'family', guideText: 'Practice three big belly breaths together before bedtime tonight!', image: '/game-assets/inner-world/family-circle.png' },
@@ -299,10 +299,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'You are loved just because you are YOU. Not because of anything you do.', image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What does love feel like?', guideText: 'What does love feel like inside?',
         items: [
-          { image: '/game-assets/inner-world/glowing-heart.png', label: 'Warm and safe',  correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Hot and angry' },
-          { image: '/game-assets/inner-world/cold-shaky.png',    label: 'Cold and shaky' },
-          { image: '/game-assets/inner-world/heavy-dark.png',    label: 'Heavy and dark' },
+          { image: '/game-assets/inner-world/glowing-heart.png',  label: 'Warm and safe',  correct: true },
+          { image: '/game-assets/inner-world/love-hot-angry.png', label: 'Hot and angry' },
+          { image: '/game-assets/inner-world/cold-shaky.png',     label: 'Cold and shaky' },
+          { image: '/game-assets/inner-world/heavy-dark.png',     label: 'Heavy and dark' },
         ]
       },
       { type: 'family', guideText: 'Tell every person in your family one thing you love about them tonight!', image: '/game-assets/inner-world/family-circle.png' },
@@ -397,10 +397,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Your happy things are special to YOU. Nobody else has to like the same things.', image: '/game-assets/inner-world/gratitude-jar.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What should you do when you feel sad?', guideText: 'What can you do when you feel sad?',
         items: [
-          { image: '/game-assets/inner-world/happy-face.png',  label: 'Do something that makes you happy', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',  label: 'Stay sad forever' },
-          { image: '/game-assets/inner-world/scared-face.png', label: 'Hide under the bed' },
-          { image: '/game-assets/inner-world/sad-face.png',    label: 'Break something' },
+          { image: '/game-assets/inner-world/sad-do-happy.png',      label: 'Do something that makes you happy', correct: true },
+          { image: '/game-assets/inner-world/sad-stuck-forever.png', label: 'Stay sad forever' },
+          { image: '/game-assets/inner-world/sad-hiding-bed.png',    label: 'Hide under the bed' },
+          { image: '/game-assets/inner-world/sad-breaking.png',      label: 'Break something' },
         ]
       },
       { type: 'family', guideText: 'Each family member shares three things that make them happy!', image: '/game-assets/inner-world/family-circle.png' },
