@@ -51,6 +51,30 @@ const LESSON_MAP = {
   'frontier':    FRONTIER_LITTLESTARS,
 };
 
+// ── Karaoke: map ElevenLabs character timestamps → per-word start times ──────
+// alignment.characters is a 1-to-1 array of every character in the input text
+// (including spaces). alignment.character_start_times_seconds[i] is when that
+// character is spoken. We find each word's first-character index in the text
+// and look up its timestamp to get the word's start time.
+function charAlignmentToWordStarts(text, alignment) {
+  try {
+    const starts = alignment?.character_start_times_seconds;
+    if (!starts?.length) return null;
+    const words = text.split(/\s+/).filter(Boolean);
+    const wordStarts = [];
+    let searchFrom = 0;
+    for (const word of words) {
+      const idx = text.indexOf(word, searchFrom);
+      if (idx === -1 || idx >= starts.length) return null;
+      wordStarts.push(starts[idx]);
+      searchFrom = idx + word.length;
+    }
+    return wordStarts.length === words.length ? wordStarts : null;
+  } catch {
+    return null;
+  }
+}
+
 // ── Guide speech bubble ───────────────────────────────────────────────────────
 function GuideBubble({ text, speaking, guideAvatar }) {
   if (!text) return null;
@@ -235,7 +259,7 @@ export default function GameLessonPlayer() {
         body:    JSON.stringify({ text: resolved }),
       });
       if (!res.ok) throw new Error('tts-unavailable');
-      const { audio } = await res.json();
+      const { audio, alignment } = await res.json();
 
       // Bail out if a newer speak() call has already started — discard this audio.
       // Still call onDone so the screen isn't left waiting with no callback.
@@ -244,31 +268,51 @@ export default function GameLessonPlayer() {
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
       let playStarted = false;
-      let cachedDur = null;
-      el.onloadedmetadata = () => { cachedDur = el.duration; };
-      el.onplay = () => {
-        const dur = cachedDur
-          || (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null)
-          || resolved.split(/\s+/).length * 0.40;
-        // Schedule per-word highlights proportional to character length (min 150ms/word)
+
+      // Set up word-level karaoke highlighting
+      const kWords = resolved.split(/\s+/).filter(Boolean);
+      if (kWords.length >= 2) {
+        setKaraokeWords(kWords);
         karaokeRef.current.forEach(id => clearTimeout(id));
         karaokeRef.current = [];
         setKaraokeIdx(-1);
-        const kWords = resolved.split(/\s+/).filter(Boolean);
-        if (kWords.length >= 2 && dur > 0) {
-          setKaraokeWords(kWords);
-          const totalChars = kWords.reduce((sum, w) => sum + w.length, 0);
-          const msPerChar  = (dur * 1000) / totalChars;
-          let cumMs = 0;
-          const ids = kWords.map((word, i) => {
-            const id = setTimeout(() => setKaraokeIdx(i), cumMs);
-            cumMs += Math.max(150, word.length * msPerChar);
-            return id;
-          });
-          ids.push(setTimeout(() => setKaraokeIdx(-1), cumMs + 300));
-          karaokeRef.current = ids;
+
+        const wordStarts = charAlignmentToWordStarts(resolved, alignment);
+        if (wordStarts && wordStarts.length === kWords.length) {
+          // Accurate path: use ElevenLabs character timestamps + timeupdate event.
+          // timeupdate fires ~every 250ms; we find the last word whose start ≤ currentTime.
+          let lastKi = -1;
+          el.ontimeupdate = () => {
+            const t = el.currentTime;
+            let ki = -1;
+            for (let i = 0; i < wordStarts.length; i++) {
+              if (wordStarts[i] <= t) ki = i;
+              else break;
+            }
+            if (ki !== lastKi) { lastKi = ki; setKaraokeIdx(ki); }
+          };
+        } else {
+          // Fallback: estimate per-word timing from character proportions.
+          // Used when alignment data is unavailable (ElevenLabs error, offline, etc.).
+          el.onplay = () => {
+            const dur = (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null)
+              || kWords.length * 0.40;
+            if (!(dur > 0)) return;
+            karaokeRef.current.forEach(id => clearTimeout(id));
+            karaokeRef.current = [];
+            const totalChars = kWords.reduce((s, w) => s + w.length, 0);
+            const msPerChar  = (dur * 1000) / totalChars;
+            let cumMs = 0;
+            const ids = kWords.map((word, i) => {
+              const id = setTimeout(() => setKaraokeIdx(i), cumMs);
+              cumMs += Math.max(150, word.length * msPerChar);
+              return id;
+            });
+            ids.push(setTimeout(() => setKaraokeIdx(-1), cumMs + 300));
+            karaokeRef.current = ids;
+          };
         }
-      };
+      }
       el.onended = () => {
         clearTimeout(deadman);
         audioRef.current = null;

@@ -49,7 +49,11 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
         margin: 0,
         lineHeight: 1.3,
       }}>
-        <KaraokeText text={step.instruction || 'Tap the right one!'} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
+        <KaraokeText
+          text={step.instruction || 'Tap the right one!'}
+          karaokeWords={karaokeWords}
+          karaokeIdx={readingIdx >= 0 ? -1 : karaokeIdx}
+        />
       </p>
 
       {/* 2×2 grid */}

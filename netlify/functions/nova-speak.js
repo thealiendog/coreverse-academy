@@ -12,12 +12,14 @@ exports.handler = async (event) => {
       return { statusCode: 500, body: JSON.stringify({ error: 'ELEVENLABS_API_KEY not set' }) };
     }
 
-    const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+    // Use the /with-timestamps endpoint so we get character-level timing data
+    // alongside the audio. This powers accurate word-level karaoke in the client.
+    const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}/with-timestamps`, {
       method: 'POST',
       headers: {
         'xi-api-key':   apiKey,
         'Content-Type': 'application/json',
-        'Accept':       'audio/mpeg',
+        'Accept':       'application/json',
       },
       body: JSON.stringify({
         text,
@@ -37,11 +39,12 @@ exports.handler = async (event) => {
       return { statusCode: 502, body: JSON.stringify({ error: `ElevenLabs ${response.status}`, detail }) };
     }
 
-    const buffer = Buffer.from(await response.arrayBuffer());
+    // /with-timestamps returns JSON: { audio_base64, alignment, normalized_alignment }
+    const data = await response.json();
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ audio: buffer.toString('base64') }),
+      body: JSON.stringify({ audio: data.audio_base64, alignment: data.alignment }),
     };
   } catch (err) {
     console.error('nova-speak error:', err.message);
