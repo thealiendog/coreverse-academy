@@ -190,7 +190,7 @@ export const innerworldLittleStars = [
     badge: "Breathing Champion", nextLesson: "iw-3-5-05",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn the superpower of breathing!' },
-      { type: 'story', guideText: 'When big feelings come, you have a superpower. It is your BREATH. Breathing slowly calms everything down.', image: '/game-assets/inner-world/breathing-balloon.png' },
+      { type: 'story', guideText: 'When big feelings come, you have a superpower. It is your BREATH. Breathing slowly calms everything down.', image: '/game-assets/inner-world/breathing-superpower.png' },
       { type: 'cause-effect', guideText: 'Watch what happens when you breathe in!',
         cycles: [
           { prompt: 'Breathe in!',         beforeEl: null, before: 'Small balloon', action: 'Breathe in',   after: 'Big balloon!',        narration: 'Great breathing!' },

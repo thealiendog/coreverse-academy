@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 import WinCelebration from '../WinCelebration';
 
-export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, disabled, speak, onUnlock }) {
+export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, disabled }) {
   const [chosen,   setChosen]  = useState(null); // true=yes, false=no
   const [locked,   setLocked]  = useState(false);
   const [showWin,  setShowWin] = useState(false);
@@ -11,14 +11,7 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, dis
     setChosen(null);
     setLocked(false);
     setShowWin(false);
-    // Speak scenario + tap prompt — one call, no duplicates.
-    // question/guideText are intentionally excluded: the scenario already
-    // contains the full question ("Should you give them a hug?").
-    const text = [
-      step.scenario,
-      'Tap the green check for yes, or the red X for no.',
-    ].filter(Boolean).join(' ');
-    if (text) speak?.(text, onUnlock);
+    // All TTS is handled by GameLessonPlayer — no speak call here.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 

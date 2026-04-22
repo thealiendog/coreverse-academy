@@ -136,6 +136,7 @@ export default function GameLessonPlayer() {
   const [canAdvance,        setCanAdvance]        = useState(false);
   const [isPaused,          setIsPaused]          = useState(false);
   const [winPulse,          setWinPulse]          = useState(false);
+  const [readingIdx,        setReadingIdx]        = useState(-1); // tap-right card currently being read aloud
 
   // Detect portrait orientation on tablet-sized screens
   useEffect(() => {
@@ -257,6 +258,10 @@ export default function GameLessonPlayer() {
     if (step.instruction) parts.push(r(step.instruction));
     if (step.guideText)   parts.push(r(step.guideText));
     if (step.type === 'yes-no') parts.push('Tap the green check for yes, or the red X for no!');
+    // Cause-and-effect: include the first cycle's prompt (e.g. "Tap the button to plant the seed!")
+    if (step.type === 'cause-effect' && step.cycles?.[0]?.prompt) {
+      parts.push(r(step.cycles[0].prompt));
+    }
     return parts.join(' ');
   }
 
@@ -277,90 +282,94 @@ export default function GameLessonPlayer() {
     return buildSpeechText(step);
   }
 
-  // ── Screen type sets ──────────────────────────────────────────────────────
-  // Game templates handle their own TTS and call onUnlock when ready.
-  const GAME_TYPES = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect']);
-  // Auto-advance screens: advance automatically after speech ends (+ 2s pause).
+  // ── Screen type sets (module-scoped constants referenced inside effects) ────
+  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect']);
   const AUTO_ADVANCE_TYPES = new Set(['welcome', 'story', 'teach', 'family']);
-  // Fallback delay per type — fires if audio onended never comes (TTS failure / silence).
-  const AUTO_FALLBACK_MS = { welcome: 8000, story: 12000, teach: 10000, family: 12000 };
+  // Fallback delay per auto-advance type — fires if audio onended never arrives.
+  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000 };
 
-  // ── Stable unlock callback passed to game templates ───────────────────────
-  const handleUnlock = useCallback(() => {
-    clearTimeout(fallbackTimerRef.current);
-    setInteractionLocked(false);
-  }, []);
-
-  // ── Speak + interaction lock + auto-advance ────────────────────────────────
-  // Auto-advance screens:
-  //   PRIMARY  — audio onended fires → wait 2s → advance
-  //   FALLBACK — if onended never fires (TTS failure) → advance after AUTO_FALLBACK_MS
-  // Game screens: templates call speak() + onUnlock themselves.
+  // ── Single speak + lock + auto-advance useEffect ───────────────────────────
+  // GameLessonPlayer is the ONLY place that calls TTS. Templates are purely
+  // presentational — they receive readingIdx (for card highlights) and disabled
+  // (for interaction lock) as props instead of managing speech themselves.
+  //
+  // Flow for each screen type:
+  //   auto-advance  — speak intro → onended → 2s pause → advance
+  //                   (fallback: advance after AUTO_FALLBACK_MS if onended never fires)
+  //   tap-right/readOptions — speak intro → read each option label → unlock cards
+  //   other game    — speak intro → unlock cards (forward arrow stays disabled until onReady)
+  //   celebration   — speak intro → unlock (forward arrow = home button, shown immediately)
   useEffect(() => {
     if (!gameSequence) return;
-    const step = gameSequence[screenIdx];
-    const text = buildSpeechText(step);
+    const step   = gameSequence[screenIdx];
+    const text   = buildSpeechText(step);
+    const isGame = GAME_TYPES.has(step.type);
+    const isAuto = AUTO_ADVANCE_TYPES.has(step.type);
 
     setInteractionLocked(true);
-    setCanAdvance(false);
+    setCanAdvance(!isGame); // game screens: arrow disabled until template calls onReady
+    setReadingIdx(-1);
 
-    let cancelled = false;
+    let cancelled  = false;
+    let advanceDone = false;
     clearTimeout(fallbackTimerRef.current);
 
-    if (GAME_TYPES.has(step.type)) {
-      // Game templates manage their own TTS; give them a 12s safety net.
-      fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
-      return () => { cancelled = true; clearTimeout(fallbackTimerRef.current); };
-    }
-
-    // Non-game screens: forward arrow available immediately.
-    setCanAdvance(true);
-
-    if (AUTO_ADVANCE_TYPES.has(step.type)) {
-      const fallbackMs = AUTO_FALLBACK_MS[step.type] || 10000;
-      let advanced = false;
-
-      // doAdvance is idempotent — only fires once even if both primary and fallback race.
-      const doAdvance = () => {
-        if (advanced || cancelled) return;
-        advanced = true;
-        clearTimeout(fallbackTimerRef.current);
-        if (!cancelled) {
-          setInteractionLocked(false);
-          setScreenIdx(prev => Math.min(prev + 1, gameSequence.length - 1));
-        }
-      };
-
-      // Fallback: advance even if onended never fires (TTS error, silence, etc.)
-      fallbackTimerRef.current = setTimeout(doAdvance, fallbackMs);
-
-      // Primary: when speech ends naturally, wait 2s so child can absorb content.
-      const onAudioDone = () => {
-        if (cancelled) return;
+    // Idempotent advance — whichever of primary/fallback fires first wins.
+    const doAdvance = () => {
+      if (advanceDone || cancelled) return;
+      advanceDone = true;
+      clearTimeout(fallbackTimerRef.current);
+      if (!cancelled) {
         setInteractionLocked(false);
-        clearTimeout(fallbackTimerRef.current);
-        fallbackTimerRef.current = setTimeout(doAdvance, 2000);
-      };
-
-      if (text) {
-        speak(text, onAudioDone);
-      } else {
-        // No text: skip straight to the 2s post-silence pause then advance.
-        fallbackTimerRef.current = setTimeout(doAdvance, 2000);
+        setScreenIdx(prev => Math.min(prev + 1, gameSequence.length - 1));
       }
-    } else {
-      // Non-auto, non-game (e.g. celebration): just unlock after TTS, no auto-advance.
-      fallbackTimerRef.current = setTimeout(() => setInteractionLocked(false), 12000);
-      if (text) {
-        speak(text, () => {
+    };
+
+    // Set the top-level fallback timer.
+    const fallbackMs = AUTO_FALLBACK_MS[step.type] || 20000;
+    fallbackTimerRef.current = isAuto
+      ? setTimeout(doAdvance, fallbackMs)
+      : setTimeout(() => { if (!cancelled) { setReadingIdx(-1); setInteractionLocked(false); } }, fallbackMs);
+
+    // Called once the intro speech finishes (or immediately if no text).
+    const onIntroDone = () => {
+      if (cancelled) return;
+
+      if (step.type === 'tap-right' && step.readOptions && step.items?.length) {
+        // Read each option label one-by-one, highlighting that card while speaking.
+        // Fallback timer stays active and covers this phase too.
+        const items = step.items;
+        let idx = 0;
+        function readOption() {
           if (cancelled) return;
-          clearTimeout(fallbackTimerRef.current);
-          setInteractionLocked(false);
-        });
+          if (idx >= items.length) {
+            clearTimeout(fallbackTimerRef.current);
+            setReadingIdx(-1);
+            setInteractionLocked(false);
+            return;
+          }
+          setReadingIdx(idx);
+          speak(items[idx]?.label || '', () => {
+            if (!cancelled) { idx++; setTimeout(readOption, 350); }
+          });
+        }
+        setTimeout(readOption, 400);
+      } else if (isAuto) {
+        // Speech finished naturally — wait 2s then advance.
+        setInteractionLocked(false);
+        clearTimeout(fallbackTimerRef.current);
+        fallbackTimerRef.current = setTimeout(doAdvance, 2000);
       } else {
+        // Other game types (no readOptions) and celebration — just unlock.
         clearTimeout(fallbackTimerRef.current);
         setInteractionLocked(false);
       }
+    };
+
+    if (text) {
+      speak(text, onIntroDone);
+    } else {
+      onIntroDone();
     }
 
     return () => {
@@ -432,11 +441,11 @@ export default function GameLessonPlayer() {
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
-      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
-      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} speak={speak} onUnlock={handleUnlock} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} readingIdx={readingIdx} />;
+      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} />;
+      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>

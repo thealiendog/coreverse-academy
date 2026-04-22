@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-export default function SortIntoBuckets({ step, onReady, disabled, speak, onUnlock }) {
+export default function SortIntoBuckets({ step, onReady, disabled }) {
   const buckets = step.buckets || [
     { label: 'Living',     color: '#34D399' },
     { label: 'Non-living', color: '#60A5FA' },
@@ -19,8 +19,7 @@ export default function SortIntoBuckets({ step, onReady, disabled, speak, onUnlo
     setCurrentIdx(0);
     setCounts(Array(buckets.length).fill(0));
     setDone(false);
-    const text = step.instruction || 'Sort each item into the right bucket!';
-    if (text) speak?.(text, onUnlock);
+    // All TTS handled by GameLessonPlayer.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 

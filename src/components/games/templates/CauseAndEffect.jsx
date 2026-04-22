@@ -42,7 +42,7 @@ const DEFAULT_CYCLES = [
   },
 ];
 
-export default function CauseAndEffect({ step, onReady, onNarrate, disabled, speak, onUnlock }) {
+export default function CauseAndEffect({ step, onReady, onNarrate, disabled }) {
   const cycles = step.cycles || DEFAULT_CYCLES;
 
   const [cycleIdx, setCycleIdx] = useState(0);
@@ -51,9 +51,7 @@ export default function CauseAndEffect({ step, onReady, onNarrate, disabled, spe
   useEffect(() => {
     setCycleIdx(0);
     setPhase('before');
-    const firstCycle = (step.cycles || DEFAULT_CYCLES)[0];
-    const text = [step.guideText, firstCycle?.prompt].filter(Boolean).join('. ');
-    if (text) speak?.(text, onUnlock);
+    // All TTS handled by GameLessonPlayer.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 

@@ -1,78 +1,36 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import WinCelebration from '../WinCelebration';
 
-export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, speak, onUnlock }) {
-  const [selected,   setSelected]   = useState(null);
-  const [wrong,      setWrong]      = useState(null);
-  const [showWin,    setShowWin]    = useState(false);
-  const [locked,     setLocked]     = useState(true);   // stays true until all options are read
-  const [readingIdx, setReadingIdx] = useState(-1);     // which option card is currently highlighted
+// All TTS is handled by GameLessonPlayer. This component is purely presentational:
+// it receives readingIdx (which card is being narrated) and disabled (interaction lock)
+// as props and renders accordingly. No speak calls here.
+
+export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, readingIdx = -1 }) {
+  const [selected, setSelected] = useState(null);
+  const [wrong,    setWrong]    = useState(null);
+  const [showWin,  setShowWin]  = useState(false);
 
   const items = step.items || [];
 
+  // Reset state when the step changes (new question).
   useEffect(() => {
     setSelected(null);
     setWrong(null);
     setShowWin(false);
-    setLocked(true);
-    setReadingIdx(-1);
-
-    let cancelled = false;
-
-    // Read each option label aloud in sequence, highlighting the card while speaking.
-    function readOption(idx) {
-      if (cancelled) return;
-      if (idx >= items.length) {
-        // All options read — release both locks
-        setReadingIdx(-1);
-        setLocked(false);
-        onUnlock?.();
-        return;
-      }
-      setReadingIdx(idx);
-      const label = items[idx]?.label || '';
-      speak?.(label, () => {
-        if (!cancelled) setTimeout(() => readOption(idx + 1), 350);
-      });
-    }
-
-    // 1. Read instruction + guideText.
-    // 2a. readOptions=true  → then read each option label one by one, then unlock.
-    // 2b. readOptions=false → unlock immediately after intro (images speak for themselves).
-    const intro = [step.instruction, step.guideText].filter(Boolean).join('. ');
-    const afterIntro = () => {
-      if (cancelled) return;
-      if (step.readOptions) {
-        setTimeout(() => readOption(0), 400);
-      } else {
-        setReadingIdx(-1);
-        setLocked(false);
-        onUnlock?.();
-      }
-    };
-    if (intro) {
-      speak?.(intro, afterIntro);
-    } else {
-      setTimeout(afterIntro, 200);
-    }
-
-    return () => { cancelled = true; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   function handleTap(idx) {
-    if (locked || selected !== null || disabled) return;
+    if (disabled || selected !== null) return;
     const item = items[idx];
     if (item?.correct) {
       setSelected(idx);
-      setLocked(true);
       setShowWin(true);
       onWin?.();
       onReady?.();
     } else {
       setWrong(idx);
       sfxBuzz();
-      onWrong?.(`Try again! That is not quite right.`);
+      onWrong?.('Try again! That is not quite right.');
       setTimeout(() => setWrong(null), 700);
     }
   }
@@ -104,9 +62,9 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
         boxSizing: 'border-box',
       }}>
         {items.map((item, idx) => {
-          const isCorrect  = selected === idx;
-          const isWrong    = wrong    === idx;
-          const isReading  = readingIdx === idx;
+          const isCorrect = selected === idx;
+          const isWrong   = wrong    === idx;
+          const isReading = readingIdx === idx;
 
           return (
             <button
@@ -128,7 +86,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
                     : isReading
                       ? 'rgba(252,211,77,0.14)'
                       : 'rgba(255,255,255,0.06)',
-                cursor: (locked || disabled) ? 'default' : 'pointer',
+                cursor: (disabled || selected !== null) ? 'default' : 'pointer',
                 touchAction: 'manipulation',
                 display: 'flex',
                 flexDirection: 'column',
