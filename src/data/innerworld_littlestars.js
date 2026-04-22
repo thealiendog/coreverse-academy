@@ -63,8 +63,6 @@ export const innerworldLittleStars = [
       },
       { type: 'yes-no',
         scenario:      'Your friend is crying. Should you give them a hug?',
-        question:      'What should you do?',
-        guideText:     'What should you do?',
         image:         '/game-assets/inner-world/hug-scene.png',
         correctAnswer: true,
         explanation:   'Yes! A hug shows your friend you care about them.',
@@ -117,7 +115,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Scared feels shaky inside. Your heart beats fast and you might want to hide.', image: '/game-assets/inner-world/scared-face.png' },
-      { type: 'yes-no', scenario: 'Your little brother is crying because he is scared of the dark. Is it okay to feel scared?', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png', guideText: 'Is it okay to feel scared?' },
+      { type: 'yes-no', scenario: 'Your little brother is crying because he is scared of the dark. Is it okay to feel scared?', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'family', guideText: 'Tonight, each family member names one time they felt each of the Big Four feelings!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Feelings Finder', guideText: 'You know all four big feelings now!' },
     ],
@@ -154,7 +152,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Happy feels warm in your chest. Like sunshine inside you!', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'yes-no', scenario: 'When you feel butterflies in your tummy, your body is telling you something.', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png', guideText: 'Is your body talking to you when your tummy feels funny?' },
+      { type: 'yes-no', scenario: 'When you feel butterflies in your tummy, your body is telling you something.', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'teach', guideText: 'Your body is your friend. It tells you how you feel before your brain even knows!', image: '/game-assets/inner-world/brain-pathways.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What happens when you are angry?', guideText: 'What does your body do when you are angry?',
         items: [
@@ -202,7 +200,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Breathing in makes your belly big like a balloon. Breathing out lets everything go.', image: '/game-assets/inner-world/breathing-balloon.png' },
-      { type: 'yes-no', scenario: 'When you feel angry, should you take a deep breath before doing anything?', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png', guideText: 'Should you breathe when you feel angry?' },
+      { type: 'yes-no', scenario: 'When you feel angry, should you take a deep breath before doing anything?', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'teach', guideText: 'Three deep breaths can change everything. In through your nose, out through your mouth.', image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What does deep breathing do?', guideText: 'What does deep breathing do?',
         items: [
@@ -250,7 +248,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'When you are upset, your mind is like the swirly glitter. When you breathe and wait, everything settles.', image: '/game-assets/inner-world/calm-jar.png' },
-      { type: 'yes-no', scenario: 'You are really upset. Should you shake the jar, watch the glitter settle, and breathe?', correctAnswer: true, image: '/game-assets/inner-world/calm-jar.png', guideText: 'What should you do when you are upset?' },
+      { type: 'yes-no', scenario: 'You are really upset. Should you shake the jar, watch the glitter settle, and breathe?', correctAnswer: true, image: '/game-assets/inner-world/calm-jar.png' },
       { type: 'teach', guideText: 'The calm-down jar shows you that all big feelings settle down if you give them time.', image: '/game-assets/inner-world/feelings-weather.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What happens to the glitter?', guideText: 'What happens to the glitter in the jar?',
         items: [
@@ -296,7 +294,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Love is in hugs. Love is in bedtime stories. Love is in someone making you breakfast.', image: '/game-assets/inner-world/hug-scene.png' },
-      { type: 'yes-no', scenario: 'Your mom made you breakfast this morning. Is that love?', correctAnswer: true, image: '/game-assets/inner-world/glowing-heart.png', guideText: 'Is making breakfast an act of love?' },
+      { type: 'yes-no', scenario: 'Your mom made you breakfast this morning. Is that love?', correctAnswer: true, image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'teach', guideText: 'You are loved just because you are YOU. Not because of anything you do.', image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What does love feel like?', guideText: 'What does love feel like inside?',
         items: [
@@ -315,7 +313,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Your heart has SO much love inside!' },
       { type: 'story', guideText: 'Your heart is like a jar that never runs out. The more love you give, the more love fills back up!', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'yes-no', scenario: 'If you share love with a friend, do you have LESS love?', correctAnswer: false, image: '/game-assets/inner-world/glowing-heart.png', guideText: 'If you share love, do you run out?' },
+      { type: 'yes-no', scenario: 'If you share love with a friend, do you have LESS love?', correctAnswer: false, image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'teach', guideText: 'Love is magic. When you give it away, you get even MORE back!', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What happens when you share love?', guideText: 'What happens when you share love?',
         items: [
@@ -326,7 +324,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Kind words, hugs, and helping others are all ways to share love.', image: '/game-assets/inner-world/hug-scene.png' },
-      { type: 'yes-no', scenario: 'Helping your friend pick up their dropped crayons is sharing love.', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png', guideText: 'Is helping a friend an act of love?' },
+      { type: 'yes-no', scenario: 'Helping your friend pick up their dropped crayons is sharing love.', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'family', guideText: 'Do three kind things for your family today and watch the love grow!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Love Giver', guideText: 'Your love makes the world brighter!' },
     ],
@@ -336,7 +334,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about a powerful word: SORRY.' },
       { type: 'story', guideText: 'Everyone makes mistakes. When we hurt someone, saying sorry helps fix it. But you have to really MEAN it.', image: '/game-assets/inner-world/hug-scene.png' },
-      { type: 'yes-no', scenario: 'You accidentally knocked over your friend\'s tower of blocks. Should you say sorry?', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png', guideText: 'Should you say sorry?' },
+      { type: 'yes-no', scenario: 'You accidentally knocked over your friend\'s tower of blocks. Should you say sorry?', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'teach', guideText: 'Saying sorry means you know you hurt someone and you want to make it better.', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What makes a REAL sorry?', guideText: 'What makes sorry REAL?',
         items: [
@@ -347,7 +345,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'After you say sorry, try to fix what happened. Help rebuild the tower. That shows you mean it.', image: '/game-assets/inner-world/hug-scene.png' },
-      { type: 'yes-no', scenario: 'After saying sorry, you should try to make things better.', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png', guideText: 'Should you try to fix things after saying sorry?' },
+      { type: 'yes-no', scenario: 'After saying sorry, you should try to make things better.', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'family', guideText: 'Practice saying sorry to someone today and do something kind to make it better!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Sorry Hero', guideText: 'You know how to say sorry and mean it!' },
     ],
@@ -366,7 +364,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Every time you try something new, you are being brave. Your first day of school. Trying a new food. Saying hi to someone new.', image: '/game-assets/inner-world/bravery-slide.png' },
-      { type: 'yes-no', scenario: 'A child is scared to go down the big slide but tries anyway. Is that brave?', correctAnswer: true, image: '/game-assets/inner-world/bravery-slide.png', guideText: 'Is trying something scary being brave?' },
+      { type: 'yes-no', scenario: 'A child is scared to go down the big slide but tries anyway. Is that brave?', correctAnswer: true, image: '/game-assets/inner-world/bravery-slide.png' },
       { type: 'teach', guideText: 'You have been brave many times already. Think of all the new things you have tried!', image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'tap-right', readOptions: true, instruction: 'Which is an example of being brave?', guideText: 'Which shows bravery?',
         items: [
@@ -394,7 +392,7 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Knowing what makes you happy is a SUPERPOWER. When you feel sad, you can do something that makes you happy!', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'yes-no', scenario: 'Is it okay if what makes you happy is different from what makes your friend happy?', correctAnswer: true, image: '/game-assets/inner-world/mirror-self.png', guideText: 'Can different things make different people happy?' },
+      { type: 'yes-no', scenario: 'Is it okay if what makes you happy is different from what makes your friend happy?', correctAnswer: true, image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'teach', guideText: 'Your happy things are special to YOU. Nobody else has to like the same things.', image: '/game-assets/inner-world/gratitude-jar.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What should you do when you feel sad?', guideText: 'What can you do when you feel sad?',
         items: [
