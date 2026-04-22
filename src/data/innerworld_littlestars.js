@@ -318,10 +318,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Love is magic. When you give it away, you get even MORE back!', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What happens when you share love?', guideText: 'What happens when you share love?',
         items: [
-          { image: '/game-assets/inner-world/glowing-heart.png', label: 'You get more love', correct: true },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'You run out' },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Nothing happens' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'It disappears' },
+          { image: '/game-assets/inner-world/glowing-heart.png',   label: 'You get more love', correct: true },
+          { image: '/game-assets/inner-world/heart-empty.png',    label: 'You run out' },
+          { image: '/game-assets/inner-world/nothing-happens.png', label: 'Nothing happens' },
+          { image: '/game-assets/inner-world/heart-dissolving.png', label: 'It disappears' },
         ]
       },
       { type: 'teach', guideText: 'Kind words, hugs, and helping others are all ways to share love.', image: '/game-assets/inner-world/hug-scene.png' },
