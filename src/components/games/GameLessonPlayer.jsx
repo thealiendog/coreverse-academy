@@ -510,6 +510,10 @@ export default function GameLessonPlayer() {
           touch-action: manipulation;
         }
         button:active { opacity: 0.82 !important; }
+        @keyframes next-lesson-pulse {
+          0%,100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.7), 0 0 16px rgba(52,211,153,0.4); transform: scale(1); }
+          50%     { box-shadow: 0 0 0 10px rgba(52,211,153,0), 0 0 32px rgba(52,211,153,0.7); transform: scale(1.08); }
+        }
         @keyframes guide-ring {
           0%,100% { opacity: 0.45; transform: scale(1); }
           50%      { opacity: 1;   transform: scale(1.14); }
@@ -630,9 +634,9 @@ export default function GameLessonPlayer() {
       }}>
         {isCelebration ? (
           <>
-            {/* LEFT: back to subject lesson list */}
+            {/* LEFT: back arrow → subject lesson list */}
             <button
-              onClick={() => navigate(`/child/subject/${subjectId}`)}
+              onClick={() => navigate(`/child/subject/${subjectId}?level=1`)}
               style={{ ...navBtnBase, opacity: 0.75 }}
             >
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -640,24 +644,34 @@ export default function GameLessonPlayer() {
               </svg>
             </button>
 
-            {/* CENTER: home */}
+            {/* CENTER: lesson list grid icon → subject lesson list */}
             <button
-              onClick={() => navigate('/child/dashboard')}
+              onClick={() => navigate(`/child/subject/${subjectId}?level=1`)}
               style={{ ...navBtnBase, opacity: 0.85 }}
             >
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <path d="M16 3L2 14h3v15h8v-9h6v9h8V14h3L16 3z" fill="rgba(255,255,255,0.9)" />
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect x="3"  y="3"  width="9" height="9" rx="2" fill="rgba(255,255,255,0.9)" />
+                <rect x="16" y="3"  width="9" height="9" rx="2" fill="rgba(255,255,255,0.9)" />
+                <rect x="3"  y="16" width="9" height="9" rx="2" fill="rgba(255,255,255,0.9)" />
+                <rect x="16" y="16" width="9" height="9" rx="2" fill="rgba(255,255,255,0.55)" />
               </svg>
             </button>
 
-            {/* RIGHT: next lesson, or empty spacer if this is the last lesson */}
+            {/* RIGHT: pulsing green forward arrow → next lesson */}
             {hasNextLesson ? (
               <button
                 onClick={() => navigate(`/child/lesson/${subjectId}/${nextLessonIdx}?level=1`)}
-                style={{ ...navBtnBase, opacity: 1 }}
+                style={{
+                  ...navBtnBase,
+                  width: 56,
+                  height: 56,
+                  borderRadius: '50%',
+                  background: 'rgba(52,211,153,0.18)',
+                  animation: 'next-lesson-pulse 1.6s ease-in-out infinite',
+                }}
               >
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <polygon points="8,4 24,16 8,28" fill={accent} />
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                  <polygon points="8,4 24,16 8,28" fill="#34D399" />
                 </svg>
               </button>
             ) : (
