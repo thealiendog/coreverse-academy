@@ -358,10 +358,10 @@ export const innerworldLittleStars = [
       { type: 'story', guideText: 'Being brave does not mean you are not scared. Being brave means you TRY even when you feel scared.', image: '/game-assets/inner-world/bravery-slide.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What is being brave?', guideText: 'What does brave mean?',
         items: [
-          { image: '/game-assets/inner-world/bravery-slide.png', label: 'Trying when scared', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Never being scared' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'Running away' },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'Crying a lot' },
+          { image: '/game-assets/inner-world/bravery-slide.png',        label: 'Trying when scared', correct: true },
+          { image: '/game-assets/inner-world/brave-invincible-shield.png', label: 'Never being scared' },
+          { image: '/game-assets/inner-world/running-away.png',            label: 'Running away' },
+          { image: '/game-assets/inner-world/brave-tears-puddle.png',      label: 'Crying a lot' },
         ]
       },
       { type: 'teach', guideText: 'Every time you try something new, you are being brave. Your first day of school. Trying a new food. Saying hi to someone new.', image: '/game-assets/inner-world/bravery-slide.png' },
