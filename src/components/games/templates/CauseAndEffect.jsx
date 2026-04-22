@@ -89,6 +89,7 @@ export default function CauseAndEffect({ step, onComplete, onNarrate, disabled, 
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
+      overflowY: 'auto',
       gap: 32,
       minHeight: '55vh',
     }}>

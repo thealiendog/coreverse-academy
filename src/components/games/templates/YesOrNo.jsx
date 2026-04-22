@@ -39,7 +39,7 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, dis
   const scenario = step.scenario || '';
 
   return (
-    <div style={{ padding: '16px 16px 24px', display:'flex', flexDirection:'column', alignItems:'center', gap:20 }}>
+    <div style={{ padding: '16px 16px 24px', display:'flex', flexDirection:'column', alignItems:'center', gap:20, overflowY:'auto' }}>
       {showWin && <WinCelebration onDone={() => { setShowWin(false); onComplete?.(); }} />}
       <style>{`
         @keyframes yn-correct { 0%{transform:scale(1)}30%{transform:scale(1.18)}70%{transform:scale(0.97)}100%{transform:scale(1)} }

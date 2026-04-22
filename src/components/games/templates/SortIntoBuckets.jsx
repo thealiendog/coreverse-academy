@@ -55,7 +55,7 @@ export default function SortIntoBuckets({ step, onReady, disabled, karaokeWords 
   }
 
   return (
-    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, overflowY: 'auto' }}>
       <style>{`
         @keyframes sib-bounce { 0%,100%{transform:translateY(0)}30%{transform:translateY(-12px)}60%{transform:translateY(4px)} }
         @keyframes sib-pop    { 0%{transform:scale(0.8);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1} }

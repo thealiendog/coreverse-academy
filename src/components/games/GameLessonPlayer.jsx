@@ -138,7 +138,6 @@ export default function GameLessonPlayer() {
   const [speaking,          setSpeaking]          = useState(false);
   const [bubble,            setBubble]            = useState('');
   const [interactionLocked, setInteractionLocked] = useState(true);
-  const [isPortrait,        setIsPortrait]        = useState(false);
   const [canAdvance,        setCanAdvance]        = useState(false);
   const [isPaused,          setIsPaused]          = useState(false);
   const [winPulse,          setWinPulse]          = useState(false);
@@ -146,21 +145,6 @@ export default function GameLessonPlayer() {
   const [karaokeWords,      setKaraokeWords]      = useState([]); // words of text currently being spoken
   const [karaokeIdx,        setKaraokeIdx]        = useState(-1); // index of the actively spoken word
 
-  // Detect portrait orientation on tablet-sized screens
-  useEffect(() => {
-    function check() {
-      const portrait = window.matchMedia('(orientation: portrait)').matches;
-      const wide     = window.innerWidth >= 768 || window.innerHeight >= 768;
-      setIsPortrait(portrait && wide);
-    }
-    check();
-    window.addEventListener('resize',          check);
-    window.addEventListener('orientationchange', check);
-    return () => {
-      window.removeEventListener('resize',          check);
-      window.removeEventListener('orientationchange', check);
-    };
-  }, []);
 
   const audioRef        = useRef(null);
   const bubbleTimer     = useRef(null);
@@ -354,7 +338,10 @@ export default function GameLessonPlayer() {
   const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect', 'guided-demo']);
   const AUTO_ADVANCE_TYPES = new Set(['welcome', 'story', 'teach', 'family']);
   // Fallback delay per auto-advance type — fires if audio onended never arrives.
-  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000 };
+  // Game-type fallbacks are intentionally short — if speech fails, cards must unlock
+  // quickly so a broken TTS call can't brick the lesson for a 3-5 year old.
+  // cause-effect / guided-demo stay at the 20000ms default (long automated sequences).
+  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000, 'tap-right': 6000, 'yes-no': 6000, count: 6000, sort: 6000 };
 
   // ── Single speak + lock + auto-advance useEffect ───────────────────────────
   // GameLessonPlayer is the ONLY place that calls TTS. Templates are purely
@@ -600,21 +587,6 @@ export default function GameLessonPlayer() {
         }
       `}</style>
 
-      {/* Portrait orientation nudge (tablet only) */}
-      {isPortrait && (
-        <div style={{
-          position: 'absolute', top: 0, left: 0, right: 0, zIndex: 50,
-          background: 'rgba(124,58,237,0.92)',
-          color: '#fff',
-          textAlign: 'center',
-          padding: '10px 16px',
-          fontSize: '0.9rem',
-          fontWeight: 700,
-          letterSpacing: '0.02em',
-        }}>
-          Turn your tablet sideways for the best experience
-        </div>
-      )}
 
       {/* Progress bar */}
       <ProgressBar current={screenIdx} total={total} accent={accent} />

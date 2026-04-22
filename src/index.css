@@ -28,6 +28,32 @@ h1, h2, h3, h4 {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Portrait-only lock for phones and tablets ───────────────────────────── */
+/* Shows a fullscreen overlay when the device is in landscape and < 1024px wide */
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: #080618;
+    z-index: 9999;
+  }
+  body::after {
+    content: 'Please rotate your phone to portrait mode';
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    text-align: center;
+    padding: 2rem;
+    z-index: 10000;
+  }
+}
+
 .card-hover {
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }

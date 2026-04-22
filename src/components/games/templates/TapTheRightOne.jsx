@@ -37,7 +37,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
   }
 
   return (
-    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, overflowY: 'auto' }}>
       {showWin && <WinCelebration onDone={() => { setShowWin(false); onComplete?.(); }} />}
 
       {/* Instruction */}
@@ -135,10 +135,11 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
                   alt={item.label || ''}
                   style={{
                     width: '100%',
-                    height: '110px',
+                    height: 'min(110px, 22vw)',
                     objectFit: 'cover',
                     borderRadius: '12px',
                     display: 'block',
+                    flexShrink: 0,
                     filter: isWrong ? 'brightness(0.7)' : 'none',
                   }}
                   draggable={false}
@@ -157,6 +158,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
                         : 'rgba(255,255,255,0.8)',
                   fontSize: '0.9rem',
                   fontWeight: 700,
+                  flexShrink: 0,
                 }}>
                   {item.label}
                 </span>

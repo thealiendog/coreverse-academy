@@ -43,7 +43,7 @@ export default function CountAndTap({ step, onReady, disabled, karaokeWords = []
   }
 
   return (
-    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, overflowY: 'auto' }}>
       <style>{`
         @keyframes cat-bounce { 0%{transform:scale(1)}30%{transform:scale(1.3)}70%{transform:scale(0.95)}100%{transform:scale(1)} }
         @keyframes cat-num    { 0%{transform:translateY(0);opacity:1}100%{transform:translateY(-28px);opacity:0} }
