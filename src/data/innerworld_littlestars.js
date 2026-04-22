@@ -251,12 +251,12 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'When you are upset, your mind is like the swirly glitter. When you breathe and wait, everything settles.', image: '/game-assets/inner-world/calm-jar.png' },
       { type: 'yes-no', scenario: 'You are really upset. Should you shake the jar, watch the glitter settle, and breathe?', correctAnswer: true, image: '/game-assets/inner-world/calm-jar.png' },
       { type: 'teach', guideText: 'The calm-down jar shows you that all big feelings settle down if you give them time.', image: '/game-assets/inner-world/feelings-weather.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What happens to the glitter?', guideText: 'What happens to the glitter in the jar?',
+      { type: 'tap-right', readOptions: true, instruction: 'What happens to the glitter when you breathe and wait?',
         items: [
-          { image: '/game-assets/inner-world/calm-jar.png',           label: 'It settles down', correct: true },
-          { image: '/game-assets/inner-world/feelings-weather.png',   label: 'It disappears' },
-          { image: '/game-assets/inner-world/breathing-balloon.png',  label: 'It gets bigger' },
-          { image: '/game-assets/inner-world/glowing-heart.png',      label: 'It turns pink' },
+          { image: '/game-assets/inner-world/jar-settled.png',     label: 'It settles down', correct: true },
+          { image: '/game-assets/inner-world/jar-empty.png',       label: 'It disappears' },
+          { image: '/game-assets/inner-world/jar-overflowing.png', label: 'It gets bigger' },
+          { image: '/game-assets/inner-world/jar-pink.png',        label: 'It turns pink' },
         ]
       },
       { type: 'family', guideText: 'Make a real calm-down jar with water, glitter, and glue. Shake it when big feelings come!', image: '/game-assets/inner-world/family-circle.png' },
