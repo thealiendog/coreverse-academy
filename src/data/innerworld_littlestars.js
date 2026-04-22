@@ -237,14 +237,15 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Let us make a magical calm-down jar!' },
       { type: 'story', guideText: 'When your feelings are wild and swirly, a calm-down jar can help. Watch the glitter spin and slowly settle. Your feelings settle too.', image: '/game-assets/inner-world/calm-jar.png' },
-      { type: 'cause-effect',
+      { type: 'guided-demo',
         image: '/game-assets/inner-world/calm-jar.png',
-        guideText: 'Watch the calm-down jar! Shake it up, then breathe and watch the glitter settle.',
-        finalMessage: 'The glitter settled! Your feelings can settle too!',
-        cycles: [
-          { in: 'Shake it up!',    out: 'Watch it settle...' },
-          { in: 'Shake again!',    out: 'Breathe and wait...' },
-          { in: 'One more shake!', out: 'Calm like the jar!' },
+        guideText: 'Watch what happens with a calm-down jar!',
+        phases: [
+          { narrate: 'This is a calm-down jar! Watch what happens!',                                                      visual: 'still',   pauseAfter: 600  },
+          { narrate: 'When you feel upset, everything gets swirly inside — just like this jar!',                          visual: 'shake',   pauseAfter: 500  },
+          { narrate: "See how wild it is? Now let's breathe and watch it settle...",                                      visual: 'settle',  pauseAfter: 1200 },
+          { narrate: 'When you breathe and wait, your feelings settle down too. Just like the glitter.',                  visual: 'still',   pauseAfter: 800  },
+          { narrate: 'You can make your very own calm-down jar at home!',                                                 visual: 'still',   pauseAfter: 2000 },
         ]
       },
       { type: 'teach', guideText: 'When you are upset, your mind is like the swirly glitter. When you breathe and wait, everything settles.', image: '/game-assets/inner-world/calm-jar.png' },

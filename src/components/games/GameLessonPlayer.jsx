@@ -16,6 +16,7 @@ import CountAndTap     from './templates/CountAndTap';
 import SortIntoBuckets from './templates/SortIntoBuckets';
 import YesOrNo         from './templates/YesOrNo';
 import CauseAndEffect  from './templates/CauseAndEffect';
+import GuidedDemo      from './templates/GuidedDemo';
 
 // Lesson data — level 1 overrides keyed by subjectId
 import INNERWORLD_LITTLESTARS from '../../data/innerworld_littlestars_adapter';
@@ -303,7 +304,7 @@ export default function GameLessonPlayer() {
   }
 
   // ── Screen type sets (module-scoped constants referenced inside effects) ────
-  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect']);
+  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect', 'guided-demo']);
   const AUTO_ADVANCE_TYPES = new Set(['welcome', 'story', 'teach', 'family']);
   // Fallback delay per auto-advance type — fires if audio onended never arrives.
   const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000 };
@@ -443,8 +444,9 @@ export default function GameLessonPlayer() {
     if (message) speak(message);
   }
 
-  function handleNarrate(message) {
-    if (message) speak(message);
+  function handleNarrate(message, onDone) {
+    if (message) speak(message, onDone);
+    else onDone?.();
   }
 
   function handlePause() {
@@ -474,6 +476,7 @@ export default function GameLessonPlayer() {
       case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} />;
       case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
+      case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>
