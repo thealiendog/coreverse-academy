@@ -173,15 +173,16 @@ export default function GameLessonPlayer() {
   const [karaokeIdx,        setKaraokeIdx]        = useState(-1); // index of the actively spoken word
 
 
-  const audioRef        = useRef(null);
-  const bubbleTimer     = useRef(null);
-  const fallbackTimerRef = useRef(null);
-  const speakGenRef     = useRef(0); // incremented on every speak() call; stale fetches bail out
-  const totalRef        = useRef(0); // kept in sync with gameSequence.length; read by advance()
-  const lastSpeakTime   = useRef(0);
-  const lastSpokenText  = useRef('');
-  const karaokeRef      = useRef([]); // scheduled karaoke timeout IDs
-  const blobUrlRef      = useRef(null); // active blob URL — revoked whenever audio ends or is replaced
+  const persistentAudioRef       = useRef(null); // single reused Audio element — created inside first gesture so iOS authorizes all future .play() calls
+  const audioListenersCleanupRef = useRef(null); // removes current debug event listeners before reuse
+  const bubbleTimer              = useRef(null);
+  const fallbackTimerRef         = useRef(null);
+  const speakGenRef              = useRef(0); // incremented on every speak() call; stale fetches bail out
+  const totalRef                 = useRef(0); // kept in sync with gameSequence.length; read by advance()
+  const lastSpeakTime            = useRef(0);
+  const lastSpokenText           = useRef('');
+  const karaokeRef               = useRef([]); // scheduled karaoke timeout IDs
+  const blobUrlRef               = useRef(null); // active blob URL — revoked only when replaced or component unmounts
 
   // ── Stable advance — uses functional setScreenIdx so setTimeout closures
   //    always read current state, not a stale render's screenIdx. ────────────
@@ -219,13 +220,18 @@ export default function GameLessonPlayer() {
     // a stale gen and discard its audio, preventing the double-speech race.
     const gen = ++speakGenRef.current;
 
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.src = '';
-      audioRef.current = null;
+    // Remove debug event listeners from previous speak() call before reusing element.
+    audioListenersCleanupRef.current?.();
+    audioListenersCleanupRef.current = null;
+
+    // Pause the persistent element if it's currently playing.
+    const elAtCancel = persistentAudioRef.current;
+    if (elAtCancel) {
+      elAtCancel.pause();
+      // Don't null persistentAudioRef — we'll reuse the same element.
     }
-    if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-    window.speechSynthesis?.cancel();
+    // Don't revoke the active blob URL here — do it just before creating the new one,
+    // so iOS has the URL available throughout its async buffering cycle.
     clearTimeout(bubbleTimer.current);
 
     const resolved = text.replace(/\{name\}/g, childName);
@@ -248,29 +254,6 @@ export default function GameLessonPlayer() {
       console.log(`[audio ${ts()}] DEADMAN_FIRED gen=${gen} — onended never arrived`);
       finish('deadman');
     }, 20000);
-
-    function trySpeechSynthesis() {
-      if (gen !== speakGenRef.current) {
-        console.log(`[audio ${ts()}] SYNTH_GEN_STALE gen=${gen} current=${speakGenRef.current} — skipping`);
-        clearTimeout(deadman);
-        return;
-      }
-      console.log(`[audio ${ts()}] SYNTH_START gen=${gen} speechSynthesis=${!!window.speechSynthesis}`);
-      const synthTimer = setTimeout(() => { console.log(`[audio ${ts()}] SYNTH_TIMEOUT`); finish('synth-timeout'); }, 12000);
-      try {
-        if (!window.speechSynthesis) { clearTimeout(synthTimer); finish('no-speechSynthesis'); return; }
-        window.speechSynthesis.cancel();
-        const utt = new SpeechSynthesisUtterance(resolved);
-        utt.rate    = 0.92;
-        utt.onend   = () => { console.log(`[audio ${ts()}] SYNTH_END`); clearTimeout(synthTimer); finish('synth-end'); };
-        utt.onerror = (e) => { console.log(`[audio ${ts()}] SYNTH_ERROR`, e?.error, e?.message); clearTimeout(synthTimer); finish('synth-error'); };
-        window.speechSynthesis.speak(utt);
-      } catch (e) {
-        console.log(`[audio ${ts()}] SYNTH_THROW`, e?.message);
-        clearTimeout(synthTimer);
-        finish('synth-throw');
-      }
-    }
 
     const fetchStart = Date.now();
     console.log(`[audio ${ts()}] FETCH_START gen=${gen} text="${resolved.slice(0, 60)}${resolved.length > 60 ? '…' : ''}"`);
@@ -297,31 +280,60 @@ export default function GameLessonPlayer() {
         clearTimeout(deadman); onDone?.(); return;
       }
 
-      // Blob URL — a lightweight pointer into browser memory, never a multi-hundred-KB URI string.
-      if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); }
+      // Revoke previous blob URL NOW — just before creating the new one.
+      // Waiting until here (rather than at the top of speak()) ensures iOS has
+      // had the full fetch+buffer cycle to finish loading the previous audio.
+      if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
       const blobUrl = URL.createObjectURL(blob);
       blobUrlRef.current = blobUrl;
-      console.log(`[audio ${ts()}] AUDIO_ELEMENT_CREATE gen=${gen} blob_bytes=${blob.size}`);
-      const el = new Audio(blobUrl);
 
-      // Mobile-friendly attributes — required for inline playback on iOS Safari.
-      el.playsInline = true;
-      el.preload     = 'auto';
-      el.setAttribute('webkit-playsinline', 'true');
-      el.setAttribute('playsinline',        'true');
+      // Reuse the persistent Audio element created on first user gesture.
+      // If the element doesn't exist yet (very early speak() before any gesture),
+      // create it now — it won't be gesture-authorized but we'll try anyway.
+      if (!persistentAudioRef.current) {
+        const el = new Audio();
+        el.playsInline = true;
+        el.preload     = 'auto';
+        el.setAttribute('webkit-playsinline', 'true');
+        el.setAttribute('playsinline',        'true');
+        persistentAudioRef.current = el;
+        console.log(`[audio ${ts()}] PERSISTENT_EL_CREATED (fallback, no gesture yet)`);
+      }
+      const el = persistentAudioRef.current;
+      el.src = blobUrl;
+      el.load();
+      console.log(`[audio ${ts()}] AUDIO_LOAD gen=${gen} blob_bytes=${blob.size}`);
 
-      audioRef.current = el;
       let playStarted = false;
 
       // ── Mobile event tracing ──────────────────────────────────────────────
-      el.addEventListener('loadstart',      () => console.log(`[audio ${ts()}] EVT loadstart`));
-      el.addEventListener('canplay',        () => console.log(`[audio ${ts()}] EVT canplay duration=${el.duration?.toFixed(2)}`));
-      el.addEventListener('canplaythrough', () => console.log(`[audio ${ts()}] EVT canplaythrough`));
-      el.addEventListener('play',           () => console.log(`[audio ${ts()}] EVT play`));
-      el.addEventListener('playing',        () => console.log(`[audio ${ts()}] EVT playing`));
-      el.addEventListener('pause',          () => console.log(`[audio ${ts()}] EVT pause currentTime=${el.currentTime?.toFixed(2)}`));
-      el.addEventListener('stalled',        () => console.log(`[audio ${ts()}] EVT stalled`));
-      el.addEventListener('waiting',        () => console.log(`[audio ${ts()}] EVT waiting`));
+      const onLoadstart      = () => console.log(`[audio ${ts()}] EVT loadstart`);
+      const onCanplay        = () => console.log(`[audio ${ts()}] EVT canplay duration=${el.duration?.toFixed(2)}`);
+      const onCanplaythrough = () => console.log(`[audio ${ts()}] EVT canplaythrough`);
+      const onPlay           = () => console.log(`[audio ${ts()}] EVT play`);
+      const onPlaying        = () => console.log(`[audio ${ts()}] EVT playing`);
+      const onPause          = () => console.log(`[audio ${ts()}] EVT pause currentTime=${el.currentTime?.toFixed(2)}`);
+      const onStalled        = () => console.log(`[audio ${ts()}] EVT stalled`);
+      const onWaiting        = () => console.log(`[audio ${ts()}] EVT waiting`);
+      el.addEventListener('loadstart',      onLoadstart);
+      el.addEventListener('canplay',        onCanplay);
+      el.addEventListener('canplaythrough', onCanplaythrough);
+      el.addEventListener('play',           onPlay);
+      el.addEventListener('playing',        onPlaying);
+      el.addEventListener('pause',          onPause);
+      el.addEventListener('stalled',        onStalled);
+      el.addEventListener('waiting',        onWaiting);
+      // Store cleanup function so next speak() call can remove these before reuse.
+      audioListenersCleanupRef.current = () => {
+        el.removeEventListener('loadstart',      onLoadstart);
+        el.removeEventListener('canplay',        onCanplay);
+        el.removeEventListener('canplaythrough', onCanplaythrough);
+        el.removeEventListener('play',           onPlay);
+        el.removeEventListener('playing',        onPlaying);
+        el.removeEventListener('pause',          onPause);
+        el.removeEventListener('stalled',        onStalled);
+        el.removeEventListener('waiting',        onWaiting);
+      };
 
       // Karaoke highlighting — skipped for feedback / secondary audio
       if (noKaraoke) {
@@ -378,35 +390,34 @@ export default function GameLessonPlayer() {
       el.onended = () => {
         console.log(`[audio ${ts()}] EVT ended gen=${gen} currentTime=${el.currentTime?.toFixed(2)}`);
         clearTimeout(deadman);
-        audioRef.current = null;
+        // Revoke blob URL now that playback is complete and iOS no longer needs it.
         if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
+        // Don't null persistentAudioRef — the element stays alive for future screens.
         karaokeRef.current.forEach(id => clearTimeout(id));
         karaokeRef.current = [];
         setKaraokeIdx(-1);
         setKaraokeWords([]);
         finish('onended');
       };
-      // Only fall back to speech synthesis if ElevenLabs never started playing.
-      // If playStarted=true, onerror is a mid-stream glitch — just finish() cleanly
-      // rather than layering speech synthesis on top of a partially-playing audio.
       el.onerror = (e) => {
         console.log(`[audio ${ts()}] EVT error playStarted=${playStarted} code=${el.error?.code} msg=${el.error?.message}`);
         clearTimeout(deadman);
-        audioRef.current = null;
-        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-        if (playStarted) finish('onerror-mid');
-        else trySpeechSynthesis();
+        // Don't revoke blob URL here — iOS may still be loading asynchronously.
+        // Don't null persistentAudioRef — element stays alive for future screens.
+        finish('onerror');
       };
 
       console.log(`[audio ${ts()}] PLAY_CALL gen=${gen}`);
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) {
-        // Autoplay blocked (iOS Safari before first user gesture)
+        // Autoplay blocked — with a persistent gesture-authorized element this should
+        // be rare, but handle gracefully: advance silently rather than playing garbled
+        // browser TTS on top of a partially-loaded audio element.
         console.log(`[audio ${ts()}] PLAY_BLOCKED ${playErr.name}: ${playErr.message}`);
         clearTimeout(deadman);
-        audioRef.current = null;
-        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-        trySpeechSynthesis();
+        // Don't revoke blob URL — element may still be loading asynchronously.
+        // Don't null persistentAudioRef — element stays alive for future screens.
+        finish('play-blocked');
       } else {
         console.log(`[audio ${ts()}] PLAY_OK gen=${gen}`);
         playStarted = true; // ElevenLabs audio is now playing — no speech synthesis fallback
@@ -415,7 +426,7 @@ export default function GameLessonPlayer() {
     } catch (e) {
       console.log(`[audio ${ts()}] FETCH_OR_PARSE_ERROR gen=${gen}`, e?.message);
       clearTimeout(deadman);
-      trySpeechSynthesis();
+      finish('fetch-error');
     }
   }, [childName]);
 
@@ -574,18 +585,25 @@ export default function GameLessonPlayer() {
   }, [screenIdx]);
 
   // ── iOS audio unlock ──────────────────────────────────────────────────────
-  // iOS Safari blocks audio.play() on any element that wasn't triggered directly
-  // by a user gesture. Playing a tiny silent clip on the first tap primes the
-  // audio context so all subsequent programmatic plays work without a gesture —
-  // including auto-advance screens where there is no tap between screens.
+  // iOS Safari's gesture authorization follows the Audio OBJECT, not the src.
+  // We create ONE persistent Audio element inside the first user gesture handler
+  // and store it in persistentAudioRef. All subsequent speak() calls reuse this
+  // same element (.src = blobUrl; .load(); .play()), so iOS always considers the
+  // play() call gesture-authorized — even on auto-advance screens between taps.
   useEffect(() => {
-    const SILENT = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
     let unlocked = false;
     function unlock() {
       if (unlocked) return;
       unlocked = true;
-      const el = new Audio(SILENT);
-      el.play().catch(() => {});
+      if (!persistentAudioRef.current) {
+        const el = new Audio();
+        el.playsInline = true;
+        el.preload     = 'auto';
+        el.setAttribute('webkit-playsinline', 'true');
+        el.setAttribute('playsinline',        'true');
+        persistentAudioRef.current = el;
+        console.log(`[audio ${ts()}] PERSISTENT_EL_CREATED on first gesture`);
+      }
       document.removeEventListener('touchstart', unlock, true);
       document.removeEventListener('click',      unlock, true);
     }
@@ -599,8 +617,11 @@ export default function GameLessonPlayer() {
 
   // ── Cleanup on unmount ─────────────────────────────────────────────────────
   useEffect(() => () => {
-    if (window.speechSynthesis) window.speechSynthesis.cancel();
-    if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
+    audioListenersCleanupRef.current?.();
+    if (persistentAudioRef.current) {
+      persistentAudioRef.current.pause();
+      persistentAudioRef.current.src = '';
+    }
     if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
     clearTimeout(bubbleTimer.current);
     karaokeRef.current.forEach(id => clearTimeout(id));
@@ -644,12 +665,10 @@ export default function GameLessonPlayer() {
   function handlePause() {
     if (!isPaused) {
       // Pause audio
-      if (audioRef.current) audioRef.current.pause();
-      window.speechSynthesis?.pause?.();
+      if (persistentAudioRef.current) persistentAudioRef.current.pause();
     } else {
       // Resume audio
-      if (audioRef.current) audioRef.current.play().catch(() => {});
-      window.speechSynthesis?.resume?.();
+      if (persistentAudioRef.current) persistentAudioRef.current.play().catch(() => {});
     }
     setIsPaused(p => !p);
   }
