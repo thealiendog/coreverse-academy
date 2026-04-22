@@ -339,10 +339,10 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Saying sorry means you know you hurt someone and you want to make it better.', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What makes a REAL sorry?', guideText: 'What makes sorry REAL?',
         items: [
-          { image: '/game-assets/inner-world/glowing-heart.png', label: 'Meaning it inside', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Saying it fast' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'Running away' },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'Not looking at them' },
+          { image: '/game-assets/inner-world/glowing-heart.png',      label: 'Meaning it inside', correct: true },
+          { image: '/game-assets/inner-world/sorry-rushed-bunny.png', label: 'Saying it fast' },
+          { image: '/game-assets/inner-world/running-away.png',        label: 'Running away' },
+          { image: '/game-assets/inner-world/sorry-avoiding.png',      label: 'Not looking at them' },
         ]
       },
       { type: 'teach', guideText: 'After you say sorry, try to fix what happened. Help rebuild the tower. That shows you mean it.', image: '/game-assets/inner-world/hug-scene.png' },
