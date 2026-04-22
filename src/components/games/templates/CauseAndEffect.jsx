@@ -10,7 +10,7 @@ import KaraokeText from '../KaraokeText';
 //   → 1s hold
 //   → next cycle (repeat)
 //
-// After all cycles: onNarrate(finalMessage) → 2.5s → onComplete (auto-advance)
+// After all cycles: onNarrate(finalMessage, onComplete) — advance when speech ends
 //
 // The sequence starts automatically when `disabled` goes false
 // (i.e., GameLessonPlayer has finished speaking the intro guideText).
@@ -72,11 +72,11 @@ export default function CauseAndEffect({ step, onComplete, onNarrate, disabled, 
       setScale(0.9);
       setLabel(finalMsg);
       setIsDone(true);
-      onNarrate?.(finalMsg);
+      // Pass onComplete as the speech callback so the screen advances only
+      // when the closing line has fully finished playing — not after a fixed
+      // timer that races against ElevenLabs fetch latency + audio duration.
+      onNarrate?.(finalMsg, onComplete);
     });
-    t += 2500;
-
-    after(t, () => onComplete?.());
 
     return () => { cancelled = true; timers.forEach(clearTimeout); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
