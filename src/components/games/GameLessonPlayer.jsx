@@ -258,11 +258,9 @@ export default function GameLessonPlayer() {
     if (step.instruction) parts.push(r(step.instruction));
     if (step.guideText)   parts.push(r(step.guideText));
     if (step.type === 'yes-no') parts.push('Tap the green check for yes, or the red X for no!');
-    // Cause-and-effect: include the first cycle's action as the opening prompt.
-    if (step.type === 'cause-effect' && step.cycles?.[0]) {
-      const spoken = step.cycles[0].prompt || step.cycles[0].action;
-      if (spoken) parts.push(r(spoken));
-    }
+    // Cause-and-effect: only include the guideText — the template narrates each
+    // breath cycle at the correct moment via onNarrate, so we don't prepend any
+    // cycle text here (timing would be wrong: this speech plays before the animation).
     return parts.join(' ');
   }
 
@@ -446,7 +444,7 @@ export default function GameLessonPlayer() {
       case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} />;
       case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} />;
       case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onReady={handleReady} onNarrate={handleNarrate} disabled={interactionLocked} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>

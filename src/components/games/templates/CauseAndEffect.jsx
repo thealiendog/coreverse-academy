@@ -1,171 +1,164 @@
 import { useState, useEffect } from 'react';
-import { sfx } from '../sounds';
 
-// All TTS is handled by GameLessonPlayer.
-// Initial intro: GameLessonPlayer speaks guideText + cycles[0].action.
-// Between cycles: this component calls onNarrate() to speak the next prompt.
+// Fully automatic guided breathing exercise — no tapping required.
+//
+// Flow (per cycle):
+//   onNarrate("Breathe in!") + balloon grows over 3s
+//   → 1s hold
+//   → onNarrate("Breathe out!") + balloon shrinks over 3s
+//   → 1s hold
+//   → next cycle (repeat)
+//
+// After all cycles: onNarrate(finalMessage) → 2.5s → onComplete (auto-advance)
+//
+// The sequence starts automatically when `disabled` goes false
+// (i.e., GameLessonPlayer has finished speaking the intro guideText).
 
-export default function CauseAndEffect({ step, onReady, onNarrate, disabled }) {
-  const cycles = step.cycles || [];
+const GROW_MS  = 3000; // balloon expand duration (matches CSS transition)
+const SHRINK_MS = 3000; // balloon shrink duration
+const HOLD_MS   = 1000; // pause between phases
 
-  const [cycleIdx, setCycleIdx] = useState(0);
-  const [phase,    setPhase]    = useState('before'); // 'before' | 'animating' | 'after'
-  // imgScale persists across cycles so breathe-in stays big until breathe-out shrinks it.
-  const [imgScale, setImgScale] = useState(0.7);
+export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }) {
+  const cycles     = step.cycles || [];
+  const finalMsg   = step.finalMessage || 'Great job! You feel so calm!';
+  const hasImage   = !!step.image;
 
+  const [scale,   setScale]   = useState(0.85);
+  const [label,   setLabel]   = useState('');
+  const [isDone,  setIsDone]  = useState(false);
+
+  // Reset when step changes (new screen).
   useEffect(() => {
-    setCycleIdx(0);
-    setPhase('before');
-    setImgScale(0.7);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setScale(0.85);
+    setLabel('');
+    setIsDone(false);
   }, [step]);
 
-  const cycle = cycles[cycleIdx];
-  if (!cycle) return null;
+  // Start the automatic sequence once the intro speech finishes (disabled → false).
+  useEffect(() => {
+    if (disabled) return;
+    if (!cycles.length) { onComplete?.(); return; }
 
-  const afterScale = cycle.afterScale ?? 1.15;
+    let cancelled = false;
+    const timers  = [];
+    const after   = (ms, fn) => { const t = setTimeout(() => { if (!cancelled) fn(); }, ms); timers.push(t); };
 
-  function trigger() {
-    if (phase !== 'before' || disabled) return;
-    sfx.chime();
-    setPhase('animating');
-    setImgScale(afterScale);
+    let t = 0;
 
-    setTimeout(() => {
-      setPhase('after');
-      sfx.sparkle();
-      onNarrate?.(cycle.after);
+    cycles.forEach(cycle => {
+      const inText  = cycle.in  || 'Breathe in!';
+      const outText = cycle.out || 'Breathe out!';
 
-      setTimeout(() => {
-        const next = cycleIdx + 1;
-        if (next >= cycles.length) {
-          sfx.fanfare();
-          setTimeout(() => onReady?.(), 800);
-        } else {
-          const nextCycle = cycles[next];
-          setCycleIdx(next);
-          // imgScale stays at afterScale — becomes the "before" scale for next cycle
-          setPhase('before');
-          setTimeout(() => onNarrate?.(nextCycle.action), 500);
-        }
-      }, 2200);
-    }, 800);
-  }
+      // ── Breathe IN ──────────────────────────────────────────────
+      after(t, () => {
+        setScale(1.3);
+        setLabel(inText);
+        onNarrate?.(inText);
+      });
+      t += GROW_MS + HOLD_MS; // grow finishes + 1s hold
 
-  const isBefore    = phase === 'before';
-  const isAfter     = phase === 'after';
-  const hasImage    = !!step.image;
+      // ── Breathe OUT ─────────────────────────────────────────────
+      after(t, () => {
+        setScale(0.65);
+        setLabel(outText);
+        onNarrate?.(outText);
+      });
+      t += SHRINK_MS + HOLD_MS; // shrink finishes + 1s hold
+    });
+
+    // ── Finished ────────────────────────────────────────────────
+    after(t, () => {
+      setScale(0.9);
+      setLabel(finalMsg);
+      setIsDone(true);
+      onNarrate?.(finalMsg);
+    });
+    t += 2500;
+
+    after(t, () => onComplete?.());
+
+    return () => { cancelled = true; timers.forEach(clearTimeout); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [disabled]);
 
   return (
-    <div style={{ padding: '16px 16px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+    <div style={{
+      padding: '24px 16px 32px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 32,
+      minHeight: '55vh',
+    }}>
       <style>{`
-        @keyframes cae-btn-pulse {
-          0%,100% { transform: scale(1);    box-shadow: 0 0 28px rgba(124,58,237,0.55); }
-          50%      { transform: scale(1.12); box-shadow: 0 0 52px rgba(124,58,237,0.9);  }
-        }
-        @keyframes cae-glow-ring {
-          0%,100% { opacity: 0.55; transform: scale(1);    }
-          50%      { opacity: 1;    transform: scale(1.06); }
+        @keyframes cae-glow {
+          0%,100% { opacity: 0.5; transform: scale(1);    }
+          50%      { opacity: 1;   transform: scale(1.06); }
         }
       `}</style>
 
-      {/* Progress dots */}
-      <div style={{ display: 'flex', gap: 8 }}>
-        {cycles.map((_, i) => (
-          <div key={i} style={{
-            width:      i <= cycleIdx ? 14 : 10,
-            height:     i <= cycleIdx ? 14 : 10,
-            borderRadius: '50%',
-            background: i < cycleIdx ? '#34D399' : i === cycleIdx ? '#FCD34D' : 'rgba(255,255,255,0.2)',
-            transition: 'all 0.3s ease',
-          }} />
-        ))}
-      </div>
-
-      {/* Main visual — image or fallback shape */}
-      <div style={{
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 300,
-        height: 300,
-      }}>
-        {/* Glow ring when "after" */}
-        {isAfter && (
-          <div style={{
-            position: 'absolute',
-            inset: -24,
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(252,211,77,0.35) 0%, transparent 70%)',
-            animation: 'cae-glow-ring 1.6s ease-in-out infinite',
-            pointerEvents: 'none',
-          }} />
-        )}
+      {/* Balloon / image */}
+      <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {/* Ambient glow when expanded */}
+        <div style={{
+          position: 'absolute',
+          width: 260,
+          height: 260,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(124,58,237,0.22) 0%, transparent 70%)',
+          transform: `scale(${scale})`,
+          transition: `transform ${GROW_MS}ms ease-in-out`,
+          pointerEvents: 'none',
+        }} />
 
         {hasImage ? (
           <img
             src={step.image}
             alt=""
             style={{
-              width: '100%',
-              height: '100%',
+              width: 280,
+              height: 280,
               objectFit: 'contain',
-              borderRadius: 24,
-              transition: 'transform 0.85s cubic-bezier(0.34,1.56,0.64,1), opacity 0.45s ease, filter 0.45s ease',
-              transform: `scale(${imgScale})`,
-              opacity:    isBefore ? 0.72 : 1,
-              filter:     isAfter  ? 'drop-shadow(0 0 22px rgba(252,211,77,0.65))' : 'none',
+              display: 'block',
+              transition: `transform ${GROW_MS}ms ease-in-out, filter 0.6s ease, opacity 0.6s ease`,
+              transform: `scale(${scale})`,
+              filter:  isDone
+                ? 'drop-shadow(0 0 24px rgba(52,211,153,0.7))'
+                : scale > 1
+                  ? 'drop-shadow(0 0 16px rgba(124,58,237,0.55))'
+                  : 'none',
+              opacity: disabled ? 0.6 : 1,
             }}
             draggable={false}
           />
         ) : (
-          /* Fallback: simple colored circle */
           <div style={{
-            width: 180,
-            height: 180,
+            width: 200,
+            height: 200,
             borderRadius: '50%',
-            background: isAfter ? '#34D399' : '#7C3AED',
-            transition: 'transform 0.85s cubic-bezier(0.34,1.56,0.64,1), background 0.4s ease, box-shadow 0.4s ease',
-            transform: `scale(${imgScale})`,
-            opacity:    isBefore ? 0.72 : 1,
-            boxShadow:  isAfter  ? '0 0 48px rgba(52,211,153,0.6)' : '0 0 20px rgba(124,58,237,0.4)',
+            background: isDone ? '#34D399' : '#7C3AED',
+            transition: `transform ${GROW_MS}ms ease-in-out, background 0.6s ease`,
+            transform: `scale(${scale})`,
+            boxShadow: scale > 1 ? '0 0 48px rgba(124,58,237,0.6)' : '0 0 16px rgba(124,58,237,0.3)',
           }} />
         )}
       </div>
 
-      {/* State text label */}
+      {/* "Breathe in..." / "Breathe out..." label */}
       <p style={{
-        color:      isAfter ? '#FCD34D' : 'rgba(255,255,255,0.85)',
-        fontWeight: 800,
-        fontSize:   'clamp(1.05rem, 3.5vw, 1.3rem)',
+        color:      isDone ? '#34D399' : '#FCD34D',
+        fontWeight: 900,
+        fontSize:   'clamp(1.3rem, 4vw, 1.7rem)',
         textAlign:  'center',
         margin:     0,
-        minHeight:  '1.6em',
-        transition: 'color 0.4s ease',
+        letterSpacing: '0.02em',
+        opacity:    label ? 1 : 0,
+        transition: 'opacity 0.6s ease, color 0.4s ease',
+        minHeight:  '2em',
       }}>
-        {isAfter ? cycle.after : cycle.before}
+        {label || ' '}
       </p>
-
-      {/* Tap circle — large, pulsing, no text; hidden during animating/after */}
-      {isBefore && (
-        <button
-          onClick={trigger}
-          style={{
-            width:          96,
-            height:         96,
-            borderRadius:   '50%',
-            border:         'none',
-            background:     'rgba(124,58,237,0.85)',
-            cursor:         disabled ? 'default' : 'pointer',
-            touchAction:    'manipulation',
-            opacity:        disabled ? 0.4 : 1,
-            pointerEvents:  disabled ? 'none' : 'auto',
-            animation:      disabled ? 'none' : 'cae-btn-pulse 1.5s ease-in-out infinite',
-            boxShadow:      '0 0 28px rgba(124,58,237,0.55)',
-          }}
-        />
-      )}
     </div>
   );
 }
