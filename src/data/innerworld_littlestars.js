@@ -202,8 +202,8 @@ export const innerworldLittleStars = [
         ]
       },
       { type: 'teach', guideText: 'Breathing in makes your belly big like a balloon. Breathing out lets everything go.', image: '/game-assets/inner-world/breathing-balloon.png' },
-      { type: 'yes-no', scenario: 'When you feel angry, should you take a deep breath before doing anything?', correctAnswer: true, image: '/game-assets/inner-world/calm-jar.png', guideText: 'Should you breathe when you feel angry?' },
-      { type: 'teach', guideText: 'Three deep breaths can change everything. In through your nose, out through your mouth.', image: '/game-assets/inner-world/safe-place.png' },
+      { type: 'yes-no', scenario: 'When you feel angry, should you take a deep breath before doing anything?', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png', guideText: 'Should you breathe when you feel angry?' },
+      { type: 'teach', guideText: 'Three deep breaths can change everything. In through your nose, out through your mouth.', image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What does deep breathing do?', guideText: 'What does deep breathing do?',
         items: [
           { image: '/game-assets/inner-world/breathing-balloon.png', label: 'Calms you down', correct: true },
@@ -239,11 +239,14 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Let us make a magical calm-down jar!' },
       { type: 'story', guideText: 'When your feelings are wild and swirly, a calm-down jar can help. Watch the glitter spin and slowly settle. Your feelings settle too.', image: '/game-assets/inner-world/calm-jar.png' },
-      { type: 'cause-effect', guideText: 'Shake the jar and watch!',
+      { type: 'cause-effect',
+        image: '/game-assets/inner-world/calm-jar.png',
+        guideText: 'Watch the calm-down jar! Shake it up, then breathe and watch the glitter settle.',
+        finalMessage: 'The glitter settled! Your feelings can settle too!',
         cycles: [
-          { prompt: 'Shake the jar!',      before: 'Still jar',        action: 'Shake it',      after: 'Glitter swirling!',  narration: 'Look at all that glitter!' },
-          { prompt: 'Now wait and watch!', before: 'Swirling glitter', action: 'Wait and watch', after: 'Glitter settles',    narration: 'It is settling down!' },
-          { prompt: 'How do you feel?',    before: 'Settled jar',      action: 'Feel calm',      after: 'Peaceful and still!', narration: 'Calm like the jar!' },
+          { in: 'Shake it up!',    out: 'Watch it settle...' },
+          { in: 'Shake again!',    out: 'Breathe and wait...' },
+          { in: 'One more shake!', out: 'Calm like the jar!' },
         ]
       },
       { type: 'teach', guideText: 'When you are upset, your mind is like the swirly glitter. When you breathe and wait, everything settles.', image: '/game-assets/inner-world/calm-jar.png' },
@@ -343,7 +346,7 @@ export const innerworldLittleStars = [
           { image: '/game-assets/inner-world/sad-face.png',      label: 'Not looking at them' },
         ]
       },
-      { type: 'teach', guideText: 'After you say sorry, try to fix what happened. Help rebuild the tower. That shows you mean it.', image: '/game-assets/inner-world/bravery-slide.png' },
+      { type: 'teach', guideText: 'After you say sorry, try to fix what happened. Help rebuild the tower. That shows you mean it.', image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'yes-no', scenario: 'After saying sorry, you should try to make things better.', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png', guideText: 'Should you try to fix things after saying sorry?' },
       { type: 'family', guideText: 'Practice saying sorry to someone today and do something kind to make it better!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Sorry Hero', guideText: 'You know how to say sorry and mean it!' },
