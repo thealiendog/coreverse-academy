@@ -421,6 +421,7 @@ export default function GameLessonPlayer() {
 
   // ── Cleanup on unmount ─────────────────────────────────────────────────────
   useEffect(() => () => {
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
     if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
     clearTimeout(bubbleTimer.current);
   }, []);
