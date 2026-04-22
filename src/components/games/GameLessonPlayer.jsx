@@ -128,6 +128,11 @@ export default function GameLessonPlayer() {
 
   const gameSequence = lesson?.gameSequence || null;
 
+  // Next-lesson navigation (celebration screen forward arrow)
+  const nextLessonId  = lesson?.nextLesson;
+  const nextLessonIdx = nextLessonId ? lessons.findIndex(l => l.id === nextLessonId) : -1;
+  const hasNextLesson = nextLessonIdx !== -1;
+
   const [screenIdx,         setScreenIdx]         = useState(0);
   const [speaking,          setSpeaking]          = useState(false);
   const [bubble,            setBubble]            = useState('');
@@ -253,6 +258,10 @@ export default function GameLessonPlayer() {
   // ── Build full speech text for a step ─────────────────────────────────────
   function buildSpeechText(step) {
     const r = t => (t || '').replace(/\{name\}/g, childName);
+    if (step.type === 'celebration') {
+      const guide = r(step.guideText);
+      return guide ? `You did it, ${childName}! Amazing job! ${guide}` : `You did it, ${childName}! Amazing job!`;
+    }
     const parts = [];
     if (step.scenario)    parts.push(r(step.scenario));
     if (step.instruction) parts.push(r(step.instruction));
@@ -611,57 +620,86 @@ export default function GameLessonPlayer() {
         borderTop: '1px solid rgba(255,255,255,0.07)',
         paddingBottom: 'env(safe-area-inset-bottom)',
       }}>
-        {/* Back arrow */}
-        <button
-          onClick={goBack}
-          style={{
-            ...navBtnBase,
-            opacity: screenIdx > 0 ? 0.75 : 0.2,
-            pointerEvents: screenIdx > 0 ? 'auto' : 'none',
-          }}
-        >
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <polygon points="24,4 8,16 24,28" fill="rgba(255,255,255,0.9)" />
-          </svg>
-        </button>
-
-        {/* Pause / resume */}
-        <button onClick={handlePause} style={{ ...navBtnBase, opacity: 0.85 }}>
-          {isPaused ? (
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <polygon points="6,3 30,16 6,29" fill="rgba(255,255,255,0.9)" />
-            </svg>
-          ) : (
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <rect x="6"  y="5" width="7" height="22" rx="2.5" fill="rgba(255,255,255,0.9)" />
-              <rect x="19" y="5" width="7" height="22" rx="2.5" fill="rgba(255,255,255,0.9)" />
-            </svg>
-          )}
-        </button>
-
-        {/* Forward arrow — becomes home icon on celebration screen */}
         {isCelebration ? (
-          <button
-            onClick={() => navigate('/child/dashboard')}
-            style={{ ...navBtnBase, opacity: 0.9 }}
-          >
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M16 3L2 14h3v15h8v-9h6v9h8V14h3L16 3z" fill="rgba(255,255,255,0.9)" />
-            </svg>
-          </button>
+          <>
+            {/* LEFT: back to subject lesson list */}
+            <button
+              onClick={() => navigate(`/child/subject/${subjectId}`)}
+              style={{ ...navBtnBase, opacity: 0.75 }}
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <polygon points="24,4 8,16 24,28" fill="rgba(255,255,255,0.9)" />
+              </svg>
+            </button>
+
+            {/* CENTER: home */}
+            <button
+              onClick={() => navigate('/child/dashboard')}
+              style={{ ...navBtnBase, opacity: 0.85 }}
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 3L2 14h3v15h8v-9h6v9h8V14h3L16 3z" fill="rgba(255,255,255,0.9)" />
+              </svg>
+            </button>
+
+            {/* RIGHT: next lesson, or empty spacer if this is the last lesson */}
+            {hasNextLesson ? (
+              <button
+                onClick={() => navigate(`/child/lesson/${subjectId}/${nextLessonIdx}?level=1`)}
+                style={{ ...navBtnBase, opacity: 1 }}
+              >
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <polygon points="8,4 24,16 8,28" fill={accent} />
+                </svg>
+              </button>
+            ) : (
+              <div style={{ width: 60 }} />
+            )}
+          </>
         ) : (
-          <button
-            onClick={() => { if (canAdvance) advance(); }}
-            style={{
-              ...navBtnBase,
-              opacity: canAdvance ? 1 : 0.2,
-              pointerEvents: canAdvance ? 'auto' : 'none',
-            }}
-          >
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <polygon points="8,4 24,16 8,28" fill={canAdvance ? accent : 'rgba(255,255,255,0.9)'} />
-            </svg>
-          </button>
+          <>
+            {/* Back arrow */}
+            <button
+              onClick={goBack}
+              style={{
+                ...navBtnBase,
+                opacity: screenIdx > 0 ? 0.75 : 0.2,
+                pointerEvents: screenIdx > 0 ? 'auto' : 'none',
+              }}
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <polygon points="24,4 8,16 24,28" fill="rgba(255,255,255,0.9)" />
+              </svg>
+            </button>
+
+            {/* Pause / resume */}
+            <button onClick={handlePause} style={{ ...navBtnBase, opacity: 0.85 }}>
+              {isPaused ? (
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <polygon points="6,3 30,16 6,29" fill="rgba(255,255,255,0.9)" />
+                </svg>
+              ) : (
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                  <rect x="6"  y="5" width="7" height="22" rx="2.5" fill="rgba(255,255,255,0.9)" />
+                  <rect x="19" y="5" width="7" height="22" rx="2.5" fill="rgba(255,255,255,0.9)" />
+                </svg>
+              )}
+            </button>
+
+            {/* Forward arrow */}
+            <button
+              onClick={() => { if (canAdvance) advance(); }}
+              style={{
+                ...navBtnBase,
+                opacity: canAdvance ? 1 : 0.2,
+                pointerEvents: canAdvance ? 'auto' : 'none',
+              }}
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <polygon points="8,4 24,16 8,28" fill={canAdvance ? accent : 'rgba(255,255,255,0.9)'} />
+              </svg>
+            </button>
+          </>
         )}
       </div>
 

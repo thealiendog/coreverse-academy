@@ -64,10 +64,11 @@ export default function CelebrationScreen({ step, childName, guideAvatar }) {
       justifyContent: 'center',
     }}>
       <style>{`
-        @keyframes cel-pop   { 0%{transform:scale(0) rotate(-20deg)}60%{transform:scale(1.12) rotate(4deg)}100%{transform:scale(1) rotate(0)} }
-        @keyframes cel-spin  { 0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)} }
-        @keyframes cel-glow  { 0%,100%{box-shadow:0 0 30px ${accent}55}50%{box-shadow:0 0 60px ${accent}99,0 0 100px ${accent}44} }
-        @keyframes cel-float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
+        @keyframes cel-pop        { 0%{transform:scale(0) rotate(-20deg)}60%{transform:scale(1.12) rotate(4deg)}100%{transform:scale(1) rotate(0)} }
+        @keyframes cel-spin       { 0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)} }
+        @keyframes cel-glow       { 0%,100%{box-shadow:0 0 30px ${accent}55}50%{box-shadow:0 0 60px ${accent}99,0 0 100px ${accent}44} }
+        @keyframes cel-float      { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
+        @keyframes cel-badge-glow { 0%,100%{box-shadow:0 8px 32px rgba(252,211,77,0.15),0 0 0px rgba(252,211,77,0)}50%{box-shadow:0 8px 48px rgba(252,211,77,0.45),0 0 60px rgba(252,211,77,0.25)} }
       `}</style>
 
       <Confetti />
@@ -134,12 +135,12 @@ export default function CelebrationScreen({ step, childName, guideAvatar }) {
         transform: phase >= 1 ? 'scale(1)' : 'scale(0.85)',
         transition: 'all 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.1s',
         background: `linear-gradient(135deg, ${guideAvatar?.color || '#1a0a2e'}, rgba(252,211,77,0.08))`,
-        border: '2px solid #FCD34D55',
+        border: '2px solid #FCD34D88',
         borderRadius: 20,
         padding: '18px 24px',
         maxWidth: 340,
         width: '100%',
-        boxShadow: '0 8px 32px rgba(252,211,77,0.15)',
+        animation: phase >= 1 ? 'cel-badge-glow 2.4s ease-in-out infinite' : 'none',
       }}>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.8rem', fontWeight: 700, margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           Badge Earned
