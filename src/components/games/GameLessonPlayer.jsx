@@ -164,6 +164,8 @@ export default function GameLessonPlayer() {
   const fallbackTimerRef = useRef(null);
   const speakGenRef     = useRef(0); // incremented on every speak() call; stale fetches bail out
   const totalRef        = useRef(0); // kept in sync with gameSequence.length; read by advance()
+  const lastSpeakTime   = useRef(0);
+  const lastSpokenText  = useRef('');
 
   // ── Stable advance — uses functional setScreenIdx so setTimeout closures
   //    always read current state, not a stale render's screenIdx. ────────────
@@ -177,6 +179,17 @@ export default function GameLessonPlayer() {
   // ── Speak ──────────────────────────────────────────────────────────────────
   const speak = useCallback(async (text, onDone) => {
     if (!text) { onDone?.(); return; }
+
+    // Timestamp debounce: block identical text spoken within 3 seconds.
+    // Catches any double-invoke path (StrictMode, stale closures, re-renders)
+    // before any audio or fetch is started.
+    const now = Date.now();
+    if (text === lastSpokenText.current && now - lastSpeakTime.current < 3000) {
+      console.log('[speak] BLOCKED duplicate:', text.slice(0, 60));
+      return; // don't call onDone — the original invocation's onDone owns the flow
+    }
+    lastSpokenText.current = text;
+    lastSpeakTime.current  = now;
 
     // Increment generation — any in-flight fetch from a previous call will see
     // a stale gen and discard its audio, preventing the double-speech race.
