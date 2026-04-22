@@ -36,14 +36,24 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
       });
     }
 
-    // 1. Read instruction + guideText, then read each option.
+    // 1. Read instruction + guideText.
+    // 2a. readOptions=true  → then read each option label one by one, then unlock.
+    // 2b. readOptions=false → unlock immediately after intro (images speak for themselves).
     const intro = [step.instruction, step.guideText].filter(Boolean).join('. ');
+    const afterIntro = () => {
+      if (cancelled) return;
+      if (step.readOptions) {
+        setTimeout(() => readOption(0), 400);
+      } else {
+        setReadingIdx(-1);
+        setLocked(false);
+        onUnlock?.();
+      }
+    };
     if (intro) {
-      speak?.(intro, () => {
-        if (!cancelled) setTimeout(() => readOption(0), 400);
-      });
+      speak?.(intro, afterIntro);
     } else {
-      setTimeout(() => { if (!cancelled) readOption(0); }, 200);
+      setTimeout(afterIntro, 200);
     }
 
     return () => { cancelled = true; };
