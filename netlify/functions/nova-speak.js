@@ -41,10 +41,21 @@ exports.handler = async (event) => {
 
     // /with-timestamps returns JSON: { audio_base64, alignment, normalized_alignment }
     const data = await response.json();
+
+    // Return raw binary audio as the body (avoids iOS Safari bugs with large
+    // base64 data URIs in Audio elements — truncation, silent failures, etc.).
+    // Alignment timestamps travel in the X-Alignment header so the client can
+    // drive karaoke without a second request.
+    const audioBuffer = Buffer.from(data.audio_base64, 'base64');
     return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ audio: data.audio_base64, alignment: data.alignment }),
+      statusCode:      200,
+      isBase64Encoded: true,       // tells Netlify the body is base64-encoded binary
+      headers: {
+        'Content-Type':  'audio/mpeg',
+        'X-Alignment':   JSON.stringify(data.alignment),
+        'Cache-Control': 'no-store',
+      },
+      body: audioBuffer.toString('base64'),
     };
   } catch (err) {
     console.error('nova-speak error:', err.message);

@@ -181,6 +181,7 @@ export default function GameLessonPlayer() {
   const lastSpeakTime   = useRef(0);
   const lastSpokenText  = useRef('');
   const karaokeRef      = useRef([]); // scheduled karaoke timeout IDs
+  const blobUrlRef      = useRef(null); // active blob URL — revoked whenever audio ends or is replaced
 
   // ── Stable advance — uses functional setScreenIdx so setTimeout closures
   //    always read current state, not a stale render's screenIdx. ────────────
@@ -223,6 +224,7 @@ export default function GameLessonPlayer() {
       audioRef.current.src = '';
       audioRef.current = null;
     }
+    if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
     window.speechSynthesis?.cancel();
     clearTimeout(bubbleTimer.current);
 
@@ -280,8 +282,13 @@ export default function GameLessonPlayer() {
       });
       console.log(`[audio ${ts()}] FETCH_RESPONSE status=${res.status} took=${Date.now() - fetchStart}ms`);
       if (!res.ok) throw new Error('tts-unavailable');
-      const { audio, alignment } = await res.json();
-      console.log(`[audio ${ts()}] AUDIO_RECEIVED base64_chars=${audio?.length ?? 0} has_alignment=${!!alignment} gen_ok=${gen === speakGenRef.current}`);
+
+      // Alignment timestamps travel in a header; audio body is raw binary (avoids
+      // iOS Safari bugs with large base64 data URIs in Audio elements).
+      const alignmentHeader = res.headers.get('X-Alignment');
+      const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
+      const blob = await res.blob();
+      console.log(`[audio ${ts()}] AUDIO_RECEIVED blob_bytes=${blob.size} has_alignment=${!!alignment} gen_ok=${gen === speakGenRef.current}`);
 
       // Bail out if a newer speak() call has already started — discard this audio.
       // Still call onDone so the screen isn't left waiting with no callback.
@@ -290,9 +297,19 @@ export default function GameLessonPlayer() {
         clearTimeout(deadman); onDone?.(); return;
       }
 
-      const dataUri = `data:audio/mpeg;base64,${audio}`;
-      console.log(`[audio ${ts()}] AUDIO_ELEMENT_CREATE gen=${gen} dataUri_chars=${dataUri.length}`);
-      const el = new Audio(dataUri);
+      // Blob URL — a lightweight pointer into browser memory, never a multi-hundred-KB URI string.
+      if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); }
+      const blobUrl = URL.createObjectURL(blob);
+      blobUrlRef.current = blobUrl;
+      console.log(`[audio ${ts()}] AUDIO_ELEMENT_CREATE gen=${gen} blob_bytes=${blob.size}`);
+      const el = new Audio(blobUrl);
+
+      // Mobile-friendly attributes — required for inline playback on iOS Safari.
+      el.playsInline = true;
+      el.preload     = 'auto';
+      el.setAttribute('webkit-playsinline', 'true');
+      el.setAttribute('playsinline',        'true');
+
       audioRef.current = el;
       let playStarted = false;
 
@@ -362,6 +379,7 @@ export default function GameLessonPlayer() {
         console.log(`[audio ${ts()}] EVT ended gen=${gen} currentTime=${el.currentTime?.toFixed(2)}`);
         clearTimeout(deadman);
         audioRef.current = null;
+        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
         karaokeRef.current.forEach(id => clearTimeout(id));
         karaokeRef.current = [];
         setKaraokeIdx(-1);
@@ -375,6 +393,7 @@ export default function GameLessonPlayer() {
         console.log(`[audio ${ts()}] EVT error playStarted=${playStarted} code=${el.error?.code} msg=${el.error?.message}`);
         clearTimeout(deadman);
         audioRef.current = null;
+        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
         if (playStarted) finish('onerror-mid');
         else trySpeechSynthesis();
       };
@@ -386,6 +405,7 @@ export default function GameLessonPlayer() {
         console.log(`[audio ${ts()}] PLAY_BLOCKED ${playErr.name}: ${playErr.message}`);
         clearTimeout(deadman);
         audioRef.current = null;
+        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
         trySpeechSynthesis();
       } else {
         console.log(`[audio ${ts()}] PLAY_OK gen=${gen}`);
@@ -553,10 +573,35 @@ export default function GameLessonPlayer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
+  // ── iOS audio unlock ──────────────────────────────────────────────────────
+  // iOS Safari blocks audio.play() on any element that wasn't triggered directly
+  // by a user gesture. Playing a tiny silent clip on the first tap primes the
+  // audio context so all subsequent programmatic plays work without a gesture —
+  // including auto-advance screens where there is no tap between screens.
+  useEffect(() => {
+    const SILENT = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+    let unlocked = false;
+    function unlock() {
+      if (unlocked) return;
+      unlocked = true;
+      const el = new Audio(SILENT);
+      el.play().catch(() => {});
+      document.removeEventListener('touchstart', unlock, true);
+      document.removeEventListener('click',      unlock, true);
+    }
+    document.addEventListener('touchstart', unlock, { capture: true, passive: true });
+    document.addEventListener('click',      unlock, { capture: true, passive: true });
+    return () => {
+      document.removeEventListener('touchstart', unlock, true);
+      document.removeEventListener('click',      unlock, true);
+    };
+  }, []);
+
   // ── Cleanup on unmount ─────────────────────────────────────────────────────
   useEffect(() => () => {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
     if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
+    if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
     clearTimeout(bubbleTimer.current);
     karaokeRef.current.forEach(id => clearTimeout(id));
   }, []);
