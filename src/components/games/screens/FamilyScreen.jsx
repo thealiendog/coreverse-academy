@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import KaraokeText from '../KaraokeText';
 
-export default function FamilyScreen({ step, childName, guideAvatar }) {
+export default function FamilyScreen({ step, childName, guideAvatar, karaokeWords = [], karaokeIdx = -1 }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export default function FamilyScreen({ step, childName, guideAvatar }) {
           margin: 0,
           fontWeight: 600,
         }}>
-          {text}
+          <KaraokeText text={text} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
         </p>
       </div>
 

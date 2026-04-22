@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
+import KaraokeText from '../KaraokeText';
 
 const CONFETTI_COLORS = ['#FCD34D', '#F59E0B', '#7C3AED', '#A78BFA', '#10B981', '#60A5FA', '#F472B6', '#34D399'];
 
@@ -37,7 +38,7 @@ function Confetti() {
   );
 }
 
-export default function CelebrationScreen({ step, childName, guideAvatar }) {
+export default function CelebrationScreen({ step, childName, guideAvatar, karaokeWords = [], karaokeIdx = -1 }) {
   const [phase, setPhase] = useState(0); // 0=avatar, 1=text+badge
 
   useEffect(() => {
@@ -149,7 +150,7 @@ export default function CelebrationScreen({ step, childName, guideAvatar }) {
           {badgeName}
         </p>
         <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', lineHeight: 1.5, margin: 0 }}>
-          {text}
+          <KaraokeText text={text} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
         </p>
       </div>
 

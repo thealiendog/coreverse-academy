@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 import WinCelebration from '../WinCelebration';
+import KaraokeText from '../KaraokeText';
 
-export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, disabled }) {
+export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, disabled, karaokeWords = [], karaokeIdx = -1 }) {
   const [chosen,   setChosen]  = useState(null); // true=yes, false=no
   const [locked,   setLocked]  = useState(false);
   const [showWin,  setShowWin] = useState(false);
@@ -66,7 +67,7 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, dis
         textAlign: 'center',
       }}>
         <p style={{ color:'rgba(255,255,255,0.9)', fontWeight:700, fontSize:'clamp(1.05rem,3vw,1.25rem)', lineHeight:1.55, margin:0 }}>
-          {scenario}
+          <KaraokeText text={scenario} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
         </p>
       </div>
 

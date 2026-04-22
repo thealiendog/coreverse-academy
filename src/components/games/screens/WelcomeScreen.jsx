@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import KaraokeText from '../KaraokeText';
 
-export default function WelcomeScreen({ step, childName, guideAvatar }) {
+export default function WelcomeScreen({ step, childName, guideAvatar, karaokeWords = [], karaokeIdx = -1 }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -102,7 +103,7 @@ export default function WelcomeScreen({ step, childName, guideAvatar }) {
           margin: 0,
           fontWeight: 600,
         }}>
-          {greeting}
+          <KaraokeText text={greeting} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
         </p>
       </div>
 

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import KaraokeText from '../KaraokeText';
 
 // Fully automatic guided demonstration — no tapping required.
 //
@@ -13,7 +14,7 @@ import { useState, useEffect, useRef } from 'react';
 //
 // Starts automatically when `disabled` goes false (intro speech done).
 
-export default function GuidedDemo({ step, onComplete, onNarrate, disabled }) {
+export default function GuidedDemo({ step, onComplete, onNarrate, disabled, karaokeWords = [], karaokeIdx = -1 }) {
   const phases = step.phases || [];
   const image  = step.image;
 
@@ -143,7 +144,7 @@ export default function GuidedDemo({ step, onComplete, onNarrate, disabled }) {
         minHeight:  '3em',
         maxWidth:   340,
       }}>
-        {label || ' '}
+        {label ? <KaraokeText text={label} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} /> : ' '}
       </p>
     </div>
   );

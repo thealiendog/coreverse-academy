@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import KaraokeText from '../KaraokeText';
 
 // Text label fallbacks when no image is provided (no emoji)
 const TEXT_VISUALS = {
@@ -18,7 +19,7 @@ const TEXT_VISUALS = {
 
 // Auto-advance is driven by GameLessonPlayer via the speak() onDone callback —
 // this screen just displays content and fades in.
-export default function TeachScreen({ step, childName, guideAvatar }) {
+export default function TeachScreen({ step, childName, guideAvatar, karaokeWords = [], karaokeIdx = -1 }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -95,7 +96,7 @@ export default function TeachScreen({ step, childName, guideAvatar }) {
           fontWeight: 700,
           textAlign: 'center',
         }}>
-          {text}
+          <KaraokeText text={text} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
         </p>
       </div>
     </div>

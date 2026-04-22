@@ -143,6 +143,8 @@ export default function GameLessonPlayer() {
   const [isPaused,          setIsPaused]          = useState(false);
   const [winPulse,          setWinPulse]          = useState(false);
   const [readingIdx,        setReadingIdx]        = useState(-1); // tap-right card currently being read aloud
+  const [karaokeWords,      setKaraokeWords]      = useState([]); // words of text currently being spoken
+  const [karaokeIdx,        setKaraokeIdx]        = useState(-1); // index of the actively spoken word
 
   // Detect portrait orientation on tablet-sized screens
   useEffect(() => {
@@ -167,6 +169,7 @@ export default function GameLessonPlayer() {
   const totalRef        = useRef(0); // kept in sync with gameSequence.length; read by advance()
   const lastSpeakTime   = useRef(0);
   const lastSpokenText  = useRef('');
+  const karaokeRef      = useRef([]); // scheduled karaoke timeout IDs
 
   // ── Stable advance — uses functional setScreenIdx so setTimeout closures
   //    always read current state, not a stale render's screenIdx. ────────────
@@ -253,7 +256,40 @@ export default function GameLessonPlayer() {
       const el = new Audio(`data:audio/mpeg;base64,${audio}`);
       audioRef.current = el;
       let playStarted = false;
-      el.onended = () => { clearTimeout(deadman); audioRef.current = null; finish(); };
+      let cachedDur = null;
+      el.onloadedmetadata = () => { cachedDur = el.duration; };
+      el.onplay = () => {
+        const dur = cachedDur
+          || (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null)
+          || resolved.split(/\s+/).length * 0.40;
+        // Schedule per-word highlights proportional to character length (min 150ms/word)
+        karaokeRef.current.forEach(id => clearTimeout(id));
+        karaokeRef.current = [];
+        setKaraokeIdx(-1);
+        const kWords = resolved.split(/\s+/).filter(Boolean);
+        if (kWords.length >= 2 && dur > 0) {
+          setKaraokeWords(kWords);
+          const totalChars = kWords.reduce((sum, w) => sum + w.length, 0);
+          const msPerChar  = (dur * 1000) / totalChars;
+          let cumMs = 0;
+          const ids = kWords.map((word, i) => {
+            const id = setTimeout(() => setKaraokeIdx(i), cumMs);
+            cumMs += Math.max(150, word.length * msPerChar);
+            return id;
+          });
+          ids.push(setTimeout(() => setKaraokeIdx(-1), cumMs + 300));
+          karaokeRef.current = ids;
+        }
+      };
+      el.onended = () => {
+        clearTimeout(deadman);
+        audioRef.current = null;
+        karaokeRef.current.forEach(id => clearTimeout(id));
+        karaokeRef.current = [];
+        setKaraokeIdx(-1);
+        setKaraokeWords([]);
+        finish();
+      };
       // Only fall back to speech synthesis if ElevenLabs never started playing.
       // If playStarted=true, onerror is a mid-stream glitch — just finish() cleanly
       // rather than layering speech synthesis on top of a partially-playing audio.
@@ -332,6 +368,12 @@ export default function GameLessonPlayer() {
   //   other game    — speak intro → unlock cards (forward arrow stays disabled until onReady)
   //   celebration   — speak intro → unlock (forward arrow = home button, shown immediately)
   useEffect(() => {
+    // Reset karaoke whenever the screen changes.
+    karaokeRef.current.forEach(id => clearTimeout(id));
+    karaokeRef.current = [];
+    setKaraokeIdx(-1);
+    setKaraokeWords([]);
+
     if (!gameSequence) return;
     const step   = gameSequence[screenIdx];
     const text   = buildSpeechText(step);
@@ -424,6 +466,7 @@ export default function GameLessonPlayer() {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
     if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
     clearTimeout(bubbleTimer.current);
+    karaokeRef.current.forEach(id => clearTimeout(id));
   }, []);
 
   // ── No game sequence → navigate to regular LessonPlayer (no ?level=1 so no loop) ───
@@ -476,19 +519,19 @@ export default function GameLessonPlayer() {
 
   // ── Render screen ─────────────────────────────────────────────────────────
   function renderScreen(step) {
-    const common = { step, childName, guideAvatar, onComplete: advance, speaking, disabled: interactionLocked, speak };
+    const common = { step, childName, guideAvatar, onComplete: advance, speaking, disabled: interactionLocked, speak, karaokeWords, karaokeIdx };
     switch (step.type) {
       case 'welcome':      return <WelcomeScreen     {...common} />;
       case 'story':        return <StoryScreen       {...common} />;
       case 'teach':        return <TeachScreen       {...common} />;
       case 'family':       return <FamilyScreen      {...common} />;
       case 'celebration':  return <CelebrationScreen {...common} />;
-      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} readingIdx={readingIdx} />;
-      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} />;
-      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} />;
-      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} />;
-      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
-      case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} />;
+      case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} readingIdx={readingIdx} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>

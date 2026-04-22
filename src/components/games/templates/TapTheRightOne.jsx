@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import WinCelebration from '../WinCelebration';
+import KaraokeText from '../KaraokeText';
 
 // All TTS is handled by GameLessonPlayer. This component is purely presentational:
 // it receives readingIdx (which card is being narrated) and disabled (interaction lock)
 // as props and renders accordingly. No speak calls here.
 
-export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, readingIdx = -1 }) {
+export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, readingIdx = -1, karaokeWords = [], karaokeIdx = -1 }) {
   const [selected, setSelected] = useState(null);
   const [wrong,    setWrong]    = useState(null);
   const [showWin,  setShowWin]  = useState(false);
@@ -48,7 +49,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
         margin: 0,
         lineHeight: 1.3,
       }}>
-        {step.instruction || 'Tap the right one!'}
+        <KaraokeText text={step.instruction || 'Tap the right one!'} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
       </p>
 
       {/* 2×2 grid */}

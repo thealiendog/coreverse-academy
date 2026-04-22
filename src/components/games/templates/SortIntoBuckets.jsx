@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
+import KaraokeText from '../KaraokeText';
 
-export default function SortIntoBuckets({ step, onReady, disabled }) {
+export default function SortIntoBuckets({ step, onReady, disabled, karaokeWords = [], karaokeIdx = -1 }) {
   const buckets = step.buckets || [
     { label: 'Living',     color: '#34D399' },
     { label: 'Non-living', color: '#60A5FA' },
@@ -63,7 +64,7 @@ export default function SortIntoBuckets({ step, onReady, disabled }) {
 
       {/* Instruction */}
       <p style={{ color:'#fff', fontWeight:800, fontSize:'clamp(1.1rem,3.5vw,1.4rem)', textAlign:'center', margin:0 }}>
-        {done ? 'Great sorting!' : (step.instruction || 'Sort each item into the right bucket!')}
+        {done ? 'Great sorting!' : <KaraokeText text={step.instruction || 'Sort each item into the right bucket!'} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />}
       </p>
 
       {/* Current item to sort */}

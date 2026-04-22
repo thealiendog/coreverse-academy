@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import KaraokeText from '../KaraokeText';
 
 // Fully automatic guided breathing exercise — no tapping required.
 //
@@ -18,7 +19,7 @@ const GROW_MS  = 3000; // balloon expand duration (matches CSS transition)
 const SHRINK_MS = 3000; // balloon shrink duration
 const HOLD_MS   = 1000; // pause between phases
 
-export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }) {
+export default function CauseAndEffect({ step, onComplete, onNarrate, disabled, karaokeWords = [], karaokeIdx = -1 }) {
   const cycles     = step.cycles || [];
   const finalMsg   = step.finalMessage || 'Great job! You feel so calm!';
   const hasImage   = !!step.image;
@@ -157,7 +158,7 @@ export default function CauseAndEffect({ step, onComplete, onNarrate, disabled }
         transition: 'opacity 0.6s ease, color 0.4s ease',
         minHeight:  '2em',
       }}>
-        {label || ' '}
+        {label ? <KaraokeText text={label} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} /> : ' '}
       </p>
     </div>
   );

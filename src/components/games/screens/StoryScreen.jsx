@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import KaraokeText from '../KaraokeText';
 
 // Image grid — used when step.images is an array of paths
 function ImageGrid({ images, labels }) {
@@ -25,7 +26,7 @@ function ImageGrid({ images, labels }) {
 
 // Auto-advance is driven by GameLessonPlayer via the speak() onDone callback —
 // this screen just displays content and fades in.
-export default function StoryScreen({ step, childName, guideAvatar }) {
+export default function StoryScreen({ step, childName, guideAvatar, karaokeWords = [], karaokeIdx = -1 }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -81,7 +82,7 @@ export default function StoryScreen({ step, childName, guideAvatar }) {
           fontWeight: 600,
           textAlign: 'center',
         }}>
-          {text}
+          <KaraokeText text={text} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />
         </p>
       </div>
     </div>

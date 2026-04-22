@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
+import KaraokeText from '../KaraokeText';
 
 // Default objects when none provided: colored circles with letters
 const DEFAULT_OBJECTS = ['A','B','C','D','E'];
 const DEFAULT_COLORS  = ['#7C3AED','#F59E0B','#10B981','#60A5FA','#F472B6'];
 
-export default function CountAndTap({ step, onReady, disabled }) {
+export default function CountAndTap({ step, onReady, disabled, karaokeWords = [], karaokeIdx = -1 }) {
   const raw     = step.objects || DEFAULT_OBJECTS;
   const N       = raw.length;
   const isImage = typeof raw[0] === 'object' && raw[0]?.image;
@@ -53,7 +54,7 @@ export default function CountAndTap({ step, onReady, disabled }) {
       <p style={{ color:'#fff', fontWeight:800, fontSize:'clamp(1.1rem,3.5vw,1.4rem)', textAlign:'center', margin:0 }}>
         {done
           ? `You counted ${N}!`
-          : `${step.instruction || `Tap all ${N} items!`} (${tapped.size}/${N})`}
+          : <><KaraokeText text={step.instruction || `Tap all ${N} items!`} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />({tapped.size}/{N})</>}
       </p>
 
       {/* Objects */}
