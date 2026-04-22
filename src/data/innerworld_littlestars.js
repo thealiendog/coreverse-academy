@@ -286,12 +286,12 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about something beautiful. LOVE!' },
       { type: 'story', guideText: 'Love is all around you. Your family loves you. Your friends love you. Love fills your heart like a warm glow.', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What shows LOVE?', guideText: 'Which one shows love?',
+      { type: 'tap-right', readOptions: true, instruction: 'What shows LOVE?',
         items: [
-          { image: '/game-assets/inner-world/hug-scene.png',     label: 'Giving a hug', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',    label: 'Yelling' },
-          { image: '/game-assets/inner-world/scared-face.png',   label: 'Running away' },
-          { image: '/game-assets/inner-world/sad-face.png',      label: 'Ignoring someone' },
+          { image: '/game-assets/inner-world/hug-scene.png',      label: 'Giving a hug',    correct: true },
+          { image: '/game-assets/inner-world/yelling.png',        label: 'Yelling' },
+          { image: '/game-assets/inner-world/running-away.png',   label: 'Running away' },
+          { image: '/game-assets/inner-world/ignoring.png',       label: 'Ignoring someone' },
         ]
       },
       { type: 'teach', guideText: 'Love is in hugs. Love is in bedtime stories. Love is in someone making you breakfast.', image: '/game-assets/inner-world/hug-scene.png' },
