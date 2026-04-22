@@ -386,10 +386,10 @@ export const innerworldLittleStars = [
       { type: 'story', guideText: 'Everyone is happy about different things. Some people love playing outside. Some love drawing. Some love cuddles. What makes YOU happy?', image: '/game-assets/inner-world/happy-face.png' },
       { type: 'tap-right', readOptions: true, instruction: 'What might make someone happy?', guideText: 'What makes people happy?',
         items: [
-          { image: '/game-assets/inner-world/happy-face.png',  label: 'Playing with friends', correct: true },
-          { image: '/game-assets/inner-world/angry-face.png',  label: 'Breaking toys' },
-          { image: '/game-assets/inner-world/scared-face.png', label: 'Being alone in dark' },
-          { image: '/game-assets/inner-world/sad-face.png',    label: 'Losing things' },
+          { image: '/game-assets/inner-world/happy-playing-friends.png', label: 'Playing with friends', correct: true },
+          { image: '/game-assets/inner-world/happy-breaking-toy.png',   label: 'Breaking toys' },
+          { image: '/game-assets/inner-world/happy-alone-dark.png',     label: 'Being alone in dark' },
+          { image: '/game-assets/inner-world/happy-losing-item.png',    label: 'Losing things' },
         ]
       },
       { type: 'teach', guideText: 'Knowing what makes you happy is a SUPERPOWER. When you feel sad, you can do something that makes you happy!', image: '/game-assets/inner-world/glowing-heart.png' },
