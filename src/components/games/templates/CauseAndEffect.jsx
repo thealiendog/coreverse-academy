@@ -1,114 +1,80 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 
-// CSS-only shape for default cycles — no emoji
-function DefaultShape({ color, label }) {
-  return (
-    <div style={{
-      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10,
-    }}>
-      <div style={{
-        width: 80, height: 80, borderRadius: '50%',
-        background: color,
-        boxShadow: `0 0 24px ${color}88`,
-      }} />
-      <span style={{ color: '#fff', fontWeight: 800, fontSize: '1rem' }}>{label}</span>
-    </div>
-  );
-}
-
-// Default cycles — fully image/CSS driven, no emoji
-const DEFAULT_CYCLES = [
-  {
-    prompt:    'Tap the button to plant the seed!',
-    beforeEl:  <DefaultShape color="#86EFAC" label="Seed" />,
-    afterEl:   <DefaultShape color="#34D399" label="Flower" />,
-    action:    'Plant it!',
-    narration: 'You planted the seed and it grew!',
-  },
-  {
-    prompt:    'Tap the button to save the coin!',
-    beforeEl:  <DefaultShape color="#FCD34D" label="Coin" />,
-    afterEl:   <DefaultShape color="#F59E0B" label="Saved!" />,
-    action:    'Save it!',
-    narration: 'You saved the coin and built a treasure!',
-  },
-  {
-    prompt:    'Tap the button to cheer them up!',
-    beforeEl:  <DefaultShape color="#60A5FA" label="Sad" />,
-    afterEl:   <DefaultShape color="#34D399" label="Happy" />,
-    action:    'Help it!',
-    narration: 'You helped and now they feel better!',
-  },
-];
+// All TTS is handled by GameLessonPlayer.
+// Initial intro: GameLessonPlayer speaks guideText + cycles[0].action.
+// Between cycles: this component calls onNarrate() to speak the next prompt.
 
 export default function CauseAndEffect({ step, onReady, onNarrate, disabled }) {
-  const cycles = step.cycles || DEFAULT_CYCLES;
+  const cycles = step.cycles || [];
 
   const [cycleIdx, setCycleIdx] = useState(0);
   const [phase,    setPhase]    = useState('before'); // 'before' | 'animating' | 'after'
+  // imgScale persists across cycles so breathe-in stays big until breathe-out shrinks it.
+  const [imgScale, setImgScale] = useState(0.7);
 
   useEffect(() => {
     setCycleIdx(0);
     setPhase('before');
-    // All TTS handled by GameLessonPlayer.
+    setImgScale(0.7);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
   const cycle = cycles[cycleIdx];
+  if (!cycle) return null;
 
-  // Resolve what to show — supports legacy `before`/`after` strings (images/text)
-  // and new `beforeEl`/`afterEl` React elements
-  function SceneContent({ which, anim }) {
-    const el = cycle[which + 'El'];
-    const src = cycle[which]; // legacy: image path or text
-    if (el) return <div style={{ animation: anim }}>{el}</div>;
-    if (src && (src.startsWith('/') || src.startsWith('http'))) {
-      return (
-        <img src={src} alt="" style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: 16, animation: anim }} draggable={false} />
-      );
-    }
-    if (src) {
-      return <span style={{ color: '#fff', fontWeight: 800, fontSize: '1.2rem', animation: anim }}>{src}</span>;
-    }
-    return null;
-  }
+  const afterScale = cycle.afterScale ?? 1.15;
 
   function trigger() {
     if (phase !== 'before' || disabled) return;
     sfx.chime();
     setPhase('animating');
+    setImgScale(afterScale);
+
     setTimeout(() => {
       setPhase('after');
       sfx.sparkle();
-      onNarrate?.(cycle.narration);
+      onNarrate?.(cycle.after);
+
       setTimeout(() => {
         const next = cycleIdx + 1;
         if (next >= cycles.length) {
           sfx.fanfare();
-          setTimeout(() => onReady?.(), 1200);
+          setTimeout(() => onReady?.(), 800);
         } else {
+          const nextCycle = cycles[next];
           setCycleIdx(next);
+          // imgScale stays at afterScale — becomes the "before" scale for next cycle
           setPhase('before');
+          setTimeout(() => onNarrate?.(nextCycle.action), 500);
         }
       }, 2200);
     }, 800);
   }
 
+  const isBefore    = phase === 'before';
+  const isAfter     = phase === 'after';
+  const hasImage    = !!step.image;
+
   return (
-    <div style={{ padding: '16px 16px 28px', display:'flex', flexDirection:'column', alignItems:'center', gap:24 }}>
+    <div style={{ padding: '16px 16px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
       <style>{`
-        @keyframes cae-appear { 0%{transform:scale(0) rotate(-20deg);opacity:0}60%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0);opacity:1} }
-        @keyframes cae-pulse  { 0%,100%{transform:scale(1)}50%{transform:scale(1.1)} }
-        @keyframes cae-spin   { 0%{transform:rotate(0)}100%{transform:rotate(360deg)} }
+        @keyframes cae-btn-pulse {
+          0%,100% { transform: scale(1);    box-shadow: 0 0 28px rgba(124,58,237,0.55); }
+          50%      { transform: scale(1.12); box-shadow: 0 0 52px rgba(124,58,237,0.9);  }
+        }
+        @keyframes cae-glow-ring {
+          0%,100% { opacity: 0.55; transform: scale(1);    }
+          50%      { opacity: 1;    transform: scale(1.06); }
+        }
       `}</style>
 
       {/* Progress dots */}
-      <div style={{ display:'flex', gap:8 }}>
+      <div style={{ display: 'flex', gap: 8 }}>
         {cycles.map((_, i) => (
           <div key={i} style={{
-            width: i <= cycleIdx ? 14 : 10,
-            height: i <= cycleIdx ? 14 : 10,
+            width:      i <= cycleIdx ? 14 : 10,
+            height:     i <= cycleIdx ? 14 : 10,
             borderRadius: '50%',
             background: i < cycleIdx ? '#34D399' : i === cycleIdx ? '#FCD34D' : 'rgba(255,255,255,0.2)',
             transition: 'all 0.3s ease',
@@ -116,43 +82,89 @@ export default function CauseAndEffect({ step, onReady, onNarrate, disabled }) {
         ))}
       </div>
 
-      {/* Prompt / narration */}
-      <p style={{ color:'#fff', fontWeight:800, fontSize:'clamp(1.1rem,3.5vw,1.4rem)', textAlign:'center', margin:0 }}>
-        {phase === 'after' ? cycle.narration : cycle.prompt}
-      </p>
-
-      {/* Scene canvas */}
+      {/* Main visual — image or fallback shape */}
       <div style={{
-        width: 200, height: 170,
-        background: 'rgba(255,255,255,0.05)',
-        borderRadius: 24,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        border: '1.5px solid rgba(255,255,255,0.12)',
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 300,
+        height: 300,
       }}>
-        {phase === 'before'    && <SceneContent which="before" anim="cae-pulse 1.5s ease-in-out infinite" />}
-        {phase === 'animating' && <SceneContent which="before" anim="cae-spin 0.8s ease-in-out" />}
-        {phase === 'after'     && <SceneContent which="after"  anim="cae-appear 0.6s cubic-bezier(0.34,1.56,0.64,1) both" />}
+        {/* Glow ring when "after" */}
+        {isAfter && (
+          <div style={{
+            position: 'absolute',
+            inset: -24,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(252,211,77,0.35) 0%, transparent 70%)',
+            animation: 'cae-glow-ring 1.6s ease-in-out infinite',
+            pointerEvents: 'none',
+          }} />
+        )}
+
+        {hasImage ? (
+          <img
+            src={step.image}
+            alt=""
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              borderRadius: 24,
+              transition: 'transform 0.85s cubic-bezier(0.34,1.56,0.64,1), opacity 0.45s ease, filter 0.45s ease',
+              transform: `scale(${imgScale})`,
+              opacity:    isBefore ? 0.72 : 1,
+              filter:     isAfter  ? 'drop-shadow(0 0 22px rgba(252,211,77,0.65))' : 'none',
+            }}
+            draggable={false}
+          />
+        ) : (
+          /* Fallback: simple colored circle */
+          <div style={{
+            width: 180,
+            height: 180,
+            borderRadius: '50%',
+            background: isAfter ? '#34D399' : '#7C3AED',
+            transition: 'transform 0.85s cubic-bezier(0.34,1.56,0.64,1), background 0.4s ease, box-shadow 0.4s ease',
+            transform: `scale(${imgScale})`,
+            opacity:    isBefore ? 0.72 : 1,
+            boxShadow:  isAfter  ? '0 0 48px rgba(52,211,153,0.6)' : '0 0 20px rgba(124,58,237,0.4)',
+          }} />
+        )}
       </div>
 
-      {/* Action button — only shown when child can interact (before phase) */}
-      {phase === 'before' && (
+      {/* State text label */}
+      <p style={{
+        color:      isAfter ? '#FCD34D' : 'rgba(255,255,255,0.85)',
+        fontWeight: 800,
+        fontSize:   'clamp(1.05rem, 3.5vw, 1.3rem)',
+        textAlign:  'center',
+        margin:     0,
+        minHeight:  '1.6em',
+        transition: 'color 0.4s ease',
+      }}>
+        {isAfter ? cycle.after : cycle.before}
+      </p>
+
+      {/* Tap circle — large, pulsing, no text; hidden during animating/after */}
+      {isBefore && (
         <button
           onClick={trigger}
           style={{
-            background: 'linear-gradient(135deg,#7C3AED,#A78BFA)',
-            color: '#fff',
-            border: 'none',
-            borderRadius: 100,
-            padding: '16px 44px',
-            fontSize: '1.2rem',
-            fontWeight: 900,
-            cursor: 'pointer',
-            boxShadow: '0 6px 24px rgba(124,58,237,0.5)',
-            touchAction: 'manipulation',
+            width:          96,
+            height:         96,
+            borderRadius:   '50%',
+            border:         'none',
+            background:     'rgba(124,58,237,0.85)',
+            cursor:         disabled ? 'default' : 'pointer',
+            touchAction:    'manipulation',
+            opacity:        disabled ? 0.4 : 1,
+            pointerEvents:  disabled ? 'none' : 'auto',
+            animation:      disabled ? 'none' : 'cae-btn-pulse 1.5s ease-in-out infinite',
+            boxShadow:      '0 0 28px rgba(124,58,237,0.55)',
           }}
-        >
-          {cycle.action}
-        </button>
+        />
       )}
     </div>
   );

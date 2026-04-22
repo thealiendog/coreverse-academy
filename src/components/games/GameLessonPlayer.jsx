@@ -258,9 +258,10 @@ export default function GameLessonPlayer() {
     if (step.instruction) parts.push(r(step.instruction));
     if (step.guideText)   parts.push(r(step.guideText));
     if (step.type === 'yes-no') parts.push('Tap the green check for yes, or the red X for no!');
-    // Cause-and-effect: include the first cycle's prompt (e.g. "Tap the button to plant the seed!")
-    if (step.type === 'cause-effect' && step.cycles?.[0]?.prompt) {
-      parts.push(r(step.cycles[0].prompt));
+    // Cause-and-effect: include the first cycle's action as the opening prompt.
+    if (step.type === 'cause-effect' && step.cycles?.[0]) {
+      const spoken = step.cycles[0].prompt || step.cycles[0].action;
+      if (spoken) parts.push(r(spoken));
     }
     return parts.join(' ');
   }

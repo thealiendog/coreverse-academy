@@ -191,11 +191,13 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn the superpower of breathing!' },
       { type: 'story', guideText: 'When big feelings come, you have a superpower. It is your BREATH. Breathing slowly calms everything down.', image: '/game-assets/inner-world/breathing-superpower.png' },
-      { type: 'cause-effect', guideText: 'Watch what happens when you breathe in!',
+      { type: 'cause-effect',
+        image: '/game-assets/inner-world/breathing-balloon.png',
+        guideText: 'Watch what happens when you breathe in!',
         cycles: [
-          { prompt: 'Breathe in!',         beforeEl: null, before: 'Small balloon', action: 'Breathe in',   after: 'Big balloon!',        narration: 'Great breathing!' },
-          { prompt: 'Now breathe out!',    beforeEl: null, before: 'Big balloon',   action: 'Breathe out',  after: 'Small balloon',       narration: 'Well done!' },
-          { prompt: 'Feel those feelings?', beforeEl: null, before: 'Wiggly feelings', action: 'Deep breath', after: 'Calm and peaceful!', narration: 'Deep breathing works!' },
+          { before: 'Small and calm',  action: 'Breathe in!',  after: 'Growing bigger!',    afterScale: 1.2  },
+          { before: 'Big and full',    action: 'Breathe out!', after: 'Shrinking down!',    afterScale: 0.65 },
+          { before: 'Wiggly feelings', action: 'Deep breath!', after: 'Calm and peaceful!', afterScale: 1.0  },
         ]
       },
       { type: 'teach', guideText: 'Breathing in makes your belly big like a balloon. Breathing out lets everything go.', image: '/game-assets/inner-world/breathing-balloon.png' },
