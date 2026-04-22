@@ -75,6 +75,9 @@ function charAlignmentToWordStarts(text, alignment) {
   }
 }
 
+// ── Debug timestamp — remove with all [audio] logs when done ─────────────────
+const ts = () => new Date().toISOString().slice(11, 23);
+
 // ── Guide speech bubble ───────────────────────────────────────────────────────
 function GuideBubble({ text, speaking, guideAvatar }) {
   if (!text) return null;
@@ -204,6 +207,7 @@ export default function GameLessonPlayer() {
       // Duplicate detected — skip the audio but still call onDone so the screen
       // can advance. This handles StrictMode double-invoke, back/forward within
       // 3s, and any other re-entry that would produce double audio.
+      console.log(`[audio ${ts()}] DEBOUNCE_BLOCK — calling onDone. text="${text.slice(0, 50)}"`);
       onDone?.();
       return;
     }
@@ -227,9 +231,10 @@ export default function GameLessonPlayer() {
     setSpeaking(true);
 
     let done = false;
-    const finish = () => {
+    const finish = (reason = 'unknown') => {
       if (done) return;
       done = true;
+      console.log(`[audio ${ts()}] FINISH reason=${reason} gen=${gen}`);
       setSpeaking(false);
       bubbleTimer.current = setTimeout(() => setBubble(''), 3000);
       onDone?.();
@@ -237,41 +242,69 @@ export default function GameLessonPlayer() {
 
     // Dead-man's switch: if onended never fires (mobile Audio API quirk),
     // force completion after 20s so the screen never gets permanently stuck.
-    const deadman = setTimeout(finish, 20000);
+    const deadman = setTimeout(() => {
+      console.log(`[audio ${ts()}] DEADMAN_FIRED gen=${gen} — onended never arrived`);
+      finish('deadman');
+    }, 20000);
 
     function trySpeechSynthesis() {
-      if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
-      const synthTimer = setTimeout(finish, 12000);
+      if (gen !== speakGenRef.current) {
+        console.log(`[audio ${ts()}] SYNTH_GEN_STALE gen=${gen} current=${speakGenRef.current} — skipping`);
+        clearTimeout(deadman);
+        return;
+      }
+      console.log(`[audio ${ts()}] SYNTH_START gen=${gen} speechSynthesis=${!!window.speechSynthesis}`);
+      const synthTimer = setTimeout(() => { console.log(`[audio ${ts()}] SYNTH_TIMEOUT`); finish('synth-timeout'); }, 12000);
       try {
-        if (!window.speechSynthesis) { clearTimeout(synthTimer); finish(); return; }
+        if (!window.speechSynthesis) { clearTimeout(synthTimer); finish('no-speechSynthesis'); return; }
         window.speechSynthesis.cancel();
         const utt = new SpeechSynthesisUtterance(resolved);
         utt.rate    = 0.92;
-        utt.onend   = () => { clearTimeout(synthTimer); finish(); };
-        utt.onerror = () => { clearTimeout(synthTimer); finish(); };
+        utt.onend   = () => { console.log(`[audio ${ts()}] SYNTH_END`); clearTimeout(synthTimer); finish('synth-end'); };
+        utt.onerror = (e) => { console.log(`[audio ${ts()}] SYNTH_ERROR`, e?.error, e?.message); clearTimeout(synthTimer); finish('synth-error'); };
         window.speechSynthesis.speak(utt);
-      } catch {
+      } catch (e) {
+        console.log(`[audio ${ts()}] SYNTH_THROW`, e?.message);
         clearTimeout(synthTimer);
-        finish();
+        finish('synth-throw');
       }
     }
 
+    const fetchStart = Date.now();
+    console.log(`[audio ${ts()}] FETCH_START gen=${gen} text="${resolved.slice(0, 60)}${resolved.length > 60 ? '…' : ''}"`);
     try {
       const res = await fetch('/.netlify/functions/nova-speak', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ text: resolved }),
       });
+      console.log(`[audio ${ts()}] FETCH_RESPONSE status=${res.status} took=${Date.now() - fetchStart}ms`);
       if (!res.ok) throw new Error('tts-unavailable');
       const { audio, alignment } = await res.json();
+      console.log(`[audio ${ts()}] AUDIO_RECEIVED base64_chars=${audio?.length ?? 0} has_alignment=${!!alignment} gen_ok=${gen === speakGenRef.current}`);
 
       // Bail out if a newer speak() call has already started — discard this audio.
       // Still call onDone so the screen isn't left waiting with no callback.
-      if (gen !== speakGenRef.current) { clearTimeout(deadman); onDone?.(); return; }
+      if (gen !== speakGenRef.current) {
+        console.log(`[audio ${ts()}] GEN_STALE gen=${gen} current=${speakGenRef.current} — discarding audio`);
+        clearTimeout(deadman); onDone?.(); return;
+      }
 
-      const el = new Audio(`data:audio/mpeg;base64,${audio}`);
+      const dataUri = `data:audio/mpeg;base64,${audio}`;
+      console.log(`[audio ${ts()}] AUDIO_ELEMENT_CREATE gen=${gen} dataUri_chars=${dataUri.length}`);
+      const el = new Audio(dataUri);
       audioRef.current = el;
       let playStarted = false;
+
+      // ── Mobile event tracing ──────────────────────────────────────────────
+      el.addEventListener('loadstart',      () => console.log(`[audio ${ts()}] EVT loadstart`));
+      el.addEventListener('canplay',        () => console.log(`[audio ${ts()}] EVT canplay duration=${el.duration?.toFixed(2)}`));
+      el.addEventListener('canplaythrough', () => console.log(`[audio ${ts()}] EVT canplaythrough`));
+      el.addEventListener('play',           () => console.log(`[audio ${ts()}] EVT play`));
+      el.addEventListener('playing',        () => console.log(`[audio ${ts()}] EVT playing`));
+      el.addEventListener('pause',          () => console.log(`[audio ${ts()}] EVT pause currentTime=${el.currentTime?.toFixed(2)}`));
+      el.addEventListener('stalled',        () => console.log(`[audio ${ts()}] EVT stalled`));
+      el.addEventListener('waiting',        () => console.log(`[audio ${ts()}] EVT waiting`));
 
       // Karaoke highlighting — skipped for feedback / secondary audio
       if (noKaraoke) {
@@ -326,35 +359,41 @@ export default function GameLessonPlayer() {
         }
       }
       el.onended = () => {
+        console.log(`[audio ${ts()}] EVT ended gen=${gen} currentTime=${el.currentTime?.toFixed(2)}`);
         clearTimeout(deadman);
         audioRef.current = null;
         karaokeRef.current.forEach(id => clearTimeout(id));
         karaokeRef.current = [];
         setKaraokeIdx(-1);
         setKaraokeWords([]);
-        finish();
+        finish('onended');
       };
       // Only fall back to speech synthesis if ElevenLabs never started playing.
       // If playStarted=true, onerror is a mid-stream glitch — just finish() cleanly
       // rather than layering speech synthesis on top of a partially-playing audio.
-      el.onerror = () => {
+      el.onerror = (e) => {
+        console.log(`[audio ${ts()}] EVT error playStarted=${playStarted} code=${el.error?.code} msg=${el.error?.message}`);
         clearTimeout(deadman);
         audioRef.current = null;
-        if (playStarted) finish();
+        if (playStarted) finish('onerror-mid');
         else trySpeechSynthesis();
       };
 
+      console.log(`[audio ${ts()}] PLAY_CALL gen=${gen}`);
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) {
         // Autoplay blocked (iOS Safari before first user gesture)
+        console.log(`[audio ${ts()}] PLAY_BLOCKED ${playErr.name}: ${playErr.message}`);
         clearTimeout(deadman);
         audioRef.current = null;
         trySpeechSynthesis();
       } else {
+        console.log(`[audio ${ts()}] PLAY_OK gen=${gen}`);
         playStarted = true; // ElevenLabs audio is now playing — no speech synthesis fallback
       }
       // play() succeeded: onended will fire and clear deadman — no premature timeout
-    } catch {
+    } catch (e) {
+      console.log(`[audio ${ts()}] FETCH_OR_PARSE_ERROR gen=${gen}`, e?.message);
       clearTimeout(deadman);
       trySpeechSynthesis();
     }
