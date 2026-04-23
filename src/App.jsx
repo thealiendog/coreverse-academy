@@ -46,6 +46,7 @@ import ChildDashboard  from './pages/ChildDashboard';
 import SubjectView     from './pages/SubjectView';
 import LessonPlayer    from './pages/LessonPlayer';
 import GameLessonPlayer from './components/games/GameLessonPlayer';
+import TemplateTest     from './pages/TemplateTest';
 
 // Dispatches to GameLessonPlayer for Little Stars (?level=1) lessons
 // that have a gameSequence; falls back to LessonPlayer otherwise.
@@ -90,6 +91,9 @@ export default function App() {
         <Route path="/child/dashboard"          element={<ChildDashboard />} />
         <Route path="/child/subject/:subjectId" element={<ErrorBoundary><SubjectView /></ErrorBoundary>} />
         <Route path="/child/lesson/:subjectId/:lessonIdx" element={<ErrorBoundary><LessonDispatcher /></ErrorBoundary>} />
+
+        {/* Dev: template testing */}
+        <Route path="/template-test" element={<TemplateTest />} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

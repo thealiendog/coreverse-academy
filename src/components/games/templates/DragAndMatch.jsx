@@ -165,77 +165,75 @@ export default function DragAndMatch({
   const CARD_W   = IMG_SIZE + 24;  // item/target card width (px)
   const CARD_MIN = IMG_SIZE + 28;  // item/target card min-height (px)
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
-  function ItemContent({ pair, isMatch, isDark }) {
+  // ── Shape placeholder ─────────────────────────────────────────────────────
+  // Renders a colored geometric shape when no image is provided.
+  // Supports: 'circle', 'square', 'triangle'
+  function ShapeGraphic({ shape, color, size }) {
+    if (shape === 'circle') {
+      return <div style={{ width: size, height: size, borderRadius: '50%', background: color, flexShrink: 0 }} />;
+    }
+    if (shape === 'square') {
+      return <div style={{ width: size, height: size, borderRadius: 8, background: color, flexShrink: 0 }} />;
+    }
+    if (shape === 'triangle') {
+      return (
+        <svg width={size} height={size} viewBox="0 0 100 100" style={{ flexShrink: 0 }}>
+          <polygon points="50,8 96,92 4,92" fill={color} />
+        </svg>
+      );
+    }
+    // Fallback: question mark placeholder
+    return <span style={{ fontSize: size * 0.5, color: 'rgba(255,255,255,0.3)' }}>?</span>;
+  }
+
+  // Renders the visual content for an item (left column) or a matched item
+  // shown inside a target. Supports: image, shape+color, label (any combo).
+  function SlotContent({ slot, size, labelColor = 'rgba(255,255,255,0.9)' }) {
     return (
       <>
-        {pair.item.image && (
-          <img
-            src={pair.item.image}
-            alt={pair.item.label || ''}
-            draggable={false}
-            style={{ width: IMG_SIZE, height: IMG_SIZE, objectFit: 'contain', borderRadius: 10 }}
-          />
-        )}
-        {pair.item.label && (
-          <span style={{
-            color:      isMatch ? '#34D399' : isDark ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.9)',
-            fontSize:   '0.78rem',
-            fontWeight: 700,
-            textAlign:  'center',
-          }}>
-            {pair.item.label}
+        {slot.image
+          ? <img src={slot.image} alt={slot.label || ''} draggable={false}
+              style={{ width: size, height: size, objectFit: 'contain', borderRadius: 10, flexShrink: 0 }} />
+          : (slot.shape && slot.color)
+            ? <ShapeGraphic shape={slot.shape} color={slot.color} size={size} />
+            : null
+        }
+        {slot.label && (
+          <span style={{ color: labelColor, fontSize: '0.78rem', fontWeight: 700, textAlign: 'center' }}>
+            {slot.label}
           </span>
         )}
       </>
     );
   }
 
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function ItemContent({ pair, isMatch, isDark }) {
+    return (
+      <SlotContent
+        slot={pair.item}
+        size={IMG_SIZE}
+        labelColor={isMatch ? '#34D399' : isDark ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.9)'}
+      />
+    );
+  }
+
   function TargetContent({ pair, isMatch }) {
     if (isMatch) {
       // Show matched item inside target zone.
-      return (
-        <>
-          {pair.item.image && (
-            <img
-              src={pair.item.image}
-              alt={pair.item.label || ''}
-              draggable={false}
-              style={{ width: IMG_SIZE, height: IMG_SIZE, objectFit: 'contain', borderRadius: 10 }}
-            />
-          )}
-          {pair.target.label && (
-            <span style={{ color: '#34D399', fontSize: '0.78rem', fontWeight: 700, textAlign: 'center' }}>
-              {pair.target.label}
-            </span>
-          )}
-        </>
-      );
+      return <SlotContent slot={pair.item} size={IMG_SIZE} labelColor="#34D399" />;
     }
-    // Unmatched target zone.
+    // Unmatched — show the target's own visual (image, shape, or label hint).
+    const hasVisual = pair.target.image || (pair.target.shape && pair.target.color);
     return (
       <>
-        {pair.target.image && (
-          <img
-            src={pair.target.image}
-            alt={pair.target.label || ''}
-            draggable={false}
-            style={{ width: IMG_SIZE, height: IMG_SIZE, objectFit: 'contain', borderRadius: 10, opacity: 0.75 }}
-          />
-        )}
-        {pair.target.label && (
-          <span style={{
-            color:      'rgba(255,255,255,0.65)',
-            fontSize:   pair.target.image ? '0.78rem' : 'clamp(1rem, 4vw, 1.3rem)',
-            fontWeight: 800,
-            textAlign:  'center',
-            lineHeight: 1.2,
-          }}>
-            {pair.target.label}
-          </span>
-        )}
-        {/* Hint arrow when empty and label-only */}
-        {!pair.target.image && !pair.target.label && (
+        <SlotContent
+          slot={pair.target}
+          size={IMG_SIZE}
+          labelColor="rgba(255,255,255,0.65)"
+        />
+        {/* Fallback placeholder when target has nothing renderable */}
+        {!hasVisual && !pair.target.label && (
           <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: '1.5rem' }}>?</span>
         )}
       </>
