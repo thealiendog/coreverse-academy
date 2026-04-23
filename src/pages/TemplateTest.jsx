@@ -18,11 +18,12 @@ const DRAG_STEP = {
 };
 
 const COUNT_STEP = {
-  count:       5,
-  emoji:       '⭐',
-  instruction: 'Count the stars!',
-  guideText:   "Let's count them together!",
-  interactive: true,
+  count:             5,
+  emoji:             '⭐',
+  instruction:       'Count the stars!',
+  guideText:         "Let's count them together!",
+  interactive:       true,
+  celebrationNumber: 5,
 };
 
 const TAB_STYLE = (active) => ({

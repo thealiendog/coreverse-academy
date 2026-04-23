@@ -23,11 +23,12 @@ import WinCelebration from '../WinCelebration';
 //
 // Modes:
 //   interactive:true  — child taps each object; guide speaks each number;
-//                       all tapped → WinCelebration → onComplete()
+//                       all tapped → big number reveal → WinCelebration → onComplete()
 //   interactive:false — objects displayed statically; after speech finishes
 //                       (disabled → false) auto-advances after 2 s delay
 //
 // Object content (in priority order): step.image → step.emoji → colored dot
+// step.celebrationNumber — the numeral shown large on completion (defaults to count)
 
 const NUMBER_WORDS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 
@@ -56,14 +57,16 @@ export default function CountArray({
   karaokeWords = [],
   karaokeIdx   = -1,
 }) {
-  const count       = Math.min(10, Math.max(1, step.count || 1));
-  const interactive = step.interactive !== false; // defaults true
-  const imgSize     = getImgSize(count);
-  const rows        = getRows(count);
+  const count           = Math.min(10, Math.max(1, step.count || 1));
+  const interactive     = step.interactive !== false; // defaults true
+  const celebrationNum  = step.celebrationNumber ?? count;
+  const imgSize         = getImgSize(count);
+  const rows            = getRows(count);
 
-  const [tapped,   setTapped]   = useState(new Set()); // indices tapped
-  const [bouncing, setBouncing] = useState(null);       // idx doing bounce anim
-  const [showWin,  setShowWin]  = useState(false);
+  const [tapped,      setTapped]      = useState(new Set()); // indices tapped
+  const [bouncing,    setBouncing]    = useState(null);       // idx doing bounce anim
+  const [showBigNum,  setShowBigNum]  = useState(false);      // big number reveal
+  const [showWin,     setShowWin]     = useState(false);
 
   // Ref so the display-mode effect doesn't capture stale disabled
   const disabledRef = useRef(disabled);
@@ -73,6 +76,7 @@ export default function CountArray({
   useEffect(() => {
     setTapped(new Set());
     setBouncing(null);
+    setShowBigNum(false);
     setShowWin(false);
   }, [step]);
 
@@ -101,10 +105,14 @@ export default function CountArray({
     const word = NUMBER_WORDS[n - 1] ?? String(n);
     onNarrate?.(word + '!');
 
-    // All objects tapped → celebrate
+    // All objects tapped → big number reveal → WinCelebration
     if (n === count) {
       sfx.fanfare();
-      setTimeout(() => setShowWin(true), 700);
+      setShowBigNum(true);
+      setTimeout(() => {
+        setShowBigNum(false);
+        setShowWin(true);
+      }, 1100);
     }
   }
 
@@ -150,6 +158,16 @@ export default function CountArray({
           55%  { transform: scale(1.18) translateY(-4px); }
           100% { opacity: 1; transform: scale(1) translateY(0); }
         }
+        @keyframes ca-big-num {
+          0%   { opacity: 0; transform: scale(0.2); }
+          45%  { transform: scale(1.25); }
+          70%  { transform: scale(0.95); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes ca-big-num-glow {
+          0%,100% { text-shadow: 0 0 30px rgba(52,211,153,0.6), 0 0 60px rgba(52,211,153,0.3); }
+          50%     { text-shadow: 0 0 50px rgba(52,211,153,0.9), 0 0 90px rgba(52,211,153,0.5); }
+        }
       `}</style>
 
       {/* ── WinCelebration overlay ─────────────────────────────────────────── */}
@@ -180,31 +198,42 @@ export default function CountArray({
         )}
       </p>
 
-      {/* ── Running count display ─────────────────────────────────────────── */}
+      {/* ── Running count / big number reveal ────────────────────────────── */}
       {interactive && (
         <div style={{
-          minHeight:  64,
+          minHeight:  showBigNum ? 120 : 64,
           display:   'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          transition: 'min-height 0.2s',
         }}>
-          {tapped.size > 0 && (
+          {showBigNum ? (
+            /* Big celebration number */
+            <div style={{
+              fontSize:   'clamp(5rem, 22vw, 8rem)',
+              fontWeight:  900,
+              color:       '#34D399',
+              lineHeight:  1,
+              animation:  'ca-big-num 0.5s cubic-bezier(0.34,1.56,0.64,1) both, ca-big-num-glow 0.8s ease 0.5s infinite alternate',
+            }}>
+              {celebrationNum}
+            </div>
+          ) : tapped.size > 0 ? (
+            /* Running count — remount each tap to re-trigger pop */
             <div
-              key={tapped.size} // re-mount to re-trigger animation on each tap
+              key={tapped.size}
               style={{
                 fontSize:   'clamp(2.8rem, 10vw, 3.8rem)',
                 fontWeight:  900,
-                color:       allDone ? '#34D399' : '#FCD34D',
+                color:       '#FCD34D',
                 lineHeight:  1,
                 animation:  'ca-count-pop 0.35s ease both',
-                textShadow: allDone
-                  ? '0 0 24px rgba(52,211,153,0.7)'
-                  : '0 0 18px rgba(252,211,77,0.6)',
+                textShadow: '0 0 18px rgba(252,211,77,0.6)',
               }}
             >
               {tapped.size}
             </div>
-          )}
+          ) : null}
         </div>
       )}
 
