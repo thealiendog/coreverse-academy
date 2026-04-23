@@ -17,6 +17,7 @@ import SortIntoBuckets from './templates/SortIntoBuckets';
 import YesOrNo         from './templates/YesOrNo';
 import CauseAndEffect  from './templates/CauseAndEffect';
 import GuidedDemo      from './templates/GuidedDemo';
+import DragAndMatch    from './templates/DragAndMatch';
 
 // Lesson data — level 1 overrides keyed by subjectId
 import INNERWORLD_LITTLESTARS from '../../data/innerworld_littlestars_adapter';
@@ -460,6 +461,7 @@ export default function GameLessonPlayer() {
       case 'tap-right':
       case 'count':
       case 'sort':
+      case 'drag-match':
         return r(step.instruction);
       default:
         // welcome, story, teach, family, cause-effect — guideText only
@@ -473,13 +475,13 @@ export default function GameLessonPlayer() {
   }
 
   // ── Screen type sets (module-scoped constants referenced inside effects) ────
-  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect', 'guided-demo']);
+  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect', 'guided-demo', 'drag-match']);
   const AUTO_ADVANCE_TYPES = new Set(['welcome', 'story', 'teach', 'family']);
   // Fallback delay per auto-advance type — fires if audio onended never arrives.
   // Game-type fallbacks are intentionally short — if speech fails, cards must unlock
   // quickly so a broken TTS call can't brick the lesson for a 3-5 year old.
   // cause-effect / guided-demo stay at the 20000ms default (long automated sequences).
-  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000, 'tap-right': 6000, 'yes-no': 6000, count: 6000, sort: 6000 };
+  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000, 'tap-right': 6000, 'yes-no': 6000, count: 6000, sort: 6000, 'drag-match': 6000 };
 
   // ── Single speak + lock + auto-advance useEffect ───────────────────────────
   // GameLessonPlayer is the ONLY place that calls TTS. Templates are purely
@@ -741,6 +743,7 @@ export default function GameLessonPlayer() {
       case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} isPaused={isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'drag-match':   return <DragAndMatch    step={step} onComplete={advance} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       default:             return (
         <div style={{ textAlign:'center', padding:40 }}>
           <p style={{ color:'rgba(255,255,255,0.5)' }}>Unknown step type: {step.type}</p>
