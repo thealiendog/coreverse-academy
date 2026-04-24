@@ -197,6 +197,21 @@ export default function GameLessonPlayer() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
+  // ── Stable currentStep reference ─────────────────────────────────────────────
+  // Must be a useMemo (hook) called BEFORE the early return below, so that the
+  // reference is stable across re-renders within the same screen.  If we spread
+  // a new object on every render, TapTheRightOne's useEffect[step] fires on every
+  // parent state change (e.g. setWinPulse) and resets showWin=false, killing
+  // WinCelebration before onDone fires → screen freezes with no auto-advance.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const currentStep = useMemo(() => {
+    const s = gameSequence?.[screenIdx];
+    if (!s || s.type !== 'tap-right' || !tapRightShuffled) return s ?? null;
+    return { ...s, items: tapRightShuffled };
+  // tapRightShuffled is itself memoized on screenIdx, so effective dep is screenIdx
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screenIdx, tapRightShuffled]);
+
   const persistentAudioRef       = useRef(null); // single reused Audio element — created inside first gesture so iOS authorizes all future .play() calls
   const audioListenersCleanupRef = useRef(null); // removes current debug event listeners before reuse
   const bubbleTimer              = useRef(null);
@@ -595,7 +610,7 @@ export default function GameLessonPlayer() {
     const onIntroDone = () => {
       if (cancelled) return;
 
-      if (step.type === 'tap-right' && step.readOptions && step.items?.length) {
+      if (step.type === 'tap-right' && step.readOptions && !step.hideLabels && step.items?.length) {
         // Read each option label one-by-one, highlighting that card while speaking.
         // Use tapRightShuffled so the narration order matches the on-screen card order.
         // Fallback timer stays active and covers this phase too.
@@ -689,12 +704,8 @@ export default function GameLessonPlayer() {
     return null;
   }
 
-  // For tap-right screens inject the pre-shuffled items so the rendered card
-  // positions always match the readOptions narration order.
-  const rawStep     = gameSequence[screenIdx];
-  const currentStep = (rawStep?.type === 'tap-right' && tapRightShuffled)
-    ? { ...rawStep, items: tapRightShuffled }
-    : rawStep;
+  // currentStep is memoized above (before the early return) so the reference stays
+  // stable across re-renders within the same screen — see comment there.
   const total       = gameSequence.length;
   totalRef.current  = total; // keep ref in sync on every render for advance()
 
