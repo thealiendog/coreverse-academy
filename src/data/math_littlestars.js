@@ -60,7 +60,7 @@ export const mathLittleStars = [
     badge: "Big Counter", nextLesson: "math-3-5-03",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we count EVEN HIGHER!' },
-      { type: 'story', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'Remi found SO many acorns today. Ten is not enough! She learned to count to twenty, then thirty, then higher and higher.' },
+      { type: 'story', image: '/game-assets/math/remi-acorns-many.png', guideText: 'Remi found SO many acorns today. Ten is not enough! She learned to count to twenty, then thirty, then higher and higher.' },
       { type: 'count-array', count: 10, image: '/game-assets/math/acorn-single.png', interactive: false, instruction: 'Here are ten acorns', guideText: 'Ten acorns! But Remi found MORE!' },
       { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'After ten comes eleven, twelve, thirteen — the numbers keep going!' },
       { type: 'tap-right', readOptions: true, instruction: 'Which is MORE than ten?', guideText: 'Tap the bigger number!',
@@ -68,7 +68,7 @@ export const mathLittleStars = [
           { image: '/game-assets/math/numeral-10.png', label: 'Ten' },
           { image: '/game-assets/math/numeral-8.png', label: 'Eight' },
           { image: '/game-assets/math/numeral-3.png', label: 'Three' },
-          { image: '/game-assets/math/math-celebration.png', label: 'Twenty!', correct: true }
+          { image: '/game-assets/math/numeral-20.png', label: 'Twenty', correct: true }
         ]
       },
       { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'Numbers go on forever! Twenty, thirty, one hundred, one thousand!' },
@@ -99,7 +99,7 @@ export const mathLittleStars = [
     badge: "Pattern Finder", nextLesson: "math-3-5-04",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we find PATTERNS in numbers!' },
-      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi noticed something amazing. Numbers follow a pattern! 10, 20, 30, 40 — they all end in zero. She felt like a detective!' },
+      { type: 'story', image: '/game-assets/math/remi-detective.png', guideText: 'Remi noticed something amazing. Numbers follow a pattern! 10, 20, 30, 40 — they all end in zero. She felt like a detective!' },
       { type: 'count-array', count: 10, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Ten stars in a group', guideText: 'Ten! Another ten makes twenty. Another makes thirty!' },
       { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'Every time we add ten more, we get another number ending in zero.' },
       { type: 'tap-right', readOptions: true, instruction: 'Which number ends in ZERO?', guideText: 'Find the zero at the end!',
@@ -138,7 +138,7 @@ export const mathLittleStars = [
     badge: "Number Neighbor", nextLesson: "math-3-5-05",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn BEFORE and AFTER!' },
-      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi lines up her acorns in order. One, two, three. Before three comes two. After three comes four. Every number has a neighbor!' },
+      { type: 'story', image: '/game-assets/math/remi-acorns-many.png', guideText: 'Remi lines up her acorns in order. One, two, three. Before three comes two. After three comes four. Every number has a neighbor!' },
       { type: 'teach', image: '/game-assets/math/numeral-3.png', guideText: 'Before three is two. After three is four. Every number has one before and one after.' },
       { type: 'tap-right', readOptions: true, instruction: 'What comes AFTER three?', guideText: 'Tap the number that comes next!',
         items: [
@@ -188,14 +188,7 @@ export const mathLittleStars = [
       { type: 'count-array', count: 3, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Three stars', guideText: 'Three stars here!' },
       { type: 'count-array', count: 5, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Five stars', guideText: 'Five stars here! That is MORE!' },
       { type: 'teach', image: '/game-assets/math/numeral-5.png', guideText: 'Five is more than three. When you count, you can see which group is bigger!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which has MORE?', guideText: 'Tap the one with more!',
-        items: [
-          { image: '/game-assets/math/numeral-8.png', label: 'Eight', correct: true },
-          { image: '/game-assets/math/numeral-2.png', label: 'Two' },
-          { image: '/game-assets/math/numeral-3.png', label: 'Three' },
-          { image: '/game-assets/math/numeral-1.png', label: 'One' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Five stars is more than two stars. Is that true?', correctAnswer: true, image: '/game-assets/math/star-single.png' },
       { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'Sometimes two groups have the SAME. Two stars here, two stars there — same!' },
       { type: 'yes-no', scenario: 'If you have 4 and your friend has 4, do you have the SAME?', correctAnswer: true, image: '/game-assets/math/numeral-4.png' },
       { type: 'family', guideText: 'Tonight, compare things at dinner. Who has more grapes? Who has less? Who has the same? Count together!', image: '/game-assets/inner-world/family-circle.png' },
@@ -224,8 +217,8 @@ export const mathLittleStars = [
     badge: "Shape Spotter", nextLesson: "math-3-5-07",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we find SHAPES everywhere!' },
-      { type: 'story', image: '/game-assets/math/shape-circle.png', guideText: 'Remi looks around the forest and sees shapes! Circles in the sun. Squares in windows. Triangles in trees. Shapes are EVERYWHERE.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is a CIRCLE?', guideText: 'Tap the round one!',
+      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi looks around the forest and sees shapes! Circles in the sun. Squares in windows. Triangles in trees. Shapes are EVERYWHERE.' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a CIRCLE?', guideText: 'Tap the round one!',
         items: [
           { image: '/game-assets/math/shape-circle.png', label: 'Circle', correct: true },
           { image: '/game-assets/math/shape-square.png', label: 'Square' },
@@ -234,7 +227,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-circle.png', guideText: 'A circle is ROUND. Like a ball, the sun, or a wheel!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is a TRIANGLE?', guideText: 'Tap the one with three sides!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a TRIANGLE?', guideText: 'Tap the one with three sides!',
         items: [
           { image: '/game-assets/math/shape-triangle.png', label: 'Triangle', correct: true },
           { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
@@ -243,7 +236,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-square.png', guideText: 'A square has FOUR sides, all the same size. Like a window or a book!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is a SQUARE?', guideText: 'Tap the one with four equal sides!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SQUARE?', guideText: 'Tap the one with four equal sides!',
         items: [
           { image: '/game-assets/math/shape-square.png', label: 'Square', correct: true },
           { image: '/game-assets/math/shape-triangle.png', label: 'Triangle' },
@@ -279,7 +272,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn 3D SHAPES — shapes with depth!' },
       { type: 'story', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'A circle is flat. But a BALL is round all the way around. It has depth! That makes it a 3D shape — a SPHERE!' },
       { type: 'teach', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'A sphere is round like a ball. You can hold it in your hand!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is a SPHERE?', guideText: 'Tap the round ball shape!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SPHERE?', guideText: 'Tap the round ball shape!',
         items: [
           { image: '/game-assets/math/shape-3d-sphere.png', label: 'Sphere', correct: true },
           { image: '/game-assets/math/shape-3d-cube.png', label: 'Cube' },
@@ -288,7 +281,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-3d-cube.png', guideText: 'A cube is like a 3D square — like dice or a block!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is a CUBE?', guideText: 'Tap the block shape!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a CUBE?', guideText: 'Tap the block shape!',
         items: [
           { image: '/game-assets/math/shape-3d-cube.png', label: 'Cube', correct: true },
           { image: '/game-assets/math/shape-3d-sphere.png', label: 'Sphere' },
@@ -370,8 +363,8 @@ export const mathLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we find PATTERNS!' },
       { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi sees a pattern in the forest. Red leaf, yellow leaf, red leaf, yellow leaf. What comes next? Another red leaf! Patterns help us guess what is coming.' },
-      { type: 'teach', image: '/game-assets/math/shape-star.png', guideText: 'A pattern is something that repeats. Like star, heart, star, heart, star, heart!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Star, heart, star, heart, what comes NEXT?', guideText: 'Tap what comes next in the pattern!',
+      { type: 'teach', image: '/game-assets/math/pattern-star-heart.png', guideText: 'A pattern is something that repeats. Like star, heart, star, heart, star, heart!' },
+      { type: 'tap-right', readOptions: true, headerImage: '/game-assets/math/pattern-star-heart.png', instruction: 'Star, heart, star, heart, what comes NEXT?', guideText: 'Tap what comes next in the pattern!',
         items: [
           { image: '/game-assets/math/shape-star.png', label: 'Star', correct: true },
           { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
@@ -388,7 +381,7 @@ export const mathLittleStars = [
           { image: '/game-assets/math/shape-heart.png', label: 'Heart' }
         ]
       },
-      { type: 'yes-no', scenario: 'Are patterns things that repeat over and over?', correctAnswer: true, image: '/game-assets/math/shape-star.png' },
+      { type: 'yes-no', scenario: 'Are patterns things that repeat over and over?', correctAnswer: true, image: '/game-assets/math/pattern-star-heart.png' },
       { type: 'family', guideText: 'Tonight, make a pattern together! Clap-clap-stomp, clap-clap-stomp. Or draw a pattern — red-blue-red-blue!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Pattern Master', guideText: 'You see patterns everywhere, {name}!' }
     ]
@@ -415,19 +408,12 @@ export const mathLittleStars = [
     badge: "Measure Master", nextLesson: "math-3-5-11",
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we measure HOW LONG things are!' },
-      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi wanted to know which branch was longer. So she lined them up side by side and compared. One was SHORTER. One was LONGER. Now she knew!' },
-      { type: 'teach', image: '/game-assets/math/shape-rectangle.png', guideText: 'Long, short. Tall, small. We can compare how big things are!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is LONGER?', guideText: 'Tap the longer one!',
-        items: [
-          { image: '/game-assets/math/shape-rectangle.png', label: 'Long rectangle', correct: true },
-          { image: '/game-assets/math/shape-square.png', label: 'Small square' },
-          { image: '/game-assets/math/shape-circle.png', label: 'Small circle' },
-          { image: '/game-assets/math/shape-triangle.png', label: 'Small triangle' }
-        ]
-      },
+      { type: 'story', image: '/game-assets/math/remi-branches-compare.png', guideText: 'Remi wanted to know which branch was longer. So she lined them up side by side and compared. One was SHORTER. One was LONGER. Now she knew!' },
+      { type: 'teach', image: '/game-assets/math/compare-long-short.png', guideText: 'Long, short. Tall, small. We can compare how big things are!' },
+      { type: 'yes-no', scenario: 'Is the longer stick the one that goes further along?', correctAnswer: true, image: '/game-assets/math/compare-sticks.png' },
       { type: 'teach', image: '/game-assets/math/shape-rectangle.png', guideText: 'To compare, we line things up and look at which goes farther!' },
-      { type: 'yes-no', scenario: 'Can you measure with your hands, like how many hands long a table is?', correctAnswer: true, image: '/game-assets/math/remi-treasure-pile.png' },
-      { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'You can measure with anything — your foot, a shoe, a block, or a ruler!' },
+      { type: 'yes-no', scenario: 'Can you measure with your hands, like how many hands long a table is?', correctAnswer: true, image: '/game-assets/math/remi-measuring-hands.png' },
+      { type: 'teach', image: '/game-assets/math/remi-measuring-hands.png', guideText: 'You can measure with anything — your foot, a shoe, a block, or a ruler!' },
       { type: 'family', guideText: 'Tonight, measure three things at home with your feet. How many foot-steps is the couch? The table? Your bedroom?', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Measure Master', guideText: 'You can measure anything, {name}!' }
     ]

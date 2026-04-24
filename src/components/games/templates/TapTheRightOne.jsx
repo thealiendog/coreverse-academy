@@ -10,7 +10,7 @@ import KaraokeText from '../KaraokeText';
 // keyed on screenIdx). This ensures readOptions audio narration and on-screen card
 // positions are always in the same order. Do NOT re-shuffle here.
 
-export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, readingIdx = -1, karaokeWords = [], karaokeIdx = -1 }) {
+export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, readingIdx = -1, karaokeWords = [], karaokeIdx = -1, headerImage }) {
   const [selected, setSelected] = useState(null);
   const [wrong,    setWrong]    = useState(null);
   const [showWin,  setShowWin]  = useState(false);
@@ -60,6 +60,23 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
           karaokeIdx={readingIdx >= 0 ? -1 : karaokeIdx}
         />
       </p>
+
+      {/* Optional header image (e.g. for pattern screens) */}
+      {(step.headerImage || headerImage) && (
+        <img
+          src={step.headerImage || headerImage}
+          alt=""
+          draggable={false}
+          style={{
+            width: '100%',
+            maxWidth: 200,
+            height: 'auto',
+            maxHeight: 120,
+            objectFit: 'contain',
+            borderRadius: 12,
+          }}
+        />
+      )}
 
       {/* 2×2 grid */}
       <div style={{
