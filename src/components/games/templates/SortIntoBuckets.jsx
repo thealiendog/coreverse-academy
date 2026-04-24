@@ -1,27 +1,35 @@
 import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
+import WinCelebration from '../WinCelebration';
 import KaraokeText from '../KaraokeText';
 
 // ── SortIntoBuckets ───────────────────────────────────────────────────────────
 //
 // Tap-to-select → tap-bucket-to-sort flow:
 //   1. All unsorted items appear in a horizontal row at top.
-//   2. Child taps an item to "pick it up" (glows, scales up).
+//   2. Child taps an item to "pick it up" (pop sfx, glows, scales up).
 //   3. Child taps a bucket at bottom.
 //      Correct  → chime, item disappears from row, bucket counter++
 //      Wrong    → boing, item shakes, stays selected (no penalty)
-//   4. After last item sorted → fanfare, "You sorted everything!", auto-advance.
+//   4. After last item sorted → fanfare sfx, WinCelebration confetti,
+//      bucket glow pulse, optional celebrationText narration, then onComplete.
 //
 // Props:
-//   step.buckets  [{ label, image?, color? }]
-//   step.items    [{ image?, emoji?, label?, bucket: <bucket index> }]
-//   onReady       → called immediately when done (enables forward arrow)
-//   onComplete    → called 2 s after done  (auto-advances)
-//   disabled      → blocks interaction while TTS plays
+//   step.buckets         [{ label, image?, color? }]
+//   step.items           [{ image?, emoji?, label?, bucket: <bucket index> }]
+//   step.celebrationText optional string spoken by guide on completion
+//   onReady              → called immediately when done (enables forward arrow)
+//   onComplete           → called by WinCelebration.onDone (~1.5s after done)
+//   onNarrate(text)      → triggers guide speech (fire-and-forget)
+//   onWin                → pulses guide avatar
+//   disabled             → blocks interaction while TTS plays
 
 const BUCKET_COLORS = ['#7C3AED', '#F59E0B', '#34D399', '#60A5FA', '#F472B6'];
 
-export default function SortIntoBuckets({ step, onReady, onComplete, disabled, karaokeWords = [], karaokeIdx = -1 }) {
+export default function SortIntoBuckets({
+  step, onReady, onComplete, onNarrate, onWin,
+  disabled, karaokeWords = [], karaokeIdx = -1,
+}) {
   const rawBuckets = step.buckets || [
     { label: 'A', color: '#34D399' },
     { label: 'B', color: '#60A5FA' },
@@ -33,13 +41,14 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
 
   const totalItems = (step.items || []).length;
 
-  // Each item gets a stable _id for React keys and identity tracking.
-  const [unsorted,     setUnsorted]     = useState(() => (step.items || []).map((it, i) => ({ ...it, _id: i })));
-  const [activeId,     setActiveId]     = useState(null);       // _id of currently-picked item
-  const [bucketCounts, setBucketCounts] = useState(() => Array(buckets.length).fill(0));
-  const [flashBucket,  setFlashBucket]  = useState(null);       // { idx, type: 'correct'|'wrong' }
-  const [shakeId,      setShakeId]      = useState(null);       // _id of item to shake on wrong
-  const [done,         setDone]         = useState(false);
+  const [unsorted,         setUnsorted]         = useState(() => (step.items || []).map((it, i) => ({ ...it, _id: i })));
+  const [activeId,         setActiveId]         = useState(null);
+  const [bucketCounts,     setBucketCounts]     = useState(() => Array(buckets.length).fill(0));
+  const [flashBucket,      setFlashBucket]      = useState(null);   // { idx, type: 'correct'|'wrong' }
+  const [shakeId,          setShakeId]          = useState(null);   // _id of item to shake on wrong
+  const [done,             setDone]             = useState(false);
+  const [showWin,          setShowWin]          = useState(false);  // mounts WinCelebration
+  const [bucketsCelebrate, setBucketsCelebrate] = useState(false); // pulsing glow on completion
 
   // Reset when step changes.
   useEffect(() => {
@@ -49,6 +58,8 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
     setFlashBucket(null);
     setShakeId(null);
     setDone(false);
+    setShowWin(false);
+    setBucketsCelebrate(false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
@@ -58,7 +69,7 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
   // ── Item tap ─────────────────────────────────────────────────────────────
   function handleItemTap(item) {
     if (done || disabled) return;
-    // Toggle selection: tap same item again → deselect
+    sfx.pop(); // pickup feedback
     setActiveId(prev => (prev === item._id ? null : item._id));
   }
 
@@ -67,7 +78,7 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
     if (done || disabled || !activeItem) return;
 
     if (activeItem.bucket === bucketIdx) {
-      // ✅ Correct
+      // ✅ Correct drop
       sfx.chime();
       setFlashBucket({ idx: bucketIdx, type: 'correct' });
       setTimeout(() => setFlashBucket(null), 400);
@@ -82,14 +93,21 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
       setActiveId(remaining.length > 0 ? remaining[0]._id : null);
 
       if (remaining.length === 0) {
+        // ── All sorted — celebrate! ───────────────────────────────────────
         setDone(true);
         sfx.fanfare();
-        onReady?.();
-        setTimeout(() => onComplete?.(), 2000);
+        setShowWin(true);          // mounts WinCelebration; onDone triggers onComplete
+        setBucketsCelebrate(true); // bucket glow pulse
+        onWin?.();                 // pulse guide avatar
+        onReady?.();               // enable forward arrow immediately
+        setTimeout(() => setBucketsCelebrate(false), 1800);
+        // Speak celebration text after fanfare settles (~0.5s)
+        const celebText = step.celebrationText || 'You sorted everything! Amazing job!';
+        setTimeout(() => onNarrate?.(celebText), 500);
       }
     } else {
-      // ❌ Wrong
-      sfx.boing?.() || sfx.buzz?.();
+      // ❌ Wrong drop
+      sfx.boing();
       setFlashBucket({ idx: bucketIdx, type: 'wrong' });
       setTimeout(() => setFlashBucket(null), 400);
       setShakeId(activeId);
@@ -109,6 +127,9 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
       minHeight:     '58vh',
       overflowY:     'auto',
     }}>
+      {/* WinCelebration confetti — auto-advances via onDone after ~1.5s */}
+      {showWin && <WinCelebration onDone={() => { setShowWin(false); onComplete?.(); }} />}
+
       <style>{`
         @keyframes sib-shake {
           0%,100%{transform:translateX(0) scale(1.18)}
@@ -125,6 +146,11 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
         @keyframes sib-active-pulse {
           0%,100%{box-shadow:0 0 14px rgba(252,211,77,0.5)}
           50%{box-shadow:0 0 28px rgba(252,211,77,0.9)}
+        }
+        @keyframes sib-bucket-celebrate {
+          0%,100%{transform:scale(1)}
+          40%{transform:scale(1.07)}
+          70%{transform:scale(0.97)}
         }
       `}</style>
 
@@ -165,30 +191,30 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
                 key={item._id}
                 onClick={() => handleItemTap(item)}
                 style={{
-                  width:        72,
-                  height:       72,
-                  borderRadius: 16,
-                  border:       isActive
+                  width:          72,
+                  height:         72,
+                  borderRadius:   16,
+                  border:         isActive
                     ? '3px solid #FCD34D'
                     : '2px solid rgba(255,255,255,0.18)',
-                  background:   isActive
+                  background:     isActive
                     ? 'rgba(252,211,77,0.14)'
                     : 'rgba(255,255,255,0.07)',
-                  padding:      0,
-                  cursor:       disabled ? 'default' : 'pointer',
-                  touchAction:  'manipulation',
-                  display:      'flex',
-                  alignItems:   'center',
+                  padding:        0,
+                  cursor:         disabled ? 'default' : 'pointer',
+                  touchAction:    'manipulation',
+                  display:        'flex',
+                  alignItems:     'center',
                   justifyContent: 'center',
-                  transform:    isActive ? 'scale(1.18)' : 'scale(1)',
-                  transition:   'transform 0.15s ease, border-color 0.15s, background 0.15s',
-                  animation:    isShaking
+                  transform:      isActive ? 'scale(1.18)' : 'scale(1)',
+                  transition:     'transform 0.15s ease, border-color 0.15s, background 0.15s',
+                  animation:      isShaking
                     ? 'sib-shake 0.5s ease'
                     : isActive
                       ? 'sib-active-pulse 1.2s ease infinite'
                       : 'sib-pop 0.35s ease both',
-                  boxShadow:    isActive ? '0 0 18px rgba(252,211,77,0.5)' : 'none',
-                  zIndex:       isActive ? 2 : 1,
+                  boxShadow:      isActive ? '0 0 18px rgba(252,211,77,0.5)' : 'none',
+                  zIndex:         isActive ? 2 : 1,
                 }}
               >
                 {item.image ? (
@@ -221,15 +247,15 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
           {activeItem ? (
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
               <div style={{
-                width:        80,
-                height:       80,
-                borderRadius: 18,
-                border:       '2.5px solid #FCD34D',
-                background:   'rgba(252,211,77,0.12)',
-                display:      'flex',
-                alignItems:   'center',
+                width:          80,
+                height:         80,
+                borderRadius:   18,
+                border:         '2.5px solid #FCD34D',
+                background:     'rgba(252,211,77,0.12)',
+                display:        'flex',
+                alignItems:     'center',
                 justifyContent: 'center',
-                boxShadow:    '0 0 24px rgba(252,211,77,0.4)',
+                boxShadow:      '0 0 24px rgba(252,211,77,0.4)',
               }}>
                 {activeItem.image ? (
                   <img src={activeItem.image} alt={activeItem.label || ''} draggable={false}
@@ -268,7 +294,9 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
         {buckets.map((bucket, bi) => {
           const isCorrectFlash = flashBucket?.idx === bi && flashBucket?.type === 'correct';
           const isWrongFlash   = flashBucket?.idx === bi && flashBucket?.type === 'wrong';
-          const canTap = !done && !!activeItem && !disabled;
+          const canTap         = !done && !!activeItem && !disabled;
+          const celebGlow      = bucketsCelebrate ? `0 0 36px ${bucket.color}cc, 0 0 12px ${bucket.color}88` : null;
+
           return (
             <button
               key={bi}
@@ -277,19 +305,22 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
                 flex:          1,
                 minHeight:     100,
                 borderRadius:  20,
-                border:        `2px solid ${
-                  isCorrectFlash ? '#34D399'
-                  : isWrongFlash  ? '#EF4444'
-                  : activeItem    ? bucket.color
+                border:        `${bucketsCelebrate ? 3 : 2}px solid ${
+                  isCorrectFlash   ? '#34D399'
+                  : isWrongFlash   ? '#EF4444'
+                  : bucketsCelebrate ? bucket.color
+                  : activeItem     ? bucket.color
                   : bucket.color + '55'
                 }`,
                 background:    isCorrectFlash
                   ? 'rgba(52,211,153,0.2)'
                   : isWrongFlash
                     ? 'rgba(239,68,68,0.12)'
-                    : activeItem
-                      ? `${bucket.color}22`
-                      : `${bucket.color}11`,
+                    : bucketsCelebrate
+                      ? `${bucket.color}33`
+                      : activeItem
+                        ? `${bucket.color}22`
+                        : `${bucket.color}11`,
                 cursor:        canTap ? 'pointer' : 'default',
                 touchAction:   'manipulation',
                 display:       'flex',
@@ -298,14 +329,15 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
                 justifyContent:'center',
                 gap:            6,
                 transition:    'all 0.18s ease',
-                boxShadow:     isCorrectFlash
+                boxShadow:     celebGlow || (isCorrectFlash
                   ? `0 0 24px rgba(52,211,153,0.6)`
                   : isWrongFlash
                     ? '0 0 16px rgba(239,68,68,0.5)'
                     : activeItem
                       ? `0 0 14px ${bucket.color}44`
-                      : 'none',
-                transform:     isCorrectFlash ? 'scale(1.05)' : 'scale(1)',
+                      : 'none'),
+                animation:     bucketsCelebrate ? 'sib-bucket-celebrate 0.6s ease infinite' : 'none',
+                transform:     isCorrectFlash && !bucketsCelebrate ? 'scale(1.05)' : 'scale(1)',
               }}
             >
               {bucket.image ? (
@@ -328,7 +360,7 @@ export default function SortIntoBuckets({ step, onReady, onComplete, disabled, k
 
       {done && (
         <p style={{ color: '#FCD34D', fontWeight: 900, fontSize: '1.1rem', margin: 0, textAlign: 'center' }}>
-          Remi is so proud of you!
+          Amazing! You sorted everything!
         </p>
       )}
     </div>

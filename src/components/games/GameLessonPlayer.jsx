@@ -788,7 +788,7 @@ export default function GameLessonPlayer() {
       case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} readingIdx={readingIdx} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'sort':
-      case 'sort-buckets': return <SortIntoBuckets step={step} onReady={handleReady} onComplete={advance} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'sort-buckets': return <SortIntoBuckets step={step} onReady={handleReady} onComplete={advance} onNarrate={handleNarrate} onWin={handleWin} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} isPaused={isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
