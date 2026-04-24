@@ -2,155 +2,333 @@ import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 import KaraokeText from '../KaraokeText';
 
-// Fallback palette when bucket.color is not provided
+// ── SortIntoBuckets ───────────────────────────────────────────────────────────
+//
+// Tap-to-select → tap-bucket-to-sort flow:
+//   1. All unsorted items appear in a horizontal row at top.
+//   2. Child taps an item to "pick it up" (glows, scales up).
+//   3. Child taps a bucket at bottom.
+//      Correct  → chime, item disappears from row, bucket counter++
+//      Wrong    → boing, item shakes, stays selected (no penalty)
+//   4. After last item sorted → fanfare, "You sorted everything!", auto-advance.
+//
+// Props:
+//   step.buckets  [{ label, image?, color? }]
+//   step.items    [{ image?, emoji?, label?, bucket: <bucket index> }]
+//   onReady       → called immediately when done (enables forward arrow)
+//   onComplete    → called 2 s after done  (auto-advances)
+//   disabled      → blocks interaction while TTS plays
+
 const BUCKET_COLORS = ['#7C3AED', '#F59E0B', '#34D399', '#60A5FA', '#F472B6'];
 
-export default function SortIntoBuckets({ step, onReady, disabled, karaokeWords = [], karaokeIdx = -1 }) {
+export default function SortIntoBuckets({ step, onReady, onComplete, disabled, karaokeWords = [], karaokeIdx = -1 }) {
   const rawBuckets = step.buckets || [
-    { label: 'Living',     color: '#34D399' },
-    { label: 'Non-living', color: '#60A5FA' },
+    { label: 'A', color: '#34D399' },
+    { label: 'B', color: '#60A5FA' },
   ];
-  // Inject fallback colors so downstream code can always read bucket.color
-  const buckets = rawBuckets.map((b, i) => ({ ...b, color: b.color || BUCKET_COLORS[i % BUCKET_COLORS.length] }));
-  const items   = step.items || [];
+  const buckets = rawBuckets.map((b, i) => ({
+    ...b,
+    color: b.color || BUCKET_COLORS[i % BUCKET_COLORS.length],
+  }));
 
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [counts,     setCounts]     = useState(Array(buckets.length).fill(0));
-  const [flash,      setFlash]      = useState(null); // bucket index flashing correct/wrong
-  const [wrongFlash, setWrongFlash] = useState(null);
-  const [done,       setDone]       = useState(false);
-  const [bounceItem, setBounceItem] = useState(false);
+  const totalItems = (step.items || []).length;
 
+  // Each item gets a stable _id for React keys and identity tracking.
+  const [unsorted,     setUnsorted]     = useState(() => (step.items || []).map((it, i) => ({ ...it, _id: i })));
+  const [activeId,     setActiveId]     = useState(null);       // _id of currently-picked item
+  const [bucketCounts, setBucketCounts] = useState(() => Array(buckets.length).fill(0));
+  const [flashBucket,  setFlashBucket]  = useState(null);       // { idx, type: 'correct'|'wrong' }
+  const [shakeId,      setShakeId]      = useState(null);       // _id of item to shake on wrong
+  const [done,         setDone]         = useState(false);
+
+  // Reset when step changes.
   useEffect(() => {
-    setCurrentIdx(0);
-    setCounts(Array(buckets.length).fill(0));
+    setUnsorted((step.items || []).map((it, i) => ({ ...it, _id: i })));
+    setActiveId(null);
+    setBucketCounts(Array(buckets.length).fill(0));
+    setFlashBucket(null);
+    setShakeId(null);
     setDone(false);
-    // All TTS handled by GameLessonPlayer.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
-  const currentItem = items[currentIdx];
+  const activeItem  = unsorted.find(it => it._id === activeId) ?? null;
+  const sortedCount = totalItems - unsorted.length;
 
-  function sort(bucketIdx) {
-    if (done || !currentItem || disabled) return;
-    const correct = currentItem.bucket === bucketIdx;
-    if (correct) {
-      sfx.plop();
-      setCounts(prev => {
-        const next = [...prev];
-        next[bucketIdx]++;
-        return next;
+  // ── Item tap ─────────────────────────────────────────────────────────────
+  function handleItemTap(item) {
+    if (done || disabled) return;
+    // Toggle selection: tap same item again → deselect
+    setActiveId(prev => (prev === item._id ? null : item._id));
+  }
+
+  // ── Bucket tap ───────────────────────────────────────────────────────────
+  function handleBucketTap(bucketIdx) {
+    if (done || disabled || !activeItem) return;
+
+    if (activeItem.bucket === bucketIdx) {
+      // ✅ Correct
+      sfx.chime();
+      setFlashBucket({ idx: bucketIdx, type: 'correct' });
+      setTimeout(() => setFlashBucket(null), 400);
+
+      setBucketCounts(prev => {
+        const next = [...prev]; next[bucketIdx]++; return next;
       });
-      setFlash(bucketIdx);
-      setTimeout(() => setFlash(null), 500);
-      const next = currentIdx + 1;
-      if (next >= items.length) {
+
+      const remaining = unsorted.filter(it => it._id !== activeId);
+      setUnsorted(remaining);
+      // Auto-highlight first remaining item for smoother flow
+      setActiveId(remaining.length > 0 ? remaining[0]._id : null);
+
+      if (remaining.length === 0) {
         setDone(true);
         sfx.fanfare();
-        setTimeout(() => onReady?.(), 1000);
-      } else {
-        setCurrentIdx(next);
+        onReady?.();
+        setTimeout(() => onComplete?.(), 2000);
       }
     } else {
-      sfx.boing?.() || sfx.buzz();
-      setWrongFlash(bucketIdx);
-      setBounceItem(true);
-      setTimeout(() => { setWrongFlash(null); setBounceItem(false); }, 600);
+      // ❌ Wrong
+      sfx.boing?.() || sfx.buzz?.();
+      setFlashBucket({ idx: bucketIdx, type: 'wrong' });
+      setTimeout(() => setFlashBucket(null), 400);
+      setShakeId(activeId);
+      setTimeout(() => setShakeId(null), 500);
+      // Stay on same active item — no penalty
     }
   }
 
+  // ── Render ───────────────────────────────────────────────────────────────
   return (
-    <div style={{ padding: '16px 16px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, overflowY: 'auto' }}>
+    <div style={{
+      padding:       '12px 12px 24px',
+      display:       'flex',
+      flexDirection: 'column',
+      alignItems:    'center',
+      gap:            14,
+      minHeight:     '58vh',
+      overflowY:     'auto',
+    }}>
       <style>{`
-        @keyframes sib-bounce { 0%,100%{transform:translateY(0)}30%{transform:translateY(-12px)}60%{transform:translateY(4px)} }
-        @keyframes sib-pop    { 0%{transform:scale(0.8);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1} }
-        @keyframes sib-shake  { 0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)} }
+        @keyframes sib-shake {
+          0%,100%{transform:translateX(0) scale(1.18)}
+          20%{transform:translateX(-8px) scale(1.18)}
+          40%{transform:translateX(8px) scale(1.18)}
+          60%{transform:translateX(-5px) scale(1.18)}
+          80%{transform:translateX(5px) scale(1.18)}
+        }
+        @keyframes sib-pop {
+          0%{opacity:0;transform:scale(0.7)}
+          60%{transform:scale(1.1)}
+          100%{opacity:1;transform:scale(1)}
+        }
+        @keyframes sib-active-pulse {
+          0%,100%{box-shadow:0 0 14px rgba(252,211,77,0.5)}
+          50%{box-shadow:0 0 28px rgba(252,211,77,0.9)}
+        }
       `}</style>
 
-      {/* Instruction */}
-      <p style={{ color:'#fff', fontWeight:800, fontSize:'clamp(1.1rem,3.5vw,1.4rem)', textAlign:'center', margin:0 }}>
-        {done ? 'Great sorting!' : <KaraokeText text={step.instruction || 'Sort each item into the right bucket!'} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />}
+      {/* ── Instruction ────────────────────────────────────────────────── */}
+      <p style={{
+        color:     '#fff',
+        fontWeight: 800,
+        fontSize:  'clamp(1.05rem,3.5vw,1.35rem)',
+        textAlign: 'center',
+        margin:     0,
+        lineHeight: 1.3,
+      }}>
+        {done
+          ? <span style={{ color: '#34D399' }}>You sorted everything!</span>
+          : <KaraokeText
+              text={step.instruction || 'Sort each item into the right bucket!'}
+              karaokeWords={karaokeWords}
+              karaokeIdx={karaokeIdx}
+            />
+        }
       </p>
 
-      {/* Current item to sort */}
-      {!done && currentItem && (
+      {/* ── Unsorted items row ─────────────────────────────────────────── */}
+      {!done && (
         <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 8,
-          animation: bounceItem ? 'sib-bounce 0.5s ease' : 'sib-pop 0.4s ease',
+          display:        'flex',
+          flexWrap:       'wrap',
+          gap:             10,
+          justifyContent: 'center',
+          width:          '100%',
+          maxWidth:        400,
         }}>
-          {currentItem.image ? (
-            <img
-              src={currentItem.image}
-              alt={currentItem.label || ''}
-              draggable={false}
-              style={{ width: 96, height: 96, objectFit: 'contain', borderRadius: 12 }}
-            />
-          ) : currentItem.emoji ? (
-            <div style={{ fontSize: '4rem', lineHeight: 1 }}>{currentItem.emoji}</div>
-          ) : null}
-          {currentItem.label && (
-            <p style={{ color:'rgba(255,255,255,0.8)', fontWeight:700, fontSize:'1.1rem', margin:0 }}>
-              {currentItem.label}
-            </p>
-          )}
-          <p style={{ color:'rgba(255,255,255,0.45)', fontSize:'0.85rem', margin:0 }}>
-            Tap a bucket to sort it!
-          </p>
+          {unsorted.map(item => {
+            const isActive  = item._id === activeId;
+            const isShaking = item._id === shakeId;
+            return (
+              <button
+                key={item._id}
+                onClick={() => handleItemTap(item)}
+                style={{
+                  width:        72,
+                  height:       72,
+                  borderRadius: 16,
+                  border:       isActive
+                    ? '3px solid #FCD34D'
+                    : '2px solid rgba(255,255,255,0.18)',
+                  background:   isActive
+                    ? 'rgba(252,211,77,0.14)'
+                    : 'rgba(255,255,255,0.07)',
+                  padding:      0,
+                  cursor:       disabled ? 'default' : 'pointer',
+                  touchAction:  'manipulation',
+                  display:      'flex',
+                  alignItems:   'center',
+                  justifyContent: 'center',
+                  transform:    isActive ? 'scale(1.18)' : 'scale(1)',
+                  transition:   'transform 0.15s ease, border-color 0.15s, background 0.15s',
+                  animation:    isShaking
+                    ? 'sib-shake 0.5s ease'
+                    : isActive
+                      ? 'sib-active-pulse 1.2s ease infinite'
+                      : 'sib-pop 0.35s ease both',
+                  boxShadow:    isActive ? '0 0 18px rgba(252,211,77,0.5)' : 'none',
+                  zIndex:       isActive ? 2 : 1,
+                }}
+              >
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.label || ''}
+                    draggable={false}
+                    style={{ width: 52, height: 52, objectFit: 'contain', borderRadius: 8 }}
+                  />
+                ) : item.emoji ? (
+                  <span style={{ fontSize: '2.2rem', lineHeight: 1 }}>{item.emoji}</span>
+                ) : (
+                  <div style={{ width: 36, height: 36, borderRadius: '50%', background: '#7C3AED' }} />
+                )}
+              </button>
+            );
+          })}
         </div>
       )}
 
-      {/* Progress */}
+      {/* ── Active item slot ───────────────────────────────────────────── */}
       {!done && (
-        <p style={{ color:'rgba(255,255,255,0.4)', fontSize:'0.85rem', margin:0 }}>
-          {currentIdx} / {items.length} sorted
+        <div style={{
+          minHeight:      60,
+          display:        'flex',
+          alignItems:     'center',
+          justifyContent: 'center',
+          gap:             8,
+        }}>
+          {activeItem ? (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+              <div style={{
+                width:        80,
+                height:       80,
+                borderRadius: 18,
+                border:       '2.5px solid #FCD34D',
+                background:   'rgba(252,211,77,0.12)',
+                display:      'flex',
+                alignItems:   'center',
+                justifyContent: 'center',
+                boxShadow:    '0 0 24px rgba(252,211,77,0.4)',
+              }}>
+                {activeItem.image ? (
+                  <img src={activeItem.image} alt={activeItem.label || ''} draggable={false}
+                    style={{ width: 60, height: 60, objectFit: 'contain', borderRadius: 10 }} />
+                ) : activeItem.emoji ? (
+                  <span style={{ fontSize: '2.8rem', lineHeight: 1 }}>{activeItem.emoji}</span>
+                ) : null}
+              </div>
+              <span style={{ color: '#FCD34D', fontSize: '0.75rem', fontWeight: 700 }}>
+                Tap a bucket!
+              </span>
+            </div>
+          ) : (
+            <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8rem', fontWeight: 600 }}>
+              Tap an item above to pick it up
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* ── Progress counter ───────────────────────────────────────────── */}
+      {!done && (
+        <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.82rem', fontWeight: 700, margin: 0 }}>
+          {sortedCount} / {totalItems} sorted
         </p>
       )}
 
-      {/* Buckets */}
-      <div style={{ display:'flex', gap:16, width:'100%', maxWidth:400, justifyContent:'center' }}>
-        {buckets.map((bucket, bi) => (
-          <button
-            key={bi}
-            onClick={() => sort(bi)}
-            style={{
-              flex: 1,
-              minHeight: 110,
-              borderRadius: 20,
-              border: `2px solid ${flash === bi ? bucket.color : wrongFlash === bi ? '#EF4444' : bucket.color + '55'}`,
-              background: flash === bi
-                ? `${bucket.color}22`
-                : wrongFlash === bi
-                  ? 'rgba(239,68,68,0.12)'
-                  : `${bucket.color}11`,
-              cursor: done ? 'default' : 'pointer',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 6,
-              transition: 'all 0.2s ease',
-              animation: wrongFlash === bi ? 'sib-shake 0.5s ease' : 'none',
-              boxShadow: flash === bi ? `0 0 20px ${bucket.color}55` : 'none',
-            }}
-          >
-            {bucket.image ? (
-              <img src={bucket.image} alt={bucket.label || ''} draggable={false}
-                style={{ width:40, height:40, objectFit:'contain', borderRadius:8 }} />
-            ) : (
-              <div style={{ width:20, height:20, borderRadius:'50%', background:bucket.color, boxShadow:`0 0 10px ${bucket.color}88` }} />
-            )}
-            <span style={{ color: bucket.color, fontWeight:800, fontSize:'0.95rem' }}>{bucket.label}</span>
-            <span style={{ color:'rgba(255,255,255,0.5)', fontSize:'0.8rem' }}>{counts[bi]} items</span>
-          </button>
-        ))}
+      {/* ── Buckets row ────────────────────────────────────────────────── */}
+      <div style={{
+        display:        'flex',
+        gap:             12,
+        width:          '100%',
+        maxWidth:        420,
+        justifyContent: 'center',
+      }}>
+        {buckets.map((bucket, bi) => {
+          const isCorrectFlash = flashBucket?.idx === bi && flashBucket?.type === 'correct';
+          const isWrongFlash   = flashBucket?.idx === bi && flashBucket?.type === 'wrong';
+          const canTap = !done && !!activeItem && !disabled;
+          return (
+            <button
+              key={bi}
+              onClick={() => handleBucketTap(bi)}
+              style={{
+                flex:          1,
+                minHeight:     100,
+                borderRadius:  20,
+                border:        `2px solid ${
+                  isCorrectFlash ? '#34D399'
+                  : isWrongFlash  ? '#EF4444'
+                  : activeItem    ? bucket.color
+                  : bucket.color + '55'
+                }`,
+                background:    isCorrectFlash
+                  ? 'rgba(52,211,153,0.2)'
+                  : isWrongFlash
+                    ? 'rgba(239,68,68,0.12)'
+                    : activeItem
+                      ? `${bucket.color}22`
+                      : `${bucket.color}11`,
+                cursor:        canTap ? 'pointer' : 'default',
+                touchAction:   'manipulation',
+                display:       'flex',
+                flexDirection: 'column',
+                alignItems:    'center',
+                justifyContent:'center',
+                gap:            6,
+                transition:    'all 0.18s ease',
+                boxShadow:     isCorrectFlash
+                  ? `0 0 24px rgba(52,211,153,0.6)`
+                  : isWrongFlash
+                    ? '0 0 16px rgba(239,68,68,0.5)'
+                    : activeItem
+                      ? `0 0 14px ${bucket.color}44`
+                      : 'none',
+                transform:     isCorrectFlash ? 'scale(1.05)' : 'scale(1)',
+              }}
+            >
+              {bucket.image ? (
+                <img src={bucket.image} alt={bucket.label || ''} draggable={false}
+                  style={{ width: 44, height: 44, objectFit: 'contain', borderRadius: 8 }} />
+              ) : (
+                <div style={{ width: 20, height: 20, borderRadius: '50%', background: bucket.color,
+                  boxShadow: `0 0 10px ${bucket.color}88` }} />
+              )}
+              <span style={{ color: bucket.color, fontWeight: 800, fontSize: '0.9rem' }}>
+                {bucket.label}
+              </span>
+              <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.75rem' }}>
+                {bucketCounts[bi]} {bucketCounts[bi] === 1 ? 'item' : 'items'}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {done && (
-        <p style={{ color:'#FCD34D', fontWeight:900, fontSize:'1.2rem', margin:0 }}>
-          You sorted everything!
+        <p style={{ color: '#FCD34D', fontWeight: 900, fontSize: '1.1rem', margin: 0, textAlign: 'center' }}>
+          Remi is so proud of you!
         </p>
       )}
     </div>

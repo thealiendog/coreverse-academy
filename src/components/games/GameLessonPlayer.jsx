@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild, getCurrentParent, updateChildProgress } from '../../lib/storage';
 import { getAvatar } from '../../lib/constants';
@@ -79,6 +79,16 @@ function charAlignmentToWordStarts(text, alignment) {
 
 // ── Debug timestamp — remove with all [audio] logs when done ─────────────────
 const ts = () => new Date().toISOString().slice(11, 23);
+
+// ── Fisher-Yates shuffle (pure, returns new array) ────────────────────────────
+function fisherYates(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 // ── Guide speech bubble ───────────────────────────────────────────────────────
 function GuideBubble({ text, speaking, guideAvatar }) {
@@ -174,6 +184,18 @@ export default function GameLessonPlayer() {
   const [karaokeWords,      setKaraokeWords]      = useState([]); // words of text currently being spoken
   const [karaokeIdx,        setKaraokeIdx]        = useState(-1); // index of the actively spoken word
 
+
+  // ── Shuffle tap-right items ONCE per screen ─────────────────────────────────
+  // Computed by useMemo (not inside render) so both renderScreen and the
+  // readOptions narration loop share the SAME shuffled order.  Without this,
+  // the guide would say "Six" while highlighting the "One" card.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const tapRightShuffled = useMemo(() => {
+    const s = gameSequence?.[screenIdx];
+    if (!s || s.type !== 'tap-right' || !s.items?.length) return null;
+    return fisherYates(s.items);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screenIdx]);
 
   const persistentAudioRef       = useRef(null); // single reused Audio element — created inside first gesture so iOS authorizes all future .play() calls
   const audioListenersCleanupRef = useRef(null); // removes current debug event listeners before reuse
@@ -575,8 +597,9 @@ export default function GameLessonPlayer() {
 
       if (step.type === 'tap-right' && step.readOptions && step.items?.length) {
         // Read each option label one-by-one, highlighting that card while speaking.
+        // Use tapRightShuffled so the narration order matches the on-screen card order.
         // Fallback timer stays active and covers this phase too.
-        const items = step.items;
+        const items = tapRightShuffled || step.items;
         let idx = 0;
         function readOption() {
           if (cancelled) return;
@@ -666,7 +689,12 @@ export default function GameLessonPlayer() {
     return null;
   }
 
-  const currentStep = gameSequence[screenIdx];
+  // For tap-right screens inject the pre-shuffled items so the rendered card
+  // positions always match the readOptions narration order.
+  const rawStep     = gameSequence[screenIdx];
+  const currentStep = (rawStep?.type === 'tap-right' && tapRightShuffled)
+    ? { ...rawStep, items: tapRightShuffled }
+    : rawStep;
   const total       = gameSequence.length;
   totalRef.current  = total; // keep ref in sync on every render for advance()
 
@@ -749,7 +777,7 @@ export default function GameLessonPlayer() {
       case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} readingIdx={readingIdx} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'sort':
-      case 'sort-buckets': return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'sort-buckets': return <SortIntoBuckets step={step} onReady={handleReady} onComplete={advance} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} isPaused={isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
