@@ -25,7 +25,18 @@ export const mathLittleStars = [
       { question: "Can you count things that are different from each other?", answer: "Yes — you can count any mix of objects by pointing to each one and saying a number", options: ["No — all objects must look the same", "Yes — you can count any mix of objects by pointing to each one and saying a number", "Only if they are the same color", "Only toys can be counted"] }
     ],
     familyAdventure: "Play the Counting Game at dinner. Someone says a number between 1 and 10, and everyone has to find that many of something at the table — 3 forks, 5 peas, 7 bites of bread. Take turns calling numbers. Then count together: how many people at the table? How many plates? How many total pieces of silverware? Counting becomes second nature when you do it playfully every day.",
-    badge: "Counting Star", nextLesson: "math-3-5-02"
+    badge: "Counting Star", nextLesson: "math-3-5-02",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! I am Remi. Today we learn to count to TEN!' },
+      { type: 'story', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'Remi the Raccoon loves finding treasures in the forest. Stars, acorns, little shiny things. She counts every single one with her nimble paws.' },
+      { type: 'count-array', count: 3, image: '/game-assets/math/star-single.png', interactive: true, instruction: 'Tap each star to count them!', guideText: 'One, two, three! Tap them with me!' },
+      { type: 'teach', image: '/game-assets/math/numeral-3.png', guideText: 'Three! Every time you count, you find out HOW MANY.' },
+      { type: 'count-array', count: 5, image: '/game-assets/math/star-single.png', interactive: true, instruction: 'Now count five stars!', guideText: 'Five is two more than three! Let us count!' },
+      { type: 'teach', image: '/game-assets/math/numeral-5.png', guideText: 'Five! You are a counting star, {name}.' },
+      { type: 'count-array', count: 10, image: '/game-assets/math/star-single.png', interactive: true, instruction: 'Can you count to ten?', guideText: 'Ten is a big number! Tap each star!' },
+      { type: 'family', guideText: 'Tonight, count something together — stairs, fingers, stars outside the window. See how high you can go!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Counting Star', guideText: 'You counted to ten, {name}!' }
+    ]
   },
 
   { id: "math-3-5-02", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 2, title: "Counting 1–20 and Beyond", duration: "10-15 min",
@@ -46,7 +57,25 @@ export const mathLittleStars = [
       { question: "What comes after twenty-nine?", answer: "Thirty (30)", options: ["Twenty-ten", "Thirty (30)", "Forty", "Twenty-nineteen"] }
     ],
     familyAdventure: "Do a 20-item scavenger hunt. Find and collect 20 small objects from around the house (buttons, coins, blocks, crayons). Lay them out in a line and count together from 1 to 20, touching each one. Then arrange them in two rows of 10 — this shows that 20 is two groups of ten. Then try counting to 20 while doing an activity: 20 jumping jacks, 20 claps, 20 steps. Moving and counting together helps the numbers stick.",
-    badge: "Super Counter", nextLesson: "math-3-5-03"
+    badge: "Big Counter", nextLesson: "math-3-5-03",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we count EVEN HIGHER!' },
+      { type: 'story', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'Remi found SO many acorns today. Ten is not enough! She learned to count to twenty, then thirty, then higher and higher.' },
+      { type: 'count-array', count: 10, image: '/game-assets/math/acorn-single.png', interactive: false, instruction: 'Here are ten acorns', guideText: 'Ten acorns! But Remi found MORE!' },
+      { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'After ten comes eleven, twelve, thirteen — the numbers keep going!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is MORE than ten?', guideText: 'Tap the bigger number!',
+        items: [
+          { image: '/game-assets/math/numeral-10.png', label: 'Ten' },
+          { image: '/game-assets/math/numeral-8.png', label: 'Eight' },
+          { image: '/game-assets/math/numeral-3.png', label: 'Three' },
+          { image: '/game-assets/math/math-celebration.png', label: 'Twenty!', correct: true }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'Numbers go on forever! Twenty, thirty, one hundred, one thousand!' },
+      { type: 'yes-no', scenario: 'Can numbers keep going higher and higher forever?', correctAnswer: true, image: '/game-assets/math/math-celebration.png' },
+      { type: 'family', guideText: 'Tonight, see how high you can count together. Take turns — you say one, then a grown-up says two, and keep going!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Big Counter', guideText: 'Numbers go on forever, {name}!' }
+    ]
   },
 
   { id: "math-3-5-03", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 3, title: "Counting to 100: Patterns in Numbers", duration: "10-15 min",
@@ -67,7 +96,25 @@ export const mathLittleStars = [
       { question: "What is the biggest number?", answer: "There is no biggest number — you can always add one more", options: ["100", "There is no biggest number — you can always add one more", "1,000", "A million"] }
     ],
     familyAdventure: "Count to 100 together as a family — taking turns. Person 1 says 1, person 2 says 2, and so on around the circle until you reach 100. If someone makes a mistake, help them and keep going. Then try counting by tens together: 10, 20, 30... to 100. Then collect 100 small objects (cereal pieces, beans, or coins) and arrange them in 10 groups of 10 to SEE what 100 looks like. One hundred is a big number — but it is just ten tens.",
-    badge: "Hundreds Hero", nextLesson: "math-3-5-04"
+    badge: "Pattern Finder", nextLesson: "math-3-5-04",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we find PATTERNS in numbers!' },
+      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi noticed something amazing. Numbers follow a pattern! 10, 20, 30, 40 — they all end in zero. She felt like a detective!' },
+      { type: 'count-array', count: 10, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Ten stars in a group', guideText: 'Ten! Another ten makes twenty. Another makes thirty!' },
+      { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'Every time we add ten more, we get another number ending in zero.' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which number ends in ZERO?', guideText: 'Find the zero at the end!',
+        items: [
+          { image: '/game-assets/math/numeral-10.png', label: 'Ten', correct: true },
+          { image: '/game-assets/math/numeral-3.png', label: 'Three' },
+          { image: '/game-assets/math/numeral-5.png', label: 'Five' },
+          { image: '/game-assets/math/numeral-7.png', label: 'Seven' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'Ten, twenty, thirty, forty, fifty! Counting by tens is a pattern!' },
+      { type: 'yes-no', scenario: 'Does counting by tens help us count bigger numbers faster?', correctAnswer: true, image: '/game-assets/math/math-celebration.png' },
+      { type: 'family', guideText: 'Tonight, count by tens together up to 100 — ten, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Pattern Finder', guideText: 'You found the pattern, {name}!' }
+    ]
   },
 
   { id: "math-3-5-04", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 4, title: "What Comes Before and After? (Ordering Numbers)", duration: "10-15 min",
@@ -88,7 +135,32 @@ export const mathLittleStars = [
       { question: "When putting numbers in order from smallest to biggest, which comes first: 9 or 3?", answer: "3 — because 3 is smaller than 9", options: ["9", "3 — because 3 is smaller than 9", "They are equal", "It does not matter"] }
     ],
     familyAdventure: "Play Human Number Line. Write numbers 1-10 on paper plates. Scatter them on the floor. Each family member picks up a plate and stands in the correct position on the number line (smallest to biggest, left to right). Then shuffle and do it again faster. Then remove one plate secretly — who can figure out which number is missing? Then try counting backward as a family: everyone counts down from 20 together. Make it dramatic — BLAST OFF at the end!",
-    badge: "Number Order Pro", nextLesson: "math-3-5-05"
+    badge: "Number Neighbor", nextLesson: "math-3-5-05",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn BEFORE and AFTER!' },
+      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi lines up her acorns in order. One, two, three. Before three comes two. After three comes four. Every number has a neighbor!' },
+      { type: 'teach', image: '/game-assets/math/numeral-3.png', guideText: 'Before three is two. After three is four. Every number has one before and one after.' },
+      { type: 'tap-right', readOptions: true, instruction: 'What comes AFTER three?', guideText: 'Tap the number that comes next!',
+        items: [
+          { image: '/game-assets/math/numeral-4.png', label: 'Four', correct: true },
+          { image: '/game-assets/math/numeral-2.png', label: 'Two' },
+          { image: '/game-assets/math/numeral-7.png', label: 'Seven' },
+          { image: '/game-assets/math/numeral-1.png', label: 'One' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/numeral-4.png', guideText: 'Four comes after three. You are counting forward!' },
+      { type: 'tap-right', readOptions: true, instruction: 'What comes BEFORE five?', guideText: 'Tap the number that comes just before!',
+        items: [
+          { image: '/game-assets/math/numeral-4.png', label: 'Four', correct: true },
+          { image: '/game-assets/math/numeral-6.png', label: 'Six' },
+          { image: '/game-assets/math/numeral-3.png', label: 'Three' },
+          { image: '/game-assets/math/numeral-1.png', label: 'One' }
+        ]
+      },
+      { type: 'yes-no', scenario: 'Does every number have a number that comes before it?', correctAnswer: true, image: '/game-assets/math/math-celebration.png' },
+      { type: 'family', guideText: 'Tonight, play Before and After. Someone says a number. Then guess what comes before and after together!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Number Neighbor', guideText: 'You know what comes next, {name}!' }
+    ]
   },
 
   { id: "math-3-5-05", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 5, title: "More, Less, or the Same? (Comparing Numbers)", duration: "10-15 min",
@@ -109,7 +181,26 @@ export const mathLittleStars = [
       { question: "What symbol means equal?", answer: "The = sign — it means the same as", options: ["The + sign", "The = sign — it means the same as", "The - sign", "The > sign"] }
     ],
     familyAdventure: "Play Fair Share at snack time. Give each family member a different number of crackers (or grapes, or pretzels). Count each person's amount. Who has more? Who has fewer? Then redistribute until everyone has an equal amount. How did you figure out how to make it fair? This is comparing and equalizing in action. Then play a card game: each person flips a card (use just number cards 1-10). The person with the higher number wins the round. Simple, fun, and full of comparing practice.",
-    badge: "Comparing Champion", nextLesson: "math-3-5-06"
+    badge: "More or Less", nextLesson: "math-3-5-06",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn MORE and LESS!' },
+      { type: 'story', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'Remi has three stars. Her friend has five stars. Five is MORE than three. Three is LESS than five. Remi knows by counting!' },
+      { type: 'count-array', count: 3, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Three stars', guideText: 'Three stars here!' },
+      { type: 'count-array', count: 5, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Five stars', guideText: 'Five stars here! That is MORE!' },
+      { type: 'teach', image: '/game-assets/math/numeral-5.png', guideText: 'Five is more than three. When you count, you can see which group is bigger!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which has MORE?', guideText: 'Tap the one with more!',
+        items: [
+          { image: '/game-assets/math/numeral-8.png', label: 'Eight', correct: true },
+          { image: '/game-assets/math/numeral-2.png', label: 'Two' },
+          { image: '/game-assets/math/numeral-3.png', label: 'Three' },
+          { image: '/game-assets/math/numeral-1.png', label: 'One' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'Sometimes two groups have the SAME. Two stars here, two stars there — same!' },
+      { type: 'yes-no', scenario: 'If you have 4 and your friend has 4, do you have the SAME?', correctAnswer: true, image: '/game-assets/math/numeral-4.png' },
+      { type: 'family', guideText: 'Tonight, compare things at dinner. Who has more grapes? Who has less? Who has the same? Count together!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'More or Less', guideText: 'You know more and less, {name}!' }
+    ]
   },
 
   { id: "math-3-5-06", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 6, title: "2D Shapes All Around Us", duration: "10-15 min",
@@ -130,7 +221,39 @@ export const mathLittleStars = [
       { question: "Why are triangles used in bridges and buildings?", answer: "Because triangles are the strongest shape — they distribute weight evenly and do not collapse easily", options: ["Because they look nice", "Because triangles are the strongest shape — they distribute weight evenly and do not collapse easily", "Because they are the cheapest shape", "Triangles are not used in buildings"] }
     ],
     familyAdventure: "Build a Shape City together. Using paper, cardboard, or blocks, build a city made of shapes: square buildings, triangular roofs, circular windows, rectangular doors. Label each shape. Then count: how many of each shape did you use? Which shape appears most? Take a photo of your Shape City. Then on your next drive or walk, play Shape I Spy: I spy something circular (a wheel), I spy something rectangular (a door). Shapes are the building blocks of the world.",
-    badge: "Shape Finder", nextLesson: "math-3-5-07"
+    badge: "Shape Spotter", nextLesson: "math-3-5-07",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we find SHAPES everywhere!' },
+      { type: 'story', image: '/game-assets/math/shape-circle.png', guideText: 'Remi looks around the forest and sees shapes! Circles in the sun. Squares in windows. Triangles in trees. Shapes are EVERYWHERE.' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is a CIRCLE?', guideText: 'Tap the round one!',
+        items: [
+          { image: '/game-assets/math/shape-circle.png', label: 'Circle', correct: true },
+          { image: '/game-assets/math/shape-square.png', label: 'Square' },
+          { image: '/game-assets/math/shape-triangle.png', label: 'Triangle' },
+          { image: '/game-assets/math/shape-rectangle.png', label: 'Rectangle' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/shape-circle.png', guideText: 'A circle is ROUND. Like a ball, the sun, or a wheel!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is a TRIANGLE?', guideText: 'Tap the one with three sides!',
+        items: [
+          { image: '/game-assets/math/shape-triangle.png', label: 'Triangle', correct: true },
+          { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
+          { image: '/game-assets/math/shape-square.png', label: 'Square' },
+          { image: '/game-assets/math/shape-heart.png', label: 'Heart' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/shape-square.png', guideText: 'A square has FOUR sides, all the same size. Like a window or a book!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is a SQUARE?', guideText: 'Tap the one with four equal sides!',
+        items: [
+          { image: '/game-assets/math/shape-square.png', label: 'Square', correct: true },
+          { image: '/game-assets/math/shape-triangle.png', label: 'Triangle' },
+          { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
+          { image: '/game-assets/math/shape-star.png', label: 'Star' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight, go on a Shape Hunt. Find one circle, one square, and one triangle in your house. Point them out together!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Shape Spotter', guideText: 'You see shapes everywhere, {name}!' }
+    ]
   },
 
   { id: "math-3-5-07", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 7, title: "3D Shapes: Spheres, Cubes, and Cylinders", duration: "10-15 min",
@@ -151,7 +274,32 @@ export const mathLittleStars = [
       { question: "What 3D shape is an ice cream cone?", answer: "A cone — one flat circle on the bottom that comes to a point on top", options: ["A cylinder", "A cone — one flat circle on the bottom that comes to a point on top", "A sphere", "A pyramid"] }
     ],
     familyAdventure: "Go on a 3D Shape Hunt in the kitchen. Find: a sphere (orange, ball of dough), a cylinder (can, glass, paper towel roll), a cube or rectangular prism (box, block of cheese, cereal box), and a cone (funnel, ice cream cone, party hat). Line them up and discuss: what makes each unique? Then build the tallest tower you can using only kitchen 3D shapes — which shapes are best for stacking? Worst? Engineering starts with understanding shapes.",
-    badge: "3D Shape Explorer", nextLesson: "math-3-5-08"
+    badge: "3D Explorer", nextLesson: "math-3-5-08",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn 3D SHAPES — shapes with depth!' },
+      { type: 'story', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'A circle is flat. But a BALL is round all the way around. It has depth! That makes it a 3D shape — a SPHERE!' },
+      { type: 'teach', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'A sphere is round like a ball. You can hold it in your hand!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is a SPHERE?', guideText: 'Tap the round ball shape!',
+        items: [
+          { image: '/game-assets/math/shape-3d-sphere.png', label: 'Sphere', correct: true },
+          { image: '/game-assets/math/shape-3d-cube.png', label: 'Cube' },
+          { image: '/game-assets/math/shape-3d-cylinder.png', label: 'Cylinder' },
+          { image: '/game-assets/math/shape-3d-cone.png', label: 'Cone' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/shape-3d-cube.png', guideText: 'A cube is like a 3D square — like dice or a block!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is a CUBE?', guideText: 'Tap the block shape!',
+        items: [
+          { image: '/game-assets/math/shape-3d-cube.png', label: 'Cube', correct: true },
+          { image: '/game-assets/math/shape-3d-sphere.png', label: 'Sphere' },
+          { image: '/game-assets/math/shape-3d-cylinder.png', label: 'Cylinder' },
+          { image: '/game-assets/math/shape-3d-cone.png', label: 'Cone' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/shape-3d-cylinder.png', guideText: 'A cylinder is tall and round — like a soup can or a glass!' },
+      { type: 'family', guideText: 'Tonight, find 3D shapes at home. A ball (sphere), a box (cube), a cup (cylinder), an ice cream cone. Touch them and feel the shape!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: '3D Explorer', guideText: 'You found 3D shapes, {name}!' }
+    ]
   },
 
   { id: "math-3-5-08", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 8, title: "Sorting and Classifying Objects", duration: "10-15 min",
@@ -172,7 +320,32 @@ export const mathLittleStars = [
       { question: "What is classifying?", answer: "Sorting with named categories — like grouping animals into mammals, birds, and fish", options: ["The same as counting", "Sorting with named categories — like grouping animals into mammals, birds, and fish", "Making things smaller", "Only for libraries"] }
     ],
     familyAdventure: "Play Guess My Rule. One person sorts a pile of objects by a secret rule (all round things together, all blue things together, all heavy things together). Everyone else tries to guess the sorting rule. Take turns being the sorter. Then do a laundry sort together: sort clothes by color, then by person, then by type (shirts, pants, socks). Sorting laundry is real-world math you do every week. Then sort a snack mix (trail mix works great): separate nuts, raisins, and chocolate pieces. Count each group. Which has the most? Sorting + counting = mathematical thinking.",
-    badge: "Sorting Superstar", nextLesson: "math-3-5-09"
+    badge: "Super Sorter", nextLesson: "math-3-5-09",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn to SORT!' },
+      { type: 'story', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'Remi found a big pile of treasures — stars, acorns, apples, flowers, all mixed up! She sorted them. Stars with stars. Acorns with acorns. Now everything has a place!' },
+      { type: 'teach', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'Sorting means putting things that are the SAME together. It helps us see what we have!' },
+      { type: 'sort-buckets',
+        instruction: 'Sort the treasures! Stars go with stars. Acorns go with acorns.',
+        guideText: 'Drag each one into the right bucket!',
+        buckets: [
+          { label: 'Stars', image: '/game-assets/math/star-single.png' },
+          { label: 'Acorns', image: '/game-assets/math/acorn-single.png' }
+        ],
+        items: [
+          { image: '/game-assets/math/star-single.png', bucket: 0 },
+          { image: '/game-assets/math/acorn-single.png', bucket: 1 },
+          { image: '/game-assets/math/star-single.png', bucket: 0 },
+          { image: '/game-assets/math/acorn-single.png', bucket: 1 },
+          { image: '/game-assets/math/star-single.png', bucket: 0 },
+          { image: '/game-assets/math/acorn-single.png', bucket: 1 }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'You sorted them all! Now we can count each group easily.' },
+      { type: 'yes-no', scenario: 'Does sorting help us see how many of each thing we have?', correctAnswer: true, image: '/game-assets/math/remi-treasure-pile.png' },
+      { type: 'family', guideText: 'Tonight, sort something at home together — toys by color, socks by pair, or laundry by person. Sorting is fun!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Super Sorter', guideText: 'You are a sorting champion, {name}!' }
+    ]
   },
 
   { id: "math-3-5-09", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 9, title: "Patterns: What Comes Next?", duration: "10-15 min",
@@ -193,7 +366,32 @@ export const mathLittleStars = [
       { question: "What type of pattern is red-red-blue-red-red-blue?", answer: "An AAB pattern — two of one kind followed by one of another, then repeating", options: ["An AB pattern", "An AAB pattern — two of one kind followed by one of another, then repeating", "An ABC pattern", "Not a pattern at all"] }
     ],
     familyAdventure: "Go on a Pattern Hunt. Find patterns everywhere: on clothing (stripes, plaid), in architecture (brick patterns, tile patterns), in nature (leaf arrangements, flower petals), in music (rhythms), and in daily routines (eat-play-sleep-eat-play-sleep). Each person finds 3 patterns and shares them with the family. Then create a Family Pattern Dance: invent a movement pattern (clap-jump-spin-clap-jump-spin) and perform it together. Patterns are the rhythm of life.",
-    badge: "Pattern Finder", nextLesson: "math-3-5-10"
+    badge: "Pattern Master", nextLesson: "math-3-5-10",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we find PATTERNS!' },
+      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi sees a pattern in the forest. Red leaf, yellow leaf, red leaf, yellow leaf. What comes next? Another red leaf! Patterns help us guess what is coming.' },
+      { type: 'teach', image: '/game-assets/math/shape-star.png', guideText: 'A pattern is something that repeats. Like star, heart, star, heart, star, heart!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Star, heart, star, heart, what comes NEXT?', guideText: 'Tap what comes next in the pattern!',
+        items: [
+          { image: '/game-assets/math/shape-star.png', label: 'Star', correct: true },
+          { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
+          { image: '/game-assets/math/shape-square.png', label: 'Square' },
+          { image: '/game-assets/math/shape-triangle.png', label: 'Triangle' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/shape-circle.png', guideText: 'Patterns can be colors, shapes, numbers, or sounds. The trick is to notice what repeats.' },
+      { type: 'tap-right', readOptions: true, instruction: 'Circle, square, circle, square, what is NEXT?', guideText: 'Tap the next one!',
+        items: [
+          { image: '/game-assets/math/shape-circle.png', label: 'Circle', correct: true },
+          { image: '/game-assets/math/shape-square.png', label: 'Square' },
+          { image: '/game-assets/math/shape-triangle.png', label: 'Triangle' },
+          { image: '/game-assets/math/shape-heart.png', label: 'Heart' }
+        ]
+      },
+      { type: 'yes-no', scenario: 'Are patterns things that repeat over and over?', correctAnswer: true, image: '/game-assets/math/shape-star.png' },
+      { type: 'family', guideText: 'Tonight, make a pattern together! Clap-clap-stomp, clap-clap-stomp. Or draw a pattern — red-blue-red-blue!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Pattern Master', guideText: 'You see patterns everywhere, {name}!' }
+    ]
   },
 
   { id: "math-3-5-10", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 10, title: "How Long Is It? Introduction to Measurement", duration: "10-15 min",
@@ -214,7 +412,25 @@ export const mathLittleStars = [
       { question: "If your pencil is 5 paper clips long and your book is 8 paper clips long, which is longer?", answer: "The book — because 8 paper clips is more than 5 paper clips", options: ["The pencil", "The book — because 8 paper clips is more than 5 paper clips", "They are the same length", "You cannot compare them"] }
     ],
     familyAdventure: "Do a Family Measurement Challenge. Each person picks 3 objects and measures them in two ways: first using a non-standard unit (hand spans, foot lengths, or paper clips) and then using a ruler (inches or centimeters). Record all measurements. Compare: whose hand span is biggest? Did that person get fewer hand spans for the same object? (Yes — bigger unit = fewer of them.) Then measure each family member's height. Who is tallest? By how much? Make a height chart on the wall and remeasure every few months to track growth.",
-    badge: "Measurement Master", nextLesson: "math-3-5-11"
+    badge: "Measure Master", nextLesson: "math-3-5-11",
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we measure HOW LONG things are!' },
+      { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'Remi wanted to know which branch was longer. So she lined them up side by side and compared. One was SHORTER. One was LONGER. Now she knew!' },
+      { type: 'teach', image: '/game-assets/math/shape-rectangle.png', guideText: 'Long, short. Tall, small. We can compare how big things are!' },
+      { type: 'tap-right', readOptions: true, instruction: 'Which is LONGER?', guideText: 'Tap the longer one!',
+        items: [
+          { image: '/game-assets/math/shape-rectangle.png', label: 'Long rectangle', correct: true },
+          { image: '/game-assets/math/shape-square.png', label: 'Small square' },
+          { image: '/game-assets/math/shape-circle.png', label: 'Small circle' },
+          { image: '/game-assets/math/shape-triangle.png', label: 'Small triangle' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/math/shape-rectangle.png', guideText: 'To compare, we line things up and look at which goes farther!' },
+      { type: 'yes-no', scenario: 'Can you measure with your hands, like how many hands long a table is?', correctAnswer: true, image: '/game-assets/math/remi-treasure-pile.png' },
+      { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'You can measure with anything — your foot, a shoe, a block, or a ruler!' },
+      { type: 'family', guideText: 'Tonight, measure three things at home with your feet. How many foot-steps is the couch? The table? Your bedroom?', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Measure Master', guideText: 'You can measure anything, {name}!' }
+    ]
   },
 
   { id: "math-3-5-11", subject: "Mathematics", ageGroup: "3-5", band: "Little Stars", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 11, title: "Heavy or Light? Introduction to Weight", duration: "10-15 min", hook: "Hold a feather in one hand and a book in the other. Which is heavier? The book! Weight tells us how heavy something is. Understanding weight helps you compare objects, cook recipes, and even mail packages. Remi the Raccoon can tell which acorn is heaviest just by holding them — but a scale gives a more accurate answer.", bigIdea: "Weight measures how heavy an object is — it can be estimated by feel, compared using a balance, and measured precisely using a scale in pounds or kilograms.", sections: [ { title: "Heavy and Light", emoji: "⚖️", content: "Some things are heavy — they pull your arm down when you hold them. Some things are light — you can hold them easily. A watermelon is heavy. A cotton ball is light. You can estimate weight by holding objects, but your estimates might be wrong — a small rock can be heavier than a big pillow. Actual weight depends on what the object is made of, not just its size." }, { title: "Comparing Weights", emoji: "🏋️", content: "You can compare two objects by holding one in each hand — the heavier one pulls your hand down more. A balance scale makes this more precise: put one object on each side, and the heavier side goes down. If both sides are level, the objects weigh the same. Comparing weights helps you decide which bag to carry, which box to lift, and whether you have enough of something." }, { title: "Measuring Weight", emoji: "📊", content: "Weight is measured using scales. In the US, we use pounds (lb) and ounces (oz). Most of the world uses kilograms (kg) and grams (g). A loaf of bread weighs about 1 pound. A large watermelon weighs about 20 pounds. YOU might weigh between 30 and 50 pounds. Knowing the units helps you understand weights you hear about." }, { title: "Weight in Daily Life", emoji: "🛒", content: "Weight matters every day. Groceries are priced by weight. Recipe ingredients are measured by weight. Your pediatrician tracks your weight to make sure you are growing well. Luggage has weight limits at the airport. Bridges have weight limits for trucks. Understanding weight helps you navigate the real world." } ], activity: { title: "Weight Guessing Game", instructions: "Gather 10 objects: a book, a shoe, an apple, a spoon, a pillow, a cup of water, a toy, a coin, a rock, and a stuffed animal. First rank them from lightest to heaviest just by guessing. Then pick them up one at a time and re-rank based on feel. Finally, if you have a kitchen scale, weigh each one and see how accurate your guesses were. Which objects fooled you? Was anything heavier or lighter than you expected?" }, quiz: [ { question: "Does a bigger object always weigh more?", answer: "No — a big pillow is lighter than a small rock; weight depends on material, not just size", options: ["Yes — bigger is always heavier", "No — a big pillow is lighter than a small rock; weight depends on material, not just size", "Size and weight are always the same", "Only metal objects are heavy"] }, { question: "How does a balance scale work?", answer: "You put one object on each side — the heavier side goes down", options: ["It measures temperature", "You put one object on each side — the heavier side goes down", "Both sides always balance", "It only works for food"] }, { question: "About how much does a loaf of bread weigh?", answer: "About 1 pound", options: ["About 100 pounds", "About 1 pound", "About 1 ounce", "About 20 pounds"] }, { question: "What unit measures weight in the US?", answer: "Pounds (lb) and ounces (oz)", options: ["Inches and feet", "Pounds (lb) and ounces (oz)", "Degrees", "Minutes and seconds"] }, { question: "Why does weight matter at the grocery store?", answer: "Because many foods are priced by weight — you pay per pound for fruits, vegetables, and meats", options: ["It does not matter at the store", "Because many foods are priced by weight — you pay per pound for fruits, vegetables, and meats", "Only for frozen food", "Only at farmers markets"] } ], familyAdventure: "Play Weight Olympics. Event 1: each person picks up a mystery bag (fill bags with different amounts of rice, beans, or toys) and ranks them heaviest to lightest — then weigh to check. Event 2: estimate the weight of a banana, then weigh it. Closest guess wins! Event 3: find two objects that weigh about the same (feel them, then verify with a scale). Give gold stars for accuracy. This builds estimation skills and number sense around weight.", badge: "Weight Wizard", nextLesson: "math-3-5-12"
