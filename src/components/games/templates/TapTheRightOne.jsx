@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import WinCelebration from '../WinCelebration';
 import KaraokeText from '../KaraokeText';
 
@@ -6,12 +6,27 @@ import KaraokeText from '../KaraokeText';
 // it receives readingIdx (which card is being narrated) and disabled (interaction lock)
 // as props and renders accordingly. No speak calls here.
 
+function shuffled(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onWin, disabled, readingIdx = -1, karaokeWords = [], karaokeIdx = -1 }) {
   const [selected, setSelected] = useState(null);
   const [wrong,    setWrong]    = useState(null);
   const [showWin,  setShowWin]  = useState(false);
 
-  const items = step.items || [];
+  const rawItems  = step.items || [];
+  const hideLabels = step.hideLabels ?? false;
+
+  // Shuffle once per items array reference (new step = new reference = new shuffle).
+  // useMemo prevents re-shuffling on every re-render within the same step.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const items = useMemo(() => shuffled(rawItems), [rawItems]);
 
   // Reset state when the step changes (new question).
   useEffect(() => {
@@ -151,7 +166,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
               ) : (
                 <span style={{ fontSize: '3rem', lineHeight: 1 }}>{item.emoji}</span>
               )}
-              {item.label && (
+              {item.label && !hideLabels && (
                 <span style={{
                   color: isCorrect
                     ? '#34D399'

@@ -418,6 +418,12 @@ export default function GameLessonPlayer() {
       };
 
       console.log(`[audio ${ts()}] PLAY_CALL gen=${gen}`);
+      console.log('[audio]', {
+        duration:   el.duration,
+        blobSize:   blob.size,
+        src:        blobUrl?.slice(0, 50),
+        lessonId:   lesson?.id,
+      });
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) {
         // Autoplay blocked — with a persistent gesture-authorized element this should
@@ -462,6 +468,7 @@ export default function GameLessonPlayer() {
       case 'tap-right':
       case 'count':
       case 'sort':
+      case 'sort-buckets':
       case 'drag-match':
       case 'count-array':
         return r(step.instruction);
@@ -477,13 +484,13 @@ export default function GameLessonPlayer() {
   }
 
   // ── Screen type sets (module-scoped constants referenced inside effects) ────
-  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'cause-effect', 'guided-demo', 'drag-match', 'count-array']);
+  const GAME_TYPES         = new Set(['tap-right', 'yes-no', 'count', 'sort', 'sort-buckets', 'cause-effect', 'guided-demo', 'drag-match', 'count-array']);
   const AUTO_ADVANCE_TYPES = new Set(['welcome', 'story', 'teach', 'family']);
   // Fallback delay per auto-advance type — fires if audio onended never arrives.
   // Game-type fallbacks are intentionally short — if speech fails, cards must unlock
   // quickly so a broken TTS call can't brick the lesson for a 3-5 year old.
   // cause-effect / guided-demo stay at the 20000ms default (long automated sequences).
-  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000, 'tap-right': 6000, 'yes-no': 6000, count: 6000, sort: 6000, 'drag-match': 6000, 'count-array': 6000 };
+  const AUTO_FALLBACK_MS   = { welcome: 8000, story: 12000, teach: 10000, family: 12000, 'tap-right': 6000, 'yes-no': 6000, count: 6000, sort: 6000, 'sort-buckets': 6000, 'drag-match': 6000, 'count-array': 6000 };
 
   // ── Single speak + lock + auto-advance useEffect ───────────────────────────
   // GameLessonPlayer is the ONLY place that calls TTS. Templates are purely
@@ -741,7 +748,8 @@ export default function GameLessonPlayer() {
       case 'celebration':  return <CelebrationScreen {...common} />;
       case 'tap-right':    return <TapTheRightOne  step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} readingIdx={readingIdx} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'count':        return <CountAndTap     step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
-      case 'sort':         return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
+      case 'sort':
+      case 'sort-buckets': return <SortIntoBuckets step={step} onReady={handleReady} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'yes-no':       return <YesOrNo         step={step} onComplete={advance} onReady={handleReady} onWrong={handleWrong} onWin={handleWin} disabled={interactionLocked || isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'cause-effect': return <CauseAndEffect  step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} isPaused={isPaused} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;
       case 'guided-demo':  return <GuidedDemo      step={step} onComplete={advance} onNarrate={handleNarrate} disabled={interactionLocked} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} />;

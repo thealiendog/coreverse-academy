@@ -2,11 +2,16 @@ import { useState, useEffect } from 'react';
 import { sfx } from '../sounds';
 import KaraokeText from '../KaraokeText';
 
+// Fallback palette when bucket.color is not provided
+const BUCKET_COLORS = ['#7C3AED', '#F59E0B', '#34D399', '#60A5FA', '#F472B6'];
+
 export default function SortIntoBuckets({ step, onReady, disabled, karaokeWords = [], karaokeIdx = -1 }) {
-  const buckets = step.buckets || [
+  const rawBuckets = step.buckets || [
     { label: 'Living',     color: '#34D399' },
     { label: 'Non-living', color: '#60A5FA' },
   ];
+  // Inject fallback colors so downstream code can always read bucket.color
+  const buckets = rawBuckets.map((b, i) => ({ ...b, color: b.color || BUCKET_COLORS[i % BUCKET_COLORS.length] }));
   const items   = step.items || [];
 
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -76,10 +81,21 @@ export default function SortIntoBuckets({ step, onReady, disabled, karaokeWords 
           gap: 8,
           animation: bounceItem ? 'sib-bounce 0.5s ease' : 'sib-pop 0.4s ease',
         }}>
-          <div style={{ fontSize: '4rem', lineHeight: 1 }}>{currentItem.emoji}</div>
-          <p style={{ color:'rgba(255,255,255,0.8)', fontWeight:700, fontSize:'1.1rem', margin:0 }}>
-            {currentItem.label}
-          </p>
+          {currentItem.image ? (
+            <img
+              src={currentItem.image}
+              alt={currentItem.label || ''}
+              draggable={false}
+              style={{ width: 96, height: 96, objectFit: 'contain', borderRadius: 12 }}
+            />
+          ) : currentItem.emoji ? (
+            <div style={{ fontSize: '4rem', lineHeight: 1 }}>{currentItem.emoji}</div>
+          ) : null}
+          {currentItem.label && (
+            <p style={{ color:'rgba(255,255,255,0.8)', fontWeight:700, fontSize:'1.1rem', margin:0 }}>
+              {currentItem.label}
+            </p>
+          )}
           <p style={{ color:'rgba(255,255,255,0.45)', fontSize:'0.85rem', margin:0 }}>
             Tap a bucket to sort it!
           </p>
@@ -120,8 +136,12 @@ export default function SortIntoBuckets({ step, onReady, disabled, karaokeWords 
               boxShadow: flash === bi ? `0 0 20px ${bucket.color}55` : 'none',
             }}
           >
-            {/* Colored dot instead of emoji */}
-            <div style={{ width:20, height:20, borderRadius:'50%', background:bucket.color, boxShadow:`0 0 10px ${bucket.color}88` }} />
+            {bucket.image ? (
+              <img src={bucket.image} alt={bucket.label || ''} draggable={false}
+                style={{ width:40, height:40, objectFit:'contain', borderRadius:8 }} />
+            ) : (
+              <div style={{ width:20, height:20, borderRadius:'50%', background:bucket.color, boxShadow:`0 0 10px ${bucket.color}88` }} />
+            )}
             <span style={{ color: bucket.color, fontWeight:800, fontSize:'0.95rem' }}>{bucket.label}</span>
             <span style={{ color:'rgba(255,255,255,0.5)', fontSize:'0.8rem' }}>{counts[bi]} items</span>
           </button>
