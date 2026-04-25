@@ -15,7 +15,7 @@ export const socialleadershipLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! I am Valor. Today we learn about FRIENDSHIP!' },
       { type: 'story', image: '/game-assets/social-leadership/friends-hugging.png', guideText: 'A good friend is someone who is kind to you, plays with you, and cares about how you feel. Good friends share, they listen, they give hugs when you are sad, and they cheer for you when you do something cool. The best part? You can BE a good friend too!' },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'Friendship is built on kindness. Every kind thing you do makes the friendship stronger!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows GOOD FRIENDS?', guideText: 'Tap the friends being kind!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows GOOD FRIENDS?', guideText: 'Tap the friends being kind!',
         items: [
           { image: '/game-assets/social-leadership/friends-hugging.png', label: 'Friends hugging', correct: true },
           { image: '/game-assets/social-leadership/friends-fighting.png', label: 'Fighting' },
