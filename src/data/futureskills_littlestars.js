@@ -48,9 +48,9 @@ export const futureskillsLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What is on a TABLET?', guideText: 'Tap what you find on a tablet!',
         items: [
           { image: '/game-assets/future-skills/app-icons.png', label: 'Apps', correct: true },
-          { image: '/game-assets/future-skills/building-blocks.png', label: 'Blocks' },
-          { image: '/game-assets/future-skills/robot-parts.png', label: 'Robot parts' },
-          { image: '/game-assets/future-skills/puzzle-pieces.png', label: 'Puzzle' }
+          { image: '/game-assets/future-skills/paper-pages.png', label: 'Paper pages' },
+          { image: '/game-assets/future-skills/crayons-art.png', label: 'Crayons' },
+          { image: '/game-assets/future-skills/cookies-snack.png', label: 'Cookies' }
         ]
       },
       { type: 'teach', image: '/game-assets/future-skills/phone-device.png', guideText: 'Phones can do SO many things — call, take pictures, play music, show maps. Like having a magic helper in your pocket!' },
@@ -114,9 +114,9 @@ export const futureskillsLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where do you find APPS?', guideText: 'Tap where apps live!',
         items: [
           { image: '/game-assets/future-skills/tablet-device.png', label: 'Tablet', correct: true },
-          { image: '/game-assets/future-skills/building-blocks.png', label: 'Blocks' },
-          { image: '/game-assets/future-skills/friendly-robot.png', label: 'Robot' },
-          { image: '/game-assets/future-skills/puzzle-pieces.png', label: 'Puzzle' }
+          { image: '/game-assets/future-skills/book-physical.png', label: 'Paper book' },
+          { image: '/game-assets/future-skills/tv-old.png', label: 'Old TV' },
+          { image: '/game-assets/future-skills/radio-old.png', label: 'Old radio' }
         ]
       },
       { type: 'teach', image: '/game-assets/future-skills/creative-spark.png', guideText: 'One day, YOU could invent an app that helps people! Apps start with one good idea.' },
@@ -171,14 +171,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we become PROBLEM SOLVERS!' },
       { type: 'story', image: '/game-assets/future-skills/puzzle-pieces.png', guideText: 'Every day, you meet little problems — a puzzle is too hard, your shoe is tied weird, your tower keeps falling. Problem solving is the magic skill of figuring out HOW to fix things. Every great inventor, scientist, and builder is a problem solver!' },
       { type: 'teach', image: '/game-assets/future-skills/brain-thinking.png', guideText: 'When you see a problem, the first thing to do is THINK — what is happening? What could I try?' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What is the first thing to do when you have a problem?', guideText: 'Tap what comes first!',
-        items: [
-          { image: '/game-assets/future-skills/brain-thinking.png', label: 'Think', correct: true },
-          { image: '/game-assets/future-skills/screen-time-timer.png', label: 'Wait' },
-          { image: '/game-assets/future-skills/tablet-device.png', label: 'Tablet' },
-          { image: '/game-assets/future-skills/friendly-robot.png', label: 'Robot' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Should you think before trying to solve a problem?', correctAnswer: true, image: '/game-assets/future-skills/brain-thinking.png' },
       { type: 'teach', image: '/game-assets/future-skills/puzzle-pieces.png', guideText: 'Every puzzle piece fits SOMEWHERE — you just have to find the right spot. Same with problems!' },
       { type: 'yes-no', scenario: 'Should you think before trying to solve a problem?', correctAnswer: true, image: '/game-assets/future-skills/brain-thinking.png' },
       { type: 'family', guideText: 'Together, find one little problem at home — like a puzzle, a stuck zipper, or a too-high shelf. Practice thinking first, then trying. You are a problem solver!', image: '/game-assets/inner-world/family-circle.png' },
@@ -204,9 +197,9 @@ export const futureskillsLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do you do when you do not know something?', guideText: 'Tap the question mark!',
         items: [
           { image: '/game-assets/future-skills/question-mark-glowing.png', label: 'Ask a question', correct: true },
-          { image: '/game-assets/future-skills/screen-time-timer.png', label: 'Wait' },
-          { image: '/game-assets/future-skills/building-blocks.png', label: 'Build' },
-          { image: '/game-assets/future-skills/robot-helper.png', label: 'Robot' }
+          { image: '/game-assets/future-skills/child-shrugging.png', label: 'Shrug it off' },
+          { image: '/game-assets/future-skills/child-pretending-know.png', label: 'Pretend to know' },
+          { image: '/game-assets/future-skills/child-making-up.png', label: 'Make up an answer' }
         ]
       },
       { type: 'teach', image: '/game-assets/future-skills/lightbulb-idea.png', guideText: 'Good questions start with WHO, WHAT, WHERE, WHEN, WHY, or HOW. Try them out!' },
@@ -235,9 +228,9 @@ export const futureskillsLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do you do when something does not work?', guideText: 'Tap try again!',
         items: [
           { image: '/game-assets/future-skills/try-again.png', label: 'Try again', correct: true },
-          { image: '/game-assets/future-skills/screen-time-timer.png', label: 'Stop' },
-          { image: '/game-assets/future-skills/tablet-device.png', label: 'Tablet' },
-          { image: '/game-assets/future-skills/friendly-robot.png', label: 'Robot' }
+          { image: '/game-assets/future-skills/child-frustrated-quit.png', label: 'Quit angrily' },
+          { image: '/game-assets/future-skills/child-blaming.png', label: 'Blame someone' },
+          { image: '/game-assets/future-skills/child-hiding-fail.png', label: 'Hide it' }
         ]
       },
       { type: 'teach', image: '/game-assets/future-skills/brain-thinking.png', guideText: 'Smart people say: I have not figured it out YET. They know they will get it eventually!' },
@@ -264,9 +257,9 @@ export const futureskillsLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does it look like to work as a TEAM?', guideText: 'Tap kids working together!',
         items: [
           { image: '/game-assets/future-skills/kids-working-together.png', label: 'Working together', correct: true },
-          { image: '/game-assets/future-skills/screen-time-timer.png', label: 'Timer' },
-          { image: '/game-assets/future-skills/robot-parts.png', label: 'Robot parts' },
-          { image: '/game-assets/future-skills/lightbulb-idea.png', label: 'Idea' }
+          { image: '/game-assets/future-skills/kid-alone-working.png', label: 'Alone with everything' },
+          { image: '/game-assets/future-skills/kids-arguing-team.png', label: 'Team arguing' },
+          { image: '/game-assets/future-skills/kid-bossing.png', label: 'Bossing others' }
         ]
       },
       { type: 'teach', image: '/game-assets/future-skills/robot-helper.png', guideText: 'Even robots and humans can be a team — the robot helps the human, the human helps the robot!' },
@@ -294,9 +287,9 @@ export const futureskillsLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows CREATIVITY?', guideText: 'Tap a kid making something new!',
         items: [
           { image: '/game-assets/future-skills/kids-creating.png', label: 'Creating', correct: true },
-          { image: '/game-assets/future-skills/screen-time-timer.png', label: 'Timer' },
-          { image: '/game-assets/future-skills/tablet-device.png', label: 'Tablet' },
-          { image: '/game-assets/future-skills/friendly-robot.png', label: 'Robot' }
+          { image: '/game-assets/future-skills/child-watching-tv.png', label: 'Just watching' },
+          { image: '/game-assets/future-skills/child-copying.png', label: 'Copying others' },
+          { image: '/game-assets/future-skills/child-blank-paper.png', label: 'Blank paper' }
         ]
       },
       { type: 'teach', image: '/game-assets/future-skills/building-blocks.png', guideText: 'You can be creative with blocks, paint, music, or words — anything! There is no wrong way to create!' },
