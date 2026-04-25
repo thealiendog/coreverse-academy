@@ -214,6 +214,7 @@ export default function GameLessonPlayer() {
 
   const persistentAudioRef       = useRef(null); // single reused Audio element — created inside first gesture so iOS authorizes all future .play() calls
   const audioListenersCleanupRef = useRef(null); // removes current debug event listeners before reuse
+  const currentAbortControllerRef = useRef(null); // AbortController for the in-flight nova-speak fetch — replaced on every speak() call
   const bubbleTimer              = useRef(null);
   const fallbackTimerRef         = useRef(null);
   const speakGenRef              = useRef(0); // incremented on every speak() call; stale fetches bail out
@@ -262,6 +263,14 @@ export default function GameLessonPlayer() {
     // a stale gen and discard its audio, preventing the double-speech race.
     const gen = ++speakGenRef.current;
 
+    // Cancel any in-flight fetch from a previous speak() call.
+    if (currentAbortControllerRef.current) {
+      currentAbortControllerRef.current.abort();
+      console.log(`[audio ${ts()}] CANCELLED previous fetch gen=${gen - 1}`);
+    }
+    const abortController = new AbortController();
+    currentAbortControllerRef.current = abortController;
+
     // Remove debug event listeners from previous speak() call before reusing element.
     audioListenersCleanupRef.current?.();
     audioListenersCleanupRef.current = null;
@@ -309,6 +318,7 @@ export default function GameLessonPlayer() {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ text: resolved }),
+        signal:  abortController.signal,
       });
       console.log(`[audio ${ts()}] FETCH_RESPONSE status=${res.status} took=${Date.now() - fetchStart}ms`);
       if (!res.ok) throw new Error('tts-unavailable');
@@ -477,6 +487,11 @@ export default function GameLessonPlayer() {
       }
       // play() succeeded: onended will fire and clear deadman — no premature timeout
     } catch (e) {
+      if (e?.name === 'AbortError') {
+        console.log(`[audio ${ts()}] ABORTED gen=${gen} (expected when advancing screens)`);
+        clearTimeout(deadman);
+        return;
+      }
       console.log(`[audio ${ts()}] FETCH_OR_PARSE_ERROR gen=${gen}`, e?.message);
       clearTimeout(deadman);
       finish('fetch-error');
@@ -688,6 +703,7 @@ export default function GameLessonPlayer() {
 
   // ── Cleanup on unmount ─────────────────────────────────────────────────────
   useEffect(() => () => {
+    if (currentAbortControllerRef.current) currentAbortControllerRef.current.abort();
     audioListenersCleanupRef.current?.();
     if (persistentAudioRef.current) {
       persistentAudioRef.current.pause();
