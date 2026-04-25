@@ -75,14 +75,7 @@ export const moneybusinessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn NEEDS and WANTS!' },
       { type: 'story', image: '/game-assets/money/needs-trio.png', guideText: 'Some things we NEED — like food, water, and a home. We cannot live without them! Other things we just WANT — like toys and candy. They are fun, but we can live without them.' },
       { type: 'teach', image: '/game-assets/money/needs-trio.png', guideText: 'Food, water, a place to sleep — these are NEEDS. Our bodies need them every day!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a NEED?', guideText: 'Tap the thing we cannot live without!',
-        items: [
-          { image: '/game-assets/money/needs-trio.png', label: 'Food and water', correct: true },
-          { image: '/game-assets/money/clean-toy.png', label: 'Toy' },
-          { image: '/game-assets/money/wants-trio.png', label: 'Candy and toys' },
-          { image: '/game-assets/money/money-celebration.png', label: 'Sparkles' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Is food a NEED that we cannot live without?', correctAnswer: true, image: '/game-assets/money/needs-trio.png' },
       { type: 'teach', image: '/game-assets/money/wants-trio.png', guideText: 'Toys, candy, balloons — these are WANTS. They make us happy, but we do not need them to live!' },
       { type: 'sort-buckets',
         instruction: 'Sort needs and wants!',
@@ -149,14 +142,7 @@ export const moneybusinessLittleStars = [
       { type: 'story', image: '/game-assets/money/giving-receiving.png', guideText: 'Sometimes I have a coin and a friend has none. When I give my coin to my friend, we both feel good! Giving is like magic — it makes our hearts bigger.' },
       { type: 'teach', image: '/game-assets/money/giving-receiving.png', guideText: 'Giving means sharing what we have with someone who needs it!' },
       { type: 'yes-no', scenario: 'Does giving to others make us feel good?', correctAnswer: true, image: '/game-assets/money/giving-receiving.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is GIVING?', guideText: 'Tap the picture that shows giving!',
-        items: [
-          { image: '/game-assets/money/giving-receiving.png', label: 'Giving a coin', correct: true },
-          { image: '/game-assets/money/piggy-bank-empty.png', label: 'Empty piggy bank' },
-          { image: '/game-assets/money/broken-toy.png', label: 'Broken toy' },
-          { image: '/game-assets/money/coins-pile.png', label: 'Pile of coins' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'When you share a coin with a friend, is that giving?', correctAnswer: true, image: '/game-assets/money/giving-receiving.png' },
       { type: 'teach', image: '/game-assets/money/money-celebration.png', guideText: 'When we give, both people are happier. Money is even better when we share it!' },
       { type: 'family', guideText: 'Tonight, find a coin together and put it in a place where you can give it away — to a charity jar, a friend, or a piggy bank for someone else!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Generous Heart', guideText: 'You have a generous heart, {name}!' }
@@ -179,14 +165,7 @@ export const moneybusinessLittleStars = [
       { type: 'story', image: '/game-assets/money/working-tasks.png', guideText: 'Money does not grow on trees. People EARN money by doing work. Building, growing food, helping others — every job earns money!' },
       { type: 'teach', image: '/game-assets/money/working-tasks.png', guideText: 'When we work, we make something or help someone. That is how we earn!' },
       { type: 'yes-no', scenario: 'Do people work to earn money?', correctAnswer: true, image: '/game-assets/money/working-tasks.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which one is WORKING?', guideText: 'Tap the picture that shows work!',
-        items: [
-          { image: '/game-assets/money/working-tasks.png', label: 'Working hard', correct: true },
-          { image: '/game-assets/money/clean-toy.png', label: 'Toy bear' },
-          { image: '/game-assets/money/wants-trio.png', label: 'Toys and candy' },
-          { image: '/game-assets/money/money-celebration.png', label: 'Sparkles' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Is cleaning up a kind of work?', correctAnswer: true, image: '/game-assets/money/working-tasks.png' },
       { type: 'teach', image: '/game-assets/money/coins-pile.png', guideText: 'After working, we earn coins. We can save them, spend them, or share them!' },
       { type: 'family', guideText: 'Tonight, talk together about jobs. What does each grown-up in your family do for work? What might YOU do when you grow up?', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Hard Worker', guideText: 'You understand work, {name}!' }
@@ -268,14 +247,7 @@ export const moneybusinessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn to TAKE CARE of our things!' },
       { type: 'story', image: '/game-assets/money/clean-toy.png', guideText: 'When we take good care of our toys and clothes, they last a long time! When we are careless, they break and we cannot use them anymore. Caring saves money!' },
       { type: 'teach', image: '/game-assets/money/clean-toy.png', guideText: 'A toy that is loved and cared for stays bright and beautiful for years!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which toy was TAKEN CARE OF?', guideText: 'Tap the one that looks loved!',
-        items: [
-          { image: '/game-assets/money/clean-toy.png', label: 'Clean toy', correct: true },
-          { image: '/game-assets/money/broken-toy.png', label: 'Broken toy' },
-          { image: '/game-assets/money/coins-pile.png', label: 'Coins' },
-          { image: '/game-assets/money/wants-trio.png', label: 'New toys' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Is a clean, undamaged toy a toy that was taken care of?', correctAnswer: true, image: '/game-assets/money/clean-toy.png' },
       { type: 'teach', image: '/game-assets/money/broken-toy.png', guideText: 'A toy that was not cared for breaks. Then we have to buy a new one — that costs money!' },
       { type: 'yes-no', scenario: 'Does taking care of our things save money?', correctAnswer: true, image: '/game-assets/money/clean-toy.png' },
       { type: 'family', guideText: 'Tonight, pick one favorite toy together. Make a special spot where it will live. Promise to put it back there every time you finish playing!', image: '/game-assets/inner-world/family-circle.png' },
@@ -301,9 +273,9 @@ export const moneybusinessLittleStars = [
       { type: 'tap-right', readOptions: true, instruction: 'Which one is HELPING at home?', guideText: 'Tap the picture that shows helping!',
         items: [
           { image: '/game-assets/money/helping-home.png', label: 'Cleaning up', correct: true },
-          { image: '/game-assets/money/broken-toy.png', label: 'Broken toy' },
-          { image: '/game-assets/money/wants-trio.png', label: 'Candy and toys' },
-          { image: '/game-assets/money/clean-toy.png', label: 'Clean toy' }
+          { image: '/game-assets/money/child-making-mess.png', label: 'Making a mess' },
+          { image: '/game-assets/money/child-watching-parents-work.png', label: 'Just watching parents' },
+          { image: '/game-assets/money/child-leaving-toys-out.png', label: 'Leaving toys out' }
         ]
       },
       { type: 'teach', image: '/game-assets/money/family-helping.png', guideText: 'When everyone helps, the home runs smoothly. We work together as a TEAM!' },

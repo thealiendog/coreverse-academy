@@ -459,12 +459,12 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn FULL and EMPTY!' },
       { type: 'story', image: '/game-assets/math/remi-baskets-full-empty.png', guideText: 'I have two baskets. One is FULL of acorns. One is EMPTY. I put more acorns in the empty one until it is full too. Now both are full!' },
       { type: 'teach', image: '/game-assets/math/remi-baskets-full-empty.png', guideText: 'Full means it has a lot. Empty means it has nothing. In between is partly full!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is FULL?', guideText: 'Tap the one with lots inside!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which basket is FULL?', guideText: 'Tap the basket with lots inside!',
         items: [
           { image: '/game-assets/math/remi-treasure-pile.png', label: 'Full basket', correct: true },
-          { image: '/game-assets/math/numeral-1.png', label: 'One thing' },
-          { image: '/game-assets/math/star-single.png', label: 'Single star' },
-          { image: '/game-assets/math/flower-single.png', label: 'Single flower' }
+          { image: '/game-assets/math/basket-empty.png', label: 'Empty basket' },
+          { image: '/game-assets/math/star-single.png', label: 'Just one star' },
+          { image: '/game-assets/math/flower-single.png', label: 'Just one flower' }
         ]
       },
       { type: 'teach', image: '/game-assets/math/remi-baskets-full-empty.png', guideText: 'A full cup holds lots of water. An empty cup holds nothing. We can fill things up little by little!' },
@@ -576,7 +576,7 @@ export const mathLittleStars = [
           { image: '/game-assets/math/coin-penny.png', label: 'Penny', correct: true },
           { image: '/game-assets/math/coin-nickel.png', label: 'Nickel' },
           { image: '/game-assets/math/coin-dime.png', label: 'Dime' },
-          { image: '/game-assets/math/star-single.png', label: 'Star' }
+          { image: '/game-assets/math/coin-quarter.png', label: 'Quarter' }
         ]
       },
       { type: 'teach', image: '/game-assets/math/coin-nickel.png', guideText: 'A nickel is worth five cents. It is bigger than a penny!' },
@@ -585,7 +585,7 @@ export const mathLittleStars = [
           { image: '/game-assets/math/coin-dime.png', label: 'Dime', correct: true },
           { image: '/game-assets/math/coin-nickel.png', label: 'Nickel' },
           { image: '/game-assets/math/coin-penny.png', label: 'Penny' },
-          { image: '/game-assets/math/numeral-1.png', label: 'One' }
+          { image: '/game-assets/math/coin-quarter.png', label: 'Quarter' }
         ]
       },
       { type: 'family', guideText: 'Tonight, find coins together at home. Look at the pictures on each one. A penny has Abraham Lincoln. Can you find all three kinds?', image: '/game-assets/inner-world/family-circle.png' },
