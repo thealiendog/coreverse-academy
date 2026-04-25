@@ -15,12 +15,12 @@ export const lifewellnessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! I am Terra. Today we learn why your body needs SLEEP!' },
       { type: 'story', image: '/game-assets/life-wellness/child-sleeping.png', guideText: 'When you sleep, your body does amazing things — it grows taller, it heals, and your brain saves all the cool things you learned during the day. Sleep is like magic medicine. Kids your age need a LOT of sleep — about 11 hours every night. That is how your body builds itself stronger!' },
       { type: 'teach', image: '/game-assets/life-wellness/child-sleeping.png', guideText: 'When you sleep, your brain plays back everything you learned today and saves it forever!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does your body NEED?', guideText: 'Tap the child sleeping!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does your body NEED at night?', guideText: 'Tap what your body needs at bedtime!',
         items: [
           { image: '/game-assets/life-wellness/child-sleeping.png', label: 'Sleep', correct: true },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty hands' },
-          { image: '/game-assets/life-wellness/tired-child.png', label: 'Stay up late' }
+          { image: '/game-assets/life-wellness/child-running.png', label: 'More running' },
+          { image: '/game-assets/life-wellness/kids-playing.png', label: 'Stay up playing' },
+          { image: '/game-assets/life-wellness/water-glass.png', label: 'Drink water' }
         ]
       },
       { type: 'teach', image: '/game-assets/life-wellness/tired-child.png', guideText: 'When you are tired, your body tells you with yawns and heavy eyes. That is a signal — listen to it!' },
@@ -80,12 +80,12 @@ export const lifewellnessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we MOVE our bodies!' },
       { type: 'story', image: '/game-assets/life-wellness/child-running.png', guideText: 'Your body LOVES to move. When you run, jump, dance, or climb, your heart gets stronger, your muscles grow, and your brain releases happy chemicals that make you smile! Moving is medicine for your whole body. Animals know this — that is why you see puppies running and birds flying. Move every day!' },
       { type: 'teach', image: '/game-assets/life-wellness/kids-playing.png', guideText: 'Playing IS exercise — running, jumping, dancing, climbing all make your body stronger!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is MOVING?', guideText: 'Tap the kid running!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What makes your body STRONGER?', guideText: 'Tap what makes your body strong!',
         items: [
-          { image: '/game-assets/life-wellness/child-running.png', label: 'Running', correct: true },
-          { image: '/game-assets/life-wellness/child-sleeping.png', label: 'Sleeping' },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty hands' },
-          { image: '/game-assets/life-wellness/water-glass.png', label: 'Water glass' }
+          { image: '/game-assets/life-wellness/child-running.png', label: 'Running and moving', correct: true },
+          { image: '/game-assets/life-wellness/cozy-rest.png', label: 'Sitting all day' },
+          { image: '/game-assets/life-wellness/child-on-screen.png', label: 'Watching screens' },
+          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' }
         ]
       },
       { type: 'teach', image: '/game-assets/life-wellness/child-body-strong.png', guideText: 'When you move every day, your body gets STRONGER. Your muscles grow, your heart pumps better!' },
@@ -110,12 +110,12 @@ export const lifewellnessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we wash our HANDS!' },
       { type: 'story', image: '/game-assets/life-wellness/washing-hands.png', guideText: 'Your hands touch SO many things every day — toys, doorknobs, the floor, other kids. Tiny invisible germs can stick to your hands. If you do not wash them, those germs can get inside you and make you sick. Soap and warm water make germs go DOWN the drain. Washing your hands is one of the easiest ways to stay healthy!' },
       { type: 'teach', image: '/game-assets/life-wellness/washing-hands.png', guideText: 'Wash for as long as it takes to sing the ABCs slowly — that is about 20 seconds!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which keeps you HEALTHY?', guideText: 'Tap clean hands!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What gets GERMS off your hands?', guideText: 'Tap what cleans germs away!',
         items: [
           { image: '/game-assets/life-wellness/washing-hands.png', label: 'Washing hands', correct: true },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty hands' },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' },
-          { image: '/game-assets/life-wellness/tired-child.png', label: 'Tired' }
+          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Leave them dirty' },
+          { image: '/game-assets/life-wellness/brushing-teeth.png', label: 'Brushing teeth' },
+          { image: '/game-assets/life-wellness/child-eating.png', label: 'Just eat' }
         ]
       },
       { type: 'teach', image: '/game-assets/life-wellness/dirty-hands.png', guideText: 'Germs are too tiny to see — but they are there. Soap is their kryptonite!' },
@@ -141,12 +141,12 @@ export const lifewellnessLittleStars = [
       { type: 'story', image: '/game-assets/life-wellness/brushing-teeth.png', guideText: 'You only get TWO sets of teeth in your whole life — your baby teeth, and then your big strong grown-up teeth. Every time you eat, tiny bits of food and sugar stick to your teeth. If you do not brush, they make holes called cavities! Brushing your teeth twice a day keeps them strong, white, and healthy for your whole life!' },
       { type: 'teach', image: '/game-assets/life-wellness/brushing-teeth.png', guideText: 'Brush twice a day — once in the morning, once before bed. Up and down, side to side!' },
       { type: 'yes-no', scenario: 'Should you brush your teeth twice a day?', correctAnswer: true, image: '/game-assets/life-wellness/brushing-teeth.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What keeps your TEETH healthy?', guideText: 'Tap brushing teeth!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What keeps your TEETH healthy?', guideText: 'Tap what keeps teeth healthy!',
         items: [
-          { image: '/game-assets/life-wellness/brushing-teeth.png', label: 'Brushing', correct: true },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty hands' },
-          { image: '/game-assets/life-wellness/tired-child.png', label: 'Tired' }
+          { image: '/game-assets/life-wellness/brushing-teeth.png', label: 'Brushing teeth', correct: true },
+          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Eating candy' },
+          { image: '/game-assets/life-wellness/cavity-tooth.png', label: 'Never brushing' },
+          { image: '/game-assets/life-wellness/juice-glass.png', label: 'Sugary juice' }
         ]
       },
       { type: 'teach', image: '/game-assets/life-wellness/heart-glowing-green.png', guideText: 'Healthy teeth let you smile big, eat any food, and feel proud of yourself!' },
@@ -170,12 +170,12 @@ export const lifewellnessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we drink WATER!' },
       { type: 'story', image: '/game-assets/life-wellness/water-glass.png', guideText: 'Did you know your body is mostly WATER? Every part of you — your blood, your brain, even your eyeballs — needs water to work. Without enough water, you feel tired, grumpy, and your head hurts. Drinking plain water is the BEST drink for your body. Better than juice, better than soda, better than anything!' },
       { type: 'teach', image: '/game-assets/life-wellness/water-glass.png', guideText: 'Your body needs water all day long — when you wake up, with meals, after playing!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What is the BEST drink for your body?', guideText: 'Tap the glass of water!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is the BEST drink for your body?', guideText: 'Tap the best drink!',
         items: [
           { image: '/game-assets/life-wellness/water-glass.png', label: 'Water', correct: true },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Soda' },
-          { image: '/game-assets/life-wellness/healthy-foods.png', label: 'Foods' },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty' }
+          { image: '/game-assets/life-wellness/juice-glass.png', label: 'Sugary juice' },
+          { image: '/game-assets/life-wellness/milk-glass.png', label: 'Milk' },
+          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Soda' }
         ]
       },
       { type: 'teach', image: '/game-assets/life-wellness/heart-glowing-green.png', guideText: 'When you are thirsty, that is your body asking for water — listen to it!' },
@@ -233,9 +233,9 @@ export const lifewellnessLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where does your body LOVE to be?', guideText: 'Tap a kid in nature!',
         items: [
           { image: '/game-assets/life-wellness/child-in-nature.png', label: 'In nature', correct: true },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty' },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' },
-          { image: '/game-assets/life-wellness/tired-child.png', label: 'Tired' }
+          { image: '/game-assets/life-wellness/child-on-screen.png', label: 'Stuck on screen' },
+          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Inside in dirt' },
+          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Eating junk' }
         ]
       },
       { type: 'teach', image: '/game-assets/life-wellness/child-in-nature.png', guideText: 'Trees, sun, fresh air, dirt, water — nature has everything your body needs to feel good!' },
@@ -260,16 +260,9 @@ export const lifewellnessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we celebrate your AMAZING body!' },
       { type: 'story', image: '/game-assets/life-wellness/child-body-strong.png', guideText: 'Your body does INCREDIBLE things every second. Your heart beats over 100,000 times a day. Your lungs breathe in and out without you even thinking about it. Your eyes see colors, your ears hear music, your legs carry you everywhere. Your body is a miracle. And it is YOURS — to take care of, to thank, and to be proud of!' },
       { type: 'teach', image: '/game-assets/life-wellness/heart-glowing-green.png', guideText: 'Your heart pumps blood to every part of you, all day, all night, your whole life — without stopping!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows your AMAZING body?', guideText: 'Tap the strong body!',
-        items: [
-          { image: '/game-assets/life-wellness/child-body-strong.png', label: 'Strong body', correct: true },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty' },
-          { image: '/game-assets/life-wellness/tired-child.png', label: 'Tired' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Does your heart beat all day and all night without stopping?', correctAnswer: true, image: '/game-assets/life-wellness/heart-glowing-green.png' },
       { type: 'teach', image: '/game-assets/life-wellness/child-running.png', guideText: 'Every body is different — and every body is amazing in its own way. Yours is perfectly YOU!' },
-      { type: 'yes-no', scenario: 'Is your body amazing?', correctAnswer: true, image: '/game-assets/life-wellness/child-body-strong.png' },
+      { type: 'yes-no', scenario: 'Is YOUR body amazing just the way it is?', correctAnswer: true, image: '/game-assets/life-wellness/child-body-strong.png' },
       { type: 'family', guideText: 'Tonight, look in the mirror together and say ONE amazing thing about your body. Maybe your strong legs, your warm hugs, your kind eyes. Your body deserves love!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Body Champion', guideText: 'You honor your body, {name}!' }
     ]
@@ -290,16 +283,9 @@ export const lifewellnessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn FEELINGS live in our bodies!' },
       { type: 'story', image: '/game-assets/life-wellness/body-feelings.png', guideText: 'Feelings are not just in your head — they live in your BODY! When you feel happy, your chest feels warm and light. When you feel scared, your tummy gets butterflies. When you feel angry, your hands might tighten and your face gets hot. Your body is always telling you how you feel. The trick is to listen!' },
       { type: 'teach', image: '/game-assets/life-wellness/body-feelings.png', guideText: 'Where in your body do YOU feel happiness? Where do you feel sadness? Each feeling has a home in you!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where do FEELINGS live?', guideText: 'Tap feelings in the body!',
-        items: [
-          { image: '/game-assets/life-wellness/body-feelings.png', label: 'In the body', correct: true },
-          { image: '/game-assets/life-wellness/unhealthy-foods.png', label: 'Junk food' },
-          { image: '/game-assets/life-wellness/dirty-hands.png', label: 'Dirty' },
-          { image: '/game-assets/life-wellness/water-glass.png', label: 'Water' }
-        ]
-      },
-      { type: 'teach', image: '/game-assets/life-wellness/heart-glowing-green.png', guideText: 'Your body is wise. When you feel something strong, pause and notice WHERE it lives. Your body knows!' },
       { type: 'yes-no', scenario: 'Do feelings live inside your body?', correctAnswer: true, image: '/game-assets/life-wellness/body-feelings.png' },
+      { type: 'teach', image: '/game-assets/life-wellness/heart-glowing-green.png', guideText: 'Your body is wise. When you feel something strong, pause and notice WHERE it lives. Your body knows!' },
+      { type: 'yes-no', scenario: 'When you feel happy, do you feel it in your chest?', correctAnswer: true, image: '/game-assets/life-wellness/heart-glowing-green.png' },
       { type: 'family', guideText: 'Tonight, try this together: think of a happy memory. Where do you feel it in your body? Now think of a worried thought. Where is THAT? Your body is a feeling map!', image: '/game-assets/inner-world/family-circle.png' },
       { type: 'celebration', badge: 'Body Listener', guideText: 'You listen to your body, {name}!' }
     ]
