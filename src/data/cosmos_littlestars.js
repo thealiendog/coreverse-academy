@@ -580,14 +580,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we use our FIVE SENSES!' },
       { type: 'story', image: '/game-assets/cosmos/five-senses.png', guideText: 'Your body has FIVE amazing senses that tell you about the world! You SEE with your eyes. You HEAR with your ears. You SMELL with your nose. You TASTE with your tongue. And you TOUCH with your hands and skin. Every moment, your senses are sending information to your brain!' },
       { type: 'teach', image: '/game-assets/cosmos/five-senses.png', guideText: 'Your eyes see colors, your ears hear sounds, your nose smells food, your tongue tastes flavors, and your hands feel things!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'How do we SEE?', guideText: 'Tap what we use to see!',
-        items: [
-          { image: '/game-assets/cosmos/five-senses.png', label: 'Eyes', correct: true },
-          { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Clouds' },
-          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
-          { image: '/game-assets/cosmos/water-everywhere.png', label: 'Water' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Do we see with our eyes?', correctAnswer: true, image: '/game-assets/cosmos/five-senses.png' },
       { type: 'teach', image: '/game-assets/cosmos/light-shadow.png', guideText: 'Light helps us see! Without light, our eyes cannot see anything. That is why a dark room feels different!' },
       { type: 'yes-no', scenario: 'Do you have five senses?', correctAnswer: true, image: '/game-assets/cosmos/five-senses.png' },
       { type: 'family', guideText: 'Together, play a sense game. Close your eyes — what can you HEAR? Now smell something — what is it? Touch a soft thing and a hard thing. Use every sense!', image: '/game-assets/inner-world/family-circle.png' },
