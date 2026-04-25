@@ -18,9 +18,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows GOOD FRIENDS?', guideText: 'Tap the friends being kind!',
         items: [
           { image: '/game-assets/social-leadership/friends-hugging.png', label: 'Friends hugging', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' }
+          { image: '/game-assets/social-leadership/friends-fighting.png', label: 'Fighting' },
+          { image: '/game-assets/social-leadership/friends-ignoring.png', label: 'Ignoring' },
+          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/circle-of-friends.png', guideText: 'You can have many friends — and every friend is special in their own way!' },
@@ -48,9 +48,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows TAKING TURNS?', guideText: 'Tap the kids taking turns on the slide!',
         items: [
           { image: '/game-assets/social-leadership/taking-turns.png', label: 'Taking turns', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' }
+          { image: '/game-assets/social-leadership/pushing-line.png', label: 'Pushing in line' },
+          { image: '/game-assets/social-leadership/grabbing-toy.png', label: 'Grabbing toy' },
+          { image: '/game-assets/social-leadership/playing-alone-hoard.png', label: 'Hoarding all toys' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/sharing-toy.png', guideText: 'When you share your toys, your friends share back. Sharing makes everyone feel included!' },
@@ -113,9 +113,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is LISTENING well?', guideText: 'Tap the great listener!',
         items: [
           { image: '/game-assets/social-leadership/child-listening.png', label: 'Listening', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' }
+          { image: '/game-assets/social-leadership/child-distracted.png', label: 'On a screen' },
+          { image: '/game-assets/social-leadership/child-talking-over.png', label: 'Talking over' },
+          { image: '/game-assets/social-leadership/child-walking-away.png', label: 'Walking away' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'When you listen to someone, you tell them they matter without saying a single word!' },
@@ -143,9 +143,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'When you need HELP, what do you do?', guideText: 'Tap asking for help!',
         items: [
           { image: '/game-assets/social-leadership/asking-for-help.png', label: 'Ask for help', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Stay sad' },
-          { image: '/game-assets/social-leadership/heart-glowing.png', label: 'Heart' }
+          { image: '/game-assets/social-leadership/child-stuck-alone.png', label: 'Struggle alone' },
+          { image: '/game-assets/social-leadership/child-crying-alone.png', label: 'Cry alone' },
+          { image: '/game-assets/social-leadership/child-giving-up.png', label: 'Give up' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'The bravest thing you can say is "I need help." It takes courage — and helping each other is what makes us strong!' },
@@ -174,9 +174,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows GOOD MANNERS?', guideText: 'Tap please and thank you!',
         items: [
           { image: '/game-assets/social-leadership/please-thank-you.png', label: 'Polite', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' }
+          { image: '/game-assets/social-leadership/demanding-rude.png', label: 'Demanding' },
+          { image: '/game-assets/social-leadership/grabbing-rude.png', label: 'Grabbing' },
+          { image: '/game-assets/social-leadership/ignoring-gift.png', label: 'Ignoring gift' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'These tiny words make people smile and feel respected. Use them every day!' },
@@ -203,9 +203,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'When a friend is SAD, what can you do?', guideText: 'Tap helping a sad friend!',
         items: [
           { image: '/game-assets/social-leadership/helping-friend-sad.png', label: 'Help and comfort', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' },
-          { image: '/game-assets/social-leadership/team-working.png', label: 'Team' }
+          { image: '/game-assets/social-leadership/laughing-at-sad.png', label: 'Laugh at them' },
+          { image: '/game-assets/social-leadership/walking-past-sad.png', label: 'Walk past' },
+          { image: '/game-assets/social-leadership/being-mean-sad.png', label: 'Be mean' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'Empathy means feeling what your friend feels. When you care, you help them carry the sadness!' },
@@ -233,9 +233,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a real LEADER do?', guideText: 'Tap a leader helping others!',
         items: [
           { image: '/game-assets/social-leadership/leader-helping.png', label: 'Helps others', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' }
+          { image: '/game-assets/social-leadership/bossy-leader.png', label: 'Bossy and yelling' },
+          { image: '/game-assets/social-leadership/leader-takes-all.png', label: 'Takes everything' },
+          { image: '/game-assets/social-leadership/leader-ignoring-team.png', label: 'Ignores team' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'You can lead by being kind, brave, and helpful. People will follow your example!' },
@@ -260,14 +260,7 @@ export const socialleadershipLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn why RULES matter!' },
       { type: 'story', image: '/game-assets/social-leadership/safety-rules.png', guideText: 'Rules might feel like they get in the way of fun — but most rules are there to keep us SAFE. Look both ways before crossing the street. Wear a seatbelt. Hold a grown-up\'s hand near big roads. Wait for swings to stop. Rules are like invisible helpers protecting you!' },
       { type: 'teach', image: '/game-assets/social-leadership/safety-rules.png', guideText: 'When you follow safety rules, you stay safe AND your family does not have to worry!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What are RULES for?', guideText: 'Tap safety rules!',
-        items: [
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Keep safe', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/heart-glowing.png', label: 'Heart' }
-        ]
-      },
+      { type: 'yes-no', scenario: 'Do rules help keep us safe?', correctAnswer: true, image: '/game-assets/social-leadership/safety-rules.png' },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'Family rules and school rules help everyone get along. Brave kids follow them — and ask why if they wonder!' },
       { type: 'yes-no', scenario: 'Do rules help keep us safe?', correctAnswer: true, image: '/game-assets/social-leadership/safety-rules.png' },
       { type: 'family', guideText: 'Together, pick ONE family rule and talk about it. Why does it exist? What would happen without it? Rules make sense when you understand them!', image: '/game-assets/inner-world/family-circle.png' },
@@ -293,9 +286,9 @@ export const socialleadershipLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows TEAMWORK?', guideText: 'Tap kids working together!',
         items: [
           { image: '/game-assets/social-leadership/team-working.png', label: 'Working together', correct: true },
-          { image: '/game-assets/social-leadership/mean-words.png', label: 'Mean words' },
-          { image: '/game-assets/social-leadership/sad-child.png', label: 'Sad child' },
-          { image: '/game-assets/social-leadership/safety-rules.png', label: 'Safety' }
+          { image: '/game-assets/social-leadership/team-alone-trying.png', label: 'Alone with everything' },
+          { image: '/game-assets/social-leadership/team-fighting.png', label: 'Team fighting' },
+          { image: '/game-assets/social-leadership/leader-ignoring-team.png', label: 'Ignoring teammates' }
         ]
       },
       { type: 'teach', image: '/game-assets/social-leadership/heart-glowing.png', guideText: 'You have learned so much about being a great friend, listener, leader, and teammate. Use these every day!' },
