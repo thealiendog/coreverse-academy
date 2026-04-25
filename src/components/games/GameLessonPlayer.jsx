@@ -610,7 +610,7 @@ export default function GameLessonPlayer() {
     const onIntroDone = () => {
       if (cancelled) return;
 
-      if (step.type === 'tap-right' && step.readOptions && !step.hideLabels && step.items?.length) {
+      if (step.type === 'tap-right' && step.readOptions && step.items?.length) {
         // Read each option label one-by-one, highlighting that card while speaking.
         // Use tapRightShuffled so the narration order matches the on-screen card order.
         // Fallback timer stays active and covers this phase too.
