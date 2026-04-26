@@ -1,59 +1,384 @@
-// ============================================================
-// COREVERSE ACADEMY — CREATIVE ARTS · LITTLE STARS (Ages 3-5)
-// 10 Lessons · Guide: Muse the Butterfly
-// File: creativearts_littlestars.js · Export: creativeartsLittleStars
-// ============================================================
-
 export const creativeartsLittleStars = [
-
-  { id: "ca-3-5-01", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 1, title: "Colors Are Everywhere", duration: "10-15 min",
-    hook: "Red strawberries, blue sky, green grass, yellow sun — the world is painted in colors! Colors can make you feel happy (bright yellow), calm (soft blue), or excited (fiery red). Artists use colors to tell stories without words. Today you begin your journey as a young artist by exploring the magical world of color. Muse the Butterfly wears the most beautiful colors in nature — and she wants to share that beauty with you.",
-    bigIdea: "Colors are the foundation of all visual art — understanding primary colors (red, blue, yellow), how they mix to create secondary colors, and how colors make us feel opens the door to creative expression.",
-    sections: [
-      { title: "Primary Colors", emoji: "🎨", content: "Three special colors — red, blue, and yellow — are called primary colors. They are special because you cannot make them by mixing other colors, but you CAN make every other color by mixing them together. Primary colors are the building blocks of all color. Every painting, every sunset, every rainbow starts with red, blue, and yellow." },
-      { title: "Mixing Colors", emoji: "🔄", content: "Mix red and blue — you get purple! Mix blue and yellow — you get green! Mix red and yellow — you get orange! These new colors are called secondary colors. Keep mixing: red and white make pink. Blue and white make light blue. Any color and black makes it darker. The possibilities are endless — from just three starting colors, you can create millions." },
-      { title: "Colors and Feelings", emoji: "💛", content: "Colors can make you feel things. Warm colors (red, orange, yellow) feel energetic and happy. Cool colors (blue, green, purple) feel calm and peaceful. Black can feel serious or mysterious. White feels clean and fresh. Artists choose colors carefully to create moods. A painting of a sunset uses warm oranges and reds to feel cozy. A painting of the ocean uses cool blues to feel serene." },
-      { title: "Colors in Nature", emoji: "🌈", content: "Nature is the greatest artist. Sunsets paint the sky in orange, pink, and purple. Flowers bloom in every color imaginable. Butterflies wear patterns that artists try to copy. Rainbows display all colors in perfect order. Muse says: the best way to learn color is to look at the world — nature has been painting masterpieces for billions of years." }
-    ],
-    activity: { title: "Color Mixing Lab", instructions: "Get red, blue, and yellow paint (or food coloring and water). Mix them: red + blue = ? (purple!), blue + yellow = ? (green!), red + yellow = ? (orange!). Then experiment: what happens when you add white? (Colors get lighter — these are called tints.) What about black? (Colors get darker — called shades.) How many different colors can you make from just red, blue, yellow, white, and black? Paint a rainbow using ONLY colors you mixed yourself." },
-    quiz: [
-      { question: "What are the three primary colors?", answer: "Red, blue, and yellow — they cannot be made by mixing other colors", options: ["Green, orange, and purple", "Red, blue, and yellow — they cannot be made by mixing other colors", "Black, white, and gray", "Pink, brown, and tan"] },
-      { question: "What do you get when you mix red and blue?", answer: "Purple — a secondary color made from two primary colors", options: ["Green", "Purple — a secondary color made from two primary colors", "Orange", "Brown"] },
-      { question: "How do warm colors make you feel?", answer: "Energetic and happy — warm colors like red, orange, and yellow feel lively and exciting", options: ["Sad and tired", "Energetic and happy — warm colors like red, orange, and yellow feel lively and exciting", "Scared", "Nothing — colors do not affect feelings"] },
-      { question: "What happens when you add white to a color?", answer: "It gets lighter — creating a tint of that color", options: ["It disappears", "It gets lighter — creating a tint of that color", "It turns white", "Nothing changes"] },
-      { question: "Where is the best place to see amazing colors?", answer: "Nature — sunsets, flowers, rainbows, butterflies, and oceans display colors that inspire all art", options: ["Only in art museums", "Nature — sunsets, flowers, rainbows, butterflies, and oceans display colors that inspire all art", "Only on screens", "Colors only exist in paint"] }
-    ],
-    familyAdventure: "Go on a Color Walk. Walk through your neighborhood and find something in every color of the rainbow: red, orange, yellow, green, blue, purple. Take photos or draw what you find. Then do a sunset observation: watch the sunset together and name every color you see — you will be surprised how many there are (sometimes 10+). Then paint a picture together using only primary colors mixed into whatever you need. Muse says: color is the language of joy.",
-    badge: "Color Explorer", nextLesson: "ca-3-5-02"
+  {
+    id: 'ca-3-5-01',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 1,
+    title: 'Colors Are Everywhere',
+    duration: '3-5 min',
+    badge: 'Color Explorer',
+    nextLesson: 'ca-3-5-02',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! I am Muse! Today we explore COLORS!' },
+      { type: 'story', image: '/game-assets/creative-arts/colors-rainbow.png', guideText: 'Look! I see colors EVERYWHERE! Red like a strawberry, blue like the sky, yellow like the sun, green like grass! Colors make the world beautiful!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is RED?', guideText: 'Tap the red one!',
+        items: [
+          { image: '/game-assets/creative-arts/color-red.png', label: 'Red', correct: true },
+          { image: '/game-assets/creative-arts/color-blue.png', label: 'Blue' },
+          { image: '/game-assets/creative-arts/color-yellow.png', label: 'Yellow' },
+          { image: '/game-assets/creative-arts/color-green.png', label: 'Green' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/color-yellow.png', guideText: 'Yellow is bright like the sun! It makes me feel happy and warm!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is YELLOW?', guideText: 'Tap the yellow one!',
+        items: [
+          { image: '/game-assets/creative-arts/color-yellow.png', label: 'Yellow', correct: true },
+          { image: '/game-assets/creative-arts/color-red.png', label: 'Red' },
+          { image: '/game-assets/creative-arts/color-blue.png', label: 'Blue' },
+          { image: '/game-assets/creative-arts/color-green.png', label: 'Green' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/colors-rainbow.png', guideText: 'When all the colors come together, they make a RAINBOW! That is my favorite!' },
+      { type: 'yes-no', scenario: 'Are colors everywhere we look?', correctAnswer: true, image: '/game-assets/creative-arts/colors-rainbow.png' },
+      { type: 'family', guideText: 'Tonight, go on a Color Hunt with your family. Find one thing red, one thing blue, one thing yellow, and one thing green!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Color Explorer', guideText: 'You are a color explorer, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-02", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 2, title: "Drawing and Doodling", duration: "10-15 min", hook: "Every great artist started with a simple line on paper. Drawing is one of the oldest forms of human expression — cave paintings are over 30,000 years old! You do not need special talent to draw — you just need a pencil, paper, and willingness to try. Every line you make is art. Muse the Butterfly creates beautiful patterns with her wings — and you create beautiful art with your hands.", bigIdea: "Drawing is a fundamental form of self-expression that develops fine motor skills, observation, and creativity — there is no wrong way to draw, and practice builds skill and confidence.", sections: [ { title: "Lines and Shapes", emoji: "✏️", content: "All drawings start with lines and shapes. Straight lines, curved lines, zigzag lines, wavy lines, dotted lines — each creates a different feeling. Circles, squares, triangles, and ovals combine to form more complex images. A face is a circle with two small circles (eyes), a triangle (nose), and a curve (mouth). Break any object into simple shapes and you can draw it." }, { title: "Drawing What You See", emoji: "👀", content: "Observational drawing means looking carefully at something and drawing what you actually see — not what you think it looks like. Look at an apple: it is not just a circle. It has a dip at the top, a stem, maybe a leaf, and different colors. The more carefully you look, the better your drawing becomes. Drawing trains your eyes to see details you normally miss." }, { title: "Drawing from Imagination", emoji: "💭", content: "You can also draw things that do not exist: dragons, underwater cities, flying cats, alien planets. Imaginative drawing has no limits — anything you can think of, you can draw. It does not have to look realistic — your style is your own. Some of the most famous artists drew in ways that looked nothing like real life (Picasso, Kandinsky, Miró)." }, { title: "Practice, Not Perfection", emoji: "🌱", content: "Drawing gets better with practice — not with natural talent. Every artist has filled sketchbooks with drawings they thought were bad. The more you draw, the more your hand learns to create what your mind sees. There is no wrong way to draw. A squiggly line is just as valid as a straight one. Muse says: the best drawing is the one you are making right now." } ], activity: { title: "Daily Doodle Challenge", instructions: "Start a Daily Doodle Journal. Each day, draw something different: Day 1 — your pet (or dream pet). Day 2 — your house. Day 3 — a monster from your imagination. Day 4 — your favorite food. Day 5 — a tree with as much detail as possible. Day 6 — an underwater scene. Day 7 — yourself as a superhero. Spend at least 5 minutes on each. No erasing! Every line stays. At the end of the week, look at your growth. You will be amazed." }, quiz: [ { question: "Do you need special talent to draw?", answer: "No — drawing is a skill that improves with practice; everyone can draw, and every style is valid", options: ["Yes — only talented people should draw", "No — drawing is a skill that improves with practice; everyone can draw, and every style is valid", "Only after years of training", "Only realistic drawing counts as art"] }, { question: "What are all drawings made of?", answer: "Lines and shapes — straight, curved, zigzag, circles, squares, and triangles combine to form everything", options: ["Only straight lines", "Lines and shapes — straight, curved, zigzag, circles, squares, and triangles combine to form everything", "Only perfect circles", "Only colors"] }, { question: "What is observational drawing?", answer: "Drawing what you actually see by looking carefully — noticing details, shapes, and colors in real objects", options: ["Drawing with your eyes closed", "Drawing what you actually see by looking carefully — noticing details, shapes, and colors in real objects", "Copying someone else's drawing", "Only drawing people"] }, { question: "Can you draw things that do not exist?", answer: "Yes — imaginative drawing has no limits; dragons, aliens, and impossible worlds are all valid subjects", options: ["No — you should only draw real things", "Yes — imaginative drawing has no limits; dragons, aliens, and impossible worlds are all valid subjects", "Only if you are very advanced", "Imaginary drawings are not real art"] }, { question: "How does drawing get better?", answer: "Through practice — the more you draw, the more your hand-eye coordination and skills develop", options: ["It does not — you either have it or you do not", "Through practice — the more you draw, the more your hand-eye coordination and skills develop", "Only through expensive classes", "Only by copying other artists exactly"] } ], familyAdventure: "Have a Family Drawing Night. Everyone draws the same subject — maybe the family pet, a bowl of fruit, or a family portrait. No talking about quality — just creating. When done, display all drawings together. Notice how each person sees the same subject differently — that is what makes art beautiful. Then play Collaborative Drawing: one person starts a drawing, passes it after 30 seconds, and the next person adds to it. Keep passing until everyone has contributed. The result is always hilarious and creative.", badge: "Drawing Star", nextLesson: "ca-3-5-03"
+  {
+    id: 'ca-3-5-02',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 2,
+    title: 'Drawing My Family',
+    duration: '3-5 min',
+    badge: 'Family Artist',
+    nextLesson: 'ca-3-5-03',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we DRAW our family!' },
+      { type: 'story', image: '/game-assets/creative-arts/family-drawing.png', guideText: 'Drawing is one of the most special things you can do! When you draw your family, you show how much you LOVE them. Your drawing is one of a kind in the whole world!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do we use to DRAW?', guideText: 'Tap what we use to draw!',
+        items: [
+          { image: '/game-assets/creative-arts/crayons-rainbow.png', label: 'Crayons', correct: true },
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Playdough' },
+          { image: '/game-assets/creative-arts/scissors-paper.png', label: 'Scissors' },
+          { image: '/game-assets/creative-arts/block-tower.png', label: 'Blocks' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/blank-paper.png', guideText: 'Every drawing starts with a blank paper. The paper is waiting for your magic!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a drawing of a FAMILY?', guideText: 'Tap the family drawing!',
+        items: [
+          { image: '/game-assets/creative-arts/family-stick-figures.png', label: 'Stick figure family', correct: true },
+          { image: '/game-assets/creative-arts/colors-rainbow.png', label: 'Just a rainbow' },
+          { image: '/game-assets/creative-arts/playdough-snake.png', label: 'A snake' },
+          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Blank paper' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/family-drawing.png', guideText: 'Stick figures are PERFECT! A circle for the head, lines for arms and legs. Now you can draw anyone!' },
+      { type: 'yes-no', scenario: 'Is your family drawing special, even if it is simple?', correctAnswer: true, image: '/game-assets/creative-arts/family-drawing.png' },
+      { type: 'family', guideText: 'Tonight, draw a picture of your family with crayons! Stick figures are great. Then show your family — they will love it!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Family Artist', guideText: 'You are a family artist, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-03", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 3, title: "Music and Rhythm", duration: "10-15 min", hook: "Clap your hands — that is rhythm! Hum a tune — that is melody! Tap your feet — that is a beat! Music is organized sound, and it exists in every culture on Earth. From lullabies to rock concerts, music makes people feel, move, dance, and connect. You do not need an instrument to make music — your body is the first and best instrument. Muse the Butterfly dances to the rhythm of the wind.", bigIdea: "Music is organized sound made of rhythm (patterns of beats), melody (sequences of notes), and dynamics (loud and soft) — everyone can make and enjoy music, and it develops listening, coordination, and emotional expression.", sections: [ { title: "What Is Music?", emoji: "🎵", content: "Music is sound organized into patterns. A beat is a steady pulse (like a heartbeat). Rhythm is a pattern of long and short sounds over the beat. Melody is a sequence of notes that creates a tune (like a song you can hum). When you combine beat, rhythm, and melody, you have music. Music can be fast or slow, loud or soft, happy or sad." }, { title: "Rhythm Is in Your Body", emoji: "👏", content: "Your heart beats in rhythm. You breathe in rhythm. You walk in rhythm. Rhythm is natural to your body. Clap a steady beat — that is rhythm. Now clap a pattern: clap-clap-pause-clap-clap-pause. That is a more complex rhythm. Stomping, tapping, snapping, and clapping all create rhythms. Your body is a percussion instrument." }, { title: "Making Music", emoji: "🥁", content: "You can make music with anything: pots and spoons (drums), rubber bands on a box (guitar), dried beans in a container (shaker), whistling (flute), singing (the most natural instrument). Professional instruments are wonderful, but they are not required. Many famous songs were written by people banging on whatever was nearby." }, { title: "Music and Feelings", emoji: "💝", content: "Music makes you feel things. A lullaby calms you. A fast drumbeat makes you want to dance. A sad song might make you cry. A triumphant anthem makes you feel powerful. Music is the universal language of emotion — it crosses all barriers of age, language, and culture. Muse says: when words are not enough, music speaks." } ], activity: { title: "Kitchen Band", instructions: "Create a Kitchen Band using household items: pot + wooden spoon = drum. Two pot lids = cymbals. Dried beans in a sealed container = shaker. Rubber bands stretched over an open box = guitar. Glasses filled with different amounts of water and tapped with a spoon = xylophone. Now play together: someone keeps a steady beat on the pot drum while others add rhythm with shakers and melody with the water glasses. Record your performance!" }, quiz: [ { question: "What is rhythm?", answer: "A pattern of sounds and silences over a steady beat — like clap-clap-pause repeated", options: ["Just being loud", "A pattern of sounds and silences over a steady beat — like clap-clap-pause repeated", "Only drum sounds", "Random noise"] }, { question: "Do you need an instrument to make music?", answer: "No — your body (clapping, stomping, singing) and household items can all make music", options: ["Yes — only real instruments count", "No — your body (clapping, stomping, singing) and household items can all make music", "Only expensive instruments work", "Singing is not really music"] }, { question: "What is melody?", answer: "A sequence of notes that creates a tune — the part of a song you can hum", options: ["Banging on things loudly", "A sequence of notes that creates a tune — the part of a song you can hum", "Only sounds from a piano", "The same as rhythm"] }, { question: "Can music make you feel emotions?", answer: "Yes — music is the universal language of emotion; different music creates different feelings", options: ["No — music is just noise", "Yes — music is the universal language of emotion; different music creates different feelings", "Only sad music creates feelings", "Only adults respond emotionally to music"] }, { question: "Where does rhythm come from naturally?", answer: "Your body — your heartbeat, breathing, and walking are all natural rhythms", options: ["Only from drums", "Your body — your heartbeat, breathing, and walking are all natural rhythms", "Only from music class", "Rhythm is not natural — it must be learned"] } ], familyAdventure: "Have a Family Dance Party. Put on 5 different songs — each in a different style (pop, classical, Latin, rock, jazz). Dance to each one and notice: how does each song make you feel? Which makes you dance the fastest? The slowest? Which is your favorite? Then play Freeze Dance: when the music stops, everyone freezes. Caught moving? You are out! Then try making a family rhythm: everyone claps a different pattern at the same time. Can you make it sound good together? That is what bands do — and you just started one.", badge: "Music Maker", nextLesson: "ca-3-5-04"
+  {
+    id: 'ca-3-5-03',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 3,
+    title: 'Making Music with My Body',
+    duration: '3-5 min',
+    badge: 'Body Musician',
+    nextLesson: 'ca-3-5-04',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we make MUSIC with our bodies!' },
+      { type: 'story', image: '/game-assets/creative-arts/clapping-hands.png', guideText: 'Did you know your body is a MUSIC INSTRUMENT? You can clap, stomp, sing, and drum on your knees — all without ANY tools! Music lives inside YOU!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is CLAPPING?', guideText: 'Tap the clapping hands!',
+        items: [
+          { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Hands clapping', correct: true },
+          { image: '/game-assets/creative-arts/stomping-feet.png', label: 'Feet stomping' },
+          { image: '/game-assets/creative-arts/singing-mouth.png', label: 'Mouth singing' },
+          { image: '/game-assets/creative-arts/drumming-lap.png', label: 'Hands drumming' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/stomping-feet.png', guideText: 'You can STOMP your feet to make a big BOOM sound!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is STOMPING?', guideText: 'Tap the stomping feet!',
+        items: [
+          { image: '/game-assets/creative-arts/stomping-feet.png', label: 'Feet stomping', correct: true },
+          { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Hands clapping' },
+          { image: '/game-assets/creative-arts/singing-mouth.png', label: 'Mouth singing' },
+          { image: '/game-assets/creative-arts/drumming-lap.png', label: 'Hands drumming' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/singing-mouth.png', guideText: 'And you can SING with your mouth! Music notes flow out like magic!' },
+      { type: 'yes-no', scenario: 'Can your body make music with no instruments?', correctAnswer: true, image: '/game-assets/creative-arts/drumming-lap.png' },
+      { type: 'family', guideText: 'Tonight, make a body music band with your family! Everyone picks one — clap, stomp, sing, or drum on knees. Make a song together!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Body Musician', guideText: 'You are a body musician, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-04", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 4, title: "Telling Stories", duration: "10-15 min", hook: "Once upon a time — those four words open a door to unlimited worlds. Stories are how humans share experiences, teach lessons, entertain each other, and make sense of the world. Every movie, book, song, and video game tells a story. You tell stories every day when you say guess what happened! You are already a storyteller — today you will become an even better one.", bigIdea: "Storytelling is a fundamental human skill — every story has characters, a setting, a problem, and a resolution — and learning to tell stories builds language, creativity, empathy, and communication.", sections: [ { title: "Parts of a Story", emoji: "📖", content: "Every story has: characters (who the story is about), a setting (where and when it happens), a problem (something that needs to be solved), and a resolution (how it gets solved). Little Red Riding Hood: character (a girl), setting (the forest), problem (a wolf is pretending to be grandma), resolution (a woodsman saves them). These four parts create the structure of every story ever told." }, { title: "Beginning, Middle, End", emoji: "📚", content: "Stories flow in three parts: the beginning introduces characters and setting, the middle presents the problem and challenges, and the end resolves the problem. This structure gives stories a satisfying shape. A story without an ending feels incomplete. A story that starts in the middle is confusing. Learning this structure helps you both tell and understand stories." }, { title: "Making Stories Come Alive", emoji: "✨", content: "Great storytellers use details to make stories vivid: instead of a dog, say a big, fluffy, golden dog with muddy paws. Instead of she was sad, say tears rolled down her cheeks and she hugged her teddy bear tight. Details help listeners see, hear, and feel the story. Voices, sound effects, and gestures make storytelling even more engaging." }, { title: "Everyone Has Stories", emoji: "🌍", content: "Your life is full of stories: the time you lost your tooth, your first day of school, the funny thing your pet did, the time you were brave. Personal stories connect people because everyone can relate to feelings of excitement, fear, joy, and surprise. Muse says: every person you meet is a book full of stories — including you." } ], activity: { title: "Story Builder", instructions: "Build a story together. Each person adds one sentence, going around the circle. Start with: Once upon a time, there was a ___. The next person adds to it. Keep going until the story has a beginning, middle, and end. Then draw your favorite scene from the story. Then try again with a new story — this time, someone picks a setting (the moon!), someone picks a character (a talking cat!), and someone picks a problem (the cat lost its voice!). See where the story goes!" }, quiz: [ { question: "What are the four parts of every story?", answer: "Characters, setting, problem, and resolution — who, where, what goes wrong, and how it is solved", options: ["Only a beginning and end", "Characters, setting, problem, and resolution — who, where, what goes wrong, and how it is solved", "Only words and pictures", "There are no rules for stories"] }, { question: "What makes a story come alive?", answer: "Vivid details, descriptive language, voices, and sound effects that help listeners see and feel the story", options: ["Using big words", "Vivid details, descriptive language, voices, and sound effects that help listeners see and feel the story", "Making it as long as possible", "Only true stories come alive"] }, { question: "What are the three parts of story structure?", answer: "Beginning (introduce), middle (problem and challenges), and end (resolution)", options: ["Start and finish only", "Beginning (introduce), middle (problem and challenges), and end (resolution)", "There are five parts", "Stories do not have structure"] }, { question: "Can your own life experiences be stories?", answer: "Yes — personal stories about your experiences connect people and are some of the most powerful stories you can tell", options: ["No — only made-up stories count", "Yes — personal stories about your experiences connect people and are some of the most powerful stories you can tell", "Only if something dramatic happened", "Personal stories are boring"] }, { question: "Who can be a storyteller?", answer: "Everyone — if you can say guess what happened, you are already telling stories", options: ["Only published authors", "Everyone — if you can say guess what happened, you are already telling stories", "Only people with good imaginations", "Only grownups"] } ], familyAdventure: "Have Family Story Night. Turn off all screens. Sit together with a candle or cozy lighting. Each family member tells one story — it can be real (something that happened to them) or imagined (completely made up). Use voices, gestures, and details. After each story, the audience gives a compliment: I loved the part where... Then create a Family Story Book: over the next month, write and illustrate one family story each week. In a year, you will have a treasure chest of family memories and imagination.", badge: "Storyteller", nextLesson: "ca-3-5-05"
+  {
+    id: 'ca-3-5-04',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 4,
+    title: 'Dance: Moving to the Beat',
+    duration: '3-5 min',
+    badge: 'Joyful Dancer',
+    nextLesson: 'ca-3-5-05',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we DANCE!' },
+      { type: 'story', image: '/game-assets/creative-arts/dancing-spinning.png', guideText: 'When music plays, your body wants to MOVE! That is dancing! There is no wrong way to dance — every person dances differently and that is what makes it beautiful!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is SPINNING?', guideText: 'Tap the spinning dancer!',
+        items: [
+          { image: '/game-assets/creative-arts/dancing-spinning.png', label: 'Spinning', correct: true },
+          { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Jumping' },
+          { image: '/game-assets/creative-arts/dancing-swaying.png', label: 'Swaying' },
+          { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Clapping' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/dancing-jumping.png', guideText: 'You can JUMP up high when the music gets loud! Your feet leave the ground!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is JUMPING?', guideText: 'Tap the jumping dancer!',
+        items: [
+          { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Jumping', correct: true },
+          { image: '/game-assets/creative-arts/dancing-spinning.png', label: 'Spinning' },
+          { image: '/game-assets/creative-arts/dancing-swaying.png', label: 'Swaying' },
+          { image: '/game-assets/creative-arts/stomping-feet.png', label: 'Stomping' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/dancing-swaying.png', guideText: 'When the music is slow and soft, you SWAY gently like a leaf in the wind!' },
+      { type: 'yes-no', scenario: 'Are there many different ways to dance?', correctAnswer: true, image: '/game-assets/creative-arts/music-notes-floating.png' },
+      { type: 'family', guideText: 'Tonight, put on your favorite song and have a family dance party! Spin, jump, sway — whatever the music tells your body to do!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Joyful Dancer', guideText: 'You are a joyful dancer, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-05", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 5, title: "Dancing and Moving to Music", duration: "10-15 min", hook: "When a great song comes on, your body just wants to MOVE. Tapping toes, bobbing heads, swaying hips, spinning in circles — dance is your body's response to music. Dance is the oldest art form — humans danced before they painted, sculpted, or wrote. Every culture dances. You do not need lessons or rules — just music and willingness to let your body express what it feels. Muse the Butterfly dances through meadows on delicate wings.", bigIdea: "Dance is physical expression of music and emotion — it requires no formal training, builds coordination, creativity, and confidence, and is one of the most joyful forms of self-expression.", sections: [ { title: "Dance Is for Everyone", emoji: "💃", content: "You do not need to be graceful, flexible, or trained to dance. Dance is simply moving your body to music — and there is no wrong way to do it. Some people dance smoothly, others bounce energetically, others sway gently. Your style is YOUR style, and it is perfect. The only rule of dance is: enjoy it." }, { title: "Types of Dance", emoji: "🩰", content: "Ballet is graceful and precise. Hip-hop is energetic and creative. Salsa and merengue are Latin dances with quick footwork. Traditional folk dances tell cultural stories. Freestyle is whatever your body feels like doing. Each type of dance has its own beauty. Exploring different styles helps you find what feels best for your body." }, { title: "Dance and Feelings", emoji: "❤️", content: "Dance expresses emotions that words cannot. Jumping and spinning express joy. Slow, gentle movements express peace. Strong, powerful movements express confidence. Soft, flowing movements express sadness or tenderness. When you dance, you are telling an emotional story with your body. Others can feel what you feel just by watching you move." }, { title: "Dance as Exercise", emoji: "💪", content: "Dance is one of the best exercises: it strengthens your heart, builds flexibility, improves balance and coordination, and works muscles throughout your entire body. A 30-minute dance session burns as many calories as jogging. Plus, it is so fun you forget you are exercising. Muse says: dance is the only workout that feels like a party." } ], activity: { title: "Dance Exploration", instructions: "Put on 4 very different songs. For each, dance in a way that matches the music: slow and gentle for a calm song, fast and wild for an upbeat song, dramatic and powerful for an intense song, silly and goofy for a funny song. Then try: can you dance like an animal? A lion (proud, powerful), a butterfly (light, graceful), a snake (smooth, twisting), a monkey (playful, bouncy). Then create your own dance move and teach it to your family." }, quiz: [ { question: "Do you need training to dance?", answer: "No — dance is simply moving your body to music, and there is no wrong way to do it", options: ["Yes — only trained dancers should dance", "No — dance is simply moving your body to music, and there is no wrong way to do it", "Only if you want to look good", "Only adults can dance well"] }, { question: "Why is dance good exercise?", answer: "It strengthens your heart, builds flexibility, improves coordination, works your whole body, and is so fun you forget you are exercising", options: ["It is not good exercise — only sports count", "It strengthens your heart, builds flexibility, improves coordination, works your whole body, and is so fun you forget you are exercising", "Only professional dance counts as exercise", "Dance only works your legs"] }, { question: "How does dance express feelings?", answer: "Through movement — jumping shows joy, slow movements show peace, powerful moves show confidence, and gentle moves show tenderness", options: ["Dance cannot express feelings", "Through movement — jumping shows joy, slow movements show peace, powerful moves show confidence, and gentle moves show tenderness", "Only through facial expressions while dancing", "Only sad feelings can be danced"] }, { question: "Can you dance to any kind of music?", answer: "Yes — every type of music inspires different types of movement, and you can dance to all of them", options: ["No — only dance music is for dancing", "Yes — every type of music inspires different types of movement, and you can dance to all of them", "Only fast music", "Only songs with lyrics"] }, { question: "What is freestyle dancing?", answer: "Dancing however your body feels like moving — no rules, no choreography, just self-expression", options: ["A type of martial art", "Dancing however your body feels like moving — no rules, no choreography, just self-expression", "Only professional dancers do freestyle", "Dancing without music"] } ], familyAdventure: "Host a Family Dance Show. Each family member prepares a 1-minute dance performance to a song of their choice. Perform for each other — complete with introductions (presenting: Dad dancing to his favorite 80s song!). Cheer for every performer. No judging — only celebration. Then end with a group dance: everyone dances together to one final song. Record it as a family memory. Then try learning a cultural dance together: look up a simple salsa, folk dance, or line dance tutorial and practice together. Dancing connects you to cultures, history, and each other.", badge: "Dance Star", nextLesson: "ca-3-5-06"
+  {
+    id: 'ca-3-5-05',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 5,
+    title: 'Clay and Playdough Sculpting',
+    duration: '3-5 min',
+    badge: 'Sculptor',
+    nextLesson: 'ca-3-5-06',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we make things with PLAYDOUGH!' },
+      { type: 'story', image: '/game-assets/creative-arts/playdough-mixed-colors.png', guideText: 'Playdough is like SQUISHY MAGIC! You can squish it, roll it, flatten it, and make ANYTHING you imagine! Your hands are the artist!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SNAKE shape?', guideText: 'Tap the long thin snake!',
+        items: [
+          { image: '/game-assets/creative-arts/playdough-snake.png', label: 'Snake shape', correct: true },
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Ball shape' },
+          { image: '/game-assets/creative-arts/playdough-flat.png', label: 'Flat pancake' },
+          { image: '/game-assets/creative-arts/playdough-mixed-colors.png', label: 'Mixed colors' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/playdough-ball.png', guideText: 'Roll the playdough between your hands and you make a BALL! Round and smooth!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a BALL shape?', guideText: 'Tap the round ball!',
+        items: [
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Ball shape', correct: true },
+          { image: '/game-assets/creative-arts/playdough-snake.png', label: 'Snake shape' },
+          { image: '/game-assets/creative-arts/playdough-flat.png', label: 'Flat pancake' },
+          { image: '/game-assets/creative-arts/colors-rainbow.png', label: 'Rainbow' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/playdough-flat.png', guideText: 'Press it flat and you have a PANCAKE! Like a little dish!' },
+      { type: 'yes-no', scenario: 'Can you mix different colors of playdough together?', correctAnswer: true, image: '/game-assets/creative-arts/playdough-mixed-colors.png' },
+      { type: 'family', guideText: 'Tonight, use playdough or even mashed potatoes to make a snake, a ball, and a pancake. Let your hands do the magic!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Sculptor', guideText: 'You are a sculptor, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-06", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 6, title: "Building and Sculpting", duration: "10-15 min", hook: "Squish, mold, stack, shape — building and sculpting turn flat materials into three-dimensional creations you can hold, rotate, and display. From sandcastles to skyscrapers, from clay pots to marble statues, humans have been shaping materials into art and structures for thousands of years. Your hands are your most powerful creative tools. Muse says: when you build, you bring your imagination into the physical world.", bigIdea: "Building and sculpting are three-dimensional art forms that develop spatial awareness, fine motor skills, and engineering thinking — working with materials like clay, blocks, and found objects transforms imagination into tangible creations.", sections: [ { title: "3D Art vs 2D Art", emoji: "🏗️", content: "Drawing and painting are 2D — flat, on a surface. Building and sculpting are 3D — they have height, width, AND depth. You can walk around a sculpture and see it from every angle. 3D art takes up space in the real world. It can be tiny (a clay figurine) or enormous (the Statue of Liberty). Creating in 3D develops spatial thinking — understanding how things exist in space." }, { title: "Materials for Building", emoji: "🧱", content: "You can build and sculpt with many materials: play dough and clay (mold and shape), blocks and LEGO (stack and connect), cardboard and tape (cut and construct), sand (pack and shape), natural materials like sticks, stones, and leaves (arrange and balance), and recycled materials like boxes, tubes, and containers. Every material has different properties that inspire different creations." }, { title: "Planning and Building", emoji: "📐", content: "Some builders plan carefully with sketches before starting. Others start building and let the creation evolve as they go. Both approaches work! Planning helps with complex structures (how will this stay standing?). Improvising encourages creative discoveries (oh, that shape looks like a spaceship!). The best builders often combine both — start with a plan and adapt as they go." }, { title: "Failure Is Part of Building", emoji: "💪", content: "Towers fall. Clay cracks. Structures collapse. This is not failure — it is learning. Every architect and engineer has built things that did not work. The lesson is always: try again with what you learned. Why did the tower fall? (Base too narrow.) Fix it and rebuild. Muse says: every collapsed tower teaches you how to build a stronger one." } ], activity: { title: "3D Creation Station", instructions: "Choose a building material available at home. Option 1: Play dough — sculpt an animal. Option 2: Blocks or LEGO — build the tallest structure you can. Option 3: Cardboard boxes and tape — build a house or spaceship. Option 4: Natural materials from outside — build a fairy house or nature sculpture. Spend at least 15 minutes creating. Display your work and give it a title and an artist's statement (I built this because...). Then try building the same thing from a different material — how does the experience change?" }, quiz: [ { question: "How is 3D art different from 2D art?", answer: "3D art has height, width, and depth — you can see it from every angle; 2D art is flat on a surface", options: ["They are the same", "3D art has height, width, and depth — you can see it from every angle; 2D art is flat on a surface", "3D is always bigger", "2D is always better"] }, { question: "What can you build and sculpt with?", answer: "Many materials — clay, blocks, cardboard, sand, natural objects, and recycled materials all work", options: ["Only expensive art supplies", "Many materials — clay, blocks, cardboard, sand, natural objects, and recycled materials all work", "Only clay", "Only LEGO"] }, { question: "What should you do when your structure falls?", answer: "Learn from it — figure out why it fell, then rebuild with that knowledge", options: ["Give up — building is not for you", "Learn from it — figure out why it fell, then rebuild with that knowledge", "Blame the materials", "Only build easy things"] }, { question: "Why is building good for your brain?", answer: "It develops spatial awareness, problem-solving, fine motor skills, and engineering thinking", options: ["Building does not help your brain", "It develops spatial awareness, problem-solving, fine motor skills, and engineering thinking", "Only math helps your brain", "Building is only for fun, not learning"] }, { question: "Can you plan a building project or just start building?", answer: "Both work — planning helps with complex structures, improvising encourages creative discoveries, and combining both is powerful", options: ["You must always plan first", "Both work — planning helps with complex structures, improvising encourages creative discoveries, and combining both is powerful", "Planning ruins creativity", "Only professionals plan"] } ], familyAdventure: "Have a Family Building Competition. Everyone gets the same materials (cardboard, tape, scissors, markers) and 20 minutes to build anything they want. When time is up, everyone presents their creation: what is it, what inspired it, and what was the hardest part? Award creative titles: Most Imaginative, Tallest Structure, Most Detailed, Best Use of Materials. Then build something TOGETHER — a collaborative structure where everyone adds a section. The combination of different styles and ideas creates something no one person would have made alone.", badge: "Builder", nextLesson: "ca-3-5-07"
+  {
+    id: 'ca-3-5-06',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 6,
+    title: 'Collage: Cutting and Pasting',
+    duration: '3-5 min',
+    badge: 'Collage Maker',
+    nextLesson: 'ca-3-5-07',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we make a COLLAGE!' },
+      { type: 'story', image: '/game-assets/creative-arts/collage-finished.png', guideText: 'A collage is when you cut out pieces of paper and stick them together to make a brand-new picture! It is like a paper puzzle YOU design!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do we use to CUT paper?', guideText: 'Tap the scissors!',
+        items: [
+          { image: '/game-assets/creative-arts/scissors-paper.png', label: 'Scissors', correct: true },
+          { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick' },
+          { image: '/game-assets/creative-arts/crayons-rainbow.png', label: 'Crayons' },
+          { image: '/game-assets/creative-arts/paint-jars.png', label: 'Paint' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/glue-stick.png', guideText: 'After cutting, we use GLUE to stick the pieces down. The glue holds them in place forever!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do we use to STICK paper?', guideText: 'Tap the glue stick!',
+        items: [
+          { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick', correct: true },
+          { image: '/game-assets/creative-arts/scissors-paper.png', label: 'Scissors' },
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Playdough' },
+          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Paper' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/collage-finished.png', guideText: 'When you put it all together, you have a COLLAGE! It is yours forever — no two are the same!' },
+      { type: 'yes-no', scenario: 'When you cut and paste paper shapes, are you making a collage?', correctAnswer: true, image: '/game-assets/creative-arts/collage-finished.png' },
+      { type: 'family', guideText: 'Tonight, make a collage with your family! Cut up old magazines or colored paper and glue the shapes onto a new piece of paper. Make something beautiful!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Collage Maker', guideText: 'You are a collage maker, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-07", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 7, title: "Singing My Heart Out", duration: "10-15 min", hook: "Your voice is an instrument you carry everywhere. You can sing in the shower, in the car, on the playground, and in your bed. Singing is one of the purest forms of expression — no equipment needed, just you and your voice. You do not need to sound like a pop star to sing — you just need to open your mouth and let the sound out. Muse the Butterfly hums along with the breeze.", bigIdea: "Singing is a natural form of expression that develops language, breathing, memory, and emotional release — every voice is unique and valuable, and singing together builds community and joy.", sections: [ { title: "Everyone Can Sing", emoji: "🎤", content: "Just like everyone can draw, everyone can sing. Your voice might be high or low, loud or soft, smooth or raspy — and ALL of those are beautiful. Singing is not about perfection — it is about expression. Some of the most beloved singers have unusual voices. What makes singing powerful is the feeling behind it, not the technical perfection." }, { title: "Singing and Language", emoji: "📝", content: "Singing helps you learn language. Songs use rhythm and melody to make words stick in your memory — that is why you can remember song lyrics better than random facts. The alphabet song helps you learn letters. Nursery rhymes teach vocabulary. Songs in other languages help you learn new words. Singing literally builds your brain's language pathways." }, { title: "Singing Together", emoji: "👥", content: "Singing with others creates a special bond. When you sing together, your breathing synchronizes, your heartbeats can even align, and feel-good chemicals release in everyone's brains. Church choirs, campfire songs, birthday songs, and sports chants all bring people together. Group singing is one of the oldest and most universal human bonding activities." }, { title: "Your Voice Is Unique", emoji: "⭐", content: "No two voices sound exactly alike — your voice is as unique as your fingerprint. The shape of your throat, mouth, and nasal passages creates a sound that belongs only to you. Sing proudly, because there will never be another voice like yours in the history of the universe. Muse says: your voice is a gift — unwrap it and share it." } ], activity: { title: "Singing Circle", instructions: "Gather as a family and take turns singing. Start with songs everyone knows (Happy Birthday, Twinkle Twinkle, ABC). Then each person sings their favorite song — even just the chorus. No judging, only cheering! Then try: can you make up a song? Choose a topic (your pet, your favorite food, your best friend) and create a simple melody with lyrics about it. It does not have to rhyme or be perfect — just have fun. Then sing together: pick one song everyone loves and sing it as a family with full energy." }, quiz: [ { question: "Can everyone sing?", answer: "Yes — every voice is unique and valuable, and singing is about expression, not perfection", options: ["No — only people with good voices should sing", "Yes — every voice is unique and valuable, and singing is about expression, not perfection", "Only after voice lessons", "Only children can sing"] }, { question: "How does singing help your brain?", answer: "It builds language pathways, improves memory, and develops breathing control and emotional expression", options: ["Singing does not help your brain", "It builds language pathways, improves memory, and develops breathing control and emotional expression", "Only classical singing helps", "It only helps if you are good at it"] }, { question: "Why does singing together feel special?", answer: "It synchronizes breathing and heartbeats, releases feel-good chemicals, and bonds people together", options: ["It does not feel special — it is just noise", "It synchronizes breathing and heartbeats, releases feel-good chemicals, and bonds people together", "Only professional choirs experience this", "Group singing is awkward, not special"] }, { question: "Is your singing voice like anyone else's?", answer: "No — your voice is as unique as your fingerprint; there will never be another voice exactly like yours", options: ["Yes — everyone's voice is basically the same", "No — your voice is as unique as your fingerprint; there will never be another voice exactly like yours", "Only trained singers have unique voices", "Voices are too similar to tell apart"] }, { question: "Do songs have to rhyme?", answer: "No — many great songs do not rhyme; what matters is that the song expresses something meaningful", options: ["Yes — all real songs must rhyme", "No — many great songs do not rhyme; what matters is that the song expresses something meaningful", "Only in English", "Rhyming is the only important part of a song"] } ], familyAdventure: "Create a Family Theme Song. Together, write lyrics about your family — what makes you special, what you love doing together, a funny family inside joke. Set it to a simple melody (you can use an existing tune or make one up). Practice it a few times. Then perform it together — record it as a family treasure. Imagine playing it back in 10 years — pure joy. Then make singing part of daily life: sing while cooking, cleaning, or driving. Families that sing together create a home full of music and happiness.", badge: "Singer", nextLesson: "ca-3-5-08"
+  {
+    id: 'ca-3-5-07',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 7,
+    title: 'Storytelling with Pictures',
+    duration: '3-5 min',
+    badge: 'Story Artist',
+    nextLesson: 'ca-3-5-08',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we tell STORIES with pictures!' },
+      { type: 'story', image: '/game-assets/creative-arts/picture-book-open.png', guideText: 'Did you know every picture tells a STORY? When you draw a sun and a tree and a friend, your picture is saying something! You are a storyteller!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one tells a STORY?', guideText: 'Tap the picture with a story!',
+        items: [
+          { image: '/game-assets/creative-arts/story-picture-1.png', label: 'A scene with characters', correct: true },
+          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Empty paper' },
+          { image: '/game-assets/creative-arts/color-blue.png', label: 'Just blue' },
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'A ball' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/story-sequence.png', guideText: 'A story has a BEGINNING, a MIDDLE, and an END. Three pictures can make one whole story!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a STORY in three pictures?', guideText: 'Tap the three connected pictures!',
+        items: [
+          { image: '/game-assets/creative-arts/story-sequence.png', label: 'Three story pictures', correct: true },
+          { image: '/game-assets/creative-arts/colors-rainbow.png', label: 'Just colors' },
+          { image: '/game-assets/creative-arts/family-drawing.png', label: 'A family drawing' },
+          { image: '/game-assets/creative-arts/picture-book-open.png', label: 'A book' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/picture-book-open.png', guideText: 'In a book, every page is part of the story! Each picture moves the story forward!' },
+      { type: 'yes-no', scenario: 'Can a picture tell a story without any words?', correctAnswer: true, image: '/game-assets/creative-arts/story-picture-1.png' },
+      { type: 'family', guideText: 'Tonight, draw a three-picture story with your family! Beginning, middle, end. It can be about anything — a dog, a trip, a magical adventure!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Story Artist', guideText: 'You are a story artist, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-08", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 8, title: "Pretend Play and Acting", duration: "10-15 min", hook: "You are a doctor examining a teddy bear. Now you are a chef cooking an imaginary feast. Now you are an astronaut launching into space. Pretend play — acting out roles and scenarios — is one of the most important things children do. It builds empathy (feeling what others feel), language (using new vocabulary), creativity (imagining new worlds), and problem-solving (navigating pretend challenges). Muse says: when you pretend, you practice being anyone and doing anything.", bigIdea: "Pretend play and dramatic expression develop empathy, language, creativity, and social skills — stepping into different roles and scenarios helps children understand others' perspectives and explore the world safely.", sections: [ { title: "Why Pretend Play Matters", emoji: "🎭", content: "When you pretend to be a doctor, you practice caring for others. When you pretend to be a teacher, you practice explaining. When you pretend to be a parent, you practice responsibility. Pretend play lets you try on different roles and perspectives without real consequences. Psychologists say it is one of the most important activities for brain development." }, { title: "Types of Pretend Play", emoji: "🏥", content: "Role play: pretending to be someone (doctor, teacher, superhero, parent, animal). Scenario play: acting out a situation (going to the store, flying to the moon, having a tea party). Story reenactment: acting out a favorite book or movie. Improvisation: making up a scene on the spot with no script. All types develop different skills." }, { title: "Props and Costumes", emoji: "👑", content: "Props make pretend play more vivid: a cardboard box becomes a spaceship, a blanket becomes a cape, a stick becomes a magic wand, a hat becomes a crown. You do not need expensive costumes — imagination transforms everyday objects into anything. The simpler the prop, the more your imagination fills in the details." }, { title: "Acting and Empathy", emoji: "❤️", content: "When you pretend to be someone else — a firefighter, a new student, a lost puppy — you practice seeing the world through their eyes. This builds empathy: the ability to understand and share others' feelings. Actors practice empathy professionally — they spend their careers stepping into other people's perspectives. Every time you pretend, you are building your empathy muscle." } ], activity: { title: "Scene Starters", instructions: "Act out these scenes with family members (take turns being different characters): Scene 1: You are a vet and your stuffed animal is sick — what is wrong? How do you help? Scene 2: You are an explorer who just discovered a new planet — describe what you see. Scene 3: You are a chef at a fancy restaurant — take your family's order and pretend to cook it. Scene 4: You are a superhero — what is your power? Show us how you save the day. Give each scene 3-5 minutes. Then create your own scene and invite others to join." }, quiz: [ { question: "Why is pretend play important for children?", answer: "It builds empathy, language, creativity, problem-solving, and social skills — all while being fun", options: ["It is just silliness with no purpose", "It builds empathy, language, creativity, problem-solving, and social skills — all while being fun", "Only for very young children", "It prevents real learning"] }, { question: "What is empathy?", answer: "The ability to understand and share others' feelings — seeing the world through someone else's eyes", options: ["Feeling sorry for someone", "The ability to understand and share others' feelings — seeing the world through someone else's eyes", "Being nice to everyone", "A type of acting"] }, { question: "Do you need expensive costumes for pretend play?", answer: "No — imagination transforms everyday objects into anything; a blanket becomes a cape, a box becomes a spaceship", options: ["Yes — real costumes are essential", "No — imagination transforms everyday objects into anything; a blanket becomes a cape, a box becomes a spaceship", "Only store-bought props work", "You need at least a hat"] }, { question: "What is improvisation?", answer: "Making up a scene on the spot with no script or plan — creating the story as you go", options: ["Following a memorized script", "Making up a scene on the spot with no script or plan — creating the story as you go", "Only professional acting", "Copying what someone else does"] }, { question: "What happens when you pretend to be someone else?", answer: "You practice seeing the world from their perspective — building empathy and understanding", options: ["Nothing meaningful — it is just playing", "You practice seeing the world from their perspective — building empathy and understanding", "You become that person", "Only actors benefit from this"] } ], familyAdventure: "Host a Family Improv Night. Play Yes And: one person starts a scene (We are on a spaceship heading to Mars!). The next person adds to it with yes, and... (Yes, and the engine just broke!). Keep building the scene, each person adding a new element. The only rule: never say no or but — always yes, and. This builds listening, creativity, and collaborative storytelling. Then do Character Swap: each family member picks a family member to impersonate (lovingly!) for 2 minutes. Guess who each person is pretending to be. Laughter is guaranteed.", badge: "Actor", nextLesson: "ca-3-5-09"
+  {
+    id: 'ca-3-5-08',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 8,
+    title: 'Finger Painting',
+    duration: '3-5 min',
+    badge: 'Finger Painter',
+    nextLesson: 'ca-3-5-09',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we FINGER PAINT!' },
+      { type: 'story', image: '/game-assets/creative-arts/finger-paint-hand.png', guideText: 'When you paint with your FINGERS, your hand becomes the brush! You can swirl, smear, dot, and dance the paint across the paper!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows FINGER PAINT on a hand?', guideText: 'Tap the colorful hand!',
+        items: [
+          { image: '/game-assets/creative-arts/finger-paint-hand.png', label: 'Hand with paint', correct: true },
+          { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Clean clapping hands' },
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Playdough' },
+          { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/paint-jars.png', guideText: 'Each color lives in its own little jar. Dip your finger in and start painting!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a FINGER PAINTING?', guideText: 'Tap the finger painting!',
+        items: [
+          { image: '/game-assets/creative-arts/finger-paint-art.png', label: 'Finger painting', correct: true },
+          { image: '/game-assets/creative-arts/family-drawing.png', label: 'Crayon drawing' },
+          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Blank paper' },
+          { image: '/game-assets/creative-arts/block-tower.png', label: 'Block tower' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/handprint-art.png', guideText: 'You can press your whole hand down to make a HANDPRINT! Your hand is your special signature!' },
+      { type: 'yes-no', scenario: 'Is finger painting messy AND fun?', correctAnswer: true, image: '/game-assets/creative-arts/finger-paint-art.png' },
+      { type: 'family', guideText: 'Tonight, finger paint with your family! Use real paint or pudding or yogurt as paint. Make handprints on paper!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Finger Painter', guideText: 'You are a finger painter, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-09", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 9, title: "Art from Nature", duration: "10-15 min", hook: "Leaves, sticks, stones, flowers, shells, feathers, sand, and bark — nature provides an endless supply of free, beautiful art materials. Land art uses natural materials to create temporary masterpieces in the outdoor world. No paint, no paper, no store — just you and nature creating together. Muse the Butterfly is a living work of art made entirely by nature.", bigIdea: "Natural materials — leaves, stones, sticks, flowers, shells — can be used to create art that connects you to the natural world, develops observation skills, and teaches that beauty is everywhere and art does not require purchased supplies.", sections: [ { title: "Nature as Art Supply", emoji: "🍂", content: "Leaves come in dozens of shapes, sizes, and colors. Stones are smooth, rough, round, flat, striped, and spotted. Sticks are straight, curved, forked, and gnarled. Flowers offer every color. Feathers are soft and detailed. Seeds and pods have fascinating textures. Pine cones are natural sculptures. Nature provides more variety than any art store." }, { title: "Land Art", emoji: "🌿", content: "Land art (or earth art) uses natural materials arranged in patterns, spirals, lines, or shapes directly on the ground. Artists like Andy Goldsworthy create stunning works from leaves, ice, stones, and branches. The art is temporary — wind, rain, and time will change and eventually erase it. This impermanence is part of its beauty: create, enjoy, and let go." }, { title: "Pressed and Collected", emoji: "📚", content: "You can preserve natural materials: press flowers and leaves between heavy books (they dry flat and keep their shape). Collect interesting stones, shells, and feathers. Arrange them in shadow boxes or glue them into collages. A nature journal with pressed specimens becomes a beautiful record of the plants and materials you discovered." }, { title: "Observing Nature's Art", emoji: "🔍", content: "Nature itself is the greatest artist: spider webs are geometric masterpieces. Snowflakes are crystalline sculptures. Tree bark has textures that look like abstract paintings. Sunsets paint the sky differently every evening. Flowers have symmetrical patterns mathematicians study. When you learn to look closely at nature, you see art everywhere. Muse says: nature has been creating masterpieces for 4.5 billion years." } ], activity: { title: "Nature Art Walk", instructions: "Go outside and collect natural materials: at least 10 different items (leaves, sticks, stones, flowers, seed pods, bark, grass). Then create: Option 1 — Land Art: arrange materials into a pattern, face, or design on the ground. Take a photo before it disappears. Option 2 — Nature Collage: glue materials onto cardboard to create a scene (a forest, an animal, an abstract design). Option 3 — Nature Mandala: arrange materials in a circular pattern, starting from the center and working outward. Display or photograph your creation." }, quiz: [ { question: "Do you need to buy art supplies to make art?", answer: "No — nature provides endless free materials: leaves, stones, sticks, flowers, shells, and more", options: ["Yes — real art requires store-bought supplies", "No — nature provides endless free materials: leaves, stones, sticks, flowers, shells, and more", "Only for temporary art", "Nature materials are not real art supplies"] }, { question: "What is land art?", answer: "Art made from natural materials arranged directly on the ground — temporary creations that nature eventually reclaims", options: ["Art you buy at a store", "Art made from natural materials arranged directly on the ground — temporary creations that nature eventually reclaims", "Paintings of landscapes", "Only art in museums"] }, { question: "How can you preserve pressed flowers?", answer: "Place them between pages of a heavy book — they dry flat and keep their shape and color", options: ["Put them in water", "Place them between pages of a heavy book — they dry flat and keep their shape and color", "Leave them in the sun", "You cannot preserve flowers"] }, { question: "Why is nature called the greatest artist?", answer: "Spider webs, snowflakes, sunsets, flowers, and tree bark are natural masterpieces of pattern, color, and design", options: ["Nature is not artistic — only humans create art", "Spider webs, snowflakes, sunsets, flowers, and tree bark are natural masterpieces of pattern, color, and design", "Only flowers are artistic", "Nature creates randomly with no beauty"] }, { question: "Is temporary art still valuable?", answer: "Yes — creating something beautiful and then letting it go teaches appreciation for the moment and the process", options: ["No — art must be permanent to have value", "Yes — creating something beautiful and then letting it go teaches appreciation for the moment and the process", "Only if you photograph it", "Temporary art is a waste of time"] } ], familyAdventure: "Do a Nature Art Gallery Walk. Each family member creates one piece of nature art outdoors — land art on the ground, a stick sculpture, a leaf collage, or a stone arrangement. Then walk the gallery together: each artist presents their work and explains their inspiration. Take photos of every piece. Then create a nature mandala TOGETHER — everyone contributes materials to one large circular design. The collaborative mandala is always more beautiful than any individual piece. Then let it be — return tomorrow and see how nature has begun to reclaim it.", badge: "Nature Artist", nextLesson: "ca-3-5-10"
+  {
+    id: 'ca-3-5-09',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 9,
+    title: 'Building with Blocks',
+    duration: '3-5 min',
+    badge: 'Master Builder',
+    nextLesson: 'ca-3-5-10',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we BUILD with blocks!' },
+      { type: 'story', image: '/game-assets/creative-arts/blocks-scattered.png', guideText: 'Blocks are little squares and rectangles that stack on top of each other! With just a few blocks, you can build a tall tower, a cozy house, or a strong bridge!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a TOWER?', guideText: 'Tap the tall tower!',
+        items: [
+          { image: '/game-assets/creative-arts/block-tower.png', label: 'Block tower', correct: true },
+          { image: '/game-assets/creative-arts/block-house.png', label: 'Block house' },
+          { image: '/game-assets/creative-arts/block-bridge.png', label: 'Block bridge' },
+          { image: '/game-assets/creative-arts/blocks-scattered.png', label: 'Scattered blocks' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/block-house.png', guideText: 'You can build a HOUSE with walls, a roof, and a door — just like the one you live in!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the block house!',
+        items: [
+          { image: '/game-assets/creative-arts/block-house.png', label: 'Block house', correct: true },
+          { image: '/game-assets/creative-arts/block-tower.png', label: 'Tower' },
+          { image: '/game-assets/creative-arts/block-bridge.png', label: 'Bridge' },
+          { image: '/game-assets/creative-arts/playdough-flat.png', label: 'Pancake' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/block-bridge.png', guideText: 'A BRIDGE has two strong sides with a flat top! Cars and trains can go across!' },
+      { type: 'yes-no', scenario: 'Can you build many different things with the same blocks?', correctAnswer: true, image: '/game-assets/creative-arts/blocks-scattered.png' },
+      { type: 'family', guideText: 'Tonight, build something with your family! Use real blocks, books, or pillows. Build a tower, a house, or a bridge!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Master Builder', guideText: 'You are a master builder, {name}!' }
+    ]
   },
-
-  { id: "ca-3-5-10", subject: "Creative Arts", ageGroup: "3-5", band: "Little Stars", guide: "Muse", guideAnimal: "Butterfly", lessonNumber: 10, title: "My Creative Self", duration: "10-15 min", hook: "You have explored colors, drawing, music, storytelling, dance, building, singing, acting, and nature art. You ARE creative. Creativity is not just about making art — it is a way of seeing, thinking, and living. Creative people find new solutions, see beauty in ordinary things, and imagine possibilities others miss. Your creative journey is just beginning, and it will enrich every part of your life. Muse the Butterfly has guided you through the garden of creativity — now it is time to fly on your own.", bigIdea: "Creativity is not a talent reserved for artists — it is a way of thinking and being that everyone possesses — and nurturing your creative self through regular practice, experimentation, and expression enriches every area of life.", sections: [ { title: "You Are Already Creative", emoji: "🌟", content: "Every time you make up a game, tell a joke, solve a problem in a new way, build something, or imagine a story, you are being creative. Creativity is not just painting and music — it is thinking differently, seeing possibilities, and making things that did not exist before. Scientists, engineers, teachers, and parents are all creative. Creativity is human nature." }, { title: "Keep Creating", emoji: "🎨", content: "Creativity is like a muscle — it gets stronger with use. Draw every day. Sing in the shower. Dance in the kitchen. Tell stories at bedtime. Build with whatever is available. The more you create, the more creative you become. Do not wait for inspiration — just start, and inspiration will find you." }, { title: "There Is No Wrong Way", emoji: "✨", content: "Your art does not have to look like anyone else's. Your songs do not have to sound perfect. Your dances do not have to follow any rules. Your stories can go anywhere your imagination takes them. The most important thing is that you EXPRESS YOURSELF — honestly, boldly, and without apology. Your creative voice is unique and the world needs it." }, { title: "Creativity Changes the World", emoji: "🌍", content: "Every invention started as a creative idea. Every building was first imagined. Every song, book, movie, and game was created by someone who dared to make something new. The world you live in was built by creative people — and you will add your creations to it. Muse says: the butterfly does not compare its wings to others — it simply flies. So should you." } ], activity: { title: "My Creative Masterpiece", instructions: "Create one final masterpiece using ANY medium you choose: drawing, painting, clay, building, music, dance, story, or a combination. This piece should express something about WHO YOU ARE — your favorite things, your feelings, your dreams, your personality. Spend at least 20 minutes. Then present it to your family with an artist's statement: This is called ___. I made it because ___. It represents ___. Display it proudly. You are an artist, a musician, a storyteller, a dancer, a builder, and a creator. You always have been." }, quiz: [ { question: "Is creativity only for artists?", answer: "No — creativity is a way of thinking that everyone uses, from scientists and engineers to parents and teachers", options: ["Yes — only people who make art are creative", "No — creativity is a way of thinking that everyone uses, from scientists and engineers to parents and teachers", "Only if you are good at it", "Creativity is not important in real life"] }, { question: "How does creativity get stronger?", answer: "Through practice — the more you create, the more creative you become, just like exercising a muscle", options: ["You are born with a fixed amount of creativity", "Through practice — the more you create, the more creative you become, just like exercising a muscle", "Only through art school", "It gets weaker with age"] }, { question: "Is there a wrong way to create?", answer: "No — your creative expression is valid as long as it is honest; there are no rules in self-expression", options: ["Yes — art must follow specific rules", "No — your creative expression is valid as long as it is honest; there are no rules in self-expression", "Only if a teacher approves it", "Wrong art should be hidden"] }, { question: "Why does the world need your creativity?", answer: "Every invention, building, song, and story was created by someone who dared to make something new — the world needs YOUR unique contributions", options: ["The world has enough creativity already", "Every invention, building, song, and story was created by someone who dared to make something new — the world needs YOUR unique contributions", "Only famous people's creativity matters", "Children's creativity does not count"] }, { question: "What is the most important thing about creating?", answer: "Expressing yourself — honestly, boldly, and without apology, in whatever form feels right for you", options: ["Being better than everyone else", "Expressing yourself — honestly, boldly, and without apology, in whatever form feels right for you", "Making money from your art", "Getting likes on social media"] } ], familyAdventure: "Host a Family Art Exhibition. Each family member creates a piece of art in any medium: drawing, painting, sculpture, song, dance, story, or anything else. Set up a gallery in your home with labels: title, artist, and description. Walk through the gallery together, discussing each piece. Then vote on awards: Most Colorful, Most Creative, Most Surprising, Most Meaningful. Then make a family creative commitment: one creative activity together every week — drawing night, dance party, story time, building challenge, nature art. Muse the Butterfly is immensely proud of every young creator who completed the Little Stars Creative Arts journey. You are an artist. You always have been. Now go create the beautiful things only YOU can create.", badge: "Creative Champion", nextLesson: null
-  },
-
+  {
+    id: 'ca-3-5-10',
+    subject: 'Creative Arts',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Muse',
+    guideAnimal: 'Butterfly',
+    lessonNumber: 10,
+    title: 'My Favorite Song',
+    duration: '3-5 min',
+    badge: 'Music Lover',
+    nextLesson: null,
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we celebrate our FAVORITE SONGS!' },
+      { type: 'story', image: '/game-assets/creative-arts/happy-singing-kid.png', guideText: 'Everyone has a favorite SONG! It is the song that makes your heart feel like dancing! When you hear it, you can not help but smile and move!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is SINGING?', guideText: 'Tap the singing kid!',
+        items: [
+          { image: '/game-assets/creative-arts/happy-singing-kid.png', label: 'Singing happily', correct: true },
+          { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Just jumping' },
+          { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Just clapping' },
+          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Blank paper' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/microphone-magic.png', guideText: 'When you sing into a MICROPHONE, your voice gets BIG so everyone can hear it!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What helps your voice get LOUD?', guideText: 'Tap the microphone!',
+        items: [
+          { image: '/game-assets/creative-arts/microphone-magic.png', label: 'Microphone', correct: true },
+          { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick' },
+          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Paper' },
+          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Playdough ball' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/music-celebration.png', guideText: 'Music is everywhere! Songs make us happy, sad, excited, and brave. Music is MAGIC!' },
+      { type: 'yes-no', scenario: 'Does your favorite song make you happy?', correctAnswer: true, image: '/game-assets/creative-arts/happy-singing-kid.png' },
+      { type: 'family', guideText: 'Tonight, share your favorite song with your family! Sing it together. Or play it loud and have a dance party. Music brings everyone together!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Music Lover', guideText: 'You are a music lover, {name}! Great work, you finished Creative Arts!' }
+    ]
+  }
 ];
 
 export default creativeartsLittleStars;
