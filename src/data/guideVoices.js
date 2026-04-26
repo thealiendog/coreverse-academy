@@ -21,7 +21,7 @@ export const guideVoices = {
   Quill: 'aUNOP2y8xEvi4nZebjIw',
   Cosmo: 'aUNOP2y8xEvi4nZebjIw',
   Atlas: 'aUNOP2y8xEvi4nZebjIw',
-  Luna:  'x5IDPSl4ZUbhosMmVFTk',  // Spanish-native voice for Subject 9
+  Luna:  'aUNOP2y8xEvi4nZebjIw',  // default voice — custom voice TBD with all guides later
   Orion: 'aUNOP2y8xEvi4nZebjIw',
 };
 
