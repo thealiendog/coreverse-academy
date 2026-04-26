@@ -14,7 +14,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! I am Muse! Today we explore COLORS!' },
       { type: 'story', image: '/game-assets/creative-arts/colors-rainbow.png', guideText: 'Look! I see colors EVERYWHERE! Red like a strawberry, blue like the sky, yellow like the sun, green like grass! Colors make the world beautiful!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is RED?', guideText: 'Tap the red one!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is RED?', guideText: 'Tap the red one!',
         items: [
           { image: '/game-assets/creative-arts/color-red.png', label: 'Red', correct: true },
           { image: '/game-assets/creative-arts/color-blue.png', label: 'Blue' },
@@ -23,7 +23,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/color-yellow.png', guideText: 'Yellow is bright like the sun! It makes me feel happy and warm!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is YELLOW?', guideText: 'Tap the yellow one!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is YELLOW?', guideText: 'Tap the yellow one!',
         items: [
           { image: '/game-assets/creative-arts/color-yellow.png', label: 'Yellow', correct: true },
           { image: '/game-assets/creative-arts/color-red.png', label: 'Red' },
@@ -52,7 +52,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we DRAW our family!' },
       { type: 'story', image: '/game-assets/creative-arts/family-drawing.png', guideText: 'Drawing is one of the most special things you can do! When you draw your family, you show how much you LOVE them. Your drawing is one of a kind in the whole world!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do we use to DRAW?', guideText: 'Tap what we use to draw!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What do we use to DRAW?', guideText: 'Tap what we use to draw!',
         items: [
           { image: '/game-assets/creative-arts/crayons-rainbow.png', label: 'Crayons', correct: true },
           { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Playdough' },
@@ -61,7 +61,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/blank-paper.png', guideText: 'Every drawing starts with a blank paper. The paper is waiting for your magic!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a drawing of a FAMILY?', guideText: 'Tap the family drawing!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a drawing of a FAMILY?', guideText: 'Tap the family drawing!',
         items: [
           { image: '/game-assets/creative-arts/family-stick-figures.png', label: 'Stick figure family', correct: true },
           { image: '/game-assets/creative-arts/colors-rainbow.png', label: 'Just a rainbow' },
@@ -90,7 +90,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we make MUSIC with our bodies!' },
       { type: 'story', image: '/game-assets/creative-arts/clapping-hands.png', guideText: 'Did you know your body is a MUSIC INSTRUMENT? You can clap, stomp, sing, and drum on your knees — all without ANY tools! Music lives inside YOU!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is CLAPPING?', guideText: 'Tap the clapping hands!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is CLAPPING?', guideText: 'Tap the clapping hands!',
         items: [
           { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Hands clapping', correct: true },
           { image: '/game-assets/creative-arts/stomping-feet.png', label: 'Feet stomping' },
@@ -99,7 +99,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/stomping-feet.png', guideText: 'You can STOMP your feet to make a big BOOM sound!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is STOMPING?', guideText: 'Tap the stomping feet!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is STOMPING?', guideText: 'Tap the stomping feet!',
         items: [
           { image: '/game-assets/creative-arts/stomping-feet.png', label: 'Feet stomping', correct: true },
           { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Hands clapping' },
@@ -166,7 +166,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we make things with PLAYDOUGH!' },
       { type: 'story', image: '/game-assets/creative-arts/playdough-mixed-colors.png', guideText: 'Playdough is like SQUISHY MAGIC! You can squish it, roll it, flatten it, and make ANYTHING you imagine! Your hands are the artist!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SNAKE shape?', guideText: 'Tap the long thin snake!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a SNAKE shape?', guideText: 'Tap the long thin snake!',
         items: [
           { image: '/game-assets/creative-arts/playdough-snake.png', label: 'Snake shape', correct: true },
           { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Ball shape' },
@@ -175,7 +175,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/playdough-ball.png', guideText: 'Roll the playdough between your hands and you make a BALL! Round and smooth!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a BALL shape?', guideText: 'Tap the round ball!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a BALL shape?', guideText: 'Tap the round ball!',
         items: [
           { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Ball shape', correct: true },
           { image: '/game-assets/creative-arts/playdough-snake.png', label: 'Snake shape' },
@@ -204,7 +204,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we make a COLLAGE!' },
       { type: 'story', image: '/game-assets/creative-arts/collage-finished.png', guideText: 'A collage is when you cut out pieces of paper and stick them together to make a brand-new picture! It is like a paper puzzle YOU design!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do we use to CUT paper?', guideText: 'Tap the scissors!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What do we use to CUT paper?', guideText: 'Tap the scissors!',
         items: [
           { image: '/game-assets/creative-arts/scissors-paper.png', label: 'Scissors', correct: true },
           { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick' },
@@ -213,7 +213,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/glue-stick.png', guideText: 'After cutting, we use GLUE to stick the pieces down. The glue holds them in place forever!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do we use to STICK paper?', guideText: 'Tap the glue stick!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What do we use to STICK paper?', guideText: 'Tap the glue stick!',
         items: [
           { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick', correct: true },
           { image: '/game-assets/creative-arts/scissors-paper.png', label: 'Scissors' },
@@ -242,7 +242,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we tell STORIES with pictures!' },
       { type: 'story', image: '/game-assets/creative-arts/picture-book-open.png', guideText: 'Did you know every picture tells a STORY? When you draw a sun and a tree and a friend, your picture is saying something! You are a storyteller!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one tells a STORY?', guideText: 'Tap the picture with a story!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one tells a STORY?', guideText: 'Tap the picture with a story!',
         items: [
           { image: '/game-assets/creative-arts/story-picture-1.png', label: 'A scene with characters', correct: true },
           { image: '/game-assets/creative-arts/blank-paper.png', label: 'Empty paper' },
@@ -251,7 +251,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/story-sequence.png', guideText: 'A story has a BEGINNING, a MIDDLE, and an END. Three pictures can make one whole story!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a STORY in three pictures?', guideText: 'Tap the three connected pictures!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a STORY in three pictures?', guideText: 'Tap the three connected pictures!',
         items: [
           { image: '/game-assets/creative-arts/story-sequence.png', label: 'Three story pictures', correct: true },
           { image: '/game-assets/creative-arts/colors-rainbow.png', label: 'Just colors' },
@@ -280,7 +280,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we FINGER PAINT!' },
       { type: 'story', image: '/game-assets/creative-arts/finger-paint-hand.png', guideText: 'When you paint with your FINGERS, your hand becomes the brush! You can swirl, smear, dot, and dance the paint across the paper!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows FINGER PAINT on a hand?', guideText: 'Tap the colorful hand!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one shows FINGER PAINT on a hand?', guideText: 'Tap the colorful hand!',
         items: [
           { image: '/game-assets/creative-arts/finger-paint-hand.png', label: 'Hand with paint', correct: true },
           { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Clean clapping hands' },
@@ -289,7 +289,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/paint-jars.png', guideText: 'Each color lives in its own little jar. Dip your finger in and start painting!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a FINGER PAINTING?', guideText: 'Tap the finger painting!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a FINGER PAINTING?', guideText: 'Tap the finger painting!',
         items: [
           { image: '/game-assets/creative-arts/finger-paint-art.png', label: 'Finger painting', correct: true },
           { image: '/game-assets/creative-arts/family-drawing.png', label: 'Crayon drawing' },
@@ -318,7 +318,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we BUILD with blocks!' },
       { type: 'story', image: '/game-assets/creative-arts/blocks-scattered.png', guideText: 'Blocks are little squares and rectangles that stack on top of each other! With just a few blocks, you can build a tall tower, a cozy house, or a strong bridge!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a TOWER?', guideText: 'Tap the tall tower!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a TOWER?', guideText: 'Tap the tall tower!',
         items: [
           { image: '/game-assets/creative-arts/block-tower.png', label: 'Block tower', correct: true },
           { image: '/game-assets/creative-arts/block-house.png', label: 'Block house' },
@@ -327,7 +327,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/block-house.png', guideText: 'You can build a HOUSE with walls, a roof, and a door — just like the one you live in!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the block house!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the block house!',
         items: [
           { image: '/game-assets/creative-arts/block-house.png', label: 'Block house', correct: true },
           { image: '/game-assets/creative-arts/block-tower.png', label: 'Tower' },
@@ -356,7 +356,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we celebrate our FAVORITE SONGS!' },
       { type: 'story', image: '/game-assets/creative-arts/happy-singing-kid.png', guideText: 'Everyone has a favorite SONG! It is the song that makes your heart feel like dancing! When you hear it, you can not help but smile and move!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is SINGING?', guideText: 'Tap the singing kid!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is SINGING?', guideText: 'Tap the singing kid!',
         items: [
           { image: '/game-assets/creative-arts/happy-singing-kid.png', label: 'Singing happily', correct: true },
           { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Just jumping' },
@@ -365,7 +365,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/microphone-magic.png', guideText: 'When you sing into a MICROPHONE, your voice gets BIG so everyone can hear it!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What helps your voice get LOUD?', guideText: 'Tap the microphone!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What helps your voice get LOUD?', guideText: 'Tap the microphone!',
         items: [
           { image: '/game-assets/creative-arts/microphone-magic.png', label: 'Microphone', correct: true },
           { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick' },
