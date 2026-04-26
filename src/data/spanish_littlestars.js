@@ -1,62 +1,420 @@
-// ============================================================
-// COREVERSE ACADEMY — SPANISH · LITTLE STARS (Ages 3-5)
-// 10 Lessons · Guide: Luna the Parrot
-// File: spanish_littlestars.js · Export: spanishLittleStars
-// ============================================================
-
 export const spanishLittleStars = [
-
-  { id: "sp-3-5-01", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 1, title: "¡Hola! Hello in Spanish", duration: "10-15 min",
-    hook: "Did you know that over 500 million people speak Spanish? It is the second most spoken language in the world! Learning Spanish opens doors to new friends, new cultures, and new adventures. And the best time to learn a new language is RIGHT NOW — young brains are wired to absorb languages like sponges. Luna the Parrot speaks many languages and loves teaching new words to her friends.",
-    bigIdea: "Spanish is one of the world's most spoken languages — learning basic greetings (hola, adiós, por favor, gracias) opens the door to communicating with millions of people and understanding a rich, vibrant culture.",
-    sections: [
-      { title: "¡Hola! and ¡Adiós!", emoji: "👋", content: "Hola (OH-lah) means hello. Adiós (ah-dee-OHS) means goodbye. Buenos días (BWEH-nos DEE-as) means good morning. Buenas tardes (BWEH-nas TAR-des) means good afternoon. Buenas noches (BWEH-nas NO-ches) means good night. Spanish speakers greet each other warmly — often with a hug or a kiss on the cheek. Greetings matter in Spanish culture." },
-      { title: "Por favor and Gracias", emoji: "🙏", content: "Por favor (por fah-VOR) means please. Gracias (GRAH-see-as) means thank you. De nada (day NAH-dah) means you are welcome. Lo siento (lo see-EN-toh) means I am sorry. These polite words work in any language — and knowing them in Spanish shows respect to Spanish speakers you meet." },
-      { title: "Me llamo...", emoji: "😊", content: "Me llamo (may YAH-mo) means my name is. ¿Cómo te llamas? (KOH-mo tay YAH-mas) means what is your name? When you meet a Spanish speaker, you can say: ¡Hola! Me llamo [your name]. ¿Cómo te llamas? That is an entire introduction in Spanish! Luna says: learning someone's name in their language is the best way to start a friendship." },
-      { title: "Why Learn Spanish?", emoji: "🌎", content: "Spanish is spoken in 20 countries: Spain, Mexico, Colombia, Argentina, Peru, and many more. In the United States, over 40 million people speak Spanish at home. Learning Spanish helps you communicate with neighbors, travel confidently, understand songs and movies, and appreciate one of the world's richest cultures. Your young brain is the perfect language-learning machine — start now!" }
-    ],
-    activity: { title: "Greeting Practice", instructions: "Practice these greetings with family members. Pretend to meet each other: ¡Hola! Buenos días. Me llamo [name]. ¿Cómo te llamas? Then practice: por favor, gracias, de nada. Use them throughout the day: say gracias when someone helps you, por favor when you ask for something. Try greeting your family in Spanish every morning this week. The more you use the words, the more natural they become." },
-    quiz: [
-      { question: "What does hola mean?", answer: "Hello — it is the most common Spanish greeting", options: ["Goodbye", "Hello — it is the most common Spanish greeting", "Thank you", "Please"] },
-      { question: "How do you say thank you in Spanish?", answer: "Gracias (GRAH-see-as)", options: ["Por favor", "Gracias (GRAH-see-as)", "Hola", "Adiós"] },
-      { question: "What does me llamo mean?", answer: "My name is — used to introduce yourself", options: ["I am hungry", "My name is — used to introduce yourself", "Goodbye", "How old are you?"] },
-      { question: "How many people speak Spanish worldwide?", answer: "Over 500 million — it is the second most spoken language in the world", options: ["About 1 million", "Over 500 million — it is the second most spoken language in the world", "Only in Spain", "Less than English"] },
-      { question: "What does por favor mean?", answer: "Please — a polite word used when making requests", options: ["Thank you", "Please — a polite word used when making requests", "Goodbye", "Good morning"] }
-    ],
-    familyAdventure: "Make Spanish Greetings a family habit for one week. Every morning, greet each other in Spanish: ¡Buenos días! Every night: ¡Buenas noches! Every time someone helps: ¡Gracias! Every request includes: por favor. Track how many Spanish words your family uses each day. By the end of the week, these words will feel natural. Then find a Spanish song online and learn to sing along. Music is one of the best ways to learn a language.",
-    badge: "Spanish Greeter", nextLesson: "sp-3-5-02"
+  {
+    id: 'sp-3-5-01',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 1,
+    title: '¡Hola! Greetings',
+    duration: '3-5 min',
+    badge: 'Little Greeter',
+    nextLesson: 'sp-3-5-02',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! I am Luna! Today we learn how to say HELLO and GOODBYE in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/friends-greeting.png', guideText: 'In Spanish, when we see a friend we say ¡Hola! That means HELLO! And when we leave we say ¡Adiós! That means GOODBYE!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one means HELLO?', guideText: '¡Hola! Tap the picture that means hello!',
+        items: [
+          { image: '/game-assets/spanish/wave-hello.png', label: 'Hola', correct: true },
+          { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/wave-goodbye.png', guideText: 'And when we say goodbye we say ¡Adiós! Try saying it with me — ¡Adiós!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one means GOODBYE?', guideText: '¡Adiós! Tap the picture that means goodbye!',
+        items: [
+          { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós', correct: true },
+          { image: '/game-assets/spanish/wave-hello.png', label: 'Hola' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/friends-greeting.png', guideText: '¡Hola y adiós! Two new Spanish words! ¡Muy bien!' },
+      { type: 'yes-no', scenario: 'In Spanish, does HOLA mean hello?', correctAnswer: true, image: '/game-assets/spanish/wave-hello.png' },
+      { type: 'family', guideText: 'Tonight, greet your family the Spanish way! Say ¡Hola! when you see them and ¡Adiós! at bedtime!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Little Greeter', guideText: '¡Muy bien, {name}! You said HOLA and ADIÓS!' }
+    ]
   },
-
-  { id: "sp-3-5-02", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 2, title: "Numbers: Uno, Dos, Tres", duration: "10-15 min", hook: "Uno, dos, tres, cuatro, cinco — one, two, three, four, five! Counting in Spanish is one of the first skills that makes you feel like a real bilingual person. The numbers have a musical quality that makes them fun to say and easy to remember. Luna the Parrot counts her feathers in Spanish: ¡Tengo muchas plumas!", bigIdea: "Learning to count 1-10 in Spanish (uno through diez) builds number vocabulary, connects math to language learning, and gives practical skills for real-world Spanish communication.", sections: [ { title: "Numbers 1-5", emoji: "🔢", content: "1 = uno (OO-no). 2 = dos (dohs). 3 = tres (trehs). 4 = cuatro (KWAH-tro). 5 = cinco (SEEN-ko). Say them slowly, then faster. Clap along: UNO (clap) DOS (clap) TRES (clap) CUATRO (clap) CINCO (clap). The rhythm helps your brain remember. These five numbers are used constantly in daily Spanish." }, { title: "Numbers 6-10", emoji: "🔟", content: "6 = seis (says). 7 = siete (see-EH-teh). 8 = ocho (OH-cho). 9 = nueve (NWEH-veh). 10 = diez (dee-EHS). Now count all ten: uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez! Practice counting on your fingers as you say each number. Can you count to diez without looking?" }, { title: "Using Numbers", emoji: "🛒", content: "Numbers appear everywhere in Spanish: ¿Cuántos años tienes? (How old are you?) Tengo cinco años (I am five years old). Quiero dos galletas (I want two cookies). Hay tres gatos (There are three cats). Numbers plus nouns create useful sentences. Luna says: once you know numbers and a few nouns, you can communicate a lot." }, { title: "Counting Beyond 10", emoji: "📈", content: "Bonus numbers: 11 = once (OHN-seh). 12 = doce (DOH-seh). 13 = trece (TREH-seh). 14 = catorce (kah-TOR-seh). 15 = quince (KEEN-seh). 20 = veinte (BAYN-teh). 100 = cien (see-EN). You do not need to memorize these all now — but hearing them starts planting seeds in your brain for later." } ], activity: { title: "Spanish Counting Games", instructions: "Count objects in Spanish throughout the day: uno, dos, tres crackers on your plate. Cuatro, cinco, seis, siete books on the shelf. Then play Spanish Hide and Seek: the seeker counts to diez in Spanish before looking. Then practice age: ¿Cuántos años tienes? Tengo __ años. Then sing a Spanish counting song (search for Uno Dos Tres counting songs online). Then count steps as you walk: uno, dos, tres, cuatro, cinco... How high can you count before you reach your destination?" }, quiz: [ { question: "What is cinco in English?", answer: "Five", options: ["Three", "Five", "Ten", "Seven"] }, { question: "How do you say 8 in Spanish?", answer: "Ocho (OH-cho)", options: ["Seis", "Ocho (OH-cho)", "Nueve", "Siete"] }, { question: "What does ¿Cuántos años tienes? mean?", answer: "How old are you? — a common question answered with Tengo __ años", options: ["What is your name?", "How old are you? — a common question answered with Tengo __ años", "Where do you live?", "What time is it?"] }, { question: "What number is diez?", answer: "10 — the last number in Spanish counting 1-10", options: ["6", "10 — the last number in Spanish counting 1-10", "12", "100"] }, { question: "What is the Spanish word for 3?", answer: "Tres (trehs)", options: ["Dos", "Tres (trehs)", "Cuatro", "Uno"] } ], familyAdventure: "Play a bilingual counting game. Take turns: one person says a number in English, the other says it in Spanish. Then reverse! Then count things at dinner in Spanish: ¿Cuántas personas hay? (How many people are there?) ¡Hay cuatro personas! Then play store with prices in Spanish: el libro cuesta tres dólares (the book costs three dollars). Then learn your ages in Spanish: each family member says tengo __ años. Numbers in Spanish will feel natural within days of practice.", badge: "Spanish Counter", nextLesson: "sp-3-5-03"
+  {
+    id: 'sp-3-5-02',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 2,
+    title: 'Los Números 1-5',
+    duration: '3-5 min',
+    badge: 'Number Friend',
+    nextLesson: 'sp-3-5-03',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we count in Spanish — uno, dos, tres, cuatro, cinco!' },
+      { type: 'story', image: '/game-assets/spanish/numero-uno.png', guideText: 'In Spanish, ONE is uno. TWO is dos. THREE is tres. FOUR is cuatro. And FIVE is cinco! Let us count together!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which number is UNO?', guideText: '¡Uno! Tap the number one!',
+        items: [
+          { image: '/game-assets/spanish/numero-uno.png', label: 'Uno', correct: true },
+          { image: '/game-assets/spanish/numero-dos.png', label: 'Dos' },
+          { image: '/game-assets/spanish/numero-tres.png', label: 'Tres' },
+          { image: '/game-assets/spanish/numero-cuatro.png', label: 'Cuatro' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/numero-dos.png', guideText: '¡Dos! That means TWO. Like two eyes, or two hands!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which number is TRES?', guideText: '¡Tres! Tap the number three!',
+        items: [
+          { image: '/game-assets/spanish/numero-tres.png', label: 'Tres', correct: true },
+          { image: '/game-assets/spanish/numero-uno.png', label: 'Uno' },
+          { image: '/game-assets/spanish/numero-cinco.png', label: 'Cinco' },
+          { image: '/game-assets/spanish/numero-cuatro.png', label: 'Cuatro' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/numero-cinco.png', guideText: '¡Cinco! That means FIVE. Hold up five fingers — ¡cinco!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which number is CINCO?', guideText: '¡Cinco! Tap the number five!',
+        items: [
+          { image: '/game-assets/spanish/numero-cinco.png', label: 'Cinco', correct: true },
+          { image: '/game-assets/spanish/numero-dos.png', label: 'Dos' },
+          { image: '/game-assets/spanish/numero-cuatro.png', label: 'Cuatro' },
+          { image: '/game-assets/spanish/numero-uno.png', label: 'Uno' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight, count to five in Spanish with your family! Uno, dos, tres, cuatro, cinco! Hold up your fingers as you count!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Number Friend', guideText: '¡Muy bien, {name}! You can count to cinco!' }
+    ]
   },
-
-  { id: "sp-3-5-03", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 3, title: "Colors: Rojo, Azul, Amarillo", duration: "10-15 min", hook: "The sky is azul. The sun is amarillo. Strawberries are rojo. Colors in Spanish are beautiful to say and easy to learn because you see colors everywhere. Once you know color words, you can describe the whole world in Spanish! Luna the Parrot is verde, azul, rojo, and amarillo all at once — she is a living rainbow.", bigIdea: "Learning colors in Spanish (rojo, azul, amarillo, verde, naranja, morado, blanco, negro, rosado, marrón) adds descriptive vocabulary that can be practiced constantly by naming the colors you see around you.", sections: [ { title: "Primary Colors", emoji: "🎨", content: "Rojo (ROH-ho) = red. Azul (ah-SOOL) = blue. Amarillo (ah-mah-REE-yo) = yellow. These are the primary colors in both English and Spanish. Say them three times each: rojo, rojo, rojo. Azul, azul, azul. Amarillo, amarillo, amarillo. Now you know the building blocks of color in Spanish!" }, { title: "More Colors", emoji: "🌈", content: "Verde (BEHR-deh) = green. Naranja (nah-RAHN-ha) = orange. Morado (moh-RAH-doh) = purple. Rosado (roh-SAH-doh) = pink. Blanco (BLAHN-ko) = white. Negro (NEH-gro) = black. Marrón (mah-ROHN) = brown. Gris (grees) = gray. That is 11 colors — enough to describe almost anything!" }, { title: "Describing with Colors", emoji: "🏠", content: "In Spanish, colors come AFTER the noun (opposite of English). The red car = el carro rojo. The blue sky = el cielo azul. The green tree = el árbol verde. This word order feels different but becomes natural with practice. Try: mi camisa es [color] (my shirt is [color]). ¿De qué color es? (What color is it?)" }, { title: "Colors All Around", emoji: "👀", content: "Practice colors everywhere you go: la manzana es roja (the apple is red). El pasto es verde (the grass is green). El sol es amarillo (the sun is yellow). Point at things and name their color in Spanish. The more you practice, the more automatic it becomes. Luna says: the world is your Spanish textbook — just add color words." } ], activity: { title: "Spanish Color Hunt", instructions: "Go on a Spanish Color Hunt. Find one object for each color and say its Spanish name: find something rojo (red car, red shirt), azul (blue sky, blue pen), amarillo (banana, sun drawing), verde (plant, grass), naranja (orange fruit), morado (purple flower), rosado (pink toy), blanco (white paper), negro (black shoe), marrón (brown dog, tree bark). Say the full sentence: es [color]! Try to find all 10 colors in 5 minutes." }, quiz: [ { question: "What color is verde?", answer: "Green", options: ["Red", "Green", "Purple", "Yellow"] }, { question: "How do you say blue in Spanish?", answer: "Azul (ah-SOOL)", options: ["Rojo", "Azul (ah-SOOL)", "Blanco", "Negro"] }, { question: "In Spanish, where does the color word go?", answer: "After the noun — el carro rojo (the red car), not el rojo carro", options: ["Before the noun, like English", "After the noun — el carro rojo (the red car), not el rojo carro", "Colors do not have a set position", "At the beginning of the sentence"] }, { question: "What is amarillo?", answer: "Yellow", options: ["Orange", "Yellow", "Brown", "White"] }, { question: "What does ¿De qué color es? mean?", answer: "What color is it? — a useful question for practicing color vocabulary", options: ["Where is it?", "What color is it? — a useful question for practicing color vocabulary", "How many colors?", "Do you like colors?"] } ], familyAdventure: "Play I Spy in Spanish: Veo algo de color [color]. (I see something the color [color].) Others guess what it is — in Spanish if they can! Then sort objects by color and label each pile in Spanish. Then color a picture together but call out every color in Spanish as you use it: necesito el rojo (I need the red one). Then try the rainbow in Spanish: rojo, naranja, amarillo, verde, azul, morado. Can you say it fast? Sing it to a tune? Colors are the perfect daily Spanish practice.", badge: "Spanish Color Expert", nextLesson: "sp-3-5-04"
+  {
+    id: 'sp-3-5-03',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 3,
+    title: 'Los Colores',
+    duration: '3-5 min',
+    badge: 'Color Speaker',
+    nextLesson: 'sp-3-5-04',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn COLORS in Spanish!' },
+      { type: 'story', image: '/game-assets/creative-arts/colors-rainbow.png', guideText: 'In Spanish, RED is rojo. BLUE is azul. YELLOW is amarillo. And GREEN is verde! Beautiful new words!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is ROJO?', guideText: '¡Rojo! Tap the red one!',
+        items: [
+          { image: '/game-assets/creative-arts/color-red.png', label: 'Rojo', correct: true },
+          { image: '/game-assets/creative-arts/color-blue.png', label: 'Azul' },
+          { image: '/game-assets/creative-arts/color-yellow.png', label: 'Amarillo' },
+          { image: '/game-assets/creative-arts/color-green.png', label: 'Verde' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/color-blue.png', guideText: '¡Azul! That means BLUE — like the sky and the ocean!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is AZUL?', guideText: '¡Azul! Tap the blue one!',
+        items: [
+          { image: '/game-assets/creative-arts/color-blue.png', label: 'Azul', correct: true },
+          { image: '/game-assets/creative-arts/color-red.png', label: 'Rojo' },
+          { image: '/game-assets/creative-arts/color-yellow.png', label: 'Amarillo' },
+          { image: '/game-assets/creative-arts/color-green.png', label: 'Verde' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/creative-arts/color-yellow.png', guideText: '¡Amarillo! That means YELLOW — like the sun and bananas!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is VERDE?', guideText: '¡Verde! Tap the green one!',
+        items: [
+          { image: '/game-assets/creative-arts/color-green.png', label: 'Verde', correct: true },
+          { image: '/game-assets/creative-arts/color-yellow.png', label: 'Amarillo' },
+          { image: '/game-assets/creative-arts/color-red.png', label: 'Rojo' },
+          { image: '/game-assets/creative-arts/color-blue.png', label: 'Azul' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight, find one thing rojo, one thing azul, one thing amarillo, and one thing verde at home with your family!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Color Speaker', guideText: '¡Muy bien, {name}! You know four colors in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-04", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 4, title: "Family: Mi Familia", duration: "10-15 min", hook: "Mamá, papá, hermano, hermana, abuela, abuelo — your family has Spanish names! Family is at the heart of Latin American culture, and learning family vocabulary connects you to one of the most important values in Spanish-speaking communities. Luna the Parrot calls her flock mi familia — because family is everything.", bigIdea: "Family vocabulary (mamá, papá, hermano, hermana, abuelo, abuela, tío, tía, primo) connects language learning to personal relationships and introduces the central importance of family in Hispanic culture.", sections: [ { title: "Immediate Family", emoji: "👨‍👩‍👧‍👦", content: "Mamá (mah-MAH) = mom. Papá (pah-PAH) = dad. Hermano (ehr-MAH-no) = brother. Hermana (ehr-MAH-nah) = sister. Bebé (beh-BEH) = baby. Mi familia (mee fah-MEE-lee-ah) = my family. Practice: point to family members and say their Spanish names. Mi mamá, mi papá, mi hermano/hermana." }, { title: "Extended Family", emoji: "👵", content: "Abuelo (ah-BWEH-lo) = grandfather. Abuela (ah-BWEH-lah) = grandmother. Tío (TEE-oh) = uncle. Tía (TEE-ah) = aunt. Primo (PREE-mo) = male cousin. Prima (PREE-mah) = female cousin. In Hispanic culture, extended family often lives close by and gathers frequently. Family gatherings are large, warm, and full of food and laughter." }, { title: "Describing Family", emoji: "❤️", content: "Te quiero (teh kee-EH-ro) = I love you. Mi familia es grande (my family is big). Mi familia es pequeña (my family is small). Tengo un hermano (I have one brother). Tengo dos hermanas (I have two sisters). Combining family words with numbers and descriptions lets you talk about YOUR family in Spanish." }, { title: "Family in Hispanic Culture", emoji: "🌮", content: "In Hispanic culture, la familia is the most important thing. Extended families stay closely connected. Grandparents often live with the family. Sundays are for family meals. Celebrations include the whole family. Children are deeply cherished. Learning to talk about family in Spanish connects you to these beautiful cultural values." } ], activity: { title: "Mi Familia Poster", instructions: "Draw your family and label each person in Spanish: mamá, papá, hermano, hermana, abuelo, abuela. Add pets too: perro (dog), gato (cat). Write Mi Familia at the top. Then practice introducing your family: Esta es mi mamá. Este es mi papá. Tengo [number] hermanos. Then learn to say I love you: Te quiero, mamá. Te quiero, papá. Say it to each family member today." }, quiz: [ { question: "What does hermana mean?", answer: "Sister", options: ["Brother", "Sister", "Mother", "Grandmother"] }, { question: "How do you say grandfather in Spanish?", answer: "Abuelo (ah-BWEH-lo)", options: ["Tío", "Abuelo (ah-BWEH-lo)", "Primo", "Papá"] }, { question: "What does te quiero mean?", answer: "I love you — an important phrase used with family and close friends", options: ["Thank you", "I love you — an important phrase used with family and close friends", "Good morning", "My name is"] }, { question: "What is tía in English?", answer: "Aunt", options: ["Uncle", "Aunt", "Cousin", "Sister"] }, { question: "What does mi familia mean?", answer: "My family", options: ["My friend", "My family", "My house", "My school"] } ], familyAdventure: "Make a bilingual Family Tree. Draw a tree with branches for each family member. Write their name and Spanish family word (mamá, papá, abuela, abuelo, tío, tía, primo). Then video call or visit a family member and introduce them to your Spanish family vocabulary: this is my abuela! Then at dinner, practice: pass the sal (salt), por favor. Gracias, papá. Te quiero, mamá. Mixing Spanish into family life makes it real.", badge: "Familia Expert", nextLesson: "sp-3-5-05"
+  {
+    id: 'sp-3-5-04',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 4,
+    title: 'Mi Familia',
+    duration: '3-5 min',
+    badge: 'Family Speaker',
+    nextLesson: 'sp-3-5-05',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn FAMILY words in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/mama-figure.png', guideText: 'Your family is special! In Spanish, MOM is mamá. DAD is papá. BROTHER is hermano. SISTER is hermana. Let us learn these family words!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is MAMÁ?', guideText: '¡Mamá! Tap mom!',
+        items: [
+          { image: '/game-assets/spanish/mama-figure.png', label: 'Mamá', correct: true },
+          { image: '/game-assets/spanish/papa-figure.png', label: 'Papá' },
+          { image: '/game-assets/spanish/hermano-figure.png', label: 'Hermano' },
+          { image: '/game-assets/spanish/hermana-figure.png', label: 'Hermana' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/papa-figure.png', guideText: '¡Papá! That means DAD. Two words very close in many languages!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PAPÁ?', guideText: '¡Papá! Tap dad!',
+        items: [
+          { image: '/game-assets/spanish/papa-figure.png', label: 'Papá', correct: true },
+          { image: '/game-assets/spanish/mama-figure.png', label: 'Mamá' },
+          { image: '/game-assets/spanish/hermano-figure.png', label: 'Hermano' },
+          { image: '/game-assets/spanish/hermana-figure.png', label: 'Hermana' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/hermana-figure.png', guideText: 'Hermano means BROTHER. Hermana means SISTER. Almost the same word — only one letter different!' },
+      { type: 'yes-no', scenario: 'In Spanish, does MAMÁ mean mom?', correctAnswer: true, image: '/game-assets/spanish/mama-figure.png' },
+      { type: 'family', guideText: 'Tonight, call your family by their Spanish names! Say ¡Hola, mamá! and ¡Hola, papá! See if they smile!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Family Speaker', guideText: '¡Muy bien, {name}! You know your familia in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-05", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 5, title: "Animals: Los Animales", duration: "10-15 min", hook: "Perro, gato, pájaro, pez — kids LOVE animals, and animals are some of the most fun words to learn in Spanish. From farm animals to jungle creatures, learning animal names in Spanish brings vocabulary to life. Luna the Parrot introduces you to all her animal friends — in español!", bigIdea: "Animal vocabulary in Spanish (perro, gato, pájaro, pez, caballo, vaca, mariposa) is engaging for young learners and provides practice with pronunciation, gender (el/la), and descriptive language.", sections: [ { title: "Pets", emoji: "🐕", content: "Perro (PEH-roh) = dog. Gato (GAH-toh) = cat. Pájaro (PAH-hah-roh) = bird. Pez (pehs) = fish. Conejo (koh-NEH-hoh) = rabbit. Tortuga (tor-TOO-gah) = turtle. If you have a pet, learn its Spanish name: mi perro, mi gato. Practice: tengo un perro (I have a dog)." }, { title: "Farm Animals", emoji: "🐄", content: "Vaca (BAH-kah) = cow. Caballo (kah-BAH-yoh) = horse. Cerdo (SEHR-doh) = pig. Gallina (gah-YEE-nah) = chicken. Oveja (oh-BEH-hah) = sheep. Pato (PAH-toh) = duck. Farm animals make fun sounds in Spanish too: the dog says guau guau, the cat says miau, the rooster says quiquiriquí!" }, { title: "Wild Animals", emoji: "🦁", content: "León (leh-OHN) = lion. Elefante (eh-leh-FAHN-teh) = elephant. Mono (MOH-noh) = monkey. Mariposa (mah-ree-POH-sah) = butterfly. Serpiente (sehr-pee-EN-teh) = snake. Oso (OH-soh) = bear. Lobo (LOH-boh) = wolf. These are the animals of jungles, forests, and savannas — all with beautiful Spanish names." }, { title: "Animal Sounds in Spanish", emoji: "🔊", content: "Animals make different sounds in different languages! In Spanish: dogs say guau guau (not woof). Cats say miau (like English meow). Roosters say quiquiriquí (not cock-a-doodle-doo). Ducks say cuac cuac (not quack). Cows say muuu. Pigs say oinc oinc. Learning animal sounds in Spanish is hilarious and educational. Luna says: quiquiriquí!" } ], activity: { title: "Animal Charades en Español", instructions: "Play Animal Charades in Spanish. One person acts like an animal. Others guess the Spanish name: ¡Es un perro! ¡Es un gato! ¡Es un mono! Play 10 rounds. Then draw your favorite animal and label it in Spanish. Then practice animal sounds in Spanish — quiquiriquí for the rooster, guau guau for the dog. Then count animals: uno, dos, tres gatos. Cuatro, cinco perros. Combining numbers with animals practices both vocabularies." }, quiz: [ { question: "What is perro in English?", answer: "Dog", options: ["Cat", "Dog", "Bird", "Fish"] }, { question: "How do you say butterfly in Spanish?", answer: "Mariposa (mah-ree-POH-sah)", options: ["Serpiente", "Mariposa (mah-ree-POH-sah)", "Pájaro", "Tortuga"] }, { question: "What sound does a rooster make in Spanish?", answer: "Quiquiriquí — different from the English cock-a-doodle-doo", options: ["Cock-a-doodle-doo", "Quiquiriquí — different from the English cock-a-doodle-doo", "Guau guau", "Miau"] }, { question: "What is gato?", answer: "Cat", options: ["Dog", "Cat", "Horse", "Duck"] }, { question: "How do you say I have a dog in Spanish?", answer: "Tengo un perro", options: ["Me llamo perro", "Tengo un perro", "Hola perro", "Perro grande"] } ], familyAdventure: "Visit a pet store, farm, or zoo and name every animal you see in Spanish. At a pet store: ¡Mira! Un pez. Dos conejos. Tres pájaros. At the zoo: ¡Un león! ¡Un elefante! ¡Tres monos! Take photos and make a bilingual animal album. Then watch an animal video and pause to name each animal in Spanish. Then teach your pet its Spanish name — say ¡Ven aquí, perro! (Come here, dog!) Pets do not know the difference, but your brain is learning!",
-    badge: "Animal Expert", nextLesson: "sp-3-5-06"
+  {
+    id: 'sp-3-5-05',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 5,
+    title: 'Los Animales',
+    duration: '3-5 min',
+    badge: 'Animal Friend',
+    nextLesson: 'sp-3-5-06',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn ANIMALS in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/perro-dog.png', guideText: 'Animals have new names in Spanish! DOG is perro. CAT is gato. BIRD is pájaro. FISH is pez. Let us meet them!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PERRO?', guideText: '¡Perro! Tap the dog!',
+        items: [
+          { image: '/game-assets/spanish/perro-dog.png', label: 'Perro', correct: true },
+          { image: '/game-assets/spanish/gato-cat.png', label: 'Gato' },
+          { image: '/game-assets/spanish/pajaro-bird.png', label: 'Pájaro' },
+          { image: '/game-assets/spanish/pez-fish.png', label: 'Pez' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/gato-cat.png', guideText: '¡Gato! That means CAT. Cats say meow in every language!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is GATO?', guideText: '¡Gato! Tap the cat!',
+        items: [
+          { image: '/game-assets/spanish/gato-cat.png', label: 'Gato', correct: true },
+          { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' },
+          { image: '/game-assets/spanish/pajaro-bird.png', label: 'Pájaro' },
+          { image: '/game-assets/spanish/pez-fish.png', label: 'Pez' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/pajaro-bird.png', guideText: '¡Pájaro! That means BIRD. Like me — I am a parrot, una clase de pájaro!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PEZ?', guideText: '¡Pez! Tap the fish!',
+        items: [
+          { image: '/game-assets/spanish/pez-fish.png', label: 'Pez', correct: true },
+          { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' },
+          { image: '/game-assets/spanish/gato-cat.png', label: 'Gato' },
+          { image: '/game-assets/spanish/pajaro-bird.png', label: 'Pájaro' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight, ask your family — do you have a perro, gato, pájaro, or pez? Tell them the Spanish name for your pet!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Animal Friend', guideText: '¡Muy bien, {name}! You know four animals in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-06", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 6, title: "Food: La Comida", duration: "10-15 min", hook: "Manzana, pan, leche, agua — the kitchen is one of the best places to practice Spanish! Food words are used every day, and connecting them to actual eating makes them stick in your memory. Luna the Parrot loves tropical frutas — especially mangos!", bigIdea: "Food vocabulary in Spanish connects language to daily life — learning words for common foods, drinks, and meals provides practical vocabulary used at every breakfast, lunch, and dinner.", sections: [ { title: "Fruits and Vegetables", emoji: "🍎", content: "Manzana (mahn-SAH-nah) = apple. Plátano (PLAH-tah-noh) = banana. Naranja (nah-RAHN-hah) = orange (also the color!). Fresa (FREH-sah) = strawberry. Uva (OO-bah) = grape. Zanahoria (sah-nah-OH-ree-ah) = carrot. Tomate (toh-MAH-teh) = tomato. Point to fruits in your kitchen and name them in Spanish." }, { title: "Other Foods", emoji: "🍞", content: "Pan (pahn) = bread. Arroz (ah-ROHS) = rice. Huevo (WEH-boh) = egg. Pollo (POH-yoh) = chicken. Queso (KEH-soh) = cheese. Leche (LEH-cheh) = milk. Agua (AH-gwah) = water. Jugo (HOO-goh) = juice. These are the everyday foods that fill your plate — and now you know their Spanish names." }, { title: "Meal Words", emoji: "🍽️", content: "Desayuno (deh-sah-YOO-no) = breakfast. Almuerzo (ahl-MWEHR-so) = lunch. Cena (SEH-nah) = dinner. Tengo hambre (TENG-go AHM-breh) = I am hungry. Tengo sed (TENG-go sed) = I am thirsty. ¡Qué rico! (keh REE-ko) = How delicious! ¡Buen provecho! (bwen pro-BEH-cho) = Enjoy your meal! These phrases make every meal a Spanish lesson." }, { title: "Food and Culture", emoji: "🌮", content: "Hispanic food is one of the world's greatest cuisines. Tacos, empanadas, paella, ceviche, tamales, and churros are beloved globally. Each Spanish-speaking country has unique dishes. Mexican food uses corn, beans, and chiles. Colombian food features arepas and bandeja paisa. Spanish food includes tortilla española and gazpacho. Food is one of the most delicious ways to explore culture." } ], activity: { title: "Spanish Kitchen Labels", instructions: "Label 10 foods in your kitchen with sticky notes in Spanish: leche (on the milk), pan (on the bread), manzana (on the apples), queso (on the cheese), huevo (on the eggs), arroz (on the rice), agua (on the water). Leave the labels for a week. Every time you grab that item, read the Spanish word. Then at meals say: quiero [food] por favor (I want [food] please). Then cook something simple together and name every ingredient in Spanish as you use it." }, quiz: [ { question: "What is manzana?", answer: "Apple", options: ["Banana", "Apple", "Orange", "Strawberry"] }, { question: "How do you say I am hungry in Spanish?", answer: "Tengo hambre", options: ["Tengo sed", "Tengo hambre", "Tengo sueño", "Me llamo hambre"] }, { question: "What does leche mean?", answer: "Milk", options: ["Water", "Milk", "Juice", "Bread"] }, { question: "What is desayuno?", answer: "Breakfast — the first meal of the day", options: ["Dinner", "Breakfast — the first meal of the day", "Lunch", "Snack"] }, { question: "What does ¡Qué rico! mean?", answer: "How delicious! — an exclamation used when food tastes great", options: ["How expensive!", "How delicious! — an exclamation used when food tastes great", "I am full!", "That is terrible!"] } ], familyAdventure: "Cook a Hispanic dish together. Make simple guacamole: aguacate (avocado), tomate (tomato), cebolla (onion), limón (lime), sal (salt). Name every ingredient in Spanish as you add it. Say ¡Qué rico! when you taste it. Then try a full meal with Spanish labels: el pollo, el arroz, las fresas. Say ¡Buen provecho! before eating. Then visit a Mexican or Latin American restaurant and try ordering in Spanish. Even a simple gracias makes the staff smile.",
-    badge: "Food Expert", nextLesson: "sp-3-5-07"
+  {
+    id: 'sp-3-5-06',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 6,
+    title: 'La Comida',
+    duration: '3-5 min',
+    badge: 'Food Speaker',
+    nextLesson: 'sp-3-5-07',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn FOOD words in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/manzana-apple.png', guideText: 'Yummy! In Spanish, BREAD is pan. MILK is leche. APPLE is manzana. WATER is agua. Food in Spanish — ¡delicioso!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PAN?', guideText: '¡Pan! Tap the bread!',
+        items: [
+          { image: '/game-assets/spanish/pan-bread.png', label: 'Pan', correct: true },
+          { image: '/game-assets/spanish/leche-milk.png', label: 'Leche' },
+          { image: '/game-assets/spanish/manzana-apple.png', label: 'Manzana' },
+          { image: '/game-assets/spanish/agua-water.png', label: 'Agua' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/leche-milk.png', guideText: '¡Leche! That means MILK. Milk helps your body grow strong!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is MANZANA?', guideText: '¡Manzana! Tap the apple!',
+        items: [
+          { image: '/game-assets/spanish/manzana-apple.png', label: 'Manzana', correct: true },
+          { image: '/game-assets/spanish/pan-bread.png', label: 'Pan' },
+          { image: '/game-assets/spanish/agua-water.png', label: 'Agua' },
+          { image: '/game-assets/spanish/leche-milk.png', label: 'Leche' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/agua-water.png', guideText: '¡Agua! That means WATER. Your body needs water every day!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is AGUA?', guideText: '¡Agua! Tap the water!',
+        items: [
+          { image: '/game-assets/spanish/agua-water.png', label: 'Agua', correct: true },
+          { image: '/game-assets/spanish/leche-milk.png', label: 'Leche' },
+          { image: '/game-assets/spanish/pan-bread.png', label: 'Pan' },
+          { image: '/game-assets/spanish/manzana-apple.png', label: 'Manzana' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight at dinner, ask for things in Spanish! ¡Quiero pan, por favor! Or ¡Más agua, por favor!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Food Speaker', guideText: '¡Muy bien, {name}! You know food in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-07", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 7, title: "Body Parts: Mi Cuerpo", duration: "10-15 min", hook: "Cabeza, hombros, rodillas, pies — head, shoulders, knees, and toes! The song you already know has a Spanish version, and it is just as catchy. Learning body parts in Spanish is fun because you can touch each part as you say its name. Luna the Parrot points to her alas (wings) and pico (beak).", bigIdea: "Body part vocabulary (cabeza, ojos, nariz, boca, manos, pies) is learned through physical movement — touching each part as you name it creates powerful kinesthetic memory connections.", sections: [ { title: "Head and Face", emoji: "😃", content: "Cabeza (kah-BEH-sah) = head. Ojos (OH-hos) = eyes. Nariz (nah-REES) = nose. Boca (BOH-kah) = mouth. Orejas (oh-REH-has) = ears. Pelo (PEH-lo) = hair. Cara (KAH-rah) = face. Touch each part as you say its name: toca tu cabeza (touch your head), toca tus ojos (touch your eyes)." }, { title: "Body", emoji: "🦵", content: "Hombros (OHM-bros) = shoulders. Brazos (BRAH-sos) = arms. Manos (MAH-nos) = hands. Dedos (DEH-dos) = fingers. Piernas (pee-EHR-nas) = legs. Rodillas (roh-DEE-yas) = knees. Pies (pee-EHS) = feet. Barriga (bah-REE-gah) = belly. Espalda (ehs-PAHL-dah) = back." }, { title: "The Song", emoji: "🎵", content: "Cabeza, hombros, rodillas, pies, rodillas, pies. Cabeza, hombros, rodillas, pies, rodillas, pies. Ojos, orejas, boca y nariz. Cabeza, hombros, rodillas, pies, rodillas, pies! Sing it while touching each body part. Start slow, then go faster and faster. This song has taught Spanish body parts to millions of children worldwide." }, { title: "Using Body Words", emoji: "💬", content: "Me duele la cabeza (my head hurts). Tengo las manos frías (my hands are cold). Mis pies están cansados (my feet are tired). Body words combine with other vocabulary to express how you feel physically. Luna says: when you can describe how your body feels in another language, you have real communication power." } ], activity: { title: "Spanish Body Song", instructions: "Sing Cabeza, Hombros, Rodillas, Pies together while touching each body part. Start slowly. Then get faster. Then faster! Then play Spanish Simon Says: Simón dice... toca tu nariz (Simon says touch your nose). Toca tus orejas. Toca tus rodillas. If Simon does not say Simón dice, freeze! Then draw a person and label every body part in Spanish. How many can you label from memory?" }, quiz: [ { question: "What does cabeza mean?", answer: "Head", options: ["Hand", "Head", "Foot", "Knee"] }, { question: "How do you say eyes in Spanish?", answer: "Ojos (OH-hos)", options: ["Orejas", "Ojos (OH-hos)", "Nariz", "Boca"] }, { question: "What are rodillas?", answer: "Knees", options: ["Shoulders", "Knees", "Feet", "Hands"] }, { question: "What does manos mean?", answer: "Hands", options: ["Feet", "Hands", "Fingers", "Arms"] }, { question: "In the Spanish body song, what comes after hombros?", answer: "Rodillas (knees) — cabeza, hombros, rodillas, pies", options: ["Ojos", "Rodillas (knees) — cabeza, hombros, rodillas, pies", "Boca", "Brazos"] } ], familyAdventure: "Play full-body Spanish throughout the day. At bath time: name body parts as you wash them — lava tu cabeza (wash your head), lava tus manos (wash your hands). At bedtime: mis ojos están cansados (my eyes are tired). During exercise: mueve tus brazos (move your arms), salta con tus pies (jump with your feet). Then teach the Cabeza Hombros song to a friend. Teaching solidifies learning. By the end of the week, your child will know 15+ body parts in Spanish without flashcards — just from using them.",
-    badge: "Body Expert", nextLesson: "sp-3-5-08"
+  {
+    id: 'sp-3-5-07',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 7,
+    title: 'El Cuerpo',
+    duration: '3-5 min',
+    badge: 'Body Speaker',
+    nextLesson: 'sp-3-5-08',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn BODY parts in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/cabeza-head.png', guideText: 'Your body has new names in Spanish! HEAD is cabeza. EYES are ojos. HANDS are manos. FEET are pies. Touch them as we say each one!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is CABEZA?', guideText: '¡Cabeza! Tap the head!',
+        items: [
+          { image: '/game-assets/spanish/cabeza-head.png', label: 'Cabeza', correct: true },
+          { image: '/game-assets/spanish/ojos-eyes.png', label: 'Ojos' },
+          { image: '/game-assets/spanish/manos-hands.png', label: 'Manos' },
+          { image: '/game-assets/spanish/pies-feet.png', label: 'Pies' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/ojos-eyes.png', guideText: '¡Ojos! That means EYES — the part you see with! Touch your ojos!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is MANOS?', guideText: '¡Manos! Tap the hands!',
+        items: [
+          { image: '/game-assets/spanish/manos-hands.png', label: 'Manos', correct: true },
+          { image: '/game-assets/spanish/ojos-eyes.png', label: 'Ojos' },
+          { image: '/game-assets/spanish/pies-feet.png', label: 'Pies' },
+          { image: '/game-assets/spanish/cabeza-head.png', label: 'Cabeza' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/pies-feet.png', guideText: '¡Pies! That means FEET — the part you walk with! Wiggle your pies!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PIES?', guideText: '¡Pies! Tap the feet!',
+        items: [
+          { image: '/game-assets/spanish/pies-feet.png', label: 'Pies', correct: true },
+          { image: '/game-assets/spanish/manos-hands.png', label: 'Manos' },
+          { image: '/game-assets/spanish/ojos-eyes.png', label: 'Ojos' },
+          { image: '/game-assets/spanish/cabeza-head.png', label: 'Cabeza' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight, play Touch Your Body in Spanish with your family! ¡Toca tu cabeza! Touch your head! ¡Toca tus ojos! Touch your eyes!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Body Speaker', guideText: '¡Muy bien, {name}! You know your body in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-08", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 8, title: "Where I Live: Mi Casa", duration: "10-15 min", hook: "Casa means house. Inside your casa you have rooms: cocina (kitchen), baño (bathroom), dormitorio (bedroom). Every room has objects you can name in Spanish. Your home becomes a Spanish learning lab when you know the vocabulary! Luna the Parrot decorates her nido (nest) with bright feathers.", bigIdea: "Home vocabulary (casa, cocina, baño, dormitorio, sala, puerta, ventana, mesa, silla) transforms the familiar home environment into a Spanish immersion experience through daily labeling and usage.", sections: [ { title: "Rooms", emoji: "🏠", content: "Casa (KAH-sah) = house/home. Cocina (koh-SEE-nah) = kitchen. Baño (BAH-nyoh) = bathroom. Dormitorio (dor-mee-TOR-ee-oh) = bedroom. Sala (SAH-lah) = living room. Comedor (koh-meh-DOR) = dining room. Jardín (har-DEEN) = garden/yard. Walk through your casa and name each room." }, { title: "Furniture and Objects", emoji: "🪑", content: "Mesa (MEH-sah) = table. Silla (SEE-yah) = chair. Cama (KAH-mah) = bed. Puerta (PWEHR-tah) = door. Ventana (ben-TAH-nah) = window. Televisor (teh-leh-bee-SOR) = television. Lámpara (LAHM-pah-rah) = lamp. Espejo (ehs-PEH-ho) = mirror. Label these items with sticky notes for immersive learning." }, { title: "Where Things Are", emoji: "📍", content: "En (ehn) = in/on. Debajo de (deh-BAH-ho deh) = under. Encima de (ehn-SEE-mah deh) = on top of. Al lado de (ahl LAH-doh deh) = next to. El gato está debajo de la mesa (The cat is under the table). La lámpara está encima de la mesa (The lamp is on the table). Location words help you describe your whole home." }, { title: "My Room", emoji: "🛏️", content: "Describe your room: mi dormitorio tiene una cama (my room has a bed), una ventana (a window), y una lámpara (and a lamp). Es [color] (it is [color]). Es grande/pequeño (it is big/small). Combining room vocabulary with colors and descriptions lets you give a full house tour — in Spanish." } ], activity: { title: "Casa Labeling Project", instructions: "Label 15 objects in your home with Spanish sticky notes: puerta, ventana, mesa, silla, cama, espejo, lámpara, cocina sign, baño sign. Leave them for a week. Every time you walk past, read the word. Then give a house tour in Spanish: esta es la cocina (this is the kitchen). Aquí está mi cama (here is my bed). La mesa está en el comedor (the table is in the dining room). Record your tour!" }, quiz: [ { question: "What does cocina mean?", answer: "Kitchen", options: ["Bedroom", "Kitchen", "Bathroom", "Living room"] }, { question: "How do you say window in Spanish?", answer: "Ventana (ben-TAH-nah)", options: ["Puerta", "Ventana (ben-TAH-nah)", "Espejo", "Mesa"] }, { question: "What is cama?", answer: "Bed", options: ["Chair", "Bed", "Table", "Door"] }, { question: "What does debajo de mean?", answer: "Under — as in el perro está debajo de la mesa (the dog is under the table)", options: ["On top of", "Under — as in el perro está debajo de la mesa (the dog is under the table)", "Next to", "Inside of"] }, { question: "How do you say my house in Spanish?", answer: "Mi casa", options: ["Mi familia", "Mi casa", "Mi escuela", "Mi cama"] } ], familyAdventure: "Do a Bilingual House Tour for a relative (in person or video call). Walk through each room naming it in Spanish and English. Point out labeled objects. Describe what is in each room. Then play ¿Dónde está? (Where is it?): hide a toy and give clues in Spanish — está en la cocina, debajo de la mesa (it is in the kitchen, under the table). This combines location words with room vocabulary in an exciting treasure hunt.", badge: "Casa Expert", nextLesson: "sp-3-5-09"
+  {
+    id: 'sp-3-5-08',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 8,
+    title: 'El Tiempo',
+    duration: '3-5 min',
+    badge: 'Weather Speaker',
+    nextLesson: 'sp-3-5-09',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn WEATHER words in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/sol-sun.png', guideText: 'Look up at the sky! In Spanish, SUN is sol. RAIN is lluvia. SNOW is nieve. WIND is viento. The weather changes every day!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is SOL?', guideText: '¡Sol! Tap the sun!',
+        items: [
+          { image: '/game-assets/spanish/sol-sun.png', label: 'Sol', correct: true },
+          { image: '/game-assets/spanish/lluvia-rain.png', label: 'Lluvia' },
+          { image: '/game-assets/spanish/nieve-snow.png', label: 'Nieve' },
+          { image: '/game-assets/spanish/viento-wind.png', label: 'Viento' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/lluvia-rain.png', guideText: '¡Lluvia! That means RAIN. Plants love la lluvia!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is LLUVIA?', guideText: '¡Lluvia! Tap the rain!',
+        items: [
+          { image: '/game-assets/spanish/lluvia-rain.png', label: 'Lluvia', correct: true },
+          { image: '/game-assets/spanish/sol-sun.png', label: 'Sol' },
+          { image: '/game-assets/spanish/nieve-snow.png', label: 'Nieve' },
+          { image: '/game-assets/spanish/viento-wind.png', label: 'Viento' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/nieve-snow.png', guideText: '¡Nieve! That means SNOW. Cold and white and sparkly!' },
+      { type: 'yes-no', scenario: 'In Spanish, does SOL mean sun?', correctAnswer: true, image: '/game-assets/spanish/sol-sun.png' },
+      { type: 'family', guideText: 'Tonight, look out the window with your family. What is the weather? Say it in Spanish — ¡hay sol! ¡hay lluvia! ¡hay viento!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Weather Speaker', guideText: '¡Muy bien, {name}! You know the weather in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-09", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 9, title: "Feelings: ¿Cómo Estás?", duration: "10-15 min", hook: "¿Cómo estás? How are you? In Spanish, you can say estoy feliz (I am happy), estoy triste (I am sad), estoy enojado (I am angry), or estoy cansado (I am tired). Expressing your feelings in two languages doubles your emotional vocabulary. Luna the Parrot asks ¿Cómo estás? every time she greets a friend.", bigIdea: "Feelings vocabulary in Spanish (feliz, triste, enojado, cansado, asustado, emocionado) connects emotional intelligence with language learning — expressing emotions in both languages strengthens both skills.", sections: [ { title: "How Are You?", emoji: "👋", content: "¿Cómo estás? (KOH-mo ehs-TAHS) = How are you? Estoy bien (ehs-TOY bee-EN) = I am fine/well. Estoy mal (ehs-TOY mahl) = I am not well. Estoy así así (ehs-TOY ah-SEE ah-SEE) = I am so-so. These responses to ¿Cómo estás? are used multiple times every day in Spanish conversation. Learn them and you can answer the most common question in Spanish." }, { title: "Happy, Sad, Angry", emoji: "😊", content: "Feliz (feh-LEES) = happy. Triste (TREES-teh) = sad. Enojado/a (eh-noh-HAH-doh/dah) = angry. Asustado/a (ah-soos-TAH-doh/dah) = scared. Cansado/a (kahn-SAH-doh/dah) = tired. Emocionado/a (eh-moh-see-oh-NAH-doh/dah) = excited. Nervioso/a (nehr-vee-OH-soh/sah) = nervous. Practice: estoy feliz (I am happy), estoy cansado (I am tired)." }, { title: "Expressing Feelings", emoji: "💬", content: "Estoy feliz porque... (I am happy because...). Estoy triste porque... (I am sad because...). Adding porque (because) lets you explain your feelings. Estoy emocionado porque es mi cumpleaños (I am excited because it is my birthday). Estoy cansado porque corrí mucho (I am tired because I ran a lot). Expressing WHY you feel something is powerful in any language." }, { title: "Feelings Check-In en Español", emoji: "❤️", content: "Start doing feelings check-ins in Spanish: ¿Cómo estás hoy? (How are you today?) Hoy estoy [feeling]. This daily practice builds both emotional awareness and Spanish fluency simultaneously. Luna says: a parrot who can express feelings in two languages has twice the emotional range." } ], activity: { title: "Spanish Feelings Faces", instructions: "Draw 7 faces showing different emotions. Label each in Spanish AND English: feliz/happy, triste/sad, enojado/angry, asustado/scared, cansado/tired, emocionado/excited, nervioso/nervous. Then do a Spanish feelings check-in: each family member answers ¿Cómo estás? with a Spanish feeling word. Then play Feelings Charades en Español: act out an emotion, others guess the Spanish word. ¡Estás triste! ¡Estás emocionado!" }, quiz: [ { question: "What does ¿Cómo estás? mean?", answer: "How are you? — the most common greeting question in Spanish", options: ["What is your name?", "How are you? — the most common greeting question in Spanish", "Where are you going?", "How old are you?"] }, { question: "How do you say I am happy in Spanish?", answer: "Estoy feliz", options: ["Estoy triste", "Estoy feliz", "Estoy enojado", "Estoy cansado"] }, { question: "What does triste mean?", answer: "Sad", options: ["Happy", "Sad", "Angry", "Tired"] }, { question: "What does porque mean?", answer: "Because — it connects your feeling to the reason why", options: ["Why", "Because — it connects your feeling to the reason why", "Please", "However"] }, { question: "What is cansado?", answer: "Tired", options: ["Excited", "Tired", "Nervous", "Happy"] } ], familyAdventure: "Do a bilingual Feelings Check-In at dinner every night for a week. Each person answers ¿Cómo estás hoy? with a Spanish feeling word AND a reason: Estoy feliz porque jugué con mis amigos. By the end of the week, these feeling words will be automatic. Then when your child is experiencing a big emotion, gently ask: ¿Cómo te sientes? (How do you feel?) Naming emotions in two languages gives children more tools for emotional regulation.", badge: "Feelings Expert en Español", nextLesson: "sp-3-5-10"
+  {
+    id: 'sp-3-5-09',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 9,
+    title: '¿Cómo Estás? Feelings',
+    duration: '3-5 min',
+    badge: 'Feelings Speaker',
+    nextLesson: 'sp-3-5-10',
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we learn FEELINGS in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/feliz-happy.png', guideText: 'When someone asks ¿Cómo estás? — How are you? — you can answer! HAPPY is feliz. SAD is triste. TIRED is cansado. Tell people how you feel!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is FELIZ?', guideText: '¡Feliz! Tap the happy face!',
+        items: [
+          { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz', correct: true },
+          { image: '/game-assets/spanish/triste-sad.png', label: 'Triste' },
+          { image: '/game-assets/spanish/cansado-tired.png', label: 'Cansado' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/triste-sad.png', guideText: '¡Triste! That means SAD. It is okay to feel triste sometimes — every feeling is okay!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is TRISTE?', guideText: '¡Triste! Tap the sad face!',
+        items: [
+          { image: '/game-assets/spanish/triste-sad.png', label: 'Triste', correct: true },
+          { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz' },
+          { image: '/game-assets/spanish/cansado-tired.png', label: 'Cansado' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/cansado-tired.png', guideText: '¡Cansado! That means TIRED. When you are sleepy and need to rest, you are cansado!' },
+      { type: 'yes-no', scenario: 'In Spanish, does FELIZ mean happy?', correctAnswer: true, image: '/game-assets/spanish/feliz-happy.png' },
+      { type: 'family', guideText: 'Tonight, ask your family ¿Cómo estás? Then they can answer ¡feliz! or ¡cansado! or ¡triste! Share your feelings in Spanish!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Feelings Speaker', guideText: '¡Muy bien, {name}! You can share feelings in Spanish!' }
+    ]
   },
-
-  { id: "sp-3-5-10", subject: "Spanish", ageGroup: "3-5", band: "Little Stars", guide: "Luna", guideAnimal: "Parrot", lessonNumber: 10, title: "Songs and Fun: ¡Vamos a Cantar!", duration: "10-15 min", hook: "The best way to learn a language is through music, games, and fun! Spanish songs stick in your memory, games make vocabulary exciting, and celebrating your progress keeps you motivated. You have learned greetings, numbers, colors, family, animals, food, body parts, rooms, and feelings — all in Spanish! That is over 100 words. ¡Increíble! Luna the Parrot sings all day long — because singing in Spanish is the most fun way to learn.", bigIdea: "Music, songs, and games are the most effective and enjoyable ways to learn a language — they embed vocabulary in memory through rhythm and melody and make continued learning feel like play rather than work.", sections: [ { title: "Songs for Learning", emoji: "🎵", content: "Music activates more parts of your brain than any other activity — which is why song lyrics are so easy to remember. Spanish children's songs include: Los Pollitos Dicen (the chicks say pio pio pio), De Colores (about the colors of the world), and Estrellita Dónde Estás (Twinkle Twinkle Little Star in Spanish). Each song teaches vocabulary through melody." }, { title: "Games for Practice", emoji: "🎮", content: "Spanish Bingo: make cards with Spanish words and pictures. Caller says the Spanish word, players mark the picture. Memoria (Memory): make card pairs — one with the English word, one with Spanish. Flip and match. Veo Veo (I Spy): Veo algo de color rojo! These games turn practice into play." }, { title: "What You Have Learned", emoji: "🏆", content: "In 10 lessons you have learned: greetings (hola, adiós, por favor, gracias), numbers 1-10, 11 colors, family words, 15+ animals, 15+ food words, 10+ body parts, 10+ home words, and 8 feeling words. That is well over 100 Spanish words! You can introduce yourself, count, describe things, name your family, and express how you feel — all in Spanish. ¡Increíble!" }, { title: "Keep Going", emoji: "🚀", content: "Language learning is a journey, not a destination. Keep practicing every day — even 5 minutes helps. Watch cartoons in Spanish. Listen to Spanish music. Use your Spanish words at home. Talk to Spanish-speaking neighbors or classmates. Every word you learn opens a door to a new connection. Luna says: the parrot who speaks two languages has twice as many friends." } ], activity: { title: "Spanish Fiesta", instructions: "Hold a Spanish Fiesta celebration! Play Spanish music. Make a simple Hispanic recipe together (quesadillas, guacamole, or churros — just cinnamon and sugar on toast). Review everything you learned: greet each other in Spanish, count the food items, name the colors of decorations, introduce your family, name animals on a poster, label food, point to body parts, describe rooms, and share feelings. Then sing Estrellita Dónde Estás (Spanish Twinkle Twinkle). This celebration reinforces everything while creating a joyful memory associated with Spanish." }, quiz: [ { question: "How many Spanish words have you learned in this course?", answer: "Over 100 — including greetings, numbers, colors, family, animals, food, body parts, rooms, and feelings", options: ["About 5", "Over 100 — including greetings, numbers, colors, family, animals, food, body parts, rooms, and feelings", "Exactly 10", "Only 20"] }, { question: "What is the best way to remember Spanish vocabulary?", answer: "Through songs, games, and daily practice — music and play embed vocabulary deeply in memory", options: ["Memorizing word lists", "Through songs, games, and daily practice — music and play embed vocabulary deeply in memory", "Only reading textbooks", "Watching English TV with subtitles"] }, { question: "What does ¡Increíble! mean?", answer: "Incredible! Amazing! — an exclamation of amazement", options: ["Terrible!", "Incredible! Amazing! — an exclamation of amazement", "Goodbye!", "I am hungry!"] }, { question: "How much daily practice helps maintain Spanish?", answer: "Even 5 minutes a day helps — consistency matters more than duration", options: ["At least 3 hours a day", "Even 5 minutes a day helps — consistency matters more than duration", "Only weekly practice matters", "You do not need to practice — it stays forever"] }, { question: "What is the Spanish version of Twinkle Twinkle Little Star?", answer: "Estrellita Dónde Estás — a beautiful Spanish children's song", options: ["Los Pollitos Dicen", "Estrellita Dónde Estás — a beautiful Spanish children's song", "De Colores", "La Bamba"] } ], familyAdventure: "Make Spanish a permanent part of family life. Commit to three daily Spanish moments: (1) Morning greeting in Spanish: ¡Buenos días! ¿Cómo estás? (2) Name one food at each meal in Spanish. (3) Bedtime: ¡Buenas noches! Te quiero. These three moments take 30 seconds total but keep Spanish alive every day. Then once a week, learn 3 new words as a family. In one year, you will know over 250 Spanish words — enough for basic conversation! Luna the Parrot is immensely proud of every young Spanish learner who completed the Little Stars Spanish journey. You can greet, count, describe, name, and feel — all in two languages. ¡Eres increíble! (You are incredible!)", badge: "Spanish Star", nextLesson: null
-  },
-
+  {
+    id: 'sp-3-5-10',
+    subject: 'Spanish',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Luna',
+    guideAnimal: 'Parrot',
+    lessonNumber: 10,
+    title: '¡Adiós, Amigos! Review',
+    duration: '3-5 min',
+    badge: 'Spanish Star',
+    nextLesson: null,
+    gameSequence: [
+      { type: 'welcome', guideText: '¡Hola, {name}! Today we celebrate everything we learned in Spanish!' },
+      { type: 'story', image: '/game-assets/spanish/spanish-celebration.png', guideText: '¡Wow! You learned so much! Greetings, numbers, colors, family, animals, food, body, weather, and feelings — all in Spanish!' },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which means HELLO?', guideText: '¡Hola! Tap the greeting!',
+        items: [
+          { image: '/game-assets/spanish/wave-hello.png', label: 'Hola', correct: true },
+          { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' },
+          { image: '/game-assets/spanish/sol-sun.png', label: 'Sol' },
+          { image: '/game-assets/spanish/agua-water.png', label: 'Agua' }
+        ]
+      },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which means MOM?', guideText: '¡Mamá! Tap mom!',
+        items: [
+          { image: '/game-assets/spanish/mama-figure.png', label: 'Mamá', correct: true },
+          { image: '/game-assets/spanish/gato-cat.png', label: 'Gato' },
+          { image: '/game-assets/spanish/lluvia-rain.png', label: 'Lluvia' },
+          { image: '/game-assets/spanish/numero-tres.png', label: 'Tres' }
+        ]
+      },
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which means HAPPY?', guideText: '¡Feliz! Tap happy!',
+        items: [
+          { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz', correct: true },
+          { image: '/game-assets/spanish/manzana-apple.png', label: 'Manzana' },
+          { image: '/game-assets/spanish/manos-hands.png', label: 'Manos' },
+          { image: '/game-assets/spanish/viento-wind.png', label: 'Viento' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/spanish/spanish-celebration.png', guideText: '¡Bravo, {name}! You learned over 30 Spanish words! Now you can speak Spanish with your family and friends!' },
+      { type: 'yes-no', scenario: 'Are you a Spanish speaker now?', correctAnswer: true, image: '/game-assets/spanish/spanish-celebration.png' },
+      { type: 'family', guideText: 'Tonight, teach your family ONE Spanish word you learned! Pick your favorite. Now they can speak Spanish too!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Spanish Star', guideText: '¡Adiós, {name}! Eres una estrella de español! You are a Spanish star!' }
+    ]
+  }
 ];
 
 export default spanishLittleStars;
