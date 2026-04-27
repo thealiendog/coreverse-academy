@@ -18,7 +18,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/letter-A.png', label: 'Letter A', correct: true },
           { image: '/game-assets/ela/letter-B.png', label: 'Letter B' },
-          { image: '/game-assets/ela/letter-C.png', label: 'Letter C' }
+          { image: '/game-assets/ela/letter-C.png', label: 'Letter C' },
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/letter-B.png', guideText: 'This is the letter B! B is the SECOND letter in the alphabet. Beautiful B!' },
@@ -26,7 +27,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/letter-B.png', label: 'Letter B', correct: true },
           { image: '/game-assets/ela/letter-A.png', label: 'Letter A' },
-          { image: '/game-assets/ela/letter-C.png', label: 'Letter C' }
+          { image: '/game-assets/ela/letter-C.png', label: 'Letter C' },
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/letter-C.png', guideText: 'And this is the letter C! C is curvy and cool!' },
@@ -55,7 +57,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/letter-A-apple.png', label: 'Apple — A', correct: true },
           { image: '/game-assets/ela/letter-B-ball.png', label: 'Ball — B' },
-          { image: '/game-assets/ela/letter-C-cat.png', label: 'Cat — C' }
+          { image: '/game-assets/ela/letter-C-cat.png', label: 'Cat — C' },
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/letter-B-ball.png', guideText: 'B makes the BUH sound. B — Ball. B — Bear. B — Bunny! When your lips press together — that is B!' },
@@ -63,7 +66,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/letter-B-ball.png', label: 'Ball — B', correct: true },
           { image: '/game-assets/ela/letter-A-apple.png', label: 'Apple — A' },
-          { image: '/game-assets/ela/letter-C-cat.png', label: 'Cat — C' }
+          { image: '/game-assets/ela/letter-C-cat.png', label: 'Cat — C' },
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/letter-C-cat.png', guideText: 'C makes the KUH sound — like Cat. Or sometimes the SSS sound — like Circle. C is tricky!' },
@@ -90,7 +94,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/word-cat.png', label: 'Word CAT', correct: true },
           { image: '/game-assets/ela/word-dog.png', label: 'Word DOG' },
-          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' }
+          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' },
+          { image: '/game-assets/ela/name-letters-personalized.png', label: 'A name' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/word-dog.png', guideText: 'D, O, G — that spells DOG! Three letters that name our furry friend!' },
@@ -98,7 +103,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/word-dog.png', label: 'Word DOG', correct: true },
           { image: '/game-assets/ela/word-cat.png', label: 'Word CAT' },
-          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' }
+          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' },
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/word-sun.png', guideText: 'S, U, N spells SUN! That bright shining ball in the sky has only THREE letters!' },
@@ -125,9 +131,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one rhymes with CAT?', guideText: 'Tap the rhyming pair!',
         items: [
           { image: '/game-assets/ela/cat-hat-rhyme.png', label: 'Cat and Hat', correct: true },
-          { image: '/game-assets/ela/storybook-hero.png', label: 'A hero' },
-          { image: '/game-assets/ela/word-dog.png', label: 'Word DOG' },
-          { image: '/game-assets/ela/letter-B.png', label: 'Letter B' }
+          { image: '/game-assets/ela/bee-tree-rhyme.png', label: 'Bee and Tree' },
+          { image: '/game-assets/ela/mouse-house-rhyme.png', label: 'Mouse and House' },
+          { image: '/game-assets/ela/word-dog.png', label: 'Word DOG' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/bee-tree-rhyme.png', guideText: 'BEE and TREE rhyme! Both end with EEEE sound! Listen — beeeee, treeee!' },
@@ -165,9 +171,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows letters that make a NAME?', guideText: 'Tap the letters!',
         items: [
           { image: '/game-assets/ela/name-letters-personalized.png', label: 'Letters', correct: true },
-          { image: '/game-assets/ela/cat-hat-rhyme.png', label: 'Cat and Hat' },
-          { image: '/game-assets/ela/storybook-friend-animal.png', label: 'Animal' },
-          { image: '/game-assets/ela/imagination-burst.png', label: 'Imagination' }
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' },
+          { image: '/game-assets/ela/child-pointing-letters.png', label: 'Pointing at letters' },
+          { image: '/game-assets/ela/word-cat.png', label: 'Word CAT' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/child-pointing-letters.png', guideText: 'Soon you will be able to write your name all by yourself! Practice tracing the letters with your finger!' },
@@ -195,7 +201,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/story-beginning.png', label: 'Beginning', correct: true },
           { image: '/game-assets/ela/story-middle.png', label: 'Middle' },
-          { image: '/game-assets/ela/story-ending.png', label: 'End' }
+          { image: '/game-assets/ela/story-ending.png', label: 'End' },
+          { image: '/game-assets/ela/storybook-hero.png', label: 'A hero' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/story-middle.png', guideText: 'In the MIDDLE of a story, EXCITING things happen. The character meets friends, has problems, goes on adventures!' },
@@ -203,7 +210,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/story-middle.png', label: 'Middle', correct: true },
           { image: '/game-assets/ela/story-beginning.png', label: 'Beginning' },
-          { image: '/game-assets/ela/story-ending.png', label: 'End' }
+          { image: '/game-assets/ela/story-ending.png', label: 'End' },
+          { image: '/game-assets/ela/storybook-friend-animal.png', label: 'Animal character' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/story-ending.png', guideText: 'And at the END, everything wraps up. The character celebrates! The adventure is done!' },
@@ -230,9 +238,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a CHARACTER?', guideText: 'Tap the storybook hero!',
         items: [
           { image: '/game-assets/ela/storybook-hero.png', label: 'Hero', correct: true },
-          { image: '/game-assets/ela/letter-A.png', label: 'Letter A' },
+          { image: '/game-assets/ela/story-beginning.png', label: 'Story start' },
           { image: '/game-assets/ela/word-cat.png', label: 'Word CAT' },
-          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' }
+          { image: '/game-assets/ela/child-cozy-reading.png', label: 'Reading' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/storybook-friend-animal.png', guideText: 'Characters can be ANIMALS too! In Charlotte\'s Web, there is a pig and a spider. In Frog and Toad, there are two frog friends! Animals make great characters!' },
@@ -240,8 +248,8 @@ export const elaLittleStars = [
         items: [
           { image: '/game-assets/ela/storybook-friend-animal.png', label: 'Animal friend', correct: true },
           { image: '/game-assets/ela/storybook-hero.png', label: 'Hero kid' },
-          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' },
-          { image: '/game-assets/ela/imagination-burst.png', label: 'Sparkles' }
+          { image: '/game-assets/ela/child-asking-book.png', label: 'Asking questions' },
+          { image: '/game-assets/ela/story-beginning.png', label: 'Story start' }
         ]
       },
       { type: 'yes-no', scenario: 'Can characters in stories be people OR animals?', correctAnswer: true, image: '/game-assets/ela/storybook-friend-animal.png' },
@@ -267,9 +275,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows asking a QUESTION?', guideText: 'Tap the curious child!',
         items: [
           { image: '/game-assets/ela/child-asking-book.png', label: 'Curious reader', correct: true },
-          { image: '/game-assets/ela/word-cat.png', label: 'Word CAT' },
-          { image: '/game-assets/ela/letter-B.png', label: 'Letter B' },
-          { image: '/game-assets/ela/cat-hat-rhyme.png', label: 'Cat and Hat' }
+          { image: '/game-assets/ela/child-cozy-reading.png', label: 'Reading' },
+          { image: '/game-assets/ela/child-drawing-imagining.png', label: 'Drawing' },
+          { image: '/game-assets/ela/storybook-hero.png', label: 'Story hero' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/question-mark-glowing-quill.png', guideText: 'A question mark looks like this — a curve with a dot at the bottom. When you ask Why? or How? or What? — those are questions!' },
@@ -277,7 +285,7 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a QUESTION MARK?', guideText: 'Tap the question mark!',
         items: [
           { image: '/game-assets/ela/question-mark-glowing-quill.png', label: 'Question mark', correct: true },
-          { image: '/game-assets/ela/letter-A.png', label: 'Letter A' },
+          { image: '/game-assets/ela/alphabet-rainbow.png', label: 'Alphabet' },
           { image: '/game-assets/ela/letter-B.png', label: 'Letter B' },
           { image: '/game-assets/ela/word-dog.png', label: 'Word DOG' }
         ]
@@ -305,9 +313,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows IMAGINATION?', guideText: 'Tap the kid imagining!',
         items: [
           { image: '/game-assets/ela/child-drawing-imagining.png', label: 'Drawing imagination', correct: true },
-          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' },
-          { image: '/game-assets/ela/letter-A.png', label: 'Letter A' },
-          { image: '/game-assets/ela/storybook-friend-animal.png', label: 'Animal' }
+          { image: '/game-assets/ela/child-cozy-reading.png', label: 'Reading' },
+          { image: '/game-assets/ela/child-asking-book.png', label: 'Asking questions' },
+          { image: '/game-assets/ela/storybook-friend-animal.png', label: 'Animal friend' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/imagination-burst.png', guideText: 'Imagination has NO RULES! In your imagination, dragons can fly, kids can fly, soup can fly! Whatever you imagine is real in your mind!' },
@@ -315,9 +323,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows lots of IMAGINATION?', guideText: 'Tap the magical burst!',
         items: [
           { image: '/game-assets/ela/imagination-burst.png', label: 'Imagination burst', correct: true },
-          { image: '/game-assets/ela/word-dog.png', label: 'Word DOG' },
-          { image: '/game-assets/ela/letter-C.png', label: 'Letter C' },
-          { image: '/game-assets/ela/cat-hat-rhyme.png', label: 'Cat and Hat' }
+          { image: '/game-assets/ela/child-drawing-imagining.png', label: 'Drawing' },
+          { image: '/game-assets/ela/storybook-hero.png', label: 'Story hero' },
+          { image: '/game-assets/ela/child-cozy-reading.png', label: 'Reading' }
         ]
       },
       { type: 'family', guideText: 'Tonight, listen to a story or pretend to be in one with your family. Close your eyes and SEE the story in your mind! Then DRAW what you saw!', image: '/game-assets/inner-world/family-circle.png' },
@@ -342,9 +350,9 @@ export const elaLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one shows READING?', guideText: 'Tap the cozy reader!',
         items: [
           { image: '/game-assets/ela/child-cozy-reading.png', label: 'Cozy reading', correct: true },
-          { image: '/game-assets/ela/letter-A.png', label: 'Letter A' },
-          { image: '/game-assets/ela/word-sun.png', label: 'Word SUN' },
-          { image: '/game-assets/ela/imagination-burst.png', label: 'Sparkles' }
+          { image: '/game-assets/ela/child-asking-book.png', label: 'Asking questions' },
+          { image: '/game-assets/ela/child-drawing-imagining.png', label: 'Drawing' },
+          { image: '/game-assets/ela/storybook-hero.png', label: 'Story hero' }
         ]
       },
       { type: 'teach', image: '/game-assets/ela/child-cozy-reading.png', guideText: 'Reading every day grows your BRAIN! Kids who love books learn faster, dream bigger, and have more fun!' },
