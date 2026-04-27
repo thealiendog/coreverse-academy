@@ -1,432 +1,384 @@
-// ============================================================
-// COREVERSE ACADEMY — SOCIAL STUDIES · LITTLE STARS (Ages 3-5)
-// All 20 Lessons · Standards: C3 Framework for Social Studies (NCSS)
-// Guide: Atlas the Bear
-// File: ss_littlestars.js · Export: ssLittleStars
-// ============================================================
-
 export const ssLittleStars = [
-
-  { id: "ss-3-5-01", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 1, title: "Me, My Family, and My Community", duration: "10-15 min",
-    hook: "You are part of something bigger than just you. You belong to a family — the people who love and care for you. Your family belongs to a community — the neighborhood where you live. Everyone around you is connected. Atlas the Bear lives with his family in the forest and knows every bear, bird, and tree in his community.",
-    bigIdea: "Every person belongs to a family and a community — understanding who you are, who your family is, and how your community works helps you feel connected and know your place in the world.",
-    sections: [
-      { title: "Who Am I?", emoji: "🪞", content: "You are a unique person with your own name, face, favorite things, and feelings. No one in the whole world is exactly like you. You have things you are good at and things you are still learning. Knowing who you are is the first step in understanding the world around you." },
-      { title: "My Family", emoji: "👨‍👩‍👧‍👦", content: "Families come in all shapes and sizes. Some have two parents, some have one. Some have grandparents or step-parents. What makes a family is love and caring for each other. Every family has its own traditions and ways of doing things. Atlas the Bear's family hibernates together every winter — that is their tradition." },
-      { title: "My Community", emoji: "🏘️", content: "A community is a group of people who live near each other and share things like parks, schools, and stores. Your community has people who help each other. Communities can be small or large. You are an important part of your community." },
-      { title: "How We Are Connected", emoji: "🔗", content: "You are connected to your family by love. Your family is connected to the community by where you live, shop, play, and learn. Every person you meet is part of this web of connections. Atlas says: when you help one person, it helps the whole community." }
-    ],
-    activity: { title: "All About Me Poster", instructions: "Make a poster with yourself in the center. Draw your family, home, favorite food, and favorite activity around you. Add your community: school, park, store. Share your poster with your family." },
-    quiz: [
-      { question: "What is a family?", answer: "People who love and care for each other — families come in many shapes and sizes", options: ["Only people who look alike", "People who love and care for each other — families come in many shapes and sizes", "Only people in big houses", "Only parents and children"] },
-      { question: "What is a community?", answer: "A group of people who live near each other and share parks, schools, and stores", options: ["Only your family", "A group of people who live near each other and share parks, schools, and stores", "A very large country", "Only your friends"] },
-      { question: "What makes you special?", answer: "You are unique — no one has your exact combination of name, looks, feelings, and talents", options: ["Nothing — everyone is the same", "You are unique — no one has your exact combination of name, looks, feelings, and talents", "Only your birthday", "Only being the best at something"] },
-      { question: "How are families connected to communities?", answer: "Through where they live, shop, play, learn, and help each other", options: ["They are not connected", "Through where they live, shop, play, learn, and help each other", "Only through the internet", "Only through school"] },
-      { question: "Do all families look the same?", answer: "No — families come in many shapes and sizes, and what makes them a family is love", options: ["Yes — all families are identical", "No — families come in many shapes and sizes, and what makes them a family is love", "Only big families count", "Families must all live together"] }
-    ],
-    familyAdventure: "Do a Family Interview Night. Each person answers: what is your favorite memory together? What do you love about our family? Then take a Community Walk and point out the places that matter to your family.",
-    badge: "Community Star", nextLesson: "ss-3-5-02"
+  {
+    id: 'ss-3-5-01',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 1,
+    title: 'Me, My Family, and My Community',
+    duration: '3-5 min',
+    badge: 'Connected Friend',
+    nextLesson: 'ss-3-5-02',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! I am Atlas the Bear. I love seeing how people connect — and today we explore how YOU fit in the world!' },
+      { type: 'story', image: '/game-assets/socialstudies/child-with-family.png', guideText: 'You are YOU — special and one of a kind. You also belong to a FAMILY who loves you. And your family belongs to a COMMUNITY of neighbors. We are all connected!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows YOU with FAMILY?', guideText: 'Tap the family!',
+        items: [
+          { image: '/game-assets/socialstudies/child-with-family.png', label: 'Child with family', correct: true },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/community-circle.png', guideText: 'A COMMUNITY is everyone who lives near each other — neighbors, helpers, friends. Together you take care of each other!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows a COMMUNITY?', guideText: 'Tap the community circle!',
+        items: [
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community circle', correct: true },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
+          { image: '/game-assets/socialstudies/child-helping-clean-room.png', label: 'Cleaning' },
+          { image: '/game-assets/socialstudies/compass-rose.png', label: 'Compass' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/single-child-alone.png', guideText: 'You are AMAZING all by yourself. AND you are part of family and community. Both are TRUE at the same time!' },
+      { type: 'yes-no', scenario: 'Are YOU part of a family AND a community?', correctAnswer: true, image: '/game-assets/socialstudies/child-with-family.png' },
+      { type: 'family', guideText: 'Tonight, talk with your family — who is in our family? Who is in our community? Names of people we know! You belong to so many wonderful people!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Connected Friend', guideText: 'You belong, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-02", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 2, title: "Rules and Responsibilities at Home and School", duration: "10-15 min",
-    hook: "Imagine a playground where nobody takes turns and everybody grabs whatever they want. Chaos! That is why we have rules. Rules keep everyone safe, make things fair, and help us get along. Atlas the Bear follows the rules of the forest — stay in your territory, share resources, and protect the young ones.",
-    bigIdea: "Rules exist to keep people safe, make things fair, and help everyone get along — and responsibilities are the things we are expected to do as part of our family, school, and community.",
-    sections: [
-      { title: "Why We Have Rules", emoji: "📏", content: "Rules are agreements about how to behave so everyone can be safe and happy. Some protect us: look both ways before crossing. Some make things fair: take turns. Some help us learn: raise your hand. Rules are not meant to stop fun — they make sure everyone can have fun." },
-      { title: "Rules at Home", emoji: "🏠", content: "Every family has rules: clean up toys, be kind to siblings, tell the truth, go to bed on time. Home rules help your family run smoothly. Different families have different rules — and that is okay." },
-      { title: "Rules at School", emoji: "🏫", content: "School rules help everyone learn safely: listen when the teacher talks, keep hands to yourself, walk in hallways, be respectful. When everyone follows rules, the classroom is a happy place where everyone learns." },
-      { title: "Responsibilities", emoji: "✅", content: "A responsibility is something you are expected to do. Putting away toys, feeding a pet, setting the table. Responsibilities help you become reliable — someone others can count on. Atlas teaches his cubs responsibility by showing them how to find food and stay safe." }
-    ],
-    activity: { title: "Family Rules Poster", instructions: "Make a Family Rules poster. Each person suggests one or two rules. Write and decorate them. Hang it where everyone can see. Then make a Responsibility Chart for the week with check marks for completed tasks." },
-    quiz: [
-      { question: "Why do we have rules?", answer: "To keep everyone safe, make things fair, and help people get along", options: ["To make life boring", "To keep everyone safe, make things fair, and help people get along", "Only to punish people", "Rules are not important"] },
-      { question: "What is a responsibility?", answer: "Something you are expected to do — like cleaning up or being kind", options: ["Something only adults have", "Something you are expected to do — like cleaning up or being kind", "A type of game", "Only at school"] },
-      { question: "What happens without rules?", answer: "Things become unfair and unsafe — no one can have fun when there is chaos", options: ["Nothing — rules do not matter", "Things become unfair and unsafe — no one can have fun when there is chaos", "Only rule-breakers are affected", "Everyone has more fun"] },
-      { question: "Do all families have the same rules?", answer: "No — different families have different rules, and that is okay", options: ["Yes — identical rules everywhere", "No — different families have different rules, and that is okay", "Only strict families have rules", "Families should not have rules"] },
-      { question: "Why are consequences important?", answer: "They are reminders to do better — helping people learn and make better choices", options: ["To be mean", "They are reminders to do better — helping people learn and make better choices", "They are never necessary", "Only adults face consequences"] }
-    ],
-    familyAdventure: "Play What Would Happen If: what if there were no rules about taking turns? No rules about telling the truth? Discuss each scenario. Then create one new family rule together that everyone agrees on.",
-    badge: "Responsible Citizen", nextLesson: "ss-3-5-03"
+  {
+    id: 'ss-3-5-02',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 2,
+    title: 'Rules at Home and School',
+    duration: '3-5 min',
+    badge: 'Responsible Helper',
+    nextLesson: 'ss-3-5-03',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn about RESPONSIBILITIES at home and school!' },
+      { type: 'story', image: '/game-assets/socialstudies/child-helping-clean-room.png', guideText: 'A RESPONSIBILITY is something you have to do — like cleaning up your toys or being kind to your sister. Responsibilities help your family and your school work great!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a RESPONSIBILITY at home?', guideText: 'Tap the helper!',
+        items: [
+          { image: '/game-assets/socialstudies/child-helping-clean-room.png', label: 'Cleaning room', correct: true },
+          { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/kids-raising-hand-class.png', guideText: 'At school, raising your hand to speak is a RULE. It means everyone gets a turn to talk! Without that rule, everyone would talk at once and no one could be heard!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a SCHOOL RULE?', guideText: 'Tap raising your hand!',
+        items: [
+          { image: '/game-assets/socialstudies/kids-raising-hand-class.png', label: 'Raising hand', correct: true },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community circle' },
+          { image: '/game-assets/socialstudies/fireworks-celebration.png', label: 'Fireworks' },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/kids-walking-line.png', guideText: 'Walking in a LINE is another rule! It keeps everyone safe and together. Following rules makes everything work!' },
+      { type: 'yes-no', scenario: 'Do rules and responsibilities help everyone get along?', correctAnswer: true, image: '/game-assets/socialstudies/kids-walking-line.png' },
+      { type: 'family', guideText: 'Tonight, talk with your family about your responsibilities. What do you do to help? Make your bed? Clear your plate? Put toys away? You are SO helpful!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Responsible Helper', guideText: 'You are responsible, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-03", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 3, title: "Helpers in Our Community", duration: "10-15 min",
-    hook: "When there is a fire, firefighters come. When you are sick, a doctor helps. Communities are full of helpers whose jobs are to take care of others. Atlas the Bear watches the humans in his community and sees how they care for each other.",
-    bigIdea: "Communities have many helpers — firefighters, police officers, doctors, teachers, mail carriers, and more — who work together to keep everyone safe, healthy, and connected.",
-    sections: [
-      { title: "Safety Helpers", emoji: "🚒", content: "Firefighters put out fires and rescue people. Police officers protect people and keep order. Paramedics arrive quickly when someone is hurt. Lifeguards watch swimmers. These helpers keep your community safe." },
-      { title: "Health Helpers", emoji: "🏥", content: "Doctors examine you and help you heal. Nurses care for patients. Dentists take care of teeth. Veterinarians care for animals. Pharmacists prepare medicine. These helpers went to school for many years to learn their skills." },
-      { title: "Learning and Service Helpers", emoji: "📚", content: "Teachers help you learn. Librarians help you find books. Mail carriers deliver letters. Garbage collectors keep streets clean. Bus drivers take you places. Every helper makes your community better." },
-      { title: "Everyone Can Be a Helper", emoji: "🤝", content: "You do not need a uniform to be a helper. Helping a friend who fell, picking up litter, sharing toys, holding a door — these are all ways to help. Atlas says: the best communities are where everyone helps each other." }
-    ],
-    activity: { title: "Thank-You Cards", instructions: "Think of three community helpers who have helped you. Make a thank-you card for each with a drawing and message. Deliver or mail them if possible. Then discuss: what helper job would you want? Why?" },
-    quiz: [
-      { question: "What do firefighters do?", answer: "Put out fires and rescue people from emergencies", options: ["Drive trucks only", "Put out fires and rescue people from emergencies", "Deliver mail", "Teach in schools"] },
-      { question: "What do teachers do?", answer: "Help people learn reading, math, science, and how to be good citizens", options: ["Fight fires", "Help people learn reading, math, science, and how to be good citizens", "Fix broken bones", "Drive buses"] },
-      { question: "Can children be helpers?", answer: "Yes — helping friends, picking up litter, and being kind are all ways to help", options: ["No — only adults", "Yes — helping friends, picking up litter, and being kind are all ways to help", "Only with a uniform", "Only at school"] },
-      { question: "Why are community helpers important?", answer: "They keep everyone safe, healthy, and connected", options: ["They are not important", "They keep everyone safe, healthy, and connected", "Only safety helpers matter", "Only for pay"] },
-      { question: "Who cares for sick animals?", answer: "Veterinarians", options: ["Regular doctors", "Veterinarians", "Firefighters", "Teachers"] }
-    ],
-    familyAdventure: "Go on a Community Helper Scavenger Hunt. Spot helpers: mail carriers, police, construction workers, store workers. Wave and say thank you. Then play Helpers Charades at home.",
-    badge: "Helper Spotter", nextLesson: "ss-3-5-04"
+  {
+    id: 'ss-3-5-03',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 3,
+    title: 'Maps: Finding Our Way',
+    duration: '3-5 min',
+    badge: 'Map Reader',
+    nextLesson: 'ss-3-5-04',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn how MAPS help us find our way!' },
+      { type: 'story', image: '/game-assets/socialstudies/simple-map-treasure.png', guideText: 'A MAP is like a picture of a place from above! Maps show us where things are — your house, the park, the store. Maps help us find our way without getting lost!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a MAP?', guideText: 'Tap the map!',
+        items: [
+          { image: '/game-assets/socialstudies/simple-map-treasure.png', label: 'Treasure map', correct: true },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'A child' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/compass-rose.png', guideText: 'A COMPASS shows directions! North is UP, South is DOWN, East is RIGHT, West is LEFT! Compasses help us know which way to go!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows DIRECTIONS?', guideText: 'Tap the compass!',
+        items: [
+          { image: '/game-assets/socialstudies/compass-rose.png', label: 'Compass', correct: true },
+          { image: '/game-assets/socialstudies/simple-map-treasure.png', label: 'Map' },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/kid-with-map.png', guideText: 'When you READ a map, you can go on adventures! Find your house, find the park, find the treasure!' },
+      { type: 'yes-no', scenario: 'Do maps help us find our way to places?', correctAnswer: true, image: '/game-assets/socialstudies/simple-map-treasure.png' },
+      { type: 'family', guideText: 'Tonight, draw a map with your family! A map of your room, your home, or your backyard. Mark special spots with X. Maps are SO fun!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Map Reader', guideText: 'You read maps, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-04", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 4, title: "Maps: Finding Our Way", duration: "10-15 min",
-    hook: "A map is a picture of a place seen from above, like a bird flying over your neighborhood. Maps show where things are and help you get from one place to another. Atlas the Bear does not need a map — he knows his forest by heart — but humans use maps to explore places they have never been.",
-    bigIdea: "A map is a drawing that shows where things are — maps help us find locations, understand our surroundings, and navigate using symbols and directions.",
-    sections: [
-      { title: "What Is a Map?", emoji: "🗺️", content: "A map is a flat picture of a place drawn from a bird's-eye view. A map of your bedroom shows furniture from above. A map of your neighborhood shows streets and buildings. Maps come in many sizes — from one room to the whole planet." },
-      { title: "Map Symbols", emoji: "🔑", content: "Maps use symbols — small pictures or shapes — to represent real things. A map key explains what each symbol means. Without the key, symbols are just shapes. With it, the whole map makes sense." },
-      { title: "Directions", emoji: "🧭", content: "Maps use four directions: north (up), south (down), east (right), west (left). A compass rose shows where they are. Knowing directions helps you describe where things are and how to get there." },
-      { title: "Maps Help Us Explore", emoji: "🌍", content: "Maps have helped humans explore for thousands of years. Today, digital maps show anywhere on Earth. But reading a paper map is still important — it builds understanding of space, distance, and direction." }
-    ],
-    activity: { title: "My Room Map", instructions: "Draw a bird's-eye view map of your bedroom. Include furniture as simple shapes. Create a map key. Add cardinal directions. Share with a family member — can they identify everything just from the map?" },
-    quiz: [
-      { question: "What is a map?", answer: "A flat picture of a place drawn from above showing where things are", options: ["A painting", "A flat picture of a place drawn from above showing where things are", "A photograph", "Only a world drawing"] },
-      { question: "What is a map key?", answer: "A guide explaining what each symbol represents", options: ["A treasure key", "A guide explaining what each symbol represents", "The title", "The compass"] },
-      { question: "Which direction is up on most maps?", answer: "North", options: ["South", "North", "East", "It changes"] },
-      { question: "What do map symbols represent?", answer: "Real things like buildings, roads, water, and parks", options: ["Nothing", "Real things like buildings, roads, water, and parks", "Only mountains", "Secret codes"] },
-      { question: "Why are maps useful?", answer: "They help us find locations and navigate from place to place", options: ["Only for sailors", "They help us find locations and navigate from place to place", "Only for adults", "Maps are obsolete"] }
-    ],
-    familyAdventure: "Make a Treasure Map! One person hides a prize and draws a bird's-eye map with an X marking the spot. Everyone uses the map to find it. Take turns. Then find your street on a real map together.",
-    badge: "Map Maker", nextLesson: "ss-3-5-05"
+  {
+    id: 'ss-3-5-04',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 4,
+    title: 'Neighborhood, City, Country',
+    duration: '3-5 min',
+    badge: 'Place Knower',
+    nextLesson: 'ss-3-5-05',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn about places — neighborhoods, cities, and countries!' },
+      { type: 'story', image: '/game-assets/socialstudies/quiet-neighborhood-street.png', guideText: 'You live somewhere — and that place has different SIZES! Your NEIGHBORHOOD is the streets near your home. Your CITY is many neighborhoods together. Your COUNTRY is many many cities together!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a NEIGHBORHOOD?', guideText: 'Tap the neighborhood!',
+        items: [
+          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood', correct: true },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'Big city' },
+          { image: '/game-assets/socialstudies/country-on-globe.png', label: 'Country' },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'A child' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/big-city-skyline.png', guideText: 'A CITY is BIG! Cities have lots of buildings and people. New York, Los Angeles, Chicago — those are big cities!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a big CITY?', guideText: 'Tap the city skyline!',
+        items: [
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City skyline', correct: true },
+          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood' },
+          { image: '/game-assets/socialstudies/country-on-globe.png', label: 'Country' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/country-on-globe.png', guideText: 'A COUNTRY is HUGE — the biggest place. America, Mexico, Japan — those are countries! Each one has its own flag and stories!' },
+      { type: 'yes-no', scenario: 'Is your country bigger than your city?', correctAnswer: true, image: '/game-assets/socialstudies/country-on-globe.png' },
+      { type: 'family', guideText: 'Tonight, ask your family — what is the name of our city? Our country? Practice saying both names. They are part of YOU!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Place Knower', guideText: 'You know your places, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-05", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 5, title: "Our Neighborhood, City, and Country", duration: "10-15 min",
-    hook: "Your home is in a neighborhood. Your neighborhood is in a city. Your city is in a state. Your state is in a country. And your country is on a planet. You are connected to bigger and bigger circles — like ripples from a stone in water. Atlas the Bear's den is in a forest, in a valley, in a mountain range, in a country. Everything is part of something bigger.",
-    bigIdea: "People live in places organized from small to large — home, neighborhood, city, state, country, continent, planet — understanding where you fit helps you understand your world.",
-    sections: [
-      { title: "Your Neighborhood", emoji: "🏘️", content: "Your neighborhood is the area right around your home — nearby houses, streets, parks, and stores. Every neighborhood is different and special to the people who live there." },
-      { title: "Your City or Town", emoji: "🏙️", content: "Your city is made of many neighborhoods. It has a government that provides services like fire departments and libraries. Your city's name is part of your identity." },
-      { title: "Your State and Country", emoji: "🇺🇸", content: "Your city is in a state (50 states in the US). All states together make up the United States. Your country has a government led by the president that makes decisions for the whole nation." },
-      { title: "Part of Something Bigger", emoji: "🌍", content: "Your country is on a continent — one of seven large land areas on Earth. All continents are on planet Earth. You are a person in a family in a neighborhood in a city in a state in a country on a continent on a planet. Atlas says: knowing where you belong helps you understand how connected you are to all of it." }
-    ],
-    activity: { title: "My Address in the Universe", instructions: "Write or draw your full address from smallest to biggest: name, home, street, city, state, country, continent, planet. Make nesting circles with you at center. Then find each level on a map." },
-    quiz: [
-      { question: "What is a neighborhood?", answer: "The area around your home — nearby houses, streets, and parks", options: ["The whole city", "The area around your home — nearby houses, streets, and parks", "Only next door", "A different country"] },
-      { question: "How many states in the US?", answer: "50 states", options: ["13", "50 states", "100", "25"] },
-      { question: "What is a continent?", answer: "One of seven large land areas on Earth", options: ["A country", "One of seven large land areas on Earth", "An ocean", "A city"] },
-      { question: "What is inside a state?", answer: "Many cities and towns", options: ["Only one city", "Many cities and towns", "Nothing", "Only farms"] },
-      { question: "Correct order smallest to largest?", answer: "Home → neighborhood → city → state → country → continent → planet", options: ["Country → city → home", "Home → neighborhood → city → state → country → continent → planet", "Planet → country → home", "City → state → neighborhood"] }
-    ],
-    familyAdventure: "Play the Zoom Out Game on a phone map. Start at your home, then zoom out to see neighborhood, city, state, country, continent, Earth. Talk about what changes. Then zoom back in. Home is where it starts.",
-    badge: "World Explorer", nextLesson: "ss-3-5-06"
+  {
+    id: 'ss-3-5-05',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 5,
+    title: 'Independence Day',
+    duration: '3-5 min',
+    badge: 'Celebrator',
+    nextLesson: 'ss-3-5-06',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we celebrate INDEPENDENCE DAY — America birthday!' },
+      { type: 'story', image: '/game-assets/socialstudies/birthday-cake-stars.png', guideText: 'Independence Day is on July 4th every year — it is America BIRTHDAY! That is the day America became its own country a long long time ago. We celebrate with parades, fireworks, and being together!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'How do we CELEBRATE Independence Day?', guideText: 'Tap the fireworks!',
+        items: [
+          { image: '/game-assets/socialstudies/fireworks-celebration.png', label: 'Fireworks', correct: true },
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Voting box' },
+          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood' },
+          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/kids-with-flags.png', guideText: 'Kids LOVE Independence Day! We wave little flags, watch parades, and feel proud of our country!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do kids carry on the 4th of July?', guideText: 'Tap the flag-waving kids!',
+        items: [
+          { image: '/game-assets/socialstudies/kids-with-flags.png', label: 'Kids with flags', correct: true },
+          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community sharing' },
+          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Water tap' },
+          { image: '/game-assets/socialstudies/two-options-choice.png', label: 'Two paths' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/birthday-cake-stars.png', guideText: 'We even have CAKE for our country birthday! Red white and blue desserts — the colors of the American flag!' },
+      { type: 'yes-no', scenario: 'Is Independence Day America birthday?', correctAnswer: true, image: '/game-assets/socialstudies/fireworks-celebration.png' },
+      { type: 'family', guideText: 'Tonight, ask your family if you have ever celebrated 4th of July. Did you see fireworks? Wave a flag? Eat watermelon? Tell stories together!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Celebrator', guideText: 'You celebrate, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-06", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 6, title: "American Symbols and Traditions", duration: "10-15 min",
-    hook: "The flag has 50 stars and 13 stripes. The bald eagle soars as our national bird. The Statue of Liberty welcomes visitors. These symbols represent freedom, bravery, and unity. Atlas the Bear thinks every community needs symbols that represent what they stand for.",
-    bigIdea: "Countries have symbols — like flags, monuments, and national animals — that represent shared values and remind citizens of their history and identity.",
-    sections: [
-      { title: "The American Flag", emoji: "🇺🇸", content: "50 stars for 50 states. 13 stripes for the original 13 colonies. Red for bravery, white for purity, blue for justice. The flag flies at government buildings, schools, and homes." },
-      { title: "The Bald Eagle", emoji: "🦅", content: "Chosen in 1782 for strength, freedom, and courage. Found only in North America. Once endangered but recovered through conservation. Appears on coins and the presidential seal." },
-      { title: "The Statue of Liberty", emoji: "🗽", content: "A gift from France in 1886 representing freedom and welcome. Holds a torch and a tablet with July 4, 1776. For millions of immigrants, it was the first thing they saw of America." },
-      { title: "Why Symbols Matter", emoji: "⭐", content: "Symbols help us remember what we stand for. They bring people together around shared ideas. Every country and every family can have symbols that represent who they are." }
-    ],
-    activity: { title: "Family Symbol", instructions: "Design a symbol for your family based on your values. Draw it and explain your choice. Then color an American flag together — count the stars and stripes." },
-    quiz: [
-      { question: "How many stars on the flag?", answer: "50 — one for each state", options: ["13", "50 — one for each state", "100", "25"] },
-      { question: "What does the bald eagle represent?", answer: "Strength, freedom, and courage", options: ["Speed", "Strength, freedom, and courage", "Wisdom", "Patience"] },
-      { question: "What does the Statue of Liberty hold?", answer: "A torch — lighting the way to freedom", options: ["A flag", "A torch — lighting the way to freedom", "A book", "A flower"] },
-      { question: "Why have symbols?", answer: "To represent shared values and remind citizens of their identity", options: ["Just decoration", "To represent shared values and remind citizens of their identity", "Only for holidays", "To copy other countries"] },
-      { question: "What do the 13 stripes represent?", answer: "The original 13 colonies", options: ["13 cities", "The original 13 colonies", "13 presidents", "13 holidays"] }
-    ],
-    familyAdventure: "Go on a Symbol Hunt. Find flags, eagles on coins, patriotic decorations. Count flags you see. Then examine coins together — find the eagle and presidents.",
-    badge: "Symbol Spotter", nextLesson: "ss-3-5-07"
+  {
+    id: 'ss-3-5-06',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 6,
+    title: 'Washington and Lincoln',
+    duration: '3-5 min',
+    badge: 'History Friend',
+    nextLesson: 'ss-3-5-07',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we meet two American HEROES from long ago!' },
+      { type: 'story', image: '/game-assets/socialstudies/washington-portrait.png', guideText: 'GEORGE WASHINGTON was the FIRST president of America. A long long time ago, he led the people who made America its own country. He is on the dollar bill and the quarter!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is George WASHINGTON?', guideText: 'Tap Washington!',
+        items: [
+          { image: '/game-assets/socialstudies/washington-portrait.png', label: 'Washington', correct: true },
+          { image: '/game-assets/socialstudies/lincoln-portrait.png', label: 'Lincoln' },
+          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'A child' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/lincoln-portrait.png', guideText: 'ABRAHAM LINCOLN was a special president too. He wore a tall hat. He kept America together when it was breaking apart, and he ended slavery so all people could be free. He is on the penny and the five-dollar bill!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is Abraham LINCOLN?', guideText: 'Tap Lincoln!',
+        items: [
+          { image: '/game-assets/socialstudies/lincoln-portrait.png', label: 'Lincoln', correct: true },
+          { image: '/game-assets/socialstudies/washington-portrait.png', label: 'Washington' },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' }
+        ]
+      },
+      { type: 'yes-no', scenario: 'Was George Washington the FIRST president?', correctAnswer: true, image: '/game-assets/socialstudies/washington-portrait.png' },
+      { type: 'family', guideText: 'Tonight, look at money with your family! A penny shows Lincoln. A quarter shows Washington. Two heroes you can hold in your hand!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'History Friend', guideText: 'You met heroes, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-07", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 7, title: "Our Country's Birthday: Independence Day", duration: "10-15 min",
-    hook: "Every July 4th: fireworks, parades, barbecues, and flags. On July 4, 1776, American leaders signed the Declaration of Independence, telling the world America was free from England's king. It was America's birthday! Atlas the Bear watches the fireworks from his hilltop every year.",
-    bigIdea: "Independence Day celebrates the birthday of the United States — the day in 1776 when leaders declared freedom from British rule, establishing a nation built on liberty.",
-    sections: [
-      { title: "What Is Independence?", emoji: "🗽", content: "Independence means being free to make your own decisions. Americans had to follow the king's rules without having a voice. They decided this was not fair and wanted to govern themselves." },
-      { title: "The Declaration", emoji: "📜", content: "On July 4, 1776, leaders signed the Declaration of Independence. Thomas Jefferson wrote most of it. It said all people are created equal with rights to life, liberty, and the pursuit of happiness." },
-      { title: "How We Celebrate", emoji: "🎆", content: "Barbecues, parades, marching bands, and fireworks in red, white, and blue. The celebrations honor the bravery of those who fought for freedom." },
-      { title: "Freedom and Gratitude", emoji: "🙏", content: "Independence Day is a time to be grateful for freedoms we enjoy. These freedoms were not free — people fought for them. Atlas says: freedom is a gift every generation must appreciate and protect." }
-    ],
-    activity: { title: "Independence Day Art", instructions: "Make a paper flag or fork-print fireworks painting on black paper in red, white, and blue. While crafting, discuss what freedom means to you." },
-    quiz: [
-      { question: "What do we celebrate July 4th?", answer: "America's birthday — the 1776 Declaration of Independence", options: ["End of a war", "America's birthday — the 1776 Declaration of Independence", "President's birthday", "Thanksgiving"] },
-      { question: "What does independence mean?", answer: "Being free to make your own decisions", options: ["Being alone", "Being free to make your own decisions", "Having money", "Being strongest"] },
-      { question: "Who wrote most of the Declaration?", answer: "Thomas Jefferson", options: ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "Benjamin Franklin"] },
-      { question: "What big idea is in the Declaration?", answer: "All people are created equal with rights to life, liberty, and happiness", options: ["The king is always right", "All people are created equal with rights to life, liberty, and happiness", "Only rich deserve freedom", "America should rule others"] },
-      { question: "How do Americans celebrate?", answer: "Fireworks, parades, barbecues, flags, and patriotic songs", options: ["Going to school", "Fireworks, parades, barbecues, flags, and patriotic songs", "Staying home quietly", "Only watching TV"] }
-    ],
-    familyAdventure: "Have a mini Independence Day celebration anytime. Red, white, and blue snacks. Patriotic music. Each person shares one freedom they are grateful for.",
-    badge: "Freedom Celebrator", nextLesson: "ss-3-5-08"
+  {
+    id: 'ss-3-5-07',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 7,
+    title: 'Voting: How We Decide Together',
+    duration: '3-5 min',
+    badge: 'Voter Friend',
+    nextLesson: 'ss-3-5-08',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn how grown-ups DECIDE big things together — by VOTING!' },
+      { type: 'story', image: '/game-assets/socialstudies/voting-ballot-box.png', guideText: 'When a community needs to decide something — like who will be the leader — everyone gets to VOTE! Voting means each person picks what they want. Then we count all the votes!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a BALLOT BOX?', guideText: 'Tap the ballot box!',
+        items: [
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box', correct: true },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' },
+          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Water tap' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/two-options-choice.png', guideText: 'Sometimes voting is between TWO choices — like pizza or tacos for dinner! Whichever choice gets more votes WINS!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a CHOICE?', guideText: 'Tap the two paths!',
+        items: [
+          { image: '/game-assets/socialstudies/two-options-choice.png', label: 'Two options', correct: true },
+          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' },
+          { image: '/game-assets/socialstudies/world-celebration.png', label: 'Celebration' },
+          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/kids-voting-classroom.png', guideText: 'Kids vote too! In school, you might vote on what game to play, or what book to read. Everyone gets a fair turn to decide!' },
+      { type: 'yes-no', scenario: 'Does voting let everyone help decide together?', correctAnswer: true, image: '/game-assets/socialstudies/kids-voting-classroom.png' },
+      { type: 'family', guideText: 'Tonight, vote with your family on something fun! What movie to watch? What snack to share? Each person votes — count it up!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Voter Friend', guideText: 'You vote, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-08", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 8, title: "American Heroes: Washington and Lincoln", duration: "10-15 min",
-    hook: "George Washington led the fight for independence and became the first president. Abraham Lincoln held the country together and freed enslaved people. These heroes shaped our nation. Atlas the Bear looks up to leaders who are brave and fair.",
-    bigIdea: "Washington led the fight for independence and became the first president; Lincoln preserved the Union and ended slavery — both showed courage, fairness, and service.",
-    sections: [
-      { title: "George Washington", emoji: "🇺🇸", content: "Led the army during the fight for independence. Became the first president. Voluntarily gave up power after two terms — showing leaders serve the people. Called the Father of Our Country." },
-      { title: "Abraham Lincoln", emoji: "🎩", content: "Grew up poor but loved to learn. Became the 16th president during the Civil War. Signed the Emancipation Proclamation freeing enslaved people. Believed all people deserve freedom." },
-      { title: "What Makes a Hero?", emoji: "⭐", content: "Courage, commitment to doing right, and putting others first. Heroes are not perfect — but they have determination and compassion. You can be a hero by being brave, kind, and fair." },
-      { title: "Remembering Heroes", emoji: "🏛️", content: "Washington is on the dollar bill and quarter. Lincoln is on the five and penny. The Washington Monument and Lincoln Memorial are in D.C. Presidents' Day honors them both." }
-    ],
-    activity: { title: "Hero Portrait", instructions: "Draw Washington or Lincoln. Write three heroic qualities around the portrait. Then draw yourself as a hero — what quality do you want to be known for? Find Washington and Lincoln on coins and bills." },
-    quiz: [
-      { question: "Why is Washington the Father of Our Country?", answer: "He led the fight for independence and was the first president", options: ["He had many children", "He led the fight for independence and was the first president", "He was oldest", "He built the White House"] },
-      { question: "What did Lincoln do for enslaved people?", answer: "Signed the Emancipation Proclamation freeing them", options: ["Nothing", "Signed the Emancipation Proclamation freeing them", "Sent them away", "Only helped his state"] },
-      { question: "Who is on the one-dollar bill?", answer: "George Washington", options: ["Lincoln", "George Washington", "Jefferson", "Franklin"] },
-      { question: "What makes someone a hero?", answer: "Courage, doing what is right, and putting others first", options: ["Superpowers", "Courage, doing what is right, and putting others first", "Being famous and rich", "Winning every fight"] },
-      { question: "Where are their memorials?", answer: "Washington, D.C.", options: ["New York", "Washington, D.C.", "Los Angeles", "No memorials exist"] }
-    ],
-    familyAdventure: "Look at coins and bills together. Find Washington and Lincoln. Tell their stories simply. Each person shares: who is a hero in your life and why?",
-    badge: "Hero Historian", nextLesson: "ss-3-5-09"
+  {
+    id: 'ss-3-5-08',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 8,
+    title: 'Goods and Services',
+    duration: '3-5 min',
+    badge: 'Helper Knower',
+    nextLesson: 'ss-3-5-09',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn how communities help each other through GOODS and SERVICES!' },
+      { type: 'story', image: '/game-assets/socialstudies/bakery-bread-goods.png', guideText: 'A GOOD is a thing you can hold — like bread from a baker, a toy from a store, or a book from a library. Goods are objects you can touch!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a GOOD you can hold?', guideText: 'Tap the bread!',
+        items: [
+          { image: '/game-assets/socialstudies/bakery-bread-goods.png', label: 'Bread', correct: true },
+          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist helping' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' },
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/dentist-helping-service.png', guideText: 'A SERVICE is when someone HELPS you — like a dentist cleaning your teeth, a teacher teaching, or a doctor checking your heart. Services are help, not things!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a SERVICE?', guideText: 'Tap the dentist helping!',
+        items: [
+          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist service', correct: true },
+          { image: '/game-assets/socialstudies/bakery-bread-goods.png', label: 'Bread good' },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
+          { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/delivery-truck-goods.png', guideText: 'A delivery truck brings GOODS to people! That is both a good (the package) and a service (the driver helping)!' },
+      { type: 'yes-no', scenario: 'Is a TOY a good you can hold?', correctAnswer: true, image: '/game-assets/socialstudies/bakery-bread-goods.png' },
+      { type: 'family', guideText: 'Tonight, list goods and services your family uses! Bread from a bakery — good. Doctor visit — service. Find one of each!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Helper Knower', guideText: 'You know goods and services, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-09", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 9, title: "Martin Luther King Jr. and Treating Everyone Fairly", duration: "10-15 min",
-    hook: "There was a time when people were treated differently because of skin color. Separate water fountains, bus seats, and schools. Martin Luther King Jr. said this was wrong — all people should be treated equally. He used words and peaceful protest, not fighting, to change the world. Atlas the Bear believes every creature deserves respect.",
-    bigIdea: "Martin Luther King Jr. fought for civil rights through peaceful action — showing that all people deserve fair and equal treatment regardless of skin color.",
-    sections: [
-      { title: "Unfair Treatment", emoji: "😔", content: "Segregation kept Black and white people separate: different schools, buses, restaurants. These laws treated people as less important because of skin color. This is called discrimination." },
-      { title: "Dr. King's Dream", emoji: "🌟", content: "Dr. King dreamed his children would be judged by character, not skin color. He dreamed all children could play and learn together. His dream was about fairness, kindness, and respect for every person." },
-      { title: "Peaceful Protest", emoji: "✌️", content: "Dr. King believed in nonviolent protest — marches, sit-ins, boycotts. These peaceful actions changed laws. The Civil Rights Act of 1964 made segregation illegal. Peace and determination proved more powerful than violence." },
-      { title: "Treating Everyone Fairly", emoji: "🤝", content: "Dr. King's message is for you: include everyone, do not make fun of differences, stand up for those treated unkindly, judge people by who they are inside. Every act of fairness moves the world closer to Dr. King's dream." }
-    ],
-    activity: { title: "Dream Drawing", instructions: "Draw your dream of a fair world. Write 'I have a dream that...' and finish the sentence. Share with your family." },
-    quiz: [
-      { question: "What was segregation?", answer: "Laws keeping Black and white people separated", options: ["A celebration", "Laws keeping Black and white people separated", "A fair system", "A game"] },
-      { question: "What was Dr. King's dream?", answer: "People judged by character, not skin color", options: ["Being president", "People judged by character, not skin color", "A big house", "Daily parades"] },
-      { question: "How did Dr. King change laws?", answer: "Through peaceful protest — marches, speeches, nonviolent actions", options: ["By fighting", "Through peaceful protest — marches, speeches, nonviolent actions", "By ignoring problems", "By leaving the country"] },
-      { question: "What law changed?", answer: "The Civil Rights Act of 1964 made segregation illegal", options: ["No laws changed", "The Civil Rights Act of 1964 made segregation illegal", "A lunch law", "A bedtime law"] },
-      { question: "How can you help Dr. King's dream?", answer: "Treat everyone fairly, include people who are different, stand up against unkindness", options: ["Only adults can help", "Treat everyone fairly, include people who are different, stand up against unkindness", "Only play with people like you", "The dream is already complete"] }
-    ],
-    familyAdventure: "Read a children's book about Dr. King together. Discuss: what does fairness mean to our family? Each person completes: I have a dream that... Make a Family Dream Wall.",
-    badge: "Fairness Champion", nextLesson: "ss-3-5-10"
+  {
+    id: 'ss-3-5-09',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 9,
+    title: 'Needs vs. Wants',
+    duration: '3-5 min',
+    badge: 'Smart Chooser',
+    nextLesson: 'ss-3-5-10',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn the BIG difference between NEEDS and WANTS!' },
+      { type: 'story', image: '/game-assets/socialstudies/clean-water-tap.png', guideText: 'A NEED is something you cannot live without — like food, water, a home, and love. A WANT is something extra that is nice to have — like toys, candy, or fancy clothes. Both feel good — but needs come FIRST!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a NEED?', guideText: 'Tap clean water!',
+        items: [
+          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Clean water', correct: true },
+          { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' },
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/toy-store-wants.png', guideText: 'A toy store is FULL of WANTS! Toys are wonderful, but you do not need them to live. They make life FUN — but food and water keep you ALIVE!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a WANT?', guideText: 'Tap the toy store!',
+        items: [
+          { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store', correct: true },
+          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Clean water' },
+          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community sharing food' },
+          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/community-providing-need.png', guideText: 'In a good community, EVERYONE gets their NEEDS! We share food, water, and love. No one should be without those!' },
+      { type: 'yes-no', scenario: 'Are food and water NEEDS for everyone?', correctAnswer: true, image: '/game-assets/socialstudies/community-providing-need.png' },
+      { type: 'family', guideText: 'Tonight, talk with your family — what is a need? A want? Look at things in your home and decide which is which. It is a fun thinking game!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Smart Chooser', guideText: 'You know needs and wants, {name}!' }
+    ]
   },
-
-  { id: "ss-3-5-10", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 10, title: "How Families Live Around the World", duration: "10-15 min",
-    hook: "In Japan, families remove shoes at the door. In Mexico, big afternoon meals are tradition. In Kenya, some homes are made of earth and grass. Families everywhere do things differently — but all share love, care, traditions, and togetherness. Atlas the Bear is curious about how families everywhere find their own ways to live.",
-    bigIdea: "Families around the world live in different homes, eat different foods, and follow different traditions — but all share universal needs for love, shelter, food, and belonging.",
-    sections: [
-      { title: "Different Homes", emoji: "🏠", content: "Apartments, houses, yurts in Mongolia, stilt houses in Southeast Asia, earth homes in Africa. The type depends on climate, landscape, and culture. Every home is special to its family." },
-      { title: "Different Foods", emoji: "🍜", content: "Pasta in Italy, spices in India, rice and fish in Japan, corn and beans in Mexico, injera bread in Ethiopia. What you eat connects you to your culture and your land." },
-      { title: "Different Traditions", emoji: "🎉", content: "Every culture has special celebrations, clothing, and customs. Chinese New Year, Nowruz in Iran, kimonos in Japan, saris in India, dashikis in West Africa. Traditions connect families to their history." },
-      { title: "What We All Share", emoji: "❤️", content: "Every family needs food, shelter, and water. Every family has people who care for each other. Children everywhere play, laugh, and learn. Our differences make the world interesting; our similarities make us one human family." }
-    ],
-    activity: { title: "Family Around the World", instructions: "Pick a country. Research: what do families eat? What do homes look like? What traditions do they celebrate? Draw a family there. Compare with yours. Try cooking a dish from that country together." },
-    quiz: [
-      { question: "Do all families live in the same type of home?", answer: "No — homes vary: apartments, houses, yurts, stilt houses, depending on climate and culture", options: ["Yes — all have yards", "No — homes vary: apartments, houses, yurts, stilt houses, depending on climate and culture", "Only rich families differ", "Other countries lack homes"] },
-      { question: "What do all families share?", answer: "The need for food, shelter, love, and belonging", options: ["The same language", "The need for food, shelter, love, and belonging", "The same food", "The same holidays"] },
-      { question: "What is a yurt?", answer: "A round tent used in Mongolia — portable and warm", options: ["A food", "A round tent used in Mongolia — portable and warm", "A car", "An instrument"] },
-      { question: "Why different foods in different countries?", answer: "Food depends on climate, land, and culture", options: ["Some families dislike good food", "Food depends on climate, land, and culture", "Only Americans eat well", "Everyone eats the same"] },
-      { question: "Why learn about world families?", answer: "Differences make the world interesting; similarities connect us as one human family", options: ["Not important", "Differences make the world interesting; similarities connect us as one human family", "Only for tests", "To prove our way is best"] }
-    ],
-    familyAdventure: "Have a World Dinner Night. Pick a country and make or order food from that culture. Discuss what you know about families there. Share one tradition from your own heritage.",
-    badge: "World Family Explorer", nextLesson: "ss-3-5-11"
-  },
-
-  { id: "ss-3-5-11", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 11, title: "Food, Clothing, and Shelter: Meeting Basic Needs", duration: "10-15 min",
-    hook: "Every person on Earth needs three things to survive: food to eat, clothing to wear, and shelter to live in. These are called basic needs. People in different places meet these needs in different ways — warm coats in cold places, light clothes in hot places, houses of brick, wood, or earth. Atlas the Bear meets his basic needs from the forest: berries and fish for food, thick fur for warmth, and a cozy den for shelter.",
-    bigIdea: "All people share three basic needs — food, clothing, and shelter — and how these needs are met depends on the climate, resources, and culture of the place where people live.",
-    sections: [
-      { title: "Food", emoji: "🍎", content: "Food gives your body energy to move, think, and grow. People eat different foods depending on where they live. Families near the ocean eat a lot of fish. Families in farming areas eat fresh vegetables. Some foods are grown nearby; others travel thousands of miles to reach your plate. No matter what you eat, food is a basic need every person shares." },
-      { title: "Clothing", emoji: "👕", content: "Clothing protects your body from weather. In cold places, people wear thick coats, hats, and boots. In hot places, people wear light, loose clothing. Some clothing is for special occasions — uniforms for work, costumes for celebrations. Clothing also expresses culture and identity. But at its core, clothing is a basic need that keeps you safe and comfortable." },
-      { title: "Shelter", emoji: "🏠", content: "Shelter protects you from weather, keeps you safe, and gives you a place to rest. Homes are built from materials available nearby: wood in forested areas, brick and stone in cities, adobe in dry climates, ice blocks in the Arctic (igloos). Some people live in apartments, some in houses, some in mobile homes. The type of shelter varies, but the need for it is universal." },
-      { title: "Needs vs Extras", emoji: "⚖️", content: "Basic needs are things you must have to survive: food, clothing, and shelter (plus water and air). Extras — also called wants — are things that are nice to have but not necessary for survival: toys, video games, candy, decorations. Understanding the difference between needs and wants helps you make good decisions about what is truly important. Atlas needs his den, his food, and his fur. Everything else is a bonus." }
-    ],
-    activity: { title: "Needs Sorting Game", instructions: "Cut out or draw pictures of 15 items: food, a coat, a house, a toy, a bicycle, water, candy, shoes, a blanket, a video game, fruit, a hat, a tent, a stuffed animal, and bread. Sort them into two piles: NEEDS (must have to survive) and WANTS (nice to have but not necessary). Discuss: why is water a need but juice is a want? Why are shoes a need but fancy sneakers are a want? The line between needs and wants is an important life skill." },
-    quiz: [
-      { question: "What are the three basic needs all people share?", answer: "Food, clothing, and shelter", options: ["Toys, games, and TV", "Food, clothing, and shelter", "Cars, phones, and computers", "Money, jobs, and friends"] },
-      { question: "Why do people in cold places wear thick coats?", answer: "Clothing protects the body from weather — thick coats keep you warm in cold climates", options: ["Because they like heavy clothes", "Clothing protects the body from weather — thick coats keep you warm in cold climates", "Cold places have no other clothing", "Coats are fashionable everywhere"] },
-      { question: "What is the difference between a need and a want?", answer: "Needs are necessary for survival; wants are nice to have but not essential", options: ["There is no difference", "Needs are necessary for survival; wants are nice to have but not essential", "Wants are more important than needs", "Needs are things only adults have"] },
-      { question: "Why are homes built differently in different places?", answer: "Because the climate, available materials, and culture vary — people build with what they have", options: ["Some people build badly", "Because the climate, available materials, and culture vary — people build with what they have", "Everyone should build the same way", "Only modern homes are good"] },
-      { question: "Is candy a need or a want?", answer: "A want — it is nice to have but not necessary for survival", options: ["A need — everyone needs sweets", "A want — it is nice to have but not necessary for survival", "Both a need and a want", "Neither"] }
-    ],
-    familyAdventure: "Play the Desert Island Game. If your family was stranded on a desert island, what 10 items would you bring? Each person picks 10 items from a list that mixes needs and wants. Compare lists: did everyone prioritize food, water, shelter, and clothing? Or did someone pick a video game? Discuss why needs come first. Then walk through your home and identify items that are needs vs wants. You might be surprised how many wants you have — and how few needs you actually require.",
-    badge: "Needs Expert", nextLesson: "ss-3-5-12"
-  },
-
-  { id: "ss-3-5-12", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 12, title: "Then and Now: How Things Have Changed", duration: "10-15 min",
-    hook: "Long ago, there were no cars — people walked or rode horses. There were no phones — people sent letters that took weeks to arrive. There were no computers — everything was written by hand. The world has changed a lot over time, and many things you use every day did not exist when your grandparents were children. Atlas the Bear's forest has changed too — but some things in nature stay the same.",
-    bigIdea: "Life has changed dramatically over time — technology, transportation, communication, and daily life look very different now than they did long ago — and understanding these changes helps us appreciate both the past and the present.",
-    sections: [
-      { title: "Long Ago vs Today", emoji: "⏳", content: "Long ago, people traveled by horse, cooked over fires, washed clothes by hand, and had no electricity. Today, we drive cars, cook with stoves and microwaves, use washing machines, and have electricity powering everything. Life was harder in many ways — but people still played, celebrated, loved their families, and helped their neighbors. The activities of daily life have changed, but human feelings and relationships stay the same." },
-      { title: "Communication Then and Now", emoji: "📬", content: "Long ago, people communicated by talking face to face, sending handwritten letters, or using messengers on horseback. Today, we send texts in seconds, video call across the world, and share pictures instantly. The speed of communication has changed everything — news that took weeks to travel now reaches everywhere in minutes." },
-      { title: "School Then and Now", emoji: "🏫", content: "Long ago, many children did not go to school at all — they worked on farms or in factories. Schools that existed had one room with students of all ages, slate boards instead of paper, and strict teachers who sometimes used punishment. Today, schools have separate classrooms, computers, playgrounds, libraries, and many subjects. Education has become available to far more children than ever before." },
-      { title: "Some Things Stay the Same", emoji: "❤️", content: "Even though technology and daily life have changed enormously, some things remain the same. Families still love each other. Friends still play together. People still need food, shelter, and community. Children still ask questions and wonder about the world. The tools change, but the human experience at its core — love, curiosity, joy, and connection — remains timeless." }
-    ],
-    activity: { title: "Then and Now Comparison", instructions: "Interview a grandparent or older family member (in person or by phone). Ask: what was school like when you were young? What did you do for fun? Did you have a TV, phone, or computer? How did you travel? Draw two pictures side by side: their childhood and yours. What is different? What is the same? Share your comparison with the family and discuss what has changed the most." },
-    quiz: [
-      { question: "How did people travel long ago before cars?", answer: "By walking, riding horses, or using horse-drawn carriages", options: ["By airplane", "By walking, riding horses, or using horse-drawn carriages", "By train only", "They did not travel"] },
-      { question: "How has communication changed?", answer: "From handwritten letters taking weeks to texts and video calls happening in seconds", options: ["It has not changed at all", "From handwritten letters taking weeks to texts and video calls happening in seconds", "People never communicated long ago", "Only adults communicated in the past"] },
-      { question: "What were schools like long ago?", answer: "Often one room with all ages, slate boards, and fewer students — many children did not attend school at all", options: ["Exactly like today's schools", "Often one room with all ages, slate boards, and fewer students — many children did not attend school at all", "Better than today's schools", "Schools did not exist"] },
-      { question: "What has stayed the same over time?", answer: "Families loving each other, friends playing, people needing food and shelter — human feelings and relationships", options: ["Everything has changed completely", "Families loving each other, friends playing, people needing food and shelter — human feelings and relationships", "Only buildings stayed the same", "Nothing stays the same"] },
-      { question: "Why is learning about the past important?", answer: "It helps us appreciate how life has improved and understand the experiences of people who came before us", options: ["The past does not matter", "It helps us appreciate how life has improved and understand the experiences of people who came before us", "Only for history tests", "To prove the present is always better"] }
-    ],
-    familyAdventure: "Have a Then and Now Night. Look at old family photos (or ask older relatives to share stories). Compare: what did people wear? What did homes look like? What activities did they do for fun? Then imagine the future: what will life be like when you are a grandparent? Draw a picture of the future and one of the past. Display them side by side. Change is constant — and your family's story is part of history being made right now.",
-    badge: "Time Traveler", nextLesson: "ss-3-5-13"
-  },
-
-  { id: "ss-3-5-13", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 13, title: "Native Americans: First Peoples of America", duration: "10-15 min",
-    hook: "Long before any European ships arrived, people had been living in America for thousands of years. These first peoples — Native Americans — built communities, developed languages, created art, and lived in harmony with the land. They are not just people from the past — Native Americans are here today, with vibrant cultures and communities across the country. Atlas the Bear shares the land with all its inhabitants and respects those who were here first.",
-    bigIdea: "Native Americans were the first people to live in America — they had diverse cultures, languages, and ways of life connected to the land, and their communities and traditions continue today.",
-    sections: [
-      { title: "The First Americans", emoji: "🌾", content: "Native Americans have lived in North America for at least 15,000 years — long before anyone from Europe, Africa, or Asia arrived. They were the original inhabitants of this land. There were hundreds of different groups (called tribes or nations), each with their own language, customs, food, and way of life. They lived in every type of environment: forests, deserts, plains, mountains, and coastlines." },
-      { title: "Different Tribes, Different Lives", emoji: "🏕️", content: "Native American groups adapted to their environments. Plains tribes like the Lakota followed buffalo herds and lived in tepees. Southwest groups like the Pueblo built adobe homes and farmed corn, beans, and squash. Northwest Coast tribes like the Tlingit fished for salmon and carved totem poles. Eastern Woodland tribes like the Iroquois lived in longhouses and formed a democratic government. Each group had its own rich culture." },
-      { title: "Connection to the Land", emoji: "🌿", content: "Native Americans had a deep respect for the natural world. They used resources carefully, taking only what they needed. Many believed that people, animals, plants, and the earth were all connected and should be treated with respect. They developed farming techniques, managed forests through controlled burns, and understood ecosystems long before the word existed. Their relationship with nature holds wisdom that is still relevant today." },
-      { title: "Native Americans Today", emoji: "🤝", content: "Native Americans are not just a people of the past — millions live in America today. They maintain languages, traditions, art, music, and ceremonies that have been passed down for generations. Many live on reservations (lands set aside for tribal nations), but many also live in cities and towns throughout the country. Learning about Native American history and culture with respect and accuracy is important because their story is America's first chapter." }
-    ],
-    activity: { title: "Native American Culture Exploration", instructions: "Choose one Native American group (Lakota, Navajo, Iroquois, Cherokee, or another). Research: where did they live? What type of home did they build? What food did they eat? What is one tradition or art form they are known for? Draw a picture showing their way of life. Share what you learned with your family. Remember: these are real people with living cultures, not characters from a story." },
-    quiz: [
-      { question: "How long have Native Americans lived in North America?", answer: "At least 15,000 years — they were the first people to live here", options: ["About 100 years", "At least 15,000 years — they were the first people to live here", "About 500 years", "They came after European settlers"] },
-      { question: "Did all Native American groups live the same way?", answer: "No — there were hundreds of different tribes with different languages, homes, food, and customs", options: ["Yes — they all lived in tepees", "No — there were hundreds of different tribes with different languages, homes, food, and customs", "They all lived in one place", "Only two types of groups existed"] },
-      { question: "What was the Native American relationship with nature?", answer: "Deep respect — they took only what they needed and believed people, animals, and the earth are connected", options: ["They feared nature", "Deep respect — they took only what they needed and believed people, animals, and the earth are connected", "They had no relationship with nature", "They tried to control nature completely"] },
-      { question: "Are Native Americans only part of the past?", answer: "No — millions of Native Americans live in America today with vibrant cultures and communities", options: ["Yes — they no longer exist", "No — millions of Native Americans live in America today with vibrant cultures and communities", "Only a few remain", "They all moved to other countries"] },
-      { question: "What did Plains tribes like the Lakota live in?", answer: "Tepees — portable cone-shaped tents that could be moved to follow buffalo herds", options: ["Adobe houses", "Tepees — portable cone-shaped tents that could be moved to follow buffalo herds", "Log cabins", "Underground tunnels"] }
-    ],
-    familyAdventure: "Research which Native American group originally lived in your area. What was the land like before your city was built? What did the native people call this place? Many places still have Native American names — your state, city, rivers, or mountains might have names from indigenous languages. Discuss as a family: what can we learn from Native American respect for the land? How can we honor the first peoples of our area? Understanding whose land you live on is a meaningful step toward respect and awareness.",
-    badge: "First Peoples Scholar", nextLesson: "ss-3-5-14"
-  },
-
-  { id: "ss-3-5-14", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 14, title: "Goods and Services: How Communities Work", duration: "10-15 min",
-    hook: "When you buy an apple at the store, that is a good — something you can touch and take home. When a barber cuts your hair, that is a service — work someone does for you. Communities run on goods and services: people making things, selling things, fixing things, and helping each other. Atlas the Bear does not use money, but he trades — sharing food and protection with his forest community.",
-    bigIdea: "Communities function through the exchange of goods (physical things people make, grow, or sell) and services (work people do for others) — and everyone in a community both provides and receives goods and services.",
-    sections: [
-      { title: "What Are Goods?", emoji: "📦", content: "Goods are things you can touch, hold, and take with you. Food from the grocery store, clothes from a shop, toys from a toy store, and books from a bookstore are all goods. Goods are made by people — farmers grow food, factory workers make products, and artists create crafts. When you buy a good, you exchange money for a physical item." },
-      { title: "What Are Services?", emoji: "💈", content: "Services are jobs people do for you. A doctor examines you. A teacher teaches you. A plumber fixes your pipes. A mail carrier delivers your mail. You cannot hold a service in your hand, but you benefit from the work being done. When you pay for a service, you are paying for someone's time, skill, and effort." },
-      { title: "Producers and Consumers", emoji: "🔄", content: "A producer makes goods or provides services. A farmer who grows apples is a producer. A baker who makes bread is a producer. A dentist who cleans teeth is a producer of services. A consumer uses or buys goods and services. When you eat an apple, you are a consumer. Most people are both producers and consumers — a teacher produces education and consumes groceries." },
-      { title: "How Communities Work Together", emoji: "🤝", content: "In a community, people depend on each other. The farmer grows food that the baker needs. The baker makes bread that the teacher buys. The teacher educates the farmer's children. Everyone produces something and consumes something else. This network of goods and services keeps the community running. Atlas says: no one can do everything alone — that is why communities exist." }
-    ],
-    activity: { title: "Goods and Services Sort", instructions: "Walk through your home and list 10 goods your family has bought (food, clothes, furniture, toys). Then list 10 services your family uses (doctor visits, haircuts, school, car repair, internet). Are there more goods or services? Then play Store: one person is the shopkeeper selling goods, another person is a customer. Practice buying and selling. Discuss: what goods and services does your family provide to others?" },
-    quiz: [
-      { question: "What is a good?", answer: "A physical thing you can touch — like food, clothing, or toys", options: ["A kind action", "A physical thing you can touch — like food, clothing, or toys", "A job someone does for you", "Only expensive items"] },
-      { question: "What is a service?", answer: "Work someone does for you — like a doctor's exam, a haircut, or mail delivery", options: ["A physical product you buy", "Work someone does for you — like a doctor's exam, a haircut, or mail delivery", "Something you get for free", "Only government work"] },
-      { question: "What is a producer?", answer: "Someone who makes goods or provides services", options: ["Someone who only buys things", "Someone who makes goods or provides services", "Only factory workers", "Only farmers"] },
-      { question: "Can one person be both a producer and consumer?", answer: "Yes — a teacher produces education and consumes groceries, for example", options: ["No — you are one or the other", "Yes — a teacher produces education and consumes groceries, for example", "Only adults can be both", "Only business owners can be both"] },
-      { question: "Why do communities need both goods and services?", answer: "People depend on each other — no one can produce everything they need alone", options: ["They do not — goods are enough", "People depend on each other — no one can produce everything they need alone", "Only big cities need both", "Communities only need services"] }
-    ],
-    familyAdventure: "Go on a Goods and Services Walk through your neighborhood. Point out every business you see and identify: does it sell goods (grocery store, clothing shop) or provide services (salon, doctor, repair shop) or both (restaurant — food is a good, cooking is a service)? Count each type. Then discuss at home: what goods or services does each family member produce? A parent's job, a child's help at home, a sibling's creative crafts — everyone produces something valuable.",
-    badge: "Economics Explorer", nextLesson: "ss-3-5-15"
-  },
-
-  { id: "ss-3-5-15", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 15, title: "Working and Earning: Introduction to Economics", duration: "10-15 min",
-    hook: "Where does money come from? People earn it by working — doing jobs that produce goods or services that others need. A farmer works to grow food. A doctor works to help sick people. A builder works to construct homes. In exchange for their work, they receive money, which they use to buy what they need. Atlas the Bear works hard catching fish — his payment is a full belly and a healthy family.",
-    bigIdea: "People work to earn money, which they use to buy the goods and services they need — work creates value for the community, and different jobs contribute in different ways.",
-    sections: [
-      { title: "Why People Work", emoji: "💼", content: "People work to earn money so they can buy food, clothing, shelter, and other things their families need. But work is not just about money — it also gives people purpose, helps the community, and uses their talents and skills. When a firefighter saves a life, they earn money — but they also feel proud of helping others. Work connects you to your community." },
-      { title: "Different Kinds of Work", emoji: "🔧", content: "There are countless types of work. Some people work with their hands: builders, farmers, artists, cooks. Some people work with their minds: scientists, writers, programmers, teachers. Some people work with people: nurses, counselors, salespeople. Some work indoors, some outdoors. Some work for big companies, some for themselves. Every kind of honest work is valuable." },
-      { title: "Earning and Spending", emoji: "💰", content: "When you work, you earn money (income). You use that money to buy what you need (spending). If you earn more than you spend, you can save the extra for later. If you spend more than you earn, you run out of money and may have to borrow. Learning to balance earning and spending is an important life skill that starts with understanding where money comes from." },
-      { title: "Your Work Matters", emoji: "⭐", content: "Even as a child, you do work that matters. Doing chores, helping at home, learning at school — these are all forms of work. You may not earn money yet, but you earn something just as valuable: skills, knowledge, and the trust of the people who depend on you. Atlas says: every contribution, no matter how small, makes the community stronger." }
-    ],
-    activity: { title: "Jobs I Know", instructions: "List every job you can think of — parents' jobs, community helpers, people you see working. For each, answer: do they produce goods, services, or both? Then pick one job you find interesting and draw a person doing that job. Write (or say) three things that person does at work. Finally, do a job at home (clean a room, organize toys, help with cooking) and discuss: how did your work help the family? Work creates value." },
-    quiz: [
-      { question: "Why do people work?", answer: "To earn money for things they need — and because work gives purpose and helps the community", options: ["Only to get rich", "To earn money for things they need — and because work gives purpose and helps the community", "Because they are forced to", "Only adults work"] },
-      { question: "What is income?", answer: "Money you earn from working", options: ["Money you find on the ground", "Money you earn from working", "Money the government gives everyone", "Only a lot of money counts"] },
-      { question: "What happens if you spend more than you earn?", answer: "You run out of money and may need to borrow — that is why balancing earning and spending matters", options: ["Nothing — money is unlimited", "You run out of money and may need to borrow — that is why balancing earning and spending matters", "The bank gives you more", "Only adults have this problem"] },
-      { question: "Is a child's work at home valuable?", answer: "Yes — chores, helping, and learning are all valuable work that builds skills and helps the family", options: ["No — only paid work counts", "Yes — chores, helping, and learning are all valuable work that builds skills and helps the family", "Only schoolwork counts", "Children cannot do real work"] },
-      { question: "Are all types of honest work valuable?", answer: "Yes — every job contributes something to the community, whether it uses hands, minds, or people skills", options: ["No — only high-paying jobs are valuable", "Yes — every job contributes something to the community, whether it uses hands, minds, or people skills", "Only doctor and lawyer jobs matter", "Physical labor is not real work"] }
-    ],
-    familyAdventure: "Do a Family Career Night. Each person shares what they do for work (or school). Explain: what do you produce? Who benefits? What skills do you use? Then each child picks a dream job and gives a 1-minute presentation about it. What would you do all day? Who would you help? What would you earn? Discuss: every job in the family contributes to the whole — just like every job in a community. Work is how we take care of each other.",
-    badge: "Work & Money Learner", nextLesson: "ss-3-5-16"
-  },
-
-  { id: "ss-3-5-16", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 16, title: "Needs vs. Wants: Making Choices", duration: "10-15 min",
-    hook: "You need food to survive. You want ice cream. You need shoes to protect your feet. You want the fanciest sneakers. Learning to tell the difference between needs and wants is one of the most important life skills because it helps you make smart choices with your money, your time, and your energy. Atlas the Bear needs fish and a warm den. He does not need a television or a swimming pool — those would be wants.",
-    bigIdea: "Needs are things you must have to survive (food, water, shelter, clothing), wants are things you would like but do not need, and understanding the difference helps you make wise choices about spending and priorities.",
-    sections: [
-      { title: "What Are Needs?", emoji: "✅", content: "Needs are things you cannot live without: food, clean water, clothing, shelter, and safety. Without these, your health and survival are at risk. Needs come first — before anything else. When you have limited money or resources, needs must be taken care of before wants." },
-      { title: "What Are Wants?", emoji: "🎮", content: "Wants are things you would like to have but can live without: toys, video games, candy, fancy clothes, entertainment. Wants make life more enjoyable, but they are not necessary for survival. There is nothing wrong with wants — but understanding that they come after needs helps you make good decisions." },
-      { title: "Making Choices", emoji: "🤔", content: "Because we cannot have everything we want, we have to make choices. This is called scarcity — there are limited resources and unlimited wants. When you choose to spend your allowance on a toy, you cannot also spend it on candy. Every choice means giving up something else. Smart choices come from thinking about what matters most. Atlas chooses to eat fish (a need) before playing in the river (a want)." },
-      { title: "Saving for Later", emoji: "🐷", content: "Sometimes the wisest choice is not spending at all — but saving for later. When you save money, you can buy something bigger or more important in the future. You can also save for unexpected needs — like if something breaks and needs to be replaced. Saving is a habit that starts small and builds over time. A piggy bank today can become a savings account tomorrow." }
-    ],
-    activity: { title: "Needs vs Wants Budget Game", instructions: "Pretend you have 10 coins (or use real ones). Here are items you can buy: food (2 coins), shelter (3 coins), clothing (2 coins), a toy (2 coins), candy (1 coin), a video game (3 coins), water (1 coin). You only have 10 coins — what do you buy? Write your choices. Did you cover all your needs first? Did you have any left for wants? Try again with only 7 coins — what changes? This simple exercise teaches budgeting and prioritization." },
-    quiz: [
-      { question: "What is the difference between needs and wants?", answer: "Needs are essential for survival; wants are nice to have but not necessary", options: ["There is no difference", "Needs are essential for survival; wants are nice to have but not necessary", "Wants are more important than needs", "Needs are only for poor people"] },
-      { question: "Which of these is a need?", answer: "Clean water — you cannot survive without it", options: ["A video game", "Clean water — you cannot survive without it", "A stuffed animal", "Candy"] },
-      { question: "What is scarcity?", answer: "Having limited resources but unlimited wants — which means you have to make choices", options: ["Having everything you want", "Having limited resources but unlimited wants — which means you have to make choices", "A type of game", "Only a problem for businesses"] },
-      { question: "Why is saving money wise?", answer: "It lets you buy something bigger later or be prepared for unexpected needs", options: ["It is not wise — spend everything now", "It lets you buy something bigger later or be prepared for unexpected needs", "Only adults need to save", "Saving means you never get anything"] },
-      { question: "Should needs or wants come first?", answer: "Needs always come first — take care of survival before spending on extras", options: ["Wants — because they are more fun", "Needs always come first — take care of survival before spending on extras", "It does not matter", "Whatever costs less comes first"] }
-    ],
-    familyAdventure: "Play the Family Budget Challenge. Give each family member 20 pretend dollars. Present a list of items at different prices: rent (8), groceries (5), electricity (3), new shoes (4), a movie (3), a fancy dinner out (6), a toy (3), savings (any amount). Each person budgets their 20 dollars. Compare: did everyone cover needs first? How much did anyone save? Discuss the trade-offs: if you chose the fancy dinner, what did you give up? This is real-world budgeting in a playful format.",
-    badge: "Smart Chooser", nextLesson: "ss-3-5-17"
-  },
-
-  { id: "ss-3-5-17", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 17, title: "Holidays and Celebrations Around the World", duration: "10-15 min",
-    hook: "In India, families celebrate Diwali by lighting thousands of lamps. In Mexico, families honor loved ones who have passed during Dia de los Muertos. In China, the New Year is celebrated with dragon dances and red envelopes of money. Every culture has special holidays and celebrations that bring families together and keep traditions alive. Atlas the Bear does not celebrate holidays — but he notices that humans seem happiest when they gather to celebrate together.",
-    bigIdea: "People around the world celebrate different holidays with unique traditions — these celebrations reflect cultural values, connect generations, and bring communities together in joy and remembrance.",
-    sections: [
-      { title: "Why We Celebrate", emoji: "🎉", content: "Holidays and celebrations mark important events: the changing of seasons, religious observances, historical milestones, and family traditions. They give people a reason to come together, share food, tell stories, and express joy or gratitude. Celebrations create memories that last a lifetime and connect you to your culture, your family, and your community." },
-      { title: "Celebrations Around the World", emoji: "🌍", content: "Diwali (India): the festival of lights, celebrating the victory of light over darkness with lamps, fireworks, and sweets. Chinese New Year: celebrated with dragon dances, red decorations, and family feasts. Hanukkah (Jewish): eight nights of candle lighting, gifts, and traditional foods. Eid (Muslim): a celebration after the holy month of Ramadan with prayers, feasts, and charity. Carnival (Brazil): a huge festival with music, dancing, and colorful costumes." },
-      { title: "American Holidays", emoji: "🇺🇸", content: "Americans celebrate many holidays: Thanksgiving (gratitude and family meals), Independence Day (fireworks and patriotism), Halloween (costumes and trick-or-treating), Memorial Day (honoring fallen soldiers), and many more. Some holidays are celebrated by everyone; others are specific to certain communities or religions. Each holiday has its own traditions, foods, and meaning." },
-      { title: "Your Family's Celebrations", emoji: "👨‍👩‍👧‍👦", content: "Every family has its own way of celebrating — even for the same holidays. Your family might have a special recipe for Thanksgiving, a unique way of decorating for a holiday, or a tradition that no other family has. These personal traditions are just as important as the big cultural ones. Atlas says: what matters is not how you celebrate, but that you celebrate together." }
-    ],
-    activity: { title: "Celebration Exploration", instructions: "Pick a holiday your family does NOT celebrate. Research it: what country or culture does it come from? When is it? What are the traditions? What foods are eaten? Draw or make a small craft related to that holiday. Then share with your family: what did you learn? Would you like to try any of these traditions? Finally, describe your family's favorite holiday and one tradition that makes it special." },
-    quiz: [
-      { question: "Why do people celebrate holidays?", answer: "To mark important events, bring people together, share traditions, and express joy or gratitude", options: ["Only to get presents", "To mark important events, bring people together, share traditions, and express joy or gratitude", "Because the government requires it", "Only for a day off from work"] },
-      { question: "What is Diwali?", answer: "The festival of lights celebrated in India — honoring the victory of light over darkness", options: ["A Chinese holiday", "The festival of lights celebrated in India — honoring the victory of light over darkness", "An American holiday", "A type of food"] },
-      { question: "Do all families celebrate holidays the same way?", answer: "No — every family has its own traditions, even for the same holidays", options: ["Yes — there is only one correct way", "No — every family has its own traditions, even for the same holidays", "Only certain families can celebrate", "Holidays should all be the same"] },
-      { question: "What holiday involves dragon dances and red envelopes?", answer: "Chinese New Year", options: ["Thanksgiving", "Chinese New Year", "Halloween", "Easter"] },
-      { question: "What makes your family's celebration special?", answer: "Your unique traditions — special recipes, activities, or customs that belong to your family", options: ["Only expensive celebrations are special", "Your unique traditions — special recipes, activities, or customs that belong to your family", "Celebrations must copy what everyone else does", "Only holidays with presents are special"] }
-    ],
-    familyAdventure: "Have a Celebrations Around the World Night. Each family member picks a different culture's celebration and shares one fact and one tradition. Then try one tradition from another culture: light candles like Diwali, make paper lanterns like Chinese New Year, or share what you are grateful for like Thanksgiving (even if it is not November). Creating a multicultural celebration night teaches respect for all cultures and adds new joy to your family's traditions.",
-    badge: "Celebration Explorer", nextLesson: "ss-3-5-18"
-  },
-
-  { id: "ss-3-5-18", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 18, title: "The Globe: Our Planet Earth", duration: "10-15 min",
-    hook: "If you could fly high enough, you would see that Earth is a big, round ball — mostly blue (because of all the water) with patches of green and brown (the land). Earth is our only home, and it floats in space, spinning around the sun. A globe is a small model of our planet that shows you where all the continents, oceans, and countries are. Atlas the Bear has never seen a globe, but he knows every inch of his forest — your challenge is knowing the whole planet.",
-    bigIdea: "Earth is a spherical planet with large land masses (continents), vast bodies of water (oceans), and many different countries — a globe is a model that helps us understand the shape and features of our planet.",
-    sections: [
-      { title: "Earth Is Round", emoji: "🌍", content: "Earth looks flat when you stand on it because it is so big. But from space, you can see it is a sphere — a big round ball. Astronauts who have seen Earth from space say it is the most beautiful sight imaginable: a blue marble floating in darkness. A globe is a round model of Earth that shows its true shape, unlike a flat map which distorts the shapes of continents." },
-      { title: "Continents and Oceans", emoji: "🗺️", content: "Earth has seven continents (large land masses): North America, South America, Europe, Asia, Africa, Australia, and Antarctica. It has five oceans: Pacific (the largest), Atlantic, Indian, Southern, and Arctic. About 71% of Earth's surface is covered by water. The continents and oceans are the biggest features you can see on a globe." },
-      { title: "Countries of the World", emoji: "🌐", content: "The continents are divided into about 195 countries, each with its own government, flag, and culture. Some countries are huge (Russia, Canada, China). Some are tiny (Vatican City is smaller than a city park). People in different countries speak different languages, eat different foods, and follow different traditions. A globe helps you see where each country is located." },
-      { title: "Our Shared Home", emoji: "🏠", content: "Earth is the only planet we know of that has life. It has the right temperature, water, and atmosphere to support plants, animals, and people. That makes Earth precious and worth protecting. No matter where you live — in a big city or a small village, on a mountain or by the sea — we all share this one planet. Atlas says: Earth is home for all of us, and taking care of it is everyone's job." }
-    ],
-    activity: { title: "Globe Explorer", instructions: "If you have a globe, spin it and point — see where your finger lands. Name the continent and ocean nearest to your finger. Find your country on the globe. Find the largest continent (Asia) and smallest (Australia). Find the largest ocean (Pacific). If you do not have a globe, use an online globe or world map. Then draw your own simple globe: a circle with rough continent shapes colored green/brown and oceans colored blue. Label as many features as you can." },
-    quiz: [
-      { question: "What shape is Earth?", answer: "A sphere — a round ball, though it looks flat from the ground because it is so large", options: ["Flat like a pancake", "A sphere — a round ball, though it looks flat from the ground because it is so large", "A cube", "A triangle"] },
-      { question: "How many continents are there?", answer: "Seven: North America, South America, Europe, Asia, Africa, Australia, and Antarctica", options: ["Three", "Seven: North America, South America, Europe, Asia, Africa, Australia, and Antarctica", "Ten", "Five"] },
-      { question: "What percentage of Earth is covered by water?", answer: "About 71% — most of Earth's surface is ocean", options: ["About 10%", "About 71% — most of Earth's surface is ocean", "About 50%", "About 90%"] },
-      { question: "What is a globe?", answer: "A round model of Earth that shows continents, oceans, and countries in their true shape", options: ["A flat map", "A round model of Earth that shows continents, oceans, and countries in their true shape", "A type of light bulb", "A ball used in sports"] },
-      { question: "Which is the largest ocean?", answer: "The Pacific Ocean — it covers more area than all the land on Earth combined", options: ["The Atlantic Ocean", "The Pacific Ocean — it covers more area than all the land on Earth combined", "The Indian Ocean", "The Arctic Ocean"] }
-    ],
-    familyAdventure: "Play Globe Roulette. Spin a globe (or close your eyes and point at a world map). Wherever your finger lands, research that place: what country is it? What language do they speak? What is one interesting fact? Take turns — each person explores a different random location. By the end, your family will have learned about several places you might never have thought about. Then find where relatives or friends live and measure (roughly) how far away they are. The globe makes the whole world accessible.",
-    badge: "Globe Explorer", nextLesson: "ss-3-5-19"
-  },
-
-  { id: "ss-3-5-19", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 19, title: "Different Places, Different Landscapes", duration: "10-15 min",
-    hook: "Some places have tall mountains covered in snow. Others have flat deserts stretching to the horizon. Some have thick green forests, and others have sandy beaches meeting blue oceans. The world has an incredible variety of landscapes — and each one shapes how the people and animals living there eat, build, dress, and play. Atlas the Bear's forest is full of tall trees, rushing rivers, and rocky hillsides — it is a landscape that gives him everything he needs.",
-    bigIdea: "Earth has many different landscapes — mountains, deserts, forests, plains, coastlines, and more — and each landscape has unique features that shape the weather, plants, animals, and human communities that exist there.",
-    sections: [
-      { title: "Mountains", emoji: "🏔️", content: "Mountains are tall landforms that rise high above the surrounding area. Some have snow on top all year. Mountain communities are often small because the land is steep and hard to farm. People in mountain areas may herd animals, mine resources, or attract tourists for skiing and hiking. Famous mountain ranges include the Rockies, the Andes, the Alps, and the Himalayas." },
-      { title: "Deserts", emoji: "🏜️", content: "Deserts are dry areas that receive very little rain. Some deserts are hot (like the Sahara in Africa), and some are cold (like the Gobi in Asia). Plants and animals in deserts have adapted to survive with very little water. People in desert communities conserve water carefully and often build homes from materials that stay cool, like adobe. Desert sunsets are some of the most beautiful in the world." },
-      { title: "Forests and Jungles", emoji: "🌲", content: "Forests have many trees and lots of wildlife. Tropical rainforests near the equator are warm, wet, and home to more species than any other landscape. Temperate forests have trees that change with the seasons. People in forest areas may work in logging, farming, or conservation. Atlas the Bear lives in a temperate forest with seasons that change his world four times a year." },
-      { title: "Coastlines and Plains", emoji: "🏖️", content: "Coastlines are where land meets the ocean — they can be rocky cliffs, sandy beaches, or marshy wetlands. People near coastlines often fish, trade, and enjoy water activities. Plains are large, flat areas with few trees — great for farming and ranching. The Great Plains of the United States are sometimes called the breadbasket of the world because so much grain grows there. Every landscape offers something unique." }
-    ],
-    activity: { title: "Landscape Art Gallery", instructions: "Draw four different landscapes: a mountain scene, a desert scene, a forest scene, and a beach/coastline scene. In each drawing, include the plants, animals, and type of weather you would find there. Label each landscape. Then discuss: which landscape would you most like to visit? Which would be hardest to live in? What landscape is your home area most like? Create a gallery wall with all four drawings." },
-    quiz: [
-      { question: "What is a desert?", answer: "A dry area that receives very little rain — some are hot and some are cold", options: ["A place with lots of water", "A dry area that receives very little rain — some are hot and some are cold", "Only a hot sandy place", "A place with no living things"] },
-      { question: "Why are plains good for farming?", answer: "They are large and flat with fertile soil — perfect for growing crops like wheat and corn", options: ["They are not good for farming", "They are large and flat with fertile soil — perfect for growing crops like wheat and corn", "They have too many trees", "They are always near the ocean"] },
-      { question: "What kind of landscape does Atlas the Bear live in?", answer: "A temperate forest with seasons, trees, rivers, and diverse wildlife", options: ["A desert", "A temperate forest with seasons, trees, rivers, and diverse wildlife", "A mountaintop", "A sandy beach"] },
-      { question: "Where are tropical rainforests found?", answer: "Near the equator — they are warm, wet, and home to more species than any other landscape", options: ["At the North Pole", "Near the equator — they are warm, wet, and home to more species than any other landscape", "Only in South America", "In cold mountain areas"] },
-      { question: "How do landscapes affect the people who live there?", answer: "Landscapes shape what people eat, how they build homes, what they wear, and how they work and play", options: ["Landscapes do not affect people", "Landscapes shape what people eat, how they build homes, what they wear, and how they work and play", "Only weather affects people", "People shape landscapes but not the reverse"] }
-    ],
-    familyAdventure: "Take a Virtual Landscape Tour. Using a phone, tablet, or computer, look up images or videos of four different landscapes: the Sahara Desert, the Amazon Rainforest, the Swiss Alps, and a tropical beach (like the Maldives). For each, discuss: what would it be like to live here? What would you eat? What would your home look like? What clothes would you need? Then look outside your own window — what landscape do you live in, and how does it shape your daily life?",
-    badge: "Landscape Explorer", nextLesson: "ss-3-5-20"
-  },
-
-  { id: "ss-3-5-20", subject: "Social Studies", ageGroup: "3-5", band: "Little Stars", guide: "Atlas", guideAnimal: "Bear", lessonNumber: 20, title: "We Are All Different and the Same", duration: "10-15 min",
-    hook: "Some people have light skin and some have dark skin. Some families speak English and some speak Spanish, Mandarin, Arabic, or Swahili. Some people celebrate Christmas and some celebrate Eid or Diwali. We look different, sound different, eat different foods, and believe different things. But underneath all those differences, we are far more alike than we are different — and our differences are what make the world beautiful. Atlas the Bear shares his forest with foxes, deer, birds, and fish — all different, all important, all part of one community.",
-    bigIdea: "Every person is unique — with different appearances, cultures, languages, and traditions — but all people share the same basic needs, feelings, and desire to be loved and respected, and embracing both our differences and our similarities makes the world a better place.",
-    sections: [
-      { title: "How We Are Different", emoji: "🌈", content: "People come in every shade of skin color, from very light to very dark and everything in between. People speak over 7,000 languages. People practice different religions and celebrate different holidays. Families have different structures, eat different foods, and live in different types of homes. These differences are not good or bad — they are simply part of the rich tapestry of human life. Every difference adds something unique to the world." },
-      { title: "How We Are the Same", emoji: "🤝", content: "Beneath all the differences, every person shares the same basic needs: food, water, shelter, and love. Every person experiences the same feelings: happiness, sadness, fear, excitement, and hope. Every child wants to play, learn, and feel safe. Every parent wants their children to be healthy and happy. These shared human experiences connect us all — no matter where we live or what we look like." },
-      { title: "Respect and Kindness", emoji: "💛", content: "Respecting differences means treating everyone with kindness — even when they look, speak, or believe differently from you. It means not making fun of people who are different. It means being curious rather than afraid of unfamiliar cultures. It means including everyone and judging people by their character, not their appearance. Respect is the foundation of every healthy community." },
-      { title: "The World Is Better Together", emoji: "🌍", content: "Imagine if every flower in a garden were the same color — it would be boring. The beauty comes from the variety. The same is true for people. Our different perspectives, talents, cultures, and ideas make the world richer and more creative than any one culture could be alone. Atlas says: the forest needs every type of tree, every type of animal, and every type of life to be healthy. The world needs every type of person." }
-    ],
-    activity: { title: "Unique and United Poster", instructions: "Make a poster divided into two sections: How I Am Unique (draw things that make you special — your favorite food, your language, your family traditions, your talents) and How We Are All the Same (draw things all people share — a heart for love, a house for shelter, a plate for food, a smile for happiness). Decorate it with all the colors of the rainbow. Share it with your family and discuss: what makes each family member unique? What do you all share? Celebrate completing the entire Little Stars Social Studies journey — Atlas the Bear is immensely proud of every curious, caring, and connected young citizen in your family." },
-    quiz: [
-      { question: "Are differences between people good or bad?", answer: "Neither — differences are simply part of being human, and they make the world richer and more interesting", options: ["Bad — everyone should be the same", "Neither — differences are simply part of being human, and they make the world richer and more interesting", "Only some differences are acceptable", "Good only if they match your own"] },
-      { question: "What do all people share despite their differences?", answer: "Basic needs (food, water, shelter), feelings (joy, sadness, fear), and the desire to be loved and respected", options: ["Nothing — people are completely different", "Basic needs (food, water, shelter), feelings (joy, sadness, fear), and the desire to be loved and respected", "Only their appearance", "Only language"] },
-      { question: "What does respect mean?", answer: "Treating everyone with kindness — even when they are different from you — and judging people by character, not appearance", options: ["Only being nice to people you like", "Treating everyone with kindness — even when they are different from you — and judging people by character, not appearance", "Ignoring people who are different", "Only respecting people who are the same as you"] },
-      { question: "How many languages do people speak worldwide?", answer: "Over 7,000 — an incredible diversity of human expression", options: ["About 10", "Over 7,000 — an incredible diversity of human expression", "Only English matters", "Exactly 100"] },
-      { question: "Why is the world better with different types of people?", answer: "Different perspectives, talents, and cultures make the world richer and more creative than any one culture alone", options: ["It is not — sameness would be better", "Different perspectives, talents, and cultures make the world richer and more creative than any one culture alone", "Only to fill different jobs", "Diversity does not affect anything"] }
-    ],
-    familyAdventure: "Hold a Family Diversity Celebration. Each family member shares one thing that makes them unique AND one thing they have in common with every other family member. Then discuss: what cultures, languages, or traditions exist in your family's history? What foods from your heritage do you still enjoy? What traditions have been passed down? Finally, each person names one way they will show respect and kindness to someone different from them this week. The world starts getting better the moment you decide to make it so. Congratulations on completing the entire Little Stars Social Studies journey — Atlas the Bear is proud of every young global citizen in your family.",
-    badge: "Global Citizen", nextLesson: null
-  },
-
+  {
+    id: 'ss-3-5-10',
+    subject: 'Social Studies',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Atlas',
+    guideAnimal: 'Bear',
+    lessonNumber: 10,
+    title: 'We Are All Different and the Same',
+    duration: '3-5 min',
+    badge: 'Citizen of the World',
+    nextLesson: null,
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today is the BIG one — we are all different AND the same!' },
+      { type: 'story', image: '/game-assets/socialstudies/diverse-friends-circle.png', guideText: 'Look at all these kids! Some have different skin, different hair, different clothes, different homes. They are all DIFFERENT! And yet — they all laugh, they all love, they all dream. They are all the SAME on the INSIDE!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows kids being DIFFERENT and TOGETHER?', guideText: 'Tap the diverse friends!',
+        items: [
+          { image: '/game-assets/socialstudies/diverse-friends-circle.png', label: 'Diverse friends', correct: true },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
+          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/kids-laughing-together.png', guideText: 'Two kids who look really different from each other LAUGHING together. Laughter is a language EVERYONE speaks. Even kids who do not share a single word can be best friends!' },
+      { type: 'yes-no', scenario: 'Are all people the SAME on the inside, even if they look DIFFERENT outside?', correctAnswer: true, image: '/game-assets/socialstudies/kids-laughing-together.png' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows the WHOLE WORLD together?', guideText: 'Tap world celebration!',
+        items: [
+          { image: '/game-assets/socialstudies/world-celebration.png', label: 'World celebration', correct: true },
+          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' },
+          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Water tap' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/socialstudies/atlas-celebration-burst.png', guideText: 'Wow {name}! You finished SOCIAL STUDIES! You know about your family, your community, your country, and the WHOLE WORLD! You are a citizen — a smart helper for our shared home!' },
+      { type: 'yes-no', scenario: 'Are YOU a citizen of the world?', correctAnswer: true, image: '/game-assets/socialstudies/atlas-celebration-burst.png' },
+      { type: 'family', guideText: 'Tonight, tell your family — what is ONE way our family is the SAME as other families? What is ONE way we are DIFFERENT? Both are GOOD!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Citizen of the World', guideText: 'You are a citizen of the world, {name}! Great work — you finished Social Studies AND all 14 Little Stars subjects!' }
+    ]
+  }
 ];
 
-export default ssLittleStars;
+export default socialstudiesLittleStars;
