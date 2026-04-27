@@ -18,7 +18,8 @@ export const scienceLittleStars = [
         items: [
           { image: '/game-assets/science/puppy-living.png', label: 'Puppy', correct: true },
           { image: '/game-assets/science/rock-nonliving.png', label: 'Rock' },
-          { image: '/game-assets/science/chair-nonliving.png', label: 'Chair' }
+          { image: '/game-assets/science/chair-nonliving.png', label: 'Chair' },
+          { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/flower-living.png', guideText: 'A FLOWER is alive too! It grows from a seed, drinks water, and turns toward the sun!' },
@@ -26,7 +27,8 @@ export const scienceLittleStars = [
         items: [
           { image: '/game-assets/science/rock-nonliving.png', label: 'Rock', correct: true },
           { image: '/game-assets/science/puppy-living.png', label: 'Puppy' },
-          { image: '/game-assets/science/flower-living.png', label: 'Flower' }
+          { image: '/game-assets/science/flower-living.png', label: 'Flower' },
+          { image: '/game-assets/science/animal-eating-food.png', label: 'Animal eating' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/chair-nonliving.png', guideText: 'A CHAIR is not alive. It does not eat or grow. It just sits there waiting for you to use it!' },
@@ -53,8 +55,8 @@ export const scienceLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a plant need to DRINK?', guideText: 'Tap watering the plant!',
         items: [
           { image: '/game-assets/science/watering-plant.png', label: 'Water', correct: true },
-          { image: '/game-assets/science/rock-nonliving.png', label: 'A rock' },
-          { image: '/game-assets/science/chair-nonliving.png', label: 'A chair' },
+          { image: '/game-assets/science/flower-living.png', label: 'A flower' },
+          { image: '/game-assets/science/plant-with-sun.png', label: 'Sun' },
           { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock' }
         ]
       },
@@ -63,9 +65,9 @@ export const scienceLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SEED in soil?', guideText: 'Tap the seed!',
         items: [
           { image: '/game-assets/science/seed-planted-soil.png', label: 'Seed in soil', correct: true },
-          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' },
-          { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube' },
-          { image: '/game-assets/science/loud-drum.png', label: 'A drum' }
+          { image: '/game-assets/science/plant-with-sun.png', label: 'Plant in sun' },
+          { image: '/game-assets/science/flower-living.png', label: 'A flower' },
+          { image: '/game-assets/science/watering-plant.png', label: 'Watering' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/watering-plant.png', guideText: 'Without water, plants get THIRSTY and droopy. Without sun, plants cannot make food. Plants need both to be happy!' },
@@ -91,9 +93,9 @@ export const scienceLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does this animal NEED to eat?', guideText: 'Tap the animal eating food!',
         items: [
           { image: '/game-assets/science/animal-eating-food.png', label: 'Eating food', correct: true },
-          { image: '/game-assets/science/rock-nonliving.png', label: 'A rock' },
-          { image: '/game-assets/science/material-soft-pillow.png', label: 'A pillow' },
-          { image: '/game-assets/science/loud-drum.png', label: 'A drum' }
+          { image: '/game-assets/science/animal-drinking-water.png', label: 'Drinking water' },
+          { image: '/game-assets/science/animal-shelter-burrow.png', label: 'In a burrow' },
+          { image: '/game-assets/science/flower-living.png', label: 'A flower' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/animal-drinking-water.png', guideText: 'Animals need WATER too! They drink from rivers, lakes, ponds, and rain puddles!' },
@@ -102,7 +104,7 @@ export const scienceLittleStars = [
           { image: '/game-assets/science/animal-drinking-water.png', label: 'Drinking water', correct: true },
           { image: '/game-assets/science/animal-eating-food.png', label: 'Eating food' },
           { image: '/game-assets/science/animal-shelter-burrow.png', label: 'In a burrow' },
-          { image: '/game-assets/science/flashlight-shining.png', label: 'A flashlight' }
+          { image: '/game-assets/science/puppy-living.png', label: 'A puppy' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/animal-shelter-burrow.png', guideText: 'Animals also need SHELTER — a safe place to sleep! Birds have nests. Mice have burrows. Bears have caves!' },
@@ -214,7 +216,7 @@ export const scienceLittleStars = [
           { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube', correct: true },
           { image: '/game-assets/science/liquid-water-pouring.png', label: 'Water pouring' },
           { image: '/game-assets/science/gas-steam-rising.png', label: 'Steam' },
-          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' }
+          { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/liquid-water-pouring.png', guideText: 'Water is a LIQUID! Liquids POUR and take the shape of whatever container holds them. Splish splash!' },
@@ -252,7 +254,7 @@ export const scienceLittleStars = [
           { image: '/game-assets/science/pushing-cart.png', label: 'Pushing cart', correct: true },
           { image: '/game-assets/science/pulling-wagon.png', label: 'Pulling wagon' },
           { image: '/game-assets/science/magnet-attracting.png', label: 'Magnet' },
-          { image: '/game-assets/science/loud-drum.png', label: 'Drum' }
+          { image: '/game-assets/science/animal-eating-food.png', label: 'Animal eating' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/pulling-wagon.png', guideText: 'PULLING is when you bring something TOWARD you. Pulling a wagon by the handle brings it closer!' },
@@ -260,8 +262,8 @@ export const scienceLittleStars = [
         items: [
           { image: '/game-assets/science/pulling-wagon.png', label: 'Pulling wagon', correct: true },
           { image: '/game-assets/science/pushing-cart.png', label: 'Pushing cart' },
-          { image: '/game-assets/science/seed-planted-soil.png', label: 'Seed in soil' },
-          { image: '/game-assets/science/quiet-whisper.png', label: 'Whispering' }
+          { image: '/game-assets/science/magnet-attracting.png', label: 'Magnet' },
+          { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/magnet-attracting.png', guideText: 'A MAGNET is special — it pulls metal things WITHOUT touching them! That is invisible force!' },
@@ -289,8 +291,8 @@ export const scienceLittleStars = [
         items: [
           { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight', correct: true },
           { image: '/game-assets/science/dark-room-no-light.png', label: 'Dark room' },
-          { image: '/game-assets/science/material-hard-rock.png', label: 'Rock' },
-          { image: '/game-assets/science/quiet-whisper.png', label: 'Whisper' }
+          { image: '/game-assets/science/plant-with-sun.png', label: 'Plant in sun' },
+          { image: '/game-assets/science/child-with-shadow.png', label: 'Shadow' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/child-with-shadow.png', guideText: 'When light hits you, you make a SHADOW! Your shadow is a dark shape that copies your body. Light cannot go through you, so your shape shows up on the ground!' },
@@ -299,7 +301,7 @@ export const scienceLittleStars = [
           { image: '/game-assets/science/child-with-shadow.png', label: 'Kid with shadow', correct: true },
           { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight' },
           { image: '/game-assets/science/dark-room-no-light.png', label: 'Dark room' },
-          { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Magnifying glass' }
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Rock' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/dark-room-no-light.png', guideText: 'When there is NO light, everything looks DARK. We cannot see our toys, our books, or our pets! That is why we need light!' },
@@ -328,7 +330,7 @@ export const scienceLittleStars = [
           { image: '/game-assets/science/loud-drum.png', label: 'Loud drum', correct: true },
           { image: '/game-assets/science/quiet-whisper.png', label: 'Quiet whisper' },
           { image: '/game-assets/science/ear-listening.png', label: 'Ear' },
-          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' }
+          { image: '/game-assets/science/discovery-celebration.png', label: 'Celebration' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/quiet-whisper.png', guideText: 'A WHISPER is a quiet sound. So small you have to listen carefully! Quiet sounds are gentle for our ears.' },
@@ -336,8 +338,8 @@ export const scienceLittleStars = [
         items: [
           { image: '/game-assets/science/quiet-whisper.png', label: 'Quiet whisper', correct: true },
           { image: '/game-assets/science/loud-drum.png', label: 'Loud drum' },
-          { image: '/game-assets/science/animal-eating-food.png', label: 'Animal eating' },
-          { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Scientist' }
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' },
+          { image: '/game-assets/science/discovery-celebration.png', label: 'Celebration' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/ear-listening.png', guideText: 'We hear sounds with our EARS! Sound waves enter our ears and our brains tell us what we hear!' },
@@ -364,9 +366,9 @@ export const scienceLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows a SCIENTIST?', guideText: 'Tap the curious scientist!',
         items: [
           { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Scientist', correct: true },
-          { image: '/game-assets/science/material-soft-pillow.png', label: 'Pillow' },
-          { image: '/game-assets/science/loud-drum.png', label: 'Drum' },
-          { image: '/game-assets/science/quiet-whisper.png', label: 'Whisper' }
+          { image: '/game-assets/science/discovery-celebration.png', label: 'Discovery' },
+          { image: '/game-assets/science/child-with-shadow.png', label: 'Observing shadow' },
+          { image: '/game-assets/science/flower-living.png', label: 'A flower' }
         ]
       },
       { type: 'teach', image: '/game-assets/science/scientist-magnifying-glass.png', guideText: 'Scientists OBSERVE — that means look carefully. They ASK why? They TEST things to find answers. They never stop wondering!' },
