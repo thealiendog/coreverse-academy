@@ -1,492 +1,382 @@
-// ============================================================
-// COREVERSE ACADEMY — SCIENCE · LITTLE STARS (Ages 3-5)
-// All 20 Lessons · Standards: Next Generation Science Standards (NGSS)
-// Guide: Cosmo the Otter
-// File: sci_littlestars.js · Export: sciLittleStars
-// ============================================================
-
-export const sciLittleStars = [
-
-  // ── LESSON 1 ────────────────────────────────────────────────────────────────
+export const scienceLittleStars = [
   {
-    id: "sci-3-5-01", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 1,
-    title: "Living and Non-Living Things", duration: "10-15 min",
-    hook: "Look around you right now. Some things are alive — like the plant on the windowsill and the dog on the couch. Other things are not alive — like the couch itself and the cup on the table. But how can you tell the difference? What makes something alive? Cosmo the Otter knows the answer because he has been observing living and non-living things in the river since the day he was born.",
-    bigIdea: "Living things grow, need food and water, move on their own, and can have babies — non-living things do not do any of these things, and learning to tell the difference is the first step in understanding the natural world.",
-    sections: [
-      { title: "What Is Alive?", emoji: "🌱", content: "Living things have special abilities that non-living things do not have. Living things grow — a tiny seed grows into a tall tree. Living things need food and water to survive. Living things can move on their own — even plants move slowly toward the light. And living things can make more of themselves — cats have kittens and flowers make seeds. These four things together make something alive." },
-      { title: "What Is Not Alive?", emoji: "🪨", content: "Non-living things do not grow, do not need food, do not move on their own, and cannot make babies. A rock sits in the same spot for a thousand years. A toy car does not eat or drink. A shoe does not grow bigger by itself. Some non-living things were once alive — like a wooden table (made from a tree) or a leather belt (made from animal skin). But they are no longer alive." },
-      { title: "Tricky Cases", emoji: "🤔", content: "Some things can be tricky. A car moves — but it does not move on its own; someone has to drive it. A cloud changes shape — but it is not alive. A stuffed animal looks like a real animal — but it does not eat, grow, or have babies. When you are not sure, ask the four questions: does it grow? Does it need food and water? Does it move on its own? Can it have babies? Cosmo uses these questions every time." },
-      { title: "Living Things Are Everywhere", emoji: "🌍", content: "Living things are all around you — some so small you cannot see them without help. Tiny bugs live in the soil. Microscopic creatures live in pond water. Bacteria live on your skin. The world is bursting with life in places you might not expect. Cosmo loves discovering living things in surprising places — under rocks, inside tree bark, and floating in the river." }
-    ],
-    activity: { title: "Living vs Non-Living Sort", instructions: "Go on a walk around your home or yard. Find 10 things and sort them into two groups: living and non-living. For each item, check the four questions: does it grow? Does it need food and water? Does it move on its own? Can it have babies? Draw a picture of each item in the correct group. Were any items tricky to sort? Talk about why with a grownup." },
-    quiz: [
-      { question: "Which of these is a living thing?", answer: "A flower — it grows, needs water, and makes seeds", options: ["A rock", "A flower — it grows, needs water, and makes seeds", "A toy car", "A cup"] },
-      { question: "What do all living things need?", answer: "Food and water to survive", options: ["Batteries", "Food and water to survive", "Wheels to move", "Paint to stay colorful"] },
-      { question: "Can a stuffed animal grow and have babies?", answer: "No — it looks like an animal but it is not alive", options: ["Yes — it is shaped like an animal", "No — it looks like an animal but it is not alive", "Only if you water it", "Yes — but only at night"] },
-      { question: "What four things do living things do?", answer: "Grow, need food and water, move on their own, and have babies", options: ["Shine, spin, float, and bounce", "Grow, need food and water, move on their own, and have babies", "Talk, sing, dance, and sleep", "Break, melt, dry, and crack"] },
-      { question: "Is a wooden table alive?", answer: "No — it was made from a tree that was alive, but the table itself is not alive anymore", options: ["Yes — because it came from a tree", "No — it was made from a tree that was alive, but the table itself is not alive anymore", "Only when it is new", "Yes — because it can hold things"] }
-    ],
-    familyAdventure: "Go on a Living Things Safari in your neighborhood. Each family member tries to spot as many different living things as possible in 10 minutes — plants, animals, insects, birds, even moss or mushrooms. Count them up. Who found the most? Then find 5 non-living things and discuss: were any of them once alive (like a wooden fence or cotton shirt)? Nature is everywhere once you start looking.",
-    badge: "Life Spotter", nextLesson: "sci-3-5-02"
+    id: 'sci-3-5-01',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 1,
+    title: 'Living and Non-Living Things',
+    duration: '3-5 min',
+    badge: 'Living Spotter',
+    nextLesson: 'sci-3-5-02',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! I am Cosmo! I LOVE doing science. Today we figure out what is ALIVE and what is NOT!' },
+      { type: 'story', image: '/game-assets/science/puppy-living.png', guideText: 'Some things are ALIVE — they breathe, eat, grow, and move. A puppy is alive! A flower is alive! YOU are alive! Other things are not alive — they do not eat or grow!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is ALIVE?', guideText: 'Tap the living thing!',
+        items: [
+          { image: '/game-assets/science/puppy-living.png', label: 'Puppy', correct: true },
+          { image: '/game-assets/science/rock-nonliving.png', label: 'Rock' },
+          { image: '/game-assets/science/chair-nonliving.png', label: 'Chair' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/flower-living.png', guideText: 'A FLOWER is alive too! It grows from a seed, drinks water, and turns toward the sun!' },
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is NOT ALIVE?', guideText: 'Tap the non-living thing!',
+        items: [
+          { image: '/game-assets/science/rock-nonliving.png', label: 'Rock', correct: true },
+          { image: '/game-assets/science/puppy-living.png', label: 'Puppy' },
+          { image: '/game-assets/science/flower-living.png', label: 'Flower' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/chair-nonliving.png', guideText: 'A CHAIR is not alive. It does not eat or grow. It just sits there waiting for you to use it!' },
+      { type: 'yes-no', scenario: 'Are you a living thing?', correctAnswer: true, image: '/game-assets/science/puppy-living.png' },
+      { type: 'family', guideText: 'Tonight, walk around your home with your family. Point at things — alive or not? A plant? A book? A pet? Your hand? You are doing real science!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Living Spotter', guideText: 'You spot living things, {name}!' }
+    ]
   },
-
-  // ── LESSON 2 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-02", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 2,
-    title: "What Plants Need to Grow", duration: "10-15 min",
-    hook: "A tiny seed sits in the dirt. It looks like nothing is happening. But underground, something amazing is starting — a root is pushing down and a stem is pushing up. In just a few weeks, that seed will become a plant with leaves, a stem, and maybe even flowers. But only if it gets what it needs. Cosmo the Otter watches the plants along the riverbank and knows exactly what makes them grow.",
-    bigIdea: "Plants need four things to grow: sunlight, water, air, and soil (or nutrients) — take away any one of these and the plant cannot survive.",
-    sections: [
-      { title: "Sunlight: Food from Light", emoji: "☀️", content: "Plants use sunlight to make their own food — this is what makes them special. They do not eat like animals do. Instead, their leaves capture sunlight and turn it into energy. That is why plants grow toward windows and why forests are thickest where the most sunlight reaches. Without sunlight, plants cannot make food and they will wilt and die." },
-      { title: "Water: A Drink for Roots", emoji: "💧", content: "Plants drink water through their roots. The roots are like straws buried in the soil, pulling water up into the stem and leaves. Water carries nutrients from the soil into the plant and helps keep the plant firm and upright. When a plant does not get enough water, it droops. Cosmo sees the river plants standing tall because their roots are always near water." },
-      { title: "Air and Soil", emoji: "🌬️", content: "Plants breathe air through tiny holes in their leaves. They take in a gas called carbon dioxide and release oxygen — the air we need to breathe. Soil gives plants a place to anchor their roots and provides nutrients — like vitamins for plants. Rich, dark soil has more nutrients than sandy or rocky soil. That is why gardens with good soil grow the healthiest plants." },
-      { title: "From Seed to Plant", emoji: "🌱", content: "A seed contains a tiny baby plant and a small supply of food. When the seed gets water, warmth, and is in soil, it germinates — the baby plant breaks through the seed coat. First a root grows down, then a stem grows up. Leaves appear and begin catching sunlight. The plant grows bigger and bigger, and eventually it may produce flowers, fruit, and new seeds. The cycle starts all over again." }
-    ],
-    activity: { title: "Grow a Seed", instructions: "Plant a seed (a bean seed works great) in a small cup of soil. Place it near a window where it will get sunlight. Water it a little bit each day — the soil should be damp but not soaked. Watch it every day and draw a picture of what you see on days 1, 3, 5, 7, and 10. How long does it take for the seed to sprout? What appears first — the root or the stem? Compare your plant to one that gets no sunlight (put a second cup in a dark closet) — what happens differently?" },
-    quiz: [
-      { question: "What four things do plants need to grow?", answer: "Sunlight, water, air, and soil", options: ["Sunlight, milk, candy, and toys", "Sunlight, water, air, and soil", "Rain, snow, wind, and clouds", "Batteries, food, sleep, and toys"] },
-      { question: "How do plants get water?", answer: "Through their roots — the roots pull water up from the soil like straws", options: ["Through their flowers", "Through their roots — the roots pull water up from the soil like straws", "Someone pours it on their leaves", "They make their own water from sunlight"] },
-      { question: "Why do plants need sunlight?", answer: "To make their own food — leaves capture sunlight and turn it into energy", options: ["To stay warm at night", "To make their own food — leaves capture sunlight and turn it into energy", "To see where they are growing", "To change colors in autumn"] },
-      { question: "What does germination mean?", answer: "When a seed starts to grow — the baby plant breaks through the seed coat", options: ["When a flower blooms", "When a seed starts to grow — the baby plant breaks through the seed coat", "When a plant dies", "When leaves fall off a tree"] },
-      { question: "What would happen to a plant with no sunlight?", answer: "It would not be able to make food and would wilt and die", options: ["It would grow faster in the dark", "It would not be able to make food and would wilt and die", "Nothing — plants do not need sunlight", "It would turn blue"] }
-    ],
-    familyAdventure: "Start a Family Garden Project — even a small one. Plant three bean seeds in separate cups. Give one all four things it needs (sun, water, air, soil). Give the second no sunlight (keep it in a closet). Give the third no water. Observe all three for two weeks. Which one grows? Which ones struggle? This simple experiment teaches the scientific method while growing something together. Take photos each day to document the results.",
-    badge: "Plant Scientist", nextLesson: "sci-3-5-03"
+    id: 'sci-3-5-02',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 2,
+    title: 'What Plants Need to Grow',
+    duration: '3-5 min',
+    badge: 'Plant Helper',
+    nextLesson: 'sci-3-5-03',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn what PLANTS need to grow strong!' },
+      { type: 'story', image: '/game-assets/science/seed-planted-soil.png', guideText: 'Every plant starts as a tiny SEED in the soil! With the right care, that seed grows into a big plant. Plants need three things to grow: SOIL, WATER, and SUN!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a plant need to DRINK?', guideText: 'Tap watering the plant!',
+        items: [
+          { image: '/game-assets/science/watering-plant.png', label: 'Water', correct: true },
+          { image: '/game-assets/science/rock-nonliving.png', label: 'A rock' },
+          { image: '/game-assets/science/chair-nonliving.png', label: 'A chair' },
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/plant-with-sun.png', guideText: 'Plants also need SUN! Sunlight gives plants ENERGY to make their food. Plants reach toward the sun to get more light!' },
+      { type: 'yes-no', scenario: 'Do plants need sunlight to grow?', correctAnswer: true, image: '/game-assets/science/plant-with-sun.png' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SEED in soil?', guideText: 'Tap the seed!',
+        items: [
+          { image: '/game-assets/science/seed-planted-soil.png', label: 'Seed in soil', correct: true },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' },
+          { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube' },
+          { image: '/game-assets/science/loud-drum.png', label: 'A drum' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/watering-plant.png', guideText: 'Without water, plants get THIRSTY and droopy. Without sun, plants cannot make food. Plants need both to be happy!' },
+      { type: 'family', guideText: 'Tonight, find a plant at home or look outside. Does it have soil? Does it get water? Does it get sun? You are a plant scientist!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Plant Helper', guideText: 'You know what plants need, {name}!' }
+    ]
   },
-
-  // ── LESSON 3 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-03", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 3,
-    title: "What Animals Need to Survive", duration: "10-15 min",
-    hook: "A bird needs worms to eat. A fish needs water to breathe. A bear needs a warm den for winter. Every animal on Earth needs certain things to stay alive — and those needs are surprisingly similar, whether the animal is a tiny ant or an enormous whale. Cosmo the Otter knows exactly what he needs: fresh water, fish to eat, a safe place to sleep, and clean air to breathe. Today you will discover what all animals need to survive.",
-    bigIdea: "All animals need food, water, air, and shelter to survive — different animals get these needs met in different ways, but the basic needs are the same for every animal, including humans.",
-    sections: [
-      { title: "Food: Energy for Life", emoji: "🍎", content: "Every animal needs food for energy. Some animals eat plants (herbivores like rabbits and cows). Some eat other animals (carnivores like lions and hawks). Some eat both (omnivores like bears and humans). The type of food an animal eats shapes its body — sharp teeth for meat eaters, flat teeth for plant eaters, beaks for seed crackers. Cosmo eats fish, which makes him a carnivore." },
-      { title: "Water: Essential for Everyone", emoji: "💧", content: "All animals need water. Some drink from rivers and lakes. Some get water from the food they eat — like a koala that gets most of its water from eucalyptus leaves. Some animals, like camels, can store water in their bodies for long trips through the desert. But no animal can survive forever without water. It is the one thing every living creature must have." },
-      { title: "Air: Breathing In and Out", emoji: "🌬️", content: "Animals need air to breathe. Land animals breathe with lungs. Fish breathe with gills that pull oxygen from water. Insects breathe through tiny holes in their bodies called spiracles. Even though they breathe differently, all animals need oxygen — a gas in the air — to turn their food into energy. Without oxygen, animals cannot survive for more than a few minutes." },
-      { title: "Shelter: A Safe Place", emoji: "🏠", content: "Animals need shelter — a safe place to rest, hide from predators, raise their babies, and stay warm or cool. Birds build nests. Bears use caves. Rabbits dig burrows. Fish hide in coral reefs. Cosmo makes his den near the riverbank with an underwater entrance so predators cannot get in. Every animal finds or builds the shelter that keeps it safe." }
-    ],
-    activity: { title: "Animal Needs Chart", instructions: "Pick three of your favorite animals (one that lives on land, one in water, one that flies). For each animal, draw a picture and answer: what does it eat? Where does it get water? How does it breathe? Where does it live (its shelter)? Compare the three animals — what is the same about their needs? What is different? Talk about how humans meet these same four needs. We are animals too!" },
-    quiz: [
-      { question: "What four things do all animals need?", answer: "Food, water, air, and shelter", options: ["Toys, friends, sunshine, and music", "Food, water, air, and shelter", "Shoes, clothes, books, and beds", "Cars, phones, houses, and money"] },
-      { question: "What is a herbivore?", answer: "An animal that eats only plants", options: ["An animal that eats only meat", "An animal that eats only plants", "An animal that eats both plants and meat", "An animal that does not eat at all"] },
-      { question: "How do fish breathe underwater?", answer: "Through gills that pull oxygen from the water", options: ["They hold their breath", "Through gills that pull oxygen from the water", "They come to the surface every few minutes", "They do not need to breathe"] },
-      { question: "Why do animals need shelter?", answer: "To rest safely, hide from predators, raise babies, and stay warm or cool", options: ["Just to sleep at night", "To rest safely, hide from predators, raise babies, and stay warm or cool", "Only during winter", "Animals do not actually need shelter"] },
-      { question: "Are humans animals too?", answer: "Yes — humans need food, water, air, and shelter just like all other animals", options: ["No — humans are completely different from animals", "Yes — humans need food, water, air, and shelter just like all other animals", "Only baby humans are animals", "Humans only need food and water"] }
-    ],
-    familyAdventure: "Visit your yard or a park and look for signs of how animals meet their needs. Can you find a bird's nest (shelter)? An ant carrying food? A puddle where animals might drink? A hole where something might live? Make a list of every animal clue you find. Then discuss: how does your family meet the same four needs — food, water, air, and shelter? What is your family's shelter? Where does your food come from? We are part of the animal world too.",
-    badge: "Animal Expert", nextLesson: "sci-3-5-04"
+    id: 'sci-3-5-03',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 3,
+    title: 'What Animals Need',
+    duration: '3-5 min',
+    badge: 'Animal Friend',
+    nextLesson: 'sci-3-5-04',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn what ANIMALS need to live!' },
+      { type: 'story', image: '/game-assets/science/animal-eating-food.png', guideText: 'Animals are alive — so they need things to stay alive too! Animals need FOOD to eat, WATER to drink, and a SHELTER to stay safe and warm. Just like us!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does this animal NEED to eat?', guideText: 'Tap the animal eating food!',
+        items: [
+          { image: '/game-assets/science/animal-eating-food.png', label: 'Eating food', correct: true },
+          { image: '/game-assets/science/rock-nonliving.png', label: 'A rock' },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'A pillow' },
+          { image: '/game-assets/science/loud-drum.png', label: 'A drum' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/animal-drinking-water.png', guideText: 'Animals need WATER too! They drink from rivers, lakes, ponds, and rain puddles!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows an animal DRINKING?', guideText: 'Tap the drinking animal!',
+        items: [
+          { image: '/game-assets/science/animal-drinking-water.png', label: 'Drinking water', correct: true },
+          { image: '/game-assets/science/animal-eating-food.png', label: 'Eating food' },
+          { image: '/game-assets/science/animal-shelter-burrow.png', label: 'In a burrow' },
+          { image: '/game-assets/science/flashlight-shining.png', label: 'A flashlight' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/animal-shelter-burrow.png', guideText: 'Animals also need SHELTER — a safe place to sleep! Birds have nests. Mice have burrows. Bears have caves!' },
+      { type: 'yes-no', scenario: 'Do animals need food, water, AND shelter to live?', correctAnswer: true, image: '/game-assets/science/animal-shelter-burrow.png' },
+      { type: 'family', guideText: 'Tonight, talk with your family about animals you know. Where do they sleep? What do they eat? What do they drink? Animals are amazing!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Animal Friend', guideText: 'You understand animals, {name}!' }
+    ]
   },
-
-  // ── LESSON 4 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-04", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 4,
-    title: "Animals and Their Babies", duration: "10-15 min",
-    hook: "A baby cat is called a kitten. A baby dog is called a puppy. A baby frog starts as a tadpole that looks nothing like its parents! Baby animals come in all shapes and sizes — some look just like tiny versions of their parents, and some look completely different. But one thing is always true: parents take care of their babies until they can survive on their own. Cosmo the Otter carried his babies on his belly when they were tiny, keeping them warm and safe on the water.",
-    bigIdea: "Animals have babies that grow and change — some baby animals look like small versions of their parents while others look very different, and animal parents care for their young in many different ways.",
-    sections: [
-      { title: "Baby Animals Have Special Names", emoji: "🐣", content: "Many baby animals have their own special names. A baby cat is a kitten. A baby cow is a calf. A baby sheep is a lamb. A baby chicken is a chick. A baby horse is a foal. A baby bear is a cub. A baby frog is a tadpole. Learning these names is fun and helps you talk about animals more precisely. Cosmo's babies are called pups — otter pups!" },
-      { title: "Some Babies Look Like Their Parents", emoji: "🐕", content: "Many baby animals look like smaller versions of their parents. A puppy looks like a small dog. A kitten looks like a small cat. A foal looks like a small horse. These babies grow bigger over time but keep the same basic shape. They have the same number of legs, the same type of body covering (fur, feathers, scales), and the same general appearance as their parents." },
-      { title: "Some Babies Look Different", emoji: "🐛", content: "Some baby animals look completely different from their parents. A caterpillar does not look like a butterfly at all — but it grows into one through metamorphosis. A tadpole has a tail and no legs, but it grows into a frog with four legs and no tail. A baby ladybug looks like a tiny spiky creature, nothing like the round spotted adult. These amazing transformations are some of the most surprising things in nature." },
-      { title: "Parents Care for Their Young", emoji: "❤️", content: "Animal parents take care of their babies in many ways. Birds sit on eggs to keep them warm, then feed their chicks. Mammals nurse their babies with milk. Elephants protect their young in a group. Penguins take turns keeping their egg warm in the freezing cold. Some animals, like sea turtles, leave their babies to survive on their own from birth. Every species has its own way of giving babies the best chance to grow up." }
-    ],
-    activity: { title: "Baby Animal Match", instructions: "Draw lines to match baby animals with their parents: kitten-cat, tadpole-frog, calf-cow, chick-chicken, pup-dog, cub-bear. Then draw two baby animals: one that looks like its parent (like a puppy) and one that looks very different (like a tadpole). Label each drawing. Talk about: which baby animal transformation surprises you the most? Can you think of other animals whose babies look different from the adults?" },
-    quiz: [
-      { question: "What is a baby cat called?", answer: "A kitten", options: ["A pup", "A kitten", "A cub", "A calf"] },
-      { question: "Do all baby animals look like their parents?", answer: "No — some look very different, like tadpoles that become frogs or caterpillars that become butterflies", options: ["Yes — all babies look exactly like small parents", "No — some look very different, like tadpoles that become frogs or caterpillars that become butterflies", "Only mammals look like their parents", "Only fish look different from their parents"] },
-      { question: "What is metamorphosis?", answer: "A big change in body shape as an animal grows — like a caterpillar becoming a butterfly", options: ["When an animal moves to a new home", "A big change in body shape as an animal grows — like a caterpillar becoming a butterfly", "When a baby animal learns to walk", "When an animal changes color"] },
-      { question: "How do bird parents take care of their babies?", answer: "They sit on eggs to keep them warm, then feed the chicks after they hatch", options: ["They do not — baby birds take care of themselves", "They sit on eggs to keep them warm, then feed the chicks after they hatch", "They carry the eggs in their beaks", "They only sing to their babies"] },
-      { question: "What is a baby otter called?", answer: "A pup", options: ["A kitten", "A cub", "A pup", "A chick"] }
-    ],
-    familyAdventure: "Play Baby Animal Charades. Write the names of baby animals on slips of paper: kitten, puppy, tadpole, chick, cub, foal, lamb, calf. One person draws a slip and acts out the baby animal without speaking. Everyone guesses. Then act out how the parent takes care of that baby — a bird feeding its chick, a cat carrying a kitten by the scruff, an otter floating with pups on its belly. Discuss: how did your parents take care of you when you were a baby?",
-    badge: "Baby Animal Expert", nextLesson: "sci-3-5-05"
+    id: 'sci-3-5-04',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 4,
+    title: 'Habitats: Where Animals Live',
+    duration: '3-5 min',
+    badge: 'Habitat Explorer',
+    nextLesson: 'sci-3-5-05',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we explore HABITATS — where animals live!' },
+      { type: 'story', image: '/game-assets/science/habitat-forest.png', guideText: 'A HABITAT is the special place where an animal lives. Some animals live in forests, some in oceans, some in deserts, some in icy lands. Each habitat is just right for the animals there!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which habitat is the FOREST?', guideText: 'Tap the forest!',
+        items: [
+          { image: '/game-assets/science/habitat-forest.png', label: 'Forest', correct: true },
+          { image: '/game-assets/science/habitat-ocean.png', label: 'Ocean' },
+          { image: '/game-assets/science/habitat-desert.png', label: 'Desert' },
+          { image: '/game-assets/science/habitat-arctic.png', label: 'Arctic' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/habitat-ocean.png', guideText: 'The OCEAN is a big watery habitat! Fish, dolphins, and whales live there. They are made for water!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where does a polar bear LIVE?', guideText: 'Tap the icy arctic!',
+        items: [
+          { image: '/game-assets/science/habitat-arctic.png', label: 'Arctic ice', correct: true },
+          { image: '/game-assets/science/habitat-desert.png', label: 'Desert' },
+          { image: '/game-assets/science/habitat-forest.png', label: 'Forest' },
+          { image: '/game-assets/science/habitat-ocean.png', label: 'Ocean' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/habitat-desert.png', guideText: 'The DESERT is hot and sandy! Lizards, snakes, and cactus plants love it there. They are built for the heat!' },
+      { type: 'yes-no', scenario: 'Do different animals live in different habitats?', correctAnswer: true, image: '/game-assets/science/habitat-forest.png' },
+      { type: 'family', guideText: 'Tonight, ask your family — what is YOUR habitat? Where do you live? A house? An apartment? Your home is YOUR habitat!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Habitat Explorer', guideText: 'You know habitats, {name}!' }
+    ]
   },
-
-  // ── LESSON 5 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-05", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 5,
-    title: "Habitats: Where Animals Live", duration: "10-15 min",
-    hook: "A polar bear lives in the icy Arctic. A parrot lives in the warm rainforest. A camel lives in the hot desert. Each animal lives in a place that gives it exactly what it needs — food, water, shelter, and the right temperature. That place is called a habitat, and every animal has one that is perfect for it. Cosmo the Otter's habitat is a freshwater river with rocks to play on, fish to eat, and banks to build dens in. Where is your habitat?",
-    bigIdea: "A habitat is the natural home of an animal where it finds everything it needs to survive — food, water, shelter, and the right conditions — and different habitats support different kinds of animals.",
-    sections: [
-      { title: "What Is a Habitat?", emoji: "🏕️", content: "A habitat is the place where an animal naturally lives. It provides everything the animal needs: food to eat, water to drink, shelter to hide in, and the right climate (temperature, rainfall, sunlight). A fish's habitat is water. A bird's habitat might be a forest, a meadow, or a city park. The habitat and the animal are partners — the habitat provides, and the animal is adapted to thrive there." },
-      { title: "Forest Habitats", emoji: "🌲", content: "Forests are full of trees, plants, and shade. Animals that live in forests include deer, owls, squirrels, bears, and woodpeckers. The trees provide shelter, food (nuts, fruits, insects), and places to build nests. Forest floors are covered in leaves and soil where bugs, worms, and mushrooms live. Forests can be warm (tropical rainforests) or cold (pine forests in the north). Each type has its own special animals." },
-      { title: "Water Habitats", emoji: "🌊", content: "Oceans, rivers, lakes, and ponds are water habitats. Fish, dolphins, otters, frogs, turtles, and crabs live in or near water. Fresh water (rivers and lakes) and salt water (oceans) support different animals. Coral reefs in warm oceans are some of the most colorful habitats on Earth, packed with thousands of species. Cosmo's river habitat has flowing water, smooth rocks, and plenty of fish." },
-      { title: "Desert and Arctic Habitats", emoji: "🏜️", content: "Deserts are hot and dry with very little rain. Animals like camels, lizards, scorpions, and rattlesnakes have special features to survive the heat and lack of water. The Arctic is freezing cold with ice and snow. Polar bears, arctic foxes, penguins, and seals have thick fur or blubber to stay warm. These extreme habitats show how adaptable life can be — animals can live almost anywhere on Earth if they have the right features." }
-    ],
-    activity: { title: "Habitat Diorama", instructions: "Choose a habitat — forest, ocean, desert, Arctic, or river. In a shoebox or on a piece of paper, create a scene of that habitat. Add drawings or cutouts of at least three animals that live there. Label the habitat and each animal. Include features of the habitat that the animals need: water, trees, ice, sand, caves. Then explain to someone: why do these animals live in this habitat? What does it give them that they need?" },
-    quiz: [
-      { question: "What is a habitat?", answer: "The natural home of an animal where it finds food, water, shelter, and the right conditions", options: ["A cage at the zoo", "The natural home of an animal where it finds food, water, shelter, and the right conditions", "Any place an animal visits", "A house that people build for animals"] },
-      { question: "Which animals live in a forest habitat?", answer: "Deer, owls, squirrels, bears, and woodpeckers", options: ["Dolphins, whales, and sharks", "Deer, owls, squirrels, bears, and woodpeckers", "Camels, lizards, and scorpions", "Penguins, polar bears, and seals"] },
-      { question: "Why can polar bears live in the Arctic?", answer: "They have thick fur and blubber to keep warm in the freezing cold", options: ["They wear coats", "They have thick fur and blubber to keep warm in the freezing cold", "The Arctic is actually warm", "They only visit the Arctic in summer"] },
-      { question: "What makes a desert habitat challenging?", answer: "It is very hot and dry with very little rain — animals need special features to survive", options: ["It is too cold", "It has too much water", "It is very hot and dry with very little rain — animals need special features to survive", "It has too many trees"] },
-      { question: "What is Cosmo the Otter's habitat?", answer: "A freshwater river with rocks, fish, and riverbanks for dens", options: ["The ocean", "A freshwater river with rocks, fish, and riverbanks for dens", "The desert", "The Arctic"] }
-    ],
-    familyAdventure: "Take a Habitat Walk around your neighborhood. What habitat features can you find? Trees and bushes (forest habitat elements), puddles or streams (water habitat), sunny dry patches (a little like a desert), shady cool areas (like a forest floor). For each area, discuss: what animals might live here? What does this spot provide — food, water, shelter? Then discuss your own family's habitat: what features of your home meet your needs for food, water, shelter, and comfort?",
-    badge: "Habitat Explorer", nextLesson: "sci-3-5-06"
+    id: 'sci-3-5-05',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 5,
+    title: 'Materials: Hard, Soft, Smooth, Rough',
+    duration: '3-5 min',
+    badge: 'Material Tester',
+    nextLesson: 'sci-3-5-06',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we feel the world! Some things are SOFT, some are HARD, some are smooth, some are rough!' },
+      { type: 'story', image: '/game-assets/science/material-soft-pillow.png', guideText: 'Look around — everything is made of MATERIAL. A pillow is SOFT and squishy. A rock is HARD. A glass is SMOOTH. Tree bark is ROUGH. Materials feel different!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is SOFT?', guideText: 'Tap the soft pillow!',
+        items: [
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow', correct: true },
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock' },
+          { image: '/game-assets/science/material-smooth-glass.png', label: 'Smooth glass' },
+          { image: '/game-assets/science/material-rough-bark.png', label: 'Rough bark' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/material-hard-rock.png', guideText: 'A rock is HARD! You cannot squish it. It does not change shape. Hard things are strong!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is HARD?', guideText: 'Tap the hard rock!',
+        items: [
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock', correct: true },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' },
+          { image: '/game-assets/science/material-smooth-glass.png', label: 'Smooth glass' },
+          { image: '/game-assets/science/material-rough-bark.png', label: 'Rough bark' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/material-smooth-glass.png', guideText: 'Glass is SMOOTH. When you slide your finger on it, it glides! No bumps!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is ROUGH?', guideText: 'Tap the bumpy bark!',
+        items: [
+          { image: '/game-assets/science/material-rough-bark.png', label: 'Rough bark', correct: true },
+          { image: '/game-assets/science/material-smooth-glass.png', label: 'Smooth glass' },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' },
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock' }
+        ]
+      },
+      { type: 'family', guideText: 'Tonight, do a Touch Test with your family! Find something soft, hard, smooth, and rough at home. Close your eyes and feel each one!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Material Tester', guideText: 'You feel materials, {name}!' }
+    ]
   },
-
-  // ── LESSON 6 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-06", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 6,
-    title: "Weather: Sun, Wind, Rain, and Snow", duration: "10-15 min",
-    hook: "Some days the sun shines bright and warm. Other days clouds cover the sky and rain falls. Sometimes wind blows so hard it bends the trees. And in winter, soft white snow might cover everything. Weather changes every day — and sometimes every hour! Understanding weather helps you know what to wear, what to do outside, and how nature works. Cosmo the Otter checks the weather every morning because it changes how the river flows and where the fish swim.",
-    bigIdea: "Weather is what is happening in the sky and air right now — it includes sunshine, clouds, rain, snow, wind, and temperature — and it changes from day to day and season to season.",
-    sections: [
-      { title: "Sunshine and Clouds", emoji: "☀️", content: "The sun warms the Earth and gives us light. On clear days, you can see blue sky and feel the sun's warmth on your skin. Clouds are made of tiny water droplets floating in the sky. When there are many clouds, the sky looks gray and the sun hides behind them. Clouds come in different shapes: fluffy white ones on nice days, flat gray ones that bring rain, and tall puffy ones that can bring thunderstorms." },
-      { title: "Rain and Snow", emoji: "🌧️", content: "Rain happens when clouds get so full of water droplets that the water falls down to Earth. Light rain is called a drizzle. Heavy rain can cause puddles and even floods. When it is very cold, the water in clouds freezes into tiny ice crystals that fall as snow. Snowflakes are beautiful — each one has six sides, and no two are exactly alike. Cosmo loves playing in the rain because it fills the river with fresh water." },
-      { title: "Wind", emoji: "💨", content: "Wind is moving air. You cannot see wind, but you can feel it on your skin and see it move things — flags wave, leaves blow, and kites fly. A gentle breeze feels nice on a warm day. A strong wind can knock things over. Very strong winds in storms can even move trees and buildings. Wind happens because the sun heats the air unevenly — warm air rises and cooler air rushes in to take its place." },
-      { title: "Temperature", emoji: "🌡️", content: "Temperature tells you how hot or cold the air is. On hot days, you might want to swim or stay in the shade. On cold days, you need a warm coat, hat, and gloves. A thermometer measures temperature with a number. High numbers mean hot weather. Low numbers mean cold weather. Temperature changes throughout the day — mornings are usually cooler, and afternoons are warmer. Cosmo's fur keeps him warm even in cold water." }
-    ],
-    activity: { title: "Weather Watcher Journal", instructions: "For five days in a row, look outside and record the weather. Draw a picture of what you see: sun, clouds, rain, snow, or wind. Write (or have a grownup help you write) whether it is hot, warm, cool, or cold. At the end of five days, look at your journal: did the weather stay the same or change? What was the most common weather? Was any day surprising? You just collected real scientific data — that is what meteorologists do every day!" },
-    quiz: [
-      { question: "What is weather?", answer: "What is happening in the sky and air right now — sunshine, clouds, rain, wind, and temperature", options: ["The same thing as the seasons", "What is happening in the sky and air right now — sunshine, clouds, rain, wind, and temperature", "Only whether it is raining or not", "Something that never changes"] },
-      { question: "What are clouds made of?", answer: "Tiny water droplets floating in the air", options: ["Cotton", "Tiny water droplets floating in the air", "Smoke from factories", "Dust from the ground"] },
-      { question: "Why does it snow instead of rain?", answer: "When it is very cold, the water in clouds freezes into ice crystals that fall as snow", options: ["Because the clouds are higher in winter", "When it is very cold, the water in clouds freezes into ice crystals that fall as snow", "Snow comes from a different type of cloud than rain", "It only snows at night"] },
-      { question: "What causes wind?", answer: "The sun heats air unevenly — warm air rises and cooler air rushes in, creating movement", options: ["Trees waving back and forth", "The sun heats air unevenly — warm air rises and cooler air rushes in, creating movement", "The Earth spinning too fast", "Clouds pushing the air around"] },
-      { question: "What does a thermometer measure?", answer: "Temperature — how hot or cold the air is", options: ["Wind speed", "Temperature — how hot or cold the air is", "How much rain has fallen", "How many clouds are in the sky"] }
-    ],
-    familyAdventure: "Be a Family Weather Team for one week. Each morning, everyone predicts the day's weather: sunny, cloudy, rainy, or windy? Hot, warm, cool, or cold? At the end of the day, check: who was closest? Keep a family weather chart on the fridge. At the end of the week, look at the data together: what patterns do you notice? Was any prediction really wrong? Really right? This builds observation skills and introduces the scientific practice of making and testing predictions.",
-    badge: "Weather Watcher", nextLesson: "sci-3-5-07"
+    id: 'sci-3-5-06',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 6,
+    title: 'Solids, Liquids, Gases',
+    duration: '3-5 min',
+    badge: 'Matter Master',
+    nextLesson: 'sci-3-5-07',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn about THREE kinds of stuff — solids, liquids, and gases!' },
+      { type: 'story', image: '/game-assets/science/solid-ice-cube.png', guideText: 'Everything in the world is in one of three forms! SOLIDS keep their shape — like an ice cube. LIQUIDS pour and flow — like water. GASES float around invisibly — like steam!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a SOLID?', guideText: 'Tap the solid ice!',
+        items: [
+          { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube', correct: true },
+          { image: '/game-assets/science/liquid-water-pouring.png', label: 'Water pouring' },
+          { image: '/game-assets/science/gas-steam-rising.png', label: 'Steam' },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/liquid-water-pouring.png', guideText: 'Water is a LIQUID! Liquids POUR and take the shape of whatever container holds them. Splish splash!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a LIQUID?', guideText: 'Tap the pouring water!',
+        items: [
+          { image: '/game-assets/science/liquid-water-pouring.png', label: 'Water pouring', correct: true },
+          { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube' },
+          { image: '/game-assets/science/gas-steam-rising.png', label: 'Steam' },
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/gas-steam-rising.png', guideText: 'STEAM is a GAS! Gases float in the air and you can almost see through them. Air is a gas too — it is all around us!' },
+      { type: 'yes-no', scenario: 'Is ice a solid that keeps its shape?', correctAnswer: true, image: '/game-assets/science/solid-ice-cube.png' },
+      { type: 'family', guideText: 'Tonight, find a solid, a liquid, and a gas at home with your family. A book is solid! Juice is liquid! Bubbles in your tummy are gas!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Matter Master', guideText: 'You know matter, {name}!' }
+    ]
   },
-
-  // ── LESSON 7 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-07", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 7,
-    title: "Seasons: How Weather Changes Through the Year", duration: "10-15 min",
-    hook: "In spring, flowers bloom and baby animals are born. In summer, the days are long and hot. In autumn, leaves change color and fall from the trees. In winter, it gets cold and some places get snow. The year is divided into four seasons, and each one brings different weather, different activities, and different changes to the natural world. Cosmo the Otter adjusts his routine with every season — thicker fur in winter, more fishing in summer.",
-    bigIdea: "The four seasons — spring, summer, autumn (fall), and winter — bring predictable changes in weather, daylight, and nature, and they repeat in the same order every year.",
-    sections: [
-      { title: "Spring: New Beginnings", emoji: "🌷", content: "Spring follows winter. The weather gets warmer, days get longer, and rain helps everything grow. Flowers bloom, trees grow new leaves, and baby animals are born. Birds return from their winter travels. Gardens start producing vegetables. Spring feels like the Earth is waking up after a long sleep. Cosmo loves spring because the river fills with snowmelt and the fish return." },
-      { title: "Summer: Warm and Bright", emoji: "☀️", content: "Summer has the longest days and warmest temperatures. The sun is high in the sky and stays out late. Plants grow tall and produce fruit. Animals are active and busy feeding their young. People swim, play outside, and enjoy the warm weather. Summer is when nature is at its fullest — green leaves, buzzing insects, and long sunny evenings." },
-      { title: "Autumn: Change and Harvest", emoji: "🍂", content: "Autumn (also called fall) brings cooler weather and shorter days. Leaves on many trees change from green to red, orange, and yellow before falling to the ground. Animals prepare for winter — squirrels gather nuts, birds fly south, and bears eat extra food. Farmers harvest crops. The air feels crisp and cool. Autumn is nature's way of preparing for the quiet of winter." },
-      { title: "Winter: Cold and Quiet", emoji: "❄️", content: "Winter has the shortest days and coldest temperatures. Some places get snow and ice. Many trees are bare — they have lost all their leaves. Some animals hibernate (sleep through winter), like bears and groundhogs. Others have thick fur or feathers to stay warm. People wear coats, hats, and mittens. Cosmo's thick fur grows even thicker in winter to keep him warm in the cold river." }
-    ],
-    activity: { title: "Seasons Art Project", instructions: "Fold a large piece of paper into four sections. Label each section with a season: spring, summer, autumn, winter. In each section, draw what nature looks like during that season — the same tree in all four seasons looks very different. Add details: spring flowers, summer sun, autumn leaves, winter snow. Under each drawing, write or say one thing you love about that season. Hang your seasons art where everyone can see it." },
-    quiz: [
-      { question: "What happens to trees in autumn?", answer: "Their leaves change color and fall off — the trees prepare for winter", options: ["They grow new flowers", "Their leaves change color and fall off — the trees prepare for winter", "They get taller", "Nothing changes"] },
-      { question: "Which season has the longest days?", answer: "Summer — the sun is up for the most hours", options: ["Winter", "Summer — the sun is up for the most hours", "Spring", "Autumn"] },
-      { question: "What does hibernate mean?", answer: "When an animal sleeps through winter to save energy when food is scarce", options: ["When an animal runs very fast", "When an animal sleeps through winter to save energy when food is scarce", "When an animal has babies", "When an animal changes color"] },
-      { question: "What order do the seasons go in?", answer: "Spring, summer, autumn, winter — then spring again, repeating every year", options: ["Winter, autumn, summer, spring", "Spring, summer, autumn, winter — then spring again, repeating every year", "Summer, spring, winter, autumn", "They come in random order"] },
-      { question: "What happens in spring?", answer: "Weather gets warmer, flowers bloom, baby animals are born, and trees grow new leaves", options: ["Leaves change color and fall", "Weather gets warmer, flowers bloom, baby animals are born, and trees grow new leaves", "Snow covers everything", "Animals hibernate"] }
-    ],
-    familyAdventure: "Create a Family Seasons Memory Book. Each family member shares their favorite memory from each season: a spring adventure, a summer day, an autumn activity, and a winter moment. Draw or write about each one. Then go outside together and observe: what season is it right now? What clues from nature tell you — the temperature, the plants, the daylight, the animal activity? Take a photo of the same tree or spot in your yard and commit to photographing it in every season. Over a year, you will see nature's transformation firsthand.",
-    badge: "Seasons Scholar", nextLesson: "sci-3-5-08"
+    id: 'sci-3-5-07',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 7,
+    title: 'Pushing and Pulling: Forces',
+    duration: '3-5 min',
+    badge: 'Force Mover',
+    nextLesson: 'sci-3-5-08',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we learn about FORCES — pushing and pulling things!' },
+      { type: 'story', image: '/game-assets/science/pushing-cart.png', guideText: 'When you want to MOVE something, you can PUSH it away from you, or PULL it toward you. Pushing and pulling are called FORCES — they make things move!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is PUSHING?', guideText: 'Tap pushing the cart!',
+        items: [
+          { image: '/game-assets/science/pushing-cart.png', label: 'Pushing cart', correct: true },
+          { image: '/game-assets/science/pulling-wagon.png', label: 'Pulling wagon' },
+          { image: '/game-assets/science/magnet-attracting.png', label: 'Magnet' },
+          { image: '/game-assets/science/loud-drum.png', label: 'Drum' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/pulling-wagon.png', guideText: 'PULLING is when you bring something TOWARD you. Pulling a wagon by the handle brings it closer!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is PULLING?', guideText: 'Tap pulling the wagon!',
+        items: [
+          { image: '/game-assets/science/pulling-wagon.png', label: 'Pulling wagon', correct: true },
+          { image: '/game-assets/science/pushing-cart.png', label: 'Pushing cart' },
+          { image: '/game-assets/science/seed-planted-soil.png', label: 'Seed in soil' },
+          { image: '/game-assets/science/quiet-whisper.png', label: 'Whispering' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/magnet-attracting.png', guideText: 'A MAGNET is special — it pulls metal things WITHOUT touching them! That is invisible force!' },
+      { type: 'yes-no', scenario: 'Do you push something AWAY from you?', correctAnswer: true, image: '/game-assets/science/pushing-cart.png' },
+      { type: 'family', guideText: 'Tonight, find things to push and pull at home with your family! A door — push or pull? A drawer — push or pull? You are testing forces!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Force Mover', guideText: 'You move things with force, {name}!' }
+    ]
   },
-
-  // ── LESSON 8 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-08", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 8,
-    title: "The Sky: Sun, Moon, and Stars", duration: "10-15 min",
-    hook: "Look up! The sky is the biggest thing you can see. During the day, the sun gives us light and warmth. At night, the moon glows and thousands of stars twinkle. The sky changes constantly — from bright blue to sunset orange to dark black dotted with starlight. Everything up there is part of space, and you can see it right from your backyard. Cosmo the Otter watches the stars reflected in the river at night and wonders about the universe.",
-    bigIdea: "The sky contains the sun (our closest star that gives light and heat), the moon (which reflects the sun's light and changes shape throughout the month), and countless stars — and observing the sky is one of the oldest and most wonderful human activities.",
-    sections: [
-      { title: "The Sun", emoji: "☀️", content: "The sun is a star — the closest star to Earth. It is a giant ball of hot, glowing gas that gives us light and warmth. Without the sun, Earth would be dark and frozen. The sun rises in the morning (we call this sunrise) and sets in the evening (sunset). During the day, the sun appears to move across the sky from east to west. It is actually the Earth spinning that makes the sun appear to move." },
-      { title: "The Moon", emoji: "🌙", content: "The moon is a big rocky ball that orbits (goes around) Earth. It does not make its own light — it reflects the sun's light like a mirror. That is why it glows at night. The moon appears to change shape throughout the month — from a thin crescent to a full circle and back again. These shapes are called phases. The moon is the only place beyond Earth that humans have visited." },
-      { title: "Stars", emoji: "⭐", content: "Stars are giant balls of burning gas, just like our sun, but much farther away. They look like tiny dots because they are so far from Earth. On a clear night, you can see thousands of stars. People have been looking at stars for thousands of years and have given names to groups of stars called constellations. The Big Dipper, Orion, and Cassiopeia are famous constellations you can learn to find." },
-      { title: "Day and Night Sky", emoji: "🌅", content: "The daytime sky is bright blue (because sunlight scatters in the air) and usually shows only the sun and sometimes the moon. The nighttime sky is dark and shows the moon and stars. At sunrise and sunset, the sky turns beautiful colors — pink, orange, purple, and red — because sunlight passes through more air and bends into different colors. Cosmo watches both the sunrise and the moonrise because both are magical." }
-    ],
-    activity: { title: "Sky Watching Journal", instructions: "Go outside at two different times: once during the day and once in the evening or at night (with a grownup). During the day: what do you see in the sky? Draw the sun, any clouds, and any other things you notice. In the evening or at night: what do you see? Draw the moon (what shape is it?), any stars you can spot, and the colors of the sky. Compare your two drawings. How is the daytime sky different from the nighttime sky? Look at the moon every night for a week — does its shape change?" },
-    quiz: [
-      { question: "What is the sun?", answer: "A star — the closest star to Earth, made of hot glowing gas", options: ["A planet that is on fire", "A star — the closest star to Earth, made of hot glowing gas", "A very big lightbulb", "A moon that is very bright"] },
-      { question: "Why does the moon glow?", answer: "It reflects the sun's light like a mirror — it does not make its own light", options: ["It has its own light inside", "It reflects the sun's light like a mirror — it does not make its own light", "Aliens turn on lights on the moon", "It glows because it is made of cheese"] },
-      { question: "Why do stars look so tiny?", answer: "Because they are very, very far away — they are actually as big as our sun or bigger", options: ["Because they are actually tiny", "Because they are very, very far away — they are actually as big as our sun or bigger", "Because they are behind the moon", "Because our eyes cannot see big things at night"] },
-      { question: "What is a constellation?", answer: "A group of stars that form a pattern or shape in the sky that people have named", options: ["A single very bright star", "A group of stars that form a pattern or shape in the sky that people have named", "A type of planet", "A group of clouds"] },
-      { question: "Why does the sky turn colors at sunset?", answer: "Sunlight passes through more air and bends into different colors like pink, orange, and red", options: ["Someone paints the sky every evening", "Sunlight passes through more air and bends into different colors like pink, orange, and red", "The sun changes color when it is tired", "Clouds change color on their own"] }
-    ],
-    familyAdventure: "Have a Family Stargazing Night. On a clear evening, go outside with blankets and lie on the ground looking up. Can you find the moon? What shape is it tonight? Can you spot any bright stars? Try to find a constellation — the Big Dipper is easiest (look for seven bright stars in the shape of a ladle). Count how many stars you can see. Talk about how people thousands of years ago looked at these same stars and told stories about them. The sky connects us to every person who has ever lived.",
-    badge: "Sky Watcher", nextLesson: "sci-3-5-09"
+    id: 'sci-3-5-08',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 8,
+    title: 'Light and Shadow',
+    duration: '3-5 min',
+    badge: 'Light Watcher',
+    nextLesson: 'sci-3-5-09',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we play with LIGHT and SHADOW!' },
+      { type: 'story', image: '/game-assets/science/flashlight-shining.png', guideText: 'LIGHT helps us see! When light shines on something, we can see it. The sun is the biggest light. A flashlight is a small bright light. A lamp lights up your room!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one MAKES light?', guideText: 'Tap the flashlight!',
+        items: [
+          { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight', correct: true },
+          { image: '/game-assets/science/dark-room-no-light.png', label: 'Dark room' },
+          { image: '/game-assets/science/material-hard-rock.png', label: 'Rock' },
+          { image: '/game-assets/science/quiet-whisper.png', label: 'Whisper' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/child-with-shadow.png', guideText: 'When light hits you, you make a SHADOW! Your shadow is a dark shape that copies your body. Light cannot go through you, so your shape shows up on the ground!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows a SHADOW?', guideText: 'Tap the kid with a shadow!',
+        items: [
+          { image: '/game-assets/science/child-with-shadow.png', label: 'Kid with shadow', correct: true },
+          { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight' },
+          { image: '/game-assets/science/dark-room-no-light.png', label: 'Dark room' },
+          { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Magnifying glass' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/dark-room-no-light.png', guideText: 'When there is NO light, everything looks DARK. We cannot see our toys, our books, or our pets! That is why we need light!' },
+      { type: 'yes-no', scenario: 'Do you make a shadow when light shines on you?', correctAnswer: true, image: '/game-assets/science/child-with-shadow.png' },
+      { type: 'family', guideText: 'Tonight, play with shadows! Use a flashlight or stand under a lamp with your family. Make hand shadows on the wall — bunny ears, butterflies, dogs!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Light Watcher', guideText: 'You know light, {name}!' }
+    ]
   },
-
-  // ── LESSON 9 ────────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-09", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 9,
-    title: "Day and Night: Why Does It Get Dark?", duration: "10-15 min",
-    hook: "Every morning the sun comes up and the world gets bright. Every evening the sun goes down and darkness arrives. This happens every single day, as reliably as breathing. But why? The answer is that our planet — Earth — is spinning like a top, and as it spins, different parts face the sun and then face away. Cosmo the Otter wakes with the sunrise and rests at sunset, following the rhythm that the spinning Earth creates.",
-    bigIdea: "Day happens when your part of Earth faces the sun, and night happens when your part faces away — this cycle occurs because Earth spins (rotates) once every 24 hours.",
-    sections: [
-      { title: "Earth Is Spinning", emoji: "🌍", content: "The Earth is always spinning — slowly and smoothly, like a top that never stops. One complete spin takes about 24 hours, which is one full day and night. You cannot feel it spinning because everything on Earth spins with it — you, the buildings, the air, and the water all move together. But the spinning is why the sun appears to move across the sky." },
-      { title: "Daytime: Facing the Sun", emoji: "☀️", content: "When your part of Earth faces the sun, sunlight reaches you and it is daytime. The sky is bright, you can see everything clearly, and the sun feels warm. As Earth keeps spinning, the sun appears to move from one side of the sky to the other — rising in the east and setting in the west. But the sun is not actually moving — you are, riding on the spinning Earth." },
-      { title: "Nighttime: Facing Away", emoji: "🌙", content: "When your part of Earth rotates away from the sun, sunlight cannot reach you and it is nighttime. The sky gets dark, and you can see the moon and stars. On the other side of Earth, where it is still facing the sun, it is daytime for those people. When you are sleeping at night, children on the other side of the world are waking up to their morning. Cosmo thinks that is amazing." },
-      { title: "The Cycle Repeats", emoji: "🔄", content: "Every 24 hours, the cycle repeats — day turns to night, and night turns to day, over and over again. This cycle is called the day-night cycle, and it has been happening for billions of years. Plants, animals, and people have all adapted to this rhythm. Many flowers open during the day and close at night. Owls hunt at night and sleep during the day. Your body has a natural clock that follows this cycle too — that is why you feel sleepy at night." }
-    ],
-    activity: { title: "Day and Night Experiment", instructions: "Get a ball (any ball will work) and a flashlight. The ball is Earth and the flashlight is the sun. In a dark room, hold the flashlight steady and slowly spin the ball. Watch how one side is lit up (daytime) while the other side is dark (nighttime). Put a sticker or tiny mark on the ball to represent where you live. Spin the ball slowly and watch your sticker move into light (morning) and then into dark (evening). You just modeled why day and night happen!" },
-    quiz: [
-      { question: "Why does it get dark at night?", answer: "Because Earth spins and your part rotates away from the sun, so sunlight cannot reach you", options: ["Because the sun turns off at night", "Because Earth spins and your part rotates away from the sun, so sunlight cannot reach you", "Because the moon blocks the sun", "Because clouds cover the sky"] },
-      { question: "How long does one full spin of Earth take?", answer: "About 24 hours — one complete day and night", options: ["1 hour", "About 24 hours — one complete day and night", "One week", "One year"] },
-      { question: "When it is nighttime where you live, what is happening on the other side of Earth?", answer: "It is daytime — the other side is facing the sun", options: ["It is also nighttime everywhere", "It is daytime — the other side is facing the sun", "The other side is also dark", "Nothing — the other side does not exist"] },
-      { question: "Why can you not feel the Earth spinning?", answer: "Because everything on Earth — you, the air, buildings — spins together at the same speed", options: ["The Earth is not actually spinning", "Because everything on Earth — you, the air, buildings — spins together at the same speed", "Because we are too small to feel it", "Because gravity turns off the spinning feeling"] },
-      { question: "Where does the sun appear to rise?", answer: "In the east — it appears to move across the sky to the west because Earth is spinning", options: ["In the north", "In the west", "In the east — it appears to move across the sky to the west because Earth is spinning", "It rises from a different direction each day"] }
-    ],
-    familyAdventure: "Do the Flashlight Earth experiment together as a family. In a dark room, one person holds a flashlight steady (the sun) while another slowly spins a globe or ball (Earth). Everyone watches the light move across the surface. Talk about: when the light reaches California (or wherever you live), is it daytime or nighttime there? What about London? What about Japan? Then go outside together at sunset and watch the transition from day to night in real time. You are watching the Earth spin.",
-    badge: "Day-Night Detective", nextLesson: "sci-3-5-10"
+    id: 'sci-3-5-09',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 9,
+    title: 'Sound: Loud and Quiet',
+    duration: '3-5 min',
+    badge: 'Sound Hearer',
+    nextLesson: 'sci-3-5-10',
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today we explore SOUNDS — loud ones and quiet ones!' },
+      { type: 'story', image: '/game-assets/science/loud-drum.png', guideText: 'Sound is everywhere! When you bang a drum BOOM, that is a LOUD sound! When a mouse whispers shhh, that is a QUIET sound. Sounds travel through the air to your EARS!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is LOUD?', guideText: 'Tap the loud drum!',
+        items: [
+          { image: '/game-assets/science/loud-drum.png', label: 'Loud drum', correct: true },
+          { image: '/game-assets/science/quiet-whisper.png', label: 'Quiet whisper' },
+          { image: '/game-assets/science/ear-listening.png', label: 'Ear' },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/quiet-whisper.png', guideText: 'A WHISPER is a quiet sound. So small you have to listen carefully! Quiet sounds are gentle for our ears.' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is QUIET?', guideText: 'Tap the whispering mouse!',
+        items: [
+          { image: '/game-assets/science/quiet-whisper.png', label: 'Quiet whisper', correct: true },
+          { image: '/game-assets/science/loud-drum.png', label: 'Loud drum' },
+          { image: '/game-assets/science/animal-eating-food.png', label: 'Animal eating' },
+          { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Scientist' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/ear-listening.png', guideText: 'We hear sounds with our EARS! Sound waves enter our ears and our brains tell us what we hear!' },
+      { type: 'yes-no', scenario: 'Do we hear sounds with our ears?', correctAnswer: true, image: '/game-assets/science/ear-listening.png' },
+      { type: 'family', guideText: 'Tonight, play a Sound Game with your family! Close your eyes — what is the LOUDEST thing you can hear? What is the QUIETEST? Listen carefully!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Sound Hearer', guideText: 'You hear sounds, {name}!' }
+    ]
   },
-
-  // ── LESSON 10 ───────────────────────────────────────────────────────────────
   {
-    id: "sci-3-5-10", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 10,
-    title: "Materials and Their Properties", duration: "10-15 min",
-    hook: "Why is a window made of glass instead of wood? Why is a pillow soft instead of hard? Why is a raincoat waterproof? Everything around you is made of different materials, and each material has special properties — qualities that make it good for certain jobs. Understanding materials helps you understand why things are built the way they are. Cosmo the Otter builds his den with mud and sticks because those materials are waterproof and strong enough to hold together.",
-    bigIdea: "Materials have different properties — like hard or soft, rough or smooth, heavy or light, waterproof or absorbent — and people choose materials based on which properties are needed for the job.",
-    sections: [
-      { title: "What Are Properties?", emoji: "🔍", content: "Properties are words that describe what a material is like. Hard or soft. Rough or smooth. Heavy or light. Shiny or dull. Bendable or stiff. Waterproof or absorbent. Transparent (see-through) or opaque (not see-through). When you describe a material's properties, you are explaining what it can do and how it behaves. Glass is hard, smooth, transparent, and breakable. Cotton is soft, light, absorbent, and bendable." },
-      { title: "Common Materials", emoji: "🧱", content: "Look around and you will see many materials. Wood is hard, strong, and comes from trees — used for furniture and buildings. Metal is hard, shiny, and very strong — used for tools, cars, and bridges. Plastic is light, waterproof, and can be shaped into anything — used for toys, bottles, and containers. Fabric is soft and flexible — used for clothing and blankets. Each material has properties that make it useful for specific things." },
-      { title: "Choosing the Right Material", emoji: "🎯", content: "People choose materials based on what they need. An umbrella must be waterproof — so it is made of nylon or plastic, not cotton. A hammer must be hard and strong — so the head is metal, not wood. A pillow should be soft — so it is filled with feathers or foam, not rocks. When engineers and designers create things, choosing the right material is one of their most important decisions." },
-      { title: "Testing Materials", emoji: "🧪", content: "You can test materials to discover their properties. Drop water on them — does the water soak in (absorbent) or roll off (waterproof)? Try to bend them — do they flex (flexible) or stay rigid (stiff)? Hold them up to light — can you see through them (transparent) or not (opaque)? Scientists test materials exactly this way — by observing and experimenting. Cosmo tests everything he finds by touching, squeezing, and splashing." }
-    ],
-    activity: { title: "Material Testing Lab", instructions: "Gather 5 different objects from around your home — a rock, a piece of cloth, a plastic bottle, a wooden spoon, and a piece of foil. Test each one for these properties: is it hard or soft? Heavy or light? Rough or smooth? Does water soak in or roll off? Can you see through it? Can you bend it? Make a chart with the object names across the top and properties down the side. Fill it in with your discoveries. Which material had the most interesting properties?" },
-    quiz: [
-      { question: "What is a property of a material?", answer: "A quality that describes what the material is like — such as hard, soft, rough, smooth, or waterproof", options: ["Where the material comes from", "A quality that describes what the material is like — such as hard, soft, rough, smooth, or waterproof", "How expensive the material is", "The color of the material only"] },
-      { question: "Why is glass used for windows?", answer: "Because glass is transparent — you can see through it", options: ["Because glass is soft and flexible", "Because glass is transparent — you can see through it", "Because glass is the cheapest material", "Because glass is the strongest material"] },
-      { question: "What does waterproof mean?", answer: "Water does not soak in — it rolls off or stays on the surface", options: ["Made of water", "Water does not soak in — it rolls off or stays on the surface", "Can float on water", "Dissolves in water"] },
-      { question: "Why is a pillow filled with soft material?", answer: "Because soft materials make it comfortable to rest your head on", options: ["Because hard materials are more expensive", "Because soft materials make it comfortable to rest your head on", "Because soft materials are stronger", "Pillows are not actually soft"] },
-      { question: "How can you test if a material is absorbent?", answer: "Drop water on it — if the water soaks in, the material is absorbent", options: ["Hit it with a hammer", "Drop water on it — if the water soaks in, the material is absorbent", "Hold it up to the light", "Smell it"] }
-    ],
-    familyAdventure: "Play Material Match Challenge. Walk through your house and find three things that are hard, three that are soft, three that are smooth, and three that are rough. Compare your lists — did anyone find the same objects? Then play Material Mystery: one person holds an object behind their back and describes only its properties (hard, smooth, cold, heavy). Everyone else guesses what it is. This builds vocabulary for describing the physical world — a core science skill.",
-    badge: "Material Scientist", nextLesson: "sci-3-5-11"
-  },
-
-  // ── LESSON 11 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-11", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 11,
-    title: "Solids, Liquids, and Gases", duration: "10-15 min",
-    hook: "An ice cube is hard and you can hold it. But leave it in the sun and it melts into water you can pour. Heat that water more and it turns into steam that floats into the air. The same stuff — water — can be a solid, a liquid, or a gas. Everything in the world exists in one of these three forms, called states of matter. Cosmo the Otter swims in liquid water, slides on solid ice, and sees gas (steam) rising from warm ponds on cold mornings.",
-    bigIdea: "Everything is made of matter, and matter exists in three states — solids (hold their shape), liquids (flow and take the shape of their container), and gases (spread out to fill any space) — and matter can change from one state to another.",
-    sections: [
-      { title: "Solids: Hold Their Shape", emoji: "🧊", content: "A solid keeps its shape no matter where you put it. A rock is a solid. A book is a solid. Ice is a solid. You can hold a solid in your hand because it does not flow or spread out. Solids can be hard (like metal) or soft (like a pillow), but they all have a definite shape. The tiny particles inside a solid are packed tightly together and do not move much — that is why solids hold their form." },
-      { title: "Liquids: Flow and Pour", emoji: "💧", content: "A liquid flows and takes the shape of whatever container it is in. Pour water into a cup — it becomes cup-shaped. Pour it into a bowl — it becomes bowl-shaped. Liquids do not have their own shape, but they do have a definite amount. You can pour a liquid, splash in it, and feel it flow. Water, juice, milk, and honey are all liquids. Cosmo spends most of his day in the best liquid of all — river water." },
-      { title: "Gases: Fill Every Space", emoji: "💨", content: "A gas spreads out to fill whatever space it is in. Air is a gas — it fills your whole room, your whole house, and the entire atmosphere around Earth. You cannot usually see gases, but you can feel them (wind is moving air) and smell some of them (the smell of baking cookies is gas particles traveling through the air). Steam rising from hot water and the air in a balloon are everyday examples of gases." },
-      { title: "Changing States", emoji: "🔄", content: "Matter can change states. When you heat a solid, it can melt into a liquid — like ice melting into water. When you heat a liquid, it can evaporate into a gas — like water turning to steam. When you cool a gas, it condenses back into a liquid — like water droplets forming on a cold glass. When you cool a liquid, it freezes into a solid — like water becoming ice. Temperature is the key that unlocks these changes." }
-    ],
-    activity: { title: "States of Matter Experiment", instructions: "Get an ice cube and a plate. Place the ice cube on the plate and watch it melt — you are seeing a solid become a liquid! Time how long it takes. Then with a grownup's help, heat some water in a pot until it steams — you are seeing a liquid become a gas! Go around your home and find three solids, three liquids, and one gas you can feel or see (hint: blow on your hand — that is gas). Draw all of them and label each as solid, liquid, or gas." },
-    quiz: [
-      { question: "What is a solid?", answer: "Matter that holds its own shape — like ice, rocks, and books", options: ["Something that flows and pours", "Matter that holds its own shape — like ice, rocks, and books", "Something you cannot see or touch", "Something that is always hard"] },
-      { question: "What happens when you pour a liquid into a cup?", answer: "The liquid takes the shape of the cup — liquids flow to fit their container", options: ["The liquid stays in its original shape", "The liquid takes the shape of the cup — liquids flow to fit their container", "The liquid disappears", "The liquid becomes a solid"] },
-      { question: "Can you see most gases?", answer: "No — most gases are invisible, but you can feel them (like wind) or smell them (like baking cookies)", options: ["Yes — all gases are colorful", "No — most gases are invisible, but you can feel them (like wind) or smell them (like baking cookies)", "Only at night", "Only through a microscope"] },
-      { question: "What happens when ice gets warm?", answer: "It melts — the solid changes into a liquid", options: ["It gets bigger", "It melts — the solid changes into a liquid", "It turns into a gas immediately", "Nothing — ice never changes"] },
-      { question: "What causes matter to change states?", answer: "Temperature — heating or cooling can change solids to liquids to gases and back", options: ["Gravity", "Temperature — heating or cooling can change solids to liquids to gases and back", "Color changes", "Shaking it very hard"] }
-    ],
-    familyAdventure: "Make ice pops together as a family — pour juice into molds or small cups, add sticks, and freeze. Watch liquid become solid overnight! When you eat them, watch the solid melt back into liquid on your tongue. Then boil water together (carefully, with a grownup) and watch the steam (gas) rise. You just witnessed all three state changes in one delicious science experiment. Discuss: can you think of other things that change states at home?",
-    badge: "Matter Master", nextLesson: "sci-3-5-12"
-  },
-
-  // ── LESSON 12 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-12", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 12,
-    title: "Pushing and Pulling: Forces in Action", duration: "10-15 min",
-    hook: "When you push a toy car, it rolls forward. When you pull a wagon, it comes toward you. Every time something moves, a push or a pull made it happen. Scientists call pushes and pulls forces, and forces are what make everything in the world move, stop, speed up, or change direction. Cosmo the Otter pushes through the water with his paws and pulls fish out of the river — forces are everywhere!",
-    bigIdea: "A force is a push or a pull that can make something start moving, stop moving, speed up, slow down, or change direction — and forces are at work in everything that moves.",
-    sections: [
-      { title: "Pushes", emoji: "👐", content: "A push moves something away from you. When you push a swing, it moves forward. When you push a ball, it rolls away. When you push a door, it opens. Pushes can be gentle (nudging a toy) or strong (shoving a heavy box). The harder you push, the faster and farther things move. Gravity is a push too — Earth pushes (pulls, actually!) everything toward the ground." },
-      { title: "Pulls", emoji: "🤲", content: "A pull moves something toward you. When you pull a door handle, the door opens toward you. When you pull a sled, it follows you. When you reel in a fishing line, you pull the fish closer. Like pushes, pulls can be gentle or strong. A magnet pulls metal objects toward it without even touching them — that is a special kind of force called magnetic force." },
-      { title: "Forces Change Movement", emoji: "🔄", content: "Forces do not just start movement — they also stop it, speed it up, slow it down, and change its direction. Friction is a force that slows things down — it is why a ball eventually stops rolling on the ground. A wall stops a ball by pushing back against it. Kicking a rolling ball changes its direction. Every change in movement involves a force. Cosmo uses the force of the water current to help him swim faster downstream." },
-      { title: "Forces Are Everywhere", emoji: "🌍", content: "You use forces every minute of every day. Walking pushes the ground backward (and you forward). Picking up a cup is a pull. Throwing a ball is a push. Catching it is a push in the opposite direction. Even sitting in a chair involves forces — the chair pushes up against you while gravity pulls you down. When those forces are balanced, you stay still. Forces are the invisible hands that control all movement." }
-    ],
-    activity: { title: "Force Experiment", instructions: "Gather a toy car, a ball, and a book. Experiment with pushes and pulls: push the car gently, then hard — which goes farther? Pull the book across different surfaces (carpet, tile, wood) — which is easiest? Roll the ball on grass and then on a smooth floor — where does it roll farther? (That is friction!) For each experiment, talk about: what force made it move? Was it a push or a pull? What made it stop? Draw your three experiments and label the forces." },
-    quiz: [
-      { question: "What is a force?", answer: "A push or a pull that can change how something moves", options: ["A type of energy", "A push or a pull that can change how something moves", "A loud sound", "A very strong person"] },
-      { question: "What happens when you push something?", answer: "It moves away from you", options: ["It comes toward you", "It moves away from you", "It stays perfectly still", "It disappears"] },
-      { question: "What is friction?", answer: "A force that slows things down — it is why a rolling ball eventually stops", options: ["A type of push that makes things go faster", "A force that slows things down — it is why a rolling ball eventually stops", "The sound a car makes", "A force that only works in water"] },
-      { question: "Does a harder push make a ball go farther or shorter?", answer: "Farther — a stronger force creates more movement", options: ["Shorter — hard pushes stop the ball", "Farther — a stronger force creates more movement", "The same distance regardless of push strength", "It depends on the color of the ball"] },
-      { question: "What forces are acting on you right now while sitting?", answer: "Gravity is pulling you down and the chair is pushing you up — the forces are balanced so you stay still", options: ["No forces are acting on you when you sit still", "Gravity is pulling you down and the chair is pushing you up — the forces are balanced so you stay still", "Only gravity is acting", "Only the chair is acting"] }
-    ],
-    familyAdventure: "Build a ramp with books or a board and test forces with toy cars or balls. How far does a car roll when released from the top vs the middle? What happens if you add a carpet square at the bottom (more friction)? What happens if you push the car vs just letting it roll? Keep a record of distances. Then play Force Charades: act out a force without speaking — pushing a heavy door, pulling a stubborn dog on a leash, kicking a soccer ball — and everyone guesses the force. Forces are fun!",
-    badge: "Force Finder", nextLesson: "sci-3-5-13"
-  },
-
-  // ── LESSON 13 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-13", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 13,
-    title: "Light and Shadow", duration: "10-15 min",
-    hook: "Stand in the sun and look behind you — there is a dark shape on the ground that copies your every move. That is your shadow! Shadows happen because your body blocks the light. Light travels in straight lines, and when something gets in its way, a shadow appears on the other side. Cosmo the Otter makes shadows on the riverbed when the sun is high, and he loves watching his shadow swim alongside him.",
-    bigIdea: "Light travels in straight lines from a source, and when an object blocks the light, a shadow forms on the other side — shadows change size and shape depending on the position of the light and the object.",
-    sections: [
-      { title: "Light Sources", emoji: "💡", content: "Light comes from sources — things that produce light. The sun is the biggest light source we see every day. Light bulbs, candles, flashlights, phone screens, and fires are also light sources. The moon is not a light source — it reflects the sun's light. Without light sources, we would be in total darkness. Cosmo appreciates the sun because it lights up the river so he can see the fish." },
-      { title: "How Shadows Form", emoji: "🌑", content: "Light travels in straight lines. When it hits something it cannot pass through — like your body, a tree, or a building — the light is blocked. The area behind the object where no light reaches is the shadow. Shadows are always on the opposite side of the object from the light source. If the sun is in front of you, your shadow is behind you." },
-      { title: "Shadow Size Changes", emoji: "📏", content: "Shadows change size depending on where the light is. When the sun is low in the sky (morning and evening), shadows are long and stretched out. When the sun is high (midday), shadows are short. You can also change shadow size with a flashlight: move the light closer to an object and the shadow gets bigger. Move it farther away and the shadow gets smaller. It is like a magic trick that follows the rules of science." },
-      { title: "Shadow Play", emoji: "🎭", content: "People have been making shadow puppets for thousands of years — using their hands between a light source and a wall to create animal shapes. You can make a dog, a bird, a rabbit, and many other shapes with just your hands and a flashlight. Shadow art is a beautiful combination of science and creativity. Cosmo loves shadow play because it proves that understanding light helps you create amazing things." }
-    ],
-    activity: { title: "Shadow Investigation", instructions: "On a sunny day, go outside and observe your shadow at three different times: morning, midday, and afternoon. Draw your shadow at each time. What changed? Then use a flashlight in a dark room to make shadow puppets on the wall. Try making animals with your hands. Move the flashlight closer and farther — what happens to the shadow? Finally, find five objects and predict whether each will make a shadow. Test your predictions. Were any surprising?" },
-    quiz: [
-      { question: "What is a shadow?", answer: "A dark area formed when an object blocks light from reaching the surface behind it", options: ["A reflection in water", "A dark area formed when an object blocks light from reaching the surface behind it", "A type of cloud", "Something that only appears at night"] },
-      { question: "Why does light create shadows?", answer: "Because light travels in straight lines and cannot bend around solid objects", options: ["Because light is afraid of objects", "Because light travels in straight lines and cannot bend around solid objects", "Because shadows attract light", "Because the ground absorbs light everywhere"] },
-      { question: "When are shadows longest during the day?", answer: "In the morning and evening when the sun is low in the sky", options: ["At noon when the sun is highest", "In the morning and evening when the sun is low in the sky", "Shadows are always the same length", "Only at midnight"] },
-      { question: "Is the moon a light source?", answer: "No — it reflects the sun's light like a mirror", options: ["Yes — it makes its own light", "No — it reflects the sun's light like a mirror", "Only when it is full", "Yes — but only at night"] },
-      { question: "What happens to a shadow when you move a flashlight closer to an object?", answer: "The shadow gets bigger", options: ["The shadow disappears", "The shadow gets bigger", "The shadow gets smaller", "The shadow does not change"] }
-    ],
-    familyAdventure: "Have a Family Shadow Show. In a dark room with a flashlight or lamp as your light source, take turns making shadow puppets on the wall. Start with simple shapes and try to create animals, characters, or scenes. Then go outside on a sunny day and play Shadow Tag — instead of tagging the person, you step on their shadow. Notice how everyone's shadow changes throughout the game as the sun moves. Shadows make science playful and visible.",
-    badge: "Shadow Scientist", nextLesson: "sci-3-5-14"
-  },
-
-  // ── LESSON 14 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-14", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 14,
-    title: "Sound: Loud, Quiet, High, and Low", duration: "10-15 min",
-    hook: "Clap your hands. Now whisper. Now hum. Every sound you hear — music, voices, thunder, birds singing — happens because something is vibrating. When a guitar string vibrates, you hear music. When your vocal cords vibrate, you hear your voice. When thunder rumbles, air is vibrating from a lightning bolt. Sound is vibration, and it is everywhere. Cosmo the Otter listens to the river sounds and can tell whether the water is fast or slow just by listening.",
-    bigIdea: "Sound is caused by vibrations — when something vibrates, it creates sound waves that travel to your ears — and sounds differ in volume (loud or quiet) and pitch (high or low).",
-    sections: [
-      { title: "Sound Is Vibration", emoji: "〰️", content: "Put your fingers on your throat and hum. Feel the buzzing? Those are your vocal cords vibrating — and those vibrations create the sound of your voice. Every sound is made by something vibrating: a drum skin, a guitar string, a bell, even the air itself during thunder. When an object vibrates, it pushes the air around it, creating invisible waves that travel to your ears. Your ears turn those waves into the sounds you hear." },
-      { title: "Loud and Quiet", emoji: "🔊", content: "Volume is how loud or quiet a sound is. A whisper is quiet — small vibrations create small sound waves. A shout is loud — big vibrations create big sound waves. A jet engine is so loud it can hurt your ears. The size of the vibration determines the volume: bigger vibration means louder sound. You can control volume with your voice — speaking softly or loudly changes how much your vocal cords vibrate." },
-      { title: "High and Low", emoji: "🎹", content: "Pitch is how high or low a sound is. A bird's chirp is high-pitched. A lion's roar is low-pitched. A whistle is high. A drum is low. Pitch is determined by how fast something vibrates: fast vibrations make high sounds, and slow vibrations make low sounds. Small, thin things tend to vibrate fast (high pitch). Big, thick things vibrate slow (low pitch). That is why a tiny bell rings high and a big bell rings low." },
-      { title: "Sound Travels", emoji: "👂", content: "Sound travels through air, but it can also travel through water and solid objects. Put your ear against a table and tap the other end — you hear the sound clearly because it traveled through the solid wood. Whales communicate through water because sound travels well in liquids too. Sound needs something to travel through — it cannot travel through empty space. That is why outer space is completely silent, even though stars are exploding. Cosmo hears sounds underwater that humans cannot hear above." }
-    ],
-    activity: { title: "Sound Exploration", instructions: "Make sounds with five different objects: tap a glass with a spoon, shake a container of rice, blow across the top of a bottle, pluck a rubber band stretched between two fingers, and clap your hands. For each sound, describe: is it loud or quiet? High or low? What is vibrating to make the sound? Then try an experiment: fill three glasses with different amounts of water and tap each one. Do they make different sounds? (Yes — different amounts of water change the vibration speed.) You just made a musical instrument!" },
-    quiz: [
-      { question: "What causes sound?", answer: "Vibrations — when something vibrates, it creates sound waves that travel to your ears", options: ["Wind blowing", "Vibrations — when something vibrates, it creates sound waves that travel to your ears", "Light shining", "Objects being still and quiet"] },
-      { question: "What is volume?", answer: "How loud or quiet a sound is — determined by the size of the vibration", options: ["How high or low a sound is", "How loud or quiet a sound is — determined by the size of the vibration", "How far sound travels", "The button on a TV remote"] },
-      { question: "What is pitch?", answer: "How high or low a sound is — determined by how fast something vibrates", options: ["How loud a sound is", "How high or low a sound is — determined by how fast something vibrates", "How long a sound lasts", "Whether a sound echoes"] },
-      { question: "Can sound travel through water?", answer: "Yes — sound can travel through air, water, and solid objects", options: ["No — sound only travels through air", "Yes — sound can travel through air, water, and solid objects", "Only very loud sounds can travel through water", "Only in warm water"] },
-      { question: "Why is outer space silent?", answer: "Because sound needs something to travel through (like air or water) and space is empty", options: ["Because there are no sounds being made", "Because sound needs something to travel through (like air or water) and space is empty", "Because space is too cold for sound", "It is not silent — we just cannot hear it from Earth"] }
-    ],
-    familyAdventure: "Make a Family Band using only household items. Pots and pans become drums. Glasses with water become a xylophone. Rubber bands on a box become a guitar. Rice in a sealed container becomes a shaker. A comb with wax paper becomes a kazoo. Each family member picks an instrument and plays together. Discuss: which instrument is loudest? Quietest? Highest pitch? Lowest? Can you change the pitch of any instrument? Music is the beautiful side of sound science.",
-    badge: "Sound Explorer", nextLesson: "sci-3-5-15"
-  },
-
-  // ── LESSON 15 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-15", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 15,
-    title: "Heat: Hot and Cold", duration: "10-15 min",
-    hook: "Touch a cup of hot chocolate — warm! Touch an ice cube — cold! But what is heat really? It is energy — energy that moves from hot things to cold things. That is why the hot chocolate warms your hands and the ice cube makes your fingers cold. Heat is always moving, always flowing, and understanding it helps you understand cooking, weather, your body temperature, and so much more. Cosmo the Otter's thick fur traps heat close to his body, keeping him warm even in cold water.",
-    bigIdea: "Heat is a form of energy that flows from warmer objects to cooler objects — things feel hot when they give heat to you and cold when they take heat from you.",
-    sections: [
-      { title: "Heat Is Energy", emoji: "🔥", content: "Heat is energy — the energy of tiny particles moving inside everything. In hot things, particles move fast. In cold things, particles move slowly. When you heat something up, you are making its particles move faster. When you cool something down, the particles slow down. Temperature measures how fast the particles are moving. Hot means fast. Cold means slow." },
-      { title: "Heat Moves", emoji: "➡️", content: "Heat always flows from warm things to cool things — never the other way around. When you hold a cup of hot chocolate, heat flows from the cup into your hands (making them warm). When you hold an ice cube, heat flows from your warm hand into the cold ice (making your hand feel cold and making the ice melt). Heat moves until both objects are the same temperature." },
-      { title: "Sources of Heat", emoji: "☀️", content: "Heat comes from many sources. The sun is the biggest source of heat for Earth. Fire produces heat. Friction (rubbing things together) creates heat — rub your hands together quickly and feel the warmth. Your body produces heat by turning food into energy. Heaters, stoves, and ovens all produce heat for our homes and cooking. Cosmo gets his heat from his food and his thick fur helps him keep it." },
-      { title: "Keeping Heat In or Out", emoji: "🧥", content: "Insulators are materials that slow down heat movement. A coat keeps your body heat from escaping into the cold air — it is an insulator. A cooler keeps outside heat from warming your cold drinks. Conductors are the opposite — they let heat flow easily. Metal is a conductor, which is why a metal spoon gets hot in soup quickly. Understanding heat helps you choose what to wear, how to cook, and how to stay comfortable." }
-    ],
-    activity: { title: "Hot and Cold Investigation", instructions: "Fill three cups: one with warm water, one with room-temperature water, and one with ice water. Put one finger in the warm cup and one in the ice water cup for 30 seconds. Then put both fingers in the room-temperature cup. Does it feel warm or cold to each finger? (Surprise — the same water feels different to each finger because of heat flow!) Then test insulation: wrap one ice cube in a towel and leave another unwrapped. Which melts faster? The towel is an insulator." },
-    quiz: [
-      { question: "What is heat?", answer: "A form of energy — the energy of tiny particles moving inside everything", options: ["A type of light", "A form of energy — the energy of tiny particles moving inside everything", "Something that only comes from fire", "A color"] },
-      { question: "Which direction does heat flow?", answer: "From warmer objects to cooler objects — always from hot to cold", options: ["From cold to hot", "From warmer objects to cooler objects — always from hot to cold", "In random directions", "It does not flow at all"] },
-      { question: "Why does your hand feel cold when holding ice?", answer: "Heat flows from your warm hand into the cold ice — losing heat makes your hand feel cold", options: ["The ice sends coldness into your hand", "Heat flows from your warm hand into the cold ice — losing heat makes your hand feel cold", "Your hand stops working when it is cold", "The ice creates a cold force"] },
-      { question: "What is an insulator?", answer: "A material that slows down heat movement — like a coat that keeps body heat from escaping", options: ["A material that speeds up heat", "A material that slows down heat movement — like a coat that keeps body heat from escaping", "A device that measures temperature", "A type of battery"] },
-      { question: "Why does rubbing your hands together make them warm?", answer: "Friction creates heat — the rubbing motion generates energy that warms your skin", options: ["Your hands have built-in heaters", "Friction creates heat — the rubbing motion generates energy that warms your skin", "The air between your hands gets warmer", "It is just your imagination"] }
-    ],
-    familyAdventure: "Do a Heat Race. Get two identical ice cubes. One person wraps theirs in a towel (insulator). Another leaves theirs on a plate. A third puts theirs on a metal pan. Which melts fastest? (The metal pan — metal conducts heat quickly.) Which melts slowest? (The towel — it insulates.) Discuss: how is this like wearing a coat in winter? Then make hot chocolate and hold the warm mug — feel the heat flowing from the cup into your hands. Heat science is cozy science.",
-    badge: "Heat Expert", nextLesson: "sci-3-5-16"
-  },
-
-  // ── LESSON 16 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-16", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 16,
-    title: "Magnets: Attract and Repel", duration: "10-15 min",
-    hook: "Hold a magnet near a paper clip and something magical happens — the clip jumps right to the magnet without you even touching it! Magnets can pull certain metals toward them through invisible force. They can even push other magnets away. This invisible power is called magnetism, and it is one of the most fascinating forces in nature. Cosmo the Otter is curious about magnets because they seem like real magic — but they follow the rules of science.",
-    bigIdea: "Magnets create an invisible force that attracts (pulls) certain metals like iron and steel, and magnets can attract or repel each other depending on which ends (poles) face each other.",
-    sections: [
-      { title: "What Magnets Do", emoji: "🧲", content: "Magnets have a special power: they can attract (pull toward) certain metals without touching them. Hold a magnet near a paper clip, a nail, or a coin — some will jump to the magnet and stick. Not all metals are magnetic. Iron and steel are attracted to magnets. Aluminum, copper, and gold are not. Wood, plastic, paper, and fabric are not magnetic either. Magnets are picky about what they attract." },
-      { title: "Poles: North and South", emoji: "🧭", content: "Every magnet has two ends called poles — a north pole and a south pole. When you bring two magnets together, something interesting happens. Opposite poles attract: north and south pull toward each other and stick. Same poles repel: north and north (or south and south) push away from each other. You can feel the pushing force if you try to press two same poles together — they resist, like an invisible cushion between them." },
-      { title: "Magnetic Force Goes Through Things", emoji: "✨", content: "Magnets can attract through materials! Put a paper clip on a table and hold a magnet underneath — the clip will move, pulled by the magnet through the table. Magnets can work through paper, cardboard, fabric, water, and even thin wood. The magnetic force is invisible, but it is real and powerful. This is what makes magnets seem magical — their force reaches through solid objects." },
-      { title: "Magnets in Everyday Life", emoji: "🏠", content: "Magnets are everywhere. Refrigerator magnets hold up papers. Compasses use magnets to point north. Electric motors use magnets to spin. Speakers use magnets to create sound. Credit card strips contain magnetic information. Even the Earth itself is a giant magnet — that is why compasses work! Cosmo says magnets are proof that invisible forces shape our visible world." }
-    ],
-    activity: { title: "Magnet Treasure Hunt", instructions: "Take a magnet around your home and test 15 different objects: does the magnet stick? Make two lists: magnetic and not magnetic. Try coins (some are magnetic, some are not!), silverware, door handles, toys, cans, and anything metal you find. Then test if your magnet can attract through things: can it pull a paper clip through a piece of paper? Through a thin book? Through your hand? How thick can the barrier be before the magnet stops working?" },
-    quiz: [
-      { question: "What does a magnet attract?", answer: "Certain metals like iron and steel — but not all metals and not non-metal materials", options: ["Everything", "Certain metals like iron and steel — but not all metals and not non-metal materials", "Only paper clips", "All metals"] },
-      { question: "What happens when two north poles of magnets face each other?", answer: "They repel — they push away from each other", options: ["They attract and stick together", "They repel — they push away from each other", "Nothing happens", "They break each other"] },
-      { question: "Can a magnet attract through a piece of paper?", answer: "Yes — magnetic force can pass through many materials like paper, cardboard, and fabric", options: ["No — paper blocks magnetic force", "Yes — magnetic force can pass through many materials like paper, cardboard, and fabric", "Only through special paper", "Only very strong magnets can"] },
-      { question: "What are the two ends of a magnet called?", answer: "North pole and south pole", options: ["Top and bottom", "North pole and south pole", "Left and right", "Strong and weak"] },
-      { question: "Is the Earth a magnet?", answer: "Yes — Earth has a magnetic field, which is why compasses point north", options: ["No — only small objects can be magnets", "Yes — Earth has a magnetic field, which is why compasses point north", "Only the North Pole is magnetic", "Only during winter"] }
-    ],
-    familyAdventure: "Play Magnetic Fishing. Tie a magnet to a string and attach it to a stick (a pencil or chopstick works). Put paper clips on paper fish (draw fish on paper and clip a paper clip to each one). Place the fish in a bowl or on the floor. Take turns fishing with the magnetic rod — whoever catches the most fish wins! Then try the magnet maze: put a paper clip on top of a piece of cardboard and move a magnet underneath to guide the clip through a drawn maze. Magnetic force goes through things — and it is incredibly fun to play with.",
-    badge: "Magnet Master", nextLesson: "sci-3-5-17"
-  },
-
-  // ── LESSON 17 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-17", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 17,
-    title: "Earth's Materials: Rocks, Soil, and Water", duration: "10-15 min",
-    hook: "Look down at the ground beneath your feet. Under the grass or sidewalk, there is soil. Under the soil, there is rock. And flowing through everything — from underground rivers to puddles — is water. These three materials make up the surface of our planet, and together they support all life on Earth. Cosmo the Otter digs in soil, slides on rocks, and swims in water every day — Earth's materials are his playground.",
-    bigIdea: "Earth is made of rocks (hard, solid pieces of the planet), soil (a mix of tiny rock pieces, dead plants, and living things), and water (found in oceans, rivers, lakes, rain, and underground) — these materials support all life.",
-    sections: [
-      { title: "Rocks", emoji: "🪨", content: "Rocks come in many shapes, sizes, and colors. Some are rough, some are smooth. Some are heavy, some are light. Rocks are found everywhere — mountains are made of rock, pebbles on a beach are small rocks, and sand is made of tiny rock pieces. Rocks are the oldest things on Earth — some are billions of years old. People use rocks for building, roads, and even jewelry (gemstones are special rocks)." },
-      { title: "Soil", emoji: "🌱", content: "Soil is the dark, crumbly material on the surface of the Earth. It is made of tiny pieces of broken-down rock mixed with dead leaves and plants (called organic matter), water, air, and millions of tiny living things (worms, insects, bacteria). Soil is where plants grow — their roots reach into soil to find water and nutrients. Without soil, we could not grow food. Healthy soil is one of the most important things on Earth." },
-      { title: "Water", emoji: "💧", content: "Water covers about 70% of Earth's surface. Most of it is in the oceans (saltwater), but some is in rivers, lakes, and underground (freshwater). Water falls from the sky as rain and snow. It flows in rivers to the oceans. It evaporates back into the sky as water vapor. This cycle repeats endlessly. Every living thing needs water to survive. Cosmo's river is freshwater — clean, cold, and full of life." },
-      { title: "How They Work Together", emoji: "🌍", content: "Rocks, soil, and water work together to support life. Rain falls on rocks and slowly breaks them into smaller pieces that become part of the soil. Soil holds water for plants to drink. Water flows over rocks, carving rivers and valleys over millions of years. Plants grow in soil, using water and nutrients. Animals eat the plants and drink the water. Everything is connected — and it all starts with Earth's basic materials." }
-    ],
-    activity: { title: "Earth Materials Collection", instructions: "Go outside and collect three small rocks, a handful of soil, and a small container of water (from a puddle, stream, or faucet). Examine each one closely. Rocks: describe the color, texture, and weight of each rock. Are they different from each other? Soil: look closely — can you see tiny rock pieces, plant bits, or small creatures? Water: is it clear or cloudy? Does it have anything floating in it? Draw all three materials and write one interesting thing about each." },
-    quiz: [
-      { question: "What is soil made of?", answer: "Tiny pieces of rock mixed with dead plants, water, air, and tiny living things", options: ["Just dirt and nothing else", "Tiny pieces of rock mixed with dead plants, water, air, and tiny living things", "Only sand", "Recycled paper and compost only"] },
-      { question: "Where is most of Earth's water found?", answer: "In the oceans — as saltwater", options: ["In rivers and lakes", "In the oceans — as saltwater", "Underground only", "In the clouds"] },
-      { question: "What are sand grains?", answer: "Tiny pieces of rock that have been broken down over time by wind and water", options: ["A special type of soil", "Tiny pieces of rock that have been broken down over time by wind and water", "Dried-up mud", "Ground-up seashells only"] },
-      { question: "Why is soil important for life?", answer: "Plants grow in soil — their roots find water and nutrients there — and most of our food comes from plants grown in soil", options: ["It is not important", "Plants grow in soil — their roots find water and nutrients there — and most of our food comes from plants grown in soil", "Only for making mud pies", "Only worms need soil"] },
-      { question: "How do rocks, soil, and water work together?", answer: "Rain breaks rocks into soil, soil holds water for plants, and water carves rivers through rocks — everything is connected", options: ["They do not work together at all", "Rain breaks rocks into soil, soil holds water for plants, and water carves rivers through rocks — everything is connected", "Only rocks are important", "They only connect underground"] }
-    ],
-    familyAdventure: "Go on an Earth Materials Walk. Bring a bag and collect interesting rocks (at least five different ones). At home, wash them and examine each one: sort by color, texture, size, and weight. Then dig a small hole in the yard (or look at a potted plant's soil) and observe the soil layers. Finally, trace where your home's water comes from — turn on the faucet and discuss: where does this water travel from? River? Reservoir? Underground? You are connected to Earth's materials every time you drink a glass of water.",
-    badge: "Earth Material Explorer", nextLesson: "sci-3-5-18"
-  },
-
-  // ── LESSON 18 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-18", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 18,
-    title: "Caring for the Earth: Conservation", duration: "10-15 min",
-    hook: "The Earth gives us everything we need — air to breathe, water to drink, food to eat, and a beautiful world to live in. But the Earth needs our help too. When we throw trash on the ground, pollute the water, or waste energy, we hurt the planet that takes care of us. Conservation means taking care of the Earth so it can keep taking care of us — and every person, even the smallest, can make a difference. Cosmo the Otter keeps his river clean because a healthy river means a healthy home.",
-    bigIdea: "Conservation means taking care of the Earth by reducing waste, reusing materials, recycling, saving water and energy, and protecting plants and animals — every small action helps keep our planet healthy.",
-    sections: [
-      { title: "Reduce, Reuse, Recycle", emoji: "♻️", content: "The three Rs are the simplest way to help the Earth. Reduce means using less — turn off lights, take shorter showers, use less paper. Reuse means using things again instead of throwing them away — refill a water bottle, use both sides of paper, donate old toys. Recycle means turning old materials into new ones — paper, plastic, glass, and metal can often be recycled into new products. Reduce is the most powerful because it prevents waste from being created in the first place." },
-      { title: "Saving Water", emoji: "💧", content: "Clean water is precious — only about 1% of Earth's water is fresh and available for drinking. You can save water by turning off the faucet while brushing your teeth, taking shorter showers, fixing leaky faucets, and watering plants in the morning when it is cool (so less water evaporates). Every drop you save helps ensure there is enough clean water for everyone. Cosmo respects every drop because his river is his lifeline." },
-      { title: "Protecting Animals and Plants", emoji: "🌳", content: "Plants and animals need clean air, clean water, and healthy habitats to survive. When forests are cut down, animals lose their homes. When rivers are polluted, fish cannot survive. Planting trees, keeping parks clean, and not disturbing wildlife are ways to protect nature. Even small actions — like not picking wildflowers or keeping dogs on trails — help plants and animals thrive." },
-      { title: "Every Action Matters", emoji: "🌟", content: "You might think one person cannot make a difference — but you can. If every person picked up one piece of litter, billions of pieces would be cleaned up. If every family saved one gallon of water per day, billions of gallons would be saved. Big changes start with small actions repeated by many people. You are not too young to be an Earth protector. Cosmo says: start small, be consistent, and inspire others." }
-    ],
-    activity: { title: "Earth Helper Challenge", instructions: "Do three things to help the Earth today: (1) pick up five pieces of litter from your yard or neighborhood (with gloves or a bag over your hand), (2) find one way to reduce waste in your home — turn off a light, use a reusable water bottle, or use both sides of paper, (3) draw a poster that says one thing people can do to help the planet. Hang it where visitors can see it. You just made a real difference and inspired others to do the same." },
-    quiz: [
-      { question: "What does reduce mean?", answer: "Using less — like turning off lights and using less paper", options: ["Throwing everything away", "Using less — like turning off lights and using less paper", "Making things smaller", "Buying more things on sale"] },
-      { question: "Why is saving water important?", answer: "Only about 1% of Earth's water is fresh and drinkable — every drop is precious", options: ["Water is unlimited", "Only about 1% of Earth's water is fresh and drinkable — every drop is precious", "Saving water is only important in deserts", "Water does not need to be saved"] },
-      { question: "How can you help protect animals?", answer: "Keep their habitats clean, do not disturb wildlife, and support conservation of forests and rivers", options: ["Keep all animals as pets", "Keep their habitats clean, do not disturb wildlife, and support conservation of forests and rivers", "Animals do not need human help", "Only zoos can protect animals"] },
-      { question: "Which of the three Rs is most powerful?", answer: "Reduce — because it prevents waste from being created in the first place", options: ["Recycle — because it turns trash into new things", "Reduce — because it prevents waste from being created in the first place", "Reuse — because it gives things a second life", "They are all equally powerful"] },
-      { question: "Can one person really make a difference?", answer: "Yes — big changes start with small actions repeated by many people, and every action counts", options: ["No — one person is too small to matter", "Yes — big changes start with small actions repeated by many people, and every action counts", "Only scientists can help the Earth", "Only when you are an adult"] }
-    ],
-    familyAdventure: "Do a Family Earth Audit. Walk through your home and find five ways your family can be more earth-friendly: are any lights left on in empty rooms? Is the faucet dripping? Could you use reusable bags at the store? Are there items that could be recycled instead of thrown away? Make a family conservation plan with one change per week. Track your progress on a chart. At the end of a month, celebrate how much your family has helped the planet. Small changes, big impact.",
-    badge: "Earth Protector", nextLesson: "sci-3-5-19"
-  },
-
-  // ── LESSON 19 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-19", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 19,
-    title: "Our Bodies: How We Work", duration: "10-15 min",
-    hook: "Right now, without you even thinking about it, your heart is beating, your lungs are breathing, your stomach is digesting, and your brain is making sense of these words. Your body is the most amazing machine ever built — millions of parts working together every second of every day. Understanding how your body works helps you take better care of it. Cosmo the Otter takes care of his body because he knows a healthy body means a happy life.",
-    bigIdea: "Your body is made of parts that work together — your heart pumps blood, your lungs breathe air, your stomach digests food, your brain controls everything, and your bones and muscles let you move — and taking care of your body keeps all these parts working well.",
-    sections: [
-      { title: "Your Heart and Blood", emoji: "❤️", content: "Your heart is a muscle about the size of your fist that pumps blood through your whole body. Blood carries oxygen from your lungs and nutrients from your food to every part of you. Your heart beats about 100,000 times every day — and it never takes a break. Put your hand on your chest and feel the thump-thump. That is your heart working right now. Exercise makes your heart stronger." },
-      { title: "Your Lungs and Breathing", emoji: "🫁", content: "When you breathe in, air travels through your nose or mouth, down your windpipe, and into your lungs. Your lungs take oxygen from the air and put it into your blood. When you breathe out, your lungs push out carbon dioxide — a waste gas your body does not need. You breathe about 20,000 times a day without even thinking about it. Taking deep breaths helps your lungs work their best." },
-      { title: "Your Brain", emoji: "🧠", content: "Your brain is the control center of your entire body. It tells your heart to beat, your lungs to breathe, your muscles to move, and your stomach to digest. It also lets you think, feel emotions, remember things, dream, and learn. Your brain is protected by your skull — a hard helmet of bone. Everything you experience — every sight, sound, taste, touch, and smell — is processed by your brain." },
-      { title: "Bones and Muscles", emoji: "💪", content: "You have 206 bones that make up your skeleton — the frame that gives your body its shape and protects your organs. Without bones, you would be like a jellyfish. Muscles are attached to your bones and pull them to make you move. You have over 600 muscles. When you walk, run, jump, or even smile, muscles are doing the work. Eating healthy food and exercising keeps your bones strong and your muscles powerful." }
-    ],
-    activity: { title: "Body Detective", instructions: "Explore your body. (1) Heart: put your hand on your chest and count your heartbeats for 15 seconds. Multiply by 4 to get beats per minute. Then do 20 jumping jacks and count again — what changed? (2) Lungs: take a deep breath and hold it as long as you can (safely). How long? Try again after resting. (3) Bones: feel your elbow, knee, and skull — those are bones protecting important parts. (4) Muscles: flex your arm and feel the muscle get hard. Draw a picture of yourself and label where your heart, lungs, brain, and biggest bones are." },
-    quiz: [
-      { question: "What does your heart do?", answer: "It pumps blood to every part of your body — delivering oxygen and nutrients", options: ["It helps you feel emotions", "It pumps blood to every part of your body — delivering oxygen and nutrients", "It only works when you exercise", "It stores food"] },
-      { question: "What do your lungs do?", answer: "They take oxygen from the air and put it in your blood, and they remove carbon dioxide", options: ["They pump blood like the heart", "They take oxygen from the air and put it in your blood, and they remove carbon dioxide", "They help you smell", "They store air for later"] },
-      { question: "What does your brain control?", answer: "Everything — your heartbeat, breathing, movement, thoughts, feelings, and senses", options: ["Only your thoughts", "Everything — your heartbeat, breathing, movement, thoughts, feelings, and senses", "Only your muscles", "Nothing — your body works on its own"] },
-      { question: "How many bones do you have?", answer: "206 — they make up your skeleton and protect your organs", options: ["26", "206 — they make up your skeleton and protect your organs", "1,000", "Bones cannot be counted"] },
-      { question: "Why does your heart beat faster when you exercise?", answer: "Because your muscles need more oxygen, so your heart pumps blood faster to deliver it", options: ["Because exercise scares your heart", "Because your muscles need more oxygen, so your heart pumps blood faster to deliver it", "Because your heart is tired", "It does not actually beat faster"] }
-    ],
-    familyAdventure: "Do a Family Body Challenge. Everyone checks their resting heart rate (count beats for 15 seconds × 4). Then everyone does 2 minutes of exercise (jumping jacks, running in place, dancing). Check heart rate again immediately after. Who had the biggest increase? Whose heart rate returned to normal fastest? (A faster recovery means a stronger heart.) Then try balance challenges — stand on one foot as long as you can. Your brain, muscles, and bones are all working together. Celebrate your amazing bodies.",
-    badge: "Body Explorer", nextLesson: "sci-3-5-20"
-  },
-
-  // ── LESSON 20 ───────────────────────────────────────────────────────────────
-  {
-    id: "sci-3-5-20", subject: "Science", ageGroup: "3-5", band: "Little Stars", guide: "Cosmo", guideAnimal: "Otter", lessonNumber: 20,
-    title: "Being a Scientist: Asking and Investigating", duration: "10-15 min",
-    hook: "Scientists are not just people in white coats in laboratories. A scientist is anyone who asks questions about the world, looks for answers through observation and experiments, and shares what they discover. You have been a scientist this whole time — every time you wondered why, how, or what if. Today you will learn the process that all scientists follow, from five-year-olds to Nobel Prize winners. Cosmo the Otter is a scientist every day because curiosity is his nature.",
-    bigIdea: "Being a scientist means asking questions, making predictions, observing carefully, testing ideas through experiments, and sharing what you learn — everyone can be a scientist because science starts with curiosity.",
-    sections: [
-      { title: "Ask a Question", emoji: "❓", content: "Every scientific discovery begins with a question. Why is the sky blue? What do worms eat? Which ball bounces highest? Do plants grow faster in sunlight or shade? Scientists are curious people who notice things and wonder about them. The best questions come from observing the world around you and asking why or how. You do not need special equipment — you just need curiosity. Cosmo asks questions about his river every single day." },
-      { title: "Make a Prediction", emoji: "🔮", content: "After asking a question, scientists make a prediction — their best guess about what the answer might be. A prediction is not a random guess; it is based on what you already know. If you know plants need sunlight, you might predict that a plant in the sun will grow faster than one in a closet. A prediction gives you something to test. Scientists call this a hypothesis — an educated guess that can be tested." },
-      { title: "Test and Observe", emoji: "🔬", content: "To find out if your prediction is right, you run a test — an experiment. Put one plant in the sun and one in a closet. Water them the same amount. Measure them each day. Watch what happens. Observation is the most important scientific skill — paying careful attention to what is actually happening, not what you expect to happen. Sometimes the results surprise you, and surprises are where the best discoveries live." },
-      { title: "Share What You Learned", emoji: "📢", content: "After your experiment, share your results. Was your prediction correct? What did you discover? What surprised you? What new questions do you have? Scientists share through papers, presentations, and conversations. You can share through drawings, show-and-tell, or just telling your family about what you found. Sharing is important because science grows when people learn from each other. Cosmo says: a discovery kept to yourself is only half a discovery." }
-    ],
-    activity: { title: "My First Experiment", instructions: "Pick a question: which paper airplane design flies farthest? Does a ball roll faster on a smooth or rough surface? Do ice cubes melt faster in water or air? Follow the scientific process: (1) Write your question. (2) Make a prediction. (3) Test it — try it at least three times to be sure. (4) Record what happened (draw pictures or write notes). (5) Share your results with your family. Did your prediction match the results? What new questions do you have now? Congratulations — you just did real science!" },
-    quiz: [
-      { question: "What is the first step of being a scientist?", answer: "Ask a question about something you are curious about", options: ["Buy a lab coat", "Ask a question about something you are curious about", "Read a textbook cover to cover", "Wait until you are an adult"] },
-      { question: "What is a prediction?", answer: "Your best guess about what will happen — based on what you already know", options: ["A random guess with no thinking", "Your best guess about what will happen — based on what you already know", "The final answer to a question", "Something only professional scientists can make"] },
-      { question: "Why do scientists repeat experiments?", answer: "To make sure the results are reliable — one try might give unusual results by chance", options: ["Because they forgot what happened the first time", "To make sure the results are reliable — one try might give unusual results by chance", "Because teachers require it", "Scientists never repeat experiments"] },
-      { question: "Why is sharing results important in science?", answer: "Because science grows when people learn from each other — sharing lets others build on your discoveries", options: ["It is not important — keep discoveries secret", "Because science grows when people learn from each other — sharing lets others build on your discoveries", "Only to get good grades", "Only famous scientists need to share"] },
-      { question: "Can you be a scientist right now?", answer: "Yes — anyone who asks questions and investigates answers through observation and experiments is doing science", options: ["No — you need a degree first", "Yes — anyone who asks questions and investigates answers through observation and experiments is doing science", "Only with expensive equipment", "Only adults can be scientists"] }
-    ],
-    familyAdventure: "Hold a Family Science Fair. Each family member picks a question, makes a prediction, runs a simple experiment, and presents their results. Display the experiments on a table like a real science fair. Give each person 2 minutes to present: their question, prediction, what they did, and what they found. Award ribbons for: Most Creative Question, Most Surprising Result, and Best Presentation. Celebrate completing the entire Little Stars Science journey. Cosmo the Otter is proud of every curious young scientist in your family. Keep asking questions — the world is full of answers waiting to be discovered.",
-    badge: "Junior Scientist", nextLesson: null
-  },
-
+    id: 'sci-3-5-10',
+    subject: 'Science',
+    ageGroup: '3-5',
+    band: 'Little Stars',
+    guide: 'Cosmo',
+    guideAnimal: 'Otter',
+    lessonNumber: 10,
+    title: 'Being a Scientist',
+    duration: '3-5 min',
+    badge: 'Little Scientist',
+    nextLesson: null,
+    gameSequence: [
+      { type: 'welcome', guideText: 'Hi {name}! Today is the BEST day — you become a real SCIENTIST!' },
+      { type: 'story', image: '/game-assets/science/scientist-magnifying-glass.png', guideText: 'A scientist is someone who LOOKS carefully, ASKS questions, and TRIES to understand the world! Guess what — kids are AMAZING scientists. You are curious all the time!' },
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows a SCIENTIST?', guideText: 'Tap the curious scientist!',
+        items: [
+          { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Scientist', correct: true },
+          { image: '/game-assets/science/material-soft-pillow.png', label: 'Pillow' },
+          { image: '/game-assets/science/loud-drum.png', label: 'Drum' },
+          { image: '/game-assets/science/quiet-whisper.png', label: 'Whisper' }
+        ]
+      },
+      { type: 'teach', image: '/game-assets/science/scientist-magnifying-glass.png', guideText: 'Scientists OBSERVE — that means look carefully. They ASK why? They TEST things to find answers. They never stop wondering!' },
+      { type: 'yes-no', scenario: 'Are you curious about the world?', correctAnswer: true, image: '/game-assets/science/scientist-magnifying-glass.png' },
+      { type: 'teach', image: '/game-assets/science/discovery-celebration.png', guideText: 'When a scientist FIGURES SOMETHING OUT — that is called a discovery! Discoveries change the world. And YOU make little discoveries every day!' },
+      { type: 'yes-no', scenario: 'Are YOU a scientist?', correctAnswer: true, image: '/game-assets/science/discovery-celebration.png' },
+      { type: 'family', guideText: 'Tonight, be a scientist with your family! Pick ONE question you wonder about. Look closely. Ask why. Try things. Be curious! That is real science!', image: '/game-assets/inner-world/family-circle.png' },
+      { type: 'celebration', badge: 'Little Scientist', guideText: 'You ARE a scientist, {name}! Great work, you finished Science!' }
+    ]
+  }
 ];
 
-export default sciLittleStars;
+export default scienceLittleStars;
