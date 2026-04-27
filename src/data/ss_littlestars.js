@@ -381,4 +381,4 @@ export const ssLittleStars = [
   }
 ];
 
-export default socialstudiesLittleStars;
+export default ssLittleStars;
