@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { sfx } from '../sounds';
+import { sfx, unlockAudio } from '../sounds';
 import WinCelebration from '../WinCelebration';
 import KaraokeText from '../KaraokeText';
 
@@ -22,6 +22,7 @@ export default function YesOrNo({ step, onComplete, onReady, onWrong, onWin, dis
     setLocked(true);
     const correct = (val === step.correctAnswer);
     if (correct) {
+      unlockAudio(); // re-authorize AudioContext within gesture — WinCelebration.useEffect fires async
       setShowWin(true);
       onWin?.();   // pulse guide avatar
       onReady?.(); // enable forward arrow immediately

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { sfx } from '../sounds';
+import { sfx, unlockAudio } from '../sounds';
 import WinCelebration from '../WinCelebration';
 import KaraokeText from '../KaraokeText';
 
@@ -95,6 +95,7 @@ export default function SortIntoBuckets({
       if (remaining.length === 0) {
         // ── All sorted — celebrate! ───────────────────────────────────────
         setDone(true);
+        unlockAudio(); // re-authorize AudioContext within gesture before fanfare
         sfx.fanfare();
         setShowWin(true);          // mounts WinCelebration; onDone triggers onComplete
         setBucketsCelebrate(true); // bucket glow pulse

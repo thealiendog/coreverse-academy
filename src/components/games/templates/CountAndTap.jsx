@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { sfx } from '../sounds';
+import { sfx, unlockAudio } from '../sounds';
 import KaraokeText from '../KaraokeText';
 
 // Default objects when none provided: colored circles with letters
@@ -37,6 +37,7 @@ export default function CountAndTap({ step, onReady, disabled, karaokeWords = []
 
     if (count === N) {
       setDone(true);
+      unlockAudio(); // re-authorize AudioContext within gesture before fanfare
       sfx.fanfare();
       setTimeout(() => onReady?.(), 1200);
     }

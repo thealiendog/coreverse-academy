@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import WinCelebration from '../WinCelebration';
 import KaraokeText from '../KaraokeText';
-import { sfx } from '../sounds';
+import { sfx, unlockAudio } from '../sounds';
 
 // All TTS is handled by GameLessonPlayer. This component is purely presentational:
 // it receives readingIdx (which card is being narrated) and disabled (interaction lock)
@@ -30,6 +30,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
     if (disabled || selected !== null) return;
     const item = items[idx];
     if (item?.correct) {
+      unlockAudio(); // re-authorize AudioContext within gesture — WinCelebration.useEffect fires async
       setSelected(idx);
       setShowWin(true);
       onWin?.();

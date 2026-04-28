@@ -166,7 +166,7 @@ export default function SubjectView() {
         {/* Subject header */}
         <div className="text-center mb-10">
           <div className="mb-4 flex justify-center" style={{ filter: `drop-shadow(0 0 8px ${s.color}60)` }}>
-            <AnimalIcon subjectId={subjectId} color={s.color} size={64} />
+            <AnimalIcon subjectId={subjectId} color={s.color} size={88} />
           </div>
           <h1 className="text-4xl font-semibold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
             {s.label}
@@ -195,7 +195,7 @@ export default function SubjectView() {
         {/* Speech bubble */}
         <div className="flex gap-4 mb-6 bg-[#0F0B2E] rounded-2xl p-5 border border-white/8">
           <div
-            className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0"
+            className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0"
             style={{ boxShadow: `0 0 0 2px ${guideAvatar.accent}55` }}
           >
             <img src={guideAvatar.image} alt={guideAvatar.name} className="w-full h-full object-cover" />

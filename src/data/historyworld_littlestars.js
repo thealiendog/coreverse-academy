@@ -213,7 +213,7 @@ export const historyworldLittleStars = [
       { type: 'story', image: '/game-assets/history/mlk-portrait.png', guideText: 'A long time ago, some people were treated UNFAIRLY because of the color of their skin. Martin Luther King Jr. believed everyone should be treated the SAME — kindly and fairly. He spoke up for fairness, and the world started to change!' },
       { type: 'teach', image: '/game-assets/history/kids-holding-hands-different.png', guideText: 'When kids of every color hold hands and play together, that is what FAIRNESS looks like!' },
       { type: 'yes-no', scenario: 'Should everyone be treated kindly, no matter how they look?', correctAnswer: true, image: '/game-assets/history/kids-holding-hands-different.png' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows FAIRNESS?', guideText: 'Tap the picture of fairness!',
+      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which shows FAIRNESS?', guideText: 'Tap the picture of fairness!',
         items: [
           { image: '/game-assets/history/kids-holding-hands-different.png', label: 'Kids holding hands together', correct: true },
           { image: '/game-assets/history/mlk-portrait.png', label: 'MLK portrait' },

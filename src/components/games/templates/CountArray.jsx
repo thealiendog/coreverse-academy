@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { sfx } from '../sounds';
+import { sfx, unlockAudio } from '../sounds';
 import KaraokeText from '../KaraokeText';
 import WinCelebration from '../WinCelebration';
 
@@ -107,6 +107,7 @@ export default function CountArray({
 
     // All objects tapped → big number reveal → WinCelebration
     if (n === count) {
+      unlockAudio(); // re-authorize AudioContext within gesture before fanfare
       sfx.fanfare();
       setShowBigNum(true);
       setTimeout(() => {
