@@ -78,10 +78,10 @@ export const cosmosLittleStars = [
       { type: 'yes-no', scenario: 'Can we see stars in the daytime?', correctAnswer: false, image: '/game-assets/cosmos/day-sky.png' },
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'When can we see STARS?', guideText: 'Tap when the stars come out!',
         items: [
-          { image: '/game-assets/cosmos/night-sky.png', label: 'Night', correct: true },
-          { image: '/game-assets/cosmos/day-sky.png', label: 'Day' },
-          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sunny' },
-          { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Cloudy' }
+          { image: '/game-assets/cosmos/night-sky.png', label: 'At night', correct: true },
+          { image: '/game-assets/cosmos/day-sky.png', label: 'During the day' },
+          { image: '/game-assets/cosmos/sun-glowing.png', label: 'In the sunshine' },
+          { image: '/game-assets/cosmos/weather-types.png', label: 'In the morning' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/stars-night.png', guideText: 'Long ago, sailors looked at stars to find their way. Stars are like a map in the sky!' },
@@ -105,7 +105,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about DAY and NIGHT!' },
       { type: 'story', image: '/game-assets/cosmos/day-night-cycle.png', guideText: 'Earth is a giant ball spinning through space. When our part of Earth faces the Sun, it is daytime. When our part of Earth faces away, it is nighttime. The Sun does not really go anywhere — we are the ones spinning!' },
       { type: 'teach', image: '/game-assets/cosmos/day-sky.png', guideText: 'In the daytime, the Sun is high in the sky. We can see everything around us!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is DAYTIME?', guideText: 'Tap the bright daytime sky!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is DAYTIME?', guideText: 'Tap the bright daytime sky!',
         items: [
           { image: '/game-assets/cosmos/day-sky.png', label: 'Daytime', correct: true },
           { image: '/game-assets/cosmos/night-sky.png', label: 'Nighttime' },
@@ -178,7 +178,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we look at CLOUDS!' },
       { type: 'story', image: '/game-assets/cosmos/clouds-fluffy.png', guideText: 'Clouds are made of tiny tiny drops of water floating high in the sky. They look fluffy and soft like cotton, but they are actually made of water! Some clouds are puffy and white, others are gray and full of rain.' },
       { type: 'teach', image: '/game-assets/cosmos/clouds-fluffy.png', guideText: 'When clouds get very heavy with water, they let the drops fall — that is rain!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is CLOUDS?', guideText: 'Tap the fluffy clouds!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is CLOUDS?', guideText: 'Tap the fluffy clouds!',
         items: [
           { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Clouds', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
@@ -213,7 +213,7 @@ export const cosmosLittleStars = [
           { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Clouds', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
           { image: '/game-assets/cosmos/stars-night.png', label: 'Stars' },
-          { image: '/game-assets/cosmos/earth-from-space.png', label: 'Ground' }
+          { image: '/game-assets/cosmos/seed-to-plant.png', label: 'Ground' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/seed-to-plant.png', guideText: 'When it rains, plants drink the water and grow taller and stronger!' },
@@ -298,12 +298,12 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we explore WATER!' },
       { type: 'story', image: '/game-assets/cosmos/water-everywhere.png', guideText: 'Water is one of the most special things on Earth. We have water in oceans, in rivers, in lakes, in puddles, and even in our bodies! Every living thing needs water to stay alive — plants, animals, and us!' },
       { type: 'teach', image: '/game-assets/cosmos/earth-from-space.png', guideText: 'See those big blue parts on Earth? That is all water! Most of our planet is covered in water!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which has WATER everywhere?', guideText: 'Tap the picture with oceans and rivers!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which planet has WATER everywhere?', guideText: 'Tap the planet covered in blue oceans!',
         items: [
-          { image: '/game-assets/cosmos/water-everywhere.png', label: 'Water', correct: true },
+          { image: '/game-assets/cosmos/earth-from-space.png', label: 'Earth', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
-          { image: '/game-assets/cosmos/rain-falling.png', label: 'Rain' },
-          { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Clouds' }
+          { image: '/game-assets/cosmos/moon-full.png', label: 'Moon' },
+          { image: '/game-assets/cosmos/stars-night.png', label: 'Stars' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/water-everywhere.png', guideText: 'Water flows from rivers into the ocean, then back up into clouds — over and over forever!' },
@@ -347,7 +347,7 @@ export const cosmosLittleStars = [
         items: [
           { image: '/game-assets/cosmos/sun-glowing.png', bucket: 0 },
           { image: '/game-assets/cosmos/ice-melting.png', bucket: 1 },
-          { image: '/game-assets/cosmos/temperature-hot-cold.png', bucket: 0 }
+          { image: '/game-assets/cosmos/day-sky.png', bucket: 0 }
         ]
       },
       { type: 'family', guideText: 'Together, find one hot thing in your home (carefully!) and one cold thing. Touch each one and notice how different they feel on your fingers!', image: '/game-assets/inner-world/family-circle.png' },
@@ -371,9 +371,9 @@ export const cosmosLittleStars = [
       { type: 'story', image: '/game-assets/cosmos/weight-comparison.png', guideText: 'Some things are heavy, like a big rock or a backpack full of books. Some things are light, like a feather or a balloon. When you pick something up, your arms can feel how heavy or light it is. That is called WEIGHT!' },
       { type: 'teach', image: '/game-assets/cosmos/weight-comparison.png', guideText: 'A scale shows us which thing is heavier — the heavy side goes DOWN, the light side goes UP!' },
       { type: 'yes-no', scenario: 'Is a rock heavier than a feather?', correctAnswer: true, image: '/game-assets/cosmos/weight-comparison.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which thing would feel HEAVY?', guideText: 'Tap the heavy thing!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which thing would feel HEAVY?', guideText: 'Tap the heavy thing!',
         items: [
-          { image: '/game-assets/cosmos/weight-comparison.png', label: 'Rock', correct: true },
+          { image: '/game-assets/cosmos/hibernating-bear.png', label: 'Big bear', correct: true },
           { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Cloud' },
           { image: '/game-assets/cosmos/bubbles-floating.png', label: 'Bubbles' },
           { image: '/game-assets/cosmos/air-blowing.png', label: 'Air' }
