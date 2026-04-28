@@ -48,7 +48,6 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
   const [showMicPrompt, setShowMicPrompt] = useState(false);
 
   const audioRef       = useRef(null);
-  const utterRef       = useRef(null);
   const recognRef      = useRef(null);
   const bubbleTimer    = useRef(null);
   const micPromptTimer = useRef(null);
@@ -79,12 +78,12 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
   function stopAudio() {
     if (audioRef.current) {
       audioRef.current.pause();
+      // Revoke blob URL before clearing src to free memory
+      if (audioRef.current.src?.startsWith('blob:')) {
+        URL.revokeObjectURL(audioRef.current.src);
+      }
       audioRef.current.src = '';
       audioRef.current = null;
-    }
-    if (utterRef.current) {
-      window.speechSynthesis?.cancel();
-      utterRef.current = null;
     }
     setSpeaking(false);
     clearTimeout(micPromptTimer.current);
@@ -103,23 +102,30 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
         headers: { 'Content-Type': 'application/json' },
         body:    JSON.stringify({ text }),
       });
-      if (!res.ok) throw new Error('unavailable');
-      const { audio } = await res.json();
-      const el = new Audio(`data:audio/mpeg;base64,${audio}`);
+      if (!res.ok) throw new Error(`nova-speak ${res.status}`);
+
+      // nova-speak returns raw binary audio (isBase64Encoded on Netlify).
+      // Read as blob → blob URL to avoid iOS Safari base64 data URI bugs.
+      const blob    = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const el = new Audio();
+      el.playsInline = true;
+      el.preload = 'auto';
+      el.src = blobUrl;
       audioRef.current = el;
-      let playStarted = false;
+
       let cachedDur = null;
       el.onloadedmetadata = () => { cachedDur = el.duration; };
-      el.onplay  = () => {
+      el.onplay = () => {
         setSpeaking(true);
-        // Use loadedmetadata value, fallback to checking el.duration at play time,
-        // final fallback: estimate from word count (~150 WPM → 0.40s/word)
         const dur = cachedDur
           || (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null)
           || text.split(/\s+/).length * 0.40;
         onSpeakStart?.(text, dur);
       };
       el.onended = () => {
+        URL.revokeObjectURL(blobUrl);
         setSpeaking(false);
         audioRef.current = null;
         onSpeakEnd?.();
@@ -127,44 +133,21 @@ export default function NovaChat({ child, lesson, subject, stepType, learnBlock,
         if (window.SpeechRecognition || window.webkitSpeechRecognition) showPromptBriefly();
         onComplete?.();
       };
-      // Only fall back to speech synthesis if ElevenLabs never started — mid-stream
-      // errors should not trigger a second voice on top of playing audio.
       el.onerror = () => {
+        URL.revokeObjectURL(blobUrl);
         setSpeaking(false);
         audioRef.current = null;
         setBubble('');
         onSpeakEnd?.();
-        if (!playStarted) throw new Error('audio-error'); // re-enter catch → speech synthesis
+        onComplete?.();
       };
       await el.play();
-      playStarted = true;
-    } catch {
-      if (window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-        const utt = new SpeechSynthesisUtterance(text);
-        utt.rate  = 0.88;
-        utt.pitch = 1.05;
-        utterRef.current = utt;
-        utt.onstart = () => {
-          setSpeaking(true);
-          const dur = text.split(/\s+/).length * 0.40;
-          onSpeakStart?.(text, dur);
-        };
-        utt.onend   = () => {
-          setSpeaking(false);
-          utterRef.current = null;
-          onSpeakEnd?.();
-          bubbleTimer.current = setTimeout(() => setBubble(''), 3500);
-          if (window.SpeechRecognition || window.webkitSpeechRecognition) showPromptBriefly();
-          onComplete?.();
-        };
-        utt.onerror = () => { setSpeaking(false); utterRef.current = null; onSpeakEnd?.(); };
-        window.speechSynthesis.speak(utt);
-      } else {
-        setSpeaking(false);
-        setBubble('');
-        onComplete?.();
-      }
+    } catch (err) {
+      console.error('[NovaChat] speak error:', err?.message);
+      setSpeaking(false);
+      setBubble('');
+      onSpeakEnd?.();
+      onComplete?.();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
