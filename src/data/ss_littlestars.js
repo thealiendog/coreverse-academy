@@ -19,7 +19,7 @@ export const ssLittleStars = [
           { image: '/game-assets/socialstudies/child-with-family.png', label: 'Child with family', correct: true },
           { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
           { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' },
-          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' }
+          { image: '/game-assets/socialstudies/diverse-friends-circle.png', label: 'Diverse friends' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/community-circle.png', guideText: 'A COMMUNITY is everyone who lives near each other — neighbors, helpers, friends. Together you take care of each other!' },
@@ -28,7 +28,7 @@ export const ssLittleStars = [
           { image: '/game-assets/socialstudies/community-circle.png', label: 'Community circle', correct: true },
           { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
           { image: '/game-assets/socialstudies/child-helping-clean-room.png', label: 'Cleaning' },
-          { image: '/game-assets/socialstudies/compass-rose.png', label: 'Compass' }
+          { image: '/game-assets/socialstudies/kids-laughing-together.png', label: 'Kids together' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/single-child-alone.png', guideText: 'You are AMAZING all by yourself. AND you are part of family and community. Both are TRUE at the same time!' },
@@ -55,18 +55,18 @@ export const ssLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a RESPONSIBILITY at home?', guideText: 'Tap the helper!',
         items: [
           { image: '/game-assets/socialstudies/child-helping-clean-room.png', label: 'Cleaning room', correct: true },
-          { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' },
-          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
-          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' }
+          { image: '/game-assets/socialstudies/kids-raising-hand-class.png', label: 'Raising hand' },
+          { image: '/game-assets/socialstudies/kids-walking-line.png', label: 'Walking in line' },
+          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community helping' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/kids-raising-hand-class.png', guideText: 'At school, raising your hand to speak is a RULE. It means everyone gets a turn to talk! Without that rule, everyone would talk at once and no one could be heard!' },
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a SCHOOL RULE?', guideText: 'Tap raising your hand!',
         items: [
           { image: '/game-assets/socialstudies/kids-raising-hand-class.png', label: 'Raising hand', correct: true },
-          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community circle' },
-          { image: '/game-assets/socialstudies/fireworks-celebration.png', label: 'Fireworks' },
-          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' }
+          { image: '/game-assets/socialstudies/child-helping-clean-room.png', label: 'Cleaning room' },
+          { image: '/game-assets/socialstudies/kids-voting-classroom.png', label: 'Classroom voting' },
+          { image: '/game-assets/socialstudies/kids-walking-line.png', label: 'Walking in line' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/kids-walking-line.png', guideText: 'Walking in a LINE is another rule! It keeps everyone safe and together. Following rules makes everything work!' },
@@ -93,9 +93,9 @@ export const ssLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a MAP?', guideText: 'Tap the map!',
         items: [
           { image: '/game-assets/socialstudies/simple-map-treasure.png', label: 'Treasure map', correct: true },
-          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' },
-          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' },
-          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'A child' }
+          { image: '/game-assets/socialstudies/compass-rose.png', label: 'Compass' },
+          { image: '/game-assets/socialstudies/kid-with-map.png', label: 'Kid with map' },
+          { image: '/game-assets/socialstudies/country-on-globe.png', label: 'Globe' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/compass-rose.png', guideText: 'A COMPASS shows directions! North is UP, South is DOWN, East is RIGHT, West is LEFT! Compasses help us know which way to go!' },
@@ -103,8 +103,8 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/compass-rose.png', label: 'Compass', correct: true },
           { image: '/game-assets/socialstudies/simple-map-treasure.png', label: 'Map' },
-          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
-          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
+          { image: '/game-assets/socialstudies/kid-with-map.png', label: 'Kid with map' },
+          { image: '/game-assets/socialstudies/country-on-globe.png', label: 'Globe' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/kid-with-map.png', guideText: 'When you READ a map, you can go on adventures! Find your house, find the park, find the treasure!' },
@@ -133,7 +133,7 @@ export const ssLittleStars = [
           { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood', correct: true },
           { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'Big city' },
           { image: '/game-assets/socialstudies/country-on-globe.png', label: 'Country' },
-          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'A child' }
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/big-city-skyline.png', guideText: 'A CITY is BIG! Cities have lots of buildings and people. New York, Los Angeles, Chicago — those are big cities!' },
@@ -169,18 +169,18 @@ export const ssLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'How do we CELEBRATE Independence Day?', guideText: 'Tap the fireworks!',
         items: [
           { image: '/game-assets/socialstudies/fireworks-celebration.png', label: 'Fireworks', correct: true },
-          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Voting box' },
-          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood' },
-          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' }
+          { image: '/game-assets/socialstudies/kids-voting-classroom.png', label: 'Classroom voting' },
+          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community helping' },
+          { image: '/game-assets/socialstudies/atlas-celebration-burst.png', label: 'Atlas celebrating' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/kids-with-flags.png', guideText: 'Kids LOVE Independence Day! We wave little flags, watch parades, and feel proud of our country!' },
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do kids carry on the 4th of July?', guideText: 'Tap the flag-waving kids!',
         items: [
           { image: '/game-assets/socialstudies/kids-with-flags.png', label: 'Kids with flags', correct: true },
-          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community sharing' },
-          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Water tap' },
-          { image: '/game-assets/socialstudies/two-options-choice.png', label: 'Two paths' }
+          { image: '/game-assets/socialstudies/fireworks-celebration.png', label: 'Fireworks' },
+          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Birthday cake' },
+          { image: '/game-assets/socialstudies/atlas-celebration-burst.png', label: 'Atlas celebrating' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/birthday-cake-stars.png', guideText: 'We even have CAKE for our country birthday! Red white and blue desserts — the colors of the American flag!' },
@@ -208,8 +208,8 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/washington-portrait.png', label: 'Washington', correct: true },
           { image: '/game-assets/socialstudies/lincoln-portrait.png', label: 'Lincoln' },
-          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' },
-          { image: '/game-assets/socialstudies/single-child-alone.png', label: 'A child' }
+          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community leader' },
+          { image: '/game-assets/socialstudies/kids-with-flags.png', label: 'Flag wavers' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/lincoln-portrait.png', guideText: 'ABRAHAM LINCOLN was a special president too. He wore a tall hat. He kept America together when it was breaking apart, and he ended slavery so all people could be free. He is on the penny and the five-dollar bill!' },
@@ -217,8 +217,8 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/lincoln-portrait.png', label: 'Lincoln', correct: true },
           { image: '/game-assets/socialstudies/washington-portrait.png', label: 'Washington' },
-          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
-          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' }
+          { image: '/game-assets/socialstudies/diverse-friends-circle.png', label: 'Freed people' },
+          { image: '/game-assets/socialstudies/kids-with-flags.png', label: 'Flag wavers' }
         ]
       },
       { type: 'yes-no', scenario: 'Was George Washington the FIRST president?', correctAnswer: true, image: '/game-assets/socialstudies/washington-portrait.png' },
@@ -244,18 +244,18 @@ export const ssLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a BALLOT BOX?', guideText: 'Tap the ballot box!',
         items: [
           { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box', correct: true },
-          { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' },
-          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Water tap' },
-          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
+          { image: '/game-assets/socialstudies/kids-voting-classroom.png', label: 'Kids voting' },
+          { image: '/game-assets/socialstudies/two-options-choice.png', label: 'Two choices' },
+          { image: '/game-assets/socialstudies/kids-raising-hand-class.png', label: 'Raising hand' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/two-options-choice.png', guideText: 'Sometimes voting is between TWO choices — like pizza or tacos for dinner! Whichever choice gets more votes WINS!' },
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows a CHOICE?', guideText: 'Tap the two paths!',
         items: [
           { image: '/game-assets/socialstudies/two-options-choice.png', label: 'Two options', correct: true },
-          { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist' },
-          { image: '/game-assets/socialstudies/world-celebration.png', label: 'Celebration' },
-          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'Neighborhood' }
+          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' },
+          { image: '/game-assets/socialstudies/kids-voting-classroom.png', label: 'Kids voting' },
+          { image: '/game-assets/socialstudies/kids-raising-hand-class.png', label: 'Raising hand' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/kids-voting-classroom.png', guideText: 'Kids vote too! In school, you might vote on what game to play, or what book to read. Everyone gets a fair turn to decide!' },
@@ -283,8 +283,8 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/bakery-bread-goods.png', label: 'Bread', correct: true },
           { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist helping' },
-          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' },
-          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' }
+          { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' },
+          { image: '/game-assets/socialstudies/delivery-truck-goods.png', label: 'Delivery truck' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/dentist-helping-service.png', guideText: 'A SERVICE is when someone HELPS you — like a dentist cleaning your teeth, a teacher teaching, or a doctor checking your heart. Services are help, not things!' },
@@ -292,7 +292,7 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/dentist-helping-service.png', label: 'Dentist service', correct: true },
           { image: '/game-assets/socialstudies/bakery-bread-goods.png', label: 'Bread good' },
-          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
+          { image: '/game-assets/socialstudies/delivery-truck-goods.png', label: 'Delivery truck' },
           { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' }
         ]
       },
@@ -322,7 +322,7 @@ export const ssLittleStars = [
           { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Clean water', correct: true },
           { image: '/game-assets/socialstudies/toy-store-wants.png', label: 'Toy store' },
           { image: '/game-assets/socialstudies/birthday-cake-stars.png', label: 'Cake' },
-          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' }
+          { image: '/game-assets/socialstudies/community-providing-need.png', label: 'Community sharing' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/toy-store-wants.png', guideText: 'A toy store is FULL of WANTS! Toys are wonderful, but you do not need them to live. They make life FUN — but food and water keep you ALIVE!' },
@@ -359,8 +359,8 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/diverse-friends-circle.png', label: 'Diverse friends', correct: true },
           { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
-          { image: '/game-assets/socialstudies/big-city-skyline.png', label: 'City' },
-          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' }
+          { image: '/game-assets/socialstudies/kids-laughing-together.png', label: 'Kids laughing' },
+          { image: '/game-assets/socialstudies/community-circle.png', label: 'Community' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/kids-laughing-together.png', guideText: 'Two kids who look really different from each other LAUGHING together. Laughter is a language EVERYONE speaks. Even kids who do not share a single word can be best friends!' },
@@ -369,8 +369,8 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/world-celebration.png', label: 'World celebration', correct: true },
           { image: '/game-assets/socialstudies/single-child-alone.png', label: 'Child alone' },
-          { image: '/game-assets/socialstudies/voting-ballot-box.png', label: 'Ballot box' },
-          { image: '/game-assets/socialstudies/clean-water-tap.png', label: 'Water tap' }
+          { image: '/game-assets/socialstudies/diverse-friends-circle.png', label: 'Diverse friends' },
+          { image: '/game-assets/socialstudies/atlas-celebration-burst.png', label: 'Atlas celebrating' }
         ]
       },
       { type: 'teach', image: '/game-assets/socialstudies/atlas-celebration-burst.png', guideText: 'Wow {name}! You finished SOCIAL STUDIES! You know about your family, your community, your country, and the WHOLE WORLD! You are a citizen — a smart helper for our shared home!' },
