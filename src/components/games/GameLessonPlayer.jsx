@@ -729,6 +729,7 @@ export default function GameLessonPlayer() {
 
   function goBack() {
     if (screenIdx > 0) setScreenIdx(screenIdx - 1);
+    else navigate(`/child/subject/${subjectId}?level=1`);
   }
 
   // Called by game templates when interaction is successfully completed —
@@ -1020,8 +1021,8 @@ export default function GameLessonPlayer() {
               onClick={goBack}
               style={{
                 ...navBtnBase,
-                opacity: (screenIdx > 0 && !isPaused) ? 0.75 : 0.2,
-                pointerEvents: (screenIdx > 0 && !isPaused) ? 'auto' : 'none',
+                opacity: !isPaused ? 0.75 : 0.2,
+                pointerEvents: !isPaused ? 'auto' : 'none',
               }}
             >
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">

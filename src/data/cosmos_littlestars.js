@@ -148,12 +148,12 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn the FOUR SEASONS!' },
       { type: 'story', image: '/game-assets/cosmos/four-seasons.png', guideText: 'Every year, Earth goes around the Sun one big time. As we travel, the weather changes. We have FOUR seasons: spring is when things grow, summer is hot and bright, fall is when leaves change colors, and winter is cold with snow!' },
       { type: 'teach', image: '/game-assets/cosmos/four-seasons.png', guideText: 'Spring, summer, fall, winter — every season is special!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'In which season do leaves change colors?', guideText: 'Tap the season with orange and red leaves!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows all FOUR seasons together?', guideText: 'Tap the picture that shows all four seasons!',
         items: [
-          { image: '/game-assets/cosmos/four-seasons.png', label: 'Fall', correct: true },
-          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Summer' },
-          { image: '/game-assets/cosmos/seed-to-plant.png', label: 'Spring' },
-          { image: '/game-assets/cosmos/ice-melting.png', label: 'Winter' }
+          { image: '/game-assets/cosmos/four-seasons.png', label: 'All four seasons', correct: true },
+          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Just the sun' },
+          { image: '/game-assets/cosmos/rain-falling.png', label: 'Just rain' },
+          { image: '/game-assets/cosmos/night-sky.png', label: 'Just nighttime' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/seed-to-plant.png', guideText: 'In spring, flowers bloom and animals have babies! Earth is waking up after winter.' },
@@ -243,7 +243,7 @@ export const cosmosLittleStars = [
           { image: '/game-assets/cosmos/hibernating-bear.png', label: 'Sleeping bear', correct: true },
           { image: '/game-assets/cosmos/animals-babies.png', label: 'Baby animals' },
           { image: '/game-assets/cosmos/dinosaurs.png', label: 'Dinosaurs' },
-          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' }
+          { image: '/game-assets/cosmos/weather-types.png', label: 'Weather' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/four-seasons.png', guideText: 'When spring comes again, the animals wake up and come outside!' },
@@ -271,9 +271,9 @@ export const cosmosLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a seed grow into?', guideText: 'Tap the picture of a seed becoming a plant!',
         items: [
           { image: '/game-assets/cosmos/seed-to-plant.png', label: 'Plant', correct: true },
-          { image: '/game-assets/cosmos/dinosaurs.png', label: 'Dinosaur' },
-          { image: '/game-assets/cosmos/animals-babies.png', label: 'Animal' },
-          { image: '/game-assets/cosmos/stars-night.png', label: 'Star' }
+          { image: '/game-assets/cosmos/rain-falling.png', label: 'Rain' },
+          { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Cloud' },
+          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/sun-glowing.png', guideText: 'The Sun gives plants energy to grow. The water helps them drink. The soil holds them strong!' },
@@ -302,7 +302,7 @@ export const cosmosLittleStars = [
         items: [
           { image: '/game-assets/cosmos/water-everywhere.png', label: 'Water', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
-          { image: '/game-assets/cosmos/dinosaurs.png', label: 'Dinosaurs' },
+          { image: '/game-assets/cosmos/rain-falling.png', label: 'Rain' },
           { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Clouds' }
         ]
       },
@@ -404,9 +404,9 @@ export const cosmosLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What happens when you mix colors?', guideText: 'Tap the colors mixing!',
         items: [
           { image: '/game-assets/cosmos/colors-mixing.png', label: 'Mixing colors', correct: true },
-          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
-          { image: '/game-assets/cosmos/water-everywhere.png', label: 'Water' },
-          { image: '/game-assets/cosmos/stars-night.png', label: 'Stars' }
+          { image: '/game-assets/cosmos/ice-melting.png', label: 'Melting ice' },
+          { image: '/game-assets/cosmos/magnet-attracting.png', label: 'Magnet pulling' },
+          { image: '/game-assets/cosmos/bubbles-floating.png', label: 'Blowing bubbles' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/colors-mixing.png', guideText: 'Artists use color mixing to paint beautiful pictures of everything in the world!' },
@@ -493,9 +493,9 @@ export const cosmosLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What happens when ice gets WARM?', guideText: 'Tap what happens to ice in the sun!',
         items: [
           { image: '/game-assets/cosmos/ice-melting.png', label: 'Melts to water', correct: true },
-          { image: '/game-assets/cosmos/stars-night.png', label: 'Becomes stars' },
+          { image: '/game-assets/cosmos/temperature-hot-cold.png', label: 'Gets hotter' },
           { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Becomes clouds' },
-          { image: '/game-assets/cosmos/seed-to-plant.png', label: 'Becomes a plant' }
+          { image: '/game-assets/cosmos/rain-falling.png', label: 'Falls as rain' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/sun-glowing.png', guideText: 'The Sun is very warm — that is why snow and ice melt when the sun shines on them!' },
@@ -523,9 +523,9 @@ export const cosmosLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do animal moms do?', guideText: 'Tap moms with their babies!',
         items: [
           { image: '/game-assets/cosmos/animals-babies.png', label: 'Care for babies', correct: true },
-          { image: '/game-assets/cosmos/dinosaurs.png', label: 'Dinosaurs' },
-          { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
-          { image: '/game-assets/cosmos/water-everywhere.png', label: 'Water' }
+          { image: '/game-assets/cosmos/hibernating-bear.png', label: 'Sleep all winter' },
+          { image: '/game-assets/cosmos/dinosaurs.png', label: 'Ancient animals' },
+          { image: '/game-assets/cosmos/five-senses.png', label: 'Use their senses' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/animals-babies.png', guideText: 'Birds make nests for their baby chicks. Bears keep their cubs warm. Every animal cares for its young!' },
@@ -555,7 +555,7 @@ export const cosmosLittleStars = [
           { image: '/game-assets/cosmos/dinosaurs.png', label: 'Dinosaur', correct: true },
           { image: '/game-assets/cosmos/animals-babies.png', label: 'Baby animals' },
           { image: '/game-assets/cosmos/hibernating-bear.png', label: 'Bear' },
-          { image: '/game-assets/cosmos/seed-to-plant.png', label: 'Plant' }
+          { image: '/game-assets/cosmos/five-senses.png', label: 'Human body' }
         ]
       },
       { type: 'teach', image: '/game-assets/cosmos/dinosaurs.png', guideText: 'Dinosaurs are not alive anymore, but birds today are like little dinosaurs that survived!' },

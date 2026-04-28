@@ -17,14 +17,18 @@ export const spanishLittleStars = [
       { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one means HELLO?', guideText: '¡Hola! Tap the picture that means hello!',
         items: [
           { image: '/game-assets/spanish/wave-hello.png', label: 'Hola', correct: true },
-          { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós' }
+          { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós' },
+          { image: '/game-assets/spanish/numero-uno.png', label: 'Uno' },
+          { image: '/game-assets/spanish/gato-cat.png', label: 'Gato' }
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/wave-goodbye.png', guideText: 'And when we say goodbye we say ¡Adiós! Try saying it with me — ¡Adiós!' },
       { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one means GOODBYE?', guideText: '¡Adiós! Tap the picture that means goodbye!',
         items: [
           { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós', correct: true },
-          { image: '/game-assets/spanish/wave-hello.png', label: 'Hola' }
+          { image: '/game-assets/spanish/wave-hello.png', label: 'Hola' },
+          { image: '/game-assets/spanish/numero-dos.png', label: 'Dos' },
+          { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' }
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/friends-greeting.png', guideText: '¡Hola y adiós! Two new Spanish words! ¡Muy bien!' },
@@ -353,7 +357,8 @@ export const spanishLittleStars = [
         items: [
           { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz', correct: true },
           { image: '/game-assets/spanish/triste-sad.png', label: 'Triste' },
-          { image: '/game-assets/spanish/cansado-tired.png', label: 'Cansado' }
+          { image: '/game-assets/spanish/cansado-tired.png', label: 'Cansado' },
+          { image: '/game-assets/spanish/wave-hello.png', label: 'Hola' }
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/triste-sad.png', guideText: '¡Triste! That means SAD. It is okay to feel triste sometimes — every feeling is okay!' },
@@ -361,7 +366,8 @@ export const spanishLittleStars = [
         items: [
           { image: '/game-assets/spanish/triste-sad.png', label: 'Triste', correct: true },
           { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz' },
-          { image: '/game-assets/spanish/cansado-tired.png', label: 'Cansado' }
+          { image: '/game-assets/spanish/cansado-tired.png', label: 'Cansado' },
+          { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós' }
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/cansado-tired.png', guideText: '¡Cansado! That means TIRED. When you are sleepy and need to rest, you are cansado!' },

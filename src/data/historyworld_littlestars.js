@@ -17,14 +17,18 @@ export const historyworldLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is from LONG AGO?', guideText: 'Tap the picture from long ago!',
         items: [
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago', correct: true },
-          { image: '/game-assets/history/today-scene.png', label: 'Today' }
+          { image: '/game-assets/history/today-scene.png', label: 'Today' },
+          { image: '/game-assets/history/community-park.png', label: 'Modern park' },
+          { image: '/game-assets/history/earth-globe.png', label: 'Earth today' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/today-scene.png', guideText: 'And TODAY we have cars, computers, and bright electric lights! The world is always changing!' },
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is TODAY?', guideText: 'Tap the picture from today!',
         items: [
           { image: '/game-assets/history/today-scene.png', label: 'Today', correct: true },
-          { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago' }
+          { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago' },
+          { image: '/game-assets/history/family-tree.png', label: 'Family tree' },
+          { image: '/game-assets/history/world-map.png', label: 'World map' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/time-passing.png', guideText: 'History is the story of everything that happened before now. Knowing history helps us understand TODAY!' },

@@ -361,16 +361,16 @@ export const creativeartsLittleStars = [
           { image: '/game-assets/creative-arts/happy-singing-kid.png', label: 'Singing happily', correct: true },
           { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Just jumping' },
           { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Just clapping' },
-          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Blank paper' }
+          { image: '/game-assets/creative-arts/drumming-lap.png', label: 'Drumming on lap' }
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/microphone-magic.png', guideText: 'When you sing into a MICROPHONE, your voice gets BIG so everyone can hear it!' },
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What helps your voice get LOUD?', guideText: 'Tap the microphone!',
         items: [
           { image: '/game-assets/creative-arts/microphone-magic.png', label: 'Microphone', correct: true },
-          { image: '/game-assets/creative-arts/glue-stick.png', label: 'Glue stick' },
-          { image: '/game-assets/creative-arts/blank-paper.png', label: 'Paper' },
-          { image: '/game-assets/creative-arts/playdough-ball.png', label: 'Playdough ball' }
+          { image: '/game-assets/creative-arts/stomping-feet.png', label: 'Stomping feet' },
+          { image: '/game-assets/creative-arts/clapping-hands.png', label: 'Clapping hands' },
+          { image: '/game-assets/creative-arts/drumming-lap.png', label: 'Drumming on lap' }
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/music-celebration.png', guideText: 'Music is everywhere! Songs make us happy, sad, excited, and brave. Music is MAGIC!' },

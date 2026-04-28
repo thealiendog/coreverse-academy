@@ -4,13 +4,13 @@ import KaraokeText from '../KaraokeText';
 // Image grid — used when step.images is an array of paths
 function ImageGrid({ images, labels }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
       {images.map((src, i) => (
         <div key={i} style={{ textAlign: 'center' }}>
           <img
             src={src}
             alt={labels?.[i] || ''}
-            style={{ width: '100%', aspectRatio: '1', objectFit: 'cover', borderRadius: 14, display: 'block' }}
+            style={{ width: '100%', maxHeight: 130, aspectRatio: '1', objectFit: 'cover', borderRadius: 14, display: 'block' }}
             draggable={false}
           />
           {labels?.[i] && (
