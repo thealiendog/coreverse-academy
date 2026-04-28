@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild, getCurrentParent, updateChildProgress } from '../../lib/storage';
 import { getAvatar } from '../../lib/constants';
 import { getVoiceForGuide } from '../../data/guideVoices';
+import { unlockAudio } from './sounds';
 
 // Screen types
 import WelcomeScreen     from './screens/WelcomeScreen';
@@ -697,6 +698,9 @@ export default function GameLessonPlayer() {
         persistentAudioRef.current = el;
         console.log(`[audio ${ts()}] PERSISTENT_EL_CREATED on first gesture`);
       }
+      // Pre-authorize the Web Audio context within the gesture window so
+      // synthesized sounds (buzz, fanfare, sparkle) work on iOS without delay.
+      unlockAudio();
       document.removeEventListener('touchstart', unlock, true);
       document.removeEventListener('click',      unlock, true);
     }
@@ -952,6 +956,7 @@ export default function GameLessonPlayer() {
           key={screenIdx}
           style={{
             flex: 1,
+            minHeight: 0,
             animation: 'screen-enter 0.35s ease both',
             overflowY: 'auto',
             overscrollBehavior: 'contain',

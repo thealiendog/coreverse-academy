@@ -11,6 +11,21 @@ function getCtx() {
   return _ctx;
 }
 
+// Call this inside a user-gesture handler (touchstart/click) to pre-authorize the
+// AudioContext on iOS. Must run synchronously within the gesture event to count.
+export function unlockAudio() {
+  try {
+    const ctx = getCtx();
+    if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+    // Play a silent buffer so iOS marks this context as gesture-authorized
+    const buf = ctx.createBuffer(1, 1, 22050);
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    src.connect(ctx.destination);
+    src.start(0);
+  } catch { /* no audio context */ }
+}
+
 function tone(freq, dur = 0.15, type = 'sine', vol = 0.22) {
   try {
     const ctx  = getCtx();

@@ -128,7 +128,7 @@ export const creativeartsLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we DANCE!' },
       { type: 'story', image: '/game-assets/creative-arts/dancing-spinning.png', guideText: 'When music plays, your body wants to MOVE! That is dancing! There is no wrong way to dance — every person dances differently and that is what makes it beautiful!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is SPINNING?', guideText: 'Tap the spinning dancer!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is SPINNING?', guideText: 'Tap the spinning dancer!',
         items: [
           { image: '/game-assets/creative-arts/dancing-spinning.png', label: 'Spinning', correct: true },
           { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Jumping' },
@@ -137,7 +137,7 @@ export const creativeartsLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/dancing-jumping.png', guideText: 'You can JUMP up high when the music gets loud! Your feet leave the ground!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is JUMPING?', guideText: 'Tap the jumping dancer!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is JUMPING?', guideText: 'Tap the jumping dancer!',
         items: [
           { image: '/game-assets/creative-arts/dancing-jumping.png', label: 'Jumping', correct: true },
           { image: '/game-assets/creative-arts/dancing-spinning.png', label: 'Spinning' },

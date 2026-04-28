@@ -53,7 +53,7 @@ export const elaLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn what letters SOUND like!' },
       { type: 'story', image: '/game-assets/ela/letter-A-apple.png', guideText: 'Every letter has its own SOUND! When you say A, your mouth opens wide — aaah! Apple starts with A — and so does your mouth-sound!' },
       { type: 'teach', image: '/game-assets/ela/letter-A-apple.png', guideText: 'A makes the AAH sound. A — Apple. A — Ant. A — Alligator! Listen for the AAH at the start!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one starts with A like APPLE?', guideText: 'Tap the apple!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one starts with A like APPLE?', guideText: 'Tap the apple!',
         items: [
           { image: '/game-assets/ela/letter-A-apple.png', label: 'Apple — A', correct: true },
           { image: '/game-assets/ela/letter-B-ball.png', label: 'Ball — B' },
@@ -62,7 +62,7 @@ export const elaLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/ela/letter-B-ball.png', guideText: 'B makes the BUH sound. B — Ball. B — Bear. B — Bunny! When your lips press together — that is B!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one starts with B like BALL?', guideText: 'Tap the ball!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one starts with B like BALL?', guideText: 'Tap the ball!',
         items: [
           { image: '/game-assets/ela/letter-B-ball.png', label: 'Ball — B', correct: true },
           { image: '/game-assets/ela/letter-A-apple.png', label: 'Apple — A' },
@@ -90,7 +90,7 @@ export const elaLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn that letters become WORDS!' },
       { type: 'story', image: '/game-assets/ela/word-cat.png', guideText: 'When you put letters TOGETHER, you make a WORD! Look — C, A, T spells CAT! Three letters became a meaningful word. That is the magic of reading!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which spells CAT?', guideText: 'Tap the word CAT!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which spells CAT?', guideText: 'Tap the word CAT!',
         items: [
           { image: '/game-assets/ela/word-cat.png', label: 'Word CAT', correct: true },
           { image: '/game-assets/ela/word-dog.png', label: 'Word DOG' },
@@ -99,7 +99,7 @@ export const elaLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/ela/word-dog.png', guideText: 'D, O, G — that spells DOG! Three letters that name our furry friend!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which spells DOG?', guideText: 'Tap the word DOG!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which spells DOG?', guideText: 'Tap the word DOG!',
         items: [
           { image: '/game-assets/ela/word-dog.png', label: 'Word DOG', correct: true },
           { image: '/game-assets/ela/word-cat.png', label: 'Word CAT' },
@@ -128,7 +128,7 @@ export const elaLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we play with RHYMES — words that sound the same at the end!' },
       { type: 'story', image: '/game-assets/ela/cat-hat-rhyme.png', guideText: 'CAT and HAT sound the same at the end — that is a RHYME! Rhyming makes words sound like a song. Rhymes are everywhere in books and songs!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one rhymes with CAT?', guideText: 'Tap the rhyming pair!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one rhymes with CAT?', guideText: 'Tap the rhyming pair!',
         items: [
           { image: '/game-assets/ela/cat-hat-rhyme.png', label: 'Cat and Hat', correct: true },
           { image: '/game-assets/ela/bee-tree-rhyme.png', label: 'Bee and Tree' },
@@ -137,7 +137,7 @@ export const elaLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/ela/bee-tree-rhyme.png', guideText: 'BEE and TREE rhyme! Both end with EEEE sound! Listen — beeeee, treeee!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which rhymes with TREE?', guideText: 'Tap the bee and tree!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which rhymes with TREE?', guideText: 'Tap the bee and tree!',
         items: [
           { image: '/game-assets/ela/bee-tree-rhyme.png', label: 'Bee and Tree', correct: true },
           { image: '/game-assets/ela/cat-hat-rhyme.png', label: 'Cat and Hat' },
@@ -197,7 +197,7 @@ export const elaLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn that every story has THREE parts!' },
       { type: 'story', image: '/game-assets/ela/story-beginning.png', guideText: 'Every story has a BEGINNING — where it starts. A MIDDLE — where the exciting stuff happens. And an END — where the story finishes. Like your day! You wake up, you play, you sleep!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows the BEGINNING of a story?', guideText: 'Tap the start!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one shows the BEGINNING of a story?', guideText: 'Tap the start!',
         items: [
           { image: '/game-assets/ela/story-beginning.png', label: 'Beginning', correct: true },
           { image: '/game-assets/ela/story-middle.png', label: 'Middle' },
@@ -206,7 +206,7 @@ export const elaLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/ela/story-middle.png', guideText: 'In the MIDDLE of a story, EXCITING things happen. The character meets friends, has problems, goes on adventures!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows the MIDDLE of a story?', guideText: 'Tap the exciting middle!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows the MIDDLE of a story?', guideText: 'Tap the exciting middle!',
         items: [
           { image: '/game-assets/ela/story-middle.png', label: 'Middle', correct: true },
           { image: '/game-assets/ela/story-beginning.png', label: 'Beginning' },
@@ -235,7 +235,7 @@ export const elaLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we meet the people in stories — CHARACTERS!' },
       { type: 'story', image: '/game-assets/ela/storybook-hero.png', guideText: 'A CHARACTER is anyone in a story — a brave kid, a talking dog, a wise grandma. Every story is about characters! When we read, we get to know them like friends!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a CHARACTER?', guideText: 'Tap the storybook hero!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a CHARACTER?', guideText: 'Tap the storybook hero!',
         items: [
           { image: '/game-assets/ela/storybook-hero.png', label: 'Hero', correct: true },
           { image: '/game-assets/ela/story-beginning.png', label: 'Story start' },
@@ -244,7 +244,7 @@ export const elaLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/ela/storybook-friend-animal.png', guideText: 'Characters can be ANIMALS too! In Charlotte\'s Web, there is a pig and a spider. In Frog and Toad, there are two frog friends! Animals make great characters!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is an ANIMAL character?', guideText: 'Tap the animal friend!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is an ANIMAL character?', guideText: 'Tap the animal friend!',
         items: [
           { image: '/game-assets/ela/storybook-friend-animal.png', label: 'Animal friend', correct: true },
           { image: '/game-assets/ela/storybook-hero.png', label: 'Hero kid' },
@@ -310,7 +310,7 @@ export const elaLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we use IMAGINATION when we listen to stories!' },
       { type: 'story', image: '/game-assets/ela/child-drawing-imagining.png', guideText: 'When someone reads you a story, your IMAGINATION makes pictures in your head! Even before you can read the words, you can SEE the story in your mind. That is amazing!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows IMAGINATION?', guideText: 'Tap the kid imagining!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows IMAGINATION?', guideText: 'Tap the kid imagining!',
         items: [
           { image: '/game-assets/ela/child-drawing-imagining.png', label: 'Drawing imagination', correct: true },
           { image: '/game-assets/ela/child-cozy-reading.png', label: 'Reading' },
@@ -320,7 +320,7 @@ export const elaLittleStars = [
       },
       { type: 'teach', image: '/game-assets/ela/imagination-burst.png', guideText: 'Imagination has NO RULES! In your imagination, dragons can fly, kids can fly, soup can fly! Whatever you imagine is real in your mind!' },
       { type: 'yes-no', scenario: 'Can you imagine ANYTHING in your mind?', correctAnswer: true, image: '/game-assets/ela/imagination-burst.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows lots of IMAGINATION?', guideText: 'Tap the magical burst!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows lots of IMAGINATION?', guideText: 'Tap the magical burst!',
         items: [
           { image: '/game-assets/ela/imagination-burst.png', label: 'Imagination burst', correct: true },
           { image: '/game-assets/ela/child-drawing-imagining.png', label: 'Drawing' },

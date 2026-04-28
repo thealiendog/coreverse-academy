@@ -46,7 +46,7 @@ export const moneybusinessLittleStars = [
       { type: 'story', image: '/game-assets/money/trade-scene.png', guideText: 'When we want something, we give money to get it. We give a coin, and we get an apple. That is called a TRADE!' },
       { type: 'teach', image: '/game-assets/money/trade-scene.png', guideText: 'Money for things. Things for money. That is how trading works!' },
       { type: 'yes-no', scenario: 'If I give one coin, can I get an apple?', correctAnswer: true, image: '/game-assets/money/trade-scene.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which one do we use to TRADE?', guideText: 'Tap the thing we use to trade!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which one do we use to TRADE?', guideText: 'Tap the thing we use to trade!',
         items: [
           { image: '/game-assets/money/coins-pile.png', label: 'Coins', correct: true },
           { image: '/game-assets/money/clean-toy.png', label: 'Toy' },
@@ -113,7 +113,7 @@ export const moneybusinessLittleStars = [
       { type: 'teach', image: '/game-assets/money/piggy-bank-empty.png', guideText: 'An empty piggy bank waits for our coins. We drop them in one at a time!' },
       { type: 'yes-no', scenario: 'Does saving money mean keeping it for later?', correctAnswer: true, image: '/game-assets/money/piggy-bank-empty.png' },
       { type: 'teach', image: '/game-assets/money/piggy-bank-full.png', guideText: 'When we save many coins, our piggy bank gets FULL! Now we have lots of money saved up!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which piggy bank has SAVED a lot?', guideText: 'Tap the full one!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which piggy bank has SAVED a lot?', guideText: 'Tap the full one!',
         items: [
           { image: '/game-assets/money/piggy-bank-full.png', label: 'Full piggy bank', correct: true },
           { image: '/game-assets/money/piggy-bank-empty.png', label: 'Empty piggy bank' },
@@ -187,7 +187,7 @@ export const moneybusinessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we go SHOPPING at the store!' },
       { type: 'story', image: '/game-assets/money/store-scene.png', guideText: 'A store has lots of things to buy. We pick what we want, put it in our cart, and pay at the end. Then we take our things home!' },
       { type: 'teach', image: '/game-assets/money/shopping-cart.png', guideText: 'A shopping cart helps us carry everything we want to buy!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where do we go to BUY food?', guideText: 'Tap the right place!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Where do we go to BUY food?', guideText: 'Tap the right place!',
         items: [
           { image: '/game-assets/money/store-scene.png', label: 'Store', correct: true },
           { image: '/game-assets/money/piggy-bank-empty.png', label: 'Piggy bank' },
@@ -218,7 +218,7 @@ export const moneybusinessLittleStars = [
       { type: 'story', image: '/game-assets/money/food-table.png', guideText: 'Every meal we eat — every apple, every piece of bread — was bought with money. Food does not just appear on our plates. Someone worked hard to grow it, and someone paid for it!' },
       { type: 'teach', image: '/game-assets/money/food-table.png', guideText: 'Food is precious. It takes work to grow it and money to buy it!' },
       { type: 'yes-no', scenario: 'Does food cost money?', correctAnswer: true, image: '/game-assets/money/food-table.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which costs MORE — a meal or candy?', guideText: 'Tap the one that costs more!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which costs MORE — a meal or candy?', guideText: 'Tap the one that costs more!',
         items: [
           { image: '/game-assets/money/food-table.png', label: 'Full meal', correct: true },
           { image: '/game-assets/money/wants-trio.png', label: 'Candy' },
@@ -270,7 +270,7 @@ export const moneybusinessLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn that HELPING at home is real work!' },
       { type: 'story', image: '/game-assets/money/family-helping.png', guideText: 'When we help at home — putting toys away, setting the table, carrying groceries — that is REAL WORK. It helps the whole family. Helping makes us strong, kind, and proud!' },
       { type: 'teach', image: '/game-assets/money/helping-home.png', guideText: 'Picking up toys, making the bed, helping in the kitchen — every little job counts!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which one is HELPING at home?', guideText: 'Tap the picture that shows helping!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which one is HELPING at home?', guideText: 'Tap the picture that shows helping!',
         items: [
           { image: '/game-assets/money/helping-home.png', label: 'Cleaning up', correct: true },
           { image: '/game-assets/money/child-making-mess.png', label: 'Making a mess' },

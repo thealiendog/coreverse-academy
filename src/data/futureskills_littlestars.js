@@ -45,7 +45,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we explore what TECHNOLOGY can do!' },
       { type: 'story', image: '/game-assets/future-skills/app-icons.png', guideText: 'Technology is anything humans build to help us do things faster or easier. Phones let us call friends far away. Cars take us places quickly. Microwaves heat our food in seconds. Apps on tablets help us learn and play. Technology is everywhere!' },
       { type: 'teach', image: '/game-assets/future-skills/tablet-device.png', guideText: 'Apps are like little helpers that live inside your tablet — each one does something different!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What is on a TABLET?', guideText: 'Tap what you find on a tablet!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What is on a TABLET?', guideText: 'Tap what you find on a tablet!',
         items: [
           { image: '/game-assets/future-skills/app-icons.png', label: 'Apps', correct: true },
           { image: '/game-assets/future-skills/paper-pages.png', label: 'Paper pages' },
@@ -111,7 +111,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we think about APPS we love!' },
       { type: 'story', image: '/game-assets/future-skills/app-icons.png', guideText: 'Apps are little programs that live inside phones and tablets. Some apps help you draw. Some play music. Some teach you words. Some let you talk to grandma. The best apps help you learn or create something new!' },
       { type: 'teach', image: '/game-assets/future-skills/lightbulb-idea.png', guideText: 'Smart kids pick apps that help them grow — not just apps that watch you do nothing!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where do you find APPS?', guideText: 'Tap where apps live!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Where do you find APPS?', guideText: 'Tap where apps live!',
         items: [
           { image: '/game-assets/future-skills/tablet-device.png', label: 'Tablet', correct: true },
           { image: '/game-assets/future-skills/book-physical.png', label: 'Paper book' },
@@ -141,7 +141,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we meet REAL ROBOTS!' },
       { type: 'story', image: '/game-assets/future-skills/friendly-robot.png', guideText: 'Robots are real — they exist outside of stories and movies! Some robots clean floors in our houses. Some robots help build cars in factories. Some robots even explore Mars! People build robots to do hard or dangerous jobs that humans cannot do easily.' },
       { type: 'teach', image: '/game-assets/future-skills/robot-parts.png', guideText: 'Robots have parts like we do — heads, arms, legs — but theirs are made of metal and have computers inside!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a ROBOT?', guideText: 'Tap the friendly robot!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a ROBOT?', guideText: 'Tap the friendly robot!',
         items: [
           { image: '/game-assets/future-skills/friendly-robot.png', label: 'Robot', correct: true },
           { image: '/game-assets/future-skills/computer-glowing.png', label: 'Computer' },
@@ -194,7 +194,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we ask GREAT QUESTIONS!' },
       { type: 'story', image: '/game-assets/future-skills/question-mark-glowing.png', guideText: 'Asking questions is a SUPERPOWER. Every great inventor and scientist starts with a question. Why does the sky look blue? How do birds fly? What if I tried it differently? Questions help your brain grow bigger and stronger every single day!' },
       { type: 'teach', image: '/game-assets/future-skills/brain-thinking.png', guideText: 'When you do not know something, ASK. Asking is how smart people learn!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do you do when you do not know something?', guideText: 'Tap the question mark!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What do you do when you do not know something?', guideText: 'Tap the question mark!',
         items: [
           { image: '/game-assets/future-skills/question-mark-glowing.png', label: 'Ask a question', correct: true },
           { image: '/game-assets/future-skills/child-shrugging.png', label: 'Shrug it off' },
@@ -225,7 +225,7 @@ export const futureskillsLittleStars = [
       { type: 'story', image: '/game-assets/future-skills/try-again.png', guideText: 'Sometimes things do not work the first time — your tower falls, your puzzle piece does not fit, your drawing does not look right. That is OKAY! Every great inventor failed many times before they succeeded. Trying again is how you learn and grow. Do not give up!' },
       { type: 'teach', image: '/game-assets/future-skills/lightbulb-idea.png', guideText: 'When you try AGAIN, your brain learns something new each time — even if it does not work, you are getting smarter!' },
       { type: 'yes-no', scenario: 'Should you give up if something does not work the first time?', correctAnswer: false, image: '/game-assets/future-skills/try-again.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do you do when something does not work?', guideText: 'Tap try again!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What do you do when something does not work?', guideText: 'Tap try again!',
         items: [
           { image: '/game-assets/future-skills/try-again.png', label: 'Try again', correct: true },
           { image: '/game-assets/future-skills/child-frustrated-quit.png', label: 'Quit angrily' },
@@ -254,7 +254,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we work as a TEAM!' },
       { type: 'story', image: '/game-assets/future-skills/kids-working-together.png', guideText: 'Some problems are too BIG for one person to solve alone. That is when we work together! When two people share ideas, the answer comes faster. When three people lift something heavy, it is easier. Teams build the biggest, coolest things in the world!' },
       { type: 'teach', image: '/game-assets/future-skills/kids-working-together.png', guideText: 'Working together means listening to each other, sharing ideas, and helping when someone is stuck!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does it look like to work as a TEAM?', guideText: 'Tap kids working together!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What does it look like to work as a TEAM?', guideText: 'Tap kids working together!',
         items: [
           { image: '/game-assets/future-skills/kids-working-together.png', label: 'Working together', correct: true },
           { image: '/game-assets/future-skills/kid-alone-working.png', label: 'Alone with everything' },
@@ -284,7 +284,7 @@ export const futureskillsLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we are CREATIVE GENIUSES!' },
       { type: 'story', image: '/game-assets/future-skills/creative-spark.png', guideText: 'Creativity is when you make something that did not exist before. It could be a drawing, a song, a story, a dance, or a brand new game. Every person on Earth has creativity inside them — including YOU. Your imagination is one of the most powerful tools you will ever have!' },
       { type: 'teach', image: '/game-assets/future-skills/lightbulb-idea.png', guideText: 'Creativity starts with one little idea — a spark in your brain. Then you make it real with your hands, voice, or words!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows CREATIVITY?', guideText: 'Tap a kid making something new!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one shows CREATIVITY?', guideText: 'Tap a kid making something new!',
         items: [
           { image: '/game-assets/future-skills/kids-creating.png', label: 'Creating', correct: true },
           { image: '/game-assets/future-skills/child-watching-tv.png', label: 'Just watching' },

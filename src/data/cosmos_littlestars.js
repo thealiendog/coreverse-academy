@@ -45,7 +45,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we watch the MOON!' },
       { type: 'story', image: '/game-assets/cosmos/moon-phases.png', guideText: 'The Moon is our nighttime friend. It changes shape over the month — sometimes it is a thin crescent, sometimes a half, and sometimes a big round circle. But the Moon never really changes — we just see different parts of it!' },
       { type: 'teach', image: '/game-assets/cosmos/moon-full.png', guideText: 'When we see the whole circle, that is called a FULL moon!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is the FULL moon?', guideText: 'Tap the round, full moon!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is the FULL moon?', guideText: 'Tap the round, full moon!',
         items: [
           { image: '/game-assets/cosmos/moon-full.png', label: 'Full moon', correct: true },
           { image: '/game-assets/cosmos/moon-phases.png', label: 'All phases' },
@@ -76,7 +76,7 @@ export const cosmosLittleStars = [
       { type: 'story', image: '/game-assets/cosmos/stars-night.png', guideText: 'Stars are huge balls of fire very, very far away in space. There are MILLIONS of them in the sky! Each one is its own sun, just like ours, but very tiny because they are so far away.' },
       { type: 'teach', image: '/game-assets/cosmos/stars-night.png', guideText: 'Stars come out at night when the Sun is on the other side of Earth!' },
       { type: 'yes-no', scenario: 'Can we see stars in the daytime?', correctAnswer: false, image: '/game-assets/cosmos/day-sky.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'When can we see STARS?', guideText: 'Tap when the stars come out!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'When can we see STARS?', guideText: 'Tap when the stars come out!',
         items: [
           { image: '/game-assets/cosmos/night-sky.png', label: 'At night', correct: true },
           { image: '/game-assets/cosmos/day-sky.png', label: 'During the day' },
@@ -148,7 +148,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn the FOUR SEASONS!' },
       { type: 'story', image: '/game-assets/cosmos/four-seasons.png', guideText: 'Every year, Earth goes around the Sun one big time. As we travel, the weather changes. We have FOUR seasons: spring is when things grow, summer is hot and bright, fall is when leaves change colors, and winter is cold with snow!' },
       { type: 'teach', image: '/game-assets/cosmos/four-seasons.png', guideText: 'Spring, summer, fall, winter — every season is special!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows all FOUR seasons together?', guideText: 'Tap the picture that shows all four seasons!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows all FOUR seasons together?', guideText: 'Tap the picture that shows all four seasons!',
         items: [
           { image: '/game-assets/cosmos/four-seasons.png', label: 'All four seasons', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Just the sun' },
@@ -208,7 +208,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about RAIN!' },
       { type: 'story', image: '/game-assets/cosmos/rain-falling.png', guideText: 'Rain happens when clouds get full of water. The water gets so heavy that it falls down to Earth as raindrops. Rain is very important — it gives water to plants, animals, rivers, and lakes. Without rain, nothing could grow!' },
       { type: 'teach', image: '/game-assets/cosmos/rain-falling.png', guideText: 'Rain helps everything alive on Earth! Plants drink it through their roots.' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where does RAIN come from?', guideText: 'Tap where rain comes from!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Where does RAIN come from?', guideText: 'Tap where rain comes from!',
         items: [
           { image: '/game-assets/cosmos/clouds-fluffy.png', label: 'Clouds', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },
@@ -238,7 +238,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about animals in WINTER!' },
       { type: 'story', image: '/game-assets/cosmos/hibernating-bear.png', guideText: 'When winter comes and it gets very cold, some animals do something amazing — they sleep for the WHOLE winter! Bears curl up in cozy caves, frogs dig into the mud, and bats hide in trees. This special long sleep is called hibernation!' },
       { type: 'teach', image: '/game-assets/cosmos/hibernating-bear.png', guideText: 'Bears eat lots and lots of food in fall to get fat — then they sleep all winter!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which animal HIBERNATES?', guideText: 'Tap the bear sleeping in winter!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which animal HIBERNATES?', guideText: 'Tap the bear sleeping in winter!',
         items: [
           { image: '/game-assets/cosmos/hibernating-bear.png', label: 'Sleeping bear', correct: true },
           { image: '/game-assets/cosmos/animals-babies.png', label: 'Baby animals' },
@@ -268,7 +268,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we watch a SEED grow!' },
       { type: 'story', image: '/game-assets/cosmos/seed-to-plant.png', guideText: 'A tiny little seed has something magical inside — a whole plant waiting to grow! When you put a seed in the soil and give it water and sunshine, it pushes out a little sprout. The sprout grows leaves, then it grows tall, and one day it might even have a flower!' },
       { type: 'teach', image: '/game-assets/cosmos/seed-to-plant.png', guideText: 'A seed needs three things to grow — water, sunlight, and good soil!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a seed grow into?', guideText: 'Tap the picture of a seed becoming a plant!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What does a seed grow into?', guideText: 'Tap the picture of a seed becoming a plant!',
         items: [
           { image: '/game-assets/cosmos/seed-to-plant.png', label: 'Plant', correct: true },
           { image: '/game-assets/cosmos/rain-falling.png', label: 'Rain' },
@@ -328,7 +328,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we feel HOT and COLD!' },
       { type: 'story', image: '/game-assets/cosmos/temperature-hot-cold.png', guideText: 'Some things are hot, like the sun on a summer day or a cup of tea. Some things are cold, like ice cubes or snow. Hot and cold are called TEMPERATURE — and your body can feel the difference!' },
       { type: 'teach', image: '/game-assets/cosmos/sun-glowing.png', guideText: 'The Sun is VERY hot! It is so hot that we feel its warmth even though it is far away in space.' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is HOT?', guideText: 'Tap the hot one!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is HOT?', guideText: 'Tap the hot one!',
         items: [
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun', correct: true },
           { image: '/game-assets/cosmos/ice-melting.png', label: 'Ice' },
@@ -401,7 +401,7 @@ export const cosmosLittleStars = [
       { type: 'story', image: '/game-assets/cosmos/colors-mixing.png', guideText: 'When you mix two colors together, something magical happens — they become a NEW color! Red and yellow make orange. Blue and yellow make green. Red and blue make purple. Color mixing is like science magic!' },
       { type: 'teach', image: '/game-assets/cosmos/colors-mixing.png', guideText: 'Red, yellow, and blue are special — they make all the other colors!' },
       { type: 'yes-no', scenario: 'Do red and blue make purple?', correctAnswer: true, image: '/game-assets/cosmos/colors-mixing.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What happens when you mix colors?', guideText: 'Tap the colors mixing!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What happens when you mix colors?', guideText: 'Tap the colors mixing!',
         items: [
           { image: '/game-assets/cosmos/colors-mixing.png', label: 'Mixing colors', correct: true },
           { image: '/game-assets/cosmos/ice-melting.png', label: 'Melting ice' },
@@ -430,7 +430,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we discover BUBBLES and AIR!' },
       { type: 'story', image: '/game-assets/cosmos/bubbles-floating.png', guideText: 'Air is all around us — even though we cannot see it, it is everywhere! When you blow into a bubble, you fill it with air. The bubble floats because air is so light. Air is what we breathe to stay alive!' },
       { type: 'teach', image: '/game-assets/cosmos/air-blowing.png', guideText: 'You can FEEL air when the wind blows on your face. Air can be still, or it can move very fast!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What floats with AIR inside?', guideText: 'Tap the bubbles!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What floats with AIR inside?', guideText: 'Tap the bubbles!',
         items: [
           { image: '/game-assets/cosmos/bubbles-floating.png', label: 'Bubbles', correct: true },
           { image: '/game-assets/cosmos/weight-comparison.png', label: 'Heavy rock' },
@@ -461,7 +461,7 @@ export const cosmosLittleStars = [
       { type: 'story', image: '/game-assets/cosmos/magnet-attracting.png', guideText: 'A magnet has an invisible power — it can pull metal things toward itself without even touching them! Watch how paperclips and keys jump right onto the magnet. This invisible pulling power is called magnetism, and it is real science magic!' },
       { type: 'teach', image: '/game-assets/cosmos/magnet-attracting.png', guideText: 'Magnets only pull on certain metals, like iron and steel. They do not pull plastic or wood!' },
       { type: 'yes-no', scenario: 'Can a magnet pull metal toward it?', correctAnswer: true, image: '/game-assets/cosmos/magnet-attracting.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a MAGNET do?', guideText: 'Tap the magnet pulling things!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What does a MAGNET do?', guideText: 'Tap the magnet pulling things!',
         items: [
           { image: '/game-assets/cosmos/magnet-attracting.png', label: 'Magnet pulling', correct: true },
           { image: '/game-assets/cosmos/bubbles-floating.png', label: 'Bubbles' },
@@ -490,7 +490,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we watch ICE turn into WATER!' },
       { type: 'story', image: '/game-assets/cosmos/ice-melting.png', guideText: 'Ice is just water that got SO cold it turned hard. But when ice gets warm again, it MELTS — it slowly turns back into water! You can watch this happen if you leave an ice cube on the table. Ice and water are the same thing in different forms!' },
       { type: 'teach', image: '/game-assets/cosmos/ice-melting.png', guideText: 'Cold makes water turn to ice. Warmth makes ice turn back to water!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What happens when ice gets WARM?', guideText: 'Tap what happens to ice in the sun!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What happens when ice gets WARM?', guideText: 'Tap what happens to ice in the sun!',
         items: [
           { image: '/game-assets/cosmos/ice-melting.png', label: 'Melts to water', correct: true },
           { image: '/game-assets/cosmos/temperature-hot-cold.png', label: 'Gets hotter' },
@@ -520,7 +520,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we meet ANIMAL BABIES!' },
       { type: 'story', image: '/game-assets/cosmos/animals-babies.png', guideText: 'Every animal has babies, just like people do! Dogs have puppies. Cats have kittens. Ducks have ducklings. Cows have calves. Animal mommies take care of their babies — they feed them, keep them warm, and teach them how to live!' },
       { type: 'teach', image: '/game-assets/cosmos/animals-babies.png', guideText: 'Baby animals look like little versions of their parents — but they grow up SO fast!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What do animal moms do?', guideText: 'Tap moms with their babies!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What do animal moms do?', guideText: 'Tap moms with their babies!',
         items: [
           { image: '/game-assets/cosmos/animals-babies.png', label: 'Care for babies', correct: true },
           { image: '/game-assets/cosmos/hibernating-bear.png', label: 'Sleep all winter' },
@@ -550,7 +550,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we meet DINOSAURS!' },
       { type: 'story', image: '/game-assets/cosmos/dinosaurs.png', guideText: 'A long long LONG time ago — way before people existed — giant creatures called dinosaurs walked on Earth! Some were taller than houses. Some were as small as chickens. Some ate plants, and some ate other animals. They were REAL animals!' },
       { type: 'teach', image: '/game-assets/cosmos/dinosaurs.png', guideText: 'Dinosaurs lived millions of years ago. We know about them because we find their bones in the ground!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a DINOSAUR?', guideText: 'Tap the dinosaur!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a DINOSAUR?', guideText: 'Tap the dinosaur!',
         items: [
           { image: '/game-assets/cosmos/dinosaurs.png', label: 'Dinosaur', correct: true },
           { image: '/game-assets/cosmos/animals-babies.png', label: 'Baby animals' },
@@ -603,7 +603,7 @@ export const cosmosLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we celebrate our home — EARTH!' },
       { type: 'story', image: '/game-assets/cosmos/earth-from-space.png', guideText: 'Earth is our planet — our HOME. It floats in space, with the Sun warming us, the Moon orbiting around us, and stars all around. Earth has water, air, plants, animals, and YOU. It is the only planet we know with life on it. Earth is precious and we must take care of it!' },
       { type: 'teach', image: '/game-assets/cosmos/earth-from-space.png', guideText: 'Earth gives us everything we need — air to breathe, water to drink, food to eat, and a place to live!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which planet is our HOME?', guideText: 'Tap our home, Earth!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which planet is our HOME?', guideText: 'Tap our home, Earth!',
         items: [
           { image: '/game-assets/cosmos/earth-from-space.png', label: 'Earth', correct: true },
           { image: '/game-assets/cosmos/sun-glowing.png', label: 'Sun' },

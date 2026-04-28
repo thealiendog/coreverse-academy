@@ -14,7 +14,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! I am Luna! Today we learn how to say HELLO and GOODBYE in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/friends-greeting.png', guideText: 'In Spanish, when we see a friend we say ¡Hola! That means HELLO! And when we leave we say ¡Adiós! That means GOODBYE!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one means HELLO?', guideText: '¡Hola! Tap the picture that means hello!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one means HELLO?', guideText: '¡Hola! Tap the picture that means hello!',
         items: [
           { image: '/game-assets/spanish/wave-hello.png', label: 'Hola', correct: true },
           { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós' },
@@ -23,7 +23,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/wave-goodbye.png', guideText: 'And when we say goodbye we say ¡Adiós! Try saying it with me — ¡Adiós!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one means GOODBYE?', guideText: '¡Adiós! Tap the picture that means goodbye!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one means GOODBYE?', guideText: '¡Adiós! Tap the picture that means goodbye!',
         items: [
           { image: '/game-assets/spanish/wave-goodbye.png', label: 'Adiós', correct: true },
           { image: '/game-assets/spanish/wave-hello.png', label: 'Hola' },
@@ -142,7 +142,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn FAMILY words in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/mama-figure.png', guideText: 'Your family is special! In Spanish, MOM is mamá. DAD is papá. BROTHER is hermano. SISTER is hermana. Let us learn these family words!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is MAMÁ?', guideText: '¡Mamá! Tap mom!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is MAMÁ?', guideText: '¡Mamá! Tap mom!',
         items: [
           { image: '/game-assets/spanish/mama-figure.png', label: 'Mamá', correct: true },
           { image: '/game-assets/spanish/papa-figure.png', label: 'Papá' },
@@ -151,7 +151,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/papa-figure.png', guideText: '¡Papá! That means DAD. Two words very close in many languages!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PAPÁ?', guideText: '¡Papá! Tap dad!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is PAPÁ?', guideText: '¡Papá! Tap dad!',
         items: [
           { image: '/game-assets/spanish/papa-figure.png', label: 'Papá', correct: true },
           { image: '/game-assets/spanish/mama-figure.png', label: 'Mamá' },
@@ -180,7 +180,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn ANIMALS in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/perro-dog.png', guideText: 'Animals have new names in Spanish! DOG is perro. CAT is gato. BIRD is pájaro. FISH is pez. Let us meet them!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PERRO?', guideText: '¡Perro! Tap the dog!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is PERRO?', guideText: '¡Perro! Tap the dog!',
         items: [
           { image: '/game-assets/spanish/perro-dog.png', label: 'Perro', correct: true },
           { image: '/game-assets/spanish/gato-cat.png', label: 'Gato' },
@@ -189,7 +189,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/gato-cat.png', guideText: '¡Gato! That means CAT. Cats say meow in every language!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is GATO?', guideText: '¡Gato! Tap the cat!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is GATO?', guideText: '¡Gato! Tap the cat!',
         items: [
           { image: '/game-assets/spanish/gato-cat.png', label: 'Gato', correct: true },
           { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' },
@@ -198,7 +198,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/pajaro-bird.png', guideText: '¡Pájaro! That means BIRD. Like me — I am a parrot, una clase de pájaro!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PEZ?', guideText: '¡Pez! Tap the fish!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is PEZ?', guideText: '¡Pez! Tap the fish!',
         items: [
           { image: '/game-assets/spanish/pez-fish.png', label: 'Pez', correct: true },
           { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' },
@@ -225,7 +225,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn FOOD words in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/manzana-apple.png', guideText: 'Yummy! In Spanish, BREAD is pan. MILK is leche. APPLE is manzana. WATER is agua. Food in Spanish — ¡delicioso!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PAN?', guideText: '¡Pan! Tap the bread!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is PAN?', guideText: '¡Pan! Tap the bread!',
         items: [
           { image: '/game-assets/spanish/pan-bread.png', label: 'Pan', correct: true },
           { image: '/game-assets/spanish/leche-milk.png', label: 'Leche' },
@@ -234,7 +234,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/leche-milk.png', guideText: '¡Leche! That means MILK. Milk helps your body grow strong!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is MANZANA?', guideText: '¡Manzana! Tap the apple!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is MANZANA?', guideText: '¡Manzana! Tap the apple!',
         items: [
           { image: '/game-assets/spanish/manzana-apple.png', label: 'Manzana', correct: true },
           { image: '/game-assets/spanish/pan-bread.png', label: 'Pan' },
@@ -243,7 +243,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/agua-water.png', guideText: '¡Agua! That means WATER. Your body needs water every day!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is AGUA?', guideText: '¡Agua! Tap the water!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is AGUA?', guideText: '¡Agua! Tap the water!',
         items: [
           { image: '/game-assets/spanish/agua-water.png', label: 'Agua', correct: true },
           { image: '/game-assets/spanish/leche-milk.png', label: 'Leche' },
@@ -270,7 +270,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn BODY parts in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/cabeza-head.png', guideText: 'Your body has new names in Spanish! HEAD is cabeza. EYES are ojos. HANDS are manos. FEET are pies. Touch them as we say each one!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is CABEZA?', guideText: '¡Cabeza! Tap the head!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is CABEZA?', guideText: '¡Cabeza! Tap the head!',
         items: [
           { image: '/game-assets/spanish/cabeza-head.png', label: 'Cabeza', correct: true },
           { image: '/game-assets/spanish/ojos-eyes.png', label: 'Ojos' },
@@ -279,7 +279,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/ojos-eyes.png', guideText: '¡Ojos! That means EYES — the part you see with! Touch your ojos!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is MANOS?', guideText: '¡Manos! Tap the hands!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is MANOS?', guideText: '¡Manos! Tap the hands!',
         items: [
           { image: '/game-assets/spanish/manos-hands.png', label: 'Manos', correct: true },
           { image: '/game-assets/spanish/ojos-eyes.png', label: 'Ojos' },
@@ -288,7 +288,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/pies-feet.png', guideText: '¡Pies! That means FEET — the part you walk with! Wiggle your pies!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is PIES?', guideText: '¡Pies! Tap the feet!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is PIES?', guideText: '¡Pies! Tap the feet!',
         items: [
           { image: '/game-assets/spanish/pies-feet.png', label: 'Pies', correct: true },
           { image: '/game-assets/spanish/manos-hands.png', label: 'Manos' },
@@ -315,7 +315,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn WEATHER words in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/sol-sun.png', guideText: 'Look up at the sky! In Spanish, SUN is sol. RAIN is lluvia. SNOW is nieve. WIND is viento. The weather changes every day!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is SOL?', guideText: '¡Sol! Tap the sun!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is SOL?', guideText: '¡Sol! Tap the sun!',
         items: [
           { image: '/game-assets/spanish/sol-sun.png', label: 'Sol', correct: true },
           { image: '/game-assets/spanish/lluvia-rain.png', label: 'Lluvia' },
@@ -324,7 +324,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/lluvia-rain.png', guideText: '¡Lluvia! That means RAIN. Plants love la lluvia!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is LLUVIA?', guideText: '¡Lluvia! Tap the rain!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is LLUVIA?', guideText: '¡Lluvia! Tap the rain!',
         items: [
           { image: '/game-assets/spanish/lluvia-rain.png', label: 'Lluvia', correct: true },
           { image: '/game-assets/spanish/sol-sun.png', label: 'Sol' },
@@ -353,7 +353,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn FEELINGS in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/feliz-happy.png', guideText: 'When someone asks ¿Cómo estás? — How are you? — you can answer! HAPPY is feliz. SAD is triste. TIRED is cansado. Tell people how you feel!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is FELIZ?', guideText: '¡Feliz! Tap the happy face!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is FELIZ?', guideText: '¡Feliz! Tap the happy face!',
         items: [
           { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz', correct: true },
           { image: '/game-assets/spanish/triste-sad.png', label: 'Triste' },
@@ -362,7 +362,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/triste-sad.png', guideText: '¡Triste! That means SAD. It is okay to feel triste sometimes — every feeling is okay!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is TRISTE?', guideText: '¡Triste! Tap the sad face!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is TRISTE?', guideText: '¡Triste! Tap the sad face!',
         items: [
           { image: '/game-assets/spanish/triste-sad.png', label: 'Triste', correct: true },
           { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz' },
@@ -391,7 +391,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we celebrate everything we learned in Spanish!' },
       { type: 'story', image: '/game-assets/spanish/spanish-celebration.png', guideText: '¡Wow! You learned so much! Greetings, numbers, colors, family, animals, food, body, weather, and feelings — all in Spanish!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which means HELLO?', guideText: '¡Hola! Tap the greeting!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which means HELLO?', guideText: '¡Hola! Tap the greeting!',
         items: [
           { image: '/game-assets/spanish/wave-hello.png', label: 'Hola', correct: true },
           { image: '/game-assets/spanish/perro-dog.png', label: 'Perro' },
@@ -399,7 +399,7 @@ export const spanishLittleStars = [
           { image: '/game-assets/spanish/agua-water.png', label: 'Agua' }
         ]
       },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which means MOM?', guideText: '¡Mamá! Tap mom!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which means MOM?', guideText: '¡Mamá! Tap mom!',
         items: [
           { image: '/game-assets/spanish/mama-figure.png', label: 'Mamá', correct: true },
           { image: '/game-assets/spanish/gato-cat.png', label: 'Gato' },
@@ -407,7 +407,7 @@ export const spanishLittleStars = [
           { image: '/game-assets/spanish/numero-tres.png', label: 'Tres' }
         ]
       },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which means HAPPY?', guideText: '¡Feliz! Tap happy!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which means HAPPY?', guideText: '¡Feliz! Tap happy!',
         items: [
           { image: '/game-assets/spanish/feliz-happy.png', label: 'Feliz', correct: true },
           { image: '/game-assets/spanish/manzana-apple.png', label: 'Manzana' },

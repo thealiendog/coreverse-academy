@@ -143,7 +143,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Your body tells you how you feel!' },
       { type: 'story', guideText: 'When you are happy, your body feels light. When you are scared, your tummy feels funny. Your body always knows!', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'Where do you feel happy?', guideText: 'Where do you feel happy in your body?',
+      { type: 'tap-right', readOptions: false, instruction: 'Where do you feel happy?', guideText: 'Where do you feel happy in your body?',
         items: [
           { image: '/game-assets/inner-world/body-heart.png', label: 'In your heart', correct: true },
           { image: '/game-assets/inner-world/body-fists.png', label: 'In your fists' },
@@ -154,7 +154,7 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Happy feels warm in your chest. Like sunshine inside you!', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'yes-no', scenario: 'When you feel butterflies in your tummy, your body is telling you something.', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'teach', guideText: 'Your body is your friend. It tells you how you feel before your brain even knows!', image: '/game-assets/inner-world/brain-pathways.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What happens when you are angry?', guideText: 'What does your body do when you are angry?',
+      { type: 'tap-right', readOptions: false, instruction: 'What happens when you are angry?', guideText: 'What does your body do when you are angry?',
         items: [
           { image: '/game-assets/inner-world/body-fists.png', label: 'Fists get tight', correct: true },
           { image: '/game-assets/inner-world/body-heart.png', label: 'Heart feels warm' },
@@ -202,7 +202,7 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Breathing in makes your belly big like a balloon. Breathing out lets everything go.', image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'yes-no', scenario: 'When you feel angry, should you take a deep breath before doing anything?', correctAnswer: true, image: '/game-assets/inner-world/breathing-balloon.png' },
       { type: 'teach', guideText: 'Three deep breaths can change everything. In through your nose, out through your mouth.', image: '/game-assets/inner-world/breathing-balloon.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What does deep breathing do?', guideText: 'What does deep breathing do?',
+      { type: 'tap-right', readOptions: false, instruction: 'What does deep breathing do?', guideText: 'What does deep breathing do?',
         items: [
           { image: '/game-assets/inner-world/breathing-balloon.png', label: 'Calms you down',   correct: true },
           { image: '/game-assets/inner-world/breath-angry.png',     label: 'Makes you angry' },
@@ -251,7 +251,7 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'When you are upset, your mind is like the swirly glitter. When you breathe and wait, everything settles.', image: '/game-assets/inner-world/calm-jar.png' },
       { type: 'yes-no', scenario: 'You are really upset. Should you shake the jar, watch the glitter settle, and breathe?', correctAnswer: true, image: '/game-assets/inner-world/calm-jar.png' },
       { type: 'teach', guideText: 'The calm-down jar shows you that all big feelings settle down if you give them time.', image: '/game-assets/inner-world/feelings-weather.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What happens to the glitter when you breathe and wait?',
+      { type: 'tap-right', readOptions: false, instruction: 'What happens to the glitter when you breathe and wait?',
         items: [
           { image: '/game-assets/inner-world/jar-settled.png',     label: 'It settles down', correct: true },
           { image: '/game-assets/inner-world/jar-empty.png',       label: 'It disappears' },
@@ -286,7 +286,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about something beautiful. LOVE!' },
       { type: 'story', guideText: 'Love is all around you. Your family loves you. Your friends love you. Love fills your heart like a warm glow.', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What shows LOVE?',
+      { type: 'tap-right', readOptions: false, instruction: 'What shows LOVE?',
         items: [
           { image: '/game-assets/inner-world/hug-scene.png',      label: 'Giving a hug',    correct: true },
           { image: '/game-assets/inner-world/yelling.png',        label: 'Yelling' },
@@ -297,7 +297,7 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Love is in hugs. Love is in bedtime stories. Love is in someone making you breakfast.', image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'yes-no', scenario: 'Your mom made you breakfast this morning. Is that love?', correctAnswer: true, image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'teach', guideText: 'You are loved just because you are YOU. Not because of anything you do.', image: '/game-assets/inner-world/mirror-self.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What does love feel like?', guideText: 'What does love feel like inside?',
+      { type: 'tap-right', readOptions: false, instruction: 'What does love feel like?', guideText: 'What does love feel like inside?',
         items: [
           { image: '/game-assets/inner-world/glowing-heart.png',  label: 'Warm and safe',  correct: true },
           { image: '/game-assets/inner-world/love-hot-angry.png', label: 'Hot and angry' },
@@ -316,7 +316,7 @@ export const innerworldLittleStars = [
       { type: 'story', guideText: 'Your heart is like a jar that never runs out. The more love you give, the more love fills back up!', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'yes-no', scenario: 'If you share love with a friend, do you have LESS love?', correctAnswer: false, image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'teach', guideText: 'Love is magic. When you give it away, you get even MORE back!', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What happens when you share love?', guideText: 'What happens when you share love?',
+      { type: 'tap-right', readOptions: false, instruction: 'What happens when you share love?', guideText: 'What happens when you share love?',
         items: [
           { image: '/game-assets/inner-world/glowing-heart.png',   label: 'You get more love', correct: true },
           { image: '/game-assets/inner-world/heart-empty.png',    label: 'You run out' },
@@ -337,7 +337,7 @@ export const innerworldLittleStars = [
       { type: 'story', guideText: 'Everyone makes mistakes. When we hurt someone, saying sorry helps fix it. But you have to really MEAN it.', image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'yes-no', scenario: 'You accidentally knocked over your friend\'s tower of blocks. Should you say sorry?', correctAnswer: true, image: '/game-assets/inner-world/hug-scene.png' },
       { type: 'teach', guideText: 'Saying sorry means you know you hurt someone and you want to make it better.', image: '/game-assets/inner-world/glowing-heart.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What makes a REAL sorry?', guideText: 'What makes sorry REAL?',
+      { type: 'tap-right', readOptions: false, instruction: 'What makes a REAL sorry?', guideText: 'What makes sorry REAL?',
         items: [
           { image: '/game-assets/inner-world/glowing-heart.png',      label: 'Meaning it inside', correct: true },
           { image: '/game-assets/inner-world/sorry-rushed-bunny.png', label: 'Saying it fast' },
@@ -356,7 +356,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we discover how BRAVE you are!' },
       { type: 'story', guideText: 'Being brave does not mean you are not scared. Being brave means you TRY even when you feel scared.', image: '/game-assets/inner-world/bravery-slide.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What is being brave?', guideText: 'What does brave mean?',
+      { type: 'tap-right', readOptions: false, instruction: 'What is being brave?', guideText: 'What does brave mean?',
         items: [
           { image: '/game-assets/inner-world/brave-step-forward.png',       label: 'Trying when scared', correct: true },
           { image: '/game-assets/inner-world/brave-invincible-shield.png', label: 'Never being scared' },
@@ -367,7 +367,7 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Every time you try something new, you are being brave. Your first day of school. Trying a new food. Saying hi to someone new.', image: '/game-assets/inner-world/bravery-slide.png' },
       { type: 'yes-no', scenario: 'A child is scared to go down the big slide but tries anyway. Is that brave?', correctAnswer: true, image: '/game-assets/inner-world/bravery-slide.png' },
       { type: 'teach', guideText: 'You have been brave many times already. Think of all the new things you have tried!', image: '/game-assets/inner-world/mirror-self.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is an example of being brave?', guideText: 'Which shows bravery?',
+      { type: 'tap-right', readOptions: false, instruction: 'Which is an example of being brave?', guideText: 'Which shows bravery?',
         items: [
           { image: '/game-assets/inner-world/brave-slide-try.png',  label: 'Trying the slide', correct: true },
           { image: '/game-assets/inner-world/brave-pushing.png',  label: 'Pushing someone' },
@@ -384,7 +384,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Let us think about what makes YOU happy!' },
       { type: 'story', guideText: 'Everyone is happy about different things. Some people love playing outside. Some love drawing. Some love cuddles. What makes YOU happy?', image: '/game-assets/inner-world/happy-face.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What might make someone happy?', guideText: 'What makes people happy?',
+      { type: 'tap-right', readOptions: false, instruction: 'What might make someone happy?', guideText: 'What makes people happy?',
         items: [
           { image: '/game-assets/inner-world/happy-playing-friends.png', label: 'Playing with friends', correct: true },
           { image: '/game-assets/inner-world/happy-breaking-toy.png',   label: 'Breaking toys' },
@@ -395,7 +395,7 @@ export const innerworldLittleStars = [
       { type: 'teach', guideText: 'Knowing what makes you happy is a SUPERPOWER. When you feel sad, you can do something that makes you happy!', image: '/game-assets/inner-world/glowing-heart.png' },
       { type: 'yes-no', scenario: 'Is it okay if what makes you happy is different from what makes your friend happy?', correctAnswer: true, image: '/game-assets/inner-world/mirror-self.png' },
       { type: 'teach', guideText: 'Your happy things are special to YOU. Nobody else has to like the same things.', image: '/game-assets/inner-world/gratitude-jar.png' },
-      { type: 'tap-right', readOptions: true, instruction: 'What should you do when you feel sad?', guideText: 'What can you do when you feel sad?',
+      { type: 'tap-right', readOptions: false, instruction: 'What should you do when you feel sad?', guideText: 'What can you do when you feel sad?',
         items: [
           { image: '/game-assets/inner-world/sad-do-happy.png',      label: 'Do something that makes you happy', correct: true },
           { image: '/game-assets/inner-world/sad-stuck-forever.png', label: 'Stay sad forever' },
@@ -412,7 +412,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about SHARING!' },
       { type: 'story', image: '/game-assets/inner-world/sharing-toy.png', guideText: 'Sage the Deer found one juicy apple. Instead of eating it alone, she split it with a friend. Both deer smiled bigger than if they had one whole apple each.' },
-      { type: 'tap-right', readOptions: true, instruction: 'What makes sharing feel good?', guideText: 'Tap the happy one!',
+      { type: 'tap-right', readOptions: false, instruction: 'What makes sharing feel good?', guideText: 'Tap the happy one!',
         items: [
           { image: '/game-assets/inner-world/sharing-scene.png', label: 'Everyone is happy', correct: true },
           { image: '/game-assets/inner-world/share-alone.png', label: 'Playing all alone' },
@@ -433,7 +433,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we discover why YOU are SPECIAL!' },
       { type: 'story', image: '/game-assets/inner-world/mirror-self.png', guideText: 'Sage looked at every deer in the forest and noticed something amazing. Every single one was different. No two deer were exactly the same. And she was the only Sage in the whole world.' },
-      { type: 'tap-right', readOptions: true, instruction: 'What makes each person SPECIAL?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'What makes each person SPECIAL?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/inner-world/special-unique.png', label: 'Being exactly themselves', correct: true },
           { image: '/game-assets/inner-world/special-copy.png', label: 'Being a copy of someone' },
@@ -444,7 +444,7 @@ export const innerworldLittleStars = [
       { type: 'teach', image: '/game-assets/inner-world/special-reflection.png', guideText: 'There is no one else in the whole universe exactly like YOU. That makes you one of a kind.' },
       { type: 'yes-no', scenario: 'Is it okay to be different from your friends?', correctAnswer: true, image: '/game-assets/inner-world/special-different.png' },
       { type: 'teach', image: '/game-assets/inner-world/special-glow.png', guideText: 'Your special things — your laugh, your ideas, your heart — they are gifts only you can give to the world.' },
-      { type: 'tap-right', readOptions: true, instruction: 'What should you do with your special things?', guideText: 'Tap the best answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'What should you do with your special things?', guideText: 'Tap the best answer!',
         items: [
           { image: '/game-assets/inner-world/special-share.png', label: 'Share them with the world', correct: true },
           { image: '/game-assets/inner-world/special-hide.png', label: 'Hide them away' },
@@ -470,7 +470,7 @@ export const innerworldLittleStars = [
         finalMessage: 'Feelings always pass. You are bigger than any feeling!'
       },
       { type: 'teach', image: '/game-assets/inner-world/feelings-sky.png', guideText: 'You are the sky. Your feelings are the clouds. The clouds come and go — but YOU are always there.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Do big feelings last forever?', guideText: 'Tap the answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Do big feelings last forever?', guideText: 'Tap the answer!',
         items: [
           { image: '/game-assets/inner-world/feelings-pass.png', label: 'No, they come and go', correct: true },
           { image: '/game-assets/inner-world/feelings-stuck.png', label: 'Yes, they stay forever' },
@@ -489,7 +489,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we visit your Safe Place — a peaceful spot inside your mind!' },
       { type: 'story', image: '/game-assets/inner-world/safe-place.png', guideText: 'Sage the Deer has a secret hidden meadow. When she feels scared or worried, she closes her eyes and visits it. It always makes her feel calm and safe.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which of these could be YOUR safe place?', guideText: 'Tap any place that feels safe and peaceful!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which of these could be YOUR safe place?', guideText: 'Tap any place that feels safe and peaceful!',
         items: [
           { image: '/game-assets/inner-world/safe-place-beach.png', label: 'A peaceful beach', correct: true },
           { image: '/game-assets/inner-world/safe-place-treehouse.png', label: 'A cozy treehouse', correct: true },
@@ -510,7 +510,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we discover the superpower of THREE GOOD THINGS!' },
       { type: 'story', image: '/game-assets/inner-world/gratitude-three-hearts.png', guideText: 'Every morning, Sage the Deer thinks of three good things from yesterday — the warm sun, the cool water, a friend who made her smile. It makes every day feel brighter.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which of these is something to feel GRATEFUL for?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which of these is something to feel GRATEFUL for?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/inner-world/gratitude-sunrise.png', label: 'A beautiful sunrise', correct: true },
           { image: '/game-assets/inner-world/feelings-stuck.png', label: 'Feeling stuck all day' },
@@ -521,7 +521,7 @@ export const innerworldLittleStars = [
       { type: 'teach', image: '/game-assets/inner-world/gratitude-jar.png', guideText: 'A Gratitude Jar is where you drop in a good thing every day. At the end of the week, you read them all together — and feel so happy!' },
       { type: 'yes-no', scenario: 'Does a good thing have to be something big and special?', correctAnswer: false, image: '/game-assets/inner-world/gratitude-friend-hug.png' },
       { type: 'teach', image: '/game-assets/inner-world/gratitude-three-hearts.png', guideText: 'Small things count just as much! A yummy snack, a funny laugh, a warm hug — these are all beautiful good things.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which of these could go in your Gratitude Jar?', guideText: 'Tap the best answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which of these could go in your Gratitude Jar?', guideText: 'Tap the best answer!',
         items: [
           { image: '/game-assets/inner-world/gratitude-meal.png', label: 'A yummy meal', correct: true },
           { image: '/game-assets/inner-world/feelings-stuck.png', label: 'Feeling stuck all day' },
@@ -538,7 +538,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn the most important truth: YOU ARE ENOUGH!' },
       { type: 'story', image: '/game-assets/inner-world/enough-tree.png', guideText: 'A little tree looked at the tall oak next to it and felt sad. But wise Sage said: you are not the oak — you are yourself. And that is exactly enough.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which shows believing YOU ARE ENOUGH?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which shows believing YOU ARE ENOUGH?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/inner-world/enough-self-glow.png', label: 'Shining just as you are', correct: true },
           { image: '/game-assets/inner-world/enough-comparing.png', label: 'Comparing yourself to others' },
@@ -559,7 +559,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we discover your KINDNESS SUPERPOWER!' },
       { type: 'story', image: '/game-assets/inner-world/kindness-cape.png', guideText: 'Sage the Deer has a secret superpower. It does not make her fly. It does not make her strong. Her superpower is KINDNESS — and it changes the whole forest.' },
-      { type: 'tap-right', readOptions: true, instruction: 'What is a KIND thing to do?', guideText: 'Tap the kind one!',
+      { type: 'tap-right', readOptions: false, instruction: 'What is a KIND thing to do?', guideText: 'Tap the kind one!',
         items: [
           { image: '/game-assets/inner-world/kindness-sad-friend.png', label: 'Comfort a sad friend', correct: true },
           { image: '/game-assets/inner-world/kindness-mean.png', label: 'Laugh at someone' },
@@ -580,7 +580,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn to love our BODY!' },
       { type: 'story', image: '/game-assets/inner-world/body-friend.png', guideText: 'Sage the Deer talks to her body like a best friend. Thank you legs for running. Thank you heart for beating. Her body listens and does amazing things for her every single day.' },
-      { type: 'tap-right', readOptions: true, instruction: 'How do you take GOOD CARE of your body?', guideText: 'Tap the good way!',
+      { type: 'tap-right', readOptions: false, instruction: 'How do you take GOOD CARE of your body?', guideText: 'Tap the good way!',
         items: [
           { image: '/game-assets/inner-world/body-healthy-food.png', label: 'Eat healthy foods', correct: true },
           { image: '/game-assets/inner-world/body-unkind.png', label: 'Say mean things to it' },
@@ -601,7 +601,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn you CAN do hard things!' },
       { type: 'story', image: '/game-assets/inner-world/hard-climb.png', guideText: 'Sage the Deer once stood at the bottom of a tall mountain. It looked too big to climb. But she took one step. Then another. And another. Until one day, she stood at the top.' },
-      { type: 'tap-right', readOptions: true, instruction: 'What should you do when something feels HARD?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'What should you do when something feels HARD?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/inner-world/hard-practice.png', label: 'Practice and keep trying', correct: true },
           { image: '/game-assets/inner-world/hard-giving-up.png', label: 'Give up right away' },
@@ -623,7 +623,7 @@ export const innerworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn that LOVE starts with YOU!' },
       { type: 'story', image: '/game-assets/inner-world/love-self-first.png', guideText: 'Sage the Deer learned a secret. To give love to others, you first have to love yourself. Her heart is like a cup — she fills it first, and then shares what spills over.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Where does LOVE start?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Where does LOVE start?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/inner-world/love-self-first.png', label: 'With loving myself', correct: true },
           { image: '/game-assets/inner-world/love-cup-empty.png', label: 'With an empty heart' },

@@ -52,7 +52,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn what PLANTS need to grow strong!' },
       { type: 'story', image: '/game-assets/science/seed-planted-soil.png', guideText: 'Every plant starts as a tiny SEED in the soil! With the right care, that seed grows into a big plant. Plants need three things to grow: SOIL, WATER, and SUN!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does a plant need to DRINK?', guideText: 'Tap watering the plant!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What does a plant need to DRINK?', guideText: 'Tap watering the plant!',
         items: [
           { image: '/game-assets/science/watering-plant.png', label: 'Water', correct: true },
           { image: '/game-assets/science/flower-living.png', label: 'A flower' },
@@ -62,7 +62,7 @@ export const scienceLittleStars = [
       },
       { type: 'teach', image: '/game-assets/science/plant-with-sun.png', guideText: 'Plants also need SUN! Sunlight gives plants ENERGY to make their food. Plants reach toward the sun to get more light!' },
       { type: 'yes-no', scenario: 'Do plants need sunlight to grow?', correctAnswer: true, image: '/game-assets/science/plant-with-sun.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SEED in soil?', guideText: 'Tap the seed!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a SEED in soil?', guideText: 'Tap the seed!',
         items: [
           { image: '/game-assets/science/seed-planted-soil.png', label: 'Seed in soil', correct: true },
           { image: '/game-assets/science/plant-with-sun.png', label: 'Plant in sun' },
@@ -90,7 +90,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn what ANIMALS need to live!' },
       { type: 'story', image: '/game-assets/science/animal-eating-food.png', guideText: 'Animals are alive — so they need things to stay alive too! Animals need FOOD to eat, WATER to drink, and a SHELTER to stay safe and warm. Just like us!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'What does this animal NEED to eat?', guideText: 'Tap the animal eating food!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'What does this animal NEED to eat?', guideText: 'Tap the animal eating food!',
         items: [
           { image: '/game-assets/science/animal-eating-food.png', label: 'Eating food', correct: true },
           { image: '/game-assets/science/animal-drinking-water.png', label: 'Drinking water' },
@@ -99,7 +99,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/animal-drinking-water.png', guideText: 'Animals need WATER too! They drink from rivers, lakes, ponds, and rain puddles!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows an animal DRINKING?', guideText: 'Tap the drinking animal!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows an animal DRINKING?', guideText: 'Tap the drinking animal!',
         items: [
           { image: '/game-assets/science/animal-drinking-water.png', label: 'Drinking water', correct: true },
           { image: '/game-assets/science/animal-eating-food.png', label: 'Eating food' },
@@ -128,7 +128,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we explore HABITATS — where animals live!' },
       { type: 'story', image: '/game-assets/science/habitat-forest.png', guideText: 'A HABITAT is the special place where an animal lives. Some animals live in forests, some in oceans, some in deserts, some in icy lands. Each habitat is just right for the animals there!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which habitat is the FOREST?', guideText: 'Tap the forest!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which habitat is the FOREST?', guideText: 'Tap the forest!',
         items: [
           { image: '/game-assets/science/habitat-forest.png', label: 'Forest', correct: true },
           { image: '/game-assets/science/habitat-ocean.png', label: 'Ocean' },
@@ -137,7 +137,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/habitat-ocean.png', guideText: 'The OCEAN is a big watery habitat! Fish, dolphins, and whales live there. They are made for water!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Where does a polar bear LIVE?', guideText: 'Tap the icy arctic!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Where does a polar bear LIVE?', guideText: 'Tap the icy arctic!',
         items: [
           { image: '/game-assets/science/habitat-arctic.png', label: 'Arctic ice', correct: true },
           { image: '/game-assets/science/habitat-desert.png', label: 'Desert' },
@@ -166,7 +166,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we feel the world! Some things are SOFT, some are HARD, some are smooth, some are rough!' },
       { type: 'story', image: '/game-assets/science/material-soft-pillow.png', guideText: 'Look around — everything is made of MATERIAL. A pillow is SOFT and squishy. A rock is HARD. A glass is SMOOTH. Tree bark is ROUGH. Materials feel different!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is SOFT?', guideText: 'Tap the soft pillow!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is SOFT?', guideText: 'Tap the soft pillow!',
         items: [
           { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow', correct: true },
           { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock' },
@@ -175,7 +175,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/material-hard-rock.png', guideText: 'A rock is HARD! You cannot squish it. It does not change shape. Hard things are strong!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is HARD?', guideText: 'Tap the hard rock!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is HARD?', guideText: 'Tap the hard rock!',
         items: [
           { image: '/game-assets/science/material-hard-rock.png', label: 'Hard rock', correct: true },
           { image: '/game-assets/science/material-soft-pillow.png', label: 'Soft pillow' },
@@ -184,7 +184,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/material-smooth-glass.png', guideText: 'Glass is SMOOTH. When you slide your finger on it, it glides! No bumps!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is ROUGH?', guideText: 'Tap the bumpy bark!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is ROUGH?', guideText: 'Tap the bumpy bark!',
         items: [
           { image: '/game-assets/science/material-rough-bark.png', label: 'Rough bark', correct: true },
           { image: '/game-assets/science/material-smooth-glass.png', label: 'Smooth glass' },
@@ -211,7 +211,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about THREE kinds of stuff — solids, liquids, and gases!' },
       { type: 'story', image: '/game-assets/science/solid-ice-cube.png', guideText: 'Everything in the world is in one of three forms! SOLIDS keep their shape — like an ice cube. LIQUIDS pour and flow — like water. GASES float around invisibly — like steam!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a SOLID?', guideText: 'Tap the solid ice!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a SOLID?', guideText: 'Tap the solid ice!',
         items: [
           { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube', correct: true },
           { image: '/game-assets/science/liquid-water-pouring.png', label: 'Water pouring' },
@@ -220,7 +220,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/liquid-water-pouring.png', guideText: 'Water is a LIQUID! Liquids POUR and take the shape of whatever container holds them. Splish splash!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is a LIQUID?', guideText: 'Tap the pouring water!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is a LIQUID?', guideText: 'Tap the pouring water!',
         items: [
           { image: '/game-assets/science/liquid-water-pouring.png', label: 'Water pouring', correct: true },
           { image: '/game-assets/science/solid-ice-cube.png', label: 'Ice cube' },
@@ -249,7 +249,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about FORCES — pushing and pulling things!' },
       { type: 'story', image: '/game-assets/science/pushing-cart.png', guideText: 'When you want to MOVE something, you can PUSH it away from you, or PULL it toward you. Pushing and pulling are called FORCES — they make things move!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is PUSHING?', guideText: 'Tap pushing the cart!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is PUSHING?', guideText: 'Tap pushing the cart!',
         items: [
           { image: '/game-assets/science/pushing-cart.png', label: 'Pushing cart', correct: true },
           { image: '/game-assets/science/pulling-wagon.png', label: 'Pulling wagon' },
@@ -258,7 +258,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/pulling-wagon.png', guideText: 'PULLING is when you bring something TOWARD you. Pulling a wagon by the handle brings it closer!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is PULLING?', guideText: 'Tap pulling the wagon!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is PULLING?', guideText: 'Tap pulling the wagon!',
         items: [
           { image: '/game-assets/science/pulling-wagon.png', label: 'Pulling wagon', correct: true },
           { image: '/game-assets/science/pushing-cart.png', label: 'Pushing cart' },
@@ -287,7 +287,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we play with LIGHT and SHADOW!' },
       { type: 'story', image: '/game-assets/science/flashlight-shining.png', guideText: 'LIGHT helps us see! When light shines on something, we can see it. The sun is the biggest light. A flashlight is a small bright light. A lamp lights up your room!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one MAKES light?', guideText: 'Tap the flashlight!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one MAKES light?', guideText: 'Tap the flashlight!',
         items: [
           { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight', correct: true },
           { image: '/game-assets/science/dark-room-no-light.png', label: 'Dark room' },
@@ -296,7 +296,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/child-with-shadow.png', guideText: 'When light hits you, you make a SHADOW! Your shadow is a dark shape that copies your body. Light cannot go through you, so your shape shows up on the ground!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows a SHADOW?', guideText: 'Tap the kid with a shadow!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one shows a SHADOW?', guideText: 'Tap the kid with a shadow!',
         items: [
           { image: '/game-assets/science/child-with-shadow.png', label: 'Kid with shadow', correct: true },
           { image: '/game-assets/science/flashlight-shining.png', label: 'Flashlight' },
@@ -325,7 +325,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we explore SOUNDS — loud ones and quiet ones!' },
       { type: 'story', image: '/game-assets/science/loud-drum.png', guideText: 'Sound is everywhere! When you bang a drum BOOM, that is a LOUD sound! When a mouse whispers shhh, that is a QUIET sound. Sounds travel through the air to your EARS!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is LOUD?', guideText: 'Tap the loud drum!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is LOUD?', guideText: 'Tap the loud drum!',
         items: [
           { image: '/game-assets/science/loud-drum.png', label: 'Loud drum', correct: true },
           { image: '/game-assets/science/quiet-whisper.png', label: 'Quiet whisper' },
@@ -334,7 +334,7 @@ export const scienceLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/science/quiet-whisper.png', guideText: 'A WHISPER is a quiet sound. So small you have to listen carefully! Quiet sounds are gentle for our ears.' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is QUIET?', guideText: 'Tap the whispering mouse!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is QUIET?', guideText: 'Tap the whispering mouse!',
         items: [
           { image: '/game-assets/science/quiet-whisper.png', label: 'Quiet whisper', correct: true },
           { image: '/game-assets/science/loud-drum.png', label: 'Loud drum' },
@@ -363,7 +363,7 @@ export const scienceLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today is the BEST day — you become a real SCIENTIST!' },
       { type: 'story', image: '/game-assets/science/scientist-magnifying-glass.png', guideText: 'A scientist is someone who LOOKS carefully, ASKS questions, and TRIES to understand the world! Guess what — kids are AMAZING scientists. You are curious all the time!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one shows a SCIENTIST?', guideText: 'Tap the curious scientist!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one shows a SCIENTIST?', guideText: 'Tap the curious scientist!',
         items: [
           { image: '/game-assets/science/scientist-magnifying-glass.png', label: 'Scientist', correct: true },
           { image: '/game-assets/science/discovery-celebration.png', label: 'Discovery' },

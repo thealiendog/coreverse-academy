@@ -63,7 +63,7 @@ export const mathLittleStars = [
       { type: 'story', image: '/game-assets/math/remi-acorns-many.png', guideText: 'I found SO many acorns today! Ten is not enough! I learned to count to twenty, then thirty, then higher and higher!' },
       { type: 'count-array', count: 10, image: '/game-assets/math/acorn-single.png', interactive: false, instruction: 'Here are ten acorns', guideText: 'Ten acorns! But I found MORE!' },
       { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'After ten comes eleven, twelve, thirteen — the numbers keep going!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which is MORE than ten?', guideText: 'Tap the bigger number!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which is MORE than ten?', guideText: 'Tap the bigger number!',
         items: [
           { image: '/game-assets/math/numeral-10.png', label: 'Ten' },
           { image: '/game-assets/math/numeral-8.png', label: 'Eight' },
@@ -102,7 +102,7 @@ export const mathLittleStars = [
       { type: 'story', image: '/game-assets/math/remi-detective.png', guideText: 'I noticed something amazing. Numbers follow a pattern! 10, 20, 30, 40 — they all end in zero. I felt like a detective!' },
       { type: 'count-array', count: 10, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Ten stars in a group', guideText: 'Ten! Another ten makes twenty. Another makes thirty!' },
       { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'Every time we add ten more, we get another number ending in zero.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which number ends in ZERO?', guideText: 'Find the zero at the end!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which number ends in ZERO?', guideText: 'Find the zero at the end!',
         items: [
           { image: '/game-assets/math/numeral-10.png', label: 'Ten', correct: true },
           { image: '/game-assets/math/numeral-3.png', label: 'Three' },
@@ -140,7 +140,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn BEFORE and AFTER!' },
       { type: 'story', image: '/game-assets/math/remi-acorns-many.png', guideText: 'I line up my acorns in order. One, two, three. Before three comes two. After three comes four. Every number has a neighbor!' },
       { type: 'teach', image: '/game-assets/math/numeral-3.png', guideText: 'Before three is two. After three is four. Every number has one before and one after.' },
-      { type: 'tap-right', readOptions: true, instruction: 'What comes AFTER three?', guideText: 'Tap the number that comes next!',
+      { type: 'tap-right', readOptions: false, instruction: 'What comes AFTER three?', guideText: 'Tap the number that comes next!',
         items: [
           { image: '/game-assets/math/numeral-4.png', label: 'Four', correct: true },
           { image: '/game-assets/math/numeral-2.png', label: 'Two' },
@@ -149,7 +149,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/numeral-4.png', guideText: 'Four comes after three. You are counting forward!' },
-      { type: 'tap-right', readOptions: true, instruction: 'What comes BEFORE five?', guideText: 'Tap the number that comes just before!',
+      { type: 'tap-right', readOptions: false, instruction: 'What comes BEFORE five?', guideText: 'Tap the number that comes just before!',
         items: [
           { image: '/game-assets/math/numeral-4.png', label: 'Four', correct: true },
           { image: '/game-assets/math/numeral-6.png', label: 'Six' },
@@ -219,7 +219,7 @@ export const mathLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hi {name}! Today we find SHAPES everywhere!' },
       { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'I look around the forest and see shapes! Circles in the sun. Squares in windows. Triangles in trees. Shapes are EVERYWHERE!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a CIRCLE?', guideText: 'Tap the round one!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a CIRCLE?', guideText: 'Tap the round one!',
         items: [
           { image: '/game-assets/math/shape-circle.png', label: 'Circle', correct: true },
           { image: '/game-assets/math/shape-square.png', label: 'Square' },
@@ -228,7 +228,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-circle.png', guideText: 'A circle is ROUND. Like a ball, the sun, or a wheel!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a TRIANGLE?', guideText: 'Tap the one with three sides!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a TRIANGLE?', guideText: 'Tap the one with three sides!',
         items: [
           { image: '/game-assets/math/shape-triangle.png', label: 'Triangle', correct: true },
           { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
@@ -237,7 +237,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-square.png', guideText: 'A square has FOUR sides, all the same size. Like a window or a book!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SQUARE?', guideText: 'Tap the one with four equal sides!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a SQUARE?', guideText: 'Tap the one with four equal sides!',
         items: [
           { image: '/game-assets/math/shape-square.png', label: 'Square', correct: true },
           { image: '/game-assets/math/shape-triangle.png', label: 'Triangle' },
@@ -273,7 +273,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn 3D SHAPES — shapes with depth!' },
       { type: 'story', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'A circle is flat. But a BALL is round all the way around. It has depth! That makes it a 3D shape — a SPHERE!' },
       { type: 'teach', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'A sphere is round like a ball. You can hold it in your hand!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a SPHERE?', guideText: 'Tap the round ball shape!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a SPHERE?', guideText: 'Tap the round ball shape!',
         items: [
           { image: '/game-assets/math/shape-3d-sphere.png', label: 'Sphere', correct: true },
           { image: '/game-assets/math/shape-3d-cube.png', label: 'Cube' },
@@ -282,7 +282,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-3d-cube.png', guideText: 'A cube is like a 3D square — like dice or a block!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a CUBE?', guideText: 'Tap the block shape!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a CUBE?', guideText: 'Tap the block shape!',
         items: [
           { image: '/game-assets/math/shape-3d-cube.png', label: 'Cube', correct: true },
           { image: '/game-assets/math/shape-3d-sphere.png', label: 'Sphere' },
@@ -365,7 +365,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we find PATTERNS!' },
       { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'I see a pattern in the forest. Red leaf, yellow leaf, red leaf, yellow leaf. What comes next? Another red leaf! Patterns help us guess what is coming.' },
       { type: 'teach', image: '/game-assets/math/pattern-star-heart.png', guideText: 'A pattern is something that repeats. Like star, heart, star, heart, star, heart!' },
-      { type: 'tap-right', readOptions: true, headerImage: '/game-assets/math/pattern-star-heart.png', instruction: 'Star, heart, star, heart, what comes NEXT?', guideText: 'Tap what comes next in the pattern!',
+      { type: 'tap-right', readOptions: false, headerImage: '/game-assets/math/pattern-star-heart.png', instruction: 'Star, heart, star, heart, what comes NEXT?', guideText: 'Tap what comes next in the pattern!',
         items: [
           { image: '/game-assets/math/shape-star.png', label: 'Star', correct: true },
           { image: '/game-assets/math/shape-circle.png', label: 'Circle' },
@@ -374,7 +374,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/shape-circle.png', guideText: 'Patterns can be colors, shapes, numbers, or sounds. The trick is to notice what repeats.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Circle, square, circle, square, what is NEXT?', guideText: 'Tap the next one!',
+      { type: 'tap-right', readOptions: false, instruction: 'Circle, square, circle, square, what is NEXT?', guideText: 'Tap the next one!',
         items: [
           { image: '/game-assets/math/shape-circle.png', label: 'Circle', correct: true },
           { image: '/game-assets/math/shape-square.png', label: 'Square' },
@@ -425,7 +425,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn HEAVY and LIGHT!' },
       { type: 'story', image: '/game-assets/math/remi-rock-feather.png', guideText: 'I picked up a rock. Heavy! Then I picked up a feather. Light! Some things push down hard. Some things float up. That is weight!' },
       { type: 'teach', image: '/game-assets/math/shape-3d-sphere.png', guideText: 'Heavy things are hard to lift. Light things are easy to lift!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which would be HEAVY?', guideText: 'Tap the heavy one!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which would be HEAVY?', guideText: 'Tap the heavy one!',
         items: [
           { image: '/game-assets/math/item-rock.png', label: 'Rock', correct: true },
           { image: '/game-assets/math/flower-single.png', label: 'Flower' },
@@ -459,7 +459,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn FULL and EMPTY!' },
       { type: 'story', image: '/game-assets/math/remi-baskets-full-empty.png', guideText: 'I have two baskets. One is FULL of acorns. One is EMPTY. I put more acorns in the empty one until it is full too. Now both are full!' },
       { type: 'teach', image: '/game-assets/math/remi-baskets-full-empty.png', guideText: 'Full means it has a lot. Empty means it has nothing. In between is partly full!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which basket is FULL?', guideText: 'Tap the basket with lots inside!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which basket is FULL?', guideText: 'Tap the basket with lots inside!',
         items: [
           { image: '/game-assets/math/remi-treasure-pile.png', label: 'Full basket', correct: true },
           { image: '/game-assets/math/basket-empty.png', label: 'Empty basket' },
@@ -483,7 +483,7 @@ export const mathLittleStars = [
       { type: 'count-array', count: 3, image: '/game-assets/math/star-single.png', interactive: false, instruction: 'Three stars here', guideText: 'Three stars in this group!' },
       { type: 'count-array', count: 5, image: '/game-assets/math/star-single.png', interactive: true, celebrationNumber: 5, instruction: 'Two and three make FIVE!', guideText: 'Put them together and count them all!' },
       { type: 'teach', image: '/game-assets/math/numeral-5.png', guideText: 'Two plus three equals FIVE! Adding makes groups bigger!' },
-      { type: 'tap-right', readOptions: true, instruction: 'One plus four equals?', guideText: 'Tap the right number!',
+      { type: 'tap-right', readOptions: false, instruction: 'One plus four equals?', guideText: 'Tap the right number!',
         items: [
           { image: '/game-assets/math/numeral-5.png', label: 'Five', correct: true },
           { image: '/game-assets/math/numeral-3.png', label: 'Three' },
@@ -504,7 +504,7 @@ export const mathLittleStars = [
       { type: 'count-array', count: 4, image: '/game-assets/math/acorn-single.png', interactive: false, instruction: 'Four more acorns', guideText: 'My friend has four acorns!' },
       { type: 'count-array', count: 10, image: '/game-assets/math/acorn-single.png', interactive: true, celebrationNumber: 10, instruction: 'Six and four make TEN!', guideText: 'Count them all together!' },
       { type: 'teach', image: '/game-assets/math/numeral-10.png', guideText: 'Six plus four equals TEN! Many different groups can add up to ten!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Five plus five equals?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Five plus five equals?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/math/numeral-10.png', label: 'Ten', correct: true },
           { image: '/game-assets/math/numeral-5.png', label: 'Five' },
@@ -525,7 +525,7 @@ export const mathLittleStars = [
       { type: 'teach', image: '/game-assets/math/numeral-5.png', guideText: 'Now two fly away. Let us see what is left!' },
       { type: 'count-array', count: 3, image: '/game-assets/math/star-single.png', interactive: true, celebrationNumber: 3, instruction: 'Three stars left!', guideText: 'Count what is left!' },
       { type: 'teach', image: '/game-assets/math/numeral-3.png', guideText: 'Five take away two equals THREE. Subtracting takes some away!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Four take away one equals?', guideText: 'Tap the answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Four take away one equals?', guideText: 'Tap the answer!',
         items: [
           { image: '/game-assets/math/numeral-3.png', label: 'Three', correct: true },
           { image: '/game-assets/math/numeral-4.png', label: 'Four' },
@@ -543,7 +543,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn to read CLOCKS!' },
       { type: 'story', image: '/game-assets/math/clock-12.png', guideText: 'I look at the clock to know when to wake up, when to eat, and when to sleep. The clock has two hands. The short one points to the hour!' },
       { type: 'teach', image: '/game-assets/math/clock-12.png', guideText: 'When both hands point UP at the twelve, it is twelve o\'clock!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which clock shows three o\'clock?', guideText: 'Tap the one where the short hand points to the three!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which clock shows three o\'clock?', guideText: 'Tap the one where the short hand points to the three!',
         items: [
           { image: '/game-assets/math/clock-3.png', label: 'Three o\'clock', correct: true },
           { image: '/game-assets/math/clock-12.png', label: 'Twelve o\'clock' },
@@ -552,7 +552,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/clock-6.png', guideText: 'At six o\'clock, the short hand points down. That might be dinner time!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which clock shows nine o\'clock?', guideText: 'Tap the right one!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which clock shows nine o\'clock?', guideText: 'Tap the right one!',
         items: [
           { image: '/game-assets/math/clock-9.png', label: 'Nine o\'clock', correct: true },
           { image: '/game-assets/math/clock-3.png', label: 'Three o\'clock' },
@@ -571,7 +571,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we learn about COINS!' },
       { type: 'story', image: '/game-assets/math/coin-penny.png', guideText: 'I found shiny coins in the forest! A copper one is a PENNY. A bigger silver one is a NICKEL. A smaller silver one is a DIME. Each coin has its own name!' },
       { type: 'teach', image: '/game-assets/math/coin-penny.png', guideText: 'A penny is worth one cent. The smallest amount!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which coin is a PENNY?', guideText: 'Tap the copper-colored coin!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which coin is a PENNY?', guideText: 'Tap the copper-colored coin!',
         items: [
           { image: '/game-assets/math/coin-penny.png', label: 'Penny', correct: true },
           { image: '/game-assets/math/coin-nickel.png', label: 'Nickel' },
@@ -580,7 +580,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/coin-nickel.png', guideText: 'A nickel is worth five cents. It is bigger than a penny!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Which coin is a DIME?', guideText: 'Tap the smallest silver coin!',
+      { type: 'tap-right', readOptions: false, instruction: 'Which coin is a DIME?', guideText: 'Tap the smallest silver coin!',
         items: [
           { image: '/game-assets/math/coin-dime.png', label: 'Dime', correct: true },
           { image: '/game-assets/math/coin-nickel.png', label: 'Nickel' },
@@ -598,7 +598,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Today we solve MATH STORIES!' },
       { type: 'story', image: '/game-assets/math/remi-birds-branch.png', guideText: 'I tell stories with math! Three birds sat on a branch. Two more joined. How many now? Stories help us see when to add and when to take away!' },
       { type: 'teach', image: '/game-assets/math/numeral-3.png', guideText: 'Three birds plus two more is adding! Three plus two equals FIVE.' },
-      { type: 'tap-right', readOptions: true, instruction: 'Three birds plus two birds equals?', guideText: 'Tap the right number!',
+      { type: 'tap-right', readOptions: false, instruction: 'Three birds plus two birds equals?', guideText: 'Tap the right number!',
         items: [
           { image: '/game-assets/math/numeral-5.png', label: 'Five', correct: true },
           { image: '/game-assets/math/numeral-3.png', label: 'Three' },
@@ -607,7 +607,7 @@ export const mathLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/math/numeral-5.png', guideText: 'Now listen! I had five acorns. I ate two. How many left? Taking away!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Five acorns, Remi eats two. How many left?', guideText: 'Tap the answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Five acorns, Remi eats two. How many left?', guideText: 'Tap the answer!',
         items: [
           { image: '/game-assets/math/numeral-3.png', label: 'Three', correct: true },
           { image: '/game-assets/math/numeral-5.png', label: 'Five' },
@@ -626,7 +626,7 @@ export const mathLittleStars = [
       { type: 'welcome', guideText: 'Hi {name}! Math is EVERYWHERE — let us look!' },
       { type: 'story', image: '/game-assets/math/remi-forest.png', guideText: 'I use math all day! Counting friends at the park. Measuring how tall I am growing. Telling time for breakfast. Math is a superpower!' },
       { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'We use math when we count, when we cook, when we tell time, and when we play games!' },
-      { type: 'tap-right', readOptions: true, instruction: 'Where do we use math?', guideText: 'Tap the right answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Where do we use math?', guideText: 'Tap the right answer!',
         items: [
           { image: '/game-assets/math/math-celebration.png', label: 'Everywhere!', correct: true },
           { image: '/game-assets/math/numeral-1.png', label: 'Only in school' },
@@ -648,7 +648,7 @@ export const mathLittleStars = [
       { type: 'story', image: '/game-assets/math/remi-treasure-pile.png', guideText: 'I am so proud of you! You count. You add. You subtract. You find shapes and patterns. You read clocks and coins. You are a MATH STAR!' },
       { type: 'count-array', count: 10, image: '/game-assets/math/star-single.png', interactive: true, celebrationNumber: 10, instruction: 'Count to ten one more time!', guideText: 'Let us count all the way to ten!' },
       { type: 'teach', image: '/game-assets/math/math-celebration.png', guideText: 'You can count, add, subtract, and see patterns. You are a math treasure!' },
-      { type: 'tap-right', readOptions: true, instruction: 'What shape is ROUND?', guideText: 'Tap the round one!',
+      { type: 'tap-right', readOptions: false, instruction: 'What shape is ROUND?', guideText: 'Tap the round one!',
         items: [
           { image: '/game-assets/math/shape-circle.png', label: 'Circle', correct: true },
           { image: '/game-assets/math/shape-square.png', label: 'Square' },
@@ -656,7 +656,7 @@ export const mathLittleStars = [
           { image: '/game-assets/math/shape-rectangle.png', label: 'Rectangle' }
         ]
       },
-      { type: 'tap-right', readOptions: true, instruction: 'Two plus three equals?', guideText: 'Tap the answer!',
+      { type: 'tap-right', readOptions: false, instruction: 'Two plus three equals?', guideText: 'Tap the answer!',
         items: [
           { image: '/game-assets/math/numeral-5.png', label: 'Five', correct: true },
           { image: '/game-assets/math/numeral-3.png', label: 'Three' },

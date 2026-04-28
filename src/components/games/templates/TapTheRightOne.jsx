@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import WinCelebration from '../WinCelebration';
 import KaraokeText from '../KaraokeText';
+import { sfx } from '../sounds';
 
 // All TTS is handled by GameLessonPlayer. This component is purely presentational:
 // it receives readingIdx (which card is being narrated) and disabled (interaction lock)
@@ -35,7 +36,7 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
       onReady?.();
     } else {
       setWrong(idx);
-      sfxBuzz();
+      sfx.buzz();
       onWrong?.('Try again! That is not quite right.');
       setTimeout(() => setWrong(null), 700);
     }
@@ -211,16 +212,3 @@ export default function TapTheRightOne({ step, onComplete, onReady, onWrong, onW
   );
 }
 
-// Inline buzz so we don't need the sfx import just for wrong-answer sound
-function sfxBuzz() {
-  try {
-    const ctx  = new (window.AudioContext || window.webkitAudioContext)();
-    const osc  = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain); gain.connect(ctx.destination);
-    osc.type = 'sawtooth'; osc.frequency.value = 200;
-    gain.gain.setValueAtTime(0.14, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.14);
-    osc.start(); osc.stop(ctx.currentTime + 0.18);
-  } catch { /* no audio */ }
-}

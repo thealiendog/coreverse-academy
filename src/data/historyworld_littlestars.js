@@ -128,7 +128,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we meet COMMUNITY HELPERS!' },
       { type: 'story', image: '/game-assets/history/firefighter-helper.png', guideText: 'In every community, there are special people who HELP us! Firefighters keep us safe. Doctors keep us healthy. Teachers teach us. Mail carriers bring us letters. They are our helpers!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one puts out FIRES?', guideText: 'Tap the firefighter!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one puts out FIRES?', guideText: 'Tap the firefighter!',
         items: [
           { image: '/game-assets/history/firefighter-helper.png', label: 'Firefighter', correct: true },
           { image: '/game-assets/history/teacher-helper.png', label: 'Teacher' },
@@ -137,7 +137,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/doctor-helper.png', guideText: 'A DOCTOR helps us when we are sick or hurt. They check our heart with a special tool!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Who helps when you are SICK?', guideText: 'Tap the doctor!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Who helps when you are SICK?', guideText: 'Tap the doctor!',
         items: [
           { image: '/game-assets/history/doctor-helper.png', label: 'Doctor', correct: true },
           { image: '/game-assets/history/firefighter-helper.png', label: 'Firefighter' },
@@ -146,7 +146,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/teacher-helper.png', guideText: 'A TEACHER helps you learn new things every day! Teachers are super important!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Who brings us LETTERS?', guideText: 'Tap the mail carrier!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Who brings us LETTERS?', guideText: 'Tap the mail carrier!',
         items: [
           { image: '/game-assets/history/mail-carrier-helper.png', label: 'Mail carrier', correct: true },
           { image: '/game-assets/history/doctor-helper.png', label: 'Doctor' },
@@ -213,7 +213,7 @@ export const historyworldLittleStars = [
       { type: 'story', image: '/game-assets/history/mlk-portrait.png', guideText: 'A long time ago, some people were treated UNFAIRLY because of the color of their skin. Martin Luther King Jr. believed everyone should be treated the SAME — kindly and fairly. He spoke up for fairness, and the world started to change!' },
       { type: 'teach', image: '/game-assets/history/kids-holding-hands-different.png', guideText: 'When kids of every color hold hands and play together, that is what FAIRNESS looks like!' },
       { type: 'yes-no', scenario: 'Should everyone be treated kindly, no matter how they look?', correctAnswer: true, image: '/game-assets/history/kids-holding-hands-different.png' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows FAIRNESS?', guideText: 'Tap the picture of fairness!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows FAIRNESS?', guideText: 'Tap the picture of fairness!',
         items: [
           { image: '/game-assets/history/kids-holding-hands-different.png', label: 'Kids holding hands together', correct: true },
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago scene' },
@@ -318,7 +318,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we visit DIFFERENT HOMES around the world!' },
       { type: 'story', image: '/game-assets/history/home-igloo.png', guideText: 'People live in MANY different kinds of homes! Some are made of ice in cold lands. Some are tall buildings in big cities. Some sit on tall poles over the water! Every home is a place where someone is loved!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which home is made of ICE?', guideText: 'Tap the igloo!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which home is made of ICE?', guideText: 'Tap the igloo!',
         items: [
           { image: '/game-assets/history/home-igloo.png', label: 'Igloo', correct: true },
           { image: '/game-assets/history/home-tipi.png', label: 'Tipi' },
@@ -327,7 +327,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/home-tipi.png', guideText: 'A TIPI is a tall pointy home made from wooden poles and animal hide. Native Americans built tipis long ago!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which home stands on TALL POLES over water?', guideText: 'Tap the stilt house!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which home stands on TALL POLES over water?', guideText: 'Tap the stilt house!',
         items: [
           { image: '/game-assets/history/home-stilt-house.png', label: 'Stilt house', correct: true },
           { image: '/game-assets/history/home-igloo.png', label: 'Igloo' },
@@ -356,7 +356,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we taste FOOD from around the world!' },
       { type: 'story', image: '/game-assets/history/food-tacos.png', guideText: 'Every country has its own special FOODS! In Mexico people eat tacos. In Japan they eat sushi. In Italy they eat pasta. In India they eat curry with rice. Food brings people together!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which food is from MEXICO?', guideText: 'Tap the tacos!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which food is from MEXICO?', guideText: 'Tap the tacos!',
         items: [
           { image: '/game-assets/history/food-tacos.png', label: 'Tacos', correct: true },
           { image: '/game-assets/history/food-sushi.png', label: 'Sushi' },
@@ -365,7 +365,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/food-sushi.png', guideText: 'SUSHI comes from JAPAN! It is small bites of rice with fish or vegetables — sometimes you eat it with chopsticks!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which food is from ITALY?', guideText: 'Tap the pasta!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which food is from ITALY?', guideText: 'Tap the pasta!',
         items: [
           { image: '/game-assets/history/food-pasta.png', label: 'Pasta', correct: true },
           { image: '/game-assets/history/food-tacos.png', label: 'Tacos' },
