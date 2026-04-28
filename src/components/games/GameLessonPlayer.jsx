@@ -245,11 +245,12 @@ export default function GameLessonPlayer() {
     const { noKaraoke = false } = options;
     if (!text) { onDone?.(); return; }
 
-    // Timestamp debounce: block identical text spoken within 3 seconds.
-    // Catches any double-invoke path (StrictMode, stale closures, re-renders)
+    // Timestamp debounce: block identical text spoken within 500ms.
+    // 500ms is enough to catch React StrictMode double-invocation (which fires within ~100ms)
+    // without blocking back-navigation replays, which always take >500ms to trigger.
     // before any audio or fetch is started.
     const now = Date.now();
-    if (text === lastSpokenText.current && now - lastSpeakTime.current < 3000) {
+    if (text === lastSpokenText.current && now - lastSpeakTime.current < 500) {
       // Duplicate detected — skip the audio but still call onDone so the screen
       // can advance. This handles StrictMode double-invoke, back/forward within
       // 3s, and any other re-entry that would produce double audio.
@@ -276,10 +277,13 @@ export default function GameLessonPlayer() {
     audioListenersCleanupRef.current?.();
     audioListenersCleanupRef.current = null;
 
-    // Pause the persistent element if it's currently playing.
+    // Pause and fully reset the persistent element before reuse.
+    // Setting src='' between loads prevents stale decode state from the previous
+    // audio blob causing garbled output when the new audio starts playing.
     const elAtCancel = persistentAudioRef.current;
     if (elAtCancel) {
       elAtCancel.pause();
+      elAtCancel.src = '';
       // Don't null persistentAudioRef — we'll reuse the same element.
     }
     // Don't revoke the active blob URL here — do it just before creating the new one,
@@ -287,7 +291,7 @@ export default function GameLessonPlayer() {
     clearTimeout(bubbleTimer.current);
 
     const resolved = text.replace(/\{name\}/g, childName);
-    setBubble(resolved.slice(0, 120) + (resolved.length > 120 ? '…' : ''));
+    setBubble(resolved.slice(0, 200) + (resolved.length > 200 ? '…' : ''));
     setSpeaking(true);
 
     let done = false;
@@ -306,11 +310,12 @@ export default function GameLessonPlayer() {
     };
 
     // Dead-man's switch: if onended never fires (mobile Audio API quirk),
-    // force completion after 20s so the screen never gets permanently stuck.
+    // force completion after 35s so the screen never gets permanently stuck.
+    // 35s gives long story narrations (200+ chars) room to finish before the switch fires.
     const deadman = setTimeout(() => {
       console.log(`[audio ${ts()}] DEADMAN_FIRED gen=${gen} — onended never arrived`);
       finish('deadman');
-    }, 20000);
+    }, 35000);
 
     const fetchStart = Date.now();
     console.log(`[audio ${ts()}] FETCH_START gen=${gen} text="${resolved.slice(0, 60)}${resolved.length > 60 ? '…' : ''}"`);

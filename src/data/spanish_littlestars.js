@@ -52,7 +52,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we count in Spanish — uno, dos, tres, cuatro, cinco!' },
       { type: 'story', image: '/game-assets/spanish/numero-uno.png', guideText: 'In Spanish, ONE is uno. TWO is dos. THREE is tres. FOUR is cuatro. And FIVE is cinco! Let us count together!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which number is UNO?', guideText: '¡Uno! Tap the number one!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which number is UNO?', guideText: '¡Uno! Tap the number one!',
         items: [
           { image: '/game-assets/spanish/numero-uno.png', label: 'Uno', correct: true },
           { image: '/game-assets/spanish/numero-dos.png', label: 'Dos' },
@@ -61,7 +61,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/numero-dos.png', guideText: '¡Dos! That means TWO. Like two eyes, or two hands!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which number is TRES?', guideText: '¡Tres! Tap the number three!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which number is TRES?', guideText: '¡Tres! Tap the number three!',
         items: [
           { image: '/game-assets/spanish/numero-tres.png', label: 'Tres', correct: true },
           { image: '/game-assets/spanish/numero-uno.png', label: 'Uno' },
@@ -70,7 +70,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/spanish/numero-cinco.png', guideText: '¡Cinco! That means FIVE. Hold up five fingers — ¡cinco!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which number is CINCO?', guideText: '¡Cinco! Tap the number five!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which number is CINCO?', guideText: '¡Cinco! Tap the number five!',
         items: [
           { image: '/game-assets/spanish/numero-cinco.png', label: 'Cinco', correct: true },
           { image: '/game-assets/spanish/numero-dos.png', label: 'Dos' },
@@ -97,7 +97,7 @@ export const spanishLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: '¡Hola, {name}! Today we learn COLORS in Spanish!' },
       { type: 'story', image: '/game-assets/creative-arts/colors-rainbow.png', guideText: 'In Spanish, RED is rojo. BLUE is azul. YELLOW is amarillo. And GREEN is verde! Beautiful new words!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is ROJO?', guideText: '¡Rojo! Tap the red one!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is ROJO?', guideText: '¡Rojo! Tap the red one!',
         items: [
           { image: '/game-assets/creative-arts/color-red.png', label: 'Rojo', correct: true },
           { image: '/game-assets/creative-arts/color-blue.png', label: 'Azul' },
@@ -106,7 +106,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/color-blue.png', guideText: '¡Azul! That means BLUE — like the sky and the ocean!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is AZUL?', guideText: '¡Azul! Tap the blue one!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is AZUL?', guideText: '¡Azul! Tap the blue one!',
         items: [
           { image: '/game-assets/creative-arts/color-blue.png', label: 'Azul', correct: true },
           { image: '/game-assets/creative-arts/color-red.png', label: 'Rojo' },
@@ -115,7 +115,7 @@ export const spanishLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/creative-arts/color-yellow.png', guideText: '¡Amarillo! That means YELLOW — like the sun and bananas!' },
-      { type: 'tap-right', readOptions: true, hideLabels: false, instruction: 'Which one is VERDE?', guideText: '¡Verde! Tap the green one!',
+      { type: 'tap-right', readOptions: false, hideLabels: false, instruction: 'Which one is VERDE?', guideText: '¡Verde! Tap the green one!',
         items: [
           { image: '/game-assets/creative-arts/color-green.png', label: 'Verde', correct: true },
           { image: '/game-assets/creative-arts/color-yellow.png', label: 'Amarillo' },

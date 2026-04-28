@@ -60,7 +60,7 @@ export default function ChildDashboard() {
       >
         <div className="flex items-start justify-between mb-3">
           <span style={{ filter: `drop-shadow(0 0 6px ${s.color}50)` }}>
-            <GuideAvatar guide={s.guide} color={s.color} size={28} />
+            <GuideAvatar guide={s.guide} color={s.color} size={44} />
           </span>
           <span className="text-[10px] font-semibold text-white/35 tabular-nums">{done}/{total}</span>
         </div>

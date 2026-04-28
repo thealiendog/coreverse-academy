@@ -18,8 +18,8 @@ export const historyworldLittleStars = [
         items: [
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago', correct: true },
           { image: '/game-assets/history/today-scene.png', label: 'Today' },
-          { image: '/game-assets/history/community-park.png', label: 'Modern park' },
-          { image: '/game-assets/history/earth-globe.png', label: 'Earth today' }
+          { image: '/game-assets/history/community-park.png', label: 'A park today' },
+          { image: '/game-assets/history/community-neighborhood.png', label: 'A neighborhood today' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/today-scene.png', guideText: 'And TODAY we have cars, computers, and bright electric lights! The world is always changing!' },
@@ -27,8 +27,8 @@ export const historyworldLittleStars = [
         items: [
           { image: '/game-assets/history/today-scene.png', label: 'Today', correct: true },
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago' },
-          { image: '/game-assets/history/family-tree.png', label: 'Family tree' },
-          { image: '/game-assets/history/world-map.png', label: 'World map' }
+          { image: '/game-assets/history/grandparents-figures.png', label: 'Long long ago' },
+          { image: '/game-assets/history/family-photo-album.png', label: 'Old photos' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/time-passing.png', guideText: 'History is the story of everything that happened before now. Knowing history helps us understand TODAY!' },
