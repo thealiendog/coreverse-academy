@@ -55,9 +55,9 @@ export const historyworldLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a FAMILY TREE?', guideText: 'Tap the family tree!',
         items: [
           { image: '/game-assets/history/family-tree.png', label: 'Family tree', correct: true },
-          { image: '/game-assets/history/community-park.png', label: 'A park' },
-          { image: '/game-assets/history/world-map.png', label: 'A map' },
-          { image: '/game-assets/history/today-scene.png', label: 'A city' }
+          { image: '/game-assets/history/family-photo-album.png', label: 'Photo album' },
+          { image: '/game-assets/history/grandparents-figures.png', label: 'Grandparents' },
+          { image: '/game-assets/history/house-home.png', label: 'A home' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/grandparents-figures.png', guideText: 'GRANDPARENTS are your parents\' parents! They have lots of stories from when YOUR parents were little kids!' },
@@ -216,9 +216,9 @@ export const historyworldLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows FAIRNESS?', guideText: 'Tap the picture of fairness!',
         items: [
           { image: '/game-assets/history/kids-holding-hands-different.png', label: 'Kids holding hands together', correct: true },
-          { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago scene' },
-          { image: '/game-assets/history/world-map.png', label: 'A map' },
-          { image: '/game-assets/history/community-park.png', label: 'A park' }
+          { image: '/game-assets/history/mlk-portrait.png', label: 'MLK portrait' },
+          { image: '/game-assets/history/american-flag.png', label: 'Flag' },
+          { image: '/game-assets/history/peace-dove.png', label: 'A dove' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/peace-dove.png', guideText: 'Martin Luther King Jr. dreamed of PEACE. The white dove is a symbol of peace and hope!' },
@@ -283,9 +283,9 @@ export const historyworldLittleStars = [
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is EARTH?', guideText: 'Tap our planet!',
         items: [
           { image: '/game-assets/history/earth-globe.png', label: 'Earth', correct: true },
-          { image: '/game-assets/history/american-flag.png', label: 'A flag' },
-          { image: '/game-assets/history/peace-dove.png', label: 'A dove' },
-          { image: '/game-assets/history/long-ago-scene.png', label: 'Old scene' }
+          { image: '/game-assets/history/solar-system-tiny.png', label: 'Solar system' },
+          { image: '/game-assets/history/world-map.png', label: 'World map' },
+          { image: '/game-assets/history/flags-of-world.png', label: 'Flags' }
         ]
       },
       { type: 'teach', image: '/game-assets/history/solar-system-tiny.png', guideText: 'Earth is just ONE of EIGHT planets that go around the sun! All together that is called the SOLAR SYSTEM!' },
@@ -317,7 +317,7 @@ export const historyworldLittleStars = [
     nextLesson: 'hw-3-5-10',
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we visit DIFFERENT HOMES around the world!' },
-      { type: 'story', image: '/game-assets/history/home-igloo.png', guideText: 'People live in MANY different kinds of homes! Some are made of ice in cold lands. Some are tall buildings in big cities. Some sit on tall poles over the water! Every home is a place where someone is loved!' },
+      { type: 'story', image: '/game-assets/history/home-igloo.png', guideText: 'People live in MANY different kinds of homes! In icy cold lands, families build round homes made of snow called IGLOOS! In places near the water, some families live in homes on tall poles called STILT HOUSES. And in big cities, many families live stacked up high in APARTMENT BUILDINGS! Every home is a special place filled with love!' },
       { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which home is made of ICE?', guideText: 'Tap the igloo!',
         items: [
           { image: '/game-assets/history/home-igloo.png', label: 'Igloo', correct: true },

@@ -279,13 +279,20 @@ export default function GameLessonPlayer() {
     audioListenersCleanupRef.current = null;
 
     // Pause and fully reset the persistent element before reuse.
-    // Setting src='' between loads prevents stale decode state from the previous
-    // audio blob causing garbled output when the new audio starts playing.
+    // IMPORTANT: null out direct-property event handlers BEFORE pause()/src='' so
+    // that src='' cannot fire a stale onerror/onended from the previous speak() call.
+    // (audioListenersCleanupRef handles the addEventListener-based debug events.)
+    // After src='', call load() to fully reset the media element state machine —
+    // without this, iOS WebKit can retain stale decode state that causes garbled output.
     const elAtCancel = persistentAudioRef.current;
     if (elAtCancel) {
+      elAtCancel.onended      = null;
+      elAtCancel.onerror      = null;
+      elAtCancel.ontimeupdate = null;
+      elAtCancel.onplay       = null;
       elAtCancel.pause();
       elAtCancel.src = '';
-      // Don't null persistentAudioRef — we'll reuse the same element.
+      elAtCancel.load(); // reset media state machine — prevents garbled audio on iOS
     }
     // Don't revoke the active blob URL here — do it just before creating the new one,
     // so iOS has the URL available throughout its async buffering cycle.
