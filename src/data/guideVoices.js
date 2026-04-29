@@ -31,12 +31,16 @@ export const guideModels = {
   Luna: 'eleven_multilingual_v2',
 };
 
+function normalize(guideName) {
+  return guideName.charAt(0).toUpperCase() + guideName.slice(1).toLowerCase();
+}
+
 export function getVoiceForGuide(guideName) {
   if (!guideName) return DEFAULT_VOICE_ID;
-  return guideVoices[guideName] || DEFAULT_VOICE_ID;
+  return guideVoices[normalize(guideName)] || DEFAULT_VOICE_ID;
 }
 
 export function getModelForGuide(guideName) {
   if (!guideName) return null;
-  return guideModels[guideName] || null; // null → use default in nova-speak.js
+  return guideModels[normalize(guideName)] || null;
 }
