@@ -2,10 +2,11 @@ exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method Not Allowed' };
 
   try {
-    const { text, voiceId: requestedVoiceId } = JSON.parse(event.body || '{}');
+    const { text, voiceId: requestedVoiceId, modelId: requestedModelId } = JSON.parse(event.body || '{}');
     if (!text) return { statusCode: 400, body: JSON.stringify({ error: 'Missing text' }) };
 
     const voiceId = requestedVoiceId || process.env.ELEVENLABS_VOICE_ID || 'aUNOP2y8xEvi4nZebjIw';
+    const modelId = requestedModelId || 'eleven_turbo_v2_5';
     const apiKey  = process.env.ELEVENLABS_API_KEY;
 
     if (!apiKey) {
@@ -23,7 +24,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         text,
-        model_id: 'eleven_turbo_v2_5',
+        model_id: modelId,
         voice_settings: {
           stability:        0.5,
           similarity_boost: 0.75,

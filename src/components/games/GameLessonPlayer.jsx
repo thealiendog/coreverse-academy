@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild, getCurrentParent, updateChildProgress } from '../../lib/storage';
 import { getAvatar } from '../../lib/constants';
-import { getVoiceForGuide } from '../../data/guideVoices';
+import { getVoiceForGuide, getModelForGuide } from '../../data/guideVoices';
 import { unlockAudio } from './sounds';
 
 // Screen types
@@ -329,10 +329,11 @@ export default function GameLessonPlayer() {
     console.log(`[audio ${ts()}] FETCH_START gen=${gen} text="${resolved.slice(0, 60)}${resolved.length > 60 ? '…' : ''}"`);
     try {
       const voiceId = getVoiceForGuide(lesson?.guide);
+      const modelId = getModelForGuide(lesson?.guide); // null → use default in nova-speak.js
       const res = await fetch('/.netlify/functions/nova-speak', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ text: resolved, voiceId }),
+        body:    JSON.stringify({ text: resolved, voiceId, ...(modelId && { modelId }) }),
         signal:  abortController.signal,
       });
       console.log(`[audio ${ts()}] FETCH_RESPONSE status=${res.status} took=${Date.now() - fetchStart}ms`);

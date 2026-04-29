@@ -1,31 +1,42 @@
 // ============================================================
 // COREVERSE ACADEMY — Per-Guide ElevenLabs Voice IDs
 // ============================================================
-// Default voice (Nova) is used for guides we have not yet
-// custom-voiced. Luna has a Spanish-native voice for Subject 9.
-// As we test voices for other guides we update this map.
+// Each Little Stars guide has a unique ElevenLabs voice.
+// Luna uses eleven_multilingual_v2 for best Spanish quality.
+// All other guides use eleven_turbo_v2_5 (default).
 // ============================================================
 
-export const DEFAULT_VOICE_ID = 'aUNOP2y8xEvi4nZebjIw';
+export const DEFAULT_VOICE_ID = 'aUNOP2y8xEvi4nZebjIw'; // Nova
 
 export const guideVoices = {
-  Nova:  'aUNOP2y8xEvi4nZebjIw',
-  Sage:  'aUNOP2y8xEvi4nZebjIw',
-  Byte:  'aUNOP2y8xEvi4nZebjIw',
-  Ace:   'aUNOP2y8xEvi4nZebjIw',
-  Muse:  'aUNOP2y8xEvi4nZebjIw',
-  Valor: 'aUNOP2y8xEvi4nZebjIw',
-  Terra: 'aUNOP2y8xEvi4nZebjIw',
-  Lyra:  'aUNOP2y8xEvi4nZebjIw',
-  Remi:  'aUNOP2y8xEvi4nZebjIw',
-  Quill: 'aUNOP2y8xEvi4nZebjIw',
-  Cosmo: 'aUNOP2y8xEvi4nZebjIw',
-  Atlas: 'aUNOP2y8xEvi4nZebjIw',
-  Luna:  'aUNOP2y8xEvi4nZebjIw',  // default voice — custom voice TBD with all guides later
-  Orion: 'aUNOP2y8xEvi4nZebjIw',
+  Sage:  'xYa75LlayhWHCRl1yJSH',  // Inner World
+  Nova:  'aUNOP2y8xEvi4nZebjIw',  // Cosmos
+  Byte:  'wP7XBmkAmRwrjtfK2KeY',  // Future Skills
+  Ace:   'RPEIZnKMqlQiZyZd1Dae',  // Money & Business
+  Muse:  'HfRsWv6W0kiMbBILCEFI',  // Creative Arts
+  Valor: 'EozfaQ3ZX0esAp1cW5nG',  // Social & Leadership
+  Terra: 't5ztDJA7pj9EyW9QIcJ2',  // Life & Wellness
+  Lyra:  'NTqGiNK8P02i66yY2GOH',  // History & World
+  Remi:  'ShhDvxS4N0arXxn6PD5o',  // Math
+  Quill: 'J5DQLSCZaWrvT9yRCZNJ',  // ELA
+  Cosmo: 'ZoiZ8fuDWInAcwPXaVeq',  // Science
+  Atlas: 'NOpBlnGInO9m6vDvFkFC',  // Social Studies
+  Luna:  'MwUMLXurEzSN7bIfIdXF',  // Spanish
+  Orion: 'Dslrhjl3ZpzrctukrQSN',  // Frontier & Philosophy
+};
+
+// Per-guide model override. eleven_multilingual_v2 gives best Spanish quality.
+// Omitted guides use the default (eleven_turbo_v2_5) set in nova-speak.js.
+export const guideModels = {
+  Luna: 'eleven_multilingual_v2',
 };
 
 export function getVoiceForGuide(guideName) {
   if (!guideName) return DEFAULT_VOICE_ID;
   return guideVoices[guideName] || DEFAULT_VOICE_ID;
+}
+
+export function getModelForGuide(guideName) {
+  if (!guideName) return null;
+  return guideModels[guideName] || null; // null → use default in nova-speak.js
 }
