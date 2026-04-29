@@ -49,11 +49,13 @@ function charAlignmentToWordStarts(text, alignment) {
 function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
   switch (screen?.type) {
-    case 'welcome':    return r(screen.guideText);
-    case 'magazine':   return (screen.paragraphs || []).join(' ');
-    case 'real-world': return r(screen.guideText);
-    case 'celebration':return r(screen.message);
-    default:           return '';
+    case 'welcome':     return r(screen.guideText);
+    case 'magazine':    return (screen.paragraphs || []).join(' ');
+    case 'interactive': return r(screen.guideText);
+    case 'quiz':        return r(screen.guideText);
+    case 'real-world':  return r(screen.guideText);
+    case 'celebration': return r(screen.message);
+    default:            return '';
   }
 }
 
@@ -79,7 +81,8 @@ export default function ExplorerLessonPlayer() {
   const [audioEnabled, setAudioEnabled] = useState(true);
   const [karaokeWords, setKaraokeWords] = useState([]);
   const [karaokeIdx,   setKaraokeIdx]   = useState(-1);
-  const [vocabOpen,    setVocabOpen]    = useState(null);
+  const [vocabOpen,     setVocabOpen]     = useState(null);
+  const [showVocabHint, setShowVocabHint] = useState(false);
 
   // ── Refs ──────────────────────────────────────────────────────────────────
   const persistentAudioRef        = useRef(null);
@@ -139,7 +142,8 @@ export default function ExplorerLessonPlayer() {
   // ── speak() ───────────────────────────────────────────────────────────────
   // Simplified vs GameLessonPlayer: no auto-advance, no fallback timer loop,
   // no readOptions narration. Just fetch → play → karaoke → onDone.
-  const speak = useCallback(async (text, onDone) => {
+  const speak = useCallback(async (text, onDone, options = {}) => {
+    const { noKaraoke = false } = options;
     if (!text) { onDone?.(); return; }
     if (!audioEnabledRef.current) { onDone?.(); return; }
 
@@ -230,40 +234,42 @@ export default function ExplorerLessonPlayer() {
       el.load();
 
       // ── Karaoke ─────────────────────────────────────────────────────────
-      const kWords = text.split(/\s+/).filter(Boolean);
-      if (kWords.length >= 2) {
-        setKaraokeWords(kWords);
-        setKaraokeIdx(-1);
-        const wordStarts = charAlignmentToWordStarts(text, alignment);
-        if (wordStarts && wordStarts.length === kWords.length) {
-          // Accurate path: timeupdate drives per-word highlight
-          let lastKi = -1;
-          el.ontimeupdate = () => {
-            const t = el.currentTime;
-            let ki = -1;
-            for (let i = 0; i < wordStarts.length; i++) {
-              if (wordStarts[i] <= t) ki = i; else break;
-            }
-            if (ki !== lastKi) { lastKi = ki; setKaraokeIdx(ki); }
-          };
-        } else {
-          // Fallback: proportional timeout estimation
-          el.onplay = () => {
-            const dur = (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null) || kWords.length * 0.40;
-            if (!(dur > 0)) return;
-            karaokeRef.current.forEach(id => clearTimeout(id));
-            karaokeRef.current = [];
-            const totalChars = kWords.reduce((s, w) => s + w.length, 0);
-            const msPerChar  = (dur * 1000) / totalChars;
-            let cumMs = 0;
-            const ids = kWords.map((word, i) => {
-              const id = setTimeout(() => setKaraokeIdx(i), cumMs);
-              cumMs += Math.max(150, word.length * msPerChar);
-              return id;
-            });
-            ids.push(setTimeout(() => setKaraokeIdx(-1), cumMs + 300));
-            karaokeRef.current = ids;
-          };
+      if (!noKaraoke) {
+        const kWords = text.split(/\s+/).filter(Boolean);
+        if (kWords.length >= 2) {
+          setKaraokeWords(kWords);
+          setKaraokeIdx(-1);
+          const wordStarts = charAlignmentToWordStarts(text, alignment);
+          if (wordStarts && wordStarts.length === kWords.length) {
+            // Accurate path: timeupdate drives per-word highlight
+            let lastKi = -1;
+            el.ontimeupdate = () => {
+              const t = el.currentTime;
+              let ki = -1;
+              for (let i = 0; i < wordStarts.length; i++) {
+                if (wordStarts[i] <= t) ki = i; else break;
+              }
+              if (ki !== lastKi) { lastKi = ki; setKaraokeIdx(ki); }
+            };
+          } else {
+            // Fallback: proportional timeout estimation
+            el.onplay = () => {
+              const dur = (Number.isFinite(el.duration) && el.duration > 0 ? el.duration : null) || kWords.length * 0.40;
+              if (!(dur > 0)) return;
+              karaokeRef.current.forEach(id => clearTimeout(id));
+              karaokeRef.current = [];
+              const totalChars = kWords.reduce((s, w) => s + w.length, 0);
+              const msPerChar  = (dur * 1000) / totalChars;
+              let cumMs = 0;
+              const ids = kWords.map((word, i) => {
+                const id = setTimeout(() => setKaraokeIdx(i), cumMs);
+                cumMs += Math.max(150, word.length * msPerChar);
+                return id;
+              });
+              ids.push(setTimeout(() => setKaraokeIdx(-1), cumMs + 300));
+              karaokeRef.current = ids;
+            };
+          }
         }
       }
 
@@ -293,21 +299,99 @@ export default function ExplorerLessonPlayer() {
     }
   }, []); // no deps — reads all values via refs
 
+  // ── Stop all audio immediately ────────────────────────────────────────────
+  const stopAudio = useCallback(() => {
+    currentAbortControllerRef.current?.abort();
+    audioListenersCleanupRef.current?.();
+    audioListenersCleanupRef.current = null;
+    if (persistentAudioRef.current) { persistentAudioRef.current.pause(); }
+    karaokeRef.current.forEach(id => clearTimeout(id));
+    karaokeRef.current = [];
+    setSpeaking(false);
+    setLoadingAudio(false);
+    setKaraokeIdx(-1);
+    setKaraokeWords([]);
+  }, []);
+
   // ── Speak on screen change ─────────────────────────────────────────────────
   useEffect(() => {
     if (!screens.length) return;
     const screen = screens[screenIdx];
-    const text   = getScreenText(screen, childName);
+    let cancelled = false;
+    const timers  = [];
 
-    // Reset karaoke
+    // Reset karaoke + hint
     karaokeRef.current.forEach(id => clearTimeout(id));
     karaokeRef.current = [];
     setKaraokeIdx(-1);
     setKaraokeWords([]);
+    setShowVocabHint(false);
 
-    if (text && audioEnabled) speak(text);
+    const cleanup = () => {
+      cancelled = true;
+      timers.forEach(clearTimeout);
+      currentAbortControllerRef.current?.abort();
+    };
 
-    return () => { currentAbortControllerRef.current?.abort(); };
+    if (!audioEnabled) return cleanup;
+
+    const r = t => (t || '').replace(/\{name\}/g, childName);
+
+    if (screen.type === 'magazine') {
+      // Sequence: headline (noKaraoke) → 500ms → paragraphs (karaoke) → vocab hint (if first time)
+      const headline = screen.headline || '';
+      const paraText = (screen.paragraphs || []).join(' ');
+
+      speak(headline, () => {
+        if (cancelled) return;
+        const t1 = setTimeout(() => {
+          if (cancelled) return;
+          speak(paraText, () => {
+            if (cancelled) return;
+            // Fix 3 — one-time vocab hint after first magazine paragraph audio
+            if (screen.vocab?.length > 0 && !localStorage.getItem('explorer_vocab_hint_shown')) {
+              setShowVocabHint(true);
+              const hintText = "See those underlined words? Tap any of them to hear what they mean!";
+              speak(hintText, () => {
+                if (cancelled) return;
+                localStorage.setItem('explorer_vocab_hint_shown', 'true');
+                const t2 = setTimeout(() => { if (!cancelled) setShowVocabHint(false); }, 1500);
+                timers.push(t2);
+              }, { noKaraoke: true });
+            }
+          });
+        }, 500);
+        timers.push(t1);
+      }, { noKaraoke: true });
+
+    } else if (screen.type === 'real-world') {
+      // Sequence: guideText → 400ms → familyAdventure (noKaraoke) → 400ms → creativePrompt (noKaraoke)
+      const guideText       = r(screen.guideText);
+      const familyAdventure = screen.familyAdventure || '';
+      const creativePrompt  = screen.creativePrompt  || '';
+
+      speak(guideText, () => {
+        if (cancelled) return;
+        const t1 = setTimeout(() => {
+          if (cancelled) return;
+          speak(familyAdventure, () => {
+            if (cancelled) return;
+            const t2 = setTimeout(() => {
+              if (cancelled) return;
+              speak(creativePrompt, undefined, { noKaraoke: true });
+            }, 400);
+            timers.push(t2);
+          }, { noKaraoke: true });
+        }, 400);
+        timers.push(t1);
+      });
+
+    } else {
+      const text = getScreenText(screen, childName);
+      if (text) speak(text);
+    }
+
+    return cleanup;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenIdx]);
 
@@ -391,6 +475,7 @@ export default function ExplorerLessonPlayer() {
 
   return (
     <div style={{
+      position:     'relative',
       width:        '100%',
       minHeight:    '100dvh',
       maxHeight:    '100dvh',
@@ -417,6 +502,14 @@ export default function ExplorerLessonPlayer() {
         @keyframes explorer-enter {
           from { opacity: 0; transform: translateY(14px); }
           to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes hint-in {
+          0%   { opacity: 0; transform: translateY(12px) scale(0.92); }
+          100% { opacity: 1; transform: translateY(0)    scale(1); }
+        }
+        @keyframes hint-bounce {
+          0%, 100% { transform: translateY(0); }
+          50%      { transform: translateY(-5px); }
         }
       `}</style>
 
@@ -458,6 +551,39 @@ export default function ExplorerLessonPlayer() {
         isCelebration={currentScreen.type === 'celebration'}
       />
 
+      {/* Vocab hint — one-time animated callout after first magazine audio */}
+      {showVocabHint && (
+        <div style={{
+          position:      'absolute',
+          bottom:        80,
+          left:          0,
+          right:         0,
+          display:       'flex',
+          justifyContent:'center',
+          zIndex:        150,
+          pointerEvents: 'none',
+          padding:       '0 24px',
+        }}>
+          <div style={{
+            background:   accent,
+            color:        '#000',
+            padding:      '12px 22px',
+            borderRadius: 100,
+            fontWeight:   700,
+            fontSize:     '0.95rem',
+            letterSpacing:'-0.01em',
+            animation:    'hint-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
+            boxShadow:    `0 6px 24px ${accent}55`,
+            display:      'flex',
+            alignItems:   'center',
+            gap:          8,
+          }}>
+            <span style={{ animation: 'hint-bounce 1s ease-in-out infinite', display: 'inline-block' }}>👆</span>
+            Tap underlined words to hear them!
+          </div>
+        </div>
+      )}
+
       {/* Vocab popup (portal-like overlay) */}
       {vocabOpen && (
         <VocabPopup
@@ -465,6 +591,7 @@ export default function ExplorerLessonPlayer() {
           accent={accent}
           guideAvatar={guideAvatar}
           onClose={() => setVocabOpen(null)}
+          onStop={stopAudio}
           speak={speak}
         />
       )}

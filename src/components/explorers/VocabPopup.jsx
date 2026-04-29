@@ -1,12 +1,13 @@
 // VocabPopup — modal shown when a vocab word is tapped in MagazineScreen
 import { useEffect } from 'react';
 
-export default function VocabPopup({ vocab, accent, onClose, speak }) {
-  // Auto-play definition when popup opens
+export default function VocabPopup({ vocab, accent, onClose, onStop, speak }) {
+  // Auto-play definition when popup opens; stop audio on unmount
   useEffect(() => {
     if (vocab?.audioPrompt && speak) {
-      speak(vocab.audioPrompt);
+      speak(vocab.audioPrompt, undefined, { noKaraoke: true });
     }
+    return () => { onStop?.(); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -80,7 +81,7 @@ export default function VocabPopup({ vocab, accent, onClose, speak }) {
         {/* Replay button */}
         {speak && (
           <button
-            onClick={() => speak(vocab.audioPrompt)}
+            onClick={() => speak(vocab.audioPrompt, undefined, { noKaraoke: true })}
             style={{
               display:      'flex',
               alignItems:   'center',

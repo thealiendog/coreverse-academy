@@ -81,7 +81,7 @@ const innerworld_explorer_screens = {
           type:         'interactive',
           activityType: 'drag-match',
           instruction:  'Drag each scene to the feeling it shows.',
-          guideText:    "Let's see if you can match each picture to the feeling it shows. Drag and drop!",
+          guideText:    "Now we're going to play a matching game! I'll show you scenes, and you drag each one to the feeling it shows.",
           items: [
             { image: 'birthday-party.png', label: 'Happy',  correctMatch: 'happy'  },
             { image: 'lost-toy.png',       label: 'Sad',    correctMatch: 'sad'    },
@@ -99,6 +99,7 @@ const innerworld_explorer_screens = {
         // PHASE 4 — MASTERY QUIZ (Day 5)
         {
           type: 'quiz',
+          guideText: "Quiz time! Let's see what you've learned. Answer all 5 questions to earn your Feelings Explorer badge!",
           questions: [
             { format: 'multiple-choice', question: 'What are feelings?', options: ['Messages from your body and mind', 'Things you eat for breakfast', 'Toys in your room', 'Numbers on a clock'], correctIndex: 0 },
             { format: 'true-false',      question: 'All feelings are okay to have.', correctAnswer: true },
@@ -112,8 +113,8 @@ const innerworld_explorer_screens = {
         {
           type:            'real-world',
           guideText:       "Amazing work, {name}! Now let's bring this into your real life. Share what you learned with your family — they will love it!",
-          familyAdventure: 'Tonight at dinner, share with your family one feeling you had today. Ask them to share one too. Listen to each other.',
-          creativePrompt:  'Draw a picture of yourself feeling one of the Big Four. Show what is happening around you.',
+          familyAdventure: "At dinner tonight, ask each family member: \"What is ONE feeling you had today, and what made you feel that way?\" Take turns — no interrupting! Really listen to each other.",
+          creativePrompt:  "Draw yourself feeling one of the Big Four feelings — happy, sad, angry, or scared. Then draw ONE thing around you that's making you feel that way. Write or ask someone to write the feeling name at the top!",
         },
 
         // PHASE 6 — CELEBRATION
