@@ -14,7 +14,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! I am Lyra! I never forget anything — and today I will tell you about LONG AGO!' },
       { type: 'story', image: '/game-assets/history/long-ago-scene.png', guideText: 'A long time ago, before phones and cars, people rode horses! Houses were lit with candles. The world looked very different then. Time keeps moving and everything changes!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is from LONG AGO?', guideText: 'Tap the picture from long ago!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is from LONG AGO?', guideText: 'Tap the picture from long ago!',
         items: [
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago', correct: true },
           { image: '/game-assets/history/today-scene.png', label: 'Today' },
@@ -23,7 +23,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/today-scene.png', guideText: 'And TODAY we have cars, computers, and bright electric lights! The world is always changing!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one is TODAY?', guideText: 'Tap the picture from today!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one is TODAY?', guideText: 'Tap the picture from today!',
         items: [
           { image: '/game-assets/history/today-scene.png', label: 'Today', correct: true },
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago' },
@@ -52,7 +52,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we explore YOUR family history!' },
       { type: 'story', image: '/game-assets/history/family-tree.png', guideText: 'Your family has a STORY that started a long time ago! Your grandparents had children — those are your parents! And your parents had YOU! That is your family history!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a FAMILY TREE?', guideText: 'Tap the family tree!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a FAMILY TREE?', guideText: 'Tap the family tree!',
         items: [
           { image: '/game-assets/history/family-tree.png', label: 'Family tree', correct: true },
           { image: '/game-assets/history/family-photo-album.png', label: 'Photo album' },
@@ -90,7 +90,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we learn about our COMMUNITY!' },
       { type: 'story', image: '/game-assets/history/community-neighborhood.png', guideText: 'A community is the place where YOU live with your neighbors! Your community has houses, schools, parks, and stores. The people in your community help each other!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the house!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the house!',
         items: [
           { image: '/game-assets/history/house-home.png', label: 'House', correct: true },
           { image: '/game-assets/history/world-map.png', label: 'A map' },
@@ -99,7 +99,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/community-park.png', guideText: 'A PARK is a special place in our community where everyone can play, swing, and run on the grass!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a PARK?', guideText: 'Tap the park!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a PARK?', guideText: 'Tap the park!',
         items: [
           { image: '/game-assets/history/community-park.png', label: 'Park', correct: true },
           { image: '/game-assets/history/house-home.png', label: 'A house' },
@@ -128,7 +128,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we meet COMMUNITY HELPERS!' },
       { type: 'story', image: '/game-assets/history/firefighter-helper.png', guideText: 'In every community, there are special people who HELP us! Firefighters keep us safe. Doctors keep us healthy. Teachers teach us. Mail carriers bring us letters. They are our helpers!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one puts out FIRES?', guideText: 'Tap the firefighter!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one puts out FIRES?', guideText: 'Tap the firefighter!',
         items: [
           { image: '/game-assets/history/firefighter-helper.png', label: 'Firefighter', correct: true },
           { image: '/game-assets/history/teacher-helper.png', label: 'Teacher' },
@@ -137,7 +137,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/doctor-helper.png', guideText: 'A DOCTOR helps us when we are sick or hurt. They check our heart with a special tool!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Who helps when you are SICK?', guideText: 'Tap the doctor!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Who helps when you are SICK?', guideText: 'Tap the doctor!',
         items: [
           { image: '/game-assets/history/doctor-helper.png', label: 'Doctor', correct: true },
           { image: '/game-assets/history/firefighter-helper.png', label: 'Firefighter' },
@@ -146,7 +146,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/teacher-helper.png', guideText: 'A TEACHER helps you learn new things every day! Teachers are super important!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Who brings us LETTERS?', guideText: 'Tap the mail carrier!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Who brings us LETTERS?', guideText: 'Tap the mail carrier!',
         items: [
           { image: '/game-assets/history/mail-carrier-helper.png', label: 'Mail carrier', correct: true },
           { image: '/game-assets/history/doctor-helper.png', label: 'Doctor' },
@@ -173,7 +173,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we learn about AMERICAN SYMBOLS!' },
       { type: 'story', image: '/game-assets/history/american-flag.png', guideText: 'America has special SYMBOLS that everyone knows! The American flag has stripes and stars. The bald eagle is a strong free bird. The Liberty Bell rings for freedom. These symbols tell our story!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is the American FLAG?', guideText: 'Tap the flag!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is the American FLAG?', guideText: 'Tap the flag!',
         items: [
           { image: '/game-assets/history/american-flag.png', label: 'American flag', correct: true },
           { image: '/game-assets/history/bald-eagle.png', label: 'Eagle' },
@@ -182,7 +182,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/bald-eagle.png', guideText: 'The BALD EAGLE is the national bird of America! It is strong, brave, and FREE!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is the BALD EAGLE?', guideText: 'Tap the eagle!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is the BALD EAGLE?', guideText: 'Tap the eagle!',
         items: [
           { image: '/game-assets/history/bald-eagle.png', label: 'Bald eagle', correct: true },
           { image: '/game-assets/history/peace-dove.png', label: 'Dove' },
@@ -242,7 +242,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we explore the WHOLE WORLD!' },
       { type: 'story', image: '/game-assets/history/world-map.png', guideText: 'The world is HUGE and full of many different places called COUNTRIES! Each country has its own flag, language, and special foods. There are almost 200 countries in the world!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a WORLD MAP?', guideText: 'Tap the world map!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a WORLD MAP?', guideText: 'Tap the world map!',
         items: [
           { image: '/game-assets/history/world-map.png', label: 'World map', correct: true },
           { image: '/game-assets/history/family-tree.png', label: 'Family tree' },
@@ -251,7 +251,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/flags-of-world.png', guideText: 'Every country has a special FLAG with different colors and patterns! Some have stars, some have stripes, some have animals!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows many FLAGS?', guideText: 'Tap the flags!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows many FLAGS?', guideText: 'Tap the flags!',
         items: [
           { image: '/game-assets/history/flags-of-world.png', label: 'Many flags', correct: true },
           { image: '/game-assets/history/american-flag.png', label: 'One flag' },
@@ -280,7 +280,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we see EARTH from SPACE!' },
       { type: 'story', image: '/game-assets/history/earth-globe.png', guideText: 'Imagine you are flying high up — past the clouds, past the airplanes, all the way into SPACE! From up there, our home looks like a big blue ball with white clouds. That is EARTH — our planet!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is EARTH?', guideText: 'Tap our planet!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is EARTH?', guideText: 'Tap our planet!',
         items: [
           { image: '/game-assets/history/earth-globe.png', label: 'Earth', correct: true },
           { image: '/game-assets/history/solar-system-tiny.png', label: 'Solar system' },
@@ -289,7 +289,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/solar-system-tiny.png', guideText: 'Earth is just ONE of EIGHT planets that go around the sun! All together that is called the SOLAR SYSTEM!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows the SOLAR SYSTEM?', guideText: 'Tap the planets and sun!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows the SOLAR SYSTEM?', guideText: 'Tap the planets and sun!',
         items: [
           { image: '/game-assets/history/solar-system-tiny.png', label: 'Solar system', correct: true },
           { image: '/game-assets/history/earth-globe.png', label: 'Just Earth' },
@@ -318,7 +318,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we visit DIFFERENT HOMES around the world!' },
       { type: 'story', image: '/game-assets/history/home-igloo.png', guideText: 'People live in MANY different kinds of homes! In icy cold lands, families build round homes made of snow called IGLOOS! In places near the water, some families live in homes on tall poles called STILT HOUSES. And in big cities, many families live stacked up high in APARTMENT BUILDINGS! Every home is a special place filled with love!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which home is made of ICE?', guideText: 'Tap the igloo!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which home is made of ICE?', guideText: 'Tap the igloo!',
         items: [
           { image: '/game-assets/history/home-igloo.png', label: 'Igloo', correct: true },
           { image: '/game-assets/history/home-tipi.png', label: 'Tipi' },
@@ -327,7 +327,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/home-tipi.png', guideText: 'A TIPI is a tall pointy home made from wooden poles and animal hide. Native Americans built tipis long ago!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which home stands on TALL POLES over water?', guideText: 'Tap the stilt house!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which home stands on TALL POLES over water?', guideText: 'Tap the stilt house!',
         items: [
           { image: '/game-assets/history/home-stilt-house.png', label: 'Stilt house', correct: true },
           { image: '/game-assets/history/home-igloo.png', label: 'Igloo' },
@@ -356,7 +356,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we taste FOOD from around the world!' },
       { type: 'story', image: '/game-assets/history/food-tacos.png', guideText: 'Every country has its own special FOODS! In Mexico people eat tacos. In Japan they eat sushi. In Italy they eat pasta. In India they eat curry with rice. Food brings people together!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which food is from MEXICO?', guideText: 'Tap the tacos!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which food is from MEXICO?', guideText: 'Tap the tacos!',
         items: [
           { image: '/game-assets/history/food-tacos.png', label: 'Tacos', correct: true },
           { image: '/game-assets/history/food-sushi.png', label: 'Sushi' },
@@ -365,7 +365,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/food-sushi.png', guideText: 'SUSHI comes from JAPAN! It is small bites of rice with fish or vegetables — sometimes you eat it with chopsticks!' },
-      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which food is from ITALY?', guideText: 'Tap the pasta!',
+      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which food is from ITALY?', guideText: 'Tap the pasta!',
         items: [
           { image: '/game-assets/history/food-pasta.png', label: 'Pasta', correct: true },
           { image: '/game-assets/history/food-tacos.png', label: 'Tacos' },
