@@ -8,6 +8,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../../lib/storage';
 import { getAvatar } from '../../lib/constants';
 import { getVoiceForGuide, getModelForGuide } from '../../data/guideVoices';
+import { unlockAudio } from '../games/sounds';
 
 import ExplorerWelcomeScreen  from './ExplorerWelcomeScreen';
 import MagazineScreen         from './MagazineScreen';
@@ -108,6 +109,8 @@ export default function ExplorerLessonPlayer() {
     function unlock() {
       if (unlocked) return;
       unlocked = true;
+      // Pre-authorize Web Audio API for iOS (must run synchronously in gesture)
+      unlockAudio();
       if (!persistentAudioRef.current) {
         const el = new Audio();
         el.playsInline = true;

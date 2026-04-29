@@ -1,17 +1,21 @@
-// ExplorerCelebration — Phase 6: XP, badge, confetti, return home
-import { useEffect, useRef } from 'react';
+// ExplorerCelebration — Phase 6: XP, badge, confetti, fanfare, return home
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { sfx } from '../games/sounds';
 
 export default function ExplorerCelebration({
-  screen, guideAvatar, accent, karaokeWords, karaokeIdx, onComplete,
-  lessonTitle, subjectId,
+  screen, guideAvatar, accent, subjectId,
 }) {
   const { xpEarned = 50, badgeName = 'Explorer', message = 'Amazing work!' } = screen;
-  const saved = useRef(false);
+  const saved       = useRef(false);
+  const navigate    = useNavigate();
+  const [showButtons, setShowButtons] = useState(false);
 
-  // Save XP + badge to localStorage once
+  // Save XP + badge once; play fanfare; reveal buttons after animations settle
   useEffect(() => {
     if (saved.current) return;
     saved.current = true;
+
     try {
       const xp = parseInt(localStorage.getItem('explorer_total_xp') || '0', 10);
       localStorage.setItem('explorer_total_xp', String(xp + xpEarned));
@@ -19,6 +23,13 @@ export default function ExplorerCelebration({
       if (!badges.includes(screen.badge)) badges.push(screen.badge);
       localStorage.setItem('explorer_badges', JSON.stringify(badges));
     } catch { /* localStorage unavailable */ }
+
+    // Fanfare: plays when screen mounts (AudioContext already unlocked by first gesture)
+    sfx.fanfare();
+
+    // Reveal CTA buttons after all animations have played out
+    const t = setTimeout(() => setShowButtons(true), 1400);
+    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -37,6 +48,7 @@ export default function ExplorerCelebration({
         @keyframes xp-pop   { 0%{transform:scale(0.4);opacity:0} 60%{transform:scale(1.2);opacity:1} 100%{transform:scale(1);opacity:1} }
         @keyframes badge-in { 0%{transform:rotate(-12deg) scale(0.4);opacity:0} 70%{transform:rotate(4deg) scale(1.05)} 100%{transform:rotate(0) scale(1);opacity:1} }
         @keyframes confetti-fall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1} 100%{transform:translateY(60px) rotate(360deg);opacity:0} }
+        @keyframes btn-rise { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
       `}</style>
 
       {/* Confetti burst */}
@@ -109,6 +121,57 @@ export default function ExplorerCelebration({
         <img src={guideAvatar?.image || '/avatars/sage.png'} alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${accent}` }} />
         <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem' }}>— {guideAvatar?.name || 'Sage'}</span>
       </div>
+
+      {/* CTA buttons — appear after animations settle */}
+      {showButtons && (
+        <div style={{
+          display:       'flex',
+          flexDirection: 'column',
+          gap:           12,
+          width:         '100%',
+          maxWidth:      320,
+          marginTop:     8,
+          animation:     'btn-rise 0.4s ease both',
+        }}>
+          {/* Primary: return to subject view */}
+          <button
+            onClick={() => navigate(`/child/subject/${subjectId || 'inner-world'}`)}
+            style={{
+              height:       64,
+              background:   accent,
+              color:        '#000',
+              border:       'none',
+              borderRadius: 16,
+              fontSize:     '1.05rem',
+              fontWeight:   800,
+              cursor:       'pointer',
+              touchAction:  'manipulation',
+              letterSpacing:'-0.01em',
+              boxShadow:    `0 6px 24px ${accent}55`,
+            }}
+          >
+            Continue Exploring →
+          </button>
+
+          {/* Secondary: go to child dashboard (subject picker) */}
+          <button
+            onClick={() => navigate('/child/dashboard')}
+            style={{
+              height:       56,
+              background:   'rgba(255,255,255,0.07)',
+              color:        'rgba(255,255,255,0.7)',
+              border:       '1px solid rgba(255,255,255,0.12)',
+              borderRadius: 14,
+              fontSize:     '0.95rem',
+              fontWeight:   600,
+              cursor:       'pointer',
+              touchAction:  'manipulation',
+            }}
+          >
+            Try Another Subject
+          </button>
+        </div>
+      )}
     </div>
   );
 }
