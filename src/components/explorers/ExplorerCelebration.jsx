@@ -4,17 +4,23 @@ import { useNavigate } from 'react-router-dom';
 import { sfx } from '../games/sounds';
 
 export default function ExplorerCelebration({
-  screen, guideAvatar, accent, subjectId,
+  screen, guideAvatar, accent, subjectId, childName,
 }) {
   const { xpEarned = 50, badgeName = 'Explorer', message = 'Amazing work!' } = screen;
-  const saved       = useRef(false);
-  const navigate    = useNavigate();
+  const saved    = useRef(false);
+  const navigate = useNavigate();
   const [showButtons, setShowButtons] = useState(false);
+
+  // Resolve {name} in message
+  const resolvedName    = childName || 'friend';
+  const resolvedMessage = message.replace(/\{name\}/g, resolvedName);
 
   // Save XP + badge once; play fanfare; reveal buttons after animations settle
   useEffect(() => {
     if (saved.current) return;
     saved.current = true;
+
+    console.log('[CELEBRATION] Child name resolved:', resolvedName);
 
     try {
       const xp = parseInt(localStorage.getItem('explorer_total_xp') || '0', 10);
@@ -30,7 +36,7 @@ export default function ExplorerCelebration({
     // Reveal CTA buttons after all animations have played out
     const t = setTimeout(() => setShowButtons(true), 1400);
     return () => clearTimeout(t);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div style={{
@@ -70,50 +76,27 @@ export default function ExplorerCelebration({
       </div>
 
       {/* Badge */}
-      <div style={{
-        fontSize:  '5rem',
-        animation: 'badge-in 0.6s 0.2s cubic-bezier(0.34,1.56,0.64,1) both',
-      }}>
+      <div style={{ fontSize: '5rem', animation: 'badge-in 0.6s 0.2s cubic-bezier(0.34,1.56,0.64,1) both' }}>
         🏅
       </div>
 
       {/* XP */}
-      <div style={{
-        fontSize:     '2.2rem',
-        fontWeight:   800,
-        color:        '#F59E0B',
-        animation:    'xp-pop 0.5s 0.5s cubic-bezier(0.34,1.56,0.64,1) both',
-        opacity:      0,
-      }}>
+      <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#F59E0B', animation: 'xp-pop 0.5s 0.5s cubic-bezier(0.34,1.56,0.64,1) both', opacity: 0 }}>
         +{xpEarned} XP
       </div>
 
       {/* Badge name */}
       <div style={{
-        background:   `${accent}22`,
-        border:       `1.5px solid ${accent}55`,
-        borderRadius: 30,
-        padding:      '8px 20px',
-        color:        accent,
-        fontSize:     '0.9rem',
-        fontWeight:   700,
-        letterSpacing: '0.04em',
-        animation:    'xp-pop 0.5s 0.7s cubic-bezier(0.34,1.56,0.64,1) both',
-        opacity:      0,
+        background: `${accent}22`, border: `1.5px solid ${accent}55`, borderRadius: 30,
+        padding: '8px 20px', color: accent, fontSize: '0.9rem', fontWeight: 700,
+        letterSpacing: '0.04em', animation: 'xp-pop 0.5s 0.7s cubic-bezier(0.34,1.56,0.64,1) both', opacity: 0,
       }}>
         🎖 {badgeName}
       </div>
 
-      {/* Message */}
-      <div style={{
-        fontSize:   '1.1rem',
-        color:      'rgba(255,255,255,0.88)',
-        lineHeight: 1.6,
-        maxWidth:   320,
-        animation:  'xp-pop 0.4s 0.9s ease both',
-        opacity:    0,
-      }}>
-        {message}
+      {/* Message — {name} replaced */}
+      <div style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.6, maxWidth: 320, animation: 'xp-pop 0.4s 0.9s ease both', opacity: 0 }}>
+        {resolvedMessage}
       </div>
 
       {/* Guide */}
@@ -124,49 +107,16 @@ export default function ExplorerCelebration({
 
       {/* CTA buttons — appear after animations settle */}
       {showButtons && (
-        <div style={{
-          display:       'flex',
-          flexDirection: 'column',
-          gap:           12,
-          width:         '100%',
-          maxWidth:      320,
-          marginTop:     8,
-          animation:     'btn-rise 0.4s ease both',
-        }}>
-          {/* Primary: return to subject view */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', maxWidth: 320, marginTop: 8, animation: 'btn-rise 0.4s ease both' }}>
           <button
             onClick={() => navigate(`/child/subject/${subjectId || 'inner-world'}`)}
-            style={{
-              height:       64,
-              background:   accent,
-              color:        '#000',
-              border:       'none',
-              borderRadius: 16,
-              fontSize:     '1.05rem',
-              fontWeight:   800,
-              cursor:       'pointer',
-              touchAction:  'manipulation',
-              letterSpacing:'-0.01em',
-              boxShadow:    `0 6px 24px ${accent}55`,
-            }}
+            style={{ height: 64, background: accent, color: '#000', border: 'none', borderRadius: 16, fontSize: '1.05rem', fontWeight: 800, cursor: 'pointer', touchAction: 'manipulation', letterSpacing: '-0.01em', boxShadow: `0 6px 24px ${accent}55` }}
           >
             Continue Exploring →
           </button>
-
-          {/* Secondary: go to child dashboard (subject picker) */}
           <button
             onClick={() => navigate('/child/dashboard')}
-            style={{
-              height:       56,
-              background:   'rgba(255,255,255,0.07)',
-              color:        'rgba(255,255,255,0.7)',
-              border:       '1px solid rgba(255,255,255,0.12)',
-              borderRadius: 14,
-              fontSize:     '0.95rem',
-              fontWeight:   600,
-              cursor:       'pointer',
-              touchAction:  'manipulation',
-            }}
+            style={{ height: 56, background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, fontSize: '0.95rem', fontWeight: 600, cursor: 'pointer', touchAction: 'manipulation' }}
           >
             Try Another Subject
           </button>

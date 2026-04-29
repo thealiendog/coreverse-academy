@@ -24,8 +24,10 @@ function renderKaraokeText(text, karaokeWords, karaokeIdx, accent) {
 }
 
 export default function ExplorerWelcomeScreen({
-  screen, guideAvatar, speaking, loadingAudio, karaokeWords, karaokeIdx, accent, onReplay,
+  screen, guideAvatar, speaking, loadingAudio, karaokeWords, karaokeIdx, accent, onReplay, childName,
 }) {
+  // Resolve {name} for display (spoken text also has it resolved in ExplorerLessonPlayer)
+  const displayText = (screen.guideText || '').replace(/\{name\}/g, childName || 'friend');
   return (
     <div style={{
       height:         '100%',
@@ -108,7 +110,7 @@ export default function ExplorerWelcomeScreen({
           borderRight: '10px solid transparent',
           borderBottom: `10px solid ${accent}33`,
         }} />
-        {renderKaraokeText(screen.guideText, karaokeWords, karaokeIdx, accent)}
+        {renderKaraokeText(displayText, karaokeWords, karaokeIdx, accent)}
       </div>
 
       {/* Tap to continue hint */}

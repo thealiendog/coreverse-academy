@@ -1,4 +1,4 @@
-// MagazineScreen — Phase 2: image + headline + karaoke paragraphs + vocab
+// MagazineScreen — Phase 2: image + headline + karaoke paragraphs + vocab + inline hint
 
 // Render paragraphs with per-word karaoke highlighting and tappable vocab words.
 // globalWordIdx tracks position across ALL paragraphs (matching speak()'s joined text).
@@ -46,12 +46,23 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
 
 export default function MagazineScreen({
   screen, guideAvatar, speaking, loadingAudio, karaokeWords, karaokeIdx,
-  accent, onReplay, onVocabTap,
+  accent, onReplay, onVocabTap, showVocabHint, onDismissVocabHint,
 }) {
   const { section, totalSections, headline, paragraphs = [], image, imageCaption, vocab = [] } = screen;
 
   return (
     <div style={{ height: '100%', overflowY: 'auto', overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch' }}>
+      <style>{`
+        @keyframes hint-in {
+          0%   { opacity: 0; transform: translateY(8px) scale(0.95); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes hint-bounce {
+          0%, 100% { transform: translateY(0); }
+          50%      { transform: translateY(-4px); }
+        }
+      `}</style>
+
       {/* Hero image */}
       <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', background: '#111827', flexShrink: 0 }}>
         <img
@@ -62,16 +73,9 @@ export default function MagazineScreen({
         />
         {/* Section badge */}
         <div style={{
-          position:     'absolute',
-          top:          12,
-          left:         12,
-          background:   `${accent}dd`,
-          borderRadius: 20,
-          padding:      '4px 12px',
-          fontSize:     '0.75rem',
-          fontWeight:   700,
-          color:        '#000',
-          letterSpacing: '0.04em',
+          position: 'absolute', top: 12, left: 12,
+          background: `${accent}dd`, borderRadius: 20, padding: '4px 12px',
+          fontSize: '0.75rem', fontWeight: 700, color: '#000', letterSpacing: '0.04em',
         }}>
           {section} of {totalSections}
         </div>
@@ -79,22 +83,13 @@ export default function MagazineScreen({
         <button
           onClick={onReplay}
           style={{
-            position:     'absolute',
-            top:          10,
-            right:        10,
-            width:        38,
-            height:       38,
-            borderRadius: '50%',
-            border:       'none',
-            background:   (speaking || loadingAudio) ? accent : 'rgba(0,0,0,0.5)',
-            color:        (speaking || loadingAudio) ? '#000' : 'rgba(255,255,255,0.8)',
-            fontSize:     '1rem',
-            cursor:       'pointer',
-            display:      'flex',
-            alignItems:   'center',
-            justifyContent: 'center',
-            touchAction:  'manipulation',
-            transition:   'background 0.2s',
+            position: 'absolute', top: 10, right: 10,
+            width: 38, height: 38, borderRadius: '50%', border: 'none',
+            background: (speaking || loadingAudio) ? accent : 'rgba(0,0,0,0.5)',
+            color:      (speaking || loadingAudio) ? '#000' : 'rgba(255,255,255,0.8)',
+            fontSize: '1rem', cursor: 'pointer', display: 'flex',
+            alignItems: 'center', justifyContent: 'center',
+            touchAction: 'manipulation', transition: 'background 0.2s',
           }}
         >
           {(speaking || loadingAudio) ? '⏸' : '▶'}
@@ -112,12 +107,8 @@ export default function MagazineScreen({
       <div style={{ padding: '16px 18px 24px' }}>
         {/* Headline */}
         <h2 style={{
-          fontSize:     '1.45rem',
-          fontWeight:   800,
-          color:        '#fff',
-          marginBottom: 18,
-          lineHeight:   1.25,
-          letterSpacing: '-0.02em',
+          fontSize: '1.45rem', fontWeight: 800, color: '#fff',
+          marginBottom: 18, lineHeight: 1.25, letterSpacing: '-0.02em',
         }}>
           {headline}
         </h2>
@@ -139,21 +130,43 @@ export default function MagazineScreen({
                   key={i}
                   onClick={() => onVocabTap(v)}
                   style={{
-                    padding:      '6px 14px',
-                    borderRadius: 20,
-                    border:       '1.5px solid #60A5FA55',
-                    background:   '#60A5FA11',
-                    color:        '#60A5FA',
-                    fontSize:     '0.85rem',
-                    fontWeight:   600,
-                    cursor:       'pointer',
-                    touchAction:  'manipulation',
+                    padding: '6px 14px', borderRadius: 20,
+                    border: '1.5px solid #60A5FA55', background: '#60A5FA11',
+                    color: '#60A5FA', fontSize: '0.85rem', fontWeight: 600,
+                    cursor: 'pointer', touchAction: 'manipulation',
                   }}
                 >
                   {v.word}
                 </button>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* Vocab hint — inline, below chips, never overlaps content */}
+        {showVocabHint && vocab.length > 0 && (
+          <div
+            onClick={onDismissVocabHint}
+            style={{
+              marginTop:    16,
+              padding:      '12px 16px',
+              background:   `${accent}18`,
+              border:       `1.5px solid ${accent}66`,
+              borderRadius: 14,
+              display:      'flex',
+              alignItems:   'center',
+              gap:          10,
+              cursor:       'pointer',
+              animation:    'hint-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
+              touchAction:  'manipulation',
+            }}
+          >
+            <span style={{ fontSize: '1.3rem', animation: 'hint-bounce 1.2s ease-in-out infinite', display: 'inline-block', flexShrink: 0 }}>
+              ☝️
+            </span>
+            <span style={{ color: accent, fontWeight: 700, fontSize: '0.9rem', lineHeight: 1.4 }}>
+              Tap any underlined word above to hear what it means!
+            </span>
           </div>
         )}
       </div>

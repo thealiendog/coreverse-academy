@@ -61,11 +61,13 @@ export const sfx = {
   // Wrong answer
   buzz: () => tone(200, 0.12, 'sawtooth', 0.14),
 
-  // Big celebration at end
+  // Big celebration at end — 4-note ascending chord, high gain for audibility
   fanfare: () => {
-    tone(523, 0.18, 'sine', 0.20);
-    setTimeout(() => tone(659, 0.18, 'sine', 0.18), 160);
-    setTimeout(() => tone(784, 0.22, 'sine', 0.20), 320);
+    console.log('[CELEBRATION] Playing fanfare at gain 0.55');
+    tone(523, 0.28, 'sine', 0.55);                           // C5
+    setTimeout(() => tone(659, 0.28, 'sine', 0.52), 180);   // E5
+    setTimeout(() => tone(784, 0.32, 'sine', 0.55), 360);   // G5
+    setTimeout(() => tone(1047, 0.42, 'sine', 0.50), 540);  // C6 high finish
   },
 
   // Ascending count tones: C4, D4, E4, F4, G4

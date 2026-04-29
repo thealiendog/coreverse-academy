@@ -1,9 +1,9 @@
 // ExplorerNavigation — bottom nav bar for ExplorerLessonPlayer
-// Back arrow | progress dots | audio toggle | next arrow
+// Back arrow | progress dots | audio toggle | next arrow (+countdown badge)
 
 export default function ExplorerNavigation({
   screenIdx, total, accent, audioEnabled, speaking,
-  onBack, onNext, onToggleAudio, isCelebration,
+  onBack, onNext, onToggleAudio, isCelebration, countdown,
 }) {
   const btnBase = {
     width: 52, height: 52, borderRadius: '50%', border: 'none',
@@ -59,18 +59,43 @@ export default function ExplorerNavigation({
         </button>
       </div>
 
-      {/* Next */}
-      <button
-        onClick={onNext}
-        style={{
-          ...btnBase,
-          background: isCelebration ? '#10B981' : accent,
-          color:      '#000',
-          fontWeight: 700,
-        }}
-      >
-        {isCelebration ? '🏠' : '›'}
-      </button>
+      {/* Next — with countdown badge */}
+      <div style={{ position: 'relative' }}>
+        <button
+          onClick={onNext}
+          style={{
+            ...btnBase,
+            background: isCelebration ? '#10B981' : accent,
+            color:      '#000',
+            fontWeight: 700,
+          }}
+        >
+          {isCelebration ? '🏠' : '›'}
+        </button>
+
+        {/* Countdown badge — appears during auto-advance countdown */}
+        {countdown !== null && countdown > 0 && (
+          <div style={{
+            position:       'absolute',
+            top:            -4,
+            right:          -4,
+            width:          22,
+            height:         22,
+            borderRadius:   '50%',
+            background:     '#F59E0B',
+            color:          '#000',
+            fontSize:       '0.72rem',
+            fontWeight:     800,
+            display:        'flex',
+            alignItems:     'center',
+            justifyContent: 'center',
+            pointerEvents:  'none',
+            boxShadow:      '0 2px 8px rgba(245,158,11,0.6)',
+          }}>
+            {countdown}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -84,6 +84,7 @@ export default function ExplorerLessonPlayer() {
   const [karaokeIdx,   setKaraokeIdx]   = useState(-1);
   const [vocabOpen,     setVocabOpen]     = useState(null);
   const [showVocabHint, setShowVocabHint] = useState(false);
+  const [countdown,     setCountdown]     = useState(null); // null | 3 | 2 | 1
 
   // ── Refs ──────────────────────────────────────────────────────────────────
   const persistentAudioRef        = useRef(null);
@@ -95,7 +96,10 @@ export default function ExplorerLessonPlayer() {
   const lastSpokenText            = useRef('');
   const lastSpeakTime             = useRef(0);
   const audioEnabledRef           = useRef(true);   // mirrors audioEnabled; read inside speak()
+  const countdownIntervalRef      = useRef(null);
+  const screenIdxRef              = useRef(0);      // always-current screenIdx for interval callbacks
   audioEnabledRef.current = audioEnabled;
+  screenIdxRef.current    = screenIdx;
 
   // Voice refs — always current, avoids stale closure in speak()
   const voiceIdRef = useRef(getVoiceForGuide(guide));
@@ -316,12 +320,29 @@ export default function ExplorerLessonPlayer() {
     setKaraokeWords([]);
   }, []);
 
+  // ── Cancel auto-advance countdown ────────────────────────────────────────
+  const cancelCountdown = useCallback(() => {
+    if (countdownIntervalRef.current) {
+      clearInterval(countdownIntervalRef.current);
+      countdownIntervalRef.current = null;
+      console.log('[AUTO-ADVANCE] Cancelled by user tap');
+    }
+    setCountdown(null);
+  }, []);
+
   // ── Speak on screen change ─────────────────────────────────────────────────
   useEffect(() => {
     if (!screens.length) return;
     const screen = screens[screenIdx];
     let cancelled = false;
     const timers  = [];
+
+    // Stop any existing countdown when screen changes
+    if (countdownIntervalRef.current) {
+      clearInterval(countdownIntervalRef.current);
+      countdownIntervalRef.current = null;
+    }
+    setCountdown(null);
 
     // Reset karaoke + hint
     karaokeRef.current.forEach(id => clearTimeout(id));
@@ -334,33 +355,82 @@ export default function ExplorerLessonPlayer() {
       cancelled = true;
       timers.forEach(clearTimeout);
       currentAbortControllerRef.current?.abort();
+      if (countdownIntervalRef.current) {
+        clearInterval(countdownIntervalRef.current);
+        countdownIntervalRef.current = null;
+      }
+      setCountdown(null);
     };
 
     if (!audioEnabled) return cleanup;
 
     const r = t => (t || '').replace(/\{name\}/g, childName);
 
+    // Auto-advance: starts a 3→2→1 countdown then navigates, for welcome + magazine only
+    function startCountdownForScreen() {
+      if (cancelled) return;
+      let n = 3;
+      setCountdown(n);
+      countdownIntervalRef.current = setInterval(() => {
+        if (cancelled) {
+          clearInterval(countdownIntervalRef.current);
+          countdownIntervalRef.current = null;
+          setCountdown(null);
+          return;
+        }
+        n--;
+        if (n <= 0) {
+          clearInterval(countdownIntervalRef.current);
+          countdownIntervalRef.current = null;
+          setCountdown(null);
+          console.log(`[AUTO-ADVANCE] Screen ${screenIdx} (${screen.type}) auto-advanced after countdown`);
+          if (screenIdxRef.current < total - 1) {
+            setScreenIdx(prev => prev + 1);
+          } else {
+            navigate(`/child/subject/${subjectId}`);
+          }
+        } else {
+          setCountdown(n);
+        }
+      }, 1000);
+    }
+
     if (screen.type === 'magazine') {
-      // Sequence: headline (noKaraoke) → 500ms → paragraphs (karaoke) → vocab hint (if first time)
+      // Sequence: headline (noKaraoke) → 500ms → paragraphs (karaoke) → vocab hint → countdown
       const headline = screen.headline || '';
       const paraText = (screen.paragraphs || []).join(' ');
 
+      console.log(`[TTS] Screen ${screenIdx} magazine — Reading title: "${headline}"`);
       speak(headline, () => {
         if (cancelled) return;
         const t1 = setTimeout(() => {
           if (cancelled) return;
+          console.log(`[TTS] Screen ${screenIdx} magazine — Reading paragraphs: "${paraText.slice(0, 60)}..."`);
           speak(paraText, () => {
             if (cancelled) return;
-            // Fix 3 — one-time vocab hint after first magazine paragraph audio
+            // One-time vocab hint
             if (screen.vocab?.length > 0 && !localStorage.getItem('explorer_vocab_hint_shown')) {
               setShowVocabHint(true);
+              // 5s safety dismiss even if hint audio fails
+              const tHint5s = setTimeout(() => {
+                if (!cancelled) {
+                  setShowVocabHint(false);
+                  localStorage.setItem('explorer_vocab_hint_shown', 'true');
+                }
+              }, 5000);
+              timers.push(tHint5s);
               const hintText = "See those underlined words? Tap any of them to hear what they mean!";
               speak(hintText, () => {
                 if (cancelled) return;
                 localStorage.setItem('explorer_vocab_hint_shown', 'true');
-                const t2 = setTimeout(() => { if (!cancelled) setShowVocabHint(false); }, 1500);
-                timers.push(t2);
+                const tHide = setTimeout(() => { if (!cancelled) setShowVocabHint(false); }, 1500);
+                timers.push(tHide);
+                // Start countdown after hint
+                const tCD = setTimeout(() => startCountdownForScreen(), 1600);
+                timers.push(tCD);
               }, { noKaraoke: true });
+            } else {
+              startCountdownForScreen();
             }
           });
         }, 500);
@@ -368,7 +438,8 @@ export default function ExplorerLessonPlayer() {
       }, { noKaraoke: true });
 
     } else if (screen.type === 'real-world') {
-      // Sequence: guideText → 400ms → familyAdventure (noKaraoke) → 400ms → creativePrompt (noKaraoke)
+      // Sequence: guideText (karaoke) → 400ms → familyAdventure (karaoke) → 400ms → creativePrompt (karaoke)
+      // No noKaraoke — RealWorldConnection detects active section from karaokeWords
       const guideText       = r(screen.guideText);
       const familyAdventure = screen.familyAdventure || '';
       const creativePrompt  = screen.creativePrompt  || '';
@@ -381,13 +452,23 @@ export default function ExplorerLessonPlayer() {
             if (cancelled) return;
             const t2 = setTimeout(() => {
               if (cancelled) return;
-              speak(creativePrompt, undefined, { noKaraoke: true });
+              speak(creativePrompt, undefined);
             }, 400);
             timers.push(t2);
-          }, { noKaraoke: true });
+          });
         }, 400);
         timers.push(t1);
       });
+
+    } else if (screen.type === 'welcome') {
+      const text = getScreenText(screen, childName);
+      if (text) {
+        console.log(`[TTS] Screen ${screenIdx} welcome — Reading: "${text.slice(0, 60)}..."`);
+        speak(text, () => {
+          if (cancelled) return;
+          startCountdownForScreen();
+        });
+      }
 
     } else {
       const text = getScreenText(screen, childName);
@@ -446,7 +527,7 @@ export default function ExplorerLessonPlayer() {
 
   // ── Render screen ──────────────────────────────────────────────────────────
   const commonProps = {
-    screen:       currentScreen,
+    screen:             currentScreen,
     childName,
     guideAvatar,
     speaking,
@@ -454,9 +535,11 @@ export default function ExplorerLessonPlayer() {
     karaokeWords,
     karaokeIdx,
     accent,
-    onReplay:    replayAudio,
-    onVocabTap:  (vocab) => setVocabOpen(vocab),
-    onComplete:  goNext,
+    onReplay:           replayAudio,
+    onVocabTap:         (vocab) => setVocabOpen(vocab),
+    onComplete:         goNext,
+    showVocabHint,
+    onDismissVocabHint: () => { setShowVocabHint(false); localStorage.setItem('explorer_vocab_hint_shown', 'true'); },
   };
 
   function renderScreen(screen) {
@@ -536,6 +619,8 @@ export default function ExplorerLessonPlayer() {
             overflow: 'hidden',
             animation: 'explorer-enter 0.28s ease both',
           }}
+          onTouchStart={() => { if (countdown !== null) cancelCountdown(); }}
+          onClick={() => { if (countdown !== null) cancelCountdown(); }}
         >
           {renderScreen(currentScreen)}
         </div>
@@ -552,40 +637,8 @@ export default function ExplorerLessonPlayer() {
         onNext={goNext}
         onToggleAudio={toggleAudio}
         isCelebration={currentScreen.type === 'celebration'}
+        countdown={countdown}
       />
-
-      {/* Vocab hint — one-time animated callout after first magazine audio */}
-      {showVocabHint && (
-        <div style={{
-          position:      'absolute',
-          bottom:        80,
-          left:          0,
-          right:         0,
-          display:       'flex',
-          justifyContent:'center',
-          zIndex:        150,
-          pointerEvents: 'none',
-          padding:       '0 24px',
-        }}>
-          <div style={{
-            background:   accent,
-            color:        '#000',
-            padding:      '12px 22px',
-            borderRadius: 100,
-            fontWeight:   700,
-            fontSize:     '0.95rem',
-            letterSpacing:'-0.01em',
-            animation:    'hint-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
-            boxShadow:    `0 6px 24px ${accent}55`,
-            display:      'flex',
-            alignItems:   'center',
-            gap:          8,
-          }}>
-            <span style={{ animation: 'hint-bounce 1s ease-in-out infinite', display: 'inline-block' }}>👆</span>
-            Tap underlined words to hear them!
-          </div>
-        </div>
-      )}
 
       {/* Vocab popup (portal-like overlay) */}
       {vocabOpen && (
