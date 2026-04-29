@@ -330,6 +330,7 @@ export default function GameLessonPlayer() {
     try {
       const voiceId = getVoiceForGuide(lesson?.guide);
       const modelId = getModelForGuide(lesson?.guide); // null → use default in nova-speak.js
+      console.log(`[VOICE] guide="${lesson?.guide}" → voiceId="${voiceId}" modelId="${modelId ?? 'default'}"`);
       const res = await fetch('/.netlify/functions/nova-speak', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },

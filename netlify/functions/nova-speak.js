@@ -8,6 +8,7 @@ exports.handler = async (event) => {
     const voiceId = requestedVoiceId || process.env.ELEVENLABS_VOICE_ID || 'aUNOP2y8xEvi4nZebjIw';
     const modelId = requestedModelId || 'eleven_turbo_v2_5';
     const apiKey  = process.env.ELEVENLABS_API_KEY;
+    console.log(`[nova-speak] requestedVoiceId="${requestedVoiceId}" resolvedVoiceId="${voiceId}" modelId="${modelId}" textLen=${text?.length}`);
 
     if (!apiKey) {
       return { statusCode: 500, body: JSON.stringify({ error: 'ELEVENLABS_API_KEY not set' }) };
@@ -34,6 +35,7 @@ exports.handler = async (event) => {
       }),
     });
 
+    console.log(`[nova-speak] ElevenLabs response status=${response.status} for voiceId="${voiceId}"`);
     if (!response.ok) {
       const detail = await response.text();
       console.error(`ElevenLabs error ${response.status}:`, detail);
