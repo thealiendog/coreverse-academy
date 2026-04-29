@@ -94,7 +94,7 @@ export const ssLittleStars = [
         items: [
           { image: '/game-assets/socialstudies/simple-map-treasure.png', label: 'Treasure map', correct: true },
           { image: '/game-assets/socialstudies/compass-rose.png', label: 'Compass' },
-          { image: '/game-assets/socialstudies/kid-with-map.png', label: 'Kid with map' },
+          { image: '/game-assets/socialstudies/quiet-neighborhood-street.png', label: 'A street' },
           { image: '/game-assets/socialstudies/country-on-globe.png', label: 'Globe' }
         ]
       },
