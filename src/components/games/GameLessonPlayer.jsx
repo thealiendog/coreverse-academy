@@ -229,6 +229,14 @@ export default function GameLessonPlayer() {
   const pendingOnDoneRef         = useRef(null);  // onDone deferred if finish() fires while paused
   const timerInfoRef             = useRef(null);  // { fn, ms, startedAt } tracks fallbackTimerRef for pause/resume
 
+  // ── Voice / model refs — written every render, read inside speak() at call time.
+  // Using refs (not closure) so speak()'s useCallback never sees a stale value
+  // regardless of which render created the memoized function.
+  const voiceIdRef = useRef(getVoiceForGuide(lesson?.guide));
+  const modelIdRef = useRef(getModelForGuide(lesson?.guide));
+  voiceIdRef.current = getVoiceForGuide(lesson?.guide);
+  modelIdRef.current = getModelForGuide(lesson?.guide);
+
   // ── Stable advance — uses functional setScreenIdx so setTimeout closures
   //    always read current state, not a stale render's screenIdx. ────────────
   const advance = useCallback(() => {
@@ -328,9 +336,10 @@ export default function GameLessonPlayer() {
     const fetchStart = Date.now();
     console.log(`[audio ${ts()}] FETCH_START gen=${gen} text="${resolved.slice(0, 60)}${resolved.length > 60 ? '…' : ''}"`);
     try {
-      const voiceId = getVoiceForGuide(lesson?.guide);
-      const modelId = getModelForGuide(lesson?.guide); // null → use default in nova-speak.js
-      console.log(`[VOICE] guide="${lesson?.guide}" → voiceId="${voiceId}" modelId="${modelId ?? 'default'}"`);
+      // Read from refs — always current regardless of closure capture age.
+      const voiceId = voiceIdRef.current;
+      const modelId = modelIdRef.current;
+      console.log(`[VOICE] guide="${lesson?.guide}" voiceIdRef="${voiceId}" modelId="${modelId ?? 'default'}"`);
       const res = await fetch('/.netlify/functions/nova-speak', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
