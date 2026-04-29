@@ -229,7 +229,6 @@ export default function GameLessonPlayer() {
   const isPausedRef              = useRef(false); // closure-accessible mirror of isPaused — read inside callbacks where state is stale
   const pendingOnDoneRef         = useRef(null);  // onDone deferred if finish() fires while paused
   const timerInfoRef             = useRef(null);  // { fn, ms, startedAt } tracks fallbackTimerRef for pause/resume
-  const prefetchRef              = useRef(null);  // { text, promise } — pre-fetched screen-0 audio
 
   // ── Voice / model refs — written every render, read inside speak() at call time.
   // Using refs (not closure) so speak()'s useCallback never sees a stale value
@@ -345,34 +344,21 @@ export default function GameLessonPlayer() {
       const modelId = modelIdRef.current;
       console.log(`[VOICE] guide="${lesson?.guide}" voiceIdRef="${voiceId}" modelId="${modelId ?? 'default'}"`);
 
-      // Pre-fetch hit path — consume the promise started on mount if text matches.
-      let blob, alignment;
-      const pf = prefetchRef.current;
-      if (pf?.text === resolved) {
-        prefetchRef.current = null; // consume once
-        console.log(`[audio ${ts()}] PREFETCH_HIT gen=${gen}`);
-        const result = await pf.promise;
-        if (result && gen === speakGenRef.current) {
-          blob = result.blob;
-          alignment = result.alignment;
-        }
-      }
-      if (!blob) {
-        const res = await fetch('/.netlify/functions/nova-speak', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ text: resolved, voiceId, ...(modelId && { modelId }) }),
-          signal:  abortController.signal,
-        });
-        console.log(`[audio ${ts()}] FETCH_RESPONSE status=${res.status} took=${Date.now() - fetchStart}ms`);
-        if (!res.ok) throw new Error('tts-unavailable');
-        // Alignment timestamps travel in a header; audio body is raw binary (avoids
-        // iOS Safari bugs with large base64 data URIs in Audio elements).
-        const alignmentHeader = res.headers.get('X-Alignment');
-        alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
-        blob = await res.blob();
-      }
-      console.log(`[audio ${ts()}] AUDIO_RECEIVED blob_bytes=${blob.size} has_alignment=${!!alignment} gen_ok=${gen === speakGenRef.current}`);
+      const res = await fetch('/.netlify/functions/nova-speak', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ text: resolved, voiceId, ...(modelId && { modelId }) }),
+        signal:  abortController.signal,
+      });
+      console.log(`[audio ${ts()}] FETCH_RESPONSE status=${res.status} took=${Date.now() - fetchStart}ms`);
+      if (!res.ok) throw new Error('tts-unavailable');
+
+      // Alignment timestamps travel in a header; audio body is raw binary (avoids
+      // iOS Safari bugs with large base64 data URIs in Audio elements).
+      const alignmentHeader = res.headers.get('X-Alignment');
+      const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
+      const blob = await res.blob();
+      console.log(`[audio ${ts()}] AUDIO_RECEIVED blob_bytes=${blob.size} blob_type="${blob.type}" has_alignment=${!!alignment} gen_ok=${gen === speakGenRef.current}`);
 
       // Bail out if a newer speak() call has already started — discard this audio.
       // Still call onDone so the screen isn't left waiting with no callback.
@@ -761,44 +747,6 @@ export default function GameLessonPlayer() {
     karaokeRef.current.forEach(id => clearTimeout(id));
   }, []);
 
-  // ── Pre-fetch first screen's audio on mount ────────────────────────────────
-  // Starts the ElevenLabs fetch immediately while React is rendering the first
-  // screen, so speak() can await an already-in-flight promise instead of starting
-  // from scratch — eliminating most of the 700-1500ms startup delay.
-  useEffect(() => {
-    if (!gameSequence?.length) return;
-    const step = gameSequence[0];
-    const r = t => (t || '').replace(/\{name\}/g, childName);
-    const rawText = (() => {
-      switch (step.type) {
-        case 'celebration': return r(step.guideText) ? `You did it, ${childName}! Amazing job! ${r(step.guideText)}` : `You did it, ${childName}! Amazing job!`;
-        case 'yes-no': return [r(step.scenario), 'Tap the green check for yes, or the red X for no!'].filter(Boolean).join(' ');
-        case 'tap-right': case 'count': case 'sort': case 'sort-buckets': case 'drag-match': case 'count-array': return r(step.instruction);
-        default: return r(step.guideText);
-      }
-    })();
-    if (!rawText) return;
-    const voiceId = voiceIdRef.current;
-    const modelId = modelIdRef.current;
-    const promise = fetch('/.netlify/functions/nova-speak', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify({ text: rawText, voiceId, ...(modelId && { modelId }) }),
-    })
-    .then(async res => {
-      if (!res.ok) return null;
-      const alignmentHeader = res.headers.get('X-Alignment');
-      const blob = await res.blob();
-      const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
-      console.log(`[audio ${ts()}] PREFETCH_DONE blob_bytes=${blob.size}`);
-      return { blob, alignment };
-    })
-    .catch(e => { console.log(`[audio ${ts()}] PREFETCH_FAIL`, e?.message); return null; });
-    prefetchRef.current = { text: rawText, promise };
-    console.log(`[audio ${ts()}] PREFETCH_START text="${rawText.slice(0, 60)}"`);
-    return () => { prefetchRef.current = null; };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // ── No game sequence → navigate to regular LessonPlayer (no ?level=1 so no loop) ───
   if (!lesson || !gameSequence) {
