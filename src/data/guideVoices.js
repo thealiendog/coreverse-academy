@@ -21,7 +21,7 @@ export const guideVoices = {
   Quill: 'J5DQLSCZaWrvT9yRCZNJ',  // ELA
   Cosmo: 'ZoiZ8fuDWInAcwPXaVeq',  // Science
   Atlas: 'NOpBlnGInO9m6vDvFkFC',  // Social Studies
-  Luna:  'MwUMLXurEzSN7bIfIdXF',  // Spanish
+  Luna:  'b2htR0pMe28pYwCY9gnP',  // Spanish
   Orion: 'Dslrhjl3ZpzrctukrQSN',  // Frontier & Philosophy
 };
 
