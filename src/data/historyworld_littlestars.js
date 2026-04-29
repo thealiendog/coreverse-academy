@@ -27,7 +27,7 @@ export const historyworldLittleStars = [
         items: [
           { image: '/game-assets/history/today-scene.png', label: 'Today', correct: true },
           { image: '/game-assets/history/long-ago-scene.png', label: 'Long ago' },
-          { image: '/game-assets/history/grandparents-figures.png', label: 'Long long ago' },
+          { image: '/game-assets/history/grandparents-figures.png', label: 'Grandparents' },
           { image: '/game-assets/history/family-photo-album.png', label: 'Old photos' }
         ]
       },
@@ -61,7 +61,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/grandparents-figures.png', guideText: 'GRANDPARENTS are your parents\' parents! They have lots of stories from when YOUR parents were little kids!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which are GRANDPARENTS?', guideText: 'Tap the grandparents!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which are GRANDPARENTS?', guideText: 'Tap the grandparents!',
         items: [
           { image: '/game-assets/history/grandparents-figures.png', label: 'Grandparents', correct: true },
           { image: '/game-assets/history/teacher-helper.png', label: 'Teacher' },
@@ -90,7 +90,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we learn about our COMMUNITY!' },
       { type: 'story', image: '/game-assets/history/community-neighborhood.png', guideText: 'A community is the place where YOU live with your neighbors! Your community has houses, schools, parks, and stores. The people in your community help each other!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the house!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a HOUSE?', guideText: 'Tap the house!',
         items: [
           { image: '/game-assets/history/house-home.png', label: 'House', correct: true },
           { image: '/game-assets/history/world-map.png', label: 'A map' },
@@ -99,7 +99,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/community-park.png', guideText: 'A PARK is a special place in our community where everyone can play, swing, and run on the grass!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is a PARK?', guideText: 'Tap the park!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is a PARK?', guideText: 'Tap the park!',
         items: [
           { image: '/game-assets/history/community-park.png', label: 'Park', correct: true },
           { image: '/game-assets/history/house-home.png', label: 'A house' },
@@ -128,7 +128,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we meet COMMUNITY HELPERS!' },
       { type: 'story', image: '/game-assets/history/firefighter-helper.png', guideText: 'In every community, there are special people who HELP us! Firefighters keep us safe. Doctors keep us healthy. Teachers teach us. Mail carriers bring us letters. They are our helpers!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which one puts out FIRES?', guideText: 'Tap the firefighter!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which one puts out FIRES?', guideText: 'Tap the firefighter!',
         items: [
           { image: '/game-assets/history/firefighter-helper.png', label: 'Firefighter', correct: true },
           { image: '/game-assets/history/teacher-helper.png', label: 'Teacher' },
@@ -137,7 +137,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/doctor-helper.png', guideText: 'A DOCTOR helps us when we are sick or hurt. They check our heart with a special tool!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Who helps when you are SICK?', guideText: 'Tap the doctor!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Who helps when you are SICK?', guideText: 'Tap the doctor!',
         items: [
           { image: '/game-assets/history/doctor-helper.png', label: 'Doctor', correct: true },
           { image: '/game-assets/history/firefighter-helper.png', label: 'Firefighter' },
@@ -146,7 +146,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/teacher-helper.png', guideText: 'A TEACHER helps you learn new things every day! Teachers are super important!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Who brings us LETTERS?', guideText: 'Tap the mail carrier!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Who brings us LETTERS?', guideText: 'Tap the mail carrier!',
         items: [
           { image: '/game-assets/history/mail-carrier-helper.png', label: 'Mail carrier', correct: true },
           { image: '/game-assets/history/doctor-helper.png', label: 'Doctor' },
@@ -173,7 +173,7 @@ export const historyworldLittleStars = [
     gameSequence: [
       { type: 'welcome', guideText: 'Hello, {name}! Today we learn about AMERICAN SYMBOLS!' },
       { type: 'story', image: '/game-assets/history/american-flag.png', guideText: 'America has special SYMBOLS that everyone knows! The American flag has stripes and stars. The bald eagle is a strong free bird. The Liberty Bell rings for freedom. These symbols tell our story!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which is the American FLAG?', guideText: 'Tap the flag!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which is the American FLAG?', guideText: 'Tap the flag!',
         items: [
           { image: '/game-assets/history/american-flag.png', label: 'American flag', correct: true },
           { image: '/game-assets/history/bald-eagle.png', label: 'Eagle' },
@@ -251,7 +251,7 @@ export const historyworldLittleStars = [
         ]
       },
       { type: 'teach', image: '/game-assets/history/flags-of-world.png', guideText: 'Every country has a special FLAG with different colors and patterns! Some have stars, some have stripes, some have animals!' },
-      { type: 'tap-right', readOptions: true, hideLabels: true, instruction: 'Which shows many FLAGS?', guideText: 'Tap the flags!',
+      { type: 'tap-right', readOptions: false, hideLabels: true, instruction: 'Which shows many FLAGS?', guideText: 'Tap the flags!',
         items: [
           { image: '/game-assets/history/flags-of-world.png', label: 'Many flags', correct: true },
           { image: '/game-assets/history/american-flag.png', label: 'One flag' },
