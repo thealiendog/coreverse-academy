@@ -13,7 +13,7 @@ export default function ExplorerNavigation({
   };
 
   return (
-    <div style={{
+    <div className="explorer-nav" style={{
       height: 72,
       flexShrink: 0,
       display: 'flex',

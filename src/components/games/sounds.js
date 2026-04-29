@@ -26,16 +26,50 @@ export function unlockAudio() {
   } catch { /* no audio context */ }
 }
 
+// Standard tone — oscillator → gain → destination
 function tone(freq, dur = 0.15, type = 'sine', vol = 0.22) {
   try {
     const ctx  = getCtx();
-    // Resume is required on iOS when the context was created outside a gesture.
-    // resume() is a no-op if the context is already running.
     const play = () => {
       const osc  = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain);
       gain.connect(ctx.destination);
+      osc.type = type;
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(vol, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+      osc.start();
+      osc.stop(ctx.currentTime + dur + 0.05);
+    };
+    if (ctx.state === 'suspended') {
+      ctx.resume().then(play).catch(() => {});
+    } else {
+      play();
+    }
+  } catch { /* no audio context */ }
+}
+
+// Loud tone with DynamicsCompressor — for celebration fanfare.
+// Compressor brings quiet signals up to near-full-scale; effective even on phone speakers.
+// IMPORTANT: must be called inside a user-gesture handler for iOS AudioContext to be running.
+function loudTone(freq, dur = 0.30, type = 'sine', vol = 0.9) {
+  try {
+    const ctx  = getCtx();
+    const play = () => {
+      // Compressor: low threshold + high ratio = "louder" perceived sound
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.setValueAtTime(-24, ctx.currentTime);
+      comp.knee.setValueAtTime(6,    ctx.currentTime);
+      comp.ratio.setValueAtTime(12,  ctx.currentTime);
+      comp.attack.setValueAtTime(0.003, ctx.currentTime);
+      comp.release.setValueAtTime(0.25, ctx.currentTime);
+      comp.connect(ctx.destination);
+
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(comp);
       osc.type = type;
       osc.frequency.value = freq;
       gain.gain.setValueAtTime(vol, ctx.currentTime);
@@ -61,13 +95,14 @@ export const sfx = {
   // Wrong answer
   buzz: () => tone(200, 0.12, 'sawtooth', 0.14),
 
-  // Big celebration at end — 4-note ascending chord, high gain for audibility
+  // Big celebration at end — 4-note ascending sequence with compressor.
+  // MUST be called inside a user-gesture handler on iOS (not from useEffect).
   fanfare: () => {
-    console.log('[CELEBRATION] Playing fanfare at gain 0.55');
-    tone(523, 0.28, 'sine', 0.55);                           // C5
-    setTimeout(() => tone(659, 0.28, 'sine', 0.52), 180);   // E5
-    setTimeout(() => tone(784, 0.32, 'sine', 0.55), 360);   // G5
-    setTimeout(() => tone(1047, 0.42, 'sine', 0.50), 540);  // C6 high finish
+    console.log('[CELEBRATION] Playing fanfare — source: oscillator+compressor, gain: 0.9');
+    loudTone(523,  0.35, 'sine', 0.90);                          // C5
+    setTimeout(() => loudTone(659,  0.35, 'sine', 0.88), 200);  // E5
+    setTimeout(() => loudTone(784,  0.38, 'sine', 0.90), 400);  // G5
+    setTimeout(() => loudTone(1047, 0.45, 'sine', 0.85), 600);  // C6 high finish
   },
 
   // Ascending count tones: C4, D4, E4, F4, G4

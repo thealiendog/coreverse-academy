@@ -8,7 +8,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentChild } from '../../lib/storage';
 import { getAvatar } from '../../lib/constants';
 import { getVoiceForGuide, getModelForGuide } from '../../data/guideVoices';
-import { unlockAudio } from '../games/sounds';
+import { unlockAudio, sfx } from '../games/sounds';
 
 import ExplorerWelcomeScreen  from './ExplorerWelcomeScreen';
 import MagazineScreen         from './MagazineScreen';
@@ -98,6 +98,8 @@ export default function ExplorerLessonPlayer() {
   const audioEnabledRef           = useRef(true);   // mirrors audioEnabled; read inside speak()
   const countdownIntervalRef      = useRef(null);
   const screenIdxRef              = useRef(0);      // always-current screenIdx for interval callbacks
+  const countdownPausedRef        = useRef(false);  // true when vocab popup interrupted countdown
+  const startCountdownFnRef       = useRef(null);   // points to current screen's startCountdownForScreen
   audioEnabledRef.current = audioEnabled;
   screenIdxRef.current    = screenIdx;
 
@@ -330,6 +332,25 @@ export default function ExplorerLessonPlayer() {
     setCountdown(null);
   }, []);
 
+  // ── Pause / resume countdown when vocab popup opens / closes ─────────────
+  useEffect(() => {
+    if (vocabOpen) {
+      // Popup opened — pause countdown if it's running
+      if (countdownIntervalRef.current) {
+        clearInterval(countdownIntervalRef.current);
+        countdownIntervalRef.current = null;
+        countdownPausedRef.current = true;
+        setCountdown(null);
+        console.log('[AUTO-ADVANCE] Paused — vocab popup open');
+      }
+    } else if (countdownPausedRef.current) {
+      // Popup closed after having paused a countdown — restart from 3
+      countdownPausedRef.current = false;
+      console.log('[AUTO-ADVANCE] Resumed — vocab popup closed');
+      startCountdownFnRef.current?.();
+    }
+  }, [vocabOpen]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // ── Speak on screen change ─────────────────────────────────────────────────
   useEffect(() => {
     if (!screens.length) return;
@@ -337,12 +358,14 @@ export default function ExplorerLessonPlayer() {
     let cancelled = false;
     const timers  = [];
 
-    // Stop any existing countdown when screen changes
+    // Stop any existing countdown when screen changes; reset popup-pause flag
     if (countdownIntervalRef.current) {
       clearInterval(countdownIntervalRef.current);
       countdownIntervalRef.current = null;
     }
     setCountdown(null);
+    countdownPausedRef.current = false;
+    startCountdownFnRef.current = null;
 
     // Reset karaoke + hint
     karaokeRef.current.forEach(id => clearTimeout(id));
@@ -366,7 +389,8 @@ export default function ExplorerLessonPlayer() {
 
     const r = t => (t || '').replace(/\{name\}/g, childName);
 
-    // Auto-advance: starts a 3→2→1 countdown then navigates, for welcome + magazine only
+    // Auto-advance: starts a 3→2→1 countdown then navigates, for welcome + magazine only.
+    // Also stored in startCountdownFnRef so the vocabOpen effect can restart it.
     function startCountdownForScreen() {
       if (cancelled) return;
       let n = 3;
@@ -394,6 +418,8 @@ export default function ExplorerLessonPlayer() {
         }
       }, 1000);
     }
+    // Expose so vocabOpen effect can restart the countdown after popup closes
+    startCountdownFnRef.current = startCountdownForScreen;
 
     if (screen.type === 'magazine') {
       // Sequence: headline (noKaraoke) → 500ms → paragraphs (karaoke) → vocab hint → countdown
@@ -438,8 +464,12 @@ export default function ExplorerLessonPlayer() {
       }, { noKaraoke: true });
 
     } else if (screen.type === 'real-world') {
-      // Sequence: guideText (karaoke) → 400ms → familyAdventure (karaoke) → 400ms → creativePrompt (karaoke)
-      // No noKaraoke — RealWorldConnection detects active section from karaokeWords
+      // Sequence:
+      //   guideText (karaoke) → 400ms
+      //   → "Family Adventure" title (noKaraoke) → 300ms
+      //   → familyAdventure description (karaoke) → 400ms
+      //   → "Create Something" title (noKaraoke) → 300ms
+      //   → creativePrompt description (karaoke)
       const guideText       = r(screen.guideText);
       const familyAdventure = screen.familyAdventure || '';
       const creativePrompt  = screen.creativePrompt  || '';
@@ -448,14 +478,30 @@ export default function ExplorerLessonPlayer() {
         if (cancelled) return;
         const t1 = setTimeout(() => {
           if (cancelled) return;
-          speak(familyAdventure, () => {
+          console.log('[TTS] Real-world card title: "Family Adventure"');
+          speak('Family Adventure', () => {
             if (cancelled) return;
             const t2 = setTimeout(() => {
               if (cancelled) return;
-              speak(creativePrompt, undefined);
-            }, 400);
+              speak(familyAdventure, () => {
+                if (cancelled) return;
+                const t3 = setTimeout(() => {
+                  if (cancelled) return;
+                  console.log('[TTS] Real-world card title: "Create Something"');
+                  speak('Create Something', () => {
+                    if (cancelled) return;
+                    const t4 = setTimeout(() => {
+                      if (cancelled) return;
+                      speak(creativePrompt, undefined);
+                    }, 300);
+                    timers.push(t4);
+                  }, { noKaraoke: true });
+                }, 400);
+                timers.push(t3);
+              });
+            }, 300);
             timers.push(t2);
-          });
+          }, { noKaraoke: true });
         }, 400);
         timers.push(t1);
       });
@@ -481,8 +527,19 @@ export default function ExplorerLessonPlayer() {
 
   // ── Navigation ────────────────────────────────────────────────────────────
   function goNext() {
-    if (screenIdx < total - 1) setScreenIdx(prev => prev + 1);
-    else navigate(`/child/subject/${subjectId}`);
+    // Keep AudioContext fresh — iOS can suspend it between taps
+    unlockAudio();
+    if (screenIdx < total - 1) {
+      const nextScreen = screens[screenIdx + 1];
+      // Trigger fanfare HERE (inside gesture handler) so iOS AudioContext is running
+      if (nextScreen?.type === 'celebration') {
+        sfx.fanfare();
+        console.log('[CELEBRATION] Fanfare triggered inside gesture handler — next screen is celebration');
+      }
+      setScreenIdx(prev => prev + 1);
+    } else {
+      navigate(`/child/subject/${subjectId}`);
+    }
   }
 
   function goBack() {
@@ -560,7 +617,7 @@ export default function ExplorerLessonPlayer() {
   }
 
   return (
-    <div style={{
+    <div className="explorer-shell" style={{
       position:     'relative',
       width:        '100%',
       minHeight:    '100dvh',
@@ -590,22 +647,103 @@ export default function ExplorerLessonPlayer() {
           to   { opacity: 1; transform: translateY(0); }
         }
         @keyframes hint-in {
-          0%   { opacity: 0; transform: translateY(12px) scale(0.92); }
-          100% { opacity: 1; transform: translateY(0)    scale(1); }
+          0%   { opacity: 0; transform: translateY(8px) scale(0.95); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
         }
         @keyframes hint-bounce {
           0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-5px); }
+          50%      { transform: translateY(-4px); }
+        }
+
+        /* ── Responsive layout ──────────────────────────────────────── */
+
+        /* Explorer outer shell — centre on wide screens */
+        .explorer-shell {
+          width: 100%;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+          .explorer-shell { font-size: 18px; }
+          .explorer-header { padding: 14px 28px 12px !important; }
+          .explorer-header-label { font-size: 0.8rem !important; }
+          .explorer-nav { height: 80px !important; }
+          .explorer-nav-btn { width: 60px !important; height: 60px !important; font-size: 1.6rem !important; }
+          .explorer-nav-dot-active { width: 24px !important; }
+        }
+        @media (min-width: 1024px) {
+          .explorer-shell { font-size: 19px; max-width: 1100px; }
+        }
+
+        /* Magazine — single column default, two-column on iPad landscape */
+        .magazine-outer {
+          height: 100%;
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          -webkit-overflow-scrolling: touch;
+        }
+        .magazine-image-col {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16/9;
+          background: #111827;
+          flex-shrink: 0;
+        }
+        .magazine-text-col {
+          padding: 16px 18px 24px;
+        }
+        @media (min-width: 768px) {
+          .magazine-text-col { padding: 20px 28px 28px; }
+          .mag-headline { font-size: 1.7rem !important; }
+          .mag-para { font-size: 1.05rem !important; line-height: 1.8 !important; }
+        }
+        @media (min-width: 1024px) {
+          .magazine-outer {
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+          }
+          .magazine-image-col {
+            width: 42%;
+            aspect-ratio: unset;
+            height: 100%;
+            overflow: hidden;
+          }
+          .magazine-text-col {
+            flex: 1;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            padding: 28px 36px 32px;
+          }
+          .mag-headline { font-size: 2rem !important; }
+          .mag-para { font-size: 1.1rem !important; }
+        }
+
+        /* Real-world — wider on iPad */
+        @media (min-width: 768px) {
+          .real-world-scroll { padding: 32px 36px !important; }
+          .real-world-card   { padding: 22px 20px !important; }
+          .real-world-text   { font-size: 1.05rem !important; }
+        }
+        @media (min-width: 1024px) {
+          .real-world-scroll { max-width: 760px; margin: 0 auto; }
+          .real-world-text   { font-size: 1.1rem !important; }
+        }
+
+        /* Celebration — wider on iPad */
+        @media (min-width: 768px) {
+          .celebration-wrap { max-width: 560px; margin: 0 auto; }
         }
       `}</style>
 
       {/* Lesson header */}
-      <div style={{
+      <div className="explorer-header" style={{
         padding:     '10px 16px 8px',
         flexShrink:  0,
         borderBottom:'1px solid rgba(255,255,255,0.06)',
       }}>
-        <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+        <div className="explorer-header-label" style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.35)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
           {lesson.title}
         </div>
       </div>

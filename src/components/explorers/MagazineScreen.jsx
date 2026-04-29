@@ -1,7 +1,6 @@
 // MagazineScreen — Phase 2: image + headline + karaoke paragraphs + vocab + inline hint
+// Responsive: single-column on mobile, two-column on iPad landscape (CSS classes from ExplorerLessonPlayer style block)
 
-// Render paragraphs with per-word karaoke highlighting and tappable vocab words.
-// globalWordIdx tracks position across ALL paragraphs (matching speak()'s joined text).
 function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
   const vocabMap = new Map((vocab || []).map(v => [v.word.toLowerCase(), v]));
   let wordCount = 0;
@@ -37,7 +36,7 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
     });
 
     return (
-      <p key={pIdx} style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, marginBottom: 16, fontSize: '1.02rem' }}>
+      <p key={pIdx} className="mag-para" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, marginBottom: 16, fontSize: '1.02rem' }}>
         {spans}
       </p>
     );
@@ -51,20 +50,9 @@ export default function MagazineScreen({
   const { section, totalSections, headline, paragraphs = [], image, imageCaption, vocab = [] } = screen;
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto', overscrollBehavior: 'contain', WebkitOverflowScrolling: 'touch' }}>
-      <style>{`
-        @keyframes hint-in {
-          0%   { opacity: 0; transform: translateY(8px) scale(0.95); }
-          100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes hint-bounce {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-4px); }
-        }
-      `}</style>
-
-      {/* Hero image */}
-      <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', background: '#111827', flexShrink: 0 }}>
+    <div className="magazine-outer">
+      {/* Image column — full-width on mobile, left-side on iPad landscape */}
+      <div className="magazine-image-col">
         <img
           src={image}
           alt={headline}
@@ -94,21 +82,27 @@ export default function MagazineScreen({
         >
           {(speaking || loadingAudio) ? '⏸' : '▶'}
         </button>
+        {/* Caption — shown inside image col on mobile, same on desktop */}
+        {imageCaption && (
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            padding: '6px 14px', fontSize: '0.75rem',
+            color: 'rgba(255,255,255,0.6)', fontStyle: 'italic',
+            textAlign: 'center',
+            background: 'linear-gradient(transparent, rgba(0,0,0,0.55))',
+          }}>
+            {imageCaption}
+          </div>
+        )}
       </div>
 
-      {/* Caption */}
-      {imageCaption && (
-        <div style={{ padding: '6px 16px', fontSize: '0.78rem', color: 'rgba(255,255,255,0.38)', fontStyle: 'italic', textAlign: 'center' }}>
-          {imageCaption}
-        </div>
-      )}
-
-      {/* Content */}
-      <div style={{ padding: '16px 18px 24px' }}>
+      {/* Text column — below image on mobile, right-side on iPad landscape */}
+      <div className="magazine-text-col">
         {/* Headline */}
-        <h2 style={{
+        <h2 className="mag-headline" style={{
           fontSize: '1.45rem', fontWeight: 800, color: '#fff',
           marginBottom: 18, lineHeight: 1.25, letterSpacing: '-0.02em',
+          marginTop: 0,
         }}>
           {headline}
         </h2>
@@ -148,17 +142,17 @@ export default function MagazineScreen({
           <div
             onClick={onDismissVocabHint}
             style={{
-              marginTop:    16,
-              padding:      '12px 16px',
-              background:   `${accent}18`,
-              border:       `1.5px solid ${accent}66`,
+              marginTop: 16,
+              padding: '12px 16px',
+              background: `${accent}18`,
+              border: `1.5px solid ${accent}66`,
               borderRadius: 14,
-              display:      'flex',
-              alignItems:   'center',
-              gap:          10,
-              cursor:       'pointer',
-              animation:    'hint-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
-              touchAction:  'manipulation',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              cursor: 'pointer',
+              animation: 'hint-in 0.4s cubic-bezier(0.34,1.56,0.64,1) both',
+              touchAction: 'manipulation',
             }}
           >
             <span style={{ fontSize: '1.3rem', animation: 'hint-bounce 1.2s ease-in-out infinite', display: 'inline-block', flexShrink: 0 }}>
@@ -169,10 +163,9 @@ export default function MagazineScreen({
             </span>
           </div>
         )}
-      </div>
 
-      {/* Bottom padding so nav doesn't overlap last content */}
-      <div style={{ height: 8 }} />
+        <div style={{ height: 12 }} />
+      </div>
     </div>
   );
 }

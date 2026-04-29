@@ -46,7 +46,7 @@ export default function RealWorldConnection({
   }, [karaokeIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div className="real-world-scroll" style={{ height: '100%', overflowY: 'auto', padding: '24px 18px', display: 'flex', flexDirection: 'column', gap: 20 }}>
       {/* Guide intro with karaoke */}
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
         <img
@@ -60,12 +60,12 @@ export default function RealWorldConnection({
 
       {/* Family Adventure with karaoke */}
       {familyAdventure && (
-        <div style={{ background: 'rgba(245,158,11,0.1)', border: '1.5px solid #F59E0B44', borderRadius: 16, padding: '18px 16px' }}>
+        <div className="real-world-card" style={{ background: 'rgba(245,158,11,0.1)', border: '1.5px solid #F59E0B44', borderRadius: 16, padding: '18px 16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <span style={{ fontSize: '1.4rem' }}>🏠</span>
             <span style={{ color: '#F59E0B', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>Family Adventure</span>
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
+          <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
             {renderKaraokeBlock(familyAdventure, karaokeWords, karaokeIdx, '#F59E0B')}
           </p>
         </div>
@@ -73,12 +73,12 @@ export default function RealWorldConnection({
 
       {/* Creative Prompt with karaoke */}
       {creativePrompt && (
-        <div style={{ background: 'rgba(167,139,250,0.1)', border: '1.5px solid #A78BFA44', borderRadius: 16, padding: '18px 16px' }}>
+        <div className="real-world-card" style={{ background: 'rgba(167,139,250,0.1)', border: '1.5px solid #A78BFA44', borderRadius: 16, padding: '18px 16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <span style={{ fontSize: '1.4rem' }}>✏️</span>
             <span style={{ color: '#A78BFA', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>Create Something</span>
           </div>
-          <p style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
+          <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
             {renderKaraokeBlock(creativePrompt, karaokeWords, karaokeIdx, '#A78BFA')}
           </p>
         </div>
