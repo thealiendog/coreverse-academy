@@ -44,8 +44,8 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
 }
 
 export default function MagazineScreen({
-  screen, guideAvatar, speaking, loadingAudio, karaokeWords, karaokeIdx,
-  accent, onReplay, onVocabTap, showVocabHint, onDismissVocabHint,
+  screen, guideAvatar, speaking, loadingAudio, audioPaused, karaokeWords, karaokeIdx,
+  accent, onReplay, onPauseResume, onVocabTap, showVocabHint, onDismissVocabHint,
 }) {
   const { section, totalSections, headline, paragraphs = [], image, imageCaption, vocab = [] } = screen;
 
@@ -59,28 +59,21 @@ export default function MagazineScreen({
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           onError={e => { e.currentTarget.style.opacity = '0.2'; }}
         />
-        {/* Section badge */}
-        <div style={{
-          position: 'absolute', top: 12, left: 12,
-          background: `${accent}dd`, borderRadius: 20, padding: '4px 12px',
-          fontSize: '0.75rem', fontWeight: 700, color: '#000', letterSpacing: '0.04em',
-        }}>
-          {section} of {totalSections}
-        </div>
-        {/* Audio replay */}
+        {/* Pause / Resume / Replay button */}
         <button
-          onClick={onReplay}
+          className="mag-replay-btn"
+          onClick={audioPaused || speaking ? onPauseResume : onReplay}
           style={{
             position: 'absolute', top: 10, right: 10,
             width: 38, height: 38, borderRadius: '50%', border: 'none',
-            background: (speaking || loadingAudio) ? accent : 'rgba(0,0,0,0.5)',
-            color:      (speaking || loadingAudio) ? '#000' : 'rgba(255,255,255,0.8)',
+            background: (speaking || loadingAudio || audioPaused) ? accent : 'rgba(0,0,0,0.5)',
+            color:      (speaking || loadingAudio || audioPaused) ? '#000' : 'rgba(255,255,255,0.8)',
             fontSize: '1rem', cursor: 'pointer', display: 'flex',
             alignItems: 'center', justifyContent: 'center',
             touchAction: 'manipulation', transition: 'background 0.2s',
           }}
         >
-          {(speaking || loadingAudio) ? '⏸' : '▶'}
+          {audioPaused ? '▶' : (speaking || loadingAudio) ? '⏸' : '▶'}
         </button>
         {/* Caption — shown inside image col on mobile, same on desktop */}
         {imageCaption && (
@@ -98,6 +91,16 @@ export default function MagazineScreen({
 
       {/* Text column — below image on mobile, right-side on iPad landscape */}
       <div className="magazine-text-col">
+        {/* Section badge — above headline, integrated in text flow */}
+        <div style={{
+          display: 'inline-flex', alignItems: 'center',
+          background: `${accent}22`, border: `1.5px solid ${accent}55`,
+          borderRadius: 20, padding: '4px 14px', marginBottom: 14,
+          fontSize: '0.75rem', fontWeight: 700, color: accent, letterSpacing: '0.05em',
+        }}>
+          Section {section} of {totalSections}
+        </div>
+
         {/* Headline */}
         <h2 className="mag-headline" style={{
           fontSize: '1.45rem', fontWeight: 800, color: '#fff',

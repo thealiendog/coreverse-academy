@@ -37,11 +37,18 @@ export default function RealWorldConnection({
   const familyAdventure = screen.familyAdventure || '';
   const creativePrompt  = screen.creativePrompt  || '';
 
-  // Verify karaoke log — every 5th word change to avoid spam
+  // Karaoke log — title sections log every word, body sections every 5th word
   useEffect(() => {
-    if (karaokeIdx >= 0 && karaokeIdx % 5 === 0 && karaokeWords.length > 0) {
-      const word = karaokeWords[karaokeIdx];
-      if (word) console.log(`[KARAOKE] Real-world — highlighting word: '${word}' at index ${karaokeIdx}`);
+    if (karaokeIdx < 0 || karaokeWords.length === 0) return;
+    const joined = karaokeWords.join(' ');
+    const word   = karaokeWords[karaokeIdx];
+    if (!word) return;
+    if (joined === 'Family Adventure') {
+      console.log(`[KARAOKE] Family Adventure title — highlighting word: '${word}' at index ${karaokeIdx}`);
+    } else if (joined === 'Create Something') {
+      console.log(`[KARAOKE] Create Something title — highlighting word: '${word}' at index ${karaokeIdx}`);
+    } else if (karaokeIdx % 5 === 0) {
+      console.log(`[KARAOKE] Real-world — highlighting word: '${word}' at index ${karaokeIdx}`);
     }
   }, [karaokeIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -63,7 +70,9 @@ export default function RealWorldConnection({
         <div className="real-world-card" style={{ background: 'rgba(245,158,11,0.1)', border: '1.5px solid #F59E0B44', borderRadius: 16, padding: '18px 16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <span style={{ fontSize: '1.4rem' }}>🏠</span>
-            <span style={{ color: '#F59E0B', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>Family Adventure</span>
+            <span style={{ color: '#F59E0B', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+              {renderKaraokeBlock('Family Adventure', karaokeWords, karaokeIdx, '#F59E0B')}
+            </span>
           </div>
           <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
             {renderKaraokeBlock(familyAdventure, karaokeWords, karaokeIdx, '#F59E0B')}
@@ -76,7 +85,9 @@ export default function RealWorldConnection({
         <div className="real-world-card" style={{ background: 'rgba(167,139,250,0.1)', border: '1.5px solid #A78BFA44', borderRadius: 16, padding: '18px 16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <span style={{ fontSize: '1.4rem' }}>✏️</span>
-            <span style={{ color: '#A78BFA', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>Create Something</span>
+            <span style={{ color: '#A78BFA', fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+              {renderKaraokeBlock('Create Something', karaokeWords, karaokeIdx, '#A78BFA')}
+            </span>
           </div>
           <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
             {renderKaraokeBlock(creativePrompt, karaokeWords, karaokeIdx, '#A78BFA')}

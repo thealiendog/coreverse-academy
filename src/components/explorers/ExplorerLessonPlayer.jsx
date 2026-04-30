@@ -85,6 +85,7 @@ export default function ExplorerLessonPlayer() {
   const [vocabOpen,     setVocabOpen]     = useState(null);
   const [showVocabHint, setShowVocabHint] = useState(false);
   const [countdown,     setCountdown]     = useState(null); // null | 3 | 2 | 1
+  const [audioPaused,   setAudioPaused]   = useState(false);
 
   // ── Refs ──────────────────────────────────────────────────────────────────
   const persistentAudioRef        = useRef(null);
@@ -367,12 +368,13 @@ export default function ExplorerLessonPlayer() {
     countdownPausedRef.current = false;
     startCountdownFnRef.current = null;
 
-    // Reset karaoke + hint
+    // Reset karaoke + hint + pause state
     karaokeRef.current.forEach(id => clearTimeout(id));
     karaokeRef.current = [];
     setKaraokeIdx(-1);
     setKaraokeWords([]);
     setShowVocabHint(false);
+    setAudioPaused(false);
 
     const cleanup = () => {
       cancelled = true;
@@ -434,6 +436,7 @@ export default function ExplorerLessonPlayer() {
           console.log(`[TTS] Screen ${screenIdx} magazine — Reading paragraphs: "${paraText.slice(0, 60)}..."`);
           speak(paraText, () => {
             if (cancelled) return;
+            console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
             // One-time vocab hint
             if (screen.vocab?.length > 0 && !localStorage.getItem('explorer_vocab_hint_shown')) {
               setShowVocabHint(true);
@@ -451,12 +454,22 @@ export default function ExplorerLessonPlayer() {
                 localStorage.setItem('explorer_vocab_hint_shown', 'true');
                 const tHide = setTimeout(() => { if (!cancelled) setShowVocabHint(false); }, 1500);
                 timers.push(tHide);
-                // Start countdown after hint
-                const tCD = setTimeout(() => startCountdownForScreen(), 1600);
+                // Start countdown after hint + 1s buffer
+                const tCD = setTimeout(() => {
+                  if (!cancelled) {
+                    console.log('[AUTO-ADVANCE] Buffer complete, starting countdown 3-2-1...');
+                    startCountdownForScreen();
+                  }
+                }, 2600);
                 timers.push(tCD);
               }, { noKaraoke: true });
             } else {
-              startCountdownForScreen();
+              const tBuffer = setTimeout(() => {
+                if (cancelled) return;
+                console.log('[AUTO-ADVANCE] Buffer complete, starting countdown 3-2-1...');
+                startCountdownForScreen();
+              }, 1000);
+              timers.push(tBuffer);
             }
           });
         }, 500);
@@ -495,13 +508,13 @@ export default function ExplorerLessonPlayer() {
                       speak(creativePrompt, undefined);
                     }, 300);
                     timers.push(t4);
-                  }, { noKaraoke: true });
+                  });
                 }, 400);
                 timers.push(t3);
               });
             }, 300);
             timers.push(t2);
-          }, { noKaraoke: true });
+          });
         }, 400);
         timers.push(t1);
       });
@@ -512,7 +525,13 @@ export default function ExplorerLessonPlayer() {
         console.log(`[TTS] Screen ${screenIdx} welcome — Reading: "${text.slice(0, 60)}..."`);
         speak(text, () => {
           if (cancelled) return;
-          startCountdownForScreen();
+          console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
+          const tBuffer = setTimeout(() => {
+            if (cancelled) return;
+            console.log('[AUTO-ADVANCE] Buffer complete, starting countdown 3-2-1...');
+            startCountdownForScreen();
+          }, 1000);
+          timers.push(tBuffer);
         });
       }
 
@@ -569,6 +588,22 @@ export default function ExplorerLessonPlayer() {
     if (text) speak(text);
   }
 
+  function pauseResumeAudio() {
+    const el = persistentAudioRef.current;
+    if (!el) return;
+    if (audioPaused) {
+      el.play().catch(() => {});
+      setAudioPaused(false);
+      setSpeaking(true);
+      console.log('[PAUSE] Button tapped — audio.play() called, paused=false');
+    } else if (speaking) {
+      el.pause();
+      setAudioPaused(true);
+      setSpeaking(false);
+      console.log('[PAUSE] Button tapped — audio.pause() called, paused=true');
+    }
+  }
+
   // ── Not found ─────────────────────────────────────────────────────────────
   if (!lesson) {
     return (
@@ -589,10 +624,12 @@ export default function ExplorerLessonPlayer() {
     guideAvatar,
     speaking,
     loadingAudio,
+    audioPaused,
     karaokeWords,
     karaokeIdx,
     accent,
     onReplay:           replayAudio,
+    onPauseResume:      pauseResumeAudio,
     onVocabTap:         (vocab) => setVocabOpen(vocab),
     onComplete:         goNext,
     showVocabHint,
@@ -694,6 +731,7 @@ export default function ExplorerLessonPlayer() {
           .magazine-text-col { padding: 28px 44px 36px; }
           .mag-headline { font-size: 2.2rem !important; }
           .mag-para { font-size: 1.2rem !important; line-height: 1.85 !important; }
+          .mag-replay-btn { width: 56px !important; height: 56px !important; font-size: 1.4rem !important; top: 12px !important; right: 12px !important; }
         }
         @media (min-width: 1024px) {
           .magazine-outer {
