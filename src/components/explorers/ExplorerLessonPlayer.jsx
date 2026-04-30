@@ -618,10 +618,8 @@ export default function ExplorerLessonPlayer() {
 
   return (
     <div className="explorer-shell" style={{
-      position:     'relative',
-      width:        '100%',
-      minHeight:    '100dvh',
-      maxHeight:    '100dvh',
+      position:     'fixed',
+      inset:        0,
       background:   '#0f172a',
       display:      'flex',
       flexDirection:'column',
@@ -657,22 +655,21 @@ export default function ExplorerLessonPlayer() {
 
         /* ── Responsive layout ──────────────────────────────────────── */
 
-        /* Explorer outer shell — centre on wide screens */
+        /* Explorer outer shell — position:fixed inset:0 is set inline */
         .explorer-shell {
           width: 100%;
           max-width: 100%;
-          margin: 0 auto;
         }
         @media (min-width: 768px) {
-          .explorer-shell { font-size: 18px; }
-          .explorer-header { padding: 14px 28px 12px !important; }
-          .explorer-header-label { font-size: 0.8rem !important; }
-          .explorer-nav { height: 80px !important; }
-          .explorer-nav-btn { width: 60px !important; height: 60px !important; font-size: 1.6rem !important; }
-          .explorer-nav-dot-active { width: 24px !important; }
+          .explorer-shell { font-size: 20px; }
+          .explorer-header { padding: 16px 32px 14px !important; }
+          .explorer-header-label { font-size: 0.85rem !important; }
+          .explorer-nav { height: 92px !important; }
+          .explorer-nav-btn { width: 64px !important; height: 64px !important; font-size: 1.8rem !important; }
+          .explorer-nav-dot-active { width: 28px !important; }
         }
         @media (min-width: 1024px) {
-          .explorer-shell { font-size: 19px; max-width: 1100px; }
+          .explorer-shell { font-size: 21px; }
         }
 
         /* Magazine — single column default, two-column on iPad landscape */
@@ -693,9 +690,10 @@ export default function ExplorerLessonPlayer() {
           padding: 16px 18px 24px;
         }
         @media (min-width: 768px) {
-          .magazine-text-col { padding: 20px 28px 28px; }
-          .mag-headline { font-size: 1.7rem !important; }
-          .mag-para { font-size: 1.05rem !important; line-height: 1.8 !important; }
+          .magazine-image-col { aspect-ratio: 4/3; }
+          .magazine-text-col { padding: 28px 44px 36px; }
+          .mag-headline { font-size: 2.2rem !important; }
+          .mag-para { font-size: 1.2rem !important; line-height: 1.85 !important; }
         }
         @media (min-width: 1024px) {
           .magazine-outer {
@@ -704,7 +702,7 @@ export default function ExplorerLessonPlayer() {
             overflow: hidden;
           }
           .magazine-image-col {
-            width: 42%;
+            width: 44%;
             aspect-ratio: unset;
             height: 100%;
             overflow: hidden;
@@ -714,26 +712,26 @@ export default function ExplorerLessonPlayer() {
             overflow-y: auto;
             overscroll-behavior: contain;
             -webkit-overflow-scrolling: touch;
-            padding: 28px 36px 32px;
+            padding: 32px 44px 36px;
           }
-          .mag-headline { font-size: 2rem !important; }
-          .mag-para { font-size: 1.1rem !important; }
+          .mag-headline { font-size: 2.4rem !important; }
+          .mag-para { font-size: 1.25rem !important; }
         }
 
         /* Real-world — wider on iPad */
         @media (min-width: 768px) {
-          .real-world-scroll { padding: 32px 36px !important; }
-          .real-world-card   { padding: 22px 20px !important; }
-          .real-world-text   { font-size: 1.05rem !important; }
+          .real-world-scroll { padding: 36px 48px !important; }
+          .real-world-card   { padding: 26px 24px !important; }
+          .real-world-text   { font-size: 1.2rem !important; }
         }
         @media (min-width: 1024px) {
-          .real-world-scroll { max-width: 760px; margin: 0 auto; }
-          .real-world-text   { font-size: 1.1rem !important; }
+          .real-world-scroll { max-width: 820px; margin: 0 auto; }
+          .real-world-text   { font-size: 1.25rem !important; }
         }
 
         /* Celebration — wider on iPad */
         @media (min-width: 768px) {
-          .celebration-wrap { max-width: 560px; margin: 0 auto; }
+          .celebration-wrap { max-width: 620px; margin: 0 auto; }
         }
       `}</style>
 

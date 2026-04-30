@@ -25,7 +25,7 @@ export default function ExplorerNavigation({
       gap: 4,
     }}>
       {/* Back */}
-      <button onClick={onBack} style={{ ...btnBase, background: 'rgba(255,255,255,0.09)', color: 'rgba(255,255,255,0.7)' }}>
+      <button className="explorer-nav-btn" onClick={onBack} style={{ ...btnBase, background: 'rgba(255,255,255,0.09)', color: 'rgba(255,255,255,0.7)' }}>
         ‹
       </button>
 
@@ -62,6 +62,7 @@ export default function ExplorerNavigation({
       {/* Next — with countdown badge */}
       <div style={{ position: 'relative' }}>
         <button
+          className="explorer-nav-btn"
           onClick={onNext}
           style={{
             ...btnBase,
