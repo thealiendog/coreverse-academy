@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function ExplorerCelebration({
-  screen, guideAvatar, accent, subjectId, childName,
+  screen, guideAvatar, accent, subjectId, childName, lessonRecord,
 }) {
   const { xpEarned = 50, badgeName = 'Explorer', message = 'Amazing work!' } = screen;
   const saved    = useRef(false);
@@ -30,6 +30,19 @@ export default function ExplorerCelebration({
       if (!badges.includes(screen.badge)) badges.push(screen.badge);
       localStorage.setItem('explorer_badges', JSON.stringify(badges));
     } catch { /* localStorage unavailable */ }
+
+    // Write full lesson progress record
+    if (lessonRecord) {
+      try {
+        const completedAt      = Date.now();
+        const totalTimeSeconds = Math.round((completedAt - (lessonRecord.startedAt || completedAt)) / 1000);
+        const record = { ...lessonRecord, completedAt, totalTimeSeconds };
+        const existing = JSON.parse(localStorage.getItem('coreverse_lesson_progress') || '[]');
+        existing.push(record);
+        localStorage.setItem('coreverse_lesson_progress', JSON.stringify(existing));
+        console.log(`[LESSON-COMPLETE] Record written. firstTryAccuracy: ${(record.firstTryAccuracy || 0).toFixed(2)}, grade: ${record.letterGrade}, time: ${totalTimeSeconds}s`);
+      } catch { /* localStorage unavailable */ }
+    }
 
     // Reveal CTA buttons after all animations have played out
     const t = setTimeout(() => setShowButtons(true), 1400);

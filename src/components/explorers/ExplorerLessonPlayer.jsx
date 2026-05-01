@@ -60,6 +60,17 @@ function getScreenText(screen, childName) {
   }
 }
 
+// ── Letter grade from first-try accuracy ─────────────────────────────────────
+function getGrade(acc) {
+  if (acc >= 0.95) return 'A+';
+  if (acc >= 0.90) return 'A';
+  if (acc >= 0.85) return 'B+';
+  if (acc >= 0.80) return 'B';
+  if (acc >= 0.75) return 'C+';
+  if (acc >= 0.70) return 'C';
+  return 'Practice More';
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 export default function ExplorerLessonPlayer() {
   const { subjectId, lessonId } = useParams();
@@ -103,6 +114,8 @@ export default function ExplorerLessonPlayer() {
   const startCountdownFnRef       = useRef(null);   // points to current screen's startCountdownForScreen
   const audioPrewarmRef           = useRef(new Map()); // text → Promise | { blobUrl, alignment } pre-fetched results
   const isPausedRef               = useRef(false);    // true while user has paused — blocks all audio triggers
+  const lessonStartTimeRef        = useRef(Date.now()); // set once on mount
+  const lessonProgressRef         = useRef({ interactiveDetails: null, questionDetails: [], firstTryAccuracy: 0 });
   audioEnabledRef.current = audioEnabled;
   screenIdxRef.current    = screenIdx;
 
@@ -414,6 +427,18 @@ export default function ExplorerLessonPlayer() {
     return p;
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ── Lesson progress callbacks — called by InteractiveExplore / MasteryQuiz ──
+  const onInteractiveComplete = useCallback((details) => {
+    lessonProgressRef.current.interactiveDetails = details;
+    console.log('[LESSON] Interactive details recorded:', JSON.stringify(details));
+  }, []);
+
+  const onQuizComplete = useCallback((questionDetails, firstTryAccuracy) => {
+    lessonProgressRef.current.questionDetails    = questionDetails;
+    lessonProgressRef.current.firstTryAccuracy   = firstTryAccuracy;
+    console.log('[LESSON] Quiz details recorded. firstTryAccuracy:', firstTryAccuracy.toFixed(2));
+  }, []);
+
   // ── Cancel auto-advance countdown ────────────────────────────────────────
   const cancelCountdown = useCallback(() => {
     if (countdownIntervalRef.current) {
@@ -647,7 +672,8 @@ export default function ExplorerLessonPlayer() {
         });
       }
 
-    } else {
+    } else if (screen.type !== 'interactive' && screen.type !== 'quiz') {
+      // interactive and quiz drive their own audio via onSpeak prop
       const text = getScreenText(screen, childName);
       if (text) speak(text);
     }
@@ -756,6 +782,11 @@ export default function ExplorerLessonPlayer() {
     onComplete:         goNext,
     showVocabHint,
     onDismissVocabHint: () => { setShowVocabHint(false); localStorage.setItem('explorer_vocab_hint_shown', 'true'); },
+    // Audio + lesson progress hooks for interactive / quiz
+    onSpeak:                speak,
+    onPrewarm:              prewarmAudio,
+    onInteractiveComplete,
+    onQuizComplete,
   };
 
   function renderScreen(screen) {
@@ -765,7 +796,27 @@ export default function ExplorerLessonPlayer() {
       case 'interactive':return <InteractiveExplore    {...commonProps} />;
       case 'quiz':       return <MasteryQuiz           {...commonProps} />;
       case 'real-world': return <RealWorldConnection   {...commonProps} />;
-      case 'celebration':return <ExplorerCelebration   {...commonProps} subjectId={subjectId} lessonTitle={lesson.title} />;
+      case 'celebration': {
+        const prog = lessonProgressRef.current;
+        const fta  = prog.firstTryAccuracy || 0;
+        const lessonRecord = {
+          childId:                   child?.id || null,
+          lessonId,
+          subjectId,
+          ageBand:                   'explorers',
+          startedAt:                 lessonStartTimeRef.current,
+          firstTryAccuracy:          fta,
+          masteryScore:              100,
+          letterGrade:               getGrade(fta),
+          xpEarned:                  fta >= 0.8 ? 50 : 30,
+          badgeEarned:               screen.badge || lesson.badge || '',
+          questionDetails:           prog.questionDetails || [],
+          interactiveDetails:        prog.interactiveDetails || null,
+          creativePromptCompleted:   false,
+          familyAdventureViewed:     false,
+        };
+        return <ExplorerCelebration {...commonProps} subjectId={subjectId} lessonTitle={lesson.title} lessonRecord={lessonRecord} />;
+      }
       default:
         return (
           <div style={{ padding: 40, textAlign: 'center' }}>
