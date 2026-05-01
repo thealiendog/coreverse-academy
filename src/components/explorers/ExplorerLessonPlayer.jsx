@@ -101,7 +101,8 @@ export default function ExplorerLessonPlayer() {
   const screenIdxRef              = useRef(0);      // always-current screenIdx for interval callbacks
   const countdownPausedRef        = useRef(false);  // true when vocab popup interrupted countdown
   const startCountdownFnRef       = useRef(null);   // points to current screen's startCountdownForScreen
-  const audioPrewarmRef           = useRef(new Map()); // text → { blobUrl, alignment } pre-fetched results
+  const audioPrewarmRef           = useRef(new Map()); // text → Promise | { blobUrl, alignment } pre-fetched results
+  const isPausedRef               = useRef(false);    // true while user has paused — blocks all audio triggers
   audioEnabledRef.current = audioEnabled;
   screenIdxRef.current    = screenIdx;
 
@@ -126,6 +127,14 @@ export default function ExplorerLessonPlayer() {
         el.setAttribute('webkit-playsinline', 'true');
         el.setAttribute('playsinline', 'true');
         persistentAudioRef.current = el;
+      }
+      // iOS autoplay retry — if speak() already set src+load() before gesture arrived,
+      // the el.play() call from the async context was silently blocked. Retry it now,
+      // synchronously inside this gesture event, so iOS grants permission.
+      const existingEl = persistentAudioRef.current;
+      if (existingEl && existingEl.src && existingEl.paused && !existingEl.ended && !isPausedRef.current) {
+        console.log('[TAP] Sync play() called — retrying autoplay-blocked audio in gesture handler');
+        existingEl.play().catch(() => {});
       }
       document.removeEventListener('touchstart', unlock, true);
       document.removeEventListener('click',      unlock, true);
@@ -228,16 +237,27 @@ export default function ExplorerLessonPlayer() {
       const modelId = modelIdRef.current;
 
       // ── Pre-warm cache check ─────────────────────────────────────────────
-      // If this text was pre-fetched, use the cached blob and skip the network round-trip.
+      // Cache may hold: a Promise (in-progress fetch) or { blobUrl, alignment } (ready).
+      // We await the Promise so speak() never races with an in-progress prewarm.
       let blobUrl, alignment;
       const cached = audioPrewarmRef.current.get(text);
-      if (cached?.blobUrl) {
-        blobUrl   = cached.blobUrl;
-        alignment = cached.alignment;
-        audioPrewarmRef.current.delete(text);
-        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-        console.log(`[PREWARM] Cache hit — "${text.slice(0, 40)}..." playing from cache (latency: ${Date.now() - speakCallTime}ms)`);
-      } else {
+      if (cached) {
+        let result = cached;
+        if (cached instanceof Promise) {
+          console.log(`[PREWARM] Awaiting in-progress prewarm for "${text.slice(0, 40)}..."`);
+          result = await cached;
+          if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
+        }
+        if (result?.blobUrl) {
+          blobUrl   = result.blobUrl;
+          alignment = result.alignment;
+          audioPrewarmRef.current.delete(text);
+          if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
+          console.log(`[PREWARM] Cache hit — "${text.slice(0, 40)}..." playing from cache (latency: ${Date.now() - speakCallTime}ms)`);
+        }
+      }
+
+      if (!blobUrl) {
         // Normal network fetch
         const res = await fetch('/.netlify/functions/nova-speak', {
           method:  'POST',
@@ -314,7 +334,10 @@ export default function ExplorerLessonPlayer() {
       }
 
       // Playing event → clear loading indicator
-      const onPlaying = () => setLoadingAudio(false);
+      const onPlaying = () => {
+        setLoadingAudio(false);
+        console.log(`[TAP] Audio playing event fired at ${new Date().toISOString()}`);
+      };
       el.addEventListener('playing', onPlaying);
       audioListenersCleanupRef.current = () => el.removeEventListener('playing', onPlaying);
 
@@ -329,6 +352,7 @@ export default function ExplorerLessonPlayer() {
       };
       el.onerror = () => { clearTimeout(deadman); finish(); };
 
+      console.log(`[TAP] Sync play() called at ${new Date().toISOString()}`);
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) { clearTimeout(deadman); finish(); }
 
@@ -353,29 +377,41 @@ export default function ExplorerLessonPlayer() {
     setKaraokeWords([]);
   }, []);
 
-  // ── Pre-warm audio cache — fetches without AbortController, stores blob URL ──
-  // Used to pre-fetch audio before it's needed so speak() can play instantly.
-  const prewarmAudio = useCallback(async (text) => {
-    if (!text || !audioEnabledRef.current) return;
-    if (audioPrewarmRef.current.has(text)) return; // already cached or in-progress
-    audioPrewarmRef.current.set(text, null); // mark in-progress
-    try {
-      const res = await fetch('/.netlify/functions/nova-speak', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ text, voiceId: voiceIdRef.current, ...(modelIdRef.current && { modelId: modelIdRef.current }) }),
-        // No AbortController — prewarm runs independently of the main speak() lifecycle
-      });
-      if (!res.ok) { audioPrewarmRef.current.delete(text); return; }
-      const alignmentHeader = res.headers.get('X-Alignment');
-      const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
-      const blob = await res.blob();
-      const blobUrl = URL.createObjectURL(blob);
-      audioPrewarmRef.current.set(text, { blobUrl, alignment });
-      console.log(`[PREWARM] Audio ready: "${text.slice(0, 40)}...", blob size: ${blob.size} bytes, at ${new Date().toISOString()}`);
-    } catch {
-      audioPrewarmRef.current.delete(text);
-    }
+  // ── Pre-warm audio cache — Promise-based so speak() can await in-progress fetches ──
+  // Stores Promise immediately → speak() can await it rather than spawning a duplicate fetch.
+  // After resolution, map entry is replaced with { blobUrl, alignment } for direct access.
+  const prewarmAudio = useCallback((text) => {
+    if (!text || !audioEnabledRef.current) return Promise.resolve(null);
+    const existing = audioPrewarmRef.current.get(text);
+    if (existing) return existing instanceof Promise ? existing : Promise.resolve(existing);
+
+    const p = (async () => {
+      try {
+        const res = await fetch('/.netlify/functions/nova-speak', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ text, voiceId: voiceIdRef.current, ...(modelIdRef.current && { modelId: modelIdRef.current }) }),
+          // No AbortController — prewarm runs independently of the main speak() lifecycle
+        });
+        if (!res.ok) { audioPrewarmRef.current.delete(text); return null; }
+        const alignmentHeader = res.headers.get('X-Alignment');
+        const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const result = { blobUrl, alignment };
+        // Replace Promise with result so future callers get it directly
+        audioPrewarmRef.current.set(text, result);
+        console.log(`[PREWARM] Audio ready: "${text.slice(0, 40)}...", blob: ${blob.size} bytes, at ${new Date().toISOString()}`);
+        return result;
+      } catch {
+        audioPrewarmRef.current.delete(text);
+        return null;
+      }
+    })();
+
+    // Store the Promise immediately — speak() can await it if called mid-fetch
+    audioPrewarmRef.current.set(text, p);
+    return p;
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Cancel auto-advance countdown ────────────────────────────────────────
@@ -430,6 +466,7 @@ export default function ExplorerLessonPlayer() {
     setKaraokeWords([]);
     setShowVocabHint(false);
     setAudioPaused(false);
+    isPausedRef.current = false;
 
     const cleanup = () => {
       cancelled = true;
@@ -457,6 +494,10 @@ export default function ExplorerLessonPlayer() {
           clearInterval(countdownIntervalRef.current);
           countdownIntervalRef.current = null;
           setCountdown(null);
+          return;
+        }
+        if (isPausedRef.current) {
+          console.log('[PAUSE-BLOCK] Skipped auto-advance tick — audio is paused');
           return;
         }
         n--;
@@ -498,6 +539,10 @@ export default function ExplorerLessonPlayer() {
         const titleEndTime = Date.now();
         const t1 = setTimeout(() => {
           if (cancelled) return;
+          if (isPausedRef.current) {
+            console.log('[PAUSE-BLOCK] Skipped body audio in chain timer — audio is paused');
+            return;
+          }
           console.log(`[CHAIN] Title ended, playing body (gap: ${Date.now() - titleEndTime}ms)`);
           console.log(`[TTS] Screen ${screenIdx} magazine — Reading paragraphs: "${paraText.slice(0, 60)}..."`);
           speak(paraText, () => {
@@ -659,15 +704,25 @@ export default function ExplorerLessonPlayer() {
     const el = persistentAudioRef.current;
     if (!el) return;
     if (audioPaused) {
+      // Resume — clear global paused flag before play() so all downstream checks pass
+      isPausedRef.current = false;
       el.play().catch(() => {});
       setAudioPaused(false);
       setSpeaking(true);
-      console.log('[PAUSE] Button tapped — audio.play() called, paused=false');
+      console.log(`[PAUSE] State → playing. Resuming audio from ${el.currentTime.toFixed(2)}s`);
     } else if (speaking) {
+      // Pause — set global flag first, then stop audio and countdown
+      isPausedRef.current = true;
       el.pause();
+      // Cancel countdown so it doesn't auto-advance while audio is paused
+      if (countdownIntervalRef.current) {
+        clearInterval(countdownIntervalRef.current);
+        countdownIntervalRef.current = null;
+      }
+      setCountdown(null);
       setAudioPaused(true);
       setSpeaking(false);
-      console.log('[PAUSE] Button tapped — audio.pause() called, paused=true');
+      console.log(`[PAUSE] State → paused. Stopped audio at ${el.currentTime.toFixed(2)}s`);
     }
   }
 
