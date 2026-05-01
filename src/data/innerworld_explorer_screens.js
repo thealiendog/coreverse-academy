@@ -85,7 +85,7 @@ const innerworld_explorer_screens = {
           items: [
             { image: 'birthday-party.png', label: 'Happy',  correctMatch: 'happy'  },
             { image: 'lost-toy.png',       label: 'Sad',    correctMatch: 'sad'    },
-            { image: 'broken-tower.png',   label: 'Angry',  correctMatch: 'angry'  },
+            { image: 'mad-face.png',         label: 'Angry',  correctMatch: 'angry'  },
             { image: 'dark-room.png',      label: 'Scared', correctMatch: 'scared' },
           ],
           buckets: [

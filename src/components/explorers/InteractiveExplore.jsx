@@ -56,6 +56,7 @@ export default function InteractiveExplore({
 
   // Prefetch all Sage phrases + speak intro on mount
   useEffect(() => {
+    console.log(`[INTERACTIVE] Loaded items: ${items.map(it => it.image).join(', ')}`);
     const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
