@@ -390,7 +390,15 @@ export default function ExplorerLessonPlayer() {
     currentAbortControllerRef.current?.abort();
     audioListenersCleanupRef.current?.();
     audioListenersCleanupRef.current = null;
-    if (persistentAudioRef.current) { persistentAudioRef.current.pause(); }
+    const el = persistentAudioRef.current;
+    if (el) {
+      // Null handlers BEFORE pause so no stale onended fires on the tail of playback
+      el.onended      = null;
+      el.onerror      = null;
+      el.ontimeupdate = null;
+      el.onplay       = null;
+      el.pause();
+    }
     karaokeRef.current.forEach(id => clearTimeout(id));
     karaokeRef.current = [];
     setSpeaking(false);

@@ -1,7 +1,6 @@
 // ExplorerCelebration — Phase 6: XP, badge, confetti, fanfare, return home
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { sfx } from '../games/sounds';
 
 export default function ExplorerCelebration({
   screen, guideAvatar, accent, subjectId, childName, lessonRecord,
@@ -20,10 +19,12 @@ export default function ExplorerCelebration({
     if (saved.current) return;
     saved.current = true;
 
-    // Fanfare: also called in goNext() for button-nav path; calling here too covers
-    // the quiz-completion async path where goNext fires outside a gesture handler.
-    // AudioContext is already authorized from the user's recent quiz-answer tap.
-    sfx.lessonComplete();
+    // Real audio sample — plays immediately on mount.
+    // AudioContext/autoplay is already authorized from the user's recent quiz-answer tap.
+    const audio = new Audio('/sounds/lesson-complete.mp3');
+    audio.volume = 0.7;
+    audio.play().catch(err => console.error('[CELEBRATION] Audio play failed:', err));
+    console.log('[CELEBRATION] Lesson complete — playing /sounds/lesson-complete.mp3');
 
     try {
       const xp = parseInt(localStorage.getItem('explorer_total_xp') || '0', 10);

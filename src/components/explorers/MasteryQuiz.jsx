@@ -134,15 +134,12 @@ export default function MasteryQuiz({
     setWrongOptions(new Set());
 
     const spokenQ = toSpokenQuestion(q);
-    if (isLastQuestion) {
-      console.log(`[QUIZ] Q${idx + 1} reading question (clean state)`);
-    } else {
-      console.log(`[QUIZ] Q${idx + 1} reading question`);
-    }
+    console.log(`[QUIZ] Q${idx + 1} reading question`);
     onSpeak?.(spokenQ, () => {
-      if (!mountedRef.current) return;
+      // Guard: bail if component unmounted or user already advanced to a different question
+      if (!mountedRef.current || qIdxRef.current !== idx) return;
       const t = setTimeout(() => {
-        if (!mountedRef.current) return;
+        if (!mountedRef.current || qIdxRef.current !== idx) return;
         readOptions(q, idx);
       }, 800);
       readingTimersRef.current.push(t);
@@ -158,29 +155,40 @@ export default function MasteryQuiz({
     return () => clearReadingTimers();
   }, [qIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Reads all options for the current question in sequence
-  function readOptions(q, idx) {
-    if (!mountedRef.current) return;
+  // Reads all options for the current question in sequence.
+  // capturedIdx is the qIdx at the time readOptions was scheduled — guards against
+  // stale chains continuing after the question has advanced (mountedRef stays true
+  // between questions, so only the qIdx check reliably kills a stale chain).
+  function readOptions(q, capturedIdx) {
+    if (!mountedRef.current || qIdxRef.current !== capturedIdx) return;
     isReadingOptsRef.current = true;
 
     if (q.format === 'true-false') {
-      console.log(`[QUIZ] Q${idx + 1} reading options (true-false)`);
-      onSpeak?.(TRUE_FALSE_PROMPT, () => { isReadingOptsRef.current = false; });
+      console.log(`[QUIZ] Q${capturedIdx + 1} reading options (true-false)`);
+      onSpeak?.(TRUE_FALSE_PROMPT, () => {
+        if (qIdxRef.current !== capturedIdx) return;
+        isReadingOptsRef.current = false;
+      });
       return;
     }
 
     const opts = q.options || [];
-    console.log(`[QUIZ] Q${idx + 1} reading options (${opts.length} options)`);
-
     let i = 0;
+
     function readNext() {
-      if (!mountedRef.current || i >= opts.length) {
+      // Bail if component unmounted OR question has already advanced
+      if (!mountedRef.current || qIdxRef.current !== capturedIdx || i >= opts.length) {
         isReadingOptsRef.current = false;
         return;
       }
       const opt = opts[i++];
+      const optNum = i; // 1-based for log (captured before increment)
+      console.log(`[QUIZ] Q${capturedIdx + 1} reading option ${optNum}`);
       onSpeak?.(opt, () => {
-        if (!mountedRef.current) { isReadingOptsRef.current = false; return; }
+        if (!mountedRef.current || qIdxRef.current !== capturedIdx) {
+          isReadingOptsRef.current = false;
+          return;
+        }
         const t = setTimeout(readNext, 600);
         readingTimersRef.current.push(t);
       });
