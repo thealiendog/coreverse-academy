@@ -366,13 +366,14 @@ export default function ExplorerLessonPlayer() {
         }
       }
 
-      // Playing event → clear loading indicator + disarm audio-fail safety timer
+      // 'playing' event → disarm fail-safety timer + clear loading indicator.
+      // Registered BEFORE el.play() so it catches events that fire during play() resolution.
       if (audioFailTimerRef.current) { clearTimeout(audioFailTimerRef.current); audioFailTimerRef.current = null; }
       const onPlaying = () => {
         if (audioFailTimerRef.current) { clearTimeout(audioFailTimerRef.current); audioFailTimerRef.current = null; }
-        setAudioFallback(false); // hide tap-to-hear if it was showing
+        setAudioFallback(false);
         setLoadingAudio(false);
-        console.log(`[TAP] Audio playing event fired at ${new Date().toISOString()}`);
+        console.log(`[AUDIO-CHECK] Audio playing successfully — ${new Date().toISOString()}`);
       };
       el.addEventListener('playing', onPlaying);
       audioListenersCleanupRef.current = () => el.removeEventListener('playing', onPlaying);
@@ -388,30 +389,42 @@ export default function ExplorerLessonPlayer() {
       };
       el.onerror = () => { clearTimeout(deadman); finish(); };
 
-      console.log(`[TAP] Sync play() called at ${new Date().toISOString()}`);
+      // Arm fail-safety timer BEFORE await el.play() — critical for correctness.
+      // Race condition if armed after: 'playing' can fire during play() resolution and
+      // call onPlaying() before the timer exists, making clearTimeout a no-op.
+      // Belt-and-suspenders: also check !el.paused inside callback to catch that race.
+      audioFailTimerRef.current = setTimeout(() => {
+        audioFailTimerRef.current = null;
+        if (done) return;
+        const curEl = persistentAudioRef.current;
+        if (curEl && !curEl.paused && !curEl.ended) {
+          // Audio IS playing — 'playing' fired before timer was armed (prewarm hit).
+          // onPlaying() ran but clearTimeout was a no-op (ref was null at that moment).
+          console.log('[AUDIO-CHECK] Audio playing successfully, no fallback needed');
+          return;
+        }
+        console.log('[AUDIO-FALLBACK] Audio did not start in 800ms, showing icon prompt');
+        setAudioFallback(true);
+      }, 800);
+
+      console.log(`[AUDIO-CHECK] Screen mount — play() called at ${new Date().toISOString()}`);
       const playErr = await el.play().catch(err => err);
       if (playErr instanceof Error) {
+        // play() rejected — disarm timer before handling
+        if (audioFailTimerRef.current) { clearTimeout(audioFailTimerRef.current); audioFailTimerRef.current = null; }
         if (playErr.name === 'NotAllowedError') {
           // iOS gesture policy blocked play(). Don't call finish() — element stays loaded.
-          // The "Tap to hear Sage" overlay lets the user retry inside a gesture.
-          console.log('[iOS-UNLOCK] play() blocked by gesture policy — showing Tap to hear prompt');
+          // Icon-only overlay lets user retry inside a gesture.
+          console.log('[iOS-UNLOCK] play() blocked by gesture policy — showing icon prompt');
           setAudioFallback(true);
-          // deadman still running — fires finish() at 35s as last-resort
+          // deadman still running — fires finish() at 35s as last resort
           return;
         }
         clearTimeout(deadman);
         finish();
         return;
       }
-
-      // Fix 5: 500ms safety — if 'playing' never fires, audio silently stalled
-      audioFailTimerRef.current = setTimeout(() => {
-        audioFailTimerRef.current = null;
-        if (!done) {
-          console.log('[AUDIO-FAIL] Audio did not start within 500ms — showing manual continue prompt');
-          setAudioFallback(true);
-        }
-      }, 500);
+      // play() resolved — timer already armed; 'playing' event or timer will settle state
 
     } catch (e) {
       if (e?.name === 'AbortError') { clearTimeout(deadman); return; }
@@ -522,6 +535,7 @@ export default function ExplorerLessonPlayer() {
   // Called from "Tap to hear Sage" button (welcome) or "Tap to hear" overlay.
   // Must stay synchronous: silent prime → play() — NO awaits in between.
   const retryAudio = useCallback(() => {
+    console.log('[AUDIO-FALLBACK] User tapped, retrying audio with fresh gesture');
     // Silent audio prime — unlocks iOS AudioContext inside gesture handler
     try {
       const s = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
@@ -1009,6 +1023,18 @@ export default function ExplorerLessonPlayer() {
           0%, 100% { text-shadow: 0 0 0 rgba(96,165,250,0); }
           50%      { text-shadow: 0 0 12px rgba(96,165,250,0.9), 0 0 24px rgba(96,165,250,0.5); }
         }
+        @keyframes af-fade-in {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes af-ripple {
+          0%   { transform: scale(1);   opacity: 0.65; }
+          100% { transform: scale(1.9); opacity: 0; }
+        }
+        @keyframes af-breathe {
+          0%, 100% { transform: scale(1); }
+          50%       { transform: scale(1.1); }
+        }
         .vocab-tutorial-pulse {
           animation: vocab-pulse 1s ease-in-out infinite;
           display: inline;
@@ -1139,27 +1165,51 @@ export default function ExplorerLessonPlayer() {
         countdown={countdown}
       />
 
-      {/* Audio-fail safety overlay — shown when iOS blocks autoplay or audio stalls (Fix 1/5) */}
+      {/* Audio-fail / gesture-unlock overlay — icon-only, no text (Fix 1/5 + Day 2.9) */}
       {audioFallback && (
         <div
-          style={{
-            position: 'absolute', inset: 0,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: 'rgba(0,0,0,0.6)', zIndex: 90,
-          }}
+          aria-label="Tap to hear Sage"
           onClick={retryAudio}
+          style={{
+            position:    'absolute',
+            inset:       0,
+            display:     'flex',
+            alignItems:  'center',
+            justifyContent: 'center',
+            background:  'rgba(0,0,0,0.48)',
+            zIndex:      90,
+            cursor:      'pointer',
+            touchAction: 'manipulation',
+            animation:   'af-fade-in 0.2s ease both',
+          }}
         >
-          <button
-            onClick={retryAudio}
-            style={{
-              background: accent, color: '#000', border: 'none',
-              borderRadius: 20, padding: '18px 36px',
-              fontSize: '1.1rem', fontWeight: 800, cursor: 'pointer',
-              touchAction: 'manipulation', boxShadow: `0 8px 32px ${accent}55`,
-            }}
-          >
-            🔊 Tap to hear Sage
-          </button>
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {/* Expanding ripple ring */}
+            <div style={{
+              position:     'absolute',
+              width:        88,
+              height:       88,
+              borderRadius: '50%',
+              border:       `3px solid ${accent}`,
+              animation:    'af-ripple 1.8s ease-out infinite',
+              pointerEvents:'none',
+            }} />
+            {/* Speaker icon circle */}
+            <div style={{
+              width:          88,
+              height:         88,
+              borderRadius:   '50%',
+              background:     accent,
+              display:        'flex',
+              alignItems:     'center',
+              justifyContent: 'center',
+              fontSize:       '2rem',
+              animation:      'af-breathe 2s ease-in-out infinite',
+              boxShadow:      `0 8px 32px ${accent}66`,
+            }}>
+              🔊
+            </div>
+          </div>
         </div>
       )}
 
