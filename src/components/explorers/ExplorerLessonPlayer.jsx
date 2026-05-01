@@ -252,7 +252,7 @@ export default function ExplorerLessonPlayer() {
       // ── Pre-warm cache check ─────────────────────────────────────────────
       // Cache may hold: a Promise (in-progress fetch) or { blobUrl, alignment } (ready).
       // We await the Promise so speak() never races with an in-progress prewarm.
-      let blobUrl, alignment;
+      let blobUrl, alignment, skipLoadSetup = false;
       const cached = audioPrewarmRef.current.get(text);
       if (cached) {
         let result = cached;
@@ -266,7 +266,12 @@ export default function ExplorerLessonPlayer() {
           alignment = result.alignment;
           audioPrewarmRef.current.delete(text);
           if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-          console.log(`[PREWARM] Cache hit — "${text.slice(0, 40)}..." playing from cache (latency: ${Date.now() - speakCallTime}ms)`);
+          // Transfer pre-buffered element so play() fires without src+load latency
+          if (result.preppedEl) {
+            persistentAudioRef.current = result.preppedEl;
+            skipLoadSetup = true;
+          }
+          console.log(`[PREWARM] Cache hit on tap — playing immediately (latency: ${Date.now() - speakCallTime}ms)`);
         }
       }
 
@@ -303,8 +308,12 @@ export default function ExplorerLessonPlayer() {
         persistentAudioRef.current = el;
       }
       const el = persistentAudioRef.current;
-      el.src = blobUrl;
-      el.load();
+      if (!skipLoadSetup) {
+        // Normal path: assign src and buffer now
+        el.src = blobUrl;
+        el.load();
+      }
+      // skipLoadSetup path: prewarm already set src+load() — play() fires with no extra latency
 
       // ── Karaoke ─────────────────────────────────────────────────────────
       if (!noKaraoke) {
@@ -411,10 +420,18 @@ export default function ExplorerLessonPlayer() {
         const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
         const blob = await res.blob();
         const blobUrl = URL.createObjectURL(blob);
-        const result = { blobUrl, alignment };
+        // Pre-buffer an Audio element now so speak() can skip src+load latency on cache hit
+        const preppedEl = new Audio();
+        preppedEl.playsInline = true;
+        preppedEl.preload     = 'auto';
+        preppedEl.setAttribute('webkit-playsinline', 'true');
+        preppedEl.setAttribute('playsinline', 'true');
+        preppedEl.src = blobUrl;
+        preppedEl.load();
+        const result = { blobUrl, alignment, preppedEl };
         // Replace Promise with result so future callers get it directly
         audioPrewarmRef.current.set(text, result);
-        console.log(`[PREWARM] Audio ready: "${text.slice(0, 40)}...", blob: ${blob.size} bytes, at ${new Date().toISOString()}`);
+        console.log(`[PREWARM] Audio ready, blob size: ${blob.size} bytes`);
         return result;
       } catch {
         audioPrewarmRef.current.delete(text);

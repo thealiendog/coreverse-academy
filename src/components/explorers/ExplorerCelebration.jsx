@@ -23,8 +23,7 @@ export default function ExplorerCelebration({
     // Fanfare: also called in goNext() for button-nav path; calling here too covers
     // the quiz-completion async path where goNext fires outside a gesture handler.
     // AudioContext is already authorized from the user's recent quiz-answer tap.
-    sfx.fanfare();
-    console.log('[CELEBRATION] Lesson complete — playing full enhanced fanfare (2.2s)');
+    sfx.lessonComplete();
 
     try {
       const xp = parseInt(localStorage.getItem('explorer_total_xp') || '0', 10);
