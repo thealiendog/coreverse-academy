@@ -25,7 +25,7 @@ export default function InteractiveExplore({
   onSpeak, onPrewarm, onComplete, onInteractiveComplete,
   karaokeWords, karaokeIdx,
 }) {
-  const { items = [], buckets = [], guideText = '', instruction = '' } = screen;
+  const { items = [], buckets = [], guideText = '', instruction = '', columnHeaders = ['Scenes', 'Feelings'] } = screen;
 
   // Shuffle once on mount
   const [shuffledItems]   = useState(() => shuffle([...items]));
@@ -111,8 +111,14 @@ export default function InteractiveExplore({
       setSelectedKey(null);
       sfx.sparkle();
 
-      const phrase = ENCOURAGEMENT[encourageIdx.current % ENCOURAGEMENT.length];
-      encourageIdx.current++;
+      const matchedItem = shuffledItems.find(it => it.correctMatch === pairId);
+      let phrase;
+      if (matchedItem?.matchPhrase) {
+        phrase = matchedItem.matchPhrase;
+      } else {
+        phrase = ENCOURAGEMENT[encourageIdx.current % ENCOURAGEMENT.length];
+        encourageIdx.current++;
+      }
 
       if (newCount === items.length) {
         // All pairs matched — chain: encouragement → completion → advance
@@ -204,10 +210,10 @@ export default function InteractiveExplore({
       {/* Column headers */}
       <div style={{ display: 'flex', padding: '8px 10px 4px', gap: 10, flexShrink: 0 }}>
         <div style={{ flex: 1, fontSize: '0.70rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', textAlign: 'center' }}>
-          Scenes
+          {columnHeaders[0]}
         </div>
         <div style={{ flex: 1, fontSize: '0.70rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', textAlign: 'center' }}>
-          Feelings
+          {columnHeaders[1]}
         </div>
       </div>
 
