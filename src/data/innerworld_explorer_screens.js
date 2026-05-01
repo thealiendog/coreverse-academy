@@ -31,7 +31,7 @@ const innerworld_explorer_screens = {
           headline:      'What Are Feelings?',
           paragraphs: [
             'Feelings are messages from your body and mind. They tell you something important about what is happening around you and inside you.',
-            'Some feelings feel good — like happy, excited, or peaceful. Other feelings can be hard — like sad, angry, or scared.',
+            'Some feelings feel good — like happy, excited, or peaceful. Other feelings can be hard — like sad, mad, or scared.',
             'All feelings are okay to have. They are part of being human!',
           ],
           image:        '/explorer-assets/inner-world/feelings-spectrum.png',
@@ -66,7 +66,7 @@ const innerworld_explorer_screens = {
           headline:      'Why Feelings Matter',
           paragraphs: [
             'When you know what you feel, you can take care of yourself better.',
-            'If you feel sad, you might need a hug. If you feel angry, you might need to take deep breaths. If you feel scared, you might need a friend.',
+            'If you feel sad, you might need a hug. If you feel mad, you might need to take deep breaths. If you feel scared, you might need a friend.',
             'Knowing your feelings is your superpower!',
           ],
           image:        '/explorer-assets/inner-world/superhero-feelings.png',
@@ -85,13 +85,13 @@ const innerworld_explorer_screens = {
           items: [
             { image: 'birthday-party.png', label: 'Happy',  correctMatch: 'happy'  },
             { image: 'lost-toy.png',       label: 'Sad',    correctMatch: 'sad'    },
-            { image: 'mad-face.png',         label: 'Angry',  correctMatch: 'angry'  },
+            { image: 'mad-face.png',          label: 'Mad',    correctMatch: 'angry'  },
             { image: 'dark-room.png',      label: 'Scared', correctMatch: 'scared' },
           ],
           buckets: [
             { id: 'happy',  label: 'Happy',  color: '#FFD700' },
             { id: 'sad',    label: 'Sad',    color: '#4A90E2' },
-            { id: 'angry',  label: 'Angry',  color: '#E74C3C' },
+            { id: 'angry',  label: 'Mad',    color: '#E74C3C' },
             { id: 'scared', label: 'Scared', color: '#9B59B6' },
           ],
         },
@@ -114,7 +114,7 @@ const innerworld_explorer_screens = {
           type:            'real-world',
           guideText:       "Amazing work, {name}! Now let's bring this into your real life. Share what you learned with your family — they will love it!",
           familyAdventure: "At dinner tonight, ask each family member: \"What is ONE feeling you had today, and what made you feel that way?\" Take turns — no interrupting! Really listen to each other.",
-          creativePrompt:  "Draw yourself feeling one of the Big Four feelings — happy, sad, angry, or scared. Then draw ONE thing around you that's making you feel that way. Write or ask someone to write the feeling name at the top!",
+          creativePrompt:  "Draw yourself feeling one of the Big Four feelings — happy, sad, mad, or scared. Then draw ONE thing around you that's making you feel that way. Write or ask someone to write the feeling name at the top!",
         },
 
         // PHASE 6 — CELEBRATION
