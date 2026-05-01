@@ -59,7 +59,10 @@ export default function InteractiveExplore({
     const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
-    if (guideText) onSpeak?.(guideText);
+    if (guideText) {
+      console.log(`[INTERACTIVE] Instruction spoken: "${guideText}"`);
+      onSpeak?.(guideText);
+    }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Long-press helpers (shared for item + bucket columns) ──────────────────
@@ -247,7 +250,14 @@ export default function InteractiveExplore({
                   src={`${IMG_BASE}${item.image}`}
                   alt={item.label}
                   style={{ width: '100%', objectFit: 'cover', minHeight: 60, maxHeight: 110, display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
-                  onError={e => { e.currentTarget.style.display = 'none'; }}
+                  onError={e => {
+                    console.log(`[INTERACTIVE] Missing image: ${item.image} — using placeholder`);
+                    // Replace src with inline SVG placeholder showing the label
+                    e.currentTarget.src = `data:image/svg+xml,${encodeURIComponent(
+                      `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="110"><rect width="200" height="110" fill="#1e293b"/><text x="100" y="62" font-family="sans-serif" font-size="18" font-weight="bold" fill="rgba(255,255,255,0.55)" text-anchor="middle">${item.label}</text></svg>`
+                    )}`;
+                    e.currentTarget.onerror = null; // prevent infinite loop
+                  }}
                 />
                 {locked && (
                   <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2 }}>

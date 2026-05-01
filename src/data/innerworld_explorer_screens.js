@@ -80,8 +80,8 @@ const innerworld_explorer_screens = {
         {
           type:         'interactive',
           activityType: 'drag-match',
-          instruction:  'Drag each scene to the feeling it shows.',
-          guideText:    "Now we're going to play a matching game! I'll show you scenes, and you drag each one to the feeling it shows.",
+          instruction:  'Tap a feeling picture, then tap where it belongs!',
+          guideText:    "Now let's play a matching game! Tap a picture, then tap the feeling it shows. Let's go!",
           items: [
             { image: 'birthday-party.png', label: 'Happy',  correctMatch: 'happy'  },
             { image: 'lost-toy.png',       label: 'Sad',    correctMatch: 'sad'    },
