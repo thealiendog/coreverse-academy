@@ -250,7 +250,7 @@ export default function InteractiveExplore({
                 <img
                   src={`${IMG_BASE}${item.image}`}
                   alt={item.label}
-                  style={{ width: '100%', objectFit: 'cover', minHeight: 60, maxHeight: 110, display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
+                  style={{ width: '100%', objectFit: 'cover', objectPosition: 'center 30%', minHeight: 60, maxHeight: 110, display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
                   onError={e => {
                     console.log(`[INTERACTIVE] Missing image: ${item.image} — using placeholder`);
                     // Replace src with inline SVG placeholder showing the label
