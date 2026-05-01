@@ -71,6 +71,20 @@ function getGrade(acc) {
   return 'Practice More';
 }
 
+// ── Audio session unlock — module-level, persists for the SPA session ────────
+// iOS requires at least one user gesture to authorize audio playback. Once the
+// user taps the welcome screen (or the retry overlay), we mark the session as
+// unlocked. Post-welcome speak() calls skip the fallback timer — iOS allows
+// them via sticky-activation (user has previously interacted with the page).
+// Resets on hard reload, which is correct (iOS requires one gesture per load).
+let _audioSessionUnlocked = false;
+function markAudioSessionUnlocked() {
+  if (_audioSessionUnlocked) return;
+  _audioSessionUnlocked = true;
+  console.log('[iOS-UNLOCK] AudioContext unlocked, will persist for session');
+}
+function isAudioSessionUnlocked() { return _audioSessionUnlocked; }
+
 // ─────────────────────────────────────────────────────────────────────────────
 export default function ExplorerLessonPlayer() {
   const { subjectId, lessonId } = useParams();
@@ -261,9 +275,11 @@ export default function ExplorerLessonPlayer() {
       const modelId = modelIdRef.current;
 
       // ── Pre-warm cache check ─────────────────────────────────────────────
-      // Cache may hold: a Promise (in-progress fetch) or { blobUrl, alignment } (ready).
+      // Cache holds: a Promise (in-progress fetch) or { blobUrl, alignment } (ready).
       // We await the Promise so speak() never races with an in-progress prewarm.
-      let blobUrl, alignment, skipLoadSetup = false;
+      // The blobUrl gives instant audio (no network wait); playback still uses
+      // persistentAudioRef (the gesture-authorized element) via src+load below.
+      let blobUrl, alignment;
       const cached = audioPrewarmRef.current.get(text);
       if (cached) {
         let result = cached;
@@ -277,12 +293,7 @@ export default function ExplorerLessonPlayer() {
           alignment = result.alignment;
           audioPrewarmRef.current.delete(text);
           if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-          // Transfer pre-buffered element so play() fires without src+load latency
-          if (result.preppedEl) {
-            persistentAudioRef.current = result.preppedEl;
-            skipLoadSetup = true;
-          }
-          console.log(`[PREWARM] Cache hit on tap — playing immediately (latency: ${Date.now() - speakCallTime}ms)`);
+          console.log(`[PREWARM] Cache hit — blobUrl ready, zero network wait (${Date.now() - speakCallTime}ms)`);
         }
       }
 
@@ -319,12 +330,10 @@ export default function ExplorerLessonPlayer() {
         persistentAudioRef.current = el;
       }
       const el = persistentAudioRef.current;
-      if (!skipLoadSetup) {
-        // Normal path: assign src and buffer now
-        el.src = blobUrl;
-        el.load();
-      }
-      // skipLoadSetup path: prewarm already set src+load() — play() fires with no extra latency
+      // Always use the persistent (gesture-authorized) element — assign blob src now.
+      // blobUrl is in-memory, so this is effectively zero-latency even on prewarm hits.
+      el.src = blobUrl;
+      el.load();
 
       // ── Karaoke ─────────────────────────────────────────────────────────
       if (!noKaraoke) {
@@ -390,22 +399,28 @@ export default function ExplorerLessonPlayer() {
       el.onerror = () => { clearTimeout(deadman); finish(); };
 
       // Arm fail-safety timer BEFORE await el.play() — critical for correctness.
-      // Race condition if armed after: 'playing' can fire during play() resolution and
-      // call onPlaying() before the timer exists, making clearTimeout a no-op.
-      // Belt-and-suspenders: also check !el.paused inside callback to catch that race.
+      // Race: 'playing' can fire during play() resolution before the timer ref is set,
+      // making onPlaying()'s clearTimeout a no-op. Belt-and-suspenders: also check
+      // !el.paused + isAudioSessionUnlocked() inside callback.
       audioFailTimerRef.current = setTimeout(() => {
         audioFailTimerRef.current = null;
         if (done) return;
         const curEl = persistentAudioRef.current;
         if (curEl && !curEl.paused && !curEl.ended) {
-          // Audio IS playing — 'playing' fired before timer was armed (prewarm hit).
-          // onPlaying() ran but clearTimeout was a no-op (ref was null at that moment).
+          // 'playing' fired before timer was armed — audio IS playing.
           console.log('[AUDIO-CHECK] Audio playing successfully, no fallback needed');
           return;
         }
-        console.log('[AUDIO-FALLBACK] Audio did not start in 800ms, showing icon prompt');
+        if (isAudioSessionUnlocked()) {
+          // Post-welcome: iOS allows play() via sticky activation; audio is buffering slowly.
+          // Don't show fallback — onerror + 35s deadman handle genuine stalls.
+          console.log('[AUDIO-CHECK] Session unlocked — audio buffering on slow network, no fallback');
+          return;
+        }
+        // Pre-unlock (welcome): show icon prompt so user can trigger gesture.
+        console.log('[AUDIO-FALLBACK] Audio did not start in 1500ms — reason: session-not-unlocked, showing icon prompt');
         setAudioFallback(true);
-      }, 800);
+      }, 1500); // 1500ms: generous slack for slow mobile networks + iOS buffering time
 
       console.log(`[AUDIO-CHECK] Screen mount — play() called at ${new Date().toISOString()}`);
       const playErr = await el.play().catch(err => err);
@@ -415,7 +430,7 @@ export default function ExplorerLessonPlayer() {
         if (playErr.name === 'NotAllowedError') {
           // iOS gesture policy blocked play(). Don't call finish() — element stays loaded.
           // Icon-only overlay lets user retry inside a gesture.
-          console.log('[iOS-UNLOCK] play() blocked by gesture policy — showing icon prompt');
+          console.log('[AUDIO-FALLBACK] Showing prompt — reason: NotAllowedError (gesture policy)');
           setAudioFallback(true);
           // deadman still running — fires finish() at 35s as last resort
           return;
@@ -478,18 +493,16 @@ export default function ExplorerLessonPlayer() {
         const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
         const blob = await res.blob();
         const blobUrl = URL.createObjectURL(blob);
-        // Pre-buffer an Audio element now so speak() can skip src+load latency on cache hit
-        const preppedEl = new Audio();
-        preppedEl.playsInline = true;
-        preppedEl.preload     = 'auto';
-        preppedEl.setAttribute('webkit-playsinline', 'true');
-        preppedEl.setAttribute('playsinline', 'true');
-        preppedEl.src = blobUrl;
-        preppedEl.load();
-        const result = { blobUrl, alignment, preppedEl };
+        // Store blobUrl only — do NOT pre-create a new Audio() here.
+        // A new Audio element created in a non-gesture Promise callback is not
+        // gesture-authorized on iOS 13-14; play() on it throws NotAllowedError
+        // even after the user has tapped the welcome screen. The persistent
+        // gesture-authorized element (persistentAudioRef) handles playback;
+        // the blobUrl gives us the network-zero-latency win without the iOS risk.
+        const result = { blobUrl, alignment };
         // Replace Promise with result so future callers get it directly
         audioPrewarmRef.current.set(text, result);
-        console.log(`[PREWARM] Audio ready, blob size: ${blob.size} bytes`);
+        console.log(`[PREWARM] Audio ready (blobUrl, ${blob.size} bytes) — no preppedEl`);
         return result;
       } catch {
         audioPrewarmRef.current.delete(text);
@@ -536,6 +549,7 @@ export default function ExplorerLessonPlayer() {
   // Must stay synchronous: silent prime → play() — NO awaits in between.
   const retryAudio = useCallback(() => {
     console.log('[AUDIO-FALLBACK] User tapped, retrying audio with fresh gesture');
+    markAudioSessionUnlocked(); // overlay tap also counts as gesture — unlock for session
     // Silent audio prime — unlocks iOS AudioContext inside gesture handler
     try {
       const s = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
@@ -571,6 +585,7 @@ export default function ExplorerLessonPlayer() {
     if (welcomePlayedRef.current) return; // ignore double-taps
     welcomePlayedRef.current = true;
     setWelcomeReady(false); // hide the tap-cue immediately
+    markAudioSessionUnlocked(); // welcome tap = first user gesture — unlock audio for session
 
     // Silent audio prime — unlocks iOS AudioContext synchronously inside this gesture
     try {
