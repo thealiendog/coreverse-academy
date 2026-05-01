@@ -63,8 +63,13 @@ export default function ExplorerNavigation({
       <div style={{ position: 'relative' }}>
         <button
           className="explorer-nav-btn"
-          onClick={onNext}
-          disabled={nextDisabled}
+          onClick={() => {
+            if (nextDisabled) {
+              console.log('[NAV] Next button — quiz active, button disabled');
+              return;
+            }
+            onNext();
+          }}
           style={{
             ...btnBase,
             background: isCelebration ? '#10B981' : nextDisabled ? 'rgba(255,255,255,0.06)' : accent,
@@ -72,6 +77,7 @@ export default function ExplorerNavigation({
             fontWeight: 700,
             opacity:    nextDisabled ? 0.4 : 1,
             cursor:     nextDisabled ? 'default' : 'pointer',
+            pointerEvents: nextDisabled ? 'auto' : 'auto',
           }}
         >
           {isCelebration ? '🏠' : '›'}

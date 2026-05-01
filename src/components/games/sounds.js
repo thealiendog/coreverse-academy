@@ -123,6 +123,22 @@ export const sfx = {
   // Correct answer / celebration
   chime: () => tone(800, 0.18, 'sine', 0.22),
 
+  // Short win — quiz correct answer (~1s: 3-note ascent + sparkle + light noise)
+  quizWin: () => {
+    console.log('[CELEBRATION] Quiz correct — playing enhanced fanfare (1000ms)');
+    loudTone(523,  0.28, 'sine', 0.85);                          // C5
+    setTimeout(() => loudTone(784,  0.28, 'sine', 0.85), 180);  // G5
+    setTimeout(() => loudTone(1047, 0.35, 'sine', 0.80), 360);  // C6 peak
+    // Sparkle burst at 500ms
+    setTimeout(() => {
+      tone(1760, 0.10, 'sine', 0.16);                           // A6
+      setTimeout(() => tone(2093, 0.08, 'sine', 0.12), 100);   // C7
+      setTimeout(() => tone(2637, 0.06, 'sine', 0.09), 200);   // E7
+    }, 500);
+    // Light crowd swell
+    setTimeout(() => noiseBurst(0.8, 0.09), 400);
+  },
+
   // Object tap / collect
   pop: () => tone(440, 0.08, 'sine', 0.18),
 

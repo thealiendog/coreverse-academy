@@ -1,6 +1,7 @@
 // ExplorerCelebration — Phase 6: XP, badge, confetti, fanfare, return home
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { sfx } from '../games/sounds';
 
 export default function ExplorerCelebration({
   screen, guideAvatar, accent, subjectId, childName, lessonRecord,
@@ -19,9 +20,11 @@ export default function ExplorerCelebration({
     if (saved.current) return;
     saved.current = true;
 
-    // Fanfare is triggered in ExplorerLessonPlayer.goNext() inside the gesture handler
-    // (not here) so iOS AudioContext is guaranteed to be running when sound plays.
-    console.log('[CELEBRATION] Screen mounted — child name resolved:', resolvedName, '— fanfare was triggered at navigation gesture');
+    // Fanfare: also called in goNext() for button-nav path; calling here too covers
+    // the quiz-completion async path where goNext fires outside a gesture handler.
+    // AudioContext is already authorized from the user's recent quiz-answer tap.
+    sfx.fanfare();
+    console.log('[CELEBRATION] Lesson complete — playing full enhanced fanfare (2.2s)');
 
     try {
       const xp = parseInt(localStorage.getItem('explorer_total_xp') || '0', 10);

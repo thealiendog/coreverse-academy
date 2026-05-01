@@ -81,7 +81,7 @@ export default function QuizQuestion({ question, accent, wrongOptions, onAnswer,
       setTimeout(() => setShaking(null), 440);
     } else {
       setTappedCorrect(idx);
-      sfx.chime();
+      sfx.quizWin();
     }
     onAnswer(isCorrect, label, idx);
   };

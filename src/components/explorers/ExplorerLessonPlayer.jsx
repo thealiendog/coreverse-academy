@@ -703,17 +703,12 @@ export default function ExplorerLessonPlayer() {
   function goNext() {
     // Keep AudioContext fresh — iOS can suspend it between taps
     unlockAudio();
-    // Quiz drives its own navigation — next arrow is locked during quiz
-    if (currentScreen?.type === 'quiz') {
-      console.log('[NAV] Next button — quiz active, button disabled');
-      return;
-    }
     if (screenIdx < total - 1) {
       const nextScreen = screens[screenIdx + 1];
       // Trigger fanfare HERE (inside gesture handler) so iOS AudioContext is running
       if (nextScreen?.type === 'celebration') {
         sfx.fanfare();
-        console.log('[CELEBRATION] Fanfare triggered inside gesture handler — next screen is celebration');
+        console.log('[CELEBRATION] Lesson complete — playing full enhanced fanfare (2.2s)');
       }
       setScreenIdx(prev => prev + 1);
     } else {
