@@ -20,7 +20,6 @@ const innerworld_explorer_screens = {
         {
           type:      'welcome',
           guideText: "Hi {name}! Today we're opening a door to the most fascinating place in the world — the world inside you. Here's a question: have you ever felt something really big inside, but weren't sure what to call it? Today we're going to find out — because all your feelings have names. Are you ready to become an Emotion Explorer?",
-          image:     '/explorer-assets/inner-world/sage-greeting.png',
         },
 
         // PHASE 2 — MAGAZINE STORY
