@@ -3,7 +3,7 @@
 
 export default function ExplorerNavigation({
   screenIdx, total, accent, audioEnabled, speaking,
-  onBack, onNext, onToggleAudio, isCelebration, countdown,
+  onBack, onNext, onToggleAudio, isCelebration, nextDisabled, countdown,
 }) {
   const btnBase = {
     width: 52, height: 52, borderRadius: '50%', border: 'none',
@@ -64,11 +64,14 @@ export default function ExplorerNavigation({
         <button
           className="explorer-nav-btn"
           onClick={onNext}
+          disabled={nextDisabled}
           style={{
             ...btnBase,
-            background: isCelebration ? '#10B981' : accent,
-            color:      '#000',
+            background: isCelebration ? '#10B981' : nextDisabled ? 'rgba(255,255,255,0.06)' : accent,
+            color:      nextDisabled ? 'rgba(255,255,255,0.2)' : '#000',
             fontWeight: 700,
+            opacity:    nextDisabled ? 0.4 : 1,
+            cursor:     nextDisabled ? 'default' : 'pointer',
           }}
         >
           {isCelebration ? '🏠' : '›'}

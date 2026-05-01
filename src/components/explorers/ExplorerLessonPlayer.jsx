@@ -439,6 +439,23 @@ export default function ExplorerLessonPlayer() {
     console.log('[LESSON] Quiz details recorded. firstTryAccuracy:', firstTryAccuracy.toFixed(2));
   }, []);
 
+  // Prefetch RealWorldConnection audio when kid reaches the last quiz question
+  const onLastQuizQuestion = useCallback(() => {
+    const nextIdx    = screenIdxRef.current + 1;
+    const nextScreen = screens[nextIdx];
+    if (!nextScreen || nextScreen.type !== 'real-world') return;
+    const r = t => (t || '').replace(/\{name\}/g, childName);
+    const toPrewarm = [
+      r(nextScreen.guideText),
+      'Family Adventure',
+      nextScreen.familyAdventure || '',
+      'Create Something',
+      nextScreen.creativePrompt  || '',
+    ].filter(Boolean);
+    console.log('[PREWARM] Last quiz question — prefetching RealWorldConnection audio');
+    toPrewarm.forEach(t => prewarmAudio(t));
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // ── Cancel auto-advance countdown ────────────────────────────────────────
   const cancelCountdown = useCallback(() => {
     if (countdownIntervalRef.current) {
@@ -686,6 +703,11 @@ export default function ExplorerLessonPlayer() {
   function goNext() {
     // Keep AudioContext fresh — iOS can suspend it between taps
     unlockAudio();
+    // Quiz drives its own navigation — next arrow is locked during quiz
+    if (currentScreen?.type === 'quiz') {
+      console.log('[NAV] Next button — quiz active, button disabled');
+      return;
+    }
     if (screenIdx < total - 1) {
       const nextScreen = screens[screenIdx + 1];
       // Trigger fanfare HERE (inside gesture handler) so iOS AudioContext is running
@@ -785,8 +807,10 @@ export default function ExplorerLessonPlayer() {
     // Audio + lesson progress hooks for interactive / quiz
     onSpeak:                speak,
     onPrewarm:              prewarmAudio,
+    onStopAudio:            stopAudio,
     onInteractiveComplete,
     onQuizComplete,
+    onLastQuestion:         onLastQuizQuestion,
   };
 
   function renderScreen(screen) {
@@ -992,6 +1016,7 @@ export default function ExplorerLessonPlayer() {
         onNext={goNext}
         onToggleAudio={toggleAudio}
         isCelebration={currentScreen.type === 'celebration'}
+        nextDisabled={currentScreen.type === 'quiz'}
         countdown={countdown}
       />
 

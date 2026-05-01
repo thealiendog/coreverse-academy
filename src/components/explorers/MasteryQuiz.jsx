@@ -1,4 +1,4 @@
-// MasteryQuiz — Phase 4: 5-question mixed quiz with soft retry, karaoke, full audio coverage
+// MasteryQuiz — Phase 4: 6-question mixed quiz with soft retry, karaoke, full audio coverage
 // Sage reads EVERYTHING: question → 800ms → each option in sequence.
 // Kid can tap mid-read to answer immediately (audio aborts via onSpeak).
 // Formats: multiple-choice, true-false, fill-blank
@@ -62,7 +62,7 @@ function renderKaraoke(text, karaokeWords, karaokeIdx, accent) {
 
 export default function MasteryQuiz({
   screen, guideAvatar, speaking, accent,
-  onSpeak, onPrewarm, onComplete, onQuizComplete,
+  onSpeak, onPrewarm, onStopAudio, onLastQuestion, onComplete, onQuizComplete,
   karaokeWords, karaokeIdx,
 }) {
   const questions = screen?.questions || [];
@@ -116,14 +116,29 @@ export default function MasteryQuiz({
     const q   = questions[idx];
     if (!q) return;
 
+    // Count stale timers BEFORE clearing (for last-question diagnostic)
+    const staleTimerCount = readingTimersRef.current.length;
     clearReadingTimers();
+
+    // ── Last question — force-clear all prior audio + prefetch next phase ──
+    const isLastQuestion = idx === questions.length - 1;
+    if (isLastQuestion) {
+      console.log(`[QUIZ] Q${idx + 1} mount — clearing ${staleTimerCount} stale audio refs`);
+      onStopAudio?.(); // hard-abort any in-flight audio from previous questions
+      onLastQuestion?.(); // trigger RealWorldConnection prefetch
+    }
+
     console.log(`[QUIZ] Q${idx + 1} shown: "${q.question}"`);
     qStartTimeRef.current = Date.now();
     qAttemptsRef.current  = 0;
     setWrongOptions(new Set());
 
     const spokenQ = toSpokenQuestion(q);
-    console.log(`[QUIZ] Q${idx + 1} reading question`);
+    if (isLastQuestion) {
+      console.log(`[QUIZ] Q${idx + 1} reading question (clean state)`);
+    } else {
+      console.log(`[QUIZ] Q${idx + 1} reading question`);
+    }
     onSpeak?.(spokenQ, () => {
       if (!mountedRef.current) return;
       const t = setTimeout(() => {
@@ -209,7 +224,7 @@ export default function MasteryQuiz({
     const wasFirstTry = qAttemptsRef.current === 1;
     if (wasFirstTry) firstTryCountRef.current++;
 
-    console.log(`[QUIZ] Q${currentIdx + 1} complete. firstTry: ${wasFirstTry}, attempts: ${qAttemptsRef.current}, time: ${timeSeconds}s`);
+    console.log(`[QUIZ] Q${currentIdx + 1} correct — green glow + checkmark + scale + fade siblings rendered. firstTry: ${wasFirstTry}, attempts: ${qAttemptsRef.current}, time: ${timeSeconds}s`);
 
     questionDetailsRef.current.push({
       qId:          `q${currentIdx}`,

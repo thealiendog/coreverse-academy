@@ -65,9 +65,9 @@ const innerworld_explorer_screens = {
           totalSections: 3,
           headline:      'Where Feelings Live in Your Body',
           paragraphs: [
-            'Your feelings don\'t just live in your mind — they live in your body too! When you feel scared, your heart might beat faster. When you feel happy, your chest might feel light and open.',
-            'When you feel angry, your face might feel warm and your jaw might get tight. Sadness can feel like a heavy weight in your chest. Your body is always giving you clues about what you\'re feeling inside.',
-            'Here\'s something amazing scientists discovered: when you name a feeling out loud, a part of your brain helps calm the emotional storm. Naming your feeling is like turning on a light in a dark room.',
+            'Here\'s something amazing: when you name a feeling out loud, a part of your brain activates and helps calm the storm inside. Naming your feeling is like turning on a light in a dark room!',
+            'Feelings also live in your body. A tight chest might mean you\'re scared. Butterflies in your stomach might mean you\'re excited. A heavy feeling in your chest might mean you\'re sad.',
+            'When you notice where a feeling lives in your body, you understand yourself a little better.',
           ],
           image:        '/explorer-assets/inner-world/body-feelings.png',
           imageCaption: 'Feelings live in your body — your body always gives you clues',
@@ -162,13 +162,21 @@ const innerworld_explorer_screens = {
   ],
 };
 
-// Log on module load — confirms lesson wired correctly
+// Log on module load — confirms lesson wired correctly + verifies image assets at runtime
 (() => {
   const l    = innerworld_explorer_screens.lessons[0];
   const mags  = l.screens.filter(s => s.type === 'magazine').length;
   const game  = l.screens.find(s => s.type === 'interactive')?.items?.length || 0;
   const quiz  = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON] Loaded: "${l.title}" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
+  Promise.all([
+    fetch('/explorer-assets/inner-world/emotion-wheel.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/body-feelings.png', { method: 'HEAD' }),
+  ]).then(([r1, r2]) => {
+    console.log(`[ASSET-CHECK] emotion-wheel.png exists: ${r1.ok}, body-feelings.png exists: ${r2.ok}`);
+  }).catch(() => {
+    console.log('[ASSET-CHECK] Could not verify image assets — network check failed');
+  });
 })();
 
 export default innerworld_explorer_screens;
