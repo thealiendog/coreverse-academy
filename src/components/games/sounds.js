@@ -50,6 +50,40 @@ function tone(freq, dur = 0.15, type = 'sine', vol = 0.22) {
   } catch { /* no audio context */ }
 }
 
+// Crowd-noise burst: filtered white noise shaped like applause swell.
+// Used as a cheer layer under the celebration fanfare.
+function noiseBurst(dur = 1.0, vol = 0.13) {
+  try {
+    const ctx = getCtx();
+    const play = () => {
+      const bufSize = Math.ceil(ctx.sampleRate * dur);
+      const buf     = ctx.createBuffer(1, bufSize, ctx.sampleRate);
+      const data    = buf.getChannelData(0);
+      for (let i = 0; i < bufSize; i++) data[i] = (Math.random() * 2 - 1) * 0.35;
+
+      const src = ctx.createBufferSource();
+      src.buffer = buf;
+
+      // Band-pass ~700Hz → warm crowd buzz
+      const bpf = ctx.createBiquadFilter();
+      bpf.type = 'bandpass';
+      bpf.frequency.value = 700;
+      bpf.Q.value = 0.6;
+      src.connect(bpf);
+
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0, ctx.currentTime);
+      gain.gain.linearRampToValueAtTime(vol, ctx.currentTime + 0.25);
+      gain.gain.setValueAtTime(vol, ctx.currentTime + dur * 0.55);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+      bpf.connect(gain);
+      gain.connect(ctx.destination);
+      src.start();
+    };
+    if (ctx.state === 'suspended') ctx.resume().then(play).catch(() => {}); else play();
+  } catch { /* no audio context */ }
+}
+
 // Loud tone with DynamicsCompressor — for celebration fanfare.
 // Compressor brings quiet signals up to near-full-scale; effective even on phone speakers.
 // IMPORTANT: must be called inside a user-gesture handler for iOS AudioContext to be running.
@@ -95,14 +129,25 @@ export const sfx = {
   // Wrong answer
   buzz: () => tone(200, 0.12, 'sawtooth', 0.14),
 
-  // Big celebration at end — 4-note ascending sequence with compressor.
+  // Big celebration — 4-note fanfare + sparkle cascade + crowd cheer swell (~2s total).
   // MUST be called inside a user-gesture handler on iOS (not from useEffect).
   fanfare: () => {
-    console.log('[CELEBRATION] Playing fanfare — source: oscillator+compressor, gain: 0.9');
+    console.log('[CELEBRATION] Playing enhanced fanfare — 4-note ascent + sparkle + crowd cheer');
+    // Main 4-note fanfare
     loudTone(523,  0.35, 'sine', 0.90);                          // C5
     setTimeout(() => loudTone(659,  0.35, 'sine', 0.88), 200);  // E5
     setTimeout(() => loudTone(784,  0.38, 'sine', 0.90), 400);  // G5
-    setTimeout(() => loudTone(1047, 0.45, 'sine', 0.85), 600);  // C6 high finish
+    setTimeout(() => loudTone(1047, 0.48, 'sine', 0.85), 600);  // C6 high peak
+    // Sparkle cascade — starts as fanfare peaks (700ms), rises to top shimmer
+    setTimeout(() => {
+      tone(1397, 0.14, 'sine', 0.20);                           // F6
+      setTimeout(() => tone(1760, 0.12, 'sine', 0.17), 110);   // A6
+      setTimeout(() => tone(2093, 0.10, 'sine', 0.14), 220);   // C7
+      setTimeout(() => tone(2637, 0.08, 'sine', 0.11), 330);   // E7 shimmer tip
+      setTimeout(() => tone(3136, 0.06, 'sine', 0.08), 440);   // G7 sparkle top
+    }, 700);
+    // Crowd cheer swell — warm noise burst from 500ms, fades over ~1.5s
+    setTimeout(() => noiseBurst(1.5, 0.13), 500);
   },
 
   // Ascending count tones: C4, D4, E4, F4, G4

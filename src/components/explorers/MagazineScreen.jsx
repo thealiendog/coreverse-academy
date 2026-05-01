@@ -1,9 +1,10 @@
 // MagazineScreen — Phase 2: image + headline + karaoke paragraphs + vocab + inline hint
 // Responsive: single-column on mobile, two-column on iPad landscape (CSS classes from ExplorerLessonPlayer style block)
 
-function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
+function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint) {
   const vocabMap = new Map((vocab || []).map(v => [v.word.toLowerCase(), v]));
   let wordCount = 0;
+  let firstVocabPulsed = false; // only the very first vocab word gets the tutorial pulse
 
   return paragraphs.map((para, pIdx) => {
     const chunks = para.split(/(\s+)/);
@@ -16,9 +17,14 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
       const cleanKey = chunk.toLowerCase().replace(/[^a-z]/g, '');
       const vocabEntry = vocabMap.get(cleanKey);
 
+      // First vocab word gets a pulsing glow during the one-time tutorial
+      const isTutorialTarget = vocabEntry && showVocabHint && !firstVocabPulsed;
+      if (isTutorialTarget) firstVocabPulsed = true;
+
       return (
         <span
           key={cIdx}
+          className={isTutorialTarget ? 'vocab-tutorial-pulse' : undefined}
           onClick={vocabEntry ? () => onVocabTap(vocabEntry) : undefined}
           style={{
             color:           isActive ? accent : (vocabEntry ? '#60A5FA' : 'inherit'),
@@ -26,7 +32,7 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap) {
             textDecoration:  vocabEntry && !isActive ? 'underline dotted' : 'none',
             textDecorationColor: '#60A5FA',
             cursor:          vocabEntry ? 'pointer' : 'default',
-            fontWeight:      isActive ? 700 : 'inherit',
+            fontWeight:      isActive ? 700 : (isTutorialTarget ? 700 : 'inherit'),
             transition:      'color 0.08s ease, text-shadow 0.08s ease',
           }}
         >
@@ -112,7 +118,7 @@ export default function MagazineScreen({
 
         {/* Paragraphs with karaoke */}
         <div>
-          {renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap)}
+          {renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint)}
         </div>
 
         {/* Vocab chips */}

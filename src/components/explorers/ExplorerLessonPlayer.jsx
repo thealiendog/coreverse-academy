@@ -101,6 +101,7 @@ export default function ExplorerLessonPlayer() {
   const screenIdxRef              = useRef(0);      // always-current screenIdx for interval callbacks
   const countdownPausedRef        = useRef(false);  // true when vocab popup interrupted countdown
   const startCountdownFnRef       = useRef(null);   // points to current screen's startCountdownForScreen
+  const audioPrewarmRef           = useRef(new Map()); // text → { blobUrl, alignment } pre-fetched results
   audioEnabledRef.current = audioEnabled;
   screenIdxRef.current    = screenIdx;
 
@@ -147,7 +148,21 @@ export default function ExplorerLessonPlayer() {
     }
     if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
     karaokeRef.current.forEach(id => clearTimeout(id));
+    // Clean up any cached blob URLs
+    audioPrewarmRef.current.forEach(v => { if (v?.blobUrl) URL.revokeObjectURL(v.blobUrl); });
+    audioPrewarmRef.current.clear();
   }, []);
+
+  // ── Pre-warm welcome audio immediately on mount ───────────────────────────
+  // Fetches the first screen's audio before user taps so playback starts in <200ms.
+  useEffect(() => {
+    const firstScreen = screens[0];
+    if (!firstScreen || firstScreen.type !== 'welcome') return;
+    const text = getScreenText(firstScreen, childName);
+    if (!text) return;
+    console.log('[PREWARM] Mount — starting welcome audio pre-fetch...');
+    prewarmAudio(text);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── speak() ───────────────────────────────────────────────────────────────
   // Simplified vs GameLessonPlayer: no auto-advance, no fallback timer loop,
@@ -206,28 +221,43 @@ export default function ExplorerLessonPlayer() {
     // Dead-man's switch — 35s max (prevents permanent stall on broken audio)
     const deadman = setTimeout(() => finish(), 35000);
 
+    const speakCallTime = Date.now();
+
     try {
       const voiceId = voiceIdRef.current;
       const modelId = modelIdRef.current;
 
-      const res = await fetch('/.netlify/functions/nova-speak', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ text, voiceId, ...(modelId && { modelId }) }),
-        signal:  abortController.signal,
-      });
-      if (!res.ok) throw new Error('tts-unavailable');
+      // ── Pre-warm cache check ─────────────────────────────────────────────
+      // If this text was pre-fetched, use the cached blob and skip the network round-trip.
+      let blobUrl, alignment;
+      const cached = audioPrewarmRef.current.get(text);
+      if (cached?.blobUrl) {
+        blobUrl   = cached.blobUrl;
+        alignment = cached.alignment;
+        audioPrewarmRef.current.delete(text);
+        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
+        console.log(`[PREWARM] Cache hit — "${text.slice(0, 40)}..." playing from cache (latency: ${Date.now() - speakCallTime}ms)`);
+      } else {
+        // Normal network fetch
+        const res = await fetch('/.netlify/functions/nova-speak', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ text, voiceId, ...(modelId && { modelId }) }),
+          signal:  abortController.signal,
+        });
+        if (!res.ok) throw new Error('tts-unavailable');
 
-      const alignmentHeader = res.headers.get('X-Alignment');
-      const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
-      const blob = await res.blob();
+        const alignmentHeader = res.headers.get('X-Alignment');
+        alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
+        const blob = await res.blob();
 
-      if (gen !== speakGenRef.current) {
-        clearTimeout(deadman); onDone?.(); return;
+        if (gen !== speakGenRef.current) {
+          clearTimeout(deadman); onDone?.(); return;
+        }
+        if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
+        blobUrl = URL.createObjectURL(blob);
       }
 
-      if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
-      const blobUrl = URL.createObjectURL(blob);
       blobUrlRef.current = blobUrl;
 
       // Create audio element if not yet created (pre-gesture fallback)
@@ -322,6 +352,31 @@ export default function ExplorerLessonPlayer() {
     setKaraokeIdx(-1);
     setKaraokeWords([]);
   }, []);
+
+  // ── Pre-warm audio cache — fetches without AbortController, stores blob URL ──
+  // Used to pre-fetch audio before it's needed so speak() can play instantly.
+  const prewarmAudio = useCallback(async (text) => {
+    if (!text || !audioEnabledRef.current) return;
+    if (audioPrewarmRef.current.has(text)) return; // already cached or in-progress
+    audioPrewarmRef.current.set(text, null); // mark in-progress
+    try {
+      const res = await fetch('/.netlify/functions/nova-speak', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ text, voiceId: voiceIdRef.current, ...(modelIdRef.current && { modelId: modelIdRef.current }) }),
+        // No AbortController — prewarm runs independently of the main speak() lifecycle
+      });
+      if (!res.ok) { audioPrewarmRef.current.delete(text); return; }
+      const alignmentHeader = res.headers.get('X-Alignment');
+      const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+      audioPrewarmRef.current.set(text, { blobUrl, alignment });
+      console.log(`[PREWARM] Audio ready: "${text.slice(0, 40)}...", blob size: ${blob.size} bytes, at ${new Date().toISOString()}`);
+    } catch {
+      audioPrewarmRef.current.delete(text);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Cancel auto-advance countdown ────────────────────────────────────────
   const cancelCountdown = useCallback(() => {
@@ -424,22 +479,34 @@ export default function ExplorerLessonPlayer() {
     startCountdownFnRef.current = startCountdownForScreen;
 
     if (screen.type === 'magazine') {
-      // Sequence: headline (noKaraoke) → 500ms → paragraphs (karaoke) → vocab hint → countdown
+      // Sequence: headline (noKaraoke) → 150ms → paragraphs (karaoke) → vocab hint → countdown
+      // Body audio is pre-fetched in parallel so it's ready the moment the title finishes.
       const headline = screen.headline || '';
       const paraText = (screen.paragraphs || []).join(' ');
+
+      // Pre-fetch body audio NOW — headline will play while body downloads in background
+      if (paraText) {
+        console.log(`[PREWARM] Section ${screen.section} — pre-fetching body audio in background...`);
+        prewarmAudio(paraText).then(() => {
+          console.log(`[PREWARM] Section ${screen.section} title + body fetched, ready`);
+        });
+      }
 
       console.log(`[TTS] Screen ${screenIdx} magazine — Reading title: "${headline}"`);
       speak(headline, () => {
         if (cancelled) return;
+        const titleEndTime = Date.now();
         const t1 = setTimeout(() => {
           if (cancelled) return;
+          console.log(`[CHAIN] Title ended, playing body (gap: ${Date.now() - titleEndTime}ms)`);
           console.log(`[TTS] Screen ${screenIdx} magazine — Reading paragraphs: "${paraText.slice(0, 60)}..."`);
           speak(paraText, () => {
             if (cancelled) return;
             console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
-            // One-time vocab hint
+            // One-time vocab hint / tutorial
             if (screen.vocab?.length > 0 && !localStorage.getItem('explorer_vocab_hint_shown')) {
               setShowVocabHint(true);
+              console.log(`[TUTORIAL] Vocab tutorial shown for child ${child?.name || 'unknown'} (id: ${child?.id || 'no-id'})`);
               // 5s safety dismiss even if hint audio fails
               const tHint5s = setTimeout(() => {
                 if (!cancelled) {
@@ -472,7 +539,7 @@ export default function ExplorerLessonPlayer() {
               timers.push(tBuffer);
             }
           });
-        }, 500);
+        }, 150); // 150ms — body audio is pre-cached so it plays instantly
         timers.push(t1);
       }, { noKaraoke: true });
 
@@ -688,6 +755,14 @@ export default function ExplorerLessonPlayer() {
         @keyframes hint-bounce {
           0%, 100% { transform: translateY(0); }
           50%      { transform: translateY(-4px); }
+        }
+        @keyframes vocab-pulse {
+          0%, 100% { text-shadow: 0 0 0 rgba(96,165,250,0); }
+          50%      { text-shadow: 0 0 12px rgba(96,165,250,0.9), 0 0 24px rgba(96,165,250,0.5); }
+        }
+        .vocab-tutorial-pulse {
+          animation: vocab-pulse 1s ease-in-out infinite;
+          display: inline;
         }
 
         /* ── Responsive layout ──────────────────────────────────────── */
