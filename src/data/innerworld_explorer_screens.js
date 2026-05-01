@@ -65,9 +65,9 @@ const innerworld_explorer_screens = {
           totalSections: 3,
           headline:      'Where Feelings Live in Your Body',
           paragraphs: [
-            'Here\'s something amazing: when you name a feeling out loud, a part of your brain activates and helps calm the storm inside. Naming your feeling is like turning on a light in a dark room!',
-            'Feelings also live in your body. A tight chest might mean you\'re scared. Butterflies in your stomach might mean you\'re excited. A heavy feeling in your chest might mean you\'re sad.',
-            'When you notice where a feeling lives in your body, you understand yourself a little better.',
+            'When you NAME a feeling, your brain calms down. The thinking part of your brain — the prefrontal cortex — turns on, and the panic part quiets.',
+            'Feelings live in your body too. Scared can feel like a tight chest. Excited might feel like butterflies in your tummy. Love can feel warm in your heart.',
+            'When you notice WHERE a feeling lives, you understand it better.',
           ],
           image:        '/explorer-assets/inner-world/body-feelings.png',
           imageCaption: 'Feelings live in your body — your body always gives you clues',
