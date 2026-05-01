@@ -25,6 +25,7 @@ function renderKaraokeText(text, karaokeWords, karaokeIdx, accent) {
 
 export default function ExplorerWelcomeScreen({
   screen, guideAvatar, speaking, loadingAudio, karaokeWords, karaokeIdx, accent, onReplay, childName,
+  welcomeReady, onWelcomeTap,
 }) {
   // Resolve {name} for display (spoken text also has it resolved in ExplorerLessonPlayer)
   const displayText = (screen.guideText || '').replace(/\{name\}/g, childName || 'friend');
@@ -112,6 +113,21 @@ export default function ExplorerWelcomeScreen({
         }} />
         {renderKaraokeText(displayText, karaokeWords, karaokeIdx, accent)}
       </div>
+
+      {/* "Tap to Hear Sage" — shows after prewarm is ready, before audio plays */}
+      {!speaking && !loadingAudio && welcomeReady && onWelcomeTap && (
+        <button
+          onClick={onWelcomeTap}
+          style={{
+            background: accent, color: '#000', border: 'none',
+            borderRadius: 16, padding: '14px 32px',
+            fontSize: '1.05rem', fontWeight: 800, cursor: 'pointer',
+            touchAction: 'manipulation', boxShadow: `0 6px 24px ${accent}55`,
+          }}
+        >
+          🔊 Tap to Hear Sage
+        </button>
+      )}
 
       {/* Tap to continue hint */}
       {!speaking && (

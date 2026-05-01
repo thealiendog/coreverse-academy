@@ -5,6 +5,9 @@
 import { useState, useEffect, useRef } from 'react';
 import QuizQuestion from './QuizQuestion';
 
+const FILL_BLANK_ANNOUNCEMENT = 'Fill in the blank!';
+const TRUE_FALSE_ANNOUNCEMENT  = 'True or false?';
+
 const CORRECT_PHRASES = [
   "Great job!",
   "You got it!",
@@ -105,6 +108,8 @@ export default function MasteryQuiz({
       ...RETRY_PHRASES,
       FINISH_PHRASE,
       TRUE_FALSE_PROMPT,
+      FILL_BLANK_ANNOUNCEMENT,
+      TRUE_FALSE_ANNOUNCEMENT,
     ];
     console.log('[QUIZ] Mount — prefetching Q1 + retry phrases');
     toFetch.forEach(p => { if (p) onPrewarm?.(p); });
@@ -134,16 +139,38 @@ export default function MasteryQuiz({
     setWrongOptions(new Set());
 
     const spokenQ = toSpokenQuestion(q);
-    console.log(`[QUIZ] Q${idx + 1} reading question`);
-    onSpeak?.(spokenQ, () => {
-      // Guard: bail if component unmounted or user already advanced to a different question
+
+    // mainCallback: fires after question text is read; waits 800ms then reads options
+    const mainCallback = () => {
       if (!mountedRef.current || qIdxRef.current !== idx) return;
       const t = setTimeout(() => {
         if (!mountedRef.current || qIdxRef.current !== idx) return;
         readOptions(q, idx);
       }, 800);
       readingTimersRef.current.push(t);
-    });
+    };
+
+    // Fix 3: prepend format announcement for fill-blank and true-false questions
+    const formatAnnouncement =
+      q.format === 'fill-blank' ? FILL_BLANK_ANNOUNCEMENT :
+      q.format === 'true-false' ? TRUE_FALSE_ANNOUNCEMENT  :
+      null;
+
+    if (formatAnnouncement) {
+      console.log(`[QUIZ] Q${idx + 1} announcing format: ${q.format}`);
+      onSpeak?.(formatAnnouncement, () => {
+        if (!mountedRef.current || qIdxRef.current !== idx) return;
+        const t = setTimeout(() => {
+          if (!mountedRef.current || qIdxRef.current !== idx) return;
+          console.log(`[QUIZ] Q${idx + 1} reading question`);
+          onSpeak?.(spokenQ, mainCallback);
+        }, 400);
+        readingTimersRef.current.push(t);
+      });
+    } else {
+      console.log(`[QUIZ] Q${idx + 1} reading question`);
+      onSpeak?.(spokenQ, mainCallback);
+    }
 
     // Lookahead — prefetch next question's full audio set
     const nextQ = questions[idx + 1];

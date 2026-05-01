@@ -95,8 +95,10 @@ export default function ExplorerLessonPlayer() {
   const [karaokeIdx,   setKaraokeIdx]   = useState(-1);
   const [vocabOpen,     setVocabOpen]     = useState(null);
   const [showVocabHint, setShowVocabHint] = useState(false);
-  const [countdown,     setCountdown]     = useState(null); // null | 3 | 2 | 1
-  const [audioPaused,   setAudioPaused]   = useState(false);
+  const [countdown,       setCountdown]       = useState(null); // null | 3 | 2 | 1
+  const [audioPaused,     setAudioPaused]     = useState(false);
+  const [audioFallback,   setAudioFallback]   = useState(false); // Fix 1/5: show "Tap to hear Sage"
+  const [welcomeReady,    setWelcomeReady]    = useState(false); // Fix 2: prewarm complete, show tap cue
 
   // ── Refs ──────────────────────────────────────────────────────────────────
   const persistentAudioRef        = useRef(null);
@@ -114,6 +116,9 @@ export default function ExplorerLessonPlayer() {
   const startCountdownFnRef       = useRef(null);   // points to current screen's startCountdownForScreen
   const audioPrewarmRef           = useRef(new Map()); // text → Promise | { blobUrl, alignment } pre-fetched results
   const isPausedRef               = useRef(false);    // true while user has paused — blocks all audio triggers
+  const audioFailTimerRef         = useRef(null);     // Fix 5: 500ms timer to detect audio-never-started
+  const welcomePlayedRef          = useRef(false);    // Fix 2: true after welcome audio tap-to-play fired
+  const welcomePlayFnRef          = useRef(null);     // Fix 2: stores the speak() chain, called from onWelcomeTap
   const lessonStartTimeRef        = useRef(Date.now()); // set once on mount
   const lessonProgressRef         = useRef({ interactiveDetails: null, questionDetails: [], firstTryAccuracy: 0 });
   audioEnabledRef.current = audioEnabled;
@@ -175,15 +180,21 @@ export default function ExplorerLessonPlayer() {
     audioPrewarmRef.current.clear();
   }, []);
 
-  // ── Pre-warm welcome audio immediately on mount ───────────────────────────
-  // Fetches the first screen's audio before user taps so playback starts in <200ms.
+  // ── Pre-warm welcome audio immediately on mount (Fix 2: Day 1.8 Fix 8 restore) ─
+  // Fetches + pre-buffers first screen audio before user taps.
+  // Sets welcomeReady when done so the tap-cue can animate in.
   useEffect(() => {
     const firstScreen = screens[0];
     if (!firstScreen || firstScreen.type !== 'welcome') return;
     const text = getScreenText(firstScreen, childName);
     if (!text) return;
     console.log('[PREWARM] Mount — starting welcome audio pre-fetch...');
-    prewarmAudio(text);
+    prewarmAudio(text).then(result => {
+      if (result?.blobUrl) {
+        console.log('[PREWARM] Welcome audio ready — tap cue active');
+        setWelcomeReady(true);
+      }
+    });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── speak() ───────────────────────────────────────────────────────────────
@@ -355,8 +366,11 @@ export default function ExplorerLessonPlayer() {
         }
       }
 
-      // Playing event → clear loading indicator
+      // Playing event → clear loading indicator + disarm audio-fail safety timer
+      if (audioFailTimerRef.current) { clearTimeout(audioFailTimerRef.current); audioFailTimerRef.current = null; }
       const onPlaying = () => {
+        if (audioFailTimerRef.current) { clearTimeout(audioFailTimerRef.current); audioFailTimerRef.current = null; }
+        setAudioFallback(false); // hide tap-to-hear if it was showing
         setLoadingAudio(false);
         console.log(`[TAP] Audio playing event fired at ${new Date().toISOString()}`);
       };
@@ -376,7 +390,28 @@ export default function ExplorerLessonPlayer() {
 
       console.log(`[TAP] Sync play() called at ${new Date().toISOString()}`);
       const playErr = await el.play().catch(err => err);
-      if (playErr instanceof Error) { clearTimeout(deadman); finish(); }
+      if (playErr instanceof Error) {
+        if (playErr.name === 'NotAllowedError') {
+          // iOS gesture policy blocked play(). Don't call finish() — element stays loaded.
+          // The "Tap to hear Sage" overlay lets the user retry inside a gesture.
+          console.log('[iOS-UNLOCK] play() blocked by gesture policy — showing Tap to hear prompt');
+          setAudioFallback(true);
+          // deadman still running — fires finish() at 35s as last-resort
+          return;
+        }
+        clearTimeout(deadman);
+        finish();
+        return;
+      }
+
+      // Fix 5: 500ms safety — if 'playing' never fires, audio silently stalled
+      audioFailTimerRef.current = setTimeout(() => {
+        audioFailTimerRef.current = null;
+        if (!done) {
+          console.log('[AUDIO-FAIL] Audio did not start within 500ms — showing manual continue prompt');
+          setAudioFallback(true);
+        }
+      }, 500);
 
     } catch (e) {
       if (e?.name === 'AbortError') { clearTimeout(deadman); return; }
@@ -390,6 +425,7 @@ export default function ExplorerLessonPlayer() {
     currentAbortControllerRef.current?.abort();
     audioListenersCleanupRef.current?.();
     audioListenersCleanupRef.current = null;
+    if (audioFailTimerRef.current) { clearTimeout(audioFailTimerRef.current); audioFailTimerRef.current = null; }
     const el = persistentAudioRef.current;
     if (el) {
       // Null handlers BEFORE pause so no stale onended fires on the tail of playback
@@ -403,6 +439,7 @@ export default function ExplorerLessonPlayer() {
     karaokeRef.current = [];
     setSpeaking(false);
     setLoadingAudio(false);
+    setAudioFallback(false);
     setKaraokeIdx(-1);
     setKaraokeWords([]);
   }, []);
@@ -479,6 +516,57 @@ export default function ExplorerLessonPlayer() {
     ].filter(Boolean);
     console.log('[PREWARM] Last quiz question — prefetching RealWorldConnection audio');
     toPrewarm.forEach(t => prewarmAudio(t));
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Fix 1+2: Gesture-based audio retry / welcome tap ─────────────────────
+  // Called from "Tap to hear Sage" button (welcome) or "Tap to hear" overlay.
+  // Must stay synchronous: silent prime → play() — NO awaits in between.
+  const retryAudio = useCallback(() => {
+    // Silent audio prime — unlocks iOS AudioContext inside gesture handler
+    try {
+      const s = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
+      s.play().catch(() => {});
+      console.log('[iOS-UNLOCK] Silent audio primed at', new Date().toISOString());
+    } catch { /* no audio support */ }
+
+    setAudioFallback(false);
+
+    // Attempt play on existing element first (element already has src+load from prewarm)
+    const el = persistentAudioRef.current;
+    if (el && el.src && !el.ended) {
+      console.log('[TAP] Welcome audio play() called synchronously');
+      el.play().catch(err => {
+        console.error('[TAP] Play failed:', err);
+      });
+      return;
+    }
+
+    // Element gone — fall back to async speak() for current screen
+    const screen = screens[screenIdxRef.current];
+    if (screen) {
+      const text = getScreenText(screen, childName);
+      if (text) speak(text);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Welcome-tap handler — fires Sage greeting inside a user gesture ─────────
+  // iOS requires el.play() to be called synchronously within a touchstart/click handler.
+  // We store the full speak() chain in welcomePlayFnRef (set by the [screenIdx] effect)
+  // and call it here — giving speak() a gesture context while keeping countdown wiring intact.
+  const onWelcomeTap = useCallback(() => {
+    if (welcomePlayedRef.current) return; // ignore double-taps
+    welcomePlayedRef.current = true;
+    setWelcomeReady(false); // hide the tap-cue immediately
+
+    // Silent audio prime — unlocks iOS AudioContext synchronously inside this gesture
+    try {
+      const s = new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA');
+      s.play().catch(() => {});
+      console.log('[iOS-UNLOCK] Silent audio primed at', new Date().toISOString());
+    } catch { /* no audio support */ }
+
+    console.log('[TAP] Welcome tap — calling welcomePlayFnRef');
+    welcomePlayFnRef.current?.();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Cancel auto-advance countdown ────────────────────────────────────────
@@ -699,19 +787,27 @@ export default function ExplorerLessonPlayer() {
       });
 
     } else if (screen.type === 'welcome') {
+      // Fix 2: welcome audio is NOT auto-played here.
+      // Store the speak() chain in welcomePlayFnRef — onWelcomeTap calls it inside a gesture,
+      // so iOS gets gesture auth and iPad gets <200ms latency from the prewarm cache.
+      welcomePlayedRef.current = false; // allow replay if user navigates back to welcome
+      welcomePlayFnRef.current = null;
       const text = getScreenText(screen, childName);
       if (text) {
-        console.log(`[TTS] Screen ${screenIdx} welcome — Reading: "${text.slice(0, 60)}..."`);
-        speak(text, () => {
+        welcomePlayFnRef.current = () => {
           if (cancelled) return;
-          console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
-          const tBuffer = setTimeout(() => {
+          console.log('[TTS] Screen welcome — starting Sage greeting via gesture');
+          speak(text, () => {
             if (cancelled) return;
-            console.log('[AUTO-ADVANCE] Buffer complete, starting countdown 3-2-1...');
-            startCountdownForScreen();
-          }, 1000);
-          timers.push(tBuffer);
-        });
+            console.log('[AUTO-ADVANCE] Welcome audio ended, starting 1s buffer...');
+            const tBuffer = setTimeout(() => {
+              if (cancelled) return;
+              console.log('[AUTO-ADVANCE] Buffer complete, starting countdown 3-2-1...');
+              startCountdownForScreen();
+            }, 1000);
+            timers.push(tBuffer);
+          });
+        };
       }
 
     } else if (screen.type !== 'interactive' && screen.type !== 'quiz') {
@@ -831,6 +927,9 @@ export default function ExplorerLessonPlayer() {
     onInteractiveComplete,
     onQuizComplete,
     onLastQuestion:         onLastQuizQuestion,
+    // Fix 2: welcome screen gesture-based audio
+    welcomeReady,
+    onWelcomeTap,
   };
 
   function renderScreen(screen) {
@@ -1039,6 +1138,30 @@ export default function ExplorerLessonPlayer() {
         nextDisabled={currentScreen.type === 'quiz'}
         countdown={countdown}
       />
+
+      {/* Audio-fail safety overlay — shown when iOS blocks autoplay or audio stalls (Fix 1/5) */}
+      {audioFallback && (
+        <div
+          style={{
+            position: 'absolute', inset: 0,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            background: 'rgba(0,0,0,0.6)', zIndex: 90,
+          }}
+          onClick={retryAudio}
+        >
+          <button
+            onClick={retryAudio}
+            style={{
+              background: accent, color: '#000', border: 'none',
+              borderRadius: 20, padding: '18px 36px',
+              fontSize: '1.1rem', fontWeight: 800, cursor: 'pointer',
+              touchAction: 'manipulation', boxShadow: `0 8px 32px ${accent}55`,
+            }}
+          >
+            🔊 Tap to hear Sage
+          </button>
+        </div>
+      )}
 
       {/* Vocab popup (portal-like overlay) */}
       {vocabOpen && (
