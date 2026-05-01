@@ -26,7 +26,7 @@ function toSpokenQuestion(q) {
   return q.question;
 }
 
-// All audio clips that need prefetching for a given question
+// All audio clips needed for a given question (for prefetch)
 function getAudioClips(q) {
   if (!q) return [];
   const clips = [toSpokenQuestion(q)];
@@ -67,8 +67,13 @@ export default function MasteryQuiz({
 }) {
   const questions = screen?.questions || [];
 
-  const [qIdx,        setQIdx]        = useState(0);
+  const [qIdx,         setQIdx]        = useState(0);
   const [wrongOptions, setWrongOptions] = useState(new Set());
+
+  // ── Always-current ref for qIdx — prevents stale closure in async callbacks ──
+  // (same pattern used by screenIdxRef in ExplorerLessonPlayer)
+  const qIdxRef = useRef(0);
+  qIdxRef.current = qIdx;
 
   // Per-question tracking
   const questionDetailsRef = useRef([]);
@@ -79,9 +84,9 @@ export default function MasteryQuiz({
   const qAttemptsRef       = useRef(0);
   const mountedRef         = useRef(true);
 
-  // Reading-options state — for detecting mid-read taps
-  const readingTimersRef   = useRef([]);   // active setTimeout IDs during option reading
-  const isReadingOptsRef   = useRef(false); // true while options are being spoken
+  // Reading-options state
+  const readingTimersRef   = useRef([]);
+  const isReadingOptsRef   = useRef(false);
 
   useEffect(() => { return () => { mountedRef.current = false; }; }, []);
 
@@ -107,32 +112,31 @@ export default function MasteryQuiz({
 
   // ── When question changes: speak question → options + prefetch next ─────────
   useEffect(() => {
-    const q = questions[qIdx];
+    const idx = qIdxRef.current;
+    const q   = questions[idx];
     if (!q) return;
 
     clearReadingTimers();
-    console.log(`[QUIZ] Q${qIdx + 1} shown: "${q.question}"`);
+    console.log(`[QUIZ] Q${idx + 1} shown: "${q.question}"`);
     qStartTimeRef.current = Date.now();
     qAttemptsRef.current  = 0;
     setWrongOptions(new Set());
 
-    // Speak question (fill-blank: replace ___ with "blank")
     const spokenQ = toSpokenQuestion(q);
-    console.log(`[QUIZ] Q${qIdx + 1} reading question`);
+    console.log(`[QUIZ] Q${idx + 1} reading question`);
     onSpeak?.(spokenQ, () => {
       if (!mountedRef.current) return;
-      // 800ms pause then read options
       const t = setTimeout(() => {
         if (!mountedRef.current) return;
-        readOptions(q);
+        readOptions(q, idx);
       }, 800);
       readingTimersRef.current.push(t);
     });
 
     // Lookahead — prefetch next question's full audio set
-    const nextQ = questions[qIdx + 1];
+    const nextQ = questions[idx + 1];
     if (nextQ) {
-      console.log(`[QUIZ] Prefetching Q${qIdx + 2} question audio in background`);
+      console.log(`[QUIZ] Prefetching Q${idx + 2} question audio in background`);
       getAudioClips(nextQ).forEach(p => { if (p) onPrewarm?.(p); });
     }
 
@@ -140,18 +144,18 @@ export default function MasteryQuiz({
   }, [qIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Reads all options for the current question in sequence
-  function readOptions(q) {
+  function readOptions(q, idx) {
     if (!mountedRef.current) return;
     isReadingOptsRef.current = true;
 
     if (q.format === 'true-false') {
-      console.log(`[QUIZ] Q${qIdx + 1} reading options (true-false)`);
+      console.log(`[QUIZ] Q${idx + 1} reading options (true-false)`);
       onSpeak?.(TRUE_FALSE_PROMPT, () => { isReadingOptsRef.current = false; });
       return;
     }
 
-    const opts = (q.options || []);
-    console.log(`[QUIZ] Q${qIdx + 1} reading options (${opts.length} options)`);
+    const opts = q.options || [];
+    console.log(`[QUIZ] Q${idx + 1} reading options (${opts.length} options)`);
 
     let i = 0;
     function readNext() {
@@ -173,17 +177,22 @@ export default function MasteryQuiz({
   const handleAnswer = (isCorrect, optionText, optionIdx) => {
     if (!mountedRef.current) return;
 
+    // Use the always-current ref — never a stale closure value
+    const currentIdx   = qIdxRef.current;
+    const totalQs      = questions.length;
+    const isLastQ      = currentIdx === totalQs - 1;
+
     // Cancel any in-progress option reading
     const wasReadingMidway = isReadingOptsRef.current || readingTimersRef.current.length > 0;
     clearReadingTimers();
     if (wasReadingMidway) {
-      console.log(`[QUIZ] Q${qIdx + 1} kid tapped option mid-read — aborting audio`);
+      console.log(`[QUIZ] Q${currentIdx + 1} kid tapped option mid-read — aborting audio`);
     }
 
     qAttemptsRef.current++;
-    const q = questions[qIdx];
+    const q = questions[currentIdx];
 
-    console.log(`[QUIZ] Q${qIdx + 1} attempt: "${optionText}". Result: ${isCorrect ? 'correct' : 'wrong'}. Attempts on this Q: ${qAttemptsRef.current}`);
+    console.log(`[QUIZ] Q${currentIdx + 1} attempt: "${optionText}". Result: ${isCorrect ? 'correct' : 'wrong'}. Attempts: ${qAttemptsRef.current}. isLastQ: ${isLastQ} (${currentIdx + 1}/${totalQs})`);
 
     if (!isCorrect) {
       if (optionIdx !== undefined) {
@@ -200,10 +209,10 @@ export default function MasteryQuiz({
     const wasFirstTry = qAttemptsRef.current === 1;
     if (wasFirstTry) firstTryCountRef.current++;
 
-    console.log(`[QUIZ] Q${qIdx + 1} complete. firstTry: ${wasFirstTry}, attempts: ${qAttemptsRef.current}, time: ${timeSeconds}s`);
+    console.log(`[QUIZ] Q${currentIdx + 1} complete. firstTry: ${wasFirstTry}, attempts: ${qAttemptsRef.current}, time: ${timeSeconds}s`);
 
     questionDetailsRef.current.push({
-      qId:          `q${qIdx}`,
+      qId:          `q${currentIdx}`,
       questionText: q.question,
       firstTry:     wasFirstTry,
       attempts:     qAttemptsRef.current,
@@ -213,11 +222,11 @@ export default function MasteryQuiz({
 
     const correctPhrase = CORRECT_PHRASES[correctPhraseIdx.current % CORRECT_PHRASES.length];
     correctPhraseIdx.current++;
-    const isLastQ = qIdx === questions.length - 1;
 
     if (isLastQ) {
-      const firstTryAccuracy = questions.length > 0 ? firstTryCountRef.current / questions.length : 0;
-      console.log(`[QUIZ] All questions complete. firstTryAccuracy: ${firstTryAccuracy.toFixed(2)}`);
+      // ── Final question ──────────────────────────────────────────────────────
+      const firstTryAccuracy = totalQs > 0 ? firstTryCountRef.current / totalQs : 0;
+      console.log(`[QUIZ] Final question complete — calling onComplete with results. firstTryAccuracy: ${firstTryAccuracy.toFixed(2)}`);
       onSpeak?.(correctPhrase, () => {
         if (!mountedRef.current) return;
         onSpeak?.(FINISH_PHRASE, () => {
@@ -227,9 +236,15 @@ export default function MasteryQuiz({
         });
       });
     } else {
+      // ── Advance to next question ────────────────────────────────────────────
+      const nextIdx = currentIdx + 1;
+      console.log(`[QUIZ] Advancing from Q${currentIdx + 1} to Q${nextIdx + 1}`);
       onSpeak?.(correctPhrase, () => {
         if (!mountedRef.current) return;
-        setTimeout(() => { if (mountedRef.current) setQIdx(prev => prev + 1); }, 2000);
+        setTimeout(() => {
+          if (!mountedRef.current) return;
+          setQIdx(nextIdx);
+        }, 2000);
       });
     }
   };
@@ -246,7 +261,6 @@ export default function MasteryQuiz({
         borderBottom: '1px solid rgba(255,255,255,0.07)',
         flexShrink: 0,
       }}>
-        {/* Avatar with speaking glow */}
         <div style={{ position: 'relative', flexShrink: 0 }}>
           <img
             src={guideAvatar?.image || '/avatars/sage.png'}
@@ -267,7 +281,6 @@ export default function MasteryQuiz({
         </div>
 
         <div style={{ flex: 1 }}>
-          {/* Progress badge */}
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 6,
             background: `${accent}22`, border: `1px solid ${accent}44`,
@@ -277,14 +290,13 @@ export default function MasteryQuiz({
             Question {qIdx + 1} of {questions.length}
           </div>
 
-          {/* Question text with karaoke (show original text including ___ for fill-blank) */}
           <div style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1rem', lineHeight: 1.55, fontWeight: 500 }}>
             {renderKaraoke(currentQ.question, karaokeWords, karaokeIdx, accent)}
           </div>
         </div>
       </div>
 
-      {/* Question UI — passes karaokeWords so options highlight as Sage reads them */}
+      {/* Question UI */}
       <div style={{ flex: 1, overflowY: 'auto', padding: '16px 14px', WebkitOverflowScrolling: 'touch' }}>
         <QuizQuestion
           key={qIdx}
