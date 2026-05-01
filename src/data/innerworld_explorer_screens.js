@@ -83,10 +83,10 @@ const innerworld_explorer_screens = {
           instruction:  'Tap a feeling picture, then tap where it belongs!',
           guideText:    "Now let's play a matching game! Tap a picture, then tap the feeling it shows. Let's go!",
           items: [
-            { image: 'birthday-party.png', label: 'Happy',  correctMatch: 'happy'  },
-            { image: 'lost-toy.png',       label: 'Sad',    correctMatch: 'sad'    },
-            { image: 'mad-face.png',          label: 'Mad',    correctMatch: 'angry'  },
-            { image: 'dark-room.png',      label: 'Scared', correctMatch: 'scared' },
+            { image: 'birthday-party.png', label: 'Happy',  correctMatch: 'happy',  objectPosition: 'center 40%' },
+            { image: 'lost-toy.png',       label: 'Sad',    correctMatch: 'sad',    objectPosition: 'center 50%' },
+            { image: 'mad-face.png',       label: 'Mad',    correctMatch: 'angry',  objectPosition: 'center 30%' },
+            { image: 'dark-room.png',      label: 'Scared', correctMatch: 'scared', objectPosition: 'center 50%' },
           ],
           buckets: [
             { id: 'happy',  label: 'Happy',  color: '#FFD700' },
