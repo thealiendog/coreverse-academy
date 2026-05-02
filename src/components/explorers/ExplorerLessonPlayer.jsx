@@ -31,11 +31,12 @@ import INNERWORLD_L08     from '../../data/innerworld_explorer_l08_screens';
 import INNERWORLD_L09     from '../../data/innerworld_explorer_l09_screens';
 import INNERWORLD_L10     from '../../data/innerworld_explorer_l10_screens';
 import INNERWORLD_L11     from '../../data/innerworld_explorer_l11_screens';
+import INNERWORLD_L12     from '../../data/innerworld_explorer_l12_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
-    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons, ...INNERWORLD_L05.lessons, ...INNERWORLD_L06.lessons, ...INNERWORLD_L07.lessons, ...INNERWORLD_L08.lessons, ...INNERWORLD_L09.lessons, ...INNERWORLD_L10.lessons, ...INNERWORLD_L11.lessons],
+    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons, ...INNERWORLD_L05.lessons, ...INNERWORLD_L06.lessons, ...INNERWORLD_L07.lessons, ...INNERWORLD_L08.lessons, ...INNERWORLD_L09.lessons, ...INNERWORLD_L10.lessons, ...INNERWORLD_L11.lessons, ...INNERWORLD_L12.lessons],
   },
 };
 
