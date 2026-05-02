@@ -21,9 +21,13 @@ import VocabPopup             from './VocabPopup';
 
 // ── Lesson data (screen-based format, ExplorerLessonPlayer only) ───────────────
 import INNERWORLD_SCREENS from '../../data/innerworld_explorer_screens';
+import INNERWORLD_L02     from '../../data/innerworld_explorer_l02_screens';
 
 const EXPLORER_DATA = {
-  'inner-world': INNERWORLD_SCREENS,
+  'inner-world': {
+    ...INNERWORLD_SCREENS,
+    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons],
+  },
 };
 
 // ── ElevenLabs character timestamps → per-word start times ────────────────────
