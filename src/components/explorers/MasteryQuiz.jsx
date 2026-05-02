@@ -306,7 +306,7 @@ export default function MasteryQuiz({
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <style>{`
-        .quiz-question-text { font-size: 1.25rem; }
+        .quiz-question-text { font-size: 1.25rem; font-weight: 700; }
         @media (min-width: 768px) { .quiz-question-text { font-size: 1.5rem; } }
       `}</style>
       {/* Sage header with question text + karaoke */}
@@ -345,7 +345,7 @@ export default function MasteryQuiz({
             Question {qIdx + 1} of {questions.length}
           </div>
 
-          <div className="quiz-question-text" style={{ color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, fontWeight: 500 }}>
+          <div className="quiz-question-text" style={{ color: 'rgba(255,255,255,0.9)', lineHeight: 1.55 }}>
             {renderKaraoke(currentQ.question, karaokeWords, karaokeIdx, accent)}
           </div>
         </div>

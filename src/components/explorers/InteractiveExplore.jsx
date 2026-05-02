@@ -59,6 +59,7 @@ export default function InteractiveExplore({
     console.log(`[INTERACTIVE] Loaded items: ${items.map(it => it.label).join(', ')}`);
     console.log(`[INTERACTIVE] Item cards using aspect-ratio: 1/1, min-height: 180px (mobile) / 220px (iPad)`);
     console.log(`[INTERACTIVE] Buckets using min-height 64px (mobile) / 80px (iPad), text size 1.25rem (mobile) / 1.5rem (iPad)`);
+    console.log(`[INTERACTIVE] Instruction text size 1.25rem (mobile) / 1.5rem (iPad), Sage avatar 56px (mobile) / 72px (iPad)`);
     const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
@@ -186,14 +187,17 @@ export default function InteractiveExplore({
         .game-bucket-label { font-size: 1.25rem; font-weight: 800; }
         /* Column headers */
         .game-col-header   { font-size: 0.875rem; letter-spacing: 0.08em; }
-        /* Sage instruction bar */
-        .game-instruction  { font-size: 1rem; }
+        /* Sage instruction bar — most important text on screen, tell kid how to play */
+        .game-instruction     { font-size: 1.25rem; line-height: 1.4; }
+        .game-sage-avatar     { width: 56px; height: 56px; }
+        .game-sage-ring       { inset: -5px; }
         @media (min-width: 768px) {
-          .game-item         { min-height: 220px; }
-          .game-bucket       { min-height: 80px; }
-          .game-bucket-label { font-size: 1.5rem; }
-          .game-col-header   { font-size: 1rem; }
-          .game-instruction  { font-size: 1.125rem; }
+          .game-item            { min-height: 220px; }
+          .game-bucket          { min-height: 80px; }
+          .game-bucket-label    { font-size: 1.5rem; }
+          .game-col-header      { font-size: 1rem; }
+          .game-instruction     { font-size: 1.5rem; }
+          .game-sage-avatar     { width: 72px; height: 72px; }
         }
       `}</style>
 
@@ -208,21 +212,22 @@ export default function InteractiveExplore({
           <img
             src={guideAvatar?.image || '/avatars/sage.png'}
             alt=""
+            className="game-sage-avatar"
             style={{
-              width: 40, height: 40, borderRadius: '50%', objectFit: 'cover',
+              borderRadius: '50%', objectFit: 'cover',
               border: `2px solid ${speaking ? accent : 'rgba(255,255,255,0.15)'}`,
               transition: 'border-color 0.2s',
             }}
           />
           {speaking && (
-            <div style={{
-              position: 'absolute', inset: -4, borderRadius: '50%',
+            <div className="game-sage-ring" style={{
+              position: 'absolute', borderRadius: '50%',
               border: `2px solid ${accent}`, opacity: 0.5,
               animation: 'ex-ring 1.4s ease-in-out infinite',
             }} />
           )}
         </div>
-        <span className="game-instruction" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.4 }}>
+        <span className="game-instruction" style={{ color: '#fff', fontWeight: 600 }}>
           {instruction || 'Tap a scene, then tap the feeling it shows.'}
         </span>
       </div>
