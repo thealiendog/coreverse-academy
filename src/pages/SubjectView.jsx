@@ -56,6 +56,22 @@ import HISTORYWORLD_LITTLESTARS      from '../data/historyworld_littlestars_adap
 import SPANISH_LITTLESTARS           from '../data/spanish_littlestars_adapter';
 import FRONTIER_LITTLESTARS          from '../data/frontier_littlestars_adapter';
 
+// ── New-format lesson routing ─────────────────────────────────────────────────
+// Add a lesson ID here when it's been converted to the screen-based format.
+// Its card will then route to /explorer/:subjectId/:lessonId instead of /lesson/*.
+const NEW_FORMAT_LESSONS = {
+  'inner-world': ['iw-6-8-01', 'iw-6-8-02'],
+};
+
+// Returns the new-format lesson ID for a given subject/level/index, or null if
+// no predictable ID scheme exists for that subject yet.
+function getExplorerLessonId(subjectId, level, index) {
+  if (subjectId === 'inner-world' && level === 2) {
+    return `iw-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  return null;
+}
+
 export default function SubjectView() {
   const { subjectId } = useParams();
   const navigate = useNavigate();
@@ -137,8 +153,12 @@ export default function SubjectView() {
   function handleLessonClick(i) {
     if (!hasContent) return;
     if (!child) { navigate('/child/select'); return; }
-    const url = `/child/lesson/${subjectId}/${i}?level=${level}`;
-    navigate(url);
+    const lessonId = getExplorerLessonId(subjectId, level, i);
+    if (lessonId && NEW_FORMAT_LESSONS[subjectId]?.includes(lessonId)) {
+      navigate(`/explorer/${subjectId}/${lessonId}`);
+      return;
+    }
+    navigate(`/child/lesson/${subjectId}/${i}?level=${level}`);
   }
 
   return (
