@@ -57,6 +57,7 @@ export default function InteractiveExplore({
   // Prefetch all Sage phrases + speak intro on mount
   useEffect(() => {
     console.log(`[INTERACTIVE] Loaded items: ${items.map(it => it.label).join(', ')}`);
+    console.log(`[INTERACTIVE] Item cards using aspect-ratio: 1/1, min-height: 180px (mobile) / 220px (iPad)`);
     const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
@@ -172,8 +173,18 @@ export default function InteractiveExplore({
         }
         .g-shake { animation: game-shake 0.44s ease !important; }
         .g-lock  { animation: game-lock  0.36s ease; }
+        /* Item cards: square aspect-ratio so Midjourney illustrations are legible.
+           Min-height ensures a floor on narrow viewports where aspect-ratio
+           alone would compute a height shorter than the illustration needs. */
+        .game-item {
+          aspect-ratio: 1 / 1;
+          min-height: 180px;
+        }
+        /* Bucket buttons: text-only, don't need square treatment */
+        .game-bucket { min-height: 60px; }
         @media (min-width: 768px) {
-          .game-item, .game-bucket { min-height: 88px !important; }
+          .game-item   { min-height: 220px; }
+          .game-bucket { min-height: 88px; }
         }
       `}</style>
 
@@ -235,7 +246,6 @@ export default function InteractiveExplore({
                 onTouchMove={()  => cancelLP(item.correctMatch)}
                 onClick={() => handleItemTap(item)}
                 style={{
-                  minHeight:      60,
                   border:         `2.5px solid ${locked ? '#10B981' : selected ? accent : 'rgba(255,255,255,0.14)'}`,
                   borderRadius:   14,
                   background:     locked ? 'rgba(16,185,129,0.1)' : selected ? `${accent}18` : 'rgba(255,255,255,0.05)',
@@ -256,7 +266,7 @@ export default function InteractiveExplore({
                 <img
                   src={`${IMG_BASE}${item.image}`}
                   alt={item.label}
-                  style={{ width: '100%', objectFit: 'cover', objectPosition: item.objectPosition || 'center center', minHeight: 60, maxHeight: 110, display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: item.objectPosition || 'center center', display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
                   onError={e => {
                     console.log(`[INTERACTIVE] Missing image: ${item.image} — using placeholder`);
                     // Replace src with inline SVG placeholder showing the label
@@ -292,7 +302,6 @@ export default function InteractiveExplore({
                 onTouchMove={()  => cancelLP(bucket.id)}
                 onClick={() => handleBucketTap(bucket)}
                 style={{
-                  minHeight:      60,
                   border:         `2.5px solid ${locked ? '#10B981' : isTarget ? `${bucket.color}99` : `${bucket.color}44`}`,
                   borderRadius:   14,
                   background:     locked ? 'rgba(16,185,129,0.1)' : isTarget ? `${bucket.color}1A` : `${bucket.color}0D`,
