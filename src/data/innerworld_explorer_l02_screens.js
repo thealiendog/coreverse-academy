@@ -84,10 +84,10 @@ const innerworld_explorer_l02_screens = {
           guideText:     "Now let's play thought detective! Some thoughts are real facts, some are worries, some are unkind things we say to ourselves, and some are real feelings. Can you sort them out?",
           columnHeaders: ['The Thought', 'Kind of Thought'],
           items: [
-            { image: 'l02-game-thoughts.png', label: "I'm going to fail this", correctMatch: 'worry',   objectPosition: 'center 50%', matchPhrase: "Right! That's a worry thought — it hasn't happened yet, and might not!"              },
-            { image: 'l02-game-thoughts.png', label: "I'm not good enough",    correctMatch: 'unkind',  objectPosition: 'center 50%', matchPhrase: "Yes! That's an unkind thought about yourself — and it is NOT a fact!"              },
-            { image: 'l02-game-thoughts.png', label: "The sky is blue",        correctMatch: 'fact',    objectPosition: 'center 50%', matchPhrase: "Correct! That's a real fact — you can look up and check it right now!"             },
-            { image: 'l02-game-thoughts.png', label: "I feel excited",         correctMatch: 'feeling', objectPosition: 'center 50%', matchPhrase: "Exactly! That's a real feeling — feelings are always true, even when thoughts aren't!" },
+            { image: 'l02-game-worry.png',   label: "I'm going to fail this", correctMatch: 'worry',   objectPosition: 'center 50%', matchPhrase: "Right! That's a worry thought — it hasn't happened yet, and might not!"              },
+            { image: 'l02-game-unkind.png',  label: "I'm not good enough",    correctMatch: 'unkind',  objectPosition: 'center 50%', matchPhrase: "Yes! That's an unkind thought about yourself — and it is NOT a fact!"              },
+            { image: 'l02-game-fact.png',    label: "The sky is blue",        correctMatch: 'fact',    objectPosition: 'center 50%', matchPhrase: "Correct! That's a real fact — you can look up and check it right now!"             },
+            { image: 'l02-game-feeling.png', label: "I feel excited",         correctMatch: 'feeling', objectPosition: 'center 50%', matchPhrase: "Exactly! That's a real feeling — feelings are always true, even when thoughts aren't!" },
           ],
           buckets: [
             { id: 'worry',   label: 'Worry Thought',  color: '#F59E0B' },
