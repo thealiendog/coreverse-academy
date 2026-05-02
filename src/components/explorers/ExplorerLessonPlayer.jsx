@@ -36,11 +36,12 @@ import INNERWORLD_L13     from '../../data/innerworld_explorer_l13_screens';
 import INNERWORLD_L14     from '../../data/innerworld_explorer_l14_screens';
 import INNERWORLD_L15     from '../../data/innerworld_explorer_l15_screens';
 import INNERWORLD_L16     from '../../data/innerworld_explorer_l16_screens';
+import INNERWORLD_L17     from '../../data/innerworld_explorer_l17_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
-    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons, ...INNERWORLD_L05.lessons, ...INNERWORLD_L06.lessons, ...INNERWORLD_L07.lessons, ...INNERWORLD_L08.lessons, ...INNERWORLD_L09.lessons, ...INNERWORLD_L10.lessons, ...INNERWORLD_L11.lessons, ...INNERWORLD_L12.lessons, ...INNERWORLD_L13.lessons, ...INNERWORLD_L14.lessons, ...INNERWORLD_L15.lessons, ...INNERWORLD_L16.lessons],
+    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons, ...INNERWORLD_L05.lessons, ...INNERWORLD_L06.lessons, ...INNERWORLD_L07.lessons, ...INNERWORLD_L08.lessons, ...INNERWORLD_L09.lessons, ...INNERWORLD_L10.lessons, ...INNERWORLD_L11.lessons, ...INNERWORLD_L12.lessons, ...INNERWORLD_L13.lessons, ...INNERWORLD_L14.lessons, ...INNERWORLD_L15.lessons, ...INNERWORLD_L16.lessons, ...INNERWORLD_L17.lessons],
   },
 };
 
