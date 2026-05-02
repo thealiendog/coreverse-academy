@@ -25,11 +25,12 @@ import INNERWORLD_L02     from '../../data/innerworld_explorer_l02_screens';
 import INNERWORLD_L03     from '../../data/innerworld_explorer_l03_screens';
 import INNERWORLD_L04     from '../../data/innerworld_explorer_l04_screens';
 import INNERWORLD_L05     from '../../data/innerworld_explorer_l05_screens';
+import INNERWORLD_L06     from '../../data/innerworld_explorer_l06_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
-    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons, ...INNERWORLD_L05.lessons],
+    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons, ...INNERWORLD_L05.lessons, ...INNERWORLD_L06.lessons],
   },
 };
 

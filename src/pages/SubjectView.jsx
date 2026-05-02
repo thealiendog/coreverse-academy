@@ -60,7 +60,7 @@ import FRONTIER_LITTLESTARS          from '../data/frontier_littlestars_adapter'
 // Add a lesson ID here when it's been converted to the screen-based format.
 // Its card will then route to /explorer/:subjectId/:lessonId instead of /lesson/*.
 const NEW_FORMAT_LESSONS = {
-  'inner-world': ['iw-6-8-01', 'iw-6-8-02', 'iw-6-8-03', 'iw-6-8-04', 'iw-6-8-05'],
+  'inner-world': ['iw-6-8-01', 'iw-6-8-02', 'iw-6-8-03', 'iw-6-8-04', 'iw-6-8-05', 'iw-6-8-06'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
