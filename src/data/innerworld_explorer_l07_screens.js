@@ -28,7 +28,7 @@ const innerworld_explorer_l07_screens = {
           type:          'magazine',
           section:       1,
           totalSections: 3,
-          headline:      'Empathy vs. Sympathy: What's the Difference?',
+          headline:      'Empathy vs. Sympathy: What\'s the Difference?',
           paragraphs: [
             'Empathy is the ability to understand and share the feelings of another person. It\'s one of the most powerful connections humans can have.',
             'It\'s different from sympathy. Sympathy is feeling sorry for someone from the outside — like looking through a window at someone standing in the rain.',
