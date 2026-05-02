@@ -23,11 +23,12 @@ import VocabPopup             from './VocabPopup';
 import INNERWORLD_SCREENS from '../../data/innerworld_explorer_screens';
 import INNERWORLD_L02     from '../../data/innerworld_explorer_l02_screens';
 import INNERWORLD_L03     from '../../data/innerworld_explorer_l03_screens';
+import INNERWORLD_L04     from '../../data/innerworld_explorer_l04_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
-    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons],
+    lessons: [...INNERWORLD_SCREENS.lessons, ...INNERWORLD_L02.lessons, ...INNERWORLD_L03.lessons, ...INNERWORLD_L04.lessons],
   },
 };
 
