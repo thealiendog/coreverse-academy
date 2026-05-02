@@ -58,7 +58,7 @@ export default function InteractiveExplore({
   useEffect(() => {
     console.log(`[INTERACTIVE] Loaded items: ${items.map(it => it.label).join(', ')}`);
     console.log(`[INTERACTIVE] Item cards using aspect-ratio: 1/1, min-height: 180px (mobile) / 220px (iPad)`);
-    console.log(`[INTERACTIVE] Buckets using min-height 64px (mobile) / 80px (iPad), text size 1.25rem (mobile) / 1.5rem (iPad)`);
+    console.log(`[INTERACTIVE] Buckets text-size 1.5rem (mobile) / 1.875rem (iPad), min-height 80px (mobile) / 100px (iPad), border 3px`);
     console.log(`[INTERACTIVE] Instruction text size 1.25rem (mobile) / 1.5rem (iPad), Sage avatar 56px (mobile) / 72px (iPad)`);
     const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
@@ -183,8 +183,8 @@ export default function InteractiveExplore({
           min-height: 180px;
         }
         /* Bucket buttons */
-        .game-bucket       { min-height: 64px; }
-        .game-bucket-label { font-size: 1.25rem; font-weight: 800; }
+        .game-bucket       { min-height: 80px; padding: 16px 12px; }
+        .game-bucket-label { font-size: 1.5rem; font-weight: 800; }
         /* Column headers */
         .game-col-header   { font-size: 0.875rem; letter-spacing: 0.08em; }
         /* Sage instruction bar — most important text on screen, tell kid how to play */
@@ -193,8 +193,8 @@ export default function InteractiveExplore({
         .game-sage-ring       { inset: -5px; }
         @media (min-width: 768px) {
           .game-item            { min-height: 220px; }
-          .game-bucket          { min-height: 80px; }
-          .game-bucket-label    { font-size: 1.5rem; }
+          .game-bucket          { min-height: 100px; padding: 20px 12px; }
+          .game-bucket-label    { font-size: 1.875rem; }
           .game-col-header      { font-size: 1rem; }
           .game-instruction     { font-size: 1.5rem; }
           .game-sage-avatar     { width: 72px; height: 72px; }
@@ -316,7 +316,7 @@ export default function InteractiveExplore({
                 onTouchMove={()  => cancelLP(bucket.id)}
                 onClick={() => handleBucketTap(bucket)}
                 style={{
-                  border:         `2.5px solid ${locked ? '#10B981' : isTarget ? `${bucket.color}99` : `${bucket.color}44`}`,
+                  border:         `3px solid ${locked ? '#10B981' : isTarget ? `${bucket.color}99` : `${bucket.color}44`}`,
                   borderRadius:   14,
                   background:     locked ? 'rgba(16,185,129,0.1)' : isTarget ? `${bucket.color}1A` : `${bucket.color}0D`,
                   cursor:         locked ? 'default' : 'pointer',
