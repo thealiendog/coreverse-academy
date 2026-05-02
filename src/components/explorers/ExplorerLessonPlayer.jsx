@@ -1090,7 +1090,7 @@ export default function ExplorerLessonPlayer() {
           position: relative;
           width: 100%;
           aspect-ratio: 16/9;
-          background: #111827;
+          background: #080618;
           flex-shrink: 0;
         }
         .magazine-text-col {

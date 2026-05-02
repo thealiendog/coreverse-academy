@@ -100,7 +100,7 @@ export default function MagazineScreen({
         <img
           src={image}
           alt={headline}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }}
           onError={e => { e.currentTarget.style.opacity = '0.2'; }}
         />
         {/* Pause / Resume / Replay button */}
