@@ -112,6 +112,7 @@ export default function MasteryQuiz({
       TRUE_FALSE_ANNOUNCEMENT,
     ];
     console.log('[QUIZ] Mount — prefetching Q1 + retry phrases');
+    console.log('[QUIZ] Options using min-height 64px (mobile) / 80px (iPad), text size 1.125rem (mobile) / 1.25rem (iPad)');
     toFetch.forEach(p => { if (p) onPrewarm?.(p); });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -304,6 +305,10 @@ export default function MasteryQuiz({
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <style>{`
+        .quiz-question-text { font-size: 1.25rem; }
+        @media (min-width: 768px) { .quiz-question-text { font-size: 1.5rem; } }
+      `}</style>
       {/* Sage header with question text + karaoke */}
       <div style={{
         display: 'flex', alignItems: 'flex-start', gap: 12,
@@ -340,7 +345,7 @@ export default function MasteryQuiz({
             Question {qIdx + 1} of {questions.length}
           </div>
 
-          <div style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1rem', lineHeight: 1.55, fontWeight: 500 }}>
+          <div className="quiz-question-text" style={{ color: 'rgba(255,255,255,0.9)', lineHeight: 1.55, fontWeight: 500 }}>
             {renderKaraoke(currentQ.question, karaokeWords, karaokeIdx, accent)}
           </div>
         </div>

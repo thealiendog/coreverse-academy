@@ -20,8 +20,10 @@ const STYLE = `
   }
   .quiz-shake   { animation: quiz-shake       0.42s ease !important; }
   .quiz-correct { animation: quiz-correct-pop 0.40s ease both; }
+  /* Base (iPhone): bigger touch targets + legible text for ages 6-8 */
+  .quiz-option  { min-height: 64px; font-size: 1.125rem; }
   @media (min-width: 768px) {
-    .quiz-option { min-height: 80px !important; font-size: 1.08rem !important; }
+    .quiz-option { min-height: 80px !important; font-size: 1.25rem !important; }
   }
 `;
 
@@ -109,14 +111,14 @@ export default function QuizQuestion({ question, accent, wrongOptions, onAnswer,
                 onTouchMove={()  => cancelLP(i)}
                 onClick={() => handleTap(i, label, i === correctIdx)}
                 style={{
-                  flex: 1, minHeight: 80,
+                  flex: 1,
                   border:     isCorrect ? '4px solid #22c55e' : `2.5px solid ${isWrong ? '#EF4444' : reading ? accent : isTrue ? '#10B98155' : '#EF444455'}`,
                   borderRadius: 18,
                   background: isCorrect ? 'rgba(34,197,94,0.15)' : isWrong ? 'rgba(239,68,68,0.1)' : reading ? `${accent}22` : isTrue ? 'rgba(16,185,129,0.07)' : 'rgba(239,68,68,0.07)',
                   boxShadow:  isCorrect ? '0 0 20px #22c55e88' : reading ? `0 0 0 3px ${accent}33` : 'none',
                   color:      isCorrect ? '#22c55e' : isWrong ? '#FCA5A5' : isTrue ? '#10B981' : '#F87171',
                   opacity:    isSibling ? 0.4 : 1,
-                  fontSize: '1.1rem', fontWeight: 800, cursor: tappedCorrect !== null ? 'default' : 'pointer',
+                  fontWeight: 800, cursor: tappedCorrect !== null ? 'default' : 'pointer',
                   touchAction: 'manipulation', display: 'flex', alignItems: 'center',
                   justifyContent: 'center', gap: 8,
                   transition: 'border-color 0.12s, background 0.12s, box-shadow 0.12s, opacity 0.2s',
@@ -152,14 +154,14 @@ export default function QuizQuestion({ question, accent, wrongOptions, onAnswer,
               onTouchMove={()  => cancelLP(i)}
               onClick={() => handleTap(i, opt, i === correctIndex)}
               style={{
-                width: '100%', minHeight: 60, textAlign: 'left',
+                width: '100%', textAlign: 'left',
                 border:     isCorrect ? '4px solid #22c55e' : `2px solid ${isWrong ? '#EF4444' : reading ? accent : 'rgba(255,255,255,0.13)'}`,
                 borderRadius: 14, padding: '0 16px',
                 background: isCorrect ? 'rgba(34,197,94,0.12)' : isWrong ? 'rgba(239,68,68,0.08)' : reading ? `${accent}18` : 'rgba(255,255,255,0.05)',
                 boxShadow:  isCorrect ? '0 0 20px #22c55e88' : reading ? `0 0 0 3px ${accent}33` : 'none',
                 color:      isCorrect ? '#22c55e' : isWrong ? '#FCA5A5' : 'rgba(255,255,255,0.9)',
                 opacity:    isSibling ? 0.4 : 1,
-                fontSize: '0.97rem', fontWeight: 600, cursor: tappedCorrect !== null ? 'default' : 'pointer',
+                fontWeight: 600, cursor: tappedCorrect !== null ? 'default' : 'pointer',
                 touchAction: 'manipulation', display: 'flex', alignItems: 'center', gap: 12,
                 transition: 'border-color 0.12s, background 0.12s, box-shadow 0.12s, opacity 0.2s',
                 WebkitTapHighlightColor: 'transparent',

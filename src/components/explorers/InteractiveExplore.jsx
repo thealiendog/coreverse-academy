@@ -58,6 +58,7 @@ export default function InteractiveExplore({
   useEffect(() => {
     console.log(`[INTERACTIVE] Loaded items: ${items.map(it => it.label).join(', ')}`);
     console.log(`[INTERACTIVE] Item cards using aspect-ratio: 1/1, min-height: 180px (mobile) / 220px (iPad)`);
+    console.log(`[INTERACTIVE] Buckets using min-height 64px (mobile) / 80px (iPad), text size 1.25rem (mobile) / 1.5rem (iPad)`);
     const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
@@ -180,11 +181,19 @@ export default function InteractiveExplore({
           aspect-ratio: 1 / 1;
           min-height: 180px;
         }
-        /* Bucket buttons: text-only, don't need square treatment */
-        .game-bucket { min-height: 60px; }
+        /* Bucket buttons */
+        .game-bucket       { min-height: 64px; }
+        .game-bucket-label { font-size: 1.25rem; font-weight: 800; }
+        /* Column headers */
+        .game-col-header   { font-size: 0.875rem; letter-spacing: 0.08em; }
+        /* Sage instruction bar */
+        .game-instruction  { font-size: 1rem; }
         @media (min-width: 768px) {
-          .game-item   { min-height: 220px; }
-          .game-bucket { min-height: 88px; }
+          .game-item         { min-height: 220px; }
+          .game-bucket       { min-height: 80px; }
+          .game-bucket-label { font-size: 1.5rem; }
+          .game-col-header   { font-size: 1rem; }
+          .game-instruction  { font-size: 1.125rem; }
         }
       `}</style>
 
@@ -213,17 +222,17 @@ export default function InteractiveExplore({
             }} />
           )}
         </div>
-        <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.88rem', lineHeight: 1.4 }}>
+        <span className="game-instruction" style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.4 }}>
           {instruction || 'Tap a scene, then tap the feeling it shows.'}
         </span>
       </div>
 
       {/* Column headers */}
       <div style={{ display: 'flex', padding: '8px 10px 4px', gap: 10, flexShrink: 0 }}>
-        <div style={{ flex: 1, fontSize: '0.70rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', textAlign: 'center' }}>
+        <div className="game-col-header" style={{ flex: 1, color: 'rgba(255,255,255,0.35)', fontWeight: 700, textTransform: 'uppercase', textAlign: 'center' }}>
           {columnHeaders[0]}
         </div>
-        <div style={{ flex: 1, fontSize: '0.70rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', textAlign: 'center' }}>
+        <div className="game-col-header" style={{ flex: 1, color: 'rgba(255,255,255,0.35)', fontWeight: 700, textTransform: 'uppercase', textAlign: 'center' }}>
           {columnHeaders[1]}
         </div>
       </div>
@@ -322,7 +331,7 @@ export default function InteractiveExplore({
                     <span style={{ fontSize: '0.72rem', color: '#10B981', fontWeight: 700 }}>Matched!</span>
                   </>
                 ) : (
-                  <span style={{ fontSize: '1rem', fontWeight: 800, color: bucket.color, letterSpacing: '-0.01em' }}>
+                  <span className="game-bucket-label" style={{ color: bucket.color, letterSpacing: '-0.01em' }}>
                     {bucket.label}
                   </span>
                 )}
