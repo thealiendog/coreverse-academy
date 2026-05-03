@@ -45,6 +45,7 @@ import COSMOS_L01        from '../../data/cosmos_explorer_l01_screens';
 import COSMOS_L02        from '../../data/cosmos_explorer_l02_screens';
 import COSMOS_L03        from '../../data/cosmos_explorer_l03_screens';
 import COSMOS_L04        from '../../data/cosmos_explorer_l04_screens';
+import COSMOS_L05        from '../../data/cosmos_explorer_l05_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -55,7 +56,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'cosmos',
     guide:     'Nova',
-    lessons:   [...COSMOS_L01.lessons, ...COSMOS_L02.lessons, ...COSMOS_L03.lessons, ...COSMOS_L04.lessons],
+    lessons:   [...COSMOS_L01.lessons, ...COSMOS_L02.lessons, ...COSMOS_L03.lessons, ...COSMOS_L04.lessons, ...COSMOS_L05.lessons],
   },
 };
 
