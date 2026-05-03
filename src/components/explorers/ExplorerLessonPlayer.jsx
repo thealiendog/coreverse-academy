@@ -1205,7 +1205,7 @@ export default function ExplorerLessonPlayer() {
       {/* Audio-fail / gesture-unlock overlay — icon-only, no text (Fix 1/5 + Day 2.9) */}
       {audioFallback && (
         <div
-          aria-label="Tap to hear Sage"
+          aria-label={`Tap to hear ${guideAvatar?.name || 'Guide'}`}
           onClick={retryAudio}
           style={{
             position:    'absolute',
