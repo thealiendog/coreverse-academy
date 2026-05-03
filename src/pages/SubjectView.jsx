@@ -61,7 +61,7 @@ import FRONTIER_LITTLESTARS          from '../data/frontier_littlestars_adapter'
 // Its card will then route to /explorer/:subjectId/:lessonId instead of /lesson/*.
 const NEW_FORMAT_LESSONS = {
   'inner-world': ['iw-6-8-01', 'iw-6-8-02', 'iw-6-8-03', 'iw-6-8-04', 'iw-6-8-05', 'iw-6-8-06', 'iw-6-8-07', 'iw-6-8-08', 'iw-6-8-09', 'iw-6-8-10', 'iw-6-8-11', 'iw-6-8-12', 'iw-6-8-13', 'iw-6-8-14', 'iw-6-8-15', 'iw-6-8-16', 'iw-6-8-17', 'iw-6-8-18', 'iw-6-8-19', 'iw-6-8-20'],
-  'cosmos':      ['cs-6-8-01', 'cs-6-8-02', 'cs-6-8-03'],
+  'cosmos':      ['cs-6-8-01', 'cs-6-8-02', 'cs-6-8-03', 'cs-6-8-04'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
