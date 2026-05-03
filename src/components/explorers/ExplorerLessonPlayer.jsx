@@ -56,6 +56,11 @@ import COSMOS_L12        from '../../data/cosmos_explorer_l12_screens';
 import COSMOS_L13        from '../../data/cosmos_explorer_l13_screens';
 import COSMOS_L14        from '../../data/cosmos_explorer_l14_screens';
 import COSMOS_L15        from '../../data/cosmos_explorer_l15_screens';
+import COSMOS_L16        from '../../data/cosmos_explorer_l16_screens';
+import COSMOS_L17        from '../../data/cosmos_explorer_l17_screens';
+import COSMOS_L18        from '../../data/cosmos_explorer_l18_screens';
+import COSMOS_L19        from '../../data/cosmos_explorer_l19_screens';
+import COSMOS_L20        from '../../data/cosmos_explorer_l20_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -66,7 +71,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'cosmos',
     guide:     'Nova',
-    lessons:   [...COSMOS_L01.lessons, ...COSMOS_L02.lessons, ...COSMOS_L03.lessons, ...COSMOS_L04.lessons, ...COSMOS_L05.lessons, ...COSMOS_L06.lessons, ...COSMOS_L07.lessons, ...COSMOS_L08.lessons, ...COSMOS_L09.lessons, ...COSMOS_L10.lessons, ...COSMOS_L11.lessons, ...COSMOS_L12.lessons, ...COSMOS_L13.lessons, ...COSMOS_L14.lessons, ...COSMOS_L15.lessons],
+    lessons:   [...COSMOS_L01.lessons, ...COSMOS_L02.lessons, ...COSMOS_L03.lessons, ...COSMOS_L04.lessons, ...COSMOS_L05.lessons, ...COSMOS_L06.lessons, ...COSMOS_L07.lessons, ...COSMOS_L08.lessons, ...COSMOS_L09.lessons, ...COSMOS_L10.lessons, ...COSMOS_L11.lessons, ...COSMOS_L12.lessons, ...COSMOS_L13.lessons, ...COSMOS_L14.lessons, ...COSMOS_L15.lessons, ...COSMOS_L16.lessons, ...COSMOS_L17.lessons, ...COSMOS_L18.lessons, ...COSMOS_L19.lessons, ...COSMOS_L20.lessons],
   },
 };
 
