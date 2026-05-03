@@ -17,7 +17,8 @@ export const AVATARS = [
 ];
 
 export function getAvatar(id) {
-  return AVATARS.find(a => a.id === id) || AVATARS[0];
+  if (!id) return AVATARS[0];
+  return AVATARS.find(a => a.id === id.toLowerCase()) || AVATARS[0];
 }
 
 // ── Age Bands ─────────────────────────────────────────────────────────────────
