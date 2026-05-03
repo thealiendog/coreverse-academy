@@ -151,6 +151,11 @@ import CA_L02 from '../../data/creativearts_explorer_l02_screens';
 import CA_L03 from '../../data/creativearts_explorer_l03_screens';
 import CA_L04 from '../../data/creativearts_explorer_l04_screens';
 import CA_L05 from '../../data/creativearts_explorer_l05_screens';
+import CA_L06 from '../../data/creativearts_explorer_l06_screens';
+import CA_L07 from '../../data/creativearts_explorer_l07_screens';
+import CA_L08 from '../../data/creativearts_explorer_l08_screens';
+import CA_L09 from '../../data/creativearts_explorer_l09_screens';
+import CA_L10 from '../../data/creativearts_explorer_l10_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -195,7 +200,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'creative-arts',
     guide:     'Muse',
-    lessons:   [...CA_L01.lessons, ...CA_L02.lessons, ...CA_L03.lessons, ...CA_L04.lessons, ...CA_L05.lessons],
+    lessons:   [...CA_L01.lessons, ...CA_L02.lessons, ...CA_L03.lessons, ...CA_L04.lessons, ...CA_L05.lessons, ...CA_L06.lessons, ...CA_L07.lessons, ...CA_L08.lessons, ...CA_L09.lessons, ...CA_L10.lessons],
   },
 };
 
