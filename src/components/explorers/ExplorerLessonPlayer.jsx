@@ -126,6 +126,12 @@ import SL_L18 from '../../data/socialleadership_explorer_l18_screens';
 import SL_L19 from '../../data/socialleadership_explorer_l19_screens';
 import SL_L20 from '../../data/socialleadership_explorer_l20_screens';
 
+import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
+import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
+import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
+import LW_L04 from '../../data/lifewellness_explorer_l04_screens';
+import LW_L05 from '../../data/lifewellness_explorer_l05_screens';
+
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
@@ -162,7 +168,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'wellness',
     guide:     'Terra',
-    lessons:   [],
+    lessons:   [...LW_L01.lessons, ...LW_L02.lessons, ...LW_L03.lessons, ...LW_L04.lessons, ...LW_L05.lessons],
   },
 };
 
