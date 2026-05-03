@@ -185,6 +185,13 @@ const EXPLORER_DATA = {
     guide:     'Terra',
     lessons:   [...LW_L01.lessons, ...LW_L02.lessons, ...LW_L03.lessons, ...LW_L04.lessons, ...LW_L05.lessons, ...LW_L06.lessons, ...LW_L07.lessons, ...LW_L08.lessons, ...LW_L09.lessons, ...LW_L10.lessons, ...LW_L11.lessons, ...LW_L12.lessons, ...LW_L13.lessons, ...LW_L14.lessons, ...LW_L15.lessons, ...LW_L16.lessons, ...LW_L17.lessons, ...LW_L18.lessons, ...LW_L19.lessons, ...LW_L20.lessons],
   },
+
+  'creative-arts': {
+    ageBand:   'explorers',
+    subjectId: 'creative-arts',
+    guide:     'Muse',
+    lessons:   [],
+  },
 };
 
 // ── ElevenLabs character timestamps → per-word start times ────────────────────

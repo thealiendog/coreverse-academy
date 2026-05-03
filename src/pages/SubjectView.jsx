@@ -66,6 +66,7 @@ const NEW_FORMAT_LESSONS = {
   'future-skills': ['fs-6-8-01', 'fs-6-8-02', 'fs-6-8-03', 'fs-6-8-04', 'fs-6-8-05', 'fs-6-8-06', 'fs-6-8-07', 'fs-6-8-08', 'fs-6-8-09', 'fs-6-8-10', 'fs-6-8-11', 'fs-6-8-12', 'fs-6-8-13', 'fs-6-8-14', 'fs-6-8-15', 'fs-6-8-16', 'fs-6-8-17', 'fs-6-8-18', 'fs-6-8-19', 'fs-6-8-20'],
   'leadership':    ['sl-6-8-01', 'sl-6-8-02', 'sl-6-8-03', 'sl-6-8-04', 'sl-6-8-05', 'sl-6-8-06', 'sl-6-8-07', 'sl-6-8-08', 'sl-6-8-09', 'sl-6-8-10', 'sl-6-8-11', 'sl-6-8-12', 'sl-6-8-13', 'sl-6-8-14', 'sl-6-8-15', 'sl-6-8-16', 'sl-6-8-17', 'sl-6-8-18', 'sl-6-8-19', 'sl-6-8-20'],
   'wellness':      ['lw-6-8-01', 'lw-6-8-02', 'lw-6-8-03', 'lw-6-8-04', 'lw-6-8-05', 'lw-6-8-06', 'lw-6-8-07', 'lw-6-8-08', 'lw-6-8-09', 'lw-6-8-10', 'lw-6-8-11', 'lw-6-8-12', 'lw-6-8-13', 'lw-6-8-14', 'lw-6-8-15', 'lw-6-8-16', 'lw-6-8-17', 'lw-6-8-18', 'lw-6-8-19', 'lw-6-8-20'],
+  'creative-arts': [],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
@@ -88,6 +89,9 @@ function getExplorerLessonId(subjectId, level, index) {
   }
   if (subjectId === 'wellness' && level === 2) {
     return `lw-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'creative-arts' && level === 2) {
+    return `ca-6-8-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
