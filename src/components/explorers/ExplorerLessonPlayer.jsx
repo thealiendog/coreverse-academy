@@ -157,6 +157,13 @@ const EXPLORER_DATA = {
     guide:     'Valor',
     lessons:   [...SL_L01.lessons, ...SL_L02.lessons, ...SL_L03.lessons, ...SL_L04.lessons, ...SL_L05.lessons, ...SL_L06.lessons, ...SL_L07.lessons, ...SL_L08.lessons, ...SL_L09.lessons, ...SL_L10.lessons, ...SL_L11.lessons, ...SL_L12.lessons, ...SL_L13.lessons, ...SL_L14.lessons, ...SL_L15.lessons, ...SL_L16.lessons, ...SL_L17.lessons, ...SL_L18.lessons, ...SL_L19.lessons, ...SL_L20.lessons],
   },
+
+  'wellness': {
+    ageBand:   'explorers',
+    subjectId: 'wellness',
+    guide:     'Terra',
+    lessons:   [],
+  },
 };
 
 // ── ElevenLabs character timestamps → per-word start times ────────────────────

@@ -65,6 +65,7 @@ const NEW_FORMAT_LESSONS = {
   'money':        ['mb-6-8-01', 'mb-6-8-02', 'mb-6-8-03', 'mb-6-8-04', 'mb-6-8-05', 'mb-6-8-06', 'mb-6-8-07', 'mb-6-8-08', 'mb-6-8-09', 'mb-6-8-10', 'mb-6-8-11', 'mb-6-8-12', 'mb-6-8-13', 'mb-6-8-14', 'mb-6-8-15', 'mb-6-8-16', 'mb-6-8-17', 'mb-6-8-18', 'mb-6-8-19', 'mb-6-8-20'],
   'future-skills': ['fs-6-8-01', 'fs-6-8-02', 'fs-6-8-03', 'fs-6-8-04', 'fs-6-8-05', 'fs-6-8-06', 'fs-6-8-07', 'fs-6-8-08', 'fs-6-8-09', 'fs-6-8-10', 'fs-6-8-11', 'fs-6-8-12', 'fs-6-8-13', 'fs-6-8-14', 'fs-6-8-15', 'fs-6-8-16', 'fs-6-8-17', 'fs-6-8-18', 'fs-6-8-19', 'fs-6-8-20'],
   'leadership':    ['sl-6-8-01', 'sl-6-8-02', 'sl-6-8-03', 'sl-6-8-04', 'sl-6-8-05', 'sl-6-8-06', 'sl-6-8-07', 'sl-6-8-08', 'sl-6-8-09', 'sl-6-8-10', 'sl-6-8-11', 'sl-6-8-12', 'sl-6-8-13', 'sl-6-8-14', 'sl-6-8-15', 'sl-6-8-16', 'sl-6-8-17', 'sl-6-8-18', 'sl-6-8-19', 'sl-6-8-20'],
+  'wellness':      [],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
@@ -84,6 +85,9 @@ function getExplorerLessonId(subjectId, level, index) {
   }
   if (subjectId === 'leadership' && level === 2) {
     return `sl-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'wellness' && level === 2) {
+    return `lw-6-8-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
