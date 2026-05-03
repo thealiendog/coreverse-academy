@@ -146,6 +146,11 @@ import LW_L17 from '../../data/lifewellness_explorer_l17_screens';
 import LW_L18 from '../../data/lifewellness_explorer_l18_screens';
 import LW_L19 from '../../data/lifewellness_explorer_l19_screens';
 import LW_L20 from '../../data/lifewellness_explorer_l20_screens';
+import CA_L01 from '../../data/creativearts_explorer_l01_screens';
+import CA_L02 from '../../data/creativearts_explorer_l02_screens';
+import CA_L03 from '../../data/creativearts_explorer_l03_screens';
+import CA_L04 from '../../data/creativearts_explorer_l04_screens';
+import CA_L05 from '../../data/creativearts_explorer_l05_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -190,7 +195,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'creative-arts',
     guide:     'Muse',
-    lessons:   [],
+    lessons:   [...CA_L01.lessons, ...CA_L02.lessons, ...CA_L03.lessons, ...CA_L04.lessons, ...CA_L05.lessons],
   },
 };
 
