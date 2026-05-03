@@ -100,6 +100,11 @@ import FS_L12 from '../../data/futureskills_explorer_l12_screens';
 import FS_L13 from '../../data/futureskills_explorer_l13_screens';
 import FS_L14 from '../../data/futureskills_explorer_l14_screens';
 import FS_L15 from '../../data/futureskills_explorer_l15_screens';
+import FS_L16 from '../../data/futureskills_explorer_l16_screens';
+import FS_L17 from '../../data/futureskills_explorer_l17_screens';
+import FS_L18 from '../../data/futureskills_explorer_l18_screens';
+import FS_L19 from '../../data/futureskills_explorer_l19_screens';
+import FS_L20 from '../../data/futureskills_explorer_l20_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -123,7 +128,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'future-skills',
     guide:     'Byte',
-    lessons:   [...FS_L01.lessons, ...FS_L02.lessons, ...FS_L03.lessons, ...FS_L04.lessons, ...FS_L05.lessons, ...FS_L06.lessons, ...FS_L07.lessons, ...FS_L08.lessons, ...FS_L09.lessons, ...FS_L10.lessons, ...FS_L11.lessons, ...FS_L12.lessons, ...FS_L13.lessons, ...FS_L14.lessons, ...FS_L15.lessons],
+    lessons:   [...FS_L01.lessons, ...FS_L02.lessons, ...FS_L03.lessons, ...FS_L04.lessons, ...FS_L05.lessons, ...FS_L06.lessons, ...FS_L07.lessons, ...FS_L08.lessons, ...FS_L09.lessons, ...FS_L10.lessons, ...FS_L11.lessons, ...FS_L12.lessons, ...FS_L13.lessons, ...FS_L14.lessons, ...FS_L15.lessons, ...FS_L16.lessons, ...FS_L17.lessons, ...FS_L18.lessons, ...FS_L19.lessons, ...FS_L20.lessons],
   },
 };
 
