@@ -120,6 +120,11 @@ import SL_L12 from '../../data/socialleadership_explorer_l12_screens';
 import SL_L13 from '../../data/socialleadership_explorer_l13_screens';
 import SL_L14 from '../../data/socialleadership_explorer_l14_screens';
 import SL_L15 from '../../data/socialleadership_explorer_l15_screens';
+import SL_L16 from '../../data/socialleadership_explorer_l16_screens';
+import SL_L17 from '../../data/socialleadership_explorer_l17_screens';
+import SL_L18 from '../../data/socialleadership_explorer_l18_screens';
+import SL_L19 from '../../data/socialleadership_explorer_l19_screens';
+import SL_L20 from '../../data/socialleadership_explorer_l20_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -150,7 +155,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'leadership',
     guide:     'Valor',
-    lessons:   [...SL_L01.lessons, ...SL_L02.lessons, ...SL_L03.lessons, ...SL_L04.lessons, ...SL_L05.lessons, ...SL_L06.lessons, ...SL_L07.lessons, ...SL_L08.lessons, ...SL_L09.lessons, ...SL_L10.lessons, ...SL_L11.lessons, ...SL_L12.lessons, ...SL_L13.lessons, ...SL_L14.lessons, ...SL_L15.lessons],
+    lessons:   [...SL_L01.lessons, ...SL_L02.lessons, ...SL_L03.lessons, ...SL_L04.lessons, ...SL_L05.lessons, ...SL_L06.lessons, ...SL_L07.lessons, ...SL_L08.lessons, ...SL_L09.lessons, ...SL_L10.lessons, ...SL_L11.lessons, ...SL_L12.lessons, ...SL_L13.lessons, ...SL_L14.lessons, ...SL_L15.lessons, ...SL_L16.lessons, ...SL_L17.lessons, ...SL_L18.lessons, ...SL_L19.lessons, ...SL_L20.lessons],
   },
 };
 
