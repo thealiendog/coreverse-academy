@@ -141,6 +141,11 @@ import LW_L12 from '../../data/lifewellness_explorer_l12_screens';
 import LW_L13 from '../../data/lifewellness_explorer_l13_screens';
 import LW_L14 from '../../data/lifewellness_explorer_l14_screens';
 import LW_L15 from '../../data/lifewellness_explorer_l15_screens';
+import LW_L16 from '../../data/lifewellness_explorer_l16_screens';
+import LW_L17 from '../../data/lifewellness_explorer_l17_screens';
+import LW_L18 from '../../data/lifewellness_explorer_l18_screens';
+import LW_L19 from '../../data/lifewellness_explorer_l19_screens';
+import LW_L20 from '../../data/lifewellness_explorer_l20_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -178,7 +183,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'wellness',
     guide:     'Terra',
-    lessons:   [...LW_L01.lessons, ...LW_L02.lessons, ...LW_L03.lessons, ...LW_L04.lessons, ...LW_L05.lessons, ...LW_L06.lessons, ...LW_L07.lessons, ...LW_L08.lessons, ...LW_L09.lessons, ...LW_L10.lessons, ...LW_L11.lessons, ...LW_L12.lessons, ...LW_L13.lessons, ...LW_L14.lessons, ...LW_L15.lessons],
+    lessons:   [...LW_L01.lessons, ...LW_L02.lessons, ...LW_L03.lessons, ...LW_L04.lessons, ...LW_L05.lessons, ...LW_L06.lessons, ...LW_L07.lessons, ...LW_L08.lessons, ...LW_L09.lessons, ...LW_L10.lessons, ...LW_L11.lessons, ...LW_L12.lessons, ...LW_L13.lessons, ...LW_L14.lessons, ...LW_L15.lessons, ...LW_L16.lessons, ...LW_L17.lessons, ...LW_L18.lessons, ...LW_L19.lessons, ...LW_L20.lessons],
   },
 };
 
