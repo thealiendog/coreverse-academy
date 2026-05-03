@@ -62,8 +62,12 @@ import COSMOS_L18        from '../../data/cosmos_explorer_l18_screens';
 import COSMOS_L19        from '../../data/cosmos_explorer_l19_screens';
 import COSMOS_L20        from '../../data/cosmos_explorer_l20_screens';
 
-// ── Money & Business lesson imports (populated as lessons are built) ──────────
-// Add: import MB_L01 from '../../data/money_business_explorer_l01_screens'; etc.
+// ── Money & Business lesson imports ──────────────────────────────────────────
+import MB_L01 from '../../data/moneybusiness_explorer_l01_screens';
+import MB_L02 from '../../data/moneybusiness_explorer_l02_screens';
+import MB_L03 from '../../data/moneybusiness_explorer_l03_screens';
+import MB_L04 from '../../data/moneybusiness_explorer_l04_screens';
+import MB_L05 from '../../data/moneybusiness_explorer_l05_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -80,7 +84,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'money',
     guide:     'Ace',
-    lessons:   [],
+    lessons:   [...MB_L01.lessons, ...MB_L02.lessons, ...MB_L03.lessons, ...MB_L04.lessons, ...MB_L05.lessons],
   },
 };
 
