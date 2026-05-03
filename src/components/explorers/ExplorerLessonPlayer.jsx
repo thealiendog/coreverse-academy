@@ -105,6 +105,11 @@ import FS_L17 from '../../data/futureskills_explorer_l17_screens';
 import FS_L18 from '../../data/futureskills_explorer_l18_screens';
 import FS_L19 from '../../data/futureskills_explorer_l19_screens';
 import FS_L20 from '../../data/futureskills_explorer_l20_screens';
+import SL_L01 from '../../data/socialleadership_explorer_l01_screens';
+import SL_L02 from '../../data/socialleadership_explorer_l02_screens';
+import SL_L03 from '../../data/socialleadership_explorer_l03_screens';
+import SL_L04 from '../../data/socialleadership_explorer_l04_screens';
+import SL_L05 from '../../data/socialleadership_explorer_l05_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -135,7 +140,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'leadership',
     guide:     'Valor',
-    lessons:   [],
+    lessons:   [...SL_L01.lessons, ...SL_L02.lessons, ...SL_L03.lessons, ...SL_L04.lessons, ...SL_L05.lessons],
   },
 };
 
