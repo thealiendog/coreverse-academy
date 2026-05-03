@@ -84,6 +84,13 @@ import MB_L18 from '../../data/moneybusiness_explorer_l18_screens';
 import MB_L19 from '../../data/moneybusiness_explorer_l19_screens';
 import MB_L20 from '../../data/moneybusiness_explorer_l20_screens';
 
+// ── Future Skills lesson imports ──────────────────────────────────────────────
+import FS_L01 from '../../data/futureskills_explorer_l01_screens';
+import FS_L02 from '../../data/futureskills_explorer_l02_screens';
+import FS_L03 from '../../data/futureskills_explorer_l03_screens';
+import FS_L04 from '../../data/futureskills_explorer_l04_screens';
+import FS_L05 from '../../data/futureskills_explorer_l05_screens';
+
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
@@ -106,7 +113,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'future-skills',
     guide:     'Byte',
-    lessons:   [],
+    lessons:   [...FS_L01.lessons, ...FS_L02.lessons, ...FS_L03.lessons, ...FS_L04.lessons, ...FS_L05.lessons],
   },
 };
 
