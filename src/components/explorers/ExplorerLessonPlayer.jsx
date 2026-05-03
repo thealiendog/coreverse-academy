@@ -90,6 +90,11 @@ import FS_L02 from '../../data/futureskills_explorer_l02_screens';
 import FS_L03 from '../../data/futureskills_explorer_l03_screens';
 import FS_L04 from '../../data/futureskills_explorer_l04_screens';
 import FS_L05 from '../../data/futureskills_explorer_l05_screens';
+import FS_L06 from '../../data/futureskills_explorer_l06_screens';
+import FS_L07 from '../../data/futureskills_explorer_l07_screens';
+import FS_L08 from '../../data/futureskills_explorer_l08_screens';
+import FS_L09 from '../../data/futureskills_explorer_l09_screens';
+import FS_L10 from '../../data/futureskills_explorer_l10_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -113,7 +118,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'future-skills',
     guide:     'Byte',
-    lessons:   [...FS_L01.lessons, ...FS_L02.lessons, ...FS_L03.lessons, ...FS_L04.lessons, ...FS_L05.lessons],
+    lessons:   [...FS_L01.lessons, ...FS_L02.lessons, ...FS_L03.lessons, ...FS_L04.lessons, ...FS_L05.lessons, ...FS_L06.lessons, ...FS_L07.lessons, ...FS_L08.lessons, ...FS_L09.lessons, ...FS_L10.lessons],
   },
 };
 
