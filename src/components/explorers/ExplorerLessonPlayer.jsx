@@ -78,6 +78,11 @@ import MB_L12 from '../../data/moneybusiness_explorer_l12_screens';
 import MB_L13 from '../../data/moneybusiness_explorer_l13_screens';
 import MB_L14 from '../../data/moneybusiness_explorer_l14_screens';
 import MB_L15 from '../../data/moneybusiness_explorer_l15_screens';
+import MB_L16 from '../../data/moneybusiness_explorer_l16_screens';
+import MB_L17 from '../../data/moneybusiness_explorer_l17_screens';
+import MB_L18 from '../../data/moneybusiness_explorer_l18_screens';
+import MB_L19 from '../../data/moneybusiness_explorer_l19_screens';
+import MB_L20 from '../../data/moneybusiness_explorer_l20_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -94,7 +99,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'money',
     guide:     'Ace',
-    lessons:   [...MB_L01.lessons, ...MB_L02.lessons, ...MB_L03.lessons, ...MB_L04.lessons, ...MB_L05.lessons, ...MB_L06.lessons, ...MB_L07.lessons, ...MB_L08.lessons, ...MB_L09.lessons, ...MB_L10.lessons, ...MB_L11.lessons, ...MB_L12.lessons, ...MB_L13.lessons, ...MB_L14.lessons, ...MB_L15.lessons],
+    lessons:   [...MB_L01.lessons, ...MB_L02.lessons, ...MB_L03.lessons, ...MB_L04.lessons, ...MB_L05.lessons, ...MB_L06.lessons, ...MB_L07.lessons, ...MB_L08.lessons, ...MB_L09.lessons, ...MB_L10.lessons, ...MB_L11.lessons, ...MB_L12.lessons, ...MB_L13.lessons, ...MB_L14.lessons, ...MB_L15.lessons, ...MB_L16.lessons, ...MB_L17.lessons, ...MB_L18.lessons, ...MB_L19.lessons, ...MB_L20.lessons],
   },
 };
 
