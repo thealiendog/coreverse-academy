@@ -101,6 +101,13 @@ const EXPLORER_DATA = {
     guide:     'Ace',
     lessons:   [...MB_L01.lessons, ...MB_L02.lessons, ...MB_L03.lessons, ...MB_L04.lessons, ...MB_L05.lessons, ...MB_L06.lessons, ...MB_L07.lessons, ...MB_L08.lessons, ...MB_L09.lessons, ...MB_L10.lessons, ...MB_L11.lessons, ...MB_L12.lessons, ...MB_L13.lessons, ...MB_L14.lessons, ...MB_L15.lessons, ...MB_L16.lessons, ...MB_L17.lessons, ...MB_L18.lessons, ...MB_L19.lessons, ...MB_L20.lessons],
   },
+
+  'future-skills': {
+    ageBand:   'explorers',
+    subjectId: 'future-skills',
+    guide:     'Byte',
+    lessons:   [],
+  },
 };
 
 // ── ElevenLabs character timestamps → per-word start times ────────────────────
