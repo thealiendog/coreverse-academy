@@ -130,6 +130,13 @@ const EXPLORER_DATA = {
     guide:     'Byte',
     lessons:   [...FS_L01.lessons, ...FS_L02.lessons, ...FS_L03.lessons, ...FS_L04.lessons, ...FS_L05.lessons, ...FS_L06.lessons, ...FS_L07.lessons, ...FS_L08.lessons, ...FS_L09.lessons, ...FS_L10.lessons, ...FS_L11.lessons, ...FS_L12.lessons, ...FS_L13.lessons, ...FS_L14.lessons, ...FS_L15.lessons, ...FS_L16.lessons, ...FS_L17.lessons, ...FS_L18.lessons, ...FS_L19.lessons, ...FS_L20.lessons],
   },
+
+  'leadership': {
+    ageBand:   'explorers',
+    subjectId: 'leadership',
+    guide:     'Valor',
+    lessons:   [],
+  },
 };
 
 // ── ElevenLabs character timestamps → per-word start times ────────────────────
