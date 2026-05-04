@@ -15,6 +15,7 @@ import SOCIALLEADERSHIP_EXPLORERS from '../data/socialleadership_explorers_adapt
 import LIFEWELLNESS_EXPLORERS from '../data/lifewellness_explorers_adapter';
 import CREATIVEARTS_EXPLORERS from '../data/creativearts_explorers_adapter';
 import HISTORYWORLD_EXPLORERS from '../data/historyworld_explorers_adapter';
+import SPANISH_EXPLORERS from '../data/spanish_explorers_adapter';
 import INNERWORLD_UPPEREXPLORERS from '../data/innerworld_upperexplorers_adapter';
 import COSMOS_UPPEREXPLORERS from '../data/cosmos_upperexplorers_adapter';
 import FUTURESKILLS_UPPEREXPLORERS from '../data/futureskills_upperexplorers_adapter';
@@ -143,6 +144,7 @@ export default function SubjectView() {
     : subjectId === 'wellness'                   ? LIFEWELLNESS_EXPLORERS
     : subjectId === 'creative-arts'              ? CREATIVEARTS_EXPLORERS
     : subjectId === 'history'                    ? HISTORYWORLD_EXPLORERS
+    : subjectId === 'languages'                  ? SPANISH_EXPLORERS
     : subjectId === 'ss'                         ? SS_EXPLORERS
     : getLevel2Lessons(subjectId);
   // Subject-specific Upper Explorers curricula override level 3
