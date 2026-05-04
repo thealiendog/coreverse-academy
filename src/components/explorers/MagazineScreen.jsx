@@ -3,9 +3,32 @@
 // DAY 2.11: Scroll hint chevron — bouncing icon at viewport bottom when vocab is below fold.
 import { useState, useEffect } from 'react';
 
-function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint) {
+// Render a plain string with per-word karaoke highlighting.
+// wordOffset: global word index at which this text starts (headline words come first).
+function renderKaraokeSpans(text, karaokeIdx, accent, wordOffset = 0) {
+  const chunks = text.split(/(\s+)/);
+  let wordCount = wordOffset;
+  return chunks.map((chunk, i) => {
+    if (!chunk) return null;
+    if (/^\s+$/.test(chunk)) return <span key={i}>{chunk}</span>;
+    const thisIdx  = wordCount++;
+    const isActive = thisIdx === karaokeIdx;
+    return (
+      <span key={i} style={{
+        color:      isActive ? accent : 'inherit',
+        textShadow: isActive ? `0 0 14px ${accent}99` : 'none',
+        fontWeight: isActive ? 700 : 'inherit',
+        transition: 'color 0.08s ease, text-shadow 0.08s ease',
+      }}>
+        {chunk}
+      </span>
+    );
+  });
+}
+
+function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint, headlineWordCount = 0) {
   const vocabMap = new Map((vocab || []).map(v => [v.word.toLowerCase(), v]));
-  let wordCount = 0;
+  let wordCount = headlineWordCount; // offset so paragraph indices follow headline
   let firstVocabPulsed = false; // only the very first vocab word gets the tutorial pulse
 
   return paragraphs.map((para, pIdx) => {
@@ -54,6 +77,7 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, sho
 export default function MagazineScreen({
   screen, guideAvatar, speaking, loadingAudio, audioPaused, karaokeWords, karaokeIdx,
   accent, onReplay, onPauseResume, onVocabTap, showVocabHint, onDismissVocabHint,
+  headlineWordCount = 0,
 }) {
   const { section, totalSections, headline, paragraphs = [], image, imageCaption, vocab = [] } = screen;
 
@@ -145,18 +169,18 @@ export default function MagazineScreen({
           Section {section} of {totalSections}
         </div>
 
-        {/* Headline */}
+        {/* Headline — with per-word karaoke at indices 0..headlineWordCount-1 */}
         <h2 className="mag-headline" style={{
           fontSize: '1.45rem', fontWeight: 800, color: '#fff',
           marginBottom: 18, lineHeight: 1.25, letterSpacing: '-0.02em',
           marginTop: 0,
         }}>
-          {headline}
+          {renderKaraokeSpans(headline || '', karaokeIdx, accent, 0)}
         </h2>
 
-        {/* Paragraphs with karaoke */}
+        {/* Paragraphs with karaoke — word indices start at headlineWordCount */}
         <div>
-          {renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint)}
+          {renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint, headlineWordCount)}
         </div>
 
         {/* Vocab chips */}

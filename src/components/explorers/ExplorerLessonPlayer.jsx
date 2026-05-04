@@ -239,7 +239,10 @@ function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
   switch (screen?.type) {
     case 'welcome':     return r(screen.guideText);
-    case 'magazine':    return (screen.paragraphs || []).join(' ');
+    case 'magazine': {
+      const h = screen.headline ? `${screen.headline}. ` : '';
+      return h + (screen.paragraphs || []).join(' ');
+    }
     case 'interactive': return r(screen.guideText);
     case 'quiz':        return r(screen.guideText);
     case 'real-world':  return r(screen.guideText);
@@ -892,34 +895,18 @@ export default function ExplorerLessonPlayer() {
     startCountdownFnRef.current = startCountdownForScreen;
 
     if (screen.type === 'magazine') {
-      // Sequence: headline (noKaraoke) → 150ms → paragraphs (karaoke) → vocab hint → countdown
-      // Body audio is pre-fetched in parallel so it's ready the moment the title finishes.
+      // Headline + paragraphs spoken as one TTS call so karaoke flows continuously:
+      //   headline words → indices 0..N-1
+      //   paragraph words → indices N..N+M-1
+      // MagazineScreen receives karaokeIdx and headlineWordCount to render both correctly.
       const headline = screen.headline || '';
       const paraText = (screen.paragraphs || []).join(' ');
+      const fullText = headline ? `${headline}. ${paraText}` : paraText;
 
-      // Pre-fetch body audio NOW — headline will play while body downloads in background
-      if (paraText) {
-        console.log(`[PREWARM] Section ${screen.section} — pre-fetching body audio in background...`);
-        prewarmAudio(paraText).then(() => {
-          console.log(`[PREWARM] Section ${screen.section} title + body fetched, ready`);
-        });
-      }
-
-      console.log(`[TTS] Screen ${screenIdx} magazine — Reading title: "${headline}"`);
-      speak(headline, () => {
+      console.log(`[TTS] Screen ${screenIdx} magazine — Reading section ${screen.section}: "${fullText.slice(0, 60)}..."`);
+      speak(fullText, () => {
         if (cancelled) return;
-        const titleEndTime = Date.now();
-        const t1 = setTimeout(() => {
-          if (cancelled) return;
-          if (isPausedRef.current) {
-            console.log('[PAUSE-BLOCK] Skipped body audio in chain timer — audio is paused');
-            return;
-          }
-          console.log(`[CHAIN] Title ended, playing body (gap: ${Date.now() - titleEndTime}ms)`);
-          console.log(`[TTS] Screen ${screenIdx} magazine — Reading paragraphs: "${paraText.slice(0, 60)}..."`);
-          speak(paraText, () => {
-            if (cancelled) return;
-            console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
+        console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
             // One-time vocab hint / tutorial
             if (screen.vocab?.length > 0 && !localStorage.getItem('explorer_vocab_hint_shown')) {
               setShowVocabHint(true);
@@ -955,10 +942,7 @@ export default function ExplorerLessonPlayer() {
               }, 1000);
               timers.push(tBuffer);
             }
-          });
-        }, 150); // 150ms — body audio is pre-cached so it plays instantly
-        timers.push(t1);
-      }, { noKaraoke: true });
+      });
 
     } else if (screen.type === 'real-world') {
       // Sequence:
@@ -1148,6 +1132,10 @@ export default function ExplorerLessonPlayer() {
     welcomeReady,
     onWelcomeTap,
     subjectId,
+    // For magazine: number of headline words so MagazineScreen can offset paragraph karaoke
+    headlineWordCount: currentScreen?.type === 'magazine'
+      ? (currentScreen.headline || '').split(/\s+/).filter(Boolean).length
+      : 0,
   };
 
   function renderScreen(screen) {
