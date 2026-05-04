@@ -1,0 +1,231 @@
+const SpanishExplorerL05Screens = {
+  lessons: [
+    {
+      id:        'sp-6-8-05',
+      subjectId: 'languages',
+      title:     'Los Animales — Animals',
+      guideId:   'luna',
+      xpReward:  50,
+      screens: [
+        {
+          id:        'sp05-welcome',
+          type:      'welcome',
+          guideText: `Animals were among the first things humans ever named, {name} — in every language, across every culture. Today we're going to explore the animal kingdom in Spanish: the pets we live with, the wild creatures of Latin America, the animals of the ocean, and the surprising sounds they make in Spanish. Let's go.`,
+        },
+        {
+          id:            'sp05-mag-1',
+          type:          'magazine',
+          section:       1,
+          totalSections: 4,
+          headline:      `The Animals That Live With Us`,
+          paragraphs: [
+            `The animals we share our homes with are often among the first words anyone learns in a new language. In Spanish, pet names are short and musical — easy to teach children and easy to love.`,
+            `The cat (el gato — el GAH-toh) and the dog (el perro — el PEH-rroh) are the most common companions across the Spanish-speaking world. Notice the double r in perro — that rolled r is one of Spanish's most distinctive sounds, and perro gives you a perfect chance to practice it. Roll it gently at first: PEH-rroh.`,
+            `The cow (la vaca — lah VAH-kah) isn't a pet, but she's one of the most important animals in rural Latin America and Spain. And here's a surprising connection: the English word "vaccine" came from vaca — cowpox was the first vaccine ever used, and doctors named it after the cow. Language and history braided together.`,
+          ],
+          image:        `/explorer-assets/languages/sp05-magazine-1.png`,
+          imageCaption: `A cat, a dog, and a cow illustrated with Spanish labels`,
+          vocab: [
+            {
+              word:        `el gato`,
+              definition:  `The cat in Spanish — la gata for a female cat.`,
+              audioPrompt: `El gato — el GAH-toh — the cat, {name}. La gata for a female cat. GAH-toh. Cats have lived with humans for thousands of years, and Spanish-speaking cats are no different — they're loved, they're everywhere. El GAH-toh — gato. Do you have one at home?`,
+            },
+            {
+              word:        `el perro`,
+              definition:  `The dog in Spanish — the double r requires a rolled r sound.`,
+              audioPrompt: `El perro — el PEH-rroh — the dog, {name}. That double r rolls — PEH-rroh. The rolled r is one of Spanish's most distinctive sounds. Roll it gently at first: PEH-rroh. Dogs are beloved across the Spanish-speaking world — faithful, loud, and everywhere. El PEH-rroh.`,
+            },
+            {
+              word:        `la vaca`,
+              definition:  `The cow in Spanish — the source of the English word "vaccine."`,
+              audioPrompt: `La vaca — lah VAH-kah — the cow, {name}. The v in Spanish sounds soft, almost like a b. Lah VAH-kah. Vacas are central to rural life across Latin America and Spain. And the English word vaccine came from vaca — cowpox was the first vaccine. Lah VAH-kah.`,
+            },
+          ],
+        },
+        {
+          id:            'sp05-mag-2',
+          type:          'magazine',
+          section:       2,
+          totalSections: 4,
+          headline:      `Latin America's Wild Creatures`,
+          paragraphs: [
+            `Latin America is home to some of the world's most extraordinary animals — and many of their names in Spanish carry indigenous history inside them. The language remembers who named these creatures first.`,
+            `The jaguar (el jaguar — el hah-GWAHR) is native to the Americas, and its name comes from the Tupí-Guaraní language of South America — not from Spanish or Latin. The llama (la llama — lah YAH-mah) comes from the Andes mountains of Peru and Bolivia, and its name traces back to Quechua, the language of the Inca. Spanish absorbed these words from the people who knew these animals first, for thousands of years before any European arrived.`,
+            `The parrot (el loro — el LOH-roh) is native to tropical regions of Latin America and has been part of the cultural imagination for centuries — in folklore, in songs, in the stories of rainforest communities. El loro habla — the parrot speaks. A talking animal in a language-learning lesson feels exactly right.`,
+          ],
+          image:        `/explorer-assets/languages/sp05-magazine-2.png`,
+          imageCaption: `A jaguar, a llama, and a parrot illustrated in their natural habitats`,
+          vocab: [
+            {
+              word:        `el jaguar`,
+              definition:  `The jaguar in Spanish — its name comes from the Tupí-Guaraní language of South America.`,
+              audioPrompt: `El jaguar — el hah-GWAHR — the jaguar, {name}. This word comes from Tupí-Guaraní, a language of South America — not from Spanish. The jaguar is native to the Americas, and its name traveled from the people who lived alongside it for generations. Hah-GWAHR.`,
+            },
+            {
+              word:        `la llama`,
+              definition:  `The llama in Spanish — the double-ll makes a "y" sound, and the name comes from Quechua.`,
+              audioPrompt: `La llama — lah YAH-mah — the llama, {name}. The double-l makes a y sound: YAH-mah. Llamas are native to the Andes — Peru, Bolivia, Argentina. Their name traces back to Quechua, the language of the Inca. Lah YAH-mah. A word with deep roots in the Americas.`,
+            },
+            {
+              word:        `el loro`,
+              definition:  `The parrot in Spanish — native to tropical Latin America.`,
+              audioPrompt: `El loro — el LOH-roh — the parrot, {name}. The double r rolls softly: LOH-roh. Parrots are native to tropical Latin America and have been part of folklore and song for centuries. El loro habla — the parrot speaks. A talking animal in a Spanish lesson feels exactly right. El LOH-roh.`,
+            },
+          ],
+        },
+        {
+          id:            'sp05-mag-3',
+          type:          'magazine',
+          section:       3,
+          totalSections: 4,
+          headline:      `The Ocean in Spanish`,
+          paragraphs: [
+            `Both the Pacific and Atlantic coasts of Latin America are rich with marine life — and Spanish has beautiful words for the creatures of the ocean.`,
+            `The fish (el pez — el PES) is just one syllable: short and quick. El pez becomes los peces in the plural — the z changes to a c. Dolphins (el delfín — el del-FEEN) are celebrated throughout Latin American coastal culture — in art, in the names of boats and towns, in stories told along the shore.`,
+            `The whale (la ballena — lah bah-YEH-nah) is one of the great migrations of both the Pacific and Atlantic. In Baja California and in Patagonia, whale watching is a beloved tradition — families drive hours to watch ballenas surface in cold winter water. La ballena — the word is as large and slow as the animal.`,
+          ],
+          image:        `/explorer-assets/languages/sp05-magazine-3.png`,
+          imageCaption: `A fish, a dolphin, and a whale illustrated in ocean blue`,
+          vocab: [
+            {
+              word:        `el pez`,
+              definition:  `The fish in Spanish — becomes los peces in the plural.`,
+              audioPrompt: `El pez — el PES — the fish, {name}. Just one syllable: PES. The z makes a soft s in Latin American Spanish. El pez is singular; los peces is plural — the z changes to c. El PES — pez. What kind of pez do you know?`,
+            },
+            {
+              word:        `el delfín`,
+              definition:  `The dolphin in Spanish — celebrated in coastal Latin American culture.`,
+              audioPrompt: `El delfín — el del-FEEN — the dolphin, {name}. Accent on the last syllable: del-FEEN. Delfines — del-FEE-nes — in the plural. Dolphins are celebrated in coastal Latin American culture — in art, in stories, in the names of boats. Del-FEEN. El delfín.`,
+            },
+            {
+              word:        `la ballena`,
+              definition:  `The whale in Spanish — the double-ll makes a "y" sound.`,
+              audioPrompt: `La ballena — lah bah-YEH-nah — the whale, {name}. The double-l makes that y sound: bah-YEH-nah. Whales migrate along both Pacific and Atlantic coasts of Latin America. In Baja California and Patagonia, watching ballenas is a beloved tradition. Lah bah-YEH-nah — la ballena.`,
+            },
+          ],
+        },
+        {
+          id:            'sp05-mag-4',
+          type:          'magazine',
+          section:       4,
+          totalSections: 4,
+          headline:      `What Animals Say in Spanish`,
+          paragraphs: [
+            `Every language hears animal sounds a little differently — not because the animals are making different noises, but because different communities listened, and wrote down what they heard in their own language. Animal sound words are invented by people, not discovered.`,
+            `In Spanish, a dog says guau guau (GWAU GWAU) instead of woof-woof. A cat says miau (MYOW) instead of meow — that one is actually pretty close to English. A cow says mu (MOO) — almost exactly the same. Some sounds travel across languages easily; others get filtered through a completely different set of ears.`,
+            `The differences reveal something important: language is made by people, not found in nature. When a community agrees on a sound, it becomes the word. Every version is equally real — just heard through different ears, in different places, at different moments in history. El gato dice miau. El perro dice guau guau. La vaca dice mu.`,
+          ],
+          image:        `/explorer-assets/languages/sp05-magazine-4.png`,
+          imageCaption: `Animals with speech bubbles showing their sounds in Spanish`,
+          vocab: [
+            {
+              word:        `guau guau`,
+              definition:  `The sound a dog makes in Spanish — woof-woof heard through different ears.`,
+              audioPrompt: `Guau guau — GWAU GWAU — that's what a Spanish dog says, {name}. Not woof-woof: guau guau. Every language hears animal sounds differently — people listening to the same animals and writing what they heard. GWAU GWAU. Try barking in Spanish right now.`,
+            },
+            {
+              word:        `miau`,
+              definition:  `The sound a cat makes in Spanish — very close to the English "meow."`,
+              audioPrompt: `Miau — MYOW — that's how a Spanish cat meows, {name}. Pretty close to the English meow, isn't it? Some animal sounds are so similar across languages because we're all listening to the same cat. MYOW. El gato dice miau — the cat says miau. Try it.`,
+            },
+            {
+              word:        `mu`,
+              definition:  `The sound a cow makes in Spanish — almost identical to the English "moo."`,
+              audioPrompt: `Mu — MOO — that's what the Spanish cow says, {name}. La vaca dice mu. Almost exactly like the English moo. Animal sounds that travel across languages remind us that we're all human, all listening to the same world. MOO — mu. Simple and true.`,
+            },
+          ],
+        },
+        {
+          id:            'sp05-game',
+          type:          'interactive',
+          guideText:     `Match each Spanish animal to its English name, {name}!`,
+          columnHeaders: ['Spanish', 'Animal'],
+          items: [
+            { id: 'gato-i',    label: 'el gato',    correctMatch: 'cat' },
+            { id: 'perro-i',   label: 'el perro',   correctMatch: 'dog' },
+            { id: 'ballena-i', label: 'la ballena', correctMatch: 'whale' },
+            { id: 'loro-i',    label: 'el loro',    correctMatch: 'parrot' },
+          ],
+          buckets: [
+            { id: 'cat',    label: 'cat',    color: '#F472B6' },
+            { id: 'dog',    label: 'dog',    color: '#60A5FA' },
+            { id: 'whale',  label: 'whale',  color: '#34D399' },
+            { id: 'parrot', label: 'parrot', color: '#FBBF24' },
+          ],
+        },
+        {
+          id:        'sp05-quiz',
+          type:      'quiz',
+          guideText: `¡Vamos, {name}! One last challenge before we celebrate!`,
+          questions: [
+            {
+              id:          'q1',
+              format:      'multiple-choice',
+              text:        `How do you say "fish" in Spanish?`,
+              options:     ['el loro', 'el delfín', 'el pez', 'la ballena'],
+              answer:      'el pez',
+              explanation: `El pez (el PES) is fish — one syllable. In the plural, it becomes los peces (the z changes to c).`,
+            },
+            {
+              id:          'q2',
+              format:      'multiple-choice',
+              text:        `What does "el loro" mean?`,
+              options:     ['the jaguar', 'the llama', 'the parrot', 'the dolphin'],
+              answer:      'the parrot',
+              explanation: `El loro (el LOH-roh) is the parrot — native to tropical Latin America and celebrated in folklore and song.`,
+            },
+            {
+              id:          'q3',
+              format:      'multiple-choice',
+              text:        `"La vaca" means which of the following?`,
+              options:     ['the dog', 'the cat', 'the cow', 'the horse'],
+              answer:      'the cow',
+              explanation: `La vaca (lah VAH-kah) is the cow — and the English word "vaccine" comes from this same word.`,
+            },
+            {
+              id:          'q4',
+              format:      'true-false',
+              text:        `The word "jaguar" comes from an indigenous South American language, not from Spanish.`,
+              answer:      'True',
+              explanation: `Yes — jaguar comes from Tupí-Guaraní, a language of South America. Spanish borrowed it from the people who knew the animal first.`,
+            },
+            {
+              id:          'q5',
+              format:      'multiple-choice',
+              text:        `What sound does a cat make in Spanish?`,
+              options:     ['guau guau', 'mu', 'miau', 'pío pío'],
+              answer:      'miau',
+              explanation: `Miau (MYOW) is how a Spanish cat meows — very close to the English "meow," because we're all listening to the same animal.`,
+            },
+            {
+              id:          'q6',
+              format:      'multiple-choice',
+              text:        `Why are words like "jaguar" and "llama" especially meaningful in Spanish?`,
+              options:     ['They are the most common animals in Spain', 'They were invented by Spanish explorers', `They come from indigenous languages and reflect the animals' origins in the Americas`, 'They are borrowed from English'],
+              answer:      `They come from indigenous languages and reflect the animals' origins in the Americas`,
+              explanation: `Jaguar comes from Tupí-Guaraní and llama from Quechua — Spanish kept the indigenous names of these native American animals.`,
+            },
+          ],
+        },
+        {
+          id:              'sp05-realworld',
+          type:            'real-world',
+          guideText:       `Let's bring Spanish animals into your home, {name}!`,
+          familyAdventure: `Take turns making animal sounds — and have the family guess which animal it is, first in English, then in Spanish. Try the Spanish versions: guau guau, miau, mu. Challenge: can anyone in your family make a sound for el jaguar or la ballena? Make one up — and give it a Spanish name.`,
+          creativePrompt:  `Draw your favorite animal and label it in Spanish with its name and the sound it makes. If you're not sure what sound it makes in Spanish, make one up — and write "¿Qué dice...?" (What does... say?) in a speech bubble. Bonus: write one sentence about your animal using a word you've already learned — es grande, es bonito, tengo un gato.`,
+        },
+        {
+          id:        'sp05-celebration',
+          type:      'celebration',
+          message:   `¡Excelente, {name}! You've learned to name the animals of the home, the jungle, and the ocean — and you've discovered that some Spanish animal words carry indigenous history inside them. Luna loves that about Spanish: every word has a story, and every story goes back further than you expect. ¡Hasta la próxima!`,
+          badge:     'languages-l05',
+          badgeName: 'Animal Explorer',
+          xpEarned:  50,
+        },
+      ],
+    },
+  ],
+};
+
+export default SpanishExplorerL05Screens;

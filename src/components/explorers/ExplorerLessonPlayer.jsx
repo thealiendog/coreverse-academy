@@ -169,6 +169,10 @@ import CA_L20 from '../../data/creativearts_explorer_l20_screens';
 
 // Spanish — lessons added here as screen files are authored
 import SP_L01 from '../../data/spanish_explorer_l01_screens';
+import SP_L02 from '../../data/spanish_explorer_l02_screens';
+import SP_L03 from '../../data/spanish_explorer_l03_screens';
+import SP_L04 from '../../data/spanish_explorer_l04_screens';
+import SP_L05 from '../../data/spanish_explorer_l05_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -222,7 +226,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'languages',
     guide:     'Luna',
-    lessons:   [...SP_L01.lessons],
+    lessons:   [...SP_L01.lessons, ...SP_L02.lessons, ...SP_L03.lessons, ...SP_L04.lessons, ...SP_L05.lessons],
   },
 };
 

@@ -68,7 +68,7 @@ const NEW_FORMAT_LESSONS = {
   'wellness':      ['lw-6-8-01', 'lw-6-8-02', 'lw-6-8-03', 'lw-6-8-04', 'lw-6-8-05', 'lw-6-8-06', 'lw-6-8-07', 'lw-6-8-08', 'lw-6-8-09', 'lw-6-8-10', 'lw-6-8-11', 'lw-6-8-12', 'lw-6-8-13', 'lw-6-8-14', 'lw-6-8-15', 'lw-6-8-16', 'lw-6-8-17', 'lw-6-8-18', 'lw-6-8-19', 'lw-6-8-20'],
   'creative-arts': ['ca-6-8-01', 'ca-6-8-02', 'ca-6-8-03', 'ca-6-8-04', 'ca-6-8-05', 'ca-6-8-06', 'ca-6-8-07', 'ca-6-8-08', 'ca-6-8-09', 'ca-6-8-10', 'ca-6-8-11', 'ca-6-8-12', 'ca-6-8-13', 'ca-6-8-14', 'ca-6-8-15', 'ca-6-8-16', 'ca-6-8-17', 'ca-6-8-18', 'ca-6-8-19', 'ca-6-8-20'],
   // Spanish lessons added here as screen files are authored
-  'languages':     ['sp-6-8-01'],
+  'languages':     ['sp-6-8-01', 'sp-6-8-02', 'sp-6-8-03', 'sp-6-8-04', 'sp-6-8-05'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
