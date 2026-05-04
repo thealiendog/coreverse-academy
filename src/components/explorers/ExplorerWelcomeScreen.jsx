@@ -67,6 +67,7 @@ export default function ExplorerWelcomeScreen({
   };
 
   // Visual state flags
+  const showLoading  = !hasPlayed && !speaking && !welcomeReady; // prewarm in-flight
   const showPlayBtn  = !hasPlayed && !speaking && welcomeReady;
   const showBubble   = speaking || (hasPlayed && !speaking);
   const showContinue = hasPlayed && !speaking && !loadingAudio;
@@ -95,6 +96,10 @@ export default function ExplorerWelcomeScreen({
         @keyframes wc-breathe {
           0%, 100% { transform: scale(1); }
           50%       { transform: scale(1.05); }
+        }
+        @keyframes wc-dot-pulse {
+          0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+          40%            { opacity: 1;   transform: scale(1);   }
         }
         @keyframes wc-ripple {
           0%   { transform: scale(1);   opacity: 0.65; }
@@ -179,6 +184,39 @@ export default function ExplorerWelcomeScreen({
           />
         </div>
       </div>
+
+      {/* LOADING STATE — shown while prewarm is in-flight, before play button appears */}
+      {showLoading && (
+        <div style={{
+          display:       'flex',
+          flexDirection: 'column',
+          alignItems:    'center',
+          gap:           10,
+          animation:     'wc-fade-in 0.5s ease both',
+        }}>
+          {/* Three-dot pulse — cosmetically matches the dark/cosmic aesthetic */}
+          <div style={{ display: 'flex', gap: 6 }}>
+            {[0, 1, 2].map(i => (
+              <div key={i} style={{
+                width:        8,
+                height:       8,
+                borderRadius: '50%',
+                background:   accent,
+                animation:    `wc-dot-pulse 1.4s ${i * 0.22}s ease-in-out infinite`,
+              }} />
+            ))}
+          </div>
+          <div style={{
+            color:       `${accent}88`,
+            fontSize:    '0.75rem',
+            fontWeight:  600,
+            letterSpacing: '0.06em',
+            textTransform: 'uppercase',
+          }}>
+            Preparing…
+          </div>
+        </div>
+      )}
 
       {/* PRE-READER PLAY BUTTON — visible when prewarm ready, hidden after tap */}
       {showPlayBtn && (
