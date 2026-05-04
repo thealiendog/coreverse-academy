@@ -38,6 +38,11 @@ const SL_L08 = {
           ],
           image: `/explorer-assets/leadership/l08-magazine-1.png`,
           imageCaption: `Moral courage means doing what's right even when it costs you something`,
+          vocab: [
+            { word: `moral courage`, definition: `The willingness to do what you believe is right even when there's a real social or personal cost — the everyday kind of bravery that defines character.`, audioPrompt: `Moral courage isn't the dramatic kind from movies, {name}. It's quieter than that. It's the moment you have to decide — when it would be easier to stay silent — whether you'll speak up anyway. That choice, made in real time, is what moral courage actually looks like.` },
+            { word: `social cost`, definition: `What you risk losing when you stand up — acceptance, friendship, or approval — the real reason moral courage is hard.`, audioPrompt: `The social cost is what makes standing up genuinely hard, {name}. It's not that people don't know what's right. It's that doing it might cost them something — a friendship, a reputation, a feeling of belonging. Understanding that cost is real is the first step to choosing it anyway.` },
+            { word: `bystander`, definition: `Someone who witnesses something wrong but doesn't act — not because they're bad, but because the pull to stay silent is powerful.`, audioPrompt: `Being a bystander doesn't make you a bad person, {name} — it makes you human. The pull to stay quiet is strong and normal. But understanding that pull is what gives you a choice. When you know why you hesitate, you can decide in advance what you'll do when the moment comes.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L08 = {
           ],
           image: `/explorer-assets/leadership/l08-magazine-2.png`,
           imageCaption: `The pull to go along is normal — which means you can prepare for it`,
+          vocab: [
+            { word: `belonging`, definition: `The deep human need to be part of a group — the very thing that makes standing up against the group so difficult.`, audioPrompt: `Belonging isn't a weakness, {name} — it's one of the most fundamental human needs. The reason standing up is hard is that it threatens something real: your place in the group. Understanding that doesn't make it okay to stay silent. But it helps you prepare for the moment, so you can choose your response instead of just reacting.` },
+            { word: `instinct`, definition: `A natural automatic response — the pull toward the group is an instinct, which means you have to make a conscious choice to act differently.`, audioPrompt: `Your instinct to fit in isn't something to be ashamed of, {name}. It's wired into you. What matters is knowing that instinct is there — so you can recognize the moment when it's pulling you toward silence, and decide whether that's actually what you want to choose.` },
+            { word: `prepare`, definition: `Deciding in advance how you'll act in a hard moment — so when it comes, you're choosing, not just reacting.`, audioPrompt: `Valor's belief: the best time to decide what you'll do in a hard moment is before it happens, {name}. When you've already thought it through — "If I see someone being treated badly, I'll say something" — the moment arrives already answered. That's not weakness. That's preparation. And it's how brave people actually do it.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L08 = {
           ],
           image: `/explorer-assets/leadership/l08-magazine-3.png`,
           imageCaption: `One person acting breaks the pattern — others are much more likely to follow`,
+          vocab: [
+            { word: `bystander effect`, definition: `The tendency for people to be less likely to help when others are present — because each person assumes someone else will act.`, audioPrompt: `The bystander effect works because of assumption, {name}. Everyone thinks someone else will step in. So everyone waits. And nobody acts. Understanding this pattern is the beginning of breaking it. The moment you know why people hesitate, you can decide to be the one who doesn't.` },
+            { word: `diffusion`, definition: `The spreading of responsibility across a group so that no single person feels personally required to act.`, audioPrompt: `When responsibility gets spread across a crowd, {name}, it can feel like it belongs to everyone — which often means it belongs to no one. That diffusion of responsibility is what paralyzes bystanders. The antidote is simple: decide that this is YOUR responsibility. Not someone else's.` },
+            { word: `direct`, definition: `Speaking specifically to one person rather than the group — the approach most likely to produce real action in a bystander situation.`, audioPrompt: `"Can someone help?" gets ignored, {name}. "Can you go get a teacher right now?" gets results. The difference is direction. When you point at one specific person and give them a clear task, the diffusion of responsibility collapses. That one direct ask is often all it takes to break the pattern.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L08 = {
           ],
           image: `/explorer-assets/leadership/l08-magazine-4.png`,
           imageCaption: `Small acts of courage every day build the character for bigger ones`,
+          vocab: [
+            { word: `practice`, definition: `Doing something repeatedly so it becomes more natural — moral courage grows through small daily acts, not just large dramatic ones.`, audioPrompt: `Moral courage is a muscle, {name} — and you build it through practice. Every time you choose the harder right thing over the easier wrong one, you make the next choice a little less difficult. Small moments of courage aren't warm-up acts. They're how the real thing gets built.` },
+            { word: `upstander`, definition: `Someone who sees something wrong and acts — the opposite of a bystander, and the role anyone can choose.`, audioPrompt: `An upstander sees what's wrong and steps up, {name}. Not because they feel no fear — but because they've decided their values matter more than their comfort. That choice is available to every single person in every single situation. Including you. Including now.` },
+            { word: `integrity`, definition: `Doing the right thing when it's hard — the quality that small daily acts of moral courage build over time.`, audioPrompt: `Integrity is what you build in the small moments, {name}. Not the speeches. Not the heroic gestures. The quiet choices — not laughing at the unkind joke, sitting with the person eating alone, saying "that's not okay." Those moments add up. That's the character Valor is most proud to see you building.` },
+          ],
         },
 
         {

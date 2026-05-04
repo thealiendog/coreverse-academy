@@ -38,6 +38,11 @@ const SL_L04 = {
           ],
           image: `/explorer-assets/leadership/l04-magazine-1.png`,
           imageCaption: `Hearing happens automatically — listening is a choice`,
+          vocab: [
+            { word: `hearing`, definition: `The automatic physical process of detecting sound — you hear whether you want to or not.`, audioPrompt: `Hearing is effortless, {name} — your ears do it without any help from you. Listening is different. Listening is what happens when you decide to actually take in what someone is saying, not just let the sounds wash over you. One is automatic. The other is a choice.` },
+            { word: `listening`, definition: `The intentional act of focusing fully on what someone is communicating — words, tone, and feeling together.`, audioPrompt: `Real listening means your whole attention is on the other person, {name}. Not on what you'll say next. Not on your phone. When someone feels genuinely listened to, it changes them — they open up, they trust you, they remember the conversation. That's what listening does.` },
+            { word: `intentional`, definition: `Done on purpose, with awareness and deliberate focus — listening is intentional in a way that hearing never is.`, audioPrompt: `Valor believes that the greatest gift one person can offer another is intentional attention, {name}. When you choose to put everything else aside and truly focus on someone, you're telling them: you matter enough for my full presence. That message lands, even without words.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L04 = {
           ],
           image: `/explorer-assets/leadership/l04-magazine-2.png`,
           imageCaption: `Put the phone down, face the speaker, and listen with your whole self`,
+          vocab: [
+            { word: `reflect`, definition: `To say back what you heard in your own words — checking your understanding and showing the speaker they were truly heard.`, audioPrompt: `Reflecting back is the step most people skip, {name} — and it's the most important one. "So it sounds like you're feeling..." shows the other person that their words actually landed. It also catches misunderstandings before they become real problems. Reflect first. Then respond.` },
+            { word: `eye contact`, definition: `Looking at someone while they speak — a signal of attention, respect, and genuine presence.`, audioPrompt: `Eye contact says "I'm here with you," {name}, without a single word. It's one of the most direct signals of real listening. You don't need to stare — just enough to show the other person that you see them. That you're not somewhere else. That they have your actual attention.` },
+            { word: `interrupt`, definition: `To cut someone off before they finish speaking — one of the quickest ways to make a person feel unheard.`, audioPrompt: `When you interrupt, {name}, even with good intentions, you're saying: my thoughts matter more than yours right now. The person speaking usually loses their train of thought — and feels dismissed. Let people finish. Even when you already think you know where they're going. You might be wrong.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L04 = {
           ],
           image: `/explorer-assets/leadership/l04-magazine-3.png`,
           imageCaption: `The best leaders are often the best listeners`,
+          vocab: [
+            { word: `trust`, definition: `The feeling of safety that comes when someone knows they will be genuinely heard — built through consistent active listening.`, audioPrompt: `Trust grows when people feel safe to say the real thing, {name}. And that feeling of safety comes most reliably from being truly listened to. When someone knows you'll actually hear them — without judgment, without rushing — they'll tell you what they really think. That's when real leadership becomes possible.` },
+            { word: `perspective`, definition: `Another person's point of view — something you can only access if you listen before you speak.`, audioPrompt: `Every person in the room has information you don't have, {name}. Their experience, their read on the situation, their concerns. You can only access that information by listening — really listening, not just waiting. The leaders who hear the most perspectives make the best decisions. That's not a coincidence.` },
+            { word: `genuine`, definition: `Listening that is real and focused — not performed or half-attentive — the kind that people can feel and that builds real connection.`, audioPrompt: `People can tell the difference between genuine listening and performed listening, {name}. Genuine listening isn't about the right facial expressions — it's about actually caring what the person is saying. When it's real, the other person feels it. When it's not, they feel that too.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L04 = {
           ],
           image: `/explorer-assets/leadership/l04-magazine-4.png`,
           imageCaption: `Even good listeners fall into traps — noticing them is the first step`,
+          vocab: [
+            { word: `advice`, definition: `Acting on the urge to fix someone's problem before they've asked — one of the most common listening traps.`, audioPrompt: `Sometimes people don't want a solution, {name} — they want to feel heard. Jumping straight to advice, even good advice, can make the other person feel less understood. Ask yourself first: are they looking for help, or do they just need someone to really listen?` },
+            { word: `judgment`, definition: `Forming an opinion before someone has finished speaking — a trap that shuts your mind before you have the full picture.`, audioPrompt: `When you judge before someone finishes, {name}, your mind closes to anything that might change it. You stop listening and start defending a conclusion you've already made. Let them finish. The last thing they say might be the most important.` },
+            { word: `distraction`, definition: `Anything that pulls your attention away from the speaker — including the thoughts forming in your own head.`, audioPrompt: `The sneakiest distraction isn't your phone, {name} — it's your own next thought. The moment you start planning what you'll say, you stop hearing what's being said. Real listening means staying present with the speaker, not racing ahead to your response.` },
+          ],
         },
 
         {

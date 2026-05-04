@@ -38,6 +38,11 @@ const SL_L16 = {
           ],
           image: `/explorer-assets/leadership/l16-magazine-1.png`,
           imageCaption: `Groupthink, dominance, information failure, and the bandwagon effect — four traps every group falls into`,
+          vocab: [
+            { word: `groupthink`, definition: `When a group suppresses genuine doubts to maintain harmony, producing decisions nobody actually thinks are best.`, audioPrompt: `Groupthink feels like agreement, {name} — but it's not. It's what happens when people hold back their real concerns because they don't want to disrupt the group. The result is a decision that sounds unanimous but isn't actually the best anyone could think of. Knowing this trap exists is what lets you avoid it.` },
+            { word: `dominance`, definition: `When one or two loud voices determine a group's decision before everyone else's thinking is heard.`, audioPrompt: `Dominance doesn't require anyone to be unkind, {name}. Someone just speaks first and speaks confidently — and the group orients around that. Everyone else quietly adjusts. The group decides. But the best idea might have been in the head of the person who never got a word in. Great leaders notice this and actively correct for it.` },
+            { word: `bandwagon effect`, definition: `Going along with what you think others think, rather than what you actually think yourself.`, audioPrompt: `The bandwagon effect happens when you look around the room, notice which way the wind is blowing, and adjust your view to match — even if you had a different idea, {name}. It feels like fitting in. It costs the group your actual thinking. The antidote is writing your idea down before anyone shares. That simple move protects your real view.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L16 = {
           ],
           image: `/explorer-assets/leadership/l16-magazine-2.png`,
           imageCaption: `Command is fastest, consensus builds most commitment — match the method to the moment`,
+          vocab: [
+            { word: `consensus`, definition: `A decision-making approach where everyone can genuinely support the outcome — slower, but producing the highest commitment.`, audioPrompt: `Consensus isn't everyone getting their first choice, {name}. It's everyone being able to say: "I can live with this, and I'll support it." That extra step takes time. But when people have genuinely agreed, they follow through — instead of complying with a decision they quietly resent. High-stakes decisions are often worth the time consensus takes.` },
+            { word: `voting`, definition: `Making a decision by majority — faster than consensus, but leaving the minority feeling unheard.`, audioPrompt: `Voting is efficient, {name}. Majority wins, and you move on. But the people who voted the other way still have to live with the result — and if they feel unheard, their commitment to the outcome will show it. Voting is great for low-stakes decisions. For decisions that need everyone's real effort, consensus is often worth the extra time.` },
+            { word: `commitment`, definition: `Genuine follow-through on a decision — most likely when people felt heard in the process that led to it.`, audioPrompt: `Commitment isn't compliance, {name}. Compliance means doing what you were told. Commitment means you actually believe in what you're doing and bring your full effort. The difference is whether people felt genuinely heard before the decision was made. That's why the process matters as much as the outcome.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L16 = {
           ],
           image: `/explorer-assets/leadership/l16-magazine-3.png`,
           imageCaption: `Clarify, share information, think first, invite everyone — then decide`,
+          vocab: [
+            { word: `anchor`, definition: `The first idea shared in a group discussion, which tends to pull all subsequent thinking toward it — avoided by having everyone think before anyone shares.`, audioPrompt: `An anchor is the idea that goes first and shapes everything after it, {name}. Whoever speaks first in a group discussion often becomes the invisible center of gravity. Everyone else adjusts around that first idea — even unconsciously. The fix is simple: think before you share. Write your idea down first. That way your view is your own, not a reaction to whoever went first.` },
+            { word: `brainstorm`, definition: `The phase of generating ideas without evaluating them — kept separate from the judging phase so creativity isn't shut down too early.`, audioPrompt: `Brainstorming only works if ideas are safe, {name}. The moment someone says "that won't work" during the generation phase, people stop sharing the risky ideas — which are often the best ones. Generate first, judge second. Keep those two phases completely separate. The quality of what you keep depends entirely on the quality of what you were willing to throw in.` },
+            { word: `dissent`, definition: `A different or opposing view — something great leaders actively invite rather than wait for, because it often contains the group's best thinking.`, audioPrompt: `Dissent is the voice that says "wait, I see it differently," {name}. It's uncomfortable. And it's often the most valuable thing a group hears. Great leaders don't wait for someone to brave the discomfort of speaking up — they actively ask: "Is there a different view I haven't heard?" That invitation changes the whole dynamic of the room.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L16 = {
           ],
           image: `/explorer-assets/leadership/l16-magazine-4.png`,
           imageCaption: `Disagreement about ideas — not people — is how groups find their best answers`,
+          vocab: [
+            { word: `productive`, definition: `Disagreement that leads to better ideas — focused on the work, not the people, and welcomed rather than avoided.`, audioPrompt: `Productive disagreement feels uncomfortable in the moment, {name} — and it makes groups stronger in the end. When people can push back on ideas without making it personal, early assumptions get tested, weak reasoning gets caught, and better solutions emerge. The goal isn't harmony. It's the best possible answer. Productive disagreement gets you there.` },
+            { word: `dissenting`, definition: `Holding or expressing a different view from the majority — a perspective that great leaders actively seek out before finalizing any decision.`, audioPrompt: `A dissenting voice is a gift, {name} — even when it's inconvenient. It might be wrong. It might be exactly right. Either way, hearing it makes the final decision stronger. Great leaders thank people for pushing back. Not because they always agree, but because they know that's exactly the kind of input that protects the group from its own blind spots.` },
+            { word: `safety`, definition: `The feeling that you can speak honestly without being attacked or dismissed — what leaders must create for productive group disagreement to happen.`, audioPrompt: `People only share their real thoughts when it feels safe to do so, {name}. If the last person who disagreed got shut down, everyone else took note. Creating safety means thanking people for challenging ideas, being the first to ask for pushback on your own thinking, and making it clear: different views are wanted here. That environment is what great group decisions are built on.` },
+          ],
         },
 
         {

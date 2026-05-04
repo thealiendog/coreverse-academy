@@ -38,6 +38,11 @@ const SL_L18 = {
           ],
           image: `/explorer-assets/leadership/l18-magazine-1.png`,
           imageCaption: `Fast and decisive — but best saved for emergencies, not everyday decisions`,
+          vocab: [
+            { word: `autocratic`, definition: `A leadership style where one person makes decisions alone and directs others to carry them out — fast and decisive, but best reserved for urgent situations.`, audioPrompt: `Autocratic leadership is the right tool in a crisis, {name}. When there's no time to consult anyone, someone needs to say: this way, now. A surgeon, a pilot, a captain in a genuine emergency — clarity and speed matter more than consensus. But use it outside of that context, and it shuts down ownership, creativity, and trust.` },
+            { word: `decisive`, definition: `Able to make clear decisions quickly — the quality that makes autocratic leadership effective when time is short.`, audioPrompt: `Decisive means you act when action is needed, {name}. Not impulsive — clear. The best leaders know when to gather input and when to just decide. In true urgency, hesitation is its own kind of failure. Decisiveness isn't about ignoring others — it's about knowing when the moment requires you to lead without waiting.` },
+            { word: `directive`, definition: `Giving clear, specific instructions rather than involving others in the thinking — the mode autocratic leaders operate in.`, audioPrompt: `Directive leadership works when people need clarity, not collaboration, {name}. "Do this, this way, now" is exactly right when someone's safety depends on it. What matters is knowing when that level of direction is actually needed — and when it would be far better to ask, listen, and involve the people around you. The skill is knowing the difference.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L18 = {
           ],
           image: `/explorer-assets/leadership/l18-magazine-2.png`,
           imageCaption: `More voices, more buy-in — best when there's time and the team has something to contribute`,
+          vocab: [
+            { word: `democratic`, definition: `A leadership style where the leader gathers input and perspectives from the group before making a decision.`, audioPrompt: `Democratic leadership says: your thinking matters here, {name}. Before we decide, let's hear from everyone who has something to contribute. That process is slower — but it tends to produce better decisions and much stronger follow-through. When people helped shape something, they're invested in making it work.` },
+            { word: `buy-in`, definition: `Genuine commitment to a decision — most powerfully built when people had real input into the process that led to it.`, audioPrompt: `Buy-in is the difference between "I'll comply" and "I believe in this," {name}. When people are involved in shaping a decision, they show up differently in carrying it out. Democratic leaders build that investment deliberately — not by polling endlessly, but by genuinely including people before the call is made.` },
+            { word: `input`, definition: `The perspectives, ideas, and information that team members bring — what democratic leadership is specifically designed to gather and use.`, audioPrompt: `Every person on a team has information the leader doesn't have, {name}. Democratic leadership is how you get access to it. Asking for input isn't weakness — it's how smart leaders find the things they've missed. The leader who thinks they've already seen everything often hasn't. The one who asks usually finds out what they were missing.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L18 = {
           ],
           image: `/explorer-assets/leadership/l18-magazine-3.png`,
           imageCaption: `Transformational leaders change what people believe is possible`,
+          vocab: [
+            { word: `transformational`, definition: `A leadership style that inspires people by connecting them to a vision bigger than the immediate task — changing what they believe is possible.`, audioPrompt: `Transformational leadership doesn't just manage what's already happening, {name}. It changes what people believe they can do. When a leader connects you to a purpose that matters — something beyond the immediate task — you bring a completely different level of effort. That's the power of transformation: not better instructions, but a bigger belief.` },
+            { word: `inspire`, definition: `To move people to act through vision and purpose, not through authority or command.`, audioPrompt: `Inspire means people want to move, {name} — not because they have to, but because the leader made them believe it matters. That pull is far more powerful than any order. You can command compliance. You can only inspire commitment. The best leaders know which they're aiming for — and which one lasts.` },
+            { word: `purpose`, definition: `The "why" that drives a team beyond the immediate task — what transformational leaders help people connect to when motivation is running low.`, audioPrompt: `Purpose is the fuel that doesn't run out, {name}. When people understand why their work matters — who it helps, what it builds, what it's part of — they'll bring their full effort even when things are hard. Transformational leaders don't remind people what to do. They remind them why. That difference is everything.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L18 = {
           ],
           image: `/explorer-assets/leadership/l18-magazine-4.png`,
           imageCaption: `"How can I help you succeed?" — servant leaders put the team first`,
+          vocab: [
+            { word: `servant leadership`, definition: `A leadership approach centered on serving others' needs first — removing obstacles, developing people, and prioritizing the team's wellbeing and success.`, audioPrompt: `Servant leadership starts with a question, {name}: "How can I help you succeed?" Not "What can you do for me?" — the reverse. Leaders who genuinely put their team first often get the best results precisely because of that orientation. People work hardest for someone who actually cares about them.` },
+            { word: `wellbeing`, definition: `The overall health, happiness, and flourishing of the people on a team — what servant leaders actively prioritize alongside performance.`, audioPrompt: `Wellbeing isn't soft, {name} — it's strategic. When people feel cared for, when their stress is noticed and their growth is supported, they bring more of themselves to the work. Servant leaders understand that people perform best when they're well — and they treat that as a leadership responsibility, not an afterthought.` },
+            { word: `develop`, definition: `To help someone grow their skills, confidence, and capability — what servant leaders focus on instead of simply directing tasks.`, audioPrompt: `Servant leaders don't just get things done, {name} — they make people better at doing them. When you help someone work through a challenge instead of just taking it over, you're giving them something that lasts: capability. That investment in the people around you is one of the most lasting things a leader can do.` },
+          ],
         },
 
         {

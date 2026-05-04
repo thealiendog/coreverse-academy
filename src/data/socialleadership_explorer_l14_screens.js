@@ -38,6 +38,11 @@ const SL_L14 = {
           ],
           image: `/explorer-assets/leadership/l14-magazine-1.png`,
           imageCaption: `Our bodies communicate constantly — whether we intend them to or not`,
+          vocab: [
+            { word: `nonverbal`, definition: `All the ways we communicate without words — expression, posture, gesture, eye contact, and tone of voice.`, audioPrompt: `Nonverbal communication never goes offline, {name}. The moment you walk into a room, people are already reading you. Your posture, your expression, the pace you move at — all of it carries information before a word is spoken. Great leaders learn to use that channel intentionally, not just let it run on autopilot.` },
+            { word: `expression`, definition: `What your face communicates — one of the most powerful and most automatically read forms of nonverbal communication.`, audioPrompt: `Your face is one of the most honest channels of communication you have, {name}. People read it faster than conscious thought — and they often trust it more than your words. When your expression and your words don't match, people believe the expression. Every time.` },
+            { word: `posture`, definition: `How you hold your body — upright and open or closed and hunched — which communicates your state before anyone hears your voice.`, audioPrompt: `Posture speaks first, {name}. Before you say a word, how you hold yourself tells people whether you feel confident, uncertain, engaged, or disconnected. The good news: you can change your posture deliberately. And when you do, it changes not just how you look — it changes how you feel.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L14 = {
           ],
           image: `/explorer-assets/leadership/l14-magazine-2.png`,
           imageCaption: `Read clusters of signals together, not single gestures in isolation`,
+          vocab: [
+            { word: `cluster`, definition: `Multiple body language signals read together — the accurate way to understand what someone is actually communicating.`, audioPrompt: `A cluster is when several signals point the same direction, {name}. Crossed arms could mean anything alone. But crossed arms, a flat expression, leaning back, and avoiding eye contact together? That's a clear picture. Read the cluster — not the single gesture — and your reading will almost always be more accurate.` },
+            { word: `context`, definition: `The situation surrounding a moment — what happened before, who is involved, and what the relationship is — essential for reading body language accurately.`, audioPrompt: `Context changes everything, {name}. The same body language in a job interview means something completely different than at a family dinner. Before you read someone's signals, ask: what's the situation? What happened just before? What's the relationship? Context is the frame that makes the picture make sense.` },
+            { word: `misread`, definition: `Interpreting someone's body language incorrectly — what happens when signals are read in isolation or without context.`, audioPrompt: `Misreading body language causes real misunderstandings, {name}. You assume someone's unfriendly because they crossed their arms — but they were just cold. You think someone agrees because they're nodding — but they're just following along. Reading clusters, staying curious, and asking when unsure are all habits that protect you from misreading people.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L14 = {
           ],
           image: `/explorer-assets/leadership/l14-magazine-3.png`,
           imageCaption: `How you hold your body affects not just how others see you — but how you feel`,
+          vocab: [
+            { word: `confidence`, definition: `A state of inner assurance — one that can be reinforced or undermined by how you physically hold yourself.`, audioPrompt: `Confidence isn't just a feeling, {name} — it's something your body participates in. Standing tall, opening your chest, breathing steadily — these don't just signal confidence to others. They help create it in you. Your body and mind are connected. Use that connection on purpose.` },
+            { word: `feedback loop`, definition: `The way your body's signals travel back inward to affect your mental state — standing tall makes you feel more confident, and that feeling reinforces the posture.`, audioPrompt: `Your body is in constant conversation with your mind, {name}. You slump and feel less capable. You stand tall and feel more ready. That loop works in both directions — which means you have more control over your mental state than you might think. Your next move before something hard? Adjust your posture first.` },
+            { word: `prepare`, definition: `Using your body intentionally before a challenge — adjusting posture, breathing, and physical state to help your mind approach it from a stronger place.`, audioPrompt: `Before something difficult, most people try to calm their thoughts, {name}. But your body is faster. Stand up straight. Open your posture. Take a slow breath. Those physical actions change your mental state — often faster than telling yourself to feel confident ever could. Use your body to prepare your mind.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L14 = {
           ],
           image: `/explorer-assets/leadership/l14-magazine-4.png`,
           imageCaption: `Intentional body language is the physical expression of genuine attention`,
+          vocab: [
+            { word: `rapport`, definition: `A feeling of connection and mutual trust — built partly through aligned body language and genuine attentiveness.`, audioPrompt: `Rapport is the feeling of being on the same wavelength, {name}. It's what makes a conversation feel easy and natural instead of stiff and formal. Body language contributes to it powerfully — facing someone, matching their energy, nodding as they speak. Not as tricks, but as the physical expression of actually caring about the conversation.` },
+            { word: `mirroring`, definition: `Subtly matching someone's posture or pace — a natural sign of connection that builds rapport without either person noticing.`, audioPrompt: `Mirroring happens naturally when people feel connected, {name} — they lean the same way, match each other's energy, shift into similar postures. When you do it intentionally, it's not a trick — it's a way of physically showing: I'm with you. I'm following you. Most people never notice it consciously. But they feel the warmth it creates.` },
+            { word: `intentional`, definition: `Done with awareness and purpose — body language used intentionally is the physical expression of genuinely wanting to connect.`, audioPrompt: `Intentional body language isn't about performing, {name}. It's about making the outside match the inside. When you genuinely care about someone, your body naturally turns toward them, your face softens, your attention sharpens. Intentional means you choose those signals — so that even when you're nervous, your presence still communicates what you actually mean.` },
+          ],
         },
 
         {

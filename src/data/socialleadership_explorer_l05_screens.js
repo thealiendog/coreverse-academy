@@ -38,6 +38,11 @@ const SL_L05 = {
           ],
           image: `/explorer-assets/leadership/l05-magazine-1.png`,
           imageCaption: `Conflict isn't the problem — how you handle it is what matters`,
+          vocab: [
+            { word: `conflict`, definition: `A disagreement or clash between people with different needs, values, or perspectives — a normal part of any real relationship.`, audioPrompt: `Valor's truth: conflict isn't a sign that something's broken, {name}. It's a sign that two people care enough to be honest about what they need. The question isn't how to avoid it — it's how to move through it in a way that keeps the relationship intact.` },
+            { word: `perspective`, definition: `A person's unique point of view, shaped by their experience — conflict often starts where two perspectives don't yet understand each other.`, audioPrompt: `Behind every conflict is a perspective you haven't fully heard yet, {name}. When you understand how the other person sees the situation — really understand it — the conflict almost always looks different. That's not giving in. That's gaining information you didn't have before.` },
+            { word: `resolution`, definition: `A solution both people can accept — the goal of any conflict handled well.`, audioPrompt: `Resolution doesn't mean one person wins and one loses, {name}. It means both people's concerns were heard, and a path forward was found. That takes more skill than winning an argument — and it's worth far more.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L05 = {
           ],
           image: `/explorer-assets/leadership/l05-magazine-2.png`,
           imageCaption: `Pause, Express, Ask, Consider, Evaluate — one step at a time`,
+          vocab: [
+            { word: `pause`, definition: `The deliberate act of stopping before reacting — the step that makes everything else in conflict resolution possible.`, audioPrompt: `The pause is the hardest step, {name} — and the most important one. When emotions are high, almost nothing useful comes out. Taking a breath before speaking gives you back your judgment. That short pause is where good conflict resolution actually begins.` },
+            { word: `express`, definition: `Sharing how you feel using "I" statements — describing your own experience instead of making accusations about the other person.`, audioPrompt: `"I felt left out" opens a door, {name}. "You always exclude me" slams it shut. When you express your own experience instead of attacking someone else's choices, you give the conversation a chance to actually go somewhere. That's the difference an "I" statement makes.` },
+            { word: `mediate`, definition: `To help two people work through a conflict by guiding the conversation — a skill any leader can learn to use.`, audioPrompt: `A mediator doesn't take sides, {name} — they create the conditions for both people to actually hear each other. Sometimes the most powerful thing a leader can do in a conflict is slow it down, help each person feel heard, and guide everyone toward a solution together.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L05 = {
           ],
           image: `/explorer-assets/leadership/l05-magazine-3.png`,
           imageCaption: `Ask "why does this matter to you?" — the answer usually unlocks the solution`,
+          vocab: [
+            { word: `position`, definition: `What someone says they want in a conflict — often just the surface of what's really going on underneath.`, audioPrompt: `A position is what someone asks for, {name}. But two people can have the same position for completely different reasons — and that's where the real conversation starts. Stop at the position and you get a debate. Go deeper and you find a solution.` },
+            { word: `interest`, definition: `The real reason behind someone's position — the "why" that, when understood, almost always reveals new solutions.`, audioPrompt: `Interests are the why behind the what, {name}. When you ask "why does this matter to you?" and genuinely listen, the conflict often changes shape. What looked like a clash turns out to have room for everyone. That question — just that one — is one of the most powerful tools in conflict resolution.` },
+            { word: `solution`, definition: `An answer that addresses both people's real interests — found by asking why, not just arguing about what.`, audioPrompt: `The best solutions in a conflict come from understanding what both people actually need, {name}. Not just what they're asking for — but why it matters. When you know that, you can find options that nobody thought of while they were still arguing about positions.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L05 = {
           ],
           image: `/explorer-assets/leadership/l05-magazine-4.png`,
           imageCaption: `Knowing when to ask for help is part of resolving conflict well`,
+          vocab: [
+            { word: `neutral`, definition: `Not taking either side — the quality that makes a mediator useful in a conflict neither person can resolve alone.`, audioPrompt: `A neutral person doesn't come in with a verdict, {name} — they come in with an open mind. That's what makes them so valuable. When both sides know the person helping hasn't already decided who's right, they're much more willing to actually talk.` },
+            { word: `mediator`, definition: `A trusted third person who helps two sides in a conflict hear each other and work toward a solution — used at every level of leadership.`, audioPrompt: `Valor believes: knowing when to bring in a mediator is a form of leadership, {name}. It's not giving up — it's recognizing that some conflicts need outside help to get unstuck. Even countries use mediators. Asking for that help is wisdom, not weakness.` },
+            { word: `wisdom`, definition: `Knowing not just what to do — but when to act and when to ask for help.`, audioPrompt: `Wisdom in conflict resolution isn't about having all the answers, {name}. It's about knowing your limits. When the same argument keeps happening, when emotions are too high, when safety is involved — wisdom says: this one needs help. That's not failure. That's good judgment.` },
+          ],
         },
 
         {

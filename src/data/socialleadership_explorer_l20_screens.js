@@ -39,6 +39,11 @@ const SL_L20 = {
           ],
           image: `/explorer-assets/leadership/l20-magazine-1.png`,
           imageCaption: `The best leaders never stop learning — they stay curious long after others think they've arrived`,
+          vocab: [
+            { word: `growth mindset`, definition: `The belief that your abilities can be developed through dedication and learning — the foundation of a leader who never stops improving.`, audioPrompt: `A growth mindset says: I can get better at this, {name}. Not because it's easy — but because effort and learning are what actually change what you're capable of. The moment you believe your qualities are fixed is the moment you stop growing. The leaders who have the most impact stay genuinely curious their whole lives. That curiosity is a choice. And it's available to you right now.` },
+            { word: `lifelong learner`, definition: `Someone who stays genuinely curious and committed to growing long after formal education is over — one of the most consistent traits of great leaders.`, audioPrompt: `Lifelong learners aren't just people who liked school, {name}. They're people who stay curious about ideas, people, and their own blind spots well beyond any classroom. The best leaders you'll ever encounter are almost always still learning. Not performing learning — actually seeking it. That habit, built early, compounds into something remarkable.` },
+            { word: `humility`, definition: `The quality of staying open to learning and to being wrong — what allows great leaders to keep growing when others have stopped.`, audioPrompt: `Humility in leadership isn't thinking less of yourself, {name}. It's staying genuinely open to the possibility that there's more to understand, more to learn, and more ways you could improve. The leader who says "I've figured this out" is the one who stops growing. The one who asks "what am I still missing?" keeps getting better. That's the humility that makes great leadership possible.` },
+          ],
         },
 
         {
@@ -51,6 +56,11 @@ const SL_L20 = {
           ],
           image: `/explorer-assets/leadership/l20-magazine-2.png`,
           imageCaption: `Your natural strengths are your starting point — not your limit`,
+          vocab: [
+            { word: `strength`, definition: `A natural way you lead — through listening, vision, execution, or challenge — that you can build your leadership on right now.`, audioPrompt: `Your strengths are already there, {name}. Maybe you're the person others come to when something is hard. Maybe you see possibilities before anyone else. Maybe you make plans happen when others only talk. Whatever it is — that's a leadership strength. Know it. Lead from it. And while you're building on it, keep working on the places where you're still growing.` },
+            { word: `natural`, definition: `Something that comes easily to you because of how you're wired — a starting point for leadership, not the whole picture.`, audioPrompt: `Natural strengths are your foundation, {name} — not your ceiling. The leader who only ever uses what comes easily misses the growth that happens just outside their comfort zone. Your natural gifts are the base. What you choose to develop beyond that is the building. Lead from your strengths. Grow from your edges.` },
+            { word: `self-awareness`, definition: `Knowing your own strengths, patterns, blind spots, and tendencies — the starting point for every deliberate act of leadership growth.`, audioPrompt: `Self-awareness is Valor's favorite leadership tool, {name}. Not because it's glamorous — but because nothing else works without it. When you know how you naturally lead, where you tend to fall short, and what you do under pressure, you can make deliberate choices instead of just reacting. That self-knowledge is the beginning of genuine leadership development.` },
+          ],
         },
 
         {
@@ -63,6 +73,11 @@ const SL_L20 = {
           ],
           image: `/explorer-assets/leadership/l20-magazine-3.png`,
           imageCaption: `Growth edges are not weaknesses — they're the next chapter`,
+          vocab: [
+            { word: `growth edge`, definition: `The place just beyond your current comfort zone where you're stretched enough to grow without being overwhelmed.`, audioPrompt: `A growth edge is where development actually happens, {name}. Not in the comfortable middle of what you already do well — but just past it, where things feel slightly harder. Slightly less natural. That discomfort is the signal that you're in the right place. The leaders who grow the most are the ones who keep choosing to work there.` },
+            { word: `comfort zone`, definition: `The familiar territory where things feel safe and easy — valuable as a base, but not the place where growth happens.`, audioPrompt: `Your comfort zone isn't a bad place, {name} — it's your home base. But it's not where your next chapter gets written. Growth happens just past the edge of it. The good news is you don't need to leave forever. You just need to spend a little time past the edge, regularly and deliberately. Over time, what was uncomfortable becomes your new normal.` },
+            { word: `deliberate`, definition: `Done on purpose and with intention — the quality that turns practice into genuine growth rather than repetition of what you already know.`, audioPrompt: `Deliberate practice means you're not just going through the motions, {name}. You're working on something specific, on purpose, in the place where it's hard. That intentionality is what separates people who improve from people who put in time. Time alone doesn't make you better. Deliberate effort in the right direction does.` },
+          ],
         },
 
         {
@@ -75,6 +90,11 @@ const SL_L20 = {
           ],
           image: `/explorer-assets/leadership/l20-magazine-4.png`,
           imageCaption: `Small daily choices compound into something extraordinary — that's how real leadership is built`,
+          vocab: [
+            { word: `compound`, definition: `Building on itself over time — the way small consistent choices accumulate into something much larger than any single action could produce.`, audioPrompt: `Compound is the most powerful word in leadership development, {name}. Small choices — reflecting daily, seeking feedback, stretching slightly further — don't feel significant on their own. But made consistently over months and years, they accumulate into something extraordinary. There's no shortcut that produces what that kind of steady, compounding effort builds.` },
+            { word: `reflection`, definition: `The daily practice of asking what went well, what you'd do differently, and what you learned — what turns every experience into a lesson.`, audioPrompt: `Reflection is how every day becomes a teacher, {name}. When you end the day by asking "what went well?" and "what would I do differently?" — you extract the lesson from the experience instead of just letting it pass. Over time, that habit means you're learning constantly — from success and from failure both. Nothing is wasted when you reflect on it.` },
+            { word: `discipline`, definition: `Doing what matters consistently — not only when you feel motivated, but especially when you don't.`, audioPrompt: `Discipline is choosing the practice over the excuse, {name}. Reflecting even when the day was unremarkable. Seeking feedback even when it's uncomfortable. Stretching past your comfort zone even when comfort is available. Discipline isn't restriction — it's the habit that produces the leader you're becoming. Over time, it stops feeling like effort and starts feeling like who you are.` },
+          ],
         },
 
         {

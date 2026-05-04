@@ -38,6 +38,11 @@ const SL_L02 = {
           ],
           image: `/explorer-assets/leadership/l02-magazine-1.png`,
           imageCaption: `What you do every day says more than any speech`,
+          vocab: [
+            { word: `model`, definition: `A person who shows others how to act through their own example — the most powerful form of influence a leader has.`, audioPrompt: `A model doesn't tell people what to do, {name} — they show them. When you watch someone who always does what they say, treats everyone with respect, and keeps going when things get hard, you want to be more like them. That pull is the power of modeling.` },
+            { word: `behavior`, definition: `What you actually do — not what you intend or say — the true test of a leader's character.`, audioPrompt: `Behavior is the real scorecard, {name}. Not your intentions, not your plans, not your words — but what you actually do, consistently, over time. People form their opinion of you based on your behavior. So does your own sense of who you are.` },
+            { word: `consistent`, definition: `Behaving the same way whether you are being watched or not — the quality that makes trust possible.`, audioPrompt: `Consistent doesn't mean perfect, {name} — it means predictable. When people can count on you to act with integrity whether anyone's watching or not, they trust you. That trust is the foundation everything else is built on.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L02 = {
           ],
           image: `/explorer-assets/leadership/l02-magazine-2.png`,
           imageCaption: `Being the same person in every situation is what builds real trust`,
+          vocab: [
+            { word: `predictable`, definition: `Acting in ways others can count on — when a leader is predictable in their values, people feel safe to follow them.`, audioPrompt: `Predictable isn't boring, {name} — in leadership, it's a compliment. When your team knows you'll be honest, you'll be fair, you'll show up — they can count on you. That certainty is what makes following someone feel safe.` },
+            { word: `inconsistency`, definition: `Behaving differently depending on who is watching or how convenient it is — the fastest way to lose a team's trust.`, audioPrompt: `Valor's warning: nothing destroys trust faster than inconsistency, {name}. When someone is kind to your face but dismissive behind your back, people notice immediately. Every inconsistency is a withdrawal from the trust account.` },
+            { word: `integrity`, definition: `Doing what you believe is right whether or not anyone is watching — the core of leading by example.`, audioPrompt: `Integrity is your character when nobody's scoring, {name}. The moments that define a leader aren't the ones on stage — they're the quiet ones. The decision you make when it's inconvenient. The choice you make when no one will ever know. That's where real integrity lives.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L02 = {
           ],
           image: `/explorer-assets/leadership/l02-magazine-3.png`,
           imageCaption: `One act of kindness or courage can ripple outward further than you know`,
+          vocab: [
+            { word: `ripple`, definition: `The way one action creates effects that spread outward, touching people far beyond the original moment.`, audioPrompt: `Think about dropping a pebble in still water, {name}. The ripples spread outward far further than the pebble fell. One act of kindness, one moment of courage, one decision to do the right thing — that single moment can reach people you never even met.` },
+            { word: `contagious`, definition: `Spreading from one person to others naturally — both positive and negative behaviors travel through groups this way.`, audioPrompt: `Behavior is contagious, {name} — and so is courage. When one person picks up litter, others follow. When one person speaks up, others find their voice. You don't need to lead a crowd to start a ripple. You just need to go first.` },
+            { word: `influence`, definition: `The effect your actions have on others' choices and behavior — how a leader shapes the people around them without force.`, audioPrompt: `Influence is quiet power, {name}. It doesn't shout — it shows. When you behave with integrity, when you do the hard thing, when you treat people well — you're shaping the world around you. That's real influence. And it spreads further than you'll ever be able to track.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L02 = {
           ],
           image: `/explorer-assets/leadership/l02-magazine-4.png`,
           imageCaption: `Character is what you do when things are hard, not when they're easy`,
+          vocab: [
+            { word: `character`, definition: `The collection of values and choices that define who you are — revealed most clearly when things are difficult.`, audioPrompt: `Character is revealed by pressure, {name}. When everything's going well, almost anyone can be patient, kind, and principled. Leadership character shows in the hard moments — when you're frustrated, tired, or it would be so much easier to cut a corner. That's the real test.` },
+            { word: `patience`, definition: `The ability to stay calm and principled under pressure — one of the hardest qualities to sustain when things go wrong.`, audioPrompt: `Patience under pressure is one of the rarest leadership qualities there is, {name}. Anyone can be patient when things are easy. Maintaining that same steadiness when you're stressed, when things are going wrong, when people aren't cooperating — that's where real character is built and shown.` },
+            { word: `honesty`, definition: `Telling the truth even when it is uncomfortable — the quality that makes everything else about a leader's character believable.`, audioPrompt: `Honesty when it's easy doesn't impress anyone, {name}. But honesty when it costs you something — admitting a mistake, sharing a hard truth, telling someone what they need to hear — that's the kind of honesty that makes leaders worth following.` },
+          ],
         },
 
         {

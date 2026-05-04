@@ -38,6 +38,11 @@ const SL_L12 = {
           ],
           image: `/explorer-assets/leadership/l12-magazine-1.png`,
           imageCaption: `Feedback closes the gap between how you think you're doing and how you're actually doing`,
+          vocab: [
+            { word: `blind spot`, definition: `Something you do without realizing the effect it has — only visible through honest feedback from others.`, audioPrompt: `A blind spot is exactly what it sounds like, {name} — something you genuinely can't see from where you're standing. You might be interrupting people without noticing. You might be coming across as short when you think you're being efficient. Feedback is the mirror that shows you what you can't see on your own.` },
+            { word: `growth`, definition: `Improvement over time — what becomes possible when you actively seek feedback rather than avoid it.`, audioPrompt: `Growth without feedback is slow and unpredictable, {name}. You can work hard for a long time and keep repeating the same mistakes if nobody tells you what they are. The people who improve fastest aren't the most talented — they're the ones who actively look for feedback and actually use it.` },
+            { word: `seek`, definition: `To actively ask for feedback — not waiting for it to arrive, but going after the information you need to improve.`, audioPrompt: `Seeking feedback is a choice, {name} — and it's one of the most powerful ones you can make. It says: I care more about getting better than about protecting how I look right now. Leaders who ask "how am I doing?" and mean it genuinely are the ones who keep improving long after others have stopped.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L12 = {
           ],
           image: `/explorer-assets/leadership/l12-magazine-2.png`,
           imageCaption: `Specific, timely, behaviour-focused — that's feedback someone can actually use`,
+          vocab: [
+            { word: `specific`, definition: `Naming exactly what happened, not a vague generality — the quality that turns feedback into something actionable.`, audioPrompt: `"Great job" is nice, {name}. It does almost nothing to help someone improve. "You explained that idea clearly and kept eye contact the whole time" tells them exactly what worked and why. Specificity is what turns a compliment into information — and information is what actually drives change.` },
+            { word: `timely`, definition: `Delivered close to the event — feedback given soon after helps people connect it to what they actually did and apply it faster.`, audioPrompt: `Feedback loses power with time, {name}. When someone receives feedback close to the moment, they can still feel what they did and immediately see the connection. Wait too long, and the details fade, the context is gone, and the feedback becomes abstract. Timely feedback lands while the moment is still alive.` },
+            { word: `behavior`, definition: `What someone specifically did — the right focus for feedback, because behavior can be changed in a way that personality cannot.`, audioPrompt: `Feedback about behavior gives someone something to work with, {name}. "You interrupted three times" describes something they did — something they can choose to do differently tomorrow. "You're rude" describes who they are — and puts them on the defensive instead of giving them a path forward. Behavior is where feedback has to live.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L12 = {
           ],
           image: `/explorer-assets/leadership/l12-magazine-3.png`,
           imageCaption: `Situation → Behavior → Impact: feedback anyone can understand and act on`,
+          vocab: [
+            { word: `situation`, definition: `The context in which something happened — the first part of the SBI model, which anchors feedback to a specific real moment.`, audioPrompt: `Starting with the situation gives the feedback a home, {name}. "In the group project this morning" immediately places the person — they know exactly what you're talking about. Without context, feedback can feel vague or unfair. With it, the person can connect what you're saying to something they actually remember doing.` },
+            { word: `impact`, definition: `The real effect of someone's behavior — the final part of SBI, which tells them why it matters.`, audioPrompt: `Impact is the "why it matters" part, {name}. When someone knows not just what they did but what it caused — "it meant we didn't all get to contribute" — the feedback gains weight. It's no longer an opinion. It's a consequence. And consequences are what motivate people to think about doing things differently.` },
+            { word: `model`, definition: `A simple, repeatable structure that makes giving feedback clearer, more consistent, and easier to act on.`, audioPrompt: `A model gives your feedback a shape, {name}. Without one, feedback can drift into personality attacks or vague impressions. SBI — Situation, Behavior, Impact — keeps it grounded, specific, and fair. That structure is why coaches, teachers, and leaders across every field use it. It works because it stays focused on what actually helps.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L12 = {
           ],
           image: `/explorer-assets/leadership/l12-magazine-4.png`,
           imageCaption: `Listen, ask, thank — even when the feedback is hard to hear`,
+          vocab: [
+            { word: `defend`, definition: `The instinct to explain yourself when feedback lands — the natural first response that most often prevents you from hearing what could help you.`, audioPrompt: `The urge to defend yourself when feedback arrives is completely normal, {name}. It's protective. But it's also the instinct that keeps you from hearing what might actually help. The discipline of letting feedback land before you respond — even just for a moment — is what separates people who grow from those who stay stuck.` },
+            { word: `graceful`, definition: `Receiving feedback with openness and composure — even when it's uncomfortable — the mark of a leader who values growth over pride.`, audioPrompt: `Receiving feedback gracefully doesn't mean you agree with everything, {name}. It means you let it in before you decide. You listen fully. You ask questions. You thank the person. That composure signals something important: I care more about getting better than about being right. That's the kind of person others love to give feedback to.` },
+            { word: `valuable`, definition: `Worth something real — even feedback that's uncomfortable to hear can be one of the most valuable things someone offers you.`, audioPrompt: `Valor's belief: the feedback that's hardest to hear is often the most valuable, {name}. Easy praise feels good but tells you little. The honest observation about what you're missing — delivered kindly — is a gift, even when it doesn't feel like one. Leaders who understand that seek out hard feedback rather than avoiding it.` },
+          ],
         },
 
         {

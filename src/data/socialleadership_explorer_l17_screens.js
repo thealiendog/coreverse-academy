@@ -38,6 +38,11 @@ const SL_L17 = {
           ],
           image: `/explorer-assets/leadership/l17-magazine-1.png`,
           imageCaption: `Mandela chose reconciliation over revenge — and changed an entire country`,
+          vocab: [
+            { word: `reconciliation`, definition: `The process of restoring peace after conflict — choosing to heal rather than punish, and to build rather than retaliate.`, audioPrompt: `Reconciliation is one of the hardest choices a leader can make, {name}. After 27 years in prison, Nelson Mandela had every reason to demand punishment. Instead, he chose healing. Not because he had forgotten — but because he understood that lasting change required bringing even his former enemies along. That choice helped transform an entire country.` },
+            { word: `apartheid`, definition: `A system of harsh racial separation and oppression that governed South Africa for decades — the injustice Mandela spent his life fighting.`, audioPrompt: `Apartheid was a system designed to keep people apart by race — enforcing inequality through law, {name}. It took decades of courageous resistance to dismantle. Mandela's fight against it cost him 27 years of his life. Understanding what he was fighting — and why it mattered — helps us understand what his forgiveness actually meant.` },
+            { word: `forgiveness`, definition: `Choosing not to let past harm define future action — one of the most powerful and difficult leadership qualities there is.`, audioPrompt: `Valor believes forgiveness is strength, {name} — not weakness. It doesn't mean pretending harm didn't happen. It means deciding that the future matters more than settling the score. Mandela's forgiveness wasn't passive. It was a deliberate, principled choice that made lasting change possible. That's not weakness. That's some of the most powerful leadership in history.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L17 = {
           ],
           image: `/explorer-assets/leadership/l17-magazine-2.png`,
           imageCaption: `Malala chose to keep speaking when silence would have been the safer choice`,
+          vocab: [
+            { word: `advocate`, definition: `Someone who uses their voice consistently to speak up for others — even when it comes at a personal cost.`, audioPrompt: `An advocate doesn't stop speaking when it gets dangerous, {name}. Malala Yousafzai kept writing, kept speaking, kept insisting that girls deserved an education — even under direct threat. She understood that her voice was the tool she had, and she refused to put it down. That sustained commitment, over time, is what makes an advocate powerful.` },
+            { word: `anonymous`, definition: `Without revealing your identity — how Malala first shared her story, before she became one of the world's most recognized voices.`, audioPrompt: `Malala started anonymously, {name} — writing her blog without her name attached, because the risks were real. That first step, hidden and small, was still a choice to speak when silence would have been safer. Many of the most important acts of courage start quietly, before anyone is watching. The courage was there from the beginning.` },
+            { word: `laureate`, definition: `A person recognized with a prestigious award for significant achievement — Malala became the youngest Nobel Peace Prize laureate in history at age 17.`, audioPrompt: `Becoming the youngest Nobel Peace Prize laureate in history didn't define Malala, {name} — the work that came before it did. The award was recognition of choices already made: to speak, to survive, to keep speaking. Recognition is meaningful. But Valor wants you to remember: the character that earned it was there long before the prize was.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L17 = {
           ],
           image: `/explorer-assets/leadership/l17-magazine-3.png`,
           imageCaption: `Douglass understood that education is liberation — and proved it with his own life`,
+          vocab: [
+            { word: `abolition`, definition: `The movement to completely end slavery — what Frederick Douglass devoted his voice, writing, and life to achieving.`, audioPrompt: `Abolition was the fight to end slavery entirely — not to improve it, not to contain it, but to eliminate it, {name}. Douglass understood that partial change wasn't enough. He gave his intellect, his voice, and his story to that cause for decades. What he gave up to do it, and what he built in spite of it, remains one of the most remarkable stories in American history.` },
+            { word: `literacy`, definition: `The ability to read and write — what Douglass secretly taught himself, understanding it was the most powerful form of resistance available to him.`, audioPrompt: `Literacy was illegal for enslaved people, {name} — and Douglass understood exactly why. The ability to read and write is access to ideas, to history, to arguments, to power. He taught himself in secret because he knew what those in control feared most: people who could think, articulate, and demand more. That one act of learning changed the course of his life — and contributed to changing history.` },
+            { word: `orator`, definition: `A skilled public speaker — Douglass became one of the most powerful speakers of his era, using language as his primary tool for change.`, audioPrompt: `Frederick Douglass became one of the greatest orators of his time, {name}. His words were so precise, so powerful, that people refused to believe he had been enslaved — because they couldn't imagine someone emerging from that system with that command of language. That impossibility was itself part of his argument. His voice was the evidence.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L17 = {
           ],
           image: `/explorer-assets/leadership/l17-magazine-4.png`,
           imageCaption: `Vision, courage, and service to others — the same qualities, across three continents and three centuries`,
+          vocab: [
+            { word: `vision`, definition: `A clear picture of a better world — what drove each of these leaders long before the change they worked for was visible to anyone else.`, audioPrompt: `Vision is what keeps a leader going when the goal is still far away, {name}. Mandela saw a reconciled South Africa. Malala saw a world where every girl could go to school. Douglass saw an America without slavery. None of them could see that future clearly yet — but they were committed to it completely. Vision isn't knowing the way. It's being certain enough about the destination to keep walking.` },
+            { word: `privilege`, definition: `An advantage some people have that others don't — notably absent from the starting points of all three leaders in this lesson.`, audioPrompt: `None of the three leaders in this lesson started from privilege, {name}. Mandela faced apartheid. Malala faced a regime that threatened her for learning. Douglass was born enslaved. Their leadership didn't come from advantage — it came from character, vision, and an unwillingness to accept that the world couldn't be different. That's the most important lesson their stories hold.` },
+            { word: `risk`, definition: `The personal cost a leader is willing to accept in order to act on what they believe — what all three of these leaders accepted, repeatedly, over many years.`, audioPrompt: `Real leadership involves real risk, {name}. Mandela risked and lost his freedom. Malala risked her life. Douglass risked recapture and punishment every step of the way. None of them acted because it was safe. They acted because something mattered more than the risk. That calculation — this matters more than my comfort — is what makes a leader.` },
+          ],
         },
 
         {

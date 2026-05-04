@@ -38,6 +38,11 @@ const SL_L11 = {
           ],
           image: `/explorer-assets/leadership/l11-magazine-1.png`,
           imageCaption: `Sincerity, reliability, competence, and care — all four matter`,
+          vocab: [
+            { word: `sincerity`, definition: `Saying what you mean and meaning what you say — the first building block of trust.`, audioPrompt: `Sincerity means your words and your intentions match, {name}. You don't say things to sound good and mean something different underneath. People feel the gap between genuine and performed — they can't always name it, but they notice it. Sincerity is what makes your words something others can actually rely on.` },
+            { word: `reliability`, definition: `Doing what you say you'll do, consistently — the behavior that makes trust possible over time.`, audioPrompt: `Reliability is quiet, {name} — it doesn't announce itself. It just shows up. Every time you keep a promise, follow through on a commitment, or do what you said you would without being reminded, you're making a deposit. Those deposits add up to something nobody can fake: a reputation for being trustworthy.` },
+            { word: `competence`, definition: `Actually having the ability to do what you've committed to — trust requires both good intentions and the real capability to follow through.`, audioPrompt: `Wanting to help and being able to help aren't the same thing, {name}. Competence means you don't promise what you can't deliver. A trusted person knows their limits — and says "I'll figure that out" or "let me find someone who can" instead of overcommitting and underdelivering.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L11 = {
           ],
           image: `/explorer-assets/leadership/l11-magazine-2.png`,
           imageCaption: `Small consistent actions build what grand gestures never can`,
+          vocab: [
+            { word: `deposit`, definition: `A trust-building action — each small act of honesty, reliability, or care adds to the trust account between people.`, audioPrompt: `Think of trust like a bank account, {name}. Every time you keep your word, show up when expected, or tell a hard truth kindly — you make a deposit. Those deposits accumulate slowly. But they're what give a relationship real depth. Grand gestures are nice. But deposits are what actually build trust.` },
+            { word: `consistent`, definition: `Behaving the same way over time and across situations — the quality that makes you someone others feel safe trusting.`, audioPrompt: `Consistent doesn't mean perfect, {name} — it means predictable. People can trust someone who's imperfect but reliable far more than someone who's impressive sometimes and absent others. Consistency in the small things — keeping promises, being honest, showing up — is the bedrock of every deep trust.` },
+            { word: `vulnerable`, definition: `Being open enough to trust someone — allowing something you value to depend on another person's choices.`, audioPrompt: `Trust always involves some vulnerability, {name}. When you trust someone, you're letting something that matters to you depend on their choices. That's why it's not given lightly — and why it means something real when someone trusts you. Protecting that trust is one of the most important things you can do for someone who's offered it.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L11 = {
           ],
           image: `/explorer-assets/leadership/l11-magazine-3.png`,
           imageCaption: `Trust takes much longer to build than to break`,
+          vocab: [
+            { word: `betrayal`, definition: `A serious breach of trust — sharing a confidence, lying, or acting in a way that directly contradicts what someone counted on you for.`, audioPrompt: `Betrayal breaks trust in a way that feels sudden — even when it's something the relationship had survived before, {name}. That's because every trusted relationship has a threshold. Most small inconsistencies can be absorbed. But a direct betrayal — a secret shared, a lie discovered — crosses it. Which is why protecting trust day to day matters so much.` },
+            { word: `asymmetric`, definition: `Not equal on both sides — trust is asymmetric because it takes far longer to build than to break.`, audioPrompt: `Asymmetric means the math doesn't balance, {name}. Months of reliable, honest, caring behavior can be shaken by one serious betrayal. That's not unfair — it's how trust actually works. Understanding that asymmetry is what makes you treat the small choices with the respect they deserve.` },
+            { word: `confidence`, definition: `The feeling of safety that comes from trusting someone — built slowly and felt deeply when it's real.`, audioPrompt: `Confidence in someone is different from liking them, {name}. You can like someone you don't fully trust. Confidence means you know what they'll do — that their actions are predictable in the best sense. That certainty is one of the most valuable things a person can offer another. And it's built entirely through small daily choices.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L11 = {
           ],
           image: `/explorer-assets/leadership/l11-magazine-4.png`,
           imageCaption: `Rebuilding trust takes time, consistency, and letting the other person lead the pace`,
+          vocab: [
+            { word: `acknowledge`, definition: `Clearly and honestly naming what happened — without softening, excusing, or minimizing — as the essential first step in rebuilding trust.`, audioPrompt: `Acknowledgment without escape routes, {name}. Not "if something went wrong" — but "I know what I did and I know it hurt." That clarity matters more than the words that follow it. People don't start to feel safe again until they know you actually see what happened. Acknowledge it clearly. That's where rebuilding starts.` },
+            { word: `demonstrate`, definition: `Showing changed behavior consistently over time — the only thing that actually rebuilds trust after it's been broken.`, audioPrompt: `Promises don't rebuild trust, {name} — demonstrated change does. Words say "I've changed." Consistent behavior over time proves it. The other person needs to actually experience the new choices you make — again and again — before they can feel safe trusting again. That takes patience. It's also the only thing that works.` },
+            { word: `patience`, definition: `Allowing the other person the time they need to restore trust — without pushing, pressuring, or deciding the timeline yourself.`, audioPrompt: `One of the hardest parts of rebuilding trust is letting the other person set the pace, {name}. You don't get to decide when they trust you again. That's theirs. Your job is to keep showing up — consistent, honest, caring — and let time and demonstrated change do the work. Patience in that process is itself a form of respect.` },
+          ],
         },
 
         {

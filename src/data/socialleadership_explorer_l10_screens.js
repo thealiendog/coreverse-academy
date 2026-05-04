@@ -38,6 +38,11 @@ const SL_L10 = {
           ],
           image: `/explorer-assets/leadership/l10-magazine-1.png`,
           imageCaption: `Owning what went wrong is harder than doing what's expected — and far more respected`,
+          vocab: [
+            { word: `proactive`, definition: `Taking action before being asked — showing up, keeping commitments, and being reliably there before a problem arises.`, audioPrompt: `Proactive responsibility means people never have to chase you, {name}. You show up. You follow through. You do what you said you'd do. It's not flashy — but it's the behavior that makes others say: I can count on that person. That trust is one of the most valuable things a leader can build.` },
+            { word: `reactive`, definition: `Responding to what went wrong — owning a failure honestly rather than deflecting or making excuses.`, audioPrompt: `Reactive responsibility is the harder one, {name}. When something goes wrong, the easy move is to explain why it wasn't your fault. The brave move is to say: that was on me. That moment — choosing ownership over excuse — is where real character reveals itself.` },
+            { word: `deflection`, definition: `Shifting responsibility away from yourself — onto circumstances, other people, or bad luck — instead of owning your role.`, audioPrompt: `Deflection is sneaky, {name} — it often sounds almost like honesty. "The alarm didn't go off." "Nobody told me." "It was the traffic." Each one moves the focus away from your choice. And every time you deflect, you hand over your power to change what happens next.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L10 = {
           ],
           image: `/explorer-assets/leadership/l10-magazine-2.png`,
           imageCaption: `Owning a mistake puts you back in control of what happens next`,
+          vocab: [
+            { word: `blame`, definition: `Holding someone else responsible for what went wrong — it feels safe short-term but gives away your power to fix things.`, audioPrompt: `Blame feels like protection, {name}. And in the moment, it works — the pressure moves somewhere else. But here's what it costs you: if it's their fault, only they can fix it. The moment you own it, you get your power back. That's the trade blame never tells you it's making.` },
+            { word: `ego`, definition: `The part of you that resists admitting you were wrong — the biggest obstacle to taking real responsibility.`, audioPrompt: `Ego says: protect yourself, {name}. Don't admit it. Find the angle. But ego is short-sighted — it wins the moment and loses the trust. The leaders who can put their ego aside and say "that was wrong, I own it" earn something that ego-protection never could: genuine respect.` },
+            { word: `trust`, definition: `What people extend to those who own their mistakes quickly — built through consistent honesty, not through never making errors.`, audioPrompt: `Nobody trusts someone who never makes mistakes, {name} — because everyone knows they make them, they just won't say so. Trust gets built by owning mistakes cleanly and quickly. "That was on me. Here's what I'll do differently." Those words, said honestly, build more trust than a hundred perfect performances.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L10 = {
           ],
           image: `/explorer-assets/leadership/l10-magazine-3.png`,
           imageCaption: `Acknowledge, express genuine regret, and commit to change — without "buts" or "ifs"`,
+          vocab: [
+            { word: `apology`, definition: `A genuine acknowledgment of what went wrong, real regret for the impact, and a commitment to do differently — not just the words "I'm sorry."`, audioPrompt: `An apology isn't just words, {name}. "I'm sorry if it hurt you" sounds like one — but the "if" means you're not sure anything went wrong. "I'm sorry, but..." cancels itself. A real apology is three things together: I know what I did. I'm genuinely sorry. I'll do differently. All three, without the escape routes.` },
+            { word: `acknowledgment`, definition: `Clearly naming what you did and why it was wrong — the first and most important part of any genuine apology.`, audioPrompt: `Acknowledgment means you don't soften it or make it vague, {name}. Not "if something came across wrong" — but "I said something unkind, and I knew it as I said it." That clarity is what tells the other person you actually understand what happened. And it's what makes the rest of the apology believable.` },
+            { word: `regret`, definition: `Genuinely feeling and expressing sorrow for the impact of what you did — not just discomfort at being caught.`, audioPrompt: `Real regret is about them, not you, {name}. It's not "I feel terrible" — it's "I know this hurt you, and I'm truly sorry for that." The difference between "I feel bad" and "I know I caused something bad" is the difference between self-pity and genuine accountability. People feel the difference immediately.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L10 = {
           ],
           image: `/explorer-assets/leadership/l10-magazine-4.png`,
           imageCaption: `Taking full ownership of your choices gives you more control, not less`,
+          vocab: [
+            { word: `ownership`, definition: `Fully accepting that your choices created this outcome — and that you're the one with the power to change what comes next.`, audioPrompt: `Ownership is power disguised as humility, {name}. When you say "this is on me" — you're not just admitting something. You're claiming the right to fix it. That shift — from "this happened to me" to "I made choices that led here" — puts you back in the driver's seat. That's what ownership actually gives you.` },
+            { word: `agency`, definition: `The ability to make real choices that shape what happens — what grows when you stop blaming outside circumstances and start owning your role.`, audioPrompt: `Agency is your capacity to shape your own story, {name}. Every time you own a choice — even a hard one — you strengthen that capacity. Every time you deflect, you weaken it. The leaders with the most agency aren't the ones nothing goes wrong for. They're the ones who own it when it does.` },
+            { word: `mindset`, definition: `The lens through which you see challenges — whether problems are things that happen to you, or things you have power to respond to.`, audioPrompt: `Valor's core belief: the most important shift is from "why is this happening to me?" to "what will I do now?" {name}. That shift — in mindset — changes everything. Not because it makes problems disappear, but because it keeps you focused on what you can actually control. That's the mindset that turns setbacks into stepping stones.` },
+          ],
         },
 
         {

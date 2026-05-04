@@ -38,6 +38,11 @@ const SL_L19 = {
           ],
           image: `/explorer-assets/leadership/l19-magazine-1.png`,
           imageCaption: `Starting something teaches what nothing else can — including what you're actually capable of`,
+          vocab: [
+            { word: `initiative`, definition: `The willingness to begin — taking action without being asked, and without waiting for perfect conditions.`, audioPrompt: `Initiative means you don't wait for someone else to start, {name}. You see a need, you feel the pull, and you begin. It doesn't require permission. It doesn't require a perfect plan. It just requires the decision to take the first step when something matters to you. That decision is itself the first act of leadership.` },
+            { word: `vision`, definition: `A clear picture of what you're trying to create — what you need to communicate to others so they want to join you.`, audioPrompt: `Vision is how you bring others with you, {name}. If your idea only lives in your head, it stays there. When you can explain it clearly enough that someone else feels the pull — when they say "I want to be part of that" — you've crossed from having an idea to building something. That ability to communicate your vision is where projects actually begin.` },
+            { word: `confidence`, definition: `The belief in your own capability — built most reliably through the experience of actually starting and persisting through something real.`, audioPrompt: `Real confidence isn't built from preparation, {name} — it's built from doing. Every time you start something and stay with it through the hard parts, your sense of what you're capable of grows. No amount of planning gives you what that experience does. Starting is the confidence-builder. That's why beginning — even small — matters so much.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L19 = {
           ],
           image: `/explorer-assets/leadership/l19-magazine-2.png`,
           imageCaption: `Purpose, name, team, plan, communicate, start — in that order`,
+          vocab: [
+            { word: `founding team`, definition: `The small group of two to five people who share your vision and commit to building it with you from the beginning.`, audioPrompt: `Your founding team is everything in the early days, {name}. Not big — just the right people. Two to five who genuinely believe in what you're building and will show up when it's hard. Find those people before you try to find hundreds more. A small committed group at the start is worth far more than a crowd who are only mildly interested.` },
+            { word: `purpose`, definition: `The reason your project exists — the problem it solves or the experience it creates, and the "why" that draws people to it.`, audioPrompt: `Purpose is the first question, {name}. Before the name, before the plan, before anything else: what problem does this solve? Who does it help? Why does it matter? When your purpose is clear, everything else — who to recruit, what to do first, how to explain it — becomes much easier to figure out. Start there.` },
+            { word: `launch`, definition: `The moment you begin — imperfect, real, and the only thing that actually makes a project exist.`, audioPrompt: `Launching means you stop planning and start doing, {name}. Not because you're ready — you probably won't feel ready. But because a small real beginning is infinitely more valuable than a perfect plan that never moves. The first meeting, the first event, the first post — that's the launch. And that moment is when something stops being an idea and becomes real.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L19 = {
           ],
           image: `/explorer-assets/leadership/l19-magazine-3.png`,
           imageCaption: `Small visible wins keep momentum alive through the hard middle stretch`,
+          vocab: [
+            { word: `momentum`, definition: `The forward energy of a project — built through visible progress and small wins, and lost through inaction or too long without results.`, audioPrompt: `Momentum is the feeling that this is actually happening, {name}. When it's there, people lean in. When it disappears, people drift away. The most reliable way to build it is through small completed things — something done, celebrated, and shared. Every win, however small, tells the team: we're moving. That feeling is what keeps people with you through the hard middle.` },
+            { word: `setback`, definition: `An obstacle or disappointment in a project — normal and expected, not evidence that the idea was wrong.`, audioPrompt: `Valor's truth: setbacks aren't signs that you should stop, {name}. They're the price of entry for anyone who starts something real. Low turnout at the first meeting. A founding team member who drops out. An event that doesn't go as planned. These moments aren't failures. They're information — and they're the training ground for the kind of resilience that actually makes projects succeed.` },
+            { word: `win`, definition: `A visible completed achievement that shows real progress — the tool for rebuilding momentum when energy drops in the hard middle of a project.`, audioPrompt: `A win doesn't have to be big to matter, {name}. It just has to be real. Finishing something. Showing up consistently for a month. Having three people at the meeting instead of one. When people see progress — something done, something tangible — they believe in what you're building. That belief is what carries projects through the hard parts.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L19 = {
           ],
           image: `/explorer-assets/leadership/l19-magazine-4.png`,
           imageCaption: `Handing off with generosity — not possessiveness — is its own form of leadership`,
+          vocab: [
+            { word: `transition`, definition: `Deliberately passing leadership of a project to someone who can take it further — a sign of wisdom, not failure.`, audioPrompt: `A transition done well is one of the most mature things a leader can do, {name}. It means you care more about what the project becomes than about staying in charge of it. Finding someone who can take it further, handing over with full support, and stepping back — that's not giving up. That's building something that lasts beyond you.` },
+            { word: `possessive`, definition: `Holding onto a project beyond the point where it serves the project — the opposite of the generosity great handoffs require.`, audioPrompt: `Possessiveness in leadership says: this is mine, {name}. It can quietly strangle the very thing you built. When you can't let go — even when someone else could take the work further — the project suffers for it. The goal was never to own it. The goal was to build something valuable. That goal doesn't require you to be in charge forever.` },
+            { word: `legacy`, definition: `What you leave behind when you step away — not the title, but the impact and what the project became.`, audioPrompt: `A legacy is what continues after you're no longer at the helm, {name}. Not the applause you received or the credit you were given — but the thing you built and what it became. Leaders who think about legacy hand off generously, invest in others' growth, and care more about what the work becomes than about what it does for their reputation. That's the highest form of leadership.` },
+          ],
         },
 
         {

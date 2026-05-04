@@ -38,6 +38,11 @@ const SL_L03 = {
           ],
           image: `/explorer-assets/leadership/l03-magazine-1.png`,
           imageCaption: `Words, tone, and body language all need to say the same thing`,
+          vocab: [
+            { word: `tone`, definition: `The feeling carried by your voice — whether you sound warm, sharp, bored, or caring — often heard more clearly than the words themselves.`, audioPrompt: `Your tone tells people what your words won't, {name}. Someone can say "I'm fine" in a way that makes everyone know they're not. Your voice carries emotion — warmth, frustration, confidence, care. Great leaders make sure their tone matches their intention, or the message gets lost.` },
+            { word: `body language`, definition: `The communication that happens through posture, facial expression, and gesture — often more believed than words.`, audioPrompt: `Your body speaks before your mouth opens, {name}. The way you stand, whether you make eye contact, how you hold your face — people read all of it constantly. When your words say one thing and your body says another, people believe the body. Every time.` },
+            { word: `nonverbal`, definition: `All the parts of communication that are not spoken words — tone, expression, posture, gesture, and silence itself.`, audioPrompt: `More than half of every message you send is nonverbal, {name}. That means paying attention to how you're communicating — not just what you're saying — is not optional. It's where most misunderstandings actually come from.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L03 = {
           ],
           image: `/explorer-assets/leadership/l03-magazine-2.png`,
           imageCaption: `The clearer your message, the less room there is for misunderstanding`,
+          vocab: [
+            { word: `clarity`, definition: `Saying exactly what you mean with enough detail that the listener knows what to do — the goal of every clear message.`, audioPrompt: `Clear communication is a courtesy, {name}. When you say exactly what you need — who, what, when, for how long — you respect the other person's time and make it easy to say yes or no. Vague requests create confusion. Clear ones create action.` },
+            { word: `context`, definition: `The background information that helps someone understand why something matters — missing context is one of the most common reasons messages fail.`, audioPrompt: `Context is the "why" behind your message, {name}. Without it, even a clear request can feel confusing or demanding. When you tell someone why something matters — what it's for, what's at stake — they understand what you actually need, not just what you said.` },
+            { word: `specific`, definition: `Using exact details rather than vague generalities — the difference between a message that gets misunderstood and one that gets done.`, audioPrompt: `Specific is kind, {name}. "Can you help me this Saturday morning from ten to eleven to reorganize the storage room?" leaves no room for guessing. The other person knows exactly what they're agreeing to. Specificity shows respect for their time — and it means yes actually means yes.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L03 = {
           ],
           image: `/explorer-assets/leadership/l03-magazine-3.png`,
           imageCaption: `Adjusting how you communicate isn't fake — it's thoughtful`,
+          vocab: [
+            { word: `adapt`, definition: `Changing how you communicate based on who you are talking to — a skill that shows intelligence and genuine care.`, audioPrompt: `Adapting how you speak isn't being fake, {name} — it's being thoughtful. You already do this naturally: you speak differently to a younger child than to a friend. That's not dishonesty. That's good communication. It shows you care whether people actually understand you.` },
+            { word: `audience`, definition: `The person or group you are communicating with — great communicators think about their audience before they speak.`, audioPrompt: `Every message has an audience, {name}. And the right message for one person can completely miss another. Before you speak, ask: who is hearing this? What do they already know? What might confuse them? That question — just that one — makes your communication dramatically more effective.` },
+            { word: `effective`, definition: `Communication that achieves its goal — the other person understands what you meant and can act on it.`, audioPrompt: `Effective means it worked, {name}. You can say something perfectly clearly and still fail to communicate — if the other person didn't understand, the communication failed. The goal isn't to say something well. It's to be understood. Effectiveness is the measure.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L03 = {
           ],
           image: `/explorer-assets/leadership/l03-magazine-4.png`,
           imageCaption: `Hard conversations, handled well, make relationships stronger`,
+          vocab: [
+            { word: `intention`, definition: `Your underlying purpose in a conversation — being clear about why you are having a hard conversation changes how it goes.`, audioPrompt: `Before a hard conversation, know why you're having it, {name}. Are you trying to fix something? Clear something up? Stay connected? When you start with "I care about this relationship, and I need to share something" — you're leading with intention. That changes how the conversation lands.` },
+            { word: `I statement`, definition: `A way of sharing how you feel by describing your own experience — "I felt..." — without blaming or accusing the other person.`, audioPrompt: `An "I statement" puts the focus on your experience, not the other person's character, {name}. "I felt left out when that happened" opens a conversation. "You always exclude me" closes it. One invites understanding. The other invites defense.` },
+            { word: `mediation`, definition: `The process of bringing in a neutral person to help two sides work through a conflict they cannot resolve alone — used at every level of leadership.`, audioPrompt: `Sometimes the wisest move in a conflict is asking for outside help, {name}. A mediator isn't a judge — they don't decide who was right. They create conditions where both people can actually hear each other. Knowing when to ask for that help is itself a form of leadership.` },
+          ],
         },
 
         {

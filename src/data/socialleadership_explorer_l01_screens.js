@@ -38,6 +38,11 @@ const SL_L01 = {
           ],
           image: `/explorer-assets/leadership/l01-magazine-1.png`,
           imageCaption: `Leadership is a choice, not a title`,
+          vocab: [
+            { word: `influence`, definition: `The ability to affect how others think, feel, or act — real leaders earn influence through character, not authority.`, audioPrompt: `Influence isn't something you demand, {name} — it's something you earn. When someone is genuinely kind, consistently fair, and truly cares about others, people naturally want to follow their lead. That's influence. And it's far more powerful than any title.` },
+            { word: `authority`, definition: `The official power to give orders or make decisions — authority can be given, but respect must be earned.`, audioPrompt: `Authority is like a borrowed tool, {name}. Someone in charge can hand it to you — and take it away. But when people follow you because they believe in you, not because they have to, that's something no one can take. That's what leaders build.` },
+            { word: `integrity`, definition: `Doing the right thing even when no one is watching — the foundation of all lasting leadership.`, audioPrompt: `Valor's core belief: integrity is who you are when you think no one is watching, {name}. It's easy to do the right thing when everyone is looking. Doing it in the quiet moments — that's the test. And that's what people remember, even when they can't say why they trust you.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L01 = {
           ],
           image: `/explorer-assets/leadership/l01-magazine-2.png`,
           imageCaption: `Integrity, courage, and empathy matter more than popularity`,
+          vocab: [
+            { word: `empathy`, definition: `The ability to understand and share what someone else is feeling — one of the most important qualities of a lasting leader.`, audioPrompt: `Empathy means you actually try to feel what someone else is feeling, {name} — not just understand it from a distance. Great leaders don't just think about what people need. They make people feel seen. That difference is small in words and enormous in impact.` },
+            { word: `humility`, definition: `Knowing you don't have all the answers and staying open to learning — humble leaders earn more respect, not less.`, audioPrompt: `Humility isn't thinking less of yourself, {name} — it's thinking about others more. The leaders who say "I don't know, but let's find out" build more trust than those who pretend they always have the answer. Humility is the quiet strength that makes greatness possible.` },
+            { word: `vision`, definition: `The ability to see what could be — not just what is — and inspire others to work toward it together.`, audioPrompt: `Vision is the leader's gift, {name}. Anyone can see what's in front of them. A leader looks ahead and says: this could be better, and here's what that looks like. It's not about being a dreamer — it's about seeing a destination clearly enough to bring others along.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L01 = {
           ],
           image: `/explorer-assets/leadership/l01-magazine-3.png`,
           imageCaption: `A leader asks "how can I help?" — a boss just gives orders`,
+          vocab: [
+            { word: `inspire`, definition: `To make someone want to act — leaders inspire; bosses only command.`, audioPrompt: `Inspiring someone means they want to move, {name} — not because they have to, but because you made the goal feel worth it. A boss can order action. A leader creates belief. That belief is what people carry with them long after the task is done.` },
+            { word: `accountability`, definition: `Taking responsibility for what happens — whether things go right or wrong — without making excuses or blaming others.`, audioPrompt: `Accountability is what separates people who lead from people who just manage, {name}. When things go wrong, a leader asks: what can I do differently? Not: who else is to blame? Owning the outcome — even a bad one — is a choice. And it's one of the clearest signs of real leadership.` },
+            { word: `credit`, definition: `Giving others recognition for their contributions — great leaders share the win and build loyalty in return.`, audioPrompt: `When the team wins, {name}, listen for what a leader says. Do they say "we did this" or "I did this"? Great leaders know that sharing credit costs them nothing and builds everything. People work harder for someone who sees their contribution.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L01 = {
           ],
           image: `/explorer-assets/leadership/l01-magazine-4.png`,
           imageCaption: `Leaders come in every age — including yours`,
+          vocab: [
+            { word: `courage`, definition: `Acting on what you believe is right even when it's difficult or scary — the quality that turns a good person into a leader.`, audioPrompt: `Courage isn't the absence of fear, {name} — it's deciding something matters more than the fear. Some of the most courageous leaders in history were kids — six, eight, eleven years old — who stood up for what was right when adults wouldn't. You can make that same choice today.` },
+            { word: `advocate`, definition: `Someone who speaks up for others or for a cause they believe in — advocacy is leadership in action.`, audioPrompt: `An advocate uses their voice for someone who needs it, {name}. Maybe someone is being left out. Maybe something unfair is happening. Speaking up — even when it's uncomfortable — is one of the most powerful forms of leadership available to you right now, at exactly your age.` },
+            { word: `choice`, definition: `The decision to act, speak up, or step in — leadership begins the moment you make this choice.`, audioPrompt: `Leadership doesn't start with a title or a stage, {name}. It starts with a choice — to help, to include, to speak up, to try harder than you have to. Every day gives you dozens of those moments. Each time you choose well, you become more of the leader you're already becoming.` },
+          ],
         },
 
         {

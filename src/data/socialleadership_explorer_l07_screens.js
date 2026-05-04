@@ -38,6 +38,11 @@ const SL_L07 = {
           ],
           image: `/explorer-assets/leadership/l07-magazine-1.png`,
           imageCaption: `Tolerance puts up with difference. Genuine respect values it.`,
+          vocab: [
+            { word: `tolerance`, definition: `Putting up with difference without really valuing it — a floor, not a ceiling, for how we treat people who are different.`, audioPrompt: `Tolerance says "I'll leave you alone," {name}. That's better than hostility — but it's not respect. It doesn't ask anything from you. Genuine respect goes further. It says: your perspective has value, and I'm better for having you here. That's the goal worth aiming for.` },
+            { word: `spectrum`, definition: `A range of attitudes from one extreme to another — from intolerance all the way to genuine respect, with many steps in between.`, audioPrompt: `Think of a spectrum as a line with two ends, {name}. On one end: rejection of difference. On the other: actively valuing it. Most people land somewhere in the middle — tolerating but not truly appreciating. The question is: where do you want to land? And what would it take to move further along?` },
+            { word: `inclusion`, definition: `Actively making people feel they belong — not just present, but genuinely part of the group.`, audioPrompt: `Inclusion isn't just having people in the room, {name}. It's making sure they feel like they belong in the room — that their voice matters, that their perspective is sought out, not just tolerated. Any leader can invite people in. A great leader makes sure they actually feel welcome.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L07 = {
           ],
           image: `/explorer-assets/leadership/l07-magazine-2.png`,
           imageCaption: `Different thinking styles find solutions that sameness misses`,
+          vocab: [
+            { word: `blind spot`, definition: `Something you can't see about your own thinking because of who you are and how you grew up — what diverse perspectives help you find.`, audioPrompt: `Everyone has blind spots, {name} — places where your experience shapes what you see and what you miss. The only reliable way to find your blind spots is to work with people who see the world differently. That's not a weakness. That's how great decisions get made.` },
+            { word: `creative`, definition: `Able to produce new ideas and solutions — a quality strengthened when diverse people think together.`, audioPrompt: `Creativity gets a serious boost when different kinds of thinkers work together, {name}. One person's knowledge of biology might unlock a problem in engineering. One person's cultural perspective might reveal a solution the rest of the group never considered. Diversity of thought isn't just fair — it's one of the most powerful creative tools a leader has.` },
+            { word: `decision-making`, definition: `The process of choosing between options — improved dramatically when multiple perspectives are included before the choice is made.`, audioPrompt: `Good decision-making includes people who see things differently, {name}. When everyone around the table thinks the same way, you keep making the same decisions — including the same mistakes. When you invite different perspectives, you catch things you'd have missed. That's not theory. That's what the research consistently shows.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L07 = {
           ],
           image: `/explorer-assets/leadership/l07-magazine-3.png`,
           imageCaption: `Everyone has unconscious biases — noticing them is how you start to manage them`,
+          vocab: [
+            { word: `bias`, definition: `A preference for one thing over another — sometimes helpful, sometimes leading us to unfair assumptions about people.`, audioPrompt: `Bias isn't always bad, {name}. Some preferences keep you safe. But when bias shapes how you see people — assuming someone is less capable because of how they look, or feeling less comfortable around someone unfamiliar — it becomes a barrier. And it works best when it's invisible. Which is why noticing it matters.` },
+            { word: `unconscious`, definition: `Operating below the surface of your awareness — unconscious biases influence your reactions without you realizing it.`, audioPrompt: `Unconscious means it happens without you noticing, {name}. Your brain makes thousands of snap judgments every day — it's designed to. The problem is that some of those judgments about people are shaped by stereotypes you absorbed without choosing to. You can't delete them. But you can notice them — and that's where the work starts.` },
+            { word: `awareness`, definition: `Seeing something that was previously invisible — the first and most important step in managing unconscious bias.`, audioPrompt: `Valor's truth: you can't change what you can't see, {name}. Becoming aware of a bias — noticing "I assumed something there that I shouldn't have" — is not a failure. It's the beginning of doing better. Every leader who takes this seriously starts exactly there.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L07 = {
           ],
           image: `/explorer-assets/leadership/l07-magazine-4.png`,
           imageCaption: `Curiosity opens doors that judgment keeps shut`,
+          vocab: [
+            { word: `curiosity`, definition: `A genuine desire to understand people and experiences that are different from your own — the most powerful antidote to bias.`, audioPrompt: `Curiosity is the tool that turns difference into understanding, {name}. Instead of assuming you know what someone's life is like — ask. Instead of feeling uncomfortable around unfamiliar customs — explore them. One genuine question changes the relationship. And it changes you too.` },
+            { word: `assumption`, definition: `Believing something about a person without finding out whether it's actually true — the opposite of curiosity.`, audioPrompt: `Assumptions feel efficient, {name} — they save time by not asking. But they're also how misunderstandings start. When you assume you know what someone is like, you stop seeing who they actually are. Curiosity is the habit that replaces assumption with something more accurate: the truth.` },
+            { word: `custom`, definition: `A tradition or way of doing something that's meaningful to a particular group or culture — often misunderstood by outsiders who haven't asked about it.`, audioPrompt: `Every custom means something to the people who practice it, {name}. What looks strange from outside often carries history, community, and deep meaning inside. That gap between "strange" and "meaningful" is exactly what genuine curiosity closes. Ask about it — and listen to what you learn.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const SL_L13 = {
           ],
           image: `/explorer-assets/leadership/l13-magazine-1.png`,
           imageCaption: `Nervousness isn't a sign you're not ready — it's your body preparing to do its best`,
+          vocab: [
+            { word: `nerves`, definition: `The physical sensation of anxiety before speaking — not an obstacle to overcome, but energy to use.`, audioPrompt: `Nerves aren't the enemy, {name}. Your heart beating faster, your focus sharpening — that's your body getting ready. The speakers who perform best aren't the ones with no nerves. They're the ones who've learned to work with that energy instead of against it. The feeling that something matters is often what makes you actually good.` },
+            { word: `skill`, definition: `An ability that improves with deliberate practice — public speaking is a skill, not a natural gift some people are born with.`, audioPrompt: `Public speaking is a skill, {name} — not a superpower some people were randomly given. Every confident speaker you've ever watched learned it. Practiced it. Got better at it through repetition. That means you can too. The only version that doesn't get better is the one that never practices.` },
+            { word: `energy`, definition: `The heightened physical readiness that comes with nervousness — channeled intentionally, it becomes presence and power.`, audioPrompt: `That buzzing, alert feeling before you speak? That's energy, {name} — and it's actually useful. The trick isn't to calm it down. It's to redirect it. Let it sharpen your focus and animate your voice instead of turning inward as fear. Same feeling, completely different result.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L13 = {
           ],
           image: `/explorer-assets/leadership/l13-magazine-2.png`,
           imageCaption: `Opening, Body, Closing — a clear structure gives your confidence somewhere to stand`,
+          vocab: [
+            { word: `structure`, definition: `The organized framework of a talk — Opening, Body, and Closing — that tells both speaker and audience where they are at every moment.`, audioPrompt: `Structure is what turns a scattered talk into a clear one, {name}. When you know your opening, your main points, and your closing, you always know where you are — and that security reduces the nerves dramatically. A strong structure doesn't limit what you say. It frees you to say it well.` },
+            { word: `opening`, definition: `The first part of a talk — where you grab the audience's attention and signal what's coming.`, audioPrompt: `The opening sets everything up, {name}. A question, a surprising fact, a short story — anything that makes the audience lean in and wonder what comes next. You have about thirty seconds to earn the audience's attention. A strong opening spends those thirty seconds wisely and makes the rest of the talk possible.` },
+            { word: `closing`, definition: `The final part of a talk — where you land your key message and give the audience something to carry away.`, audioPrompt: `The closing is what they'll remember, {name}. Everything before it builds to this moment — your key message, your call to action, the thing you most want them to take away. A weak ending wastes a strong talk. A strong ending makes the whole thing land. Know your last line before you start.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L13 = {
           ],
           image: `/explorer-assets/leadership/l13-magazine-3.png`,
           imageCaption: `Eye contact, pausing, and good posture do more for your presence than perfect words`,
+          vocab: [
+            { word: `delivery`, definition: `How you say something — your voice, pacing, eye contact, and posture — which often carries more impact than the words themselves.`, audioPrompt: `Delivery is everything your audience experiences that isn't your actual words, {name}. Your voice, your pacing, the way you hold your body — all of it communicates confidence or uncertainty before a single idea lands. A good delivery makes an average message powerful. A bad delivery can undercut a great one.` },
+            { word: `pause`, definition: `A deliberate silence between points — the mark of a confident speaker, and the space that lets ideas land.`, audioPrompt: `The pause is one of the most powerful tools a speaker has, {name}. It signals: I'm in control. Take that in. What comes next is important. It's also what separates a speaker from someone just reading out loud. Silence used deliberately doesn't feel awkward — it feels authoritative. Practice it until it feels natural.` },
+            { word: `filler words`, definition: `Sounds and words used unconsciously to fill silence — "um," "like," "you know" — that reduce the clarity and confidence of a talk.`, audioPrompt: `Filler words are the sound of looking for the next thought, {name}. The cure isn't trying to remember not to say them — it's replacing them with a pause. Silence is almost always better than "um." And the good news is, filler words are a habit — which means with practice, they're a habit you can actually change.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L13 = {
           ],
           image: `/explorer-assets/leadership/l13-magazine-4.png`,
           imageCaption: `Prepare, practise out loud, and shift focus from yourself to your audience`,
+          vocab: [
+            { word: `reframe`, definition: `Choosing to see something in a different way — reframing nervousness as readiness turns the same feeling from a problem into a resource.`, audioPrompt: `Reframing means same feeling, different story, {name}. "I'm terrified" and "I'm ready" can describe the exact same physical sensations — heart racing, alertness, energy. One story limits you. The other uses you. Choosing the second story, deliberately, right before you speak — that's not pretending. That's using your mind strategically.` },
+            { word: `audience`, definition: `The people you are speaking to — shifting your focus to their needs and what they'll take away is what moves a speaker from self-conscious to genuinely powerful.`, audioPrompt: `The moment you stop thinking about yourself and start thinking about your audience, the nerves shift, {name}. What do they need to understand? What do I want them to feel when this is done? Those questions move your attention outward — and that shift is one of the most reliable ways to become a better, more present speaker.` },
+            { word: `practice`, definition: `Repeated out-loud rehearsal — the single most effective way to build real speaking confidence over time.`, audioPrompt: `There's no shortcut to confident speaking, {name} — just practice. Not in your head. Out loud. With your actual voice, finding your actual pace. Each time you do it, the material becomes more yours. The structure becomes automatic. The nerves become useful energy. Practice is what turns "I have to do this" into "I know how to do this."` },
+          ],
         },
 
         {

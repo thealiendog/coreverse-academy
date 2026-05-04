@@ -38,6 +38,11 @@ const SL_L09 = {
           ],
           image: `/explorer-assets/leadership/l09-magazine-1.png`,
           imageCaption: `Service means giving because it's needed, not because there's a reward`,
+          vocab: [
+            { word: `volunteer`, definition: `To give your time and effort freely, without being required to or expecting payment — the foundation of community service.`, audioPrompt: `Volunteering means you showed up because you chose to, {name}. Not for a grade, not for recognition — because something needed doing and you had something to give. That choice, made freely, is what gives service its meaning. And it's available to anyone at any age.` },
+            { word: `community`, definition: `The network of people, relationships, and shared spaces that holds a group together — stronger when more people choose to give back to it.`, audioPrompt: `A community isn't just the people who live near you, {name}. It's the invisible web of relationships and shared care that holds people together. Every act of service strengthens that web. And every person who chooses to give something back makes the whole thing more resilient.` },
+            { word: `intention`, definition: `The reason behind an action — what makes something genuine service rather than something done for a reward or recognition.`, audioPrompt: `Intention is the difference between service and performance, {name}. When you give because something needs doing and you can help — that's service. When you give to be seen giving — that's something else. The impact might look the same from outside. But the character you build depends entirely on which one it actually is.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L09 = {
           ],
           image: `/explorer-assets/leadership/l09-magazine-2.png`,
           imageCaption: `When you act as someone who helps, you become someone who helps`,
+          vocab: [
+            { word: `empathy`, definition: `The ability to genuinely understand another person's experience — built powerfully through service that brings you into contact with lives different from your own.`, audioPrompt: `Service builds empathy in a way that classroom lessons about kindness never quite can, {name}. When you actually spend time with people whose lives are different from yours, something shifts. You stop imagining their experience from a distance — and you start to feel what it's actually like. That's the empathy that lasts.` },
+            { word: `perspective`, definition: `A broader view of the world — gained through service that exposes you to problems and experiences larger than your own daily life.`, audioPrompt: `Service gives you perspective that's hard to get any other way, {name}. When you spend time helping someone who's struggling, the problems in your own day look different. Not smaller — but in better proportion. That shift in how you see the world is one of the lasting gifts service gives you.` },
+            { word: `identity`, definition: `How you see yourself — shaped by your actions over time, including the habit of showing up to help others.`, audioPrompt: `Valor believes: when you act like someone who helps, you become someone who helps, {name}. That's not a cliché — it's how identity actually works. The more times you choose to give your time and skill to others, the more that becomes who you are. Service doesn't just help the community. It builds you.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L09 = {
           ],
           image: `/explorer-assets/leadership/l09-magazine-3.png`,
           imageCaption: `The best service matches what you can do with what the world needs`,
+          vocab: [
+            { word: `strength`, definition: `A natural ability or developed skill — the starting point for finding the service that only you can offer.`, audioPrompt: `Your strengths are your most powerful tools for service, {name}. Not what someone told you to do — but what you're genuinely good at. Patient and clear? Younger kids need a reading buddy. Creative? A community space might love a mural. The most effective service starts with asking: what can I bring that's actually needed?` },
+            { word: `passion`, definition: `A deep genuine care about something — what sustains service through the moments when it's less convenient or harder than expected.`, audioPrompt: `Passion is what keeps you going when service gets hard, {name}. Anyone can show up once. What sustains it is caring — really caring — about the problem you're trying to help with. When you find service that matches both your skill and your passion, it stops feeling like something you're doing and starts feeling like who you are.` },
+            { word: `sustainable`, definition: `Service that can continue over time without burning you out — possible when it matches your genuine strengths and what truly matters to you.`, audioPrompt: `Sustainable service is service you can keep doing, {name} — not something that drains you until you stop. That kind of lasting commitment comes from matching what you're good at to what actually matters to you. Service built on your genuine strengths and real care is the kind that creates real, lasting change.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L09 = {
           ],
           image: `/explorer-assets/leadership/l09-magazine-4.png`,
           imageCaption: `Charity helps right now. Service builds something that lasts.`,
+          vocab: [
+            { word: `charity`, definition: `Giving something to address an immediate need — valuable and necessary, but different from service that addresses root causes.`, audioPrompt: `Charity matters, {name} — when someone is hungry right now, what matters is food right now. But charity alone doesn't change the conditions that made someone hungry in the first place. Both are needed. And understanding the difference helps you figure out what kind of impact you actually want to have.` },
+            { word: `root cause`, definition: `The underlying reason a problem exists — what effective service works to address, rather than just the visible symptoms.`, audioPrompt: `A root cause is the "why" underneath the problem, {name}. Why is the park full of litter? Why are some kids falling behind in reading? When service addresses root causes — not just symptoms — it creates change that lasts. That's the difference between helping someone once and building something that keeps helping.` },
+            { word: `capacity`, definition: `The ability to handle challenges and meet needs independently — what the best service works to build in others, rather than creating dependence.`, audioPrompt: `The highest form of service isn't doing things for people, {name} — it's building their capacity to do it themselves. Teaching a skill. Connecting someone to a resource. Helping someone find their own voice. Moving from "doing for" to "doing with" is the shift that turns good intentions into lasting impact.` },
+          ],
         },
 
         {

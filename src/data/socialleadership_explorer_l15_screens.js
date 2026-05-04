@@ -38,6 +38,11 @@ const SL_L15 = {
           ],
           image: `/explorer-assets/leadership/l15-magazine-1.png`,
           imageCaption: `Empathy climbs into the experience with someone — it doesn't observe from a distance`,
+          vocab: [
+            { word: `empathy`, definition: `Genuinely trying to understand what someone else is experiencing from their perspective, not yours.`, audioPrompt: `Empathy isn't feeling sorry for someone, {name}. It's climbing into their experience with them. Asking not "what would I feel here?" but "what is it actually like for them?" That shift — from your perspective to theirs — is what turns sympathy into something that makes people feel truly understood.` },
+            { word: `sympathy`, definition: `Caring about someone's difficulty while staying outside their experience — different from empathy, which tries to understand from within.`, audioPrompt: `Sympathy is real and kind, {name}. But it keeps a distance. "That looks hard" is sympathy. "I'm in here with you" is empathy. Neither is wrong — they just land differently. Most people want to feel understood from the inside, not observed from the outside. That's the gap empathy crosses.` },
+            { word: `cognitive empathy`, definition: `The ability to understand what someone else might be thinking or feeling — the part of empathy most people can deliberately practice and improve.`, audioPrompt: `Cognitive empathy is a skill, {name} — not a feeling. It's the deliberate act of imagining what someone else is experiencing: what they know, what they fear, what they want. You don't have to feel it to understand it. And because it's a skill, you can get better at it, intentionally, through practice.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L15 = {
           ],
           image: `/explorer-assets/leadership/l15-magazine-2.png`,
           imageCaption: `"At least it's not that bad" is sympathy. "That sounds really hard" is empathy.`,
+          vocab: [
+            { word: `minimize`, definition: `Accidentally reducing someone's experience by comparing it to something worse — intended to help, but often leaving people feeling unheard.`, audioPrompt: `"At least it's not that bad" is one of those responses that means well and often hurts, {name}. When you minimize someone's experience — even kindly — they feel like they have to justify why it's hard before they can be comforted. Empathy skips the justification entirely. It just says: this is hard, and I'm here.` },
+            { word: `validate`, definition: `Acknowledging that someone's feeling makes sense — the response that makes people feel genuinely understood.`, audioPrompt: `Validation doesn't mean agreeing with someone, {name}. It means saying: given what you're experiencing, what you feel makes complete sense. "That sounds really scary." "Of course you're upset." Those few words do more than most advice. They tell the person: you're not overreacting. You're not alone in this. I see you.` },
+            { word: `presence`, definition: `Being fully there with someone — attention undivided, not rushing to fix or redirect — the most empathetic thing you can offer.`, audioPrompt: `Sometimes the most empathetic thing you can do is just stay, {name}. Not with a solution. Not with a better story. Just with full attention — phone down, eyes on them, willing to be there for as long as they need. That kind of presence is rare. And it's what people remember when they say "you were really there for me."` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L15 = {
           ],
           image: `/explorer-assets/leadership/l15-magazine-3.png`,
           imageCaption: `Listen fully, acknowledge the feeling, stay present — you don't have to fix anything`,
+          vocab: [
+            { word: `acknowledge`, definition: `Naming someone's feeling back to them — the simple act that most powerfully makes another person feel heard.`, audioPrompt: `Acknowledging a feeling is as simple as naming it, {name}. "That sounds really scary." "I can understand why you're upset." You're not solving anything — you're saying: I see what you're experiencing, and it makes sense. That moment of feeling seen is often exactly what the person needed before they could move forward.` },
+            { word: `compassion`, definition: `The desire to act on your understanding of someone's difficulty — what moves empathy from a feeling into something that helps.`, audioPrompt: `Compassion is what happens when empathy meets action, {name}. You understand what someone is going through — and you choose to do something about it. Stay. Ask. Check in again tomorrow. Compassion doesn't have to be dramatic. Often the smallest acts, done consistently, are what people feel most deeply.` },
+            { word: `available`, definition: `Being genuinely open to someone who needs support — not distracted, not rushing, but truly there for them.`, audioPrompt: `Being available to someone is a choice, {name}. It means you stop what you're doing. You put the phone away. You ask "how are you, really?" and you mean it. Not everyone who needs you will ask directly — but they notice who shows up. Being available, consistently, is one of the simplest and most powerful ways to show you care.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L15 = {
           ],
           image: `/explorer-assets/leadership/l15-magazine-4.png`,
           imageCaption: `Empathy grows through perspective-taking, curiosity, and the practice of full presence`,
+          vocab: [
+            { word: `perspective-taking`, definition: `The deliberate act of asking "what might this look like from where they're standing?" — the core practice that builds empathy over time.`, audioPrompt: `Perspective-taking is the empathy muscle, {name}. Before reacting to someone, pause and ask: what might this look like from where they're standing? Not what you'd feel in their situation — but what they might feel, given who they are and what they've been through. That pause, repeated over time, is how empathy grows.` },
+            { word: `fiction`, definition: `Stories and novels — one of the most reliable ways to build empathy, because you inhabit another person's inner world for a sustained period.`, audioPrompt: `Reading fiction builds empathy in a way that's hard to replicate, {name}. When you read a story, you live inside someone else's experience — their fears, their choices, their world. Research consistently shows that people who read widely are better at understanding others. Every book you finish is practice in seeing the world through someone else's eyes.` },
+            { word: `judgment`, definition: `The quick assumption that someone's reaction is wrong or strange — the opposite of the curiosity that builds empathy.`, audioPrompt: `Judgment closes the door, {name}. "That's a weird reaction" stops you from understanding anything. Curiosity opens it: "Why might someone feel that way?" That one question can completely change how you see a person. Empathy lives on the other side of judgment — and curiosity is how you cross over.` },
+          ],
         },
 
         {

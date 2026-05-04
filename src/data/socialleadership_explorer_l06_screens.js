@@ -38,6 +38,11 @@ const SL_L06 = {
           ],
           image: `/explorer-assets/leadership/l06-magazine-1.png`,
           imageCaption: `Complementary strengths beat identical skills every time`,
+          vocab: [
+            { word: `complementary`, definition: `Different strengths that work together — each one covering what the others lack.`, audioPrompt: `Complementary means the pieces fit together, {name}. A team where everyone is great at the same thing has the same blind spots. A team with different strengths covers all the bases. That difference is exactly what turns a group of individuals into something stronger than any one of them.` },
+            { word: `diverse`, definition: `Made up of people with different backgrounds, strengths, and ways of thinking — the quality that gives teams their greatest advantage.`, audioPrompt: `Diverse teams don't just feel more fair, {name} — they perform better. When you bring together people who think differently, you catch more mistakes and find more solutions. Sameness feels comfortable. Diversity gets results.` },
+            { word: `contribution`, definition: `The unique thing each person brings to a team — recognizing every contribution is how leaders keep teams strong.`, audioPrompt: `Every person on a team contributes something, {name} — and great leaders notice all of it, not just the most visible work. The person who keeps things organized, who asks the right question, who lifts morale when things get hard — those contributions matter just as much as the big moments.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const SL_L06 = {
           ],
           image: `/explorer-assets/leadership/l06-magazine-2.png`,
           imageCaption: `Trust, healthy conflict, commitment, accountability, results`,
+          vocab: [
+            { word: `accountability`, definition: `Holding yourself and your teammates to the standards you committed to — without it, the team's trust erodes.`, audioPrompt: `Accountability on a team means you do what you said you'd do, {name} — and you expect the same from others. Not to catch people failing, but because the whole team is counting on every person. When accountability disappears, so does the team's ability to trust each other.` },
+            { word: `commitment`, definition: `Backing a team decision fully — even when you personally had a different view — so the group can move forward together.`, audioPrompt: `Commitment means getting behind the decision even when you voted differently, {name}. You had your say. You were heard. Now the team needs everyone rowing in the same direction. That's not losing — that's what makes a team actually function.` },
+            { word: `buy-in`, definition: `Genuine agreement from team members that a decision is worth supporting — earned through honest conversation, not just announced.`, audioPrompt: `Buy-in isn't the same as being told to agree, {name}. It's what happens when people feel genuinely heard before a decision is made. Leaders who build real buy-in — by listening, explaining, and including people — get far more from their teams than those who just hand down orders.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const SL_L06 = {
           ],
           image: `/explorer-assets/leadership/l06-magazine-3.png`,
           imageCaption: `Every team needs different kinds of thinkers`,
+          vocab: [
+            { word: `role`, definition: `The specific function a person plays on a team — based on their strengths and what the group most needs.`, audioPrompt: `Everyone on a strong team plays a role, {name} — and the best team members notice what their team needs and step up to fill it. That might not always match your favorite thing to do. But choosing the role your team needs most? That's what leadership looks like in practice.` },
+            { word: `execute`, definition: `Turning ideas into action — the role of the implementer, without whom great ideas never become real results.`, audioPrompt: `Ideas without execution are just dreams, {name}. Every team needs people who can take a plan and actually make it happen — who figure out the steps, assign the work, and keep things moving. That's not glamorous. But it's often the difference between a team that delivers and one that doesn't.` },
+            { word: `morale`, definition: `The collective energy and spirit of a team — lifted by encouragers, and damaged by blame, exclusion, or persistent negativity.`, audioPrompt: `Morale is the invisible engine of a team, {name}. When it's high, people push through hard things together. When it drops, effort follows. The encourager — the one who finds what's working, who keeps people going when things get hard — often contributes more to a team's success than anyone realizes.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const SL_L06 = {
           ],
           image: `/explorer-assets/leadership/l06-magazine-4.png`,
           imageCaption: `When trust breaks down, everything else follows`,
+          vocab: [
+            { word: `trust`, definition: `The invisible foundation every team is built on — when it's present, teams can be honest, accountable, and brave together.`, audioPrompt: `Valor's core belief: trust is the foundation, {name}. Every other team behavior depends on it. When people trust each other, they share bad news early, ask for help honestly, and give their real best. When trust is gone, all of that disappears — and you're left with a group, not a team.` },
+            { word: `honest`, definition: `Telling the truth even when it's uncomfortable — the behavior that makes trust between teammates possible.`, audioPrompt: `Honesty on a team isn't just about not lying, {name}. It's about saying the hard thing early — before a problem grows. "I'm struggling with this part." "I think we're heading the wrong way." That kind of honesty protects the whole team. And it only happens when people feel safe enough to say it.` },
+            { word: `dysfunction`, definition: `The breakdown of a team's ability to work effectively together — almost always starting with a breakdown in trust.`, audioPrompt: `When a team stops working, there's almost always a trust problem underneath, {name}. People stop sharing problems. They stop holding each other accountable. They go through the motions but hold back their best effort. That's dysfunction — and it starts small, with small betrayals of trust that nobody addresses.` },
+          ],
         },
 
         {
