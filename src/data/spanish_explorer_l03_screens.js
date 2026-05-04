@@ -1,0 +1,231 @@
+const SpanishExplorerL03Screens = {
+  lessons: [
+    {
+      id:        'sp-6-8-03',
+      subjectId: 'languages',
+      title:     'Mi Familia — My Family',
+      guideId:   'luna',
+      xpReward:  50,
+      screens: [
+        {
+          id:        'sp03-welcome',
+          type:      'welcome',
+          guideText: `Before you can talk about the world, {name}, you learn to talk about the people closest to you. Family words are often the first words anyone learns in a new language — and Spanish has a beautiful vocabulary for every person in yours. Let's meet your familia.`,
+        },
+        {
+          id:            'sp03-mag-1',
+          type:          'magazine',
+          section:       1,
+          totalSections: 4,
+          headline:      `Your Family, Your First Spanish Classroom`,
+          paragraphs: [
+            `The closest family words in Spanish are almost the same in English — because family words travel across languages more easily than almost anything else. Mother (mamá — mah-MAH) and father (papá — pah-PAH) have that same warm lift in both languages.`,
+            `Notice where the stress falls: mah-MAH, pah-PAH — the accent is on the second syllable in Spanish, unlike the English "mama" and "papa" where stress shifts around. The accent mark in Spanish is a guide: it tells your voice exactly where to land.`,
+            `Brother (hermano — air-MAH-noh) introduces a pattern you'll see constantly in Spanish: the o ending is masculine, the a ending is feminine. Hermana is sister — the same word shape, just one vowel changed. Mi hermano, mi hermana. Two words from one root.`,
+          ],
+          image:        `/explorer-assets/languages/sp03-magazine-1.png`,
+          imageCaption: `A warm family portrait with Spanish labels for each member`,
+          vocab: [
+            {
+              word:        `mamá`,
+              definition:  `Mom in Spanish — accent on the second syllable gives it warmth.`,
+              audioPrompt: `Mamá — mah-MAH — mom. The accent on the second syllable gives it a warm lift: mah-MAH. Mi mamá — my mom. The possessive mi is the same for all nouns — simple, one word. Mah-MAH — mamá. Say it like you mean it.`,
+            },
+            {
+              word:        `papá`,
+              definition:  `Dad in Spanish — same stress pattern as mamá.`,
+              audioPrompt: `Papá — pah-PAH — dad. Same pattern as mamá: the accent lifts the second syllable. Pah-PAH. Mi papá, tu papá — my dad, your dad. Spanish uses tu for your and tú for you — a small mark that changes everything. Pah-PAH — papá.`,
+            },
+            {
+              word:        `hermano`,
+              definition:  `Brother in Spanish — hermana is sister, just one vowel away.`,
+              audioPrompt: `Hermano — air-MAH-noh — brother, {name}. Hermana is sister — swap the o for an a. Air-MAH-noh. Spanish is full of this pattern: o ending is masculine, a ending is feminine. Mi hermano, mi hermana. Two words from one shape. Air-MAH-noh.`,
+            },
+          ],
+        },
+        {
+          id:            'sp03-mag-2',
+          type:          'magazine',
+          section:       2,
+          totalSections: 4,
+          headline:      `Extended Family Has a Word for Everything`,
+          paragraphs: [
+            `Spanish has words for every branch of the family tree. Grandmother (abuela — ah-BWAY-lah) and grandfather (abuelo — ah-BWAY-loh) sit just one vowel apart from each other — the same warm shape, one ending changed.`,
+            `In many Spanish-speaking families, grandparents hold a central place — the keepers of recipes, stories, and language. The word abuela carries enormous warmth in Latin American culture. Asking about someone's abuela is asking about the heart of their family.`,
+            `Uncle (tío — TEE-oh) and aunt (tía — TEE-ah) are wonderfully short. In Spain, tío and tía are also used informally — the way English speakers say "man" or "buddy." Mis tíos covers aunts and uncles together in the masculine plural — Spanish includes everyone in one word.`,
+          ],
+          image:        `/explorer-assets/languages/sp03-magazine-2.png`,
+          imageCaption: `A family tree diagram labeled with Spanish family words`,
+          vocab: [
+            {
+              word:        `abuela`,
+              definition:  `Grandmother in Spanish — one of the most beloved words in the language.`,
+              audioPrompt: `Abuela — ah-BWAY-lah — grandmother, {name}. Abuelo — ah-BWAY-loh — is grandfather. Abuela and abuelo: one a, one o, same warmth. In many Spanish-speaking families, the abuela is at the center — keeper of recipes and stories. Ah-BWAY-lah — abuela.`,
+            },
+            {
+              word:        `abuelo`,
+              definition:  `Grandfather in Spanish — abuela and abuelo are one vowel apart.`,
+              audioPrompt: `Abuelo — ah-BWAY-loh — grandfather, {name}. You just learned abuela; now you have the pair. Ah-BWAY-loh. Spanish often gives you this gift: one word unlocks its partner. Mis abuelos — my grandparents — uses the masculine plural to include both. Ah-BWAY-loh.`,
+            },
+            {
+              word:        `tío`,
+              definition:  `Uncle in Spanish — tía is aunt, and mis tíos covers aunts and uncles together.`,
+              audioPrompt: `Tío — TEE-oh — uncle, {name}. Tía — TEE-ah — is aunt. Short, clear, easy. Mis tíos means my aunts and uncles together — Spanish uses the masculine plural to include everyone. TEE-oh — tío. One syllable, full of warmth.`,
+            },
+          ],
+        },
+        {
+          id:            'sp03-mag-3',
+          type:          'magazine',
+          section:       3,
+          totalSections: 4,
+          headline:      `Spanish Has Words for Every Shape of Person`,
+          paragraphs: [
+            `Once you know your family vocabulary, you can start describing the people in it. Spanish adjectives work the same way as color words: they agree with the noun they describe. For people, they agree with the person's gender.`,
+            `Tall (alto — AHL-toh) and short (bajo — BAH-hoh) are the most basic size words. Mi hermano es alto — my brother is tall. Mi abuela es baja — my grandmother is short. Notice: alto becomes alta, bajo becomes baja — the ending shifts to match the person being described.`,
+            `Young (joven — HOH-ben) works a little differently: it stays the same for masculine and feminine. Mi hermano es joven, mi hermana es joven. Spanish gives you this break with some adjectives. And families across Latin America often use loving nicknames — pequeño or chiquito, little one — as terms of endearment, not descriptions of actual size.`,
+          ],
+          image:        `/explorer-assets/languages/sp03-magazine-3.png`,
+          imageCaption: `Family members of different ages and heights, labeled in Spanish`,
+          vocab: [
+            {
+              word:        `alto`,
+              definition:  `Tall in Spanish — alta for feminine, alto for masculine.`,
+              audioPrompt: `Alto — AHL-toh — tall, {name}. Mi hermano es alto — my brother is tall. Alto changes to alta for feminine: mi hermana es alta. Spanish adjectives dress to match their noun. AHL-toh. Alta. Try describing someone you know: _____ es alto.`,
+            },
+            {
+              word:        `bajo`,
+              definition:  `Short or low in Spanish — the opposite of alto.`,
+              audioPrompt: `Bajo — BAH-hoh — short or low, {name}. The j makes a soft h sound — BAH-hoh. Bajo is alto's opposite. Una mesa baja — a low table. Un niño bajo — a short boy. In music, bajo means bass — the low voice. BAH-hoh — bajo.`,
+            },
+            {
+              word:        `joven`,
+              definition:  `Young in Spanish — stays the same for masculine and feminine.`,
+              audioPrompt: `Joven — HOH-ben — young, {name}. The j makes that soft h, and the v sounds close to a b. HOH-ben. Mi hermano es joven. Mi hermana es joven. Joven stays the same for both — no ending change. HOH-ben. Light, quick, forward-leaning — like the word itself.`,
+            },
+          ],
+        },
+        {
+          id:            'sp03-mag-4',
+          type:          'magazine',
+          section:       4,
+          totalSections: 4,
+          headline:      `Talking About Your Family in Spanish`,
+          paragraphs: [
+            `Three small words unlock an enormous amount of Spanish: my (mi — mee), I have (tengo — TEHN-goh), and is (es — es). With these three, you can describe your whole family.`,
+            `Mi is the simplest possessive in Spanish: one word, no gender change. Mi mamá, mi papá, mi hermano, mi abuela. My mom, my dad, my brother, my grandmother. Just mi, no matter what follows.`,
+            `Tengo comes from tener — to have. Tengo tres hermanos — I have three siblings. And here's something surprising: in Spanish, you don't say "I am ten years old." You say tengo diez años — I have ten years. Spanish speakers have their age rather than being it. Es — from ser — is the way you describe people: mi papá es alto, mi abuela es joven. With mi, tengo, and es, you can say almost anything about the people you love.`,
+          ],
+          image:        `/explorer-assets/languages/sp03-magazine-4.png`,
+          imageCaption: `A child drawing a picture of their family with Spanish labels`,
+          vocab: [
+            {
+              word:        `mi`,
+              definition:  `My in Spanish — one syllable, stays the same for any noun.`,
+              audioPrompt: `Mi — mee — my, {name}. One syllable. Mee. Mi mamá, mi casa, mi perro — my mom, my house, my dog. Spanish keeps it simple: mi is the same whether the noun is masculine or feminine. Just mi. Try it: mi ___. Put your favorite Spanish word after it.`,
+            },
+            {
+              word:        `tengo`,
+              definition:  `I have in Spanish — also used to express age.`,
+              audioPrompt: `Tengo — TEHN-goh — I have, {name}. Tengo dos hermanos — I have two siblings. And here's the surprise: tengo diez años means I am ten years old. In Spanish you have your years, not be them. TEHN-goh — tengo. What would you say after it?`,
+            },
+            {
+              word:        `es`,
+              definition:  `Is in Spanish — comes from ser, used to describe people and permanent qualities.`,
+              audioPrompt: `Es — es — is, {name}. Mi papá es alto — my dad is tall. Mi abuela es joven — my grandmother is young. Spanish has two ways to say "is" — ser for permanent things, estar for temporary ones — and es comes from ser. For describing people, use es. Es.`,
+            },
+          ],
+        },
+        {
+          id:            'sp03-game',
+          type:          'interactive',
+          guideText:     `Match each Spanish family word to its English meaning, {name}!`,
+          columnHeaders: ['Spanish', 'Meaning'],
+          items: [
+            { id: 'mama-i',    label: 'mamá',    correctMatch: 'mother' },
+            { id: 'abuelo-i',  label: 'abuelo',  correctMatch: 'grandfather' },
+            { id: 'hermano-i', label: 'hermano', correctMatch: 'brother' },
+            { id: 'joven-i',   label: 'joven',   correctMatch: 'young' },
+          ],
+          buckets: [
+            { id: 'mother',      label: 'mother',      color: '#F472B6' },
+            { id: 'grandfather', label: 'grandfather', color: '#60A5FA' },
+            { id: 'brother',     label: 'brother',     color: '#34D399' },
+            { id: 'young',       label: 'young',       color: '#FBBF24' },
+          ],
+        },
+        {
+          id:        'sp03-quiz',
+          type:      'quiz',
+          guideText: `¡Muy bien, {name}! Let's see how much you remember!`,
+          questions: [
+            {
+              id:          'q1',
+              format:      'multiple-choice',
+              text:        `How do you say "grandmother" in Spanish?`,
+              options:     ['abuela', 'abuelo', 'tía', 'mamá'],
+              answer:      'abuela',
+              explanation: `Abuela (ah-BWAY-lah) is grandmother. Abuelo is grandfather — just one vowel apart.`,
+            },
+            {
+              id:          'q2',
+              format:      'multiple-choice',
+              text:        `What does "alto" mean?`,
+              options:     ['short', 'young', 'tall', 'old'],
+              answer:      'tall',
+              explanation: `Alto (AHL-toh) means tall — alta for feminine. Mi hermano es alto, mi hermana es alta.`,
+            },
+            {
+              id:          'q3',
+              format:      'multiple-choice',
+              text:        `"Tengo" means which of the following?`,
+              options:     ['I am', 'I have', 'I see', 'I want'],
+              answer:      'I have',
+              explanation: `Tengo (TEHN-goh) means I have — from the verb tener. Also used for age: tengo diez años.`,
+            },
+            {
+              id:          'q4',
+              format:      'true-false',
+              text:        `Spanish-speaking families often use words like "chiquito" as loving nicknames, not actual size descriptions.`,
+              answer:      'True',
+              explanation: `Yes — chiquito (little one) and similar words are often used as terms of endearment in Spanish-speaking families.`,
+            },
+            {
+              id:          'q5',
+              format:      'multiple-choice',
+              text:        `Complete: "Mi ___ es alta" (My mother is tall).`,
+              options:     ['papá', 'hermano', 'mamá', 'abuelo'],
+              answer:      'mamá',
+              explanation: `Mamá (mah-MAH) is mom — and alta is the feminine form of tall, matching mamá.`,
+            },
+            {
+              id:          'q6',
+              format:      'multiple-choice',
+              text:        `How do you say "my uncle" in Spanish?`,
+              options:     ['mi abuela', 'mi tío', 'mi hermana', 'mi mamá'],
+              answer:      'mi tío',
+              explanation: `Mi tío (mee TEE-oh) is my uncle — tía is aunt, and mis tíos covers aunts and uncles together.`,
+            },
+          ],
+        },
+        {
+          id:              'sp03-realworld',
+          type:            'real-world',
+          guideText:       `Bring Spanish into your family this week, {name}!`,
+          familyAdventure: `Introduce each member of your family in Spanish: Este es mi papá. Esta es mi mamá. Este es mi hermano. See if family members can guess what you're saying. Then teach everyone one new Spanish family word — and use it at least once before bedtime.`,
+          creativePrompt:  `Draw your family tree and label each person in Spanish: mamá, papá, abuela, abuelo, tío, tía, hermano, hermana. Under each person, write one Spanish adjective that describes them — alto, bajo, joven, bonito. Use es to connect them: Mi abuelo es alto.`,
+        },
+        {
+          id:        'sp03-celebration',
+          type:      'celebration',
+          message:   `¡Excelente, {name}! You can now introduce your family and describe the people you love — all in Spanish. Luna loves this lesson because language is how we carry the people who matter most to us. Mi familia, mis palabras. Your family, your words. ¡Hasta la próxima!`,
+          badge:     'languages-l03',
+          badgeName: 'Family Storyteller',
+          xpEarned:  50,
+        },
+      ],
+    },
+  ],
+};
+
+export default SpanishExplorerL03Screens;
