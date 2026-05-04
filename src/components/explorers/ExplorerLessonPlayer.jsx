@@ -1147,6 +1147,7 @@ export default function ExplorerLessonPlayer() {
     // Fix 2: welcome screen gesture-based audio
     welcomeReady,
     onWelcomeTap,
+    subjectId,
   };
 
   function renderScreen(screen) {

@@ -9,8 +9,6 @@ const ENCOURAGEMENT = ["Yes!", "That's it!", "You got it!", "Beautiful match!"];
 const RETRY         = ["Hmm, try again.", "Not quite — try another.", "Almost — keep going."];
 const COMPLETION    = "Amazing! You matched them all! You really know your feelings!";
 
-const IMG_BASE = '/explorer-assets/inner-world/';
-
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -23,8 +21,9 @@ function shuffle(arr) {
 export default function InteractiveExplore({
   screen, guideAvatar, speaking, accent,
   onSpeak, onPrewarm, onComplete, onInteractiveComplete,
-  karaokeWords, karaokeIdx,
+  karaokeWords, karaokeIdx, subjectId,
 }) {
+  const imgBase = `/explorer-assets/${subjectId || 'inner-world'}/`;
   const { items = [], buckets = [], guideText = '', instruction = '', columnHeaders = ['Scenes', 'Feelings'] } = screen;
 
   // Shuffle once on mount
@@ -279,7 +278,7 @@ export default function InteractiveExplore({
                 }}
               >
                 <img
-                  src={`${IMG_BASE}${item.image}`}
+                  src={`${imgBase}${item.image}`}
                   alt={item.label}
                   style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: item.objectPosition || 'center center', display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
                   onError={e => {
