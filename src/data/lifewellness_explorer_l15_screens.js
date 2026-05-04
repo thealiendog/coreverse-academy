@@ -4,233 +4,222 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const LW_L15 = {
-  ageBand:   'explorers',
-  subjectId: 'wellness',
-  guide:     'terra',
+  ageBand:   `explorers`,
+  subjectId: `wellness`,
+  guide:     `terra`,
 
   lessons: [
     {
-      id:        'lw-6-8-15',
-      title:     'The Musculoskeletal System: Bones and Muscles',
+      id:        `lw-6-8-15`,
+      title:     `The Musculoskeletal System: Bones and Muscles`,
       duration:  12,
       xpReward:  50,
-      badge:     'strong-body',
-      badgeName: 'Strong Body',
+      badge:     `strong-body`,
+      badgeName: `Strong Body`,
 
       screens: [
 
-        // ── 1. WELCOME ──────────────────────────────────────────────────────
         {
-          id:       'l15-welcome',
-          type:     'welcome',
+          id: `l15-welcome`,
+          type: `welcome`,
           guideText: `There are 206 bones in your body, {name}, and more than 600 muscles — and together they form a structure of extraordinary sophistication. Your skeleton isn't just a frame. Your muscles aren't just tools for movement. The whole system responds to how you use it: bones grow denser with load, muscles strengthen with use. What you do now — at your age — genuinely shapes the musculoskeletal system you'll carry for the rest of your life. Today we're going to understand how it works, what it needs, and what it can do. You might look at your own body a little differently after this.`,
-          headline: 'The Musculoskeletal System: Bones and Muscles',
+          headline: `The Musculoskeletal System: Bones and Muscles`,
           subtitle: `You're walking around in a machine of 206 bones and over 600 muscles — and what you do now to build them is an investment you carry for life`,
-          visual:   '/explorer-assets/wellness/l15-welcome.png',
+          visual: `/explorer-assets/wellness/l15-welcome.png`,
         },
 
-        // ── 2. MAGAZINE — §1 ────────────────────────────────────────────────
         {
-          id:      'l15-mag-1',
-          type:    'magazine',
+          id: `l15-mag-1`,
+          type: `magazine`,
           section: 1,
-          content: {
-            heading: `Your skeleton: more than just structure`,
-            body: `Your 206 bones do far more than hold you up. They **protect vital organs** — the skull protects your brain, the ribcage protects your heart and lungs. They **produce blood cells in their marrow** — both red blood cells that carry oxygen and immune cells that protect you. They **store minerals**, especially calcium and phosphorus, that the rest of your body draws on as needed. And bones are not static — they are constantly being broken down and rebuilt through a process called **bone remodelling**. About **10% of your skeleton is replaced each year**. Your skeleton is a living, dynamic system.`,
-            image:   '/explorer-assets/wellness/l15-magazine-1.png',
-            caption: `Bones protect organs, produce blood cells, store minerals, and are constantly being rebuilt`,
-          },
+          headline: `Your skeleton: more than just structure`,
+          paragraphs: [
+            `Your 206 bones do far more than hold you up. They **protect vital organs** — the skull protects your brain, the ribcage protects your heart and lungs. They **produce blood cells in their marrow** — both red blood cells that carry oxygen and immune cells that protect you. They **store minerals**, especially calcium and phosphorus, that the rest of your body draws on as needed. And bones are not static — they are constantly being broken down and rebuilt through a process called **bone remodelling**. About **10% of your skeleton is replaced each year**. Your skeleton is a living, dynamic system.`,
+          ],
+          image: `/explorer-assets/wellness/l15-magazine-1.png`,
+          imageCaption: `Bones protect organs, produce blood cells, store minerals, and are constantly being rebuilt`,
         },
 
-        // ── 3. MAGAZINE — §2 ────────────────────────────────────────────────
         {
-          id:      'l15-mag-2',
-          type:    'magazine',
+          id: `l15-mag-2`,
+          type: `magazine`,
           section: 2,
-          content: {
-            heading: `Building bone density in childhood`,
-            body: `Childhood and adolescence are the **critical window** for building **bone density** — the amount of mineral packed into your bones. Peak bone mass is typically reached by your late 20s. After that, you can maintain or slowly lose bone density, but you cannot significantly increase it. This means the bone you build right now — through weight-bearing exercise, calcium, and vitamin D — is the bone you'll carry for the rest of your life. What you do now genuinely matters in a way that nothing later can fully replace. It's one of the most compelling reasons to take care of your body during childhood.`,
-            image:   '/explorer-assets/wellness/l15-magazine-2.png',
-            caption: `Peak bone density is built by your late 20s — what you build now is what you carry for life`,
-          },
+          headline: `Building bone density in childhood`,
+          paragraphs: [
+            `Childhood and adolescence are the **critical window** for building **bone density** — the amount of mineral packed into your bones. Peak bone mass is typically reached by your late 20s. After that, you can maintain or slowly lose bone density, but you cannot significantly increase it. This means the bone you build right now — through weight-bearing exercise, calcium, and vitamin D — is the bone you'll carry for the rest of your life. What you do now genuinely matters in a way that nothing later can fully replace. It's one of the most compelling reasons to take care of your body during childhood.`,
+          ],
+          image: `/explorer-assets/wellness/l15-magazine-2.png`,
+          imageCaption: `Peak bone density is built by your late 20s — what you build now is what you carry for life`,
         },
 
-        // ── 4. MAGAZINE — §3 ────────────────────────────────────────────────
         {
-          id:      'l15-mag-3',
-          type:    'magazine',
+          id: `l15-mag-3`,
+          type: `magazine`,
           section: 3,
-          content: {
-            heading: `Your muscles: types and function`,
-            body: `You have three types of muscle. **Skeletal muscle** (voluntary) — attached to bones via tendons, these are the muscles you consciously control for movement. **Smooth muscle** (involuntary) — lines your digestive tract, blood vessels, and organs, working automatically without any conscious effort. **Cardiac muscle** — found only in your heart, it never fatigues and works continuously for your entire life. Skeletal muscles work in **pairs** — when one contracts, its partner relaxes. Your bicep contracts to bend your arm; your tricep relaxes. When you straighten your arm, they swap roles. Every movement you make involves this coordinated partnership.`,
-            image:   '/explorer-assets/wellness/l15-magazine-3.png',
-            caption: `Skeletal, smooth, and cardiac muscle — each type with its own role, working in precise coordination`,
-          },
+          headline: `Your muscles: types and function`,
+          paragraphs: [
+            `You have three types of muscle. **Skeletal muscle** (voluntary) — attached to bones via tendons, these are the muscles you consciously control for movement. **Smooth muscle** (involuntary) — lines your digestive tract, blood vessels, and organs, working automatically without any conscious effort. **Cardiac muscle** — found only in your heart, it never fatigues and works continuously for your entire life. Skeletal muscles work in **pairs** — when one contracts, its partner relaxes. Your bicep contracts to bend your arm; your tricep relaxes. When you straighten your arm, they swap roles. Every movement you make involves this coordinated partnership.`,
+          ],
+          image: `/explorer-assets/wellness/l15-magazine-3.png`,
+          imageCaption: `Skeletal, smooth, and cardiac muscle — each type with its own role, working in precise coordination`,
         },
 
-        // ── 5. MAGAZINE — §4 ────────────────────────────────────────────────
         {
-          id:      'l15-mag-4',
-          type:    'magazine',
+          id: `l15-mag-4`,
+          type: `magazine`,
           section: 4,
-          content: {
-            heading: `Maintaining musculoskeletal health`,
-            body: `For **strong bones**: weight-bearing exercise (running, jumping, sports) — the impact signals bones to grow denser and stronger; adequate calcium (dairy, leafy greens, fortified foods); and vitamin D (sunlight, fatty fish) which is needed to absorb calcium properly. For **strong muscles**: progressive resistance (bodyweight exercises, sports, lifting), adequate protein for repair, and **rest between sessions** — muscles grow during recovery, not during exercise itself. For **joint health**: stay flexible through stretching, and avoid overuse injuries by varying the activities you do rather than repeating the same movement patterns every day.`,
-            image:   '/explorer-assets/wellness/l15-magazine-4.png',
-            caption: `Weight-bearing exercise, calcium, vitamin D, protein, and rest — the foundations of musculoskeletal health`,
-          },
+          headline: `Maintaining musculoskeletal health`,
+          paragraphs: [
+            `For **strong bones**: weight-bearing exercise (running, jumping, sports) — the impact signals bones to grow denser and stronger; adequate calcium (dairy, leafy greens, fortified foods); and vitamin D (sunlight, fatty fish) which is needed to absorb calcium properly. For **strong muscles**: progressive resistance (bodyweight exercises, sports, lifting), adequate protein for repair, and **rest between sessions** — muscles grow during recovery, not during exercise itself. For **joint health**: stay flexible through stretching, and avoid overuse injuries by varying the activities you do rather than repeating the same movement patterns every day.`,
+          ],
+          image: `/explorer-assets/wellness/l15-magazine-4.png`,
+          imageCaption: `Weight-bearing exercise, calcium, vitamin D, protein, and rest — the foundations of musculoskeletal health`,
         },
 
-        // ── 6. INTERACTIVE — Drag-match ─────────────────────────────────────
         {
-          id:     'l15-game',
-          type:   'interactive',
-          format: 'drag-match',
-          config: {
-            buckets: [
-              { id: 'builds',  label: `💪 Builds Strong Bones and Muscles`,        color: '#34D399' },
-              { id: 'misses',  label: `🛋️ Misses the Opportunity to Build`,        color: '#94A3B8' },
-            ],
-            items: [
-              {
-                id:            'l15-g1',
-                image:         'l15-game-1.png',
-                label:         `Running, jumping, and climbing — activities that put healthy impact through your bones.`,
-                correctBucket: 'builds',
-                matchPhrase:   `Weight-bearing activities that put force through your bones signal them to grow denser and stronger — this is the most direct way to build bone during childhood.`,
-              },
-              {
-                id:            'l15-g2',
-                image:         'l15-game-2.png',
-                label:         `Eating calcium-rich foods and getting some sunlight regularly for vitamin D.`,
-                correctBucket: 'builds',
-                matchPhrase:   `Calcium is the main mineral your bones are made of, and vitamin D is needed to absorb it — both are essential for the bone-building that happens during childhood and adolescence.`,
-              },
-              {
-                id:            'l15-g3',
-                image:         'l15-game-3.png',
-                label:         `Spending most of every day sitting or lying down without physical activity.`,
-                correctBucket: 'misses',
-                matchPhrase:   `Bones and muscles respond to the demands placed on them — if you rarely move, they receive very little signal to grow stronger. Consistent movement is what drives the adaptation.`,
-              },
-              {
-                id:            'l15-g4',
-                image:         'l15-game-4.png',
-                label:         `Only ever doing gentle, low-impact activities and avoiding anything that challenges your strength.`,
-                correctBucket: 'misses',
-                matchPhrase:   `Gentle movement has real value — but building bone density and muscle strength requires activities that put real load on them. The challenge is what triggers the growth.`,
-              },
-            ],
-          },
-        },
-
-        // ── 7. QUIZ ──────────────────────────────────────────────────────────
-        {
-          id:       'l15-quiz',
-          type:     'quiz',
-          questions: [
-
-            // Q1 — MC (source)
+          id: `l15-game`,
+          type: `interactive`,
+          format: `drag-match`,
+          guideText: `Alright, {name} — time to put what you've learned to the test. Look at each scene and match it to where it belongs. Take your time — you've got this.`,
+          buckets: [
             {
-              id:           'l15-q1',
-              format:       'mc',
-              question:     `What do your bones do besides supporting your body structure?`,
-              options:      [
+              id: `builds`,
+              label: `💪 Builds Strong Bones and Muscles`,
+              color: `#34D399`,
+            },
+            {
+              id: `misses`,
+              label: `🛋️ Misses the Opportunity to Build`,
+              color: `#94A3B8`,
+            },
+          ],
+          items: [
+            {
+              id: `l15-g1`,
+              image: `l15-game-1.png`,
+              label: `Running, jumping, and climbing — activities that put healthy impact through your bones.`,
+              matchPhrase: `Weight-bearing activities that put force through your bones signal them to grow denser and stronger — this is the most direct way to build bone during childhood.`,
+              correctMatch: `builds`,
+            },
+            {
+              id: `l15-g2`,
+              image: `l15-game-2.png`,
+              label: `Eating calcium-rich foods and getting some sunlight regularly for vitamin D.`,
+              matchPhrase: `Calcium is the main mineral your bones are made of, and vitamin D is needed to absorb it — both are essential for the bone-building that happens during childhood and adolescence.`,
+              correctMatch: `builds`,
+            },
+            {
+              id: `l15-g3`,
+              image: `l15-game-3.png`,
+              label: `Spending most of every day sitting or lying down without physical activity.`,
+              matchPhrase: `Bones and muscles respond to the demands placed on them — if you rarely move, they receive very little signal to grow stronger. Consistent movement is what drives the adaptation.`,
+              correctMatch: `misses`,
+            },
+            {
+              id: `l15-g4`,
+              image: `l15-game-4.png`,
+              label: `Only ever doing gentle, low-impact activities and avoiding anything that challenges your strength.`,
+              matchPhrase: `Gentle movement has real value — but building bone density and muscle strength requires activities that put real load on them. The challenge is what triggers the growth.`,
+              correctMatch: `misses`,
+            },
+          ],
+        },
+
+        {
+          id: `l15-quiz`,
+          type: `quiz`,
+          guideText: `Let's see how much you remember, {name}. Answer each question and I'll tell you how you did.`,
+          questions: [
+            {
+              id: `l15-q1`,
+              format: `multiple-choice`,
+              question: `What do your bones do besides supporting your body structure?`,
+              options: [
                 `Generate electrical signals for the nervous system`,
                 `Protect organs, produce blood and immune cells in their marrow, and store minerals like calcium and phosphorus`,
                 `Filter toxins from the blood alongside the liver`,
                 `Store fat for energy use during fasting`,
               ],
               correctIndex: 1,
-              explanation:  `Bones are multi-functional organs, not just a frame. They protect vital organs (skull, ribcage), produce red blood cells and immune cells in their marrow, and store the body's calcium and phosphorus reserves. They're also constantly being broken down and rebuilt — about 10% of the skeleton is replaced each year through a process called bone remodelling.`,
+              explanation: `Bones are multi-functional organs, not just a frame. They protect vital organs (skull, ribcage), produce red blood cells and immune cells in their marrow, and store the body's calcium and phosphorus reserves. They're also constantly being broken down and rebuilt — about 10% of the skeleton is replaced each year through a process called bone remodelling.`,
             },
-
-            // Q2 — MC (source)
             {
-              id:           'l15-q2',
-              format:       'mc',
-              question:     `Why is childhood such a critical window for bone health?`,
-              options:      [
+              id: `l15-q2`,
+              format: `multiple-choice`,
+              question: `Why is childhood such a critical window for bone health?`,
+              options: [
                 `Because childhood bones are weaker and more prone to injury than adult bones`,
                 `Because adults can easily increase bone density through diet alone`,
                 `Peak bone mass is reached by your late 20s — you cannot significantly increase it after that, so what you build now is what you carry`,
                 `Because children exercise more naturally and their bones respond faster`,
               ],
               correctIndex: 2,
-              explanation:  `Peak bone density is typically reached by the late 20s — and after that point, the most you can do is maintain what you have. This means the bone built during childhood and adolescence through weight-bearing exercise, calcium, and vitamin D is genuinely irreplaceable. What you build now is what you'll carry through your adult life.`,
+              explanation: `Peak bone density is typically reached by the late 20s — and after that point, the most you can do is maintain what you have. This means the bone built during childhood and adolescence through weight-bearing exercise, calcium, and vitamin D is genuinely irreplaceable. What you build now is what you'll carry through your adult life.`,
             },
-
-            // Q3 — MC (source)
             {
-              id:           'l15-q3',
-              format:       'mc',
-              question:     `How do muscles work in pairs?`,
-              options:      [
+              id: `l15-q3`,
+              format: `multiple-choice`,
+              question: `How do muscles work in pairs?`,
+              options: [
                 `Both muscles in a pair contract simultaneously for maximum force`,
                 `When one contracts to create movement, its partner relaxes — and they swap roles for the opposite movement`,
                 `Muscles only work in pairs during heavy lifting — light movements use single muscles`,
                 `Pairs of muscles alternate contracting with every heartbeat`,
               ],
               correctIndex: 1,
-              explanation:  `Skeletal muscles work in opposing pairs — one contracts while the other relaxes, and they swap roles for the opposite movement. Your bicep and tricep are the classic example: the bicep contracts to bend the elbow, the tricep relaxes. To straighten the arm, they reverse. This paired coordination is happening throughout your entire body with every movement you make.`,
+              explanation: `Skeletal muscles work in opposing pairs — one contracts while the other relaxes, and they swap roles for the opposite movement. Your bicep and tricep are the classic example: the bicep contracts to bend the elbow, the tricep relaxes. To straighten the arm, they reverse. This paired coordination is happening throughout your entire body with every movement you make.`,
             },
-
-            // Q4 — TF (fresh)
             {
-              id:           'l15-q4',
-              format:       'tf',
-              question:     `Bones are not static — they're constantly being broken down and rebuilt, with about 10% of your skeleton replaced each year.`,
+              id: `l15-q4`,
+              format: `true-false`,
+              question: `Bones are not static — they're constantly being broken down and rebuilt, with about 10% of your skeleton replaced each year.`,
               correctAnswer: true,
-              explanation:  `True. Bone remodelling is an ongoing process — specialised cells called osteoclasts break down old bone while osteoblasts build new bone in its place. This process allows bones to respond to the demands placed on them (growing stronger with weight-bearing exercise) and to repair microscopic damage before it becomes a problem.`,
+              explanation: `True. Bone remodelling is an ongoing process — specialised cells called osteoclasts break down old bone while osteoblasts build new bone in its place. This process allows bones to respond to the demands placed on them (growing stronger with weight-bearing exercise) and to repair microscopic damage before it becomes a problem.`,
             },
-
-            // Q5 — Fill-blank (fresh — "pressure" per adjustment 4)
             {
-              id:           'l15-q5',
-              format:       'fill-blank',
-              question:     `Weight-bearing exercises like running and jumping put healthy ___ on your bones — signalling them to grow denser and stronger.`,
-              options:      ['pressure', 'rest', 'damage', 'weight'],
+              id: `l15-q5`,
+              format: `fill-blank`,
+              question: `Weight-bearing exercises like running and jumping put healthy ___ on your bones — signalling them to grow denser and stronger.`,
+              options: [
+                `pressure`,
+                `rest`,
+                `damage`,
+                `weight`,
+              ],
               correctIndex: 0,
-              explanation:  `The pressure and impact of weight-bearing exercise is actually what stimulates bone growth. When your bones experience these forces, bone-building cells get a signal to lay down more mineral and increase density. This is why running, jumping, and sports are so valuable for bone health during childhood — gentle activities like swimming, while great for cardiovascular health, don't provide this bone-building pressure signal.`,
+              explanation: `The pressure and impact of weight-bearing exercise is actually what stimulates bone growth. When your bones experience these forces, bone-building cells get a signal to lay down more mineral and increase density. This is why running, jumping, and sports are so valuable for bone health during childhood — gentle activities like swimming, while great for cardiovascular health, don't provide this bone-building pressure signal.`,
             },
-
-            // Q6 — MC (fresh)
             {
-              id:           'l15-q6',
-              format:       'mc',
-              question:     `What is the most effective approach to building and maintaining strong muscles?`,
-              options:      [
+              id: `l15-q6`,
+              format: `multiple-choice`,
+              question: `What is the most effective approach to building and maintaining strong muscles?`,
+              options: [
                 `Do as much exercise as possible every day without rest`,
                 `Focus only on one type of movement to build strength in that area`,
                 `Regular resistance activities, adequate protein, and recovery time between sessions — because muscles grow during rest, not during exercise itself`,
                 `Stretch every day and avoid high-impact activities that could cause injury`,
               ],
               correctIndex: 2,
-              explanation:  `Muscle growth happens during recovery, not during exercise. Exercise creates small amounts of muscle fibre damage — recovery is when the body repairs and rebuilds those fibres slightly stronger than before. This is why rest between sessions is essential, not optional. Combine this with adequate protein (the building material) and consistent progressive challenge, and muscles will grow and strengthen over time.`,
+              explanation: `Muscle growth happens during recovery, not during exercise. Exercise creates small amounts of muscle fibre damage — recovery is when the body repairs and rebuilds those fibres slightly stronger than before. This is why rest between sessions is essential, not optional. Combine this with adequate protein (the building material) and consistent progressive challenge, and muscles will grow and strengthen over time.`,
             },
-
           ],
         },
 
-        // ── 8. REAL-WORLD ────────────────────────────────────────────────────
         {
-          id:   'l15-realworld',
-          type: 'real-world',
-          content: {
-            scenario:    `Musculoskeletal Baseline`,
-            description: `Test your current baseline: how many push-ups can you do in a row? How long can you hold a plank? How many seconds can you balance on one foot with eyes closed? Can you touch your toes? Record your scores, try a bodyweight workout a few times this week, and retest. Notice what changes.`,
-            familyAdventure: `Do a family bodyweight workout together — no equipment needed. Find a bodyweight workout online or make your own with push-ups, squats, lunges, jumping jacks, and planks. Modify for different fitness levels so everyone can participate. Add music, cheer each other on, and commit to doing it a few times a week. Notice what changes over the coming weeks.`,
-            realWorldConnection: `Sports scientists, physiotherapists, and bone health researchers all point to the same window: the bone density built during childhood and adolescence is the single most important factor in long-term skeletal health. What you do now is not just good for today — it's an investment in the body you'll have for decades.`,
-          },
+          id: `l15-realworld`,
+          type: `real-world`,
+          guideText: `Sports scientists, physiotherapists, and bone health researchers all point to the same window: the bone density built during childhood and adolescence is the single most important factor in long-term skeletal health. What you do now is not just good for today — it's an investment in the body you'll have for decades.`,
+          familyAdventure: `Do a family bodyweight workout together — no equipment needed. Find a bodyweight workout online or make your own with push-ups, squats, lunges, jumping jacks, and planks. Modify for different fitness levels so everyone can participate. Add music, cheer each other on, and commit to doing it a few times a week. Notice what changes over the coming weeks.`,
+          creativePrompt: `Test your current baseline: how many push-ups can you do in a row? How long can you hold a plank? How many seconds can you balance on one foot with eyes closed? Can you touch your toes? Record your scores, try a bodyweight workout a few times this week, and retest. Notice what changes.`,
         },
 
-        // ── 9. CELEBRATION ───────────────────────────────────────────────────
         {
-          id:   'l15-celebration',
-          type: 'celebration',
-          content: {
-            message: `Wonderful, {name}! You now know that the 206 bones and 600+ muscles in your body are working in extraordinary coordination every moment — and that what you do now to challenge and nourish them is an investment you'll carry for life. Your body is built to move and grow. Terra is so proud to walk this path with you.`,
-          },
+          id: `l15-celebration`,
+          type: `celebration`,
+          message: `Wonderful, {name}! You now know that the 206 bones and 600+ muscles in your body are working in extraordinary coordination every moment — and that what you do now to challenge and nourish them is an investment you'll carry for life. Your body is built to move and grow. Terra is so proud to walk this path with you.`,
+          badge: `strong-body`,
+          badgeName: `Strong Body`,
+          xpEarned: 50,
         },
 
       ], // screens
