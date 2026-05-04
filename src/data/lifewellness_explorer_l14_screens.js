@@ -38,6 +38,11 @@ const LW_L14 = {
           ],
           image: `/explorer-assets/wellness/l14-magazine-1.png`,
           imageCaption: `Right side to lungs, left side to body — 100,000 pumps a day, every day, without stopping`,
+          vocab: [
+            { word: `systole`, definition: `The phase of a heartbeat when the heart muscle contracts and pumps blood out into the arteries — the higher number in a blood pressure reading.`, audioPrompt: `Systole is the moment of action, {name} — when your heart muscle squeezes and pushes blood out into your arteries. Every time your heart beats, systole is the contraction that sends blood on its way. The "lub" in "lub-dub" of a heartbeat is systole. One hundred thousand of these contractions happen every single day, without a single rest.` },
+            { word: `diastole`, definition: `The phase of a heartbeat when the heart muscle relaxes and fills with blood — the lower number in a blood pressure reading.`, audioPrompt: `Between every beat, {name}, your heart relaxes and fills with blood — that's diastole. It's the moment of rest in the cardiac cycle, and it matters as much as the contraction. Blood pressure is measured across both phases: the pressure during contraction over the pressure during relaxation. Both together describe the work your cardiovascular system is doing constantly.` },
+            { word: `blood pressure`, definition: `The force your blood exerts on the walls of your blood vessels — measured as two numbers representing the pressure during heartbeats and between them.`, audioPrompt: `Blood pressure is a measure of the work your heart and blood vessels are doing, {name}. The higher number is the force when your heart contracts. The lower number is the force when your heart rests between beats. Too high over a long time means your cardiovascular system is under strain. Keeping it in a healthy range — through movement, sleep, and stress management — is one of the most important things you can do for your heart.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L14 = {
           ],
           image: `/explorer-assets/wellness/l14-magazine-2.png`,
           imageCaption: `Red cells carry oxygen, white cells fight infection, platelets clot wounds — all carried in plasma`,
+          vocab: [
+            { word: `hemoglobin`, definition: `The protein in red blood cells that carries oxygen — it binds to oxygen in the lungs and releases it to tissues throughout the body, giving blood its red color.`, audioPrompt: `Hemoglobin is the protein that makes blood red, {name}, and it's doing something remarkable: picking up oxygen in your lungs and delivering it to every cell in your body before returning to pick up more. Each red blood cell carries millions of hemoglobin molecules. Your body produces about two million new red blood cells every second just to keep this continuous delivery running.` },
+            { word: `plasma`, definition: `The liquid base of blood — a pale yellow fluid carrying nutrients, hormones, proteins, and waste products throughout the body.`, audioPrompt: `Take away the blood cells and what remains is plasma, {name} — a pale yellow liquid that makes up more than half of your blood. Plasma is the transport medium: it carries nutrients from digestion, hormones from glands, proteins, antibodies, and waste products — all flowing throughout your entire body simultaneously. It's your body's complete internal delivery and waste-collection system.` },
+            { word: `platelet`, definition: `A tiny blood component that helps your blood clot when you bleed — gathering at the site of an injury to form a plug and stop blood loss.`, audioPrompt: `Platelets are your body's repair crew, {name} — they respond within seconds when a blood vessel is damaged. They rush to the site of a cut, clump together, and form a clot that seals the break and stops the bleeding. Without them, a minor cut could become a serious problem. Most of the time their work is so fast and efficient you barely notice it's happened.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L14 = {
           ],
           image: `/explorer-assets/wellness/l14-magazine-3.png`,
           imageCaption: `Lifestyle choices compound over decades — what you do now shapes the heart you'll have`,
+          vocab: [
+            { word: `cardiovascular`, definition: `Relating to the heart and blood vessels — cardiovascular health refers to how well your heart and the network of vessels that carry blood throughout your body are functioning.`, audioPrompt: `Cardiovascular means heart and vessels together, {name} — the whole system that moves blood around your body. Your heart is the pump, your arteries and veins are the network. Both need care. Regular movement strengthens the pump and keeps the vessels flexible. Chronic stress and inactivity strain them both. What you do now is genuinely building the cardiovascular system you'll carry into adulthood.` },
+            { word: `inflammation`, definition: `A biological response that, when chronic and persistent, strains blood vessels and the heart over time — linked to stress, poor sleep, and eating patterns low in whole foods.`, audioPrompt: `Inflammation at low levels, running in the background all the time, is one of the ways lifestyle choices affect heart health over decades, {name}. Chronic stress, disrupted sleep, and a diet low in whole plant foods can all contribute to it. Managing stress, sleeping well, and eating a variety of whole foods aren't separate health behaviors — they're all part of protecting your cardiovascular system.` },
+            { word: `compound`, definition: `To grow or worsen gradually over time through accumulated effects — which is why lifestyle habits affect heart health powerfully: their effects, positive or negative, build with every passing year.`, audioPrompt: `Compound is the most important word for understanding why what you do now matters so much, {name}. Small habits, repeated over years, add up to outcomes that couldn't happen any other way. A heart strengthened a little by regular movement every day for ten years is genuinely different from one that wasn't. Good habits compound. So do harmful ones. The earlier you start, the more time the compounding has to work in your favor.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L14 = {
           ],
           image: `/explorer-assets/wellness/l14-magazine-4.png`,
           imageCaption: `Movement, whole foods, no smoking, stress management, sleep — the habits that compound into heart strength`,
+          vocab: [
+            { word: `aerobic exercise`, definition: `Physical activity that raises your heart rate and breathing over a sustained period — the most direct way to strengthen your heart muscle and improve cardiovascular fitness.`, audioPrompt: `Your heart is a muscle, {name}, and like every muscle, it gets stronger when it's regularly challenged. Aerobic exercise — running, swimming, cycling, dancing — is the challenge your heart responds to. Over time, it pumps more blood with each beat and works more efficiently at rest. That adaptation starts from the very first session and builds with every one that follows.` },
+            { word: `resting heart rate`, definition: `How many times your heart beats per minute when you're calm and at rest — a measure of cardiovascular fitness that tends to decrease as your heart becomes stronger and more efficient.`, audioPrompt: `A trained heart beats more slowly at rest because it pumps more blood with every beat, {name}. Resting heart rate is one of the simplest measures of cardiovascular fitness. As regular aerobic exercise strengthens your heart over weeks and months, your resting rate gradually falls — your heart is doing the same job with less effort. That efficiency is what fitness means in cardiovascular terms.` },
+            { word: `vessel`, definition: `A tube that carries blood through your body — including arteries (carrying blood away from the heart) and veins (returning blood to the heart) — which stay healthier and more flexible with regular movement and whole foods.`, audioPrompt: `Your blood vessels are the entire delivery network, {name} — thousands of miles of arteries, veins, and capillaries reaching every cell in your body. Keeping them flexible and healthy requires regular movement, nourishing food, and managing stress and inflammation. A vessel that loses flexibility becomes harder for the heart to push blood through — which is one of the ways lifestyle habits affect cardiovascular health over decades.` },
+          ],
         },
 
         {

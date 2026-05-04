@@ -38,6 +38,11 @@ const LW_L15 = {
           ],
           image: `/explorer-assets/wellness/l15-magazine-1.png`,
           imageCaption: `Bones protect organs, produce blood cells, store minerals, and are constantly being rebuilt`,
+          vocab: [
+            { word: `bone remodeling`, definition: `The continuous process of old bone being broken down and new bone being built — meaning your skeleton is always renewing itself, about 10% replaced each year.`, audioPrompt: `Your skeleton isn't a fixed structure, {name} — it's in constant renewal. Specialized cells called osteoclasts break down old bone while osteoblasts build new bone in its place. This remodeling is how bones respond to the demands placed on them, repair microscopic damage, and grow denser with regular weight-bearing exercise. About ten percent of your skeleton is replaced every year.` },
+            { word: `marrow`, definition: `The soft tissue inside your bones — which produces red blood cells, white blood cells, and platelets, making your bones essential to your immune system and oxygen delivery.`, audioPrompt: `Deep inside your bones is where new blood is made, {name}. Bone marrow produces red blood cells that carry oxygen, white blood cells that fight infection, and platelets that stop bleeding — about two million new red blood cells every second. Your bones are not just a frame. They're an active, living factory running continuously inside you.` },
+            { word: `mineral`, definition: `An element stored in your bones — particularly calcium and phosphorus — that gives bones their hardness and is released into the bloodstream when the rest of your body needs it.`, audioPrompt: `Your bones are your body's mineral bank, {name}. Calcium and phosphorus stored in bone tissue give your skeleton its hardness and strength. When blood calcium levels drop, your body draws on those reserves — pulling what it needs from bone. Building strong bones now is building a larger reserve to draw on for the rest of your life. The more you deposit now, the more you have.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L15 = {
           ],
           image: `/explorer-assets/wellness/l15-magazine-2.png`,
           imageCaption: `Peak bone density is built by your late 20s — what you build now is what you carry for life`,
+          vocab: [
+            { word: `bone density`, definition: `The amount of mineral packed into your bones — greater density means stronger, more resilient bones that are less likely to fracture and less likely to weaken with age.`, audioPrompt: `Bone density is like the thickness of the walls of a building, {name}. Denser bones are stronger, more resistant to fracture, and better equipped to last a lifetime. The density you build now — through weight-bearing exercise, calcium, and vitamin D — is the bank balance you'll carry into adulthood. After your late twenties, you can maintain it but can't significantly increase it. What you build now is what you keep.` },
+            { word: `peak bone mass`, definition: `The maximum bone density your skeleton reaches — typically in your late 20s — after which maintenance is possible but major increases are not.`, audioPrompt: `Peak bone mass is the highest point of bone density your body will reach, {name}. It's determined largely by what you do during childhood and adolescence. After your late twenties, that peak is essentially set. This is one of the most compelling reasons why physical activity, calcium, and vitamin D matter so much right now — not just for today, but for the decades ahead.` },
+            { word: `weight-bearing`, definition: `Exercise that puts your body's weight through your bones — like running, jumping, and sports — which signals bones to grow denser and stronger.`, audioPrompt: `Weight-bearing activity is what tells your bones to grow, {name}. When you run, jump, or play a sport, the impact travels through your skeleton and signals bone-building cells to lay down more mineral. Swimming is wonderful for cardiovascular health but doesn't provide this signal — the bones need to feel the load. That's why running and jumping are especially valuable during childhood, when bone density is still being built.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L15 = {
           ],
           image: `/explorer-assets/wellness/l15-magazine-3.png`,
           imageCaption: `Skeletal, smooth, and cardiac muscle — each type with its own role, working in precise coordination`,
+          vocab: [
+            { word: `skeletal muscle`, definition: `Voluntary muscle attached to bones via tendons — the muscles you consciously control for all movement, from walking to lifting to sport.`, audioPrompt: `Every movement you make, {name}, is powered by skeletal muscle. These are the muscles you can feel and control — bending your arm, kicking a ball, turning your head. They attach to your bones via tendons and work in pairs: one contracts while the other relaxes, allowing smooth, coordinated movement. Over 600 of them working together make up most of the physical capability your body has.` },
+            { word: `cardiac muscle`, definition: `The unique muscle of the heart — which never fatigues, never rests, and works continuously from before birth until the last moment of life.`, audioPrompt: `Cardiac muscle is extraordinary, {name}. It's found only in your heart, and unlike every other muscle in your body, it never fatigues and never needs to rest. It has been contracting continuously since before you were born — and it will keep going for your entire life. No other muscle in your body has this combination of endurance and reliability. Your heart is quite literally remarkable.` },
+            { word: `tendon`, definition: `A tough cord of tissue that connects a muscle to a bone — transmitting the force of muscle contractions to produce movement.`, audioPrompt: `Tendons are the connectors in your movement system, {name}. When a muscle contracts, the force needs to travel to the bone to create movement — and tendons are what make that transmission possible. Strong, flexible tendons are important for injury prevention, which is why warming up before vigorous activity and cooling down afterward supports the health of your whole musculoskeletal system.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L15 = {
           ],
           image: `/explorer-assets/wellness/l15-magazine-4.png`,
           imageCaption: `Weight-bearing exercise, calcium, vitamin D, protein, and rest — the foundations of musculoskeletal health`,
+          vocab: [
+            { word: `calcium`, definition: `The main mineral your bones are built from — found in dairy products, leafy greens, and fortified foods, and requires Vitamin D to be properly absorbed.`, audioPrompt: `Calcium is the primary building material of bone, {name}. Without enough of it — through dairy, leafy greens, or fortified foods — your body can't build or maintain the bone density it needs. But calcium alone isn't enough: Vitamin D is what allows calcium to be absorbed from your digestive system into your bloodstream. Both together, alongside weight-bearing activity, are what bone-building requires.` },
+            { word: `recovery`, definition: `The period of rest between exercise sessions — when muscle repair actually happens and muscles grow stronger than before.`, audioPrompt: `Muscles don't grow during exercise, {name} — they grow during recovery. Exercise creates small amounts of muscle fiber damage. Rest is when your body repairs those fibers, slightly stronger than before. That's why rest between sessions isn't optional — it's the actual mechanism of getting stronger. Exercise is the signal. Recovery is where the adaptation happens.` },
+            { word: `joint`, definition: `Where two bones meet — cushioned by cartilage and kept mobile by synovial fluid, and supported by maintaining flexibility through regular varied movement.`, audioPrompt: `Joints are where your skeleton's movement happens, {name} — the connections between bones that let you bend, rotate, and flex. They're cushioned by cartilage and kept lubricated by fluid. Varied movement, stretching, and avoiding overuse of any single pattern all support healthy joints. A joint that only ever moves in one way tends to become less flexible and more prone to strain over time.` },
+          ],
         },
 
         {

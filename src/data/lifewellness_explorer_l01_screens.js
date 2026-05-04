@@ -38,6 +38,11 @@ const LW_L01 = {
           ],
           image: `/explorer-assets/wellness/l01-magazine-1.png`,
           imageCaption: `Carbohydrates, proteins, and fats — your body needs all three, every day`,
+          vocab: [
+            { word: `macronutrient`, definition: `One of the three main nutrients your body needs in large amounts every day — carbohydrates, proteins, and fats. Each has its own essential job.`, audioPrompt: `Have you ever noticed, {name}, that certain foods leave you energized for hours while others fade fast? The secret is macronutrients — your body's three main fuels and building blocks. Carbohydrates, proteins, fats: not optional extras, but the foundation of everything your body does.` },
+            { word: `protein`, definition: `A macronutrient that builds and repairs your muscles, organs, enzymes, and immune cells — found in meat, fish, eggs, beans, and nuts.`, audioPrompt: `Terra loves this word, {name}. Every muscle you use, every immune cell fighting infection, every enzyme running a reaction inside you — made from protein. It's your body's building material, and it's doing its quiet work right now, in every part of you.` },
+            { word: `carbohydrate`, definition: `A macronutrient that is your body's primary energy source — found in grains, fruits, vegetables, and legumes.`, audioPrompt: `{name}, here's something Terra wants you to know: carbohydrates are your brain and body's first choice for fuel. Whole grains, fruit, vegetables — not just food, but the energy that powers everything from your thinking to your movement. Your body reaches for them first, every time.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L01 = {
           ],
           image: `/explorer-assets/wellness/l01-magazine-2.png`,
           imageCaption: `Different colours on your plate often mean different vitamins and minerals for your body`,
+          vocab: [
+            { word: `micronutrient`, definition: `Vitamins and minerals your body needs in smaller amounts than macronutrients — but each with its own essential job, from building bones to powering your immune system.`, audioPrompt: `Most kids don't realize, {name}, that the tiny amounts of vitamins and minerals in food are doing enormous work. Iron carries oxygen through your blood. Vitamin D builds your bones. Small quantities, huge consequences — that's what a micronutrient is.` },
+            { word: `vitamin`, definition: `A micronutrient your body uses for specific functions — like Vitamin C for immunity, Vitamin D for bone health, and many others found across different foods.`, audioPrompt: `Imagine slicing into an orange, {name} — that Vitamin C is doing something real for your immune system. Each vitamin has a precise job, and different vitamins live in different foods. That's exactly why eating a variety of colorful things matters so much.` },
+            { word: `mineral`, definition: `A naturally occurring micronutrient like calcium, iron, or zinc — essential for building bones, carrying oxygen, and keeping many body systems running.`, audioPrompt: `Terra has been thinking about this for a long time, {name}: minerals are physical materials your body is partly built from. Calcium in your bones. Iron in your blood. Zinc in your immune system. They come from the earth through food, and your body knows exactly how to put them to work.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L01 = {
           ],
           image: `/explorer-assets/wellness/l01-magazine-3.png`,
           imageCaption: `Whole foods give your body what it's looking for — ultra-processed foods often don't`,
+          vocab: [
+            { word: `whole food`, definition: `Food that is minimally processed and close to its natural form — like vegetables, fruits, whole grains, and legumes — containing fiber, vitamins, and minerals that work together.`, audioPrompt: `Have you ever compared how you feel after an apple versus a packaged snack, {name}? A whole food comes with everything your body recognizes — fiber, vitamins, natural compounds working together. Nothing stripped away, nothing added. Your body knows exactly what to do with it.` },
+            { word: `fiber`, definition: `A component of plant foods that supports digestion, feeds good gut bacteria, and helps keep energy steadier after eating — found in vegetables, fruits, legumes, and whole grains.`, audioPrompt: `Fiber doesn't get absorbed like other nutrients, {name} — instead it travels through your digestive system doing quiet, important work: slowing digestion, feeding beneficial gut bacteria, steadying your energy. Terra thinks this is one of the most underappreciated things in all of nutrition.` },
+            { word: `ultra-processed`, definition: `Foods significantly altered from their natural form, often engineered to be highly palatable — and typically stripped of the fiber and micronutrients that whole foods naturally contain.`, audioPrompt: `{name}, here's something genuinely useful: ultra-processed foods are often designed in labs to hit a precise combination of salt, sugar, and fat that makes them hard to stop eating. That's not a coincidence — it's intentional design. Knowing that puts you back in control.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L01 = {
           ],
           image: `/explorer-assets/wellness/l01-magazine-4.png`,
           imageCaption: `Water is in every process your body runs — staying hydrated keeps everything working`,
+          vocab: [
+            { word: `hydration`, definition: `The state of having enough water in your body for all its processes to run well — affecting energy, focus, digestion, temperature, and mood.`, audioPrompt: `Terra loves how simple this is, {name}: your body is sixty percent water, and every single process it runs — from digesting food to thinking clearly to regulating temperature — requires water to work. Hydration isn't one thing your body does. It's the condition under which everything else happens.` },
+            { word: `dehydration`, definition: `A state where your body has less water than it needs — even mildly — which can impair focus, mood, and energy before you feel obviously thirsty.`, audioPrompt: `Most kids are mildly dehydrated most of the time, {name} — and don't know it. A headache, low energy, trouble concentrating: these can all be early signs your body needs water. Thirst shows up late. Your body starts missing water long before it asks out loud.` },
+            { word: `regulate`, definition: `To keep something within a healthy range — like how water helps your body maintain the right temperature and fluid balance for all its systems to work.`, audioPrompt: `Regulate means keeping something where it needs to be, {name}. Your body has to stay within a narrow temperature range, a careful internal chemistry — and water is how it manages almost all of it. Every process keeping you well is a form of regulation your body is quietly doing right now.` },
+          ],
         },
 
         {

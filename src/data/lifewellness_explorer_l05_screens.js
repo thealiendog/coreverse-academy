@@ -38,6 +38,11 @@ const LW_L05 = {
           ],
           image: `/explorer-assets/wellness/l05-magazine-1.png`,
           imageCaption: `While you sleep, your brain cleans, grows, heals, and files away everything you learned`,
+          vocab: [
+            { word: `glymphatic system`, definition: `Your brain's waste-clearance system — which runs most actively during sleep, flushing out toxic byproducts that build up during the day.`, audioPrompt: `While you sleep, {name}, your brain is running its cleaning system — the glymphatic system. It flushes out the metabolic waste that builds up during the day. Think of it as a nightly maintenance cycle your brain cannot run properly while you're awake. This is one of the core reasons sleep deprivation affects how well you think so quickly.` },
+            { word: `consolidation`, definition: `The process during sleep where memories move from short-term to long-term storage — making everything you learned that day stick properly.`, audioPrompt: `Everything you learn during the day is still fragile, {name} — it hasn't been filed away yet. Memory consolidation happens during sleep: your brain replays experiences, strengthens the connections between them, and moves them into long-term storage. That's why studying then sleeping works better than staying up to study more.` },
+            { word: `restoration`, definition: `The repair and renewal your body carries out during sleep — including muscle repair, immune cell production, and the release of growth hormone.`, audioPrompt: `Terra loves this word, {name}: restoration. Sleep is when your body actually repairs itself — muscles rebuild, immune cells replenish, growth hormone is released, emotional experiences are processed. You're not just resting. Your body is doing some of its most important biological work in those hours. That's what restoration means.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L05 = {
           ],
           image: `/explorer-assets/wellness/l05-magazine-2.png`,
           imageCaption: `Light sleep, deep sleep, REM sleep — each cycle does different work, and you need them all`,
+          vocab: [
+            { word: `REM sleep`, definition: `Rapid Eye Movement sleep — the stage where dreaming occurs and your brain processes emotions and consolidates memories. The later cycles of sleep are especially rich in REM.`, audioPrompt: `REM sleep is when your brain is almost as active as when you're awake, {name} — it's when dreams happen, emotions get processed, and memories get filed. The tricky thing: REM is concentrated in the later sleep cycles. So cutting sleep short by even an hour can cost you a disproportionate amount of REM, and you might not notice until your mood or memory feels off.` },
+            { word: `deep sleep`, definition: `The slow-wave stage of sleep when physical restoration happens — muscles repair, bones grow, and immune cells are replenished. Also called slow-wave sleep.`, audioPrompt: `Deep sleep is your body's prime maintenance period, {name}. This is when growth hormone is released, muscles repair themselves, bones strengthen, and your immune system does critical work. It's not passive rest — it's active biological repair. Missing it regularly is one of the fastest ways to feel physically worn down.` },
+            { word: `cycle`, definition: `One complete 90-minute sequence of sleep stages — including light sleep, deep sleep, and REM. A full night's sleep involves multiple complete cycles.`, audioPrompt: `Each night of sleep is made up of cycles about 90 minutes long, {name} — and each cycle moves through different stages doing different work. You need multiple complete cycles to get the full repair, memory, and emotional processing your body and brain need. Cutting the night short cuts off cycles from the end — where the most REM tends to be.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L05 = {
           ],
           image: `/explorer-assets/wellness/l05-magazine-3.png`,
           imageCaption: `Kids aged 6–12 need 9–12 hours — sleep is a biological need, not a luxury`,
+          vocab: [
+            { word: `sleep deprivation`, definition: `Getting less sleep than your body needs — either in a single night or building up over time — with effects on mood, focus, learning, and physical health.`, audioPrompt: `Sleep deprivation doesn't always feel dramatic, {name} — sometimes it just feels like being a bit off. More irritable than usual. Harder to concentrate. Slower to respond. Craving more food. The effects of running short on sleep accumulate, and they look a lot like ADHD symptoms. The fix is often simpler than people think: more sleep.` },
+            { word: `chronic`, definition: `Ongoing and persistent over a long period — chronic sleep deprivation means regularly not getting enough sleep, which has cumulative effects that worsen over time.`, audioPrompt: `One bad night of sleep is recoverable, {name}. Chronic short sleep — night after night, week after week — is a different thing entirely. The effects compound: attention suffers, emotional regulation becomes harder, immunity weakens, and mood becomes less stable. Terra wants you to know that protecting your sleep most nights genuinely changes how you feel across your whole life.` },
+            { word: `biological need`, definition: `Something your body genuinely requires to function — not a preference or a luxury but a fundamental requirement, like food and water. Sleep is one of these.`, audioPrompt: `Sleep being called a biological need means exactly what it sounds like, {name}: your body cannot function well without it, no matter how much you might want to stay awake. It's in the same category as food and water. Not a luxury, not a reward for good behavior — a genuine requirement that your brain and body rely on every single night.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L05 = {
           ],
           image: `/explorer-assets/wellness/l05-magazine-4.png`,
           imageCaption: `Consistent bedtime, no screens, cool dark room, wind-down routine — small habits, big difference`,
+          vocab: [
+            { word: `melatonin`, definition: `A hormone your brain produces to signal that it's time to sleep — suppressed by blue light from screens, which is why devices before bed make it harder to fall asleep.`, audioPrompt: `Melatonin is your brain's natural sleep signal, {name} — it rises as it gets dark and tells your body to prepare for rest. The problem with screens is that their blue light looks like daylight to your brain, which suppresses melatonin and delays the whole process. Removing screens an hour before bed lets melatonin rise naturally. It's a simple change with a real effect.` },
+            { word: `circadian rhythm`, definition: `Your body's internal clock that regulates when you feel sleepy and when you feel alert — kept well-calibrated by consistent sleep and wake times.`, audioPrompt: `Your circadian rhythm is the internal 24-hour clock your body runs on, {name}. It regulates energy, alertness, hunger, and sleep — all cycling in a predictable pattern. Consistent bedtimes keep that clock accurate. Irregular schedules confuse it, making it harder to fall asleep when you want to and harder to wake up feeling rested. Consistency is the simplest way to keep it working for you.` },
+            { word: `wind-down`, definition: `A calming pre-sleep routine — the same sequence of activities each night that signals your brain sleep is approaching, making it easier to fall asleep quickly.`, audioPrompt: `Your brain learns from repetition, {name} — it builds associations between sequences of events. A consistent wind-down routine becomes a reliable signal: this is the pattern that comes before sleep. Over time, your brain starts preparing for sleep as soon as the routine begins. It doesn't have to be elaborate. Just consistent. And consistent is what makes it work.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const LW_L16 = {
           ],
           image: `/explorer-assets/wellness/l16-magazine-1.png`,
           imageCaption: `Risk assessment: not about fear — about thinking clearly so you can live boldly`,
+          vocab: [
+            { word: `risk assessment`, definition: `A thinking process that evaluates what could go wrong, how likely it is, how serious it would be, and what can be done to reduce it — before deciding whether to proceed.`, audioPrompt: `Risk assessment is just clear thinking before you act, {name}. What could go wrong here? How bad would it be if it did? What can I do to reduce that chance? And is it worth it? These questions don't make you cautious — they make you smart. People who assess risk well tend to take more worthwhile adventures, not fewer, because they know the difference between calculated and reckless.` },
+            { word: `hazard`, definition: `Something that has the potential to cause harm — recognizing hazards is the first step in any good risk assessment.`, audioPrompt: `A hazard is simply something with the potential to hurt you, {name} — a slippery surface, an unfamiliar current, a stranger who seems suspicious. Recognizing hazards isn't about being fearful; it's about being observant. The people who navigate the world most confidently are usually the ones who see hazards clearly and respond to them wisely, not the ones who pretend they don't exist.` },
+            { word: `consequence`, definition: `The outcome or result of a decision — thinking about consequences before acting is a key part of risk assessment and good judgment.`, audioPrompt: `Consequence is just another word for "what happens next," {name}. Good risk assessment asks: if this goes wrong, what does that actually look like? A scraped knee is a very different consequence from a head injury. The size and reversibility of consequences are what determine how much caution makes sense. Understanding that is the core of safe, confident decision-making.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L16 = {
           ],
           image: `/explorer-assets/wellness/l16-magazine-2.png`,
           imageCaption: `Seatbelts, helmets, eye contact before crossing — simple habits that dramatically change outcomes`,
+          vocab: [
+            { word: `helmet`, definition: `Protective headgear worn when cycling or using wheeled transport — designed to absorb impact and dramatically reduce the risk of serious head injury in a fall or collision.`, audioPrompt: `Your brain is the one organ you cannot replace, {name}, and a helmet is the one habit that protects it when you're on a bike or scooter. The research on helmets is clear: they dramatically reduce the risk of serious head injury in a fall. The inconvenience of wearing one is genuinely small compared to what it protects. This is the habit worth making non-negotiable, every time.` },
+            { word: `seatbelt`, definition: `A restraint in a vehicle that keeps you in your seat during a sudden stop or collision — one of the most effective safety devices ever invented.`, audioPrompt: `A seatbelt is one of the simplest, most effective safety habits in the world, {name}. In a sudden stop or collision, the forces involved are enormous — and a seatbelt keeps your body from moving with them. It takes three seconds to click in. Making it completely automatic — no exceptions, every ride — is one of the highest-return safety habits you can build.` },
+            { word: `visibility`, definition: `Being clearly seen by others — especially important near roads at night or in low light, where being seen by drivers can prevent serious accidents.`, audioPrompt: `Near roads at night, {name}, the most dangerous thing is being invisible. Drivers can only respond to what they can see — and a pedestrian or cyclist in dark clothing can be almost invisible until it's too late. Bright colors and reflective gear are simple, inexpensive ways to make yourself visible. In an environment where the stakes are high, being seen is one of the most important safety steps there is.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L16 = {
           ],
           image: `/explorer-assets/wellness/l16-magazine-3.png`,
           imageCaption: `Most accidents happen in familiar places — awareness, not fear, is the best protection`,
+          vocab: [
+            { word: `awareness`, definition: `Active attention to your surroundings and potential hazards — more effective than fear as a safety approach, because it leads to thoughtful choices rather than avoidance.`, audioPrompt: `Awareness is the safety tool that goes everywhere with you, {name}. It's not about being scared of everything — it's about staying present and noticing what's actually happening around you. What's on the stove. Where the currents are in the water. Whether a driver has seen you. That noticing is quiet, fast, and it makes an enormous difference to outcomes.` },
+            { word: `prevention`, definition: `Taking action before an accident or injury happens — the goal of safety habits, which work by reducing risk before anything goes wrong.`, audioPrompt: `Prevention is what safety habits are all about, {name} — stopping something harmful before it starts rather than responding after. Wearing a helmet prevents an injury from becoming serious. Handwashing prevents an infection before it happens. Looking before crossing prevents an accident before it occurs. The best safety tool is always the one you use before you need it.` },
+            { word: `toxic`, definition: `Poisonous or harmful to the body — some medicines, cleaning products, and certain plants are toxic if touched or swallowed, and recognizing that is part of home safety awareness.`, audioPrompt: `Toxic means harmful to the body, {name}, and it applies to more things in a typical home than most kids realize: medicines taken in the wrong dose, cleaning products, certain garden plants. Knowing what's toxic in your environment isn't scary — it's practical. It means you know what to handle carefully and what numbers to call if something does go wrong. That's knowledge worth having.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L16 = {
           ],
           image: `/explorer-assets/wellness/l16-magazine-4.png`,
           imageCaption: `The same street-safety principles apply online — your information, your location, and your safety`,
+          vocab: [
+            { word: `personal information`, definition: `Details about you — like your name, address, school, location, or daily routine — which should be protected online the same way you'd protect them with a stranger in person.`, audioPrompt: `Your personal information is yours to protect, {name}. Your address, your school name, your location, your daily routine — these are details that belong in the hands of people you actually know and trust in real life. Online, they can reach people you've never met. The same instinct that would stop you from giving your address to a stranger on the street applies equally in any online space.` },
+            { word: `verify`, definition: `To confirm that someone or something is who or what they claim to be — not possible online in the same way as in person, which is why caution with online-only contacts matters.`, audioPrompt: `Online, you cannot verify who someone actually is, {name} — only who they say they are. People can present any version of themselves in text or photos. That gap between claimed identity and real identity is exactly why the same caution you'd apply to a stranger in person applies online. If you've never met someone in the real world, you genuinely don't know them.` },
+            { word: `trusted adult`, definition: `A safe, reliable person in your life — always the right person to tell if something online feels wrong, uncomfortable, or threatening.`, audioPrompt: `If something online feels uncomfortable or wrong, {name}, a trusted adult is always the right next step. Not because you're in trouble — but because they can help you see it clearly and figure out what to do. You should never feel like you have to handle an uncomfortable online situation alone. That's exactly what trusted adults are for.` },
+          ],
         },
 
         {

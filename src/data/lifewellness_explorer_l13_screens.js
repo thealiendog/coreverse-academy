@@ -38,6 +38,11 @@ const LW_L13 = {
           ],
           image: `/explorer-assets/wellness/l13-magazine-1.png`,
           imageCaption: `Digestion starts in your mouth — chewing and saliva are doing real work before food reaches the stomach`,
+          vocab: [
+            { word: `enzyme`, definition: `A protein that speeds up a specific chemical reaction — digestive enzymes in your saliva, stomach, and small intestine break food down into nutrients your body can absorb.`, audioPrompt: `Enzymes are your digestive system's tools, {name}. The moment food enters your mouth, salivary enzymes begin breaking down carbohydrates. In your stomach, other enzymes work with acid to break down proteins. In your small intestine, more enzymes arrive to finish the job. Each one is precisely shaped for a specific task — a remarkable level of coordination happening automatically with every meal.` },
+            { word: `digestion`, definition: `The process of breaking food down from the pieces you eat into the nutrients your cells can actually use — beginning in the mouth and continuing for hours.`, audioPrompt: `Digestion is a long journey, {name} — it starts the moment food touches your tongue and continues for hours, moving through more than thirty feet of digestive system. By the time it's done, the food you ate has been broken down into its smallest components and most of it has been absorbed into your bloodstream. That's an extraordinary amount of quiet, automatic work your body is doing around every meal.` },
+            { word: `chyme`, definition: `The thick liquid that food becomes after being broken down by stomach acid and digestive enzymes — which then moves into the small intestine for further digestion and absorption.`, audioPrompt: `After your stomach churns food with acid and enzymes for a few hours, {name}, what remains is chyme — a thick, partly digested liquid. It doesn't sound very glamorous, but it's an important step. Chyme is what your small intestine then works with, breaking it down further and absorbing the nutrients across into your bloodstream. Your digestive system transforms what you eat step by step.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L13 = {
           ],
           image: `/explorer-assets/wellness/l13-magazine-2.png`,
           imageCaption: `The small intestine's villi create a tennis-court-sized surface area for absorbing nutrients`,
+          vocab: [
+            { word: `absorption`, definition: `The process of nutrients passing through the wall of the small intestine into the bloodstream — where they're carried to cells throughout the entire body.`, audioPrompt: `Absorption is where the real payoff of digestion happens, {name}. After hours of breaking food down, your small intestine absorbs the resulting nutrients through its wall into your bloodstream, and blood carries them to every cell in your body. The nutrients in the meal you had this morning are reaching your muscles and brain and organs right now. That's absorption at work.` },
+            { word: `villi`, definition: `Tiny finger-like projections covering the inner wall of the small intestine that massively increase its surface area, allowing your body to absorb nutrients efficiently.`, audioPrompt: `Terra loves this detail, {name}: the inner wall of your small intestine is covered in millions of tiny finger-like projections called villi. Together with even tinier microvilli on their surface, they expand the absorption area to roughly the size of a tennis court. That extraordinary surface area is what lets your small intestine absorb nutrients from your food so thoroughly and efficiently.` },
+            { word: `nutrient`, definition: `A substance from food that your body uses for energy, growth, repair, and all its biological processes — including macronutrients, vitamins, minerals, and water.`, audioPrompt: `Every bite you take is carrying nutrients your body needs, {name}. Some provide energy. Some build tissue. Some regulate processes. Some support immunity. Digestion is the process of releasing those nutrients from the food matrix and getting them into your blood where they can be put to work. The whole elaborate thirty-foot journey exists to deliver nutrients to your cells.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L13 = {
           ],
           image: `/explorer-assets/wellness/l13-magazine-3.png`,
           imageCaption: `Your gut microbiome affects immunity, mood, and inflammation — far beyond digestion alone`,
+          vocab: [
+            { word: `microbiome`, definition: `The community of approximately 38 trillion microorganisms living in your large intestine — affecting digestion, immunity, mood, and inflammation throughout your body.`, audioPrompt: `Your gut microbiome is a world inside you, {name} — approximately 38 trillion microorganisms, each playing a role in how your body functions. They're not passengers. They're collaborators: helping digest fiber, training your immune system, producing chemicals that influence your mood. The diversity of that community is genuinely important for your health in ways scientists are still discovering.` },
+            { word: `gut-brain axis`, definition: `The two-way communication pathway between your gut and your brain — meaning what happens in your gut can affect your mood, and your emotional state can affect your digestion.`, audioPrompt: `Most of your body's serotonin is produced in your gut, {name} — not your brain. That's the gut-brain axis at work: a constant two-way conversation between your digestive system and your brain. It's why anxiety shows up as butterflies or stomach pain, and why what you eat can shift your mood. Your gut and brain are far more connected than most people realize.` },
+            { word: `diversity`, definition: `Variety in the types of microorganisms in your gut microbiome — supported by eating a wide range of plant foods, and associated with better immunity, digestion, and mental health.`, audioPrompt: `A diverse gut microbiome — with many different species of beneficial bacteria — is associated with better health across many systems, {name}. The simplest way to support that diversity is eating a wide variety of plant foods. Different plant foods feed different species of gut bacteria. The more variety in your diet, the more variety in your microbiome — and the more resilient your whole system tends to be.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L13 = {
           ],
           image: `/explorer-assets/wellness/l13-magazine-4.png`,
           imageCaption: `Fibre, fermented foods, hydration, and eating slowly in a relaxed setting all support your gut`,
+          vocab: [
+            { word: `fiber`, definition: `The indigestible part of plant foods that feeds your gut bacteria and supports healthy digestion — found in vegetables, fruits, whole grains, and legumes.`, audioPrompt: `Fiber is gut bacteria's food, {name}. Your digestive enzymes can't break it down — but your gut microbiome can, and it thrives on it. A diet rich in fiber from varied plant sources is one of the most direct ways to support a healthy, diverse microbiome. When your gut bacteria are well-fed and thriving, they take better care of you in return.` },
+            { word: `fermented`, definition: `Food that has been transformed by beneficial bacteria through fermentation — like yogurt, kefir, sauerkraut, and kombucha — which introduce live beneficial microorganisms directly into your gut.`, audioPrompt: `Fermented foods have been part of human diets for thousands of years, {name}. Yogurt, kefir, sauerkraut, kombucha — they all contain live beneficial bacteria that, when you eat them, join your gut microbiome. It's one of the most direct ways to introduce beneficial microorganisms to your digestive system. Not magic, but real, practical, and surprisingly delicious.` },
+            { word: `enteric nervous system`, definition: `The gut's own network of neurons — sometimes called the "second brain" — which allows the gut to sense its environment and communicate constantly with the brain.`, audioPrompt: `Your gut has its own nervous system, {name} — about 100 million neurons lining your digestive tract, forming what's sometimes called the "second brain." It can sense what's in your gut, communicate with your brain, and respond to emotional states. That's why stress causes stomach pain and excitement causes butterflies. Your gut isn't just processing food — it's processing your experience of the world.` },
+          ],
         },
 
         {

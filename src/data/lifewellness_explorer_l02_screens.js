@@ -38,6 +38,11 @@ const LW_L02 = {
           ],
           image: `/explorer-assets/wellness/l02-magazine-1.png`,
           imageCaption: `Half vegetables and fruit, a quarter whole grains, a quarter protein — a pattern that works for any meal`,
+          vocab: [
+            { word: `portion`, definition: `The amount of a particular food on your plate — understanding portions helps you build meals that give your body a good balance across all the food groups.`, audioPrompt: `A portion isn't a strict rule, {name} — it's a helpful guide for building balance. Half for vegetables and fruit, a quarter for whole grains, a quarter for protein. That pattern, across most meals, gives your body the full range of what it needs to feel good and stay energized.` },
+            { word: `framework`, definition: `A flexible structure for making decisions — the balanced plate is a framework, not a rigid formula, meaning you adapt it to whatever you're eating.`, audioPrompt: `Terra believes a good framework changes how you eat without making eating complicated, {name}. The balanced plate isn't a set of rules to follow perfectly — it's a shape to aim for. Roughly half vegetables, some grains, some protein. That rough shape, done consistently, is what makes the difference.` },
+            { word: `variety`, definition: `Eating different foods across meals rather than the same things every day — variety ensures your body gets the wide range of nutrients it needs.`, audioPrompt: `Imagine your week of meals as a painting, {name} — the more colors on the canvas, the more complete the picture. Your body needs a wide range of vitamins, minerals, and other nutrients, and variety in what you eat is the most natural way to get them all without having to think hard about it.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L02 = {
           ],
           image: `/explorer-assets/wellness/l02-magazine-2.png`,
           imageCaption: `Breakfast refuels your brain after the overnight fast — it's the first investment in your day`,
+          vocab: [
+            { word: `glucose`, definition: `The type of sugar your brain runs on — replenished through the carbohydrates in breakfast after the overnight fast.`, audioPrompt: `Your brain is a glucose machine, {name} — it runs through enormous amounts of this fuel every hour. After a full night of sleep with no food, those levels are low. Breakfast is how you refuel it. That's not a metaphor — it's the literal chemistry of how your brain gets ready to think.` },
+            { word: `concentration`, definition: `The ability to focus your thinking on a task — one of the first things affected when your brain hasn't been fueled after a night of sleep.`, audioPrompt: `Have you ever tried to read something important when you're hungry, {name}? Your brain keeps sliding off the page. That's concentration running low — and breakfast is one of the most direct ways to restore it. Kids who eat breakfast consistently show better focus through the whole morning.` },
+            { word: `fast`, definition: `A period of not eating — like the overnight hours of sleep, after which breakfast literally "breaks" the fast and refuels your body and brain.`, audioPrompt: `Terra finds this detail fascinating, {name}: the word "breakfast" literally means breaking a fast. Every morning, your body has gone hours without fuel. The meal that follows isn't just a tradition — it's your body's first real opportunity to restock what it used while you were sleeping and growing.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L02 = {
           ],
           image: `/explorer-assets/wellness/l02-magazine-3.png`,
           imageCaption: `Snacks with protein and fibre keep your energy steady — unlike snacks that are mostly sugar`,
+          vocab: [
+            { word: `sustaining`, definition: `A sustaining snack is one that keeps your energy and focus steady over time — usually because it contains protein and fiber working together.`, audioPrompt: `A sustaining snack doesn't just taste good in the moment, {name} — it keeps you going afterward. That's the difference between apple slices with peanut butter and a handful of candy. One gives you a steady hour of focus. The other gives you a spike and then a drop. Your body knows the difference.` },
+            { word: `blood sugar`, definition: `The level of glucose in your blood — which rises and falls depending on what you eat, affecting your energy, mood, and ability to concentrate.`, audioPrompt: `Think of blood sugar like the volume on a stereo, {name} — you want it in a steady, comfortable range, not suddenly blasting loud then dropping to silence. Protein and fiber are what keep the dial steady. Snacks that are mostly sugar turn it all the way up and then let it crash.` },
+            { word: `stable`, definition: `Steady and consistent — the goal for your blood sugar through the day, achieved by pairing protein and fiber with carbohydrates so energy doesn't spike and crash.`, audioPrompt: `Stable energy feels different from energy that peaks and drops, {name}. When your blood sugar is stable — held steady by protein and fiber — you think more clearly, feel less irritable, and don't hit that wall mid-afternoon. That's not magic. That's just how the chemistry works when you give your body the right combination.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L02 = {
           ],
           image: `/explorer-assets/wellness/l02-magazine-4.png`,
           imageCaption: `Everyday nourishing foods and special occasion treats — both have a place in a healthy way of eating`,
+          vocab: [
+            { word: `nourish`, definition: `To give your body what it genuinely needs to grow, function, and feel well — what everyday foods like vegetables, whole grains, and proteins do.`, audioPrompt: `Nourish is Terra's favorite word in all of wellness, {name}. It means feeding yourself in a way that actually helps you thrive — not just filling the space. Every meal where you choose foods that fuel your brain and build your body is an act of taking care of yourself.` },
+            { word: `pattern`, definition: `The overall picture of what you eat across many days and weeks — more important than any single meal or choice in shaping how your body feels.`, audioPrompt: `{name}, here's something Terra wants you to hold onto: no single meal makes or breaks your health. What matters is the pattern — what you eat most of the time, across days and weeks. One celebration meal doesn't change that pattern. One nourishing meal doesn't either. It's what you do consistently that builds how you feel.` },
+            { word: `occasion`, definition: `A special event or celebration — the context for foods you enjoy sometimes rather than every day, as part of a balanced way of eating.`, audioPrompt: `Birthday cake at a party, treats at a cinema, holiday food with family — these are occasion foods, {name}. Terra believes they belong. A healthy relationship with food has room for celebration. What makes them "occasion" foods is simply that they're enjoyed sometimes, not every single day, as part of a bigger pattern that nourishes you.` },
+          ],
         },
 
         {

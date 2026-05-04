@@ -38,6 +38,11 @@ const LW_L11 = {
           ],
           image: `/explorer-assets/wellness/l11-magazine-1.png`,
           imageCaption: `Mental health is a spectrum — everyone moves up and down on it depending on what they're experiencing`,
+          vocab: [
+            { word: `wellbeing`, definition: `Your overall state of emotional, psychological, and social health — including how you feel, think, cope with challenges, and connect with the people around you.`, audioPrompt: `Wellbeing is bigger than just mood, {name}. It's how you're doing across all the dimensions of your inner life: your emotional balance, your sense of meaning, your ability to cope when things are hard, your connection to others. Good wellbeing doesn't mean everything is perfect. It means you have the resources to navigate what isn't.` },
+            { word: `spectrum`, definition: `A continuous range rather than a fixed point — mental health exists on a spectrum, meaning everyone moves up and down on it across their lifetime depending on circumstances.`, audioPrompt: `Mental health isn't something you either have or don't have, {name}. It's a spectrum — a continuous range — and everyone is somewhere on it, and that place shifts over time. Hard periods move you in one direction; good support, rest, and connection move you in the other. Understanding this takes away shame, because wherever you are right now, it's not permanent.` },
+            { word: `cope`, definition: `To manage and work through difficult emotions or situations — good mental health means being able to cope with life's challenges, not avoiding hard feelings altogether.`, audioPrompt: `Coping doesn't mean never struggling, {name}. It means having ways to work through the struggles when they come. Movement, breathing, talking to someone you trust, getting enough sleep, expressing yourself — these are all forms of coping. Building them before you need them is the smartest thing you can do for your mental health. They're the tools that help you keep going.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L11 = {
           ],
           image: `/explorer-assets/wellness/l11-magazine-2.png`,
           imageCaption: `These experiences are real, common, and deserve care — they are not character flaws`,
+          vocab: [
+            { word: `anxiety`, definition: `Worry that feels bigger than the situation warrants — often accompanied by physical symptoms like a racing heart or stomach ache, and sometimes leading to avoiding things that feel frightening.`, audioPrompt: `Anxiety is more than just being nervous, {name}. It's when worry starts to feel bigger than the situation actually calls for — when your brain keeps running worst-case scenarios even when you try to stop it. It often shows up in your body too: tight chest, fast heartbeat, stomach discomfort. These experiences are real, they're common, and they deserve care.` },
+            { word: `low mood`, definition: `A persistent state of low energy and reduced interest in things you usually enjoy — different from ordinary sadness, and worth paying attention to when it lasts more than a few days.`, audioPrompt: `Low mood is different from just having a bad day, {name}. It's when the flatness persists — when things you usually enjoy stop feeling enjoyable, when energy stays low, when it's hard to feel much of anything positive. If that feeling lasts more than a couple of weeks, it's a signal worth taking seriously and talking to someone about. It doesn't have to be carried alone.` },
+            { word: `support`, definition: `Help from other people — whether from a trusted adult, a counselor, or a therapist — that makes a real difference when mental health is under strain.`, audioPrompt: `Support genuinely changes outcomes, {name}. When mental health is under strain, being heard by someone who cares — a parent, a teacher, a counselor — can shift things in ways that going it alone cannot. Asking for support is an act of wisdom, not weakness. Terra believes that with everything in her: reaching out is one of the bravest things a person can do.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L11 = {
           ],
           image: `/explorer-assets/wellness/l11-magazine-3.png`,
           imageCaption: `Movement, sleep, connection, nourishment, expression, and breathing — the habits that build resilience`,
+          vocab: [
+            { word: `resilience`, definition: `The ability to recover from setbacks and adapt to hard things — built gradually through the daily habits that support your mental and physical health.`, audioPrompt: `Resilience isn't about never struggling, {name}. It's about having the inner resources to keep going when things are hard. Movement, sleep, nourishment, connection, expression — these aren't just individual habits. They're the foundation of resilience. You build it in the ordinary days, so it's there when the hard ones arrive.` },
+            { word: `outlet`, definition: `A way of expressing or releasing what's happening inside you — art, music, journaling, sport, or conversation that gets difficult feelings outside instead of keeping them in.`, audioPrompt: `An outlet is how you move what's inside you outside, {name}. Difficult feelings don't disappear when you suppress them — they stay in your body and grow heavier. Finding your outlet — whether it's drawing, running, writing, music, or talking — is one of the most important things you can do for your mental health. Everyone needs somewhere for feelings to go.` },
+            { word: `regulate`, definition: `To manage and adjust your emotional state — the ability to notice, work with, and return from difficult emotions rather than being overwhelmed by them.`, audioPrompt: `Emotional regulation is a skill, {name} — one that gets better with practice. It doesn't mean never feeling big emotions. It means being able to notice what you're feeling, not be swept completely away by it, and find your way back to steadiness. Breathing, movement, sleep, and talking to someone you trust are all ways of supporting that regulation.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L11 = {
           ],
           image: `/explorer-assets/wellness/l11-magazine-4.png`,
           imageCaption: `You don't have to wait for a crisis — asking for support is strength, not weakness`,
+          vocab: [
+            { word: `therapy`, definition: `A professional space to talk through feelings, build coping tools, and understand yourself better — useful for anyone, not only people in crisis.`, audioPrompt: `Therapy is a tool, {name} — not a last resort. Many people use it regularly as part of how they take care of their mental health, the same way others exercise or practice breathing. A therapist gives you a safe, private space to understand what you're feeling, build new tools, and work through things that feel stuck. It's an act of care, not a sign something is broken.` },
+            { word: `trusted adult`, definition: `A safe, caring adult in your life — a parent, teacher, school counselor, or other person — who is a good first step when mental health feels hard to manage alone.`, audioPrompt: `A trusted adult is someone who makes you feel safe enough to be honest, {name}. A parent, a teacher, a school counselor — someone who will listen without judgment and help you figure out what comes next. You don't have to have everything figured out before you talk to them. You just have to start the conversation. That first step is always the most important one.` },
+            { word: `stigma`, definition: `Negative beliefs or shame attached to mental health struggles — which discourages people from getting the help they need, and which is reduced by open, honest conversations like this one.`, audioPrompt: `Stigma is what happens when mental health struggles are treated as something shameful or weak, {name}. It's what keeps people suffering in silence when support would genuinely help. Every honest conversation about mental health — like this lesson — chips away at stigma. Your willingness to learn about this and talk about it openly matters. It's how things change.` },
+          ],
         },
 
         {

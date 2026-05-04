@@ -38,6 +38,11 @@ const LW_L03 = {
           ],
           image: `/explorer-assets/wellness/l03-magazine-1.png`,
           imageCaption: `Natural sugar comes packaged with fibre and nutrients — added sugar arrives on its own`,
+          vocab: [
+            { word: `natural sugar`, definition: `Sugar found in whole foods like fruit and milk — arriving alongside fiber, vitamins, and water that slow how your body absorbs it.`, audioPrompt: `The sugar in an apple and the sugar in a fizzy drink might be similar molecules, {name}, but your body experiences them completely differently. The apple's sugar arrives with fiber, vitamins, and water that slow it down. Context changes everything — and that's what natural sugar means.` },
+            { word: `added sugar`, definition: `Sugar and syrups added to food during processing — hitting the bloodstream faster than natural sugar because they arrive without fiber or nutrients to slow absorption.`, audioPrompt: `Added sugar is put into food during manufacturing, {name} — it shows up in fizzy drinks, packaged snacks, sauces, and cereals under dozens of different names. Unlike the sugar in whole fruit, it arrives without anything to slow it down. Understanding that difference gives you genuinely useful knowledge.` },
+            { word: `absorption`, definition: `The process of nutrients passing from your digestive system into your bloodstream — slower when food comes with fiber and faster when it doesn't.`, audioPrompt: `Terra has been thinking about this for a long time, {name}: absorption isn't just about what you eat, it's about how fast what you eat enters your blood. Fiber slows absorption. Without fiber, sugar rushes in — which is what causes the spike. Same molecule, very different speed, very different effect on how you feel.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L03 = {
           ],
           image: `/explorer-assets/wellness/l03-magazine-2.png`,
           imageCaption: `Spike, crash, crave more — the rollercoaster that protein and fibre can smooth out`,
+          vocab: [
+            { word: `blood glucose`, definition: `The level of sugar in your bloodstream at any given moment — which rises after eating sugar and drops when insulin brings it back down.`, audioPrompt: `Blood glucose is your body's immediate energy measure, {name} — it goes up when you eat sugar and your body works to bring it back down. The problem with added sugar is how steeply it rises and how fast it then drops. That drop is what leaves you tired, cranky, and looking for more.` },
+            { word: `insulin`, definition: `A hormone your pancreas releases to manage rising blood glucose — bringing it back down after a spike, sometimes overshooting and causing the familiar energy crash.`, audioPrompt: `When blood sugar spikes, {name}, your body sends insulin to bring it back down — think of it as a fast correction response. But that correction can overshoot, dropping your blood sugar below where it started. That's the crash: the tired, irritable, craving-more feeling. Insulin is doing its job — the spike was just too steep.` },
+            { word: `crash`, definition: `The drop in energy, mood, and focus that follows a blood sugar spike — when insulin overshoots and glucose falls below optimal levels.`, audioPrompt: `The crash is that familiar afternoon slump, {name} — suddenly tired, a little irritable, wanting something sweet to feel better. Your blood sugar dropped after a spike, and your body is signaling that it needs more fuel. Eating protein and fiber alongside carbohydrates is what smooths the whole thing out.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L03 = {
           ],
           image: `/explorer-assets/wellness/l03-magazine-3.png`,
           imageCaption: `Sugar activates the brain's reward system — and the gut-brain connection means what you eat affects how you feel`,
+          vocab: [
+            { word: `reward system`, definition: `A network of brain pathways that releases dopamine in response to pleasurable experiences — including eating sweet foods — making those experiences feel good and motivating repetition.`, audioPrompt: `Your brain's reward system evolved to make beneficial things feel good, {name} — it's the reason you enjoy a good meal or a warm hug. Sweet food triggers that same system. Over time, the brain can adjust, needing more sweetness for the same response. Knowing this is power, not a reason to feel bad.` },
+            { word: `dopamine`, definition: `A brain chemical released by the reward system that creates feelings of pleasure and motivation — one reason sweet foods can feel so hard to stop eating.`, audioPrompt: `Dopamine is the brain's "this felt good, do it again" signal, {name}. It's released when you eat something sweet, hear a great song, or accomplish something you're proud of. Foods engineered for maximum palatability are designed to trigger that signal repeatedly — understanding that is genuinely useful for making sense of your own experience.` },
+            { word: `gut-brain axis`, definition: `The two-way communication system connecting your gut and your brain — meaning what you eat can affect your mood, and how you feel can affect your digestion.`, audioPrompt: `Most of your body's serotonin — the chemical linked to feeling calm and content — is actually made in your gut, {name}. That's the gut-brain axis at work: a constant conversation between what's happening in your digestive system and how you feel emotionally. What you eat shapes your mood in more ways than most people realize.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L03 = {
           ],
           image: `/explorer-assets/wellness/l03-magazine-4.png`,
           imageCaption: `Sugar hides under many names — noticing where it comes from is the first step`,
+          vocab: [
+            { word: `ingredient`, definition: `Any individual component listed on a food label — reading the ingredients list shows you what a food is actually made of, including all the forms of added sugar it may contain.`, audioPrompt: `Ingredients are listed in order of quantity, {name} — so if sugar appears near the top, there's a lot of it. Sugar hides under many names: sucrose, fructose, maltose, corn syrup, dextrose. Learning to spot them in an ingredient list gives you real information about what you're eating.` },
+            { word: `label`, definition: `The nutrition and ingredient information printed on packaged food — a readable record of what a food actually contains, including added sugars.`, audioPrompt: `Terra believes reading a food label is one of the most grown-up things you can do, {name}. It's not about fear or judgment — it's about genuine curiosity. What's actually in this? How much added sugar? What are the first three ingredients? That information belongs to you. Labels are how you access it.` },
+            { word: `swap`, definition: `Choosing one food in place of another — a small, sustainable change that reduces added sugar without making eating feel like a struggle.`, audioPrompt: `A swap is the most practical tool in this whole lesson, {name}. Not a rule, not a restriction — just a choice you make when it's easy. Sparkling water instead of a soda. Fruit instead of a packaged snack sometimes. Small swaps done consistently matter far more than dramatic changes that don't last.` },
+          ],
         },
 
         {

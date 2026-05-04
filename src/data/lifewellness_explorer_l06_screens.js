@@ -38,6 +38,11 @@ const LW_L06 = {
           ],
           image: `/explorer-assets/wellness/l06-magazine-1.png`,
           imageCaption: `Your body's stress response evolved for survival — and it activates for a test just as it would for a lion`,
+          vocab: [
+            { word: `fight-or-flight`, definition: `Your body's automatic survival response to a perceived threat — triggering rapid changes including a faster heart rate, tense muscles, and sharper focus.`, audioPrompt: `Fight-or-flight is ancient, {name} — it evolved to help your ancestors survive real physical danger. The remarkable thing is that your body activates the exact same response for a maths test or a difficult conversation. The threat feels just as real, even if nothing is physically dangerous. Understanding that helps you work with the response instead of being swept away by it.` },
+            { word: `adrenaline`, definition: `A hormone released during the stress response that rapidly prepares your body to act — speeding up your heart, tensing muscles, and sharpening your senses.`, audioPrompt: `When a stressor hits, {name}, adrenaline floods your system in seconds. Heart rate jumps, breathing quickens, muscles tense, senses sharpen. It's your body's emergency preparation system. Incredibly effective in a genuine crisis — and worth understanding, because it activates for social and mental stressors just as readily as for physical ones.` },
+            { word: `cortisol`, definition: `Your body's primary stress hormone — released alongside adrenaline during the stress response, and damaging to health when chronically elevated over weeks and months.`, audioPrompt: `Cortisol is the slower, longer-lasting stress hormone, {name} — it sustains the stress response after adrenaline fades. In short bursts, it's helpful: it sharpens focus and provides energy. But when it stays elevated for weeks due to ongoing stress, it starts suppressing immunity, disrupting sleep, and affecting memory. That's why managing chronic stress genuinely matters.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L06 = {
           ],
           image: `/explorer-assets/wellness/l06-magazine-2.png`,
           imageCaption: `Short-term stress sharpens you — chronic stress without recovery is what wears you down`,
+          vocab: [
+            { word: `eustress`, definition: `Short-term, positive stress — like pre-performance nerves or the excitement of a challenge — that actually sharpens focus and improves performance before passing.`, audioPrompt: `Most kids don't realize there's a kind of stress that actually helps, {name}. Eustress — the nervous energy before something you care about — sharpens your focus, boosts your memory, and improves your performance. It's your body getting ready. The key word is "after": eustress passes once the challenge is over. That recovery is what makes it useful.` },
+            { word: `acute stress`, definition: `Short-term stress that comes and goes — tied to a specific challenge or event — and does not cause lasting harm because the body returns to baseline afterward.`, audioPrompt: `Acute stress is the good kind, {name} — sharp, focused, and temporary. You feel it before a big game or an important test, and then it fades when the challenge is over. Your body returns to normal. That recovery is the whole point. Acute stress builds resilience when it's followed by rest. It's the chronic kind, without recovery, that wears you down.` },
+            { word: `chronic stress`, definition: `Ongoing stress without adequate recovery — which over time suppresses the immune system, disrupts sleep, impairs memory, and affects brain structure.`, audioPrompt: `Chronic stress means the stress response never really gets to stop, {name}. Day after day, the same system that's supposed to protect you in an emergency is running at low-level activation — and over time, that wears things down. Sleep suffers. Immunity weakens. Mood becomes harder to manage. Understanding this is the first step to taking it seriously.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L06 = {
           ],
           image: `/explorer-assets/wellness/l06-magazine-3.png`,
           imageCaption: `Naming what stresses you is the first step — you can't manage what you haven't identified`,
+          vocab: [
+            { word: `stressor`, definition: `Any situation, demand, or experience that triggers your stress response — from exams to social conflict to family changes or world events.`, audioPrompt: `A stressor is anything that sets off your body's stress response, {name} — and the range is enormous. Tests, arguments, friendship problems, world news, changes at home. Your body responds to all of them with the same biological machinery. Knowing what your specific stressors are is the starting point for doing anything useful about them.` },
+            { word: `social stress`, definition: `Stress that comes from relationships and belonging — feeling left out, navigating friendship conflicts, or worrying about how others see you — one of the most common stressors for kids your age.`, audioPrompt: `Terra has been thinking about this for a long time, {name}: social stress can feel as real and physical as any other kind. Being left out, worrying about friendships, feeling misunderstood — these activate the same stress response as physical threats. They deserve to be taken seriously, named clearly, and addressed with care.` },
+            { word: `transition`, definition: `A major change in your life — like a new school, a family change, or moving to a new place — which is a common and valid source of stress even when the change is positive.`, audioPrompt: `Transitions are stressful even when they're exciting, {name}. A new school, a move, a change in your family — your system has to adjust to something unfamiliar, and that adjustment takes energy. Recognizing transition as a legitimate stressor means you can be a little gentler with yourself during those times, rather than wondering why everything feels harder than usual.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L06 = {
           ],
           image: `/explorer-assets/wellness/l06-magazine-4.png`,
           imageCaption: `Stress shows up in your body, your emotions, and your behaviour — learning your own signals is a real skill`,
+          vocab: [
+            { word: `signal`, definition: `An early sign that something is happening — like the physical or emotional changes that appear when stress is building, often before it peaks.`, audioPrompt: `Your body sends signals before stress becomes overwhelming, {name} — a knot in your stomach, tense shoulders, a shorter fuse, trouble sleeping. These are early warning signs. Learning to recognize your personal signals is genuinely one of the most useful skills you can build, because it gives you time to do something about stress before it takes over.` },
+            { word: `irritability`, definition: `A lower-than-usual tolerance for frustration — a common emotional signal of stress, where small things feel bigger and reactions come faster than normal.`, audioPrompt: `Have you ever noticed yourself snapping at someone for something small, {name}, and wondered why? Often that irritability is a stress signal — your emotional reserves are running low and your tolerance shrinks. Noticing irritability as a sign of underlying stress, rather than just a mood, is a meaningful shift. It tells you something useful about what your body needs.` },
+            { word: `fatigue`, definition: `A physical feeling of exhaustion or low energy — often a signal of accumulated stress, and separate from ordinary tiredness after a busy day.`, audioPrompt: `Stress fatigue feels different from just being tired, {name}. It has a heaviness to it — a reluctance, a flatness. When stress has been running for a while, your body and mind get worn down in ways that sleep alone doesn't fully fix. Noticing that quality of fatigue is a signal worth paying attention to. It's your body asking for more than just rest.` },
+          ],
         },
 
         {

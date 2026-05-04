@@ -38,6 +38,11 @@ const LW_L12 = {
           ],
           image: `/explorer-assets/wellness/l12-magazine-1.png`,
           imageCaption: `Bacteria, viruses, fungi, and parasites — and trillions of beneficial microorganisms working with you`,
+          vocab: [
+            { word: `bacteria`, definition: `Living single-celled organisms — some cause illness, but many are beneficial and essential to your health, particularly the trillions living in your gut microbiome.`, audioPrompt: `Most kids think of bacteria as the enemy, {name}, but the reality is far more interesting. Trillions of bacteria live inside you right now, and the vast majority are working with you — aiding digestion, supporting immunity, producing chemicals your body needs. The harmful ones are a small fraction. Your relationship with the bacterial world is mostly cooperative, not adversarial.` },
+            { word: `virus`, definition: `A tiny package of genetic material that is not technically alive — it can only reproduce by hijacking your own cells, which is why antibiotics (which kill bacteria) don't work on viral infections.`, audioPrompt: `Viruses are strange things, {name} — they're not quite alive by most definitions. They can't reproduce on their own. Instead, they get into your cells and use your cell's machinery to make copies of themselves. That's why antibiotics don't touch them: antibiotics kill bacteria, not the genetic material of a virus using your cells as a factory. Colds and flu are viruses. Strep throat is bacteria. Different tools for different threats.` },
+            { word: `microbiome`, definition: `The vast community of microorganisms — bacteria, fungi, and others — living in your gut, affecting digestion, immunity, mood, and much more.`, audioPrompt: `Your gut microbiome is one of the most fascinating things Terra has ever learned about, {name}. You're carrying approximately 38 trillion microorganisms — more than the number of your own cells. They affect your digestion, your immunity, your mood through the gut-brain axis, and your body's response to inflammation. The ecosystem inside you is part of who you are.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L12 = {
           ],
           image: `/explorer-assets/wellness/l12-magazine-2.png`,
           imageCaption: `Three layers — physical barriers, general response, and a targeted memory system that learns`,
+          vocab: [
+            { word: `antibody`, definition: `A protein made by your immune system that is precisely designed to recognize and neutralize a specific pathogen — part of the adaptive immune response.`, audioPrompt: `Antibodies are your immune system's custom-built weapons, {name} — each one shaped to recognize and lock onto a specific pathogen. When your adaptive immune system encounters a new threat, it starts making antibodies tailored to that exact threat. That's what makes the adaptive response so powerful: it doesn't use a general weapon, it builds the right tool for the specific job.` },
+            { word: `inflammation`, definition: `Part of your immune system's non-specific response — increased blood flow and immune activity in an area under attack, which creates redness, swelling, and warmth.`, audioPrompt: `Inflammation is your immune system showing up in force, {name}. When you cut yourself or catch an infection, the area becomes red, warm, and swollen — that's your non-specific immune response flooding the area with immune cells to fight whatever got through. Acute inflammation is protective and important. It's chronic inflammation — running in the background all the time — that's the kind associated with long-term health issues.` },
+            { word: `immunity`, definition: `The state of being protected against a specific disease — either through having had it before or through vaccination — because your immune system has memory of it.`, audioPrompt: `Immunity means your immune system has already seen this threat and knows exactly how to fight it, {name}. The first time you encounter a pathogen, your body takes time to build a response. The second time — because of memory cells — it can respond within hours, often before you feel anything. That memory is what immunity means. It's your immune system working smarter, not harder.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L12 = {
           ],
           image: `/explorer-assets/wellness/l12-magazine-3.png`,
           imageCaption: `Vaccines create memory cells — so your immune system can respond immediately when it matters`,
+          vocab: [
+            { word: `vaccine`, definition: `A preparation that trains your immune system to recognize and fight a specific pathogen — without causing the disease — by triggering a response and creating lasting memory cells.`, audioPrompt: `A vaccine is advance training for your immune system, {name}. It shows your body enough of a pathogen — or instructions for making a key part of it — to trigger a response and create memory cells, without causing actual illness. When the real pathogen arrives later, your immune system already knows it. The preparation happens before the threat does.` },
+            { word: `memory cell`, definition: `A specialized immune cell that remembers a specific pathogen after a first encounter — enabling your immune system to respond much faster if it ever encounters the same threat again.`, audioPrompt: `Memory cells are what make long-lasting immunity possible, {name}. After your immune system fights off a pathogen or responds to a vaccine, it keeps a small number of specialized cells that remember exactly what that pathogen looked like. Years later, if the same threat appears, those memory cells activate a rapid response — often before you even feel sick.` },
+            { word: `pathogen`, definition: `Any microorganism that can cause disease — including certain bacteria, viruses, fungi, and parasites.`, audioPrompt: `Pathogen is the general word for anything that can make you sick, {name} — whether it's a bacterium, a virus, a fungus, or a parasite. Your immune system is in constant contact with the outside world, evaluating every microorganism it encounters and deciding: friend, neutral, or threat? The ones it labels as threats are pathogens, and it responds accordingly.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L12 = {
           ],
           image: `/explorer-assets/wellness/l12-magazine-4.png`,
           imageCaption: `Sleep, stress management, movement, nutrition, and handwashing — all shape how well your immune system works`,
+          vocab: [
+            { word: `immune function`, definition: `How well your immune system is performing — shaped by sleep, stress levels, movement, nutrition, and hygiene habits.`, audioPrompt: `Immune function isn't fixed, {name}. It goes up and down depending on how you're living. Good sleep boosts it. Chronic stress suppresses it. Regular movement supports it. Varied whole foods nourish it. Handwashing stops threats before your immune system even needs to engage. What you do every day is a direct input into how well your body can defend itself.` },
+            { word: `handwashing`, definition: `One of the most effective disease prevention strategies — removing pathogens from your hands before they can enter your body through your eyes, nose, or mouth.`, audioPrompt: `Handwashing is ancient, simple, and still one of the most powerful public health tools ever identified, {name}. It stops germs at the first line of defence — before your immune system has to deal with them at all. Washing hands properly before eating and after using the bathroom takes twenty seconds and prevents the kind of infections that sideline you for days.` },
+            { word: `surveillance`, definition: `The constant patrolling of your body by immune cells — actively checking for and responding to threats before an infection can take hold.`, audioPrompt: `Your immune system is always on patrol, {name} — immune cells moving through your bloodstream and tissues, looking for anything that shouldn't be there. Regular movement actually supports this surveillance, helping immune cells circulate and do their monitoring work more effectively. This is one of the reasons people who move regularly tend to get sick less often.` },
+          ],
         },
 
         {

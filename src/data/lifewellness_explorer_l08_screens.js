@@ -38,6 +38,11 @@ const LW_L08 = {
           ],
           image: `/explorer-assets/wellness/l08-magazine-1.png`,
           imageCaption: `Every system in your body depends on water — transport, temperature, joints, brain, kidneys, and more`,
+          vocab: [
+            { word: `transport`, definition: `One of water's core jobs in the body — carrying nutrients, oxygen, and hormones to cells, and removing waste products through urine and sweat.`, audioPrompt: `Think of water as your body's entire delivery and waste-collection system, {name}. Nutrients get to your cells because water carries them there. Waste leaves your body because water carries it out. Without enough water, both systems slow down — and you feel it in your energy, your concentration, and how your body moves.` },
+            { word: `lubricate`, definition: `To reduce friction so things move smoothly — water lubricates your joints, allowing them to move without pain, and cushions your brain and spinal cord.`, audioPrompt: `Water lubricates your joints the same way oil keeps a machine running smoothly, {name}. Without enough of it, joints can feel stiffer and movement becomes less comfortable. Your brain and spinal cord also float in a fluid that's mostly water, protected from impact. Hydration is physical maintenance for your whole mechanical system.` },
+            { word: `enzyme`, definition: `A protein that speeds up chemical reactions in your body — every enzyme reaction requires water, making hydration essential for almost all of your body's processes.`, audioPrompt: `Your body is running thousands of chemical reactions every second, {name}, and almost all of them require water to work. Enzymes are the proteins that make those reactions possible, and they need water to do their job. That's why even mild dehydration can slow you down — not just one thing, but a whole network of processes that all depend on the same ingredient.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L08 = {
           ],
           image: `/explorer-assets/wellness/l08-magazine-2.png`,
           imageCaption: `Thirst is a late signal — pale lemonade urine is a more reliable daily hydration check`,
+          vocab: [
+            { word: `dehydration`, definition: `Having less water in your body than it needs — even mildly — which can cause fatigue, headache, difficulty concentrating, and irritability before you feel obviously thirsty.`, audioPrompt: `Mild dehydration can feel like a lot of other things, {name} — a headache that came from nowhere, brain fog, low energy, trouble concentrating. Many kids are slightly dehydrated most of the time without ever connecting it to their water intake. The good news: it's one of the simplest things in the world to fix.` },
+            { word: `indicator`, definition: `A reliable signal that tells you something about your current state — like urine color, which is a more accurate daily hydration indicator than thirst.`, audioPrompt: `Terra loves this practical knowledge, {name}: the color of your urine is one of the most accurate and instant hydration indicators you have. Pale lemonade yellow means you're well hydrated. Darker means your body needs more water soon. You don't need any equipment — just awareness. It's useful self-knowledge you can use every day.` },
+            { word: `optimal`, definition: `At the best possible level — optimal hydration means your body has all the water it needs for every process to run at its best, not just enough to get by.`, audioPrompt: `There's a difference between "not dehydrated" and fully hydrated, {name}. Optimal hydration means your brain, joints, kidneys, and every other system have exactly what they need — not just enough to survive the day, but enough to function at their best. That's the level worth aiming for, and your urine color is how you track it.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L08 = {
           ],
           image: `/explorer-assets/wellness/l08-magazine-3.png`,
           imageCaption: `5–7 cups a day is a good guide — your urine colour is your most reliable daily indicator`,
+          vocab: [
+            { word: `strategy`, definition: `A practical plan that makes a healthy behavior easier and more reliable — like drinking a glass of water when you wake up, before meals, and before activity.`, audioPrompt: `A hydration strategy takes the guesswork out of it, {name}. Instead of trying to remember to drink throughout the day, you attach water to moments that already happen: waking up, before each meal, before moving your body. The habit runs on existing anchors — no willpower required. Small strategies, done consistently, are what actually work.` },
+            { word: `consistent`, definition: `Happening regularly and reliably — consistent hydration across the day is more effective than drinking a lot at once after going hours without.`, audioPrompt: `Regular sips throughout the day serve your body better than a big glass after hours of nothing, {name}. Your body uses water continuously — and it works best when the supply is consistent, not delivered in sudden large amounts. Think of it like keeping a garden watered: steady is better than flooding once and then forgetting.` },
+            { word: `activity`, definition: `Physical movement — which increases how much water your body loses and therefore how much you need to replace to stay well hydrated during and after exercise.`, audioPrompt: `When you're active, {name}, your body uses water faster — through sweat, through the increased demands on your muscles and joints and heart. What's enough on a quiet day may not be enough on a day of sport or play. Drinking water before, during, and after activity keeps your body performing and recovering the way it needs to.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L08 = {
           ],
           image: `/explorer-assets/wellness/l08-magazine-4.png`,
           imageCaption: `Water first — no added sugar, nothing extra. Other drinks have their place, but water is what your body runs on`,
+          vocab: [
+            { word: `electrolyte`, definition: `Minerals like sodium and potassium that help regulate fluid balance in your body — relevant mainly for athletes doing intense exercise for extended periods, not for everyday hydration.`, audioPrompt: `You'll often see electrolytes mentioned in sports drink marketing, {name}. They're minerals that help your body manage fluids — and they do matter when you're sweating heavily for a long time. But for everyday activity and daily hydration, water handles everything your body needs without the added sugar. Electrolytes are a tool for a specific situation, not a daily requirement.` },
+            { word: `additive`, definition: `Something added to a drink or food beyond its natural form — like sugar, coloring, or artificial flavors — often present in drinks that seem healthy but are less ideal for everyday hydration.`, audioPrompt: `Water has no additives, {name} — nothing your body has to filter out or process beyond the water itself. Many other drinks come with added sugar, artificial flavors, or caffeine. None of those are what your body is actually asking for when it signals thirst. Water is the cleanest answer to what your body genuinely needs.` },
+            { word: `default`, definition: `Your automatic first choice — and the goal is to make water your default drink when you're thirsty, rather than reaching for something sweetened out of habit.`, audioPrompt: `Terra believes the most powerful change here is a simple one, {name}: making water your default. Not your only drink, not a rule — just the thing you reach for first when you're thirsty. That one shift, done consistently, changes your hydration, reduces your added sugar intake, and costs you nothing. Defaults are powerful because they run on habit, not on decision.` },
+          ],
         },
 
         {

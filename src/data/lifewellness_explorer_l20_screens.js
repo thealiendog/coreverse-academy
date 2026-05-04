@@ -38,6 +38,11 @@ const LW_L20 = {
           ],
           image: `/explorer-assets/wellness/l20-magazine-1.png`,
           imageCaption: `Nutrition, movement, sleep, stress management, relationships, mental health, nature — one connected system`,
+          vocab: [
+            { word: `blueprint`, definition: `A personal plan or map — in wellness, a clear picture of the habits, values, and practices that support how you want to feel and who you want to become.`, audioPrompt: `A blueprint is your plan, {name} — not someone else's rules handed to you, but your own map drawn from what you now understand about yourself. Terra has been thinking about this for a long time: the most powerful wellness plan is the one you make for yourself, built on real knowledge. That's what these twenty lessons have been building toward — the understanding you need to design something that actually fits your life.` },
+            { word: `practice`, definition: `A healthy behavior you return to regularly — not a perfect performance, but a consistent commitment to showing up and taking care of yourself.`, audioPrompt: `A practice is different from a performance, {name}. You don't have to do it perfectly — you just have to keep coming back to it. Sleep, movement, time in nature, tending your relationships: these are all practices. They don't require perfection. They require showing up, most of the time, over a long time. That consistency is what makes them powerful. Terra believes the most important word in wellness is not "best" — it's "regular."` },
+            { word: `interconnected`, definition: `Linked together so that each part affects the others — used to describe how wellness areas like sleep, movement, nutrition, and stress all influence each other.`, audioPrompt: `Interconnected means nothing works alone, {name}. Your sleep affects your stress. Your stress affects your food choices. Your food choices affect your energy. Your energy affects how much you move. And movement affects your sleep. Every part of your wellness connects to every other part. This is actually good news — it means improving anything helps everything. You don't need to fix it all at once. You just need to start somewhere.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L20 = {
           ],
           image: `/explorer-assets/wellness/l20-magazine-2.png`,
           imageCaption: `Improving one area creates ripple effects — start where you have energy and let the system respond`,
+          vocab: [
+            { word: `ripple effect`, definition: `What happens when a change in one area of your life spreads outward and creates improvements in other areas — like a stone dropped in still water.`, audioPrompt: `A ripple effect is when one change sets off others you didn't plan, {name}. Better sleep creates better energy for movement. Better movement reduces stress. Reduced stress improves your mood and your relationships. None of those later changes required extra effort — they followed from the first one. Terra loves this idea because it means you don't need to do everything. You just need to find the right first stone to drop.` },
+            { word: `system`, definition: `A set of connected parts that work together — your wellness is a system, meaning changes in any area affect the whole.`, audioPrompt: `Your wellness is a system, {name} — not a list of separate things to check off, but a set of connected parts that respond to each other. When one part improves, the whole system feels it. When one part struggles, the others feel that too. Understanding this changes how you approach your health. You stop trying to manage everything at once and start thinking about where in the system the most useful place to begin is.` },
+            { word: `momentum`, definition: `The tendency for things to keep moving in the same direction — positive habits build momentum, making it easier to sustain and grow your wellness over time.`, audioPrompt: `Momentum is what happens when good choices start making the next good choice easier, {name}. A few consistent nights of sleep and your energy goes up. Your energy goes up and movement feels less like effort. Movement becomes easier and your mood lifts. Your mood lifts and your relationships feel warmer. That's momentum — the system reinforcing itself. Terra has seen this happen again and again. The beginning is the hardest part. Once you have momentum, it starts carrying you.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L20 = {
           ],
           image: `/explorer-assets/wellness/l20-magazine-3.png`,
           imageCaption: `Consistency over intensity — boring habits that compound are more powerful than extreme ones`,
+          vocab: [
+            { word: `sustainable`, definition: `Able to be kept going over a long time — a sustainable wellness habit is one that fits your life well enough that you can actually keep doing it.`, audioPrompt: `Sustainable is the most important word in long-term health, {name}. A habit you can keep doing for years is worth far more than an intense one you abandon in a month. Terra believes this deeply — not because easy is better, but because something you do consistently for three years will always outperform something brilliant that you stopped after six weeks. Ask yourself not just whether something is good for you, but whether it's something you can honestly keep up.` },
+            { word: `compound`, definition: `To grow by building on what came before — healthy habits compound over time, meaning small consistent actions add up to much bigger results than they seem to at the start.`, audioPrompt: `Compound is a word from math, {name}, but it applies beautifully to health. When small habits build on themselves over time, the results grow bigger than they appear at the start. A consistent sleep routine now isn't just giving you better days this week — it's building the foundation for better energy, sharper thinking, and stronger health for years ahead. Small consistent choices compound into a life that looks very different from one built on nothing. That's worth understanding early.` },
+            { word: `intensity`, definition: `The degree of effort or extremity in a health approach — which research shows matters far less than consistency for long-term results.`, audioPrompt: `Intensity is how hard you push, {name} — and it's often what people focus on when they think about being healthy. But research keeps finding the same thing: intensity without consistency produces far less than consistency without intensity. The person who moves gently and regularly for ten years is healthier than the person who pushes hard for two months and then stops. You don't have to go extreme to go far. You just have to keep going.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L20 = {
           ],
           image: `/explorer-assets/wellness/l20-magazine-4.png`,
           imageCaption: `Your health is yours to care for — small consistent choices now build the foundation that grows with you`,
+          vocab: [
+            { word: `self-awareness`, definition: `Knowing yourself — understanding how you feel, what you need, and what helps or hinders your wellbeing — which grows through practice and reflection.`, audioPrompt: `Self-awareness is one of the greatest gifts you can give yourself, {name}. Knowing how you feel when you're sleep-deprived, what helps you manage stress, what kinds of movement energize you, what drains you — all of that is knowledge you can only get by paying attention over time. Terra believes this is something you've been building across every one of these twenty lessons. You know yourself better now. That matters for everything that comes next.` },
+            { word: `foundation`, definition: `The base that everything else is built on — in wellness, the habits and knowledge you develop now become the foundation that supports your health for the rest of your life.`, audioPrompt: `A foundation is what holds everything up, {name}. The habits you build now — consistent sleep, regular movement, good relationships, the ability to manage stress — these aren't just useful this year. They're the foundation your whole future health is built on. Terra has been thinking about this for a long time: what you do in these early years compounds in ways that are hard to fully see until later. But they're real. You are building something lasting right now.` },
+            { word: `agency`, definition: `The power to make choices and take action in your own life — in wellness, understanding that your daily choices genuinely shape your health and your future.`, audioPrompt: `Agency is the knowledge that your choices matter, {name} — that you are not just responding to things that happen to you, but actively shaping what happens next. Every good night's sleep, every time you reach out to someone you care about, every walk outside with your phone away — those are acts of agency. They're small, but they're real. And they add up. Your health is yours to care for, and you now know enough to actually do it. That's something worth holding on to.` },
+          ],
         },
 
         {

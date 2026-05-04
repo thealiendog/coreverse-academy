@@ -38,6 +38,11 @@ const LW_L18 = {
           ],
           image: `/explorer-assets/wellness/l18-magazine-1.png`,
           imageCaption: `Nature lowers stress hormones, reduces rumination, and restores your brain's capacity to focus`,
+          vocab: [
+            { word: `cortisol`, definition: `The body's primary stress hormone — which drops measurably when you spend time in natural environments, even for relatively short periods.`, audioPrompt: `Cortisol is what rises when you're stressed, {name}, and what nature reliably brings back down. Research consistently finds that time in natural environments reduces cortisol levels within minutes — not hours. That drop is measurable, not just a feeling. It's one of the clearest pieces of evidence that time in nature is doing something real for your body, not just your mood.` },
+            { word: `rumination`, definition: `The mental loop of repetitive negative thinking — going over the same worries or problems again and again — which natural environments measurably reduce.`, audioPrompt: `Rumination is when your mind gets stuck in a loop, {name} — the same worry circling around and around without resolution. It's exhausting, and it's surprisingly hard to stop by thinking your way out of it. What research has found is that time in nature — walking in a natural setting, specifically — reduces rumination. Something about that environment quiets the loop. It's one of the most practical benefits of going outside.` },
+            { word: `restoration`, definition: `The recovery of depleted mental resources — particularly directed attention — which natural environments provide in a way that indoor environments or screens cannot.`, audioPrompt: `Your focused attention is a resource that gets depleted, {name} — after a long day of school or a stretch of screen time, it's genuinely tired. Natural environments restore it in a way that other rest often doesn't. Screens are stimulating, not restorative. But time in nature — even briefly, even a park — gives your attention system a genuine rest. That's what restoration means here.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L18 = {
           ],
           image: `/explorer-assets/wellness/l18-magazine-2.png`,
           imageCaption: `Forest bathing — all five senses, no goal except presence — with measurable wellbeing benefits`,
+          vocab: [
+            { word: `shinrin-yoku`, definition: `A Japanese practice meaning "forest bathing" — spending time in a natural environment engaging all five senses, with no goal except presence, shown to have measurable wellbeing benefits.`, audioPrompt: `Shinrin-yoku is one of Terra's favorite discoveries, {name}. It translates as "forest bathing" — a Japanese practice of spending time in nature with no agenda except being there: noticing what you see, smell, hear, and feel. Research has found it measurably lowers cortisol, improves immune function, and lifts mood — with effects that last for days afterward. You don't need a Japanese forest. Any natural setting, entered with that quality of presence, offers the same.` },
+            { word: `presence`, definition: `Being fully attentive to what's happening right now — with your senses engaged in your surroundings rather than in your thoughts or on a screen.`, audioPrompt: `Presence is the active ingredient in shinrin-yoku, {name} — and in most of what nature does for you. It's not enough to be physically outside while your attention is on a screen or circling anxious thoughts. Presence means your senses are actually engaged with where you are: the sound of leaves, the feel of air, what you can see and smell. That full sensory engagement is what delivers the benefit.` },
+            { word: `sensory`, definition: `Related to the five senses — sight, hearing, smell, touch, and taste — and the way engaging all of them in nature is what produces its calming, restorative effects.`, audioPrompt: `The five senses are the pathway through which nature does its work, {name}. The sounds of water or wind, the smell of soil and green things, the feel of temperature on your skin, the complexity of what your eyes can take in — all of it is engaging your nervous system in a particular way that lowers stress and restores attention. Sensory engagement in nature is the mechanism. That's why presence matters so much.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L18 = {
           ],
           image: `/explorer-assets/wellness/l18-magazine-3.png`,
           imageCaption: `Vitamin D, physical activity, circadian rhythm — outdoor time benefits the whole system`,
+          vocab: [
+            { word: `vitamin D`, definition: `A micronutrient primarily produced when your skin is exposed to sunlight — essential for bone health, immune function, and mood, and often deficient in people who spend most of their time indoors.`, audioPrompt: `Vitamin D is different from most vitamins, {name} — your body makes it from sunlight rather than primarily getting it from food. It's essential for absorbing calcium, supporting immunity, and maintaining mood. Many people are deficient because they spend so much time indoors. Regular outdoor time in daylight isn't just pleasant — it's one of the main ways your body gets what it needs.` },
+            { word: `circadian rhythm`, definition: `Your body's internal 24-hour clock — regulated largely by exposure to natural light, governing when you feel awake, when you feel sleepy, and the timing of many biological processes.`, audioPrompt: `Your circadian rhythm is your body's internal timekeeper, {name} — a 24-hour biological clock that governs when you feel alert and when you feel sleepy. Natural light, especially in the morning, is the main signal that keeps this clock accurate. Spending time outside in daylight each day helps your body know when to be energized and when to wind down — which supports better sleep and steadier energy throughout the day.` },
+            { word: `natural light`, definition: `Light from the sun — which regulates your circadian rhythm, triggers Vitamin D production, and differs in important ways from artificial indoor lighting.`, audioPrompt: `Natural light is different from the light inside your home or school, {name}. It's richer, more complex, and it carries the signals your body's internal clock is designed to respond to. Morning natural light tells your brain it's time to be awake and alert. Evening natural light helps it prepare for rest. Spending time in natural light — especially in the morning — is one of the simplest things you can do to support your sleep and your energy.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L18 = {
           ],
           image: `/explorer-assets/wellness/l18-magazine-4.png`,
           imageCaption: `Regularity and presence are what matter — phone away, senses engaged`,
+          vocab: [
+            { word: `regularity`, definition: `Doing something consistently and on a regular basis — not occasionally or as a special event — so that the benefits can build up over time.`, audioPrompt: `Regularity is the ingredient that turns a nice experience into a real health habit, {name}. The benefits of nature — lower cortisol, restored attention, lifted mood — build when you return consistently. You don't need long stretches of time. Even short, regular moments outside, with your attention genuinely present, accumulate into something meaningful.` },
+            { word: `engagement`, definition: `Actively paying attention and using your senses — what you see, hear, smell, and feel — rather than being physically present while your mind is somewhere else.`, audioPrompt: `Engagement is what makes time in nature actually work, {name}. Being physically outside while scrolling your phone isn't the same thing as being present. Engagement means your senses are doing what they're designed to do — noticing light, sound, texture, temperature. That sensory aliveness is what tells your nervous system to slow down and restore. Terra believes this distinction matters deeply.` },
+            { word: `habit`, definition: `A repeated behavior that becomes automatic over time — so that going outside regularly stops feeling like an effort and starts feeling like a natural part of your day.`, audioPrompt: `A habit isn't something you decide to do each time — it's something you just do, {name}, because it's become part of your rhythm. That's what Terra hopes for you with nature: not a special occasion, but a regular, unremarkable part of your day. Eat lunch outside. Walk a different route. Notice the sky. Over time, it builds into something that sustains you without you having to think about it.` },
+          ],
         },
 
         {

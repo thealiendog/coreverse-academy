@@ -38,6 +38,11 @@ const LW_L17 = {
           ],
           image: `/explorer-assets/wellness/l17-magazine-1.png`,
           imageCaption: `Respect, trust, honesty, support, equity, independence — the foundations of any healthy relationship`,
+          vocab: [
+            { word: `mutual respect`, definition: `When both people in a relationship treat each other with consideration and value — not contempt or dismissiveness — even when they disagree.`, audioPrompt: `Mutual respect means both people in a relationship treat each other as worth taking seriously, {name}. It shows up in how you talk to each other, how you respond to disagreements, and whether you genuinely consider the other person's perspective. Without it, even a loving relationship can feel unsafe. With it, even difficult conversations feel manageable.` },
+            { word: `equity`, definition: `A fair balance in a relationship where neither person consistently carries all the emotional weight or makes all the decisions — both people's needs and perspectives matter equally.`, audioPrompt: `Equity in a relationship means the weight is shared, {name}. Neither person is always the one who gives while the other takes. Neither person always makes the decisions while the other follows. Both people's needs count. When the balance is genuinely unfair over a long time, the relationship starts to feel like a burden rather than a support.` },
+            { word: `independence`, definition: `Each person in a relationship maintaining their own identity, friendships, and interests — a sign of a healthy relationship that adds to your life rather than replacing it.`, audioPrompt: `A healthy relationship adds to who you are, {name} — it doesn't replace everything else. Independence means both people keep their own friendships, their own interests, their own sense of self. When a relationship starts requiring you to give up other things you care about in order to maintain it, that's worth paying attention to. Real closeness doesn't need to consume your whole world to feel real.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L17 = {
           ],
           image: `/explorer-assets/wellness/l17-magazine-2.png`,
           imageCaption: `Control, disrespect, guilt, jealousy, pressure, humiliation — patterns that deserve recognition`,
+          vocab: [
+            { word: `control`, definition: `Trying to direct another person's choices, appearance, friendships, or behavior — a warning sign in any relationship that crosses from care into manipulation.`, audioPrompt: `Control in a relationship shows up in many forms, {name}: telling someone what to wear, who they can spend time with, what they're allowed to say, or how they should behave. It might be dressed up as caring, but genuine care doesn't require controlling. Someone who cares about you wants you to be free and full, not limited.` },
+            { word: `pressure`, definition: `Being pushed to do something you haven't chosen freely — especially when someone keeps asking after you've already said no, or creates a sense of guilt for not agreeing.`, audioPrompt: `Pressure is when a no doesn't feel like it's allowed, {name}. Someone asking once is normal. Someone continuing to push after you've said no — using guilt, comparison, or manipulation to change your answer — is pressure. You are never required to change a no because someone is disappointed or persistent. Your answer belongs to you.` },
+            { word: `humiliation`, definition: `Being made to feel ashamed, embarrassed, or small — especially in front of others — a pattern in relationships that is a serious warning sign, not normal friction.`, audioPrompt: `Humiliation means being made to feel small in front of others, {name} — mocked, embarrassed, or dismissed publicly. All relationships have rough moments and unkind words sometimes. But a pattern of someone making you feel ashamed or ridiculed, especially in front of other people, is a warning sign worth taking seriously and talking to a trusted adult about.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L17 = {
           ],
           image: `/explorer-assets/wellness/l17-magazine-3.png`,
           imageCaption: `A boundary is a limit you set — and anyone who respects you will honour it`,
+          vocab: [
+            { word: `boundary`, definition: `A limit you set about what you're comfortable with — physically, emotionally, or in terms of your time and energy — which anyone who respects you will honor.`, audioPrompt: `A boundary is how you communicate what you need, {name}. It's not a wall that keeps people out — it's a clear statement of what you're comfortable with. "I don't want to be touched that way." "I need you to stop asking me that." You don't need to explain more than that. Anyone who respects you will accept your boundary, even if they're disappointed. That acceptance is the test.` },
+            { word: `consent`, definition: `Freely and genuinely agreeing to something — which must be clear, voluntary, and ongoing, not pressured, assumed, or given under any kind of force.`, audioPrompt: `Consent means you actually want to, {name} — freely, clearly, without pressure. It applies to physical touch, to how your information is used, to anything that affects your body or experience. Real consent is never given because someone persisted until you gave in, or because you were afraid to say no. It's given because you genuinely chose it. That distinction matters enormously.` },
+            { word: `comfortable`, definition: `Feeling at ease and safe in a situation — the basic standard for what physical and emotional interactions should feel like, and a useful guide for recognizing when something isn't right.`, audioPrompt: `Your sense of comfort is a meaningful signal, {name}. When something feels uncomfortable — physically, emotionally, in how someone is treating you — that feeling is worth listening to. You don't have to be able to explain exactly why something feels off. Discomfort is information. Trust it, name it, and if it persists, tell someone you trust.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L17 = {
           ],
           image: `/explorer-assets/wellness/l17-magazine-4.png`,
           imageCaption: `Healthy relationships make you feel more fully yourself — consistently feeling smaller is a signal`,
+          vocab: [
+            { word: `self-concept`, definition: `How you see and feel about yourself — significantly shaped by the relationships in your life, for better or worse.`, audioPrompt: `Your self-concept is built partly in the mirror of your relationships, {name}. The people closest to you affect how you see yourself — whether you feel capable, worthy, and real, or small and uncertain. Healthy relationships tend to strengthen your self-concept. Unhealthy ones quietly erode it. Paying attention to how you feel about yourself in each relationship is one of the most honest ways to assess it.` },
+            { word: `pattern`, definition: `A repeated way of behaving or being treated — more meaningful than isolated incidents when evaluating whether a relationship is healthy or harmful.`, audioPrompt: `A single unkind moment in a friendship doesn't define it, {name}. Patterns do. Everyone has hard days and sharp words sometimes. What matters is whether care, respect, and safety are the consistent experience of the relationship — or whether unkindness, dismissiveness, or control are what keeps happening. Patterns are what tell you the true character of a relationship.` },
+            { word: `signal`, definition: `Information your feelings are giving you — like consistently feeling worse about yourself around a particular person, which is a meaningful signal worth paying attention to.`, audioPrompt: `Your feelings are signals, {name} — not proof of anything, but information worth taking seriously. Consistently feeling smaller, less confident, or more anxious around a particular person is your inner life trying to tell you something. It doesn't always mean the relationship needs to end. But it always means it deserves your honest attention, not explanation away.` },
+          ],
         },
 
         {

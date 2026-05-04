@@ -38,6 +38,11 @@ const LW_L07 = {
           ],
           image: `/explorer-assets/wellness/l07-magazine-1.png`,
           imageCaption: `Your breath is the only part of your nervous system you can consciously control — and it works within seconds`,
+          vocab: [
+            { word: `parasympathetic`, definition: `The "rest-and-digest" branch of your nervous system — activated by slow, deep breathing and responsible for calming your heart rate, relaxing muscles, and signaling safety.`, audioPrompt: `The parasympathetic nervous system is your body's calm mode, {name} — the state where your heart slows, muscles soften, and your brain receives the signal that you are safe. The remarkable thing is that you can activate it deliberately, just by how you breathe. Slow, deep breath in. Slow breath out. Your body starts shifting within seconds.` },
+            { word: `sympathetic`, definition: `The "fight-or-flight" branch of your nervous system — activated by stress, producing faster breathing, tenser muscles, and a heightened state of alert.`, audioPrompt: `The sympathetic nervous system is your body's alarm mode, {name}. When it activates — from stress, excitement, or perceived danger — your heart speeds up, breathing quickens, muscles tense. It's designed to protect you. The problem is it can't distinguish between genuine danger and a math test. Understanding that helps you use breathing to turn the alarm down when you need to.` },
+            { word: `conscious control`, definition: `The ability to deliberately influence something that usually runs automatically — breathing is the only part of your nervous system you can consciously control, making it a uniquely powerful tool.`, audioPrompt: `Most of your nervous system runs on autopilot, {name} — you can't consciously lower your heart rate or speed up digestion. But breath is different. You can choose how you breathe, and because breathing is wired into the rest of your nervous system, controlling it gives you indirect control over all the things you can't directly reach. That's what makes it so remarkable.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L07 = {
           ],
           image: `/explorer-assets/wellness/l07-magazine-2.png`,
           imageCaption: `In, hold, out, hold — all for the same count. Four rounds takes about 90 seconds`,
+          vocab: [
+            { word: `rhythm`, definition: `A steady, repeating pattern — what box breathing creates in your breath, which signals your nervous system to move toward calm and balance.`, audioPrompt: `Rhythm is what makes box breathing work, {name}. When your breath has a steady, equal pattern — in for four, hold for four, out for four, hold for four — your nervous system responds to that regularity. It's the same principle as why a rocking chair calms a baby. Steady rhythm communicates safety. Your brain listens to it.` },
+            { word: `hold`, definition: `The deliberate pause between the inhale and exhale in box breathing — a brief moment that interrupts the stress cycle and gives the nervous system a chance to shift.`, audioPrompt: `The holds are what make box breathing more powerful than just breathing slowly, {name}. That brief pause — holding the breath in, then holding it out — interrupts the stress response cycle at two points instead of just flowing through. It's a tiny, deliberate stillness. And that stillness is where the calming actually happens.` },
+            { word: `technique`, definition: `A specific, practiced method — like box breathing or 4-7-8 breathing — that uses the body's own systems to create a desired state, in this case calm.`, audioPrompt: `A technique is a method you practice until it works automatically when you need it, {name}. Box breathing and 4-7-8 aren't just ideas — they're tools that get more effective the more you use them. The best time to practice a calming technique is when you're already calm, so it's there and familiar the moment you actually need it.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L07 = {
           ],
           image: `/explorer-assets/wellness/l07-magazine-3.png`,
           imageCaption: `4 in, hold 7, out for 8 — the extended exhale activates the vagus nerve and triggers calm`,
+          vocab: [
+            { word: `vagus nerve`, definition: `The main nerve of the parasympathetic nervous system — stimulated by a long, slow exhale, which directly triggers the calming response in your body.`, audioPrompt: `The vagus nerve is the main highway of your calm-down system, {name}. It runs from your brainstem through your chest and into your abdomen, and when you stimulate it with a long slow exhale, it sends a signal that travels your entire body: safe, rest, calm. That's the science behind why the extended exhale in 4-7-8 breathing feels so effective so quickly.` },
+            { word: `exhale`, definition: `Breathing out — and particularly the long, extended exhale in 4-7-8 breathing that activates the vagus nerve and triggers the parasympathetic calming response.`, audioPrompt: `The exhale is the most powerful part of a calming breath, {name}. When you breathe out slowly and completely, you activate the vagus nerve and send your nervous system into rest mode. That's why 4-7-8 breathing makes the exhale the longest part — eight counts out after four in. The out-breath is doing the most important work.` },
+            { word: `tranquilizer`, definition: `Something that calms the nervous system — 4-7-8 breathing is described as a natural one because it produces measurable physiological calm without any external substance.`, audioPrompt: `A natural tranquilizer is exactly what 4-7-8 breathing has been called, {name} — and that's not exaggeration. When you breathe in for four, hold for seven, and exhale slowly for eight, your nervous system measurably shifts. Heart rate drops, muscles release, the stress response quiets. Available to you any time, any place, at no cost. That's a remarkable tool.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L07 = {
           ],
           image: `/explorer-assets/wellness/l07-magazine-4.png`,
           imageCaption: `Before tests, during arguments, before sleep — breathing works in all of these situations, if you've practised`,
+          vocab: [
+            { word: `intentional`, definition: `Done on purpose and with awareness — intentional breathing means choosing to breathe in a particular way, rather than letting it happen automatically.`, audioPrompt: `Intentional breathing means you're in the driver's seat, {name}. Most of the time you breathe without thinking about it — and that's fine. But when stress rises, intentional breathing is the decision to take the wheel and use your breath as a tool. That shift from automatic to deliberate is where the power lies.` },
+            { word: `baseline`, definition: `Your body's normal, rested state — what breathing techniques help your nervous system return to after a stress response, and also what regular practice can lower over time.`, audioPrompt: `Your baseline is where your body settles when nothing stressful is happening, {name} — your resting heart rate, your default level of calm. Regular breathing practice can gradually lower that baseline, meaning you're starting each day from a calmer place. And in moments of stress, these techniques help you return to it much faster than you would without them.` },
+            { word: `practice`, definition: `Repeating a skill when you don't urgently need it — so it becomes available automatically when you do. Breathing techniques must be practiced calmly to work reliably under stress.`, audioPrompt: `Terra believes this is the most important part of this lesson, {name}: practice breathing techniques when you're already calm. That's when they become automatic — when your brain learns the pattern and can run it without effort. Try to use a new skill for the first time in a crisis and it's much harder. Practice it daily and it's there when you need it most.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const LW_L09 = {
           ],
           image: `/explorer-assets/wellness/l09-magazine-1.png`,
           imageCaption: `Screens deliver constant novelty — which can make slower, deeper activities feel harder to enjoy`,
+          vocab: [
+            { word: `novelty`, definition: `Something new or different — screens deliver constant novelty through new content, new notifications, and new stimulation at a pace that everyday life rarely matches.`, audioPrompt: `Novelty is what makes screens feel so compelling, {name}. Every scroll brings something new — a new image, a new video, a new notification. Your brain is naturally drawn to new information. Screens exploit that by delivering novelty at a pace nothing in real life can match. Once your brain is used to that speed, slower things — reading, conversations, being outside — can feel oddly underwhelming by comparison.` },
+            { word: `attention span`, definition: `The length of time you can focus on a single task — which research shows can shorten with heavy passive screen use as the brain adapts to rapid stimulation.`, audioPrompt: `Attention span is your brain's ability to stay with one thing, {name}. Think of it like a muscle — it grows with practice and weakens without it. Heavy passive screen use trains your brain for rapid switching between things, which makes sustained focus on slower activities progressively harder. That's not a character flaw. It's your brain responding to the environment it spends time in.` },
+            { word: `stimulation`, definition: `Input that activates your brain — screens provide very high levels of rapid stimulation, which can make lower-stimulation activities feel less engaging by comparison.`, audioPrompt: `Stimulation isn't bad, {name} — your brain needs it. The question is what kind and at what pace. Screens deliver extremely high stimulation very fast. When your brain gets calibrated to that level, ordinary life — which runs at a naturally slower pace — can feel flat or boring by comparison. That contrast is what makes it hard to put the screen down.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L09 = {
           ],
           image: `/explorer-assets/wellness/l09-magazine-2.png`,
           imageCaption: `Active screen time builds something — passive screen time consumes without creating. The ratio is what matters`,
+          vocab: [
+            { word: `active`, definition: `Screen use that involves creating, learning, communicating, or solving problems — the kind that builds real skills or meaningful connections.`, audioPrompt: `Active screen time is when you're the one driving, {name}. Creating something, learning something, having a real conversation, solving a problem. Your brain is engaged, challenged, and building. Coding, digital art, video calling someone you love, following a tutorial — these are active uses. They leave you with something you didn't have before.` },
+            { word: `passive`, definition: `Mindless screen use that consumes without creating — like endless scrolling or watching videos without purpose or engagement.`, audioPrompt: `Passive screen time is when the platform is driving, not you, {name}. Scroll, scroll, scroll — content just appearing without you choosing it, without building anything, without connecting meaningfully with anyone. Time passes, but nothing is created or learned. Occasional passive use is fine. The question is whether it's become the default.` },
+            { word: `ratio`, definition: `The proportion of one thing relative to another — in screen use, the ratio of active to passive time matters more than the total hours spent on screens.`, audioPrompt: `It's not just how long you're on a screen that shapes how it affects you, {name} — it's the ratio of active to passive. Two hours creating and learning is very different from two hours scrolling. Terra believes the most useful question to ask isn't "how long?" but "what was I doing, and did I feel better or worse afterward?"` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L09 = {
           ],
           image: `/explorer-assets/wellness/l09-magazine-3.png`,
           imageCaption: `Likes, notifications, highlight reels — understanding how these work puts you back in control`,
+          vocab: [
+            { word: `social comparison`, definition: `The act of measuring yourself against others — amplified by social media, where you compare your full experience to curated highlight reels of other people's best moments.`, audioPrompt: `Social comparison is something humans have always done, {name} — but social media makes it almost unavoidable, and it stacks the comparison unfairly against you. You're comparing your whole life, including the hard and ordinary parts, to someone else's carefully chosen, often edited best moments. That's not an honest comparison. Knowing it's happening is the first step to not letting it land so hard.` },
+            { word: `approval`, definition: `Validation from others — what likes, comments, and notifications deliver in small doses, activating the brain's reward system and driving the urge to seek more.`, audioPrompt: `Social approval feels good to every human brain, {name} — we're wired for it. Platforms are designed knowing that, building in likes and notifications that deliver small hits of approval and keep you checking back for more. Understanding that design doesn't make you immune to it. But it does help you see it clearly, and choose how much weight to give it.` },
+            { word: `curated`, definition: `Carefully selected and edited to look its best — what people share on social media is curated, showing highlights rather than the full range of their experience.`, audioPrompt: `What you see on someone's profile is curated, {name} — the best photos, the exciting moments, the achievements worth posting. Nobody shares the boring Tuesday or the hard week. When you scroll through curated highlight reels and compare them to your unedited daily life, the comparison is almost always going to make your life look less impressive. That's the design, not the reality.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L09 = {
           ],
           image: `/explorer-assets/wellness/l09-magazine-4.png`,
           imageCaption: `Screen-free times, app timers, phones out of bedrooms — small habits that keep you in control`,
+          vocab: [
+            { word: `awareness`, definition: `Conscious attention to what you're doing and why — the most powerful tool for building a healthier relationship with screens, more effective than any strict rule.`, audioPrompt: `Awareness is the superpower here, {name}. Noticing how you feel before picking up a screen, what you're actually doing while on it, and how you feel when you put it down — that noticing is what keeps you in control. Rules can be broken. Awareness is something you carry with you. It changes decisions from the inside.` },
+            { word: `intention`, definition: `Choosing to use a screen for a specific purpose rather than picking it up by default — what separates conscious screen use from automatic habit.`, audioPrompt: `Intention is the difference between choosing and drifting, {name}. "I'm going to video call my friend" is intention. Picking up your phone because it was there and you were bored is automatic. Both lead to screen time — but only one leaves you feeling like you were in control. Building the habit of asking "why am I picking this up?" changes everything.` },
+            { word: `default`, definition: `Your automatic behavior when you're not making a conscious choice — and building healthy screen habits means changing what your default behavior looks like.`, audioPrompt: `A default is what you do when you're not deciding, {name} — and for many people, screens have become the default for every moment of boredom, transition, or discomfort. Building healthy habits means designing new defaults: reach for a book, go outside, call someone. Not rules, just new automatic choices that you set up deliberately.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const LW_L19 = {
           ],
           image: `/explorer-assets/wellness/l19-magazine-1.png`,
           imageCaption: `Cue, routine, reward — the three-part cycle your brain uses to build every habit you have`,
+          vocab: [
+            { word: `cue`, definition: `A trigger — a time, place, emotion, or thing you see — that tells your brain to start a particular behavior automatically.`, audioPrompt: `A cue is what starts a habit, {name} — the trigger your brain uses to know it's time to run a familiar pattern. It could be a time of day, a place, a feeling, or something you see or hear. Once a habit is established, the cue alone is enough to set the whole sequence in motion. That's why habits feel so automatic — your brain isn't deciding each time, it's just responding to the signal.` },
+            { word: `routine`, definition: `The behavior itself — the action your brain performs automatically once a cue triggers the habit loop.`, audioPrompt: `The routine is the action at the center of every habit loop, {name}. It's what happens between the cue and the reward — the behavior that's becoming (or has become) automatic. What Terra finds remarkable is that routines can be almost anything: physical, mental, emotional. Your brain treats them all the same way — as patterns worth reinforcing if a reward follows.` },
+            { word: `reward`, definition: `The benefit your brain receives at the end of a habit loop — what signals to it that this pattern is worth remembering and repeating.`, audioPrompt: `The reward is what closes the loop, {name} — it's the signal your brain receives that says this pattern is worth keeping. It doesn't have to be big or obvious. Sometimes a reward is just a feeling of satisfaction, calm, or energy. But it matters, because without it, the brain has no reason to lock in the behavior. When you understand this, you can design habits intentionally — building in a clear reward that makes repeating the loop feel worthwhile.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L19 = {
           ],
           image: `/explorer-assets/wellness/l19-magazine-2.png`,
           imageCaption: `Start smaller than feels useful — the habit of showing up consistently is what compounds`,
+          vocab: [
+            { word: `consistency`, definition: `Doing something regularly — showing up every day or most days — which matters far more than how big or impressive each individual effort is.`, audioPrompt: `Consistency is what builds habits, {name} — not intensity, not size, not perfect performance. Showing up in a small way every day creates a pattern your brain treats as reliable. And reliable patterns become automatic. Terra has watched so many people abandon habits they genuinely wanted because they started too big. Starting small and showing up consistently is the smarter path — always.` },
+            { word: `pattern`, definition: `A repeated sequence of behavior that the brain recognizes, stores, and eventually runs automatically — the foundation of every habit you have.`, audioPrompt: `Your brain is a pattern-recognition machine, {name}. When it sees the same sequence repeated enough times, it stores that sequence and starts running it automatically — that's what a habit is. The goal in the early days of a new habit is not to do a lot; it's to repeat the pattern reliably. Even a tiny version of the action, done consistently, is enough to start building the neural groove that makes the habit stick.` },
+            { word: `automaticity`, definition: `The quality of a behavior that has become so practiced it happens without conscious effort or willpower — what all habits eventually become.`, audioPrompt: `Automaticity is the point every habit is heading toward, {name} — the stage where you don't have to think about doing it, you just do it. Brushing your teeth, putting on a seatbelt, reaching for water instead of something else: these all used to require a decision. Now they don't. That's what automaticity feels like. The habits that matter most to your wellbeing can get there too — but only if you build them gradually enough that they can become automatic before the effort runs out.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L19 = {
           ],
           image: `/explorer-assets/wellness/l19-magazine-3.png`,
           imageCaption: `Environment shapes behaviour — design your surroundings so the healthy choice is the obvious default`,
+          vocab: [
+            { word: `environment design`, definition: `Intentionally arranging your surroundings so that healthy choices are easy, visible, and the obvious default — removing the need to rely on willpower.`, audioPrompt: `Environment design is one of Terra's favorite habit tools, {name}, because it takes willpower out of the equation entirely. When your trainers are by the door, you don't decide to exercise — you just put them on. When fruit is on the counter, you reach for it. The environment makes the decision for you. This is far more reliable than trying to feel motivated at the moment of choice — your surroundings can do the work instead.` },
+            { word: `default`, definition: `The choice that happens automatically when no deliberate decision is made — which is shaped powerfully by how your environment is arranged.`, audioPrompt: `Your default is what happens when you're not really thinking, {name} — what you reach for, where you sit, what you do first. Most of those defaults are set by your environment, not by your character. If your phone is on your desk, it becomes the default. If a book is there instead, that becomes the default. Changing your defaults is one of the highest-leverage things you can do — because defaults are what govern most of your day.` },
+            { word: `friction`, definition: `The effort, difficulty, or inconvenience involved in doing something — adding friction to unwanted habits makes them harder, while reducing friction makes good habits easier.`, audioPrompt: `Friction is the resistance between you and an action, {name}. The more friction there is, the less likely you are to do something — even if you want to. Charging your phone in another room adds friction to scrolling. Putting your water bottle on your desk removes friction from staying hydrated. You can use this deliberately: add friction to habits you want to do less, remove it from the ones you want to build. It's a remarkably simple idea that actually works.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L19 = {
           ],
           image: `/explorer-assets/wellness/l19-magazine-4.png`,
           imageCaption: `Identity shift: "I'm someone who..." — every small action is a vote for the person you're becoming`,
+          vocab: [
+            { word: `identity`, definition: `How you think about and describe yourself — which powerfully shapes your behavior, because people act in ways that match who they believe they are.`, audioPrompt: `Identity is the deepest level at which habits live, {name}. When you see yourself as someone who takes care of their body, makes time to read, moves regularly, or protects their sleep — those habits start to feel like expressions of who you are, not tasks on a to-do list. Terra believes this shift is one of the most important things a person can make. You don't have to earn the identity first. You just have to start acting like the person you're becoming.` },
+            { word: `self-concept`, definition: `The overall picture you have of yourself — including your values, abilities, and the kind of person you believe you are — which habits and small daily actions either reinforce or reshape.`, audioPrompt: `Your self-concept is the story you carry about who you are, {name}. And here's what research shows: that story is not fixed. Every action you take is a small piece of evidence for or against it. Act in line with who you want to be — even once, even in a tiny way — and you've cast a vote for that self-concept. Over time, those votes accumulate into a story that feels true. That's how identity changes: not all at once, but one small choice at a time.` },
+            { word: `vote`, definition: `A small action that counts as evidence for the kind of person you are — used as a metaphor for how tiny repeated behaviors build your identity over time.`, audioPrompt: `Think of each small healthy choice as a vote, {name}. Drinking water: a vote. Going outside: a vote. Getting enough sleep: a vote. No single vote decides the election — but the accumulated pattern of votes builds the identity. You don't need to be perfect. You just need to cast more votes in the direction you want to go than in the direction you don't. Terra loves this way of thinking about it, because it makes every small action count for something real.` },
+          ],
         },
 
         {

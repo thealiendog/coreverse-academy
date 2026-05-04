@@ -38,6 +38,11 @@ const LW_L04 = {
           ],
           image: `/explorer-assets/wellness/l04-magazine-1.png`,
           imageCaption: `Movement strengthens your heart, your bones, your immunity — and gives you more energy, not less`,
+          vocab: [
+            { word: `circulation`, definition: `The movement of blood through your body — strengthened by regular physical activity, which makes your heart pump more efficiently and delivers oxygen and nutrients more effectively.`, audioPrompt: `Picture blood flowing through your entire body with every heartbeat, {name} — delivering oxygen and nutrients, carrying away waste. Regular movement makes that whole system more efficient. Your heart beats more effectively, your vessels stay flexible, and your cells get what they need faster. That's circulation working well.` },
+            { word: `immune system`, definition: `Your body's defence network against illness — boosted by regular movement, which helps your immune cells patrol your body more effectively.`, audioPrompt: `Terra loves this connection, {name}: when you move your body regularly, you're not just strengthening muscles — you're strengthening your immune system too. Movement helps immune cells circulate and do their surveillance work more effectively. People who move regularly tend to get sick less often and bounce back faster. Movement is immune support.` },
+            { word: `flexibility`, definition: `The ability of your muscles and joints to move through their full range — supported by regular movement and stretching, and important for injury prevention and physical comfort.`, audioPrompt: `Flexibility is what lets your body move freely without strain, {name}. It's built gradually through regular movement and stretching — and it makes everything else feel easier. Active, flexible kids tend to move more confidently and feel more at home in their bodies. It's one of the quieter gifts of regular movement.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L04 = {
           ],
           image: `/explorer-assets/wellness/l04-magazine-2.png`,
           imageCaption: `BDNF from exercise grows new brain cells and strengthens connections — your brain learns better when you move`,
+          vocab: [
+            { word: `BDNF`, definition: `Brain-Derived Neurotrophic Factor — a protein released during exercise that promotes new brain cell growth and strengthens connections between existing ones, improving memory and learning.`, audioPrompt: `BDNF is sometimes called "Miracle-Gro for the brain," {name} — and that name earns itself. When you exercise, your brain releases this protein, which literally helps grow new brain cells and strengthen the connections between them. Schools that added daily movement saw academic results improve. This is why.` },
+            { word: `aerobic`, definition: `A type of physical activity that raises your heart rate and breathing over a sustained period — like running, swimming, or dancing — and is especially powerful for brain health and mood.`, audioPrompt: `Aerobic means "with oxygen," {name} — and aerobic exercise is the kind that gets your breathing deeper and your heart beating faster for a sustained stretch of time. Running, swimming, cycling, dancing: all of it counts. It's this type of movement that releases BDNF and the mood-lifting chemicals your brain runs on.` },
+            { word: `neuroscience`, definition: `The scientific study of the brain and nervous system — whose most consistent finding is that physical movement dramatically improves how the brain learns, remembers, and manages emotion.`, audioPrompt: `Neuroscience is the study of how the brain works, {name} — and one of its most repeated findings is that exercise changes the brain itself. Not just how you feel, but how well you think, how much you remember, and how easily you learn. Moving your body is brain care. The science is about as clear as it gets.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L04 = {
           ],
           image: `/explorer-assets/wellness/l04-magazine-3.png`,
           imageCaption: `Endorphins, serotonin, dopamine, less cortisol — movement changes your brain chemistry within minutes`,
+          vocab: [
+            { word: `endorphin`, definition: `Natural mood-lifting chemicals your brain releases during exercise — responsible for the feeling of wellbeing and reduced pain that often follows physical activity.`, audioPrompt: `Have you ever noticed that feeling after a good run or a dance session, {name} — that warm, calm sense that everything's a little better? That's endorphins. Your brain releases them during exercise as natural mood-lifters. They're real, they're fast, and they're available to you any time you move your body.` },
+            { word: `serotonin`, definition: `A brain chemical associated with feelings of stability, calm, and wellbeing — released during exercise and also produced largely in the gut.`, audioPrompt: `Serotonin is sometimes called the "steady" chemical, {name} — it contributes to that sense of calm, contentment, and emotional balance. Exercise is one of the most reliable ways to boost it. Low serotonin is often associated with low mood; movement is one of the most direct ways to support it without any side effects.` },
+            { word: `cortisol`, definition: `Your body's primary stress hormone — which exercise actively reduces, making movement one of the most effective tools for managing stress and improving mood.`, audioPrompt: `Cortisol is what rises when you're stressed, {name} — heart rate up, muscles tense, mind alert. Exercise is one of the most effective ways to bring it back down. After physical movement, cortisol drops. That's why you often feel calmer, less wound up, more like yourself after moving your body. It's chemistry, not coincidence.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L04 = {
           ],
           image: `/explorer-assets/wellness/l04-magazine-4.png`,
           imageCaption: `The best exercise is the one you'll actually do — enjoyment is what turns movement into a lifelong habit`,
+          vocab: [
+            { word: `consistency`, definition: `Doing something regularly over time — the quality that turns movement from an occasional effort into a real habit with lasting benefits.`, audioPrompt: `Consistency is the quiet power behind every health benefit that actually lasts, {name}. One run doesn't change your brain. One hundred runs, done regularly, absolutely do. The size of each session matters much less than the habit of showing up. That's what consistency means — not perfection, just regularity.` },
+            { word: `enjoyment`, definition: `Genuinely liking the activity you choose — the most reliable predictor of whether you'll keep doing it long enough to experience the real benefits.`, audioPrompt: `Terra believes this deeply, {name}: movement you enjoy is the only movement that actually becomes a habit. You can do an exercise you hate perfectly — but if you dread it, you'll stop. Movement you look forward to builds the consistency that produces all the brain and body benefits. Finding what you love is the whole point.` },
+            { word: `burst`, definition: `A shorter period of activity — and a useful reminder that movement doesn't have to happen all at once to count. Multiple shorter bursts through a day work just as well as one longer session.`, audioPrompt: `You don't have to block out an hour to get the benefits of movement, {name}. A burst of activity — ten minutes here, fifteen there — adds up across a day. A walk at lunch, a dance while you wait for dinner, a run before school. Multiple shorter bursts work. The body doesn't need it in one perfect block to respond.` },
+          ],
         },
 
         {

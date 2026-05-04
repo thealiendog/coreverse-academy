@@ -38,6 +38,11 @@ const LW_L10 = {
           ],
           image: `/explorer-assets/wellness/l10-magazine-1.png`,
           imageCaption: `Decades of research agree: the quality of your relationships is the biggest factor in long-term happiness`,
+          vocab: [
+            { word: `connection`, definition: `A genuine sense of closeness and mutual care between people — the quality of social connection, not the number of relationships, is what most strongly predicts wellbeing.`, audioPrompt: `Connection is more than knowing a lot of people, {name}. It's the feeling of being genuinely known and cared about by someone — and knowing and caring about them in return. Research on human happiness keeps finding the same thing: it's the quality of those real connections that matters most, far more than how many you have.` },
+            { word: `loneliness`, definition: `The experience of feeling disconnected from others — which activates the same brain regions as physical pain, and has measurable effects on health and longevity.`, audioPrompt: `Loneliness activates the same brain regions as physical pain, {name} — and that's not metaphor, that's neuroscience. Your body registers social disconnection as a genuine harm, because humans are deeply wired for belonging. Understanding this is why caring for your relationships isn't a soft priority. It's one of the most serious things you can do for your health.` },
+            { word: `wellbeing`, definition: `Your overall state of physical, emotional, and social health — shaped substantially by the quality and closeness of your relationships.`, audioPrompt: `Wellbeing is how well you're actually doing across all the dimensions of your life, {name} — not just your body, but your mood, your sense of meaning, your feeling of belonging. The research is clear: close, high-quality relationships are one of the most reliable contributions to genuine wellbeing. They're not an extra. They're part of the foundation.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const LW_L10 = {
           ],
           image: `/explorer-assets/wellness/l10-magazine-2.png`,
           imageCaption: `Reliability, honesty, reciprocity, support, consistency — these are what make friendship feel safe`,
+          vocab: [
+            { word: `reciprocity`, definition: `A mutual exchange of care and investment — where both people in a friendship give and receive, rather than one person always doing the work.`, audioPrompt: `Reciprocity is the balance that keeps a friendship feeling fair, {name}. Both people reach out. Both people listen. Both people show up for the other. When that flow runs only one direction — one person always giving, the other always receiving — the friendship often starts to feel draining rather than energizing. Balance matters.` },
+            { word: `reliability`, definition: `Following through on what you say you'll do — showing up when you said you would and being someone others can count on.`, audioPrompt: `Reliability builds trust faster than almost anything else, {name}. When you say you'll be somewhere, and you are — when you say you'll keep something private, and you do — people learn they can count on you. That safety is the foundation real friendship is built on. Without it, even fun friendships stay shallow.` },
+            { word: `draining`, definition: `A word for relationships that consistently take more energy than they give — often a sign that the balance of care and investment is significantly one-sided.`, audioPrompt: `Have you ever noticed that some friendships leave you feeling lighter afterward, and others leave you feeling tired, {name}? Energizing versus draining is a real distinction. The relationships that consistently drain you — where you give more than you receive, or where you never quite feel safe to be yourself — are worth paying attention to. That feeling is information.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const LW_L10 = {
           ],
           image: `/explorer-assets/wellness/l10-magazine-3.png`,
           imageCaption: `Proximity, repetition, vulnerability, reciprocity — and genuine interest in the other person's life`,
+          vocab: [
+            { word: `vulnerability`, definition: `Sharing something real and personal — not just surface topics — which is one of the key ingredients that deepens friendship from acquaintance to genuine closeness.`, audioPrompt: `Vulnerability is what takes a friendship from pleasant to real, {name}. Sharing something true about yourself — a worry, an embarrassing moment, something you actually care about — invites the other person to do the same. That mutual openness is where genuine closeness comes from. You can't build a deep friendship staying only on the surface.` },
+            { word: `proximity`, definition: `Being in the same physical space regularly — one of the key conditions for friendship to develop, since deep connection is built through repeated in-person time together.`, audioPrompt: `Proximity is one of the quiet secrets of friendship formation, {name}. The people who end up closest to you are often the ones you're simply around most often — in the same class, on the same team, in the same neighborhood. Regular physical presence is one of the foundations. It's why online friendships rarely become as deep as the ones built face-to-face.` },
+            { word: `genuine interest`, definition: `Real curiosity about another person's life — demonstrated by remembering what they told you and asking about it later, one of the most powerful friendship-building habits.`, audioPrompt: `Genuine interest is the single most powerful friendship signal there is, {name} — and it costs nothing. Remembering something your friend mentioned last week and asking "how did that go?" tells them something simple: I was actually listening. I care about your life. Most people feel that kind of attention so rarely that it's genuinely memorable when they receive it.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const LW_L10 = {
           ],
           image: `/explorer-assets/wellness/l10-magazine-4.png`,
           imageCaption: `Every close friendship hits bumps — addressing them directly and privately is what lets them survive`,
+          vocab: [
+            { word: `I-statement`, definition: `A way of expressing a concern that focuses on how you felt rather than accusing the other person — like "I felt hurt when..." instead of "You always..."`, audioPrompt: `I-statements change the whole feeling of a hard conversation, {name}. "I felt left out when that happened" is very different from "You never include me." One opens a door. The other raises defenses. When a friendship hits a rough patch, I-statements give the other person something to respond to rather than something to argue against. That small shift can keep a conversation from becoming a fight.` },
+            { word: `benefit of the doubt`, definition: `Assuming the best possible explanation before concluding someone acted badly — a first step in addressing friendship problems that preserves trust and goodwill.`, audioPrompt: `Giving someone the benefit of the doubt means your first thought isn't "they meant to hurt me," {name}. Maybe they were having a hard day. Maybe they didn't realize how it landed. Approaching a friendship problem with that openness — rather than certain blame — keeps the conversation from starting in accusation and gives the friendship a real chance to recover.` },
+            { word: `conflict`, definition: `A disagreement or tension between people — normal in every close friendship, and not necessarily a sign something is wrong, but an opportunity to communicate and rebuild trust.`, audioPrompt: `Conflict isn't a sign a friendship is broken, {name} — it's a sign people care enough to be honest with each other. Terra believes this: the friendships that survive conflict are often stronger for it. The question isn't whether conflict happens but how you handle it. Directly, privately, kindly — that combination resolves more than most people expect.` },
+          ],
         },
 
         {
