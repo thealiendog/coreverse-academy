@@ -847,6 +847,12 @@ export default function ExplorerLessonPlayer() {
       cancelled = true;
       timers.forEach(clearTimeout);
       currentAbortControllerRef.current?.abort();
+      // Stop any playing audio immediately so it doesn't bleed into the next screen.
+      // speak() will reset the element fully when it runs for the new screen.
+      const el = persistentAudioRef.current;
+      if (el) { el.pause(); }
+      setSpeaking(false);
+      setLoadingAudio(false);
       if (countdownIntervalRef.current) {
         clearInterval(countdownIntervalRef.current);
         countdownIntervalRef.current = null;
