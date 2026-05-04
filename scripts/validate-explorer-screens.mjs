@@ -42,7 +42,9 @@ const PREFIX_TO_SUBJECT = {
   lifewellness:    'life-wellness',
   creativearts:    'creative-arts',
   socialemotional: 'social-emotional',
-  spanish:         'spanish',
+  // Spanish files are named spanish_explorer_l*_screens.js
+  // but the runtime subjectId (URL param + EXPLORER_DATA key) is 'languages'
+  spanish:         'languages',
   // Add new subjects here as they are introduced
 };
 

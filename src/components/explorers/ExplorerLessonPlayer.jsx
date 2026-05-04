@@ -167,6 +167,9 @@ import CA_L18 from '../../data/creativearts_explorer_l18_screens';
 import CA_L19 from '../../data/creativearts_explorer_l19_screens';
 import CA_L20 from '../../data/creativearts_explorer_l20_screens';
 
+// Spanish — lessons added here as screen files are authored
+import SP_L01 from '../../data/spanish_explorer_l01_screens';
+
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
@@ -211,6 +214,15 @@ const EXPLORER_DATA = {
     subjectId: 'creative-arts',
     guide:     'Muse',
     lessons:   [...CA_L01.lessons, ...CA_L02.lessons, ...CA_L03.lessons, ...CA_L04.lessons, ...CA_L05.lessons, ...CA_L06.lessons, ...CA_L07.lessons, ...CA_L08.lessons, ...CA_L09.lessons, ...CA_L10.lessons, ...CA_L11.lessons, ...CA_L12.lessons, ...CA_L13.lessons, ...CA_L14.lessons, ...CA_L15.lessons, ...CA_L16.lessons, ...CA_L17.lessons, ...CA_L18.lessons, ...CA_L19.lessons, ...CA_L20.lessons],
+  },
+
+  // Subject 8 — Spanish (guide: Luna, eleven_multilingual_v2)
+  // Add ...SP_L0N.lessons here as each screen file is authored
+  'languages': {
+    ageBand:   'explorers',
+    subjectId: 'languages',
+    guide:     'Luna',
+    lessons:   [...SP_L01.lessons],
   },
 };
 
