@@ -269,7 +269,7 @@ export default function ExplorerWelcomeScreen({
             Your Guide
           </div>
           <div style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.5rem', fontWeight: 800 }}>
-            {guideAvatar?.name || 'Sage'}
+            {guideAvatar?.name || 'your guide'}
           </div>
         </div>
       )}
@@ -343,7 +343,7 @@ export default function ExplorerWelcomeScreen({
               A note for parents
             </div>
             <div style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', lineHeight: 1.65, textAlign: 'center' }}>
-              Tap anywhere to start. You'll need to do this once each lesson — it's how Sage's voice wakes up on your device.
+              Tap anywhere to start. You'll need to do this once each lesson — it's how your guide's voice wakes up on your device.
             </div>
             <button
               onClick={dismissParentCard}

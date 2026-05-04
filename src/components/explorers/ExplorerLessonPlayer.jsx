@@ -1417,6 +1417,7 @@ export default function ExplorerLessonPlayer() {
           vocab={vocabOpen}
           accent={accent}
           guideAvatar={guideAvatar}
+          childName={childName}
           onClose={() => setVocabOpen(null)}
           onStop={stopAudio}
           speak={speak}

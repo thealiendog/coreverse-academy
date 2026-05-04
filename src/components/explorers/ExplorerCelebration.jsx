@@ -116,14 +116,14 @@ export default function ExplorerCelebration({
       {/* Guide */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 4 }}>
         <img src={guideAvatar?.image || '/avatars/sage.png'} alt="" style={{ width: 44, height: 44, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${accent}` }} />
-        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem' }}>— {guideAvatar?.name || 'Sage'}</span>
+        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem' }}>— {guideAvatar?.name || 'your guide'}</span>
       </div>
 
       {/* CTA buttons — appear after animations settle */}
       {showButtons && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, width: '100%', maxWidth: 320, marginTop: 8, animation: 'btn-rise 0.4s ease both' }}>
           <button
-            onClick={() => navigate(`/child/subject/${subjectId || 'inner-world'}`)}
+            onClick={() => navigate(subjectId ? `/child/subject/${subjectId}` : '/child/dashboard')}
             style={{ height: 64, background: accent, color: '#000', border: 'none', borderRadius: 16, fontSize: '1.05rem', fontWeight: 800, cursor: 'pointer', touchAction: 'manipulation', letterSpacing: '-0.01em', boxShadow: `0 6px 24px ${accent}55` }}
           >
             Continue Exploring →

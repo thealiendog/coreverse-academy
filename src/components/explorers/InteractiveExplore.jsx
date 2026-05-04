@@ -23,7 +23,7 @@ export default function InteractiveExplore({
   onSpeak, onPrewarm, onComplete, onInteractiveComplete,
   karaokeWords, karaokeIdx, subjectId,
 }) {
-  const imgBase = `/explorer-assets/${subjectId || 'inner-world'}/`;
+  const imgBase = `/explorer-assets/${subjectId}/`;
   const { items = [], buckets = [], guideText = '', columnHeaders = ['Items', 'Categories'] } = screen;
   // Substitute {name} throughout — childName comes from commonProps
   const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
@@ -243,7 +243,7 @@ export default function InteractiveExplore({
           )}
         </div>
         <span className="game-instruction" style={{ color: '#fff', fontWeight: 600 }}>
-          {instruction || 'Tap a scene, then tap the feeling it shows.'}
+          {instruction}
         </span>
       </div>
 
