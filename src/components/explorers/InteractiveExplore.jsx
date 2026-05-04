@@ -25,7 +25,9 @@ export default function InteractiveExplore({
 }) {
   const imgBase = `/explorer-assets/${subjectId || 'inner-world'}/`;
   const { items = [], buckets = [], guideText = '', columnHeaders = ['Items', 'Categories'] } = screen;
-  const instruction = guideText || 'Tap an item, then tap the bucket where it belongs.';
+  // Substitute {name} throughout — childName comes from commonProps
+  const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
+  const instruction = r(guideText) || 'Tap an item, then tap the bucket where it belongs.';
 
   // Shuffle once on mount.
   // Normalize: if an item has no id (older IW/Cosmos data files), derive one from
@@ -65,12 +67,15 @@ export default function InteractiveExplore({
     console.log(`[INTERACTIVE] Buckets text-size 1.5rem (mobile) / 1.875rem (iPad), min-height 80px (mobile) / 100px (iPad), border 3px`);
     console.log(`[INTERACTIVE] All 4 bucket buttons rendering with uniform width and height (flex:1 in column)`);
     console.log(`[INTERACTIVE] Instruction text size 1.25rem (mobile) / 1.5rem (iPad), Sage avatar 56px (mobile) / 72px (iPad)`);
-    const phrases = [guideText, ...ENCOURAGEMENT, ...RETRY, COMPLETION].filter(Boolean);
+    // Pre-substitute {name} so prewarm keys match exactly what speak() will request later,
+    // eliminating the cache miss that forced a fresh fetch at completion time.
+    const guideTextR = r(guideText);
+    const phrases = [guideTextR, ...ENCOURAGEMENT, ...RETRY, r(COMPLETION)].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
-    if (guideText) {
-      console.log(`[INTERACTIVE] Instruction spoken: "${guideText}"`);
-      onSpeak?.(guideText);
+    if (guideTextR) {
+      console.log(`[INTERACTIVE] Instruction spoken: "${guideTextR}"`);
+      onSpeak?.(guideTextR);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -126,7 +131,7 @@ export default function InteractiveExplore({
       const matchedItem = selectedItem;
       let phrase;
       if (matchedItem?.matchPhrase) {
-        phrase = matchedItem.matchPhrase;
+        phrase = r(matchedItem.matchPhrase);
       } else {
         phrase = ENCOURAGEMENT[encourageIdx.current % ENCOURAGEMENT.length];
         encourageIdx.current++;

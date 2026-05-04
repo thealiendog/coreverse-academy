@@ -64,11 +64,12 @@ function renderKaraoke(text, karaokeWords, karaokeIdx, accent) {
 }
 
 export default function MasteryQuiz({
-  screen, guideAvatar, speaking, accent,
+  screen, guideAvatar, speaking, accent, childName,
   onSpeak, onPrewarm, onStopAudio, onLastQuestion, onComplete, onQuizComplete,
   karaokeWords, karaokeIdx,
 }) {
   const questions = screen?.questions || [];
+  const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
 
   const [qIdx,         setQIdx]        = useState(0);
   const [wrongOptions, setWrongOptions] = useState(new Set());
@@ -91,6 +92,10 @@ export default function MasteryQuiz({
   const readingTimersRef   = useRef([]);
   const isReadingOptsRef   = useRef(false);
 
+  // introSpoken: true once quiz guideText has finished speaking.
+  // Q1 is held until intro completes so the transition feels smooth.
+  const [introSpoken, setIntroSpoken] = useState(false);
+
   useEffect(() => { return () => { mountedRef.current = false; }; }, []);
 
   function clearReadingTimers() {
@@ -99,7 +104,10 @@ export default function MasteryQuiz({
     isReadingOptsRef.current = false;
   }
 
-  // ── Prefetch on mount: Q1 full audio set + all phrase banks ────────────────
+  // ── Prefetch on mount + speak quiz intro guideText ──────────────────────────
+  // guideText (e.g. "Let's see how much you remember, {name}...") plays first.
+  // Q1 is held until intro finishes (introSpoken flag). If guideText is absent,
+  // introSpoken is set immediately so Q1 plays right away (backward-compatible).
   useEffect(() => {
     const q1Clips = getAudioClips(questions[0]);
     const toFetch = [
@@ -114,10 +122,25 @@ export default function MasteryQuiz({
     console.log('[QUIZ] Mount — prefetching Q1 + retry phrases');
     console.log('[QUIZ] Options using min-height 64px (mobile) / 80px (iPad), text size 1.125rem (mobile) / 1.25rem (iPad)');
     toFetch.forEach(p => { if (p) onPrewarm?.(p); });
+
+    const introText = r(screen?.guideText);
+    if (introText) {
+      console.log(`[QUIZ] Speaking intro: "${introText.slice(0, 60)}..."`);
+      onSpeak?.(introText, () => {
+        if (!mountedRef.current) return;
+        console.log('[QUIZ] Intro complete — starting Q1');
+        setIntroSpoken(true);
+      });
+    } else {
+      // No guideText — skip straight to Q1
+      setIntroSpoken(true);
+    }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── When question changes: speak question → options + prefetch next ─────────
+  // For Q1 (qIdx === 0), wait until the intro guideText has finished speaking.
   useEffect(() => {
+    if (qIdx === 0 && !introSpoken) return; // hold until intro completes
     const idx = qIdxRef.current;
     const q   = questions[idx];
     if (!q) return;
@@ -181,7 +204,7 @@ export default function MasteryQuiz({
     }
 
     return () => clearReadingTimers();
-  }, [qIdx]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [qIdx, introSpoken]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Reads all options for the current question in sequence.
   // capturedIdx is the qIdx at the time readOptions was scheduled — guards against
