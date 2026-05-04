@@ -1,0 +1,231 @@
+const SpanishExplorerL02Screens = {
+  lessons: [
+    {
+      id:        'sp-6-8-02',
+      subjectId: 'languages',
+      title:     'Números y Colores — Numbers and Colors',
+      guideId:   'luna',
+      xpReward:  50,
+      screens: [
+        {
+          id:        'sp02-welcome',
+          type:      'welcome',
+          guideText: `Numbers are everywhere, {name} — in markets and addresses, in ages and prices and scores. And colors paint everything you see. Today Luna is going to give you both. By the end of this lesson, you'll be able to count to twenty and name the world around you in Spanish.`,
+        },
+        {
+          id:            'sp02-mag-1',
+          type:          'magazine',
+          section:       1,
+          totalSections: 4,
+          headline:      `Counting in Spanish Feels Like Music`,
+          paragraphs: [
+            `The first ten numbers in Spanish are the foundation of everything that comes after. You probably already know one (uno — OO-noh) from the card game. The early numbers are short and musical: dos, tres, cuatro, cinco. By the time you reach ten (diez — DYEHS), you can count anything.`,
+            `Notice that five (cinco — SINK-oh) starts with a c followed by i. In Spanish, c before e or i makes a soft s sound — so it's SINK-oh, not KIN-koh. This rule applies to many Spanish words, and once you know it, the language opens up.`,
+            `Learning to count in Spanish isn't just about numbers — it's about having a conversation. You can tell someone your age, name a price, or describe how many of something you have. Uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez. Ten numbers, a world of possibilities.`,
+          ],
+          image:        `/explorer-assets/languages/sp02-magazine-1.png`,
+          imageCaption: `Numbers uno through diez illustrated in colorful tiles`,
+          vocab: [
+            {
+              word:        `uno`,
+              definition:  `One in Spanish — the starting point of every count.`,
+              audioPrompt: `Uno — OO-noh — one. You already know this word, {name}. You've heard it in card games, in counting, in songs. Uno, dos, tres — and you're already counting in a language spoken by 500 million people. OO-noh. Say it clean: uno.`,
+            },
+            {
+              word:        `cinco`,
+              definition:  `Five in Spanish — halfway to ten.`,
+              audioPrompt: `Cinco — SINK-oh — five, {name}. Five fingers on one hand: cinco dedos. Notice the c before i: in Spanish, c before e or i makes a soft s sound. So cinco is SINK-oh, not KIN-koh. Cinco. Count to five: uno, dos, tres, cuatro, cinco.`,
+            },
+            {
+              word:        `diez`,
+              definition:  `Ten in Spanish — the first big milestone in counting.`,
+              audioPrompt: `Diez — DYEHS — ten, {name}. One syllable — say it in one quick breath: DYEHS. From uno to diez, you have everything you need to count ten things in any of the twenty countries where Spanish is spoken. DYEHS — diez.`,
+            },
+          ],
+        },
+        {
+          id:            'sp02-mag-2',
+          type:          'magazine',
+          section:       2,
+          totalSections: 4,
+          headline:      `Spanish Numbers Have Hidden Patterns`,
+          paragraphs: [
+            `Eleven through fifteen are their own words in Spanish: once, doce, trece, catorce, quince. Each one is direct — no parts to assemble, just memorize the sound. Once, doce, trece, catorce, quince. Say them fast and they have a rhythm.`,
+            `Starting with sixteen, Spanish numbers become compound — built from ten (diez) plus and (i) plus the unit. Sixteen is dieciséis: diez-i-séis. Seventeen is diecisiete. Once you see the pattern, twenty numbers become five. The language is always giving you shortcuts.`,
+            `Fifteen (quince — KEEN-seh) holds special significance in Latin American culture. The quinceañera is a celebration for a girl's fifteenth birthday — a milestone marking the passage from childhood to young adulthood. The number quince sits right inside the word. Language carries life inside it.`,
+          ],
+          image:        `/explorer-assets/languages/sp02-magazine-2.png`,
+          imageCaption: `Numbers from once to veinte arranged in a colorful grid`,
+          vocab: [
+            {
+              word:        `once`,
+              definition:  `Eleven in Spanish — the first number after ten.`,
+              audioPrompt: `Once — OHN-seh — eleven, {name}. Don't read it like the English word "once" — in Spanish it's two syllables: OHN-seh. Say it twice, quickly: once, once. After diez comes once, and you're counting through the teens. OHN-seh.`,
+            },
+            {
+              word:        `quince`,
+              definition:  `Fifteen in Spanish — the number inside "quinceañera."`,
+              audioPrompt: `Quince — KEEN-seh — fifteen, {name}. You may know it from the quinceañera — the celebration of a girl's fifteenth birthday. Quince is the fifteen right inside that word. KEEN-seh. One word, many connections. KEEN-seh — quince.`,
+            },
+            {
+              word:        `veinte`,
+              definition:  `Twenty in Spanish — the first major counting milestone.`,
+              audioPrompt: `Veinte — VAIN-teh — twenty, {name}. The v in Spanish often sounds soft, close to a b. VAIN-teh. Twenty is where the first big milestone sits: uno through veinte covers ages, prices, addresses. You can count to twenty in Spanish — that's enormous. VAIN-teh — veinte.`,
+            },
+          ],
+        },
+        {
+          id:            'sp02-mag-3',
+          type:          'magazine',
+          section:       3,
+          totalSections: 4,
+          headline:      `Colors Light Up the Spanish World`,
+          paragraphs: [
+            `Colors are among the first things children name in any language. In Spanish, the color words feel vivid: red (rojo — ROH-hoh), blue (azul — ah-SOOL), yellow (amarillo — ah-mah-REE-yoh). Each one sounds a little like what it describes.`,
+            `One thing to know about Spanish colors: most of them agree with the noun they describe. Rojo becomes roja for feminine nouns — un carro rojo (a red car), una rosa roja (a red rose). Azul stays the same for both — it doesn't change. This is the gender-agreement system, and you'll see it everywhere.`,
+            `Some Spanish color words have surprising histories. Azul came into Spanish from Arabic — a reminder that Spanish absorbed words from many languages over centuries of contact and exchange. Every word carries its journey.`,
+          ],
+          image:        `/explorer-assets/languages/sp02-magazine-3.png`,
+          imageCaption: `A painter's palette with Spanish color names labeled on each swatch`,
+          vocab: [
+            {
+              word:        `rojo`,
+              definition:  `Red in Spanish — one of the most satisfying color words to say aloud.`,
+              audioPrompt: `Rojo — ROH-hoh — red, {name}. The j in Spanish makes a soft h sound, like a breath. ROH-hoh. Rojo for masculine nouns, roja for feminine — un carro rojo, una rosa roja. Spanish colors dress to match their nouns. ROH-hoh — rojo.`,
+            },
+            {
+              word:        `azul`,
+              definition:  `Blue in Spanish — borrowed from Arabic, it stays the same for any noun.`,
+              audioPrompt: `Azul — ah-SOOL — blue, {name}. This word came from Arabic — a reminder that Spanish absorbed words from many languages. The z makes a soft s sound. And azul is the same for masculine and feminine — it never changes. Ah-SOOL — azul.`,
+            },
+            {
+              word:        `amarillo`,
+              definition:  `Yellow in Spanish — four vivid syllables.`,
+              audioPrompt: `Amarillo — ah-mah-REE-yoh — yellow, {name}. Four syllables, bright as the color itself. The double-l makes a y sound: REE-yoh. Amarillo is also a city in Texas — named by Spanish speakers who saw the yellow wildflowers there. Language carries history. Ah-mah-REE-yoh.`,
+            },
+          ],
+        },
+        {
+          id:            'sp02-mag-4',
+          type:          'magazine',
+          section:       4,
+          totalSections: 4,
+          headline:      `Spanish Describes the World Around You`,
+          paragraphs: [
+            `Once you have numbers and colors, you're ready for adjectives — the words that describe size, shape, and beauty. In Spanish, adjectives usually come after the noun they describe, not before: a big house is una casa grande, not una grande casa.`,
+            `Big (grande — GRAHN-deh) works for both masculine and feminine nouns — una fiesta grande, un árbol grande. Grande stays grande. The e at the end is spoken: GRAHN-deh, not GRAHN.`,
+            `Small (pequeño — peh-KEN-yoh) uses the ñ — that n with a tilde makes a ny sound, like the ny in canyon. And Spanish takes small even further: add -ito or -ita to make something tiny or to add affection. Pequeñito, pequeñita — a little sweetness built right into the word.`,
+          ],
+          image:        `/explorer-assets/languages/sp02-magazine-4.png`,
+          imageCaption: `Objects of different sizes labeled with Spanish adjectives`,
+          vocab: [
+            {
+              word:        `grande`,
+              definition:  `Big or great in Spanish — works for both masculine and feminine nouns.`,
+              audioPrompt: `Grande — GRAHN-deh — big or great, {name}. You know this word from coffee shops — but in Spanish it means large or great. Una fiesta grande. Un árbol grande. The e at the end is spoken: GRAHN-deh, not GRAHN. Grande — say it.`,
+            },
+            {
+              word:        `pequeño`,
+              definition:  `Small or little in Spanish — the ñ makes a "ny" sound.`,
+              audioPrompt: `Pequeño — peh-KEN-yoh — small or little, {name}. The ñ makes a ny sound, like the ny in canyon. Peh-KEN-yoh. Spanish speakers also say pequeñito — very small, or someone they love. The -ito ending makes things small and sweet. Pequeño — try it.`,
+            },
+            {
+              word:        `bonito`,
+              definition:  `Beautiful or pretty in Spanish — can describe places, things, and moments.`,
+              audioPrompt: `Bonito — boh-NEE-toh — beautiful or pretty, {name}. It can describe places, things, and moments. Qué bonito — how beautiful. The -ito ending is already built in: bon-ito. Spanish layers feeling into the shape of words. Boh-NEE-toh — bonito. Say it like you mean it.`,
+            },
+          ],
+        },
+        {
+          id:            'sp02-game',
+          type:          'interactive',
+          guideText:     `Match each Spanish word to its English meaning, {name}!`,
+          columnHeaders: ['Spanish', 'Meaning'],
+          items: [
+            { id: 'uno-i',    label: 'uno',    correctMatch: 'one' },
+            { id: 'rojo-i',   label: 'rojo',   correctMatch: 'red' },
+            { id: 'grande-i', label: 'grande', correctMatch: 'big' },
+            { id: 'veinte-i', label: 'veinte', correctMatch: 'twenty' },
+          ],
+          buckets: [
+            { id: 'one',    label: 'one',    color: '#60A5FA' },
+            { id: 'red',    label: 'red',    color: '#F87171' },
+            { id: 'big',    label: 'big',    color: '#34D399' },
+            { id: 'twenty', label: 'twenty', color: '#FBBF24' },
+          ],
+        },
+        {
+          id:        'sp02-quiz',
+          type:      'quiz',
+          guideText: `¡Vamos, {name}! Show Luna what you've learned!`,
+          questions: [
+            {
+              id:          'q1',
+              format:      'multiple-choice',
+              text:        `How do you say "twenty" in Spanish?`,
+              options:     ['quince', 'once', 'veinte', 'diez'],
+              answer:      'veinte',
+              explanation: `Veinte (VAIN-teh) is twenty in Spanish — the first major counting milestone.`,
+            },
+            {
+              id:          'q2',
+              format:      'multiple-choice',
+              text:        `What does "azul" mean?`,
+              options:     ['red', 'yellow', 'blue', 'green'],
+              answer:      'blue',
+              explanation: `Azul (ah-SOOL) means blue — borrowed from Arabic, it stays the same for any noun it describes.`,
+            },
+            {
+              id:          'q3',
+              format:      'multiple-choice',
+              text:        `What does "pequeño" mean?`,
+              options:     ['tall', 'beautiful', 'big', 'small'],
+              answer:      'small',
+              explanation: `Pequeño (peh-KEN-yoh) means small or little — the ñ makes a "ny" sound like the ny in canyon.`,
+            },
+            {
+              id:          'q4',
+              format:      'true-false',
+              text:        `In Spanish, adjectives usually come after the noun they describe.`,
+              answer:      'True',
+              explanation: `Yes — Spanish adjectives usually follow the noun. "A big house" is una casa grande, not una grande casa.`,
+            },
+            {
+              id:          'q5',
+              format:      'multiple-choice',
+              text:        `Complete: "Tengo ___ años" (I am ten years old).`,
+              options:     ['cinco', 'diez', 'once', 'veinte'],
+              answer:      'diez',
+              explanation: `Diez (DYEHS) is ten. In Spanish, you "have" years rather than "being" an age — tengo diez años.`,
+            },
+            {
+              id:          'q6',
+              format:      'multiple-choice',
+              text:        `Which correctly describes "two red apples" in Spanish?`,
+              options:     ['dos rojas manzanas', 'rojas manzanas dos', 'dos manzanas rojas', 'manzanas dos rojas'],
+              answer:      'dos manzanas rojas',
+              explanation: `Dos manzanas rojas — number first, then the noun, then the adjective (which matches the feminine noun manzanas).`,
+            },
+          ],
+        },
+        {
+          id:              'sp02-realworld',
+          type:            'real-world',
+          guideText:       `Let's bring numbers and colors into your day, {name}!`,
+          familyAdventure: `Count everything you can see in Spanish: count the steps on the stairs, the books on a shelf, the chairs around the table. Challenge a family member — hold up fingers and say the number in Spanish. Then point to objects around the house and name their color: ¡Rojo! ¡Azul! ¡Amarillo!`,
+          creativePrompt:  `Draw five objects and label each one with a number in Spanish — uno, dos, tres, cuatro, cinco. Then color each object and write its Spanish color name underneath. Bonus: write the sentence "Tengo ___ [object] [color]" for each one.`,
+        },
+        {
+          id:        'sp02-celebration',
+          type:      'celebration',
+          message:   `¡Excelente, {name}! You can count to twenty and paint the world in Spanish colors. Luna is so proud of you — every time you count something or spot a color today, try naming it in Spanish. The world is already looking different. ¡Hasta la próxima!`,
+          badge:     'languages-l02',
+          badgeName: 'Color Counter',
+          xpEarned:  50,
+        },
+      ],
+    },
+  ],
+};
+
+export default SpanishExplorerL02Screens;
