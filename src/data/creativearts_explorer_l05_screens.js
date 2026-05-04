@@ -38,6 +38,11 @@ const CA_L05 = {
           ],
           image: `/explorer-assets/creative-arts/l05-magazine-1.png`,
           imageCaption: `Western music uses just 12 notes — all music ever written comes from this same set, arranged differently`,
+          vocab: [
+            { word: `pitch`, definition: `How high or low a musical note sounds — determined by how fast the sound wave vibrates, with faster vibrations creating higher pitches.`, audioPrompt: `Pitch is the highness or lowness of a sound, {name}. A hummingbird's wings vibrate hundreds of times per second — that's a high pitch. A bass guitar string vibrates slowly — that's low. When you sing up a scale, each note is a faster vibration than the one before it. All of music is built from our ability to hear and reproduce those differences in vibration speed. It's remarkable when you think about it.` },
+            { word: `octave`, definition: `The distance from one note to the next note with the same name but twice the vibration frequency — like two versions of the same sound, one higher, one lower.`, audioPrompt: `An octave is the same sound in a different register, {name}. Middle C and the C above it share a name and a quality — they feel related, almost like the same note — but one is higher. That's because the higher note vibrates exactly twice as fast. Sing "Somewhere Over the Rainbow" — the first two notes are an octave apart. You've known octaves your whole life, even if you didn't have a word for them.` },
+            { word: `note`, definition: `A sound with a specific pitch and duration — the basic building block of all music, from the simplest melody to the most complex symphony.`, audioPrompt: `A note is really just a decision about two things, {name} — what pitch to play, and for how long. That's it. And from those two decisions — pitch and duration — every piece of music that has ever existed was built. Every symphony, every pop song, every lullaby. The same 12 pitches, arranged in different orders and durations. Muse finds this endlessly astonishing.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L05 = {
           ],
           image: `/explorer-assets/creative-arts/l05-magazine-2.png`,
           imageCaption: `Beat, tempo, note durations, rests — rhythm is what makes music move through time`,
+          vocab: [
+            { word: `beat`, definition: `The steady underlying pulse of a piece of music — what you tap your foot to, and what all rhythm is organized around.`, audioPrompt: `Close your eyes and listen to any song, {name}, and you'll feel it: the steady pulse underneath everything. That's the beat — music's heartbeat. Before melody, before harmony, before lyrics, there is the beat. It's the invisible structure that all rhythm hangs on. When a song makes you nod your head or tap your foot, you're feeling the beat before you even know you are.` },
+            { word: `tempo`, definition: `How fast or slow the beat moves — measured in beats per minute (BPM), which determines whether a piece feels urgent, relaxed, triumphant, or gentle.`, audioPrompt: `Tempo is the speed of the heartbeat, {name}. A slow tempo — sixty beats per minute — feels like a quiet walk. A hundred and sixty beats per minute feels like a sprint. The same melody at different tempos becomes a completely different emotional experience. Composers choose tempo as carefully as they choose notes, because speed is part of the feeling. Fast isn't always exciting. Slow isn't always sad. But tempo shapes everything.` },
+            { word: `measure`, definition: `A unit of music that groups a set number of beats together — also called a bar — which gives music its regular, repeating structure.`, audioPrompt: `A measure is like a breath in music, {name} — a repeating unit that groups beats together and gives the music its structure. Most pop music groups four beats per measure: one, two, three, four — one, two, three, four. It's so regular that when a measure is cut short or stretched, you feel it immediately. Count along to your favorite song and you'll feel the measure organizing itself around you.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L05 = {
           ],
           image: `/explorer-assets/creative-arts/l05-magazine-3.png`,
           imageCaption: `Melody rises, falls, creates tension and release — it's the part your brain latches onto and remembers`,
+          vocab: [
+            { word: `melody`, definition: `A sequence of notes played one at a time — the singable, memorable line that rises and falls through a piece of music.`, audioPrompt: `Melody is the part of music you carry home with you, {name}. It's what you hum in the shower. A melody has shape — it rises toward tension, falls toward resolution, steps and leaps and pauses. The melody of a song is a journey, and the brain loves a journey with direction. That's why melodies that "go somewhere" feel satisfying, and ones that wander without resolve leave you unsettled.` },
+            { word: `interval`, definition: `The distance in pitch between two notes — small intervals feel smooth and connected, while large intervals feel dramatic or surprising.`, audioPrompt: `An interval is the space between two notes, {name} — and the size of that space completely changes the feeling. Small intervals, like moving up one step, feel smooth and connected. Large intervals, like jumping up five or eight steps, feel bold or surprising. Composers choose intervals deliberately: a tender lullaby moves in small, gentle steps. A dramatic theme leaps. The melody of your favorite song is built from interval choices made by someone who understood exactly how each leap would feel.` },
+            { word: `phrase`, definition: `A musical sentence — a short melody that feels like it has a beginning, middle, and end, making up part of a longer piece.`, audioPrompt: `A musical phrase is like a sentence, {name} — it starts, goes somewhere, and arrives somewhere. Most melodies are built from phrases: two bars, four bars, eight bars, each one a complete musical thought. Some phrases end with a sense of arrival (a period). Some end with a sense of question (a comma). The call-and-response structure of so many songs is really just phrases answering each other. Listen for it and suddenly you hear conversations inside music.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L05 = {
           ],
           image: `/explorer-assets/creative-arts/l05-magazine-4.png`,
           imageCaption: `Harmony is notes sounding together — consonant combinations feel pleasing, dissonant ones create tension`,
+          vocab: [
+            { word: `harmony`, definition: `Two or more notes sounded at the same time — which can feel consonant (pleasing) or dissonant (tense) depending on how they interact.`, audioPrompt: `Harmony is what happens when notes sound together, {name} — and the result can feel like a warm hug or a held breath, depending on which notes combine. Some combinations feel resolved and complete. Others feel unfinished, restless, like they're asking a question. Music moves through tension and release using harmony. It's one of the most emotionally direct things in all of art.` },
+            { word: `chord`, definition: `Three or more notes played at the same time to create harmony — the building blocks of a song's harmonic foundation.`, audioPrompt: `A chord is really just a decision about which notes to play at once, {name}. Three notes together, chosen carefully, can feel sunny, or mysterious, or heartbreaking — sometimes all three, depending on context. Most songs in popular music are built from just three or four chords. The chord progression — the order they appear in — is what creates the emotional journey. Change the chords and you change the whole feeling of a song.` },
+            { word: `consonance`, definition: `A combination of notes that sounds stable, resolved, and pleasing to the ear — as opposed to dissonance, which creates tension.`, audioPrompt: `Consonance is the feeling of arrival, {name} — the moment when notes combine and the ear relaxes. It's what you feel at the end of a song, when everything resolves. Dissonance creates tension; consonance releases it. Music breathes between the two — it needs dissonance to make consonance feel like relief. A song that never had tension would never have release, and without release, the arrival means nothing.` },
+          ],
         },
 
         {

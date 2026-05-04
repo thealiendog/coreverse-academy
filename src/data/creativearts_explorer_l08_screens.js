@@ -38,6 +38,11 @@ const CA_L08 = {
           ],
           image: `/explorer-assets/creative-arts/l08-magazine-1.png`,
           imageCaption: `Characters we love have wants, needs, flaws, and room to grow — perfection is less interesting than struggle`,
+          vocab: [
+            { word: `objective`, definition: `What a character wants — the goal driving their actions through the story — which creates motivation, momentum, and something for the audience to root for.`, audioPrompt: `Every compelling character wants something, {name}. The objective is that want — the thing driving them forward through every scene. Harry Potter wants to belong. Katniss wants to protect her sister. The objective doesn't have to be dramatic on its surface. It just has to be real and deep enough that the character will risk something to pursue it. Give a character a true objective, and the story starts to generate itself.` },
+            { word: `arc`, definition: `The internal journey of a character through a story — the change they undergo from beginning to end, shaped by the challenges and choices they face.`, audioPrompt: `A character arc is a journey from one version of a person to another, {name}. At the start, the character believes something or lacks something. By the end, they've changed — grown, broken, understood something they didn't before. The arc is what makes a story feel meaningful rather than just eventful. Things can happen to a character without an arc. But a character only truly lives in a story when the events change who they are.` },
+            { word: `flaw`, definition: `A weakness, fear, or mistaken belief in a character — what creates the internal struggle that drives their arc and makes them feel human.`, audioPrompt: `A perfect character is a boring character, {name} — and this is a truth storytellers have known for centuries. Flaws are what make characters feel human. They create the gap between who a character is and who they need to become. A flaw is not just a weakness — it's often a mistaken belief, a fear, or a defense that made sense once and has stopped serving them. The story tests that flaw until something has to give.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L08 = {
           ],
           image: `/explorer-assets/creative-arts/l08-magazine-2.png`,
           imageCaption: `Plot is a causal chain — each event causes the next, building toward a climax that demands a choice`,
+          vocab: [
+            { word: `inciting incident`, definition: `The event that disrupts the story's opening equilibrium and launches the character into the main action — the moment the story truly begins.`, audioPrompt: `The inciting incident is the moment, {name}, when the story's engine starts. The letter arrives at Privet Drive. Katniss volunteers in place of her sister. The flood sweeps through town. Before this moment, life was one way. After it, the character can't go back. Every story has an inciting incident — and when it's missing, the story feels like it never quite begins.` },
+            { word: `climax`, definition: `The point of maximum tension in a story — the moment where the character faces the hardest choice or the biggest challenge, after which nothing can be the same.`, audioPrompt: `The climax is the point of no return, {name} — the moment the whole story has been building toward. The hardest choice, the biggest confrontation, the moment where everything hangs on what the character does next. A great climax grows naturally from all the rising action before it. And it almost always demands something internal from the character — not just action, but growth, or sacrifice, or a finally-faced truth.` },
+            { word: `rising action`, definition: `The series of events and escalating complications that build tension between the inciting incident and the climax of a story.`, audioPrompt: `Rising action is the building, {name} — the sequence of obstacles, complications, and choices that push the character closer to the climax. Each event adds pressure. Each obstacle raises the stakes. Rising action is the longest part of most stories, and it's where character is truly revealed — not in who people say they are, but in what they choose to do when it keeps getting harder.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L08 = {
           ],
           image: `/explorer-assets/creative-arts/l08-magazine-3.png`,
           imageCaption: `Setting shapes character, enables plot, and carries theme — it's never just a backdrop`,
+          vocab: [
+            { word: `setting`, definition: `The time, place, and world of a story — which shapes character, enables plot, and carries the story's themes in ways no other element can.`, audioPrompt: `Setting isn't where the story happens, {name} — it's part of what the story is. Hogwarts doesn't just house Harry's adventures; it's the reason they can exist. Panem creates Katniss's impossible choice before she makes a single decision. When you build a setting, you're building a world with its own rules, pressures, and possibilities — and those rules generate story. The best settings are characters in their own right.` },
+            { word: `atmosphere`, definition: `The overall mood or feeling created by a story's setting, details, and tone — which shapes how the reader emotionally experiences the world of the story.`, audioPrompt: `Atmosphere is the feeling that soaks through every page, {name} — not described directly, but built from details. A door that creaks. Light through grimy windows. A character who walks quickly and doesn't look back. These details create atmosphere without ever announcing it. Great storytellers build atmosphere the way painters build mood: through accumulated specific choices, none of which announces itself, all of which add up to something unmistakable.` },
+            { word: `stakes`, definition: `What a character stands to gain or lose — the consequences that make the story matter and the audience care what happens next.`, audioPrompt: `Stakes are what makes the reader lean forward, {name}. They're the answer to the question: why does this matter? High stakes don't have to mean life and death — they just have to be real to the character. A friendship that might be lost. A choice that can't be undone. A truth that once said cannot be unsaid. When the reader believes in the stakes, they believe in the story. Without them, events happen but nothing is at risk.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L08 = {
           ],
           image: `/explorer-assets/creative-arts/l08-magazine-4.png`,
           imageCaption: `Conflict creates stakes and growth — layered external and internal conflict makes stories resonate deepest`,
+          vocab: [
+            { word: `conflict`, definition: `The opposing forces in a story that create tension, stakes, and the pressure that drives a character to change — without it, there is no story.`, audioPrompt: `Conflict is the engine of every story, {name}. Not violence, not cruelty — just opposing forces. What the character wants versus what stands in the way. Their belief versus the truth. Their fear versus what love is asking them to do. Without conflict, events happen but nothing is at stake. With it, every scene has direction and every choice has weight. Conflict is how stories create meaning.` },
+            { word: `internal conflict`, definition: `A struggle happening inside a character — between their fears and desires, their beliefs and their experience — which drives their emotional arc.`, audioPrompt: `Internal conflict is the most powerful kind, {name}, because it's the one the character can't escape. External problems can be solved by clever action. But a fear that lives inside you, a belief that's slowly being proved wrong, a love competing with a loyalty — these demand a different kind of resolution. The best stories resolve the external through the internal: the character's inner change is what makes the outer solution possible.` },
+            { word: `resolution`, definition: `The end of a story's conflict — the "new normal" that shows how the character and world have changed as a result of the events.`, audioPrompt: `Resolution is what shows you where the story landed, {name}. Not just whether the external problem was solved — but who the character became in solving it. Did they grow? Break? Understand something that changes them forever? Resolution doesn't have to be happy to be satisfying. It just has to feel earned — like the events actually changed something real, and we're seeing the world after that change.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const CA_L06 = {
           ],
           image: `/explorer-assets/creative-arts/l06-magazine-1.png`,
           imageCaption: `Vocal cords vibrate as air passes through — faster vibration means higher pitch, slower means lower`,
+          vocab: [
+            { word: `vocal cords`, definition: `Two small folds of tissue in the larynx that vibrate as air passes through them, producing the sound waves that become your voice.`, audioPrompt: `Your voice comes from two tiny folds of tissue in your throat, {name} — your vocal cords. When air from your lungs passes through them, they vibrate, and those vibrations become sound. Tighten them and you get higher pitches. Loosen them and the pitch drops. It's the same principle as a guitar string: tighter means higher. Your voice is a living instrument you've been playing your whole life.` },
+            { word: `vibration`, definition: `The rapid back-and-forth movement that creates sound waves — faster vibration produces higher pitch, slower vibration produces lower pitch.`, audioPrompt: `Every sound you've ever heard, {name}, began as a vibration. Your vocal cords vibrate. A guitar string vibrates. A drum skin vibrates. Sound is vibration moving through air until it reaches your ear. What changes the pitch is the speed of that vibration. This is why a hummingbird's wings sound higher than a bee's — faster vibration, higher pitch. Your voice is just a very particular, very personal way of creating vibrations.` },
+            { word: `larynx`, definition: `The structure in your throat that houses your vocal cords — also called the voice box — where air from the lungs is turned into sound.`, audioPrompt: `The larynx is your voice box, {name} — the small structure in your throat where breathing becomes speaking, becomes singing. You can feel it if you place a hand on your throat and hum: that's the larynx vibrating. When voices change during adolescence, it's the larynx growing — which temporarily shifts how the vocal cords can produce sound. Every voice, in its own larynx, is completely unique. No two are exactly alike.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L06 = {
           ],
           image: `/explorer-assets/creative-arts/l06-magazine-2.png`,
           imageCaption: `The diaphragm is the engine of the voice — deep belly breathing gives singers control and sustain`,
+          vocab: [
+            { word: `diaphragm`, definition: `The dome-shaped muscle beneath the lungs that controls breathing — the engine of singing, giving you more air and more control than shallow chest breathing.`, audioPrompt: `Place a hand on your belly and take a deep breath, {name}. Does your belly move out? That's your diaphragm doing its job — pulling air deep into your lungs. Singers train this way because diaphragmatic breathing gives far more air — and far more control — than shallow chest breathing. It's the foundation of every sustained note, every powerful phrase, every whisper that fills a theater.` },
+            { word: `breath support`, definition: `The controlled flow of air from the diaphragm that powers and sustains singing — what allows a note to be held steadily without wavering or running out.`, audioPrompt: `Breath support is what holds a note up, {name}. Without it, a long note wavers, runs out of air, or loses its quality halfway through. With it, a singer can hold a phrase steady from beginning to end, controlling exactly how much air reaches the vocal cords at every moment. All the other skills of singing — pitch, resonance, expression — build on breath support as their foundation. It's the engine everything else runs on.` },
+            { word: `sustain`, definition: `The ability to hold a note steady and full for a long duration — made possible by controlled diaphragmatic breathing and good breath support.`, audioPrompt: `Sustain is the ability to hold, {name} — to keep a note full and alive without it fading or cracking. When a singer holds a long note at the climax of a song and it just keeps going, full and resonant all the way through, that's sustain. It's not just breath — it's controlled breath, directed with precision. Practicing sustain builds both physical strength and the mental focus to keep a sound steady under pressure.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L06 = {
           ],
           image: `/explorer-assets/creative-arts/l06-magazine-3.png`,
           imageCaption: `Chest voice resonates lower and fuller; head voice sits higher and lighter — singers move between both`,
+          vocab: [
+            { word: `resonance`, definition: `The amplification and enriching of the voice as sound vibrates through the chest, throat, mouth, and head cavities — what gives each voice its unique quality and fullness.`, audioPrompt: `Your voice resonates in your whole body, {name} — not just your throat. The chest, the sinuses, the mouth, the forehead: all of these are resonating chambers that amplify and color the sound. Hum a low note and feel your chest vibrate. Hum a high one and feel it buzz behind your nose. Singers learn to consciously direct resonance — sending sound into different spaces to create different qualities of tone.` },
+            { word: `chest voice`, definition: `The deeper, fuller vocal register felt resonating in the chest — the register most speaking voices use, and which provides richness and power in the lower range.`, audioPrompt: `When you speak normally, {name}, you're probably in chest voice — the register that resonates in your chest, feels grounded and full, and has weight and warmth in its lower range. Put a hand on your sternum and speak: you'll feel it vibrate. Singers build chest voice for power and depth. It's the foundation of a strong lower range and the register most people associate with a "full" sound.` },
+            { word: `placement`, definition: `Where a singer consciously directs the focus of their sound — forward into the face, into the chest, or into the head — to achieve a particular tone quality.`, audioPrompt: `Placement is about directing sound, {name}. Sing into your lips and teeth and the tone becomes bright and forward, easy to project. Let the sound sit too far back in the throat and it becomes muffled. Great singers think of "placing" their voice — imagining the sound landing at a specific point in the face or body — to produce exactly the tone quality a phrase calls for. It's a mental image that produces a physical result.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L06 = {
           ],
           image: `/explorer-assets/creative-arts/l06-magazine-4.png`,
           imageCaption: `Expression — dynamics, phrasing, tone colour — is what makes singing tell a story beyond the notes`,
+          vocab: [
+            { word: `dynamics`, definition: `The variation in volume in music — from very soft (pianissimo) to very loud (fortissimo) — which singers use to communicate emotion and shape a song's story.`, audioPrompt: `Dynamics are the volume of your feelings, {name}. A whispered phrase creates intimacy. A sudden full-voiced note creates power. The contrast between soft and loud in a performance is what creates drama and surprise — an unexpected drop to silence can be more emotionally powerful than the biggest note in the song. Singers who only sing at one volume, however beautifully, are telling only one shade of the story.` },
+            { word: `phrasing`, definition: `How a singer shapes the flow of a musical line — where to breathe, where to lean in, where to pull back — which determines how a song feels to the listener.`, audioPrompt: `Phrasing is the interpretation layer of singing, {name} — it's not what notes you sing but how you move between them. Where you take a breath. Which word you lean into. Whether a phrase builds toward its end or arrives early and then floats. Two singers can perform the same song with the same notes and produce completely different emotional experiences through phrasing alone. It's where the singer's personality shows.` },
+            { word: `tone color`, definition: `The quality or character of a vocal sound — whether it feels warm, bright, dark, breathy, or resonant — which a singer adjusts to match the mood of what they're singing.`, audioPrompt: `Tone color is the mood inside the note, {name}. The same pitch can sound warm or bright, breathy or full, intimate or projected — depending on how the singer shapes their sound. A dark tone color creates weight and gravity. A bright tone cuts through. A breathy quality creates vulnerability. Great singers shift tone color as a storytelling tool — not just matching the emotion, but creating it, note by note.` },
+          ],
         },
 
         {

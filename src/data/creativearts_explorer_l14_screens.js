@@ -38,6 +38,11 @@ const CA_L14 = {
           ],
           image: `/explorer-assets/creative-arts/l14-magazine-1.png`,
           imageCaption: `Clothing communicates before you speak — there is no neutral choice in what you wear`,
+          vocab: [
+            { word: `visual language`, definition: `A system of visual signals — colors, shapes, styles, symbols — that communicates meaning the way spoken or written language does, often before any words are exchanged.`, audioPrompt: `Clothing is a visual language, {name} — one that speaks before you open your mouth. A uniform says "I belong to this group." A specific combination of colors and cuts sends signals that insiders read instantly. Even the choice to wear completely plain, unremarkable clothes is a statement: I don't want my clothes to do the talking. There is no neutral option. Every choice communicates something, whether you intend it or not.` },
+            { word: `subculture`, definition: `A group within a larger culture that shares specific values, practices, and often a distinctive visual style — communicating group identity through appearance.`, audioPrompt: `Think about the visual identity of any subculture, {name}: the leather jackets of punk, the specific sneakers of hip-hop, the all-black of goth. These aren't just fashion preferences — they're statements of belonging, values, and resistance. Subcultures develop their own visual languages, and the codes can be very specific. Wearing the right thing in the right way says: I know what this means. I am part of this.` },
+            { word: `code`, definition: `In fashion and visual communication, a shared system of meaning where specific garments, colors, or styles signal particular group memberships, social roles, or messages.`, audioPrompt: `Fashion has codes, {name} — shared signals that people within a community recognize and read instantly. The style of a sneaker. The cut of a jacket. The color combination on a team kit. A code is only meaningful to those who know the system: it's a shared language between people who understand what it means. Learning to read fashion codes is learning to see that clothing is always a form of communication, whether the wearer knows it or not.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L14 = {
           ],
           image: `/explorer-assets/creative-arts/l14-magazine-2.png`,
           imageCaption: `Silhouette, proportion, fabric, colour, texture, details — great design makes them all invisible by making them seamless`,
+          vocab: [
+            { word: `silhouette`, definition: `The overall outline or shape of a garment as seen from the outside — which creates the first visual impression and communicates the mood and intention of a design.`, audioPrompt: `Before color, before texture, before any detail — a garment's silhouette is what you see first, {name}. The A-line flare of a 1950s dress. The boxy oversized shoulder of the 1980s. The long, lean column of a contemporary minimal look. Silhouette communicates the era, the attitude, the mood of a design at a glance. Fashion designers often begin with the silhouette — the shape in space — and fill it in from there.` },
+            { word: `drape`, definition: `How a fabric falls and moves with the body — its flow, weight, and behavior — which is determined by the material's fiber, weave, and construction.`, audioPrompt: `Different fabrics move completely differently, {name}. Silk drapes in long, fluid falls that catch light and shift with every movement. Denim holds its shape, structured and resistant. Chiffon floats. Wool hangs with weight. Drape is how a material behaves once it leaves the hanger and begins responding to a body moving through the world. Fashion designers choose fabrics partly for color, but as much for drape — how the material will live on a person.` },
+            { word: `proportion`, definition: `The size relationship between different parts of a garment — and between the garment and the person wearing it — which determines whether a design feels balanced and intentional.`, audioPrompt: `Proportion in fashion is about relationships, {name} — how the top relates to the bottom, how the sleeve length relates to the torso, how the garment's volume relates to the wearer's frame. A garment with balanced proportion seems to work without the wearer knowing why. One with awkward proportion makes every part visible in the wrong way. Great designers feel proportion intuitively, then learn to execute it technically.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L14 = {
           ],
           image: `/explorer-assets/creative-arts/l14-magazine-3.png`,
           imageCaption: `From haute couture to fast fashion — understanding the system helps you make more intentional choices within it`,
+          vocab: [
+            { word: `haute couture`, definition: `Extremely expensive, custom-made, one-of-a-kind fashion — sewn by hand to the client's exact measurements — that functions as high art as much as clothing.`, audioPrompt: `Haute couture is fashion as sculpture, {name} — one-of-a-kind garments made entirely by hand, fitted precisely to a single person's measurements, sometimes requiring hundreds of hours of work. Almost no one can wear them, and that's partly the point: they're art objects, proposals about what clothing can be. Their influence travels down through the system, shaping what eventually becomes available at every other level. Couture is fashion thinking out loud.` },
+            { word: `fast fashion`, definition: `Mass-produced clothing made cheaply and quickly to reflect current trends — which makes fashion accessible but at significant cost to the environment and to garment workers.`, audioPrompt: `Fast fashion moves at the speed of trend, {name} — new styles every week, low prices, designed to be replaced quickly rather than kept for years. That accessibility is real. But the costs are also real: vast amounts of clothing ending up in landfill, production that often creates difficult conditions for the people who make it. Understanding how the system works doesn't mean rejecting it — it means making more intentional choices within it.` },
+            { word: `sustainable fashion`, definition: `Clothing designed with consideration for its environmental and social impact — prioritizing durable materials, ethical production, and the full lifecycle of a garment.`, audioPrompt: `Sustainable fashion asks what happens to a garment across its whole life, {name} — where the materials came from, who made it and under what conditions, how long it will last, and what happens to it when it's no longer worn. It's not just about buying "eco" labels. It's a way of thinking about clothing as something with a story before and after you own it. Choosing to buy less, choose better, and keep longer is part of what sustainable fashion asks for.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L14 = {
           ],
           image: `/explorer-assets/creative-arts/l14-magazine-4.png`,
           imageCaption: `Style is yours — fashion is what's trending; style is the visual language that's authentically you`,
+          vocab: [
+            { word: `personal style`, definition: `The consistent visual language that is authentically yours — distinct from fashion, which is what's trending — built from the choices you make regardless of what's current.`, audioPrompt: `Fashion tells you what's trending, {name}. Style is what you actually choose — the consistent thread that runs through how you dress regardless of what season it is or what the magazines say. The most stylish people aren't always the most fashionable. They're the most intentional: they know what feels like them, and they wear it with conviction. Developing personal style is a creative practice — one that evolves through your whole life.` },
+            { word: `statement piece`, definition: `A single garment or accessory that expresses something specific and intentional about who you are — designed to be noticed and to anchor the look around it.`, audioPrompt: `A statement piece is the part of an outfit that says something, {name} — a bright coat, an unexpected shoe, a piece of jewelry that carries meaning. It doesn't need to be expensive or elaborate. It just needs to be intentional: chosen because it expresses something true about who you are at this point in your life. The rest of the outfit can be quieter. The statement piece does the talking.` },
+            { word: `intentional`, definition: `Chosen deliberately and consciously — in fashion, making decisions about what to wear with awareness and purpose rather than habit or external pressure.`, audioPrompt: `Intentional dressing means making choices, {name} — not just wearing whatever's easiest or whatever everyone else is wearing, but asking: what do I actually want to say today? What feels right? What do I actually love? It doesn't have to be complicated. Intentionality just means the choice is yours, made consciously, expressing something real. That awareness is what makes personal style possible — and it's a creative act, every single morning.` },
+          ],
         },
 
         {

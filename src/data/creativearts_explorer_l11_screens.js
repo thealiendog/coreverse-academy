@@ -38,6 +38,11 @@ const CA_L11 = {
           ],
           image: `/explorer-assets/creative-arts/l11-magazine-1.png`,
           imageCaption: `Theater is live, ephemeral, and collaborative — each performance is unrepeatable and made by many hands`,
+          vocab: [
+            { word: `live performance`, definition: `Art that happens in real time in front of an audience — unrepeatable, with no retakes, where the energy between performers and audience creates something that a recording can never fully capture.`, audioPrompt: `Every filmed performance can be rewound, {name}. Live theater cannot. It exists for the duration of the performance and then it's gone — unrepeatable, unique in its moment. The audience is part of it: their laughter, their silence, their held breath. That's what live performance offers that no other art form can: something true, shared, happening right now, once only. That's why theater has existed in every human culture since the beginning.` },
+            { word: `ephemeral`, definition: `Lasting only a short time and not able to be captured or repeated — what makes live performance uniquely precious and different from recorded art.`, audioPrompt: `Ephemeral means it disappears, {name} — and theater is deliberately, beautifully ephemeral. The performance that happens tonight will never be exactly that performance again. Different audience energy. A different pause. Something unplanned that becomes the best moment of the run. This is what some people find frustrating about live art and what others find sacred about it: it exists fully only in the moment it happens.` },
+            { word: `collaborative`, definition: `Made together by many people — actors, directors, designers, stagehands, and the audience — each contributing to the final experience that none could create alone.`, audioPrompt: `Theater is never made alone, {name}. The script, the direction, the design, the performance, the audience — all of it combines into something that couldn't exist without every part. An actor's great performance in a badly designed space diminishes. A stunning set with poor acting disappears. Collaboration in theater isn't compromise — it's the whole point. The art form is built from many people trusting each other to serve something larger than any one of them.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L11 = {
           ],
           image: `/explorer-assets/creative-arts/l11-magazine-2.png`,
           imageCaption: `Truthful acting pursues an objective and hits obstacles — it doesn't perform emotions from the outside`,
+          vocab: [
+            { word: `truthfulness`, definition: `The foundation of great acting — genuinely believing and responding to the character's situation rather than performing emotions from the outside for the audience's benefit.`, audioPrompt: `Truthfulness is the difference between acting and performing, {name}. Performing announces the emotion — look at how sad I am. Acting lives inside the situation so fully that the emotion emerges on its own. An audience can tell the difference even if they can't name it. The performance that moves you is the one where the actor believes it. That internal truth travels across the distance between stage and seat and lands as real.` },
+            { word: `obstacle`, definition: `What gets in the way of a character achieving their objective — the force or complication that creates conflict and makes acting something more than moving and speaking lines.`, audioPrompt: `Without obstacles, a character just gets what they want — and that's not a scene, {name}, it's a list. The obstacle is what creates drama: something or someone standing between the character and what they need. An actor who plays only the objective becomes mechanical. An actor who feels the obstacle — who actively pushes against it — creates the tension the audience leans forward to resolve. The obstacle is where the acting happens.` },
+            { word: `action`, definition: `In acting, what a character actively does to achieve their objective — the specific, playable verb that gives an actor a real, concrete thing to pursue in each moment.`, audioPrompt: `"Sad" is not playable, {name} — it's a result, not a cause. But "trying to convince," "begging," "demanding," "comforting" — these are actions an actor can actually do, moment to moment. Acting teachers talk about playing actions rather than emotions because emotions follow from genuine action. When an actor pursues a clear, specific action, the emotion that results is authentic. That's the engine underneath every truthful scene.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L11 = {
           ],
           image: `/explorer-assets/creative-arts/l11-magazine-3.png`,
           imageCaption: `"Yes, and" — accept what your partner offers and build on it. Truth first, comedy second`,
+          vocab: [
+            { word: `improvisation`, definition: `Unscripted, spontaneous performance created in the moment — guided by "yes, and," deep listening, and genuine response to what scene partners do and say.`, audioPrompt: `Improvisation means making it up as you go, {name} — and the results are often more alive than scripted performance, because both actors are genuinely surprised. The secret is trust: you can't plan, so you have to listen and respond. Everything your partner does is an offer. Your job is to accept it and add to it. That complete attention to another person — that's the skill improv builds, and it's useful everywhere, not just on stage.` },
+            { word: `"yes, and"`, definition: `The foundational rule of improvisation — accept what your scene partner establishes ("yes") and add to it ("and") — which keeps the scene building forward rather than stalling.`, audioPrompt: `"Yes, and" is two words that unlock everything, {name}. In improv, you never deny what your partner creates. If they say "we're on the moon," you don't say "no we're not" — you say yes, and you add something. It keeps the world of the scene alive and growing. Off-stage, it's a way of listening that says: I take you seriously, and I'll build on what you're offering. Both in theater and in life, that's rare and powerful.` },
+            { word: `listening`, definition: `In performance, giving full, active attention to scene partners — responding to what they actually do rather than what you expected them to do — which creates truthful, spontaneous theater.`, audioPrompt: `Most people hear, {name}, but few people listen. In improv and in acting, listening is everything — it means being so present that you can respond to what actually happened, not what you expected. A great scene isn't two actors performing at each other. It's two people genuinely affecting each other. That requires real listening: the kind where your face changes because of what you heard, not because of what you planned to show.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L11 = {
           ],
           image: `/explorer-assets/creative-arts/l11-magazine-4.png`,
           imageCaption: `Stage fright is preparation energy — redirect it into your character's objective, and it becomes aliveness`,
+          vocab: [
+            { word: `stage fright`, definition: `The anxiety that performers feel before going on stage — nearly universal even among experienced professionals, and redirectable into presence and energy rather than paralysis.`, audioPrompt: `Stage fright visits almost every performer, {name} — even the ones who look completely calm. The racing heart, the dry mouth, the wanting to disappear. The key reframe is this: those feelings are your body preparing to perform, not warning you to stop. Redirect that energy into your character's objective — what does my character desperately need right now? — and it becomes presence instead of panic. The energy doesn't go away. It just finds a better use.` },
+            { word: `courage`, definition: `In performance, the willingness to be fully seen — to commit completely to a character or moment — without holding back or hiding behind self-consciousness.`, audioPrompt: `The actor's deepest tool is courage, {name} — the willingness to be fully seen. Not courage to be perfect or to be impressive, but to be genuinely present. To commit to a choice even if it might fail. To be vulnerable in front of strangers. This is what audiences feel when a performance lands: someone standing there who is not hiding. That quality of full presence, fully committed — that is what moves people.` },
+            { word: `presence`, definition: `In performance, the quality of being fully, attentively alive in the moment — connected to scene partners, responsive to the audience, without self-consciousness breaking the reality of the performance.`, audioPrompt: `Presence is the quality that makes you unable to look away from a certain performer, {name}, even when others are on stage. It's not loudness or beauty or technique — it's a quality of full aliveness. Total commitment to the moment. Nothing held back, nothing monitored from the outside. An actor with presence makes the audience feel they're seeing something real. That quality can be developed, through practice, through risk, through learning to trust the moment.` },
+          ],
         },
 
         {

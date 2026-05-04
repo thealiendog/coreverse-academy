@@ -38,6 +38,11 @@ const CA_L10 = {
           ],
           image: `/explorer-assets/creative-arts/l10-magazine-1.png`,
           imageCaption: `The rule of thirds places subjects at grid intersections — off-centre compositions feel more dynamic than centred ones`,
+          vocab: [
+            { word: `rule of thirds`, definition: `A compositional guideline that divides the frame into a 3×3 grid and places subjects near the intersection points — creating more dynamic, visually interesting images than centered compositions.`, audioPrompt: `The rule of thirds is a simple idea, {name}, that changes how you see a viewfinder. Divide the frame into a grid: two lines across, two lines down, nine squares. Your eye naturally gravitates toward the four intersection points. Put your subject there instead of dead center, and the image comes alive — it has breathing room, energy, somewhere to go. It's a guideline, not a law. Knowing when to break it is part of the art.` },
+            { word: `composition`, definition: `The arrangement of all elements within a photograph or artwork — what's included, excluded, and where everything is placed — which determines how the viewer's eye moves through the image.`, audioPrompt: `Composition is every decision about what goes where, {name}. What's in the frame and what isn't. Where the subject sits. What's in the foreground versus the background. The horizon line's position. Before you press a shutter or lift a brush, composition is the first and most powerful choice. A weak composition can undermine a beautiful subject. A strong one can make the ordinary extraordinary.` },
+            { word: `framing`, definition: `Using elements within a scene — a doorway, branches, a window — to create a natural frame around the subject, drawing the viewer's eye inward and adding depth.`, audioPrompt: `Framing is the art of finding a frame within the frame, {name}. A doorway around a figure. Branches arching over a landscape. A window around a face. These natural frames draw the eye inward, create depth, and give the image a sense that there's a world beyond what you can see. It's one of the most elegant compositional tools in photography — it doesn't announce itself, but it's always felt.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L10 = {
           ],
           image: `/explorer-assets/creative-arts/l10-magazine-2.png`,
           imageCaption: `Light direction, quality, and colour temperature shape mood — golden hour gives photographs their warmth and softness`,
+          vocab: [
+            { word: `golden hour`, definition: `The hour after sunrise and before sunset when natural light is warm, soft, and directional — widely considered the most beautiful light for outdoor photography.`, audioPrompt: `Golden hour is when the light turns, {name} — the hour after the sun rises or before it sets, when everything glows warm amber, shadows go long and soft, and even ordinary scenes feel like paintings. Photographers call it the magic hour. It's when the angle of the sun creates the most dimensional, flattering light of the day. Shoot the same scene at noon and at golden hour: the difference isn't just brightness — it's a completely different emotional world.` },
+            { word: `exposure`, definition: `The amount of light that reaches the camera's sensor — which determines how light or dark a photograph appears, and is controlled by aperture, shutter speed, and ISO.`, audioPrompt: `Exposure is how much light a camera lets in, {name}. Too little and the photo is dark — underexposed. Too much and it's washed out — overexposed. The right exposure captures what you actually saw: the detail in the shadows, the texture in the highlights. Learning to control exposure is learning to see light as a photographer does — not as background, but as the actual subject of every image you make.` },
+            { word: `direction`, definition: `Where light is coming from relative to the subject — front, side, or back — which dramatically changes how a photograph looks and feels.`, audioPrompt: `Light direction is one of the most powerful decisions in photography, {name}. Light coming from the front is flat and even — nothing is in shadow, everything is visible, but the image can feel two-dimensional. Side light creates shadows that reveal texture and form. Backlight creates a glow around the edges of a subject — dramatic, mysterious, beautiful. Same subject, same time of day, completely different image just by changing where the light comes from.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L10 = {
           ],
           image: `/explorer-assets/creative-arts/l10-magazine-3.png`,
           imageCaption: `Where you stand changes the story — angle, distance, and framing are all creative decisions`,
+          vocab: [
+            { word: `angle`, definition: `The vertical position of the camera relative to the subject — shooting from above, below, or at eye level — which changes the emotional and visual relationship between viewer and subject.`, audioPrompt: `Angle is a storytelling decision, {name}. Get down to ground level and shoot upward: the subject looms, feels powerful, even monumental. Shoot from above looking down: the subject feels small, vulnerable, seen from a distance. Eye level feels equal and direct — like a conversation. Most people photograph from standing height because that's where they happen to be. Learning to move changes everything about the images you make.` },
+            { word: `point of view`, definition: `The physical position and perspective from which a photograph is taken — where the camera is placed, at what height, and at what distance from the subject.`, audioPrompt: `Point of view in photography is physical, {name} — it's literally where you stand. And where you stand changes the story. The same alley looks threatening or beautiful depending on whether you're looking in from outside or looking out from within. The same child looks different photographed from adult height versus from their own eye level. Every choice about where to put the camera is a choice about how to make the viewer feel. That's creative power.` },
+            { word: `foreground`, definition: `The part of an image closest to the camera — which, when used intentionally, adds depth, context, and layers to the composition.`, audioPrompt: `The foreground is what's closest to your camera, {name} — and using it intentionally creates depth. A blurred flower in the foreground with a sharp subject behind it creates layers that feel three-dimensional. Grass in the lower edge of a landscape grounds the viewer in the scene. Foreground elements lead the eye inward. Without them, images can feel flat. With them, the viewer feels inside the world of the photograph rather than just looking at it.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L10 = {
           ],
           image: `/explorer-assets/creative-arts/l10-magazine-4.png`,
           imageCaption: `A great photograph communicates something — timing, background, and simplicity all serve the story`,
+          vocab: [
+            { word: `decisive moment`, definition: `The split second when everything in the frame aligns to tell a story perfectly — the moment of capture that makes a photograph feel inevitable and complete.`, audioPrompt: `The decisive moment is the instant, {name}, when everything in the frame aligns: the expression, the light, the composition, the action. A fraction of a second earlier or later and it's gone. Photographers train their eyes to see it coming and their fingers to respond. It's one of the most exciting things in photography — the feeling of catching something real just as it reaches its peak of meaning.` },
+            { word: `background`, definition: `Everything behind the main subject in a photograph — which matters as much as the subject itself, since a cluttered or distracting background can undermine an otherwise strong image.`, audioPrompt: `Most beginners photograph the subject and forget the background, {name}. But the background is always there — and a telephone pole appearing to grow from someone's head, or a busy crowd competing with a quiet portrait, will ruin an otherwise beautiful image. Before pressing the shutter, experienced photographers scan the whole frame. They ask: what's behind the subject? Does it serve the story or fight it? Often, moving two steps left solves everything.` },
+            { word: `simplicity`, definition: `Eliminating everything from a photograph that doesn't contribute to the story — which focuses the viewer's attention and makes the image's meaning clear.`, audioPrompt: `The most powerful photographs are often the simplest, {name}. One subject. Clean background. Nothing competing for the eye. Simplicity focuses the viewer's attention on what actually matters. It takes restraint — the impulse is always to include more. But every element that doesn't serve the story is an element that dilutes it. The discipline of asking "does this belong?" before pressing the shutter is one of the habits that separates intentional photography from snapshots.` },
+          ],
         },
 
         {

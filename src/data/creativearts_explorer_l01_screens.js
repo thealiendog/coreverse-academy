@@ -38,6 +38,11 @@ const CA_L01 = {
           ],
           image: `/explorer-assets/creative-arts/l01-magazine-1.png`,
           imageCaption: `Every drawing starts with a line — but which kind of line you choose changes everything`,
+          vocab: [
+            { word: `line`, definition: `The most basic mark an artist can make — a moving point that creates shape, direction, energy, and emotion depending on how it's drawn.`, audioPrompt: `Every drawing begins with a line, {name}. And Muse finds it wonderful that something so simple can carry so much — a thick line feels bold, a diagonal feels urgent, a wavering curve feels alive. The same mark in different hands becomes completely different things. That's not coincidence. That's art.` },
+            { word: `contour`, definition: `A line that follows the outer edge or shape of something — tracing where the object ends and the air begins.`, audioPrompt: `A contour line is how your eye travels around the edge of something, {name} — and your hand follows. When artists draw contour, they're not thinking about the inside of things. They're following the surface, tracing where the object ends and the air begins. Slowing down so the line has to think.` },
+            { word: `gesture`, definition: `A loose, fast line that captures the energy and movement of something rather than its precise shape — how artists quickly record life before it changes.`, audioPrompt: `Gesture drawing is about aliveness, not accuracy, {name}. You're not drawing what something looks like — you're drawing what it feels like to be in motion. Fast lines. The feeling of a dancer mid-spin or a bird lifting off. You capture the energy before it changes. That's a completely different thing from copying.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L01 = {
           ],
           image: `/explorer-assets/creative-arts/l01-magazine-2.png`,
           imageCaption: `Geometric shapes feel structured and man-made; organic shapes feel alive and natural`,
+          vocab: [
+            { word: `geometric`, definition: `Shapes that are mathematically precise — circles, squares, triangles, rectangles — that feel structured, ordered, and man-made.`, audioPrompt: `Have you ever noticed, {name}, how a city skyline looks completely different from a forest? Buildings are full of geometric shapes — squares, rectangles, precise angles. They feel ordered and deliberate. Artists use geometric shapes to create structure, pattern, and a sense of logic in their work. The circle, the triangle, the square — all of design starts there.` },
+            { word: `organic`, definition: `Shapes that are irregular, flowing, and natural-looking — the kind of shapes found in leaves, clouds, bodies, and rivers.`, audioPrompt: `Imagine reaching into a tide pool, {name} — everything you touch is a different, unrepeatable shape. Organic shapes have that quality: irregular, flowing, alive-feeling. No two are exactly the same. Artists use organic shapes when they want something to feel natural, warm, and full of movement. They're everywhere in the living world, if you look.` },
+            { word: `decompose`, definition: `To break a complex subject down into its basic shapes — the way artists "find the shapes" inside anything they want to draw.`, audioPrompt: `Most kids don't realize, {name}, that they can draw almost anything if they first find the shapes hiding inside it. A face is an oval with smaller shapes nested in it. A tree is a circle on a rectangle. A cat is a cluster of ovals. When you decompose a subject into shapes, the drawing stops being intimidating and becomes something you can actually build.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L01 = {
           ],
           image: `/explorer-assets/creative-arts/l01-magazine-3.png`,
           imageCaption: `Warm colors advance and energize; cool colors recede and calm — all before the brain processes the image`,
+          vocab: [
+            { word: `warm color`, definition: `Reds, oranges, and yellows — colors that feel energetic and passionate, and that visually seem to push forward toward the viewer.`, audioPrompt: `Warm colors don't just look warm, {name} — they actually feel that way. Think of fire, sunsets, ripe fruit. Reds and oranges seem to step toward you on the page, demanding attention. Artists use warm colors when they want energy, urgency, or heat. A single warm accent in a cool painting will pull the eye straight to it.` },
+            { word: `cool color`, definition: `Blues, greens, and purples — colors that feel calm and peaceful, and that visually seem to recede into the distance.`, audioPrompt: `Think of the feeling of sliding into cold water on a hot day, {name} — that's what cool colors do to the eye. Blues, greens, and purples seem to move away from you, creating depth and calm. They're perfect for shadows, skies, water, and quiet moods. Cool and warm colors talk to each other in a painting — understanding both is understanding emotional language.` },
+            { word: `temperature`, definition: `In art, a way of describing how warm or cool a color feels — reds and yellows are "warm," blues and greens are "cool" — used by artists to control mood and depth.`, audioPrompt: `Color temperature is one of Muse's favorite concepts, {name}, because it reveals that color isn't just about hue — it's about feeling. Every color has a temperature: warm or cool. Even within blues, some lean warm (purple-blue) and some lean cool (green-blue). Painters adjust temperature to create light, shadow, distance, and emotion. It's like a secret dimension hiding inside every color.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L01 = {
           ],
           image: `/explorer-assets/creative-arts/l01-magazine-4.png`,
           imageCaption: `Implied texture makes a drawing feel touchable — the marks you choose make surfaces come alive`,
+          vocab: [
+            { word: `actual texture`, definition: `Texture you can physically feel by touching it — found in sculpture, collage, and mixed media where real materials create real surfaces.`, audioPrompt: `Actual texture is the kind you feel with your fingers, {name} — the roughness of papier-mâché, the smooth coolness of polished stone, the crinkle of collaged newspaper. Sculptors and mixed-media artists work with actual texture all the time. Run your hand across a piece of bark or a woven cloth and you're feeling exactly what artists have always been fascinated by: the physical truth of a surface.` },
+            { word: `implied texture`, definition: `The illusion of texture created through marks and technique in a flat drawing or painting — making surfaces look touchable without actually being textured.`, audioPrompt: `Here's something beautiful, {name}: a flat drawing can make you feel like you're touching rough bark or soft fur — without any actual texture at all. Implied texture is created entirely with marks. Short choppy strokes suggest roughness. Long smooth blending suggests skin. Hatched lines suggest woven fabric. The marks you choose make a viewer's fingers tingle, even through a screen.` },
+            { word: `mark-making`, definition: `The way an artist applies lines, strokes, and marks to a surface — including the tool, pressure, speed, and direction used — which creates the visual texture and energy of a piece.`, audioPrompt: `Every artist has their own mark-making — a handwriting of sorts, {name}. Van Gogh's thick, spiraling brushstrokes are unmistakable. Seurat built images from thousands of tiny dots. Your marks — the way you press a pencil, the speed of your brush — are already yours, even if you don't know it yet. Paying attention to how you make marks is one of the first steps toward finding your own visual voice.` },
+          ],
         },
 
         {

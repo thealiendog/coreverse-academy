@@ -38,6 +38,11 @@ const CA_L03 = {
           ],
           image: `/explorer-assets/creative-arts/l03-magazine-1.png`,
           imageCaption: `One vanishing point on the horizon — all receding lines meet there, creating instant depth`,
+          vocab: [
+            { word: `perspective`, definition: `A system for representing three-dimensional space on a flat surface — showing how objects appear smaller and parallel lines seem to converge as they get farther away.`, audioPrompt: `Perspective is how your eye understands distance, {name} — and artists have spent centuries figuring out how to put that on a flat page. A road looks narrower as it goes away from you. A building looks smaller the farther it is. Perspective is really just the rules your eyes already use, made visible and workable. Once you understand them, depth appears wherever you put your pencil.` },
+            { word: `vanishing point`, definition: `The point on the horizon line where parallel lines appear to meet — the anchor of perspective drawing that creates the illusion of depth.`, audioPrompt: `Imagine standing in the middle of a long straight road, {name}, and looking toward the horizon. The road narrows until it seems to disappear at a single point. That's the vanishing point — the place where all receding lines meet. Fix it on the horizon and connect your lines to it, and flat paper suddenly has depth. It feels like magic the first time it works.` },
+            { word: `horizon line`, definition: `The imaginary horizontal line at your eye level — where vanishing points sit, and which determines how high or low the viewer appears to be looking at the scene from.`, audioPrompt: `The horizon line is where your eye sits, {name} — not necessarily where the sky meets the land, but your actual eye level. Put it high in the picture and viewers look down on the scene. Put it low and they look up. That invisible line is one of the most powerful decisions in a perspective drawing, and most people don't even know to think about it until someone points it out.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L03 = {
           ],
           image: `/explorer-assets/creative-arts/l03-magazine-2.png`,
           imageCaption: `Two vanishing points — one left, one right — give buildings and cityscapes their realistic depth`,
+          vocab: [
+            { word: `two-point perspective`, definition: `A drawing system that uses two vanishing points on the horizon line — one on each side — to show a three-dimensional object from its corner, as the eye would actually see it.`, audioPrompt: `Most buildings in a cityscape don't face you straight on, {name} — you see their corner, with sides angling away in two different directions. Two-point perspective captures that. One set of lines rushes toward the left vanishing point, another rushes right. Together they build a corner that feels solid and real. It's how cities look when you actually stand in them.` },
+            { word: `depth`, definition: `The illusion of three-dimensional space on a flat surface — created by perspective, overlapping, size differences, and value changes.`, audioPrompt: `Depth is what makes a flat drawing feel like you could walk into it, {name}. It's created by layers: things in front overlap things behind, objects get smaller as they recede, colors get cooler and less detailed in the distance. Perspective is one tool for creating depth — but great artists use all of them at once. The goal is always the same: make the viewer feel like there's a world beyond the paper's edge.` },
+            { word: `recession`, definition: `The way objects appear to move away from the viewer in a picture — getting smaller, less detailed, and cooler in color as they go deeper into the scene.`, audioPrompt: `Recession is the feeling of things moving away, {name}. As objects recede into a landscape, they get smaller, their details soften, their colors shift cooler and lighter. Atmospheric perspective — the way air creates haze in the distance — is one of the most painterly ways to show recession. Leonardo da Vinci used it in the Mona Lisa's background. It's why that landscape feels so far away and mysterious.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L03 = {
           ],
           image: `/explorer-assets/creative-arts/l03-magazine-3.png`,
           imageCaption: `Eyes sit halfway down the face — proportion is about observing carefully, not drawing what you expect`,
+          vocab: [
+            { word: `proportion`, definition: `The size relationships between different parts of a drawing — how large or small each part is compared to the others, which determines whether the drawing looks convincing.`, audioPrompt: `Proportion is about relationships, {name} — how big each part is compared to every other part. The eyes sit halfway down the face, not near the top where they feel like they should go. The body is about seven heads tall. These aren't rules someone invented — they're what you see when you actually look. Most drawing problems come from proportion, not from lack of skill. Measure with your eye, and the drawing fixes itself.` },
+            { word: `observation`, definition: `The act of truly looking at a subject — seeing its actual shapes, angles, and proportions rather than drawing from a mental symbol or assumption.`, audioPrompt: `Have you ever tried drawing your hand, {name}, and it came out looking nothing like it? That's because most of us draw the symbol we have for "hand" — five fingers, a palm — rather than looking at what's actually there. Real observation means seeing the specific angles, the way fingers curve, the exact proportion of the knuckle. The more carefully you look, the more accurately you draw.` },
+            { word: `negative space`, definition: `The empty space around and between objects in a drawing — which has its own shapes that can be used to check and improve the accuracy of what you're drawing.`, audioPrompt: `Negative space is the air around things, {name} — and here's something surprising: it has shapes. The gap between your arm and your body, the space between branches, the hole in the letter O. Artists draw negative space deliberately, because it's often easier to see accurately than the object itself. Draw the space, and the object takes care of itself. It's one of the most useful tricks in observational drawing.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L03 = {
           ],
           image: `/explorer-assets/creative-arts/l03-magazine-4.png`,
           imageCaption: `Drawing accurately means seeing clearly — the eye, not the brain's symbol shortcuts, is what guides the pencil`,
+          vocab: [
+            { word: `symbol`, definition: `A mental shortcut the brain uses for familiar things — like a circle with lines for "sun" or a blob for "tree" — which, when drawn, looks like a symbol rather than the real thing.`, audioPrompt: `When most kids draw a person, {name}, they draw a symbol: a circle head, stick body, mitten hands. It looks like a person the way a map looks like a city — accurate enough to recognize, not enough to feel real. The symbol isn't wrong. But learning to see past it — to draw what's actually there — is one of the most transformative things that happens when someone begins to really draw.` },
+            { word: `observational drawing`, definition: `Drawing that focuses on looking carefully at a real subject — recording what the eye actually sees rather than what the brain thinks the object looks like.`, audioPrompt: `Observational drawing is a way of paying attention, {name} — a form of looking so careful it changes how you see everything. When you sit down to draw something from life, you're not trying to produce a symbol. You're trying to see the actual angles, the specific shapes, the real proportions. Artists who draw from observation often describe it as the most meditative thing they do.` },
+            { word: `upside-down drawing`, definition: `A technique in which you draw a subject shown upside-down — which forces the brain to stop recognizing it and draw it as pure shapes and angles instead.`, audioPrompt: `Here's one of Muse's favorite drawing experiments, {name}: flip a picture upside down and draw it that way. Your brain can't recognize the subject anymore, so it stops applying symbol shortcuts. Suddenly you're just drawing shapes, angles, and spaces — and the result is almost always more accurate than drawing the same thing right-side up. It's proof that the biggest obstacle to drawing is often what you think you know.` },
+          ],
         },
 
         {

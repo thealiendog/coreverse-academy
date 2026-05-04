@@ -38,6 +38,11 @@ const CA_L09 = {
           ],
           image: `/explorer-assets/creative-arts/l09-magazine-1.png`,
           imageCaption: `Specific sensory details pull readers into the poem — the more precise the image, the more universal the feeling`,
+          vocab: [
+            { word: `imagery`, definition: `The use of specific, sensory details in writing — what something looks, sounds, smells, tastes, or feels like — that creates a vivid, felt experience for the reader.`, audioPrompt: `Imagery is showing instead of telling, {name}. "The beach was nice" is telling. "Salt stung my lips and cold sand shifted under my feet" is imagery — you feel it. Specific sensory detail pulls a reader into the poem's world rather than describing it from the outside. The more precise the image, the more the reader's body responds. That's what poetry does that argument can't.` },
+            { word: `sensory detail`, definition: `A specific detail that appeals to one of the five senses — sight, sound, smell, taste, or touch — and makes writing feel immediate and real.`, audioPrompt: `Sensory details are the texture of writing, {name} — the specific things that make a reader's body remember a feeling it recognizes. Not "it was cold" but "the window glass stung my forehead." Not "the kitchen smelled good" but "burnt sugar and yeast and something deeper, almost animal." The more senses a poem engages, the more fully a reader inhabits it.` },
+            { word: `specificity`, definition: `The quality of naming things precisely — choosing the exact right detail, word, or image — which, in poetry, paradoxically creates the most universal emotional effect.`, audioPrompt: `Here's one of the most beautiful paradoxes in all of writing, {name}: the more specific a detail, the more universal it becomes. Not "a flower" but "a bent yellow tulip half-buried in snow." The first belongs to no one. The second, somehow, belongs to everyone who has ever seen something fragile surviving something hard. Specificity is the key that unlocks the universal. It's what makes a poem feel like it was written about you.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L09 = {
           ],
           image: `/explorer-assets/creative-arts/l09-magazine-2.png`,
           imageCaption: `Simile, metaphor, personification — figurative language reaches for feelings that literal words can't touch`,
+          vocab: [
+            { word: `metaphor`, definition: `A figure of speech that says one thing IS another — not using "like" or "as" — insisting on the comparison in a way that makes it feel more direct and emotionally true.`, audioPrompt: `A simile says "her voice was like broken glass," {name}. A metaphor says "her voice was broken glass" — no hedging, no "like." The metaphor insists on the comparison, makes it fully real. That small difference changes everything. The metaphor is more direct, more startling, more true in the felt sense. Poetry uses metaphor constantly because some feelings can only be reached through saying one thing is another.` },
+            { word: `simile`, definition: `A comparison between two things using "like" or "as" — which creates a vivid image while keeping a slight distance that metaphor doesn't have.`, audioPrompt: `A simile is a comparison that announces itself, {name}: "like," "as." The moon was like a coin. Her laugh was as warm as bread. Similes are slightly more gentle than metaphors — they offer the comparison but keep a little distance. Poets choose between simile and metaphor the way painters choose a brushstroke: one is softer, one is more direct. Both reach for things that literal language can't quite touch.` },
+            { word: `personification`, definition: `Giving human qualities, feelings, or actions to non-human things — animals, objects, weather, nature — to make them feel alive and emotionally present in a poem.`, audioPrompt: `When a poem says "the sea swallowed the light," {name}, the sea is doing something human. That's personification — giving the non-human a human action or feeling. It makes the natural world feel alive and purposeful, like everything is participating in the poem's emotion. The wind groans. The city sleeps. The old house remembers. Personification is how poets make the world feel as full of feeling as we are.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L09 = {
           ],
           image: `/explorer-assets/creative-arts/l09-magazine-3.png`,
           imageCaption: `Rhyme, alliteration, onomatopoeia — poetry is music made from words, and sound is always part of the meaning`,
+          vocab: [
+            { word: `alliteration`, definition: `The repetition of the same starting sound across neighboring words — which creates rhythm, momentum, and a musical quality in writing.`, audioPrompt: `Say this slowly, {name}: "silver shadows slid across the stone." That's alliteration — the same starting sound, repeated. It creates momentum, a feeling of the words belonging to each other. Poetry uses alliteration because sound is part of meaning. When the sounds pull together, the images pull together too. It's one of the oldest sound devices in the language, and it still works every time.` },
+            { word: `onomatopoeia`, definition: `A word that sounds like what it describes — like buzz, crack, sizzle, or whisper — making the sound part of the meaning.`, audioPrompt: `Buzz. Crack. Sizzle. Hiss. These words carry their meaning in their sound, {name} — they're onomatopoeia. When a poem uses "the bees hummed" instead of "the bees made a sound," the word hum itself does the describing. It's one of the most immediate effects in language: the sound of the word becomes the sound of the thing. You hear what you read.` },
+            { word: `free verse`, definition: `Poetry that uses no fixed rhyme scheme or meter — instead relying on natural speech rhythms, line breaks, and sound to create its music.`, audioPrompt: `Free verse doesn't rhyme — and it doesn't have a strict beat — but it's not free from craft, {name}. It uses line breaks, white space, rhythm of speech, repetition, and sound devices deliberately. Many of the greatest poems in the English language are free verse. The freedom in free verse is the freedom to make every single choice — which is actually harder than working within a form. The constraint of having no rules is the hardest constraint of all.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L09 = {
           ],
           image: `/explorer-assets/creative-arts/l09-magazine-4.png`,
           imageCaption: `Each poetic form — haiku, sonnet, limerick, free verse — offers a different frame for creativity to work within`,
+          vocab: [
+            { word: `haiku`, definition: `A Japanese poetic form of three lines — 5 syllables, 7 syllables, 5 syllables — traditionally capturing a single moment, image, or observation in nature.`, audioPrompt: `A haiku is seventeen syllables and one moment, {name}. Five, seven, five — and in that small frame, something has to arrive. The best haiku create a kind of click: two images that land together and open a door into feeling. The constraint isn't a limitation. It's a practice in precision. You can't waste a syllable. Every word has to earn its place. That's a useful discipline for any kind of writing.` },
+            { word: `sonnet`, definition: `A 14-line poem — traditionally exploring love, time, beauty, or mortality — with a specific rhyme scheme that has been used by poets for centuries.`, audioPrompt: `The sonnet is 14 lines and several hundred years old, {name} — and it's still one of the most used poetic forms because it fits something in the human brain perfectly. The first twelve lines build a situation or argument. The final two lines — the couplet — turn and resolve it. Shakespeare used this to explore love and time and death. Contemporary poets still do. The form is a container that somehow keeps making space for what matters most.` },
+            { word: `form`, definition: `The structure of a poem — the rules about line length, rhyme, syllable count, and organization that define a particular type of poetry.`, audioPrompt: `Form is the architecture of a poem, {name}. A sonnet has 14 lines and a specific rhyme scheme. A haiku has three lines and seventeen syllables. Each form creates its own possibilities and its own constraints. And here's what Muse finds endlessly true: constraints don't limit creativity — they focus it. A blank page with no rules is actually harder to fill than a form that tells you the shape in advance. Creativity thrives in frames.` },
+          ],
         },
 
         {

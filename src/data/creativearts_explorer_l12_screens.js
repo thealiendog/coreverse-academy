@@ -38,6 +38,11 @@ const CA_L12 = {
           ],
           image: `/explorer-assets/creative-arts/l12-magazine-1.png`,
           imageCaption: `Persistence of vision fools the brain into seeing motion — 24 still images per second become a moving world`,
+          vocab: [
+            { word: `persistence of vision`, definition: `The optical phenomenon where your eye retains an image for a fraction of a second after it disappears — which allows a rapid sequence of still images to appear as smooth, continuous motion.`, audioPrompt: `Your eye holds an image for a tiny fraction of a second after it disappears, {name}. That's persistence of vision — and it's the entire reason animation works. Show still images fast enough and the eye fills in the gaps, creating the illusion of motion. Everything you've ever seen move on a screen — every film, every cartoon, every game — exists because of this one quirk of human perception. All of cinema is a beautiful trick we play on ourselves.` },
+            { word: `frame`, definition: `A single still image in animation or film — the individual drawing or photograph that, when many are shown in sequence, creates the illusion of movement.`, audioPrompt: `A frame is one still image, {name} — and animation is just frames shown fast enough that the eye creates movement between them. Traditional hand-drawn animation required a separate drawing for every frame. A 90-minute film is over a hundred thousand individual drawings. Each one differing slightly from the last. Each one contributing a fraction of a second to a moving world. It's staggering when you think about it: every second of motion is built from still moments.` },
+            { word: `frame rate`, definition: `The number of still images shown per second in film or animation — typically 24 frames per second for film — which determines how smooth and realistic movement appears.`, audioPrompt: `Frame rate is how many still images appear per second, {name}. Film runs at 24. Less than about 12 and the eye starts to see the flicker — the motion stops feeling smooth. More than 24 creates a hyper-real look that some find jarring. Animators choose frame rate carefully: more frames means smoother movement but far more work. Each frame is a drawing, a photograph, a rendered image. Frame rate is the speed of the illusion.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L12 = {
           ],
           image: `/explorer-assets/creative-arts/l12-magazine-2.png`,
           imageCaption: `Squash and stretch, anticipation, exaggeration, timing — the principles that make animation feel alive`,
+          vocab: [
+            { word: `squash and stretch`, definition: `An animation principle where objects deform when moving — flattening under impact and elongating through motion — giving the illusion of weight, flexibility, and life.`, audioPrompt: `When a cartoon ball hits the ground, {name}, it squashes flat for a frame — then as it bounces up, it stretches tall. That's squash and stretch, and it's what gives animated objects the feeling of having weight and flexibility. Without it, movement feels mechanical. With it, even a simple shape feels alive. Real objects do this too, slightly — animation just exaggerates it until the eye registers it as truth.` },
+            { word: `anticipation`, definition: `An animation principle where a character prepares before a big action — winding up before throwing, crouching before jumping — which makes the action feel more powerful and expected by the audience.`, audioPrompt: `Anticipation is the windup before the action, {name}. A character leans back before they leap. A hand draws back before it swings. Without this preparation, actions look sudden and unconvincing. With it, the eye is primed — it knows something is coming, and when it arrives, it lands harder. It's how animation communicates physical intention: not just the action, but the body's preparation to do it.` },
+            { word: `exaggeration`, definition: `An animation principle of pushing movements, expressions, and reactions beyond realistic limits — to make emotion and action clearer and more impactful.`, audioPrompt: `Animation can go where live action cannot, {name} — eyes can pop out, bodies can stretch impossibly, surprise can register across an entire face in ways real faces never quite manage. That's exaggeration: pushing beyond realism until the feeling becomes unmistakable. The goal isn't to be unrealistic for its own sake. It's to make the emotion so clear that the audience feels it immediately. Exaggeration is how animated characters speak without ambiguity.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L12 = {
           ],
           image: `/explorer-assets/creative-arts/l12-magazine-3.png`,
           imageCaption: `2D, stop motion, 3D, motion graphics — each animation style has its own visual language and possibilities`,
+          vocab: [
+            { word: `stop motion`, definition: `An animation technique that photographs real physical objects in slightly different positions for each frame — creating movement through the accumulation of still photographs.`, audioPrompt: `Stop motion is the art of making still things move, {name}. A clay figure is posed, photographed, adjusted by a fraction, photographed again — thousands of times, frame by frame, until 24 of those photographs each second create the illusion of life. Wallace and Gromit were made this way. So was Coraline. It's extraordinarily time-consuming and extraordinarily satisfying — the physical world, made to move as if alive.` },
+            { word: `2D animation`, definition: `Animation where characters and environments are drawn flat, as images on a plane — the traditional style of hand-drawn animation, from classic cartoons to modern Studio Ghibli films.`, audioPrompt: `2D animation is drawing brought to life, {name} — each frame a flat image, hand-drawn or digitally created, placed in sequence to create movement. Studio Ghibli's films — My Neighbor Totoro, Spirited Away — are 2D animation, and there is a warmth and texture to them that comes from each frame being, essentially, a painting. The characters move through painted worlds. It's one of the most labor-intensive art forms ever created.` },
+            { word: `rendering`, definition: `The process by which a computer calculates and generates the final appearance of a 3D animated image — applying lighting, texture, and shadow to produce each finished frame.`, audioPrompt: `In 3D animation, {name}, the computer has to figure out what each frame actually looks like — calculating how light bounces off surfaces, how shadows fall, how materials reflect or absorb. That process is called rendering. A single frame from a complex animated film can take hours to render. A feature film requires millions of frames. The rendering of a modern animated film is a feat of computing that would have been impossible even twenty years ago.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L12 = {
           ],
           image: `/explorer-assets/creative-arts/l12-magazine-4.png`,
           imageCaption: `Animation's visual magic only matters when it serves a story worth telling — character and story come first`,
+          vocab: [
+            { word: `visual storytelling`, definition: `Communicating a narrative through images, movement, and action rather than words — the specific power of animation, which can show what live action cannot.`, audioPrompt: `Animation can do things live action cannot, {name} — characters stretch, transform, reveal inner emotion through their whole body, inhabit worlds that have never existed. That visual freedom is extraordinary. But it only matters when it's telling something true. The greatest animated films use their visual language to go somewhere emotionally that ordinary drama can't reach. The technique serves the story. The story comes first. Always.` },
+            { word: `character design`, definition: `The visual creation of an animated character — their shape, color, proportions, and movement style — which communicates personality before the character says a word.`, audioPrompt: `An animated character's design tells you who they are before they open their mouth, {name}. Rounded shapes feel friendly and safe. Sharp angles feel dangerous or clever. Color communicates mood — think of Pixar's use of golden warm tones for joy versus cool blues for sadness. Every visual decision in character design is a storytelling decision. When design and story align perfectly, the character feels inevitable — like they couldn't look any other way.` },
+            { word: `timing`, definition: `In animation, the number of frames an action takes — which determines whether it feels fast and urgent or slow and heavy, and communicates the emotional weight of every moment.`, audioPrompt: `Timing in animation is the difference between life and mechanism, {name}. The same action — a door closing — takes two frames and it's a slam. Takes twelve frames and it's a slow, ominous drift. An emotion registered in one frame is a shock. In eight frames it's a dawning realization. Animators control timing the way musicians control tempo: it determines the emotional experience of every moment. Timing is feel — and it's one of the hardest things to learn.` },
+          ],
         },
 
         {

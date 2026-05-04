@@ -38,6 +38,11 @@ const CA_L07 = {
           ],
           image: `/explorer-assets/creative-arts/l07-magazine-1.png`,
           imageCaption: `Beat, tempo, note values, syncopation — rhythm is an interlocking system, not just a single thing`,
+          vocab: [
+            { word: `syncopation`, definition: `The placement of rhythmic accents on unexpected, "off" beats — creating the feeling of surprise, tension, and groove that makes listeners want to move.`, audioPrompt: `Syncopation is rhythm's way of being unpredictable, {name}. Instead of landing on the expected beat, an accent falls between the beats — off-balance in a way that creates groove and tension. Jazz and funk and hip-hop depend on syncopation. It's what makes certain rhythms feel irresistible to move to. The body wants to find the beat, and syncopation keeps teasing it.` },
+            { word: `accent`, definition: `An emphasis placed on a particular note or beat — making it louder or more forceful than the notes around it — which shapes the feel and groove of a rhythm.`, audioPrompt: `An accent is a moment of emphasis, {name} — a beat that's hit harder or louder than the ones around it. Without accents, every beat would feel equally weighted and music would become mechanical and flat. Accents are what give rhythm its personality. Moving the accent one beat earlier or later changes the entire groove. It's a small thing that changes everything.` },
+            { word: `groove`, definition: `The rhythmic feel of a piece of music — the quality that makes rhythm feel "locked in," infectious, and irresistible to move to.`, audioPrompt: `Groove is hard to define, {name}, but you feel it instantly. It's what happens when a rhythm is so well-balanced and "locked in" that your body responds before your brain does. It emerges from the relationship between the beat, the accents, the space between notes, and the feel of the players. You can play all the right notes with perfect timing and still not have groove. It's the human element — and it's the most sought-after thing in rhythm.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L07 = {
           ],
           image: `/explorer-assets/creative-arts/l07-magazine-2.png`,
           imageCaption: `Rhythmic notation is a shared written language — it lets rhythm travel across time, place, and language`,
+          vocab: [
+            { word: `notation`, definition: `A written system for representing music — using symbols for pitch, duration, and rhythm — that allows music to be recorded, shared, and performed across time and language.`, audioPrompt: `Notation is a time machine for music, {name}. A piece of music written down 300 years ago can be performed today, exactly as it was written, by musicians who weren't born when it was composed. That's what notation does — it preserves music precisely. You don't have to read music to be a great musician. But notation gives you access to a shared language that crosses centuries and cultures.` },
+            { word: `rest`, definition: `A symbol in music notation that represents silence — a specific duration of not playing — which is as important to rhythm as the notes themselves.`, audioPrompt: `The silence in music is called a rest, {name}, and it matters just as much as the sound. A rest has a specific duration — a whole rest, a half rest, a quarter rest — and it's written as deliberately as any note. The silence before a dramatic chord. The pause at the end of a phrase. The gap that makes the next note land harder. Rhythm without rests would just be noise. Silence is part of the music.` },
+            { word: `bar line`, definition: `A vertical line drawn across the staff that divides music into measures — creating the repeating rhythmic units that give music its structure.`, audioPrompt: `Bar lines are the walls that create rhythmic rooms, {name}. They divide the flowing stream of music into equal measures — units of time that repeat and create structure. Inside each measure, the beats are organized. At the bar line, a new measure begins. When you count along to music — one, two, three, four, one, two, three, four — you're feeling the bar lines even if you can't see them.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L07 = {
           ],
           image: `/explorer-assets/creative-arts/l07-magazine-3.png`,
           imageCaption: `Every human culture developed percussion — the djembe, tabla, samba, and flamenco all speak the same deep language`,
+          vocab: [
+            { word: `polyrhythm`, definition: `Two or more different rhythms played simultaneously — found in West African drumming, Brazilian samba, and many other percussion traditions worldwide.`, audioPrompt: `Polyrhythm is what happens when multiple rhythms play at the same time, {name} — and if you focus on just one, it sounds straightforward. But when all the layers lock together, something larger emerges: a complex, interlocking whole that's more than the sum of its parts. West African drumming has used polyrhythm for centuries. Much of the rhythm in modern popular music descends directly from that tradition.` },
+            { word: `djembe`, definition: `A West African drum — played with the hands and capable of producing multiple distinct tones (bass, tone, and slap) — central to communal drumming traditions across the region.`, audioPrompt: `The djembe is one of the most expressive single instruments Muse has ever encountered, {name}. It's played with bare hands, and depending on where and how you strike it, it produces completely different sounds: a deep bass, a mid-range tone, a sharp slap. West African djembe players work in interlocking patterns that take years to master, building rhythmic conversations that are simultaneously music, communication, and community ritual.` },
+            { word: `tala`, definition: `A rhythmic cycle in Indian classical music — a repeating pattern of beats that can span 7, 10, 16, or more counts — around which melodic improvisation is organized.`, audioPrompt: `In Indian classical music, {name}, rhythm isn't just a background — it's an architecture. A tala is a rhythmic cycle, and it can have seven beats, ten beats, sixteen, or more. The musicians improvise within and around the tala, which repeats and repeats. The moment when improvisation and the tala resolve together at the same point is called the sam — and when it arrives, the whole room feels it. It's mathematics and feeling at the same time.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L07 = {
           ],
           image: `/explorer-assets/creative-arts/l07-magazine-4.png`,
           imageCaption: `Any surface that makes a sound when struck is a percussion instrument — rhythm needs no special equipment`,
+          vocab: [
+            { word: `found percussion`, definition: `Rhythm made using everyday objects — pots, boxes, buckets, bottles — rather than dedicated musical instruments.`, audioPrompt: `Rhythm doesn't need a drum kit, {name}. It just needs something that makes a sound when you hit it. Pots, buckets, pencils on a desk, hands on a table — all of it is found percussion. Brazilian Batucada originated on found objects before dedicated drums were available. The rhythm is in the person, not the equipment. You can make music with almost anything that makes a sound.` },
+            { word: `body percussion`, definition: `The use of the human body — clapping, stomping, chest-patting, thigh-slapping, finger-snapping — to create rhythm without any external instrument.`, audioPrompt: `Your body is a percussion instrument, {name} — it always has been. Clapping, stomping, snapping, patting your chest or thighs: people have been making rhythm this way since before any instrument was invented. Groups like Stomp have built entire theatrical shows from it. What it reveals is that rhythm is a human impulse, not a tool-dependent one. You arrived with the instrument already built in.` },
+            { word: `timbre`, definition: `The unique quality or "color" of a sound that distinguishes one instrument or voice from another — what makes a drum sound different from a box, even at the same pitch.`, audioPrompt: `Timbre is why a piano and a guitar playing the same note sound completely different, {name}. It's the color of a sound — its texture and character. Every percussion instrument has its own timbre: the djembe's warmth, the snare's crack, the rim of a bucket versus its center. Found percussion players choose objects by timbre: what does this object sound like, and how will it fit with everything else? Timbre is what gives a rhythm its texture.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const CA_L04 = {
           ],
           image: `/explorer-assets/creative-arts/l04-magazine-1.png`,
           imageCaption: `Light passes through watercolor and reflects off the white paper — that's what creates the luminous glow`,
+          vocab: [
+            { word: `transparency`, definition: `The quality of watercolor paint that lets light pass through it to the white paper beneath — what creates the medium's distinctive glow.`, audioPrompt: `Watercolor is transparent, {name} — light actually passes through the paint and bounces back off the white paper to your eye. That's what creates the luminous glow you can't quite get with thicker paints. The more water you add, the more transparent it becomes. The less water, the more saturated. Understanding transparency is understanding what makes watercolor watercolor.` },
+            { word: `luminosity`, definition: `A glowing quality of light in a painting — in watercolor, it comes from light reflecting off the white paper through transparent layers of paint.`, audioPrompt: `Luminosity is that feeling of inner light, {name} — like the painting is lit from within rather than from outside. Watercolor creates it naturally: light passes through the paint, hits the white paper, and bounces back. Oil painters have to work hard to achieve what watercolor gives you almost automatically, as long as you trust the medium and don't overwork it.` },
+            { word: `saturation`, definition: `How intense or concentrated a color is — in watercolor, controlled by the ratio of pigment to water. Less water means more saturated and vivid; more water means lighter and more transparent.`, audioPrompt: `Saturation is how loud a color is, {name}. A fully saturated red screams. Dilute it with water and it whispers. In watercolor, your water-to-pigment ratio controls everything. More water: the color becomes softer, airier, lighter. Less water: it deepens and intensifies. Learning to feel that ratio — to know when a brushload is the right concentration — is one of the most satisfying skills in the medium.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L04 = {
           ],
           image: `/explorer-assets/creative-arts/l04-magazine-2.png`,
           imageCaption: `Wet-on-wet creates soft blooming effects; wet-on-dry gives sharp edges — most paintings use both`,
+          vocab: [
+            { word: `wet-on-wet`, definition: `A watercolor technique where wet paint is applied to already-wet paper, causing colors to spread and bloom in soft, unpredictable ways.`, audioPrompt: `Wet-on-wet is where watercolor gets magical, {name}. You wet the paper first, then drop color onto it — and the pigment spreads and blooms in ways you can't fully control. Soft edges, merging colors, clouds of color that drift into each other. It's perfect for skies, mist, and distant backgrounds. Part of the skill is learning when to let the medium do things you didn't plan.` },
+            { word: `wet-on-dry`, definition: `A watercolor technique where wet paint is applied to dry paper, giving the artist more control and creating sharper, more defined edges.`, audioPrompt: `Wet-on-dry is where you regain control, {name}. Paint on dry paper stays where you put it — edges are crisp, shapes are defined. After a soft wet-on-wet background, wet-on-dry lets you add the details: the branches, the figures, the specific textures. Most watercolor paintings use both techniques — soft and loose in the distance, more defined in the foreground.` },
+            { word: `bloom`, definition: `The effect that happens in watercolor when wet pigment spreads into another wet area, creating soft, cloud-like edges and unexpected color mixing.`, audioPrompt: `A bloom happens when you touch a wet brush to an area that's already wet, {name}, and watch the color spread — pushing outward like a flower opening. Beginning watercolorists often fight blooms. Experienced ones court them. A bloom in the right place becomes a cloud, a petal, a shadow. It's the medium's way of contributing its own voice to your painting.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L04 = {
           ],
           image: `/explorer-assets/creative-arts/l04-magazine-3.png`,
           imageCaption: `White in watercolor is the paper — you preserve it by not painting, not by adding white later`,
+          vocab: [
+            { word: `reserve`, definition: `To protect an area of the paper from paint — leaving it white — so it can become highlights, light sources, or bright details in the finished painting.`, audioPrompt: `In watercolor, you have to think backward, {name}. Instead of adding white at the end, you protect it from the beginning — you reserve it. The white highlight on a glass of water, the bright edge of a petal in sunlight: these have to be planned before a single brushstroke, not added afterward. Learning to think in reserve is one of watercolor's great mental challenges.` },
+            { word: `masking fluid`, definition: `A liquid applied to paper before painting that dries to protect specific areas from paint — peeled off afterward to reveal crisp white shapes.`, audioPrompt: `Masking fluid is a watercolorist's planning tool, {name}. You paint it over the areas you want to keep white, let it dry, paint over everything — and then peel it off like a second skin to reveal the untouched paper beneath. It lets you paint freely without fear of losing your highlights. Many artists use it for complex light effects — water sparkle, falling snow, bright flowers — where reserving by hand would be nearly impossible.` },
+            { word: `opaque`, definition: `Paint that covers what's beneath it rather than letting it show through — the opposite of transparent, and something watercolor artists typically avoid using for lights or whites.`, audioPrompt: `Opaque paint covers everything beneath it, {name} — you can't see through it. That's what makes opaque paint fundamentally different from watercolor. Adding white gouache (opaque white paint) to watercolor kills the luminosity — it becomes chalky and flat. That's why watercolorists protect their whites rather than painting them. Transparency is watercolor's superpower, and opacity undoes it.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L04 = {
           ],
           image: `/explorer-assets/creative-arts/l04-magazine-4.png`,
           imageCaption: `Happy accidents are the medium adding its own voice — experienced artists embrace them, not fight them`,
+          vocab: [
+            { word: `happy accident`, definition: `An unexpected effect in watercolor — a bloom, a backrun, a surprising color merge — that turns out to be more beautiful or interesting than what was planned.`, audioPrompt: `The term "happy accident" was made famous by a painter named Bob Ross, {name} — but watercolorists have lived by it for centuries. Watercolor does things you didn't plan: it blooms, it separates, it creates patterns your brush never made. The question is what you do with it. Beginning artists panic. Experienced artists look at it and ask: what could this become? The answer is often something better than the original plan.` },
+            { word: `backrun`, definition: `A watercolor effect where paint added to an almost-dry area pushes the existing pigment outward into a ruffled, cauliflower-shaped edge.`, audioPrompt: `A backrun happens when you're too impatient, {name} — you add wet paint to an area that's almost dry, and the water pushes the pigment outward into frilly, irregular edges. Beginning watercolorists try to avoid them. But here's what Muse has noticed: a backrun in the right place looks exactly like a petal, a leaf, a flame, a cloud. The medium is proposing something. It's worth listening.` },
+            { word: `spontaneity`, definition: `The quality of working freely and responsively in the moment — in watercolor, allowing the medium to contribute its own effects rather than forcing tight control.`, audioPrompt: `Watercolor rewards spontaneity more than almost any other medium, {name}. The painters who fight for perfect control often produce stiff, overworked paintings that have lost their life. The ones who stay loose — who respond to what the paint is doing, adjust on the fly, embrace the unexpected — end up with work that breathes. Learning to be spontaneous without being careless is one of the deepest skills in the medium.` },
+          ],
         },
 
         {

@@ -38,6 +38,11 @@ const CA_L02 = {
           ],
           image: `/explorer-assets/creative-arts/l02-magazine-1.png`,
           imageCaption: `The color wheel organizes all colors by relationship — primaries are the source, everything else follows`,
+          vocab: [
+            { word: `primary color`, definition: `Red, yellow, and blue — the three colors that cannot be made by mixing other colors, and from which all other colors are created.`, audioPrompt: `Imagine, {name}, that every color that has ever existed was made from just three. Red, yellow, blue — the primaries. They're the source of everything else on the color wheel. Mix two of them and you get a secondary. Mix more and the world of color just keeps opening up. It's one of the most elegant systems Muse has ever encountered.` },
+            { word: `secondary color`, definition: `Orange, green, and purple — each made by mixing two primary colors together.`, audioPrompt: `Mix red and yellow and something new appears, {name} — orange, which is neither one nor the other but something entirely its own. That's what secondary colors are: the children of primaries. Orange, green, purple. Each has its own mood and personality, even though you can trace them back to their parents on the wheel.` },
+            { word: `tertiary color`, definition: `A color made by mixing a primary with a neighboring secondary — like red-orange, yellow-green, or blue-purple — filling the gaps between them on the color wheel.`, audioPrompt: `Tertiary colors are the in-between ones, {name} — red-orange, yellow-green, blue-purple, and so on. They fill the spaces between primary and secondary, making the color wheel continuous rather than just six stops. Most of the colors in nature — the subtle greens of leaves, the dusty purples of mountains at dusk — live in tertiary territory.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const CA_L02 = {
           ],
           image: `/explorer-assets/creative-arts/l02-magazine-2.png`,
           imageCaption: `Complementary colors sit opposite on the wheel — together they create maximum contrast and energy`,
+          vocab: [
+            { word: `complementary color`, definition: `A color that sits directly opposite another on the color wheel — like red and green, or blue and orange — creating maximum contrast when placed together.`, audioPrompt: `Look at a stop sign, {name} — red on green. That's complementary colors at work. They sit directly across from each other on the wheel, and when they're side by side, each one makes the other more vivid than it would be alone. It's like they're in conversation, each insisting on itself. Artists use this deliberately to make things vibrate with energy.` },
+            { word: `contrast`, definition: `The difference between elements in an artwork — light and dark, warm and cool, large and small — which creates visual interest and guides the viewer's eye.`, audioPrompt: `Contrast is what makes things pop, {name}. Without it, everything sits at the same level and nothing stands out. With it, your eye knows exactly where to go. Complementary colors push contrast to its maximum — but contrast can be value (light vs. dark), size (big vs. small), or texture (rough vs. smooth). It's one of the most powerful tools in any artist's kit.` },
+            { word: `vibrance`, definition: `The intensity or brightness of a color — and the visual energy that happens when colors with high contrast or saturation are placed together.`, audioPrompt: `When Van Gogh placed yellow sunflowers against a deep blue background, {name}, the vibrance was almost physical — the colors seemed to hum. Vibrance is what happens when colors are saturated and contrasting: they create an energy that goes beyond what either color could do alone. Learning to control vibrance means learning to control the emotional temperature of a whole artwork.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const CA_L02 = {
           ],
           image: `/explorer-assets/creative-arts/l02-magazine-3.png`,
           imageCaption: `Analogous colors — neighbors on the wheel — flow together and create harmony and calm`,
+          vocab: [
+            { word: `analogous color`, definition: `Colors that are neighbors on the color wheel — three or more in a row — which create a sense of harmony and unity when used together.`, audioPrompt: `Think of a sunset, {name} — peach, coral, amber, gold, all bleeding into one another. That's an analogous palette: colors that are neighbors on the wheel, close enough to feel like family. They don't spark against each other the way complementaries do. They flow. Nature is full of analogous color — and it always looks right.` },
+            { word: `harmony`, definition: `A feeling of visual unity and cohesion in an artwork — often created when colors or shapes belong together in a way that feels balanced and satisfying.`, audioPrompt: `Harmony in color is the feeling that everything belongs, {name} — that the colors in a painting are on the same team rather than fighting. Analogous palettes create harmony naturally because the colors are already related. But harmony isn't sameness — it's agreement. A great painting can have tension and still feel harmonious, as long as all the parts are working toward the same emotional truth.` },
+            { word: `palette`, definition: `The specific set of colors an artist chooses to use in a piece of work — which shapes the mood, style, and visual identity of everything they make.`, audioPrompt: `Every artist develops a palette, {name} — a personal set of colors that shows up again and again in their work. Matisse was known for bold, saturated reds and blues. Monet returned endlessly to soft greens and lavenders. When you look at your own drawings, notice which colors you reach for instinctively. That's the beginning of your palette, and it's already yours.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const CA_L02 = {
           ],
           image: `/explorer-assets/creative-arts/l02-magazine-4.png`,
           imageCaption: `Tints add white; shades add black — value is often more important than color itself`,
+          vocab: [
+            { word: `value`, definition: `How light or dark a color is — one of the most important dimensions in all of visual art, used to create the illusion of form, depth, and light.`, audioPrompt: `Here's a test, {name}: take a color photograph and convert it to black and white. It still looks real. Still has depth and light and shadow. That's because value — how light or dark something is — carries more information than color does. Artists learn to see and control value before almost anything else. Without it, a painting goes flat. With it, everything comes to life.` },
+            { word: `tint`, definition: `A color mixed with white to make it lighter — like adding white to red to make pink, or to blue to make sky blue.`, audioPrompt: `Tints are the lighter, airier versions of a color, {name} — what you get when you add white. Red becomes pink. Blue becomes sky blue. Purple becomes lavender. Tints feel softer, more delicate, further from the source. Painters use tints to show light falling on a surface, or to create a gentle, airy mood. The same red in a tint becomes something almost tender.` },
+            { word: `shade`, definition: `A color mixed with black to make it darker — like adding black to red to make deep maroon, or to blue to make navy.`, audioPrompt: `Add black to a color and it deepens, {name} — becomes richer, more weighted, more serious. Red becomes maroon. Blue becomes navy. Green becomes forest. Shades are used for shadows, for depth, for drama. Rembrandt painted with deep, rich shades that made his subjects seem to emerge from darkness. Understanding the difference between a tint and a shade gives you control over the whole range of a color.` },
+          ],
         },
 
         {
