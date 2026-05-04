@@ -23,6 +23,7 @@ const SL_L18 = {
         {
           id:       'l18-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. Something the best leaders know — that weaker ones often don't — is that there isn't one right way to lead. The approach that works when your team is confident and experienced is completely different from the one that works when they're new and uncertain. The style that works in a crisis is different from the one that works in a creative brainstorm. Today we're going to look at leadership styles — the main approaches researchers have identified, what each one does well, and what each one gets wrong. Understanding these gives you a real toolkit — not just one tool. Let's get into it.`,
           headline: 'Leadership Styles',
           subtitle: `Great leaders don't lead the same way in every situation — they read what's needed and adapt`,
           visual:   '/explorer-assets/leadership/l18-welcome.png',

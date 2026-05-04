@@ -23,6 +23,7 @@ const SL_L06 = {
         {
           id:       'l06-welcome',
           type:     'welcome',
+          guideText: `There's something almost magical about a team that really works, {name} — where everyone brings something different, people cover each other's weaknesses, and the group achieves something none of them could have done alone. And there's something deeply frustrating about a team that doesn't — where people pull in different directions, or one person carries everything while others coast. Today we're going to look at what makes teams thrive and what makes them fall apart. Because great leaders don't just perform well themselves — they make the people around them better. That's a specific skill, and you can learn it.`,
           headline: `Teamwork: Together We're Stronger`,
           subtitle: `What makes teams work — and what makes them fall apart`,
           visual:   '/explorer-assets/leadership/l06-welcome.png',

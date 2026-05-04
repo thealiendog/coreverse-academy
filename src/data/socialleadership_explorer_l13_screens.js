@@ -23,6 +23,7 @@ const SL_L13 = {
         {
           id:       'l13-welcome',
           type:     'welcome',
+          guideText: `Here's something that might reassure you, {name}: the fear of speaking in front of people is one of the most common fears there is. Adults who speak confidently in front of crowds are almost always people who were once terrified of it — and who got better through practice, not through some special trait they were born with. Today we're going to look at public speaking as a skill — exactly like a sport or an instrument. We'll look at what makes it scary, what great speakers actually do, and how to get better at it one small step at a time. Let's begin.`,
           headline: 'Public Speaking Basics',
           subtitle: `Speaking clearly in front of others is a skill — and like every skill, it gets better with practice`,
           visual:   '/explorer-assets/leadership/l13-welcome.png',

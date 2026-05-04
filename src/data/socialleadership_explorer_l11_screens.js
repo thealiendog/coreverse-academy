@@ -23,6 +23,7 @@ const SL_L11 = {
         {
           id:       'l11-welcome',
           type:     'welcome',
+          guideText: `Think carefully about who you really trust, {name}. Not just who you like — who you actually trust. What did that person do to earn it? The chances are it wasn't one big dramatic moment. It was dozens of small ones: times they kept their word, times they told you the truth even when it was uncomfortable, times they showed up when it would have been easier not to. Trust is built in drops, and it can be lost in an instant. Today we're going to look at how trust works — how to build it, how to keep it, and what breaks it. This matters for every relationship you'll ever have.`,
           headline: 'Trust: How to Build It and Keep It',
           subtitle: `Trust is built in drops and lost in buckets — the small choices matter most`,
           visual:   '/explorer-assets/leadership/l11-welcome.png',

@@ -23,6 +23,7 @@ const SL_L02 = {
         {
           id:       'l02-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. Here's something I want you to think about: have you ever watched someone do the right thing when they thought nobody was looking? Maybe they picked up litter they didn't drop, or stood up for someone even though it cost them something. That's leading by example — and it's the most powerful kind of leadership there is. Not the speech from the stage. Not the trophy. The quiet choices, made when there's no applause. Today we're going to look at what it actually means to walk your talk — and why the leader who does that earns something that can never be given by a title. Ready?`,
           headline: 'Leading by Example',
           subtitle: `The most powerful form of leadership is what you do when no one is watching`,
           visual:   '/explorer-assets/leadership/l02-welcome.png',

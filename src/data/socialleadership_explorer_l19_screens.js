@@ -23,6 +23,7 @@ const SL_L19 = {
         {
           id:       'l19-welcome',
           type:     'welcome',
+          guideText: `Think about something you care about, {name} — something in your school, your neighbourhood, or your world that you wish someone would do something about. Here's a thought: what if that someone is you? Every club, campaign, and community project you've ever benefited from was started by one person who looked at a problem and decided to begin. Today we're going to talk about how that actually works — not the inspirational version, but the practical one. What do you do first? How do you get other people on board? How do you keep going when it gets hard? Let's find out.`,
           headline: 'Starting a Club or Project',
           subtitle: `Every organisation you've ever admired started as one person who decided to begin`,
           visual:   '/explorer-assets/leadership/l19-welcome.png',

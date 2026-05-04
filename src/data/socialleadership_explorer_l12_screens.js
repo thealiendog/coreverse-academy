@@ -23,6 +23,7 @@ const SL_L12 = {
         {
           id:       'l12-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. I want to try something: think of a piece of feedback you've received that actually helped you — something someone said that made you better at something, maybe in sport, in school, in a friendship. How did it feel when you first heard it? Probably at least a little uncomfortable. Now think: what if you'd never heard it? Today we're going to look at feedback — one of the most powerful tools in a leader's toolkit, and one of the most misunderstood. Because giving feedback well is a real skill, and receiving it gracefully is a different skill — and both are learnable.`,
           headline: 'Feedback: Giving and Receiving It',
           subtitle: `Honest feedback — given well and received well — is one of the fastest ways to grow`,
           visual:   '/explorer-assets/leadership/l12-welcome.png',

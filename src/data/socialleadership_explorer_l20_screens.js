@@ -24,6 +24,7 @@ const SL_L20 = {
         {
           id:       'l20-welcome',
           type:     'welcome',
+          guideText: `{name}. We have come a long way together. When we first started, you were thinking about what makes a good leader. Now — twenty lessons later — you've explored empathy, courage, conflict, community, failure, ethics, and what it means to truly serve others. Today's lesson is your last one with me, and it's the most personal: your own leadership journey. Not a famous person's. Yours. What have you learned? What have you changed? What kind of leader are you becoming? I'm so proud of the work you've done. Let's close out this journey properly.`,
           headline: 'My Leadership Journey',
           subtitle: `Leadership is not a destination — it's a journey you're already on`,
           visual:   '/explorer-assets/leadership/l20-welcome.png',

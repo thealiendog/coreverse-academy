@@ -23,6 +23,7 @@ const SL_L17 = {
         {
           id:       'l17-welcome',
           type:     'welcome',
+          guideText: `Here's something I think about, {name}: when we look at moments in history where things changed — where injustice was confronted, where something new was built, where a community found its way through a crisis — there's almost always a specific person at the center. Someone who saw a situation clearly, decided something needed to change, and acted. Not because they had special powers. Because they made a choice. Today we're going to meet some of those people — leaders from history who changed the world through character, not just power. I want you to think about what their choices might mean for yours.`,
           headline: 'Historical Leaders Who Changed the World',
           subtitle: `History isn't made by impersonal forces — it's made by people who decided to act`,
           visual:   '/explorer-assets/leadership/l17-welcome.png',

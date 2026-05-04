@@ -23,6 +23,7 @@ const SL_L03 = {
         {
           id:       'l03-welcome',
           type:     'welcome',
+          guideText: `Hey, {name} — here's something that happens all the time: a person says exactly what they mean, and the person listening hears something completely different. Not because anyone is dishonest — but because communication is harder than it looks. The words you choose, the tone in your voice, whether you're direct or vague — all of it shapes what the other person actually receives. Today we're going to look at how to close that gap between what you intend and what people actually hear. Being understood is a skill, and it's one the best leaders in history worked hard to develop. Let's get into it.`,
           headline: 'Communication: How to Say What You Mean',
           subtitle: `How you say something matters just as much as what you say`,
           visual:   '/explorer-assets/leadership/l03-welcome.png',

@@ -23,6 +23,7 @@ const SL_L15 = {
         {
           id:       'l15-welcome',
           type:     'welcome',
+          guideText: `Here's something that surprises people, {name}: empathy is not just a personality trait some people have and others don't. It's a skill. And like every skill, it can be developed — or neglected. The most effective leaders in history weren't just smart or bold. They were people who could genuinely understand how a situation felt from inside someone else's experience. That understanding changed how they led, how they communicated, and how people responded to them. Today we're going to look at empathy not as a soft feeling but as a practical tool — and you'll see exactly how to put it to work.`,
           headline: 'Empathy in Action',
           subtitle: `Empathy isn't just a feeling — it's something you do, and it can be learned`,
           visual:   '/explorer-assets/leadership/l15-welcome.png',

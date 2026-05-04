@@ -23,6 +23,7 @@ const SL_L01 = {
         {
           id:       'l01-welcome',
           type:     'welcome',
+          guideText: `Hey, {name} — I'm Valor, and I'm really glad you're here. Let me ask you something. Think about the people in your life who other people listen to. Maybe a coach, maybe a teacher, maybe an older kid at school. What is it about them that makes people pay attention? It's probably not a title or a badge. Today we're going to discover what leadership actually is — and here's the part that might surprise you: you don't have to wait to grow up to start. Leadership is a choice. Anyone can make it. Ready to find out what that choice looks like? Let's go.`,
           headline: 'What Makes a Good Leader?',
           subtitle: `Leadership isn't a title — it's a choice anyone can make`,
           visual:   '/explorer-assets/leadership/l01-welcome.png',

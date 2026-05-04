@@ -23,6 +23,7 @@ const SL_L09 = {
         {
           id:       'l09-welcome',
           type:     'welcome',
+          guideText: `Here's a question for you, {name}: what is a community? It's not just the people who live near you. It's the network of relationships, shared spaces, and mutual care that holds a group of people together. And one of the things that makes communities strong — or lets them weaken — is how many people choose to give something back to them. Today we're talking about community service: not because it looks good on a list, but because the act of giving your time and skill to help others does something real to your own character. Something no classroom can replicate. Let's explore it.`,
           headline: 'Community Service: Giving Back',
           subtitle: `Giving your time and talents to help others builds the kind of character no classroom can teach`,
           visual:   '/explorer-assets/leadership/l09-welcome.png',

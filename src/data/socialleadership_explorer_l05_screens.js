@@ -23,6 +23,7 @@ const SL_L05 = {
         {
           id:       'l05-welcome',
           type:     'welcome',
+          guideText: `Here's something every single person alive deals with, {name}: conflict. Disagreements. Moments when two people want different things. And here's the key question that leaders ask when conflict shows up — not "how do I win this?" but "how do we solve this?" Those are completely different questions, and they lead to completely different outcomes. Today we're going to look at what conflict actually is, why it's not always bad, and the tools that let you move through it without damaging the relationship or the team. Conflict resolution is one of the most practical skills a leader can build.`,
           headline: 'Conflict Resolution: Solving Problems Peacefully',
           subtitle: `The goal isn't to win — it's to find a solution that works for everyone`,
           visual:   '/explorer-assets/leadership/l05-welcome.png',

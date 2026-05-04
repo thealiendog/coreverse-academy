@@ -23,6 +23,7 @@ const SL_L14 = {
         {
           id:       'l14-welcome',
           type:     'welcome',
+          guideText: `I want you to try something, {name}: without saying a word, try to look confident. Now try to look like you don't care. Now try to look like you're genuinely interested in someone. Notice what your body did. That's the thing about non-verbal communication — we do it constantly, whether we intend to or not. Your posture, your eye contact, how you use your hands, whether you lean in or away — people are reading all of it. Today we're going to look at what your body says without words, and how to make sure it's saying what you actually mean.`,
           headline: 'Body Language and Non-Verbal Communication',
           subtitle: `What you say with your body often speaks louder than the words you choose`,
           visual:   '/explorer-assets/leadership/l14-welcome.png',

@@ -23,6 +23,7 @@ const SL_L10 = {
         {
           id:       'l10-welcome',
           type:     'welcome',
+          guideText: `You know that feeling, {name}, when something goes wrong and there's pressure to explain why it wasn't your fault? That's really common — and really human. But here's what I've noticed about the leaders I most respect: when things go wrong, they do something almost counter-cultural. They say, "I made that choice. I'll own what comes from it." Today we're going to look at responsibility — what it actually means, why it's so hard, and why the people who master it end up trusted in a way that excuse-makers never are. Owning your actions is one of the bravest things a person can do.`,
           headline: 'Responsibility: Owning Your Actions',
           subtitle: `Owning your choices — even when things go wrong — is one of the bravest things a person can do`,
           visual:   '/explorer-assets/leadership/l10-welcome.png',

@@ -23,6 +23,7 @@ const SL_L16 = {
         {
           id:       'l16-welcome',
           type:     'welcome',
+          guideText: `Something complicated happens when a group of people tries to make a decision together, {name}. The loudest person often dominates. Some people go quiet. Others agree with whoever spoke first. And the group ends up with a decision that doesn't reflect everyone's thinking — just the thinking of the most confident voice in the room. Today we're going to look at how groups make decisions, why the process often goes wrong, and what leaders can do to make sure every voice genuinely contributes. Good group decisions need everyone's thinking. Learning to draw that out is one of the most valuable leadership skills there is.`,
           headline: 'Making Decisions as a Group',
           subtitle: `Good group decisions need everyone's thinking — not just the loudest voices in the room`,
           visual:   '/explorer-assets/leadership/l16-welcome.png',

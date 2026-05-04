@@ -23,6 +23,7 @@ const SL_L07 = {
         {
           id:       'l07-welcome',
           type:     'welcome',
+          guideText: `Something I want you to think about today, {name}: there's a real difference between tolerating someone and actually respecting them. Tolerating means putting up with someone. Respecting means genuinely valuing their perspective — even when it's different from yours, maybe especially because it is. The most effective leaders I know of weren't just polite to people who were different. They actively sought out different perspectives, because they understood that their own view of the world had blind spots. Today we're going to explore what genuine respect looks like — and why it makes you a more powerful, more complete leader.`,
           headline: 'Respecting Differences',
           subtitle: `Genuine respect goes further than just tolerating people who are different`,
           visual:   '/explorer-assets/leadership/l07-welcome.png',

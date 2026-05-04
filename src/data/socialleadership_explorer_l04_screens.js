@@ -23,6 +23,7 @@ const SL_L04 = {
         {
           id:       'l04-welcome',
           type:     'welcome',
+          guideText: `Think about a time someone really listened to you, {name}. Not just waited for their turn to talk — but actually heard you. Eyes on you. No distractions. Asking a follow-up question that proved they'd been paying attention. How did that feel? Now think about a time you knew someone wasn't really listening. That feeling of being invisible. Today we're going to look at active listening — what it actually is, what makes it so rare, and why the leaders who master it earn a kind of loyalty that the loudest talkers never do. This one might surprise you.`,
           headline: 'Active Listening: Really Hearing Others',
           subtitle: `Giving someone your full attention is one of the most powerful things you can do`,
           visual:   '/explorer-assets/leadership/l04-welcome.png',

@@ -23,6 +23,7 @@ const SL_L08 = {
         {
           id:       'l08-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. I want to ask you something: have you ever been in a situation where you knew something was wrong — but saying so felt risky? Maybe the group was going along with something uncomfortable. Maybe the person doing the wrong thing was popular, or someone you liked. Speaking up in that moment takes a specific kind of courage. Not the dramatic kind from movies. The quiet, uncomfortable kind — where you have to decide, in real time, what you actually stand for. Today we're going to talk about moral courage: what it is, why it's hard, and how to build it.`,
           headline: `Standing Up for What's Right`,
           subtitle: `Moral courage is the kind of bravery that matters most in everyday life`,
           visual:   '/explorer-assets/leadership/l08-welcome.png',
