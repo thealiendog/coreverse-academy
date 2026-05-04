@@ -7,7 +7,7 @@ import { sfx } from '../games/sounds';
 
 const ENCOURAGEMENT = ["Yes!", "That's it!", "You got it!", "Beautiful match!"];
 const RETRY         = ["Hmm, try again.", "Not quite — try another.", "Almost — keep going."];
-const COMPLETION    = "Amazing! You matched them all! You really know your feelings!";
+const COMPLETION    = "Amazing, {name}! You matched them all!";
 
 function shuffle(arr) {
   const a = [...arr];
@@ -19,12 +19,13 @@ function shuffle(arr) {
 }
 
 export default function InteractiveExplore({
-  screen, guideAvatar, speaking, accent,
+  screen, guideAvatar, speaking, accent, childName,
   onSpeak, onPrewarm, onComplete, onInteractiveComplete,
   karaokeWords, karaokeIdx, subjectId,
 }) {
   const imgBase = `/explorer-assets/${subjectId || 'inner-world'}/`;
-  const { items = [], buckets = [], guideText = '', instruction = '', columnHeaders = ['Scenes', 'Feelings'] } = screen;
+  const { items = [], buckets = [], guideText = '', columnHeaders = ['Items', 'Categories'] } = screen;
+  const instruction = guideText || 'Tap an item, then tap the bucket where it belongs.';
 
   // Shuffle once on mount
   const [shuffledItems]   = useState(() => shuffle([...items]));
@@ -85,36 +86,40 @@ export default function InteractiveExplore({
 
   // ── Item tap (left column) ──────────────────────────────────────────────────
   const handleItemTap = (item) => {
-    if (consumeLP(item.correctMatch)) return;
-    if (lockedPairs.has(item.correctMatch)) return;
-    if (selectedKey === item.correctMatch) { setSelectedKey(null); return; }
-    setSelectedKey(item.correctMatch);
+    if (consumeLP(item.id)) return;
+    if (lockedPairs.has(item.id)) return;
+    if (selectedKey === item.id) { setSelectedKey(null); return; }
+    setSelectedKey(item.id);
     sfx.chime();
-    console.log(`[INTERACTIVE] Item selected: "${item.label}" (id: ${item.correctMatch})`);
+    console.log(`[INTERACTIVE] Item selected: "${item.label}" (id: ${item.id})`);
   };
 
   // ── Bucket tap (right column) ───────────────────────────────────────────────
   const handleBucketTap = (bucket) => {
     if (consumeLP(bucket.id)) return;
-    if (!selectedKey || lockedPairs.has(bucket.id)) return;
+    if (!selectedKey) return;
 
-    const isCorrect = selectedKey === bucket.id;
-    const pairId    = selectedKey;          // use bucket.id as stable pair identifier
+    // Find the selected item by its unique id
+    const selectedItem = shuffledItems.find(it => it.id === selectedKey);
+    if (!selectedItem || lockedPairs.has(selectedItem.id)) return;
+
+    const isCorrect = selectedItem.correctMatch === bucket.id;
+    const itemId    = selectedItem.id;
     totalAttempts.current++;
-    byPair.current[pairId] = (byPair.current[pairId] || 0) + 1;
+    byPair.current[itemId] = (byPair.current[itemId] || 0) + 1;
 
-    console.log(`[INTERACTIVE] Match attempt: ${pairId} → ${bucket.id}. Result: ${isCorrect ? 'correct' : 'wrong'}. Attempts so far: ${totalAttempts.current}`);
+    console.log(`[INTERACTIVE] Match attempt: item "${itemId}" → bucket "${bucket.id}". Correct: "${selectedItem.correctMatch}". Result: ${isCorrect ? 'correct' : 'wrong'}. Attempts: ${totalAttempts.current}`);
 
     if (isCorrect) {
-      if (byPair.current[pairId] === 1) firstTryCount.current++;
-      pairsOrder.current.push(pairId);
+      if (byPair.current[itemId] === 1) firstTryCount.current++;
+      pairsOrder.current.push(itemId);
       const newCount = pairsOrder.current.length;
 
-      setLockedPairs(prev => new Set([...prev, pairId]));
+      setLockedPairs(prev => new Set([...prev, itemId]));
       setSelectedKey(null);
       sfx.sparkle();
 
-      const matchedItem = shuffledItems.find(it => it.correctMatch === pairId);
+      const matchedItem = selectedItem;
       let phrase;
       if (matchedItem?.matchPhrase) {
         phrase = matchedItem.matchPhrase;
@@ -125,9 +130,10 @@ export default function InteractiveExplore({
 
       if (newCount === items.length) {
         // All pairs matched — chain: encouragement → completion → advance
+        const completionText = COMPLETION.replace(/\{name\}/g, childName || 'friend');
         onSpeak?.(phrase, () => {
           if (!mountedRef.current) return;
-          onSpeak?.(COMPLETION, () => {
+          onSpeak?.(completionText, () => {
             if (!mountedRef.current || completeFired.current) return;
             completeFired.current = true;
             const details = {
@@ -149,7 +155,7 @@ export default function InteractiveExplore({
       }
     } else {
       // Wrong — shake both columns, deselect, speak retry
-      setShakeItem(pairId);
+      setShakeItem(itemId);
       setShakeBucket(bucket.id);
       setSelectedKey(null);
       sfx.buzz();
@@ -248,16 +254,16 @@ export default function InteractiveExplore({
         {/* Left column — images */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
           {shuffledItems.map(item => {
-            const locked   = lockedPairs.has(item.correctMatch);
-            const selected = selectedKey === item.correctMatch;
-            const shaking  = shakeItem === item.correctMatch;
+            const locked   = lockedPairs.has(item.id);
+            const selected = selectedKey === item.id;
+            const shaking  = shakeItem === item.id;
             return (
               <button
-                key={item.correctMatch}
+                key={item.id}
                 className={`game-item${shaking ? ' g-shake' : ''}${locked ? ' g-lock' : ''}`}
-                onTouchStart={() => startLP(item.correctMatch, item.label)}
-                onTouchEnd={()   => cancelLP(item.correctMatch)}
-                onTouchMove={()  => cancelLP(item.correctMatch)}
+                onTouchStart={() => startLP(item.id, item.label)}
+                onTouchEnd={()   => cancelLP(item.id)}
+                onTouchMove={()  => cancelLP(item.id)}
                 onClick={() => handleItemTap(item)}
                 style={{
                   border:         `2.5px solid ${locked ? '#10B981' : selected ? accent : 'rgba(255,255,255,0.14)'}`,
@@ -304,7 +310,9 @@ export default function InteractiveExplore({
         {/* Right column — feeling labels (buckets) */}
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
           {shuffledBuckets.map(bucket => {
-            const locked   = lockedPairs.has(bucket.id);
+            // Bucket is "done" when every item that maps to it has been matched
+            const bucketItems = items.filter(it => it.correctMatch === bucket.id);
+            const locked   = bucketItems.length > 0 && bucketItems.every(it => lockedPairs.has(it.id));
             const shaking  = shakeBucket === bucket.id;
             const isTarget = selectedKey !== null && !locked; // highlight when item is selected
             return (
