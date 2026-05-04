@@ -1,0 +1,231 @@
+const SpanishExplorerL04Screens = {
+  lessons: [
+    {
+      id:        'sp-6-8-04',
+      subjectId: 'languages',
+      title:     'El Cuerpo — The Body',
+      guideId:   'luna',
+      xpReward:  50,
+      screens: [
+        {
+          id:        'sp04-welcome',
+          type:      'welcome',
+          guideText: `You've been carrying your first Spanish classroom with you your whole life, {name} — your own body. Today we're going to name it, from la cabeza all the way down to los dedos del pie. Every word you learn here is one you'll use every single day.`,
+        },
+        {
+          id:            'sp04-mag-1',
+          type:          'magazine',
+          section:       1,
+          totalSections: 4,
+          headline:      `Your Head Speaks Spanish First`,
+          paragraphs: [
+            `One of the first things you notice about body parts in Spanish: the language always uses the definite article — el or la — before them, even when you're talking about your own body. Instead of "my head hurts," you say me duele la cabeza — the head hurts me. The article comes with the body part, built right in.`,
+            `The head (la cabeza — lah kah-BEH-sah) is where everything starts. Cabeza also means the leader in Spanish — as in the head of a group or an organization. Language reveals how people think about the world.`,
+            `The eyes (los ojos — los OH-hos) and the nose (la nariz — lah nah-REES) are the features of a face everyone notices first. Ojos is masculine and plural — los. Nariz is feminine — la. Each body part comes with its own gender built in, and you learn both the word and its article together.`,
+          ],
+          image:        `/explorer-assets/languages/sp04-magazine-1.png`,
+          imageCaption: `A diagram of a face with Spanish body part labels`,
+          vocab: [
+            {
+              word:        `la cabeza`,
+              definition:  `The head in Spanish — always used with the article la.`,
+              audioPrompt: `La cabeza — lah kah-BEH-sah — the head, {name}. Notice la: Spanish uses the article before body parts, even for your own body. Me duele la cabeza — my head hurts. Literally: the head hurts me. Lah kah-BEH-sah — la cabeza. Learn the word with its article.`,
+            },
+            {
+              word:        `los ojos`,
+              definition:  `The eyes in Spanish — masculine plural, used with los.`,
+              audioPrompt: `Los ojos — los OH-hos — the eyes, {name}. Los because ojos is masculine plural. The j makes a soft h — OH-hos. Tienes ojos bonitos — you have beautiful eyes. The eyes don't just see in Spanish — they shine. Los OH-hos — los ojos.`,
+            },
+            {
+              word:        `la nariz`,
+              definition:  `The nose in Spanish — feminine, used with la.`,
+              audioPrompt: `La nariz — lah nah-REES — the nose, {name}. The z in Latin American Spanish sounds like a soft s. Lah nah-REES. Me duele la nariz — my nose hurts. Or: tengo la nariz fría — I have a cold nose. Nariz is feminine: always la. Lah nah-REES.`,
+            },
+          ],
+        },
+        {
+          id:            'sp04-mag-2',
+          type:          'magazine',
+          section:       2,
+          totalSections: 4,
+          headline:      `Face Words You'll Use Every Day`,
+          paragraphs: [
+            `The face is where Spanish gets expressive. The mouth (la boca — lah BOH-kah) is where language lives — where all the Spanish you're learning comes out. ¡Abre la boca! Open your mouth — you'll hear that phrase at the dentist in any Spanish-speaking country.`,
+            `The ears (las orejas — las oh-REH-has) do the listening. Con las orejas abiertas — with open ears — is how you learn any language fastest. The word orejas is feminine and plural, so it takes las. Oh-REH-has. Listen, repeat, listen again.`,
+            `Hair (el pelo — el PEH-loh) is masculine. Tengo el pelo largo — I have long hair. Tengo el pelo corto — I have short hair. Largo and corto: two more Spanish adjectives you can use right now. Pick up a word, and it brings more words with it.`,
+          ],
+          image:        `/explorer-assets/languages/sp04-magazine-2.png`,
+          imageCaption: `Close-up illustrations of mouth, ears, and hair with Spanish labels`,
+          vocab: [
+            {
+              word:        `la boca`,
+              definition:  `The mouth in Spanish — where language comes out.`,
+              audioPrompt: `La boca — lah BOH-kah — the mouth, {name}. Short, round, open — like the sound itself. La boca. ¡Abre la boca! Open your mouth — you'll hear that at the dentist across the Spanish-speaking world. Lah BOH-kah. This is where all your Spanish comes out.`,
+            },
+            {
+              word:        `las orejas`,
+              definition:  `The ears in Spanish — feminine plural, used with las.`,
+              audioPrompt: `Las orejas — las oh-REH-has — the ears, {name}. Orejas is feminine plural — so you get las. The j makes that soft h. Oh-REH-has. Con las orejas abiertas — with your ears open — that's how you learn Spanish fastest. Listen, repeat, listen again. Las orejas.`,
+            },
+            {
+              word:        `el pelo`,
+              definition:  `The hair in Spanish — masculine, used with el.`,
+              audioPrompt: `El pelo — el PEH-loh — the hair, {name}. El because pelo is masculine. Tengo el pelo largo — I have long hair. Tengo el pelo corto — I have short hair. Largo and corto: two more words you now own. El PEH-loh — pelo.`,
+            },
+          ],
+        },
+        {
+          id:            'sp04-mag-3',
+          type:          'magazine',
+          section:       3,
+          totalSections: 4,
+          headline:      `Arms, Hands, and the Middle of You`,
+          paragraphs: [
+            `The arm (el brazo — el BRAH-soh) is masculine. Los brazos — both arms. Abre los brazos — open your arms — is a phrase parents and grandparents say when they want a hug. The body vocabulary of Spanish is practical and warm at the same time.`,
+            `The hand (la mano — lah MAH-noh) is one of Spanish's most useful body words. Dame la mano — give me your hand. Levanta la mano — raise your hand. Lávate las manos — wash your hands. The hand appears in dozens of everyday phrases.`,
+            `The stomach (el estómago — el es-TOH-mah-goh) looks familiar because it shares roots with the English word. When Spanish and English words look alike, it's often because they come from the same Latin or Greek source. These shared words are called cognates — built-in shortcuts for learners.`,
+          ],
+          image:        `/explorer-assets/languages/sp04-magazine-3.png`,
+          imageCaption: `Illustrations of arms, hands, and stomach with Spanish labels`,
+          vocab: [
+            {
+              word:        `el brazo`,
+              definition:  `The arm in Spanish — los brazos for both arms.`,
+              audioPrompt: `El brazo — el BRAH-soh — the arm, {name}. Masculine: el brazo. Plural: los brazos. Abre los brazos — open your arms — is a phrase that means come in for a hug. The z makes a soft s sound in Latin America. El BRAH-soh — brazo.`,
+            },
+            {
+              word:        `la mano`,
+              definition:  `The hand in Spanish — appears in many everyday phrases.`,
+              audioPrompt: `La mano — lah MAH-noh — the hand, {name}. Dame la mano — give me your hand. Levanta la mano — raise your hand. Lávate las manos — wash your hands. The hand is the first tool and the first greeting. Lah MAH-noh — la mano.`,
+            },
+            {
+              word:        `el estómago`,
+              definition:  `The stomach in Spanish — a cognate that looks like its English cousin.`,
+              audioPrompt: `El estómago — el es-TOH-mah-goh — the stomach, {name}. Four syllables — take it slow: es-TOH-mah-goh. Me duele el estómago — my stomach hurts. Estómago looks like English stomach — both come from Greek. Words that share roots like this are called cognates. Es-TOH-mah-goh.`,
+            },
+          ],
+        },
+        {
+          id:            'sp04-mag-4',
+          type:          'magazine',
+          section:       4,
+          totalSections: 4,
+          headline:      `From the Hips Down`,
+          paragraphs: [
+            `From the hips down, Spanish gives you words for every part of the path from standing to moving. The language is built for the body in motion.`,
+            `The leg (la pierna — lah PYAIR-nah) is feminine. Las piernas — both legs. Tengo dolor en la pierna — I have pain in my leg. The foot (el pie — el PYEH) is just one syllable: short, solid, grounded. El pie, los pies.`,
+            `Fingers and toes both share the word los dedos (los DEH-dos) — Spanish uses one word for the digits of the hand and the foot. Los dedos de la mano — fingers. Los dedos del pie — toes. It's an elegant shortcut: one word, two places on the body. Hold up your hand: cuenta los dedos in Spanish.`,
+          ],
+          image:        `/explorer-assets/languages/sp04-magazine-4.png`,
+          imageCaption: `Illustrations of legs, feet, and toes with Spanish labels`,
+          vocab: [
+            {
+              word:        `la pierna`,
+              definition:  `The leg in Spanish — las piernas for both legs.`,
+              audioPrompt: `La pierna — lah PYAIR-nah — the leg, {name}. Lah PYAIR-nah. Pierna is feminine: la pierna, las piernas. Tengo dos piernas — I have two legs. You use them to walk, to run, to dance — and in Spanish, you have a beautiful word for all of that. Lah PYAIR-nah.`,
+            },
+            {
+              word:        `el pie`,
+              definition:  `The foot in Spanish — one syllable, los pies for both feet.`,
+              audioPrompt: `El pie — el PYEH — the foot, {name}. One syllable: PYEH. El pie, los pies — foot, feet. Tengo dolor en el pie — I have pain in my foot. Pie looks like the English word "pie" but sounds nothing like it: PYEH. Short, quick, grounded. El PYEH — pie.`,
+            },
+            {
+              word:        `los dedos`,
+              definition:  `The fingers or toes in Spanish — same word for both, context tells you which.`,
+              audioPrompt: `Los dedos — los DEH-dos — the fingers, or the toes, {name}. Spanish uses the same word for both. Los dedos de la mano — the fingers. Los dedos del pie — the toes. DEH-dos. Hold up your hand and count: uno, dos, tres, cuatro, cinco dedos.`,
+            },
+          ],
+        },
+        {
+          id:            'sp04-game',
+          type:          'interactive',
+          guideText:     `Match each Spanish body word to the right English meaning, {name}!`,
+          columnHeaders: ['Spanish', 'Body Part'],
+          items: [
+            { id: 'cabeza-i', label: 'la cabeza', correctMatch: 'head' },
+            { id: 'ojos-i',   label: 'los ojos',  correctMatch: 'eyes' },
+            { id: 'boca-i',   label: 'la boca',   correctMatch: 'mouth' },
+            { id: 'pie-i',    label: 'el pie',    correctMatch: 'foot' },
+          ],
+          buckets: [
+            { id: 'head',  label: 'head',  color: '#60A5FA' },
+            { id: 'eyes',  label: 'eyes',  color: '#34D399' },
+            { id: 'mouth', label: 'mouth', color: '#F87171' },
+            { id: 'foot',  label: 'foot',  color: '#FBBF24' },
+          ],
+        },
+        {
+          id:        'sp04-quiz',
+          type:      'quiz',
+          guideText: `¡Muy bien, {name}! Let's make sure it all sticks!`,
+          questions: [
+            {
+              id:          'q1',
+              format:      'multiple-choice',
+              text:        `How do you say "nose" in Spanish?`,
+              options:     ['la boca', 'la nariz', 'el brazo', 'el pie'],
+              answer:      'la nariz',
+              explanation: `La nariz (lah nah-REES) is the nose — feminine, so it takes la. The z makes a soft s sound in Latin American Spanish.`,
+            },
+            {
+              id:          'q2',
+              format:      'multiple-choice',
+              text:        `What does "las orejas" mean?`,
+              options:     ['the eyes', 'the ears', 'the hands', 'the feet'],
+              answer:      'the ears',
+              explanation: `Las orejas (las oh-REH-has) means the ears — feminine plural, so it takes las.`,
+            },
+            {
+              id:          'q3',
+              format:      'multiple-choice',
+              text:        `"El pelo" means which of the following?`,
+              options:     ['the leg', 'the arm', 'the hair', 'the foot'],
+              answer:      'the hair',
+              explanation: `El pelo (el PEH-loh) is the hair — masculine, so it takes el. Largo for long hair, corto for short hair.`,
+            },
+            {
+              id:          'q4',
+              format:      'true-false',
+              text:        `In Spanish, you always use "el" or "la" before body parts, even when talking about your own body.`,
+              answer:      'True',
+              explanation: `Yes — Spanish uses the definite article with body parts. "My head hurts" becomes me duele la cabeza — the head hurts me.`,
+            },
+            {
+              id:          'q5',
+              format:      'multiple-choice',
+              text:        `Complete: "Tengo dos ___" (I have two arms).`,
+              options:     ['piernas', 'brazos', 'ojos', 'pies'],
+              answer:      'brazos',
+              explanation: `Brazos (BRAH-sos) is the plural of brazo — arm. Tengo dos brazos: I have two arms.`,
+            },
+            {
+              id:          'q6',
+              format:      'multiple-choice',
+              text:        `A friend points to their head — what Spanish word do you say?`,
+              options:     ['la nariz', 'el brazo', 'la boca', 'la cabeza'],
+              answer:      'la cabeza',
+              explanation: `La cabeza (lah kah-BEH-sah) is the head — always with its article la.`,
+            },
+          ],
+        },
+        {
+          id:              'sp04-realworld',
+          type:            'real-world',
+          guideText:       `Let's use your body to practice Spanish, {name}!`,
+          familyAdventure: `Play Simón dice — Simon says — using Spanish body parts: Simón dice: ¡Toca la cabeza! ¡Toca los ojos! ¡Toca la nariz! Take turns being Simón. The person who touches the wrong part is out. Keep going until someone gets confused — and then teach them the right word.`,
+          creativePrompt:  `Trace your hand on paper and label all five fingers: los dedos de la mano. Then draw a simple person and label as many body parts as you can remember — la cabeza, los ojos, la nariz, la boca, las orejas, el pelo, el brazo, la mano, el estómago, la pierna, el pie. See how many you can fill in without looking.`,
+        },
+        {
+          id:        'sp04-celebration',
+          type:      'celebration',
+          message:   `¡Excelente, {name}! You've named your body in Spanish — from la cabeza all the way down to los dedos del pie. Your body and the Spanish language now know each other. Every time you reach for something, or something hurts, or you want to describe how you feel — you have the words. ¡Hasta la próxima!`,
+          badge:     'languages-l04',
+          badgeName: 'Body Mapper',
+          xpEarned:  50,
+        },
+      ],
+    },
+  ],
+};
+
+export default SpanishExplorerL04Screens;
