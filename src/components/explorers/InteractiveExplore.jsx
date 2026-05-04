@@ -27,8 +27,12 @@ export default function InteractiveExplore({
   const { items = [], buckets = [], guideText = '', columnHeaders = ['Items', 'Categories'] } = screen;
   const instruction = guideText || 'Tap an item, then tap the bucket where it belongs.';
 
-  // Shuffle once on mount
-  const [shuffledItems]   = useState(() => shuffle([...items]));
+  // Shuffle once on mount.
+  // Normalize: if an item has no id (older IW/Cosmos data files), derive one from
+  // item.image so every item gets a unique tracking key for lockedPairs/selectedKey.
+  const [shuffledItems]   = useState(() => shuffle(
+    items.map((item, idx) => item.id ? item : { ...item, id: item.image ?? String(idx) })
+  ));
   const [shuffledBuckets] = useState(() => shuffle([...buckets]));
 
   const [selectedKey,  setSelectedKey]  = useState(null);   // bucket.id of selected item
