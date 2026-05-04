@@ -38,6 +38,11 @@ const FS_L18 = {
           ],
           image: `/explorer-assets/future-skills/l18-magazine-1.png`,
           imageCaption: `Great games are built on ideas that have existed for centuries`,
+          vocab: [
+            { word: `game designer`, definition: `A person whose job is to invent the rules, goals, and systems that make a game fun to play.`, audioPrompt: `A game designer is like an architect of fun, {name}. They don't just draw pictures or write code — they think deeply about what makes a player feel excited, challenged, or satisfied. Then they build that feeling deliberately, piece by piece.` },
+            { word: `design principles`, definition: `A set of ideas that help creators build things that work well — game designers use them to make sure games feel fair, fun, and engaging.`, audioPrompt: `Design principles are like a game designer's toolkit, {name}. Instead of making random choices, they follow principles — like "rewards should feel earned" or "the challenge should grow with the player." These ideas have been tested across thousands of games.` },
+            { word: `play`, definition: `Voluntary activity done for fun, within rules or boundaries — the thing all games, from chess to video games, are built to create.`, audioPrompt: `Play is something Byte finds fascinating, {name}. Scientists study it seriously because it's one of the most powerful ways humans learn. Every great game is really just a carefully designed space for play — with just enough structure to make it feel meaningful.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const FS_L18 = {
           ],
           image: `/explorer-assets/future-skills/l18-magazine-2.png`,
           imageCaption: `Goals, rules, feedback, and progression — the building blocks of fun`,
+          vocab: [
+            { word: `feedback`, definition: `Information that tells you how you're doing right now — score counters, health bars, and sound effects are all forms of game feedback.`, audioPrompt: `Feedback is how a game talks to you, {name}. Without it, you'd never know if you were winning or losing. A flashing health bar, a satisfying coin sound, a score ticking up — these are all the game saying: here's what just happened.` },
+            { word: `progression`, definition: `The way a game grows more interesting or challenging as you improve — new abilities, harder levels, and unlocked content are all forms of progression.`, audioPrompt: `Progression is what keeps games from feeling flat, {name}. At the start, everything is new. Over time, the game needs to grow with you — new challenges, new abilities, new secrets. Without progression, even a great core loop gets stale.` },
+            { word: `core loop`, definition: `The main action a player repeats over and over throughout a game — if the core loop isn't satisfying, the game won't work.`, audioPrompt: `The core loop is the heartbeat of any game, {name}. Run, jump, collect. Build, explore, defend. Whatever you do over and over — that's the core loop. If it feels good every single time, the game works. If it doesn't, nothing else can save it.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const FS_L18 = {
           ],
           image: `/explorer-assets/future-skills/l18-magazine-3.png`,
           imageCaption: `The best games keep you in the 'flow zone' — not too easy, not too hard`,
+          vocab: [
+            { word: `flow`, definition: `The state of complete focus where challenge and skill are perfectly matched — time seems to disappear and you feel fully absorbed.`, audioPrompt: `Flow is one of Byte's favorite discoveries, {name}. It's when you're so locked into something that you forget about everything else. It happens when the challenge is just right — hard enough to keep you engaged, easy enough that you're not stuck. Great games live here.` },
+            { word: `difficulty curve`, definition: `The way a game gradually increases in challenge as the player improves — keeping them in the flow zone throughout.`, audioPrompt: `Imagine if every level was equally hard, {name}. The first level would overwhelm beginners, and the last level would bore experts. A difficulty curve solves this — it starts gentle, rises steadily, and keeps everyone right at the edge of their ability. That's where flow lives.` },
+            { word: `frustration`, definition: `The feeling of being stuck or overwhelmed — in game design, it happens when challenge rises too fast for the player's current skill.`, audioPrompt: `Frustration is the opposite of flow, {name}. It hits when the gap between what you can do and what the game demands is too wide. Good designers realize frustration is a warning sign — the difficulty curve jumped too fast. Time to pull it back and let the player catch up.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const FS_L18 = {
           ],
           image: `/explorer-assets/future-skills/l18-magazine-4.png`,
           imageCaption: `Free tools like Scratch and Godot let anyone start designing games today`,
+          vocab: [
+            { word: `open source`, definition: `Software that anyone can use, study, and improve for free — tools like Scratch and Godot are open source, which is why they're free for anyone to use.`, audioPrompt: `Open source means the code is shared with everyone, {name}. Byte's favorite examples are the tools that let anyone build great things for free — Scratch, Godot, Linux. The people who built them shared their work so others could learn, improve, and build on top of it. That spirit is part of why software moves so fast.` },
+            { word: `game engine`, definition: `A software tool that handles the technical side of making a game — physics, graphics, sound — so designers can focus on creating the experience.`, audioPrompt: `A game engine is like a power tool for game designers, {name}. Instead of writing all the math that makes things fall, bounce, and collide from scratch, designers use an engine that handles all of it. That frees them up to focus on what matters: making the experience fun.` },
+            { word: `iteration`, definition: `Testing your game, noting what isn't working, changing it, and testing again — most good games go through many rounds of iteration before they feel right.`, audioPrompt: `Iteration in game design means play it, fix it, play it again, {name}. The first version of almost every great game felt broken or boring. It was through dozens of rounds of playing, noticing problems, and improving that the fun emerged. There's no shortcut — iteration is the process.` },
+          ],
         },
 
         {

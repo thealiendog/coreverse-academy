@@ -38,6 +38,11 @@ const FS_L17 = {
           ],
           image: `/explorer-assets/future-skills/l17-magazine-1.png`,
           imageCaption: `Your brain loves surprises — but that can be used against you`,
+          vocab: [
+            { word: `willpower`, definition: `The mental strength to make yourself do — or stop doing — something, even when it's hard.`, audioPrompt: `Willpower is like a muscle, {name}. It can get tired if you use it too much in one day. That's why clever app designers try to wear it down — so you keep scrolling long after you meant to stop.` },
+            { word: `psychological`, definition: `Relating to how your mind and brain work — your thoughts, feelings, and behavior.`, audioPrompt: `Psychological means it's about your brain, not your body, {name}. The tricks used to keep you on your phone aren't physical — they're psychological. They work on your thoughts and feelings without you even noticing.` },
+            { word: `slot machine`, definition: `A gambling machine that gives random prizes — used here to describe how apps use unpredictable rewards to keep you engaged.`, audioPrompt: `A slot machine gives you a prize sometimes, and nothing other times — totally unpredictable, {name}. That's exactly how social feeds work. You scroll, and sometimes you find something amazing. Sometimes nothing. That uncertainty is what makes it so hard to stop.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const FS_L17 = {
           ],
           image: `/explorer-assets/future-skills/l17-magazine-2.png`,
           imageCaption: `Unpredictable rewards are more powerful than predictable ones`,
+          vocab: [
+            { word: `dopamine`, definition: `The brain chemical released when you get a reward — it makes you feel good and want more.`, audioPrompt: `Dopamine is your brain's reward signal, {name}. Every time something exciting happens — a great notification, a funny post — your brain releases dopamine. Apps are designed to trigger it as often as possible. Now you know the trick.` },
+            { word: `variable reward`, definition: `A reward that comes sometimes but not always — unpredictable rewards are more powerful than ones you can always predict.`, audioPrompt: `Here's Byte's favorite fact, {name}: unpredictable rewards are more powerful than predictable ones. If a treat appeared every single time you opened a box, you'd stop being excited. But if it only appears sometimes? You can't stop checking.` },
+            { word: `notification`, definition: `An alert from an app that pulls your attention back to your device — often designed to feel urgent even when it isn't.`, audioPrompt: `Notifications are tiny hooks, {name}. They're designed to feel urgent — even when they're not. Every ping is an invitation to look. Turning them off is one of the most powerful things you can do to stay in charge of your own attention.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const FS_L17 = {
           ],
           image: `/explorer-assets/future-skills/l17-magazine-3.png`,
           imageCaption: `Blue light tricks your brain into thinking it's still daytime`,
+          vocab: [
+            { word: `melatonin`, definition: `The hormone your brain releases to make you feel sleepy — blue light from screens can suppress it.`, audioPrompt: `Melatonin is your body's sleep signal, {name}. When it gets dark, your brain starts releasing it and you feel drowsy. But screens trick your brain into thinking it's still daytime — so the melatonin signal gets delayed, and sleep becomes harder.` },
+            { word: `blue light`, definition: `A type of light produced by screens that can delay melatonin release and make it harder to fall asleep.`, audioPrompt: `The sun produces blue light too, {name} — it's what wakes you up in the morning. Your phone screen does the same thing. Use it at night, and your brain thinks it's daytime. That's why screens before bed can keep you awake even when you're exhausted.` },
+            { word: `suppress`, definition: `To hold something back or reduce it — blue light suppresses melatonin by signaling to the brain that it shouldn't be released yet.`, audioPrompt: `Suppress means to push something down, {name}. Blue light suppresses melatonin — it doesn't stop it permanently, just delays it. That delay might mean 30 extra minutes before you feel sleepy. Over a week of late-night scrolling, that adds up to a lot of lost sleep.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const FS_L17 = {
           ],
           image: `/explorer-assets/future-skills/l17-magazine-4.png`,
           imageCaption: `Check your device's screen time or digital wellbeing settings to see your habits`,
+          vocab: [
+            { word: `intentional`, definition: `Done on purpose, with a clear reason — intentional screen use means you decided what to do before you picked up the device.`, audioPrompt: `Intentional means you chose it, {name}. Before you pick up a device, ask: why am I doing this? If you have an answer — great, go ahead. If you don't, that's a sign the habit is running you instead of the other way around. One question. That's the whole trick.` },
+            { word: `compulsive`, definition: `Done out of habit or impulse, without a deliberate decision — compulsive screen use happens when the technology is in control instead of you.`, audioPrompt: `Compulsive means you didn't really decide, {name}. Your hand just reached for the phone. The app just opened. Suddenly thirty minutes passed. That's compulsive use — not a choice, just a habit the technology reinforced. Noticing it is the first step to changing it.` },
+            { word: `digital wellbeing`, definition: `The practice of using technology in a way that supports your health, focus, and happiness rather than undermining it.`, audioPrompt: `Digital wellbeing isn't about using screens less, {name} — it's about using them better. Most devices have a screen time or digital wellbeing settings area where you can see exactly which apps are taking your time. Awareness is power. What you measure, you can change.` },
+          ],
         },
 
         {

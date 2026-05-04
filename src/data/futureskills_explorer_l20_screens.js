@@ -39,6 +39,11 @@ const FS_L20 = {
           ],
           image: `/explorer-assets/future-skills/l20-magazine-1.png`,
           imageCaption: `Innovation often means combining existing ideas in a new way`,
+          vocab: [
+            { word: `innovation`, definition: `Taking existing ideas and combining or applying them in a new way that creates real value for people.`, audioPrompt: `Innovation isn't about inventing from nothing, {name}. It's about seeing existing things differently. The first smartphone didn't invent the phone, the camera, or the internet — it combined them in a way nobody had tried before. That's innovation. A new combination that changes everything.` },
+            { word: `insight`, definition: `A sudden clear understanding of something — the key idea that makes an innovation possible.`, audioPrompt: `An insight is the moment the puzzle clicks, {name}. It's that "aha!" feeling when you suddenly see a problem differently. The insight behind the smartphone was: what if all these separate devices were one? That single insight reshaped how billions of people live.` },
+            { word: `reshape`, definition: `To change something so significantly that it looks and works differently than before — innovation reshapes industries, habits, and everyday life.`, audioPrompt: `Reshape means to change something's shape completely, {name}. One-click shopping reshaped how people buy things. Streaming reshaped how people watch films. A great innovation doesn't just improve something — it reshapes everything around it.` },
+          ],
         },
 
         {
@@ -51,6 +56,11 @@ const FS_L20 = {
           ],
           image: `/explorer-assets/future-skills/l20-magazine-2.png`,
           imageCaption: `Invention creates something new. Innovation creates new value from what exists.`,
+          vocab: [
+            { word: `invention`, definition: `Creating something that has never existed before — a new device, material, or formula.`, audioPrompt: `Invention is bringing something completely new into existence, {name}. The wheel was an invention. The printing press was an invention. Before they existed, no one had seen them. That's what makes invention different from innovation — it starts from nothing.` },
+            { word: `prototype`, definition: `An early version of something built to test whether an idea works — most innovations require many prototypes before the final version is ready.`, audioPrompt: `A prototype is your first real attempt, {name}. It won't be perfect — it's not supposed to be. It's built to find out what works and what doesn't. One famous vacuum designer built over five thousand prototypes. Every failed one taught him something the next one got right.` },
+            { word: `collaboration`, definition: `Working together with others — most major innovations come from teams, not lone individuals.`, audioPrompt: `Almost every great innovation came from a team, {name}. Edison had a whole laboratory of inventors. Newton built on centuries of earlier math. Even the most famous solo success stories involve mentors, colleagues, and critics. Collaboration isn't just helpful — it's usually essential.` },
+          ],
         },
 
         {
@@ -63,6 +73,11 @@ const FS_L20 = {
           ],
           image: `/explorer-assets/future-skills/l20-magazine-3.png`,
           imageCaption: `Curiosity + persistence + cross-field thinking = the innovator's mindset`,
+          vocab: [
+            { word: `curiosity`, definition: `A strong desire to understand how and why things work — the most consistent trait of innovative thinkers.`, audioPrompt: `Curiosity is Byte's favorite word, {name}. It's the one trait almost every great innovator shares — not just being smart, but genuinely needing to understand why. Why does this work? What if we changed it? What else could this be used for? Curiosity is what starts every breakthrough.` },
+            { word: `mindset`, definition: `The collection of attitudes and beliefs that shape how you approach challenges — an innovator's mindset treats failure as information, not defeat.`, audioPrompt: `Mindset is how you think about thinking, {name}. Two people can face the same failure — one sees proof they should stop, the other sees data that tells them what to try next. That difference is mindset. And the good news is: unlike your height, mindset is something you can actually change.` },
+            { word: `persistence`, definition: `Continuing to try even after repeated failures — most breakthroughs only happen because someone refused to stop before they found the answer.`, audioPrompt: `Persistence is what separates people who almost innovate from those who actually do, {name}. Every great invention came after many failures. The question isn't whether you'll face setbacks — you will. The question is whether you'll use them as reasons to stop or reasons to try differently.` },
+          ],
         },
 
         {
@@ -75,6 +90,11 @@ const FS_L20 = {
           ],
           image: `/explorer-assets/future-skills/l20-magazine-4.png`,
           imageCaption: `The world's biggest problems need the most creative thinkers`,
+          vocab: [
+            { word: `critical thinking`, definition: `The ability to analyze information carefully, question assumptions, and form well-reasoned conclusions — a core skill for innovators.`, audioPrompt: `Critical thinking means you don't just accept things, {name} — you analyze them. Why does this work? Is this evidence actually good? What else could explain it? Innovators are critical thinkers because they need to spot what everyone else missed. It's a skill, and like any skill, you build it by using it.` },
+            { word: `digital literacy`, definition: `The ability to understand, evaluate, and use digital tools and information effectively — one of the most important skills for navigating the modern world.`, audioPrompt: `Digital literacy isn't just knowing how to use apps, {name}. It's understanding how they work, who built them, and what they're designed to do. It means reading AI output critically, spotting misinformation, and knowing when to trust a source. In a digital world, this is the skill that protects you.` },
+            { word: `foundation`, definition: `The base that everything else is built on — the skills from all twenty Future Skills lessons form the foundation for whatever you choose to build next.`, audioPrompt: `A foundation is what holds everything up, {name}. You've spent twenty lessons building yours — coding, AI, data, cybersecurity, design, robotics, innovation. These aren't separate topics. They're the base layer. Whatever you choose to build next — in any field — this foundation is what you'll stand on.` },
+          ],
         },
 
         {

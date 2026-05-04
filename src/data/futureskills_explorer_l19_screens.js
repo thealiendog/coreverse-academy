@@ -38,6 +38,11 @@ const FS_L19 = {
           ],
           image: `/explorer-assets/future-skills/l19-magazine-1.png`,
           imageCaption: `Robots come in every shape — what makes them robots is how they work`,
+          vocab: [
+            { word: `robot`, definition: `A machine that can sense its environment, process information, and take physical action in the world — not just the humanoid machines from movies.`, audioPrompt: `Forget the movie robots, {name}. A real robot is any machine that senses, thinks, and acts. That includes the arm welding cars in a factory, the rover on Mars, and the small disk cleaning your floor at home. They all work on the same three-part idea.` },
+            { word: `architecture`, definition: `The way something is organized and built — a robot's architecture describes how its sensors, processor, and actuators work together.`, audioPrompt: `Architecture usually means building design, {name}, but in robotics it means the structure of how a robot is built. Every robot — from the tiniest drone to a full surgical system — follows the same basic architecture: sense, think, act.` },
+            { word: `actuator`, definition: `The part of a robot that takes physical action — motors, wheels, arms, and grippers are all actuators.`, audioPrompt: `An actuator is what makes a robot move, {name}. If sensors are the robot's eyes and ears, and the processor is its brain, then actuators are its muscles. Wheels, arms, grippers, jets — any part that physically does something is an actuator.` },
+          ],
         },
 
         {
@@ -50,6 +55,11 @@ const FS_L19 = {
           ],
           image: `/explorer-assets/future-skills/l19-magazine-2.png`,
           imageCaption: `Sensors hear the world. Processors think. Actuators act.`,
+          vocab: [
+            { word: `sensor`, definition: `The part of a robot that gathers information from the environment — cameras, microphones, and pressure detectors are all sensors.`, audioPrompt: `Sensors are a robot's eyes and ears, {name}. Without them, it can't know anything about the world around it. A camera sees. A microphone hears. A pressure sensor feels. The richer the sensors, the more aware the robot.` },
+            { word: `processor`, definition: `The computer inside a robot that receives information from sensors and decides what to do — the robot's brain.`, audioPrompt: `The processor is where the thinking happens, {name}. It takes everything the sensors gather and figures out: what should I do next? A simple processor handles basic rules. A powerful one can map a room, recognize faces, or navigate a planet.` },
+            { word: `precision`, definition: `The ability to act with exact accuracy — robots used in surgery or manufacturing need precision far beyond what human hands can reliably achieve.`, audioPrompt: `Precision means doing something exactly right, every single time, {name}. A surgeon's hands are remarkably steady — but a robotic arm can make cuts just a fraction of a millimeter wide, repeated thousands of times without ever getting tired.` },
+          ],
         },
 
         {
@@ -62,6 +72,11 @@ const FS_L19 = {
           ],
           image: `/explorer-assets/future-skills/l19-magazine-3.png`,
           imageCaption: `The real world is far less predictable than any lab test`,
+          vocab: [
+            { word: `unpredictable`, definition: `Impossible to know in advance — the real world is unpredictable in ways a lab environment can never fully replicate.`, audioPrompt: `Unpredictable means you can't see it coming, {name}. In a lab, everything is controlled — the lighting, the floor, the temperature. But the real world changes constantly. Floors have bumps. People move unexpectedly. Weather shifts. That's why testing robots outside the lab is a completely different challenge.` },
+            { word: `terrain`, definition: `The surface a robot moves across — terrain can be flat, rocky, sloped, or wet, each requiring different sensors and movement strategies.`, audioPrompt: `Terrain is everything a robot has to travel over, {name}. A factory floor is flat, smooth, and predictable. A Martian surface is rocky, dusty, and full of surprises — no roads, no curbs, no maps. Designing a robot that handles unknown terrain is one of the hardest problems in robotics.` },
+            { word: `iteration`, definition: `The process of testing, finding problems, and improving — robotics engineers use many rounds of iteration before a robot works reliably.`, audioPrompt: `Iteration means you build, test, find a flaw, fix it, and go again, {name}. Robotics engineers don't expect the first version to work perfectly. Each test — whether it succeeds or fails — teaches them something. The robot gets better with every cycle. That's iteration.` },
+          ],
         },
 
         {
@@ -74,6 +89,11 @@ const FS_L19 = {
           ],
           image: `/explorer-assets/future-skills/l19-magazine-4.png`,
           imageCaption: `Arduino, Raspberry Pi, and FIRST Robotics are brilliant starting points`,
+          vocab: [
+            { word: `microcontroller`, definition: `A tiny, affordable computer chip used to control robots and electronic devices — Arduino is one of the most popular microcontrollers for beginners.`, audioPrompt: `A microcontroller is a whole computer on a single chip, {name}. It can read sensors, run simple programs, and control motors — all from something smaller than your thumb. Arduino is the most popular one for students, and it costs less than a book. That's all you need to start building real robots.` },
+            { word: `competition`, definition: `An event where teams build robots to complete challenges against each other — student robotics competitions like FIRST are where many professional engineers got their start.`, audioPrompt: `Robotics competitions are where theory meets reality, {name}. You don't just design on paper — you build something that has to actually work under pressure, against other teams, in front of an audience. Many engineers at major space companies say their FIRST Robotics experience is what got them there.` },
+            { word: `prototype`, definition: `An early version built to test whether an idea works — robotics teams build and rebuild prototypes many times before a competition or real-world deployment.`, audioPrompt: `In robotics, your first prototype will almost certainly fail, {name}. That's expected — that's the point. A prototype isn't the final robot. It's the version you build to find out what you got wrong, so the next version can be better. Build it. Break it. Learn from it. Build again.` },
+          ],
         },
 
         {
