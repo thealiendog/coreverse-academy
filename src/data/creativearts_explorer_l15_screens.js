@@ -23,6 +23,7 @@ const CA_L15 = {
         {
           id:       'l15-welcome',
           type:     'welcome',
+          guideText: `Look around at any surface with words or images on it, {name} — a book cover, a food label, a bus stop poster, the icons on a phone screen. All of it was designed. Someone made deliberate choices about typeface, color, layout, and imagery — designed to make you feel something, understand something, or do something. Most people move through this designed world without seeing the decisions behind it. Today we're going to change that. Once you understand the principles of graphic design — hierarchy, contrast, alignment, color — you'll start reading the designed world instead of just receiving it. And you'll be able to create within it too.`,
           headline: 'Graphic Design Basics',
           subtitle: `The sign on that coffee shop. The logo on your favourite brand. The poster for the film you want to see. All of it was designed by someone making deliberate choices. Graphic design is everywhere — and once you understand its principles, you'll see exactly what those choices are and why they work`,
           visual:   '/explorer-assets/creative-arts/l15-welcome.png',

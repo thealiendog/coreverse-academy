@@ -23,6 +23,7 @@ const CA_L05 = {
         {
           id:       'l05-welcome',
           type:     'welcome',
+          guideText: `Here's something that might change how you hear music, {name}: underneath every song you've ever loved — no matter how different they are from each other — there is a structure. Notes at precise frequencies. Rhythms that repeat in counted patterns. Melodies built from scales humans have been using for thousands of years. Music is, in a real sense, mathematics you can hear and physics turned into emotion. And here's the beautiful paradox: understanding that structure doesn't take the magic away. It multiplies it. Once you know what's happening, you hear it more deeply. Today we begin that understanding.`,
           headline: 'Music Theory: Notes, Rhythm, Melody',
           subtitle: `Music is mathematics you can hear, and physics turned into emotion — and underneath every song you've ever loved is a structure. Understanding that structure doesn't take the magic away. It multiplies it`,
           visual:   '/explorer-assets/creative-arts/l05-welcome.png',

@@ -23,6 +23,7 @@ const CA_L13 = {
         {
           id:       'l13-welcome',
           type:     'welcome',
+          guideText: `Something I want you to notice today, {name}, and for the rest of your life: you spend your entire existence inside spaces that were designed by someone. Your home. Your school. The shops you walk through. Every doorway, ceiling height, window placement, and material choice was made deliberately — and those choices shape how you feel, how you move, and how you think, mostly without you realizing it. Architecture is the only art form you cannot choose to avoid. It is always around you. Today we're going to start really seeing it — and once you do, walking into a building will never be quite the same.`,
           headline: 'Architecture: Designing Spaces',
           subtitle: `You spend your entire life inside buildings — and architecture shapes your mood, your behaviour, and your sense of the world more than almost any other art form. Once you start seeing the design behind the spaces you inhabit, you can never un-see it`,
           visual:   '/explorer-assets/creative-arts/l13-welcome.png',

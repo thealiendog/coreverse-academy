@@ -23,6 +23,7 @@ const CA_L19 = {
         {
           id:       'l19-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. Here's something worth knowing about the creative world: almost every professional in it — artist, photographer, designer, architect, illustrator, filmmaker — is asked to show a portfolio at some point. Not a list of things they've made. A selection. A curated story about who they are as a creative and what they can do. Building a portfolio is a skill in its own right — separate from the skill of making the work. It requires honest self-evaluation, good judgment about what to include, and the courage to leave things out. Today we look at how to do it well. Everything you've made so far is material.`,
           headline: 'Creating a Portfolio',
           subtitle: `Every creative professional in the world uses a portfolio. It's the primary way creative people show who they are and what they can do. But a great portfolio isn't just a collection of work — it's a curated, intentional story about your creative identity. Learning to build one is a skill as important as the art itself`,
           visual:   '/explorer-assets/creative-arts/l19-welcome.png',

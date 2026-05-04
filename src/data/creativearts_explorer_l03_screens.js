@@ -23,6 +23,7 @@ const CA_L03 = {
         {
           id:       'l03-welcome',
           type:     'welcome',
+          guideText: `Here's a question that fascinated me for a long time, {name}: why do some drawings look completely flat — stuck to the surface of the paper — while others look like you could step right into them? Like there's real space behind the page? The answer is two principles that transformed the history of art when artists figured them out: perspective and proportion. Once you understand these, you'll spot them in every painting, every photograph, every film frame. And your own drawings will take a real leap forward. Today we unlock both of them. Ready to make your work come alive?`,
           headline: 'Drawing Techniques: Perspective and Proportion',
           subtitle: `Why do some drawings look flat and awkward while others look like you could step right into them? The secret is two principles that changed art forever — and once you understand them, your drawings will take a real leap forward`,
           visual:   '/explorer-assets/creative-arts/l03-welcome.png',

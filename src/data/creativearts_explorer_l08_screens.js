@@ -23,6 +23,7 @@ const CA_L08 = {
         {
           id:       'l08-welcome',
           type:     'welcome',
+          guideText: `Let me start with something true, {name}: humans have been telling stories since before writing existed. Around fires, through myths passed down generations, through drawings on cave walls. Stories are how we make sense of experience — how we understand who we are and how the world works. And here's what's remarkable: across thousands of years and every culture on earth, the same structural elements keep appearing. A character who wants something. Obstacles that stand in the way. A journey that changes them. Today we're going to look at how stories are actually built — and give you the tools to build worlds of your own.`,
           headline: 'Storytelling: Plot, Character, Setting',
           subtitle: `Humans have been telling stories for as long as we have existed — around fires, in caves, through books, through screens. Once you understand what makes a story work, you will see its structure everywhere — and you'll be able to build worlds of your own`,
           visual:   '/explorer-assets/creative-arts/l08-welcome.png',

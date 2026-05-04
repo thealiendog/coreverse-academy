@@ -23,6 +23,7 @@ const CA_L14 = {
         {
           id:       'l14-welcome',
           type:     'welcome',
+          guideText: `Every morning, {name}, you make a creative decision — maybe without thinking much about it, maybe with a lot of thought. What you wear is a form of communication: it says something about who you are, what you belong to, what mood you're in, what you want the world to see. People have been making that kind of communication through clothing for at least a hundred thousand years. Fashion is one of the oldest human art forms. Today we're going to look at it seriously — not as something shallow or frivolous, but as a genuine creative discipline with its own history, principles, and language. Let's take fashion at its full worth.`,
           headline: 'Fashion Design',
           subtitle: `Every day, you make a creative decision when you get dressed. Clothing is one of the oldest forms of human self-expression — we've been adorning ourselves for at least 100,000 years. Fashion is a language, and once you understand it, you can use it with real intention`,
           visual:   '/explorer-assets/creative-arts/l14-welcome.png',

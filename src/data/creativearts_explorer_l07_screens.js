@@ -23,6 +23,7 @@ const CA_L07 = {
         {
           id:       'l07-welcome',
           type:     'welcome',
+          guideText: `Before I say anything else, {name}, I want you to notice something: you already have rhythm. You've had it since before you were born — your first experience of the world was your mother's heartbeat. Rhythm lives in your body. It's why you tap your foot to music without thinking, why certain beats make you want to move. Today we're going to look at rhythm as a musical concept — the foundation that every other element of music is built on. We'll look at percussion, how rhythm works across different musical traditions, and how to feel it more consciously. You already have this in you. Let's develop it.`,
           headline: 'Rhythm and Percussion',
           subtitle: `Before melody, before harmony, before instruments — there was rhythm. It's the most fundamental element of music, and it lives in everything that moves. Once you understand it, you'll hear it everywhere and feel it in your body`,
           visual:   '/explorer-assets/creative-arts/l07-welcome.png',

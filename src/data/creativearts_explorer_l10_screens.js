@@ -23,6 +23,7 @@ const CA_L10 = {
         {
           id:       'l10-welcome',
           type:     'welcome',
+          guideText: `Think about the last photograph that really stopped you, {name} — one that made you look longer, or feel something unexpected. What made it different from a random snapshot? The answer is almost never the camera. It's a set of deliberate choices: where to stand, what to include in the frame, what to leave out, what kind of light to shoot in, when to press the shutter. Photography is fundamentally a decision-making art. Today we're going to look at those decisions — the vocabulary of composition, light, and perspective — and after this lesson, you'll start seeing potential photographs everywhere you already are.`,
           headline: 'Photography Basics',
           subtitle: `A camera captures light — but a photographer decides what that light means. The difference between a snapshot and a photograph is not equipment: it's a set of deliberate choices about where to stand, what to include, and when to press the shutter`,
           visual:   '/explorer-assets/creative-arts/l10-welcome.png',

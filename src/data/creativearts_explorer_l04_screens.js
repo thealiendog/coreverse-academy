@@ -23,6 +23,7 @@ const CA_L04 = {
         {
           id:       'l04-welcome',
           type:     'welcome',
+          guideText: `Watercolor is one of the most beautiful and most humbling art forms, {name}, and I want to tell you something upfront: it will do things you didn't plan. The pigment will bloom. The water will spread. Colors will bleed into each other in unexpected ways. A lot of beginners find this frustrating. But here's what experienced watercolor artists know: that unpredictability is not the problem — it's the medium's greatest quality. Today we're going to learn the basics of watercolor. The central lesson isn't technique. It's learning to work with the paint's nature rather than against it. That turns out to be useful in art, and in life.`,
           headline: 'Watercolor Painting',
           subtitle: `Watercolor is transparent, luminous, and alive — and it will do things you didn't plan. Learning to work with the medium's nature rather than against it is the secret to watercolor, and to a lot of other things too`,
           visual:   '/explorer-assets/creative-arts/l04-welcome.png',

@@ -23,6 +23,7 @@ const CA_L17 = {
         {
           id:       'l17-welcome',
           type:     'welcome',
+          guideText: `Here's a thought that moves me every time, {name}: forty thousand years ago, somewhere in Europe, a person pressed their hand to a rock wall, blew pigment around it, and left a print. We don't know their name. We don't know their language or what they believed. But we know this: they wanted to leave a mark. That impulse — the need to make something, to say "I was here, I saw this, I felt this" — has never stopped. Art history is the unbroken story of that impulse across all of human time. Today we walk through it together. Ready?`,
           headline: 'The History of Art (Highlights)',
           subtitle: `40,000 years ago, someone pressed pigment to a rock wall and made a handprint. We don't know their name, their language, or what they believed — but we know they wanted to leave a mark. That impulse has never stopped. Art history is the story of that impulse across all of human time`,
           visual:   '/explorer-assets/creative-arts/l17-welcome.png',

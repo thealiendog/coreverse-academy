@@ -23,6 +23,7 @@ const CA_L20 = {
         {
           id:       'l20-welcome',
           type:     'welcome',
+          guideText: `{name}. We've reached the final lesson of our Creative Arts journey together, and I have to say — I've loved every step of it with you. We've explored elements and principles, color and composition, history and technique and craft. And now we arrive at the deepest question of all: what does your art say about you? Not art in general. Yours. Today we're talking about how your specific identity — your background, your stories, your joys and your losses — isn't a limitation on your creative work. It's the very material of it. The world has been waiting for your particular voice. Today we talk about how to use it.`,
           headline: 'Art as Expression of Identity',
           subtitle: `Who are you — really? What do you love? What angers you? What fills you with wonder? Art is one of the most powerful answers to these questions. Not because art is therapy, but because the act of creating forces you to know yourself more clearly — and gives others a way to meet you there`,
           visual:   '/explorer-assets/creative-arts/l20-welcome.png',

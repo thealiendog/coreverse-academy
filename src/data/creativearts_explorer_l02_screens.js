@@ -23,6 +23,7 @@ const CA_L02 = {
         {
           id:       'l02-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. Last lesson we looked at the elements of art — line, shape, color, texture. Today we're going deep into one of those elements, because color deserves a whole lesson of its own. Here's what took me a long time to really understand: color is not decoration. It's a language. Every color choice an artist makes sends a signal directly to the viewer's emotions — often before the brain even processes what the image shows. Red does something different than blue. Yellow does something different than grey. Today you're going to learn to speak that language. It will change how you see everything.`,
           headline: 'Color Theory: Primary, Secondary, Complementary',
           subtitle: `Color is not just decoration — it's a language. Every color choice an artist makes sends a message straight to the viewer's emotions, often before the brain even processes what the image shows`,
           visual:   '/explorer-assets/creative-arts/l02-welcome.png',

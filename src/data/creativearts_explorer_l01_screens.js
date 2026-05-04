@@ -23,6 +23,7 @@ const CA_L01 = {
         {
           id:       'l01-welcome',
           type:     'welcome',
+          guideText: `Oh, {name} — I'm so glad you're here. I'm Muse, and I want to show you something that's going to change how you see the entire world. Everywhere you look — every painting, every building, every poster, every doodle — is built from the same small set of ingredients. Line. Shape. Color. Texture. Artists have been using these same elements since the very first cave paintings forty thousand years ago. Today you're going to learn to see them — really see them — and once you do, you'll start spotting them everywhere: in nature, in design, in the art you already make. Are you ready? Let's open your eyes.`,
           headline: 'The Elements of Art: Line, Shape, Color, Texture',
           subtitle: `Every painting, drawing, sculpture, and design ever made — from cave paintings 40,000 years ago to digital art today — is built from the same basic ingredients. Once you can see the elements of art, you'll never look at the world the same way again`,
           visual:   '/explorer-assets/creative-arts/l01-welcome.png',

@@ -23,6 +23,7 @@ const CA_L12 = {
         {
           id:       'l12-welcome',
           type:     'welcome',
+          guideText: `Here's a secret about every cartoon you've ever watched, {name}: what looks like fluid, continuous motion is actually thousands of individual still images shown so quickly that your brain fills in the gaps and perceives movement. That gap-filling is done entirely by your own mind. Isn't that fascinating? Animation is built on an optical trick — but everything else is craft: drawing, storytelling, timing, music, character design, color. It's one of the most collaborative art forms in the world, bringing together dozens of different skills. Today we're going to look at how animation actually works — and I promise you'll never watch a cartoon quite the same way again.`,
           headline: 'Animation: Making Things Move',
           subtitle: `When you watch a cartoon, you're seeing thousands of individual images flashed so fast your brain perceives smooth motion. Animation combines drawing, storytelling, music, and acting into one seamless art form — and once you understand how it works, watching it will never be quite the same`,
           visual:   '/explorer-assets/creative-arts/l12-welcome.png',

@@ -23,6 +23,7 @@ const CA_L11 = {
         {
           id:       'l11-welcome',
           type:     'welcome',
+          guideText: `Here's a thought for you, {name}: theater is the oldest art form in the world. The ancient Greeks were performing plays 2,500 years ago that are still staged today. There's something about watching people tell a story in a room together — live, in real time — that no other medium quite replicates. And the skills theater builds — stepping into another person's experience, deep listening, creative courage, working with others toward something larger than yourself — are some of the most powerful any person can develop. Today we're going inside the world of drama. Whether you end up on stage or not, this one will stay with you.`,
           headline: 'Drama and Theater',
           subtitle: `Theater is the oldest art form in the world — the ancient Greeks performed plays 2,500 years ago that are still performed today. The skills it develops — empathy, deep listening, creative courage, collaboration — are among the most powerful any person can have`,
           visual:   '/explorer-assets/creative-arts/l11-welcome.png',

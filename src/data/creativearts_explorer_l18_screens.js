@@ -23,6 +23,7 @@ const CA_L18 = {
         {
           id:       'l18-welcome',
           type:     'welcome',
+          guideText: `Something I want you to know before we start, {name}: the artists we call "great" were not superhuman. They were not born with a gift that ordinary people lack. They were people who burned with a need to create, who faced doubt, poverty, rejection, and heartbreak — and who kept going anyway. Behind every famous artwork is a human life full of struggle and surprising grace. Today we're going to meet some of those lives. Not just the work — the people who made it. I want you to see yourself in them. Because if you have the desire to create, you already have the most important thing they had.`,
           headline: 'Famous Artists and Their Stories',
           subtitle: `Behind every great artwork is a human life — full of doubt, passion, struggle, and surprising moments of grace. The greatest artists were not superhuman geniuses who effortlessly produced masterpieces. They were people who burned with a need to create, who faced enormous obstacles, who failed and kept going`,
           visual:   '/explorer-assets/creative-arts/l18-welcome.png',

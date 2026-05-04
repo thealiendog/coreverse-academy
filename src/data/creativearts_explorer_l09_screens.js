@@ -23,6 +23,7 @@ const CA_L09 = {
         {
           id:       'l09-welcome',
           type:     'welcome',
+          guideText: `Here's something I love about poetry, {name}: it's the art form that does the most with the fewest words. A short poem can make you feel something that a thousand-page novel couldn't quite reach. It works differently from prose — through compression, through sound, through the surprise of an unexpected image. And once you understand the tools poets use — rhyme, rhythm, imagery — language itself becomes something different. Not just information to transfer. A material to shape. Today we're going to look at how poetry works and why it has the effect it does. You might leave wanting to write one of your own.`,
           headline: 'Poetry: Rhyme, Rhythm, and Imagery',
           subtitle: `Poetry is the art form that does the most with the fewest words — it uses sound, image, and surprise to create feelings that ordinary language can't quite reach. Once you understand its tools, language itself becomes a playground`,
           visual:   '/explorer-assets/creative-arts/l09-welcome.png',

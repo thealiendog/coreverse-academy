@@ -23,6 +23,7 @@ const CA_L06 = {
         {
           id:       'l06-welcome',
           type:     'welcome',
+          guideText: `Something remarkable, {name}: you were born carrying a musical instrument. Not a trumpet or a violin you had to save up for — your voice. And it can do things no other instrument can: it can carry words with emotional weight, it can imitate, it can improvise, it can express something precise about how a specific person feels in a specific moment in ways a piano simply cannot. Today we're going to look at how your voice actually works — the real mechanics of it — and what it means to use it with intention. Whether you think of yourself as a singer or not, this lesson is for you.`,
           headline: 'Singing and the Voice',
           subtitle: `Your voice is the only instrument you were born with — and it can do things no other instrument can. Learning how it works, and how to use it with intention, opens a whole world that was always already inside you`,
           visual:   '/explorer-assets/creative-arts/l06-welcome.png',

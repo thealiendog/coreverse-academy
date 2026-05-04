@@ -23,6 +23,7 @@ const CA_L16 = {
         {
           id:       'l16-welcome',
           type:     'welcome',
+          guideText: `For most of human history, {name}, art lived in places with controlled access — temples, palaces, galleries, museums. Most people never got close to it. Street art changed that. It brought art outside, onto walls anyone can walk past, into conversations anyone can join — without a ticket, without permission, without belonging to any class that traditionally had access to culture. Today we're going to look at street art and murals as a serious artistic tradition: the history behind it, the techniques involved, and the artists who turned public walls into some of the most powerful works of the twentieth and twenty-first centuries. Art belongs to everyone. This lesson shows you why.`,
           headline: 'Street Art and Murals',
           subtitle: `For most of human history, art lived in temples, palaces, and museums — places where most people had limited access. Street art changed that. It brought art outside, into public spaces, where anyone could encounter it without permission, without a ticket, and without belonging to any class that traditionally had access to art`,
           visual:   '/explorer-assets/creative-arts/l16-welcome.png',
