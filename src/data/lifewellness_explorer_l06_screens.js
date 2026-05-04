@@ -23,6 +23,7 @@ const LW_L06 = {
         {
           id:       'l06-welcome',
           type:     'welcome',
+          guideText: `Something happens in your body when you feel threatened or overwhelmed, {name} — even if the threat isn't a predator but a test you haven't studied for, or a conversation you're dreading. Your heart rate goes up, your muscles tense, your thinking narrows. That's your stress response — and it's extraordinarily ancient. Today we're going to understand what stress actually is: the biological machinery behind it, why it exists, what it does to your body over time, and — most importantly — why understanding it is the first step to managing it instead of being managed by it. This knowledge is real power.`,
           headline: `Stress: What It Is and How It Feels`,
           subtitle: `Understanding what's actually happening in your body when you're stressed is the first step to managing it instead of being managed by it`,
           visual:   '/explorer-assets/wellness/l06-welcome.png',

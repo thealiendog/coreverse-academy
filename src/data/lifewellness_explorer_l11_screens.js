@@ -23,6 +23,7 @@ const LW_L11 = {
         {
           id:       'l11-welcome',
           type:     'welcome',
+          guideText: `Here's something true that doesn't get said enough, {name}: everyone has mental health. Not just people who are struggling — everyone. Just like everyone has physical health, which can be strong or fragile, thriving or under pressure. Today we're going to talk about mental health honestly and practically. What does it actually mean? What affects it? What does it look like when it's under strain? And most importantly — what can you do to look after yours? This might be one of the most important lessons in our whole journey together, and I'm really glad we're doing it. Let's begin.`,
           headline: `Mental Health: It's Okay to Not Be Okay`,
           subtitle: `Mental health is something everyone has — and like physical health, it needs care. Understanding it gives you real tools to look after yourself and the people you love`,
           visual:   '/explorer-assets/wellness/l11-welcome.png',

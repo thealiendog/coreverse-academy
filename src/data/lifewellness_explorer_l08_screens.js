@@ -23,6 +23,7 @@ const LW_L08 = {
         {
           id:       'l07-welcome',
           type:     'welcome',
+          guideText: `Here's something that surprises most people, {name}: your body is roughly sixty percent water. Your brain is closer to seventy-five. And water isn't just sitting there passively — it's involved in every single process your body runs. Digestion. Temperature regulation. Getting nutrients to your cells. Flushing out waste. Even your mood and your ability to concentrate. When you're even slightly dehydrated, you feel it — even if you don't recognise that's what it is. Today we're going to look at what hydration actually does and why something this simple can make such a measurable difference to how you feel every day.`,
           headline: 'Hydration: Your Body is Mostly Water',
           subtitle: `Water is involved in every single process your body runs — and staying well hydrated is one of the simplest things you can do to feel your best`,
           visual:   '/explorer-assets/wellness/l08-welcome.png',

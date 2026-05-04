@@ -23,6 +23,7 @@ const LW_L02 = {
         {
           id:       'l02-welcome',
           type:     'welcome',
+          guideText: `Welcome back, {name}. Last time we talked about what food actually does inside your body — the chemistry of fuel, repair, and building blocks. Today we're making that practical. Because knowing the science is great, but eventually you have to sit down for a meal. What does a genuinely balanced one look like? How do you make sure your body gets the full range of what it needs — not just once in a while, but most of the time? That's what today is about: a simple, flexible framework for building meals that actually work for you. Ready? Let's build this together.`,
           headline: 'The Food Plate: Building Balanced Meals',
           subtitle: `A simple framework for building meals that give your body everything it needs to feel good`,
           visual:   '/explorer-assets/wellness/l02-welcome.png',

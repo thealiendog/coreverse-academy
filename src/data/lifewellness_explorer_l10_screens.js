@@ -23,6 +23,7 @@ const LW_L10 = {
         {
           id:       'l10-welcome',
           type:     'welcome',
+          guideText: `Think about the people who make you feel good about yourself, {name} — the ones you can be honest with, who notice when you're not okay, who make you want to be better. That kind of friendship isn't just nice to have. Research has found that the quality of our close relationships is one of the strongest predictors of wellbeing — stronger than wealth, stronger than career success. Today we're going to look at friendship as a component of health: what makes a friendship genuinely strong, how friendships change and sometimes end, and what it takes to be the kind of friend who truly matters to someone else.`,
           headline: 'Friendship and Social Health',
           subtitle: `Strong friendships are one of the most powerful forces in a human life — and like all living things, they grow with care and attention`,
           visual:   '/explorer-assets/wellness/l10-welcome.png',

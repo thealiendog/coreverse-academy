@@ -23,6 +23,7 @@ const LW_L03 = {
         {
           id:       'l03-welcome',
           type:     'welcome',
+          guideText: `Here's something worth understanding, {name}: sugar has a complicated reputation. Some people say it's poison. Some say cutting it out entirely is the answer. Neither of those is quite right — and today we're going to look at what the science actually says. Sugar is a natural substance your body knows exactly how to use. The question is: in what amounts, in what forms, and from what sources? Understanding what sugar actually does in your body — the energy spike, the crash, the way it affects your brain — gives you something more useful than rules. It gives you real control over your own energy.`,
           headline: 'Sugar and Your Body',
           subtitle: `Sugar isn't the enemy — but understanding what it does in your body gives you real power over your own energy`,
           visual:   '/explorer-assets/wellness/l03-welcome.png',

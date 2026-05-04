@@ -23,6 +23,7 @@ const LW_L01 = {
         {
           id:       'l01-welcome',
           type:     'welcome',
+          guideText: `Hello, {name} — I'm Terra, and this is the beginning of something important. Here's a thought I want you to sit with: every single thing you eat becomes part of you. Your muscles. Your brain. The energy that gets you through a hard day. Today we're going to look at what food actually does inside your body — the real science of fuel and building blocks, and how your body knows what to do with what you give it. You might never look at your plate the same way again. I hope you don't. Let's begin.`,
           headline: 'Nutrition: What Food Does in Your Body',
           subtitle: `Everything you eat becomes part of you — your muscles, your brain, your energy, your bones`,
           visual:   '/explorer-assets/wellness/l01-welcome.png',

@@ -23,6 +23,7 @@ const LW_L15 = {
         {
           id:       'l15-welcome',
           type:     'welcome',
+          guideText: `There are 206 bones in your body, {name}, and more than 600 muscles — and together they form a structure of extraordinary sophistication. Your skeleton isn't just a frame. Your muscles aren't just tools for movement. The whole system responds to how you use it: bones grow denser with load, muscles strengthen with use. What you do now — at your age — genuinely shapes the musculoskeletal system you'll carry for the rest of your life. Today we're going to understand how it works, what it needs, and what it can do. You might look at your own body a little differently after this.`,
           headline: 'The Musculoskeletal System: Bones and Muscles',
           subtitle: `You're walking around in a machine of 206 bones and over 600 muscles — and what you do now to build them is an investment you carry for life`,
           visual:   '/explorer-assets/wellness/l15-welcome.png',

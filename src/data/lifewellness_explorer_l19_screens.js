@@ -23,6 +23,7 @@ const LW_L19 = {
         {
           id:       'l19-welcome',
           type:     'welcome',
+          guideText: `Here's something about habits, {name}, that I find genuinely interesting: the research shows they're not really about willpower at all. Willpower runs out. It's a limited resource. The people who sustain healthy habits long-term are not more disciplined than everyone else — they've designed their environment and routines in a way that makes the habit easier than the alternative. That's a learnable skill, and it changes everything. Today we're looking at how habits actually form in the brain, why some stick and others don't, and how to use that understanding to build the routines that will carry you toward the health and the life you actually want.`,
           headline: `Building Healthy Habits That Last`,
           subtitle: `Habits are not about willpower — they're about understanding how your brain works, and using that understanding to build the life you actually want`,
           visual:   '/explorer-assets/wellness/l19-welcome.png',

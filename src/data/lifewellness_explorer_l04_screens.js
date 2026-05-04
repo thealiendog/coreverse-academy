@@ -23,6 +23,7 @@ const LW_L04 = {
         {
           id:       'l04-welcome',
           type:     'welcome',
+          guideText: `I want to ask you something, {name}: how do you feel after you've been running around, or dancing, or playing a sport you love? There's usually a moment somewhere in there — even when you're tired — where you feel genuinely alive. That's not an accident. Your body was built to move, and when you do, something remarkable happens: not just in your muscles, but in your brain, your mood, and your energy levels for the rest of the day. Today we're going to look at the science of why movement matters so much — and it's more interesting than you might expect.`,
           headline: 'Exercise: Why Moving Matters',
           subtitle: `Your body was built to move — and every time you do, your brain and mood come along for the ride`,
           visual:   '/explorer-assets/wellness/l04-welcome.png',

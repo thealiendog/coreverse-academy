@@ -23,6 +23,7 @@ const LW_L09 = {
         {
           id:       'l09-welcome',
           type:     'welcome',
+          guideText: `Let's be honest about something, {name}: screens are not going away. Phones, tablets, laptops — they're part of life, part of how we connect and create and learn. The question is never really "should I avoid screens?" The question is: what does screen time actually do to your brain, and how can you use that knowledge to make choices you actually feel good about? Today we're going to look at the science — what happens in your brain during different kinds of screen use, how it affects sleep and attention, and what the research says about using technology in a way that serves you rather than the other way around.`,
           headline: 'Screen Time and Your Brain',
           subtitle: `Screens aren't the problem — it's how you use them that matters. Understanding that gives you real control`,
           visual:   '/explorer-assets/wellness/l09-welcome.png',

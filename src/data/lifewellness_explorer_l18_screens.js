@@ -23,6 +23,7 @@ const LW_L18 = {
         {
           id:       'l18-welcome',
           type:     'welcome',
+          guideText: `I want to ask you something, {name}: how do you feel after spending real time outside? Not a two-minute walk to the car — but an hour in a park, or a garden, or near water. Most people feel calmer, less cluttered, more themselves. And this isn't just subjective. Research has found consistent, measurable effects of time in nature on stress levels, mood, focus, and even inflammation in the body. Today we're going to look at why that is — what's actually happening in your brain and nervous system when you're outside — and why making time for nature is one of the most grounded forms of self-care.`,
           headline: `Nature and Mental Health`,
           subtitle: `Research has found that time in nature has powerful effects on mood, focus, and stress — people who spend regular time outdoors consistently feel better`,
           visual:   '/explorer-assets/wellness/l18-welcome.png',

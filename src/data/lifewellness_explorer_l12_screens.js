@@ -23,6 +23,7 @@ const LW_L12 = {
         {
           id:       'l12-welcome',
           type:     'welcome',
+          guideText: `You've been carrying around a remarkable defence system your entire life, {name}, and most of the time you don't even notice it. Your immune system is working continuously — identifying threats, launching responses, building memory of past encounters so it can respond faster next time. Today we're going to look at how that system actually works. What are germs, really? How does your body recognise them as threats? What is the process that makes you sick — and what makes you better? And what can you do to keep your immune system strong? Let's get into the science of the body's most impressive guardian.`,
           headline: 'Germs and Immunity',
           subtitle: `Your immune system is one of the most sophisticated defence networks in nature — working every moment to protect you, shaped by how you live`,
           visual:   '/explorer-assets/wellness/l12-welcome.png',

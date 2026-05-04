@@ -23,6 +23,7 @@ const LW_L13 = {
         {
           id:       'l13-welcome',
           type:     'welcome',
+          guideText: `Every time you eat something, {name}, an extraordinary journey begins — one that involves more than thirty feet of your digestive system working together in a carefully sequenced process that takes anywhere from six hours to two days to complete. Most of us have no idea this is happening. We eat, and food just… disappears. Today we're going to look at the digestive system in real detail: how it breaks food down from something you bite into something your cells can actually use, what each organ does, and what happens when the system isn't running well. It's one of the most remarkable processes in the human body.`,
           headline: `The Digestive System: Food's Amazing Journey`,
           subtitle: `Your digestive system is a 30-foot marvel of biological engineering — running continuously, mostly without your awareness, and far more sophisticated than it looks`,
           visual:   '/explorer-assets/wellness/l13-welcome.png',

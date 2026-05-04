@@ -23,6 +23,7 @@ const LW_L17 = {
         {
           id:       'l17-welcome',
           type:     'welcome',
+          guideText: `Something that shapes almost everything about how you feel, {name} — more than most people realise — is the quality of your relationships. The people closest to you affect how you see yourself, how much you trust your own judgement, how much energy you carry into your days. Healthy relationships build you up. Unhealthy ones — even when you care about the person — can quietly wear you down. Today we're going to look at what a healthy relationship actually involves: in friendships, in family, and in how we treat ourselves. This might be some of the most practically useful knowledge you carry with you for years.`,
           headline: `Healthy Relationships`,
           subtitle: `The relationships in your life shape how you feel about yourself every single day — and understanding what a healthy relationship looks and feels like is one of the most valuable things you can know`,
           visual:   '/explorer-assets/wellness/l17-welcome.png',

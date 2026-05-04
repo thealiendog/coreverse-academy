@@ -23,6 +23,7 @@ const LW_L05 = {
         {
           id:       'l05-welcome',
           type:     'welcome',
+          guideText: `Here's a question for you, {name}: when was the last time you woke up feeling genuinely good? Energetic, clear-headed, ready for the day? If that doesn't happen very often, you're not alone — but you are missing something important. Sleep is not just rest. It's when your brain consolidates everything it learned that day. It's when your body repairs itself. It's when growth hormone is released. The science of what happens while you sleep is remarkable — and once you understand it, you might start treating those hours very differently. Let's take a look at what's really going on.`,
           headline: `Sleep: The Superpower You're Missing`,
           subtitle: `Sleep is when your body and brain do their most important work — and protecting it is one of the best things you can do for yourself`,
           visual:   '/explorer-assets/wellness/l05-welcome.png',

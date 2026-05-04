@@ -23,6 +23,7 @@ const LW_L16 = {
         {
           id:       'l16-welcome',
           type:     'welcome',
+          guideText: `Here's something I want to start with today, {name}: the goal is not to protect you from every risk. The goal is to understand risk clearly enough to make smart choices about it. The people who live the most fully — who adventure, who try things, who build remarkable lives — are not the ones who avoid everything dangerous. They're the ones who know the difference between a calculated risk and a reckless one. Today we're going to look at safety in a grown-up way: understanding hazards, thinking about consequences, and building the habits that protect you without limiting the life you want to live.`,
           headline: `Safety: Protecting Your Body`,
           subtitle: `The people who live most fully and adventurously are not the ones who take no risks — they're the ones who understand risk clearly and make smart choices`,
           visual:   '/explorer-assets/wellness/l16-welcome.png',

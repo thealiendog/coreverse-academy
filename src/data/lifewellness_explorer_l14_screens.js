@@ -23,6 +23,7 @@ const LW_L14 = {
         {
           id:       'l14-welcome',
           type:     'welcome',
+          guideText: `Here's something remarkable to sit with, {name}: your heart started beating about three weeks after you were conceived — before you were even born. It hasn't stopped once since. Right now, as you're reading this, it's pumping blood to every cell in your body — delivering oxygen, removing waste, regulating temperature. And how you live now, at your age, is genuinely building the foundation for how strong that system will be for the rest of your life. Today we're going to look at how your cardiovascular system works, what keeps it healthy, and what puts it under strain. This one really matters.`,
           headline: 'The Cardiovascular System: Your Heart',
           subtitle: `Your heart has been beating since before you were born — and how you live now is genuinely building the foundation for a lifetime of heart strength`,
           visual:   '/explorer-assets/wellness/l14-welcome.png',

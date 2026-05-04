@@ -23,6 +23,7 @@ const LW_L07 = {
         {
           id:       'l07-welcome',
           type:     'welcome',
+          guideText: `Before we start, {name}, I want you to try something: take one slow, deep breath — in through your nose, out through your mouth. Notice anything? That slight shift in your body — the small softening, the brief pause in whatever was running through your mind — that's not imagination. That's your nervous system responding to a deliberate signal. Today we're going to look at breathing: why it has such a powerful effect on how you feel, what the science behind it actually is, and how to use it as a real tool in your everyday life. You already have everything you need for this one.`,
           headline: 'Breathing for Calm',
           subtitle: `You have a superpower built into your body — free, always available, and able to change how you feel within seconds`,
           visual:   '/explorer-assets/wellness/l07-welcome.png',

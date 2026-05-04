@@ -23,6 +23,7 @@ const LW_L20 = {
         {
           id:       'l20-welcome',
           type:     'welcome',
+          guideText: `{name}, you've done something really meaningful over these twenty lessons. You've learned how your body runs, how your mind works, how sleep and movement and stress and relationships all connect. You know more about yourself now than most adults ever take the time to learn. This last lesson is yours to keep — we're putting it all together into something practical, something personal. Your wellness blueprint. Not a rulebook from someone else — a map drawn from your own understanding of what helps you thrive. I'm proud of you. Let's make it real.`,
           headline: `My Wellness Blueprint`,
           subtitle: `You've now learned how your body and mind work — this final lesson is about putting it all together into something you can actually live`,
           visual:   '/explorer-assets/wellness/l20-welcome.png',
