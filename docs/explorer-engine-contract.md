@@ -377,3 +377,44 @@ The pre-commit hook runs `npm run validate` automatically before every commit.
 - CHECK 3: Every `*_explorers_adapter.js` for a NEW_FORMAT_LESSONS subject is imported and wired into `l2Lessons`
 - CHECK 4: Every ID in NEW_FORMAT_LESSONS has a screen file on disk; every screen file for a NEW_FORMAT_LESSONS subject is registered
 - CHECK 5: Every NEW_FORMAT_LESSONS subject has a branch in `getExplorerLessonId()`
+
+---
+
+## Voice Verification Checklist
+
+### How voices are selected
+
+Each subject's guide is set in `EXPLORER_DATA` in `ExplorerLessonPlayer.jsx`. The guide name maps to a voice ID and optional model override in `src/data/guideVoices.js`.
+
+| Guide | Subject | Language | Voice ID | Model |
+|---|---|---|---|---|
+| Sage | Inner World | English | `xYa75LlayhWHCRl1yJSH` | eleven_turbo_v2_5 |
+| Nova | Cosmos | English | `aUNOP2y8xEvi4nZebjIw` | eleven_turbo_v2_5 |
+| Byte | Future Skills | English | `wP7XBmkAmRwrjtfK2KeY` | eleven_turbo_v2_5 |
+| Ace | Money & Business | English | `RPEIZnKMqlQiZyZd1Dae` | eleven_turbo_v2_5 |
+| Muse | Creative Arts | English | `HfRsWv6W0kiMbBILCEFI` | eleven_turbo_v2_5 |
+| Valor | Social & Leadership | English | `EozfaQ3ZX0esAp1cW5nG` | eleven_turbo_v2_5 |
+| Terra | Life & Wellness | English | `t5ztDJA7pj9EyW9QIcJ2` | eleven_turbo_v2_5 |
+| **Luna** | **Spanish** | **Spanish** | **`b2htR0pMe28pYwCY9gnP`** | **eleven_multilingual_v2** |
+
+### Critical rule for non-English subjects
+
+`eleven_multilingual_v2` can generate audio in many languages, but **the voice's accent is determined by the recordings used to create or clone it** — not by the model. A voice cloned from an English speaker will pronounce Spanish with an American accent even with the multilingual model.
+
+**When adding a subject in a non-English language:**
+
+1. Choose a voice from the ElevenLabs library that was cloned from or trained on native speakers of the target language.
+2. Test the voice with 2–3 sample Spanish/French/etc. sentences before assigning it as a guide voice.
+3. Confirm the accent sounds natural (not American English) at normal speaking cadence.
+4. Set `guideModels: { GuideName: 'eleven_multilingual_v2' }` — do not use `eleven_turbo_v2_5` for non-English content (turbo model has degraded quality for non-English).
+
+### Validator output
+
+`npm run validate` surfaces all guides using `eleven_multilingual_v2` with a reminder block:
+
+```
+⚠  MULTILINGUAL VOICE — Guide: Luna | Model: eleven_multilingual_v2 | Voice ID: b2htR0pMe28pYwCY9gnP
+   → Verify on ElevenLabs that voice sounds natural in the target language.
+```
+
+This is a non-blocking reminder — it does not fail the build. Human verification on ElevenLabs is required each time a new guide is assigned to a non-English subject.

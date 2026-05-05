@@ -380,4 +380,37 @@ for (const filename of ALL_FILES) {
 }
 
 console.log(`\nValidation complete: ${ALL_FILES.length} files, ${totalErrors} error(s), ${totalWarnings} warning(s)`);
+
+// ── Multilingual voice verification reminder ───────────────────────────────────
+// Surfaces any guide using eleven_multilingual_v2 so a human can verify that
+// the voice sounds natural in the target language. Cannot be validated from code —
+// ElevenLabs voice quality depends on the underlying voice recordings, not the model.
+//
+// Run: node scripts/validate-explorer-screens.mjs  (or npm run validate)
+// The check below reads guideVoices.js as text to avoid ESM import complexity.
+
+const GUIDE_VOICES_PATH = path.join(__dirname, '../src/data/guideVoices.js');
+if (fs.existsSync(GUIDE_VOICES_PATH)) {
+  const src = fs.readFileSync(GUIDE_VOICES_PATH, 'utf8');
+
+  // Extract guideModels entries: Luna: 'eleven_multilingual_v2'
+  const modelMatches = [...src.matchAll(/(\w+):\s*'(eleven_multilingual_v[^']+)'/g)];
+
+  // Extract guideVoices entries: Luna: 'b2htRxxx'
+  const voiceMatches = [...src.matchAll(/(\w+):\s*'([A-Za-z0-9]{20,})'/g)];
+  const voiceMap = {};
+  voiceMatches.forEach(([, name, id]) => { voiceMap[name] = id; });
+
+  if (modelMatches.length > 0) {
+    console.log('\n── Multilingual voice verification required ─────────────────────────');
+    for (const [, guide, model] of modelMatches) {
+      const voiceId = voiceMap[guide] || '(voice ID not found)';
+      console.log(`⚠  MULTILINGUAL VOICE — Guide: ${guide} | Model: ${model} | Voice ID: ${voiceId}`);
+      console.log(`   → Verify on ElevenLabs that voice ${voiceId} sounds natural in the target language.`);
+      console.log(`   → eleven_multilingual_v2 generates the language; the voice accent depends on its training recordings.`);
+      console.log(`   → If accent sounds American/English, choose a voice cloned from a native speaker of the target language.`);
+    }
+    console.log('─────────────────────────────────────────────────────────────────────');
+  }
+}
 if (totalErrors > 0) process.exit(1);
