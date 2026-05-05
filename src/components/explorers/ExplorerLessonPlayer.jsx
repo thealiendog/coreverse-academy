@@ -480,8 +480,12 @@ export default function ExplorerLessonPlayer() {
       onDone?.();
     };
 
-    // Dead-man's switch — 35s max (prevents permanent stall on broken audio)
-    const deadman = setTimeout(() => finish(), 35000);
+    // Dead-man's switch — text-length-aware (700ms/word, min 35s).
+    // Spanish magazine sections run ~150 words via multilingual_v2 (~65s audio).
+    // Fixed 35s would fire mid-sentence; word-count scaling gives comfortable margin.
+    const wordCount = text.split(/\s+/).filter(Boolean).length;
+    const deadmanMs = Math.max(35000, wordCount * 700);
+    const deadman = setTimeout(() => finish(), deadmanMs);
 
     const speakCallTime = Date.now();
 
@@ -527,7 +531,7 @@ export default function ExplorerLessonPlayer() {
         const blob = await res.blob();
 
         if (gen !== speakGenRef.current) {
-          clearTimeout(deadman); onDone?.(); return;
+          clearTimeout(deadman); return;
         }
         if (blobUrlRef.current) { URL.revokeObjectURL(blobUrlRef.current); blobUrlRef.current = null; }
         blobUrl = URL.createObjectURL(blob);
