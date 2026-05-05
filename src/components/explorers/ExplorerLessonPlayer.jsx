@@ -412,6 +412,8 @@ export default function ExplorerLessonPlayer() {
   // ── Pre-warm welcome audio immediately on mount (Fix 2: Day 1.8 Fix 8 restore) ─
   // Fetches + pre-buffers first screen audio before user taps.
   // Sets welcomeReady when done so the tap-cue can animate in.
+  // Also prewarms the first magazine section in parallel so section 1 plays
+  // instantly when the user advances — eliminates the cold-fetch gap after welcome.
   useEffect(() => {
     const firstScreen = screens[0];
     if (!firstScreen || firstScreen.type !== 'welcome') return;
@@ -424,6 +426,18 @@ export default function ExplorerLessonPlayer() {
         setWelcomeReady(true);
       }
     });
+
+    // Prewarm magazine section 1 in parallel — fire-and-forget, no await needed.
+    // Bug C fixed sections 2-4 (prewarm while current plays), but section 1 was still
+    // cold-fetched when the user advanced from welcome. This closes the remaining gap.
+    const firstMag = screens.find(s => s.type === 'magazine');
+    if (firstMag) {
+      const magText = getScreenText(firstMag, childName);
+      if (magText) {
+        console.log(`[PREWARM] Mount — also prewarming magazine section 1: "${magText.slice(0, 40)}..."`);
+        prewarmAudio(magText);
+      }
+    }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── speak() ───────────────────────────────────────────────────────────────
