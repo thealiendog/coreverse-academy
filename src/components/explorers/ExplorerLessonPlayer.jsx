@@ -254,7 +254,22 @@ function charAlignmentToWordStarts(text, alignment) {
 // Matches "(word — PHONETIC)" patterns used in Spanish magazine paragraphs.
 // Only called for TTS input — visual rendering is unaffected.
 function stripPronunciationGuides(text) {
-  return (text || '').replace(/\s*\([^)]+\s—\s[^)]+\)/g, '');
+  // Keeps the Spanish word; drops only the phonetic guide after the em-dash.
+  // "(hola — oh-LAH)"   → ". Hola"   e.g. "hello (hola — oh-LAH)."  → "hello. Hola."
+  // "(¿cómo estás? — ...)" with trailing "?" → "? ¿Cómo estás?"
+  return (text || '').replace(
+    /\s*\(([^)]+?)\s—\s[^)]+\)([?!]?)/g,
+    (_, word, trailingPunct) => {
+      let capitalised;
+      if (word[0] === '¿' || word[0] === '¡') {
+        capitalised = word[0] + (word[1] || '').toUpperCase() + word.slice(2);
+      } else {
+        capitalised = word[0].toUpperCase() + word.slice(1);
+      }
+      const sep = trailingPunct || '.';
+      return sep + ' ' + capitalised;
+    }
+  );
 }
 
 // ── Resolve speech text per screen type ───────────────────────────────────────
