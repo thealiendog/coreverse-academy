@@ -230,6 +230,36 @@ const EXPLORER_DATA = {
   },
 };
 
+// ── Spoken→visual word index map for karaoke alignment ────────────────────────
+// When TTS text differs from visual text (e.g. Spanish magazine screens where
+// stripPronunciationGuides() rewrites "(hola — OH-lah)" → ". Hola"), karaoke
+// timestamps index into spoken word positions but MagazineScreen renders visual
+// word positions. This function maps spoken word index → visual word index via
+// greedy left-to-right matching on normalized (lowercase, no punctuation) tokens.
+//
+// Example:
+//   visual:  ["The", "cat", "(el", "gato", "—", "el", "GAH-toh)", "is", "here"]
+//   spoken:  ["The", "cat.", "El", "gato.", "Is", "here"]
+//   returns: [0, 1, 2, 3, 7, 8]   ← spoken[i] → visual[map[i]]
+//
+// Parenthetical tokens ("(el", "—", "GAH-toh)") are never mapped — they stay
+// un-highlighted when audio plays, which is the correct UX.
+function buildSpokenToVisualMap(visualWords, spokenWords) {
+  const norm = w => w.toLowerCase().replace(/[^a-z0-9áéíóúüñ]/g, '');
+  const map  = [];
+  let vStart = 0;
+  for (const sw of spokenWords) {
+    const swn = norm(sw);
+    let found = -1;
+    for (let vi = vStart; vi < visualWords.length; vi++) {
+      if (norm(visualWords[vi]) === swn) { found = vi; break; }
+    }
+    map.push(found);
+    if (found !== -1) vStart = found + 1;
+  }
+  return map;
+}
+
 // ── ElevenLabs character timestamps → per-word start times ────────────────────
 function charAlignmentToWordStarts(text, alignment) {
   try {
@@ -463,7 +493,7 @@ export default function ExplorerLessonPlayer() {
   // Simplified vs GameLessonPlayer: no auto-advance, no fallback timer loop,
   // no readOptions narration. Just fetch → play → karaoke → onDone.
   const speak = useCallback(async (text, onDone, options = {}) => {
-    const { noKaraoke = false } = options;
+    const { noKaraoke = false, visualText = null } = options;
     if (!text) { onDone?.(); return; }
     if (!audioEnabledRef.current) { onDone?.(); return; }
 
@@ -595,7 +625,17 @@ export default function ExplorerLessonPlayer() {
           setKaraokeIdx(-1);
           const wordStarts = charAlignmentToWordStarts(text, alignment);
           if (wordStarts && wordStarts.length === kWords.length) {
-            // Accurate path: timeupdate drives per-word highlight
+            // Accurate path: timeupdate drives per-word highlight.
+            // If visualText differs from spoken text (e.g. Spanish magazine screens),
+            // build a spoken→visual word index map so karaokeIdx stays in sync with
+            // the visual word array that MagazineScreen tokenises from original text.
+            const visualWords = (visualText && visualText !== text)
+              ? visualText.split(/\s+/).filter(Boolean)
+              : null;
+            const spokenToVisual = visualWords
+              ? buildSpokenToVisualMap(visualWords, kWords)
+              : null;
+
             let lastKi = -1;
             el.ontimeupdate = () => {
               const t = el.currentTime;
@@ -603,7 +643,11 @@ export default function ExplorerLessonPlayer() {
               for (let i = 0; i < wordStarts.length; i++) {
                 if (wordStarts[i] <= t) ki = i; else break;
               }
-              if (ki !== lastKi) { lastKi = ki; setKaraokeIdx(ki); }
+              if (ki !== lastKi) {
+                lastKi = ki;
+                const visualKi = spokenToVisual ? (spokenToVisual[ki] ?? -1) : ki;
+                setKaraokeIdx(visualKi);
+              }
             };
           } else {
             // Fallback: proportional timeout estimation
@@ -966,6 +1010,15 @@ export default function ExplorerLessonPlayer() {
       // This applies stripPronunciationGuides() and ensures cache keys match prewarm.
       const fullText = getScreenText(screen, childName);
 
+      // Visual text = what MagazineScreen renders (original paragraphs, no strip).
+      // Passed to speak() so it can build a spoken→visual karaoke alignment map.
+      // Required for Spanish screens where stripPronunciationGuides() rewrites
+      // "(hola — OH-lah)" → ". Hola", making spoken and visual word arrays diverge.
+      const rn = t => (t || '').replace(/\{name\}/g, childName);
+      const rawVisual = (screen.headline ? `${screen.headline}. ` : '') +
+                        (screen.paragraphs || []).join(' ');
+      const visualText = rn(rawVisual);
+
       console.log(`[TTS] Screen ${screenIdx} magazine — Reading section ${screen.section}: "${fullText.slice(0, 60)}..."`);
 
       // Prewarm next magazine section while this one plays — eliminates cold-fetch gap.
@@ -1017,7 +1070,7 @@ export default function ExplorerLessonPlayer() {
               }, 1000);
               timers.push(tBuffer);
             }
-      });
+      }, { visualText });
 
     } else if (screen.type === 'real-world') {
       // Sequence:
