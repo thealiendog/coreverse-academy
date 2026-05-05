@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/validate-explorer-screens.mjs && vite build",
-    "validate": "node scripts/validate-explorer-screens.mjs",
+    "build": "node scripts/validate-explorer-screens.mjs && node scripts/validate-routing-integrity.mjs && vite build",
+    "validate": "node scripts/validate-explorer-screens.mjs && node scripts/validate-routing-integrity.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

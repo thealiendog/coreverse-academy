@@ -15,6 +15,29 @@
 // Variable: {SubjectSlug}ExplorerL{NN}Screens          (PascalCase, no hyphens)
 // Example:  spanish_explorer_l01_screens.js  →  SpanishExplorerL01Screens
 
+// ─── Subject Wiring Checklist ─────────────────────────────────────────────────
+// After authoring all lesson screen files, complete ALL 10 steps to wire the
+// subject into the routing system. Skipping any step causes silent failures.
+// Full details: docs/explorer-engine-contract.md §"Subject Wiring Checklist"
+//
+//  STEP 1 ✓  Author screen files (this file — one per lesson)
+//  STEP 2    Create src/data/{slug}_explorers_adapter.js
+//            → imports all screen files, maps to { id, title, duration, guide, badge }
+//  STEP 3    Add lesson IDs to NEW_FORMAT_LESSONS in SubjectView.jsx
+//            → 'your-subject-id': ['xx-6-8-01', 'xx-6-8-02', ...]
+//  STEP 4    Import the adapter in SubjectView.jsx
+//            → import YOURSUBJECT_EXPLORERS from '../data/{slug}_explorers_adapter'
+//  STEP 5    Add arm to l2Lessons ternary in SubjectView.jsx
+//            → : subjectId === 'your-subject-id' ? YOURSUBJECT_EXPLORERS
+//  STEP 6    Add branch to getExplorerLessonId() in SubjectView.jsx
+//            → if (subjectId === 'your-subject-id' && level === 2) { return `xx-6-8-${...}`; }
+//  STEP 7    Import screen files in ExplorerLessonPlayer.jsx
+//            → import SP_L01 from '../../data/{slug}_explorer_l01_screens';
+//  STEP 8    Add subject to EXPLORER_DATA in ExplorerLessonPlayer.jsx
+//            → 'your-subject-id': { ageBand, subjectId, guide, lessons: [...] }
+//  STEP 9    Add slug to SLUG_TO_SUBJECT in scripts/validate-routing-integrity.mjs
+//  STEP 10   Run npm run validate && npm run build — both must pass clean
+
 const TemplateExplorerL01Screens = {
 
   // ── Lesson metadata ──────────────────────────────────────────────────────────

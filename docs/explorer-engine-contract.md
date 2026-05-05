@@ -288,16 +288,80 @@ Use `guideAvatar?.name || 'your guide'` and ensure `subjectId` is always provide
 
 ---
 
+## Subject Wiring Checklist
+
+Every new Explorer subject requires all 10 steps below. Skipping any step causes silent routing failures (wrong lessons shown, lesson clicks routing to old engine, lesson player crash on load). The routing integrity validator (`scripts/validate-routing-integrity.mjs`) enforces steps 3–8 at build time.
+
+### Steps
+
+1. **Author screen files** — Create `src/data/{slug}_explorer_l{NN}_screens.js` for each lesson. File naming: lowercase slug (e.g. `spanish`, `creativearts`), zero-padded lesson number (e.g. `l01`, `l10`).
+
+2. **Create the adapter** — Create `src/data/{slug}_explorers_adapter.js`. Import all screen files, spread their `.lessons` arrays into `allLessons`, and map each to `{ id, title, duration, guide, badge }`. This is the data shape SubjectView uses to render lesson cards.
+
+3. **Register lesson IDs in `NEW_FORMAT_LESSONS`** — In `SubjectView.jsx`, add a new entry to the `NEW_FORMAT_LESSONS` object:
+   ```js
+   'your-subject-id': ['xx-6-8-01', 'xx-6-8-02', ...],
+   ```
+   Every lesson that should route to `/explorer/:subjectId/:lessonId` must be listed here.
+
+4. **Import the adapter in `SubjectView.jsx`** — Add a default import at the top of the file:
+   ```js
+   import YOURSUBJECT_EXPLORERS from '../data/{slug}_explorers_adapter';
+   ```
+
+5. **Add an arm to the `l2Lessons` ternary in `SubjectView.jsx`** — Insert before the final `: getLevel2Lessons(subjectId)`:
+   ```js
+   : subjectId === 'your-subject-id' ? YOURSUBJECT_EXPLORERS
+   ```
+   Without this, lesson cards fall back to `getLevel2Lessons()` and display old data from `lessons_level2.js`.
+
+6. **Add a branch to `getExplorerLessonId()` in `SubjectView.jsx`** — Add a new `if` block in the function:
+   ```js
+   if (subjectId === 'your-subject-id' && level === 2) {
+     return `xx-6-8-${String(index + 1).padStart(2, '0')}`;
+   }
+   ```
+   Without this, clicking a lesson card routes to `/child/lesson/...` instead of `/explorer/:subjectId/:lessonId`.
+
+7. **Import screen files in `ExplorerLessonPlayer.jsx`** — Add one import per screen file:
+   ```js
+   import SP_L01 from '../../data/{slug}_explorer_l01_screens';
+   ```
+
+8. **Add the subject to `EXPLORER_DATA` in `ExplorerLessonPlayer.jsx`** — Add a new entry:
+   ```js
+   'your-subject-id': {
+     ageBand:   'explorers',
+     subjectId: 'your-subject-id',
+     guide:     'GuideName',
+     lessons:   [...SP_L01.lessons, ...SP_L02.lessons, ...],
+   },
+   ```
+   Without this, navigating to `/explorer/your-subject-id/:lessonId` crashes — the lesson player cannot find the lesson data.
+
+9. **Add slug mapping to the routing validator** — In `scripts/validate-routing-integrity.mjs`, add your slug to `SLUG_TO_SUBJECT` and (if needed) verify `SUBJECT_TO_SLUG` covers the new subject.
+
+10. **Run `npm run validate` and `npm run build`** — Both validators must pass clean before committing. The pre-commit hook runs `npm run validate` automatically.
+
+### Quick verification
+
+After wiring, confirm these three things manually:
+- Subject page shows the correct number of lesson cards (not old content from `lessons_level2.js`)
+- Clicking a lesson card navigates to `/explorer/your-subject-id/xx-6-8-01`
+- The lesson player loads the welcome screen without crashing
+
+---
+
 ## Validator
 
 ```bash
-npm run validate      # Run standalone
-npm run build         # Validates then builds (build fails if validate fails)
+npm run validate      # Run both validators standalone
+npm run build         # Validates then builds (build fails if either validator fails)
 ```
 
 The pre-commit hook runs `npm run validate` automatically before every commit.
 
-**What the validator checks:**
+**`validate-explorer-screens.mjs` checks:**
 - All required fields present, all forbidden fields absent
 - Magazine sections: vocab array with ≥ 2 entries, each entry has `word`, `definition`, `audioPrompt`
 - audioPrompt ≤ 90 words per entry
@@ -306,3 +370,10 @@ The pre-commit hook runs `npm run validate` automatically before every commit.
 - Quiz: ≥ 4 questions, format is `'multiple-choice'` or `'true-false'`
 - Engine components: no hardcoded subject-specific strings
 - Missing assets: reported as warnings (non-blocking)
+
+**`validate-routing-integrity.mjs` checks:**
+- CHECK 1: Every NEW_FORMAT_LESSONS subject has an arm in the `l2Lessons` ternary
+- CHECK 2: Every EXPLORER_DATA subject is in NEW_FORMAT_LESSONS
+- CHECK 3: Every `*_explorers_adapter.js` for a NEW_FORMAT_LESSONS subject is imported and wired into `l2Lessons`
+- CHECK 4: Every ID in NEW_FORMAT_LESSONS has a screen file on disk; every screen file for a NEW_FORMAT_LESSONS subject is registered
+- CHECK 5: Every NEW_FORMAT_LESSONS subject has a branch in `getExplorerLessonId()`

@@ -21,14 +21,93 @@ import fs   from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_DIR  = path.join(__dirname, '../src/data');
+const __dirname     = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR      = path.join(__dirname, '../src/data');
+const SUBJECT_VIEW  = path.join(__dirname, '../src/pages/SubjectView.jsx');
+const LESSON_PLAYER = path.join(__dirname, '../src/components/explorers/ExplorerLessonPlayer.jsx');
+
+// Maps file slug → runtime subjectId (same table as validate-routing-integrity.mjs)
+const SLUG_TO_SUBJECT = {
+  innerworld:       'inner-world',
+  cosmos:           'cosmos',
+  moneybusiness:    'money',
+  futureskills:     'future-skills',
+  socialleadership: 'leadership',
+  lifewellness:     'wellness',
+  creativearts:     'creative-arts',
+  historyworld:     'history',
+  ela:              'ela',
+  sci:              'sci',
+  ss:               'ss',
+  math:             'math',
+  frontier:         'frontier',
+  spanish:          'languages',
+};
 
 const subjectSlug = process.argv[2];
 if (!subjectSlug) {
   console.error('Usage: node scripts/smoke-test-subject.mjs <subjectSlug>');
   console.error('Example: node scripts/smoke-test-subject.mjs creativearts');
   process.exit(1);
+}
+
+// ── Routing reachability check ────────────────────────────────────────────────
+// Verify the subject is fully wired before rendering the content report.
+// This mirrors the checks in validate-routing-integrity.mjs for the single subject.
+
+const subjectId = SLUG_TO_SUBJECT[subjectSlug];
+console.log(`\n── Routing reachability: slug="${subjectSlug}" → subjectId="${subjectId || '(unknown)'}"\n`);
+
+let routingOk = true;
+
+if (!subjectId) {
+  console.warn(`⚠  No SLUG_TO_SUBJECT mapping for slug "${subjectSlug}" — routing checks skipped`);
+  console.warn(`   Add "${subjectSlug}" to SLUG_TO_SUBJECT in this script when the subject is wired.`);
+  routingOk = false;
+} else {
+  const svSrc = fs.readFileSync(SUBJECT_VIEW,  'utf8');
+  const lpSrc = fs.readFileSync(LESSON_PLAYER, 'utf8');
+
+  // Check 1: in NEW_FORMAT_LESSONS?
+  const inNewFormat = svSrc.includes(`'${subjectId}':`);
+  const newFormatMark = inNewFormat ? '✓' : '✗';
+  console.log(`${newFormatMark}  NEW_FORMAT_LESSONS: '${subjectId}' ${inNewFormat ? 'registered' : 'MISSING — add lesson IDs to NEW_FORMAT_LESSONS'}`);
+  if (!inNewFormat) routingOk = false;
+
+  // Check 2: in l2Lessons ternary?
+  const l2Block = svSrc.match(/Subject-specific Explorers curricula override level 2([\s\S]+?)Subject-specific Upper Explorers/);
+  const inL2 = l2Block ? l2Block[1].includes(`subjectId === '${subjectId}'`) : false;
+  const l2Mark = inL2 ? '✓' : '✗';
+  console.log(`${l2Mark}  l2Lessons ternary: '${subjectId}' ${inL2 ? 'has arm' : 'MISSING arm — lesson cards will show old data'}`);
+  if (!inL2) routingOk = false;
+
+  // Check 3: adapter imported?
+  const adapterBase = `${subjectSlug}_explorers_adapter`;
+  const adapterImported = svSrc.includes(adapterBase);
+  const adapterMark = adapterImported ? '✓' : '✗';
+  console.log(`${adapterMark}  Adapter import: '${adapterBase}' ${adapterImported ? 'found' : 'MISSING — import in SubjectView.jsx'}`);
+  if (!adapterImported) routingOk = false;
+
+  // Check 4: getExplorerLessonId branch?
+  const geliFn = svSrc.match(/function getExplorerLessonId\s*\([^)]*\)\s*\{([\s\S]+?)\n\}/);
+  const inGeli = geliFn ? geliFn[1].includes(`subjectId === '${subjectId}'`) : false;
+  const geliMark = inGeli ? '✓' : '✗';
+  console.log(`${geliMark}  getExplorerLessonId(): '${subjectId}' ${inGeli ? 'has branch' : 'MISSING branch — clicks route to old engine'}`);
+  if (!inGeli) routingOk = false;
+
+  // Check 5: in EXPLORER_DATA?
+  const explorerDataBlock = lpSrc.match(/const EXPLORER_DATA\s*=\s*\{([\s\S]+?)\n\};/);
+  const inExplorerData = explorerDataBlock ? explorerDataBlock[1].includes(`'${subjectId}'`) : false;
+  const edMark = inExplorerData ? '✓' : '✗';
+  console.log(`${edMark}  EXPLORER_DATA: '${subjectId}' ${inExplorerData ? 'registered' : 'MISSING — lesson player will crash on load'}`);
+  if (!inExplorerData) routingOk = false;
+
+  if (routingOk) {
+    console.log(`\n✓  All routing checks pass — ${subjectId} is reachable from the subject page.\n`);
+  } else {
+    console.warn(`\n⚠  Routing incomplete — fix the issues above before shipping.\n`);
+    console.warn(`   Run: node scripts/validate-routing-integrity.mjs for full details.\n`);
+  }
 }
 
 // ── Find all files for this subject ──────────────────────────────────────────
