@@ -258,6 +258,10 @@ function stripPronunciationGuides(text) {
 }
 
 // ── Resolve speech text per screen type ───────────────────────────────────────
+// getScreenText() is the SINGLE source of truth for text-to-TTS.
+// Always call this when sending screen text to speak() — never rebuild
+// text from screen.headline/paragraphs/etc. inline. Doing so bypasses
+// stripPronunciationGuides() and breaks prewarm cache keys.
 function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
   switch (screen?.type) {
@@ -943,13 +947,9 @@ export default function ExplorerLessonPlayer() {
     startCountdownFnRef.current = startCountdownForScreen;
 
     if (screen.type === 'magazine') {
-      // Headline + paragraphs spoken as one TTS call so karaoke flows continuously:
-      //   headline words → indices 0..N-1
-      //   paragraph words → indices N..N+M-1
-      // MagazineScreen receives karaokeIdx and headlineWordCount to render both correctly.
-      const headline = screen.headline || '';
-      const paraText = (screen.paragraphs || []).join(' ');
-      const fullText = headline ? `${headline}. ${paraText}` : paraText;
+      // Route through getScreenText() — single source of truth for text-to-TTS.
+      // This applies stripPronunciationGuides() and ensures cache keys match prewarm.
+      const fullText = getScreenText(screen, childName);
 
       console.log(`[TTS] Screen ${screenIdx} magazine — Reading section ${screen.section}: "${fullText.slice(0, 60)}..."`);
 
