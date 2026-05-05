@@ -250,6 +250,13 @@ function charAlignmentToWordStarts(text, alignment) {
   }
 }
 
+// ── Strip parenthetical pronunciation guides before TTS ───────────────────────
+// Matches "(word — PHONETIC)" patterns used in Spanish magazine paragraphs.
+// Only called for TTS input — visual rendering is unaffected.
+function stripPronunciationGuides(text) {
+  return (text || '').replace(/\s*\([^)]+\s—\s[^)]+\)/g, '');
+}
+
 // ── Resolve speech text per screen type ───────────────────────────────────────
 function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
@@ -257,7 +264,8 @@ function getScreenText(screen, childName) {
     case 'welcome':     return r(screen.guideText);
     case 'magazine': {
       const h = screen.headline ? `${screen.headline}. ` : '';
-      return h + (screen.paragraphs || []).join(' ');
+      const raw = h + (screen.paragraphs || []).join(' ');
+      return stripPronunciationGuides(raw);
     }
     case 'interactive': return r(screen.guideText);
     case 'quiz':        return r(screen.guideText);
