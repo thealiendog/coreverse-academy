@@ -938,6 +938,18 @@ export default function ExplorerLessonPlayer() {
       const fullText = headline ? `${headline}. ${paraText}` : paraText;
 
       console.log(`[TTS] Screen ${screenIdx} magazine — Reading section ${screen.section}: "${fullText.slice(0, 60)}..."`);
+
+      // Prewarm next magazine section while this one plays — eliminates cold-fetch gap.
+      // Only prewarm if next screen is also magazine (interactive/quiz have their own audio routing).
+      const nextScreen = screens[screenIdx + 1];
+      if (nextScreen?.type === 'magazine') {
+        const nextText = getScreenText(nextScreen, childName);
+        if (nextText) {
+          console.log(`[PREWARM] Starting prewarm for section ${nextScreen.section}: "${nextText.slice(0, 40)}..."`);
+          prewarmAudio(nextText);
+        }
+      }
+
       speak(fullText, () => {
         if (cancelled) return;
         console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
