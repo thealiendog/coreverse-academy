@@ -12,6 +12,7 @@ import { unlockAudio, sfx } from '../games/sounds';
 
 import ExplorerWelcomeScreen  from './ExplorerWelcomeScreen';
 import MagazineScreen         from './MagazineScreen';
+import StoryBeatScreen        from './StoryBeatScreen';
 import InteractiveExplore     from './InteractiveExplore';
 import MasteryQuiz            from './MasteryQuiz';
 import RealWorldConnection    from './RealWorldConnection';
@@ -316,6 +317,10 @@ function getScreenText(screen, childName) {
       const raw = h + (screen.paragraphs || []).join(' ');
       return stripPronunciationGuides(raw);
     }
+    case 'story-beat': {
+      const h = screen.headline ? `${screen.headline}. ` : '';
+      return stripPronunciationGuides(h + (screen.paragraph || ''));
+    }
     case 'interactive': return r(screen.guideText);
     case 'quiz':        return r(screen.guideText);
     case 'real-world':  return r(screen.guideText);
@@ -476,15 +481,15 @@ export default function ExplorerLessonPlayer() {
       }
     });
 
-    // Prewarm magazine section 1 in parallel — fire-and-forget, no await needed.
-    // Bug C fixed sections 2-4 (prewarm while current plays), but section 1 was still
+    // Prewarm first content screen (magazine or story-beat) in parallel — fire-and-forget.
+    // Bug C fixed sections 2+ (prewarm while current plays), but section/beat 1 was still
     // cold-fetched when the user advanced from welcome. This closes the remaining gap.
-    const firstMag = screens.find(s => s.type === 'magazine');
-    if (firstMag) {
-      const magText = getScreenText(firstMag, childName);
-      if (magText) {
-        console.log(`[PREWARM] Mount — also prewarming magazine section 1: "${magText.slice(0, 40)}..."`);
-        prewarmAudio(magText);
+    const firstContent = screens.find(s => s.type === 'magazine' || s.type === 'story-beat');
+    if (firstContent) {
+      const contentText = getScreenText(firstContent, childName);
+      if (contentText) {
+        console.log(`[PREWARM] Mount — also prewarming first content screen: "${contentText.slice(0, 40)}..."`);
+        prewarmAudio(contentText);
       }
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -1005,29 +1010,34 @@ export default function ExplorerLessonPlayer() {
     // Expose so vocabOpen effect can restart the countdown after popup closes
     startCountdownFnRef.current = startCountdownForScreen;
 
-    if (screen.type === 'magazine') {
+    if (screen.type === 'magazine' || screen.type === 'story-beat') {
       // Route through getScreenText() — single source of truth for text-to-TTS.
       // This applies stripPronunciationGuides() and ensures cache keys match prewarm.
       const fullText = getScreenText(screen, childName);
 
-      // Visual text = what MagazineScreen renders (original paragraphs, no strip).
+      // Visual text = what the screen component renders (original text, no strip).
       // Passed to speak() so it can build a spoken→visual karaoke alignment map.
       // Required for Spanish screens where stripPronunciationGuides() rewrites
       // "(hola — OH-lah)" → ". Hola", making spoken and visual word arrays diverge.
       const rn = t => (t || '').replace(/\{name\}/g, childName);
-      const rawVisual = (screen.headline ? `${screen.headline}. ` : '') +
-                        (screen.paragraphs || []).join(' ');
+      const body = screen.type === 'magazine'
+        ? (screen.paragraphs || []).join(' ')
+        : (screen.paragraph  || '');
+      const rawVisual = (screen.headline ? `${screen.headline}. ` : '') + body;
       const visualText = rn(rawVisual);
 
-      console.log(`[TTS] Screen ${screenIdx} magazine — Reading section ${screen.section}: "${fullText.slice(0, 60)}..."`);
+      const label = screen.type === 'magazine'
+        ? `magazine §${screen.section}`
+        : `story-beat ${screen.beat ?? '?'}/${screen.totalBeats ?? '?'}`;
+      console.log(`[TTS] Screen ${screenIdx} ${label}: "${fullText.slice(0, 60)}..."`);
 
-      // Prewarm next magazine section while this one plays — eliminates cold-fetch gap.
-      // Only prewarm if next screen is also magazine (interactive/quiz have their own audio routing).
+      // Prewarm next content screen while this one plays — eliminates cold-fetch gap.
       const nextScreen = screens[screenIdx + 1];
-      if (nextScreen?.type === 'magazine') {
+      if (nextScreen?.type === 'magazine' || nextScreen?.type === 'story-beat') {
         const nextText = getScreenText(nextScreen, childName);
         if (nextText) {
-          console.log(`[PREWARM] Starting prewarm for section ${nextScreen.section}: "${nextText.slice(0, 40)}..."`);
+          const nextLabel = nextScreen.type === 'magazine' ? `§${nextScreen.section}` : `beat ${nextScreen.beat}`;
+          console.log(`[PREWARM] Starting prewarm for next content screen (${nextLabel}): "${nextText.slice(0, 40)}..."`);
           prewarmAudio(nextText);
         }
       }
@@ -1260,8 +1270,8 @@ export default function ExplorerLessonPlayer() {
     welcomeReady,
     onWelcomeTap,
     subjectId,
-    // For magazine: number of headline words so MagazineScreen can offset paragraph karaoke
-    headlineWordCount: currentScreen?.type === 'magazine'
+    // For magazine/story-beat: headline word count so component can offset paragraph karaoke indices
+    headlineWordCount: (currentScreen?.type === 'magazine' || currentScreen?.type === 'story-beat')
       ? (currentScreen.headline || '').split(/\s+/).filter(Boolean).length
       : 0,
   };
@@ -1270,6 +1280,7 @@ export default function ExplorerLessonPlayer() {
     switch (screen.type) {
       case 'welcome':    return <ExplorerWelcomeScreen {...commonProps} />;
       case 'magazine':   return <MagazineScreen        {...commonProps} />;
+      case 'story-beat': return <StoryBeatScreen       {...commonProps} />;
       case 'interactive':return <InteractiveExplore    {...commonProps} />;
       case 'quiz':       return <MasteryQuiz           {...commonProps} />;
       case 'real-world': return <RealWorldConnection   {...commonProps} />;

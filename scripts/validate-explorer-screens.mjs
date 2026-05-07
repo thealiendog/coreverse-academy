@@ -110,6 +110,24 @@ const RULES = {
            || `quiz format must be 'multiple-choice' or 'true-false', not 'mc'/'tf'`,
     ],
   },
+  'story-beat': {
+    required: ['headline', 'paragraph', 'image', 'imageCaption', 'keyVocab'],
+    forbidden: ['paragraphs', 'vocab'],  // old magazine fields — must not bleed in
+    checks: [
+      s => typeof s.paragraph === 'string'
+           || `paragraph must be a string (not an array — use paragraph: "..." not paragraphs: [...])`,
+      s => typeof s.paragraph !== 'string' || s.paragraph.split(/\s+/).filter(Boolean).length >= 20
+           || `paragraph is too short (min 20 words, aim 40-60)`,
+      s => typeof s.paragraph !== 'string' || s.paragraph.split(/\s+/).filter(Boolean).length <= 80
+           || `paragraph exceeds 80 words — trim for age-appropriate cognitive load (aim 40-60)`,
+      s => s.keyVocab && s.keyVocab.word && s.keyVocab.definition && s.keyVocab.audioPrompt
+           || `keyVocab must have word, definition, and audioPrompt`,
+      s => !s.inProseVocab || Array.isArray(s.inProseVocab)
+           || `inProseVocab must be an array if present`,
+      s => !Array.isArray(s.inProseVocab) || s.inProseVocab.every(v => v.word && v.definition && v.audioPrompt)
+           || `every inProseVocab entry must have word, definition, and audioPrompt`,
+    ],
+  },
   'real-world': {
     required: ['guideText', 'familyAdventure', 'creativePrompt'],
     forbidden: ['content'],
@@ -126,6 +144,9 @@ const NO_SUBSTITUTION_PATHS = [
   // magazine
   { type: 'magazine',   field: 'headline' },
   { type: 'magazine',   field: 'imageCaption' },
+  // story-beat (paragraph gets r() in getScreenText; headline/imageCaption do not)
+  { type: 'story-beat', field: 'headline' },
+  { type: 'story-beat', field: 'imageCaption' },
   // quiz
   { type: 'quiz',       field: 'questions[].text' },
   { type: 'quiz',       field: 'questions[].options[]' },
@@ -184,14 +205,33 @@ function wordCount(text) {
 
 function checkAudioPromptLengths(screen, loc) {
   const errs = [];
-  if (!Array.isArray(screen.vocab)) return errs;
-  screen.vocab.forEach((v, idx) => {
-    if (!v.audioPrompt) return;
-    const wc = wordCount(v.audioPrompt);
+  // magazine vocab array
+  if (Array.isArray(screen.vocab)) {
+    screen.vocab.forEach((v, idx) => {
+      if (!v.audioPrompt) return;
+      const wc = wordCount(v.audioPrompt);
+      if (wc > MAX_AUDIO_PROMPT_WORDS) {
+        errs.push(`${loc}: vocab[${idx}] audioPrompt is ${wc} words (max ${MAX_AUDIO_PROMPT_WORDS}) — word: "${v.word}"`);
+      }
+    });
+  }
+  // story-beat keyVocab
+  if (screen.keyVocab?.audioPrompt) {
+    const wc = wordCount(screen.keyVocab.audioPrompt);
     if (wc > MAX_AUDIO_PROMPT_WORDS) {
-      errs.push(`${loc}: vocab[${idx}] audioPrompt is ${wc} words (max ${MAX_AUDIO_PROMPT_WORDS}) — word: "${v.word}"`);
+      errs.push(`${loc}: keyVocab audioPrompt is ${wc} words (max ${MAX_AUDIO_PROMPT_WORDS}) — word: "${screen.keyVocab.word}"`);
     }
-  });
+  }
+  // story-beat inProseVocab
+  if (Array.isArray(screen.inProseVocab)) {
+    screen.inProseVocab.forEach((v, idx) => {
+      if (!v.audioPrompt) return;
+      const wc = wordCount(v.audioPrompt);
+      if (wc > MAX_AUDIO_PROMPT_WORDS) {
+        errs.push(`${loc}: inProseVocab[${idx}] audioPrompt is ${wc} words (max ${MAX_AUDIO_PROMPT_WORDS}) — word: "${v.word}"`);
+      }
+    });
+  }
   return errs;
 }
 
