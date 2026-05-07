@@ -116,20 +116,6 @@ export default function StoryBeatScreen({
           pointerEvents: 'none',
         }} />
 
-        {/* Beat badge — bottom-left of image */}
-        {beat && totalBeats && (
-          <div style={{
-            position: 'absolute', bottom: 12, left: 14,
-            background: `${accent}25`, border: `1.5px solid ${accent}60`,
-            borderRadius: 20, padding: '4px 12px',
-            fontSize: '0.7rem', fontWeight: 700, color: accent,
-            letterSpacing: '0.06em', textTransform: 'uppercase',
-            backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)',
-          }}>
-            Beat {beat} of {totalBeats}
-        </div>
-        )}
-
         {/* Audio control — bottom-right of image */}
         <button
           onClick={isAudioActive ? onPauseResume : onReplay}

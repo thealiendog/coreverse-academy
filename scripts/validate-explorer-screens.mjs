@@ -120,7 +120,7 @@ const RULES = {
            || `paragraph is too short (min 20 words, aim 40-60)`,
       s => typeof s.paragraph !== 'string' || s.paragraph.split(/\s+/).filter(Boolean).length <= 80
            || `paragraph exceeds 80 words — trim for age-appropriate cognitive load (aim 40-60)`,
-      s => s.keyVocab && s.keyVocab.word && s.keyVocab.definition && s.keyVocab.audioPrompt
+      s => !!(s.keyVocab && s.keyVocab.word && s.keyVocab.definition && s.keyVocab.audioPrompt)
            || `keyVocab must have word, definition, and audioPrompt`,
       s => !s.inProseVocab || Array.isArray(s.inProseVocab)
            || `inProseVocab must be an array if present`,
