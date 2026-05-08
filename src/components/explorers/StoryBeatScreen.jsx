@@ -84,8 +84,8 @@ export default function StoryBeatScreen({
   return (
     <div style={{
       display: 'flex', flexDirection: 'column',
-      minHeight: '100%', background: '#0f172a',
-      overflowY: 'auto',
+      height: '100%', background: '#0f172a',
+      overflow: 'hidden',
     }}>
       <style>{`
         @keyframes sb-card-pulse {
@@ -145,8 +145,14 @@ export default function StoryBeatScreen({
         )}
       </div>
 
-      {/* ── TEXT ZONE ───────────────────────────────────────────────────────── */}
-      <div style={{ flex: 1, padding: '20px 20px 40px' }}>
+      {/* ── TEXT ZONE — scrollable, image stays pinned above ───────────────── */}
+      <div style={{
+        flex: 1,
+        overflowY: 'auto',
+        overscrollBehavior: 'contain',
+        WebkitOverflowScrolling: 'touch',
+        padding: '20px 20px 40px',
+      }}>
 
         {/* Headline */}
         <h2 style={{
