@@ -31,13 +31,13 @@ const innerworld_explorer_l04_screens = {
           headline:      'Your Brain is Like a Muscle',
           paragraphs: [
             'Scientists discovered something remarkable about the brain: it changes and grows every single time you learn something new.',
-            'When you practise a skill or work through a challenge, your brain cells form new connections — like roads being built between towns.',
+            'When you practice a skill or work through a challenge, your brain cells form new connections — like roads being built between towns.',
             'This is called neuroplasticity — and the amazing part is it happens your whole life, not just when you\'re young.',
           ],
           image:        '/explorer-assets/inner-world/l04-neuroplasticity.png',
           imageCaption: 'Every time you learn, your brain builds new connections',
           vocab: [
-            { word: 'neuroplasticity', definition: 'Your brain\'s ability to grow and change by forming new connections every time you learn or practise something.',        audioPrompt: 'Neuroplasticity — your brain\'s ability to grow and change by forming new connections every time you learn or practise something.' },
+            { word: 'neuroplasticity', definition: 'Your brain\'s ability to grow and change by forming new connections every time you learn or practice something.',        audioPrompt: 'Neuroplasticity — your brain\'s ability to grow and change by forming new connections every time you learn or practice something.' },
             { word: 'connections',     definition: 'Links between brain cells that get stronger the more you use them — like paths that become roads with practice.',          audioPrompt: 'Connections — links between brain cells that get stronger the more you use them, like paths that become roads with practice.' },
           ],
         },
@@ -47,9 +47,9 @@ const innerworld_explorer_l04_screens = {
           totalSections: 3,
           headline:      'Fixed vs. Growth Mindset',
           paragraphs: [
-            'Dr. Carol Dweck, a psychologist at Stanford University, found that people have one of two mindsets about their abilities.',
-            'A fixed mindset believes you\'re either smart or you\'re not — and that doesn\'t change. A growth mindset believes you can get better at almost anything with effort and practice.',
-            'The key word is "yet." Instead of "I can\'t do this," try "I can\'t do this yet." That tiny word opens a door — it says you\'re on the way, not at the end.',
+            'Dr. Carol Dweck, a psychologist at Stanford, found people have one of two mindsets about their abilities.',
+            'A fixed mindset believes you\'re either smart or you\'re not — and that doesn\'t change. A growth mindset believes you can get better at almost anything with effort.',
+            'The key word is "yet." Try "I can\'t do this yet" instead of "I can\'t do this." That tiny word opens a door.',
           ],
           image:        '/explorer-assets/inner-world/l04-fixed-vs-growth.png',
           imageCaption: 'Fixed mindset closes the door — growth mindset opens it',
@@ -119,7 +119,7 @@ const innerworld_explorer_l04_screens = {
             },
             {
               format:       'multiple-choice',
-              question:     'What happens in your brain when you practise something difficult?',
+              question:     'What happens in your brain when you practice something difficult?',
               options:      ['Nothing changes', 'Brain cells form new connections', 'Old brain cells disappear', 'Your brain gets tired permanently'],
               correctIndex: 1,
             },

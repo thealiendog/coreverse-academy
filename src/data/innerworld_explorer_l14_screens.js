@@ -64,7 +64,7 @@ const innerworld_explorer_l14_screens = {
           totalSections: 3,
           headline:      `You Can Be Mindful Anywhere`,
           paragraphs: [
-            `Mindfulness doesn't require sitting still or closing your eyes. You can practise it anywhere — while eating, while walking, while listening to someone speak.`,
+            `Mindfulness doesn't require sitting still or closing your eyes. You can practice it anywhere — while eating, while walking, while listening to someone speak.`,
             `Mindful eating means really tasting each bite: noticing texture, temperature, flavour. Mindful walking means feeling your feet on the ground, noticing what you see and hear. Mindful listening means giving someone your full attention — not planning what you'll say next.`,
             `Each time you bring your full attention to an ordinary moment, you're not just practising mindfulness — you're entering your life more deeply. The present moment is the only place where life actually happens.`,
           ],
@@ -114,7 +114,7 @@ const innerworld_explorer_l14_screens = {
             },
             {
               format:        'true-false',
-              question:      `You can practise mindfulness while eating, walking, or listening.`,
+              question:      `You can practice mindfulness while eating, walking, or listening.`,
               correctAnswer: true,
             },
             {
@@ -141,7 +141,7 @@ const innerworld_explorer_l14_screens = {
         // PHASE 5 — REAL-WORLD CONNECTION
         {
           type:            'real-world',
-          guideText:       `Wonderful, {name}! You've just discovered one of the most important skills a human being can practise — the ability to be right here, right now. Every time you notice your mind has wandered and bring it back, you're getting stronger. Try this with your family tonight!`,
+          guideText:       `Wonderful, {name}! You've just discovered one of the most important skills a human being can practice — the ability to be right here, right now. Every time you notice your mind has wandered and bring it back, you're getting stronger. Try this with your family tonight!`,
           familyAdventure: `At dinner tonight, try one minute of mindful eating together. Everyone pays full attention to what they're tasting — no talking, no screens, just noticing. Afterwards, share what you noticed. You might be surprised how different food tastes when you're really paying attention!`,
           creativePrompt:  `Choose one ordinary activity you do every day — eating, brushing your teeth, walking somewhere — and do it mindfully just once. Bring your full attention. Notice everything. Afterwards, write down three things you noticed that you wouldn't have noticed otherwise. What did the present moment show you?`,
         },
@@ -152,7 +152,7 @@ const innerworld_explorer_l14_screens = {
           xpEarned:  50,
           badge:     'present-moment-guide',
           badgeName: `Present Moment Guide`,
-          message:   `Wonderful, {name}! You've just discovered one of the most important skills a human being can practise — the ability to be right here, right now. Every time you bring your attention back to the present, you're training a calmer, clearer, happier mind. Sage is so proud of the awareness you're building!`,
+          message:   `Wonderful, {name}! You've just discovered one of the most important skills a human being can practice — the ability to be right here, right now. Every time you bring your attention back to the present, you're training a calmer, clearer, happier mind. Sage is so proud of the awareness you're building!`,
         },
       ],
     },

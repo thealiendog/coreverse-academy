@@ -64,9 +64,9 @@ const innerworld_explorer_l03_screens = {
           totalSections: 3,
           headline:      'Three Ways to Tame the Worry Monster',
           paragraphs: [
-            'There are three powerful ways to tame worry. First: NAME it — say "I notice I\'m feeling worried." Just naming it turns on your thinking brain and turns down the alarm.',
-            'Second: BREATHE — slow, deep breaths send a signal to your nervous system that you\'re safe. The alarm quiets when your body feels calm.',
-            'Third: ASK — "Is this real right now?" If the worry is about something that isn\'t happening yet, gently remind yourself you\'re okay. And if it feels too big, talk to a trusted adult.',
+            'There are three powerful ways to tame worry. First: NAME it — say "I notice I\'m feeling worried." Just naming it turns on your thinking brain.',
+            'Second: BREATHE — slow, deep breaths tell your nervous system you\'re safe. The alarm quiets when your body feels calm.',
+            'Third: ASK — "Is this real right now?" If it hasn\'t happened yet, you\'re okay. If it feels too big, tell a trusted adult.',
           ],
           image:        '/explorer-assets/inner-world/l03-three-tools.png',
           imageCaption: 'Name it, breathe, ask — three tools to tame the Worry Monster',
@@ -81,7 +81,7 @@ const innerworld_explorer_l03_screens = {
           type:          'interactive',
           activityType:  'drag-match',
           instruction:   'Tap a worry card, then tap how to tame it!',
-          guideText:     "Now let's practise taming worries! Each card shows something that might make you worry. Match it to the right taming tool — not real, name it, breathe, or ask if it's real!",
+          guideText:     "Now let's practice taming worries! Each card shows something that might make you worry. Match it to the right taming tool — not real, name it, breathe, or ask if it's real!",
           columnHeaders: ['The Worry', 'Taming Tool'],
           items: [
             { image: 'l03-game-tiger.png',     label: 'A tiger might get me!',         correctMatch: 'not-real', objectPosition: 'center 50%', matchPhrase: "Right! There's no tiger here — that worry isn't real right now!"              },

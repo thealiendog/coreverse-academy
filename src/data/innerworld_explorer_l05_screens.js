@@ -30,9 +30,9 @@ const innerworld_explorer_l05_screens = {
           totalSections: 3,
           headline:      'The Voice in Your Head',
           paragraphs: [
-            'Self-talk is the constant conversation you have with yourself inside your mind — it\'s always running, even when you don\'t notice it.',
-            'Researchers estimate we have between 50,000 and 80,000 thoughts every single day. That\'s a lot of talking!',
-            'A large portion of those thoughts are things we tell ourselves about who we are and what we\'re capable of. That means the voice in your head has a huge effect on how you feel about yourself.',
+            'Self-talk is the constant conversation you have with yourself inside your mind — always running, even when you don\'t notice.',
+            'Researchers estimate we have 50,000 to 80,000 thoughts every single day. That\'s a lot of talking!',
+            'Many of those thoughts are about who we are. The voice in your head shapes how you feel about yourself.',
           ],
           image:        '/explorer-assets/inner-world/l05-inner-monologue.png',
           imageCaption: 'Your inner voice talks to you all day long',
@@ -64,9 +64,9 @@ const innerworld_explorer_l05_screens = {
           totalSections: 3,
           headline:      'You Can Choose Your Voice',
           paragraphs: [
-            'The inner critic often speaks in "always" and "never" — these are called cognitive distortions, and they\'re almost never accurate. You don\'t always mess up. These exaggerations feel true, but they\'re not.',
-            'Here\'s a powerful test: when your inner critic says something, ask yourself, "Would I say this to my best friend?" If not, try rewriting it with the kindness you\'d offer someone you love.',
-            'Over time, this practice actually rewires your inner voice. The more you choose the coach, the quieter the critic becomes. You have more power over that voice than you think.',
+            'The inner critic often speaks in "always" and "never" — these are exaggerations, almost never accurate. You don\'t always mess up.',
+            'Powerful test: when your inner critic says something, ask, "Would I say this to my best friend?" If not, rewrite it with kindness.',
+            'Over time, this rewires your inner voice. The more you choose the coach, the quieter the critic becomes.',
           ],
           image:        '/explorer-assets/inner-world/l05-cognitive-distortion.png',
           imageCaption: "The best-friend test — would you say it to someone you love?",
@@ -131,7 +131,7 @@ const innerworld_explorer_l05_screens = {
             },
             {
               format:       'fill-blank',
-              question:     'When you practise kinder self-talk, your inner voice slowly ___ toward kindness.',
+              question:     'When you practice kinder self-talk, your inner voice slowly ___ toward kindness.',
               options:      ['rewires', 'shouts', 'disappears', 'freezes'],
               correctIndex: 0,
             },
@@ -143,7 +143,7 @@ const innerworld_explorer_l05_screens = {
           type:            'real-world',
           guideText:       "Brilliant work, {name}! You now know that the voice inside your head isn't always right — and you have the power to choose a kinder one. Try this with your family tonight!",
           familyAdventure: "Each family member shares their inner critic's favourite phrase — then together rewrite it as something an inner coach would say. You might be surprised what you hear from each other!",
-          creativePrompt:  "Think of something you did recently that didn't go perfectly. Write down what your inner critic said. Now imagine your best friend did the same thing — what would you say to them? Write that down too. Notice the difference, and practise saying the kinder version to yourself.",
+          creativePrompt:  "Think of something you did recently that didn't go perfectly. Write down what your inner critic said. Now imagine your best friend did the same thing — what would you say to them? Write that down too. Notice the difference, and practice saying the kinder version to yourself.",
         },
 
         // PHASE 6 — CELEBRATION

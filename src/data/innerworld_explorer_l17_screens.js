@@ -64,15 +64,15 @@ const innerworld_explorer_l17_screens = {
           totalSections: 3,
           headline:      `Building the Pause Muscle`,
           paragraphs: [
-            `Practising the pause gets easier over time. Mindfulness, breathing exercises, and emotional awareness all shorten the gap between trigger and wise response. The more you practise, the faster the prefrontal cortex comes online.`,
+            `Practising the pause gets easier over time. Mindfulness, breathing exercises, and emotional awareness all shorten the gap between trigger and wise response. The more you practice, the faster the prefrontal cortex comes online.`,
             `Athletes and performers train this exact skill — learning to stay mentally composed even under pressure. A sprinter who panics off the blocks. A musician who freezes on stage. A student who blanks in a test. The pause muscle is what steadies them.`,
-            `Think of something that reliably triggers a fast reaction from you. Now design your personal pause plan: what will you do in those first six seconds? Take two slow breaths. Count to six quietly. Press your feet into the floor and feel grounded. Choose your strategy — and practise it before you need it.`,
+            `Think of something that reliably triggers a fast reaction from you. Now design your personal pause plan: what will you do in those first six seconds? Take two slow breaths. Count to six quietly. Press your feet into the floor and feel grounded. Choose your strategy — and practice it before you need it.`,
           ],
           image:        '/explorer-assets/inner-world/l17-pause-power.png',
           imageCaption: `The pause muscle is trainable — every time you use it, it gets stronger`,
           vocab: [
             { word: 'pause muscle',       definition: `The ability to pause between a trigger and a response — built through practice so that, over time, the thinking brain comes online faster and more reliably.`,             audioPrompt: `Pause muscle — the ability to pause between a trigger and a response, built through practice so that over time the thinking brain comes online faster and more reliably.` },
-            { word: 'personal pause plan', definition: `Your own chosen strategy for those first six seconds of a hijack — like taking two breaths, counting to six, or pressing your feet into the floor — practised before you need it.`, audioPrompt: `Personal pause plan — your own chosen strategy for those first six seconds of a hijack, like taking two breaths, counting to six, or pressing your feet into the floor, practised before you need it.` },
+            { word: 'personal pause plan', definition: `Your own chosen strategy for those first six seconds of a hijack — like taking two breaths, counting to six, or pressing your feet into the floor — practiced before you need it.`, audioPrompt: `Personal pause plan — your own chosen strategy for those first six seconds of a hijack, like taking two breaths, counting to six, or pressing your feet into the floor, practiced before you need it.` },
           ],
         },
 
@@ -142,7 +142,7 @@ const innerworld_explorer_l17_screens = {
         {
           type:            'real-world',
           guideText:       `Excellent work, {name}! You now understand the neuroscience of reactions — and you have a personal pause plan to bridge the gap to a wiser response. Every time you use that pause, you're strengthening one of the most valuable skills a human being can have. Try this with your family tonight!`,
-          familyAdventure: `Share a story of a time someone in the family reacted impulsively and another time they responded wisely. What made the difference? What could help in future moments? You might even share your personal pause plans with each other — and help each other practise them.`,
+          familyAdventure: `Share a story of a time someone in the family reacted impulsively and another time they responded wisely. What made the difference? What could help in future moments? You might even share your personal pause plans with each other — and help each other practice them.`,
           creativePrompt:  `Think of one thing that reliably triggers a fast reaction from you. Now write your personal pause plan: what will you do in those first six seconds? (Ideas: two slow breaths, count to six in your head, press your feet into the floor.) Write it down and keep it somewhere you'll see it when it matters.`,
         },
 

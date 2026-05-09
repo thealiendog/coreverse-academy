@@ -65,7 +65,7 @@ const innerworld_explorer_l15_screens = {
           headline:      `Gentle Attention Is a Superpower`,
           paragraphs: [
             `When you notice tension in a part of your body, something remarkable can happen: simply noticing it — without judgment, without trying to force it to change — often causes it to soften on its own. Attention is like a gentle heat lamp. The body relaxes when it feels seen.`,
-            `You can practise a short body scan right now. Close your eyes or look down softly. Begin at your feet — what do you notice? Slowly move up through your legs, your belly, your chest, your shoulders, your neck, and finally your face.`,
+            `You can practice a short body scan right now. Close your eyes or look down softly. Begin at your feet — what do you notice? Slowly move up through your legs, your belly, your chest, your shoulders, your neck, and finally your face.`,
             `At each area, just notice — warm, cool, tight, loose, tingling, or nothing at all. No judgment. No fixing. Just listening. Each time you do this, you're building one of the most powerful skills a person can have: the ability to hear what your body is telling you.`,
           ],
           image:        '/explorer-assets/inner-world/l15-gentle-attention.png',

@@ -47,9 +47,9 @@ const innerworld_explorer_l07_screens = {
           totalSections: 3,
           headline:      'Your Brain is Built to Connect',
           paragraphs: [
-            'Scientists have discovered special cells in the brain called mirror neurons. These neurons activate both when you do something and when you watch someone else do it.',
-            'They help you feel an echo of what others feel — which is why you might flinch when you watch someone else get hurt, or smile automatically when a friend laughs.',
-            'You didn\'t choose to react that way — your brain is literally wired to connect with others. Empathy isn\'t just a choice, it\'s built into your biology.',
+            'Scientists found special brain cells called mirror neurons. They activate both when you do something and when you watch someone else do it.',
+            'They help you feel an echo of what others feel — why you flinch when you watch someone get hurt, or smile when a friend laughs.',
+            'You didn\'t choose this — your brain is wired to connect. Empathy isn\'t just a choice, it\'s built into you.',
           ],
           image:        '/explorer-assets/inner-world/l07-mirror-neurons.png',
           imageCaption: 'Mirror neurons help your brain feel an echo of what others experience',
@@ -64,9 +64,9 @@ const innerworld_explorer_l07_screens = {
           totalSections: 3,
           headline:      'Two Kinds of Empathy + How to Listen Well',
           paragraphs: [
-            'Empathy has two parts working together. Cognitive empathy is understanding what someone might be thinking and feeling — stepping into their perspective. Emotional empathy is actually feeling something of what they feel.',
-            'The most powerful empathy uses both. You think about their experience and you feel it too — head and heart together.',
-            'You can practise empathy by becoming a better listener. Instead of thinking about what to say next, focus completely on the other person — their words, their face, their body language. Ask "That sounds really hard — how are you feeling about it?" instead of jumping straight to advice.',
+            'Empathy has two parts. Cognitive empathy is understanding what someone is thinking. Emotional empathy is actually feeling what they feel.',
+            'The most powerful empathy uses both. You think about their experience AND you feel it too — head and heart together.',
+            'You build empathy by really listening. Focus completely on the other person — their words, face, body language. Ask "How are you feeling?" before jumping to advice.',
           ],
           image:        '/explorer-assets/inner-world/l07-listening-presence.png',
           imageCaption: 'Full presence — listening with your whole self, not just your ears',
@@ -141,7 +141,7 @@ const innerworld_explorer_l07_screens = {
         // PHASE 5 — REAL-WORLD CONNECTION
         {
           type:            'real-world',
-          guideText:       "Beautiful work, {name}! Empathy is what connects us to each other — and you're already so good at it. The more you practise stepping into other people's worlds, the kinder your own world becomes. Try this with your family tonight!",
+          guideText:       "Beautiful work, {name}! Empathy is what connects us to each other — and you're already so good at it. The more you practice stepping into other people's worlds, the kinder your own world becomes. Try this with your family tonight!",
           familyAdventure: "Pick a story or movie character and discuss together: what do you think they felt, and why? Practise stepping into someone else's perspective — you might be surprised how much you notice.",
           creativePrompt:  "Think of someone in your life who might be going through something difficult right now. Imagine for a moment what it might feel like to be them — not to judge their situation, just to feel it. Then think of one small thing you could do or say to let them know you care.",
         },
@@ -152,7 +152,7 @@ const innerworld_explorer_l07_screens = {
           xpEarned:  50,
           badge:     'heart-helper',
           badgeName: 'Heart Helper',
-          message:   "Beautiful work, {name}! Empathy is what connects us to each other, and you're already so good at it. The more you practise stepping into other people's worlds, the kinder and more connected your own world becomes. Sage loves your big, open heart!",
+          message:   "Beautiful work, {name}! Empathy is what connects us to each other, and you're already so good at it. The more you practice stepping into other people's worlds, the kinder and more connected your own world becomes. Sage loves your big, open heart!",
         },
       ],
     },

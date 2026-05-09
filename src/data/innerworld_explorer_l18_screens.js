@@ -142,7 +142,7 @@ const innerworld_explorer_l18_screens = {
         {
           type:            'real-world',
           guideText:       `Incredible, {name}! You've just learned one of the most transformative practices in all of psychology. Being kind to yourself is not weakness — it's the foundation of everything else. Sage carries so much compassion for you, and hopes you'll start carrying it for yourself too. Try this with your family tonight!`,
-          familyAdventure: `Share a mistake you made recently. Then — as a family — practise responding to it with compassion: "It's okay, we all make mistakes. What can we learn? How can we be kind to ourselves right now?" Notice how different it feels to respond with kindness instead of criticism.`,
+          familyAdventure: `Share a mistake you made recently. Then — as a family — practice responding to it with compassion: "It's okay, we all make mistakes. What can we learn? How can we be kind to ourselves right now?" Notice how different it feels to respond with kindness instead of criticism.`,
           creativePrompt:  `Think of something you've been hard on yourself about recently. Try the hand-on-heart practice: place a hand on your chest and say these three things slowly — "This is hard. Everyone struggles sometimes. I choose to be kind to myself right now." Write down how it felt before and after. What did you notice?`,
         },
 

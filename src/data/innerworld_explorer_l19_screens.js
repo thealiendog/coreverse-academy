@@ -48,14 +48,14 @@ const innerworld_explorer_l19_screens = {
           headline:      `The Stunning Science: Your Brain Can't Tell the Difference`,
           paragraphs: [
             `Here's the remarkable science: when you vividly imagine performing an action, your brain activates many of the same neural pathways it would use if you were actually doing it. The brain responds to vivid imagination almost as if the event were real.`,
-            `In one famous study, participants who only visualized playing piano scales — never touching a piano — showed measurable improvement in skill. Their improvement was almost equal to the group that physically practised. Imagination, done vividly enough, trains the brain.`,
+            `In one famous study, participants who only visualized playing piano scales — never touching a piano — showed measurable improvement in skill. Their improvement was almost equal to the group that physically practiced. Imagination, done vividly enough, trains the brain.`,
             `This is why visualization isn't just wishful thinking. It's neurological training. Every detailed mental rehearsal strengthens the circuits your brain will call on when the real moment arrives. You're building neural confidence before you ever step onto the stage.`,
           ],
           image:        '/explorer-assets/inner-world/l19-process-vs-outcome.png',
           imageCaption: `The piano study: visualization alone produced almost equal improvement to physical practice`,
           vocab: [
             { word: 'neural pathway',  definition: `A connection between brain cells that gets stronger with use — vivid visualization activates many of the same neural pathways as actually performing the action.`,            audioPrompt: `Neural pathway — a connection between brain cells that gets stronger with use. Vivid visualization activates many of the same neural pathways as actually performing the action.` },
-            { word: 'piano study',     definition: `A famous research study showing that participants who only visualized playing piano scales improved almost as much as those who physically practised — proof that imagination trains the brain.`, audioPrompt: `Piano study — a famous research study showing that participants who only visualized playing piano scales improved almost as much as those who physically practised, proving that imagination trains the brain.` },
+            { word: 'piano study',     definition: `A famous research study showing that participants who only visualized playing piano scales improved almost as much as those who physically practiced — proof that imagination trains the brain.`, audioPrompt: `Piano study — a famous research study showing that participants who only visualized playing piano scales improved almost as much as those who physically practiced, proving that imagination trains the brain.` },
           ],
         },
         {
@@ -109,7 +109,7 @@ const innerworld_explorer_l19_screens = {
             {
               format:       'multiple-choice',
               question:     `What did the famous piano practice study show?`,
-              options:      [`Visualization is always better than physical practice`, `Participants who only visualized playing showed almost equal improvement to those who physically practised`, `Visualization had no effect on piano skill`, `Only professional musicians can benefit from visualization`],
+              options:      [`Visualization is always better than physical practice`, `Participants who only visualized playing showed almost equal improvement to those who physically practiced`, `Visualization had no effect on piano skill`, `Only professional musicians can benefit from visualization`],
               correctIndex: 1,
             },
             {

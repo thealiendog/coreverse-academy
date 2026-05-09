@@ -64,7 +64,7 @@ const innerworld_explorer_l12_screens = {
           totalSections: 3,
           headline:      `When and How to Practise`,
           paragraphs: [
-            `The best times to practise affirmations are in the morning — to set the tone for your day — or at night, just before sleep, when your brain is very receptive to suggestion.`,
+            `The best times to practice affirmations are in the morning — to set the tone for your day — or at night, just before sleep, when your brain is very receptive to suggestion.`,
             `Saying them out loud while looking in the mirror makes them even more powerful. Research suggests this activates a stronger sense of self — something about seeing your own face while hearing your own voice creates a deeper impression.`,
             `Start with just two or three affirmations. Say them slowly, with genuine feeling. Notice what happens in your body. Over time, the words stop feeling strange — they start feeling true.`,
           ],
@@ -119,7 +119,7 @@ const innerworld_explorer_l12_screens = {
             },
             {
               format:       'multiple-choice',
-              question:     `When are two of the best times to practise affirmations?`,
+              question:     `When are two of the best times to practice affirmations?`,
               options:      [`During a test and while cooking`, `Morning and night, when the brain is most receptive`, `Only at school`, `Only when you're feeling confident already`],
               correctIndex: 1,
             },

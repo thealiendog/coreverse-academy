@@ -30,9 +30,9 @@ const innerworld_explorer_l08_screens = {
           totalSections: 3,
           headline:      `What Gratitude Does to Your Brain`,
           paragraphs: [
-            `Gratitude is the practice of noticing and appreciating the good things in your life — big and small. Researchers at UC Davis, led by Dr. Robert Emmons, found that people who regularly practise gratitude have better sleep, feel more positive emotions, and even have stronger immune systems.`,
-            `Your brain has something called a negativity bias. Because our ancient ancestors had to watch for danger constantly, our brains are wired to notice bad things more than good things.`,
-            `Gratitude practice is a way of gently retraining your brain to also notice what is good, safe, and beautiful. You're not ignoring problems — you're teaching your brain to see the full picture.`,
+            `Gratitude is noticing and appreciating the good things in your life — big and small. Dr. Robert Emmons at UC Davis found people who practice it have better sleep, more positive moods, and stronger immune systems.`,
+            `Your brain has a negativity bias. Our ancestors had to watch for danger, so our brains are wired to notice bad things more than good.`,
+            `Gratitude practice gently retrains your brain to also notice what's good, safe, and beautiful. You're not ignoring problems — you're teaching your brain to see both.`,
           ],
           image:        '/explorer-assets/inner-world/l08-negativity-bias.png',
           imageCaption: `Your brain is wired for danger — gratitude teaches it to notice the good too`,
@@ -47,9 +47,9 @@ const innerworld_explorer_l08_screens = {
           totalSections: 3,
           headline:      `The Gratitude Journal: Your Brain's Reward System`,
           paragraphs: [
-            `Gratitude journaling is one of the most studied happiness practices. Writing down three specific things you're grateful for each day activates the reward system of your brain and releases dopamine — a feel-good chemical.`,
-            `The key word is specific. Not just "my family" — but "the way my mum laughed at breakfast today." Not just "my home" — but "the warm blanket I had this morning."`,
-            `Specific details make your brain pay real attention. That's when the dopamine kicks in. The more vivid and real your gratitude, the stronger the effect.`,
+            `Gratitude journaling is one of the most studied happiness practices. Writing three specific things you're grateful for each day releases dopamine — a feel-good brain chemical.`,
+            `The key word is specific. Not just "my family" — but "the way my mom laughed at breakfast." Not just "my home" — but "the warm blanket this morning."`,
+            `Specific details make your brain pay real attention. That's when dopamine kicks in. The more vivid your gratitude, the stronger the effect.`,
           ],
           image:        '/explorer-assets/inner-world/l08-gratitude-rewires.png',
           imageCaption: `Specific gratitude activates your brain's reward system — dopamine is released`,
@@ -64,9 +64,9 @@ const innerworld_explorer_l08_screens = {
           totalSections: 3,
           headline:      `Gratitude Isn't Pretending Everything is Fine`,
           paragraphs: [
-            `Gratitude is not about pretending bad things don't exist. You can acknowledge that something is hard and still find something to be thankful for — those two things can both be true at once.`,
-            `Research shows that even people going through very difficult times benefit from gratitude practice. It's not about forced positivity. It's about balance — seeing both the hard and the good.`,
-            `Think of it like this: gratitude doesn't cancel out pain. It sits alongside it, and reminds you that even on hard days, there is something — however small — that is still good.`,
+            `Gratitude isn't pretending bad things don't exist. You can know something is hard AND still find something to be thankful for. Both can be true.`,
+            `Even people going through hard times benefit from gratitude practice. It's not forced positivity — it's balance. Seeing both the hard and the good.`,
+            `Gratitude doesn't cancel out pain. It sits alongside it, reminding you that even on hard days, there's something — however small — still good.`,
           ],
           image:        '/explorer-assets/inner-world/l08-three-gifts.png',
           imageCaption: `Gratitude and hard feelings can exist at the same time — that's balance`,
@@ -109,7 +109,7 @@ const innerworld_explorer_l08_screens = {
             {
               format:       'multiple-choice',
               question:     `What did Dr. Robert Emmons' research on gratitude find?`,
-              options:      [`Gratitude makes no difference to wellbeing`, `Grateful people have better sleep and feel more positive emotions`, `Only adults benefit from gratitude`, `Gratitude is harmful if practised too often`],
+              options:      [`Gratitude makes no difference to wellbeing`, `Grateful people have better sleep and feel more positive emotions`, `Only adults benefit from gratitude`, `Gratitude is harmful if practiced too often`],
               correctIndex: 1,
             },
             {
@@ -119,7 +119,7 @@ const innerworld_explorer_l08_screens = {
             },
             {
               format:       'multiple-choice',
-              question:     `What brain chemical is released when you practise gratitude?`,
+              question:     `What brain chemical is released when you practice gratitude?`,
               options:      [`Adrenaline`, `Cortisol`, `Dopamine`, `Melatonin`],
               correctIndex: 2,
             },
