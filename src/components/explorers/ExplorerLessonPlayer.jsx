@@ -1255,7 +1255,7 @@ export default function ExplorerLessonPlayer() {
     accent,
     onReplay:           replayAudio,
     onPauseResume:      pauseResumeAudio,
-    onVocabTap:         (vocab) => setVocabOpen(vocab),
+    onVocabTap:         (vocab) => { stopAudio(); setVocabOpen(vocab); },
     onComplete:         goNext,
     showVocabHint,
     onDismissVocabHint: () => { setShowVocabHint(false); localStorage.setItem('explorer_vocab_hint_shown', 'true'); },
