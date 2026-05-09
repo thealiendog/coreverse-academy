@@ -64,9 +64,9 @@ const innerworld_explorer_l02_screens = {
           totalSections: 3,
           headline:      'Watch Your Thoughts Like a Scientist',
           paragraphs: [
-            'Scientists call the skill of watching your thoughts without being pulled into them "thought watching." It means making space between you and your thoughts.',
-            'A simple trick: say "I notice I\'m having the thought that..." before any worry. Instead of "I can\'t do this," say "I notice I\'m having the thought that I can\'t do this." Suddenly the thought has less power over you.',
-            'When you observe your thoughts this way, you become like a scientist studying the weather — curious, calm, and not caught in the storm.',
+            'Scientists call this skill "thought watching." It means making space between you and your thoughts.',
+            'Try this: when a worry pops up, say "I notice I\'m having the thought that..." first. Suddenly the thought has less power over you.',
+            'When you watch your thoughts this way, you become like a scientist studying the weather — curious, calm, and not caught in the storm.',
           ],
           image:        '/explorer-assets/inner-world/l02-observer-self.png',
           imageCaption: 'You can watch your thoughts from a safe distance — like a scientist watching weather',
@@ -144,7 +144,7 @@ const innerworld_explorer_l02_screens = {
         {
           type:            'real-world',
           guideText:       "Amazing work, {name}! Now let's take what you've learned out into the world. Share this powerful idea with your family — you might just change how they see their own thoughts too!",
-          familyAdventure: "Share a thought you had today that wasn't actually true. Talk as a family about how thoughts can trick us — and practise saying 'I notice I'm having the thought that...' together.",
+          familyAdventure: "Share a thought you had today that wasn't actually true. Talk as a family about how thoughts can trick us — and practice saying 'I notice I'm having the thought that...' together.",
           creativePrompt:  "Sit quietly and watch your thoughts for one minute like you're watching clouds. When a thought appears, just notice it — 'there's a thought about school,' 'there's a thought about lunch.' Don't follow it, don't argue with it. Just watch it float by.",
         },
 
