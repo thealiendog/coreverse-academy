@@ -23,56 +23,101 @@ const innerworld_explorer_l10_screens = {
           guideText: `Hi {name}! Today you're going to learn one of the most important ideas in all of human psychology — and once you understand it, your whole life can change. Between what happens to you and what you do about it, there is always a space. In that space is your power. Ready to find it?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `The Space Between What Happens and What You Do`,
+          totalSections: 6,
+          headline:      `The Space Between`,
           paragraphs: [
-            `A philosopher named Viktor Frankl survived terrible hardship and made an extraordinary discovery: between every stimulus — what happens to you — and every response — what you do about it — there is a space.`,
-            `In that space is your freedom to choose. It might be tiny — just a fraction of a second — but it's always there. And no one can ever take it away from you.`,
-            `This idea changes everything. It means you are never just a puppet of your circumstances. No matter what happens, you always have a choice in how you respond.`,
+            `Viktor Frankl survived terrible hardship and discovered something amazing. Between every stimulus — what happens — and every response — what you do — there's a space.`,
+            `That space might be small — sometimes just a fraction of a second. But it's always there. And no one can ever take it away.`,
           ],
-          image:        '/explorer-assets/inner-world/l10-stimulus-space.png',
-          imageCaption: `Stimulus → Space → Response — the space is where your power lives`,
+          image:        '/explorer-assets/inner-world/l10-s1-the-space.png',
+          imageCaption: `Between what happens and what you do, there's always a space`,
           vocab: [
-            { word: 'stimulus', definition: `Something that happens to you or around you that triggers a feeling or a reaction — like a comment, an event, or a situation.`,              audioPrompt: `Stimulus — something that happens to you or around you that triggers a feeling or a reaction, like a comment, an event, or a situation.` },
-            { word: 'response', definition: `What you choose to do after a stimulus — a response uses the space between what happened and what you do next.`,                            audioPrompt: `Response — what you choose to do after a stimulus. A response uses the space between what happened and what you do next.` },
+            { word: 'stimulus', definition: `Something that happens to you — like someone saying something mean, or a loud noise, or a kind hug.`, audioPrompt: `Stimulus — something that happens to you, like someone saying something mean, or a loud noise, or a kind hug.` },
+            { word: 'response', definition: `What you choose to do after something happens — your action, your words, or even just your thoughts.`, audioPrompt: `Response — what you choose to do after something happens. Your action, your words, or even just your thoughts.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `Reaction vs. Response`,
+          totalSections: 6,
+          headline:      `Your Freedom to Choose`,
           paragraphs: [
-            `When we react, we act automatically — without thinking. Someone says something mean, and before we know it, we've said something mean back. A reaction is fast and usually driven by the amygdala, which fires before the thinking brain has time to weigh in.`,
-            `When we respond, we use that space. We pause, we breathe, we think — even for just a second — and we choose how to act.`,
-            `Responding doesn't mean ignoring your feelings. You can feel angry and still choose how to express that anger in a way you'll be proud of later. The feeling is real — the choice is yours.`,
+            `What lives inside that space? Your freedom. The freedom to choose how you respond, no matter what happens to you.`,
+            `This means you are never just a puppet of your circumstances. Whatever happens, you ALWAYS have a choice in how you respond.`,
           ],
-          image:        '/explorer-assets/inner-world/l10-react-vs-respond.png',
-          imageCaption: `Reaction is automatic — response uses the space to choose`,
+          image:        '/explorer-assets/inner-world/l10-s2-freedom.png',
+          imageCaption: `In that space lives your freedom — and no one can take it from you`,
           vocab: [
-            { word: 'reaction', definition: `An automatic, fast response driven by the emotional brain — it happens before the thinking brain has time to weigh in.`,                   audioPrompt: `Reaction — an automatic, fast response driven by the emotional brain, happening before the thinking brain has time to weigh in.` },
-            { word: 'amygdala', definition: `The brain's alarm system that fires quickly when you feel threatened or frustrated — it drives reactions before you've had a chance to think.`, audioPrompt: `Amygdala — the brain's alarm system that fires quickly when you feel threatened or frustrated, driving reactions before you've had a chance to think.` },
+            { word: 'freedom',       definition: `The power to choose how you respond — no matter what happens, this can never be taken away.`,                                                       audioPrompt: `Freedom — the power to choose how you respond. No matter what happens, this can never be taken away.` },
+            { word: 'circumstances', definition: `The events and situations around you — you can't always control your circumstances, but you can always choose your response.`,                     audioPrompt: `Circumstances — the events and situations around you. You can't always control your circumstances, but you can always choose your response.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `The STOP Technique`,
+          totalSections: 6,
+          headline:      `When You React`,
           paragraphs: [
-            `The STOP technique gives you a tool to use the space every time. S = Stop what you're doing. T = Take a breath. O = Observe what's happening inside you. P = Proceed with purpose.`,
-            `This tiny pause — just a few seconds — is enough to give your thinking brain a chance to catch up with your emotional brain. That's when you can choose wisely.`,
-            `It sounds simple, and it is. But it works. Athletes, surgeons, parents, and leaders around the world use this kind of pause to make better decisions. You can start practising it today.`,
+            `A reaction happens FAST — without thinking. Someone says something mean, and before we know it, we've said something mean back.`,
+            `Reactions come from the amygdala — the alarm part of your brain. It fires before your thinking brain has time to catch up.`,
           ],
-          image:        '/explorer-assets/inner-world/l10-stop-technique.png',
-          imageCaption: `Stop · Take a breath · Observe · Proceed — four steps to your power`,
+          image:        '/explorer-assets/inner-world/l10-s3-reaction.png',
+          imageCaption: `A reaction is fast and automatic — the alarm brain leading the way`,
           vocab: [
-            { word: 'STOP technique',      definition: `A four-step pause — Stop, Take a breath, Observe, Proceed — that gives your thinking brain time to catch up before you act.`,  audioPrompt: `STOP technique — a four-step pause: Stop, Take a breath, Observe, Proceed. It gives your thinking brain time to catch up before you act.` },
-            { word: 'proceed with purpose', definition: `The final step of STOP — moving forward with a clear, chosen intention, rather than just reacting automatically.`,                audioPrompt: `Proceed with purpose — the final step of STOP, moving forward with a clear, chosen intention rather than just reacting automatically.` },
+            { word: 'amygdala', definition: `The alarm part of your brain. It fires fast when something feels scary or upsetting — even before you think.`, audioPrompt: `Amygdala — the alarm part of your brain. It fires fast when something feels scary or upsetting, even before you think.` },
+            { word: 'react', definition: `To act automatically, before your thinking brain has time to catch up.`, audioPrompt: `React — to act automatically, before your thinking brain has time to catch up.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `When You Respond`,
+          paragraphs: [
+            `A response happens AFTER you use the space. You pause. You breathe. You think — even just for a second.`,
+            `Then you choose how to act. Responding doesn't mean ignoring your feelings. The feeling can still be real. The choice is yours.`,
+          ],
+          image:        '/explorer-assets/inner-world/l10-s4-respond.png',
+          imageCaption: `A response uses the space — pause, breathe, choose`,
+          vocab: [
+            { word: 'respond', definition: `To choose what to do after pausing, breathing, and thinking — using the space between stimulus and action.`, audioPrompt: `Respond — to choose what to do after pausing, breathing, and thinking, using the space between stimulus and action.` },
+            { word: 'pause',   definition: `A brief stop before acting — just a breath or a moment — that gives your thinking brain time to catch up.`,  audioPrompt: `Pause — a brief stop before acting, just a breath or a moment, that gives your thinking brain time to catch up.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The STOP Tool`,
+          paragraphs: [
+            `The STOP technique helps you use the space every time. S = Stop what you're doing. T = Take a breath. O = Observe. P = Proceed with purpose.`,
+            `This tiny pause — just a few seconds — gives your thinking brain a chance to catch up with your feeling brain.`,
+          ],
+          image:        '/explorer-assets/inner-world/l10-s5-stop-tool.png',
+          imageCaption: `STOP — Stop, Take a breath, Observe, Proceed with purpose`,
+          vocab: [
+            { word: 'STOP technique',      definition: `A tool with four steps: Stop, Take a breath, Observe what's happening inside you, Proceed with purpose.`,        audioPrompt: `STOP technique — a tool with four steps. Stop, take a breath, observe what's happening inside you, then proceed with purpose.` },
+            { word: 'proceed with purpose', definition: `The P in STOP — moving forward with a clear, chosen intention instead of reacting automatically.`,               audioPrompt: `Proceed with purpose — the P in STOP, moving forward with a clear, chosen intention instead of reacting automatically.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Anyone Can Do This`,
+          paragraphs: [
+            `Athletes, surgeons, leaders, and parents around the world use this kind of pause to make better decisions.`,
+            `It sounds simple, and it is. Try it the next time someone says something that upsets you. The space is always there — waiting for you to use it.`,
+          ],
+          image:        '/explorer-assets/inner-world/l10-s6-everyone.png',
+          imageCaption: `Athletes, surgeons, parents — everyone uses the pause`,
+          vocab: [
+            { word: 'choice',   definition: `A decision you make — in every situation, you have a choice in how you respond, even if the feeling is automatic.`,   audioPrompt: `Choice — a decision you make. In every situation, you have a choice in how you respond, even if the feeling is automatic.` },
+            { word: 'practice', definition: `Doing something again and again so it becomes easier — the more you use the pause, the more natural it feels.`,         audioPrompt: `Practice — doing something again and again so it becomes easier. The more you use the pause, the more natural it feels.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l10_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L10] Loaded: "${l.title}" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l10-stimulus-space.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l10-react-vs-respond.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l10-stop-technique.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L10] stimulus-space: ${r1.ok}, react-vs-respond: ${r2.ok}, stop-technique: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l10-s1-the-space.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l10-s2-freedom.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l10-s3-reaction.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l10-s4-respond.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l10-s5-stop-tool.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l10-s6-everyone.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L10] the-space: ${r1.ok}, freedom: ${r2.ok}, reaction: ${r3.ok}, respond: ${r4.ok}, stop-tool: ${r5.ok}, everyone: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L10] Could not verify image assets — network check failed');
   });
