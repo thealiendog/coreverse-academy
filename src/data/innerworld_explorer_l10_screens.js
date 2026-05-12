@@ -129,10 +129,10 @@ const innerworld_explorer_l10_screens = {
           guideText:     `Each card shows how a child handled a tricky moment. Did they react automatically — or did they use the space and respond? Tap the card, then sort it. You know the difference now!`,
           columnHeaders: [`What Happened`, `React or Respond?`],
           items: [
-            { image: 'l10-game-snapback.png',   label: `Someone was mean — I said something mean right back.`,                     correctMatch: 'react',   objectPosition: 'center 50%', matchPhrase: `That's a reaction — fast and amygdala-driven. Next time, try the STOP technique before you respond!` },
-            { image: 'l10-game-stomp.png',       label: `I lost the game and slammed the board down.`,                               correctMatch: 'react',   objectPosition: 'center 50%', matchPhrase: `That's a reaction! The feeling was real — but with a pause, you could choose a different way to show it.` },
-            { image: 'l10-game-breathpause.png', label: `I felt angry, took a breath, and said how I felt calmly.`,                  correctMatch: 'respond', objectPosition: 'center 50%', matchPhrase: `That's a response! You used the space — felt the feeling and chose how to express it. That's true power.` },
-            { image: 'l10-game-stopwalk.png',    label: `I wanted to shout, so I stopped, breathed, and walked away to cool down.`, correctMatch: 'respond', objectPosition: 'center 50%', matchPhrase: `Perfect! Stop, breathe, observe, proceed — you used the STOP technique. Sage is so proud of that choice!` },
+            { image: 'l10-game-snapback.png',   label: `Said it back`,    correctMatch: 'react',   objectPosition: 'center 50%', matchPhrase: `That's a reaction — fast and amygdala-driven. Next time, try the STOP technique before you respond!` },
+            { image: 'l10-game-stomp.png',       label: `Slammed it down`, correctMatch: 'react',   objectPosition: 'center 50%', matchPhrase: `That's a reaction! The feeling was real — but with a pause, you could choose a different way to show it.` },
+            { image: 'l10-game-breathpause.png', label: `Breathed first`,  correctMatch: 'respond', objectPosition: 'center 50%', matchPhrase: `That's a response! You used the space — felt the feeling and chose how to express it. That's true power.` },
+            { image: 'l10-game-stopwalk.png',    label: `Walked away`,     correctMatch: 'respond', objectPosition: 'center 50%', matchPhrase: `Perfect! Stop, breathe, observe, proceed — you used the STOP technique. Sage is so proud of that choice!` },
           ],
           buckets: [
             { id: 'react',   label: `⚡ Reaction`, color: '#EF4444' },
