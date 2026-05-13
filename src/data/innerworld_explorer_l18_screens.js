@@ -23,56 +23,101 @@ const innerworld_explorer_l18_screens = {
           guideText: `Hello, {name}! Today we're exploring something that many people find surprisingly hard: being kind to yourself. We're often much harder on ourselves than we would ever be on someone we love. Let's change that — with a practice called self-compassion.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `Dr. Neff's Three Components`,
+          totalSections: 6,
+          headline:      `What's Self-Compassion?`,
           paragraphs: [
-            `Self-compassion is treating yourself with the same kindness and understanding you'd offer a good friend when things go wrong. Dr. Kristin Neff has researched self-compassion for over twenty years — and she found it has three distinct parts.`,
-            `The first is self-kindness: being gentle with yourself instead of harshly critical. The second is common humanity: recognising that suffering and imperfection are part of being human — you are not uniquely broken or alone. The third is mindfulness: noticing your painful feelings without pushing them away or exaggerating them.`,
-            `These three components work together. When something goes wrong, self-compassion says: "This hurts (mindfulness). This is part of being human (common humanity). May I be kind to myself right now (self-kindness)." All three in one quiet moment.`,
+            `Self-compassion is treating yourself with the same kindness you'd offer a good friend when things go wrong.`,
+            `Dr. Kristin Neff has researched this for over twenty years — and found it has three distinct parts that work together.`,
           ],
-          image:        '/explorer-assets/inner-world/l18-three-components.png',
-          imageCaption: `Dr. Kristin Neff's three components: self-kindness, common humanity, mindfulness`,
+          image:        '/explorer-assets/inner-world/l18-s1-hand-on-heart.png',
+          imageCaption: `Self-compassion is offering yourself the kindness you'd give a friend`,
           vocab: [
-            { word: 'self-compassion',  definition: `Treating yourself with the same kindness and understanding you'd offer a good friend when things go wrong — made up of self-kindness, common humanity, and mindfulness.`, audioPrompt: `Self-compassion — treating yourself with the same kindness and understanding you'd offer a good friend when things go wrong. It's made up of self-kindness, common humanity, and mindfulness.` },
-            { word: 'common humanity', definition: `The recognition that suffering and imperfection are a normal part of being human — you are not alone in struggling, and difficulties don't make you uniquely broken.`,         audioPrompt: `Common humanity — the recognition that suffering and imperfection are a normal part of being human. You are not alone in struggling, and difficulties don't make you uniquely broken.` },
+            { word: 'self-compassion', definition: `Treating yourself with the same kindness you'd offer a good friend who was hurting or struggling.`, audioPrompt: `Self-compassion — treating yourself with the same kindness you'd offer a good friend who was hurting or struggling.` },
+            { word: 'researcher',      definition: `Someone who studies things scientifically to find out what's true. Dr. Kristin Neff is a self-compassion researcher.`, audioPrompt: `Researcher — someone who studies things scientifically to find out what's true. Dr. Kristin Neff is a self-compassion researcher.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `Not Self-Pity — Something Stronger`,
+          totalSections: 6,
+          headline:      `Three Parts Together`,
           paragraphs: [
-            `Many people confuse self-compassion with self-pity or weakness. But research shows the opposite is true. People with high self-compassion are more resilient, more motivated to improve after failure, and have lower rates of anxiety and depression.`,
-            `Self-compassion isn't about letting yourself off the hook — it's about meeting difficulty with enough kindness that you can actually learn from it. A child who attacks themselves after a mistake often freezes or gives up. A child who responds with compassion can pick themselves up and try again.`,
-            `The inner critic often disguises itself as a motivator: "If I'm harsh on myself, I'll do better next time." But studies show this isn't true. People respond better to encouragement after failure than to self-attack. Compassion is the better coach — and the research proves it.`,
+            `Self-kindness: being gentle with yourself instead of harshly critical. Common humanity: recognising that suffering is part of being human — you are not alone.`,
+            `Mindfulness: noticing your painful feelings without pushing them away or making them bigger. All three parts work together.`,
           ],
-          image:        '/explorer-assets/inner-world/l18-not-self-pity.png',
-          imageCaption: `Self-compassion isn't weakness — it's what makes resilience and improvement possible`,
+          image:        '/explorer-assets/inner-world/l18-s2-three-parts.png',
+          imageCaption: `Self-kindness, common humanity, mindfulness — three parts working as one`,
           vocab: [
-            { word: 'self-pity',    definition: `Getting stuck in feelings of unfairness and isolation after difficulty — different from self-compassion, which meets difficulty with kindness and moves forward.`, audioPrompt: `Self-pity — getting stuck in feelings of unfairness and isolation after difficulty. It's different from self-compassion, which meets difficulty with kindness and moves forward.` },
-            { word: 'inner critic', definition: `The harsh internal voice that attacks you after mistakes — often disguised as a motivator, but research shows it actually undermines performance and resilience.`,      audioPrompt: `Inner critic — the harsh internal voice that attacks you after mistakes. Often disguised as a motivator, but research shows it actually undermines performance and resilience.` },
+            { word: 'self-kindness',   definition: `Being gentle with yourself when things go wrong — instead of harshly critical. One of the three parts of self-compassion.`, audioPrompt: `Self-kindness — being gentle with yourself when things go wrong, instead of harshly critical. One of the three parts of self-compassion.` },
+            { word: 'common humanity', definition: `Recognising that suffering and imperfection are part of being human — you're not uniquely broken or alone.`, audioPrompt: `Common humanity — recognising that suffering and imperfection are part of being human. You're not uniquely broken or alone.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `The Hand-on-Heart Practice`,
+          totalSections: 6,
+          headline:      `Not Self-Pity`,
           paragraphs: [
-            `Dr. Neff offers a beautifully simple practice for difficult moments: place a hand on your heart. The warmth of your own touch activates the body's soothing system — the same system activated by a hug.`,
-            `Then say three phrases — one for each component. "This is hard." (Mindfulness — acknowledging the pain.) "Suffering is part of life." (Common humanity — you're not alone.) "May I be kind to myself in this moment." (Self-kindness — a gentle choice.)`,
-            `Think of something you've been hard on yourself about. Now try: "This is hard. Everyone struggles sometimes. I choose to be kind to myself right now." Then ask what advice you'd give your best friend in this exact situation — and offer that same advice to yourself.`,
+            `Many people confuse self-compassion with self-pity or weakness. But research shows the opposite is true.`,
+            `People with high self-compassion are more resilient, more motivated after failure, and have lower rates of anxiety and depression.`,
           ],
-          image:        '/explorer-assets/inner-world/l18-hand-on-heart.png',
-          imageCaption: `Hand on heart, three phrases — one for each component — can shift your inner world in seconds`,
+          image:        '/explorer-assets/inner-world/l18-s3-resilient.png',
+          imageCaption: `Self-compassion makes you more resilient — not less`,
           vocab: [
-            { word: 'self-kindness',          definition: `Choosing to be gentle with yourself instead of harshly critical — especially in moments of difficulty, failure, or pain.`,                                              audioPrompt: `Self-kindness — choosing to be gentle with yourself instead of harshly critical, especially in moments of difficulty, failure, or pain.` },
-            { word: 'hand-on-heart practice', definition: `A physical self-compassion practice: placing a hand on your heart while saying three phrases — one for mindfulness, one for common humanity, one for self-kindness.`, audioPrompt: `Hand-on-heart practice — a physical self-compassion practice. You place a hand on your heart while saying three phrases, one for mindfulness, one for common humanity, and one for self-kindness.` },
+            { word: 'self-pity', definition: `Feeling sorry for yourself in a way that gets you stuck — different from self-compassion, which moves you forward.`, audioPrompt: `Self-pity — feeling sorry for yourself in a way that gets you stuck. Different from self-compassion, which moves you forward.` },
+            { word: 'resilient', definition: `Able to bounce back after hard times. Self-compassion makes you more resilient, not less.`, audioPrompt: `Resilient — able to bounce back after hard times. Self-compassion makes you more resilient, not less.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `A Better Coach`,
+          paragraphs: [
+            `The inner critic often disguises itself as a motivator: "If I'm harsh on myself, I'll do better next time."`,
+            `But studies show this isn't true. People respond better to encouragement after failure than to self-attack. Compassion is the better coach.`,
+          ],
+          image:        '/explorer-assets/inner-world/l18-s4-better-coach.png',
+          imageCaption: `Encouragement works better than self-attack — compassion is the better coach`,
+          vocab: [
+            { word: 'inner critic',   definition: `The harsh voice inside that judges you when things go wrong. It often pretends to be a motivator — but it's not the best coach.`, audioPrompt: `Inner critic — the harsh voice inside that judges you when things go wrong. It often pretends to be a motivator, but it's not the best coach.` },
+            { word: 'encouragement', definition: `Kind words that build someone up after they struggle. Encouragement works better than harshness — even when you give it to yourself.`, audioPrompt: `Encouragement — kind words that build someone up after they struggle. Encouragement works better than harshness, even when you give it to yourself.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Hand on Heart`,
+          paragraphs: [
+            `Dr. Neff offers a simple practice. Place a hand on your heart. The warmth of your own touch activates the body's soothing system.`,
+            `Then say three phrases — for mindfulness, common humanity, and self-kindness. "This is hard." "Suffering is part of life." "May I be kind to myself."`,
+          ],
+          image:        '/explorer-assets/inner-world/l18-s5-soothing-touch.png',
+          imageCaption: `Hand on heart, three phrases — a simple practice for hard moments`,
+          vocab: [
+            { word: 'mindfulness',     definition: `Noticing your painful feelings without pushing them away or making them bigger. Just acknowledging: "this is hard."`, audioPrompt: `Mindfulness — noticing your painful feelings without pushing them away or making them bigger. Just acknowledging: this is hard.` },
+            { word: 'soothing system', definition: `Your body's natural way of calming down. Gentle self-touch and warmth activate it — like giving yourself a hug.`, audioPrompt: `Soothing system — your body's natural way of calming down. Gentle self-touch and warmth activate it, like giving yourself a hug.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `The Best Friend Test`,
+          paragraphs: [
+            `Think of something you've been hard on yourself about. Ask: what advice would I give my best friend in this exact situation?`,
+            `Then offer that same advice to yourself. The same kindness. The same understanding. The same care.`,
+          ],
+          image:        '/explorer-assets/inner-world/l18-s6-friend-mirror.png',
+          imageCaption: `Whatever you'd say to your best friend — say that to yourself`,
+          vocab: [
+            { word: 'compassion', definition: `Kindness offered to someone who is suffering. Compassion can be offered to others — and to yourself.`, audioPrompt: `Compassion — kindness offered to someone who is suffering. Compassion can be offered to others, and to yourself.` },
+            { word: 'empathy',    definition: `Understanding what someone else is feeling. Self-compassion turns that same understanding toward yourself.`, audioPrompt: `Empathy — understanding what someone else is feeling. Self-compassion turns that same understanding toward yourself.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l18_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L18] Loaded: "Self-Compassion: Being Kind to Myself" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l18-three-components.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l18-not-self-pity.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l18-hand-on-heart.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L18] three-components: ${r1.ok}, not-self-pity: ${r2.ok}, hand-on-heart: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l18-s1-hand-on-heart.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l18-s2-three-parts.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l18-s3-resilient.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l18-s4-better-coach.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l18-s5-soothing-touch.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l18-s6-friend-mirror.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L18] hand-on-heart: ${r1.ok}, three-parts: ${r2.ok}, resilient: ${r3.ok}, better-coach: ${r4.ok}, soothing-touch: ${r5.ok}, friend-mirror: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L18] Could not verify image assets — network check failed');
   });
