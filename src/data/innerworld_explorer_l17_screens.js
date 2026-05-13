@@ -23,56 +23,101 @@ const innerworld_explorer_l17_screens = {
           guideText: `Hi, {name}! We touched on this idea in a previous lesson — the space between what happens and what you do. Today we're going much deeper: what actually happens in your brain during a reaction versus a response, and how to build the muscle of wise responding. Ready to look inside the brain?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `The Amygdala Hijack`,
+          totalSections: 6,
+          headline:      `The Alarm Fires First`,
           paragraphs: [
-            `When something triggers a strong emotion — an insult, a fright, a frustration — your amygdala fires first, before your thinking brain has time to process. The amygdala is the brain's alarm system, and it's very fast.`,
-            `This is called an "amygdala hijack" — a term coined by psychologist Daniel Goleman. The emotional brain takes over for a few seconds before the rational brain can weigh in. It's not a character flaw. It's biology.`,
-            `For most of human history, this fast emotional reaction kept us safe from danger. But in modern life — when the "threat" is an argument or an unfair comment — the hijack can fire when we don't need it. Understanding it is the first step to working with it.`,
+            `When something triggers a strong emotion — an insult, a fright, a frustration — your amygdala fires first. Before your thinking brain has time to process.`,
+            `The amygdala is your brain's alarm system. And it's fast — way faster than your thinking brain.`,
           ],
-          image:        '/explorer-assets/inner-world/l17-amygdala-hijack.png',
-          imageCaption: `The amygdala fires first — an emotional hijack before the thinking brain can respond`,
+          image:        '/explorer-assets/inner-world/l17-s1-alarm-fires.png',
+          imageCaption: `The amygdala fires before the thinking brain even has time to process`,
           vocab: [
-            { word: 'amygdala',        definition: `A small, almond-shaped region in the brain that acts as the emotional alarm system — it fires fast when a threat or strong emotion is detected.`,                         audioPrompt: `Amygdala — a small, almond-shaped region in the brain that acts as the emotional alarm system. It fires fast when a threat or strong emotion is detected.` },
-            { word: 'amygdala hijack', definition: `A term coined by Daniel Goleman for when the amygdala fires so quickly that it takes over before the thinking brain can respond — triggering a reaction rather than a response.`, audioPrompt: `Amygdala hijack — a term coined by Daniel Goleman for when the amygdala fires so quickly that it takes over before the thinking brain can respond, triggering a reaction rather than a response.` },
+            { word: 'trigger',  definition: `Something that sets off a strong emotion — like a loud noise, an unkind word, or a sudden surprise.`, audioPrompt: `Trigger — something that sets off a strong emotion, like a loud noise, an unkind word, or a sudden surprise.` },
+            { word: 'amygdala', definition: `The alarm part of your brain. It fires fast when something feels scary or upsetting — even before you can think.`, audioPrompt: `Amygdala — the alarm part of your brain. It fires fast when something feels scary or upsetting, even before you can think.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `The Six-Second Window`,
+          totalSections: 6,
+          headline:      `The Amygdala Hijack`,
           paragraphs: [
-            `A reaction happens during those first seconds, before the thinking brain is involved. Reactions can feel satisfying in the moment but often lead to regret — they're powered by habit and emotion, not by choice.`,
-            `A response happens after the amygdala hijack passes — when you've allowed the thinking brain, called the prefrontal cortex, to catch up. The prefrontal cortex is where reasoning, empathy, and wise decision-making live.`,
-            `Research shows the amygdala hijack typically lasts about six seconds. This is why "count to ten" is actually grounded in neuroscience — six seconds of breathing gives your prefrontal cortex time to come online and help you choose what to do next.`,
+            `Psychologist Daniel Goleman coined a name for this: an "amygdala hijack." The emotional brain takes over for a few seconds before the rational brain can weigh in.`,
+            `It's not a character flaw. It's biology. Every human brain works this way.`,
           ],
-          image:        '/explorer-assets/inner-world/l17-six-seconds.png',
-          imageCaption: `Six seconds of pause — enough time for the prefrontal cortex to catch up`,
+          image:        '/explorer-assets/inner-world/l17-s2-amygdala-hijack.png',
+          imageCaption: `An amygdala hijack — the emotional brain briefly takes over from the thinking brain`,
           vocab: [
-            { word: 'reaction',          definition: `A behaviour that happens during the amygdala hijack — fast, habit-powered, often regretted — before the thinking brain has had a chance to weigh in.`,                        audioPrompt: `Reaction — a behaviour that happens during the amygdala hijack, fast and habit-powered, often regretted, before the thinking brain has had a chance to weigh in.` },
-            { word: 'prefrontal cortex', definition: `The part of the brain behind your forehead responsible for reasoning, empathy, and wise decision-making — it needs a few seconds to catch up after an amygdala hijack.`, audioPrompt: `Prefrontal cortex — the part of the brain behind your forehead responsible for reasoning, empathy, and wise decision-making. It needs a few seconds to catch up after an amygdala hijack.` },
+            { word: 'amygdala hijack', definition: `When the emotional brain takes over for a few seconds before the thinking brain can help. Named by psychologist Daniel Goleman.`, audioPrompt: `Amygdala hijack — when the emotional brain takes over for a few seconds before the thinking brain can help. Named by psychologist Daniel Goleman.` },
+            { word: 'biology',         definition: `The way your body and brain are naturally built. The amygdala hijack happens to everyone — it's biology, not a flaw.`, audioPrompt: `Biology — the way your body and brain are naturally built. The amygdala hijack happens to everyone. It's biology, not a flaw.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `Building the Pause Muscle`,
+          totalSections: 6,
+          headline:      `Reaction vs Response`,
           paragraphs: [
-            `Practising the pause gets easier over time. Mindfulness, breathing exercises, and emotional awareness all shorten the gap between trigger and wise response. The more you practice, the faster the prefrontal cortex comes online.`,
-            `Athletes and performers train this exact skill — learning to stay mentally composed even under pressure. A sprinter who panics off the blocks. A musician who freezes on stage. A student who blanks in a test. The pause muscle is what steadies them.`,
-            `Think of something that reliably triggers a fast reaction from you. Now design your personal pause plan: what will you do in those first six seconds? Take two slow breaths. Count to six quietly. Press your feet into the floor and feel grounded. Choose your strategy — and practice it before you need it.`,
+            `A reaction happens during those first seconds, before your thinking brain is involved. Reactions are powered by habit and emotion, not by choice.`,
+            `A response happens after the hijack passes — when your thinking brain catches up. That's where wise decisions live.`,
           ],
-          image:        '/explorer-assets/inner-world/l17-pause-power.png',
-          imageCaption: `The pause muscle is trainable — every time you use it, it gets stronger`,
+          image:        '/explorer-assets/inner-world/l17-s3-reaction-vs-response.png',
+          imageCaption: `A reaction is automatic. A response is chosen.`,
           vocab: [
-            { word: 'pause muscle',       definition: `The ability to pause between a trigger and a response — built through practice so that, over time, the thinking brain comes online faster and more reliably.`,             audioPrompt: `Pause muscle — the ability to pause between a trigger and a response, built through practice so that over time the thinking brain comes online faster and more reliably.` },
-            { word: 'personal pause plan', definition: `Your own chosen strategy for those first six seconds of a hijack — like taking two breaths, counting to six, or pressing your feet into the floor — practiced before you need it.`, audioPrompt: `Personal pause plan — your own chosen strategy for those first six seconds of a hijack, like taking two breaths, counting to six, or pressing your feet into the floor, practiced before you need it.` },
+            { word: 'reaction', definition: `An automatic action that happens fast, powered by habit and emotion — before your thinking brain has time to help.`, audioPrompt: `Reaction — an automatic action that happens fast, powered by habit and emotion, before your thinking brain has time to help.` },
+            { word: 'response', definition: `A chosen action that happens after pausing — when your thinking brain has caught up and helped you decide wisely.`, audioPrompt: `Response — a chosen action that happens after pausing, when your thinking brain has caught up and helped you decide wisely.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Six Seconds`,
+          paragraphs: [
+            `Research shows the amygdala hijack typically lasts about six seconds. This is why "count to ten" is actually grounded in neuroscience.`,
+            `Six seconds of breathing gives your thinking brain time to come online and help you choose what to do next.`,
+          ],
+          image:        '/explorer-assets/inner-world/l17-s4-six-seconds.png',
+          imageCaption: `Six seconds — that's how long the hijack lasts. Long enough for "count to ten" to work.`,
+          vocab: [
+            { word: 'six seconds',   definition: `How long an amygdala hijack typically lasts. After six seconds, your thinking brain can come online and help.`, audioPrompt: `Six seconds — how long an amygdala hijack typically lasts. After six seconds, your thinking brain can come online and help.` },
+            { word: 'thinking brain', definition: `The part of your brain that helps you choose wisely. It needs a few seconds to come online after a strong emotion fires.`, audioPrompt: `Thinking brain — the part of your brain that helps you choose wisely. It needs a few seconds to come online after a strong emotion fires.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Train the Pause`,
+          paragraphs: [
+            `Practising the pause gets easier over time. Mindfulness, breathing, and emotional awareness shorten the gap between trigger and wise response.`,
+            `Athletes and performers train this exact skill — staying mentally composed even under pressure. The pause is what steadies them.`,
+          ],
+          image:        '/explorer-assets/inner-world/l17-s5-train-pause.png',
+          imageCaption: `Athletes train the pause — it's what steadies them under pressure`,
+          vocab: [
+            { word: 'practice', definition: `Doing something on purpose to get better at it. Pausing is a skill — every practice makes the gap shorter.`, audioPrompt: `Practice — doing something on purpose to get better at it. Pausing is a skill. Every practice makes the gap shorter.` },
+            { word: 'composed', definition: `Calm and steady even when things are intense. Athletes and performers train themselves to stay composed under pressure.`, audioPrompt: `Composed — calm and steady even when things are intense. Athletes and performers train themselves to stay composed under pressure.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Your Pause Plan`,
+          paragraphs: [
+            `Think of something that reliably triggers a fast reaction from you. Now design your personal pause plan.`,
+            `What will you do in those first six seconds? Two slow breaths? Count to six? Feel your feet on the floor? Choose your strategy.`,
+          ],
+          image:        '/explorer-assets/inner-world/l17-s6-pause-plan.png',
+          imageCaption: `Design your personal pause plan — and practice it before you need it`,
+          vocab: [
+            { word: 'pause plan', definition: `A strategy you choose ahead of time for what to do during those first six seconds — so the pause feels easier when you need it.`, audioPrompt: `Pause plan — a strategy you choose ahead of time for what to do during those first six seconds, so the pause feels easier when you need it.` },
+            { word: 'strategy',   definition: `A plan for handling something. Your pause plan is your personal strategy for hard moments.`, audioPrompt: `Strategy — a plan for handling something. Your pause plan is your personal strategy for hard moments.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l17_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L17] Loaded: "The Difference Between Reacting and Responding" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l17-amygdala-hijack.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l17-six-seconds.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l17-pause-power.png',     { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L17] amygdala-hijack: ${r1.ok}, six-seconds: ${r2.ok}, pause-power: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l17-s1-alarm-fires.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l17-s2-amygdala-hijack.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l17-s3-reaction-vs-response.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l17-s4-six-seconds.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l17-s5-train-pause.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l17-s6-pause-plan.png',           { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L17] alarm-fires: ${r1.ok}, amygdala-hijack: ${r2.ok}, reaction-vs-response: ${r3.ok}, six-seconds: ${r4.ok}, train-pause: ${r5.ok}, pause-plan: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L17] Could not verify image assets — network check failed');
   });
