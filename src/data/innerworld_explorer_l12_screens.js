@@ -23,56 +23,101 @@ const innerworld_explorer_l12_screens = {
           guideText: `Welcome, {name}! Words are more powerful than most people realise — especially the words you say to yourself. Today we're going to learn about affirmations: positive statements that, when repeated with belief, can literally change how your brain is wired. Ready to upgrade your inner voice?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `What Is an Affirmation?`,
+          totalSections: 6,
+          headline:      `What's an Affirmation?`,
           paragraphs: [
-            `An affirmation is a positive statement you repeat to yourself on purpose. Examples: "I am capable," "I am learning and growing every day," "I handle hard things well." They might feel strange at first — especially if your inner critic disagrees. But repetition with feeling is the key.`,
-            `Neuroscience shows that repeated thoughts create stronger neural pathways — like paths in a forest. The more you walk a path, the clearer and easier it becomes.`,
-            `When you repeat an affirmation consistently, you're building a new mental pathway. Over time, your brain begins to scan for evidence that supports the affirmation — and finds it. The words shape the lens you see the world through.`,
+            `An affirmation is a positive statement you repeat to yourself on purpose. Examples: "I am capable," "I am brave," "I handle hard things well."`,
+            `They might feel strange at first — especially if your inner critic disagrees. But that's okay. The strangeness fades with practice.`,
           ],
-          image:        '/explorer-assets/inner-world/l12-neural-paths.png',
-          imageCaption: `Repeated affirmations build new neural pathways — like clearing a path through a forest`,
+          image:        '/explorer-assets/inner-world/l12-s1-affirmation-energy.png',
+          imageCaption: `An affirmation is a positive statement you tell yourself on purpose`,
           vocab: [
-            { word: 'affirmation',   definition: `A positive statement you repeat to yourself on purpose — designed to build a new belief by creating stronger neural pathways over time.`,   audioPrompt: `Affirmation — a positive statement you repeat to yourself on purpose, designed to build a new belief by creating stronger neural pathways over time.` },
-            { word: 'neural pathway', definition: `A connection between brain cells that gets stronger the more you use it — like a path in a forest that becomes a road with repeated walking.`, audioPrompt: `Neural pathway — a connection between brain cells that gets stronger the more you use it, like a path in a forest that becomes a road with repeated walking.` },
+            { word: 'affirmation',  definition: `A positive statement you repeat to yourself on purpose — like "I am brave" or "I can do hard things."`,                                     audioPrompt: `Affirmation — a positive statement you repeat to yourself on purpose, like I am brave or I can do hard things.` },
+            { word: 'inner critic', definition: `The voice inside your head that doubts or criticises you — affirmations help quiet the inner critic over time.`,                            audioPrompt: `Inner critic — the voice inside your head that doubts or criticises you. Affirmations help quiet the inner critic over time.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `Making Affirmations That Actually Work`,
+          totalSections: 6,
+          headline:      `Why It Works`,
           paragraphs: [
-            `For affirmations to work, they need to be believable to you. If a statement feels too far from the truth, your brain resists it rather than building on it.`,
-            `"I am already perfect at everything" might trigger resistance — your brain knows it's not quite true yet. But "I am becoming more confident every day" or "I am learning to be brave" is true right now, and still moves you in the direction you want.`,
-            `The best affirmations are present-tense, personal, and progressive — they describe who you're becoming, not an unreachable ideal. That slight stretch is exactly where growth happens.`,
+            `Neuroscience shows that repeated thoughts create stronger neural pathways — like paths in a forest. The more you walk a path, the clearer it becomes.`,
+            `When you repeat an affirmation consistently, you're building a new mental pathway. Over time, your brain starts to see the world through it.`,
           ],
-          image:        '/explorer-assets/inner-world/l12-believable-words.png',
-          imageCaption: `Believable + directional — the two ingredients of an affirmation that works`,
+          image:        '/explorer-assets/inner-world/l12-s2-neural-pathways.png',
+          imageCaption: `Repeated thoughts build neural pathways — like wearing a new trail through a forest`,
           vocab: [
-            { word: 'resistance',             definition: `When your brain pushes back against a statement because it feels too untrue — strong affirmations avoid triggering resistance by staying believable.`, audioPrompt: `Resistance — when your brain pushes back against a statement because it feels too untrue. Strong affirmations avoid triggering resistance by staying believable.` },
-            { word: 'progressive affirmation', definition: `An affirmation that describes who you're becoming — like "I am learning to be brave" — true right now and pointing in the direction you want to grow.`,    audioPrompt: `Progressive affirmation — an affirmation that describes who you're becoming, like I am learning to be brave, true right now and pointing in the direction you want to grow.` },
+            { word: 'neural pathway', definition: `A connection in your brain that gets stronger every time you use it — like a forest trail that becomes clearer the more you walk it.`,   audioPrompt: `Neural pathway — a connection in your brain that gets stronger every time you use it, like a forest trail that becomes clearer the more you walk it.` },
+            { word: 'repetition',     definition: `Doing or saying the same thing again and again — repetition is how affirmations build new pathways in your brain.`,                       audioPrompt: `Repetition — doing or saying the same thing again and again. Repetition is how affirmations build new pathways in your brain.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `When and How to Practise`,
+          totalSections: 6,
+          headline:      `Make It Believable`,
           paragraphs: [
-            `The best times to practice affirmations are in the morning — to set the tone for your day — or at night, just before sleep, when your brain is very receptive to suggestion.`,
-            `Saying them out loud while looking in the mirror makes them even more powerful. Research suggests this activates a stronger sense of self — something about seeing your own face while hearing your own voice creates a deeper impression.`,
-            `Start with just two or three affirmations. Say them slowly, with genuine feeling. Notice what happens in your body. Over time, the words stop feeling strange — they start feeling true.`,
+            `For affirmations to work, they need to be believable to you. If a statement feels too far from the truth, your brain resists it.`,
+            `"I am already perfect at everything" might trigger resistance — your brain knows it's not quite true yet.`,
           ],
-          image:        '/explorer-assets/inner-world/l12-best-times.png',
-          imageCaption: `Morning or night, out loud in the mirror — the ritual that makes affirmations stick`,
+          image:        '/explorer-assets/inner-world/l12-s3-believable.png',
+          imageCaption: `If an affirmation feels too far from true, your brain pushes it away`,
           vocab: [
-            { word: 'receptive',    definition: `Open and ready to take in new information or ideas — the brain is especially receptive just before sleep, making it a powerful time for affirmations.`, audioPrompt: `Receptive — open and ready to take in new information or ideas. The brain is especially receptive just before sleep, making it a powerful time for affirmations.` },
-            { word: 'sense of self', definition: `Your inner feeling of who you are — saying affirmations while looking in the mirror activates and strengthens this sense, according to research.`,          audioPrompt: `Sense of self — your inner feeling of who you are. Saying affirmations while looking in the mirror activates and strengthens this sense, according to research.` },
+            { word: 'resistance',  definition: `When your brain pushes back against an idea that doesn't feel true. Resistance is a signal to choose a different, more believable affirmation.`, audioPrompt: `Resistance — when your brain pushes back against an idea that doesn't feel true. Resistance is a signal to choose a different, more believable affirmation.` },
+            { word: 'believable',  definition: `Something your brain can accept as possible right now — the best affirmations are believable, even if they describe who you're still becoming.`,  audioPrompt: `Believable — something your brain can accept as possible right now. The best affirmations are believable, even if they describe who you're still becoming.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Present, Personal, Progressive`,
+          paragraphs: [
+            `The best affirmations are present-tense, personal, and progressive — they describe who you're becoming, not an unreachable ideal.`,
+            `"I am becoming more confident every day" or "I am learning to be brave" feels true right now AND moves you forward.`,
+          ],
+          image:        '/explorer-assets/inner-world/l12-s4-becoming.png',
+          imageCaption: `The best affirmations describe who you're becoming, not an unreachable end`,
+          vocab: [
+            { word: 'progressive',   definition: `Moving forward step by step — getting a little better every day, not jumping to a perfect end all at once.`,                                  audioPrompt: `Progressive — moving forward step by step, getting a little better every day, not jumping to a perfect end all at once.` },
+            { word: 'present-tense', definition: `Written as if it's happening now — "I am becoming" rather than "I will be one day." Present-tense affirmations feel more real to your brain.`, audioPrompt: `Present-tense — written as if it's happening now, like I am becoming rather than I will be one day. Present-tense affirmations feel more real to your brain.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `When to Practice`,
+          paragraphs: [
+            `The best times to practice affirmations are in the morning — to set the tone for your day — or at night, before sleep.`,
+            `Saying them out loud while looking in a mirror makes them even more powerful. Something about seeing your own face creates a deeper impression.`,
+          ],
+          image:        '/explorer-assets/inner-world/l12-s5-mirror.png',
+          imageCaption: `Saying affirmations in a mirror makes them even more powerful`,
+          vocab: [
+            { word: 'ritual',     definition: `Something you do at the same time each day on purpose — like a morning or bedtime practice. Rituals make the habit stick.`,                    audioPrompt: `Ritual — something you do at the same time each day on purpose, like a morning or bedtime practice. Rituals make the habit stick.` },
+            { word: 'receptive',  definition: `Open and ready to take in new ideas — the brain is especially receptive in the morning and just before sleep, making those times powerful for affirmations.`, audioPrompt: `Receptive — open and ready to take in new ideas. The brain is especially receptive in the morning and just before sleep, making those the best times for affirmations.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Start Small`,
+          paragraphs: [
+            `Start with just two or three affirmations. Say them slowly, with genuine feeling. Notice what happens in your body.`,
+            `Over time, the words stop feeling strange — they start feeling true.`,
+          ],
+          image:        '/explorer-assets/inner-world/l12-s6-seed.png',
+          imageCaption: `Start small — a few affirmations, said with real feeling, become real beliefs`,
+          vocab: [
+            { word: 'practice', definition: `Doing something on purpose, over and over, to get better at it. Affirmations work because you practice them every day.`,                          audioPrompt: `Practice — doing something on purpose, over and over, to get better at it. Affirmations work because you practice them every day.` },
+            { word: 'belief',   definition: `A thought your brain accepts as true — affirmations work by slowly turning repeated words into beliefs you carry with you.`,                      audioPrompt: `Belief — a thought your brain accepts as true. Affirmations work by slowly turning repeated words into beliefs you carry with you.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l12_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L12] Loaded: "${l.title}" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l12-neural-paths.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l12-believable-words.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l12-best-times.png',       { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L12] neural-paths: ${r1.ok}, believable-words: ${r2.ok}, best-times: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l12-s1-affirmation-energy.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l12-s2-neural-pathways.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l12-s3-believable.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l12-s4-becoming.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l12-s5-mirror.png',             { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l12-s6-seed.png',               { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L12] affirmation-energy: ${r1.ok}, neural-pathways: ${r2.ok}, believable: ${r3.ok}, becoming: ${r4.ok}, mirror: ${r5.ok}, seed: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L12] Could not verify image assets — network check failed');
   });
