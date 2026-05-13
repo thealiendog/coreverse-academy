@@ -23,56 +23,101 @@ const innerworld_explorer_l13_screens = {
           guideText: `Hello, {name}! Today we're going to dig into something very important — the invisible compass that guides all your choices. It's called your values, and when you know what yours are, making decisions becomes so much clearer. Ready to find your compass?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `What Are Values (and What They're Not)`,
+          totalSections: 6,
+          headline:      `What Are Values?`,
           paragraphs: [
-            `Values are the things that matter most to you — your deepest beliefs about what is good, important, and worth living for. They're not the same as goals.`,
-            `Goals are things you can achieve and tick off — like winning a race or reading 10 books. Values are more like directions you walk in. You can always be more honest, more kind, more creative, no matter where you are.`,
-            `There's no finish line for a value. That's what makes them so powerful — they guide every choice you make, every single day, for your whole life.`,
+            `Values are the things that matter most to you — your deepest beliefs about what is good, important, and worth living for.`,
+            `Everyone has values, even if they've never named them. They shape every choice you make, every single day.`,
           ],
-          image:        '/explorer-assets/inner-world/l13-values-vs-goals.png',
-          imageCaption: `Values are directions, not destinations — there's no finish line`,
+          image:        '/explorer-assets/inner-world/l13-s1-what-are-values.png',
+          imageCaption: `Your values are your deepest beliefs about what is good and worth living for`,
           vocab: [
-            { word: 'values',    definition: `Your deepest beliefs about what is good, important, and worth living for — they guide your choices like an internal compass.`,              audioPrompt: `Values — your deepest beliefs about what is good, important, and worth living for. They guide your choices like an internal compass.` },
-            { word: 'direction', definition: `A way you keep walking, always — unlike a goal that you finish, a direction like kindness or honesty has no end point.`,                   audioPrompt: `Direction — a way you keep walking, always. Unlike a goal that you finish, a direction like kindness or honesty has no end point.` },
+            { word: 'value',  definition: `A deep belief about what is good and important to you — what you think is worth living for.`,                                                    audioPrompt: `Value — a deep belief about what is good and important to you, what you think is worth living for.` },
+            { word: 'belief', definition: `Something you think is true at the deepest level — even when no one else is watching.`,                                                          audioPrompt: `Belief — something you think is true at the deepest level, even when no one else is watching.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `Your Values Are Uniquely Yours`,
+          totalSections: 6,
+          headline:      `Direction, Not Destination`,
           paragraphs: [
-            `Common values include kindness, honesty, courage, creativity, fairness, family, learning, adventure, and respect. Everyone has a different set of core values — and that's what makes people wonderfully unique.`,
-            `Knowing your values is like having a compass. When decisions are hard, your values point the way: "What would the most honest version of me do? What would the most courageous version of me do?"`,
-            `Values are also different from rules. Rules are external — someone else sets them and enforces them. Values are internal — they come from inside you and guide you even when nobody is watching.`,
+            `Values are not the same as goals. Goals are things you can achieve and tick off — like winning a race or reading 10 books.`,
+            `Values are more like directions you walk in. You can always be more honest, more kind, more creative — no matter where you are.`,
           ],
-          image:        '/explorer-assets/inner-world/l13-unique-set.png',
-          imageCaption: `Everyone's values are unique — your compass is yours alone`,
+          image:        '/explorer-assets/inner-world/l13-s2-direction-not-destination.png',
+          imageCaption: `Goals are places to arrive. Values are directions you walk in.`,
           vocab: [
-            { word: 'integrity', definition: `A feeling of wholeness and self-respect that comes from living by your values — doing what's right even when no one is watching.`,           audioPrompt: `Integrity — a feeling of wholeness and self-respect that comes from living by your values, doing what's right even when no one is watching.` },
-            { word: 'internal',  definition: `Coming from inside you — values are internal because they guide you from within, not because someone else told you to follow them.`,         audioPrompt: `Internal — coming from inside you. Values are internal because they guide you from within, not because someone else told you to follow them.` },
+            { word: 'goal',      definition: `Something specific you want to achieve and finish — like winning a race or reading 10 books.`,                                                audioPrompt: `Goal — something specific you want to achieve and finish, like winning a race or reading 10 books.` },
+            { word: 'direction', definition: `The way you're heading, not a place where you arrive. Values are directions — you can always walk further.`,                                  audioPrompt: `Direction — the way you're heading, not a place where you arrive. Values are directions. You can always walk further.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `Your Values Signal When You're Off Course`,
+          totalSections: 6,
+          headline:      `Everyone's Values Are Different`,
           paragraphs: [
-            `Your values have a built-in navigation system. When you act against your values, something inside you signals discomfort — a quiet feeling of "that wasn't right."`,
-            `This signal is important. It's not a punishment — it's information. Your values are telling you that you've drifted from the direction you want to go.`,
-            `When you act in alignment with your values, you feel a quiet confidence and peace. Learning to recognise both of these signals helps you make choices you'll be proud of — choices that feel true to who you are.`,
+            `Common values include kindness, honesty, courage, creativity, fairness, family, learning, and respect.`,
+            `Everyone has a different set of core values — and that's what makes each person wonderfully unique. There's no single "right" set of values.`,
           ],
-          image:        '/explorer-assets/inner-world/l13-integrity.png',
-          imageCaption: `In alignment = quiet peace. Off course = discomfort. Your values always know.`,
+          image:        '/explorer-assets/inner-world/l13-s3-common-values.png',
+          imageCaption: `Each person's set of values is unique — there's no single right answer`,
           vocab: [
-            { word: 'alignment',         definition: `Being in line with your values — when your actions match what you believe is right, you feel a quiet confidence and peace.`,           audioPrompt: `Alignment — being in line with your values. When your actions match what you believe is right, you feel a quiet confidence and peace.` },
-            { word: 'discomfort signal',  definition: `The uneasy feeling you get when you act against your values — a useful signal that you've drifted from the direction you want to go.`, audioPrompt: `Discomfort signal — the uneasy feeling you get when you act against your values, a useful signal that you've drifted from the direction you want to go.` },
+            { word: 'core values', definition: `The most important values you live by — the ones at the center of who you are. Everyone's core values are different.`,                      audioPrompt: `Core values — the most important values you live by, the ones at the center of who you are. Everyone's core values are different.` },
+            { word: 'unique',      definition: `One of a kind. Your set of values makes you unique — different from everyone else in a meaningful way.`,                                    audioPrompt: `Unique — one of a kind. Your set of values makes you unique, different from everyone else in a meaningful way.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Your Compass`,
+          paragraphs: [
+            `Knowing your values is like having a compass. When decisions are hard, your values point the way.`,
+            `Ask yourself: "What would the most honest version of me do? What would the most kind version of me do?" Your values answer.`,
+          ],
+          image:        '/explorer-assets/inner-world/l13-s4-compass.png',
+          imageCaption: `When choices are hard, your values are the compass that points the way`,
+          vocab: [
+            { word: 'compass',  definition: `A tool that always points in a direction so you don't get lost. Your values work like a compass for big life decisions.`,                      audioPrompt: `Compass — a tool that always points in a direction so you don't get lost. Your values work like a compass for big life decisions.` },
+            { word: 'decision', definition: `A choice between options. Hard decisions become easier when you let your values guide the way.`,                                                audioPrompt: `Decision — a choice between options. Hard decisions become easier when you let your values guide the way.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Values vs Rules`,
+          paragraphs: [
+            `Values are different from rules. Rules are external — someone else sets them and enforces them.`,
+            `Values are internal — they come from inside you and guide you even when nobody else is watching.`,
+          ],
+          image:        '/explorer-assets/inner-world/l13-s5-values-vs-rules.png',
+          imageCaption: `Rules come from outside. Values come from inside.`,
+          vocab: [
+            { word: 'rules',    definition: `Things someone else sets for you and makes you follow — they come from outside, like school rules or family rules.`,                           audioPrompt: `Rules — things someone else sets for you and makes you follow. They come from outside, like school rules or family rules.` },
+            { word: 'internal', definition: `Coming from inside you. Your values are internal — they're yours, not given to you by someone else.`,                                          audioPrompt: `Internal — coming from inside you. Your values are internal. They're yours, not given to you by someone else.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Your Inner Signal`,
+          paragraphs: [
+            `When you act against your values, something inside you signals discomfort — a quiet feeling of "that wasn't right."`,
+            `When you act in line with your values, you feel a quiet confidence and peace. Both signals help you choose.`,
+          ],
+          image:        '/explorer-assets/inner-world/l13-s6-alignment.png',
+          imageCaption: `Your inner signal tells you when you're aligned with your values — and when you've drifted`,
+          vocab: [
+            { word: 'discomfort', definition: `A feeling of something not being right inside you — your inner signal that you've drifted from your values.`,                                audioPrompt: `Discomfort — a feeling of something not being right inside you, your inner signal that you've drifted from your values.` },
+            { word: 'alignment',  definition: `When your actions match your values. You feel calm and clear inside when you're in alignment.`,                                               audioPrompt: `Alignment — when your actions match your values. You feel calm and clear inside when you're in alignment.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l13_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L13] Loaded: "${l.title}" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l13-values-vs-goals.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l13-unique-set.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l13-integrity.png',       { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L13] values-vs-goals: ${r1.ok}, unique-set: ${r2.ok}, integrity: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l13-s1-what-are-values.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l13-s2-direction-not-destination.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l13-s3-common-values.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l13-s4-compass.png',                 { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l13-s5-values-vs-rules.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l13-s6-alignment.png',               { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L13] what-are-values: ${r1.ok}, direction-not-destination: ${r2.ok}, common-values: ${r3.ok}, compass: ${r4.ok}, values-vs-rules: ${r5.ok}, alignment: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L13] Could not verify image assets — network check failed');
   });
