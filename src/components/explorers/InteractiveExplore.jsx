@@ -37,11 +37,12 @@ export default function InteractiveExplore({
   ));
   const [shuffledBuckets] = useState(() => shuffle([...buckets]));
 
-  const [selectedKey,  setSelectedKey]  = useState(null);   // bucket.id of selected item
-  const [lockedPairs,  setLockedPairs]  = useState(new Set()); // Set of bucket.id matched
-  const [shakeItem,    setShakeItem]    = useState(null);   // bucket.id to shake (item col)
-  const [shakeBucket,  setShakeBucket]  = useState(null);   // bucket.id to shake (bucket col)
-  const [gameComplete, setGameComplete] = useState(false);
+  const [selectedKey,   setSelectedKey]   = useState(null);   // id of selected item
+  const [speakingItemId, setSpeakingItemId] = useState(null); // id of item whose label is currently playing
+  const [lockedPairs,   setLockedPairs]   = useState(new Set()); // Set of item ids matched
+  const [shakeItem,     setShakeItem]     = useState(null);   // id to shake (item col)
+  const [shakeBucket,   setShakeBucket]   = useState(null);   // bucket.id to shake (bucket col)
+  const [gameComplete,  setGameComplete]  = useState(false);
 
   // Tracking refs
   const encourageIdx  = useRef(0);
@@ -78,15 +79,16 @@ export default function InteractiveExplore({
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
     // After guideText finishes, narrate each item label in sequence with 400ms gaps.
-    // Cancelled immediately if the user taps any card (their interaction takes priority).
+    // Highlights each card while its label plays. Cancelled if user taps any card.
     const narrateLabelAtIndex = (idx) => {
-      if (!mountedRef.current || labelNarrationCancelled.current) return;
-      if (idx >= shuffledItems.length) return;
+      if (!mountedRef.current || labelNarrationCancelled.current) { setSpeakingItemId(null); return; }
+      if (idx >= shuffledItems.length) { setSpeakingItemId(null); return; }
       labelNarrationTimer.current = setTimeout(() => {
-        if (!mountedRef.current || labelNarrationCancelled.current) return;
-        const label = shuffledItems[idx].label;
-        console.log(`[INTERACTIVE] Auto-narrating label ${idx + 1}/${shuffledItems.length}: "${label}"`);
-        onSpeak?.(label, () => narrateLabelAtIndex(idx + 1));
+        if (!mountedRef.current || labelNarrationCancelled.current) { setSpeakingItemId(null); return; }
+        const item = shuffledItems[idx];
+        console.log(`[INTERACTIVE] Auto-narrating label ${idx + 1}/${shuffledItems.length}: "${item.label}"`);
+        setSpeakingItemId(item.id);
+        onSpeak?.(item.label, () => narrateLabelAtIndex(idx + 1));
       }, 400);
     };
 
@@ -119,9 +121,10 @@ export default function InteractiveExplore({
     if (selectedKey === item.id) { setSelectedKey(null); return; }
     labelNarrationCancelled.current = true; // user is interacting — stop auto-narration
     setSelectedKey(item.id);
+    setSpeakingItemId(item.id);
     sfx.chime();
     console.log(`[INTERACTIVE] Item selected: "${item.label}" (id: ${item.id})`);
-    onSpeak?.(item.label); // speak label on short tap; speak() cancels any in-flight audio
+    onSpeak?.(item.label, () => { if (mountedRef.current) setSpeakingItemId(null); });
   };
 
   // ── Bucket tap (right column) ───────────────────────────────────────────────
@@ -148,6 +151,7 @@ export default function InteractiveExplore({
 
       setLockedPairs(prev => new Set([...prev, itemId]));
       setSelectedKey(null);
+      setSpeakingItemId(null);
       sfx.sparkle();
 
       const matchedItem = selectedItem;
@@ -189,6 +193,7 @@ export default function InteractiveExplore({
       setShakeItem(itemId);
       setShakeBucket(bucket.id);
       setSelectedKey(null);
+      setSpeakingItemId(null);
       sfx.buzz();
       setTimeout(() => {
         if (!mountedRef.current) return;
@@ -210,8 +215,13 @@ export default function InteractiveExplore({
         @keyframes game-lock {
           0%{transform:scale(0.88);opacity:0.7} 60%{transform:scale(1.07)} 100%{transform:scale(1);opacity:1}
         }
-        .g-shake { animation: game-shake 0.44s ease !important; }
-        .g-lock  { animation: game-lock  0.36s ease; }
+        @keyframes game-speak-glow {
+          0%,100% { box-shadow: 0 0 0 3px rgba(255,255,255,0.32), 0 0 16px 2px rgba(255,255,255,0.10); }
+          50%      { box-shadow: 0 0 0 6px rgba(255,255,255,0.16), 0 0 28px 6px rgba(255,255,255,0.06); }
+        }
+        .g-shake    { animation: game-shake 0.44s ease !important; }
+        .g-lock     { animation: game-lock  0.36s ease; }
+        .g-speaking { transform: scale(1.04) !important; animation: game-speak-glow 1.2s ease-in-out infinite !important; }
         /* Item cards: square aspect-ratio so Midjourney illustrations are legible.
            Min-height ensures a floor on narrow viewports where aspect-ratio
            alone would compute a height shorter than the illustration needs. */
@@ -288,19 +298,23 @@ export default function InteractiveExplore({
             const locked   = lockedPairs.has(item.id);
             const selected = selectedKey === item.id;
             const shaking  = shakeItem === item.id;
+            const speaking = speakingItemId === item.id && !locked;
             return (
               <button
                 key={item.id}
-                className={`game-item${shaking ? ' g-shake' : ''}${locked ? ' g-lock' : ''}`}
+                className={`game-item${shaking ? ' g-shake' : ''}${locked ? ' g-lock' : ''}${speaking ? ' g-speaking' : ''}`}
                 onTouchStart={() => startLP(item.id, item.label)}
                 onTouchEnd={()   => cancelLP(item.id)}
                 onTouchMove={()  => cancelLP(item.id)}
                 onClick={() => handleItemTap(item)}
                 style={{
-                  border:         `2.5px solid ${locked ? '#10B981' : selected ? accent : 'rgba(255,255,255,0.14)'}`,
+                  border:         locked  ? '2.5px solid #10B981'
+                                : speaking ? `3px solid ${accent}`
+                                : selected ? `2.5px solid ${accent}`
+                                :             '2.5px solid rgba(255,255,255,0.14)',
                   borderRadius:   14,
-                  background:     locked ? 'rgba(16,185,129,0.1)' : selected ? `${accent}18` : 'rgba(255,255,255,0.05)',
-                  boxShadow:      selected ? `0 0 0 3px ${accent}44` : 'none',
+                  background:     locked ? 'rgba(16,185,129,0.1)' : (speaking || selected) ? `${accent}18` : 'rgba(255,255,255,0.05)',
+                  boxShadow:      speaking ? undefined /* CSS animation handles shadow */ : selected ? `0 0 0 3px ${accent}44` : 'none',
                   cursor:         locked ? 'default' : 'pointer',
                   overflow:       'hidden',
                   padding:        0,
@@ -309,8 +323,8 @@ export default function InteractiveExplore({
                   display:        'flex',
                   alignItems:     'center',
                   justifyContent: 'center',
-                  transform:      selected ? 'scale(1.035)' : 'scale(1)',
-                  transition:     'transform 0.12s ease, border-color 0.12s, box-shadow 0.12s',
+                  transform:      speaking ? undefined /* CSS class handles scale */ : selected ? 'scale(1.035)' : 'scale(1)',
+                  transition:     'transform 0.18s ease, border-color 0.18s, box-shadow 0.18s',
                   WebkitTapHighlightColor: 'transparent',
                 }}
               >
