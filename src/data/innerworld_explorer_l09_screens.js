@@ -23,56 +23,101 @@ const innerworld_explorer_l09_screens = {
           guideText: `Hello, {name}! Today we're going to demystify one of the oldest and most powerful practices in human history — meditation. You might have heard of it, but today you'll understand exactly why it works and try it for yourself. Ready to train your mind?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `What Meditation Actually Is`,
+          totalSections: 6,
+          headline:      `What Is Meditation?`,
           paragraphs: [
-            `Meditation is simply the practice of training your attention. It's not about emptying your mind or sitting perfectly still — and it's not religious.`,
-            `Think of it like push-ups for your brain's attention system. You pick something to focus on, your mind wanders (this is completely normal!), and you gently bring it back.`,
-            `That's it. The whole practice is in that cycle — focus, wander, return. Every single time you return, you're making your attention stronger.`,
+            `Meditation is simply the practice of training your attention. It's not about emptying your mind or sitting perfectly still.`,
+            `It's not religious either — anyone can do it, no matter what they believe. Meditation is a brain skill, like any other one you can learn.`,
           ],
-          image:        '/explorer-assets/inner-world/l09-attention-training.png',
-          imageCaption: `Meditation is attention training — focus, wander, return`,
+          image:        '/explorer-assets/inner-world/l09-s1-what-is-meditation.png',
+          imageCaption: `Meditation is a skill anyone can practice — it trains your attention`,
           vocab: [
-            { word: 'meditation', definition: `The practice of training your attention — choosing something to focus on, noticing when your mind wanders, and gently returning.`,       audioPrompt: `Meditation — the practice of training your attention, choosing something to focus on, noticing when your mind wanders, and gently returning.` },
-            { word: 'attention',  definition: `The ability to focus your mind on one thing at a time — meditation is like exercise that makes this ability stronger.`,                  audioPrompt: `Attention — the ability to focus your mind on one thing at a time. Meditation is like exercise that makes this ability stronger.` },
+            { word: 'meditation', definition: `A practice of training your attention by focusing on one thing — like your breath — and gently coming back when your mind wanders.`, audioPrompt: `Meditation — a practice of training your attention by focusing on one thing, like your breath, and gently coming back when your mind wanders.` },
+            { word: 'attention',  definition: `What your mind chooses to focus on at any moment. Attention is like a muscle — you can train it stronger.`,                          audioPrompt: `Attention — what your mind chooses to focus on at any moment. Attention is like a muscle. You can train it stronger.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `What Meditation Does to Your Brain`,
+          totalSections: 6,
+          headline:      `Push-Ups for Your Brain`,
           paragraphs: [
-            `Neuroscientists have used brain scanners to study meditators, and the results are extraordinary. Even after just 8 weeks of regular practice, people show measurable changes in brain structure.`,
-            `The prefrontal cortex — the part of the brain responsible for thinking, decision-making, and focus — actually gets thicker. It grows stronger, like a muscle being trained.`,
-            `The amygdala — your brain's alarm system that fires when you feel stressed or scared — becomes less reactive. Meditation literally calms your inner alarm.`,
+            `Think of meditation like push-ups for your brain's attention system. You pick something to focus on — like your breath.`,
+            `Your mind wanders (this is completely normal!), and you gently bring it back. Focus, wander, return. Every time you return, your attention gets stronger.`,
           ],
-          image:        '/explorer-assets/inner-world/l09-brain-changes.png',
-          imageCaption: `8 weeks of meditation — the prefrontal cortex grows, the amygdala calms`,
+          image:        '/explorer-assets/inner-world/l09-s2-brain-pushups.png',
+          imageCaption: `Focus, wander, return — that's the whole practice`,
           vocab: [
-            { word: 'prefrontal cortex', definition: `The front part of the brain responsible for thinking, decision-making, and focus — it gets physically thicker with regular meditation.`,  audioPrompt: `Prefrontal cortex — the front part of the brain responsible for thinking, decision-making, and focus. It gets physically thicker with regular meditation.` },
-            { word: 'amygdala',          definition: `Your brain's alarm system — it fires when you sense danger or stress. Meditation makes it less reactive over time.`,                       audioPrompt: `Amygdala — your brain's alarm system that fires when you sense danger or stress. Meditation makes it less reactive over time.` },
+            { word: 'focus',      definition: `To pay close, steady attention to one thing — like the feeling of your breath going in and out.`,                                            audioPrompt: `Focus — to pay close, steady attention to one thing, like the feeling of your breath going in and out.` },
+            { word: 'mental rep', definition: `Each time you notice your mind has wandered and gently return — just like a physical rep in exercise, it builds your attention muscle.`,    audioPrompt: `Mental rep — each time you notice your mind has wandered and gently return. Just like a physical rep in exercise, it builds your attention muscle.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `How to Meditate: The Anchor Breath`,
+          totalSections: 6,
+          headline:      `Your Brain Actually Changes`,
           paragraphs: [
-            `One of the most studied forms is mindfulness meditation, where you focus on the sensations of breathing — the air coming in, the slight pause, the air going out. Your breath is your anchor.`,
-            `When your mind wanders to thoughts, plans, or worries — and it will, that's completely normal — you simply notice it has wandered and gently return to the breath. Each time you return, you're doing a mental "rep." Your attention muscle gets stronger.`,
-            `Research shows regular meditation improves focus, reduces anxiety, improves sleep, and even strengthens the immune system. Apps, schools, and sports teams around the world now teach it. This is not an ancient mystery — it's proven science.`,
+            `Neuroscientists have used brain scanners to study meditators. After just 8 weeks of practice, people show real changes in brain structure.`,
+            `Eight weeks is enough to rewire how your brain works. The changes are visible on a scan, not just felt inside.`,
           ],
-          image:        '/explorer-assets/inner-world/l09-anchor-breath.png',
-          imageCaption: `Your breath is your anchor — return to it whenever your mind wanders`,
+          image:        '/explorer-assets/inner-world/l09-s3-brain-changes.png',
+          imageCaption: `After just 8 weeks of practice, the brain actually changes shape`,
           vocab: [
-            { word: 'mindfulness', definition: `Paying full attention to what's happening right now — noticing thoughts, feelings, and sensations without judging them.`,                    audioPrompt: `Mindfulness — paying full attention to what's happening right now, noticing thoughts, feelings, and sensations without judging them.` },
-            { word: 'mental rep',  definition: `Each time you notice your mind has wandered and return your attention — just like a physical rep in exercise, it builds your focus muscle.`, audioPrompt: `Mental rep — each time you notice your mind has wandered and return your attention. Just like a physical rep in exercise, it builds your focus muscle.` },
+            { word: 'neuroscientist', definition: `A scientist who studies the brain and how it works — neuroscientists discovered that meditation changes brain structure.`,        audioPrompt: `Neuroscientist — a scientist who studies the brain and how it works. Neuroscientists discovered that meditation changes brain structure.` },
+            { word: 'brain structure', definition: `The physical shape and organisation of the brain — regular meditation can make certain parts of the brain grow larger and stronger.`, audioPrompt: `Brain structure — the physical shape and organisation of the brain. Regular meditation can make certain parts of the brain grow larger and stronger.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Two Parts That Change`,
+          paragraphs: [
+            `The prefrontal cortex — the part of your brain that helps you think, make decisions, and focus — actually gets thicker. It grows stronger, like a muscle.`,
+            `The amygdala — your brain's alarm system that fires when you feel stressed or scared — becomes less reactive. Meditation literally calms your inner alarm.`,
+          ],
+          image:        '/explorer-assets/inner-world/l09-s4-two-parts.png',
+          imageCaption: `The thinking brain grows stronger, the alarm brain grows calmer`,
+          vocab: [
+            { word: 'prefrontal cortex', definition: `The part of your brain right behind your forehead. It helps you think, plan, and make good choices.`,                                audioPrompt: `Prefrontal cortex — the part of your brain right behind your forehead. It helps you think, plan, and make good choices.` },
+            { word: 'amygdala',          definition: `The alarm part of your brain. Meditation makes it less reactive, so you feel calmer when stressful things happen.`,                  audioPrompt: `Amygdala — the alarm part of your brain. Meditation makes it less reactive, so you feel calmer when stressful things happen.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `How to Meditate`,
+          paragraphs: [
+            `The most studied form is mindfulness meditation. You focus on the sensations of breathing — the air coming in, the air going out.`,
+            `When your mind wanders to thoughts, plans, or worries — and it WILL — you simply notice it has wandered and gently return to the breath.`,
+          ],
+          image:        '/explorer-assets/inner-world/l09-s5-breath-anchor.png',
+          imageCaption: `Your breath is the anchor — you can always come back to it`,
+          vocab: [
+            { word: 'mindfulness meditation', definition: `The most studied kind of meditation. You focus on your breath and gently return whenever your mind wanders.`,          audioPrompt: `Mindfulness meditation — the most studied kind of meditation. You focus on your breath and gently return whenever your mind wanders.` },
+            { word: 'anchor',                  definition: `Something you return to whenever your mind wanders — in meditation, your breath is your anchor.`,                        audioPrompt: `Anchor — something you return to whenever your mind wanders. In meditation, your breath is your anchor.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `It's Proven Science`,
+          paragraphs: [
+            `Research shows regular meditation improves focus, reduces anxiety, improves sleep, and even strengthens the immune system.`,
+            `Apps, schools, and sports teams around the world now teach it. This isn't an ancient mystery — it's proven science.`,
+          ],
+          image:        '/explorer-assets/inner-world/l09-s6-proven-science.png',
+          imageCaption: `Meditation is proven science — not an ancient mystery`,
+          vocab: [
+            { word: 'anxiety',        definition: `A feeling of worry or nervousness — regular meditation is one of the most effective tools for reducing anxiety.`,           audioPrompt: `Anxiety — a feeling of worry or nervousness. Regular meditation is one of the most effective tools for reducing anxiety.` },
+            { word: 'immune system',  definition: `Your body's defence against illness and infection — research shows meditation can strengthen it over time.`,                  audioPrompt: `Immune system — your body's defence against illness and infection. Research shows meditation can strengthen it over time.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l09_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L9] Loaded: "${l.title}" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l09-attention-training.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l09-brain-changes.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l09-anchor-breath.png',      { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L9] attention-training: ${r1.ok}, brain-changes: ${r2.ok}, anchor-breath: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l09-s1-what-is-meditation.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l09-s2-brain-pushups.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l09-s3-brain-changes.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l09-s4-two-parts.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l09-s5-breath-anchor.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l09-s6-proven-science.png',     { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L9] what-is-meditation: ${r1.ok}, brain-pushups: ${r2.ok}, brain-changes: ${r3.ok}, two-parts: ${r4.ok}, breath-anchor: ${r5.ok}, proven-science: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L9] Could not verify image assets — network check failed');
   });
