@@ -23,56 +23,101 @@ const innerworld_explorer_l14_screens = {
           guideText: `Hello, {name}! Where is your mind right now? Is it here with me, or is it somewhere else — maybe thinking about lunch, or what happened earlier, or what you're doing later? Today we're going to explore one of the most powerful skills you can build: mindfulness. It's the art of being right here, right now. Ready to come back to the present?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `Your Mind Wanders — A Lot`,
+          totalSections: 6,
+          headline:      `The 47% Discovery`,
           paragraphs: [
-            `Here's a surprising fact: researchers at Harvard found that the human mind wanders about 47% of waking hours. That means almost half the time, your mind isn't where your body is — it's somewhere else entirely.`,
-            `When your mind wanders, it tends to travel to two places: the past and the future. It replays memories, revisits regrets, makes plans, and runs through worries. Very little of this mental travel is happening right now.`,
-            `Mindfulness is a gentle invitation to come back. It simply asks: can you pay attention to what's happening right now, without judging it? Not fixing it, not escaping it — just noticing it.`,
+            `Here's a surprising fact: researchers at Harvard found that the human mind wanders about 47% of waking hours.`,
+            `That means almost half the time, your mind isn't where your body is. Your body might be at school while your mind is at home.`,
           ],
-          image:        '/explorer-assets/inner-world/l14-wandering-mind.png',
-          imageCaption: `Almost half your waking hours, your mind is somewhere else — mindfulness invites it back`,
+          image:        '/explorer-assets/inner-world/l14-s1-wandering-mind.png',
+          imageCaption: `Almost half the time, your mind is somewhere else than your body`,
           vocab: [
-            { word: 'mindfulness',   definition: `Paying attention to what is happening right now, on purpose, without judging it — a skill that brings your mind back to the present moment.`,         audioPrompt: `Mindfulness — paying attention to what is happening right now, on purpose, without judging it. A skill that brings your mind back to the present moment.` },
-            { word: 'mind-wandering', definition: `When your thoughts drift away from the present moment to the past or future — it happens to everyone, about 47% of waking hours.`,                   audioPrompt: `Mind-wandering — when your thoughts drift away from the present moment to the past or future. It happens to everyone, about 47% of waking hours.` },
+            { word: 'wandering', definition: `When your mind drifts away from what you're doing — thinking about something else even when your body is right here.`,                                  audioPrompt: `Wandering — when your mind drifts away from what you're doing, thinking about something else even when your body is right here.` },
+            { word: 'present',   definition: `Being where your body is, in this exact moment — your mind and body in the same place at the same time.`,                                               audioPrompt: `Present — being where your body is, in this exact moment. Your mind and body in the same place at the same time.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `Presence Is Connected to Happiness`,
+          totalSections: 6,
+          headline:      `Where Your Mind Goes`,
           paragraphs: [
-            `The same Harvard study found something remarkable: people were happiest when their minds were focused on what they were currently doing — even if the activity itself wasn't particularly exciting.`,
-            `Mind-wandering, no matter what people were thinking about, was linked to lower happiness levels. Being present — even during ordinary moments — was consistently linked to greater wellbeing.`,
-            `This means happiness isn't just about what you're doing. It's about how much of your mind is actually there while you're doing it. Presence is a skill — and like all skills, it gets better with practice.`,
+            `When your mind wanders, it tends to travel to two places: the past and the future.`,
+            `It replays memories, revisits regrets, makes plans, and runs through worries. Very little of this is happening right now.`,
           ],
-          image:        '/explorer-assets/inner-world/l14-present-moment.png',
-          imageCaption: `Harvard research: presence during any activity beats a wandering mind for happiness`,
+          image:        '/explorer-assets/inner-world/l14-s2-past-future.png',
+          imageCaption: `Your wandering mind usually goes to the past or the future — rarely the present`,
           vocab: [
-            { word: 'presence',      definition: `Being fully in the current moment — having your thoughts, attention, and awareness all pointed at what is happening right now.`,                        audioPrompt: `Presence — being fully in the current moment, having your thoughts, attention, and awareness all pointed at what is happening right now.` },
-            { word: 'Harvard study', definition: `Research by Killingsworth and Gilbert that tracked people's happiness and found mind-wandering — not activity type — was the biggest predictor of low mood.`, audioPrompt: `Harvard study — research by Killingsworth and Gilbert that tracked people's happiness and found that mind-wandering, not the type of activity, was the biggest predictor of low mood.` },
+            { word: 'past',   definition: `Things that already happened. Your mind likes to visit the past — replaying memories or regrets.`,                                                         audioPrompt: `Past — things that already happened. Your mind likes to visit the past, replaying memories or regrets.` },
+            { word: 'future', definition: `Things that haven't happened yet. Your mind likes to plan, dream, or worry about the future.`,                                                             audioPrompt: `Future — things that haven't happened yet. Your mind likes to plan, dream, or worry about the future.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `You Can Be Mindful Anywhere`,
+          totalSections: 6,
+          headline:      `Coming Back`,
           paragraphs: [
-            `Mindfulness doesn't require sitting still or closing your eyes. You can practice it anywhere — while eating, while walking, while listening to someone speak.`,
-            `Mindful eating means really tasting each bite: noticing texture, temperature, flavour. Mindful walking means feeling your feet on the ground, noticing what you see and hear. Mindful listening means giving someone your full attention — not planning what you'll say next.`,
-            `Each time you bring your full attention to an ordinary moment, you're not just practising mindfulness — you're entering your life more deeply. The present moment is the only place where life actually happens.`,
+            `Mindfulness is a gentle invitation to come back. It asks: can you pay attention to what's happening right now?`,
+            `Not judging it, not fixing it, not escaping it — just noticing it. That's the whole practice.`,
           ],
-          image:        '/explorer-assets/inner-world/l14-mindful-eating.png',
-          imageCaption: `Eating, walking, listening — mindfulness fits into any moment of your day`,
+          image:        '/explorer-assets/inner-world/l14-s3-coming-back.png',
+          imageCaption: `Mindfulness is the gentle practice of coming back to right now`,
           vocab: [
-            { word: 'mindful eating', definition: `Eating with full attention — noticing texture, temperature, and flavour instead of eating automatically while your mind is somewhere else.`,           audioPrompt: `Mindful eating — eating with full attention, noticing texture, temperature, and flavour instead of eating automatically while your mind is somewhere else.` },
-            { word: 'fully present',  definition: `Having your complete attention on what is happening right now — your thoughts, senses, and awareness all focused on the current moment.`,             audioPrompt: `Fully present — having your complete attention on what is happening right now, with your thoughts, senses, and awareness all focused on the current moment.` },
+            { word: 'mindfulness', definition: `Paying attention to right now, gently and without judging it. Just noticing what's here.`,                                                             audioPrompt: `Mindfulness — paying attention to right now, gently and without judging it. Just noticing what's here.` },
+            { word: 'judgment',    definition: `Deciding something is good or bad. In mindfulness, you set judgment aside — you just notice without labeling.`,                                        audioPrompt: `Judgment — deciding something is good or bad. In mindfulness, you set judgment aside. You just notice without labeling.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Mindfulness and Happiness`,
+          paragraphs: [
+            `The same Harvard study found something remarkable: people were happiest when their minds were focused on what they were doing.`,
+            `Even when the activity itself wasn't exciting. Being present, even during ordinary moments, was linked to greater wellbeing.`,
+          ],
+          image:        '/explorer-assets/inner-world/l14-s4-ordinary-moment.png',
+          imageCaption: `People are happiest when their mind is where their body is — even doing ordinary things`,
+          vocab: [
+            { word: 'presence',  definition: `Being fully here, with your mind in the same place as your body. Presence brings calm and happiness.`,                                                   audioPrompt: `Presence — being fully here, with your mind in the same place as your body. Presence brings calm and happiness.` },
+            { word: 'wellbeing', definition: `Feeling good in your mind, body, and life all together — like everything inside is in a good place.`,                                                    audioPrompt: `Wellbeing — feeling good in your mind, body, and life all together. Like everything inside is in a good place.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Presence Is a Skill`,
+          paragraphs: [
+            `This means happiness isn't just about what you're doing. It's about how much of your mind is actually THERE while you're doing it.`,
+            `Presence is a skill — and like all skills, it gets better with practice.`,
+          ],
+          image:        '/explorer-assets/inner-world/l14-s5-attention-skill.png',
+          imageCaption: `Presence is a skill — every time you practice, it gets stronger`,
+          vocab: [
+            { word: 'skill', definition: `Something you get better at by practicing — like riding a bike, or paying attention to right now.`,                                                          audioPrompt: `Skill — something you get better at by practicing, like riding a bike or paying attention to right now.` },
+            { word: 'focus', definition: `Paying attention to one thing right now, with your whole mind. Focus is what mindfulness practices.`,                                                        audioPrompt: `Focus — paying attention to one thing right now, with your whole mind. Focus is what mindfulness practices.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Mindful Living`,
+          paragraphs: [
+            `Mindfulness doesn't require sitting still or closing your eyes. You can practice it anywhere.`,
+            `Mindful eating means really tasting each bite. Mindful walking means feeling your feet on the ground. Mindful listening means full attention.`,
+          ],
+          image:        '/explorer-assets/inner-world/l14-s6-mindful-living.png',
+          imageCaption: `Mindfulness can happen anywhere — eating, walking, listening, anywhere`,
+          vocab: [
+            { word: 'mindful eating', definition: `Really tasting each bite — noticing the flavors, textures, and feelings of eating instead of rushing.`,                                             audioPrompt: `Mindful eating — really tasting each bite. Noticing the flavors, textures, and feelings of eating instead of rushing.` },
+            { word: 'ordinary',       definition: `Regular, everyday — not special. Mindfulness turns ordinary moments into rich ones.`,                                                               audioPrompt: `Ordinary — regular, everyday, not special. Mindfulness turns ordinary moments into rich ones.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l14_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L14] Loaded: "Mindfulness: Being Present Right Now" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l14-wandering-mind.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l14-present-moment.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l14-mindful-eating.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L14] wandering-mind: ${r1.ok}, present-moment: ${r2.ok}, mindful-eating: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l14-s1-wandering-mind.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l14-s2-past-future.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l14-s3-coming-back.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l14-s4-ordinary-moment.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l14-s5-attention-skill.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l14-s6-mindful-living.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L14] wandering-mind: ${r1.ok}, past-future: ${r2.ok}, coming-back: ${r3.ok}, ordinary-moment: ${r4.ok}, attention-skill: ${r5.ok}, mindful-living: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L14] Could not verify image assets — network check failed');
   });
