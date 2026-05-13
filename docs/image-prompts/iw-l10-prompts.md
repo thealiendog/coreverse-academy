@@ -42,3 +42,33 @@ a glowing pause icon — two soft vertical bars of golden light — radiating wa
 ```
 silhouettes of diverse people — an athlete, a doctor, a parent, a teacher — standing in a circle around a glowing pause symbol, peaceful and unified, mystical children's educational app illustration, glowing ethereal style, deep navy dark background #080618, soft luminous colors, no text, digital art --ar 1:1 --style raw --v 6.1
 ```
+
+---
+
+## Interactive game cards
+
+### l10-game-snapback.png — "Said it back" (React)
+```
+silhouette of an angry child shouting with red sparks of energy bursting outward from their mouth and chest, fast and reactive, mystical children's educational app illustration, glowing ethereal style, deep navy dark background #080618, soft luminous colors with red accents, no text, digital art --ar 1:1 --style raw --v 6.1
+```
+
+---
+
+### l10-game-stomp.png — "Slammed it down" (React)
+```
+silhouette of a frustrated child slamming their hands down on a table with bright red sparks of energy bursting outward at the impact point, fast and reactive, mystical children's educational app illustration, glowing ethereal style, deep navy dark background #080618, soft luminous colors with red accents, no text, digital art --ar 1:1 --style raw --v 6.1
+```
+
+---
+
+### l10-game-breathpause.png — "Breathed first" (Respond)
+```
+silhouette of a thoughtful child speaking with soft glowing words of golden light flowing gently from their mouth, calm and considered, taking a moment before speaking, mystical children's educational app illustration, glowing ethereal style, deep navy dark background #080618, soft luminous golden colors, no text, digital art --ar 1:1 --style raw --v 6.1
+```
+
+---
+
+### l10-game-stopwalk.png — "Walked away" (Respond)
+```
+silhouette of a child walking peacefully away from a glowing red energy spot, leaving a trail of soft golden light behind them, calm and intentional, mystical children's educational app illustration, glowing ethereal style, deep navy dark background #080618, soft luminous golden colors, no text, digital art --ar 1:1 --style raw --v 6.1
+```
