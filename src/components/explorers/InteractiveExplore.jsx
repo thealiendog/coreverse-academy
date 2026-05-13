@@ -58,7 +58,11 @@ export default function InteractiveExplore({
   const lpTimers = useRef(new Map());
   const lpFired  = useRef(new Set());
 
-  useEffect(() => { return () => { mountedRef.current = false; }; }, []);
+  // Auto-narration sequence tracking
+  const labelNarrationCancelled = useRef(false);
+  const labelNarrationTimer     = useRef(null);
+
+  useEffect(() => { return () => { mountedRef.current = false; clearTimeout(labelNarrationTimer.current); }; }, []);
 
   // Prefetch all Sage phrases + speak intro on mount
   useEffect(() => {
@@ -73,9 +77,24 @@ export default function InteractiveExplore({
     const phrases = [guideTextR, ...ENCOURAGEMENT, ...RETRY, r(COMPLETION)].filter(Boolean);
     console.log(`[INTERACTIVE] Mount — prefetching ${phrases.length} Sage phrases`);
     phrases.forEach(p => onPrewarm?.(p));
+    // After guideText finishes, narrate each item label in sequence with 400ms gaps.
+    // Cancelled immediately if the user taps any card (their interaction takes priority).
+    const narrateLabelAtIndex = (idx) => {
+      if (!mountedRef.current || labelNarrationCancelled.current) return;
+      if (idx >= shuffledItems.length) return;
+      labelNarrationTimer.current = setTimeout(() => {
+        if (!mountedRef.current || labelNarrationCancelled.current) return;
+        const label = shuffledItems[idx].label;
+        console.log(`[INTERACTIVE] Auto-narrating label ${idx + 1}/${shuffledItems.length}: "${label}"`);
+        onSpeak?.(label, () => narrateLabelAtIndex(idx + 1));
+      }, 400);
+    };
+
     if (guideTextR) {
       console.log(`[INTERACTIVE] Instruction spoken: "${guideTextR}"`);
-      onSpeak?.(guideTextR);
+      onSpeak?.(guideTextR, () => narrateLabelAtIndex(0));
+    } else {
+      narrateLabelAtIndex(0);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -98,15 +117,18 @@ export default function InteractiveExplore({
     if (consumeLP(item.id)) return;
     if (lockedPairs.has(item.id)) return;
     if (selectedKey === item.id) { setSelectedKey(null); return; }
+    labelNarrationCancelled.current = true; // user is interacting — stop auto-narration
     setSelectedKey(item.id);
     sfx.chime();
     console.log(`[INTERACTIVE] Item selected: "${item.label}" (id: ${item.id})`);
+    onSpeak?.(item.label); // speak label on short tap; speak() cancels any in-flight audio
   };
 
   // ── Bucket tap (right column) ───────────────────────────────────────────────
   const handleBucketTap = (bucket) => {
     if (consumeLP(bucket.id)) return;
     if (!selectedKey) return;
+    labelNarrationCancelled.current = true; // user is interacting — stop auto-narration
 
     // Find the selected item by its unique id
     const selectedItem = shuffledItems.find(it => it.id === selectedKey);
