@@ -23,56 +23,101 @@ const innerworld_explorer_l16_screens = {
           guideText: `Hello, {name}! Most people wake up and let the day happen to them. But what if you could gently shape your day before it starts? Today we're learning about intentions — and how a few quiet moments in the morning can change everything that follows. Ready to design your day from the inside out?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `Intentions vs Goals: The Key Difference`,
+          totalSections: 6,
+          headline:      `Intention vs Goal`,
           paragraphs: [
-            `An intention is different from a goal. A goal is a destination — something you want to achieve or have. An intention is about how you want to be — a quality you want to bring to everything you do today.`,
-            `"I intend to be patient today." "I intend to be curious." "I intend to be kind to myself when I make mistakes." These aren't things you finish — they're ways of being that you carry with you from the moment you wake up.`,
-            `Most people spend their whole lives chasing goals but never stop to set an intention. Goals shape what you do. Intentions shape who you are while you're doing it. Both matter — but intentions are what make the journey feel meaningful.`,
+            `An intention is different from a goal. A goal is a destination — something you want to achieve or have.`,
+            `An intention is about HOW you want to be — a quality you want to bring to everything you do today.`,
           ],
-          image:        '/explorer-assets/inner-world/l16-being-vs-achieving.png',
-          imageCaption: `Goals shape what you do — intentions shape who you are while you're doing it`,
+          image:        '/explorer-assets/inner-world/l16-s1-intention-vs-goal.png',
+          imageCaption: `A goal is where you're going. An intention is how you walk.`,
           vocab: [
-            { word: 'intention', definition: `A quality you want to bring to how you are today — not something to achieve or tick off, but a way of being that guides you through the whole day.`,    audioPrompt: `Intention — a quality you want to bring to how you are today. Not something to achieve or tick off, but a way of being that guides you through the whole day.` },
-            { word: 'goal',      definition: `A destination — something you want to achieve or have. Goals have a finish line; intentions are directions you keep walking in.`,                       audioPrompt: `Goal — a destination, something you want to achieve or have. Goals have a finish line; intentions are directions you keep walking in.` },
+            { word: 'intention', definition: `A quality you want to bring to your day — how you want to be, not what you want to finish.`, audioPrompt: `Intention — a quality you want to bring to your day, how you want to be, not what you want to finish.` },
+            { word: 'goal',      definition: `A specific destination you want to reach — like winning a race or finishing a book. Goals are different from intentions.`, audioPrompt: `Goal — a specific destination you want to reach, like winning a race or finishing a book. Goals are different from intentions.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `How Intentions Prime the Brain`,
+          totalSections: 6,
+          headline:      `How You Want to Be`,
           paragraphs: [
-            `Research in positive psychology shows that people who set clear intentions at the start of the day are more likely to act in alignment with their values and report higher wellbeing. But how does it actually work?`,
-            `Intentions work by priming your brain — activating a part called the reticular activating system, or RAS. Once primed with an intention, your RAS scans the world around you all day, noticing opportunities to act on it. Set an intention to be curious and your brain will quietly flag moments of curiosity everywhere.`,
-            `This isn't magic — it's neuroscience. Your brain is always filtering what to pay attention to. An intention tells it what to look for. The morning is the best time to set this filter, before the noise of the day takes over.`,
+            `"I intend to be patient today." "I intend to be curious." "I intend to be kind to myself when I make mistakes."`,
+            `These aren't things you finish — they're ways of being that you carry with you from the moment you wake up.`,
           ],
-          image:        '/explorer-assets/inner-world/l16-ras-system.png',
-          imageCaption: `Your RAS scans for opportunities to live your intention — all day, automatically`,
+          image:        '/explorer-assets/inner-world/l16-s2-ways-of-being.png',
+          imageCaption: `Intentions describe ways of being — qualities you carry with you all day`,
           vocab: [
-            { word: 'reticular activating system (RAS)', definition: `A part of the brain that filters what you pay attention to — when primed with an intention, it scans for opportunities to act on it throughout the day.`, audioPrompt: `Reticular activating system, or RAS — a part of the brain that filters what you pay attention to. When primed with an intention, it scans for opportunities to act on it throughout the day.` },
-            { word: 'priming',                           definition: `Preparing your brain to notice and seek something — setting a morning intention primes your RAS to look for ways to live that intention all day.`,          audioPrompt: `Priming — preparing your brain to notice and seek something. Setting a morning intention primes your RAS to look for ways to live that intention all day.` },
+            { word: 'quality', definition: `A way of being — like patience, kindness, or curiosity. Intentions are about which qualities you want to bring to your day.`, audioPrompt: `Quality — a way of being, like patience, kindness, or curiosity. Intentions are about which qualities you want to bring to your day.` },
+            { word: 'being',   definition: `The state of how you are inside — separate from what you're doing on the outside. Intentions shape your being.`, audioPrompt: `Being — the state of how you are inside, separate from what you're doing on the outside. Intentions shape your being.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `Simple, Personal, and Forgiving`,
+          totalSections: 6,
+          headline:      `The Science of Intentions`,
           paragraphs: [
-            `The best intentions are simple and personal. "Today I choose to be present" is powerful. "Today I will be the most organised person in the world" is a goal, not an intention. Intentions don't measure you — they guide you. You can live an intention imperfectly and it still matters.`,
-            `Pairing your morning intention with a moment of stillness — even just three deep breaths — makes it more likely to stick. And a brief evening reflection — "How did I live my intention today?" — closes the loop and builds the habit over time. The morning and evening bookend your day with consciousness.`,
-            `Right now, try choosing one intention. Start with "Today I choose to be..." or "Today I intend to bring..." Say it out loud. Then take three slow breaths and let it settle in. Notice how it feels to start your day — or end it — with that kind of purpose.`,
+            `Research shows people who set clear intentions at the start of the day act more in line with their values and feel happier overall.`,
+            `Intentions work by activating a special part of your brain that scans the world for what you've told it to notice.`,
           ],
-          image:        '/explorer-assets/inner-world/l16-bookend-practice.png',
-          imageCaption: `Morning intention + evening reflection — bookends that shape the whole day`,
+          image:        '/explorer-assets/inner-world/l16-s3-brain-scan.png',
+          imageCaption: `Intentions activate the part of your brain that scans for what you've told it to notice`,
           vocab: [
-            { word: 'bookend practice',   definition: `Setting an intention in the morning and reflecting on it in the evening — two quiet moments that frame your whole day with consciousness and purpose.`,   audioPrompt: `Bookend practice — setting an intention in the morning and reflecting on it in the evening. Two quiet moments that frame your whole day with consciousness and purpose.` },
-            { word: 'evening reflection', definition: `A brief check-in at the end of the day — asking "How did I live my intention today?" — that closes the loop and builds the habit of intentional living over time.`, audioPrompt: `Evening reflection — a brief check-in at the end of the day, asking how did I live my intention today. It closes the loop and builds the habit of intentional living over time.` },
+            { word: 'research', definition: `Studies done by scientists to find out what's true. Research shows intentions actually work — they're not just a nice idea.`, audioPrompt: `Research — studies done by scientists to find out what's true. Research shows intentions actually work. They're not just a nice idea.` },
+            { word: 'scan',     definition: `To look across everything searching for something. Your brain scans the world for whatever your intention tells it to find.`, audioPrompt: `Scan — to look across everything searching for something. Your brain scans the world for whatever your intention tells it to find.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Morning Sets the Tone`,
+          paragraphs: [
+            `Set an intention to be curious, and your brain will quietly flag moments of curiosity everywhere — all day long.`,
+            `This isn't magic — it's neuroscience. The morning is the best time to set this filter, before the noise of the day takes over.`,
+          ],
+          image:        '/explorer-assets/inner-world/l16-s4-morning-tone.png',
+          imageCaption: `Set your intention in the morning — before the noise of the day takes over`,
+          vocab: [
+            { word: 'filter',       definition: `Something that chooses what passes through. Your brain filters what you notice based on your intention.`, audioPrompt: `Filter — something that chooses what passes through. Your brain filters what you notice based on your intention.` },
+            { word: 'neuroscience', definition: `The science of how your brain works. Neuroscience shows that intentions really do change what you notice.`, audioPrompt: `Neuroscience — the science of how your brain works. Neuroscience shows that intentions really do change what you notice.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Keep It Simple`,
+          paragraphs: [
+            `The best intentions are simple and personal. "Today I choose to be present" is powerful.`,
+            `Intentions don't measure you — they guide you. You can live an intention imperfectly and it still matters.`,
+          ],
+          image:        '/explorer-assets/inner-world/l16-s5-simple-clear.png',
+          imageCaption: `Intentions don't measure you — they guide you`,
+          vocab: [
+            { word: 'simple', definition: `Not complicated. The best intentions are short, clear, and easy to remember — one phrase you can carry with you.`, audioPrompt: `Simple — not complicated. The best intentions are short, clear, and easy to remember. One phrase you can carry with you.` },
+            { word: 'guide',  definition: `Something that shows you the way without grading you. Intentions guide you instead of measuring whether you got it right.`, audioPrompt: `Guide — something that shows you the way without grading you. Intentions guide you instead of measuring whether you got it right.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Try It Now`,
+          paragraphs: [
+            `Try choosing one intention right now. Start with "Today I choose to be..." Say it out loud, then take three slow breaths.`,
+            `At night, ask yourself: "How did I live my intention today?" That reflection closes the loop and builds the habit.`,
+          ],
+          image:        '/explorer-assets/inner-world/l16-s6-speak-intention.png',
+          imageCaption: `Speak your intention. Take three breaths. Reflect at night.`,
+          vocab: [
+            { word: 'reflection', definition: `Looking back gently at how something went — without judging yourself, just noticing what happened.`, audioPrompt: `Reflection — looking back gently at how something went, without judging yourself, just noticing what happened.` },
+            { word: 'habit',      definition: `Something you do regularly until it becomes automatic — like setting an intention every morning.`, audioPrompt: `Habit — something you do regularly until it becomes automatic, like setting an intention every morning.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l16_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L16] Loaded: "Setting Intentions for My Day" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l16-being-vs-achieving.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l16-ras-system.png',         { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l16-bookend-practice.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L16] being-vs-achieving: ${r1.ok}, ras-system: ${r2.ok}, bookend-practice: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l16-s1-intention-vs-goal.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l16-s2-ways-of-being.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l16-s3-brain-scan.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l16-s4-morning-tone.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l16-s5-simple-clear.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l16-s6-speak-intention.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L16] intention-vs-goal: ${r1.ok}, ways-of-being: ${r2.ok}, brain-scan: ${r3.ok}, morning-tone: ${r4.ok}, simple-clear: ${r5.ok}, speak-intention: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L16] Could not verify image assets — network check failed');
   });
