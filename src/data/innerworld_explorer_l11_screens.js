@@ -23,56 +23,101 @@ const innerworld_explorer_l11_screens = {
           guideText: `Hello, {name}! Today we're tackling a big question: where does confidence actually come from? You might think some people are just born confident — but the truth is so much more exciting than that. Confidence is built, one small step at a time. Ready to find out how?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `Confidence Comes After the Action`,
+          totalSections: 6,
+          headline:      `Confidence Comes After`,
           paragraphs: [
-            `Confidence is not a feeling that arrives before you act — it's a feeling that grows because you acted. Most people think "I'll start when I feel confident enough." But that day never comes.`,
-            `Real confidence is built by doing things while you're still scared or unsure. The action comes first. The confidence follows.`,
-            `Every time you do something that felt hard — even something tiny — your brain registers it as evidence: "I did that. I can do hard things." And that evidence is what confidence is actually made of.`,
+            `Confidence is not a feeling that arrives before you act — it's a feeling that grows because you acted. Most people think they should wait until they feel ready.`,
+            `But that day rarely comes. The truth is the opposite: action comes first, the confidence follows.`,
           ],
-          image:        '/explorer-assets/inner-world/l11-action-first.png',
-          imageCaption: `Action first, confidence second — that's how it really works`,
+          image:        '/explorer-assets/inner-world/l11-s1-step-forward.png',
+          imageCaption: `Action comes first — the confidence follows`,
           vocab: [
-            { word: 'confidence', definition: `A belief in your own ability to handle challenges — it's built by taking action, not by waiting until you feel ready.`,              audioPrompt: `Confidence — a belief in your own ability to handle challenges. It's built by taking action, not by waiting until you feel ready.` },
-            { word: 'evidence',   definition: `Proof that something is true — in confidence-building, evidence is the record of hard things you've already done.`,                 audioPrompt: `Evidence — proof that something is true. In confidence-building, evidence is the record of hard things you've already done.` },
+            { word: 'confidence', definition: `A quiet trust in yourself that grows every time you do something hard. Confidence is built, not born.`,                               audioPrompt: `Confidence — a quiet trust in yourself that grows every time you do something hard. Confidence is built, not born.` },
+            { word: 'action',     definition: `Doing something even when you don't feel fully ready — action is the very first step that starts building confidence.`,              audioPrompt: `Action — doing something even when you don't feel fully ready. Action is the very first step that starts building confidence.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `Tiny Steps Build Big Courage`,
+          totalSections: 6,
+          headline:      `Real Confidence Is Built`,
           paragraphs: [
-            `Psychologists call this approach "successive approximation" — breaking a big, scary goal into tiny steps and doing them one at a time. Each small step you complete adds more evidence to a new belief: "I can do hard things."`,
-            `This evidence is more powerful than any pep talk. Because it's not an opinion — it's your own lived experience. Your brain can't argue with what it already knows you've done.`,
-            `An evidence journal supercharges this. Write down hard things you've done and challenges you've overcome. When fear says "you can't do this," open your journal and remind your brain of all the times it was wrong. Confidence has a memory — you just have to keep feeding it.`,
+            `Real confidence is built by doing things while you're still scared or unsure. The feeling of being unsure doesn't disappear before you start.`,
+            `Every time you do something that felt hard — even something tiny — your brain registers it: "I did that. I can do hard things."`,
           ],
-          image:        '/explorer-assets/inner-world/l11-tiny-steps.png',
-          imageCaption: `Tiny steps + evidence journal — the formula for unshakable confidence`,
+          image:        '/explorer-assets/inner-world/l11-s2-built-by-doing.png',
+          imageCaption: `Every small brave action becomes evidence — proof you can do hard things`,
           vocab: [
-            { word: 'successive approximation', definition: `Breaking a big, scary goal into tiny, manageable steps and completing them one at a time to build confidence gradually.`,  audioPrompt: `Successive approximation — breaking a big, scary goal into tiny, manageable steps and completing them one at a time to build confidence gradually.` },
-            { word: 'evidence journal',          definition: `A record of hard things you've done and challenges you've overcome — proof for your brain when fear tries to tell you that you can't.`, audioPrompt: `Evidence journal — a record of hard things you've done and challenges you've overcome, proof for your brain when fear tries to tell you that you can't.` },
+            { word: 'evidence', definition: `Proof of something that's true. Your own actions become evidence — proof to your brain that you really can do hard things.`,           audioPrompt: `Evidence — proof of something that's true. Your own actions become evidence, proof to your brain that you really can do hard things.` },
+            { word: 'brave',    definition: `Doing something even when it feels scary or hard — bravery isn't the absence of fear, it's acting despite the fear.`,                 audioPrompt: `Brave — doing something even when it feels scary or hard. Bravery isn't the absence of fear, it's acting despite the fear.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `Nervous or Excited? You Decide.`,
+          totalSections: 6,
+          headline:      `Tiny Steps Forward`,
           paragraphs: [
-            `When you face a new challenge, your brain triggers a stress response — heart beats faster, palms might sweat. For a long time, scientists thought this was just anxiety to overcome.`,
-            `But newer research shows something remarkable: naming this sensation "excitement" instead of "nervousness" actually improves performance. The physical sensation is identical — only the label changes.`,
-            `So next time you feel that flutter before something big, try saying: "I'm excited." You're not lying — your body is ready for action. You're just choosing the label that helps you perform at your best.`,
+            `Psychologists call this approach "successive approximation" — breaking a big, scary goal into tiny steps and doing them one at a time.`,
+            `Each small step you complete adds more evidence to a new belief: "I can do hard things." That belief becomes your foundation.`,
           ],
-          image:        '/explorer-assets/inner-world/l11-excitement-reframe.png',
-          imageCaption: `Same feeling, different label — "I'm excited" unlocks better performance`,
+          image:        '/explorer-assets/inner-world/l11-s3-tiny-steps.png',
+          imageCaption: `Tiny steps add up — each one is a small triumph`,
           vocab: [
-            { word: 'stress response', definition: `Your body's automatic reaction to a challenge — racing heart, sweaty palms — that prepares you for action. It can be labelled as excitement instead of fear.`, audioPrompt: `Stress response — your body's automatic reaction to a challenge, like a racing heart or sweaty palms. It prepares you for action and can be labelled as excitement.` },
-            { word: 'reframe',         definition: `To look at the same thing in a new way — like calling nervousness "excitement" to help your brain perform better.`,                                          audioPrompt: `Reframe — to look at the same thing in a new way, like calling nervousness excitement to help your brain perform better.` },
+            { word: 'successive approximation', definition: `A fancy way of saying: break a big goal into tiny steps and do them one at a time. Each step gets you closer.`,         audioPrompt: `Successive approximation — a fancy way of saying: break a big goal into tiny steps and do them one at a time. Each step gets you closer.` },
+            { word: 'foundation',               definition: `The solid base you build by collecting evidence. Every small brave action adds another brick to your confidence foundation.`, audioPrompt: `Foundation — the solid base you build by collecting evidence. Every small brave action adds another brick to your confidence foundation.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `The Evidence Journal`,
+          paragraphs: [
+            `An evidence journal supercharges this. Write down hard things you've done and challenges you've overcome.`,
+            `When fear says "you can't do this," open your journal. Your brain can't argue with what it already knows you've done.`,
+          ],
+          image:        '/explorer-assets/inner-world/l11-s4-evidence-journal.png',
+          imageCaption: `Your journal holds the proof — your brain can't argue with what it already did`,
+          vocab: [
+            { word: 'evidence journal', definition: `A notebook where you write down hard things you've done and challenges you've overcome — proof for your brain when fear tries to tell you that you can't.`, audioPrompt: `Evidence journal — a notebook where you write down hard things you've done and challenges you've overcome. It's proof for your brain when fear tries to tell you that you can't.` },
+            { word: 'fear',             definition: `A feeling that tries to stop you from acting — but your evidence journal gives your brain proof that fear has been wrong before.`,                         audioPrompt: `Fear — a feeling that tries to stop you from acting. Your evidence journal gives your brain proof that fear has been wrong before.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Reframe the Flutter`,
+          paragraphs: [
+            `When you face a new challenge, your heart beats faster and your palms might sweat. For years, scientists called this anxiety to overcome.`,
+            `But newer research shows: naming this sensation "excitement" instead of "nervousness" actually improves performance. The body feels the same — only the label changes.`,
+          ],
+          image:        '/explorer-assets/inner-world/l11-s5-reframe-flutter.png',
+          imageCaption: `Same flutter — different label. The label changes how you perform.`,
+          vocab: [
+            { word: 'reframe',         definition: `To change the way you look at something — like swapping the label "nervous" for "excited" when your body feels the flutter.`,  audioPrompt: `Reframe — to change the way you look at something. Like swapping the label nervous for excited when your body feels the flutter.` },
+            { word: 'stress response', definition: `Your body's automatic reaction to a challenge — racing heart, sweaty palms — that prepares you to act. You can label it as excitement.`, audioPrompt: `Stress response — your body's automatic reaction to a challenge, like a racing heart or sweaty palms. It prepares you to act, and you can label it as excitement.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Try Saying It`,
+          paragraphs: [
+            `Next time you feel that flutter before something big, try saying: "I'm excited."`,
+            `You're not lying — your body IS ready for action. You're just choosing the label that helps you perform at your best.`,
+          ],
+          image:        '/explorer-assets/inner-world/l11-s6-try-saying.png',
+          imageCaption: `"I'm excited" — choose the label that helps you show up at your best`,
+          vocab: [
+            { word: 'label',      definition: `The word you choose to describe a feeling — changing a label from "nervous" to "excited" can actually change how you perform.`,    audioPrompt: `Label — the word you choose to describe a feeling. Changing a label from nervous to excited can actually change how you perform.` },
+            { word: 'excitement', definition: `A feeling of energy and readiness — the same physical sensation as nervousness, but with a label that helps you perform better.`,   audioPrompt: `Excitement — a feeling of energy and readiness. It's the same physical sensation as nervousness, but with a label that helps you perform better.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l11_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L11] Loaded: "${l.title}" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l11-action-first.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l11-tiny-steps.png',         { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l11-excitement-reframe.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L11] action-first: ${r1.ok}, tiny-steps: ${r2.ok}, excitement-reframe: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l11-s1-step-forward.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l11-s2-built-by-doing.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l11-s3-tiny-steps.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l11-s4-evidence-journal.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l11-s5-reframe-flutter.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l11-s6-try-saying.png',      { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L11] step-forward: ${r1.ok}, built-by-doing: ${r2.ok}, tiny-steps: ${r3.ok}, evidence-journal: ${r4.ok}, reframe-flutter: ${r5.ok}, try-saying: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L11] Could not verify image assets — network check failed');
   });
