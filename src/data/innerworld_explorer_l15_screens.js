@@ -23,56 +23,101 @@ const innerworld_explorer_l15_screens = {
           guideText: `Hello, {name}! Today we're going on a very special journey — a journey through your own body. Your body is always sending you signals and messages, but most of the time we're too busy to listen. A body scan is a way of finally paying attention. Ready to tune in?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `Your Body Has a Barometer`,
+          totalSections: 6,
+          headline:      `What's a Body Scan?`,
           paragraphs: [
-            `A body scan meditation is a practice where you slowly move your attention through different parts of your body — from head to toe or toe to head — noticing whatever sensations are there. Warmth, tingling, tightness, numbness, or ease. You're not trying to change anything; you're just listening.`,
-            `Your body stores a great deal of information about your emotional state. Tension in the jaw often signals frustration. A heavy feeling in the chest might indicate sadness. A fluttery sensation in the stomach could be excitement or anxiety.`,
-            `Your body knows things before your conscious mind does. It's like an internal barometer — always reading the weather of your inner world, even when you're not paying attention. A body scan is the skill of finally turning toward it and listening.`,
+            `A body scan meditation is a practice where you slowly move your attention through different parts of your body — from head to toe.`,
+            `You notice whatever sensations are there — warmth, tingling, tightness, or ease. You're not trying to change anything. Just listening.`,
           ],
-          image:        '/explorer-assets/inner-world/l15-body-barometer.png',
-          imageCaption: `Your body is always sending signals — a body scan teaches you to finally hear them`,
+          image:        '/explorer-assets/inner-world/l15-s1-body-scan.png',
+          imageCaption: `A body scan is slowly moving your attention through your body — just listening`,
           vocab: [
-            { word: 'body scan',  definition: `A meditation practice where you slowly move your attention through different parts of your body, noticing sensations without trying to change them.`,      audioPrompt: `Body scan — a meditation practice where you slowly move your attention through different parts of your body, noticing sensations without trying to change them.` },
-            { word: 'sensation',  definition: `A physical feeling in the body — like warmth, tingling, tightness, or ease — that your body uses to communicate information about your inner state.`,    audioPrompt: `Sensation — a physical feeling in the body, like warmth, tingling, tightness, or ease, that your body uses to communicate information about your inner state.` },
+            { word: 'body scan',  definition: `A meditation where you slowly move your attention through every part of your body — just noticing what's there.`,                                         audioPrompt: `Body scan — a meditation where you slowly move your attention through every part of your body, just noticing what's there.` },
+            { word: 'sensation',  definition: `A feeling in your body — like warmth, tingling, tightness, or ease. Sensations are what your body uses to talk to you.`,                                audioPrompt: `Sensation — a feeling in your body, like warmth, tingling, tightness, or ease. Sensations are what your body uses to talk to you.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `The Science: MBSR and Dr. Kabat-Zinn`,
+          totalSections: 6,
+          headline:      `Your Body Stores Feelings`,
           paragraphs: [
-            `Body scan meditation was developed as part of Mindfulness-Based Stress Reduction — MBSR — by Dr. Jon Kabat-Zinn, a scientist at the University of Massachusetts. He wanted to bring the benefits of meditation into mainstream medicine.`,
-            `Extensive research on MBSR shows it reduces chronic pain, anxiety, and insomnia. It works partly by activating the parasympathetic nervous system — the body's natural "rest and recover" mode — which calms the stress response.`,
-            `It also works by helping people make friends with their own bodies. Instead of fighting uncomfortable sensations or ignoring them, you learn to turn toward them with curiosity and kindness. That shift alone changes everything.`,
+            `Your body stores a great deal of information about your emotional state. Tension in the jaw often signals frustration.`,
+            `A heavy feeling in the chest might mean sadness. A flutter in the stomach could be excitement or worry.`,
           ],
-          image:        '/explorer-assets/inner-world/l15-mbsr-research.png',
-          imageCaption: `Dr. Jon Kabat-Zinn developed MBSR — research-backed relief for pain, anxiety, and insomnia`,
+          image:        '/explorer-assets/inner-world/l15-s2-body-feelings.png',
+          imageCaption: `Different feelings live in different parts of your body — and your body remembers`,
           vocab: [
-            { word: 'MBSR',                       definition: `Mindfulness-Based Stress Reduction — a programme developed by Dr. Jon Kabat-Zinn that uses mindfulness and body scan practices to reduce pain, anxiety, and insomnia.`,     audioPrompt: `MBSR — Mindfulness-Based Stress Reduction — a programme developed by Dr. Jon Kabat-Zinn that uses mindfulness and body scan practices to reduce pain, anxiety, and insomnia.` },
-            { word: 'parasympathetic nervous system', definition: `The part of your nervous system responsible for "rest and recover" — activated by slow, mindful attention, it calms the body's stress response.`,                         audioPrompt: `Parasympathetic nervous system — the part of your nervous system responsible for rest and recover. Activated by slow, mindful attention, it calms the body's stress response.` },
+            { word: 'tension', definition: `Tightness or holding in your body — often a sign of frustration, worry, or stress.`,                                                                        audioPrompt: `Tension — tightness or holding in your body, often a sign of frustration, worry, or stress.` },
+            { word: 'signal',  definition: `A sign or message your body sends to tell you what you're feeling — like a tight jaw or a heavy chest.`,                                                   audioPrompt: `Signal — a sign or message your body sends to tell you what you're feeling, like a tight jaw or a heavy chest.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `Gentle Attention Is a Superpower`,
+          totalSections: 6,
+          headline:      `Your Inner Barometer`,
           paragraphs: [
-            `When you notice tension in a part of your body, something remarkable can happen: simply noticing it — without judgment, without trying to force it to change — often causes it to soften on its own. Attention is like a gentle heat lamp. The body relaxes when it feels seen.`,
-            `You can practice a short body scan right now. Close your eyes or look down softly. Begin at your feet — what do you notice? Slowly move up through your legs, your belly, your chest, your shoulders, your neck, and finally your face.`,
-            `At each area, just notice — warm, cool, tight, loose, tingling, or nothing at all. No judgment. No fixing. Just listening. Each time you do this, you're building one of the most powerful skills a person can have: the ability to hear what your body is telling you.`,
+            `Your body knows things before your conscious mind does. It's like an internal barometer — always reading the weather of your inner world.`,
+            `A body scan is the skill of finally turning toward it, and listening to what your body has been trying to tell you.`,
           ],
-          image:        '/explorer-assets/inner-world/l15-gentle-attention.png',
-          imageCaption: `Gentle, non-judging attention is all it takes — the body softens when it feels seen`,
+          image:        '/explorer-assets/inner-world/l15-s3-inner-barometer.png',
+          imageCaption: `Your body is an inner barometer — always reading the weather of your inner world`,
           vocab: [
-            { word: 'gentle attention', definition: `Turning your awareness toward a sensation or feeling with curiosity and kindness, rather than trying to fix or escape it — this often allows tension to release naturally.`, audioPrompt: `Gentle attention — turning your awareness toward a sensation or feeling with curiosity and kindness, rather than trying to fix or escape it. This often allows tension to release naturally.` },
-            { word: 'body barometer',   definition: `A metaphor for the body's ability to sense and communicate your emotional state — like a weather instrument, it reads your inner climate even when you're not paying attention.`,  audioPrompt: `Body barometer — a metaphor for the body's ability to sense and communicate your emotional state, like a weather instrument that reads your inner climate even when you're not paying attention.` },
+            { word: 'barometer',      definition: `A tool that reads something invisible — like the weather. Your body works as a barometer for your feelings.`,                                        audioPrompt: `Barometer — a tool that reads something invisible, like the weather. Your body works as a barometer for your feelings.` },
+            { word: 'conscious mind', definition: `The thinking part of you that knows what's happening — but your body often knows what you feel before your conscious mind does.`,                    audioPrompt: `Conscious mind — the thinking part of you that knows what's happening. But your body often knows what you feel before your conscious mind does.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `The Science Behind It`,
+          paragraphs: [
+            `Body scan meditation was developed as part of Mindfulness-Based Stress Reduction — MBSR — by Dr. Jon Kabat-Zinn.`,
+            `Research shows MBSR reduces chronic pain, anxiety, and insomnia by activating the body's natural "rest and recover" mode.`,
+          ],
+          image:        '/explorer-assets/inner-world/l15-s4-mbsr-science.png',
+          imageCaption: `Body scan meditation is proven science — used in hospitals and schools worldwide`,
+          vocab: [
+            { word: 'MBSR',    definition: `Mindfulness-Based Stress Reduction — a science-based program developed by Dr. Jon Kabat-Zinn that uses the body scan meditation.`,                         audioPrompt: `MBSR — Mindfulness-Based Stress Reduction. A science-based program developed by Dr. Jon Kabat-Zinn that uses the body scan meditation.` },
+            { word: 'chronic', definition: `Lasting for a long time. Chronic pain is pain that doesn't go away quickly. Body scan helps soften it.`,                                                   audioPrompt: `Chronic — lasting for a long time. Chronic pain is pain that doesn't go away quickly. Body scan helps soften it.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Notice and Soften`,
+          paragraphs: [
+            `When you notice tension in your body, something remarkable happens. Simply noticing it — without trying to change it — often causes it to soften.`,
+            `Attention is like a gentle warmth. The body relaxes when it feels seen.`,
+          ],
+          image:        '/explorer-assets/inner-world/l15-s5-tension-softens.png',
+          imageCaption: `Tension softens on its own when it feels seen — attention is gentle warmth`,
+          vocab: [
+            { word: 'soften',    definition: `To become gentler and less tight. Tension softens when you notice it without trying to force it away.`,                                                   audioPrompt: `Soften — to become gentler and less tight. Tension softens when you notice it without trying to force it away.` },
+            { word: 'attention', definition: `Where you put your mind. Attention has a quiet healing power — your body relaxes when it feels seen.`,                                                    audioPrompt: `Attention — where you put your mind. Attention has a quiet healing power. Your body relaxes when it feels seen.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Try It Now`,
+          paragraphs: [
+            `Close your eyes softly. Begin at your feet — what do you notice? Slowly move up through your legs, belly, chest, shoulders, neck, and face.`,
+            `At each area, just notice — warm, cool, tight, loose. No judgment. No fixing. Just listening.`,
+          ],
+          image:        '/explorer-assets/inner-world/l15-s6-listening.png',
+          imageCaption: `No judgment, no fixing — just listening to each part of your body`,
+          vocab: [
+            { word: 'relax',     definition: `To let go of holding and tightness. Your body relaxes naturally when you listen to it gently.`,                                                           audioPrompt: `Relax — to let go of holding and tightness. Your body relaxes naturally when you listen to it gently.` },
+            { word: 'listening', definition: `Paying attention to your body without trying to change anything. True listening is gentle and curious.`,                                                  audioPrompt: `Listening — paying attention to your body without trying to change anything. True listening is gentle and curious.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l15_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L15] Loaded: "Body Scan Meditation" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l15-body-barometer.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l15-mbsr-research.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l15-gentle-attention.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L15] body-barometer: ${r1.ok}, mbsr-research: ${r2.ok}, gentle-attention: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l15-s1-body-scan.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l15-s2-body-feelings.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l15-s3-inner-barometer.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l15-s4-mbsr-science.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l15-s5-tension-softens.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l15-s6-listening.png',       { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L15] body-scan: ${r1.ok}, body-feelings: ${r2.ok}, inner-barometer: ${r3.ok}, mbsr-science: ${r4.ok}, tension-softens: ${r5.ok}, listening: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L15] Could not verify image assets — network check failed');
   });
