@@ -1,7 +1,7 @@
 // MagazineScreen — Phase 2: image + headline + karaoke paragraphs + vocab + inline hint
 // Responsive: single-column on mobile, two-column on iPad landscape (CSS classes from ExplorerLessonPlayer style block)
 // DAY 2.11: Scroll hint chevron — bouncing icon at viewport bottom when vocab is below fold.
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Render a plain string with per-word karaoke highlighting.
 // wordOffset: global word index at which this text starts (headline words come first).
@@ -14,7 +14,7 @@ function renderKaraokeSpans(text, karaokeIdx, accent, wordOffset = 0) {
     const thisIdx  = wordCount++;
     const isActive = thisIdx === karaokeIdx;
     return (
-      <span key={i} style={{
+      <span key={i} data-karaoke-active={isActive || undefined} style={{
         color:      isActive ? accent : 'inherit',
         textShadow: isActive ? `0 0 14px ${accent}99` : 'none',
         fontWeight: isActive ? 700 : 'inherit',
@@ -49,6 +49,7 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, sho
       return (
         <span
           key={cIdx}
+          data-karaoke-active={isActive || undefined}
           className={isTutorialTarget ? 'vocab-tutorial-pulse' : undefined}
           onClick={vocabEntry ? () => onVocabTap(vocabEntry) : undefined}
           style={{
@@ -86,12 +87,29 @@ export default function MagazineScreen({
   // so false resets automatically on every screen transition.
   const [scrollHintDismissed, setScrollHintDismissed] = useState(false);
 
+  // Ref for the text column — used for karaoke auto-scroll and scroll-hint dismissal.
+  // Text column is always the scrollable region (pinned image above, scrollable text below).
+  const textColRef = useRef(null);
+
   useEffect(() => {
     // Log on mount only when hint will be visible (short viewport + vocab exists)
     if (vocab.length > 0 && window.innerHeight < 700) {
       console.log(`[SCROLL-HINT] Showing — vocab buttons below fold on viewport ${window.innerHeight}px`);
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Karaoke auto-scroll: keep the currently-highlighted word visible in the text region.
+  useEffect(() => {
+    const container = textColRef.current;
+    if (!container || karaokeIdx == null || karaokeIdx < 0) return;
+    const activeEl = container.querySelector('[data-karaoke-active]');
+    if (!activeEl) return;
+    const elRect = activeEl.getBoundingClientRect();
+    const cRect  = container.getBoundingClientRect();
+    if (elRect.bottom > cRect.bottom - 28 || elRect.top < cRect.top + 28) {
+      activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [karaokeIdx]);
 
   const handleScroll = e => {
     if (!scrollHintDismissed && e.currentTarget.scrollTop > 24) {
@@ -105,7 +123,7 @@ export default function MagazineScreen({
   const showScrollHint = vocab.length > 0 && !scrollHintDismissed;
 
   return (
-    <div className="magazine-outer" onScroll={handleScroll}>
+    <div className="magazine-outer">
       <style>{`
         @keyframes mag-scroll-bounce {
           0%, 100% { transform: translateY(0); }
@@ -157,8 +175,8 @@ export default function MagazineScreen({
         )}
       </div>
 
-      {/* Text column — below image on mobile, right-side on iPad landscape */}
-      <div className="magazine-text-col">
+      {/* Text column — below image on mobile/tablet (scrollable), right-side on iPad landscape */}
+      <div ref={textColRef} className="magazine-text-col" onScroll={handleScroll}>
         {/* Section badge */}
         <div style={{
           display: 'inline-flex', alignItems: 'center',

@@ -1390,49 +1390,46 @@ export default function ExplorerLessonPlayer() {
           .explorer-shell { font-size: 21px; }
         }
 
-        /* Magazine — single column default, two-column on iPad landscape */
+        /* Magazine — pinned image + scrollable text on mobile/tablet; side-by-side on desktop.
+           On portrait viewports the image is capped at 42vh so paragraphs are always
+           visible below it without needing to scroll the whole page. */
         .magazine-outer {
           height: 100%;
-          overflow-y: auto;
-          overscroll-behavior: contain;
-          -webkit-overflow-scrolling: touch;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
         }
         .magazine-image-col {
           position: relative;
           width: 100%;
-          aspect-ratio: 16/9;
-          background: #080618;
           flex-shrink: 0;
+          max-height: 42vh;
+          background: #080618;
+          overflow: hidden;
         }
         .magazine-text-col {
+          flex: 1;
+          overflow-y: auto;
+          overflow-x: hidden;
+          overscroll-behavior: contain;
+          -webkit-overflow-scrolling: touch;
           padding: 16px 18px 24px;
         }
         @media (min-width: 768px) {
-          .magazine-image-col { aspect-ratio: 4/3; }
+          .magazine-image-col { max-height: 40vh; }
           .magazine-text-col { padding: 28px 44px 36px; }
           .mag-headline { font-size: 2.2rem !important; }
           .mag-para { font-size: 1.2rem !important; line-height: 1.85 !important; }
           .mag-replay-btn { width: 56px !important; height: 56px !important; font-size: 1.4rem !important; top: 12px !important; right: 12px !important; }
         }
         @media (min-width: 1024px) {
-          .magazine-outer {
-            display: flex;
-            flex-direction: row;
-            overflow: hidden;
-          }
+          .magazine-outer { flex-direction: row; }
           .magazine-image-col {
             width: 44%;
-            aspect-ratio: unset;
+            max-height: unset;
             height: 100%;
-            overflow: hidden;
           }
-          .magazine-text-col {
-            flex: 1;
-            overflow-y: auto;
-            overscroll-behavior: contain;
-            -webkit-overflow-scrolling: touch;
-            padding: 32px 44px 36px;
-          }
+          .magazine-text-col { padding: 32px 44px 36px; }
           .mag-headline { font-size: 2.4rem !important; }
           .mag-para { font-size: 1.25rem !important; }
         }
