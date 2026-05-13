@@ -305,6 +305,31 @@ export default function InteractiveExplore({
                     e.currentTarget.onerror = null; // prevent infinite loop
                   }}
                 />
+                {/* Label overlay — always visible on unlocked cards */}
+                {!locked && (
+                  <div style={{
+                    position:   'absolute',
+                    bottom:     0,
+                    left:       0,
+                    right:      0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 55%, transparent 100%)',
+                    padding:    '22px 8px 8px',
+                    textAlign:  'center',
+                    pointerEvents: 'none',
+                  }}>
+                    <span style={{
+                      display:    'block',
+                      color:      '#fff',
+                      fontWeight: 800,
+                      fontSize:   'clamp(0.78rem, 2.4vw, 1rem)',
+                      lineHeight: 1.2,
+                      textShadow: '0 1px 4px rgba(0,0,0,0.9)',
+                      letterSpacing: '-0.01em',
+                    }}>
+                      {item.label}
+                    </span>
+                  </div>
+                )}
                 {locked && (
                   <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
                     <span style={{ fontSize: '1.8rem' }}>✅</span>
