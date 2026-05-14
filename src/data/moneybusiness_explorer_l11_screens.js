@@ -23,73 +23,101 @@ const moneybusiness_explorer_l11_screens = {
           guideText: `Adults earn money, but then some of it goes to the government. Why? Did the government steal it? Taxes are actually one of the most important — and most argued about — things in any country.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Are Taxes?`,
           paragraphs: [
-            `Taxes are money that people and businesses are required by law to pay to the government. This isn't optional — failing to pay taxes carries serious legal consequences. In return, the government provides services that benefit the entire community: roads, schools, police departments, libraries, parks, and fire stations.`,
-            `Think of taxes as everyone chipping in to pay for shared things. A single person could never afford to build a road, fund a police force, or run a school system. But when millions of people each contribute a portion of what they earn, the collective amount is enough to build and maintain the infrastructure that whole communities depend on.`,
-            `Taxes have existed in some form in almost every society in history. Ancient civilisations collected grain and labour. Modern governments collect money. The principle is the same: to fund the things that benefit everyone and that no individual could afford to provide alone.`,
+            `Taxes are money that people and businesses are required by law to pay to the government. It isn't optional.`,
+            `In return, the government provides services that benefit everyone — things no single person could afford alone.`,
           ],
-          image:        '/explorer-assets/money-business/l11-magazine-what-are-taxes.png',
-          imageCaption: `Taxes — money required by law to fund shared services that benefit the whole community`,
+          image:        '/explorer-assets/money-business/l11-s1-taxes-flow.png',
+          imageCaption: `Some of every paycheck flows to the government — that's tax`,
           vocab: [
-            { word: `tax`,            definition: `Money required by law to be paid to the government by individuals and businesses — used to fund shared services like schools, roads, police, and hospitals that the whole community uses.`,       audioPrompt: `Tax — money required by law to be paid to the government by individuals and businesses. Used to fund shared services like schools, roads, police, and hospitals that the whole community uses.` },
-            { word: `infrastructure`, definition: `The basic systems and structures a society needs to function — roads, bridges, schools, water systems, and power grids. Most infrastructure is funded by taxes.`,                                    audioPrompt: `Infrastructure — the basic systems and structures a society needs to function. Roads, bridges, schools, water systems, and power grids. Most infrastructure is funded by taxes.` },
+            { word: 'tax',        definition: `Money required by law to be paid to the government. Funds shared services like schools, roads, and fire stations.`, audioPrompt: `Tax — money required by law to be paid to the government. Funds shared services like schools, roads, and fire stations.` },
+            { word: 'government', definition: `The group of people who run a country, state, or city — and collect taxes to provide shared services.`, audioPrompt: `Government — the group of people who run a country, state, or city, and collect taxes to provide shared services.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Types of Taxes`,
+          totalSections: 6,
+          headline:      `What Taxes Pay For`,
           paragraphs: [
-            `There are several different kinds of taxes. Income tax is taken from money you earn from working — it's usually deducted directly from your pay before you even receive it. In the United States, workers pay income tax to the federal government and often to their state government as well.`,
-            `Sales tax is added to the price of goods and services when you buy them at a store. Property tax is paid by homeowners based on the estimated value of their property — this often funds local schools and emergency services. Payroll tax is a separate tax on wages that funds programmes supporting older people and those who are unwell.`,
-            `Each type of tax serves a specific purpose. Income tax funds a wide range of government services. Sales tax funds state and local governments. Property tax tends to fund local schools and fire departments. Understanding which tax funds which service helps you see exactly where your money goes.`,
+            `Roads, public schools, libraries, parks, fire stations, police, hospitals — taxes pay for all of it.`,
+            `A single person could never afford to build a road or run a school system. But millions chipping in can build the infrastructure everyone depends on.`,
           ],
-          image:        '/explorer-assets/money-business/l11-magazine-types-of-taxes.png',
-          imageCaption: `Types of taxes — income, sales, property, and payroll taxes each fund specific government services`,
+          image:        '/explorer-assets/money-business/l11-s2-community-services.png',
+          imageCaption: `Everything that serves the whole community — that's where taxes go`,
           vocab: [
-            { word: `income tax`, definition: `A tax taken from the money you earn from working — calculated as a percentage of your earnings and paid to federal and sometimes state governments.`,                                          audioPrompt: `Income tax — a tax taken from the money you earn from working. Calculated as a percentage of your earnings and paid to federal and sometimes state governments.` },
-            { word: `sales tax`,  definition: `A tax added to the price of goods and services at the point of purchase — collected by the seller and sent to the government. Sales tax rates vary by state and city.`, audioPrompt: `Sales tax — a tax added to the price of goods and services at the point of purchase. Collected by the seller and sent to the government. Sales tax rates vary by state and city.` },
+            { word: 'public services', definition: `Services funded by taxes and available to everyone — schools, parks, fire stations, hospitals. No one pays at the door.`, audioPrompt: `Public services — services funded by taxes and available to everyone: schools, parks, fire stations, hospitals. No one pays at the door.` },
+            { word: 'infrastructure',  definition: `The basic systems a society needs to work — roads, bridges, water, power. Most infrastructure is funded by taxes.`, audioPrompt: `Infrastructure — the basic systems a society needs to work: roads, bridges, water, power. Most infrastructure is funded by taxes.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `How Much Do People Pay?`,
+          totalSections: 6,
+          headline:      `Different Kinds of Taxes`,
           paragraphs: [
-            `In the United States, income tax is progressive — the more money you earn, the higher the percentage you pay. Someone earning $30,000 per year might pay around 12% of that in federal income tax. Someone earning $300,000 might pay around 35%. The idea is that those who have benefited more from the economy contribute more back to it.`,
-            `Progressive taxation works in brackets — you don't pay 35% on every dollar you earn. Instead, you pay the lower rate on the first portion of your income, then higher rates only on the portions above certain thresholds. This means even high earners don't pay the top rate on their very first dollar.`,
-            `People also look for legal ways to reduce what they owe — called deductions. Certain expenses, like charitable donations or business costs, can be subtracted from your taxable income before your rate is applied. Understanding deductions is one reason many people hire accountants to help file their taxes each year.`,
+            `There are several kinds of taxes. Income tax comes out of your paycheck. Sales tax is added when you buy things at a store.`,
+            `Property tax is paid by homeowners. Payroll tax funds programs for older people and those who can't work.`,
           ],
-          image:        '/explorer-assets/money-business/l11-magazine-how-much.png',
-          imageCaption: `Progressive taxation — higher earners pay a higher percentage, with rates applied in income brackets`,
+          image:        '/explorer-assets/money-business/l11-s3-tax-types.png',
+          imageCaption: `Income, sales, property, payroll — different taxes hit at different moments`,
           vocab: [
-            { word: `progressive tax`, definition: `A tax system where the percentage you pay increases as your income increases — designed so higher earners contribute a larger share of their income to funding shared services.`, audioPrompt: `Progressive tax — a tax system where the percentage you pay increases as your income increases. Designed so higher earners contribute a larger share of their income to funding shared services.` },
-            { word: `deduction`,       definition: `An amount subtracted from your taxable income before your tax rate is applied — legal deductions reduce the total tax you owe.`,                                                 audioPrompt: `Deduction — an amount subtracted from your taxable income before your tax rate is applied. Legal deductions reduce the total tax you owe.` },
+            { word: 'income tax', definition: `A tax taken from money you earn at work. Comes out of your paycheck before you ever see it.`, audioPrompt: `Income tax — a tax taken from money you earn at work. Comes out of your paycheck before you ever see it.` },
+            { word: 'sales tax',  definition: `A tax added to the price of things you buy at a store. The amount varies by state and city.`, audioPrompt: `Sales tax — a tax added to the price of things you buy at a store. The amount varies by state and city.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Why Do People Complain About Taxes?`,
+          totalSections: 6,
+          headline:      `Progressive Taxation`,
           paragraphs: [
-            `Taxes are one of the most debated topics in politics — and the debate is genuine. Some people believe taxes should be lower, arguing that individuals should keep more of the money they earn and that government spends inefficiently. They believe people make better decisions about their own money than governments do.`,
-            `Others believe taxes should be higher — especially on the very wealthy — so that governments can provide more services: better schools, expanded healthcare, improved public transport, and a stronger safety net for people who fall on hard times. They argue that a healthy society invests in its people.`,
-            `Neither side is simply wrong. It's a real values question: how much should individuals keep vs how much should be pooled for collective benefit? Every democracy in the world debates this continuously. Understanding both sides of the argument — not just which side you're on — is what it means to think carefully about how your society should work.`,
+            `In the US, income tax is progressive — the more you earn, the higher the percentage you pay.`,
+            `Someone earning $30,000 might pay 12%. Someone earning $300,000 might pay 35%. The idea: those who earned more contribute more back.`,
           ],
-          image:        '/explorer-assets/money-business/l11-magazine-debate.png',
-          imageCaption: `The tax debate — a genuine values question about individual freedom vs collective investment that every society continues to discuss`,
+          image:        '/explorer-assets/money-business/l11-s4-progressive.png',
+          imageCaption: `Earn more, pay a higher percentage. That's a progressive tax system.`,
           vocab: [
-            { word: `tax bracket`, definition: `A range of income taxed at a specific rate in a progressive system — as your income crosses into a higher bracket, only the income above that threshold is taxed at the higher rate.`, audioPrompt: `Tax bracket — a range of income taxed at a specific rate in a progressive system. As your income crosses into a higher bracket, only the income above that threshold is taxed at the higher rate.` },
-            { word: `public services`, definition: `Services funded by taxes and provided to everyone in a community — schools, hospitals, fire stations, police, and public parks are all public services.`,                              audioPrompt: `Public services — services funded by taxes and provided to everyone in a community. Schools, hospitals, fire stations, police, and public parks are all public services.` },
+            { word: 'progressive tax', definition: `A tax where the percentage goes up as income goes up. Higher earners pay a larger share than lower earners.`, audioPrompt: `Progressive tax — a tax where the percentage goes up as income goes up. Higher earners pay a larger share than lower earners.` },
+            { word: 'percentage',      definition: `A portion out of 100. Taxes are usually calculated as a percentage of income — like 12% or 35%.`, audioPrompt: `Percentage — a portion out of 100. Taxes are usually calculated as a percentage of income, like 12 percent or 35 percent.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Brackets and Deductions`,
+          paragraphs: [
+            `You don't pay 35% on every dollar. You pay the lower rate on your first dollars, higher rates only on income above certain levels — called brackets.`,
+            `People can also lower their bill with deductions — things like charity gifts or business costs subtracted before tax is calculated.`,
+          ],
+          image:        '/explorer-assets/money-business/l11-s5-brackets-deductions.png',
+          imageCaption: `Tax brackets work like steps. Deductions lower the income that gets taxed in the first place.`,
+          vocab: [
+            { word: 'tax bracket', definition: `A range of income taxed at a specific rate. Only income above each bracket's level is taxed at the higher rate.`, audioPrompt: `Tax bracket — a range of income taxed at a specific rate. Only income above each bracket's level is taxed at the higher rate.` },
+            { word: 'deduction',   definition: `An amount subtracted from your income before tax is calculated. Deductions legally lower the tax you owe.`, audioPrompt: `Deduction — an amount subtracted from your income before tax is calculated. Deductions legally lower the tax you owe.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `The Tax Debate`,
+          paragraphs: [
+            `Taxes are one of the most argued topics in politics. Some say taxes should be lower — people make better choices with their own money.`,
+            `Others say taxes should be higher — so society can fund better schools, healthcare, and help for those in need. Neither side is simply wrong.`,
+          ],
+          image:        '/explorer-assets/money-business/l11-s6-tax-debate.png',
+          imageCaption: `Every democracy argues about taxes. The debate isn't silly — it's about real values.`,
+          vocab: [
+            { word: 'debate', definition: `A serious discussion where people argue different sides of a question. Healthy societies debate taxes constantly.`, audioPrompt: `Debate — a serious discussion where people argue different sides of a question. Healthy societies debate taxes constantly.` },
+            { word: 'values', definition: `What someone believes is most important. Tax debates are really about different values — what kind of society people want.`, audioPrompt: `Values — what someone believes is most important. Tax debates are really about different values: what kind of society people want.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l11_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L11] Loaded: "Taxes: What They Are and Why We Pay Them" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l11-magazine-what-are-taxes.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l11-magazine-types-of-taxes.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l11-magazine-how-much.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l11-magazine-debate.png',         { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L11] what-are-taxes: ${r1.ok}, types-of-taxes: ${r2.ok}, how-much: ${r3.ok}, debate: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l11-s1-taxes-flow.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l11-s2-community-services.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l11-s3-tax-types.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l11-s4-progressive.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l11-s5-brackets-deductions.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l11-s6-tax-debate.png',          { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L11] taxes-flow: ${r1.ok}, community-services: ${r2.ok}, tax-types: ${r3.ok}, progressive: ${r4.ok}, brackets-deductions: ${r5.ok}, tax-debate: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L11] Could not verify image assets — network check failed');
   });
