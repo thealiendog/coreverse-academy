@@ -23,73 +23,101 @@ const moneybusiness_explorer_l08_screens = {
           guideText: `A lemonade stand sounds simple. Squeeze lemons, add sugar, sell cups. But running a lemonade stand is actually a complete business — with real costs, real customers, real decisions, and real profit. Let's break it down like a CEO would.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Costs: What You Have to Spend`,
+          totalSections: 6,
+          headline:      `Costs: What You Spend`,
           paragraphs: [
-            `Before you make a single dollar, you have to spend money. These are called costs, or expenses. For a lemonade stand: lemons might cost $3, sugar $1, cups $2, a sign $1. That's $7 in total costs before you've sold a single cup. If you don't carefully account for your costs, you might think you're making money when you're actually losing it.`,
-            `Costs come in two types. Fixed costs stay the same no matter how much you sell — the sign you made costs $1 whether you sell 1 cup or 100. Variable costs change with how much you produce — the more cups you make, the more lemons you need. Smart business owners track both types separately, because each has to be managed differently.`,
-            `There's also a concept called the break-even point — the number of sales you need to make before your revenue covers all your costs. Before you reach break-even, you're losing money. After it, every sale starts generating profit. Knowing your break-even number before you start is essential — it tells you exactly how many cups you need to sell just to not lose money.`,
+            `Before you make a single dollar, you have to spend money. These are called costs.`,
+            `For a lemonade stand: lemons $3, sugar $1, cups $2, a sign $1. That's $7 in costs before you sell a single cup.`,
           ],
-          image:        '/explorer-assets/money-business/l08-magazine-costs.png',
-          imageCaption: `Costs — what you spend before any revenue arrives, including fixed and variable expenses`,
+          image:        '/explorer-assets/money-business/l08-s1-costs.png',
+          imageCaption: `Every business spends money before earning a single dollar — those are your costs`,
           vocab: [
-            { word: `fixed costs`,    definition: `Costs that stay the same regardless of how much you produce or sell — rent, equipment, and a sign are fixed costs. They must be paid even if you sell nothing.`,                                audioPrompt: `Fixed costs — costs that stay the same regardless of how much you produce or sell. Rent, equipment, and a sign are fixed costs. They must be paid even if you sell nothing.` },
-            { word: `variable costs`, definition: `Costs that increase as you produce or sell more — ingredients, packaging, and raw materials are variable costs. More output means more variable cost.`, audioPrompt: `Variable costs — costs that increase as you produce or sell more. Ingredients, packaging, and raw materials are variable costs. More output means more variable cost.` },
+            { word: 'cost',    definition: `Money you have to spend to run your business. Lemons, cups, a sign — all costs you pay before any sales happen.`, audioPrompt: `Cost — money you have to spend to run your business. Lemons, cups, a sign — all costs you pay before any sales happen.` },
+            { word: 'expense', definition: `Another word for cost. Every dollar that leaves your business — for any reason — is an expense.`, audioPrompt: `Expense — another word for cost. Every dollar that leaves your business, for any reason, is an expense.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Revenue: Money That Comes In`,
+          totalSections: 6,
+          headline:      `Fixed vs Variable Costs`,
           paragraphs: [
-            `Revenue is all the money you collect from selling your product or service. If you sell 20 cups of lemonade at 50 cents each, your revenue is $10. That's it — $10 is every dollar that came in. Revenue is the top line of any business — the total money generated before anything is subtracted.`,
-            `Revenue is not the same as profit. This is one of the most important distinctions in all of business, and it's a mistake that even experienced business owners sometimes make. You might generate $10,000 in revenue in a month — and if your costs were $9,800, your profit is only $200. Revenue looks impressive; profit is what actually matters.`,
-            `Revenue can grow in three ways: sell more units (volume), charge a higher price (pricing), or sell to more customers (reach). The most powerful strategy often combines all three — finding more customers, charging them a fair but strong price, and selling them more over time. Understanding which of the three to focus on is a key leadership skill.`,
+            `There are two kinds of costs. Fixed costs stay the same no matter how much you sell — your sign costs $1 whether you sell 1 cup or 100.`,
+            `Variable costs change with how much you make. More cups means more lemons. Knowing the difference helps you plan smarter.`,
           ],
-          image:        '/explorer-assets/money-business/l08-magazine-revenue.png',
-          imageCaption: `Revenue — total money collected from sales, the starting point before costs are subtracted`,
+          image:        '/explorer-assets/money-business/l08-s2-fixed-variable.png',
+          imageCaption: `Fixed costs don't change with sales. Variable costs do. Track them separately.`,
           vocab: [
-            { word: `revenue`,     definition: `The total money a business collects from selling products or services — before any costs are subtracted. Revenue is not profit; it's the starting line, not the finish.`,          audioPrompt: `Revenue — the total money a business collects from selling products or services, before any costs are subtracted. Revenue is not profit; it's the starting line, not the finish.` },
-            { word: `break-even`,  definition: `The point where revenue exactly equals costs — no profit, no loss. Reaching break-even means all costs are covered; any sale beyond that point generates actual profit.`, audioPrompt: `Break-even — the point where revenue exactly equals costs. No profit, no loss. Reaching break-even means all costs are covered; any sale beyond that point generates actual profit.` },
+            { word: 'fixed cost',    definition: `A cost that stays the same regardless of how much you sell. Rent, signs, and equipment are fixed costs.`, audioPrompt: `Fixed cost — a cost that stays the same regardless of how much you sell. Rent, signs, and equipment are fixed costs.` },
+            { word: 'variable cost', definition: `A cost that grows as you produce more. Ingredients and packaging are variable costs — more output, more cost.`, audioPrompt: `Variable cost — a cost that grows as you produce more. Ingredients and packaging are variable costs. More output, more cost.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Profit: The Goal`,
+          totalSections: 6,
+          headline:      `Revenue: Money Coming In`,
           paragraphs: [
-            `Profit is what remains after you subtract all your costs from your revenue. The formula is simple: Profit = Revenue − Costs. In our lemonade example: $10 revenue minus $7 costs = $3 profit. That $3 is yours — to keep, save, reinvest in the business, or give away. Everything else was just covering your costs.`,
-            `This is why profit is the goal of a business, not revenue. A company can generate enormous revenue and still lose money if its costs are higher. Many famous companies have run at a loss for years — spending more than they earned — betting that future profit will come. Some succeeded. Many failed. Profit is the measure that tells you if the business is actually working.`,
-            `Most businesses try to maximise profit by pulling two levers: increasing revenue and reducing costs. Both matter. If you can bring in more money while spending less to produce it, profit grows from both directions simultaneously. This is the core game of business — and it applies equally whether you're running a lemonade stand or a multinational company.`,
+            `Revenue is all the money you collect from selling. Sell 20 cups at 50 cents each — your revenue is $10.`,
+            `That's the total before you subtract anything. Revenue is NOT profit. That's one of the most important lessons in business.`,
           ],
-          image:        '/explorer-assets/money-business/l08-magazine-profit.png',
-          imageCaption: `Profit — revenue minus costs, the single number that tells you if a business is actually working`,
+          image:        '/explorer-assets/money-business/l08-s3-revenue.png',
+          imageCaption: `Revenue is the total money in — but it's not yet what you keep`,
           vocab: [
-            { word: `profit`,       definition: `What remains after subtracting all costs from revenue — the real reward of running a business. Profit = Revenue − Costs. It can be kept, saved, reinvested, or shared.`,                  audioPrompt: `Profit — what remains after subtracting all costs from revenue. The real reward of running a business. Profit equals revenue minus costs. It can be kept, saved, reinvested, or shared.` },
-            { word: `profit margin`, definition: `Profit expressed as a percentage of revenue — a business with $10 revenue and $3 profit has a 30% profit margin. Higher margins mean more profit from each dollar earned.`, audioPrompt: `Profit margin — profit expressed as a percentage of revenue. A business with $10 revenue and $3 profit has a 30% profit margin. Higher margins mean more profit from each dollar earned.` },
+            { word: 'revenue',  definition: `Total money collected from sales — before any costs are subtracted. Revenue is the starting line, not the finish.`, audioPrompt: `Revenue — total money collected from sales, before any costs are subtracted. Revenue is the starting line, not the finish.` },
+            { word: 'top line', definition: `Another name for revenue. It's the FIRST line on a business report — the total before subtraction.`, audioPrompt: `Top line — another name for revenue. It's the first line on a business report, the total before subtraction.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `How to Grow Your Lemonade Stand`,
+          totalSections: 6,
+          headline:      `Profit: What's Left`,
           paragraphs: [
-            `Once you understand the numbers, you can make smart decisions. Could you charge 75 cents per cup instead of 50 cents? At 20 cups sold, that's $5 more in revenue — for zero extra cost. Could you set up near more customers? More foot traffic means more cups sold without any increase in your production costs.`,
-            `Could you reduce your costs? Maybe you could find a cheaper supplier for cups, or buy lemons in bulk at a discount. Every cent you save on costs is a cent added directly to your profit — without needing to sell a single extra cup. Cost control is just as powerful as revenue growth.`,
-            `These same decisions — pricing, location, volume, cost control — are what business leaders at every level think about every day. The lemonade stand is a perfect model because all the variables are visible and manageable. Learn them at the lemonade stand, and you'll understand how any business in the world works.`,
+            `Profit is what remains after you subtract costs from revenue. The formula is simple: Profit = Revenue − Costs.`,
+            `$10 revenue minus $7 costs equals $3 profit. That $3 is yours to keep, save, reinvest, or give away.`,
           ],
-          image:        '/explorer-assets/money-business/l08-magazine-grow.png',
-          imageCaption: `Growing the business — adjusting price, location, volume, and costs to maximise profit`,
+          image:        '/explorer-assets/money-business/l08-s4-profit-equation.png',
+          imageCaption: `Profit = Revenue − Costs. The simplest, most important formula in business.`,
           vocab: [
-            { word: `pricing strategy`, definition: `A deliberate decision about how much to charge for a product or service — pricing affects both revenue per sale and how many customers choose to buy.`,                                     audioPrompt: `Pricing strategy — a deliberate decision about how much to charge for a product or service. Pricing affects both revenue per sale and how many customers choose to buy.` },
-            { word: `cost control`,     definition: `The practice of managing and reducing expenses without sacrificing quality — effective cost control increases profit without needing more revenue.`, audioPrompt: `Cost control — the practice of managing and reducing expenses without sacrificing quality. Effective cost control increases profit without needing more revenue.` },
+            { word: 'profit',      definition: `Revenue minus costs. The money you actually keep after paying for everything.`, audioPrompt: `Profit — revenue minus costs. The money you actually keep after paying for everything.` },
+            { word: 'bottom line', definition: `Another name for profit. It's the LAST line on a business report — the final number after all costs.`, audioPrompt: `Bottom line — another name for profit. It's the last line on a business report, the final number after all costs.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Break-Even Point`,
+          paragraphs: [
+            `Break-even is the number of sales you need to cover your costs. Below it, you lose money. Above it, every sale is pure profit.`,
+            `If costs are $7 and each cup sells for 50 cents, you need to sell 14 cups to break even. Cup 15 is where profit starts.`,
+          ],
+          image:        '/explorer-assets/money-business/l08-s5-break-even.png',
+          imageCaption: `Break-even is the line. Below it: loss. Above it: profit. Know your number.`,
+          vocab: [
+            { word: 'break-even', definition: `The point where revenue exactly equals costs — no profit, no loss. Everything above break-even is profit.`, audioPrompt: `Break-even — the point where revenue exactly equals costs. No profit, no loss. Everything above break-even is profit.` },
+            { word: 'threshold',  definition: `A point you must reach before something changes. Break-even is the threshold where a business turns profitable.`, audioPrompt: `Threshold — a point you must reach before something changes. Break-even is the threshold where a business turns profitable.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Two Levers to Grow`,
+          paragraphs: [
+            `Once you know the numbers, you can grow profit two ways. Increase revenue (raise prices, sell more cups, find more customers).`,
+            `Or reduce costs (find cheaper supplies, waste less). Both matter equally — and the best businesses pull both levers at once.`,
+          ],
+          image:        '/explorer-assets/money-business/l08-s6-two-levers.png',
+          imageCaption: `Two levers. Raise revenue. Lower costs. Pull both, and profit grows from both sides.`,
+          vocab: [
+            { word: 'lever',    definition: `Something you can pull to make change happen. Revenue and costs are the two levers every business uses to grow profit.`, audioPrompt: `Lever — something you can pull to make change happen. Revenue and costs are the two levers every business uses to grow profit.` },
+            { word: 'reinvest', definition: `Putting profit back into the business to help it grow. Reinvesting means using today's profit to make tomorrow's profit bigger.`, audioPrompt: `Reinvest — putting profit back into the business to help it grow. Reinvesting means using today's profit to make tomorrow's profit bigger.` },
           ],
         },
 
@@ -101,9 +129,9 @@ const moneybusiness_explorer_l08_screens = {
           guideText:     `Profit grows when you increase revenue, reduce costs, or both. It shrinks when costs go up or revenue goes down. Think about what each action does to the numbers — does more money come in, or does more money go out unnecessarily?`,
           columnHeaders: [`The Action`, `What Happens to Profit?`],
           items: [
-            { image: 'l08-game-raise-price.png',    label: `Raising the price of each cup from 50 cents to 75 cents while all your costs stay exactly the same.`,             correctMatch: 'profit-up',   objectPosition: 'center 50%', matchPhrase: `Profit goes up! Raising your price means more revenue from every cup sold — and since your costs haven't changed, every extra cent goes straight to profit. Selling 20 cups at 75 cents gives you $15 instead of $10. That's $5 more profit without spending a single cent more.` },
-            { image: 'l08-game-wasted-lemons.png',  label: `Buying twice as many lemons as you need for the day, and throwing half of them away unsold.`,                     correctMatch: 'profit-down', objectPosition: 'center 50%', matchPhrase: `Profit goes down! Buying ingredients you don't use increases your costs without increasing your revenue. If you spent $6 on lemons but only needed $3 worth, you wasted $3 — and that $3 comes straight out of your profit. Ordering only what you need is one of the simplest ways to protect profit.` },
-            { image: 'l08-game-busy-location.png',  label: `Moving your stand from a quiet side street to the entrance of a busy park, selling twice as many cups.`,          correctMatch: 'profit-up',   objectPosition: 'center 50%', matchPhrase: `Profit goes up! Selling twice as many cups doubles your revenue. If your costs only increase slightly (you need more lemonade), your profit grows significantly. Location is one of the most powerful levers in any business — more customers means more revenue, and more revenue means more profit.` },
+            { image: 'l08-game-raise-price.png',     label: `Raising the price of each cup from 50 cents to 75 cents while all your costs stay exactly the same.`,             correctMatch: 'profit-up',   objectPosition: 'center 50%', matchPhrase: `Profit goes up! Raising your price means more revenue from every cup sold — and since your costs haven't changed, every extra cent goes straight to profit. Selling 20 cups at 75 cents gives you $15 instead of $10. That's $5 more profit without spending a single cent more.` },
+            { image: 'l08-game-wasted-lemons.png',   label: `Buying twice as many lemons as you need for the day, and throwing half of them away unsold.`,                     correctMatch: 'profit-down', objectPosition: 'center 50%', matchPhrase: `Profit goes down! Buying ingredients you don't use increases your costs without increasing your revenue. If you spent $6 on lemons but only needed $3 worth, you wasted $3 — and that $3 comes straight out of your profit. Ordering only what you need is one of the simplest ways to protect profit.` },
+            { image: 'l08-game-busy-location.png',   label: `Moving your stand from a quiet side street to the entrance of a busy park, selling twice as many cups.`,          correctMatch: 'profit-up',   objectPosition: 'center 50%', matchPhrase: `Profit goes up! Selling twice as many cups doubles your revenue. If your costs only increase slightly (you need more lemonade), your profit grows significantly. Location is one of the most powerful levers in any business — more customers means more revenue, and more revenue means more profit.` },
             { image: 'l08-game-spilled-pitcher.png', label: `Accidentally spilling your whole pitcher of lemonade and losing an entire batch of product.`,                    correctMatch: 'profit-down', objectPosition: 'center 50%', matchPhrase: `Profit goes down! Spilling the pitcher means you lose both the ingredients you paid for and the revenue you would have earned from those cups. Your costs are the same — you already bought the lemons and sugar — but your revenue drops. Lost product is one of the most common ways small businesses lose money unnecessarily.` },
           ],
           buckets: [
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l08_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L08] Loaded: "The Lemonade Stand Business" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l08-magazine-costs.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l08-magazine-revenue.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l08-magazine-profit.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l08-magazine-grow.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L08] costs: ${r1.ok}, revenue: ${r2.ok}, profit: ${r3.ok}, grow: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l08-s1-costs.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l08-s2-fixed-variable.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l08-s3-revenue.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l08-s4-profit-equation.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l08-s5-break-even.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l08-s6-two-levers.png',     { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L08] costs: ${r1.ok}, fixed-variable: ${r2.ok}, revenue: ${r3.ok}, profit-equation: ${r4.ok}, break-even: ${r5.ok}, two-levers: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L08] Could not verify image assets — network check failed');
   });
