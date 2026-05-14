@@ -23,73 +23,101 @@ const moneybusiness_explorer_l06_screens = {
           guideText: `When you buy a candy bar, you're buying a product. When you get a haircut, you're buying a service. These are two totally different things — and understanding the difference is one of the first steps to thinking like a business person.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is a Product?`,
           paragraphs: [
-            `A product is a thing — something you can hold, use, eat, or download. Physical products include food, clothes, toys, and cars. Digital products include apps, songs, e-books, and video games. A key feature of products is that they can be made once and sold over and over again — and that's what makes them so powerful for businesses.`,
-            `When you buy a product, you take ownership of it. You bring it home, use it, or keep it. The business that made it doesn't need to do anything extra for each customer who buys it. A musician who records one song can sell that song to millions of people without recording it again — that's the power of a product.`,
-            `Physical products require materials, manufacturing, and shipping. Digital products require none of those things after they're created. A video game made once can be sold instantly to anyone anywhere in the world with a download. This is why digital products have transformed the economy — the cost of selling a second copy is almost zero.`,
+            `A product is a thing — something you can hold, use, eat, or download.`,
+            `Physical products: food, clothes, toys, cars. Digital products: apps, songs, e-books, video games. Either way, you take ownership when you buy it.`,
           ],
-          image:        '/explorer-assets/money-business/l06-magazine-products.png',
-          imageCaption: `Products — physical and digital things made once and sold repeatedly, to as many people as want them`,
+          image:        '/explorer-assets/money-business/l06-s1-product.png',
+          imageCaption: `A product is something you take home or download — and own`,
           vocab: [
-            { word: `physical product`, definition: `A tangible item you can hold, touch, and take home — like food, clothing, toys, or furniture. Physical products require materials and manufacturing to produce.`,                     audioPrompt: `Physical product — a tangible item you can hold, touch, and take home, like food, clothing, toys, or furniture. Physical products require materials and manufacturing to produce.` },
-            { word: `digital product`,  definition: `A product that exists in digital form and is delivered electronically — apps, songs, e-books, and video games are digital products that can be sold to unlimited customers instantly.`, audioPrompt: `Digital product — a product that exists in digital form and is delivered electronically. Apps, songs, e-books, and video games are digital products that can be sold to unlimited customers instantly.` },
+            { word: 'physical product', definition: `A tangible thing you can hold and take home — food, clothing, toys, furniture, anything you can touch.`, audioPrompt: `Physical product — a tangible thing you can hold and take home: food, clothing, toys, furniture, anything you can touch.` },
+            { word: 'digital product',  definition: `A product delivered electronically — apps, songs, e-books, video games. No physical form, infinite copies.`, audioPrompt: `Digital product — a product delivered electronically: apps, songs, e-books, video games. No physical form, infinite copies.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is a Service?`,
           paragraphs: [
-            `A service is work done for someone else. Haircuts, tutoring, dog walking, house cleaning, dentistry, legal advice — all services. Every time you pay someone to do something for you, you're buying a service. The business isn't selling you a thing to take home; it's selling you time, skill, and effort applied directly to your problem.`,
-            `Services are personal. A dentist can only clean one person's teeth at a time. A piano teacher can only teach one student at a time. A plumber can only fix one set of pipes at a time. This is what makes services valuable — and what makes them hard to grow beyond a certain point without hiring more people.`,
-            `The quality of a service depends heavily on the person providing it. This is why reputation matters so much in service businesses. A great hairstylist builds a loyal following. A trusted tutor becomes irreplaceable. When the service is excellent, customers return again and again — and they tell their friends.`,
+            `A service is work done for someone else. Haircuts, tutoring, dog walking, dentistry — all services.`,
+            `You're not buying a thing to take home. You're buying someone's time, skill, and effort applied directly to your problem.`,
           ],
-          image:        '/explorer-assets/money-business/l06-magazine-services.png',
-          imageCaption: `Services — work done for someone else, personal and time-based, valued for skill and reputation`,
+          image:        '/explorer-assets/money-business/l06-s2-service.png',
+          imageCaption: `A service is work — someone's time and skill applied to your problem`,
           vocab: [
-            { word: `service`,    definition: `Work done for someone else in exchange for payment — services include haircuts, tutoring, plumbing, medical care, and any task where someone applies skill and time to your problem.`, audioPrompt: `Service — work done for someone else in exchange for payment. Services include haircuts, tutoring, plumbing, medical care, and any task where someone applies skill and time to your problem.` },
-            { word: `reputation`, definition: `The opinion others have of a person or business based on past experience — in service businesses, a strong reputation is one of the most valuable assets because it brings repeat customers.`, audioPrompt: `Reputation — the opinion others have of a person or business based on past experience. In service businesses, a strong reputation is one of the most valuable assets because it brings repeat customers.` },
+            { word: 'service', definition: `Work done for someone in exchange for money. A haircut, a piano lesson, a doctor's visit — all services.`, audioPrompt: `Service — work done for someone in exchange for money. A haircut, a piano lesson, a doctor's visit, all services.` },
+            { word: 'skill',   definition: `The ability to do something well — services are valuable because of the skill behind them.`, audioPrompt: `Skill — the ability to do something well. Services are valuable because of the skill behind them.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `When Businesses Combine Both`,
+          totalSections: 6,
+          headline:      `Products Scale, Services Don't`,
           paragraphs: [
-            `Smart businesses often combine products and services, creating more value for customers and more revenue for themselves. A restaurant sells food — that's a product — but it also sells cooking, serving, and the dining experience — those are services. The combination is what makes dining out feel different from just buying a meal at a shop.`,
-            `Technology companies are especially good at this. A phone manufacturer sells a physical device — a product — and then offers cloud storage, technical support, software updates, and a streaming music platform — all services. Once a customer buys the product, the services keep them connected to the company for years.`,
-            `When you bundle products and services together, customers have more reasons to stay loyal. If you only sell a product, a competitor can undercut your price. But if you also provide ongoing service, support, and expertise, the relationship becomes much harder to replace. The combination creates what business people call a "moat" — a protective barrier around your customers.`,
+            `A musician can record one song and sell it to millions of people without recording it again. That's scale.`,
+            `A dentist can only clean one set of teeth at a time. Services are limited by hours in the day. That's the difference.`,
           ],
-          image:        '/explorer-assets/money-business/l06-magazine-both.png',
-          imageCaption: `Combining both — bundling products with services builds customer loyalty and ongoing revenue`,
+          image:        '/explorer-assets/money-business/l06-s3-scale-vs-time.png',
+          imageCaption: `Products reach millions. Services reach one customer at a time.`,
           vocab: [
-            { word: `bundle`,  definition: `Combining two or more products or services into a single offering — bundling gives customers more value and gives businesses more reasons to keep customers coming back.`,                         audioPrompt: `Bundle — combining two or more products or services into a single offering. Bundling gives customers more value and gives businesses more reasons to keep customers coming back.` },
-            { word: `loyalty`, definition: `The tendency of a customer to keep buying from the same business over time — earned through quality, trust, and value. Loyal customers are the most profitable customers a business can have.`, audioPrompt: `Loyalty — the tendency of a customer to keep buying from the same business over time. Earned through quality, trust, and value. Loyal customers are the most profitable customers a business can have.` },
+            { word: 'scale',          definition: `The ability to grow revenue without working more hours. Products scale easily; services don't.`, audioPrompt: `Scale — the ability to grow revenue without working more hours. Products scale easily; services don't.` },
+            { word: 'passive income', definition: `Money earned without actively working for each dollar. A product sold while you sleep is passive income.`, audioPrompt: `Passive income — money earned without actively working for each dollar. A product sold while you sleep is passive income.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Which Is Better to Sell?`,
+          totalSections: 6,
+          headline:      `When Businesses Combine Both`,
           paragraphs: [
-            `Products and services each have real advantages. Products can scale — you can sell thousands of copies of the same thing without working thousands of extra hours. A digital product, in particular, can generate revenue while you sleep. The same video game sells to the millionth customer exactly the same way it sold to the first.`,
-            `Services, by contrast, are limited by time. A single tutor can only work so many hours in a day. But services often command higher prices and deeper trust. A skilled surgeon, a great lawyer, an expert coach — these professionals earn enormous fees because their expertise is hard to replace. Services scale through reputation even when they can't scale through volume.`,
-            `Many successful entrepreneurs follow a strategic path: start with services to earn money quickly, build expertise and a client base, then create products based on what they've learned. A fitness trainer teaches classes (service), then creates an online workout programme (product). A consultant gives advice (service), then writes a book (product). The two work together — each making the other more valuable.`,
+            `Smart businesses combine products and services. A restaurant sells food (product) AND cooking, serving, and atmosphere (service).`,
+            `A phone company sells a device (product) AND cloud storage, support, and updates (service). The combination makes both more valuable.`,
           ],
-          image:        '/explorer-assets/money-business/l06-magazine-scale.png',
-          imageCaption: `Scaling products vs services — products reach unlimited customers; services build deep trust and expertise`,
+          image:        '/explorer-assets/money-business/l06-s4-restaurant-combined.png',
+          imageCaption: `The smartest businesses sell both — a product AND a service wrapped together`,
           vocab: [
-            { word: `scale`,    definition: `The ability to grow revenue without a proportional increase in time or cost — products scale easily; services scale slowly because they depend on the hours of the person providing them.`,        audioPrompt: `Scale — the ability to grow revenue without a proportional increase in time or cost. Products scale easily; services scale slowly because they depend on the hours of the person providing them.` },
-            { word: `passive income`, definition: `Money earned without actively working for each dollar — a product sold while you sleep is passive income. Building passive income streams is a goal of many entrepreneurs.`, audioPrompt: `Passive income — money earned without actively working for each dollar. A product sold while you sleep is passive income. Building passive income streams is a goal of many entrepreneurs.` },
+            { word: 'combine', definition: `To put two things together. Combining products and services creates more value than either alone.`, audioPrompt: `Combine — to put two things together. Combining products and services creates more value than either alone.` },
+            { word: 'bundle',  definition: `Combining offerings into one package — like a phone plus cloud storage plus tech support.`, audioPrompt: `Bundle — combining offerings into one package: like a phone plus cloud storage plus tech support.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Customer Loyalty`,
+          paragraphs: [
+            `When you bundle products with services, customers have more reasons to stay loyal.`,
+            `A competitor can match your price. But if you also provide ongoing service and support, the relationship becomes much harder to replace.`,
+          ],
+          image:        '/explorer-assets/money-business/l06-s5-loyalty-threads.png',
+          imageCaption: `Bundles create loyalty — and loyal customers are the most valuable customers`,
+          vocab: [
+            { word: 'loyalty',    definition: `The tendency of a customer to keep buying from the same business over time. Loyal customers are gold.`, audioPrompt: `Loyalty — the tendency of a customer to keep buying from the same business over time. Loyal customers are gold.` },
+            { word: 'competitor', definition: `Another business offering similar products or services. Competitors fight for the same customers.`, audioPrompt: `Competitor — another business offering similar products or services. Competitors fight for the same customers.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `The Smart Path`,
+          paragraphs: [
+            `Many entrepreneurs follow a strategic path: start with services to earn money quickly, build expertise, then create products.`,
+            `A fitness trainer teaches classes (service), then sells an online workout program (product). Services pay the bills now. Products grow the business forever.`,
+          ],
+          image:        '/explorer-assets/money-business/l06-s6-smart-path.png',
+          imageCaption: `Start with services. Build expertise. Then turn that expertise into a product.`,
+          vocab: [
+            { word: 'strategy',  definition: `A plan for reaching a goal. Many entrepreneurs use a services-first strategy to fund their product later.`, audioPrompt: `Strategy — a plan for reaching a goal. Many entrepreneurs use a services-first strategy to fund their product later.` },
+            { word: 'expertise', definition: `Deep knowledge in a specific area — built through experience. Expertise is what makes a service valuable AND a product credible.`, audioPrompt: `Expertise — deep knowledge in a specific area, built through experience. Expertise is what makes a service valuable and a product credible.` },
           ],
         },
 
@@ -101,10 +129,10 @@ const moneybusiness_explorer_l06_screens = {
           guideText:     `Businesses can sell physical products you can hold, digital products you download, services that someone does for you — or a combination of both. This lesson goes deeper than just "product or service." Can you sort all four examples into the right category?`,
           columnHeaders: [`The Business`, `What Type?`],
           items: [
-            { image: 'l06-game-book.png',            label: `A printed book you buy at a bookstore and take home to own and read.`,                              correctMatch: 'physical', objectPosition: 'center 50%', matchPhrase: `Physical product! A printed book is something you can hold, carry, and keep on a shelf. It's made from materials — paper, ink, a cover — manufactured, and shipped to you. Every copy is a physical object. Physical products can be made in large quantities, but each copy costs money to produce.` },
-            { image: 'l06-game-streaming.png',       label: `A music streaming subscription you access on any device, anywhere, at any time.`,                  correctMatch: 'digital',  objectPosition: 'center 50%', matchPhrase: `Digital product! A streaming subscription gives you access to millions of songs stored on servers — there's nothing physical to hold. The company created the platform once and sells access to it repeatedly. Every new subscriber adds almost pure profit because there's no manufacturing cost for a digital copy.` },
-            { image: 'l06-game-personal-trainer.png', label: `A personal trainer who exercises with you in person and designs your workouts each week.`,        correctMatch: 'service',  objectPosition: 'center 50%', matchPhrase: `Service! A personal trainer does work for you — they plan, coach, and motivate. You don't take a product home; you benefit from their skill and time. This is a classic service: personal, skill-based, and limited by how many clients the trainer can work with in a day.` },
-            { image: 'l06-game-restaurant.png',      label: `A restaurant that prepares hot meals and brings them to your table with full table service.`,       correctMatch: 'both',     objectPosition: 'center 50%', matchPhrase: `Both! A restaurant combines products and services seamlessly. The food is a physical product — made from ingredients, prepared, and delivered to you. But the cooking, serving, atmosphere, and hospitality are all services. This combination is why eating at a restaurant feels different from just buying the same food in a shop.` },
+            { image: 'l06-game-book.png',              label: `A printed book you buy at a bookstore and take home to own and read.`,                              correctMatch: 'physical', objectPosition: 'center 50%', matchPhrase: `Physical product! A printed book is something you can hold, carry, and keep on a shelf. It's made from materials — paper, ink, a cover — manufactured, and shipped to you. Every copy is a physical object. Physical products can be made in large quantities, but each copy costs money to produce.` },
+            { image: 'l06-game-streaming.png',         label: `A music streaming subscription you access on any device, anywhere, at any time.`,                  correctMatch: 'digital',  objectPosition: 'center 50%', matchPhrase: `Digital product! A streaming subscription gives you access to millions of songs stored on servers — there's nothing physical to hold. The company created the platform once and sells access to it repeatedly. Every new subscriber adds almost pure profit because there's no manufacturing cost for a digital copy.` },
+            { image: 'l06-game-personal-trainer.png',  label: `A personal trainer who exercises with you in person and designs your workouts each week.`,        correctMatch: 'service',  objectPosition: 'center 50%', matchPhrase: `Service! A personal trainer does work for you — they plan, coach, and motivate. You don't take a product home; you benefit from their skill and time. This is a classic service: personal, skill-based, and limited by how many clients the trainer can work with in a day.` },
+            { image: 'l06-game-restaurant.png',        label: `A restaurant that prepares hot meals and brings them to your table with full table service.`,       correctMatch: 'both',     objectPosition: 'center 50%', matchPhrase: `Both! A restaurant combines products and services seamlessly. The food is a physical product — made from ingredients, prepared, and delivered to you. But the cooking, serving, atmosphere, and hospitality are all services. This combination is why eating at a restaurant feels different from just buying the same food in a shop.` },
           ],
           buckets: [
             { id: 'physical', label: `📦 Physical Product`,   color: '#60A5FA' },
@@ -186,12 +214,14 @@ const moneybusiness_explorer_l06_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L06] Loaded: "Products vs Services" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l06-magazine-products.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l06-magazine-services.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l06-magazine-both.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l06-magazine-scale.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L06] products: ${r1.ok}, services: ${r2.ok}, both: ${r3.ok}, scale: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l06-s1-product.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l06-s2-service.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l06-s3-scale-vs-time.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l06-s4-restaurant-combined.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l06-s5-loyalty-threads.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l06-s6-smart-path.png',         { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L06] product: ${r1.ok}, service: ${r2.ok}, scale-vs-time: ${r3.ok}, restaurant-combined: ${r4.ok}, loyalty-threads: ${r5.ok}, smart-path: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L06] Could not verify image assets — network check failed');
   });
