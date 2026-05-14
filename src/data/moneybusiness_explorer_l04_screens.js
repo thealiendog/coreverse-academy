@@ -23,73 +23,101 @@ const moneybusiness_explorer_l04_screens = {
           guideText: `Have you ever run out of money before you could buy something you really wanted? That's what happens without a budget. A budget is just a plan — and it's the single most powerful money tool there is.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is a Budget?`,
           paragraphs: [
-            `A budget is a written plan that tells your money where to go before you spend it. It says: here is how much money I have, and here is exactly where I plan it to go. A budget isn't a restriction — it's a decision made in advance, so you're in control rather than reacting to whatever happens.`,
-            `Here's what surprises most people: professional athletes, movie stars, and billionaires all use budgets. Having a lot of money doesn't mean you don't need a plan — in fact, the more money you have, the more important planning becomes. Budgets are the reason some people with large incomes build wealth, while others with the same income end up with nothing.`,
-            `A budget doesn't have to be complicated. A simple list — money coming in on one side, money going out on the other — is enough to start. The act of writing it down is what matters. Once your plan is on paper, you can see it, adjust it, and stick to it.`,
+            `A budget is a written plan that tells your money where to go before you spend it.`,
+            `It's not a restriction — it's a decision made in advance, so you're in control instead of just reacting to whatever happens.`,
           ],
-          image:        '/explorer-assets/money-business/l04-magazine-what-is-a-budget.png',
-          imageCaption: `A budget — a written plan that tells money where to go before it gets spent`,
+          image:        '/explorer-assets/money-business/l04-s1-budget-plan.png',
+          imageCaption: `A budget is a plan you make BEFORE spending — so you stay in control`,
           vocab: [
-            { word: `budget`,   definition: `A written plan showing how much money you have (income) and where you plan to spend it (expenses) — made in advance so every dollar has a purpose before you spend it.`,                audioPrompt: `Budget — a written plan showing how much money you have and where you plan to spend it. Made in advance so every dollar has a purpose before you spend it.` },
-            { word: `planning`, definition: `Deciding what to do before you do it — in money terms, planning means assigning every dollar a purpose before spending it, rather than seeing what's left at the end.`, audioPrompt: `Planning — deciding what to do before you do it. In money terms, planning means assigning every dollar a purpose before spending it, rather than seeing what's left at the end.` },
+            { word: 'budget', definition: `A written plan that tells your money where to go before you spend it. Every dollar gets a job.`, audioPrompt: `Budget — a written plan that tells your money where to go before you spend it. Every dollar gets a job.` },
+            { word: 'plan',   definition: `Deciding what to do before you do it. In money terms: assigning each dollar a job in advance instead of reacting after it's gone.`, audioPrompt: `Plan — deciding what to do before you do it. In money terms: assigning each dollar a job in advance instead of reacting after it's gone.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Income vs Expenses`,
+          totalSections: 6,
+          headline:      `Why Everyone Needs One`,
           paragraphs: [
-            `Every budget has two sides. Income is money coming IN — your allowance, birthday money, money you earn from chores or a small job. Expenses are money going OUT — snacks, toys, savings contributions, giving. Every dollar that arrives is income. Every dollar that leaves for any reason is an expense.`,
-            `The golden rule of budgeting is simple: your income must always be greater than or equal to your expenses. If you're spending more than you're earning, you're going into debt — and debt is the opposite of financial freedom. The moment your expenses exceed your income, your financial situation is getting worse, not better.`,
-            `This rule sounds obvious, but millions of adults break it every month. They spend more than they earn and use credit cards or loans to cover the difference. Understanding this rule as a kid — and living by it — puts you ahead of most adults before you've even started earning seriously.`,
+            `Here's what surprises most people: professional athletes, movie stars, and billionaires all use budgets.`,
+            `Having a lot of money doesn't mean you don't need a plan. In fact, the more money you have, the more important planning becomes.`,
           ],
-          image:        '/explorer-assets/money-business/l04-magazine-income-expenses.png',
-          imageCaption: `Income vs expenses — the two sides of every budget, with the golden rule: income must always win`,
+          image:        '/explorer-assets/money-business/l04-s2-everyone-budgets.png',
+          imageCaption: `Pro athletes, celebrities, billionaires — they all budget. The wealthy plan; that's why they stay wealthy.`,
           vocab: [
-            { word: `income`,   definition: `Money coming into your budget — wages, allowance, gifts, and any other money you receive. Income is what you have available to plan with before expenses are subtracted.`,                       audioPrompt: `Income — money coming into your budget. Wages, allowance, gifts, and any other money you receive. Income is what you have available to plan with before expenses are subtracted.` },
-            { word: `expenses`, definition: `Money going out of your budget — purchases, bills, savings contributions, and giving. Every dollar that leaves your account for any reason is an expense to track.`, audioPrompt: `Expenses — money going out of your budget. Purchases, bills, savings contributions, and giving. Every dollar that leaves your account for any reason is an expense to track.` },
+            { word: 'wealth',     definition: `Having a lot of money or valuable things. Wealth tends to grow with a plan, not without one.`, audioPrompt: `Wealth — having a lot of money or valuable things. Wealth tends to grow with a plan, not without one.` },
+            { word: 'discipline', definition: `Doing what needs to be done even when you don't feel like it. Discipline is what makes a budget actually work.`, audioPrompt: `Discipline — doing what needs to be done even when you don't feel like it. Discipline is what makes a budget actually work.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `A Simple Budget Example`,
+          totalSections: 6,
+          headline:      `The Two Sides`,
           paragraphs: [
-            `Let's make this concrete. Say you receive $10 a week. A zero-based budget for that $10 might look like this: $2 to savings, $1 to giving, $3 for snacks or fun, $4 toward a specific savings goal. Add those up: $2 + $1 + $3 + $4 = $10 exactly. Every dollar has a job. Nothing is left unassigned.`,
-            `This is what "zero-based" means — not that you have zero money, but that every dollar is accounted for. Income minus expenses equals zero, because you've assigned a purpose to every single dollar. There's no money sitting around with no plan, which means there's no money disappearing on impulse purchases you can't remember making.`,
-            `The specific numbers don't matter as much as the habit. Even a budget of $1 — 50 cents for saving, 25 cents for a treat, 25 cents for giving — teaches the same principle. Every dollar has a job. You decided what that job is, in advance. That's the entire system.`,
+            `Every budget has two sides. Income is money coming IN — allowance, birthday money, what you earn.`,
+            `Expenses are money going OUT — snacks, toys, savings, giving. Every dollar that leaves your account is an expense.`,
           ],
-          image:        '/explorer-assets/money-business/l04-magazine-budget-example.png',
-          imageCaption: `Zero-based budgeting — every dollar assigned a job, so nothing is left unplanned or wasted`,
+          image:        '/explorer-assets/money-business/l04-s3-two-sides.png',
+          imageCaption: `Money coming in. Money going out. Every budget is just these two sides.`,
           vocab: [
-            { word: `zero-based budget`, definition: `A budgeting method where every dollar of income is assigned to a specific expense or purpose — income minus all assigned expenses equals zero. Nothing is left unplanned.`, audioPrompt: `Zero-based budget — a budgeting method where every dollar of income is assigned to a specific expense or purpose. Income minus all assigned expenses equals zero. Nothing is left unplanned.` },
-            { word: `allocation`,        definition: `Assigning money to a specific category or purpose — in a budget, you allocate income across savings, giving, spending categories, and goals.`,                                    audioPrompt: `Allocation — assigning money to a specific category or purpose. In a budget, you allocate income across savings, giving, spending categories, and goals.` },
+            { word: 'income',   definition: `Money coming INTO your budget — allowance, gifts, wages. Income is what you have to work with.`, audioPrompt: `Income — money coming into your budget: allowance, gifts, wages. Income is what you have to work with.` },
+            { word: 'expenses', definition: `Money going OUT of your budget — purchases, bills, savings, giving. Every dollar that leaves is an expense.`, audioPrompt: `Expenses — money going out of your budget: purchases, bills, savings, giving. Every dollar that leaves is an expense.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Budgeting for a Goal`,
+          totalSections: 6,
+          headline:      `The Golden Rule`,
           paragraphs: [
-            `One of the most powerful uses of a budget is working backward from a goal. Want something that costs $60? Find out how much you can save each week. Divide $60 by your weekly savings amount and you know exactly how many weeks until you can afford it. Math becomes your superpower.`,
-            `This is called goal-based saving — and it transforms how you think about wanting things. Instead of "I can't afford that," the question becomes "How long will I save for that?" Instead of feeling powerless, you have a timeline and a plan. That shift in thinking is worth more than any single purchase.`,
-            `Budgeting for a goal also builds patience. When you've been saving for six weeks for something, you value it differently than if you bought it impulsively. You thought about it, worked for it, and waited for it. That kind of purchase tends to feel better — and last longer.`,
+            `The golden rule of budgeting: your income must always be greater than or equal to your expenses.`,
+            `If you spend more than you earn, you're going into debt. Millions of adults break this rule every month. Don't be one of them.`,
           ],
-          image:        '/explorer-assets/money-business/l04-magazine-budgeting-goal.png',
-          imageCaption: `Budgeting for a goal — dividing cost by weekly savings to find a timeline, turning math into power`,
+          image:        '/explorer-assets/money-business/l04-s4-golden-rule.png',
+          imageCaption: `Income must always equal or beat expenses. Break this rule and you're in debt.`,
           vocab: [
-            { word: `goal`,              definition: `A specific result you're working toward — in money terms, a financial goal is something you want to buy or achieve that requires saving a specific amount over time.`,                          audioPrompt: `Goal — a specific result you're working toward. In money terms, a financial goal is something you want to buy or achieve that requires saving a specific amount over time.` },
-            { word: `goal-based saving`, definition: `Saving a specific amount each period in order to reach a defined goal by a target date — calculated by dividing the total cost by the amount you can save per week or month.`, audioPrompt: `Goal-based saving — saving a specific amount each period in order to reach a defined goal by a target date. Calculated by dividing the total cost by the amount you can save per week or month.` },
+            { word: 'debt',        definition: `When you owe more money than you have. Debt happens when expenses are bigger than income.`, audioPrompt: `Debt — when you owe more money than you have. Debt happens when expenses are bigger than income.` },
+            { word: 'golden rule', definition: `A guiding principle that always applies. In budgeting: income must always be greater than or equal to expenses.`, audioPrompt: `Golden rule — a guiding principle that always applies. In budgeting: income must always be greater than or equal to expenses.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Every Dollar Has a Job`,
+          paragraphs: [
+            `Say you receive $10 a week. A budget might be: $2 saving, $1 giving, $3 fun, $4 to a savings goal.`,
+            `$2 + $1 + $3 + $4 = $10. Every dollar has a job. That's called a zero-based budget — nothing is left unassigned.`,
+          ],
+          image:        '/explorer-assets/money-business/l04-s5-every-dollar-job.png',
+          imageCaption: `In a zero-based budget, every single dollar has a job before you spend it`,
+          vocab: [
+            { word: 'zero-based budget', definition: `A budget where every dollar of income gets a specific job. Income minus all assigned jobs equals zero — nothing is left over.`, audioPrompt: `Zero-based budget — a budget where every dollar of income gets a specific job. Income minus all assigned jobs equals zero. Nothing is left over.` },
+            { word: 'assign',            definition: `To give something a specific job or purpose. In a budget, you assign each dollar to a category like saving, giving, or fun.`, audioPrompt: `Assign — to give something a specific job or purpose. In a budget, you assign each dollar to a category like saving, giving, or fun.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Saving for a Goal`,
+          paragraphs: [
+            `Want something that costs $60? Find out how much you can save each week. Divide $60 by that amount — that's how many weeks until you have it.`,
+            `This is goal-based saving. "I can't afford that" becomes "how long until I can?" Math becomes your superpower.`,
+          ],
+          image:        '/explorer-assets/money-business/l04-s6-goal-path.png',
+          imageCaption: `"How long until I can afford it?" — math turns wanting into a real timeline`,
+          vocab: [
+            { word: 'goal-based saving', definition: `Saving a specific amount each week to reach a target by a known date. Divide the total cost by what you can save weekly.`, audioPrompt: `Goal-based saving — saving a specific amount each week to reach a target by a known date. Divide the total cost by what you can save weekly.` },
+            { word: 'divide',            definition: `To split into equal parts. To find your savings timeline, divide the total cost by what you save each week.`, audioPrompt: `Divide — to split into equal parts. To find your savings timeline, divide the total cost by what you save each week.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l04_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L04] Loaded: "Budgeting: Planning What to Spend" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l04-magazine-what-is-a-budget.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l04-magazine-income-expenses.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l04-magazine-budget-example.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l04-magazine-budgeting-goal.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L04] what-is-a-budget: ${r1.ok}, income-expenses: ${r2.ok}, budget-example: ${r3.ok}, budgeting-goal: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l04-s1-budget-plan.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l04-s2-everyone-budgets.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l04-s3-two-sides.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l04-s4-golden-rule.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l04-s5-every-dollar-job.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l04-s6-goal-path.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L04] budget-plan: ${r1.ok}, everyone-budgets: ${r2.ok}, two-sides: ${r3.ok}, golden-rule: ${r4.ok}, every-dollar-job: ${r5.ok}, goal-path: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L04] Could not verify image assets — network check failed');
   });
