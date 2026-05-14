@@ -23,73 +23,101 @@ const moneybusiness_explorer_l13_screens = {
           guideText: `An entrepreneur sees a problem and decides to solve it — and build a business around that solution. Entrepreneurs don't wait for someone to give them a job. They create their own opportunity. And the world needs more of them.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is an Entrepreneur?`,
           paragraphs: [
-            `An entrepreneur is a person who starts a business, taking on financial risk in hopes of making a profit. Famous entrepreneurs include Steve Jobs, who co-founded Apple and helped create the personal computer and smartphone industries; Oprah Winfrey, who built a media empire from nothing; and Elon Musk, who founded companies including Tesla and SpaceX. Their stories are remarkable — but they're the visible tip of a very large iceberg.`,
-            `Most entrepreneurs run businesses you'll never read about in the news: a local bakery, a plumbing company, a freelance design studio, a neighbourhood tutoring service. These people took the same leap — identifying an opportunity, bearing the risk, doing the work — and built livelihoods from nothing. They are the backbone of every economy.`,
-            `What all entrepreneurs share is not fame or wealth, but a willingness to act on an idea rather than wait for someone else to do it. They see gaps, they tolerate uncertainty, and they keep going through difficulty. That combination — vision plus persistence — is the foundation of every entrepreneurial story, large or small.`,
+            `An entrepreneur is a person who starts a business, taking on financial risk in hopes of making a profit.`,
+            `Entrepreneurs don't wait for someone to give them a job. They see a problem, create a solution, and bet on themselves.`,
           ],
-          image:        '/explorer-assets/money-business/l13-magazine-entrepreneur.png',
-          imageCaption: `Entrepreneurs — from famous founders to neighbourhood business owners, all united by taking risk to create something new`,
+          image:        '/explorer-assets/money-business/l13-s1-entrepreneur-choice.png',
+          imageCaption: `An entrepreneur is someone who acts on an idea instead of waiting for permission`,
           vocab: [
-            { word: `entrepreneur`, definition: `A person who starts a business, taking on financial risk in hopes of making a profit — entrepreneurs create opportunities rather than waiting for them.`,                        audioPrompt: `Entrepreneur — a person who starts a business, taking on financial risk in hopes of making a profit. Entrepreneurs create opportunities rather than waiting for them.` },
-            { word: `risk`,         definition: `The possibility of loss or failure — entrepreneurs accept financial and personal risk because the potential reward of a successful business is worth it to them.`, audioPrompt: `Risk — the possibility of loss or failure. Entrepreneurs accept financial and personal risk because the potential reward of a successful business is worth it to them.` },
+            { word: 'entrepreneur', definition: `A person who starts a business, taking risk to build something new in hopes of making a profit.`, audioPrompt: `Entrepreneur — a person who starts a business, taking risk to build something new in hopes of making a profit.` },
+            { word: 'risk',         definition: `The chance of losing money or failing. Entrepreneurs accept risk in exchange for the chance at big reward.`, audioPrompt: `Risk — the chance of losing money or failing. Entrepreneurs accept risk in exchange for the chance at big reward.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Entrepreneur's Mindset`,
+          totalSections: 6,
+          headline:      `Famous and Local`,
           paragraphs: [
-            `Entrepreneurs see the world differently. Where others see problems, entrepreneurs see opportunities. Where others see failure, entrepreneurs see data — information about what didn't work, which is exactly what they need to find what does. When something goes wrong, an entrepreneur's first question is: what did I just learn?`,
-            `This way of thinking is called a growth mindset — the belief that skills, intelligence, and abilities can be developed through effort, practice, and learning from failure. The opposite is a fixed mindset — the belief that you either have talent or you don't. Entrepreneurs with a growth mindset treat setbacks as information, not as verdicts on their worth.`,
-            `This mindset isn't something you're born with — it's something you develop. Every time you try something difficult, fail, analyse what went wrong, and try again with new understanding, you're training your mind to work like an entrepreneur's. The habit of learning from failure, practiced consistently, builds one of the most valuable skills any person can have.`,
+            `Famous entrepreneurs include Steve Jobs (Apple), Oprah Winfrey (media), and Elon Musk (Tesla, SpaceX).`,
+            `But most entrepreneurs you'll never hear about — the local baker, plumber, freelance designer, tutoring service. They're the backbone of every economy.`,
           ],
-          image:        '/explorer-assets/money-business/l13-magazine-mindset.png',
-          imageCaption: `The entrepreneurial mindset — seeing problems as opportunities and failures as data, not as the end`,
+          image:        '/explorer-assets/money-business/l13-s2-constellation-of-founders.png',
+          imageCaption: `A few founders become famous. Millions more quietly run the local businesses that keep the world working.`,
           vocab: [
-            { word: `growth mindset`, definition: `The belief that skills and abilities can be developed through effort and learning — people with a growth mindset treat challenges and failures as opportunities to improve.`,              audioPrompt: `Growth mindset — the belief that skills and abilities can be developed through effort and learning. People with a growth mindset treat challenges and failures as opportunities to improve.` },
-            { word: `opportunity`,    definition: `A situation or gap in the market that an entrepreneur can address with a product or service — entrepreneurs are skilled at spotting opportunities others overlook.`, audioPrompt: `Opportunity — a situation or gap in the market that an entrepreneur can address with a product or service. Entrepreneurs are skilled at spotting opportunities others overlook.` },
+            { word: 'founder',        definition: `The person who starts a company. Steve Jobs co-founded Apple. Oprah founded her media company.`, audioPrompt: `Founder — the person who starts a company. Steve Jobs co-founded Apple. Oprah founded her media company.` },
+            { word: 'small business', definition: `A locally-owned business — bakeries, plumbers, designers, tutors. Most jobs in the world come from small businesses.`, audioPrompt: `Small business — a locally-owned business: bakeries, plumbers, designers, tutors. Most jobs in the world come from small businesses.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Steps to Starting a Business`,
+          totalSections: 6,
+          headline:      `The Mindset`,
           paragraphs: [
-            `Starting a business follows a process, though rarely a perfectly straight line. It begins with finding a problem worth solving — a real need that real people have and would pay to address. Then you design a possible solution. But here's what most beginners skip: you test that solution with real people before spending significant time or money building it.`,
-            `The tested version is called an MVP — a minimum viable product. An MVP is the simplest, smallest version of your idea that still demonstrates its core value. The goal isn't perfection; it's learning. You put something real in front of customers, watch how they respond, gather feedback, improve the product, and repeat. This cycle of build-test-improve is called iteration.`,
-            `Most successful businesses look very different from their original idea. The willingness to change direction based on real feedback — called pivoting — separates entrepreneurs who succeed from those who don't. Stubbornly protecting your original idea when customers are telling you something different is one of the most common causes of business failure.`,
+            `Entrepreneurs see the world differently. Where others see problems, they see opportunities. Where others see failure, they see data.`,
+            `This is called a growth mindset — the belief that skills can be developed through effort and learning. Talent isn't fixed. It's built.`,
           ],
-          image:        '/explorer-assets/money-business/l13-magazine-steps.png',
-          imageCaption: `Starting a business — find the problem, design a solution, build an MVP, test with real people, improve, and repeat`,
+          image:        '/explorer-assets/money-business/l13-s3-mindset.png',
+          imageCaption: `Problems are opportunities. Failures are data. Skills are built. That's the mindset.`,
           vocab: [
-            { word: `MVP`,       definition: `Minimum Viable Product — the simplest version of a product that can be tested with real customers. An MVP is built to gather feedback, not to be perfect.`,                audioPrompt: `MVP — Minimum Viable Product. The simplest version of a product that can be tested with real customers. An MVP is built to gather feedback, not to be perfect.` },
-            { word: `iteration`, definition: `The process of repeatedly improving a product based on feedback — each version is better than the last because it incorporates real learning from testing.`, audioPrompt: `Iteration — the process of repeatedly improving a product based on feedback. Each version is better than the last because it incorporates real learning from testing.` },
+            { word: 'growth mindset', definition: `The belief that skills, intelligence, and abilities can grow with effort and practice. Failures become learning, not endings.`, audioPrompt: `Growth mindset — the belief that skills, intelligence, and abilities can grow with effort and practice. Failures become learning, not endings.` },
+            { word: 'opportunity',    definition: `A chance to do something valuable. Entrepreneurs are skilled at spotting opportunities other people walk past.`, audioPrompt: `Opportunity — a chance to do something valuable. Entrepreneurs are skilled at spotting opportunities other people walk past.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
+          totalSections: 6,
+          headline:      `Start with a Problem`,
+          paragraphs: [
+            `Every successful business starts the same way: with a real problem someone is willing to pay to solve.`,
+            `Not "what could I make?" but "what frustrates people right now?" The bigger and more common the frustration, the bigger the business opportunity.`,
+          ],
+          image:        '/explorer-assets/money-business/l13-s4-find-the-problem.png',
+          imageCaption: `Start with what frustrates real people. Solve that. The business follows.`,
+          vocab: [
+            { word: 'problem', definition: `Something that frustrates or limits people. Every business begins by solving a real problem someone will pay to fix.`, audioPrompt: `Problem — something that frustrates or limits people. Every business begins by solving a real problem someone will pay to fix.` },
+            { word: 'need',    definition: `Something people genuinely require — not just want. The more important the need, the bigger the business opportunity.`, audioPrompt: `Need — something people genuinely require, not just want. The more important the need, the bigger the business opportunity.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Build, Test, Pivot`,
+          paragraphs: [
+            `Smart entrepreneurs don't build the full product first. They build an MVP — the simplest version that tests the idea.`,
+            `They show it to real people, gather feedback, and improve. If something fundamental isn't working, they pivot — change direction completely.`,
+          ],
+          image:        '/explorer-assets/money-business/l13-s5-mvp-cycle.png',
+          imageCaption: `Tiny first version. Real feedback. Improve. Repeat. That's how every successful business is built.`,
+          vocab: [
+            { word: 'MVP',   definition: `Minimum Viable Product — the simplest version of an idea that can be tested with real people. The point isn't perfection; it's learning.`, audioPrompt: `MVP — Minimum Viable Product. The simplest version of an idea that can be tested with real people. The point isn't perfection; it's learning.` },
+            { word: 'pivot', definition: `A major change in direction based on what you learned. Smart entrepreneurs pivot when the original idea isn't working.`, audioPrompt: `Pivot — a major change in direction based on what you learned. Smart entrepreneurs pivot when the original idea isn't working.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
           headline:      `Failure Is Data`,
           paragraphs: [
-            `Every entrepreneur fails. James Dyson made 5,127 prototypes of his vacuum cleaner before producing one that worked the way he wanted. Walt Disney was fired from an early job for "lacking imagination." Sara Blakely's father had a weekly dinner tradition: he asked his children not what they had achieved that week, but what they had failed at. He wanted them to try hard things — and not be afraid of the answer.`,
-            `The point is not that failure is pleasant. It isn't. But failure contains information that success doesn't. When something doesn't work, you learn exactly what doesn't work — and that narrows the gap to what does. Every failed prototype, every customer who said no, every marketing message that fell flat is a step closer to the version that works.`,
-            `Failure just means you're in the game. Only people who try can fail — and only people who fail have any chance of eventually succeeding. The entrepreneurs who never failed are the ones who never tried anything worth doing. The most important thing isn't getting it right the first time. It's getting back up the second time.`,
+            `Every entrepreneur fails. James Dyson made 5,127 prototypes before one vacuum worked. Walt Disney was fired for "lacking imagination."`,
+            `Sara Blakely's father asked his kids each week what they had FAILED at — he wanted them to try hard things. Failure means you're in the game.`,
           ],
-          image:        '/explorer-assets/money-business/l13-magazine-failure.png',
-          imageCaption: `Failure is data — every setback narrows the gap to what works, and only those in the game have a chance at winning`,
+          image:        '/explorer-assets/money-business/l13-s6-failure-path.png',
+          imageCaption: `Every successful entrepreneur has a trail of failures behind them. That trail IS the path.`,
           vocab: [
-            { word: `pivot`,      definition: `A significant change in direction based on feedback or new information — entrepreneurs pivot when their original approach isn't working rather than persisting with a failing plan.`, audioPrompt: `Pivot — a significant change in direction based on feedback or new information. Entrepreneurs pivot when their original approach isn't working rather than persisting with a failing plan.` },
-            { word: `resilience`, definition: `The ability to recover from setbacks and keep going — entrepreneurial resilience is the capacity to absorb failure, learn from it, and continue building.`,                       audioPrompt: `Resilience — the ability to recover from setbacks and keep going. Entrepreneurial resilience is the capacity to absorb failure, learn from it, and continue building.` },
+            { word: 'prototype',  definition: `An early version of a product, made to test ideas. James Dyson made 5,127 prototypes before perfecting his vacuum.`, audioPrompt: `Prototype — an early version of a product, made to test ideas. James Dyson made 5,127 prototypes before perfecting his vacuum.` },
+            { word: 'resilience', definition: `The ability to keep going after setbacks. Entrepreneurial resilience is the single biggest difference between people who succeed and those who don't.`, audioPrompt: `Resilience — the ability to keep going after setbacks. Entrepreneurial resilience is the single biggest difference between people who succeed and those who don't.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l13_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L13] Loaded: "Entrepreneurship: Starting Your Own Business" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l13-magazine-entrepreneur.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l13-magazine-mindset.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l13-magazine-steps.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l13-magazine-failure.png',      { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L13] entrepreneur: ${r1.ok}, mindset: ${r2.ok}, steps: ${r3.ok}, failure: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l13-s1-entrepreneur-choice.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l13-s2-constellation-of-founders.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l13-s3-mindset.png',                   { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l13-s4-find-the-problem.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l13-s5-mvp-cycle.png',                 { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l13-s6-failure-path.png',              { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L13] entrepreneur-choice: ${r1.ok}, constellation-of-founders: ${r2.ok}, mindset: ${r3.ok}, find-the-problem: ${r4.ok}, mvp-cycle: ${r5.ok}, failure-path: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L13] Could not verify image assets — network check failed');
   });
