@@ -24,56 +24,101 @@ const innerworld_explorer_l20_screens = {
           guideText: `Hello, {name}. We've come to the last and deepest lesson in the Inner World. Today we ask the biggest question of all: who are you, really? Not your name, not your age, not your thoughts — but the you that is aware of all those things. When you watch your thoughts, who is doing the watching? Have you ever wondered about that? Today, we find out.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `Who Is the Watcher?`,
+          totalSections: 6,
+          headline:      `The Question`,
           paragraphs: [
-            `All through this curriculum, we've been practising watching thoughts and feelings come and go. But here's the question we haven't asked yet: who is the watcher? When you notice "I'm having an angry thought," there is a "you" that noticed it. That observer — that witnessing awareness — is always there, always calm, always present.`,
-            `Philosophers and scientists have explored this idea for thousands of years. In ancient wisdom traditions, this observer is called the "witness self" or pure awareness — the unchanging part of you beneath all your changing thoughts, feelings, and experiences.`,
-            `Psychologists also recognise this observer self as a key element of psychological flexibility — the ability to hold difficult experiences without being overwhelmed by them. Ancient wisdom and modern science arrive at the same place: there is something in you that watches without being swept away.`,
+            `All through this journey, we've been watching thoughts and feelings come and go. But here's a question we haven't asked yet: who is the watcher?`,
+            `When you notice "I'm having an angry thought," there is a "you" that noticed it. Someone is doing the noticing.`,
           ],
-          image:        '/explorer-assets/inner-world/l20-the-witness.png',
-          imageCaption: `The witness self — the quiet, unchanging awareness beneath every thought and feeling`,
+          image:        '/explorer-assets/inner-world/l20-s1-the-watcher.png',
+          imageCaption: `Who is the watcher? Someone in you is always doing the noticing.`,
           vocab: [
-            { word: 'witness self',  definition: `The part of you that observes your thoughts and feelings without becoming them — always calm, always present, the unchanging awareness beneath all experiences.`,                         audioPrompt: `Witness self — the part of you that observes your thoughts and feelings without becoming them. Always calm, always present, the unchanging awareness beneath all experiences.` },
-            { word: 'observer self', definition: `Another name for the witness self — used in psychology to describe the stable, aware part of you that can hold difficult experiences without being overwhelmed by them.`,               audioPrompt: `Observer self — another name for the witness self, used in psychology to describe the stable, aware part of you that can hold difficult experiences without being overwhelmed by them.` },
+            { word: 'watcher',  definition: `The part of you that notices what you're thinking and feeling — the one who is always there, observing.`, audioPrompt: `Watcher — the part of you that notices what you're thinking and feeling. The one who is always there, observing.` },
+            { word: 'noticing', definition: `Paying attention to something — like watching a thought arise, without becoming it.`, audioPrompt: `Noticing — paying attention to something, like watching a thought arise, without becoming it.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `You Are the Sky, Not the Storm`,
+          totalSections: 6,
+          headline:      `The Observer Within`,
           paragraphs: [
-            `Here is the most important thing to understand: you have thoughts, but you are not your thoughts. You have feelings, but you are not your feelings. These things move through you — like weather moving through the sky.`,
-            `The sky doesn't become the storm. When dark clouds arrive, the sky holds them — but it isn't changed by them. When they pass, the sky is still there, exactly as it was. The storm was never the sky.`,
-            `You are the sky. You are the awareness that holds all experiences — joy, sadness, excitement, fear, confusion, peace. They all pass through. The awareness that holds them is you — steady, spacious, and always there.`,
+            `That observer — that witnessing awareness — is always there. Always calm. Always present.`,
+            `Ancient wisdom traditions call this the "witness self" or pure awareness. Modern psychologists call it the observer self. Same idea, different names.`,
           ],
-          image:        '/explorer-assets/inner-world/l20-sky-and-clouds.png',
-          imageCaption: `The sky holds every storm without becoming one — and so do you`,
+          image:        '/explorer-assets/inner-world/l20-s2-observer-within.png',
+          imageCaption: `Ancient wisdom and modern science meet here — the observer within you`,
           vocab: [
-            { word: 'pure awareness',          definition: `The open, witnessing consciousness that holds all thoughts and feelings without being defined by any of them — like the sky that holds all weather without becoming it.`, audioPrompt: `Pure awareness — the open, witnessing consciousness that holds all thoughts and feelings without being defined by any of them, like the sky that holds all weather without becoming it.` },
-            { word: 'psychological flexibility', definition: `The ability to hold difficult thoughts and feelings without being overwhelmed by them — supported by the observer self, which stays calm even during hard experiences.`,   audioPrompt: `Psychological flexibility — the ability to hold difficult thoughts and feelings without being overwhelmed by them, supported by the observer self, which stays calm even during hard experiences.` },
+            { word: 'observer',  definition: `The part of you that watches your thoughts and feelings without being them. Always calm. Always there.`, audioPrompt: `Observer — the part of you that watches your thoughts and feelings without being them. Always calm. Always there.` },
+            { word: 'awareness', definition: `The steady, alert part of you that knows what's happening inside — the witness behind every thought and feeling.`, audioPrompt: `Awareness — the steady, alert part of you that knows what's happening inside. The witness behind every thought and feeling.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
+          totalSections: 6,
+          headline:      `You Have Thoughts. You Are Not Thoughts.`,
+          paragraphs: [
+            `Here is the most important thing to understand: you HAVE thoughts, but you ARE NOT your thoughts.`,
+            `You HAVE feelings, but you ARE NOT your feelings. These things move through you — they don't define you.`,
+          ],
+          image:        '/explorer-assets/inner-world/l20-s3-having-not-being.png',
+          imageCaption: `You have thoughts and feelings — but they don't define who you are`,
+          vocab: [
+            { word: 'having',   definition: `Experiencing a thought or feeling without being it. You're HAVING anger, not BEING angry. The difference matters.`, audioPrompt: `Having — experiencing a thought or feeling without being it. You're having anger, not being angry. The difference matters.` },
+            { word: 'identity', definition: `Who you are inside — separate from any thought or feeling. Your identity is bigger than what passes through you.`, audioPrompt: `Identity — who you are inside, separate from any thought or feeling. Your identity is bigger than what passes through you.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `You Are the Sky`,
+          paragraphs: [
+            `Thoughts and feelings move through you like weather moving through the sky. The sky doesn't become the storm.`,
+            `When dark clouds arrive, the sky holds them but isn't changed by them. When they pass, the sky is still there. You are the sky.`,
+          ],
+          image:        '/explorer-assets/inner-world/l20-s4-sky-and-weather.png',
+          imageCaption: `You are the sky. Thoughts and feelings are the weather passing through.`,
+          vocab: [
+            { word: 'weather', definition: `Changes in the sky — clouds, storms, sunshine — that come and go. Your thoughts and feelings are like weather.`, audioPrompt: `Weather — changes in the sky, clouds, storms, sunshine, that come and go. Your thoughts and feelings are like weather.` },
+            { word: 'sky',     definition: `The vast, unchanging space that holds all weather. You are the sky — you hold thoughts and feelings without becoming them.`, audioPrompt: `Sky — the vast, unchanging space that holds all weather. You are the sky. You hold thoughts and feelings without becoming them.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
           headline:      `Your Deepest Home`,
           paragraphs: [
-            `This understanding is both humbling and liberating. Humbling, because it means no single thought or feeling defines you — you are so much bigger than any of them. Liberating, because no matter what storm passes through, the aware and watching part of you is always there. It was never damaged. It never left.`,
-            `It is your deepest home. The one place that is always safe, always still, always you — no matter what is happening on the surface.`,
-            `Try this now: sit quietly for a moment. Notice a thought that appears. Then ask — who is noticing this thought? Don't try to answer with another thought. Just rest in the awareness that is noticing. Stay there for thirty seconds. This is you — the witness. The part that was here before this lesson started, and will be here long after.`,
+            `This understanding is both humbling and liberating. No single thought or feeling defines you — you are so much bigger than any one of them.`,
+            `No matter what storm passes through, the awareness that watches is always there. It was never damaged. It never left.`,
           ],
-          image:        '/explorer-assets/inner-world/l20-i-am-presence.png',
-          imageCaption: `Beneath every thought and every storm — the witness is always home`,
+          image:        '/explorer-assets/inner-world/l20-s5-vast-and-free.png',
+          imageCaption: `No matter what passes through, the watching awareness in you is always home`,
           vocab: [
-            { word: 'the sky metaphor', definition: `The idea that you are like the sky — vast, steady, and unchanged by the weather (thoughts and feelings) that passes through you.`,                                                      audioPrompt: `The sky metaphor — the idea that you are like the sky, vast, steady, and unchanged by the weather of thoughts and feelings that passes through you.` },
-            { word: 'deepest home',     definition: `A way of describing the witness self — the part of you that is always calm and present, no matter what is happening, the most stable and safe part of who you are.`,               audioPrompt: `Deepest home — a way of describing the witness self, the part of you that is always calm and present, no matter what is happening, the most stable and safe part of who you are.` },
+            { word: 'humbling',   definition: `Feeling small in a beautiful way. Realizing you are bigger than any single thought is humbling — and freeing.`, audioPrompt: `Humbling — feeling small in a beautiful way. Realizing you are bigger than any single thought is humbling, and freeing.` },
+            { word: 'liberating', definition: `Setting you free. Knowing no thought or feeling defines you is liberating — you don't have to carry them as identity.`, audioPrompt: `Liberating — setting you free. Knowing no thought or feeling defines you is liberating. You don't have to carry them as identity.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Try It Now`,
+          paragraphs: [
+            `Sit quietly for a moment. Notice a thought that appears. Then ask: who is noticing this thought?`,
+            `Don't answer with another thought. Just rest in the awareness that is noticing. Stay there for thirty seconds. This is you — the witness.`,
+          ],
+          image:        '/explorer-assets/inner-world/l20-s6-resting-in-awareness.png',
+          imageCaption: `Just rest in the awareness that is noticing. This is you — the witness.`,
+          vocab: [
+            { word: 'rest',     definition: `To stop trying and just be. In this practice, rest in awareness — don't grasp for an answer, just notice.`, audioPrompt: `Rest — to stop trying and just be. In this practice, rest in awareness. Don't grasp for an answer, just notice.` },
+            { word: 'presence', definition: `Simply being here, aware, without doing anything. Presence is what you find when you rest in awareness.`, audioPrompt: `Presence — simply being here, aware, without doing anything. Presence is what you find when you rest in awareness.` },
           ],
         },
 
@@ -168,11 +213,14 @@ const innerworld_explorer_l20_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L20] Loaded: "Who Am I Beyond My Thoughts?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions — INNER WORLD COMPLETE 20/20`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l20-the-witness.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l20-sky-and-clouds.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l20-i-am-presence.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L20] the-witness: ${r1.ok}, sky-and-clouds: ${r2.ok}, i-am-presence: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l20-s1-the-watcher.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l20-s2-observer-within.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l20-s3-having-not-being.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l20-s4-sky-and-weather.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l20-s5-vast-and-free.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l20-s6-resting-in-awareness.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L20] the-watcher: ${r1.ok}, observer-within: ${r2.ok}, having-not-being: ${r3.ok}, sky-and-weather: ${r4.ok}, vast-and-free: ${r5.ok}, resting-in-awareness: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L20] Could not verify image assets — network check failed');
   });
