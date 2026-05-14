@@ -23,73 +23,101 @@ const moneybusiness_explorer_l05_screens = {
           guideText: `Everything around you came from a business. Your shoes, your phone, your lunch, your bed. But what exactly IS a business? And could YOU start one someday? Spoiler: yes, absolutely.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Makes Something a Business?`,
+          totalSections: 6,
+          headline:      `What Is a Business?`,
           paragraphs: [
-            `A business is any organisation that offers something valuable to people — a product or a service — in exchange for money. A lemonade stand is a business. So is a hospital, a restaurant, a smartphone app, and a company worth a billion dollars. What they all have in common: they solve a problem for customers and get paid for doing it.`,
-            `The word "problem" is key. Every successful business exists because it answers a question people are asking: Where can I get food quickly? How do I get from A to B? Who will fix my broken pipe? Who will teach my kids? The business that answers the question and does it better than the alternatives wins customers.`,
-            `This means that starting a business doesn't require a fancy office, a big investment, or years of experience. It requires identifying a problem that people have and figuring out a solution they'll pay for. That combination — problem, solution, payment — is the entire core of a business.`,
+            `A business is any organisation that offers something valuable — a product or a service — in exchange for money.`,
+            `A lemonade stand is a business. So is a hospital, a restaurant, and a billion-dollar company. They all solve problems for customers.`,
           ],
-          image:        '/explorer-assets/money-business/l05-magazine-what-is-a-business.png',
-          imageCaption: `A business — any organisation solving a problem for customers and getting paid for the solution`,
+          image:        '/explorer-assets/money-business/l05-s1-what-is-business.png',
+          imageCaption: `From lemonade stands to billion-dollar companies — they're all the same thing at heart`,
           vocab: [
-            { word: `business`,  definition: `An organisation that offers a product or service to customers in exchange for money — businesses range from a single person working alone to companies with millions of employees.`, audioPrompt: `Business — an organisation that offers a product or service to customers in exchange for money. Businesses range from a single person working alone to companies with millions of employees.` },
-            { word: `customer`,  definition: `A person or organisation that buys a product or service from a business — understanding who your customers are and what they need is essential to building any successful business.`,  audioPrompt: `Customer — a person or organisation that buys a product or service from a business. Understanding who your customers are and what they need is essential to building any successful business.` },
+            { word: 'business', definition: `An organisation that offers a product or service in exchange for money. Big or small, the basic idea is the same.`, audioPrompt: `Business — an organisation that offers a product or service in exchange for money. Big or small, the basic idea is the same.` },
+            { word: 'product',  definition: `Something physical you can buy and take home — a bag of cookies, a toy, a phone. Products are tangible.`, audioPrompt: `Product — something physical you can buy and take home: a bag of cookies, a toy, a phone. Products are tangible.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Three Parts of Every Business`,
+          totalSections: 6,
+          headline:      `Every Business Solves a Problem`,
           paragraphs: [
-            `Every business — from the smallest lemonade stand to the largest tech company — is built on three things. The value proposition: what problem do you solve, and why is your solution better than the alternatives? The customer: who specifically needs your solution, and where do you find them? The revenue model: how do you actually get paid for what you do?`,
-            `The value proposition is the most important of the three. It answers the question a customer is really asking: "Why should I choose you instead of someone else?" A strong value proposition is specific, clear, and easy to understand. "I make the fastest sandwiches in the neighbourhood" is a value proposition. "I provide premium artisan culinary experiences" is too vague to be useful.`,
-            `If you can clearly answer all three questions — what problem you solve, who you solve it for, and how you get paid — you have a business idea. Most people only have one or two of the three. The most successful businesses have all three figured out from the start.`,
+            `The word "problem" is the key. Every successful business answers a question people are already asking.`,
+            `Where can I get food fast? Who will fix my pipe? Who will teach my kids? The business that answers best — wins customers.`,
           ],
-          image:        '/explorer-assets/money-business/l05-magazine-three-parts.png',
-          imageCaption: `The three parts of every business — value proposition, customers, and revenue model`,
+          image:        '/explorer-assets/money-business/l05-s2-problem-solution.png',
+          imageCaption: `Every business — every single one — exists because it solves a problem someone is willing to pay to fix`,
           vocab: [
-            { word: `value proposition`, definition: `A clear statement of what problem a business solves and why its solution is better than alternatives — the core reason a customer chooses one business over another.`,             audioPrompt: `Value proposition — a clear statement of what problem a business solves and why its solution is better than alternatives. The core reason a customer chooses one business over another.` },
-            { word: `revenue model`,     definition: `How a business gets paid — through product sales, subscriptions, service fees, advertising, or any other mechanism that converts value into money for the business.`, audioPrompt: `Revenue model — how a business gets paid. Through product sales, subscriptions, service fees, advertising, or any other mechanism that converts value into money for the business.` },
+            { word: 'customer', definition: `A person who buys from a business. Every business needs customers — no customers means no business.`, audioPrompt: `Customer — a person who buys from a business. Every business needs customers. No customers means no business.` },
+            { word: 'service',  definition: `An action someone does for you in exchange for money — like a haircut, a dog walk, or a music lesson.`, audioPrompt: `Service — an action someone does for you in exchange for money: like a haircut, a dog walk, or a music lesson.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Different Types of Businesses`,
+          totalSections: 6,
+          headline:      `The Three Parts of a Business`,
           paragraphs: [
-            `Businesses come in every shape and size. The simplest type is a sole proprietorship — one person running a business entirely on their own. A freelance photographer, a neighbourhood babysitter, or a kid with a lemonade stand are all sole proprietors. It's the easiest business structure to start because it requires no paperwork or formal setup.`,
-            `A partnership is when two or more people run a business together. Partners share the work, the costs, and the profits. Many professional firms — law offices, medical practices, accounting firms — are partnerships. The advantage is shared expertise and effort. The challenge is shared decision-making.`,
-            `A corporation is a larger business structure with formal ownership (shareholders), a board of directors, and employees. Corporations can raise money from investors, issue shares, and grow to enormous scale. Apple, Nike, and Amazon are all corporations. Most businesses start as sole proprietorships or small partnerships and only become corporations if they grow significantly.`,
+            `Every business — from the smallest stand to the biggest company — is built on three things.`,
+            `A value proposition (what problem you solve), a customer (who needs it), and a revenue model (how you get paid).`,
           ],
-          image:        '/explorer-assets/money-business/l05-magazine-business-types.png',
-          imageCaption: `Types of businesses — sole proprietorship, partnership, and corporation, from smallest to largest`,
+          image:        '/explorer-assets/money-business/l05-s3-three-pillars.png',
+          imageCaption: `Three pillars: what you solve, who you solve it for, how you get paid`,
           vocab: [
-            { word: `sole proprietorship`, definition: `A business owned and operated by one person — the simplest business structure, requiring no formal setup. The owner keeps all profits but is also personally responsible for any debts.`,      audioPrompt: `Sole proprietorship — a business owned and operated by one person. The simplest business structure, requiring no formal setup. The owner keeps all profits but is also personally responsible for any debts.` },
-            { word: `corporation`,         definition: `A large business structure with formal ownership through shares, a board of directors, and employees — corporations can raise investment capital and grow to enormous scale.`, audioPrompt: `Corporation — a large business structure with formal ownership through shares, a board of directors, and employees. Corporations can raise investment capital and grow to enormous scale.` },
+            { word: 'value proposition', definition: `What problem your business solves and why your solution is better than others. The reason a customer picks YOU.`, audioPrompt: `Value proposition — what problem your business solves and why your solution is better than others. The reason a customer picks you.` },
+            { word: 'revenue model',     definition: `How a business gets paid. Selling products, charging fees, monthly subscriptions — different ways to turn value into money.`, audioPrompt: `Revenue model — how a business gets paid. Selling products, charging fees, monthly subscriptions: different ways to turn value into money.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Kid Entrepreneurs`,
+          totalSections: 6,
+          headline:      `Sole Proprietor to Corporation`,
           paragraphs: [
-            `Kids start real businesses all the time — and some of those businesses become very large. Mikaila Ulmer started a lemonade business at age 4, inspired by a family recipe using honey and afraid of bees. She turned her fear into a product. Her brand, Me & the Bees Lemonade, now sells in major grocery stores across the United States.`,
-            `Moziah Bridges started making bow ties with his grandmother at age 9 because he couldn't find ones he liked. He began selling them online, appeared on the television show Shark Tank at age 11, and eventually landed a licensing deal with the NBA. He turned a personal frustration — "I can't find what I want" — into a business.`,
-            `Both of these entrepreneurs started by noticing a problem — a gap between what existed and what they wanted — and figuring out how to fill it. Age didn't determine whether they could solve a problem for people. The same is true for you. The question isn't whether you're old enough to start a business. The question is: what problem do you see?`,
+            `The simplest business is a sole proprietorship — one person running everything alone. A babysitter or a kid with a lemonade stand.`,
+            `A partnership is two or more people sharing the work. A corporation is bigger — Apple, Nike, Amazon are corporations with shareholders and employees.`,
           ],
-          image:        '/explorer-assets/money-business/l05-magazine-kid-entrepreneurs.png',
-          imageCaption: `Kid entrepreneurs — Mikaila Ulmer and Moziah Bridges, who spotted a problem and built a business`,
+          image:        '/explorer-assets/money-business/l05-s4-business-sizes.png',
+          imageCaption: `Businesses come in every size — one person alone, partners working together, or huge corporations`,
           vocab: [
-            { word: `entrepreneur`, definition: `A person who starts and runs their own business, taking on financial risk in exchange for the opportunity to build something and keep the profits.`,                                                         audioPrompt: `Entrepreneur — a person who starts and runs their own business, taking on financial risk in exchange for the opportunity to build something and keep the profits.` },
-            { word: `innovation`,   definition: `A new idea, product, or way of doing something that creates value — entrepreneurs often succeed by innovating, finding a better solution to a problem than what currently exists.`, audioPrompt: `Innovation — a new idea, product, or way of doing something that creates value. Entrepreneurs often succeed by innovating, finding a better solution to a problem than what currently exists.` },
+            { word: 'sole proprietorship', definition: `A business owned by just one person. The simplest structure — no paperwork needed. A lemonade stand or a babysitter.`, audioPrompt: `Sole proprietorship — a business owned by just one person. The simplest structure, no paperwork needed. A lemonade stand or a babysitter.` },
+            { word: 'corporation',         definition: `A big business with shareholders, a board, and employees. Apple, Nike, and Amazon are corporations.`, audioPrompt: `Corporation — a big business with shareholders, a board, and employees. Apple, Nike, and Amazon are corporations.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Kid Entrepreneurs Are Real`,
+          paragraphs: [
+            `Mikaila Ulmer started a lemonade business at age 4. Her brand, Me & the Bees Lemonade, now sells in major grocery stores across America.`,
+            `Moziah Bridges started making bow ties at age 9. He appeared on Shark Tank at 11 and later landed a deal with the NBA.`,
+          ],
+          image:        '/explorer-assets/money-business/l05-s5-kid-entrepreneurs.png',
+          imageCaption: `Mikaila started at 4. Moziah at 9. Age isn't the limit — noticing the problem is.`,
+          vocab: [
+            { word: 'entrepreneur', definition: `A person who starts and runs their own business. Entrepreneurs take risks to build something new.`, audioPrompt: `Entrepreneur — a person who starts and runs their own business. Entrepreneurs take risks to build something new.` },
+            { word: 'innovation',   definition: `A new idea, product, or way of doing something that creates value. Entrepreneurs often succeed by innovating.`, audioPrompt: `Innovation — a new idea, product, or way of doing something that creates value. Entrepreneurs often succeed by innovating.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `What Problem Do YOU See?`,
+          paragraphs: [
+            `Both Mikaila and Moziah started by noticing a problem — a gap between what existed and what they wanted — and filling it.`,
+            `Age didn't stop them. The question isn't whether you're old enough to start a business. The question is: what problem do you see?`,
+          ],
+          image:        '/explorer-assets/money-business/l05-s6-spot-the-problem.png',
+          imageCaption: `The whole business world started with one person noticing one problem. Yours could too.`,
+          vocab: [
+            { word: 'opportunity', definition: `A chance to do something. A problem nobody has solved yet is a business opportunity waiting for you.`, audioPrompt: `Opportunity — a chance to do something. A problem nobody has solved yet is a business opportunity waiting for you.` },
+            { word: 'idea',        definition: `A thought or plan in your mind. Every business in history started with a single idea — and someone willing to act on it.`, audioPrompt: `Idea — a thought or plan in your mind. Every business in history started with a single idea, and someone willing to act on it.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l05_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L05] Loaded: "What Is a Business?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l05-magazine-what-is-a-business.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l05-magazine-three-parts.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l05-magazine-business-types.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l05-magazine-kid-entrepreneurs.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L05] what-is-a-business: ${r1.ok}, three-parts: ${r2.ok}, business-types: ${r3.ok}, kid-entrepreneurs: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l05-s1-what-is-business.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l05-s2-problem-solution.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l05-s3-three-pillars.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l05-s4-business-sizes.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l05-s5-kid-entrepreneurs.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l05-s6-spot-the-problem.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L05] what-is-business: ${r1.ok}, problem-solution: ${r2.ok}, three-pillars: ${r3.ok}, business-sizes: ${r4.ok}, kid-entrepreneurs: ${r5.ok}, spot-the-problem: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L05] Could not verify image assets — network check failed');
   });
