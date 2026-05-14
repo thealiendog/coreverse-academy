@@ -23,73 +23,101 @@ const cosmos_explorer_l02_screens = {
           guideText: `Drop a pencil. It falls down. Every. Single. Time. But why? Why does everything fall DOWN and not sideways or up? The answer is one of the most powerful and mysterious forces in the universe: gravity. Today we're going to understand it — from falling apples all the way to galaxies.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is Gravity?`,
           paragraphs: [
-            `Gravity is a force of attraction between all objects with mass. The more mass something has, the stronger its gravity. And here's the remarkable part: gravity holds the entire universe together.`,
-            `Gravity is a pulling force between any two objects that have mass. Everything with mass has gravity — you, your pencil, your house, the Earth, the Sun. The bigger the mass, the stronger the pull.`,
-            `Earth's gravity is what pulls you and everything around you toward the ground. Without it, you'd float off into space — and so would the oceans, the atmosphere, and everything else. Gravity is why Earth is a world at all.`,
+            `Gravity is a pulling force between any two objects that have mass. Everything with mass has gravity — you, your pencil, your house, Earth, the Sun.`,
+            `Earth's gravity is what pulls you toward the ground. Without it, you'd float off into space.`,
           ],
-          image:        '/explorer-assets/cosmos/l02-magazine-what-is-gravity.png',
-          imageCaption: `Gravity — the pulling force between all objects with mass, from pencils to planets`,
+          image:        '/explorer-assets/cosmos/l02-s1-what-is-gravity.png',
+          imageCaption: `Gravity — the invisible pull between every object with mass`,
           vocab: [
-            { word: 'gravity', definition: `A pulling force that exists between any two objects with mass — the more mass, the stronger the pull. Gravity keeps you on the ground and planets in their orbits.`, audioPrompt: `Gravity — a pulling force that exists between any two objects with mass. The more mass, the stronger the pull. Gravity keeps you on the ground and planets in their orbits.` },
-            { word: 'mass',    definition: `The amount of matter an object contains — the more mass something has, the stronger its gravitational pull on everything around it.`,                              audioPrompt: `Mass — the amount of matter an object contains. The more mass something has, the stronger its gravitational pull on everything around it.` },
+            { word: 'gravity', definition: `A pulling force between any two objects with mass — keeps you on the ground and planets in their orbits.`, audioPrompt: `Gravity — a pulling force between any two objects with mass. Keeps you on the ground and planets in their orbits.` },
+            { word: 'force',   definition: `A push or pull that can move things. Gravity is one of the most important forces in the universe.`, audioPrompt: `Force — a push or pull that can move things. Gravity is one of the most important forces in the universe.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Isaac Newton and the Apple`,
+          totalSections: 6,
+          headline:      `Mass Matters`,
           paragraphs: [
-            `The story goes that scientist Isaac Newton was sitting under an apple tree in 1666 when an apple fell and hit his head. It made him wonder: why does everything fall toward Earth? Why not sideways, or up?`,
-            `Newton realised something extraordinary: the same force pulling the apple down also keeps the Moon orbiting Earth and Earth orbiting the Sun. It wasn't two different forces — it was one. He called it gravity and wrote mathematical laws to describe exactly how it works.`,
-            `Newton's laws of gravity were so precise that we still use them today — to calculate rocket trajectories, to predict planetary positions, and to understand how the universe is built.`,
+            `The bigger an object's mass, the stronger its gravity. A pencil has tiny gravity. The Earth has huge gravity. The Sun has enormous gravity.`,
+            `That's why you fall toward Earth, not the other way around — Earth's mass is way bigger than yours, so its pull wins.`,
           ],
-          image:        '/explorer-assets/cosmos/l02-magazine-newton.png',
-          imageCaption: `Newton's apple — the moment one scientist connected a falling fruit to the orbit of the Moon`,
+          image:        '/explorer-assets/cosmos/l02-s2-mass-matters.png',
+          imageCaption: `More mass = stronger gravity. The Sun pulls the hardest of all.`,
           vocab: [
-            { word: 'law of gravity', definition: `Isaac Newton's mathematical description of how gravity works — showing that the same force pulling objects to Earth also keeps moons, planets, and stars in their orbits.`, audioPrompt: `Law of gravity — Isaac Newton's mathematical description of how gravity works, showing that the same force pulling objects to Earth also keeps moons, planets, and stars in their orbits.` },
-            { word: 'Isaac Newton',   definition: `A seventeenth-century scientist who discovered the mathematical laws of gravity and realised gravity is a universal force acting on everything with mass.`,              audioPrompt: `Isaac Newton — a seventeenth-century scientist who discovered the mathematical laws of gravity and realised gravity is a universal force acting on everything with mass.` },
+            { word: 'mass',    definition: `How much stuff is inside an object. Bigger mass means stronger gravity.`, audioPrompt: `Mass — how much stuff is inside an object. Bigger mass means stronger gravity.` },
+            { word: 'attract', definition: `To pull toward. Gravity attracts every object toward every other object with mass.`, audioPrompt: `Attract — to pull toward. Gravity attracts every object toward every other object with mass.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Gravity in Space`,
+          totalSections: 6,
+          headline:      `Newton's Apple`,
           paragraphs: [
-            `Gravity is why planets orbit stars and moons orbit planets. Earth's gravity keeps the Moon from flying off into space. The Sun's gravity keeps all eight planets locked in their orbits. Gravity is the invisible architecture of our solar system.`,
-            `Even galaxies — collections of billions of stars — are held together by gravity. The Milky Way, our galaxy, contains around 200 billion stars, all bound together by their mutual gravitational pull.`,
-            `Without gravity, the entire universe would just be a scattered cloud of gas and particles — no stars, no planets, no you. Every world that has ever existed owes its existence to gravity.`,
+            `In 1666, scientist Isaac Newton was sitting under an apple tree when an apple fell on his head. It made him wonder: why does everything fall toward Earth?`,
+            `He asked a question nobody had asked before — and his curiosity led to one of the biggest discoveries in science.`,
           ],
-          image:        '/explorer-assets/cosmos/l02-magazine-gravity-space.png',
-          imageCaption: `Gravity at cosmic scale — holding moons, planets, stars, and entire galaxies together`,
+          image:        '/explorer-assets/cosmos/l02-s3-newton-apple.png',
+          imageCaption: `One falling apple — and a question that changed science forever`,
           vocab: [
-            { word: 'orbit',  definition: `The curved path an object follows around another due to gravity — the Moon orbits Earth, Earth orbits the Sun, all held in place by gravitational pull.`, audioPrompt: `Orbit — the curved path an object follows around another due to gravity. The Moon orbits Earth, Earth orbits the Sun, all held in place by gravitational pull.` },
-            { word: 'galaxy', definition: `A vast collection of billions of stars, gas, and dust held together by gravity — our galaxy is called the Milky Way and contains around 200 billion stars.`,  audioPrompt: `Galaxy — a vast collection of billions of stars, gas, and dust held together by gravity. Our galaxy is called the Milky Way and contains around 200 billion stars.` },
+            { word: 'Isaac Newton', definition: `A scientist who discovered the laws of gravity in 1666 after watching an apple fall from a tree.`, audioPrompt: `Isaac Newton — a scientist who discovered the laws of gravity in 1666 after watching an apple fall from a tree.` },
+            { word: 'curiosity',    definition: `Wanting to know why things happen. Newton's curiosity about a falling apple led to one of the biggest discoveries in science.`, audioPrompt: `Curiosity — wanting to know why things happen. Newton's curiosity about a falling apple led to one of the biggest discoveries in science.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Zero Gravity — Sort Of`,
+          totalSections: 6,
+          headline:      `One Force, Everywhere`,
           paragraphs: [
-            `Astronauts on the International Space Station appear to float — and many people think it's because there's no gravity in space. But that's not quite right. Earth's gravity still reaches the station!`,
-            `Astronauts float because they and the station are both falling toward Earth at exactly the same speed. They never hit the ground because they're also moving sideways fast enough to keep missing it. This is called free fall — and it's basically what an orbit is: controlled falling around a planet.`,
-            `So the next time you see an astronaut floating gracefully through a space station, remember: they're actually falling — they're just very good at it.`,
+            `Newton realised something extraordinary: the same force pulling the apple down also keeps the Moon orbiting Earth.`,
+            `It wasn't two different forces — it was ONE. Gravity works on apples, moons, planets, and stars. One invisible force, everywhere.`,
           ],
-          image:        '/explorer-assets/cosmos/l02-magazine-free-fall.png',
-          imageCaption: `Astronauts aren't weightless — they're in constant free fall, orbiting at tremendous speed`,
+          image:        '/explorer-assets/cosmos/l02-s4-one-force.png',
+          imageCaption: `The same force pulls the apple AND keeps the Moon in orbit — gravity is universal`,
           vocab: [
-            { word: 'free fall',                    definition: `The state of falling freely under gravity with nothing to stop you — astronauts on the ISS are in free fall, falling around Earth so fast they keep missing the ground.`, audioPrompt: `Free fall — the state of falling freely under gravity with nothing to stop you. Astronauts on the ISS are in free fall, falling around Earth so fast they keep missing the ground.` },
-            { word: 'International Space Station',  definition: `A large spacecraft orbiting Earth where astronauts live and work — it orbits at about 28,000 kilometres per hour, fast enough to stay in continuous free fall.`,          audioPrompt: `International Space Station — a large spacecraft orbiting Earth where astronauts live and work. It orbits at about 28,000 kilometres per hour, fast enough to stay in continuous free fall.` },
+            { word: 'universal', definition: `Working everywhere, at every scale. Gravity is universal — it works on apples, moons, and entire galaxies.`, audioPrompt: `Universal — working everywhere, at every scale. Gravity is universal. It works on apples, moons, and entire galaxies.` },
+            { word: 'discovery', definition: `Finding out something nobody knew before. Newton's discovery of gravity changed science forever.`, audioPrompt: `Discovery — finding out something nobody knew before. Newton's discovery of gravity changed science forever.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Gravity in Space`,
+          paragraphs: [
+            `Gravity is why planets orbit stars and moons orbit planets. The Sun's gravity locks all 8 planets in their orbits.`,
+            `Even galaxies — collections of billions of stars — are held together by gravity. Our galaxy, the Milky Way, has 200 billion stars.`,
+          ],
+          image:        '/explorer-assets/cosmos/l02-s5-cosmic-scale.png',
+          imageCaption: `Gravity holds it all together — from moons to entire galaxies of stars`,
+          vocab: [
+            { word: 'orbit',  definition: `The curved path one object follows around another, held in place by gravity. The Moon orbits Earth, Earth orbits the Sun.`, audioPrompt: `Orbit — the curved path one object follows around another, held in place by gravity. The Moon orbits Earth, Earth orbits the Sun.` },
+            { word: 'galaxy', definition: `A vast collection of billions of stars held together by gravity. Our galaxy is called the Milky Way.`, audioPrompt: `Galaxy — a vast collection of billions of stars held together by gravity. Our galaxy is called the Milky Way.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Astronauts Are Falling`,
+          paragraphs: [
+            `Astronauts on the Space Station appear to float — but it's not because there's no gravity. Earth's gravity still reaches them.`,
+            `They float because they're falling toward Earth at the same speed as the station — and moving sideways fast enough to keep missing the ground.`,
+          ],
+          image:        '/explorer-assets/cosmos/l02-s6-free-fall.png',
+          imageCaption: `Astronauts aren't weightless — they're falling around Earth, just very fast`,
+          vocab: [
+            { word: 'free fall',     definition: `Falling freely under gravity with nothing to stop you. Astronauts on the Space Station are in free fall, falling around Earth.`, audioPrompt: `Free fall — falling freely under gravity with nothing to stop you. Astronauts on the Space Station are in free fall, falling around Earth.` },
+            { word: 'Space Station', definition: `A large spacecraft orbiting Earth where astronauts live and work. It moves so fast it stays in continuous free fall.`, audioPrompt: `Space Station — a large spacecraft orbiting Earth where astronauts live and work. It moves so fast it stays in continuous free fall.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l02_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L02] Loaded: "Gravity: Why Things Fall Down" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l02-magazine-what-is-gravity.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l02-magazine-newton.png',          { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l02-magazine-gravity-space.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l02-magazine-free-fall.png',       { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L02] what-is-gravity: ${r1.ok}, newton: ${r2.ok}, gravity-space: ${r3.ok}, free-fall: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l02-s1-what-is-gravity.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l02-s2-mass-matters.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l02-s3-newton-apple.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l02-s4-one-force.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l02-s5-cosmic-scale.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l02-s6-free-fall.png',       { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L02] what-is-gravity: ${r1.ok}, mass-matters: ${r2.ok}, newton-apple: ${r3.ok}, one-force: ${r4.ok}, cosmic-scale: ${r5.ok}, free-fall: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L02] Could not verify image assets — network check failed');
   });
