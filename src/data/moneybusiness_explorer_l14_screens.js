@@ -23,73 +23,101 @@ const moneybusiness_explorer_l14_screens = {
           guideText: `Every business in the world — from a lemonade stand to the largest company you can name — is playing the same game. Make more money than you spend. When you do, you have a profit. When you don't, you have a loss.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Profit: The Goal`,
+          totalSections: 6,
+          headline:      'Profit Is the Goal',
           paragraphs: [
-            `Profit is what remains after you subtract all your costs from your revenue. The formula is: Profit = Revenue − Costs. If you sell $500 worth of cookies and it cost $200 to make and sell them, your profit is $300. That $300 is yours — to keep, reinvest, or save. Everything else was just covering your costs.`,
-            `Profit is the lifeblood of business — without it, a business cannot survive long-term. It's what allows a company to pay its owners, invest in growth, hire new people, and weather difficult periods. A business that generates no profit must eventually close or find a way to change its model. Profit isn't greed — it's what keeps the lights on.`,
-            `The key distinction to remember is that revenue and profit are not the same thing. Revenue is every dollar that came in. Profit is what's left after every dollar that went out. A business can have enormous revenue — millions of dollars — and still be unprofitable if its costs are higher. The number that matters is not how much comes in, but how much stays.`,
+            'Profit is what remains after you subtract all your costs from your revenue. Profit = Revenue − Costs.',
+            'Sell $500 of cookies, spend $200 making them — $300 is profit. That $300 is yours to keep, save, or reinvest.',
           ],
-          image:        '/explorer-assets/money-business/l14-magazine-profit.png',
-          imageCaption: `Profit — revenue minus costs, the single number that tells you whether a business is actually working`,
+          image:        '/explorer-assets/money-business/l14-s1-profit-equation.png',
+          imageCaption: 'Every business in the world is playing the same game: make more than you spend',
           vocab: [
-            { word: `profit`,  definition: `What remains after subtracting all costs from revenue — the real reward of running a business. Profit = Revenue − Costs. It can be kept, reinvested, or shared.`,                       audioPrompt: `Profit — what remains after subtracting all costs from revenue. The real reward of running a business. Profit equals revenue minus costs. It can be kept, reinvested, or shared.` },
-            { word: `revenue`, definition: `The total money a business collects from selling products or services — before any costs are subtracted. Revenue is not profit; it's the starting line, not the finish.`, audioPrompt: `Revenue — the total money a business collects from selling products or services, before any costs are subtracted. Revenue is not profit; it's the starting line, not the finish.` },
+            { word: 'profit',   definition: 'Revenue minus costs. The money you actually keep after paying for everything.', audioPrompt: 'Profit — revenue minus costs. The money you actually keep after paying for everything.' },
+            { word: 'reinvest', definition: 'Putting profit back into the business to help it grow. Smart owners reinvest before spending profit elsewhere.', audioPrompt: 'Reinvest — putting profit back into the business to help it grow. Smart owners reinvest before spending profit elsewhere.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Loss: Not Always Bad`,
+          totalSections: 6,
+          headline:      'When Loss Isn\'t Failure',
           paragraphs: [
-            `A loss means you spent more than you made. Revenue minus costs equals a negative number. For a new business, this is extremely common. Starting a business requires spending money before you earn any: equipment, materials, marketing, a website. These upfront costs almost always exceed early revenue.`,
-            `Some of the most successful companies in the world ran at a loss for years before becoming profitable. They were investing — spending money to build infrastructure, attract customers, and develop technology — with confidence that future revenue would eventually far exceed those costs. A loss isn't always failure. Sometimes it's a calculated investment in future profit.`,
-            `But there's a critical difference between a planned loss — spending strategically with a clear path to profitability — and persistent losses with no plan. Burning money without a route to profit is a serious warning sign. Investors and business owners must ask: are we losing money because we're growing, or because the business model doesn't work? That question determines everything.`,
+            'A loss means you spent more than you made. For new businesses, this is extremely common.',
+            'Some of the most successful companies ran at a loss for YEARS before becoming profitable. They were investing in growth — and the bet paid off.',
           ],
-          image:        '/explorer-assets/money-business/l14-magazine-loss.png',
-          imageCaption: `Loss — not always failure; new businesses often run at a planned loss before building toward profitability`,
+          image:        '/explorer-assets/money-business/l14-s2-loss-investment.png',
+          imageCaption: 'Early losses can be planned. Amazon lost money for years. So did Tesla. Both paid off.',
           vocab: [
-            { word: `loss`,        definition: `When a business spends more than it earns — revenue minus costs is a negative number. An early-stage loss can be a strategic investment; persistent losses with no plan are a warning sign.`, audioPrompt: `Loss — when a business spends more than it earns. Revenue minus costs is a negative number. An early-stage loss can be a strategic investment; persistent losses with no plan are a warning sign.` },
-            { word: `investment`,  definition: `Spending money now with the expectation of earning more money in the future — businesses invest in growth, technology, and people, accepting short-term losses for long-term gain.`,           audioPrompt: `Investment — spending money now with the expectation of earning more money in the future. Businesses invest in growth, technology, and people, accepting short-term losses for long-term gain.` },
+            { word: 'loss',       definition: 'When costs are higher than revenue. You spent more than you brought in.', audioPrompt: 'Loss — when costs are higher than revenue. You spent more than you brought in.' },
+            { word: 'investment', definition: 'Spending money now to earn more money later. Businesses invest in growth, knowing the payoff comes later.', audioPrompt: 'Investment — spending money now to earn more money later. Businesses invest in growth, knowing the payoff comes later.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Break-Even Point`,
+          totalSections: 6,
+          headline:      'When Loss IS a Warning',
           paragraphs: [
-            `The break-even point is when you've sold exactly enough to cover all your costs — profit is zero, but so is your loss. You haven't made money yet, but you haven't lost any either. For a new business, reaching break-even is a critical milestone — it means the business is at least paying for itself.`,
-            `Once you break even, every additional sale starts generating real profit. Before break-even, each sale reduces your loss but doesn't yet produce a return. After break-even, each sale adds directly to your profit. Knowing your break-even number before you start is essential — it tells you exactly how much you need to sell before the business starts working for you.`,
-            `Calculating break-even is straightforward: divide your total fixed costs by the profit you make on each unit sold. If your stand costs $50 to set up and you make $2 profit per cup of lemonade, your break-even is 25 cups. Cup 26 is your first cup of real profit. Every business owner should know this number before they open.`,
+            'But there\'s a critical difference between a planned loss and a persistent loss with no plan.',
+            'Burning money with no clear path to profit is a serious warning sign. The question is always: are we losing because we\'re growing, or because the model doesn\'t work?',
           ],
-          image:        '/explorer-assets/money-business/l14-magazine-breakeven.png',
-          imageCaption: `Break-even — the milestone where revenue exactly covers all costs, and every sale after it becomes real profit`,
+          image:        '/explorer-assets/money-business/l14-s3-burning-money.png',
+          imageCaption: 'Losing money WITH a plan is investing. Losing money WITHOUT one is burning it.',
           vocab: [
-            { word: `break-even`, definition: `The point where total revenue exactly equals total costs — no profit, no loss. Reaching break-even means all costs are covered; every sale beyond that generates actual profit.`, audioPrompt: `Break-even — the point where total revenue exactly equals total costs. No profit, no loss. Reaching break-even means all costs are covered; every sale beyond that generates actual profit.` },
-            { word: `fixed costs`, definition: `Costs that stay the same regardless of how much you produce or sell — rent, equipment, and a sign are fixed costs. They must be covered before any profit is possible.`,           audioPrompt: `Fixed costs — costs that stay the same regardless of how much you produce or sell. Rent, equipment, and a sign are fixed costs. They must be covered before any profit is possible.` },
+            { word: 'sustainable',    definition: 'Able to keep going without running out of resources. A sustainable business can survive long-term; an unsustainable one runs out of money.', audioPrompt: 'Sustainable — able to keep going without running out of resources. A sustainable business can survive long-term; an unsustainable one runs out of money.' },
+            { word: 'business model', definition: 'How a business plans to make money. If the model itself is broken, no amount of effort or money will fix it.', audioPrompt: 'Business model — how a business plans to make money. If the model itself is broken, no amount of effort or money will fix it.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Profit Margin`,
+          totalSections: 6,
+          headline:      'Break-Even: The Turning Point',
           paragraphs: [
-            `Profit margin is your profit expressed as a percentage of revenue. The formula: (Profit ÷ Revenue) × 100. If you made $100 in revenue from things that cost $70 to produce, your profit is $30 and your margin is 30%. Profit margin tells you how efficiently a business converts revenue into actual profit.`,
-            `Different industries have dramatically different margins. A supermarket might have a profit margin of 2–3% — tiny — but they sell millions of items and the volumes make the math work. A software company, by contrast, might have a margin of 70% or more, because a digital product costs almost nothing to deliver to the next customer once it's been built.`,
-            `High margin and high volume are both paths to a profitable business — but they require very different strategies. A high-margin business needs to protect its premium pricing and deliver exceptional value. A high-volume business needs to keep costs incredibly tight and processes extremely efficient. Understanding which model you're building is one of the first decisions any business owner has to make.`,
+            'Break-even is when you\'ve sold just enough to cover all your costs. No profit yet — but no loss either.',
+            'After break-even, every sale becomes pure profit. Knowing your break-even number before you start is essential.',
           ],
-          image:        '/explorer-assets/money-business/l14-magazine-margin.png',
-          imageCaption: `Profit margin — profit as a percentage of revenue, revealing how efficiently a business converts sales into actual gain`,
+          image:        '/explorer-assets/money-business/l14-s4-break-even-line.png',
+          imageCaption: 'Below the line: you\'re losing. Above it: you\'re profiting. Know exactly where the line sits.',
           vocab: [
-            { word: `profit margin`, definition: `Profit expressed as a percentage of revenue — a business with $100 revenue and $30 profit has a 30% profit margin. Higher margins mean more profit from each dollar of sales.`, audioPrompt: `Profit margin — profit expressed as a percentage of revenue. A business with $100 revenue and $30 profit has a 30% profit margin. Higher margins mean more profit from each dollar of sales.` },
-            { word: `volume`,        definition: `The total number of units sold — a high-volume business sells enormous quantities at thin margins. Low volume businesses typically need higher margins to remain profitable.`,      audioPrompt: `Volume — the total number of units sold. A high-volume business sells enormous quantities at thin margins. Low-volume businesses typically need higher margins to remain profitable.` },
+            { word: 'break-even',  definition: 'The point where revenue exactly covers costs — no profit, no loss. Everything beyond it is real profit.', audioPrompt: 'Break-even — the point where revenue exactly covers costs. No profit, no loss. Everything beyond it is real profit.' },
+            { word: 'fixed costs', definition: 'Costs that stay the same regardless of how much you sell — rent, equipment, a sign. They must be covered before any profit appears.', audioPrompt: 'Fixed costs — costs that stay the same regardless of how much you sell: rent, equipment, a sign. They must be covered before any profit appears.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Profit Margin',
+          paragraphs: [
+            'Profit margin is your profit as a percentage of revenue. (Profit ÷ Revenue) × 100.',
+            'Make $100 in revenue with $70 in costs — $30 profit, 30% margin. Margin tells you how efficiently a business turns sales into actual profit.',
+          ],
+          image:        '/explorer-assets/money-business/l14-s5-profit-margin.png',
+          imageCaption: 'Margin shows what fraction of every dollar of revenue you actually keep',
+          vocab: [
+            { word: 'profit margin', definition: 'Profit expressed as a percentage of revenue. Shows how efficient a business is — not just how much it makes.', audioPrompt: 'Profit margin — profit expressed as a percentage of revenue. Shows how efficient a business is, not just how much it makes.' },
+            { word: 'percentage',    definition: 'A portion out of 100. Margins are stated as percentages so businesses of any size can be compared.', audioPrompt: 'Percentage — a portion out of 100. Margins are stated as percentages so businesses of any size can be compared.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'High Margin vs High Volume',
+          paragraphs: [
+            'A supermarket might have a 2-3% margin — tiny — but they sell millions of items. Volume makes the math work.',
+            'A software company might have a 70% margin because digital products cost almost nothing to deliver. Both paths can work. They just require different strategies.',
+          ],
+          image:        '/explorer-assets/money-business/l14-s6-margin-vs-volume.png',
+          imageCaption: 'Tiny margin × huge volume = profit. Huge margin × small volume = profit. Pick your model.',
+          vocab: [
+            { word: 'volume',  definition: 'The total number of units sold. High-volume businesses make money on tiny per-unit profit by selling enormous quantities.', audioPrompt: 'Volume — the total number of units sold. High-volume businesses make money on tiny per-unit profit by selling enormous quantities.' },
+            { word: 'premium', definition: 'High quality at a higher price. Premium products usually have higher profit margins per sale than mass-market ones.', audioPrompt: 'Premium — high quality at a higher price. Premium products usually have higher profit margins per sale than mass-market ones.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l14_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L14] Loaded: "Profit and Loss" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l14-magazine-profit.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l14-magazine-loss.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l14-magazine-breakeven.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l14-magazine-margin.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L14] profit: ${r1.ok}, loss: ${r2.ok}, breakeven: ${r3.ok}, margin: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l14-s1-profit-equation.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l14-s2-loss-investment.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l14-s3-burning-money.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l14-s4-break-even-line.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l14-s5-profit-margin.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l14-s6-margin-vs-volume.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L14] profit-equation: ${r1.ok}, loss-investment: ${r2.ok}, burning-money: ${r3.ok}, break-even-line: ${r4.ok}, profit-margin: ${r5.ok}, margin-vs-volume: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L14] Could not verify image assets — network check failed');
   });
