@@ -23,73 +23,101 @@ const cosmos_explorer_l06_screens = {
           guideText: `The ground beneath your feet is a library of Earth's history going back billions of years. Rocks record ancient oceans, volcanic eruptions, and creatures that lived long before humans existed. And if you know how to read them, they tell an incredible story.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `The Three Types of Rock`,
+          totalSections: 6,
+          headline:      `Earth's Library`,
           paragraphs: [
-            `All rocks on Earth belong to one of three families. Igneous rocks form when molten rock — magma underground or lava on the surface — cools and solidifies. Granite and obsidian are igneous rocks.`,
-            `Sedimentary rocks form when layers of sand, shells, and mud slowly pile up and get compressed over millions of years. Sandstone and limestone are sedimentary rocks — and they're the ones most likely to contain fossils.`,
-            `Metamorphic rocks form when existing rocks get transformed by intense heat and pressure deep underground. Marble was once limestone. Slate was once a softer rock called shale. Heat and pressure turned them into something completely new.`,
+            `The ground beneath your feet is a library of Earth's history going back billions of years.`,
+            `Rocks record ancient oceans, volcanic eruptions, and creatures that lived long before humans existed. If you know how to read them, they tell an incredible story.`,
           ],
-          image:        '/explorer-assets/cosmos/l06-magazine-rock-types.png',
-          imageCaption: `The three rock families — igneous, sedimentary, and metamorphic, each formed in a different way`,
+          image:        '/explorer-assets/cosmos/l06-s1-earth-library.png',
+          imageCaption: `The ground beneath your feet is a library of Earth's history`,
           vocab: [
-            { word: 'igneous rock',      definition: `Rock formed when molten rock (magma or lava) cools and solidifies — examples include granite and obsidian, which form from cooling volcanic material.`,                             audioPrompt: `Igneous rock — rock formed when molten rock, magma or lava, cools and solidifies. Examples include granite and obsidian.` },
-            { word: 'sedimentary rock',  definition: `Rock formed when layers of sand, shells, and mud get compressed over millions of years — examples include sandstone and limestone, which often contain fossils.`, audioPrompt: `Sedimentary rock — rock formed when layers of sand, shells, and mud get compressed over millions of years. Examples include sandstone and limestone.` },
+            { word: 'geology', definition: `The science of rocks and how Earth is built — geologists read rocks like a story of the planet's past.`, audioPrompt: `Geology — the science of rocks and how Earth is built. Geologists read rocks like a story of the planet's past.` },
+            { word: 'ancient', definition: `Very, very old — going back millions or billions of years. Rocks tell us about ancient times no human ever saw.`, audioPrompt: `Ancient — very, very old, going back millions or billions of years. Rocks tell us about ancient times no human ever saw.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Minerals: The Ingredients of Rock`,
+          totalSections: 6,
+          headline:      `The Three Rock Families`,
           paragraphs: [
-            `Rocks are made of minerals — naturally occurring solid substances with specific crystal structures and chemical compositions. There are over 4,000 known minerals. Every rock is a mixture of one or more of them.`,
-            `Some common minerals: quartz is found in most sand. Feldspar is the most common mineral in Earth's crust. Calcite is found in limestone. Mica is the shiny flakes you sometimes see glittering inside a rock.`,
-            `Gemstones like diamonds, rubies, and emeralds are also minerals — just rare and extraordinarily beautiful ones. A diamond is pure carbon squeezed into a crystal under enormous pressure deep inside the Earth. The rarest minerals become the most precious things on the planet.`,
+            `All rocks belong to one of three families. Igneous rocks form when molten lava or magma cools and hardens. Granite is igneous.`,
+            `Sedimentary rocks form when layers of sand and mud compress over millions of years. Metamorphic rocks form when other rocks are transformed by heat and pressure.`,
           ],
-          image:        '/explorer-assets/cosmos/l06-magazine-minerals.png',
-          imageCaption: `Minerals — the building blocks of all rocks, from common quartz to rare diamonds`,
+          image:        '/explorer-assets/cosmos/l06-s2-three-families.png',
+          imageCaption: `The three rock families — igneous, sedimentary, and metamorphic`,
           vocab: [
-            { word: 'mineral',   definition: `A naturally occurring solid substance with a specific crystal structure and chemical composition — rocks are made of minerals, and there are over 4,000 known types.`, audioPrompt: `Mineral — a naturally occurring solid substance with a specific crystal structure and chemical composition. Rocks are made of minerals, and there are over 4,000 known types.` },
-            { word: 'gemstone',  definition: `A rare and beautiful mineral — diamonds, rubies, and emeralds are all gemstones, formed under extreme conditions deep inside the Earth.`,                               audioPrompt: `Gemstone — a rare and beautiful mineral. Diamonds, rubies, and emeralds are all gemstones, formed under extreme conditions deep inside the Earth.` },
+            { word: 'igneous rock',     definition: `Rock formed when molten lava or magma cools and hardens. Granite and obsidian are igneous rocks.`, audioPrompt: `Igneous rock — rock formed when molten lava or magma cools and hardens. Granite and obsidian are igneous rocks.` },
+            { word: 'sedimentary rock', definition: `Rock formed when layers of sand and mud are compressed over millions of years. Sandstone and limestone are sedimentary rocks.`, audioPrompt: `Sedimentary rock — rock formed when layers of sand and mud are compressed over millions of years. Sandstone and limestone are sedimentary rocks.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `The Rock Cycle`,
           paragraphs: [
-            `Rocks are not permanent — they slowly change from one type to another in what scientists call the rock cycle. It's a continuous loop that takes millions of years, driven by heat from Earth's interior and energy from the Sun.`,
-            `Here's how it goes: lava cools to become igneous rock. Igneous rock gets broken down by wind and water into sediment. Sediment compresses into sedimentary rock. Sedimentary rock gets buried, heated, and transformed into metamorphic rock. Metamorphic rock gets pulled deep enough to melt back into magma. The cycle begins again.`,
-            `Nothing is wasted. The rock you pick up off the ground today may once have been part of a mountain, an ancient seafloor, or the interior of a volcano — and millions of years from now it will be something else entirely.`,
+            `Rocks are not permanent — they slowly change from one type to another in what scientists call the rock cycle.`,
+            `Lava cools to igneous. Igneous breaks down to sediment. Sediment compresses to sedimentary. Sedimentary buried and heated becomes metamorphic. Then it melts back into magma.`,
           ],
-          image:        '/explorer-assets/cosmos/l06-magazine-rock-cycle.png',
-          imageCaption: `The rock cycle — a continuous loop transforming rocks over millions of years`,
+          image:        '/explorer-assets/cosmos/l06-s3-rock-cycle.png',
+          imageCaption: `The rock cycle never stops — every rock you see is on its way to becoming something else`,
           vocab: [
-            { word: 'rock cycle', definition: `The continuous process by which rocks slowly change from one type to another over millions of years — driven by heat from Earth's interior and energy from the Sun.`, audioPrompt: `Rock cycle — the continuous process by which rocks slowly change from one type to another over millions of years, driven by heat from Earth's interior and energy from the Sun.` },
-            { word: 'weathering', definition: `The gradual breaking down of rocks by wind, water, and temperature changes — weathered rock becomes sediment that can eventually compress into sedimentary rock.`,     audioPrompt: `Weathering — the gradual breaking down of rocks by wind, water, and temperature changes. Weathered rock becomes sediment that can eventually compress into sedimentary rock.` },
+            { word: 'metamorphic rock', definition: `Rock formed when existing rocks are transformed by heat and pressure deep underground. Marble was once limestone.`, audioPrompt: `Metamorphic rock — rock formed when existing rocks are transformed by heat and pressure deep underground. Marble was once limestone.` },
+            { word: 'rock cycle',       definition: `The continuous process by which rocks slowly change from one type to another over millions of years.`, audioPrompt: `Rock cycle — the continuous process by which rocks slowly change from one type to another over millions of years.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Fossils: Ancient Life Preserved`,
+          totalSections: 6,
+          headline:      `Minerals: The Ingredients`,
           paragraphs: [
-            `When an organism dies and gets quickly buried by sediment, something remarkable can happen. Over millions of years, minerals slowly seep in and replace the original material, creating a rock copy of the organism — a fossil.`,
-            `Fossils show us animals and plants that lived millions of years ago — from dinosaurs to ancient sea creatures to the very first flowers. Some fossils look exactly like the creature that made them. Others are just outlines or footprints pressed into ancient mud, now hardened to stone.`,
-            `The oldest fossils on Earth are bacteria from 3.5 billion years ago. That means life existed on this planet almost since Earth itself formed. Every fossil is a message from the deep past — a living thing that left its mark and never quite disappeared.`,
+            `Rocks are made of minerals — naturally occurring substances with specific crystal structures. There are over 4,000 known minerals.`,
+            `Quartz is in most sand. Feldspar is the most common mineral on Earth. Every rock is a mixture of one or more minerals.`,
           ],
-          image:        '/explorer-assets/cosmos/l06-magazine-fossils.png',
-          imageCaption: `Fossils — preserved remains of ancient life, locked in rock for millions of years`,
+          image:        '/explorer-assets/cosmos/l06-s4-minerals.png',
+          imageCaption: `Minerals are the ingredients — every rock is a mixture of one or more of them`,
           vocab: [
-            { word: 'fossil',   definition: `The preserved remains or impression of an ancient organism, formed when minerals replace the original material over millions of years — a record of past life locked in rock.`, audioPrompt: `Fossil — the preserved remains or impression of an ancient organism, formed when minerals replace the original material over millions of years. A record of past life locked in rock.` },
-            { word: 'sediment', definition: `Tiny particles of rock, shell, and organic material that settle in layers — when compressed over millions of years, sediment becomes sedimentary rock and can preserve fossils.`,  audioPrompt: `Sediment — tiny particles of rock, shell, and organic material that settle in layers. When compressed over millions of years, sediment becomes sedimentary rock and can preserve fossils.` },
+            { word: 'mineral', definition: `A naturally occurring solid substance with a specific crystal structure. Rocks are made of minerals — there are over 4,000 known types.`, audioPrompt: `Mineral — a naturally occurring solid substance with a specific crystal structure. Rocks are made of minerals, with over 4,000 known types.` },
+            { word: 'crystal', definition: `A solid with atoms arranged in a regular repeating pattern. All minerals have crystal structures — that's part of what makes them minerals.`, audioPrompt: `Crystal — a solid with atoms arranged in a regular repeating pattern. All minerals have crystal structures. That's part of what makes them minerals.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Diamonds and Gems`,
+          paragraphs: [
+            `Gemstones like diamonds, rubies, and emeralds are also minerals — just rare and beautiful ones.`,
+            `A diamond is pure carbon, squeezed into a crystal under enormous pressure deep inside the Earth. The rarest minerals become the most precious things on the planet.`,
+          ],
+          image:        '/explorer-assets/cosmos/l06-s5-gems.png',
+          imageCaption: `Diamonds, rubies, emeralds — rare minerals formed under extreme pressure deep in Earth`,
+          vocab: [
+            { word: 'gemstone', definition: `A rare and beautiful mineral. Diamonds, rubies, and emeralds are all gemstones, formed under extreme conditions deep in Earth.`, audioPrompt: `Gemstone — a rare and beautiful mineral. Diamonds, rubies, and emeralds are all gemstones, formed under extreme conditions deep in Earth.` },
+            { word: 'pressure', definition: `A strong force pushing on something. Diamonds form when carbon is squeezed under enormous pressure deep inside Earth.`, audioPrompt: `Pressure — a strong force pushing on something. Diamonds form when carbon is squeezed under enormous pressure deep inside Earth.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Fossils: Ancient Life`,
+          paragraphs: [
+            `When a creature dies and gets buried quickly by sediment, minerals slowly seep in over millions of years and replace its original material — making a rock copy.`,
+            `That's a fossil. The oldest fossils on Earth are bacteria from 3.5 billion years ago — life almost as old as the planet itself.`,
+          ],
+          image:        '/explorer-assets/cosmos/l06-s6-fossil.png',
+          imageCaption: `A fossil — a rock copy of a creature that lived millions of years ago`,
+          vocab: [
+            { word: 'fossil',   definition: `The preserved remains or impression of an ancient organism — formed when minerals replace original material over millions of years.`, audioPrompt: `Fossil — the preserved remains or impression of an ancient organism, formed when minerals replace original material over millions of years.` },
+            { word: 'sediment', definition: `Tiny particles of rock and shell that settle in layers. Sediment buries dead creatures and helps preserve them as fossils.`, audioPrompt: `Sediment — tiny particles of rock and shell that settle in layers. Sediment buries dead creatures and helps preserve them as fossils.` },
           ],
         },
 
@@ -101,10 +129,10 @@ const cosmos_explorer_l06_screens = {
           guideText:     `Rocks come in three types — igneous, sedimentary, and metamorphic — each formed in a completely different way. And fossils are something special found inside one of those types. Can you sort these four into the right category?`,
           columnHeaders: [`What Is It?`, `Rock Category`],
           items: [
-            { image: 'l06-game-obsidian.png',  label: `Obsidian — a shiny black glassy rock formed from rapidly cooling lava.`,                                                correctMatch: 'igneous',      objectPosition: 'center 50%', matchPhrase: `Igneous! Obsidian forms when lava cools so quickly that crystals don't have time to form — it becomes a natural volcanic glass. It's been used to make cutting tools for thousands of years because it fractures into razor-sharp edges.` },
-            { image: 'l06-game-sandstone.png', label: `Sandstone — a rock showing clear bands where layers of sand were compressed over millions of years.`,                   correctMatch: 'sedimentary',  objectPosition: 'center 50%', matchPhrase: `Sedimentary! Sandstone forms when sand grains are compressed together over millions of years. Those visible bands are layers of sediment from different time periods — like pages in Earth's history book.` },
-            { image: 'l06-game-marble.png',    label: `Marble — a rock formed when limestone was transformed by extreme heat and pressure deep underground.`,                  correctMatch: 'metamorphic',  objectPosition: 'center 50%', matchPhrase: `Metamorphic! Marble was once ordinary limestone — but heat and pressure deep underground transformed it into something completely different. The same transformation makes marble hard enough to last thousands of years in buildings and sculptures.` },
-            { image: 'l06-game-ammonite.png',  label: `An ammonite — a spiral shell from an ancient sea creature, preserved in rock for millions of years.`,                   correctMatch: 'fossil',       objectPosition: 'center 50%', matchPhrase: `Fossil! Ammonites were ancient sea creatures that lived alongside the dinosaurs. When they died and sank to the seafloor, sediment buried them, minerals slowly replaced their shells, and the result is a rock copy that has survived for hundreds of millions of years.` },
+            { image: 'l06-game-obsidian.png',  label: `Obsidian — a shiny black glassy rock formed from rapidly cooling lava.`,                                                correctMatch: 'igneous',     objectPosition: 'center 50%', matchPhrase: `Igneous! Obsidian forms when lava cools so quickly that crystals don't have time to form — it becomes a natural volcanic glass. It's been used to make cutting tools for thousands of years because it fractures into razor-sharp edges.` },
+            { image: 'l06-game-sandstone.png', label: `Sandstone — a rock showing clear bands where layers of sand were compressed over millions of years.`,                   correctMatch: 'sedimentary', objectPosition: 'center 50%', matchPhrase: `Sedimentary! Sandstone forms when sand grains are compressed together over millions of years. Those visible bands are layers of sediment from different time periods — like pages in Earth's history book.` },
+            { image: 'l06-game-marble.png',    label: `Marble — a rock formed when limestone was transformed by extreme heat and pressure deep underground.`,                  correctMatch: 'metamorphic', objectPosition: 'center 50%', matchPhrase: `Metamorphic! Marble was once ordinary limestone — but heat and pressure deep underground transformed it into something completely different. The same transformation makes marble hard enough to last thousands of years in buildings and sculptures.` },
+            { image: 'l06-game-ammonite.png',  label: `An ammonite — a spiral shell from an ancient sea creature, preserved in rock for millions of years.`,                   correctMatch: 'fossil',      objectPosition: 'center 50%', matchPhrase: `Fossil! Ammonites were ancient sea creatures that lived alongside the dinosaurs. When they died and sank to the seafloor, sediment buried them, minerals slowly replaced their shells, and the result is a rock copy that has survived for hundreds of millions of years.` },
           ],
           buckets: [
             { id: 'igneous',     label: `🔥 Igneous`,     color: '#F59E0B' },
@@ -186,12 +214,14 @@ const cosmos_explorer_l06_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L06] Loaded: "Rocks, Minerals, and Fossils" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l06-magazine-rock-types.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l06-magazine-minerals.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l06-magazine-rock-cycle.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l06-magazine-fossils.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L06] rock-types: ${r1.ok}, minerals: ${r2.ok}, rock-cycle: ${r3.ok}, fossils: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l06-s1-earth-library.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l06-s2-three-families.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l06-s3-rock-cycle.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l06-s4-minerals.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l06-s5-gems.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l06-s6-fossil.png',          { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L06] earth-library: ${r1.ok}, three-families: ${r2.ok}, rock-cycle: ${r3.ok}, minerals: ${r4.ok}, gems: ${r5.ok}, fossil: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L06] Could not verify image assets — network check failed');
   });
