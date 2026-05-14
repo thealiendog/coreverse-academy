@@ -23,73 +23,101 @@ const cosmos_explorer_l10_screens = {
           guideText: `Right now, without you doing anything consciously, your heart is pumping, your lungs are breathing, your kidneys are filtering, your immune system is fighting, and your nervous system is processing millions of signals. You are an incredibly complex and beautiful machine — and you didn't have to install any of it.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `The Circulatory System: Your Transport Network`,
+          totalSections: 6,
+          headline:      `Your Body Is a Machine`,
           paragraphs: [
-            `Your heart is a muscle about the size of your fist, and it never stops working. It pumps blood through a network of blood vessels — arteries, veins, and capillaries — that reaches every single cell in your body. Blood delivers oxygen and nutrients to cells and carries carbon dioxide and waste products away.`,
-            `Your heart beats about 100,000 times per day — roughly 3 billion times over a lifetime. If you stretched out all the blood vessels in one human body end to end, they would circle the Earth about 2.5 times. That's over 60,000 miles of tubes inside you right now.`,
-            `Arteries carry blood away from the heart. Veins carry it back. Capillaries are the smallest vessels — thinner than a human hair — where the actual exchange of oxygen and nutrients with cells happens. The entire circuit takes about one minute.`,
+            `Right now, without you thinking about it, your heart is pumping, your lungs are breathing, your brain is processing signals.`,
+            `You are an incredibly complex machine running many systems at once — and you didn't have to install any of them.`,
           ],
-          image:        '/explorer-assets/cosmos/l10-magazine-circulatory.png',
-          imageCaption: `The circulatory system — heart and blood vessels delivering oxygen to every cell in your body`,
+          image:        '/explorer-assets/cosmos/l10-s1-body-machine.png',
+          imageCaption: `Your body runs millions of processes automatically — without you thinking about any of them`,
           vocab: [
-            { word: 'circulatory system', definition: `The body system that pumps blood through a network of vessels — it delivers oxygen and nutrients to every cell and removes carbon dioxide and waste.`, audioPrompt: `Circulatory system — the body system that pumps blood through a network of vessels. It delivers oxygen and nutrients to every cell and removes carbon dioxide and waste.` },
-            { word: 'capillaries',        definition: `The smallest blood vessels in the body — thinner than a human hair — where oxygen and nutrients pass from blood into cells, and waste passes back into blood.`,  audioPrompt: `Capillaries — the smallest blood vessels in the body, thinner than a human hair, where oxygen and nutrients pass from blood into cells and waste passes back into blood.` },
+            { word: 'system',    definition: `A group of organs working together for one purpose — like the heart and blood vessels working as the circulatory system.`, audioPrompt: `System — a group of organs working together for one purpose, like the heart and blood vessels working as the circulatory system.` },
+            { word: 'automatic', definition: `Happening on its own without you thinking about it. Your body's systems run automatically — even while you sleep.`, audioPrompt: `Automatic — happening on its own without you thinking about it. Your body's systems run automatically, even while you sleep.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Respiratory System: Your Breathing Engine`,
+          totalSections: 6,
+          headline:      `Circulatory System`,
           paragraphs: [
-            `When you breathe in, a dome-shaped muscle called the diaphragm contracts and pulls downward, expanding your chest cavity and drawing air into your lungs. Inside your lungs, oxygen passes through thin walls into the bloodstream. Carbon dioxide — a waste gas your cells produce — passes from the blood into the lungs and is breathed out.`,
-            `You breathe about 20,000 times per day without thinking about it. Your lungs contain about 300 million tiny air sacs called alveoli. If you unfolded all the alveoli in both lungs and laid them flat, they'd cover an area roughly the size of a tennis court — all packed into your chest.`,
-            `Breathing is so automatic that it continues while you sleep, during exercise, and in moments of stress. Your brainstem monitors carbon dioxide levels in your blood and adjusts your breathing rate constantly to keep the balance exactly right.`,
+            `Your heart is a muscle about the size of your fist, and it never stops. It beats 100,000 times every day.`,
+            `It pumps blood through 60,000 miles of vessels — that's enough to circle Earth 2.5 times. Blood delivers oxygen to every cell in your body.`,
           ],
-          image:        '/explorer-assets/cosmos/l10-magazine-respiratory.png',
-          imageCaption: `The respiratory system — lungs, diaphragm, and 300 million alveoli exchanging oxygen for carbon dioxide`,
+          image:        '/explorer-assets/cosmos/l10-s2-circulatory.png',
+          imageCaption: `Your heart pumps blood through 60,000 miles of vessels — every cell gets oxygen`,
           vocab: [
-            { word: 'respiratory system', definition: `The body system that brings oxygen into the body and removes carbon dioxide — it includes the lungs, diaphragm, and airways.`,                                                          audioPrompt: `Respiratory system — the body system that brings oxygen into the body and removes carbon dioxide. It includes the lungs, diaphragm, and airways.` },
-            { word: 'alveoli',            definition: `Tiny air sacs in the lungs where oxygen passes into the bloodstream and carbon dioxide passes out — 300 million of them give your lungs the surface area of a tennis court.`, audioPrompt: `Alveoli — tiny air sacs in the lungs where oxygen passes into the bloodstream and carbon dioxide passes out. 300 million of them give your lungs the surface area of a tennis court.` },
+            { word: 'circulatory system', definition: `The body system that pumps blood through a network of vessels — delivering oxygen and nutrients to every cell.`, audioPrompt: `Circulatory system — the body system that pumps blood through a network of vessels, delivering oxygen and nutrients to every cell.` },
+            { word: 'blood vessel',       definition: `A tube that carries blood through your body. Arteries, veins, and capillaries are all blood vessels.`, audioPrompt: `Blood vessel — a tube that carries blood through your body. Arteries, veins, and capillaries are all blood vessels.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The Nervous System: Your Command Centre`,
+          totalSections: 6,
+          headline:      `Respiratory System`,
           paragraphs: [
-            `Your brain, spinal cord, and a vast network of nerves make up the nervous system. It controls everything — voluntary movements like walking and talking, involuntary functions like digestion and heartbeat, your senses, your emotions, your memory, and your thoughts.`,
-            `Your brain contains about 86 billion neurons — nerve cells that send electrical signals to each other. Nerve signals travel at up to 268 miles per hour. When you touch something hot, the signal travels from your fingertip to your brain and back out to your muscles almost instantly.`,
-            `Here's a remarkable fact: your brain uses about 20% of all the energy your body needs, even though it accounts for only about 2% of your body weight. The brain never truly rests — even while you sleep, it's processing memories, regulating your body, and consolidating everything you learned during the day.`,
+            `When you breathe in, a muscle called the diaphragm pulls down, drawing air into your lungs. You breathe about 20,000 times a day without thinking.`,
+            `Your lungs contain 300 million tiny air sacs called alveoli. Spread out flat, they'd cover an area the size of a tennis court — all packed in your chest.`,
           ],
-          image:        '/explorer-assets/cosmos/l10-magazine-nervous.png',
-          imageCaption: `The nervous system — 86 billion neurons sending signals at 268 mph through brain, spine, and nerves`,
+          image:        '/explorer-assets/cosmos/l10-s3-respiratory.png',
+          imageCaption: `Your lungs have the surface area of a tennis court — 300 million tiny alveoli packed inside`,
           vocab: [
-            { word: 'nervous system', definition: `The body system made up of the brain, spinal cord, and nerves — it controls every function of the body, from conscious movement to automatic processes like heartbeat.`, audioPrompt: `Nervous system — the body system made up of the brain, spinal cord, and nerves. It controls every function of the body, from conscious movement to automatic processes like heartbeat.` },
-            { word: 'neuron',         definition: `A nerve cell that sends and receives electrical signals — your brain contains about 86 billion neurons, forming a network more complex than any computer ever built.`,       audioPrompt: `Neuron — a nerve cell that sends and receives electrical signals. Your brain contains about 86 billion neurons, forming a network more complex than any computer ever built.` },
+            { word: 'respiratory system', definition: `The body system that brings oxygen in and removes carbon dioxide. Lungs, diaphragm, and airways all work together.`, audioPrompt: `Respiratory system — the body system that brings oxygen in and removes carbon dioxide. Lungs, diaphragm, and airways all work together.` },
+            { word: 'alveoli',            definition: `Tiny air sacs in your lungs — 300 million of them give your lungs a tennis court of surface area for breathing.`, audioPrompt: `Alveoli — tiny air sacs in your lungs. 300 million of them give your lungs a tennis court of surface area for breathing.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Your Body's Other Systems`,
+          totalSections: 6,
+          headline:      `Nervous System`,
           paragraphs: [
-            `Your body runs many systems in parallel, all the time. The digestive system breaks food into nutrients your cells can use — a journey that takes about 24 to 72 hours from mouth to exit. The skeletal system gives your body structure and protects your organs — you have 206 bones, and they're living tissue that constantly renews itself.`,
-            `The muscular system moves your body using over 600 muscles. Some are under your conscious control, like the ones in your arms. Others, like your heart and the muscles lining your digestive tract, work automatically. The immune system is your body's defence force — identifying and destroying invaders like bacteria and viruses.`,
-            `The endocrine system uses chemical messengers called hormones to communicate between organs — regulating growth, metabolism, mood, sleep, and more. All these systems work simultaneously, constantly adjusting to each other, keeping you alive and well without you having to think about any of it.`,
+            `Your brain contains about 86 billion neurons — nerve cells that send electrical signals at up to 268 miles per hour.`,
+            `When you touch something hot, the signal races to your brain and back to your muscles almost instantly. Your brain controls everything.`,
           ],
-          image:        '/explorer-assets/cosmos/l10-magazine-other-systems.png',
-          imageCaption: `Digestive, skeletal, muscular, immune, and endocrine systems — all working together, all the time`,
+          image:        '/explorer-assets/cosmos/l10-s4-nervous.png',
+          imageCaption: `Your brain — 86 billion neurons firing signals at 268 mph, controlling everything`,
           vocab: [
-            { word: 'digestive system',  definition: `The body system that breaks food down into nutrients the body can use — a process that takes between 24 and 72 hours from the moment food enters your mouth.`,                              audioPrompt: `Digestive system — the body system that breaks food down into nutrients the body can use. A process that takes between 24 and 72 hours from the moment food enters your mouth.` },
-            { word: 'endocrine system',  definition: `The body system that uses hormones to send chemical messages between organs — regulating growth, metabolism, sleep, mood, and many other essential functions.`, audioPrompt: `Endocrine system — the body system that uses hormones to send chemical messages between organs, regulating growth, metabolism, sleep, mood, and many other essential functions.` },
+            { word: 'nervous system', definition: `The body system made of brain, spinal cord, and nerves. It controls every movement, sensation, thought, and automatic function.`, audioPrompt: `Nervous system — the body system made of brain, spinal cord, and nerves. It controls every movement, sensation, thought, and automatic function.` },
+            { word: 'neuron',         definition: `A nerve cell that sends electrical signals. Your brain contains about 86 billion of them — more than there are stars in our galaxy.`, audioPrompt: `Neuron — a nerve cell that sends electrical signals. Your brain contains about 86 billion of them, more than there are stars in our galaxy.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Digestive and Skeletal`,
+          paragraphs: [
+            `The digestive system breaks food into nutrients your cells can use — a journey that takes 24 to 72 hours from mouth to exit.`,
+            `The skeletal system gives your body structure. You have 206 bones, and they're living tissue that constantly renews itself.`,
+          ],
+          image:        '/explorer-assets/cosmos/l10-s5-digestive-skeletal.png',
+          imageCaption: `Your 206 bones aren't dead — they're living tissue that constantly renews`,
+          vocab: [
+            { word: 'digestive system', definition: `The body system that breaks food into nutrients your cells can use — a 24 to 72 hour journey from mouth to exit.`, audioPrompt: `Digestive system — the body system that breaks food into nutrients your cells can use. A 24 to 72 hour journey from mouth to exit.` },
+            { word: 'skeletal system',  definition: `Your 206 bones — they give you structure, protect your organs, and are living tissue that constantly renews itself.`, audioPrompt: `Skeletal system — your 206 bones. They give you structure, protect your organs, and are living tissue that constantly renews itself.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `All Systems at Once`,
+          paragraphs: [
+            `Your body runs many systems in parallel, all the time. Muscles move you (over 600 of them). The immune system fights off invaders.`,
+            `The endocrine system sends hormone messages between organs. All of this works automatically — you don't have to think about any of it.`,
+          ],
+          image:        '/explorer-assets/cosmos/l10-s6-all-systems.png',
+          imageCaption: `Every body system runs in parallel — all the time, all working together`,
+          vocab: [
+            { word: 'immune system',    definition: `Your body's defense force. It identifies and destroys invaders like bacteria, viruses, and harmful things.`, audioPrompt: `Immune system — your body's defense force. It identifies and destroys invaders like bacteria, viruses, and harmful things.` },
+            { word: 'endocrine system', definition: `The body system that uses hormones to send chemical messages between organs — regulating growth, mood, sleep, and more.`, audioPrompt: `Endocrine system — the body system that uses hormones to send chemical messages between organs, regulating growth, mood, sleep, and more.` },
           ],
         },
 
@@ -186,12 +214,14 @@ const cosmos_explorer_l10_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L10] Loaded: "The Human Body: Amazing Systems" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l10-magazine-circulatory.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l10-magazine-respiratory.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l10-magazine-nervous.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l10-magazine-other-systems.png',{ method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L10] circulatory: ${r1.ok}, respiratory: ${r2.ok}, nervous: ${r3.ok}, other-systems: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l10-s1-body-machine.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l10-s2-circulatory.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l10-s3-respiratory.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l10-s4-nervous.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l10-s5-digestive-skeletal.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l10-s6-all-systems.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L10] body-machine: ${r1.ok}, circulatory: ${r2.ok}, respiratory: ${r3.ok}, nervous: ${r4.ok}, digestive-skeletal: ${r5.ok}, all-systems: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L10] Could not verify image assets — network check failed');
   });
