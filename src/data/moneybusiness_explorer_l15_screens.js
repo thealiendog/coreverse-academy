@@ -23,73 +23,101 @@ const moneybusiness_explorer_l15_screens = {
           guideText: `You might think you need to be a grown-up to run a real business. These kids prove otherwise. They built companies, earned real money, appeared on national TV, and in some cases changed industries — all before finishing school.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Mikaila Ulmer — Me & the Bees Lemonade`,
+          totalSections: 6,
+          headline:      'Mikaila Ulmer',
           paragraphs: [
-            `Mikaila Ulmer started her lemonade business at age 4 after getting stung by bees twice in one week. Instead of becoming afraid of bees, she got curious. She researched and learned how critical bees are to the food supply — pollinating the plants that produce a huge proportion of what humans eat — and decided to do something about it.`,
-            `Mikaila created a lemonade sweetened with honey, called Me & the Bees Lemonade, with part of every sale donated to bee conservation organisations. The product wasn't just a drink; it was a mission. By age 11, she had secured a deal with a major national grocery chain and received a $60,000 investment from an investor TV show.`,
-            `What made Mikaila's business remarkable wasn't just the early success — it was the origin. She didn't start with a business plan. She started with a bee sting and a question: why are bees important? Curiosity, not a strategy, was the starting point. The business grew from genuinely caring about something. That combination of mission and product is what made her story compelling to customers and investors alike.`,
+            'Mikaila Ulmer started her lemonade business at age 4 after getting stung by bees twice in one week.',
+            'Instead of fearing bees, she got curious. She learned how vital they are. Her honey-sweetened lemonade, with sales supporting bee conservation, is now in major US grocery stores.',
           ],
-          image:        '/explorer-assets/money-business/l15-magazine-mikaila.png',
-          imageCaption: `Mikaila Ulmer — turned a bee sting into a mission, a lemonade brand, and a national distribution deal by age 11`,
+          image:        '/explorer-assets/money-business/l15-s1-bees-lemonade.png',
+          imageCaption: 'A bee sting at age 4 became a national brand by age 11 — built on curiosity and a real mission',
           vocab: [
-            { word: `mission`,      definition: `The core purpose behind a business beyond making money — a mission-driven business is built around solving a problem or serving a cause its founders genuinely believe in.`,              audioPrompt: `Mission — the core purpose behind a business beyond making money. A mission-driven business is built around solving a problem or serving a cause its founders genuinely believe in.` },
-            { word: `conservation`, definition: `The effort to protect and preserve natural environments, species, or resources — Mikaila's lemonade supported bee conservation by donating part of every sale to organisations that protect bees.`, audioPrompt: `Conservation — the effort to protect and preserve natural environments, species, or resources. Mikaila's lemonade supported bee conservation by donating part of every sale to organisations that protect bees.` },
+            { word: 'mission',      definition: 'A deeper purpose behind a business — beyond just making money. Mission-driven businesses solve real problems people care about.', audioPrompt: 'Mission — a deeper purpose behind a business, beyond just making money. Mission-driven businesses solve real problems people care about.' },
+            { word: 'conservation', definition: 'Protecting nature or important species. Mikaila\'s business supports bee conservation with part of every sale.', audioPrompt: 'Conservation — protecting nature or important species. Mikaila\'s business supports bee conservation with part of every sale.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Moziah Bridges — Mo's Bows`,
+          totalSections: 6,
+          headline:      'Moziah Bridges',
           paragraphs: [
-            `At age 9, Moziah Bridges was frustrated that he couldn't find bow ties he actually liked. Most were plain, predictable, and nothing like his personal style. So he asked his grandmother to teach him to sew — and he made his own. Mo's Bows was born from that simple act of solving his own problem rather than accepting that what he wanted didn't exist.`,
-            `By age 13, Moziah was earning over $200,000 per year from Mo's Bows. He appeared on an investor TV show at 13, and at 14, a major professional sports league signed him to design bow ties for their draft event — a remarkable achievement at any age, let alone his. What started as a sewing lesson with his grandmother had become a nationally recognised brand.`,
-            `Moziah's story illustrates one of the most powerful entrepreneurial principles: the best business ideas often come from solving your own problem. If you need something and it doesn't exist, there's a good chance other people need it too. Instead of giving up and settling for what was available, Moziah built exactly what he wanted — and discovered that others wanted it as well.`,
+            'At age 9, Moziah Bridges couldn\'t find bow ties he actually liked. So he asked his grandmother to teach him to sew.',
+            'He made his own. By age 13, Mo\'s Bows was earning over $200,000 a year. At 14, a major sports league hired him to design ties.',
           ],
-          image:        '/explorer-assets/money-business/l15-magazine-moziah.png',
-          imageCaption: `Moziah Bridges — learned to sew at age 9 to make bow ties he actually liked, and built a nationally recognised brand from there`,
+          image:        '/explorer-assets/money-business/l15-s2-young-tailor.png',
+          imageCaption: 'Couldn\'t find what he wanted, so he built it himself. The business grew from there.',
           vocab: [
-            { word: `brand`,   definition: `The overall identity of a business — its name, visual style, reputation, and the feeling it creates in customers' minds. A strong brand makes a business instantly recognisable and memorable.`, audioPrompt: `Brand — the overall identity of a business, including its name, visual style, reputation, and the feeling it creates in customers' minds. A strong brand makes a business instantly recognisable and memorable.` },
-            { word: `product`, definition: `Something created and sold to customers — a bow tie, a drink, an app. Products can be made once and sold repeatedly, which is what makes them powerful for business growth.`,                    audioPrompt: `Product — something created and sold to customers. A bow tie, a drink, an app. Products can be made once and sold repeatedly, which is what makes them powerful for business growth.` },
+            { word: 'brand',    definition: 'The overall identity of a business — its name, look, and feel. Mo\'s Bows is now a recognized national brand.', audioPrompt: 'Brand — the overall identity of a business: its name, look, and feel. Mo\'s Bows is now a recognized national brand.' },
+            { word: 'handmade', definition: 'Made by a person, not by a machine. Moziah\'s first bow ties were all handmade by him at his grandmother\'s sewing table.', audioPrompt: 'Handmade — made by a person, not by a machine. Moziah\'s first bow ties were all handmade by him at his grandmother\'s sewing table.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Evan of EvanTubeHD`,
+          totalSections: 6,
+          headline:      'Evan of EvanTubeHD',
           paragraphs: [
-            `Evan started reviewing toys on his video channel at age 8 — just for fun. He liked toys, he liked talking about them, and his parents helped him film and upload the videos. His honest, enthusiastic reviews attracted millions of subscribers who trusted his opinions precisely because he was a real kid who genuinely loved what he reviewed.`,
-            `By age 10, Evan's channel was earning more than most adult salaries. Toy companies reached out to him. Brands sought his opinion. He taught himself video editing, analytics, and how to read what his audience wanted — skills that most adults haven't developed — all before finishing primary school. The channel grew because the passion was real.`,
-            `Evan's story is a reminder that in the digital age, a genuine interest shared publicly can become a business. He didn't start EvanTubeHD to make money — he started it because he loved toys. The business grew from the authenticity. When you do something you genuinely care about, you put in the effort naturally, and audiences can feel the difference between passion and performance.`,
+            'Evan started reviewing toys on YouTube at age 8 — just because he loved them. His parents helped him film.',
+            'His honest enthusiasm attracted millions of subscribers. By age 10, his channel was earning more than most adult salaries.',
           ],
-          image:        '/explorer-assets/money-business/l15-magazine-evan.png',
-          imageCaption: `Evan of EvanTubeHD — started reviewing toys at age 8 just for fun, and by age 10 was earning more than most adult salaries`,
+          image:        '/explorer-assets/money-business/l15-s3-young-creator.png',
+          imageCaption: 'No business plan — just a real kid who loved toys. Authenticity grew the audience.',
           vocab: [
-            { word: `creator`,      definition: `Someone who produces original content — videos, writing, art, music — and builds an audience around it. Digital creators can earn income through advertising, sponsorships, and products.`, audioPrompt: `Creator — someone who produces original content, including videos, writing, art, and music, and builds an audience around it. Digital creators can earn income through advertising, sponsorships, and products.` },
-            { word: `authenticity`, definition: `Being genuine and true to yourself — audiences respond to authenticity because it builds trust. Creators and businesses that are authentic tend to build more loyal followings.`,            audioPrompt: `Authenticity — being genuine and true to yourself. Audiences respond to authenticity because it builds trust. Creators and businesses that are authentic tend to build more loyal followings.` },
+            { word: 'creator',     definition: 'Someone who makes original content — videos, art, writing, music — and builds an audience around it.', audioPrompt: 'Creator — someone who makes original content: videos, art, writing, music, and builds an audience around it.' },
+            { word: 'subscribers', definition: 'People who follow a creator\'s channel to see new content. Evan\'s channel grew to millions of subscribers.', audioPrompt: 'Subscribers — people who follow a creator\'s channel to see new content. Evan\'s channel grew to millions of subscribers.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `What They Have in Common`,
+          totalSections: 6,
+          headline:      'Started with Genuine Interest',
           paragraphs: [
-            `Every young entrepreneur in this lesson started with a genuine interest or problem — not just a desire to make money. Mikaila started with curiosity about bees. Moziah started with frustration over bow ties. Evan started with a love of toys. None of them started by asking "how do I get rich?" They started by caring about something specific. The business grew from the caring.`,
-            `They all started small. Mikaila's lemonade was made in a kitchen. Moziah's bow ties were hand-sewn by a 9-year-old learning from his grandmother. Evan filmed videos in his house. None of them waited for the perfect setup, the right time, or enough money. They used what they had and started where they were.`,
-            `They all asked for help from adults around them — parents, grandparents, mentors. They all kept going when things got hard. And none of them waited until they felt "ready." Readiness, for entrepreneurs, usually comes after you start — not before. You don't get ready and then begin. You begin, and readiness follows.`,
+            'None of them started by asking "how do I get rich?" They started by caring about something specific.',
+            'Curiosity about bees. Frustration over bow ties. Love of toys. The business grew from the caring — not from a plan to make money.',
           ],
-          image:        '/explorer-assets/money-business/l15-magazine-what-they-share.png',
-          imageCaption: `What they share — genuine interest, starting small, asking for help, and never waiting to feel "ready" before beginning`,
+          image:        '/explorer-assets/money-business/l15-s4-thread-of-passion.png',
+          imageCaption: 'The shared thread isn\'t a plan or money — it\'s genuinely caring about something specific',
           vocab: [
-            { word: `mentor`,      definition: `An experienced person who advises and guides someone less experienced — young entrepreneurs often succeed partly because they seek out mentors who help them avoid common mistakes.`,                  audioPrompt: `Mentor — an experienced person who advises and guides someone less experienced. Young entrepreneurs often succeed partly because they seek out mentors who help them avoid common mistakes.` },
-            { word: `persistence`, definition: `Continuing to work toward a goal despite difficulty, setbacks, and slow progress — all three young entrepreneurs in this lesson showed persistence in building their businesses over time.`, audioPrompt: `Persistence — continuing to work toward a goal despite difficulty, setbacks, and slow progress. All three young entrepreneurs in this lesson showed persistence in building their businesses over time.` },
+            { word: 'passion',   definition: 'A strong interest you genuinely care about. Every great business starts from passion, not from a desire for money alone.', audioPrompt: 'Passion — a strong interest you genuinely care about. Every great business starts from passion, not from a desire for money alone.' },
+            { word: 'authentic', definition: 'Real and true to yourself. Customers and audiences can feel the difference between authentic effort and fake effort.', audioPrompt: 'Authentic — real and true to yourself. Customers and audiences can feel the difference between authentic effort and fake effort.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Started Small, Asked for Help',
+          paragraphs: [
+            'Mikaila made lemonade in a kitchen. Moziah sewed at his grandmother\'s table. Evan filmed in his living room.',
+            'They all asked the adults around them — parents, grandparents, mentors — for help. None of them waited for the perfect setup.',
+          ],
+          image:        '/explorer-assets/money-business/l15-s5-humble-beginnings.png',
+          imageCaption: 'No big offices. No investors at first. Just a kitchen, a sewing table, and a living room.',
+          vocab: [
+            { word: 'mentor',          definition: 'An experienced person who guides and advises you. Mentors help young entrepreneurs avoid common mistakes.', audioPrompt: 'Mentor — an experienced person who guides and advises you. Mentors help young entrepreneurs avoid common mistakes.' },
+            { word: 'resourcefulness', definition: 'Using what you already have to get started, instead of waiting until you have more. Every successful entrepreneur is resourceful.', audioPrompt: 'Resourcefulness — using what you already have to get started, instead of waiting until you have more. Every successful entrepreneur is resourceful.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'They Just Started',
+          paragraphs: [
+            'None of them waited until they felt "ready." Readiness, for entrepreneurs, comes AFTER you start — not before.',
+            'You don\'t get ready and then begin. You begin, and readiness follows. Age isn\'t a barrier. The starting point is exactly the same for you.',
+          ],
+          image:        '/explorer-assets/money-business/l15-s6-just-start.png',
+          imageCaption: 'Readiness doesn\'t come first. Action comes first. Readiness builds from the doing.',
+          vocab: [
+            { word: 'persistence', definition: 'Continuing even when things are hard or slow. All three young entrepreneurs kept going long after most people would have quit.', audioPrompt: 'Persistence — continuing even when things are hard or slow. All three young entrepreneurs kept going long after most people would have quit.' },
+            { word: 'action',      definition: 'Actually doing something — not just thinking about it. Entrepreneurs are defined by action, not by ideas alone.', audioPrompt: 'Action — actually doing something, not just thinking about it. Entrepreneurs are defined by action, not by ideas alone.' },
           ],
         },
 
@@ -186,12 +214,14 @@ const moneybusiness_explorer_l15_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L15] Loaded: "Famous Young Entrepreneurs" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l15-magazine-mikaila.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l15-magazine-moziah.png',         { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l15-magazine-evan.png',           { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l15-magazine-what-they-share.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L15] mikaila: ${r1.ok}, moziah: ${r2.ok}, evan: ${r3.ok}, what-they-share: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l15-s1-bees-lemonade.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l15-s2-young-tailor.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l15-s3-young-creator.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l15-s4-thread-of-passion.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l15-s5-humble-beginnings.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l15-s6-just-start.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L15] bees-lemonade: ${r1.ok}, young-tailor: ${r2.ok}, young-creator: ${r3.ok}, thread-of-passion: ${r4.ok}, humble-beginnings: ${r5.ok}, just-start: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L15] Could not verify image assets — network check failed');
   });
