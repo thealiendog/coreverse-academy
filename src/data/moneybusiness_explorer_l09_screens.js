@@ -23,73 +23,101 @@ const moneybusiness_explorer_l09_screens = {
           guideText: `You could make the most amazing product in the world. The best lemonade ever created. But if nobody knows it exists, you won't sell a single one. That's why marketing exists. And it's way more interesting than it sounds.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is Marketing?`,
           paragraphs: [
-            `Marketing is everything a business does to attract customers. Advertising is part of marketing — but so is your logo, your packaging, your pricing, your social media presence, your store's design, and the way your employees talk to customers. Every single time a business makes an impression on you, that's marketing happening.`,
-            `Think about the last time you walked past a shop and felt drawn inside, or saw packaging so beautiful you picked something up just to look at it, or heard a jingle you couldn't get out of your head. None of that happened by accident. Every element was designed deliberately to get and keep your attention.`,
-            `Businesses that understand marketing don't just sell products — they create experiences, feelings, and identities. A customer who buys a product isn't just purchasing something functional; they're choosing how they want to see themselves. Marketing makes that connection. The best marketing doesn't feel like marketing at all.`,
+            `Marketing is everything a business does to attract customers. Advertising is part of it — but so is your logo, your packaging, your pricing, your social media, and the way your employees talk to people.`,
+            `Every time a business makes an impression on you — a jingle, a beautiful package, a storefront you're drawn into — that's marketing happening. None of it is by accident.`,
           ],
-          image:        '/explorer-assets/money-business/l09-magazine-marketing.png',
-          imageCaption: `Marketing — everything a business does to attract customers, from logos to packaging to social media`,
+          image:        '/explorer-assets/money-business/l09-s1-marketing-channels.png',
+          imageCaption: `Marketing is every signal a business sends — from logos to packaging to social media`,
           vocab: [
-            { word: `marketing`,    definition: `All the activities a business uses to attract and keep customers — including advertising, branding, pricing, packaging, and any other way the business makes an impression.`,               audioPrompt: `Marketing — all the activities a business uses to attract and keep customers, including advertising, branding, pricing, packaging, and any other way the business makes an impression.` },
-            { word: `branding`,     definition: `The overall identity of a business — its name, logo, colours, tone, and the feeling it creates in customers' minds. Strong branding makes a business instantly recognisable.`, audioPrompt: `Branding — the overall identity of a business, including its name, logo, colours, tone, and the feeling it creates in customers' minds. Strong branding makes a business instantly recognisable.` },
+            { word: 'marketing', definition: `All the activities a business uses to attract and keep customers — including advertising, branding, pricing, packaging, and any other impression it makes.`, audioPrompt: `Marketing — all the activities a business uses to attract and keep customers, including advertising, branding, pricing, packaging, and any other impression it makes.` },
+            { word: 'branding',  definition: `The overall identity of a business — its name, logo, colours, and the feeling it creates in customers' minds. Strong branding makes a business instantly recognisable.`, audioPrompt: `Branding — the overall identity of a business, including its name, logo, colours, and the feeling it creates in customers' minds. Strong branding makes a business instantly recognisable.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Knowing Your Customer`,
+          totalSections: 6,
+          headline:      `Know Your Customer`,
           paragraphs: [
-            `Great marketing starts with a deep understanding of WHO you're selling to. A company selling skateboards markets very differently than one selling baby shoes — different age, different needs, different fears, different dreams. Trying to market to everyone at once is one of the most common mistakes new businesses make. Marketing that speaks to everyone speaks to no one.`,
-            `Marketers call this a target audience — the specific group of people most likely to want what you're selling. Identifying your target audience means asking questions: How old are they? What do they care about? What problem are they trying to solve? Where do they spend time? What do they fear? What do they dream about? The more clearly you answer these questions, the more precisely you can reach the right people.`,
-            `Understanding your customer also means understanding what they don't like. A great marketing message avoids the things that irritate your audience and leans into the things that excite them. This requires listening — reading reviews, talking to customers, watching how people actually use your product. The businesses that listen most carefully to their customers build the most loyal relationships.`,
+            `Great marketing starts with understanding WHO you're selling to. A company selling skateboards markets very differently than one selling baby shoes. Marketing that tries to speak to everyone speaks to no one.`,
+            `Marketers define a target audience — the specific group most likely to want what you're selling. The more clearly you know them, the more precisely you can reach them.`,
           ],
-          image:        '/explorer-assets/money-business/l09-magazine-target.png',
-          imageCaption: `Knowing your customer — defining your target audience precisely so marketing reaches the right people`,
+          image:        '/explorer-assets/money-business/l09-s2-target-audience.png',
+          imageCaption: `Know your customer — define your target audience so your message reaches the right people`,
           vocab: [
-            { word: `target audience`, definition: `The specific group of people a business most wants to reach with its marketing — defined by age, interests, needs, location, or behaviour. Precise targeting makes marketing far more effective.`, audioPrompt: `Target audience — the specific group of people a business most wants to reach with its marketing. Defined by age, interests, needs, location, or behaviour. Precise targeting makes marketing far more effective.` },
-            { word: `demographics`,    definition: `Statistical characteristics of a group of people — such as age, gender, income, location, and education. Businesses use demographics to identify and reach their target audience.`,                  audioPrompt: `Demographics — statistical characteristics of a group of people, such as age, gender, income, location, and education. Businesses use demographics to identify and reach their target audience.` },
+            { word: 'target audience', definition: `The specific group of people a business most wants to reach — defined by age, interests, needs, or behaviour. Precise targeting makes marketing far more effective.`, audioPrompt: `Target audience — the specific group of people a business most wants to reach. Defined by age, interests, needs, or behaviour. Precise targeting makes marketing far more effective.` },
+            { word: 'demographics',    definition: `Statistical characteristics of a group — such as age, gender, income, and location. Businesses use demographics to identify and reach their target audience.`, audioPrompt: `Demographics — statistical characteristics of a group, such as age, gender, income, and location. Businesses use demographics to identify and reach their target audience.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The Message`,
+          totalSections: 6,
+          headline:      `What's In It For Me?`,
           paragraphs: [
-            `The most powerful marketing messages answer one question from the customer's perspective: "What's in it for me?" Not "How good is this product?" — but "How does this make MY life better?" Customers don't buy features; they buy outcomes. They buy how a product makes them feel, what it helps them do, and who it helps them become.`,
-            `Consider how sporting brands communicate. They don't lead with technical specifications — thread count, sole density, cushioning composition. They lead with the customer's aspiration: become the athlete you've always wanted to be. The product is the vehicle. The customer's dream is the message. This shift in perspective — from "here's what we make" to "here's who you could become" — is the heart of great marketing.`,
-            `The best marketing messages are short, clear, and emotionally resonant. They stick in memory, they create feeling, and they make the customer see themselves in the story. A long list of features rarely does any of these things. A single, true, well-crafted sentence about what the customer gains can define a brand for decades.`,
+            `The most powerful marketing answers one question from the customer's perspective: "What's in it for me?" Not "How good is this product?" — but "How does this make MY life better?"`,
+            `Customers don't buy features; they buy outcomes — how a product makes them feel, what it helps them do, who it helps them become. That shift is the heart of great marketing.`,
           ],
-          image:        '/explorer-assets/money-business/l09-magazine-message.png',
-          imageCaption: `The marketing message — answering "what's in it for me?" by selling the customer's dream, not product features`,
+          image:        '/explorer-assets/money-business/l09-s3-customer-perspective.png',
+          imageCaption: `Great marketing answers "what's in it for me?" — always from the customer's point of view`,
           vocab: [
-            { word: `value proposition`, definition: `The clear statement of what a customer gains from choosing your product — it answers "what's in it for me?" and is the core of any effective marketing message.`,             audioPrompt: `Value proposition — the clear statement of what a customer gains from choosing your product. It answers "what's in it for me?" and is the core of any effective marketing message.` },
-            { word: `aspiration`,        definition: `A strong desire to achieve or become something — great marketing connects a product to the customer's aspirations, showing how the product helps them become who they want to be.`, audioPrompt: `Aspiration — a strong desire to achieve or become something. Great marketing connects a product to the customer's aspirations, showing how the product helps them become who they want to be.` },
+            { word: 'perspective', definition: `A particular way of seeing or thinking about something. Marketing works best when it's written from the customer's perspective, not the business's.`, audioPrompt: `Perspective — a particular way of seeing or thinking about something. Marketing works best when it's written from the customer's perspective, not the business's.` },
+            { word: 'outcome',     definition: `The result a customer gets from using a product. Great marketing sells the outcome — how life improves — not just the product itself.`, audioPrompt: `Outcome — the result a customer gets from using a product. Great marketing sells the outcome, how life improves, not just the product itself.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Where Marketing Lives Today`,
+          totalSections: 6,
+          headline:      `Sell the Dream, Not the Specs`,
           paragraphs: [
-            `Marketing used to mean TV commercials, radio spots, newspaper ads, and billboards. Reaching a large audience required enormous spending — only large companies could afford it. That world still exists, but the internet has created an entirely new set of channels that have fundamentally changed what's possible.`,
-            `Today, marketing also lives on YouTube, TikTok, Instagram, podcasts, email newsletters, and influencer partnerships. A creator with a following of 50,000 people on social media can reach a highly specific, engaged audience in a way that a traditional billboard never could. And the cost is a fraction of what a TV ad would require.`,
-            `This shift has transformed opportunities for small businesses. A single well-made video, a clever social post, or a genuine review from a trusted voice can introduce a product to millions of people overnight. The businesses that thrive today understand both the traditional fundamentals — know your customer, craft your message — and the new tools available to deliver that message at scale.`,
+            `Sporting brands don't lead with thread counts and sole density. They lead with aspiration: become the athlete you've always wanted to be. The product is the vehicle. The customer's dream is the message.`,
+            `A short, emotionally resonant sentence about what the customer gains can define a brand for decades. A long list of features rarely sticks in anyone's memory.`,
           ],
-          image:        '/explorer-assets/money-business/l09-magazine-digital-marketing.png',
-          imageCaption: `Where marketing lives today — social media, influencers, and digital channels alongside traditional advertising`,
+          image:        '/explorer-assets/money-business/l09-s4-dream-vs-specs.png',
+          imageCaption: `Sell the dream, not the specs — customers remember how something made them feel`,
           vocab: [
-            { word: `influencer`,         definition: `A person with a large, engaged following on social media who can affect the buying decisions of their audience — brands partner with influencers to reach their target audience authentically.`, audioPrompt: `Influencer — a person with a large, engaged following on social media who can affect the buying decisions of their audience. Brands partner with influencers to reach their target audience authentically.` },
-            { word: `digital marketing`,  definition: `Marketing conducted through digital channels — websites, social media, email, apps, and online advertising. Digital marketing allows businesses of any size to reach specific audiences worldwide.`,    audioPrompt: `Digital marketing — marketing conducted through digital channels, including websites, social media, email, apps, and online advertising. Digital marketing allows businesses of any size to reach specific audiences worldwide.` },
+            { word: 'features',    definition: `The specific characteristics of a product — its size, speed, materials. Features describe what a product IS, but don't always explain why it matters.`, audioPrompt: `Features — the specific characteristics of a product, such as its size, speed, or materials. Features describe what a product is, but don't always explain why it matters.` },
+            { word: 'aspiration',  definition: `A strong desire to achieve or become something. Great marketing connects a product to the customer's aspirations — showing how it helps them become who they want to be.`, audioPrompt: `Aspiration — a strong desire to achieve or become something. Great marketing connects a product to the customer's aspirations, showing how it helps them become who they want to be.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `From TV to TikTok`,
+          paragraphs: [
+            `Marketing used to mean TV commercials, radio spots, and billboards. Reaching a large audience required enormous spending — only large companies could afford it.`,
+            `Today, marketing also lives on YouTube, TikTok, Instagram, podcasts, and email. A creator with 50,000 followers can reach a highly specific, engaged audience at a fraction of the traditional cost.`,
+          ],
+          image:        '/explorer-assets/money-business/l09-s5-marketing-evolution.png',
+          imageCaption: `From TV to TikTok — the channels have multiplied, but the goal is the same: reach the right people`,
+          vocab: [
+            { word: 'advertising', definition: `Paid messages designed to promote a product or business. Advertising is one part of marketing — it can run on TV, radio, social media, or anywhere an audience is.`, audioPrompt: `Advertising — paid messages designed to promote a product or business. Advertising is one part of marketing, and it can run on TV, radio, social media, or anywhere an audience is.` },
+            { word: 'channel',     definition: `The medium or platform where a marketing message is delivered — TV, Instagram, email, podcast. Choosing the right channel means reaching your audience where they already are.`, audioPrompt: `Channel — the medium or platform where a marketing message is delivered, such as TV, Instagram, email, or podcast. Choosing the right channel means reaching your audience where they already are.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Small Business, Big Reach`,
+          paragraphs: [
+            `A single well-made video, a clever social post, or a genuine review from a trusted voice can introduce a product to millions of people overnight. Small businesses can now compete globally.`,
+            `The businesses that thrive today understand both the fundamentals — know your customer, craft your message — and the new digital tools that deliver that message at scale.`,
+          ],
+          image:        '/explorer-assets/money-business/l09-s6-small-business-reach.png',
+          imageCaption: `Small business, big reach — digital tools let any business find a global audience`,
+          vocab: [
+            { word: 'influencer', definition: `A person with a large, engaged following on social media who can affect the buying decisions of their audience. Brands partner with influencers to reach their target audience authentically.`, audioPrompt: `Influencer — a person with a large, engaged following on social media who can affect the buying decisions of their audience. Brands partner with influencers to reach their target audience authentically.` },
+            { word: 'viral',      definition: `Content that spreads rapidly online because many people share it. A viral post or video can reach millions without any advertising spend.`, audioPrompt: `Viral — content that spreads rapidly online because many people share it. A viral post or video can reach millions without any advertising spend.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l09_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L09] Loaded: "Marketing: How Businesses Find Customers" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l09-magazine-marketing.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l09-magazine-target.png',           { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l09-magazine-message.png',          { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l09-magazine-digital-marketing.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L09] marketing: ${r1.ok}, target: ${r2.ok}, message: ${r3.ok}, digital-marketing: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l09-s1-marketing-channels.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l09-s2-target-audience.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l09-s3-customer-perspective.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l09-s4-dream-vs-specs.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l09-s5-marketing-evolution.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l09-s6-small-business-reach.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L09] marketing-channels: ${r1.ok}, target-audience: ${r2.ok}, customer-perspective: ${r3.ok}, dream-vs-specs: ${r4.ok}, marketing-evolution: ${r5.ok}, small-business-reach: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L09] Could not verify image assets — network check failed');
   });
