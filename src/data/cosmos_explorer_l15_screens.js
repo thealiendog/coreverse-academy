@@ -23,73 +23,101 @@ const cosmos_explorer_l15_screens = {
           guideText: `Every night the Moon looks slightly different. Sometimes it's a thin crescent, sometimes a bright half circle, sometimes a full glowing disk. It's not changing shape — something else is happening. And that same Moon is pulling on Earth's oceans right now, making the tides rise and fall twice a day.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `Why the Moon Has Phases`,
           paragraphs: [
-            `The Moon doesn't produce its own light — it reflects sunlight. As the Moon orbits Earth over about 29.5 days, we see different portions of its sunlit side from our vantage point on Earth. The Moon itself never changes shape. What changes is how much of its lit side is facing toward us.`,
-            `When the Moon is positioned between Earth and the Sun, the sunlit side faces away from us — we see almost no light at all. This is a New Moon. When Earth is positioned between the Moon and the Sun, the fully lit side faces directly toward us — this is a Full Moon.`,
-            `All the phase shapes in between — the crescents, the half-circles, the gibbous shapes — are simply the varying amounts of the Moon's sunlit side visible from Earth as it moves through its 29.5-day orbit. The Moon is always exactly half lit by the Sun. We just see different amounts of that lit half from different angles.`,
+            `The Moon doesn't make its own light — it reflects sunlight. The Moon never changes shape.`,
+            `As it orbits Earth over 29.5 days, we see different amounts of its sunlit side. The Moon is always exactly half lit. We just see different angles.`,
           ],
-          image:        '/explorer-assets/cosmos/l15-magazine-moon-phases.png',
-          imageCaption: `Moon phases — the changing view of the Moon's sunlit side as it orbits Earth over 29.5 days`,
+          image:        '/explorer-assets/cosmos/l15-s1-moon-geometry.png',
+          imageCaption: `The Moon never changes shape — we just see different parts of its lit side`,
           vocab: [
-            { word: 'lunar phase', definition: `The shape of the Moon as seen from Earth — caused by the changing angle between the Moon, Earth, and the Sun as the Moon orbits Earth over 29.5 days.`, audioPrompt: `Lunar phase — the shape of the Moon as seen from Earth, caused by the changing angle between the Moon, Earth, and the Sun as the Moon orbits Earth over 29.5 days.` },
-            { word: 'new moon',    definition: `The phase when the Moon is positioned between Earth and the Sun — its sunlit side faces away from us, so we see little or no Moon in the night sky.`,              audioPrompt: `New moon — the phase when the Moon is positioned between Earth and the Sun. Its sunlit side faces away from us, so we see little or no Moon in the night sky.` },
+            { word: 'lunar phase', definition: `The shape of the Moon as seen from Earth, caused by the changing angles between the Moon, Earth, and Sun.`, audioPrompt: `Lunar phase — the shape of the Moon as seen from Earth, caused by the changing angles between the Moon, Earth, and Sun.` },
+            { word: 'orbit',       definition: `The path one object takes around another. The Moon orbits Earth once every 29.5 days.`, audioPrompt: `Orbit — the path one object takes around another. The Moon orbits Earth once every 29.5 days.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Eight Phases of the Moon`,
+          totalSections: 6,
+          headline:      `New Moon to Full Moon`,
           paragraphs: [
-            `The lunar cycle moves through eight recognised phases. Starting from the New Moon, the lit portion grows: Waxing Crescent (a small sliver on the right), First Quarter (half the Moon lit on the right), Waxing Gibbous (more than half lit and still growing). Then the Full Moon — the entire lit face visible.`,
-            `After the Full Moon, the lit portion shrinks: Waning Gibbous (more than half lit on the left, shrinking), Third Quarter (half lit on the left), Waning Crescent (a small sliver on the left). Then back to New Moon — and the cycle begins again.`,
-            `"Waxing" means the lit portion is growing. "Waning" means it's shrinking. Knowing these two words unlocks the entire system. If you see the bright side of the Moon on the right and it's getting bigger night by night, it's waxing. If the bright side is on the left and getting smaller, it's waning.`,
+            `When the Moon is between Earth and the Sun, the sunlit side faces away from us. This is a New Moon.`,
+            `As it moves around Earth, more and more of its lit side comes into view — growing from crescent to half circle to Full Moon. This growing is called waxing.`,
           ],
-          image:        '/explorer-assets/cosmos/l15-magazine-eight-phases.png',
-          imageCaption: `The eight lunar phases — from New Moon through waxing and full, to waning and back again`,
+          image:        '/explorer-assets/cosmos/l15-s2-waxing-sequence.png',
+          imageCaption: `From New Moon to Full Moon, the lit portion grows — this is waxing`,
           vocab: [
-            { word: 'waxing', definition: `A moon phase in which the visible lit portion is growing larger night by night — from New Moon through First Quarter to Full Moon, the Moon is waxing.`, audioPrompt: `Waxing — a moon phase in which the visible lit portion is growing larger night by night. From New Moon through First Quarter to Full Moon, the Moon is waxing.` },
-            { word: 'waning', definition: `A moon phase in which the visible lit portion is growing smaller night by night — from Full Moon through Third Quarter back to New Moon, the Moon is waning.`, audioPrompt: `Waning — a moon phase in which the visible lit portion is growing smaller night by night. From Full Moon through Third Quarter back to New Moon, the Moon is waning.` },
+            { word: 'new moon', definition: `The phase when the Moon is between Earth and the Sun. Its sunlit side faces away — we see almost no Moon in the sky.`, audioPrompt: `New moon — the phase when the Moon is between Earth and the Sun. Its sunlit side faces away. We see almost no Moon in the sky.` },
+            { word: 'waxing',   definition: `When the lit portion of the Moon is growing larger night by night — from New Moon through to Full Moon.`, audioPrompt: `Waxing — when the lit portion of the Moon is growing larger night by night, from New Moon through to Full Moon.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `How the Moon Causes Tides`,
+          totalSections: 6,
+          headline:      `Full Moon to New Moon`,
           paragraphs: [
-            `The Moon's gravity pulls on everything on Earth — including the oceans. The ocean on the side of Earth directly facing the Moon gets pulled toward it, creating a bulge of water — a high tide. This effect is strongest because that side of Earth is closest to the Moon.`,
-            `At the same time, the ocean on the opposite side of Earth also bulges outward — caused by the combined effects of Earth's rotation and the relative centrifugal forces in the Earth-Moon system. So there are two high-tide bulges on opposite sides of Earth at once.`,
-            `As Earth rotates over about 24 hours, different coastlines pass through these two bulges. Most coastlines experience two high tides and two low tides every day — roughly 6 hours apart. Tides drive ocean currents, shape coastlines, and create unique ecosystems in tidal zones where the ocean regularly rises and retreats.`,
+            `When Earth is between the Moon and the Sun, the Moon's fully lit face shines straight back at us. This is a Full Moon.`,
+            `After Full Moon, the lit portion shrinks night by night — back through half circle and crescent to New Moon. This shrinking is called waning.`,
           ],
-          image:        '/explorer-assets/cosmos/l15-magazine-tides.png',
-          imageCaption: `Tides — the Moon's gravity pulling Earth's oceans into two bulges, rising and falling twice each day`,
+          image:        '/explorer-assets/cosmos/l15-s3-waning-sequence.png',
+          imageCaption: `From Full Moon back to New Moon, the lit portion shrinks — this is waning`,
           vocab: [
-            { word: 'tide',         definition: `The regular rise and fall of sea levels caused by the Moon's gravitational pull on Earth's oceans — most coastlines experience two high tides and two low tides every day.`, audioPrompt: `Tide — the regular rise and fall of sea levels caused by the Moon's gravitational pull on Earth's oceans. Most coastlines experience two high tides and two low tides every day.` },
-            { word: 'tidal zone',   definition: `The area of coastline between high and low tide marks — a unique ecosystem that is covered and uncovered by water twice daily, supporting specialised plants and animals.`,   audioPrompt: `Tidal zone — the area of coastline between high and low tide marks. A unique ecosystem that is covered and uncovered by water twice daily, supporting specialised plants and animals.` },
+            { word: 'full moon', definition: `The phase when Earth is between the Moon and the Sun. The Moon's fully lit face shines back at us in the night sky.`, audioPrompt: `Full moon — the phase when Earth is between the Moon and the Sun. The Moon's fully lit face shines back at us in the night sky.` },
+            { word: 'waning',    definition: `When the lit portion of the Moon is shrinking night by night — from Full Moon back toward New Moon.`, audioPrompt: `Waning — when the lit portion of the Moon is shrinking night by night, from Full Moon back toward New Moon.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Amazing Moon Facts`,
+          totalSections: 6,
+          headline:      `How the Moon Pulls the Tides`,
           paragraphs: [
-            `The Moon is gradually moving away from Earth — about 1.5 inches every year. When the dinosaurs were alive, the Moon was much closer, tides were far more powerful, and days were shorter. Over billions of years, the Moon has been slowly drifting outward while Earth's rotation has been slowing down.`,
-            `The Moon is tidally locked to Earth — meaning the same side always faces us. The Moon rotates at exactly the same rate that it orbits Earth, so we always see the same face. The far side of the Moon was entirely unknown to humans until spacecraft photographed it in 1959. It looks very different from the familiar near side.`,
-            `Twelve humans have walked on the Moon — all Americans, between 1969 and 1972. The last time a human stood on the lunar surface was December 1972. The Moon is the only place beyond Earth where humans have ever set foot. It's 238,900 miles away — close enough, in cosmic terms, to have visited.`,
+            `The Moon's gravity pulls on Earth's oceans. The water on the side facing the Moon bulges toward it — creating a high tide.`,
+            `A second bulge forms on the opposite side of Earth. As Earth rotates, most coastlines get two high tides and two low tides each day.`,
           ],
-          image:        '/explorer-assets/cosmos/l15-magazine-moon-facts.png',
-          imageCaption: `Amazing Moon facts — tidally locked, slowly drifting away, and the only world humans have visited`,
+          image:        '/explorer-assets/cosmos/l15-s4-tides.png',
+          imageCaption: `The Moon's gravity pulls Earth's oceans into two bulges — creating tides`,
           vocab: [
-            { word: 'tidal locking', definition: `When a moon orbits a planet at exactly the same rate it rotates, so the same side always faces the planet — Earth's Moon is tidally locked, so we always see the same face.`, audioPrompt: `Tidal locking — when a moon orbits a planet at exactly the same rate it rotates, so the same side always faces the planet. Earth's Moon is tidally locked, so we always see the same face.` },
-            { word: 'far side of the Moon', definition: `The hemisphere of the Moon that never faces Earth — unknown until photographed by spacecraft in 1959. It looks very different from the near side, with fewer dark plains.`, audioPrompt: `Far side of the Moon — the hemisphere of the Moon that never faces Earth, unknown until photographed by spacecraft in 1959. It looks very different from the near side, with fewer dark plains.` },
+            { word: 'tide',      definition: `The regular rise and fall of sea levels caused by the Moon's gravity pulling on Earth's oceans.`, audioPrompt: `Tide — the regular rise and fall of sea levels caused by the Moon's gravity pulling on Earth's oceans.` },
+            { word: 'high tide', definition: `When sea level is at its highest on a coast. Most coastlines have two high tides every day as Earth rotates through the bulges.`, audioPrompt: `High tide — when sea level is at its highest on a coast. Most coastlines have two high tides every day as Earth rotates through the bulges.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The Moon Is Drifting Away`,
+          paragraphs: [
+            `The Moon is slowly moving away from Earth — about 1.5 inches every year. When dinosaurs were alive, it was much closer.`,
+            `The Moon is tidally locked to Earth — the same side always faces us. The far side was unknown to humans until spacecraft photographed it in 1959.`,
+          ],
+          image:        '/explorer-assets/cosmos/l15-s5-moon-drifting.png',
+          imageCaption: `The Moon drifts away from Earth 1.5 inches each year — and always shows us the same face`,
+          vocab: [
+            { word: 'tidal locking',        definition: `When a moon orbits a planet at exactly the same rate it rotates — so the same side always faces the planet.`, audioPrompt: `Tidal locking — when a moon orbits a planet at exactly the same rate it rotates, so the same side always faces the planet.` },
+            { word: 'far side of the Moon', definition: `The hemisphere of the Moon that never faces Earth. It was unknown to humans until spacecraft photographed it in 1959.`, audioPrompt: `Far side of the Moon — the hemisphere of the Moon that never faces Earth. It was unknown to humans until spacecraft photographed it in 1959.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Humans Have Been There`,
+          paragraphs: [
+            `Between 1969 and 1972, twelve humans walked on the Moon. The last footprint was made in December 1972.`,
+            `The Moon is the only place beyond Earth where humans have ever set foot. It's 238,900 miles away — close enough, in cosmic terms, to have visited.`,
+          ],
+          image:        '/explorer-assets/cosmos/l15-s6-astronaut-moon.png',
+          imageCaption: `Twelve humans have walked on the Moon — the only world beyond Earth we've touched`,
+          vocab: [
+            { word: 'Apollo',        definition: `The NASA program that landed humans on the Moon between 1969 and 1972. Apollo 11 was the first landing.`, audioPrompt: `Apollo — the NASA program that landed humans on the Moon between 1969 and 1972. Apollo 11 was the first landing.` },
+            { word: 'lunar surface', definition: `The ground of the Moon — covered in craters, dust, and rocks that are billions of years old.`, audioPrompt: `Lunar surface — the ground of the Moon, covered in craters, dust, and rocks that are billions of years old.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l15_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L15] Loaded: "The Moon: Phases and Tides" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l15-magazine-moon-phases.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l15-magazine-eight-phases.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l15-magazine-tides.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l15-magazine-moon-facts.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L15] moon-phases: ${r1.ok}, eight-phases: ${r2.ok}, tides: ${r3.ok}, moon-facts: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l15-s1-moon-geometry.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l15-s2-waxing-sequence.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l15-s3-waning-sequence.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l15-s4-tides.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l15-s5-moon-drifting.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l15-s6-astronaut-moon.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L15] moon-geometry: ${r1.ok}, waxing-sequence: ${r2.ok}, waning-sequence: ${r3.ok}, tides: ${r4.ok}, moon-drifting: ${r5.ok}, astronaut-moon: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L15] Could not verify image assets — network check failed');
   });
