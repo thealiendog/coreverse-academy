@@ -23,73 +23,101 @@ const cosmos_explorer_l01_screens = {
           guideText: `You are standing on a rock hurtling through space at 67,000 miles per hour right now. That rock is Earth, and it's one of eight planets circling a star we call the Sun. Welcome to our solar system — the most amazing neighbourhood in the known universe. Ready to explore it?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `The Sun: The Center of Everything`,
+          totalSections: 6,
+          headline:      `8 Planets and a Star`,
           paragraphs: [
-            `Our solar system has 8 planets orbiting the Sun. Each one is completely different — and Earth is the only one we know of with life. At the centre of it all is the Sun.`,
-            `The Sun is a star — a giant ball of hot gas so enormous that over a million Earths could fit inside it. Everything in our solar system orbits the Sun because of its massive gravity.`,
-            `The Sun provides the light and heat that makes life on Earth possible. Without it, Earth would be a frozen, dark rock drifting through space — silent and lifeless.`,
+            `Our solar system has 8 planets orbiting a star we call the Sun. Each planet is completely different.`,
+            `Earth is one of these planets — and the only one we know of with life. We are part of an incredible neighborhood in space.`,
           ],
-          image:        '/explorer-assets/cosmos/l01-magazine-sun.png',
-          imageCaption: `The Sun — our star, our warmth, and the gravitational anchor of everything`,
+          image:        '/explorer-assets/cosmos/l01-s1-solar-system.png',
+          imageCaption: `Our solar system — 8 planets, one star, and our home`,
           vocab: [
-            { word: 'star',  definition: `A massive ball of hot gas that produces its own light and heat through nuclear reactions — our Sun is a star, and there are billions more across the universe.`, audioPrompt: `Star — a massive ball of hot gas that produces its own light and heat through nuclear reactions. Our Sun is a star, and there are billions more across the universe.` },
-            { word: 'orbit', definition: `The curved path an object takes around another object in space — Earth orbits the Sun, and the Moon orbits Earth, all held in place by gravity.`,               audioPrompt: `Orbit — the curved path an object takes around another object in space. Earth orbits the Sun, and the Moon orbits Earth, all held in place by gravity.` },
+            { word: 'solar system', definition: `Our Sun and everything that orbits it — including 8 planets, asteroids, comets, and more.`, audioPrompt: `Solar system — our Sun and everything that orbits it, including 8 planets, asteroids, comets, and more.` },
+            { word: 'star',         definition: `A giant ball of hot gas in space. Our Sun is a star. There are billions of them out there.`, audioPrompt: `Star — a giant ball of hot gas in space. Our Sun is a star. There are billions of them out there.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Inner Planets: Rocky and Close`,
+          totalSections: 6,
+          headline:      `The Sun Holds Everything`,
           paragraphs: [
-            `The four planets closest to the Sun — Mercury, Venus, Earth, and Mars — are called the inner planets. They're made of rock and metal, with solid surfaces you could actually stand on.`,
-            `Mercury is tiny and has wild temperature swings — scorching hot during the day and freezing cold at night. Venus is the hottest planet in our solar system (even hotter than Mercury!) because its thick atmosphere traps heat like a greenhouse. Earth is our perfect home. And Mars, the red planet, is home to the largest volcano in the entire solar system.`,
-            `These rocky worlds are neighbours in space — but they couldn't be more different from each other.`,
+            `The Sun is a star — a giant ball of hot gas so enormous that over a million Earths could fit inside it.`,
+            `Everything in our solar system orbits the Sun because of its massive gravity. Without the Sun, Earth would be a frozen, lifeless rock.`,
           ],
-          image:        '/explorer-assets/cosmos/l01-magazine-inner-planets.png',
-          imageCaption: `Mercury, Venus, Earth, Mars — four rocky neighbours, four completely different worlds`,
+          image:        '/explorer-assets/cosmos/l01-s2-sun.png',
+          imageCaption: `The Sun's gravity holds the whole solar system together`,
           vocab: [
-            { word: 'inner planets', definition: `The four rocky planets closest to the Sun — Mercury, Venus, Earth, and Mars — made of rock and metal with solid surfaces.`,                                                        audioPrompt: `Inner planets — the four rocky planets closest to the Sun: Mercury, Venus, Earth, and Mars. They're made of rock and metal and have solid surfaces.` },
-            { word: 'atmosphere',    definition: `The layer of gases surrounding a planet — Venus's thick atmosphere traps heat so effectively it becomes the hottest planet despite being farther from the Sun than Mercury.`, audioPrompt: `Atmosphere — the layer of gases surrounding a planet. Venus's thick atmosphere traps heat so effectively that it becomes the hottest planet, despite being farther from the Sun than Mercury.` },
+            { word: 'gravity', definition: `The invisible force that pulls things together. Gravity holds the planets in their orbits around the Sun.`, audioPrompt: `Gravity — the invisible force that pulls things together. Gravity holds the planets in their orbits around the Sun.` },
+            { word: 'orbit',   definition: `To go around something in a steady path. The planets orbit the Sun — round and round, never stopping.`, audioPrompt: `Orbit — to go around something in a steady path. The planets orbit the Sun, round and round, never stopping.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The Outer Planets: Giants Made of Gas`,
+          totalSections: 6,
+          headline:      `The Inner Planets`,
           paragraphs: [
-            `Beyond Mars come the four outer planets — Jupiter, Saturn, Uranus, and Neptune. These are the gas giants: enormous worlds made mostly of gas and liquid, with no solid surface to stand on.`,
-            `Jupiter is the biggest planet of all — so large that every other planet in our solar system could fit inside it. Saturn has stunning rings made of ice and rock that stretch thousands of kilometres into space. Uranus is tilted so far on its side it essentially rolls around the Sun. Neptune has winds faster than any hurricane on Earth.`,
-            `These giants are cold, wild, and impossibly vast — worlds on a scale that's hard to imagine from here on tiny, perfect Earth.`,
+            `The four planets closest to the Sun — Mercury, Venus, Earth, and Mars — are called the inner planets. They have solid surfaces made of rock and metal.`,
+            `Mercury is tiny with wild temperature swings. Venus is the hottest planet of all. Earth is our home. Mars is the red planet.`,
           ],
-          image:        '/explorer-assets/cosmos/l01-magazine-outer-planets.png',
-          imageCaption: `Jupiter, Saturn, Uranus, Neptune — gas giants of extraordinary scale`,
+          image:        '/explorer-assets/cosmos/l01-s3-inner-planets.png',
+          imageCaption: `The 4 inner planets — rocky worlds with solid ground you could stand on`,
           vocab: [
-            { word: 'gas giant', definition: `A very large planet made mostly of gas and liquid — Jupiter, Saturn, Uranus, and Neptune are all gas giants with no solid surface to land on.`,          audioPrompt: `Gas giant — a very large planet made mostly of gas and liquid. Jupiter, Saturn, Uranus, and Neptune are all gas giants with no solid surface to land on.` },
-            { word: 'rings',     definition: `Bands of ice and rock particles orbiting a planet — Saturn's rings are the most spectacular in our solar system, stretching thousands of kilometres wide.`, audioPrompt: `Rings — bands of ice and rock particles orbiting a planet. Saturn's rings are the most spectacular in our solar system, stretching thousands of kilometres wide.` },
+            { word: 'inner planets', definition: `The four planets closest to the Sun — Mercury, Venus, Earth, and Mars. All made of rock and metal.`, audioPrompt: `Inner planets — the four planets closest to the Sun: Mercury, Venus, Earth, and Mars. All made of rock and metal.` },
+            { word: 'surface',       definition: `The solid outside of a planet — what you could walk on. The inner planets have surfaces; the outer planets don't.`, audioPrompt: `Surface — the solid outside of a planet, what you could walk on. The inner planets have surfaces; the outer planets don't.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `The Asteroid Belt and Beyond`,
+          totalSections: 6,
+          headline:      `The Outer Planets`,
           paragraphs: [
-            `Between Mars and Jupiter lies the asteroid belt — millions of rocky objects of all sizes orbiting the Sun. It's the boundary between the inner rocky planets and the outer gas giants.`,
-            `Beyond Neptune is the Kuiper Belt, a region of icy objects including Pluto — once considered our ninth planet, now classified as a dwarf planet. Further still is the Oort Cloud, a vast shell of icy objects at the very edge of our solar system. Comets that swing past Earth originate here.`,
-            `Our solar system is far larger than just eight planets. It stretches into the dark, cold reaches of space — and scientists are still discovering what lives out there.`,
+            `Beyond Mars come the four outer planets — Jupiter, Saturn, Uranus, and Neptune. These are gas giants, with no solid surface.`,
+            `Jupiter is the biggest of them all. Saturn has stunning rings of ice and rock. Uranus rolls on its side. Neptune has the fastest winds.`,
           ],
-          image:        '/explorer-assets/cosmos/l01-magazine-asteroid-belt.png',
-          imageCaption: `Beyond the planets — asteroid belts, dwarf planets, and the Oort Cloud at the edge`,
+          image:        '/explorer-assets/cosmos/l01-s4-outer-planets.png',
+          imageCaption: `The 4 outer planets — gas giants with no solid surface to stand on`,
           vocab: [
-            { word: 'asteroid belt', definition: `A region between Mars and Jupiter containing millions of rocky objects orbiting the Sun — it marks the boundary between the inner and outer solar system.`, audioPrompt: `Asteroid belt — a region between Mars and Jupiter containing millions of rocky objects orbiting the Sun. It marks the boundary between the inner and outer solar system.` },
-            { word: 'dwarf planet',  definition: `A space object that orbits the Sun and is roughly spherical, but hasn't cleared its orbit of other objects — Pluto is the most famous dwarf planet.`,   audioPrompt: `Dwarf planet — a space object that orbits the Sun and is roughly spherical, but hasn't cleared its orbit of other objects. Pluto is the most famous dwarf planet.` },
+            { word: 'outer planets', definition: `The four planets farthest from the Sun — Jupiter, Saturn, Uranus, and Neptune. All gas giants.`, audioPrompt: `Outer planets — the four planets farthest from the Sun: Jupiter, Saturn, Uranus, and Neptune. All gas giants.` },
+            { word: 'gas giant',     definition: `A huge planet made mostly of gas and liquid — no solid ground. Jupiter is the biggest gas giant.`, audioPrompt: `Gas giant — a huge planet made mostly of gas and liquid, no solid ground. Jupiter is the biggest gas giant.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The Asteroid Belt`,
+          paragraphs: [
+            `Between Mars and Jupiter lies the asteroid belt — millions of rocky objects of all sizes orbiting the Sun together.`,
+            `It's the boundary between the inner rocky planets and the outer gas giants. Two very different neighborhoods in space.`,
+          ],
+          image:        '/explorer-assets/cosmos/l01-s5-asteroid-belt.png',
+          imageCaption: `The asteroid belt — the boundary between rocky planets and gas giants`,
+          vocab: [
+            { word: 'asteroid belt', definition: `A ring of millions of rocky objects orbiting between Mars and Jupiter — the boundary between inner and outer planets.`, audioPrompt: `Asteroid belt — a ring of millions of rocky objects orbiting between Mars and Jupiter, the boundary between inner and outer planets.` },
+            { word: 'boundary',      definition: `The line between two different areas. The asteroid belt is the boundary between rocky planets and gas giants.`, audioPrompt: `Boundary — the line between two different areas. The asteroid belt is the boundary between rocky planets and gas giants.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Beyond the Planets`,
+          paragraphs: [
+            `Far beyond Neptune is the Kuiper Belt — a region of icy objects. Pluto lives here. It was once called a planet; now it's a dwarf planet.`,
+            `Our solar system is much bigger than just 8 planets. It stretches into the dark, cold edges of space.`,
+          ],
+          image:        '/explorer-assets/cosmos/l01-s6-beyond-planets.png',
+          imageCaption: `Our solar system goes far beyond the 8 planets — to the icy edges of space`,
+          vocab: [
+            { word: 'Kuiper Belt',  definition: `A region of icy objects far beyond Neptune. Pluto lives here — and so do many comets.`, audioPrompt: `Kuiper Belt — a region of icy objects far beyond Neptune. Pluto lives here, and so do many comets.` },
+            { word: 'dwarf planet', definition: `A small planet-like object that orbits the Sun but isn't big enough to be a full planet. Pluto is a dwarf planet.`, audioPrompt: `Dwarf planet — a small planet-like object that orbits the Sun but isn't big enough to be a full planet. Pluto is a dwarf planet.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l01_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L01] Loaded: "The Solar System: 8 Planets and Us" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l01-magazine-sun.png',            { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l01-magazine-inner-planets.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l01-magazine-outer-planets.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l01-magazine-asteroid-belt.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L01] sun: ${r1.ok}, inner-planets: ${r2.ok}, outer-planets: ${r3.ok}, asteroid-belt: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l01-s1-solar-system.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l01-s2-sun.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l01-s3-inner-planets.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l01-s4-outer-planets.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l01-s5-asteroid-belt.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l01-s6-beyond-planets.png',{ method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L01] solar-system: ${r1.ok}, sun: ${r2.ok}, inner-planets: ${r3.ok}, outer-planets: ${r4.ok}, asteroid-belt: ${r5.ok}, beyond-planets: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L01] Could not verify image assets — network check failed');
   });
