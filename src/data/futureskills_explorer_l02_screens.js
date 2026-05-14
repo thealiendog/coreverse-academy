@@ -23,73 +23,101 @@ const futureskills_explorer_l02_screens = {
           guideText: `Every morning you probably do the same things in the same order — wake up, brush teeth, eat breakfast, get dressed. Without thinking about it, you're following an algorithm. Algorithms are everywhere, and they're the foundation of all computer science.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is an Algorithm?`,
+          totalSections: 6,
+          headline:      `What's an Algorithm?`,
           paragraphs: [
-            `An algorithm is a finite set of well-defined instructions for solving a problem or completing a task. The key word is precise — every step must be clear enough that anyone (or any computer) following it gets exactly the same result. Algorithms are not mysterious or complicated by nature. A recipe is an algorithm. Directions to a friend's house are an algorithm. The steps for long division are an algorithm.`,
-            `What makes something an algorithm rather than just a vague plan? Three things: the steps are specific enough that there's no ambiguity about what to do next, the process makes progress toward a defined goal with each step, and it eventually reaches a conclusion rather than running forever. Whenever you have a repeatable process with clear steps and a defined end, you have an algorithm.`,
-            `The reason algorithms matter so much in computing is that computers can only follow instructions — they cannot figure things out for themselves. Every computer program is built from algorithms: structured sequences of precise instructions that tell the machine exactly what to do in what order. When you write code, you are translating your algorithm into a language the computer can execute.`,
+            `An algorithm is a set of precise, step-by-step instructions for solving a problem or completing a task. A recipe is an algorithm. Directions to a friend's house are an algorithm. The steps for long division are an algorithm.`,
+            `What makes something an algorithm? The steps are specific enough that there's no ambiguity, the process makes progress toward a defined goal, and it eventually reaches a conclusion. Whenever you have a repeatable process with clear steps and a defined end, you have an algorithm.`,
           ],
-          image:        '/explorer-assets/future-skills/l02-magazine-what-is-algorithm.png',
+          image:        '/explorer-assets/future-skills/l02-s1-list-of-steps.png',
           imageCaption: `An algorithm — a precise, finite, step-by-step process that always produces the same result when followed correctly`,
           vocab: [
-            { word: `algorithm`, definition: `A precise, finite, step-by-step set of instructions for solving a problem — algorithms must be unambiguous, make progress toward a goal, and eventually reach a conclusion.`, audioPrompt: `Algorithm — a precise, finite, step-by-step set of instructions for solving a problem. Algorithms must be unambiguous, make progress toward a goal, and eventually reach a conclusion.` },
-            { word: `finite`,    definition: `Having a definite end — a finite algorithm always terminates rather than running forever. An algorithm that never ends is not a valid algorithm.`,                              audioPrompt: `Finite — having a definite end. A finite algorithm always terminates rather than running forever. An algorithm that never ends is not a valid algorithm.` },
+            { word: `algorithm`, definition: `A precise, step-by-step set of instructions for solving a problem — algorithms must be unambiguous, make progress toward a goal, and eventually reach a conclusion.`, audioPrompt: `Algorithm — a precise, step-by-step set of instructions for solving a problem. Algorithms must be unambiguous, make progress toward a goal, and eventually reach a conclusion.` },
+            { word: `step`,      definition: `A single action in an algorithm. Every step must be clear enough that anyone following it knows exactly what to do.`,                                                  audioPrompt: `Step — a single action in an algorithm. Every step must be clear enough that anyone following it knows exactly what to do.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Properties of a Good Algorithm`,
+          totalSections: 6,
+          headline:      `Recipes and Directions`,
           paragraphs: [
-            `A good algorithm has four essential properties. First, it has a clear starting point — you know exactly where to begin. Second, each step is precise and unambiguous — there is only one way to interpret it. Third, it makes progress toward a goal with every step — it doesn't run in place or circle back forever. Fourth, it eventually ends — every algorithm must reach a conclusion.`,
-            `A bad algorithm fails on at least one of these properties. "Add some salt" fails on precision — how much is some? A process that keeps checking a condition but never changes it runs forever without termination. "Do something until it feels right" fails on both precision and a clear ending. Computer algorithms must be flawless — a single unclear step can crash an entire program or produce wrong results without any warning.`,
-            `These requirements might seem strict — and they are. But that strictness is exactly what makes algorithms so powerful. Because every step is precisely defined and the process always ends, an algorithm that works once will work the same way every time, on any machine, followed by any person or computer. Reliability and repeatability are built into the concept itself.`,
+            `Your morning routine is an algorithm. You wake up, brush your teeth, eat breakfast, get dressed — always in the same order, always the same steps. Following it without thinking is exactly what computers do with code.`,
+            `Recipes, directions, and daily routines all share one thing: a clear sequence. Do step one, then step two, then step three. Each step builds on the last. That structure — that sequence — is what makes an algorithm work.`,
           ],
-          image:        '/explorer-assets/future-skills/l02-magazine-properties.png',
-          imageCaption: `Properties of a good algorithm — clear start, unambiguous steps, forward progress, and a definite end`,
+          image:        '/explorer-assets/future-skills/l02-s2-morning-routine.png',
+          imageCaption: `Your morning routine is a real algorithm — the same steps, in the same order, every single day`,
           vocab: [
-            { word: `unambiguous`, definition: `Having only one possible interpretation — each step of a good algorithm is unambiguous, meaning anyone following it will understand it the same way and produce the same result.`, audioPrompt: `Unambiguous — having only one possible interpretation. Each step of a good algorithm is unambiguous, meaning anyone following it will understand it the same way and produce the same result.` },
-            { word: `termination`, definition: `The property of eventually ending — a valid algorithm must always reach a conclusion. A process that runs forever without stopping is not a proper algorithm.`,               audioPrompt: `Termination — the property of eventually ending. A valid algorithm must always reach a conclusion. A process that runs forever without stopping is not a proper algorithm.` },
+            { word: `routine`,  definition: `A fixed set of steps done in the same order, regularly. Your morning routine is a real algorithm you run every day.`,                    audioPrompt: `Routine — a fixed set of steps done in the same order, regularly. Your morning routine is a real algorithm you run every day.` },
+            { word: `sequence`, definition: `Steps performed in a specific order, one after another. Sequence is the core structure of every algorithm.`, audioPrompt: `Sequence — steps performed in a specific order, one after another. Sequence is the core structure of every algorithm.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Algorithms in Everyday Life`,
+          totalSections: 6,
+          headline:      `Four Marks of a Good One`,
           paragraphs: [
-            `Algorithms run far more of your life than you probably realize. When a search engine shows you results, an algorithm decided which ones to show first — ranking billions of pages in milliseconds based on patterns in what you typed. When a music streaming app recommends a new song, an algorithm analyzed your listening history and predicted what you'd enjoy next. When a traffic light changes, an algorithm controls the timing based on traffic flow patterns.`,
-            `Video platforms use algorithms to decide what you'd probably want to watch next. Navigation apps use algorithms to calculate the fastest route to your destination, recalculating in real time when there's traffic or a road closure. Every time you interact with any digital system that makes a decision or shows you content, an algorithm is running behind the scenes.`,
-            `The algorithms behind recommendation systems are some of the most influential ever built. They shape what news people read, what products they buy, and what ideas they encounter. Understanding that these recommendations are algorithmic outputs — not objective truths — is one of the most important pieces of digital literacy a person can have. Algorithms serve whoever designed them. Knowing that changes how you see every recommendation.`,
+            `A good algorithm has four properties. A clear starting point. Precise, unambiguous steps — only one way to interpret each one. Forward progress — every step moves toward the goal. And a definite end — it must eventually finish.`,
+            `A bad algorithm fails on at least one. "Add some salt" is ambiguous. A process that loops forever without ending fails termination. Computer algorithms must be flawless — a single unclear step can crash a whole program.`,
           ],
-          image:        '/explorer-assets/future-skills/l02-magazine-everyday-life.png',
-          imageCaption: `Algorithms in everyday life — search results, traffic lights, music recommendations, and navigation all run on them`,
+          image:        '/explorer-assets/future-skills/l02-s3-four-marks.png',
+          imageCaption: `Four marks of a good algorithm — clear start, unambiguous steps, forward progress, definite end`,
           vocab: [
-            { word: `recommendation`, definition: `A suggestion produced by an algorithm based on data — recommendation algorithms analyze patterns in your behavior to predict what you might want to see, hear, or buy next.`, audioPrompt: `Recommendation — a suggestion produced by an algorithm based on data. Recommendation algorithms analyze patterns in your behavior to predict what you might want to see, hear, or buy next.` },
-            { word: `automation`,     definition: `Using algorithms or machines to perform tasks without human action each time — automation is what allows digital systems to make millions of decisions per second without anyone manually directing each one.`, audioPrompt: `Automation — using algorithms or machines to perform tasks without human action each time. Automation is what allows digital systems to make millions of decisions per second without anyone manually directing each one.` },
+            { word: `unambiguous`, definition: `Having only one possible interpretation. Each step of a good algorithm is unambiguous — anyone following it will understand it the same way.`, audioPrompt: `Unambiguous — having only one possible interpretation. Each step of a good algorithm is unambiguous, meaning anyone following it will understand it the same way.` },
+            { word: `termination`, definition: `The property of eventually ending. A valid algorithm must always reach a conclusion — a process that runs forever is not a proper algorithm.`,  audioPrompt: `Termination — the property of eventually ending. A valid algorithm must always reach a conclusion. A process that runs forever without stopping is not a proper algorithm.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Flowcharts: Drawing Algorithms`,
+          totalSections: 6,
+          headline:      `Search, Music, Maps`,
           paragraphs: [
-            `Before professional programmers write a single line of code, many of them draw their algorithm as a flowchart. A flowchart is a visual diagram that maps out every step and decision in a process using standard shapes. Ovals mark the start and end. Rectangles contain process steps — actions the program takes. Diamonds contain decision points — yes/no questions that branch the flow in different directions. Arrows connect everything.`,
-            `Flowcharts make it easier to spot logical problems before you've invested time writing code. If you draw out your algorithm and discover that one branch of a decision never reaches an end point, or that two steps are in the wrong order, you can fix it on paper in seconds rather than hunting for the error in dozens of lines of code later. Planning before coding is one of the most consistently valuable professional habits.`,
-            `A well-drawn flowchart can also be shared with someone who doesn't know how to code at all, so they can check whether the logic makes sense. This is why flowcharts remain in common use even among experienced engineers: they communicate intent clearly, bridge the gap between human thinking and computer execution, and serve as documentation for how a program is supposed to work.`,
+            `Algorithms run far more of your life than you realize. When a search engine shows you results, an algorithm ranked billions of pages in milliseconds. When a music app recommends a song, an algorithm analyzed your listening history. When a traffic light changes, an algorithm controls the timing.`,
+            `Navigation apps use algorithms to calculate the fastest route, recalculating in real time when traffic changes. Every time a digital system makes a decision or shows you content, an algorithm is running behind the scenes — quietly shaping what you see.`,
           ],
-          image:        '/explorer-assets/future-skills/l02-magazine-flowcharts.png',
-          imageCaption: `Flowcharts — visual diagrams that map algorithms using shapes and arrows, making logic easier to spot and check`,
+          image:        '/explorer-assets/future-skills/l02-s4-invisible-algorithms.png',
+          imageCaption: `Search results, music recommendations, traffic lights, and navigation — all run by algorithms`,
           vocab: [
-            { word: `flowchart`,     definition: `A visual diagram that maps out an algorithm using shapes — ovals for start and end, rectangles for steps, diamonds for decisions, and arrows showing the direction of flow.`, audioPrompt: `Flowchart — a visual diagram that maps out an algorithm using shapes. Ovals for start and end, rectangles for steps, diamonds for decisions, and arrows showing the direction of flow.` },
-            { word: `decision point`, definition: `A step in an algorithm where the path branches based on a yes/no condition — represented by a diamond in a flowchart, a decision point directs the process in different directions depending on the answer.`, audioPrompt: `Decision point — a step in an algorithm where the path branches based on a yes or no condition. Represented by a diamond in a flowchart, it directs the process in different directions depending on the answer.` },
+            { word: `search algorithm`, definition: `An algorithm that finds and ranks results from a huge set of data — like how a search engine picks which web pages to show you first.`, audioPrompt: `Search algorithm — an algorithm that finds and ranks results from a huge set of data, like how a search engine picks which web pages to show you first.` },
+            { word: `navigation`,       definition: `The process of finding a route from one place to another. Navigation apps use algorithms to calculate and update your path in real time.`, audioPrompt: `Navigation — the process of finding a route from one place to another. Navigation apps use algorithms to calculate and update your path in real time.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The Recommendation Problem`,
+          paragraphs: [
+            `Recommendation algorithms are some of the most influential ever built. They shape what news people read, what products they buy, and what ideas they encounter — billions of decisions, per day, made by code.`,
+            `Understanding that recommendations are algorithmic outputs — not objective truths — is one of the most important pieces of digital literacy you can have. Algorithms serve whoever designed them. Knowing that changes how you see every recommendation.`,
+          ],
+          image:        '/explorer-assets/future-skills/l02-s5-recommendation-feed.png',
+          imageCaption: `Recommendation algorithms decide what you see next — and they serve whoever built them`,
+          vocab: [
+            { word: `recommendation`,  definition: `A suggestion produced by an algorithm based on data — analyzing patterns in your behavior to predict what you might want to see, hear, or buy.`, audioPrompt: `Recommendation — a suggestion produced by an algorithm based on data. It analyzes patterns in your behavior to predict what you might want to see, hear, or buy next.` },
+            { word: `digital literacy`, definition: `The ability to understand and think critically about how digital tools — including algorithms — work and who they serve.`,                          audioPrompt: `Digital literacy — the ability to understand and think critically about how digital tools, including algorithms, work and who they serve.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Drawing It Out: Flowcharts`,
+          paragraphs: [
+            `Before writing code, many programmers draw their algorithm as a flowchart. Ovals mark the start and end. Rectangles contain steps — actions the program takes. Diamonds contain decisions — yes/no questions that branch the flow. Arrows connect everything.`,
+            `Flowcharts make it easy to spot problems before you've written a single line of code. If one branch never reaches an end, or two steps are in the wrong order, you fix it on paper in seconds. Planning before coding is one of the most consistently valuable professional habits.`,
+          ],
+          image:        '/explorer-assets/future-skills/l02-s6-flowchart.png',
+          imageCaption: `Flowcharts — visual diagrams that map algorithms using shapes and arrows, making logic easy to spot`,
+          vocab: [
+            { word: `flowchart`,      definition: `A visual diagram that maps out an algorithm using shapes — ovals for start and end, rectangles for steps, diamonds for decisions, arrows for flow.`, audioPrompt: `Flowchart — a visual diagram that maps out an algorithm using shapes. Ovals for start and end, rectangles for steps, diamonds for decisions, and arrows showing direction.` },
+            { word: `decision`,       definition: `A step in an algorithm where the path branches based on a yes or no condition — shown as a diamond in a flowchart.`,                                audioPrompt: `Decision — a step in an algorithm where the path branches based on a yes or no condition. Shown as a diamond in a flowchart.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l02_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L02] Loaded: "Algorithms: Step-by-Step Instructions" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l02-magazine-what-is-algorithm.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l02-magazine-properties.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l02-magazine-everyday-life.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l02-magazine-flowcharts.png',        { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L02] what-is-algorithm: ${r1.ok}, properties: ${r2.ok}, everyday-life: ${r3.ok}, flowcharts: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l02-s1-list-of-steps.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l02-s2-morning-routine.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l02-s3-four-marks.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l02-s4-invisible-algorithms.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l02-s5-recommendation-feed.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l02-s6-flowchart.png',            { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L02] list-of-steps: ${r1.ok}, morning-routine: ${r2.ok}, four-marks: ${r3.ok}, invisible-algorithms: ${r4.ok}, recommendation-feed: ${r5.ok}, flowchart: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L02] Could not verify image assets — network check failed');
   });
