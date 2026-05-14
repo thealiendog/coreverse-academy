@@ -23,73 +23,101 @@ const cosmos_explorer_l16_screens = {
           guideText: `The ground beneath your feet feels solid and still — but Earth is anything but. Its surface is broken into massive moving pieces, its interior is churning with heat, and in some places that energy breaks through as volcanoes and earthquakes. The planet is alive under your feet right now.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Earth's Layered Structure`,
+          totalSections: 6,
+          headline:      `Earth's Four Layers`,
           paragraphs: [
-            `Earth is not a solid ball — it has four distinct layers. The outermost layer, the crust, is the thin rocky shell we live on. Below the crust is the mantle — a thick layer of hot, slow-flowing rock. The outer core is liquid iron and nickel, swirling at enormous temperatures. At the very centre is the inner core — a solid ball of iron and nickel under immense pressure.`,
-            `The temperature increases dramatically as you go deeper. The crust is relatively cool. The mantle, which makes up about 84% of Earth's volume, is extremely hot — hot enough that rock behaves almost like a thick, slow liquid over millions of years. This slow movement is called convection, driven by heat rising from the core.`,
-            `It's this internal heat that powers everything — the movement of continents, the building of mountains, the eruption of volcanoes, and the shaking of earthquakes. Earth's surface is not permanent. It has been constantly reshaped by internal forces for 4.5 billion years.`,
+            `Earth is not solid. It has four layers. The crust is the thin rocky shell we live on. Below it: the mantle — thick, hot, slow-flowing rock.`,
+            `Deeper still is the outer core: liquid iron swirling at extreme temperatures. At the very centre is the inner core — a solid ball of iron under crushing pressure.`,
           ],
-          image:        '/explorer-assets/cosmos/l16-magazine-earth-structure.png',
-          imageCaption: `Earth's layered structure — crust, mantle, outer core, inner core, each with different properties`,
+          image:        '/explorer-assets/cosmos/l16-s1-earth-layers.png',
+          imageCaption: `Earth has four layers — crust, mantle, outer core, and inner core`,
           vocab: [
-            { word: 'mantle',       definition: `The thick layer of hot, slow-flowing rock below Earth's crust — it makes up about 84% of Earth's volume and drives the movement of tectonic plates through convection currents.`, audioPrompt: `Mantle — the thick layer of hot, slow-flowing rock below Earth's crust. It makes up about 84% of Earth's volume and drives the movement of tectonic plates through convection currents.` },
-            { word: 'convection',   definition: `The movement of heat through a fluid — in Earth's mantle, hot rock rises, cools, and sinks in slow circular currents that push tectonic plates across the surface.`,              audioPrompt: `Convection — the movement of heat through a fluid. In Earth's mantle, hot rock rises, cools, and sinks in slow circular currents that push tectonic plates across the surface.` },
+            { word: 'crust',  definition: `The thin rocky outer shell of Earth — where we live. Compared to the rest of Earth, the crust is incredibly thin.`, audioPrompt: `Crust — the thin rocky outer shell of Earth, where we live. Compared to the rest of Earth, the crust is incredibly thin.` },
+            { word: 'mantle', definition: `The thick layer of hot, slow-flowing rock below the crust. The mantle makes up about 84% of Earth's volume.`, audioPrompt: `Mantle — the thick layer of hot, slow-flowing rock below the crust. The mantle makes up about 84% of Earth's volume.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Tectonic Plates: Earth's Moving Puzzle`,
+          totalSections: 6,
+          headline:      `The Heat Inside Earth`,
           paragraphs: [
-            `Earth's crust is broken into about 15 major tectonic plates — enormous slabs of rock that fit together like a puzzle and float on the slow-moving mantle beneath. These plates are constantly moving, typically a few centimetres per year — about the speed your fingernails grow. Over millions of years, those tiny movements add up to continents crossing oceans.`,
-            `Where plates meet, dramatic things happen. When two plates collide, the crust crumples upward into mountain ranges — the Himalayas are still growing today where the Indian plate crashes into the Eurasian plate. When plates pull apart, they create rift valleys and new ocean floor. When plates slide past each other, they lock and release in earthquakes.`,
-            `Most of Earth's volcanic and earthquake activity happens along plate boundaries — a zone called the Ring of Fire circles the Pacific Ocean and is home to about 75% of the world's volcanoes and 90% of its earthquakes. The plates don't move smoothly — they stick, build pressure, and release it suddenly.`,
+            `The deeper you go, the hotter it gets. Earth's interior is so hot that rock flows like a thick, slow liquid.`,
+            `This internal heat powers everything — moving continents, building mountains, erupting volcanoes, and shaking the ground. Earth's surface is never permanent.`,
           ],
-          image:        '/explorer-assets/cosmos/l16-magazine-tectonic-plates.png',
-          imageCaption: `Tectonic plates — Earth's puzzle-piece crust sections, moving centimetres per year and reshaping the surface`,
+          image:        '/explorer-assets/cosmos/l16-s2-mantle-convection.png',
+          imageCaption: `Heat from Earth's core powers continents, mountains, volcanoes, and earthquakes`,
           vocab: [
-            { word: 'tectonic plates', definition: `The massive moving slabs of rock that make up Earth's crust — there are about 15 major plates, floating on the mantle and slowly shifting, colliding, and pulling apart.`,    audioPrompt: `Tectonic plates — the massive moving slabs of rock that make up Earth's crust. There are about 15 major plates, floating on the mantle and slowly shifting, colliding, and pulling apart.` },
-            { word: 'Ring of Fire',    definition: `A zone of intense volcanic and earthquake activity circling the Pacific Ocean — home to about 75% of the world's volcanoes and 90% of its earthquakes, following plate boundaries.`, audioPrompt: `Ring of Fire — a zone of intense volcanic and earthquake activity circling the Pacific Ocean, home to about 75% of the world's volcanoes and 90% of its earthquakes, following plate boundaries.` },
+            { word: 'convection', definition: `The movement of heat through a fluid. Hot rock in the mantle rises, cools, sinks, and rises again — driving plate movement.`, audioPrompt: `Convection — the movement of heat through a fluid. Hot rock in the mantle rises, cools, sinks, and rises again, driving plate movement.` },
+            { word: 'molten',     definition: `Melted by intense heat. Molten rock flows like a thick liquid — and it's what powers volcanoes.`, audioPrompt: `Molten — melted by intense heat. Molten rock flows like a thick liquid, and it's what powers volcanoes.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Volcanoes: Fire From Below`,
+          totalSections: 6,
+          headline:      `Tectonic Plates`,
           paragraphs: [
-            `A volcano forms where molten rock from the mantle finds a pathway to the surface. Underground, this molten rock is called magma. When it erupts through the surface — as lava, ash, or gas — it's called lava. The difference is just location: magma is below ground, lava is above. Some eruptions are slow and flowing; others are catastrophic explosions.`,
-            `Shield volcanoes, like those in Hawaii, have gently sloping sides and produce flowing lava rather than explosive eruptions. Composite volcanoes, like Mount Fuji or Mount St Helens, are steeper and can erupt with enormous force, ejecting ash clouds high into the atmosphere. The type of eruption depends on the chemistry of the magma — thick, gas-rich magma explodes; thin magma flows.`,
-            `Some volcanoes form over "hotspots" — columns of unusually hot mantle material rising through the crust. As a tectonic plate slowly moves over a hotspot, it creates a chain of volcanic islands — which is exactly how the Hawaiian Islands formed. The oldest islands are furthest from the hotspot; the youngest, most active volcano is above it now.`,
+            `Earth's crust is broken into about 15 enormous slabs called tectonic plates. They fit together like a puzzle on the mantle below.`,
+            `The plates are constantly moving — a few centimetres per year, about the speed your fingernails grow. Tiny movements add up to continents crossing oceans.`,
           ],
-          image:        '/explorer-assets/cosmos/l16-magazine-volcanoes.png',
-          imageCaption: `Volcanoes — where magma breaks through to the surface as lava, shaped by plate boundaries and hotspots`,
+          image:        '/explorer-assets/cosmos/l16-s3-tectonic-plates.png',
+          imageCaption: `Earth's crust is a puzzle of 15 plates — slowly moving, all the time`,
           vocab: [
-            { word: 'magma', definition: `Molten rock beneath Earth's surface — when magma erupts and reaches the surface through a volcano, it is called lava. Magma forms in the mantle where temperatures and pressures are extreme.`, audioPrompt: `Magma — molten rock beneath Earth's surface. When magma erupts and reaches the surface through a volcano, it is called lava. Magma forms in the mantle where temperatures and pressures are extreme.` },
-            { word: 'lava',  definition: `Molten rock that has erupted from a volcano and reached Earth's surface — the same material as magma, but above ground. Lava can flow slowly or explode dramatically depending on its composition.`,  audioPrompt: `Lava — molten rock that has erupted from a volcano and reached Earth's surface. The same material as magma, but above ground. Lava can flow slowly or explode dramatically depending on its composition.` },
+            { word: 'tectonic plate', definition: `One of about 15 enormous slabs that make up Earth's crust. The plates float on the mantle and move constantly.`, audioPrompt: `Tectonic plate — one of about 15 enormous slabs that make up Earth's crust. The plates float on the mantle and move constantly.` },
+            { word: 'continent',      definition: `A large landmass on Earth. Tectonic plates carry the continents slowly across the planet over millions of years.`, audioPrompt: `Continent — a large landmass on Earth. Tectonic plates carry the continents slowly across the planet over millions of years.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Earthquakes: When the Ground Shakes`,
+          totalSections: 6,
+          headline:      `Where Plates Meet`,
           paragraphs: [
-            `Earthquakes happen when two tectonic plates that have been locked against each other suddenly slip. The point underground where the slip begins is called the focus. Directly above it on the surface is the epicentre — where the shaking is usually strongest. From the focus, seismic waves radiate outward in all directions through the rock, like ripples on a pond.`,
-            `The strength of an earthquake is measured on the Richter scale. Each whole number increase represents about 32 times more energy released. A magnitude 3 earthquake is barely noticeable. A magnitude 7 can collapse buildings. A magnitude 9 — like the 2011 Tōhoku earthquake in Japan — is catastrophic, capable of triggering tsunamis that cross entire oceans.`,
-            `Most earthquakes happen at plate boundaries, but they can also occur along old fault lines far from the nearest plate edge. The 1811 New Madrid earthquake shook the central United States, far from any plate boundary, because of ancient faults deep in the crust. Fault lines are zones of weakness in the rock where past slipping has occurred — and may occur again.`,
+            `When two plates crash together, the crust crumples upward into mountains. The Himalayas are growing right now where India is colliding with Asia.`,
+            `Most volcanoes and earthquakes happen where plates meet. The Ring of Fire — a zone around the Pacific Ocean — has 75% of the world's volcanoes.`,
           ],
-          image:        '/explorer-assets/cosmos/l16-magazine-earthquakes.png',
-          imageCaption: `Earthquakes — sudden plate slips releasing seismic energy outward from the focus to the epicentre`,
+          image:        '/explorer-assets/cosmos/l16-s4-plates-meet.png',
+          imageCaption: `Where plates meet, mountains rise — and volcanoes and earthquakes happen`,
           vocab: [
-            { word: 'epicentre',    definition: `The point on Earth's surface directly above the underground focus of an earthquake — usually where shaking is strongest, as seismic waves radiate outward from this point.`,            audioPrompt: `Epicentre — the point on Earth's surface directly above the underground focus of an earthquake. Usually where shaking is strongest, as seismic waves radiate outward from this point.` },
-            { word: 'fault line',   definition: `A fracture or zone of fractures in Earth's crust where two blocks of rock have slipped past each other — fault lines are sites of past and potential future earthquakes.`,           audioPrompt: `Fault line — a fracture or zone of fractures in Earth's crust where two blocks of rock have slipped past each other. Fault lines are sites of past and potential future earthquakes.` },
+            { word: 'Ring of Fire', definition: `A zone of intense volcanic and earthquake activity circling the Pacific Ocean. It follows the edges of tectonic plates.`, audioPrompt: `Ring of Fire — a zone of intense volcanic and earthquake activity circling the Pacific Ocean. It follows the edges of tectonic plates.` },
+            { word: 'collision',    definition: `When two things crash into each other. Colliding tectonic plates push the ground upward into mountain ranges.`, audioPrompt: `Collision — when two things crash into each other. Colliding tectonic plates push the ground upward into mountain ranges.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Volcanoes`,
+          paragraphs: [
+            `A volcano forms where molten rock from the mantle finds a path to the surface. Underground it's called magma. Above ground it's called lava.`,
+            `Some volcanoes flow slowly like Hawaii's. Others explode dramatically like Mount St Helens. The difference depends on the chemistry of the magma.`,
+          ],
+          image:        '/explorer-assets/cosmos/l16-s5-volcano.png',
+          imageCaption: `A volcano is a doorway between Earth's molten interior and its surface`,
+          vocab: [
+            { word: 'magma', definition: `Molten rock beneath Earth's surface. Magma is what feeds volcanoes from the mantle below.`, audioPrompt: `Magma — molten rock beneath Earth's surface. Magma is what feeds volcanoes from the mantle below.` },
+            { word: 'lava',  definition: `Molten rock that has erupted to Earth's surface. Same material as magma, just above ground instead of below.`, audioPrompt: `Lava — molten rock that has erupted to Earth's surface. Same material as magma, just above ground instead of below.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Earthquakes`,
+          paragraphs: [
+            `Earthquakes happen when two tectonic plates that have been locked together suddenly slip. The point where they slip is the focus.`,
+            `Directly above it on the surface is the epicentre — where shaking is strongest. Earthquakes are measured on the Richter scale, where each number means 32 times more energy.`,
+          ],
+          image:        '/explorer-assets/cosmos/l16-s6-earthquake.png',
+          imageCaption: `Earthquakes radiate from the focus underground to the epicentre on the surface`,
+          vocab: [
+            { word: 'epicentre',  definition: `The point on Earth's surface directly above the underground focus of an earthquake — usually where shaking is strongest.`, audioPrompt: `Epicentre — the point on Earth's surface directly above the underground focus of an earthquake, usually where shaking is strongest.` },
+            { word: 'fault line', definition: `A fracture in Earth's crust where rocks have slipped past each other. Fault lines are sites of past and possible future earthquakes.`, audioPrompt: `Fault line — a fracture in Earth's crust where rocks have slipped past each other. Fault lines are sites of past and possible future earthquakes.` },
           ],
         },
 
@@ -101,16 +129,16 @@ const cosmos_explorer_l16_screens = {
           guideText:     `Tectonic plates move in three main ways — and where they meet determines what happens at the surface. Two plates can crash into each other, pull apart, or grind sideways. Volcanoes can also form over hotspots far from any boundary. Can you match each feature to how it formed?`,
           columnHeaders: [`The Geological Feature`, `How It Formed`],
           items: [
-            { image: 'l16-game-himalayas.png',      label: `Two continental plates colliding head-on, pushing rock upward into towering mountain ranges.`,          correctMatch: 'colliding',     objectPosition: 'center 50%', matchPhrase: `Colliding plates! The Himalayas — the world's tallest mountain range — formed where the Indian plate crashed into the Eurasian plate. When two continental plates collide, neither sinks; instead the crust crumples and is forced upward. The Himalayas are still growing by a few millimetres every year.` },
-            { image: 'l16-game-rift-valley.png',    label: `Two plates pulling apart, creating a long valley where new crust forms as magma wells up between them.`, correctMatch: 'pulling-apart', objectPosition: 'center 50%', matchPhrase: `Pulling apart! When two plates move away from each other, a rift valley forms between them. The East African Rift Valley is pulling Africa apart right now — in millions of years it may become a new ocean. At mid-ocean ridges, this process creates new ocean floor constantly.` },
+            { image: 'l16-game-himalayas.png',       label: `Two continental plates colliding head-on, pushing rock upward into towering mountain ranges.`,          correctMatch: 'colliding',     objectPosition: 'center 50%', matchPhrase: `Colliding plates! The Himalayas — the world's tallest mountain range — formed where the Indian plate crashed into the Eurasian plate. When two continental plates collide, neither sinks; instead the crust crumples and is forced upward. The Himalayas are still growing by a few millimetres every year.` },
+            { image: 'l16-game-rift-valley.png',     label: `Two plates pulling apart, creating a long valley where new crust forms as magma wells up between them.`, correctMatch: 'pulling-apart', objectPosition: 'center 50%', matchPhrase: `Pulling apart! When two plates move away from each other, a rift valley forms between them. The East African Rift Valley is pulling Africa apart right now — in millions of years it may become a new ocean. At mid-ocean ridges, this process creates new ocean floor constantly.` },
             { image: 'l16-game-volcano-hotspot.png', label: `A chain of volcanic islands forming over a stationary hotspot deep in the mantle beneath a moving plate.`, correctMatch: 'hotspot',       objectPosition: 'center 50%', matchPhrase: `Hotspot! The Hawaiian Islands formed as the Pacific plate slowly moved over a stationary column of extra-hot mantle material. Each island is older than the one before it — the oldest are eroding back into the sea, while the youngest, most active volcano sits directly over the hotspot today.` },
             { image: 'l16-game-transform-fault.png', label: `Two plates grinding sideways past each other, building stress along a fault that releases suddenly as earthquakes.`, correctMatch: 'sliding-past',  objectPosition: 'center 50%', matchPhrase: `Sliding past! When plates grind sideways, they create transform faults. The San Andreas Fault in California is a famous transform boundary — the Pacific and North American plates slide past each other, locking and releasing in earthquakes. Los Angeles is slowly moving northward toward San Francisco at about 5 centimetres per year.` },
           ],
           buckets: [
-            { id: 'colliding',     label: `🏔️ Colliding`,      color: '#60A5FA' },
-            { id: 'pulling-apart', label: `↔️ Pulling Apart`,  color: '#34D399' },
-            { id: 'hotspot',       label: `🌋 Hotspot`,        color: '#F59E0B' },
-            { id: 'sliding-past',  label: `⚡ Sliding Past`,   color: '#818CF8' },
+            { id: 'colliding',     label: `🏔️ Colliding`,     color: '#60A5FA' },
+            { id: 'pulling-apart', label: `↔️ Pulling Apart`, color: '#34D399' },
+            { id: 'hotspot',       label: `🌋 Hotspot`,       color: '#F59E0B' },
+            { id: 'sliding-past',  label: `⚡ Sliding Past`,  color: '#818CF8' },
           ],
         },
 
@@ -186,12 +214,14 @@ const cosmos_explorer_l16_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L16] Loaded: "Volcanoes and Earthquakes" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l16-magazine-earth-structure.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l16-magazine-tectonic-plates.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l16-magazine-volcanoes.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l16-magazine-earthquakes.png',      { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L16] earth-structure: ${r1.ok}, tectonic-plates: ${r2.ok}, volcanoes: ${r3.ok}, earthquakes: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l16-s1-earth-layers.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l16-s2-mantle-convection.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l16-s3-tectonic-plates.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l16-s4-plates-meet.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l16-s5-volcano.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l16-s6-earthquake.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L16] earth-layers: ${r1.ok}, mantle-convection: ${r2.ok}, tectonic-plates: ${r3.ok}, plates-meet: ${r4.ok}, volcano: ${r5.ok}, earthquake: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L16] Could not verify image assets — network check failed');
   });
