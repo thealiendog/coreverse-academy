@@ -23,73 +23,101 @@ const cosmos_explorer_l04_screens = {
           guideText: `Is a fire alive? It moves, it grows, it consumes fuel and releases gases, and it dies when it runs out of fuel. But a fire is NOT alive. So what exactly makes something living? Scientists have spent centuries figuring this out — and today you're going to know the answer.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Makes Something Alive?`,
+          totalSections: 6,
+          headline:      `The Seven Signs of Life`,
           paragraphs: [
-            `All living things share seven characteristics that separate them from non-living things. These seven signs of life define what it means to be alive — and something must do ALL seven to count.`,
-            `Here they are: (1) made of cells, (2) need energy — they eat, absorb sunlight, or break down chemicals, (3) grow and develop, (4) respond to their environment, (5) reproduce — make more of themselves, (6) maintain a stable internal environment like body temperature, and (7) evolve over generations.`,
-            `Fire moves, grows, and even "eats" fuel — but it has no cells, can't reproduce, and doesn't maintain a stable internal environment. It fails the test. These seven signs together are what make life extraordinary.`,
+            `All living things share seven characteristics that separate them from non-living things. Something must do ALL seven to count as alive.`,
+            `They are: (1) made of cells, (2) need energy, (3) grow, (4) respond to their environment, (5) reproduce, (6) keep stable inside, and (7) evolve.`,
           ],
-          image:        '/explorer-assets/cosmos/l04-magazine-seven-signs.png',
-          imageCaption: `The seven signs of life — all seven are required for something to truly be alive`,
+          image:        '/explorer-assets/cosmos/l04-s1-seven-signs.png',
+          imageCaption: `The seven signs of life — all seven required to be truly alive`,
           vocab: [
-            { word: 'characteristics', definition: `Qualities or features that define something — the seven characteristics of life are the features that all living things share, and non-living things do not.`, audioPrompt: `Characteristics — qualities or features that define something. The seven characteristics of life are the features that all living things share, and non-living things do not.` },
-            { word: 'reproduce',       definition: `To make more of yourself — one of the seven signs of life. Every living thing can reproduce, whether by seeds, eggs, cell division, or birth.`,             audioPrompt: `Reproduce — to make more of yourself, one of the seven signs of life. Every living thing can reproduce, whether by seeds, eggs, cell division, or birth.` },
+            { word: 'characteristic', definition: `A quality or feature that defines something. Living things share seven characteristics that make them alive.`, audioPrompt: `Characteristic — a quality or feature that defines something. Living things share seven characteristics that make them alive.` },
+            { word: 'alive',          definition: `Meeting all seven signs of life. Something must do ALL seven to be alive — not just some.`, audioPrompt: `Alive — meeting all seven signs of life. Something must do all seven to be alive, not just some.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Cells: The Smallest Unit of Life`,
+          totalSections: 6,
+          headline:      `The Fire Test`,
           paragraphs: [
-            `Every living thing is made of cells — the smallest unit of life. Some living things are made of just ONE cell, like bacteria. A single bacterium is a complete living thing, doing everything it needs to survive inside one microscopic package.`,
-            `Humans are made of about 37 trillion cells. Every one of those cells is like a tiny factory — taking in nutrients, producing energy, and carrying out the processes that keep you alive. And here's something extraordinary: every single cell in your body contains a complete copy of your DNA.`,
-            `DNA is the instruction manual for life — a code that tells each cell what to do and what to make. The same DNA is in your skin cells, your brain cells, your heart cells. It's the blueprint that makes you, you.`,
+            `A fire moves, grows, and even consumes fuel like it's eating. But fire is NOT alive.`,
+            `It has no cells, can't reproduce, and doesn't keep a stable internal environment. It fails the test. The seven signs together are what make life truly extraordinary.`,
           ],
-          image:        '/explorer-assets/cosmos/l04-magazine-cells.png',
-          imageCaption: `Cells — the smallest unit of life, from single-celled bacteria to 37 trillion in a human body`,
+          image:        '/explorer-assets/cosmos/l04-s2-fire-test.png',
+          imageCaption: `Fire grows and moves — but fails the seven-sign test. Not alive.`,
           vocab: [
-            { word: 'cell', definition: `The smallest unit of life — every living thing is made of one or more cells, each one a tiny living factory that carries out all the processes needed to survive.`, audioPrompt: `Cell — the smallest unit of life. Every living thing is made of one or more cells, each one a tiny living factory that carries out all the processes needed to survive.` },
-            { word: 'DNA',  definition: `The chemical instruction manual found inside every cell — it contains the code that tells cells what to do and makes every living thing unique.`,                    audioPrompt: `DNA — the chemical instruction manual found inside every cell. It contains the code that tells cells what to do and makes every living thing unique.` },
+            { word: 'non-living', definition: `Something that's never been alive — like fire, rocks, or water. Fire grows and consumes fuel but is still non-living.`, audioPrompt: `Non-living — something that's never been alive, like fire, rocks, or water. Fire grows and consumes fuel but is still non-living.` },
+            { word: 'reproduce',  definition: `To make more of yourself. Every living thing can reproduce — fire can't, which is one reason it isn't alive.`, audioPrompt: `Reproduce — to make more of yourself. Every living thing can reproduce. Fire can't, which is one reason it isn't alive.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The Five Kingdoms of Life`,
+          totalSections: 6,
+          headline:      `Cells: The Building Blocks`,
           paragraphs: [
-            `Scientists organise all life on Earth into groups called kingdoms. The main five are: Animals — us, dogs, fish, insects. Plants — trees, flowers, grass. Fungi — mushrooms, mould, yeast. Bacteria — microscopic single-celled organisms. And Protists — single-celled organisms that aren't bacteria, like amoeba.`,
-            `Scientists estimate there are 8.7 million species of life on Earth — and we've only discovered about 1.2 million of them. The vast majority of life on our planet is still unknown to us. Most undiscovered species are insects and deep-sea creatures, in the parts of the world humans rarely reach.`,
-            `Every one of those millions of species, from the tiniest bacterium to the blue whale, meets all seven signs of life. Different shapes, different sizes, different kingdoms — but the same fundamental definition of being alive.`,
+            `Every living thing is made of cells — the smallest unit of life. Some living things are just ONE cell, like bacteria.`,
+            `A single bacterium is a complete living thing in a microscopic package. Humans, by comparison, are made of about 37 trillion cells.`,
           ],
-          image:        '/explorer-assets/cosmos/l04-magazine-kingdoms.png',
-          imageCaption: `The five kingdoms of life — Animals, Plants, Fungi, Bacteria, and Protists`,
+          image:        '/explorer-assets/cosmos/l04-s3-cells.png',
+          imageCaption: `From one cell to 37 trillion — cells are the building blocks of every living thing`,
           vocab: [
-            { word: 'kingdoms', definition: `The major groupings scientists use to organise all living things — the five main kingdoms are Animals, Plants, Fungi, Bacteria, and Protists.`,                             audioPrompt: `Kingdoms — the major groupings scientists use to organise all living things. The five main kingdoms are Animals, Plants, Fungi, Bacteria, and Protists.` },
-            { word: 'species',  definition: `A group of living things that share the same characteristics and can reproduce together — scientists estimate there are 8.7 million species of life on Earth.`, audioPrompt: `Species — a group of living things that share the same characteristics and can reproduce together. Scientists estimate there are 8.7 million species of life on Earth.` },
+            { word: 'cell',     definition: `The smallest unit of life. Every living thing is made of one or more cells — each one a tiny living factory.`, audioPrompt: `Cell — the smallest unit of life. Every living thing is made of one or more cells, each one a tiny living factory.` },
+            { word: 'bacteria', definition: `Tiny single-celled living things. One bacterium is a complete living thing in just one microscopic cell.`, audioPrompt: `Bacteria — tiny single-celled living things. One bacterium is a complete living thing in just one microscopic cell.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Life at Its Strangest`,
+          totalSections: 6,
+          headline:      `DNA: The Instruction Manual`,
           paragraphs: [
-            `Life on Earth is far weirder than you might expect. Tardigrades — also called water bears — are microscopic animals that can survive in the vacuum of outer space, in boiling water, and in solid ice. They're basically indestructible.`,
-            `Some bacteria live in scalding hot springs or inside polar ice. Trees communicate with each other through underground fungal networks, sharing nutrients and chemical signals. One species of jellyfish can revert back to its juvenile state when stressed — essentially resetting its life cycle and potentially living forever.`,
-            `Life finds a way into almost every corner of our planet — and the strangest examples remind us that the seven signs of life are a framework, not a limit. Whatever shape it takes, wherever it lives, life is endlessly inventive.`,
+            `Every single cell in your body contains a complete copy of your DNA — the chemical code that tells each cell what to do and what to make.`,
+            `The same DNA is in your skin, your brain, your heart. It's the blueprint that makes you, you.`,
           ],
-          image:        '/explorer-assets/cosmos/l04-magazine-extremes.png',
-          imageCaption: `Extremophiles and oddities — life surviving in outer space, boiling springs, and frozen tundra`,
+          image:        '/explorer-assets/cosmos/l04-s4-dna.png',
+          imageCaption: `DNA — the chemical instruction manual inside every one of your cells`,
           vocab: [
-            { word: 'tardigrade',    definition: `A microscopic animal — also called a water bear — that can survive extreme conditions including outer space, boiling water, and solid ice. One of the hardiest living things on Earth.`, audioPrompt: `Tardigrade — a microscopic animal, also called a water bear, that can survive extreme conditions including outer space, boiling water, and solid ice. One of the hardiest living things on Earth.` },
-            { word: 'extremophile', definition: `A living thing that thrives in extreme conditions — like bacteria living in boiling hot springs or freezing ice — showing that life can adapt to almost any environment.`,               audioPrompt: `Extremophile — a living thing that thrives in extreme conditions, like bacteria living in boiling hot springs or freezing ice, showing that life can adapt to almost any environment.` },
+            { word: 'DNA',       definition: `The chemical instruction manual inside every cell. DNA is the code that tells cells what to do and makes each living thing unique.`, audioPrompt: `DNA — the chemical instruction manual inside every cell. DNA is the code that tells cells what to do and makes each living thing unique.` },
+            { word: 'blueprint', definition: `A plan or pattern for building something. Your DNA is the blueprint that makes you, you — unique from every other living thing.`, audioPrompt: `Blueprint — a plan or pattern for building something. Your DNA is the blueprint that makes you, you, unique from every other living thing.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The Five Kingdoms`,
+          paragraphs: [
+            `Scientists organise all life on Earth into five main kingdoms: Animals, Plants, Fungi, Bacteria, and Protists.`,
+            `There are an estimated 8.7 million species of life on Earth — and we've only discovered about 1.2 million. Most of life is still unknown.`,
+          ],
+          image:        '/explorer-assets/cosmos/l04-s5-five-kingdoms.png',
+          imageCaption: `Five kingdoms of life — and 8.7 million species, most of them still undiscovered`,
+          vocab: [
+            { word: 'kingdoms', definition: `The major groups scientists use to organise all living things — Animals, Plants, Fungi, Bacteria, and Protists.`, audioPrompt: `Kingdoms — the major groups scientists use to organise all living things: Animals, Plants, Fungi, Bacteria, and Protists.` },
+            { word: 'species',  definition: `A group of living things that share characteristics and can reproduce together. There are an estimated 8.7 million species on Earth.`, audioPrompt: `Species — a group of living things that share characteristics and can reproduce together. There are an estimated 8.7 million species on Earth.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Life Finds a Way`,
+          paragraphs: [
+            `Tardigrades — microscopic water bears — can survive in outer space, boiling water, and solid ice. They're basically indestructible.`,
+            `Bacteria thrive in scalding hot springs. Trees talk to each other through underground fungal networks. Life finds a way into every corner of our planet.`,
+          ],
+          image:        '/explorer-assets/cosmos/l04-s6-life-finds-a-way.png',
+          imageCaption: `Life finds a way — from outer space to boiling springs to underground tree networks`,
+          vocab: [
+            { word: 'tardigrade',   definition: `A microscopic "water bear" — one of the toughest creatures on Earth. Can survive outer space, boiling water, and solid ice.`, audioPrompt: `Tardigrade — a microscopic water bear, one of the toughest creatures on Earth. Can survive outer space, boiling water, and solid ice.` },
+            { word: 'extremophile', definition: `A living thing that thrives in extreme conditions — like bacteria living in boiling hot springs or freezing ice.`, audioPrompt: `Extremophile — a living thing that thrives in extreme conditions, like bacteria living in boiling hot springs or freezing ice.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l04_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L04] Loaded: "Living Things: What Makes Something Alive?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l04-magazine-seven-signs.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l04-magazine-cells.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l04-magazine-kingdoms.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l04-magazine-extremes.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L04] seven-signs: ${r1.ok}, cells: ${r2.ok}, kingdoms: ${r3.ok}, extremes: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l04-s1-seven-signs.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l04-s2-fire-test.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l04-s3-cells.png',             { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l04-s4-dna.png',               { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l04-s5-five-kingdoms.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l04-s6-life-finds-a-way.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L04] seven-signs: ${r1.ok}, fire-test: ${r2.ok}, cells: ${r3.ok}, dna: ${r4.ok}, five-kingdoms: ${r5.ok}, life-finds-a-way: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L04] Could not verify image assets — network check failed');
   });
