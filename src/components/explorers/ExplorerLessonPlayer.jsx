@@ -470,20 +470,53 @@ export default function ExplorerLessonPlayer() {
   // instantly when the user advances — eliminates the cold-fetch gap after welcome.
   useEffect(() => {
     const firstScreen = screens[0];
-    if (!firstScreen || firstScreen.type !== 'welcome') return;
+    console.log(`[DIAG-A] Mount effect: firstScreen.type=${firstScreen?.type}, lessonId=${lessonId}, subjectId=${subjectId}`);
+    if (!firstScreen || firstScreen.type !== 'welcome') {
+      console.log('[DIAG-A] No welcome screen — skipping prewarm, setting welcomeReady=true immediately');
+      setWelcomeReady(true);
+      return;
+    }
     const text = getScreenText(firstScreen, childName);
-    if (!text) return;
+    console.log(`[DIAG-B] Welcome text resolved (${text?.length || 0} chars): "${text?.slice(0, 60)}..."`);
+    if (!text) {
+      console.log('[DIAG-B] Empty welcome text — setting welcomeReady=true immediately');
+      setWelcomeReady(true);
+      return;
+    }
+    console.log(`[DIAG-C] audioEnabledRef.current=${audioEnabledRef.current} — calling prewarmAudio`);
+
+    // SAFETY TIMEOUT: if prewarm hangs (fetch never resolves/rejects), unlock after 5s.
+    // This covers Netlify cold-starts, long TTS API responses, or network stalls.
+    let readySet = false;
+    const safetyTimer = setTimeout(() => {
+      if (!readySet) {
+        console.log('[DIAG-TIMEOUT] prewarm took >5s — setting welcomeReady=true via safety timeout');
+        readySet = true;
+        setWelcomeReady(true);
+      }
+    }, 5000);
+
     console.log('[PREWARM] Mount — starting welcome audio pre-fetch...');
     prewarmAudio(text).then(result => {
+      console.log(`[DIAG-D] prewarm resolved: blobUrl=${!!result?.blobUrl}, readySet=${readySet}`);
       if (result?.blobUrl) {
         console.log('[PREWARM] Welcome audio ready — tap cue active');
       } else {
         console.log('[PREWARM] Welcome audio unavailable — showing tap cue anyway');
       }
-      setWelcomeReady(true);
-    }).catch(() => {
+      if (!readySet) {
+        readySet = true;
+        clearTimeout(safetyTimer);
+        setWelcomeReady(true);
+      }
+    }).catch((err) => {
+      console.log(`[DIAG-D] prewarm rejected: ${err?.message || err} — readySet=${readySet}`);
       console.log('[PREWARM] Welcome audio fetch failed — showing tap cue anyway');
-      setWelcomeReady(true);
+      if (!readySet) {
+        readySet = true;
+        clearTimeout(safetyTimer);
+        setWelcomeReady(true);
+      }
     });
 
     // Prewarm first content screen (magazine or story-beat) in parallel — fire-and-forget.
@@ -782,19 +815,25 @@ export default function ExplorerLessonPlayer() {
   // Stores Promise immediately → speak() can await it rather than spawning a duplicate fetch.
   // After resolution, map entry is replaced with { blobUrl, alignment } for direct access.
   const prewarmAudio = useCallback((text) => {
-    if (!text || !audioEnabledRef.current) return Promise.resolve(null);
+    if (!text || !audioEnabledRef.current) {
+      console.log(`[DIAG-PREWARM] Early-exit: text=${!!text} audioEnabled=${audioEnabledRef.current}`);
+      return Promise.resolve(null);
+    }
     const existing = audioPrewarmRef.current.get(text);
     if (existing) return existing instanceof Promise ? existing : Promise.resolve(existing);
 
     const p = (async () => {
       try {
+        console.log(`[DIAG-PREWARM] Fetching nova-speak for "${text.slice(0, 40)}..."`);
+        const fetchStart = Date.now();
         const res = await fetch('/.netlify/functions/nova-speak', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
           body:    JSON.stringify({ text, voiceId: voiceIdRef.current, ...(modelIdRef.current && { modelId: modelIdRef.current }) }),
           // No AbortController — prewarm runs independently of the main speak() lifecycle
         });
-        if (!res.ok) { audioPrewarmRef.current.delete(text); return null; }
+        console.log(`[DIAG-PREWARM] fetch resolved in ${Date.now()-fetchStart}ms — status=${res.status}`);
+        if (!res.ok) { audioPrewarmRef.current.delete(text); console.log(`[DIAG-PREWARM] non-ok response ${res.status}`); return null; }
         const alignmentHeader = res.headers.get('X-Alignment');
         const alignment = alignmentHeader ? JSON.parse(alignmentHeader) : null;
         const blob = await res.blob();

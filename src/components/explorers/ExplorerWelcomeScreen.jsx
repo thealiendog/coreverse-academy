@@ -71,6 +71,7 @@ export default function ExplorerWelcomeScreen({
   const showPlayBtn  = !hasPlayed && !speaking && welcomeReady;
   const showBubble   = speaking || (hasPlayed && !speaking);
   const showContinue = hasPlayed && !speaking && !loadingAudio;
+  console.log(`[DIAG-WS] state: hasPlayed=${hasPlayed} speaking=${speaking} welcomeReady=${welcomeReady} loadingAudio=${loadingAudio} showLoading=${showLoading} showPlayBtn=${showPlayBtn}`);
 
   return (
     <div
