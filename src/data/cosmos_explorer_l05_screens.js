@@ -23,73 +23,101 @@ const cosmos_explorer_l05_screens = {
           guideText: `You eat a burger. The cow ate grass. The grass absorbed sunlight. So in a weird way, you're powered by the Sun. That chain of eating and being eaten connects almost every living thing on Earth. It's called a food chain — and it keeps our entire planet running.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Producers: Plants Power Everything`,
+          totalSections: 6,
+          headline:      `Energy Starts with the Sun`,
           paragraphs: [
-            `Energy flows from the Sun through plants to animals through food chains. Every living thing has a role, and removing any piece can affect the whole system. It all begins with producers.`,
-            `Plants are called producers because they MAKE their own food. Using sunlight, water, and carbon dioxide, they carry out a process called photosynthesis — converting the Sun's energy into sugar they can use. Every plant you've ever seen is a solar-powered food factory.`,
-            `Plants — and algae in the ocean — are the foundation of almost every food chain on Earth. Without them, there would be nothing for animals to eat. The Sun's energy only enters the food chain because producers capture it first.`,
+            `Energy flows from the Sun through plants to animals through food chains. Every living thing on Earth has a role to play.`,
+            `Every meal you've ever eaten traces back to a plant. And every plant traces back to sunlight. You are powered by the Sun.`,
           ],
-          image:        '/explorer-assets/cosmos/l05-magazine-producers.png',
-          imageCaption: `Producers — plants capture the Sun's energy through photosynthesis, powering every food chain`,
+          image:        '/explorer-assets/cosmos/l05-s1-sun-energy.png',
+          imageCaption: `Every food chain starts with the Sun — and ends, eventually, with you`,
           vocab: [
-            { word: 'producers',     definition: `Living things — mostly plants — that make their own food using sunlight through photosynthesis. They are the foundation of almost every food chain on Earth.`,                     audioPrompt: `Producers — living things, mostly plants, that make their own food using sunlight through photosynthesis. They are the foundation of almost every food chain on Earth.` },
-            { word: 'photosynthesis', definition: `The process by which plants convert sunlight, water, and carbon dioxide into sugar — it's how plants make their own food and how the Sun's energy enters the food chain.`, audioPrompt: `Photosynthesis — the process by which plants convert sunlight, water, and carbon dioxide into sugar. It's how plants make their own food and how the Sun's energy enters the food chain.` },
+            { word: 'food chain', definition: `The chain of who eats whom, carrying energy from one living thing to the next — starting with plants and the Sun.`, audioPrompt: `Food chain — the chain of who eats whom, carrying energy from one living thing to the next, starting with plants and the Sun.` },
+            { word: 'energy',     definition: `What living things use to grow, move, and survive. All energy on Earth starts with the Sun.`, audioPrompt: `Energy — what living things use to grow, move, and survive. All energy on Earth starts with the Sun.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Consumers: Animals That Eat`,
+          totalSections: 6,
+          headline:      `Producers: Plants Make Food`,
           paragraphs: [
-            `Animals are called consumers because they eat other things instead of making their own food. There are three kinds. Herbivores eat only plants — rabbits, deer, cows. Carnivores eat only animals — lions, eagles, sharks. Omnivores eat both plants and animals — bears, humans, raccoons.`,
-            `Each level of eating is called a trophic level. Plants are the first trophic level. Animals that eat plants are the second. Animals that eat those animals are the third — and so on up the chain. Energy passes from one level to the next with every meal.`,
-            `Here's a surprising fact: at each step of the food chain, about 90% of the energy is lost as heat. Only 10% is passed on to the next level. This is why there are always far more plants than herbivores, and far more herbivores than carnivores.`,
+            `Plants are called producers because they MAKE their own food. Using sunlight, water, and carbon dioxide, they create sugar in a process called photosynthesis.`,
+            `Every plant you've ever seen is a solar-powered food factory. Plants are the foundation of almost every food chain on Earth.`,
           ],
-          image:        '/explorer-assets/cosmos/l05-magazine-consumers.png',
-          imageCaption: `Consumers — herbivores, carnivores, and omnivores each occupy a different level of the food chain`,
+          image:        '/explorer-assets/cosmos/l05-s2-producers.png',
+          imageCaption: `Plants are solar-powered food factories — they capture sunlight and turn it into food`,
           vocab: [
-            { word: 'consumers',  definition: `Animals that eat other living things instead of making their own food — divided into herbivores (plant-eaters), carnivores (meat-eaters), and omnivores (both).`, audioPrompt: `Consumers — animals that eat other living things instead of making their own food. Divided into herbivores, which eat plants, carnivores, which eat meat, and omnivores, which eat both.` },
-            { word: 'herbivore',  definition: `An animal that eats only plants — examples include rabbits, deer, and cows. Herbivores are the first consumers in most food chains, eating directly from producers.`,    audioPrompt: `Herbivore — an animal that eats only plants. Examples include rabbits, deer, and cows. Herbivores are the first consumers in most food chains, eating directly from producers.` },
+            { word: 'producer',       definition: `A living thing — mostly plants — that makes its own food using sunlight. Producers are the foundation of every food chain.`, audioPrompt: `Producer — a living thing, mostly plants, that makes its own food using sunlight. Producers are the foundation of every food chain.` },
+            { word: 'photosynthesis', definition: `How plants convert sunlight, water, and carbon dioxide into sugar. It's how the Sun's energy enters the food chain.`, audioPrompt: `Photosynthesis — how plants convert sunlight, water, and carbon dioxide into sugar. It's how the Sun's energy enters the food chain.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Decomposers: Nature's Recyclers`,
+          totalSections: 6,
+          headline:      `Consumers: Who Eats What`,
           paragraphs: [
-            `When plants and animals die, something has to deal with all that matter. That's the job of decomposers. Fungi, bacteria, and some insects — like earthworms and beetles — eat dead things and break them down into nutrients that return to the soil.`,
-            `This is how nutrients get recycled back to plants so they can grow again. Without decomposers, Earth would slowly fill up with dead things — and plants would eventually run out of the nutrients they need to survive. Decomposers are the hidden cleanup crew that keeps the whole system running.`,
-            `A single handful of healthy soil contains billions of bacteria and hundreds of metres of fungal threads — all busily breaking things down and recycling nutrients. The most important recycling programme on Earth happens in the ground beneath your feet.`,
+            `Animals are called consumers because they eat instead of making their own food. There are three kinds.`,
+            `Herbivores eat only plants — rabbits, deer, cows. Carnivores eat only animals — lions, eagles, sharks. Omnivores eat both — bears, humans, raccoons.`,
           ],
-          image:        '/explorer-assets/cosmos/l05-magazine-decomposers.png',
-          imageCaption: `Decomposers — fungi, bacteria, and worms break down dead things and return nutrients to the soil`,
+          image:        '/explorer-assets/cosmos/l05-s3-consumers.png',
+          imageCaption: `Three kinds of consumers — herbivores, carnivores, and omnivores`,
           vocab: [
-            { word: 'decomposers', definition: `Living things — including fungi, bacteria, and some insects — that break down dead plants and animals and return their nutrients to the soil, completing the cycle.`, audioPrompt: `Decomposers — living things including fungi, bacteria, and some insects that break down dead plants and animals and return their nutrients to the soil, completing the cycle.` },
-            { word: 'nutrients',   definition: `Substances that living things need to grow and survive — decomposers release nutrients from dead matter back into the soil where plants can absorb them again.`,     audioPrompt: `Nutrients — substances that living things need to grow and survive. Decomposers release nutrients from dead matter back into the soil where plants can absorb them again.` },
+            { word: 'herbivore', definition: `An animal that eats only plants. Rabbits, deer, and cows are herbivores — they eat directly from producers.`, audioPrompt: `Herbivore — an animal that eats only plants. Rabbits, deer, and cows are herbivores. They eat directly from producers.` },
+            { word: 'omnivore',  definition: `An animal that eats both plants and animals. Bears, humans, and raccoons are omnivores — flexible eaters.`, audioPrompt: `Omnivore — an animal that eats both plants and animals. Bears, humans, and raccoons are omnivores, flexible eaters.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Food Webs: It's More Complex Than a Chain`,
+          totalSections: 6,
+          headline:      `The 10% Rule`,
           paragraphs: [
-            `Real feeding relationships aren't simple chains — they're webs. A mouse might be eaten by an owl, a fox, a hawk, AND a snake. A fox might eat mice, rabbits, berries, AND insects. When many food chains overlap and connect, it creates a food web.`,
-            `Food webs show us how interconnected life really is. Remove one species, and it ripples through the entire system in unexpected ways. Remove wolves from a landscape and deer populations explode, overgrazing vegetation, changing rivers, and reshaping the land. One species matters more than you'd think.`,
-            `This is why protecting biodiversity matters — every species plays a role. Even the smallest creature, like an earthworm or a bee, is a thread in the web. Pull too many threads and the whole web unravels.`,
+            `Here's a surprising fact: at each step of the food chain, about 90% of the energy is lost as heat. Only 10% is passed on.`,
+            `This is why there are always far more plants than herbivores, and far more herbivores than carnivores. Energy thins out as it climbs.`,
           ],
-          image:        '/explorer-assets/cosmos/l05-magazine-food-web.png',
-          imageCaption: `Food webs — overlapping chains of who eats who, where removing one species affects the whole system`,
+          image:        '/explorer-assets/cosmos/l05-s4-energy-pyramid.png',
+          imageCaption: `90% of energy is lost at each step — which is why the food pyramid narrows at the top`,
           vocab: [
-            { word: 'food web',     definition: `An interconnected system of many overlapping food chains — showing how most animals eat and are eaten by multiple species, not just one.`,                                audioPrompt: `Food web — an interconnected system of many overlapping food chains, showing how most animals eat and are eaten by multiple species, not just one.` },
-            { word: 'biodiversity', definition: `The variety of different species in an ecosystem — the greater the biodiversity, the more stable and resilient the food web when one species is lost or changes.`, audioPrompt: `Biodiversity — the variety of different species in an ecosystem. The greater the biodiversity, the more stable and resilient the food web when one species is lost or changes.` },
+            { word: 'trophic level', definition: `Each step in a food chain. Plants are level 1, plant-eaters are level 2, meat-eaters that eat them are level 3.`, audioPrompt: `Trophic level — each step in a food chain. Plants are level 1. Plant-eaters are level 2. Meat-eaters that eat them are level 3.` },
+            { word: 'energy loss',   definition: `How much energy disappears as heat at each step in the food chain — about 90% at every level.`, audioPrompt: `Energy loss — how much energy disappears as heat at each step in the food chain. About 90% at every level.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Decomposers: Nature's Recyclers`,
+          paragraphs: [
+            `When plants and animals die, decomposers — fungi, bacteria, earthworms — eat the dead matter and break it down into nutrients.`,
+            `Those nutrients return to the soil so plants can grow again. Without decomposers, plants would run out of food and the whole system would collapse.`,
+          ],
+          image:        '/explorer-assets/cosmos/l05-s5-decomposers.png',
+          imageCaption: `Decomposers are the hidden recycling crew — they keep nutrients flowing back to plants`,
+          vocab: [
+            { word: 'decomposer', definition: `A living thing — fungi, bacteria, earthworms — that breaks down dead matter and returns nutrients to the soil.`, audioPrompt: `Decomposer — a living thing, like fungi, bacteria, and earthworms, that breaks down dead matter and returns nutrients to the soil.` },
+            { word: 'nutrient',   definition: `A substance living things need to grow. Decomposers release nutrients from dead matter back into the soil for plants.`, audioPrompt: `Nutrient — a substance living things need to grow. Decomposers release nutrients from dead matter back into the soil for plants.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Food Webs Are Connected`,
+          paragraphs: [
+            `Real feeding isn't a simple chain — it's a web. A mouse might be eaten by an owl, a fox, a hawk, AND a snake. Many chains overlap.`,
+            `Remove one species and it ripples through the whole system. Every species matters — even the smallest bee or earthworm is a thread in the web.`,
+          ],
+          image:        '/explorer-assets/cosmos/l05-s6-food-web.png',
+          imageCaption: `Food webs are interconnected — pull one thread and the whole web feels it`,
+          vocab: [
+            { word: 'food web',     definition: `Many overlapping food chains connected together. Most animals eat (and are eaten by) multiple species, not just one.`, audioPrompt: `Food web — many overlapping food chains connected together. Most animals eat, and are eaten by, multiple species, not just one.` },
+            { word: 'biodiversity', definition: `The variety of different species in an ecosystem. The more biodiversity, the stronger and more resilient the food web.`, audioPrompt: `Biodiversity — the variety of different species in an ecosystem. The more biodiversity, the stronger and more resilient the food web.` },
           ],
         },
 
@@ -101,10 +129,10 @@ const cosmos_explorer_l05_screens = {
           guideText:     `Every living thing in a food chain plays one of four roles — producer, herbivore, carnivore, or decomposer. Energy flows from one to the next. Can you sort these four into the right role?`,
           columnHeaders: [`The Living Thing`, `Its Role`],
           items: [
-            { image: 'l05-game-grass.png',  label: `Grass growing in a sunny meadow, converting sunlight into food.`, correctMatch: 'producer',    objectPosition: 'center 50%', matchPhrase: `Producer! Grass makes its own food from sunlight through photosynthesis — it doesn't eat anything. As a producer, it's the entry point for the Sun's energy into the food chain. Every food chain on land starts here.` },
-            { image: 'l05-game-rabbit.png', label: `A rabbit eating grass in a field.`,                               correctMatch: 'herbivore',   objectPosition: 'center 50%', matchPhrase: `Herbivore! Rabbits eat only plants — they're the first consumers in the chain, eating directly from producers. They can't make their own food like plants can, so they get their energy by eating the grass that captured the Sun's energy first.` },
-            { image: 'l05-game-eagle.png',  label: `An eagle catching a mouse in flight.`,                           correctMatch: 'carnivore',   objectPosition: 'center 50%', matchPhrase: `Carnivore! Eagles eat only animals — they're higher-level consumers in the food chain. By the time the Sun's energy reaches an eagle, it's passed through plants and herbivores, losing 90% at each step. Eagles earn every meal.` },
-            { image: 'l05-game-worm.png',   label: `An earthworm breaking down a fallen leaf.`,                      correctMatch: 'decomposer',  objectPosition: 'center 50%', matchPhrase: `Decomposer! Earthworms break down dead plant and animal matter and return nutrients to the soil — without them, plants would run out of nutrients and the whole food chain would collapse. The worm is the unsung hero of every ecosystem.` },
+            { image: 'l05-game-grass.png',  label: `Grass growing in a sunny meadow, converting sunlight into food.`, correctMatch: 'producer',   objectPosition: 'center 50%', matchPhrase: `Producer! Grass makes its own food from sunlight through photosynthesis — it doesn't eat anything. As a producer, it's the entry point for the Sun's energy into the food chain. Every food chain on land starts here.` },
+            { image: 'l05-game-rabbit.png', label: `A rabbit eating grass in a field.`,                               correctMatch: 'herbivore',  objectPosition: 'center 50%', matchPhrase: `Herbivore! Rabbits eat only plants — they're the first consumers in the chain, eating directly from producers. They can't make their own food like plants can, so they get their energy by eating the grass that captured the Sun's energy first.` },
+            { image: 'l05-game-eagle.png',  label: `An eagle catching a mouse in flight.`,                           correctMatch: 'carnivore',  objectPosition: 'center 50%', matchPhrase: `Carnivore! Eagles eat only animals — they're higher-level consumers in the food chain. By the time the Sun's energy reaches an eagle, it's passed through plants and herbivores, losing 90% at each step. Eagles earn every meal.` },
+            { image: 'l05-game-worm.png',   label: `An earthworm breaking down a fallen leaf.`,                      correctMatch: 'decomposer', objectPosition: 'center 50%', matchPhrase: `Decomposer! Earthworms break down dead plant and animal matter and return nutrients to the soil — without them, plants would run out of nutrients and the whole food chain would collapse. The worm is the unsung hero of every ecosystem.` },
           ],
           buckets: [
             { id: 'producer',   label: `🌿 Producer`,   color: '#34D399' },
@@ -186,12 +214,14 @@ const cosmos_explorer_l05_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L05] Loaded: "Food Chains: Who Eats Who?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l05-magazine-producers.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l05-magazine-consumers.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l05-magazine-decomposers.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l05-magazine-food-web.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L05] producers: ${r1.ok}, consumers: ${r2.ok}, decomposers: ${r3.ok}, food-web: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l05-s1-sun-energy.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l05-s2-producers.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l05-s3-consumers.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l05-s4-energy-pyramid.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l05-s5-decomposers.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l05-s6-food-web.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L05] sun-energy: ${r1.ok}, producers: ${r2.ok}, consumers: ${r3.ok}, energy-pyramid: ${r4.ok}, decomposers: ${r5.ok}, food-web: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L05] Could not verify image assets — network check failed');
   });
