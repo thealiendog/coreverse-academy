@@ -23,73 +23,101 @@ const cosmos_explorer_l17_screens = {
           guideText: `Every light you switch on, every device you charge, every screen you touch runs on electricity. It powers hospitals, cities, the internet — essentially all of modern civilisation. And it all comes down to something almost unimaginably small: electrons moving through materials.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Electrons: The Source of Electricity`,
+          totalSections: 6,
+          headline:      `Electrons in Motion`,
           paragraphs: [
-            `Everything is made of atoms — and atoms have three kinds of particles. Protons and neutrons are packed tightly in the nucleus at the centre. Electrons orbit around the outside. In most atoms, the electrons are bound tightly to their nucleus. But in some materials — especially metals — electrons in the outermost orbit are loosely held and can move freely from atom to atom.`,
-            `Electric current is simply the flow of these free electrons through a material. When billions of electrons move together in the same direction through a wire, that flow of charge is what we call electricity. The electrons themselves don't travel fast — they drift slowly — but the electrical signal propagates almost at the speed of light.`,
-            `The force that drives electrons to flow is called voltage — think of it like pressure pushing water through a pipe. The resistance of a material is how much it opposes the flow. These three quantities — current, voltage, and resistance — are related by Ohm's Law, one of the most useful relationships in all of physics.`,
+            `Everything is made of atoms. Atoms have protons and neutrons at the centre, with tiny electrons whizzing around the outside.`,
+            `In metals, the outer electrons are loosely held — they can jump easily from atom to atom. Electricity is electrons flowing through a material.`,
           ],
-          image:        '/explorer-assets/cosmos/l17-magazine-electrons.png',
-          imageCaption: `Electrons — free electrons in metals flowing through a conductor create the electric current we use`,
+          image:        '/explorer-assets/cosmos/l17-s1-electrons.png',
+          imageCaption: `Electricity is just electrons jumping from atom to atom inside a material`,
           vocab: [
-            { word: 'electric current', definition: `The flow of electrons through a conducting material — measured in amperes. Current is what flows through a wire when a circuit is complete and voltage is applied.`,    audioPrompt: `Electric current — the flow of electrons through a conducting material, measured in amperes. Current is what flows through a wire when a circuit is complete and voltage is applied.` },
-            { word: 'voltage',          definition: `The electrical pressure that drives electrons to flow through a circuit — like water pressure in a pipe. Measured in volts, it's the force that pushes current through a conductor.`, audioPrompt: `Voltage — the electrical pressure that drives electrons to flow through a circuit, like water pressure in a pipe. Measured in volts, it's the force that pushes current through a conductor.` },
+            { word: 'electron', definition: `A tiny particle that orbits the nucleus of an atom. Electrons carry electric charge — and their movement creates electricity.`, audioPrompt: `Electron — a tiny particle that orbits the nucleus of an atom. Electrons carry electric charge, and their movement creates electricity.` },
+            { word: 'atom',     definition: `The basic building block of everything in the universe. Made of protons, neutrons, and electrons.`, audioPrompt: `Atom — the basic building block of everything in the universe. Made of protons, neutrons, and electrons.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Conductors and Insulators`,
+          totalSections: 6,
+          headline:      `Current and Voltage`,
           paragraphs: [
-            `Materials that allow electrons to flow freely are called conductors. Metals are the best conductors — copper, aluminum, silver, and gold all allow electrons to move easily. Copper is most commonly used in electrical wiring because it conducts electricity very well and is relatively affordable. Salt water is also a conductor, which is why you should never use electrical devices near water.`,
-            `Materials that resist or block electron flow are called insulators. Rubber, plastic, glass, and wood are good insulators. Electrical wires are metal on the inside and coated with rubber or plastic on the outside — the metal carries the current, the insulator keeps it contained and prevents dangerous shocks. The insulating coating is what makes it safe to touch a wire.`,
-            `Between conductors and insulators there are semiconductors — materials that can be switched between conducting and not conducting. Silicon is the most important semiconductor in the world. It's the foundation of computer chips, solar cells, and virtually all modern electronics. The ability to control exactly where and when electrons flow is what makes computers possible.`,
+            `Electric current is the flow of electrons through a wire. When billions of them move together, that's the current powering your devices.`,
+            `Voltage is the push behind the flow — like water pressure in a pipe. The bigger the voltage, the harder the electrons are shoved.`,
           ],
-          image:        '/explorer-assets/cosmos/l17-magazine-conductors.png',
-          imageCaption: `Conductors and insulators — metals carry electrons freely; rubber and plastic keep them safely contained`,
+          image:        '/explorer-assets/cosmos/l17-s2-current-voltage.png',
+          imageCaption: `Current is the flow of electrons. Voltage is the push behind that flow.`,
           vocab: [
-            { word: 'conductor', definition: `A material that allows electrons to flow freely through it — metals like copper, silver, and aluminum are excellent conductors and are used in electrical wiring.`,              audioPrompt: `Conductor — a material that allows electrons to flow freely through it. Metals like copper, silver, and aluminum are excellent conductors and are used in electrical wiring.` },
-            { word: 'insulator', definition: `A material that resists the flow of electrons — rubber, plastic, glass, and wood are insulators. Electrical wires are coated in insulators to contain current and prevent shocks.`, audioPrompt: `Insulator — a material that resists the flow of electrons. Rubber, plastic, glass, and wood are insulators. Electrical wires are coated in insulators to contain current and prevent shocks.` },
+            { word: 'electric current', definition: `The flow of electrons through a wire or other conductor. More electrons flowing means more current.`, audioPrompt: `Electric current — the flow of electrons through a wire or other conductor. More electrons flowing means more current.` },
+            { word: 'voltage',          definition: `The push behind electric current — like water pressure in a pipe. Higher voltage pushes electrons harder.`, audioPrompt: `Voltage — the push behind electric current, like water pressure in a pipe. Higher voltage pushes electrons harder.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Circuits: Giving Electricity a Path`,
+          totalSections: 6,
+          headline:      `Conductors vs Insulators`,
           paragraphs: [
-            `For electricity to flow, electrons need a complete, unbroken loop to travel through — called a circuit. A circuit has a power source (like a battery), conductors (wires), and a load (something that uses the electricity, like a light bulb or motor). If the loop is broken anywhere — even a tiny gap — current stops flowing immediately.`,
-            `Circuits can be arranged in series or parallel. In a series circuit, components are connected one after another in a single loop. If one component fails, the whole circuit breaks. Early Christmas lights were wired in series — one burned-out bulb turned them all off. In a parallel circuit, each component has its own separate path to the power source. One failure doesn't affect the others — which is how household wiring works.`,
-            `A switch is simply a device that opens and closes a gap in a circuit. When you flip a light switch on, you close the gap and complete the circuit — electrons flow, the bulb lights up. When you switch it off, you open the gap — the circuit breaks, and the flow stops immediately. Every switch you use every day works on exactly this principle.`,
+            `Materials that let electrons flow freely are called conductors. Metals like copper, aluminum, silver, and gold are excellent conductors.`,
+            `Materials that block electron flow are called insulators. Rubber, plastic, glass, and wood are insulators. That's why wires are metal inside and rubber outside.`,
           ],
-          image:        '/explorer-assets/cosmos/l17-magazine-circuits.png',
-          imageCaption: `Circuits — complete loops of conductors, power sources, and loads that let electrons flow and do work`,
+          image:        '/explorer-assets/cosmos/l17-s3-conductor-insulator.png',
+          imageCaption: `Conductors let electrons through. Insulators stop them. Wires use both.`,
           vocab: [
-            { word: 'circuit',  definition: `A complete, closed loop through which electric current can flow — a circuit requires a power source, conductors, and a load, with no gaps in the loop.`,                          audioPrompt: `Circuit — a complete, closed loop through which electric current can flow. A circuit requires a power source, conductors, and a load, with no gaps in the loop.` },
-            { word: 'parallel', definition: `A circuit arrangement where components have separate paths to the power source — if one component fails, the others continue working. Used in household wiring for safety and reliability.`, audioPrompt: `Parallel — a circuit arrangement where components have separate paths to the power source. If one component fails, the others continue working. Used in household wiring for safety and reliability.` },
+            { word: 'conductor', definition: `A material that lets electrons flow through it easily. Metals are the best conductors — that's why wires are made of copper.`, audioPrompt: `Conductor — a material that lets electrons flow through it easily. Metals are the best conductors, that's why wires are made of copper.` },
+            { word: 'insulator', definition: `A material that blocks electron flow. Rubber, plastic, glass, and wood are insulators — used to keep electricity safely contained.`, audioPrompt: `Insulator — a material that blocks electron flow. Rubber, plastic, glass, and wood are insulators, used to keep electricity safely contained.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Static Electricity and Lightning`,
+          totalSections: 6,
+          headline:      `Circuits`,
           paragraphs: [
-            `Not all electricity flows through wires. Static electricity is a buildup of electric charge on the surface of an object — caused when electrons transfer from one material to another through friction. When you rub a balloon on your hair, electrons move from your hair to the balloon. The balloon becomes negatively charged; your hair becomes positively charged. Opposite charges attract — which is why the balloon sticks to the wall and your hair stands up.`,
-            `When enough charge builds up on an object, it can discharge suddenly and dramatically. The spark you feel when you touch a metal doorknob after walking across carpet is a tiny static discharge. Lightning is the same phenomenon, operating on a scale that staggers the imagination.`,
-            `Inside a thunderstorm cloud, ice crystals and water droplets collide, transferring charge. Positive charges build at the top of the cloud; negative charges accumulate at the bottom. When the charge difference becomes large enough, it discharges as lightning — a gigantic spark racing between cloud and ground. A single bolt can carry up to a billion volts and reach temperatures of 30,000°C — about five times hotter than the surface of the Sun.`,
+            `For electricity to flow, electrons need a complete loop — called a circuit. Every circuit has a power source, a conductor, and a device to power.`,
+            `A switch opens and closes a gap in the circuit. Flip it on, the loop closes, electrons flow, the light glows. Flip it off, everything stops.`,
           ],
-          image:        '/explorer-assets/cosmos/l17-magazine-lightning.png',
-          imageCaption: `Static electricity and lightning — charge buildup discharging as a spark, from balloon to bolt`,
+          image:        '/explorer-assets/cosmos/l17-s4-circuit.png',
+          imageCaption: `A circuit is a complete loop. Break it anywhere, and the electricity stops.`,
           vocab: [
-            { word: 'static electricity', definition: `A buildup of electric charge on the surface of an object, caused by electrons transferring between materials through friction — it discharges suddenly when the charge difference becomes large enough.`, audioPrompt: `Static electricity — a buildup of electric charge on the surface of an object, caused by electrons transferring between materials through friction. It discharges suddenly when the charge difference becomes large enough.` },
-            { word: 'discharge',          definition: `The sudden release of built-up electric charge — from the tiny spark of a doorknob shock to the enormous bolt of lightning. Discharge happens when charge moves rapidly from one object to another.`,          audioPrompt: `Discharge — the sudden release of built-up electric charge, from the tiny spark of a doorknob shock to the enormous bolt of lightning. Discharge happens when charge moves rapidly from one object to another.` },
+            { word: 'circuit', definition: `A complete loop that lets electricity flow from a power source and back to it. Break the loop anywhere and the flow stops.`, audioPrompt: `Circuit — a complete loop that lets electricity flow from a power source and back to it. Break the loop anywhere and the flow stops.` },
+            { word: 'switch',  definition: `A device that opens or closes a gap in a circuit — turning the flow of electricity on or off.`, audioPrompt: `Switch — a device that opens or closes a gap in a circuit, turning the flow of electricity on or off.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Series and Parallel`,
+          paragraphs: [
+            `Circuits can be wired two ways. In a series circuit, components are connected one after another. If one breaks, the whole thing stops.`,
+            `In a parallel circuit, each component has its own path to the power. One failure doesn't affect the others. That's how your house is wired.`,
+          ],
+          image:        '/explorer-assets/cosmos/l17-s5-series-parallel.png',
+          imageCaption: `Series circuits share one path. Parallel circuits give each component its own.`,
+          vocab: [
+            { word: 'series',   definition: `A circuit where all components are connected one after another in a single loop. Break one, you break them all.`, audioPrompt: `Series — a circuit where all components are connected one after another in a single loop. Break one, you break them all.` },
+            { word: 'parallel', definition: `A circuit where each component has its own path to the power. One failure doesn't affect the others — used in household wiring.`, audioPrompt: `Parallel — a circuit where each component has its own path to the power. One failure doesn't affect the others, used in household wiring.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Static and Lightning`,
+          paragraphs: [
+            `Rub a balloon on your hair and electrons jump from your hair to the balloon. Your hair stands up. This is static electricity.`,
+            `Lightning is the same thing on a massive scale. A bolt can carry a billion volts and reach 30,000°C — five times hotter than the Sun's surface.`,
+          ],
+          image:        '/explorer-assets/cosmos/l17-s6-static-lightning.png',
+          imageCaption: `Static electricity in your hair and lightning in the sky — the same phenomenon, different scales`,
+          vocab: [
+            { word: 'static electricity', definition: `A buildup of electric charge on the surface of an object — caused by electrons transferring through friction.`, audioPrompt: `Static electricity — a buildup of electric charge on the surface of an object, caused by electrons transferring through friction.` },
+            { word: 'discharge',          definition: `The sudden release of built-up electric charge — from a tiny spark when you touch a doorknob to a giant lightning bolt.`, audioPrompt: `Discharge — the sudden release of built-up electric charge, from a tiny spark when you touch a doorknob to a giant lightning bolt.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l17_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L17] Loaded: "Electricity: What Is It?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l17-magazine-electrons.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l17-magazine-conductors.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l17-magazine-circuits.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l17-magazine-lightning.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L17] electrons: ${r1.ok}, conductors: ${r2.ok}, circuits: ${r3.ok}, lightning: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l17-s1-electrons.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l17-s2-current-voltage.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l17-s3-conductor-insulator.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l17-s4-circuit.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l17-s5-series-parallel.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l17-s6-static-lightning.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L17] electrons: ${r1.ok}, current-voltage: ${r2.ok}, conductor-insulator: ${r3.ok}, circuit: ${r4.ok}, series-parallel: ${r5.ok}, static-lightning: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L17] Could not verify image assets — network check failed');
   });
