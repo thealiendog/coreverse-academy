@@ -23,73 +23,101 @@ const moneybusiness_explorer_l02_screens = {
           guideText: `What do you do when you get money? Maybe you spend it right away. But did you know there are four things you can do with money — and the most powerful people with money do ALL four?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Earning`,
+          totalSections: 6,
+          headline:      `Four Things to Do with Money`,
           paragraphs: [
-            `Money comes from doing work. Adults earn money from jobs — they trade their time, skills, and effort for a wage or salary. Kids can earn money too: doing chores, helping neighbours, selling lemonade, walking dogs, or any task where someone values what you do enough to pay for it.`,
-            `The key insight is the exchange: you give time and effort, and you receive money in return. This is why people say "time is money" — every hour you spend working is an hour you've traded for income. Understanding this exchange is the starting point for all financial thinking.`,
-            `Earning isn't just about jobs. People also earn money through businesses they build, investments they make, and creative work they sell. But for most people — and for kids starting out — earning begins with a simple trade: your effort for someone's money.`,
+            `Every dollar you get can do one of four things — earn (coming in), spend, save, or give.`,
+            `Most people only do one or two. The most powerful people with money do all four — every single time money comes in.`,
           ],
-          image:        '/explorer-assets/money-business/l02-magazine-earning.png',
-          imageCaption: `Earning — trading time and effort for money, the foundation of every financial life`,
+          image:        '/explorer-assets/money-business/l02-s1-four-buckets.png',
+          imageCaption: `Every dollar has four possible jobs — earn, spend, save, give`,
           vocab: [
-            { word: `income`,  definition: `Money you receive in exchange for work, services, or the use of something you own — wages, allowance, and business profits are all forms of income.`,                                         audioPrompt: `Income — money you receive in exchange for work, services, or the use of something you own. Wages, allowance, and business profits are all forms of income.` },
-            { word: `wage`,    definition: `Money paid for work, typically calculated per hour or per task — different from a salary, which is a fixed amount paid regularly regardless of exact hours worked.`, audioPrompt: `Wage — money paid for work, typically calculated per hour or per task. Different from a salary, which is a fixed amount paid regularly regardless of exact hours worked.` },
+            { word: 'bucket', definition: `A category or group. Earn, spend, save, and give are the four money buckets — every dollar fits into one.`, audioPrompt: `Bucket — a category or group. Earn, spend, save, and give are the four money buckets. Every dollar fits into one.` },
+            { word: 'plan',   definition: `Decisions made ahead of time. Having a money plan means deciding what each dollar will do BEFORE it arrives.`, audioPrompt: `Plan — decisions made ahead of time. Having a money plan means deciding what each dollar will do before it arrives.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Spending`,
+          totalSections: 6,
+          headline:      `Earning`,
           paragraphs: [
-            `Spending is exchanging money for things you want or need. Every time money leaves your hands — at a store, on a website, or through an app — that's spending. Spending isn't bad; it's necessary. You need food, clothes, and shelter. You also want toys, games, and experiences. Spending covers both.`,
-            `The difference between smart spenders and careless spenders comes down to a few questions they ask before every purchase. Do I need this, or do I just want it? Is this the best price available? Will I still be glad I bought this tomorrow, or just today? These questions slow down impulsive decisions and lead to better choices.`,
-            `Smart spenders also compare prices before buying and wait before making large purchases. The simple habit of pausing before spending — even for a few seconds — separates people who always feel broke from people who always seem to have enough.`,
+            `Earning is trading your time and effort for money. Adults work jobs. Kids can do chores, walk dogs, or sell lemonade.`,
+            `The exchange is simple: you give time, you get paid. This is why people say "time is money." Every hour you work is an hour traded for income.`,
           ],
-          image:        '/explorer-assets/money-business/l02-magazine-spending.png',
-          imageCaption: `Spending — exchanging money for needs and wants, with smart decisions separating enough from never enough`,
+          image:        '/explorer-assets/money-business/l02-s2-earning.png',
+          imageCaption: `Earning is the trade — your time and effort for someone's money`,
           vocab: [
-            { word: `needs`,   definition: `Things you must have to survive and function — food, water, shelter, clothing, and healthcare. Needs come before wants in any smart spending plan.`,                                              audioPrompt: `Needs — things you must have to survive and function, including food, water, shelter, clothing, and healthcare. Needs come before wants in any smart spending plan.` },
-            { word: `impulse`, definition: `A sudden urge to buy something without thinking it through — impulse spending is one of the most common ways people end up with less money than they planned to have.`, audioPrompt: `Impulse — a sudden urge to buy something without thinking it through. Impulse spending is one of the most common ways people end up with less money than they planned to have.` },
+            { word: 'income', definition: `Money you receive in exchange for work. Wages, allowance, and business profits are all forms of income.`, audioPrompt: `Income — money you receive in exchange for work. Wages, allowance, and business profits are all forms of income.` },
+            { word: 'wage',   definition: `Money paid for work, usually by the hour or by task — $10 an hour, $5 per yard mowed.`, audioPrompt: `Wage — money paid for work, usually by the hour or by task. Ten dollars an hour, five dollars per yard mowed.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Saving`,
+          totalSections: 6,
+          headline:      `Spending`,
           paragraphs: [
-            `Saving means setting aside money now so you have it for later. The simplest rule is this: save at least 20% of any money you receive before you do anything else with it. If you earn $10, put $2 in savings immediately. This is called "paying yourself first" — and it's one of the most powerful financial habits there is.`,
-            `Saving isn't just about having money for emergencies. It's also how you afford larger things over time. If you want something that costs $50 and you save $5 a week, you'll have it in 10 weeks. Saving turns time into purchasing power — and patience into a genuine financial advantage.`,
-            `The longer you save, the easier it becomes. Money already in savings feels separate from money you can spend — and over time, watching your savings grow becomes its own reward. People who develop a saving habit early tend to keep it for life.`,
+            `Spending is trading money for things you want or need. Every time money leaves your hands, that's spending.`,
+            `Smart spenders ask: Do I need this, or just want it? Is this the best price? Will I be glad I bought it tomorrow?`,
           ],
-          image:        '/explorer-assets/money-business/l02-magazine-saving.png',
-          imageCaption: `Saving — paying yourself first, turning patience into purchasing power over time`,
+          image:        '/explorer-assets/money-business/l02-s3-spending.png',
+          imageCaption: `Pause before you spend. The few seconds of thinking separates broke from comfortable.`,
           vocab: [
-            { word: `savings`,         definition: `Money set aside and not spent — kept for future goals, emergencies, or larger purchases. Saving at least 20% of every amount received is a strong starting habit.`,             audioPrompt: `Savings — money set aside and not spent. Kept for future goals, emergencies, or larger purchases. Saving at least 20% of every amount received is a strong starting habit.` },
-            { word: `paying yourself first`, definition: `The habit of moving money to savings before spending anything else — treating your own savings as the first and most important expense in any money plan.`, audioPrompt: `Paying yourself first — the habit of moving money to savings before spending anything else. Treating your own savings as the first and most important expense in any money plan.` },
+            { word: 'needs',   definition: `Things you must have to survive — food, water, shelter, clothing. Needs come before wants in any smart spending plan.`, audioPrompt: `Needs — things you must have to survive: food, water, shelter, clothing. Needs come before wants in any smart spending plan.` },
+            { word: 'impulse', definition: `A sudden urge to buy something without thinking. Impulse spending is how people end up with less money than they planned.`, audioPrompt: `Impulse — a sudden urge to buy something without thinking. Impulse spending is how people end up with less money than they planned.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
+          totalSections: 6,
+          headline:      `Saving`,
+          paragraphs: [
+            `Saving means setting money aside now so you have it later. The rule is simple: save at least 20% before doing anything else.`,
+            `If you earn $10, put $2 in savings first. That's called "paying yourself first" — and it's one of the most powerful money habits there is.`,
+          ],
+          image:        '/explorer-assets/money-business/l02-s4-saving.png',
+          imageCaption: `Pay yourself first — savings is the most important expense in any money plan`,
+          vocab: [
+            { word: 'savings',            definition: `Money set aside, not spent. Kept for future goals, emergencies, or bigger purchases later.`, audioPrompt: `Savings — money set aside, not spent. Kept for future goals, emergencies, or bigger purchases later.` },
+            { word: 'pay yourself first', definition: `The habit of moving money to savings BEFORE spending anything else. Treat your savings as the first and most important expense.`, audioPrompt: `Pay yourself first — the habit of moving money to savings before spending anything else. Treat your savings as the first and most important expense.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
           headline:      `Giving`,
           paragraphs: [
-            `Giving money away might sound like the opposite of good money management. You worked for it — why give it away? But giving is one of the most powerful things money can do, and the research is clear: people who give regularly report feeling happier, more purposeful, and more in control of their finances than people who don't.`,
-            `Giving doesn't have to be a large amount. Even setting aside a small amount from every dollar you receive — 5% or 10% — and directing it toward something you care about creates a habit of generosity. It teaches your brain that money is a tool for doing good, not just a score to accumulate.`,
-            `People give to causes, to friends in need, to their communities, and to strangers. Whatever you care about — animals, the environment, helping people who are hungry — there's a way to direct money toward it. When you give intentionally, money becomes more than something you have. It becomes something you use.`,
+            `Giving money to causes you care about sounds weird at first — you worked for it, why give it away? But research is clear.`,
+            `People who give regularly feel happier and more in control of their money. Even 5% from each amount you receive builds the habit of generosity.`,
           ],
-          image:        '/explorer-assets/money-business/l02-magazine-giving.png',
-          imageCaption: `Giving — directing money toward what matters, the habit that makes wealth meaningful`,
+          image:        '/explorer-assets/money-business/l02-s5-giving.png',
+          imageCaption: `Giving makes you happier than spending the same amount on yourself — that's science`,
           vocab: [
-            { word: `generosity`,  definition: `The quality of giving freely — time, money, or resources — to help others without expecting something in return. Generosity is linked to greater personal happiness and wellbeing.`, audioPrompt: `Generosity — the quality of giving freely, time, money, or resources, to help others without expecting something in return. Generosity is linked to greater personal happiness and wellbeing.` },
-            { word: `charity`,     definition: `An organisation set up to raise money and support people, animals, or causes in need — donating to charities is one way to direct giving toward specific goals you care about.`,         audioPrompt: `Charity — an organisation set up to raise money and support people, animals, or causes in need. Donating to charities is one way to direct giving toward specific goals you care about.` },
+            { word: 'generosity', definition: `The quality of giving freely to help others without expecting something back. Linked to greater personal happiness.`, audioPrompt: `Generosity — the quality of giving freely to help others without expecting something back. Linked to greater personal happiness.` },
+            { word: 'charity',    definition: `An organization that raises money to support people, animals, or causes in need.`, audioPrompt: `Charity — an organization that raises money to support people, animals, or causes in need.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `The Power of All Four`,
+          paragraphs: [
+            `Every dollar that comes in should have a job — some to spend, some to save, some to give.`,
+            `People who use all four buckets don't just have money. They have a plan. That's the difference between feeling broke and feeling free.`,
+          ],
+          image:        '/explorer-assets/money-business/l02-s6-all-four.png',
+          imageCaption: `Use all four buckets — that's how money becomes a plan instead of a problem`,
+          vocab: [
+            { word: 'budget',            definition: `A plan for how to use your money — how much to earn, spend, save, and give. A budget is just a money plan written down.`, audioPrompt: `Budget — a plan for how to use your money: how much to earn, spend, save, and give. A budget is just a money plan written down.` },
+            { word: 'financial freedom', definition: `Having enough money, managed well, that you can make choices freely — not be forced into them by money problems.`, audioPrompt: `Financial freedom — having enough money, managed well, that you can make choices freely. Not be forced into them by money problems.` },
           ],
         },
 
@@ -186,12 +214,14 @@ const moneybusiness_explorer_l02_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L02] Loaded: "Earning, Spending, Saving & Giving" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l02-magazine-earning.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l02-magazine-spending.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l02-magazine-saving.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l02-magazine-giving.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L02] earning: ${r1.ok}, spending: ${r2.ok}, saving: ${r3.ok}, giving: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l02-s1-four-buckets.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l02-s2-earning.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l02-s3-spending.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l02-s4-saving.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l02-s5-giving.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l02-s6-all-four.png',     { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L02] four-buckets: ${r1.ok}, earning: ${r2.ok}, spending: ${r3.ok}, saving: ${r4.ok}, giving: ${r5.ok}, all-four: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L02] Could not verify image assets — network check failed');
   });
