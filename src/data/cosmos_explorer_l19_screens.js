@@ -23,73 +23,101 @@ const cosmos_explorer_l19_screens = {
           guideText: `How do we know that the Earth orbits the Sun? That vaccines work? That the universe is 13.8 billion years old? Not by guessing, not by authority, not by tradition — but by a method. The scientific method is the most reliable process humans have ever invented for finding out what's actually true about the world.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `The Six Steps of the Scientific Method`,
+          totalSections: 6,
+          headline:      `How Do We Know Things?`,
           paragraphs: [
-            `The scientific method is a repeatable process for testing ideas about the world. It begins with observation — noticing something and asking a question about it. Then comes research — finding out what's already known. Then the hypothesis — a testable, informed prediction. Then the experiment — a controlled test of that prediction. Then data analysis — examining the results carefully. And finally, a conclusion — deciding whether the results support or refute the hypothesis.`,
-            `A crucial feature of this process is that it's repeatable. Any scientist anywhere in the world should be able to follow the same steps and get the same results. If results can't be reproduced, they can't be trusted. Reproducibility is what separates scientific knowledge from opinion, rumour, or wishful thinking.`,
-            `The method also explicitly allows for being wrong. If the experiment's results don't match the hypothesis, you revise the hypothesis and test again. Being wrong isn't failure — it's information. Every null result (an experiment that disproves a hypothesis) is genuine progress, because it eliminates one wrong idea and points toward a better one.`,
+            `How do we know the Earth orbits the Sun? That vaccines work? Not by guessing — by a method.`,
+            `The scientific method is the most reliable process humans have ever invented for finding out what's actually true about the world.`,
           ],
-          image:        '/explorer-assets/cosmos/l19-magazine-six-steps.png',
-          imageCaption: `The scientific method — six repeatable steps from observation and question through to conclusion`,
+          image:        '/explorer-assets/cosmos/l19-s1-inquiry.png',
+          imageCaption: `Science is the most reliable way humans have ever found to learn what's true`,
           vocab: [
-            { word: 'hypothesis',    definition: `An informed, testable prediction about what you expect to happen and why — it must be specific and measurable, capable of being supported or disproved by evidence from an experiment.`, audioPrompt: `Hypothesis — an informed, testable prediction about what you expect to happen and why. It must be specific and measurable, capable of being supported or disproved by evidence from an experiment.` },
-            { word: 'reproducibility', definition: `The ability of an experiment to produce the same results when repeated by different scientists — reproducibility is essential to scientific credibility and separates verified findings from coincidences.`, audioPrompt: `Reproducibility — the ability of an experiment to produce the same results when repeated by different scientists. Reproducibility is essential to scientific credibility and separates verified findings from coincidences.` },
+            { word: 'scientific method', definition: `A step-by-step process for testing ideas and finding out what's true about the world. It's how every science gets done.`, audioPrompt: `Scientific method — a step-by-step process for testing ideas and finding out what's true about the world. It's how every science gets done.` },
+            { word: 'evidence',          definition: `Facts or observations that support or disprove a claim. Strong evidence is what makes a scientific finding trustworthy.`, audioPrompt: `Evidence — facts or observations that support or disprove a claim. Strong evidence is what makes a scientific finding trustworthy.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Variables and Controls`,
+          totalSections: 6,
+          headline:      `The Six Steps`,
           paragraphs: [
-            `A well-designed experiment changes exactly one thing at a time. The thing you deliberately change is called the independent variable. The thing you measure in response is the dependent variable. Everything else — temperature, light levels, the amount of water, the container size, the time of day — is kept the same. These constant conditions are called the controlled variables.`,
-            `A control group is a group in the experiment that receives no treatment at all — it's kept exactly as it was before the experiment started. The control group gives you something to compare against. Without it, you can't know whether a change in your results was caused by your independent variable or by some other factor you didn't account for.`,
-            `Imagine testing whether a new fertiliser helps plants grow. You grow 20 plants: 10 with the fertiliser (the experimental group) and 10 without it (the control group). Both groups get the same soil, water, light, and temperature. If the fertiliser group grows taller, you can be confident the fertiliser caused it — because everything else was the same.`,
+            `It starts with observation — noticing something. Then research — finding out what's already known. Then a hypothesis — a testable prediction.`,
+            `Then the experiment — a careful test. Then data analysis — examining the results. Then a conclusion — did the results support the hypothesis?`,
           ],
-          image:        '/explorer-assets/cosmos/l19-magazine-variables.png',
-          imageCaption: `Variables and controls — independent, dependent, and controlled variables; control groups for comparison`,
+          image:        '/explorer-assets/cosmos/l19-s2-six-steps.png',
+          imageCaption: `Six steps: observe, research, hypothesise, experiment, analyse, conclude`,
           vocab: [
-            { word: 'independent variable', definition: `The variable in an experiment that the scientist deliberately changes to test its effect — only one variable should be changed at a time so results can be attributed to it.`,        audioPrompt: `Independent variable — the variable in an experiment that the scientist deliberately changes to test its effect. Only one variable should be changed at a time so results can be attributed to it.` },
-            { word: 'control group',        definition: `A group in an experiment that receives no treatment — kept identical to the experimental group in all other conditions, so results can be compared to determine the effect of the variable.`, audioPrompt: `Control group — a group in an experiment that receives no treatment. Kept identical to the experimental group in all other conditions, so results can be compared to determine the effect of the variable.` },
+            { word: 'hypothesis', definition: `An informed, testable prediction about what you expect to happen — and why. A good hypothesis can be supported OR disproved.`, audioPrompt: `Hypothesis — an informed, testable prediction about what you expect to happen, and why. A good hypothesis can be supported or disproved.` },
+            { word: 'experiment', definition: `A careful test designed to check whether a hypothesis is true. Experiments must be repeatable — anyone should be able to run them.`, audioPrompt: `Experiment — a careful test designed to check whether a hypothesis is true. Experiments must be repeatable. Anyone should be able to run them.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Science Is Self-Correcting`,
+          totalSections: 6,
+          headline:      `Variables`,
           paragraphs: [
-            `Before scientific findings are published, they go through peer review — examination by other experts in the same field. Reviewers check whether the methods were sound, the analysis was correct, and the conclusions are supported by the data. Peer review is imperfect, but it's the best filter humanity has developed for separating reliable findings from flawed ones.`,
-            `When many independent experiments in different labs by different scientists all point to the same conclusion, scientific consensus forms. Consensus doesn't mean unanimous certainty — it means the weight of evidence strongly points in one direction. That's how we know smoking causes cancer, that DNA carries genetic information, and that the universe is expanding.`,
-            `Science is self-correcting — when new evidence contradicts an established idea, the idea changes, not the evidence. This has happened many times. For centuries, scientists believed in a substance called "phlogiston" that was released during burning. When oxygen was discovered, the phlogiston theory collapsed — and scientists updated their understanding. Science changes when evidence demands it. That's a feature, not a weakness.`,
+            `A good experiment changes exactly one thing at a time. The thing you change is the independent variable.`,
+            `The thing you measure is the dependent variable. Everything else stays the same — those are the controlled variables. Only change one thing.`,
           ],
-          image:        '/explorer-assets/cosmos/l19-magazine-peer-review.png',
-          imageCaption: `Peer review and consensus — science self-corrects when new evidence demands it, building reliable knowledge`,
+          image:        '/explorer-assets/cosmos/l19-s3-variables.png',
+          imageCaption: `Change one thing. Measure one thing. Keep everything else exactly the same.`,
           vocab: [
-            { word: 'peer review',         definition: `The process of having a scientist's work examined by other experts before publication — it checks methods, analysis, and conclusions to filter out errors and improve reliability.`,      audioPrompt: `Peer review — the process of having a scientist's work examined by other experts before publication. It checks methods, analysis, and conclusions to filter out errors and improve reliability.` },
-            { word: 'scientific consensus', definition: `The collective agreement of experts in a field based on the accumulated weight of evidence — not unanimous certainty, but the strongest supported conclusion given all available data.`, audioPrompt: `Scientific consensus — the collective agreement of experts in a field based on the accumulated weight of evidence. Not unanimous certainty, but the strongest supported conclusion given all available data.` },
+            { word: 'independent variable', definition: `The one thing a scientist deliberately changes in an experiment to test its effect.`, audioPrompt: `Independent variable — the one thing a scientist deliberately changes in an experiment to test its effect.` },
+            { word: 'dependent variable',   definition: `The thing you measure in an experiment — it might change depending on what you do to the independent variable.`, audioPrompt: `Dependent variable — the thing you measure in an experiment. It might change depending on what you do to the independent variable.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `What Science Can and Can't Do`,
+          totalSections: 6,
+          headline:      `The Control Group`,
           paragraphs: [
-            `Science is the most powerful tool humanity has for answering questions about the natural world — questions that can be tested, measured, and observed. Is this drug effective? How hot will Earth be in 2100? What is the mass of the Sun? These are scientific questions. The scientific method can investigate them and produce reliable, evidence-based answers.`,
-            `But science doesn't answer all questions. Questions of value — Is this fair? Should we do this? What makes a life meaningful? — aren't scientific questions because they can't be settled by measurement or experiment. Questions of taste — Is this beautiful? Is this music good? — similarly lie outside science's reach. Science tells us what is; other ways of thinking must address what ought to be.`,
-            `Understanding what science is — and what it isn't — matters enormously in everyday life. When someone says "studies show," it's worth asking: Were the studies peer-reviewed? Has the finding been replicated? Is there scientific consensus? A single study proving anything is almost meaningless. What matters is the accumulated weight of evidence from many independent investigations. That's what scientific knowledge actually looks like.`,
+            `Imagine testing if a fertiliser helps plants grow. Grow 20 plants — 10 with fertiliser, 10 without. The 10 without are the control group.`,
+            `Both groups get the same soil, water, and light. If the fertiliser group grows taller, you know the fertiliser caused it.`,
           ],
-          image:        '/explorer-assets/cosmos/l19-magazine-what-science-does.png',
-          imageCaption: `What science can and can't do — testable natural questions yes, questions of value or taste no`,
+          image:        '/explorer-assets/cosmos/l19-s4-control-group.png',
+          imageCaption: `The control group gets no treatment — it's what you compare your results against`,
           vocab: [
-            { word: 'empirical',  definition: `Based on observation, measurement, and experiment — empirical evidence is gathered directly from the world rather than from logic, authority, or tradition alone.`,                               audioPrompt: `Empirical — based on observation, measurement, and experiment. Empirical evidence is gathered directly from the world rather than from logic, authority, or tradition alone.` },
-            { word: 'replication', definition: `Repeating an experiment independently to verify its results — a finding that has been replicated many times by different researchers is far more reliable than one that has been done only once.`, audioPrompt: `Replication — repeating an experiment independently to verify its results. A finding that has been replicated many times by different researchers is far more reliable than one that has been done only once.` },
+            { word: 'control group', definition: `A group in an experiment that gets no treatment. Used as a comparison — so you can tell what your treatment actually did.`, audioPrompt: `Control group — a group in an experiment that gets no treatment. Used as a comparison so you can tell what your treatment actually did.` },
+            { word: 'fair test',     definition: `An experiment where only one variable is changed at a time — so you can tell exactly what caused the result.`, audioPrompt: `Fair test — an experiment where only one variable is changed at a time, so you can tell exactly what caused the result.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Peer Review and Consensus`,
+          paragraphs: [
+            `Before scientific findings are accepted, they go through peer review — examination by other experts who check the methods and results.`,
+            `When many independent experiments by different scientists all point to the same conclusion, scientific consensus forms. That's how we know smoking causes cancer.`,
+          ],
+          image:        '/explorer-assets/cosmos/l19-s5-peer-review.png',
+          imageCaption: `Real science is checked by other scientists — and confirmed by many experiments, not just one`,
+          vocab: [
+            { word: 'peer review', definition: `When other experts examine a scientist's work before it's accepted — checking methods, analysis, and conclusions for errors.`, audioPrompt: `Peer review — when other experts examine a scientist's work before it's accepted, checking methods, analysis, and conclusions for errors.` },
+            { word: 'consensus',   definition: `Agreement among experts based on the weight of evidence — not because they vote, but because many experiments point the same way.`, audioPrompt: `Consensus — agreement among experts based on the weight of evidence. Not because they vote, but because many experiments point the same way.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `What Science Is For`,
+          paragraphs: [
+            `Science can answer questions about the natural world — things you can test and measure. Does this drug work? How old is the universe?`,
+            `But science can't answer questions of value or taste. Is this fair? Is this beautiful? Those questions matter — but they live outside science's reach.`,
+          ],
+          image:        '/explorer-assets/cosmos/l19-s6-science-domain.png',
+          imageCaption: `Science answers what IS. Other ways of thinking answer what OUGHT to be.`,
+          vocab: [
+            { word: 'empirical',   definition: `Based on observation, measurement, and experiment — rather than on opinion, authority, or guessing.`, audioPrompt: `Empirical — based on observation, measurement, and experiment, rather than on opinion, authority, or guessing.` },
+            { word: 'replication', definition: `Repeating an experiment to make sure the results hold up. A finding that's only been seen once is not yet trusted science.`, audioPrompt: `Replication — repeating an experiment to make sure the results hold up. A finding that's only been seen once is not yet trusted science.` },
           ],
         },
 
@@ -186,12 +214,14 @@ const cosmos_explorer_l19_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L19] Loaded: "The Scientific Method: How We Know Things" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l19-magazine-six-steps.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l19-magazine-variables.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l19-magazine-peer-review.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l19-magazine-what-science-does.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L19] six-steps: ${r1.ok}, variables: ${r2.ok}, peer-review: ${r3.ok}, what-science-does: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l19-s1-inquiry.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l19-s2-six-steps.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l19-s3-variables.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l19-s4-control-group.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l19-s5-peer-review.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l19-s6-science-domain.png',{ method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L19] inquiry: ${r1.ok}, six-steps: ${r2.ok}, variables: ${r3.ok}, control-group: ${r4.ok}, peer-review: ${r5.ok}, science-domain: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L19] Could not verify image assets — network check failed');
   });
