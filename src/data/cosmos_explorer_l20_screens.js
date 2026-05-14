@@ -23,73 +23,101 @@ const cosmos_explorer_l20_screens = {
           guideText: `In 1957, humanity launched its first object into orbit. Twelve years later, humans walked on the Moon. Today, people live in space continuously, robots explore the surface of Mars, and a spacecraft launched in 1977 has left the solar system entirely. We are a species that reaches for the stars — and we're just getting started.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `The Space Race`,
+          totalSections: 6,
+          headline:      `The First Step`,
           paragraphs: [
-            `The modern era of space exploration began in the context of Cold War competition between the United States and the Soviet Union. In 1957, the Soviet Union launched Sputnik 1 — the first human-made object to orbit Earth. It was a small metal sphere that did little more than beep — but it shocked the world. For the first time in history, something made by human hands was circling the planet.`,
-            `Four years later, Soviet cosmonaut Yuri Gagarin became the first human being to travel to space, completing one orbit of Earth in 1961. His journey lasted 108 minutes. Later that same year, American astronaut Alan Shepard became the first American in space. The race was on. US President John F. Kennedy declared that America would land a person on the Moon before the decade was out.`,
-            `On 20 July 1969, Apollo 11 landed on the Moon. Astronaut Neil Armstrong stepped onto the lunar surface and spoke words that have echoed ever since. Twelve Americans walked on the Moon between 1969 and 1972 — the only humans who have ever set foot on another world. The last boot print left on the Moon is still there, perfectly preserved in the dust, waiting.`,
+            `In 1957, the Soviet Union launched Sputnik 1 — a small metal sphere that became the first human-made object to orbit Earth.`,
+            `It did little more than beep — but it shocked the world. For the first time, something made by human hands was circling the planet.`,
           ],
-          image:        '/explorer-assets/cosmos/l20-magazine-space-race.png',
-          imageCaption: `The Space Race — from Sputnik to Apollo 11, humanity's first steps beyond Earth`,
+          image:        '/explorer-assets/cosmos/l20-s1-sputnik.png',
+          imageCaption: `Sputnik 1957 — the first human-made object to orbit Earth`,
           vocab: [
-            { word: 'orbit',    definition: `The curved path an object takes around another object due to gravity — satellites, the Moon, and the International Space Station all orbit Earth in continuous freefall around the planet.`, audioPrompt: `Orbit — the curved path an object takes around another object due to gravity. Satellites, the Moon, and the International Space Station all orbit Earth in continuous freefall around the planet.` },
-            { word: 'cosmonaut', definition: `The Russian word for a space traveller — equivalent to the American term "astronaut." Soviet cosmonauts were the first humans in space, beginning with Yuri Gagarin in 1961.`,               audioPrompt: `Cosmonaut — the Russian word for a space traveller, equivalent to the American term astronaut. Soviet cosmonauts were the first humans in space, beginning with Yuri Gagarin in 1961.` },
+            { word: 'Sputnik', definition: `The first human-made object to orbit Earth — launched by the Soviet Union in 1957. It was a small metal sphere that beeped.`, audioPrompt: `Sputnik — the first human-made object to orbit Earth, launched by the Soviet Union in 1957. It was a small metal sphere that beeped.` },
+            { word: 'orbit',   definition: `The curved path one object takes around another due to gravity — satellites, the Moon, and the ISS all orbit Earth.`, audioPrompt: `Orbit — the curved path one object takes around another due to gravity. Satellites, the Moon, and the ISS all orbit Earth.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Robots in Space: Our Eyes and Ears`,
+          totalSections: 6,
+          headline:      `First Humans in Space`,
           paragraphs: [
-            `Before sending humans to a new destination, space agencies typically send robots first. Robotic spacecraft can go places too dangerous or distant for humans, operate for decades without life support, and send back data at a fraction of the cost of a crewed mission. They are humanity's scouts — exploring the solar system on our behalf.`,
-            `The Voyager probes, launched in 1977, flew past Jupiter, Saturn, Uranus, and Neptune — the only spacecraft ever to visit the outer planets — and are now beyond the solar system entirely, still transmitting data after nearly 50 years. The Hubble Space Telescope, launched in 1990, has captured images of galaxies billions of light-years away and transformed our understanding of the universe. Mars rovers — from Sojourner to Curiosity to Perseverance — have explored the Martian surface, analysed rocks, and searched for signs of ancient life.`,
-            `Perseverance, which landed on Mars in 2021, carries a small helicopter called Ingenuity — the first powered aircraft to fly on another planet. Ingenuity's first flight lasted 39 seconds. It has since completed dozens of flights, scouting ahead for the rover. Every robotic mission extends human knowledge by billions of miles — and prepares the way for the humans who may one day follow.`,
+            `In 1961, Soviet cosmonaut Yuri Gagarin became the first human to travel to space — orbiting Earth in just 108 minutes.`,
+            `Later that year, American astronaut Alan Shepard reached space too. The Space Race had begun — and President Kennedy promised America would land a person on the Moon.`,
           ],
-          image:        '/explorer-assets/cosmos/l20-magazine-robots.png',
-          imageCaption: `Robots in space — Voyager, Hubble, and Mars rovers exploring the solar system as humanity's scouts`,
+          image:        '/explorer-assets/cosmos/l20-s2-first-human.png',
+          imageCaption: `Yuri Gagarin, 1961 — the first human to leave Earth`,
           vocab: [
-            { word: 'space probe', definition: `An unmanned spacecraft sent to explore space, planets, or other celestial bodies — probes carry instruments to gather data and transmit it back to Earth without a crew on board.`,   audioPrompt: `Space probe — an unmanned spacecraft sent to explore space, planets, or other celestial bodies. Probes carry instruments to gather data and transmit it back to Earth without a crew on board.` },
-            { word: 'rover',       definition: `A robotic vehicle designed to move across the surface of a planet or moon — Mars rovers like Curiosity and Perseverance drive across the Martian surface, analysing rocks and soil.`, audioPrompt: `Rover — a robotic vehicle designed to move across the surface of a planet or moon. Mars rovers like Curiosity and Perseverance drive across the Martian surface, analysing rocks and soil.` },
+            { word: 'cosmonaut',  definition: `The Russian word for a space traveller — equivalent to the American term astronaut. Yuri Gagarin was the first cosmonaut.`, audioPrompt: `Cosmonaut — the Russian word for a space traveller, equivalent to the American term astronaut. Yuri Gagarin was the first cosmonaut.` },
+            { word: 'Space Race', definition: `The Cold War competition between the United States and Soviet Union to lead in space exploration during the 1950s and 1960s.`, audioPrompt: `Space Race — the Cold War competition between the United States and Soviet Union to lead in space exploration during the 1950s and 1960s.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The International Space Station`,
+          totalSections: 6,
+          headline:      `Walking on the Moon`,
           paragraphs: [
-            `The International Space Station — the ISS — is a permanently inhabited laboratory orbiting Earth at about 400 kilometres altitude, completing one orbit every 90 minutes. It has been continuously inhabited since November 2000, making it humanity's longest-running presence in space. The ISS is the size of a football field, and was assembled in orbit over more than a decade using components launched on over 40 missions.`,
-            `The ISS is a partnership among 16 nations — including former Cold War rivals the United States and Russia — alongside Europe, Japan, and Canada. Astronauts typically spend six months aboard, conducting experiments in a unique environment impossible to create on Earth: microgravity. In microgravity, everything floats. Sleeping requires being strapped down. Eating requires special sealed containers. Even tears don't fall — they form floating spheres around your eyes.`,
-            `Research aboard the ISS has produced advances in medicine, materials science, and our understanding of how the human body responds to long-duration spaceflight. Bones weaken. Muscles atrophy. Vision can change. Understanding and solving these problems is essential for any future mission to Mars — which would take months in deep space, far beyond the safety of Earth.`,
+            `On July 20, 1969, Apollo 11 landed on the Moon. Astronaut Neil Armstrong stepped onto the lunar surface.`,
+            `Between 1969 and 1972, twelve Americans walked on the Moon. They remain the only humans ever to set foot on another world.`,
           ],
-          image:        '/explorer-assets/cosmos/l20-magazine-iss.png',
-          imageCaption: `The ISS — humanity's permanent outpost in orbit since 2000, a laboratory 400 km above Earth`,
+          image:        '/explorer-assets/cosmos/l20-s3-moon-footprint.png',
+          imageCaption: `July 20, 1969 — the first human bootprint on another world`,
           vocab: [
-            { word: 'microgravity',                  definition: `The condition aboard the ISS where everything appears weightless because the station and everything in it are all falling together around Earth — not zero gravity, but constant freefall.`, audioPrompt: `Microgravity — the condition aboard the ISS where everything appears weightless because the station and everything in it are all falling together around Earth. Not zero gravity, but constant freefall.` },
-            { word: 'International Space Station',   definition: `A permanently inhabited research laboratory orbiting Earth at 400 km — a 16-nation partnership continuously occupied since November 2000, used for scientific research in microgravity.`,    audioPrompt: `International Space Station — a permanently inhabited research laboratory orbiting Earth at 400 km. A 16-nation partnership continuously occupied since November 2000, used for scientific research in microgravity.` },
+            { word: 'Apollo 11', definition: `The NASA mission that landed the first humans on the Moon on July 20, 1969 — Neil Armstrong and Buzz Aldrin walked on the surface.`, audioPrompt: `Apollo 11 — the NASA mission that landed the first humans on the Moon on July 20, 1969. Neil Armstrong and Buzz Aldrin walked on the surface.` },
+            { word: 'lunar',     definition: `Relating to the Moon. The lunar surface is the ground of the Moon — covered in grey dust and craters billions of years old.`, audioPrompt: `Lunar — relating to the Moon. The lunar surface is the ground of the Moon, covered in grey dust and craters billions of years old.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `What's Next? The Future of Space Exploration`,
+          totalSections: 6,
+          headline:      `Robots Lead the Way`,
           paragraphs: [
-            `NASA's Artemis program aims to return humans to the Moon — and this time, to stay. Artemis will land the first woman and the first person of colour on the lunar surface, and establish a sustainable presence there as a stepping stone to Mars. The Moon has water ice at its poles — a resource that could be converted to rocket fuel, making it a potential refuelling depot for deeper space missions.`,
-            `Mars is the next great destination for human exploration. It's the most Earth-like planet in the solar system — it has a day nearly the same length as Earth's, polar ice caps, seasons, and evidence of ancient liquid water. A crewed mission to Mars would take approximately 7 months of travel each way and require extraordinary life support, radiation shielding, and self-sufficiency. Multiple space agencies and private companies are actively working toward it.`,
-            `Private companies have transformed space exploration. SpaceX has developed reusable rockets — a revolution that has dramatically reduced launch costs. Companies like Blue Origin and Rocket Lab are expanding what's possible. The coming decades will likely see lunar bases, Mars missions, and space tourism become reality. The generation growing up today may be the generation that walks on Mars.`,
+            `Before sending humans, we send robots. Robotic spacecraft can go places too dangerous or distant for people, and operate for decades.`,
+            `The Voyager probes launched in 1977 have left the solar system entirely. Mars rovers like Perseverance still explore the Martian surface today.`,
           ],
-          image:        '/explorer-assets/cosmos/l20-magazine-future.png',
-          imageCaption: `The future of space exploration — Artemis Moon return, Mars missions, and a new era of human spaceflight`,
+          image:        '/explorer-assets/cosmos/l20-s4-robots-scouts.png',
+          imageCaption: `Robots are humanity's scouts — Voyager beyond the solar system, rovers crawling Mars`,
           vocab: [
-            { word: 'Artemis program', definition: `NASA's program to return humans to the Moon — named after the Greek goddess and twin of Apollo. Artemis aims to land the first woman and first person of colour on the lunar surface.`, audioPrompt: `Artemis program — NASA's program to return humans to the Moon, named after the Greek goddess and twin of Apollo. Artemis aims to land the first woman and first person of colour on the lunar surface.` },
-            { word: 'reusable rocket', definition: `A rocket designed to be recovered and launched again — pioneered by SpaceX, reusable rockets dramatically reduce the cost of reaching space by landing propulsively after delivering their payload to orbit.`, audioPrompt: `Reusable rocket — a rocket designed to be recovered and launched again. Pioneered by SpaceX, reusable rockets dramatically reduce the cost of reaching space by landing propulsively after delivering their payload to orbit.` },
+            { word: 'space probe', definition: `An unmanned spacecraft sent to explore space, planets, or moons — no crew on board, just instruments transmitting data home.`, audioPrompt: `Space probe — an unmanned spacecraft sent to explore space, planets, or moons. No crew on board, just instruments transmitting data home.` },
+            { word: 'rover',       definition: `A robotic vehicle designed to drive across the surface of a planet or moon. Mars rovers like Perseverance explore the red planet.`, audioPrompt: `Rover — a robotic vehicle designed to drive across the surface of a planet or moon. Mars rovers like Perseverance explore the red planet.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The Space Station`,
+          paragraphs: [
+            `The International Space Station orbits 400 km above Earth, circling the planet every 90 minutes. It's been continuously inhabited since November 2000.`,
+            `Astronauts from 16 nations live there in microgravity — where everything floats, tears form spheres in midair, and you sleep strapped down so you don't drift.`,
+          ],
+          image:        '/explorer-assets/cosmos/l20-s5-iss.png',
+          imageCaption: `The ISS — continuously inhabited since 2000, a 16-nation home in orbit`,
+          vocab: [
+            { word: 'International Space Station', definition: `A permanently inhabited research lab orbiting Earth at 400 km — a 16-nation partnership, continuously occupied since November 2000.`, audioPrompt: `International Space Station — a permanently inhabited research lab orbiting Earth at 400 km. A 16-nation partnership, continuously occupied since November 2000.` },
+            { word: 'microgravity',                definition: `The floating sensation on the ISS. Everything appears weightless because the station and everything inside it are falling around Earth together.`, audioPrompt: `Microgravity — the floating sensation on the ISS. Everything appears weightless because the station and everything inside it are falling around Earth together.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `What's Next`,
+          paragraphs: [
+            `NASA's Artemis program will return humans to the Moon — landing the first woman and first person of colour on the lunar surface.`,
+            `Mars is the next great destination. With SpaceX's reusable rockets driving costs down, the generation growing up today may be the one that walks on Mars.`,
+          ],
+          image:        '/explorer-assets/cosmos/l20-s6-mars-future.png',
+          imageCaption: `The Moon next. Then Mars. The next chapter is being written right now.`,
+          vocab: [
+            { word: 'Artemis program', definition: `NASA's program to return humans to the Moon — named after Apollo's twin sister in Greek myth. Will land the first woman on the Moon.`, audioPrompt: `Artemis program — NASA's program to return humans to the Moon, named after Apollo's twin sister in Greek myth. Will land the first woman on the Moon.` },
+            { word: 'reusable rocket', definition: `A rocket designed to land back on Earth and launch again — pioneered by SpaceX, dramatically reducing the cost of reaching space.`, audioPrompt: `Reusable rocket — a rocket designed to land back on Earth and launch again. Pioneered by SpaceX, dramatically reducing the cost of reaching space.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l20_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L20] Loaded: "Space Exploration: Humans in Space" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l20-magazine-space-race.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l20-magazine-robots.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l20-magazine-iss.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l20-magazine-future.png',     { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L20] space-race: ${r1.ok}, robots: ${r2.ok}, iss: ${r3.ok}, future: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l20-s1-sputnik.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l20-s2-first-human.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l20-s3-moon-footprint.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l20-s4-robots-scouts.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l20-s5-iss.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l20-s6-mars-future.png',    { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L20] sputnik: ${r1.ok}, first-human: ${r2.ok}, moon-footprint: ${r3.ok}, robots-scouts: ${r4.ok}, iss: ${r5.ok}, mars-future: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L20] Could not verify image assets — network check failed');
   });
