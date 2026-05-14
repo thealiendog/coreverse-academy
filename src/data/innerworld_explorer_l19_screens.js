@@ -23,56 +23,101 @@ const innerworld_explorer_l19_screens = {
           guideText: `Hi, {name}! Today we're exploring a tool used by Olympic athletes, concert pianists, and astronauts — visualization. It's the practice of imagining your success in vivid detail before it happens. Have you ever imagined something going wrong over and over — and then felt nervous? That's accidental negative visualization. Today we're going to do the opposite on purpose. Ready?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 3,
-          headline:      `What Visualization Is (and Why Athletes Use It)`,
+          totalSections: 6,
+          headline:      `What Is Visualization?`,
           paragraphs: [
-            `Visualization is the deliberate practice of imagining a future event going well — in detail, using all your senses. You picture yourself performing confidently, feeling capable, handling challenges gracefully. It's mental rehearsal.`,
-            `Olympic athletes have used this technique for decades, and sports psychologists have documented its effects extensively. Skiers visualize their entire run before they push off. Gymnasts rehearse every movement in their minds before they touch the mat. Sprinters see themselves crossing the finish line.`,
-            `Most people do the opposite without realising it — replaying worst-case scenarios and feeling the anxiety that follows. Visualization flips that pattern deliberately. Instead of accidentally training your brain for failure, you intentionally train it for success.`,
+            `Visualization is the deliberate practice of imagining a future event going well — in detail, using all your senses.`,
+            `Olympic athletes have used this technique for decades. Skiers visualize their entire run before they push off. Gymnasts rehearse every movement before they touch the mat.`,
           ],
-          image:        '/explorer-assets/inner-world/l19-mental-rehearsal.png',
-          imageCaption: `Olympic athletes, pianists, astronauts — they all use visualization as mental rehearsal`,
+          image:        '/explorer-assets/inner-world/l19-s1-mental-rehearsal.png',
+          imageCaption: `Visualization is mental rehearsal — imagining the success before it happens`,
           vocab: [
-            { word: 'visualization',  definition: `The deliberate practice of imagining a future event going well — in detail, using all your senses — as a form of mental rehearsal that trains the brain.`,                audioPrompt: `Visualization — the deliberate practice of imagining a future event going well, in detail, using all your senses, as a form of mental rehearsal that trains the brain.` },
-            { word: 'mental rehearsal', definition: `Practising a performance or event in your imagination — with the same detail, intention, and sensory richness as real practice — to prepare the brain for the actual event.`, audioPrompt: `Mental rehearsal — practising a performance or event in your imagination, with the same detail, intention, and sensory richness as real practice, to prepare the brain for the actual event.` },
+            { word: 'visualization', definition: `Deliberately imagining a future event going well — in detail, with all your senses. It's mental rehearsal.`, audioPrompt: `Visualization — deliberately imagining a future event going well, in detail, with all your senses. It's mental rehearsal.` },
+            { word: 'rehearse',      definition: `To practice something in advance, so you're ready when it's time to do it for real. Visualization is mental rehearsal.`, audioPrompt: `Rehearse — to practice something in advance, so you're ready when it's time to do it for real. Visualization is mental rehearsal.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 3,
-          headline:      `The Stunning Science: Your Brain Can't Tell the Difference`,
+          totalSections: 6,
+          headline:      `We All Do It (Wrong)`,
           paragraphs: [
-            `Here's the remarkable science: when you vividly imagine performing an action, your brain activates many of the same neural pathways it would use if you were actually doing it. The brain responds to vivid imagination almost as if the event were real.`,
-            `In one famous study, participants who only visualized playing piano scales — never touching a piano — showed measurable improvement in skill. Their improvement was almost equal to the group that physically practiced. Imagination, done vividly enough, trains the brain.`,
-            `This is why visualization isn't just wishful thinking. It's neurological training. Every detailed mental rehearsal strengthens the circuits your brain will call on when the real moment arrives. You're building neural confidence before you ever step onto the stage.`,
+            `Most people do the opposite without realising it — replaying worst-case scenarios and feeling the anxiety that follows.`,
+            `Visualization flips that pattern deliberately. Instead of accidentally training your brain for failure, you intentionally train it for success.`,
           ],
-          image:        '/explorer-assets/inner-world/l19-process-vs-outcome.png',
-          imageCaption: `The piano study: visualization alone produced almost equal improvement to physical practice`,
+          image:        '/explorer-assets/inner-world/l19-s2-two-paths.png',
+          imageCaption: `Worst-case visualization trains you for failure. Success visualization trains you for success.`,
           vocab: [
-            { word: 'neural pathway',  definition: `A connection between brain cells that gets stronger with use — vivid visualization activates many of the same neural pathways as actually performing the action.`,            audioPrompt: `Neural pathway — a connection between brain cells that gets stronger with use. Vivid visualization activates many of the same neural pathways as actually performing the action.` },
-            { word: 'piano study',     definition: `A famous research study showing that participants who only visualized playing piano scales improved almost as much as those who physically practiced — proof that imagination trains the brain.`, audioPrompt: `Piano study — a famous research study showing that participants who only visualized playing piano scales improved almost as much as those who physically practiced, proving that imagination trains the brain.` },
+            { word: 'worst-case', definition: `The most unwanted version of what might happen. Most people accidentally visualize the worst-case — visualization flips this on purpose.`, audioPrompt: `Worst-case — the most unwanted version of what might happen. Most people accidentally visualize the worst-case. Visualization flips this on purpose.` },
+            { word: 'deliberate', definition: `Done on purpose, with intention — different from accidental. Visualization is deliberate; worst-case thinking is usually accidental.`, audioPrompt: `Deliberate — done on purpose, with intention. Different from accidental. Visualization is deliberate; worst-case thinking is usually accidental.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 3,
-          headline:      `Make It Vivid, Specific, and Paired with Real Effort`,
+          totalSections: 6,
+          headline:      `Your Brain Doesn't Know the Difference`,
           paragraphs: [
-            `Effective visualization is specific and sensory. Don't just imagine "doing well." Imagine the room, the sounds, the feeling of your breath, your posture, the specific movements. The more detail you include, the more real it feels to your brain — and the more powerfully it trains.`,
-            `Include a moment when something goes slightly wrong — and see yourself recovering with grace. This prepares you for reality more fully than imagining everything going perfectly. Real events have small hiccups; your visualization should too.`,
-            `Visualization works best when paired with real practice — it enhances effort, it doesn't replace it. Many performers visualize right before they step out, as a final mental rehearsal that primes the body and mind. Try it now: think of something coming up, close your eyes, and spend two minutes seeing yourself handling it calmly and well.`,
+            `When you vividly imagine performing an action, your brain activates many of the same neural pathways it would use if you were actually doing it.`,
+            `The brain responds to vivid imagination almost as if the event were real. Imagination is real training.`,
           ],
-          image:        '/explorer-assets/inner-world/l19-vivid-detail.png',
-          imageCaption: `Specific, sensory, paired with real practice — the three ingredients of powerful visualization`,
+          image:        '/explorer-assets/inner-world/l19-s3-brain-imagined.png',
+          imageCaption: `Your brain fires the same pathways for vivid imagination as it does for real action`,
           vocab: [
-            { word: 'process visualization',    definition: `Imagining the specific steps, movements, and sensory details of a performance — rather than just the outcome — which trains the brain more effectively.`,                audioPrompt: `Process visualization — imagining the specific steps, movements, and sensory details of a performance, rather than just the outcome, which trains the brain more effectively.` },
-            { word: 'intentional visualization', definition: `Deliberately choosing to imagine a future event going well — the opposite of accidentally replaying worst-case scenarios — to build neural confidence before the real moment.`, audioPrompt: `Intentional visualization — deliberately choosing to imagine a future event going well, the opposite of accidentally replaying worst-case scenarios, to build neural confidence before the real moment.` },
+            { word: 'vivid',       definition: `Clear, bright, full of sensory detail. Vivid imagination feels almost real — and that's why it trains the brain.`, audioPrompt: `Vivid — clear, bright, full of sensory detail. Vivid imagination feels almost real, and that's why it trains the brain.` },
+            { word: 'imagination', definition: `Your mind's ability to create scenes that aren't happening right now. Vivid imagination can actually train your brain like real practice.`, audioPrompt: `Imagination — your mind's ability to create scenes that aren't happening right now. Vivid imagination can actually train your brain like real practice.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `The Piano Study`,
+          paragraphs: [
+            `In one famous study, participants who only visualized playing piano scales — never touching a piano — showed measurable improvement in skill.`,
+            `Their improvement was almost equal to the group that physically practiced. Imagination, done vividly enough, trains the brain.`,
+          ],
+          image:        '/explorer-assets/inner-world/l19-s4-piano-study.png',
+          imageCaption: `A famous study showed visualization alone improves skill — almost as much as real practice`,
+          vocab: [
+            { word: 'study',       definition: `A careful test scientists run to learn what's true. The piano study showed visualization improves real skill.`, audioPrompt: `Study — a careful test scientists run to learn what's true. The piano study showed visualization improves real skill.` },
+            { word: 'improvement', definition: `Getting better at something. Visualization can cause real improvement — even without physical practice.`, audioPrompt: `Improvement — getting better at something. Visualization can cause real improvement, even without physical practice.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Specific and Sensory`,
+          paragraphs: [
+            `Effective visualization is specific and sensory. Imagine the room, the sounds, the feel of your breath, your posture, the exact movements.`,
+            `Include a moment when something goes slightly wrong — and see yourself recovering with grace. This prepares you for reality.`,
+          ],
+          image:        '/explorer-assets/inner-world/l19-s5-sensory-detail.png',
+          imageCaption: `The more sensory detail you include, the more powerfully visualization trains your brain`,
+          vocab: [
+            { word: 'sensory',  definition: `Using your senses — sight, sound, smell, touch, taste. Sensory visualization is the most powerful kind.`, audioPrompt: `Sensory — using your senses: sight, sound, smell, touch, taste. Sensory visualization is the most powerful kind.` },
+            { word: 'recovery', definition: `Bouncing back when something doesn't go perfectly. Include recovery in your visualization — it prepares you for real life.`, audioPrompt: `Recovery — bouncing back when something doesn't go perfectly. Include recovery in your visualization. It prepares you for real life.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Try It Now`,
+          paragraphs: [
+            `Think of something coming up — a test, a game, a presentation. Close your eyes.`,
+            `Spend two minutes seeing yourself handling it calmly and well. Hear the sounds, feel the breath. See yourself succeed.`,
+          ],
+          image:        '/explorer-assets/inner-world/l19-s6-eyes-closed.png',
+          imageCaption: `Close your eyes. Spend two minutes seeing yourself succeed.`,
+          vocab: [
+            { word: 'success',   definition: `Doing well at something you set out to do. Visualization helps your brain rehearse for success in advance.`, audioPrompt: `Success — doing well at something you set out to do. Visualization helps your brain rehearse for success in advance.` },
+            { word: 'rehearsal', definition: `Practicing something in advance — like an actor preparing for a play. Visualization is mental rehearsal.`, audioPrompt: `Rehearsal — practicing something in advance, like an actor preparing for a play. Visualization is mental rehearsal.` },
           ],
         },
 
@@ -167,11 +212,14 @@ const innerworld_explorer_l19_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-L19] Loaded: "Visualization: Seeing My Success" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/inner-world/l19-mental-rehearsal.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l19-process-vs-outcome.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/inner-world/l19-vivid-detail.png',       { method: 'HEAD' }),
-  ]).then(([r1, r2, r3]) => {
-    console.log(`[ASSET-CHECK-L19] mental-rehearsal: ${r1.ok}, process-vs-outcome: ${r2.ok}, vivid-detail: ${r3.ok}`);
+    fetch('/explorer-assets/inner-world/l19-s1-mental-rehearsal.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l19-s2-two-paths.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l19-s3-brain-imagined.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l19-s4-piano-study.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l19-s5-sensory-detail.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/inner-world/l19-s6-eyes-closed.png',      { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-L19] mental-rehearsal: ${r1.ok}, two-paths: ${r2.ok}, brain-imagined: ${r3.ok}, piano-study: ${r4.ok}, sensory-detail: ${r5.ok}, eyes-closed: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-L19] Could not verify image assets — network check failed');
   });
