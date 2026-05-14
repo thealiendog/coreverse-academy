@@ -23,73 +23,101 @@ const moneybusiness_explorer_l12_screens = {
           guideText: `Adults pay with a small plastic card instead of cash. It looks like magic — swipe and you have things! But credit cards have a hidden catch that has gotten millions of people into serious money trouble.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `How Cash Works`,
           paragraphs: [
-            `Cash is simple. You have $10. You spend $8. You have $2 left. You can't spend more than you have because the money is right there in your hand. Once it's gone, the spending stops. This physical reality makes cash one of the most effective tools for learning money management — it makes every transaction visible and immediate.`,
-            `When you pay cash, the exchange is complete the moment it happens. No bill arrives later. No interest builds up. What you see is what you get — and what you spent is gone. There's no gap between the purchase and the consequence, which is why cash tends to make people more deliberate about what they buy.`,
-            `Many financial educators recommend that young people learn to manage money using cash before ever touching a card. The reason is simple: cash makes spending feel real. Physical cash is impossible to forget — you watch the pile shrink. Digital transactions are abstract, and it's easy to forget that real money left your account.`,
+            `Cash is simple. You have $10. You spend $8. You have $2 left.`,
+            `You can't spend more than you have because the money is right there in your hand. When it's gone, the spending stops.`,
           ],
-          image:        '/explorer-assets/money-business/l12-magazine-cash.png',
-          imageCaption: `Cash — simple, immediate, and visible: spend it and it's gone, with no hidden catches or future bills`,
+          image:        '/explorer-assets/money-business/l12-s1-cash.png',
+          imageCaption: `Cash makes spending visible. You watch the pile shrink — it can't hide from you.`,
           vocab: [
-            { word: `cash`,        definition: `Physical money — coins and notes — that completes a transaction instantly with no future payments, interest, or bills. What you spend is gone the moment you spend it.`,                                                  audioPrompt: `Cash — physical money, coins and notes, that completes a transaction instantly with no future payments, interest, or bills. What you spend is gone the moment you spend it.` },
-            { word: `transaction`, definition: `An exchange of money for goods or services — buying something at a store is a transaction. Cash transactions are immediate; credit transactions create a future payment obligation.`, audioPrompt: `Transaction — an exchange of money for goods or services. Buying something at a store is a transaction. Cash transactions are immediate; credit transactions create a future payment obligation.` },
+            { word: 'cash',        definition: `Physical money — coins and bills you can hold. Spending cash is instant and final, with no future bill.`, audioPrompt: `Cash — physical money: coins and bills you can hold. Spending cash is instant and final, with no future bill.` },
+            { word: 'transaction', definition: `An exchange of money for something — every purchase you make is a transaction.`, audioPrompt: `Transaction — an exchange of money for something. Every purchase you make is a transaction.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `How Credit Cards Work`,
           paragraphs: [
-            `A credit card is a loan that resets every month. When you swipe it, the bank pays for your purchase on your behalf — immediately and automatically. At the end of the month, the bank sends you a bill listing every purchase you made. If you pay the full amount by the due date, you owe nothing extra. The bank covered you, you repaid them, transaction complete.`,
-            `But here's where the danger lives: if you pay only part of the bill, the remaining balance carries forward to next month — and the bank starts charging you interest. Credit card interest rates are typically 20–25% per year. That might sound manageable, but on a large balance it compounds quickly and becomes expensive fast.`,
-            `Imagine spending $200 on your card and paying only $100 of the bill. Next month you owe the remaining $100 plus interest on top of it. If you again pay only part of the balance, the total owed grows further. This cycle, repeated across months, can turn a small purchase into a surprisingly large debt.`,
+            `A credit card is a loan that resets every month. When you swipe it, the bank pays for your purchase.`,
+            `At month's end, the bank sends you a bill. Pay it in full and you owe nothing extra. The bank covered you, you repaid them — done.`,
           ],
-          image:        '/explorer-assets/money-business/l12-magazine-credit-card.png',
-          imageCaption: `Credit cards — a monthly-reset loan that costs nothing if paid in full, but charges steep interest on any unpaid balance`,
+          image:        '/explorer-assets/money-business/l12-s2-credit-card-flow.png',
+          imageCaption: `A credit card swipe is a small loan. The bank pays first. You pay them back at month's end.`,
           vocab: [
-            { word: `credit card`, definition: `A payment card that lets you borrow money from the bank for purchases — you repay it in full each month (no interest) or carry a balance (with interest charged on the remaining amount).`, audioPrompt: `Credit card — a payment card that lets you borrow money from the bank for purchases. You repay it in full each month with no interest, or carry a balance with interest charged on the remaining amount.` },
-            { word: `interest`,    definition: `A fee charged for borrowing money, expressed as a percentage of the amount owed — credit cards charge interest on any balance you don't pay off by the due date.`,                             audioPrompt: `Interest — a fee charged for borrowing money, expressed as a percentage of the amount owed. Credit cards charge interest on any balance you don't pay off by the due date.` },
+            { word: 'credit card', definition: `A card that lets the bank pay first, then bills you later. Every swipe is a small loan from the bank.`, audioPrompt: `Credit card — a card that lets the bank pay first, then bills you later. Every swipe is a small loan from the bank.` },
+            { word: 'loan',        definition: `Money borrowed that must be paid back. Every credit card purchase creates a tiny loan you owe the bank.`, audioPrompt: `Loan — money borrowed that must be paid back. Every credit card purchase creates a tiny loan you owe the bank.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The Danger of Minimum Payments`,
+          totalSections: 6,
+          headline:      `The Catch — Interest`,
           paragraphs: [
-            `Every credit card bill shows two numbers: the full balance you owe, and a much smaller "minimum payment." The minimum is the least the bank requires you to pay that month to avoid a late fee — typically around $25 or 2% of your balance. Paying it keeps your account in good standing. But it doesn't get you out of debt quickly.`,
-            `Here's why it's a trap: if you spend $1,000 on your card and only ever pay the minimum each month, you'll be paying interest on a large balance for years. By the time you've paid off that original $1,000, you might have paid $1,400 or more in total — an extra $400 just for the privilege of spreading the payments out.`,
-            `The minimum payment is designed to feel manageable. And it is manageable — that's exactly the problem. It keeps you in debt at the bank's chosen interest rate for as long as possible. Understanding this is one of the most important things you can know about personal finance. Always pay the full balance if at all possible.`,
+            `Here's the catch: if you don't pay the full bill, the bank starts charging interest on what's left.`,
+            `Credit card interest is usually 20–25% per year. That sounds small, but on a big balance it adds up fast.`,
           ],
-          image:        '/explorer-assets/money-business/l12-magazine-minimum-payment.png',
-          imageCaption: `The minimum payment trap — a small payment that keeps you in debt longer and costs far more in the end`,
+          image:        '/explorer-assets/money-business/l12-s3-interest-spiral.png',
+          imageCaption: `Don't pay in full, and interest starts. A $1,000 balance can become $1,400 in a year — for nothing.`,
           vocab: [
-            { word: `minimum payment`, definition: `The smallest amount a credit card company requires you to pay each month — paying only this keeps your account current but leaves most of your balance to accrue interest.`, audioPrompt: `Minimum payment — the smallest amount a credit card company requires you to pay each month. Paying only this keeps your account current but leaves most of your balance to accrue interest.` },
-            { word: `balance`,         definition: `The total amount you currently owe on a credit card or loan — carrying a balance means you'll be charged interest on that remaining amount each month.`,                           audioPrompt: `Balance — the total amount you currently owe on a credit card or loan. Carrying a balance means you'll be charged interest on that remaining amount each month.` },
+            { word: 'interest', definition: `An extra fee charged for borrowing money. Credit cards charge some of the highest interest rates of any loan.`, audioPrompt: `Interest — an extra fee charged for borrowing money. Credit cards charge some of the highest interest rates of any loan.` },
+            { word: 'balance',  definition: `The total amount you currently owe. The bank charges interest on any balance you don't pay off.`, audioPrompt: `Balance — the total amount you currently owe. The bank charges interest on any balance you don't pay off.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `When Credit Cards Are Useful`,
+          totalSections: 6,
+          headline:      `The Minimum Payment Trap`,
           paragraphs: [
-            `Used responsibly, credit cards are genuinely useful financial tools. They protect you from fraud — if someone steals your card number and makes purchases, the bank typically reverses those charges and you're not held responsible. Cash offers no such protection. If cash is stolen, it's simply gone.`,
-            `Many credit cards also offer rewards: cashback on purchases, points redeemable for travel, or discounts at certain retailers. Used well, this can mean you're effectively getting a small percentage of your spending returned to you — as long as you pay your balance in full and never pay interest.`,
-            `Credit cards also help you build a credit score — a number lenders use to decide whether to trust you with a loan for a car, a house, or a business. Using a card consistently and paying it off in full is one of the fastest ways to build a strong score. The golden rule: always pay the full balance every month. Do that, and a credit card is a powerful tool. Don't, and it becomes an expensive problem.`,
+            `Every bill shows a "minimum payment" — a tiny amount (around $25). The bank says this is the least you have to pay.`,
+            `It feels manageable. That's the trap. Pay only the minimum, and your debt drags on for years while interest piles up.`,
           ],
-          image:        '/explorer-assets/money-business/l12-magazine-credit-benefits.png',
-          imageCaption: `Credit cards used responsibly — fraud protection, rewards, and a strong credit score are the real benefits`,
+          image:        '/explorer-assets/money-business/l12-s4-minimum-trap.png',
+          imageCaption: `The minimum payment is designed to feel easy. That's exactly why it's dangerous.`,
           vocab: [
-            { word: `credit score`, definition: `A numerical rating of your history of borrowing and repaying money — lenders use it to decide whether to offer you loans and at what interest rate. Responsible credit card use builds a strong score.`, audioPrompt: `Credit score — a numerical rating of your history of borrowing and repaying money. Lenders use it to decide whether to offer you loans and at what interest rate. Responsible credit card use builds a strong score.` },
-            { word: `fraud`,        definition: `Unauthorised or deceptive use of someone's financial information — credit cards offer fraud protection that cash does not, meaning disputed charges can often be reversed.`,                              audioPrompt: `Fraud — unauthorised or deceptive use of someone's financial information. Credit cards offer fraud protection that cash does not, meaning disputed charges can often be reversed.` },
+            { word: 'minimum payment', definition: `The smallest amount the bank requires you to pay each month. Paying only this keeps you in debt for years.`, audioPrompt: `Minimum payment — the smallest amount the bank requires you to pay each month. Paying only this keeps you in debt for years.` },
+            { word: 'debt',            definition: `Money you owe to someone else. Credit card debt is one of the most expensive kinds of debt to carry.`, audioPrompt: `Debt — money you owe to someone else. Credit card debt is one of the most expensive kinds of debt to carry.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `When Cards Are Useful`,
+          paragraphs: [
+            `Used right, credit cards have real benefits. If someone steals your card, the bank reverses the charges. Cash offers no such protection.`,
+            `Many cards also give rewards: cashback, points, or discounts. And using a card responsibly builds your credit score — important for big loans later.`,
+          ],
+          image:        '/explorer-assets/money-business/l12-s5-card-benefits.png',
+          imageCaption: `Used wisely, a card protects you, pays you back, and builds your credit score`,
+          vocab: [
+            { word: 'fraud protection', definition: `The bank reversing charges someone made on your card without permission. Cash doesn't offer this protection.`, audioPrompt: `Fraud protection — the bank reversing charges someone made on your card without permission. Cash doesn't offer this protection.` },
+            { word: 'credit score',     definition: `A number that tracks how responsibly you handle borrowed money. Banks use it to decide whether to lend to you.`, audioPrompt: `Credit score — a number that tracks how responsibly you handle borrowed money. Banks use it to decide whether to lend to you.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `The Golden Rule`,
+          paragraphs: [
+            `There's one rule that turns a credit card from a trap into a tool: always pay the full balance every month.`,
+            `Do that, and you get every benefit with zero cost. Don't, and you pay interest on every dollar. The rule is simple. The discipline is everything.`,
+          ],
+          image:        '/explorer-assets/money-business/l12-s6-golden-rule.png',
+          imageCaption: `One rule. Pay the full balance every month. Everything else flows from that.`,
+          vocab: [
+            { word: 'discipline',     definition: `The ability to follow a rule even when it's hard. Credit card discipline means paying in full no matter what.`, audioPrompt: `Discipline — the ability to follow a rule even when it's hard. Credit card discipline means paying in full no matter what.` },
+            { word: 'responsibility', definition: `Being trusted to handle something carefully. A credit card is a powerful tool placed in your hands — and your responsibility.`, audioPrompt: `Responsibility — being trusted to handle something carefully. A credit card is a powerful tool placed in your hands, and your responsibility.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l12_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L12] Loaded: "Credit Cards vs Cash" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l12-magazine-cash.png',            { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l12-magazine-credit-card.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l12-magazine-minimum-payment.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l12-magazine-credit-benefits.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L12] cash: ${r1.ok}, credit-card: ${r2.ok}, minimum-payment: ${r3.ok}, credit-benefits: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l12-s1-cash.png',              { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l12-s2-credit-card-flow.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l12-s3-interest-spiral.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l12-s4-minimum-trap.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l12-s5-card-benefits.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l12-s6-golden-rule.png',       { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L12] cash: ${r1.ok}, credit-card-flow: ${r2.ok}, interest-spiral: ${r3.ok}, minimum-trap: ${r4.ok}, card-benefits: ${r5.ok}, golden-rule: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L12] Could not verify image assets — network check failed');
   });
