@@ -23,73 +23,101 @@ const cosmos_explorer_l07_screens = {
           guideText: `Right now, light is bouncing off everything around you and landing on your eyes — that's how you see. Light is one of the most fundamental things in the universe. It's so fast that if it could travel in a straight line, it could circle the Earth 7.5 times in just one second.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is Light?`,
           paragraphs: [
-            `Light is a form of energy called electromagnetic radiation. It travels in waves at 186,000 miles per second — the fastest anything can move in the universe. Nothing has ever been observed moving faster than light.`,
-            `Light can travel through empty space. This is different from sound, which needs a physical medium like air or water to carry it. Sunlight reaches Earth across 93 million miles of empty space — a journey that takes about 8 minutes.`,
-            `The light hitting your eyes right now started its journey minutes, hours, or even billions of years ago, depending on where it came from. When you look at a distant star, you're seeing light that left it long before you were born.`,
+            `Light is a form of energy. It travels at 186,000 miles per second — the fastest anything can move in the entire universe.`,
+            `Light is so fast it could circle the Earth 7.5 times in just one second. Nothing has ever been observed moving faster than light.`,
           ],
-          image:        '/explorer-assets/cosmos/l07-magazine-what-is-light.png',
-          imageCaption: `Light — electromagnetic energy travelling at 186,000 miles per second through space and matter`,
+          image:        '/explorer-assets/cosmos/l07-s1-light-speed.png',
+          imageCaption: `Light is the fastest thing in the universe — 186,000 miles per second`,
           vocab: [
-            { word: 'electromagnetic radiation', definition: `A form of energy that travels as waves — light is one type of electromagnetic radiation, travelling at 186,000 miles per second, the fastest speed in the universe.`, audioPrompt: `Electromagnetic radiation — a form of energy that travels as waves. Light is one type of electromagnetic radiation, travelling at 186,000 miles per second, the fastest speed in the universe.` },
-            { word: 'speed of light',            definition: `186,000 miles per second — the fastest speed in the universe. Light travels fast enough to circle the entire Earth 7.5 times in one second.`,                        audioPrompt: `Speed of light — 186,000 miles per second, the fastest speed in the universe. Light travels fast enough to circle the entire Earth 7.5 times in one second.` },
+            { word: 'light',          definition: `A form of energy that travels in waves at incredible speed — what lets you see the world around you.`, audioPrompt: `Light — a form of energy that travels in waves at incredible speed. What lets you see the world around you.` },
+            { word: 'speed of light', definition: `186,000 miles per second — the fastest speed in the universe. Light could circle the Earth 7.5 times in just one second.`, audioPrompt: `Speed of light — 186,000 miles per second, the fastest speed in the universe. Light could circle the Earth 7.5 times in just one second.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Reflection and Refraction`,
+          totalSections: 6,
+          headline:      `Light Travels Anywhere`,
           paragraphs: [
-            `When light hits a smooth surface like a mirror, it bounces back in a predictable direction — this is called reflection. The angle at which light hits a mirror is exactly the same as the angle at which it bounces away. Mirrors work because their surfaces are smooth enough to reflect light perfectly.`,
-            `When light passes from one material into another — from air into water, or from air into glass — it bends. This is called refraction. Refraction is why a straw looks bent and broken when you put it in a glass of water. The light bends as it crosses from water to air, shifting the image.`,
-            `Lenses in glasses, cameras, microscopes, and telescopes all use refraction deliberately — bending light in controlled ways to focus images, magnify tiny things, or bring distant objects into sharp view.`,
+            `Light can travel through empty space. This is different from sound, which needs air or water to carry it.`,
+            `Sunlight crosses 93 million miles of empty space to reach Earth — a journey that takes about 8 minutes. The light hitting your eyes started its journey long ago.`,
           ],
-          image:        '/explorer-assets/cosmos/l07-magazine-reflection-refraction.png',
-          imageCaption: `Reflection and refraction — light bouncing off mirrors and bending through water and glass`,
+          image:        '/explorer-assets/cosmos/l07-s2-sunlight-journey.png',
+          imageCaption: `Sunlight takes 8 minutes to cross 93 million miles of empty space to reach Earth`,
           vocab: [
-            { word: 'reflection', definition: `When light bounces off a surface — smooth surfaces like mirrors reflect light at a predictable angle, allowing you to see a clear image.`,                                    audioPrompt: `Reflection — when light bounces off a surface. Smooth surfaces like mirrors reflect light at a predictable angle, allowing you to see a clear image.` },
-            { word: 'refraction', definition: `When light bends as it passes from one material into another — refraction is why a straw looks bent in water and why lenses can focus and magnify light.`, audioPrompt: `Refraction — when light bends as it passes from one material into another. Refraction is why a straw looks bent in water and why lenses can focus and magnify light.` },
+            { word: 'empty space', definition: `Vacuum without air or matter. Light can travel through empty space, but sound can't — that's why space is silent.`, audioPrompt: `Empty space — vacuum without air or matter. Light can travel through empty space, but sound can't. That's why space is silent.` },
+            { word: 'sunlight',    definition: `The light from our Sun. It takes about 8 minutes to reach Earth across 93 million miles of empty space.`, audioPrompt: `Sunlight — the light from our Sun. It takes about 8 minutes to reach Earth across 93 million miles of empty space.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `White Light Is All Colours`,
+          totalSections: 6,
+          headline:      `Reflection`,
           paragraphs: [
-            `What looks like white sunlight is actually a mixture of ALL the colours of the rainbow — red, orange, yellow, green, blue, indigo, and violet — all mixed together. You can prove this with a prism: a triangular piece of glass that refracts light.`,
-            `When light passes through a prism, different colours bend by different amounts. Red bends the least, violet bends the most. The result is the full spectrum of colour spreading out like a fan — all the hidden colours of sunlight revealed.`,
-            `Rainbows form for exactly the same reason. When sunlight passes through water droplets in the air, each droplet acts like a tiny prism — refracting and reflecting the light, spreading it into its full spectrum. You always see a rainbow on the opposite side of the sky from the Sun.`,
+            `When light hits a smooth surface like a mirror, it bounces back. This is called reflection.`,
+            `The angle at which light hits a mirror is exactly the same as the angle at which it bounces away. That's why mirrors give you a clear image of yourself.`,
           ],
-          image:        '/explorer-assets/cosmos/l07-magazine-spectrum.png',
-          imageCaption: `White light and the spectrum — a prism reveals all the hidden colours mixed inside sunlight`,
+          image:        '/explorer-assets/cosmos/l07-s3-reflection.png',
+          imageCaption: `Reflection — light bouncing off a smooth surface at the same angle it arrived`,
           vocab: [
-            { word: 'spectrum', definition: `The full range of colours that make up white light — red, orange, yellow, green, blue, indigo, and violet. A prism or water droplets spread light into its spectrum.`,  audioPrompt: `Spectrum — the full range of colours that make up white light: red, orange, yellow, green, blue, indigo, and violet. A prism or water droplets spread light into its spectrum.` },
-            { word: 'prism',    definition: `A triangular piece of glass that refracts light, bending each colour by a different amount and spreading white light into the full visible spectrum of colours.`,         audioPrompt: `Prism — a triangular piece of glass that refracts light, bending each colour by a different amount and spreading white light into the full visible spectrum of colours.` },
+            { word: 'reflection', definition: `When light bounces off a surface. Smooth surfaces like mirrors reflect light perfectly, creating clear images.`, audioPrompt: `Reflection — when light bounces off a surface. Smooth surfaces like mirrors reflect light perfectly, creating clear images.` },
+            { word: 'angle',      definition: `The direction at which something arrives or leaves. Light reflects off a mirror at exactly the same angle it hit.`, audioPrompt: `Angle — the direction at which something arrives or leaves. Light reflects off a mirror at exactly the same angle it hit.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Shadows: When Light Gets Blocked`,
+          totalSections: 6,
+          headline:      `Refraction`,
           paragraphs: [
-            `Shadows form when an opaque object — something light cannot pass through — blocks a beam of light. The shadow falls on the surface behind the object, on the opposite side from the light source. The shape of the shadow mirrors the shape of the object blocking the light.`,
-            `The size of a shadow depends on the angle of the light source. When the Sun is low on the horizon — in the morning or evening — it casts long, stretched shadows. When the Sun is directly overhead at noon, shadows are short and stubby. The same object creates very different shadows throughout the day.`,
-            `Shadows have been used to tell time for thousands of years. A sundial works by casting a shadow onto a marked surface — as the Sun moves across the sky, the shadow moves with it, pointing to the hour. You can make your own with a pencil, some clay, and a sunny day.`,
+            `When light passes from air into water — or air into glass — it bends. This is called refraction.`,
+            `Refraction is why a straw looks bent in a glass of water. It's also how lenses work — in glasses, cameras, microscopes, and telescopes.`,
           ],
-          image:        '/explorer-assets/cosmos/l07-magazine-shadows.png',
-          imageCaption: `Shadows — formed when opaque objects block light, changing shape with the angle of the Sun`,
+          image:        '/explorer-assets/cosmos/l07-s4-refraction.png',
+          imageCaption: `Refraction — light bending as it crosses from air into water (or any other material)`,
           vocab: [
-            { word: 'opaque', definition: `A material that light cannot pass through — opaque objects block light completely, creating a shadow on the surface behind them.`,                                           audioPrompt: `Opaque — a material that light cannot pass through. Opaque objects block light completely, creating a shadow on the surface behind them.` },
-            { word: 'sundial', definition: `A timekeeping device that uses the shadow cast by a post or blade to show the time — as the Sun moves across the sky, the shadow moves with it.`, audioPrompt: `Sundial — a timekeeping device that uses the shadow cast by a post or blade to show the time. As the Sun moves across the sky, the shadow moves with it.` },
+            { word: 'refraction', definition: `When light bends as it passes from one material to another — like from air into water. Refraction makes a straw look bent in water.`, audioPrompt: `Refraction — when light bends as it passes from one material to another, like from air into water. Refraction makes a straw look bent in water.` },
+            { word: 'lens',       definition: `A curved piece of glass that bends light on purpose. Lenses are used in glasses, cameras, microscopes, and telescopes.`, audioPrompt: `Lens — a curved piece of glass that bends light on purpose. Lenses are used in glasses, cameras, microscopes, and telescopes.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `The Hidden Colours`,
+          paragraphs: [
+            `White sunlight is actually a mixture of ALL the colours of the rainbow — red, orange, yellow, green, blue, indigo, and violet — all blended together.`,
+            `A prism — a triangular piece of glass — bends each colour differently and spreads them apart. That's how a prism reveals the hidden colours of light.`,
+          ],
+          image:        '/explorer-assets/cosmos/l07-s5-prism-spectrum.png',
+          imageCaption: `White light is every colour mixed together — a prism spreads them apart and reveals them`,
+          vocab: [
+            { word: 'spectrum', definition: `All the colours that make up white light — red, orange, yellow, green, blue, indigo, and violet. A prism reveals the spectrum.`, audioPrompt: `Spectrum — all the colours that make up white light: red, orange, yellow, green, blue, indigo, and violet. A prism reveals the spectrum.` },
+            { word: 'prism',    definition: `A triangular piece of glass that bends each colour by a different amount, spreading white light into its full rainbow spectrum.`, audioPrompt: `Prism — a triangular piece of glass that bends each colour by a different amount, spreading white light into its full rainbow spectrum.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Shadows and Sundials`,
+          paragraphs: [
+            `Shadows form when an opaque object blocks light. The shape of the shadow matches the shape of whatever blocked the light.`,
+            `As the Sun moves across the sky, shadows change length and direction. Sundials use this to tell time — turning shadows into a working clock.`,
+          ],
+          image:        '/explorer-assets/cosmos/l07-s6-sundial.png',
+          imageCaption: `A sundial — a clock made of light and shadow`,
+          vocab: [
+            { word: 'opaque',  definition: `A material light can't pass through. Opaque objects block light completely and create a shadow on the surface behind them.`, audioPrompt: `Opaque — a material light can't pass through. Opaque objects block light completely and create a shadow on the surface behind them.` },
+            { word: 'sundial', definition: `A tool that tells time using the moving shadow of the Sun — humans have used sundials to track hours for thousands of years.`, audioPrompt: `Sundial — a tool that tells time using the moving shadow of the Sun. Humans have used sundials to track hours for thousands of years.` },
           ],
         },
 
@@ -101,16 +129,16 @@ const cosmos_explorer_l07_screens = {
           guideText:     `Light does four amazing things — it reflects, refracts, disperses into colours, and gets blocked to create shadows. Each of these examples shows one of those phenomena. Can you sort them correctly?`,
           columnHeaders: [`What's Happening?`, `Light Phenomenon`],
           items: [
-            { image: 'l07-game-mirror.png',  label: `Light hitting a flat mirror and bouncing straight back.`,                              correctMatch: 'reflection',  objectPosition: 'center 50%', matchPhrase: `Reflection! When light hits a smooth surface, it bounces back at the same angle it arrived. Mirrors work perfectly because their surface is polished flat enough to reflect every ray of light in a perfectly predictable direction.` },
-            { image: 'l07-game-straw.png',   label: `A straw appearing bent and broken inside a glass of water.`,                          correctMatch: 'refraction',  objectPosition: 'center 50%', matchPhrase: `Refraction! The straw isn't actually bent — light bends as it crosses from water into air, shifting where the image appears. The same effect makes swimming pools look shallower than they are, and it's why lenses in glasses and cameras can focus light.` },
-            { image: 'l07-game-prism.png',   label: `White light entering a triangular prism and spreading into a rainbow of colours.`,    correctMatch: 'dispersion',  objectPosition: 'center 50%', matchPhrase: `Dispersion! When white light passes through a prism, different colours bend by different amounts and spread apart. This reveals all the colours hidden inside ordinary sunlight — the same process that paints rainbows across the sky after rain.` },
-            { image: 'l07-game-shadow.png',  label: `A hand held in front of a torch casting a dark shape on the wall behind it.`,         correctMatch: 'shadow',      objectPosition: 'center 50%', matchPhrase: `Shadow! Light travels in straight lines, so anything opaque — anything it can't pass through — blocks the light and casts a shadow on the surface behind it. The shape of the shadow matches the shape of whatever is blocking the light.` },
+            { image: 'l07-game-mirror.png',  label: `Light hitting a flat mirror and bouncing straight back.`,                              correctMatch: 'reflection', objectPosition: 'center 50%', matchPhrase: `Reflection! When light hits a smooth surface, it bounces back at the same angle it arrived. Mirrors work perfectly because their surface is polished flat enough to reflect every ray of light in a perfectly predictable direction.` },
+            { image: 'l07-game-straw.png',   label: `A straw appearing bent and broken inside a glass of water.`,                          correctMatch: 'refraction', objectPosition: 'center 50%', matchPhrase: `Refraction! The straw isn't actually bent — light bends as it crosses from water into air, shifting where the image appears. The same effect makes swimming pools look shallower than they are, and it's why lenses in glasses and cameras can focus light.` },
+            { image: 'l07-game-prism.png',   label: `White light entering a triangular prism and spreading into a rainbow of colours.`,    correctMatch: 'dispersion', objectPosition: 'center 50%', matchPhrase: `Dispersion! When white light passes through a prism, different colours bend by different amounts and spread apart. This reveals all the colours hidden inside ordinary sunlight — the same process that paints rainbows across the sky after rain.` },
+            { image: 'l07-game-shadow.png',  label: `A hand held in front of a torch casting a dark shape on the wall behind it.`,         correctMatch: 'shadow',     objectPosition: 'center 50%', matchPhrase: `Shadow! Light travels in straight lines, so anything opaque — anything it can't pass through — blocks the light and casts a shadow on the surface behind it. The shape of the shadow matches the shape of whatever is blocking the light.` },
           ],
           buckets: [
-            { id: 'reflection', label: `🪞 Reflection`,  color: '#60A5FA' },
-            { id: 'refraction', label: `🌊 Refraction`,  color: '#818CF8' },
-            { id: 'dispersion', label: `🌈 Dispersion`,  color: '#F59E0B' },
-            { id: 'shadow',     label: `👥 Shadow`,      color: '#34D399' },
+            { id: 'reflection', label: `🪞 Reflection`, color: '#60A5FA' },
+            { id: 'refraction', label: `🌊 Refraction`, color: '#818CF8' },
+            { id: 'dispersion', label: `🌈 Dispersion`, color: '#F59E0B' },
+            { id: 'shadow',     label: `👥 Shadow`,     color: '#34D399' },
           ],
         },
 
@@ -186,12 +214,14 @@ const cosmos_explorer_l07_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L07] Loaded: "Light and Shadows" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l07-magazine-what-is-light.png',          { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l07-magazine-reflection-refraction.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l07-magazine-spectrum.png',               { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l07-magazine-shadows.png',                { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L07] what-is-light: ${r1.ok}, reflection-refraction: ${r2.ok}, spectrum: ${r3.ok}, shadows: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l07-s1-light-speed.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l07-s2-sunlight-journey.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l07-s3-reflection.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l07-s4-refraction.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l07-s5-prism-spectrum.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l07-s6-sundial.png',          { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L07] light-speed: ${r1.ok}, sunlight-journey: ${r2.ok}, reflection: ${r3.ok}, refraction: ${r4.ok}, prism-spectrum: ${r5.ok}, sundial: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L07] Could not verify image assets — network check failed');
   });
