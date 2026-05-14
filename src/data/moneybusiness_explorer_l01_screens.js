@@ -23,73 +23,101 @@ const moneybusiness_explorer_l01_screens = {
           guideText: `Have you ever wondered who makes money? Like, who actually prints dollar bills? It's not just some machine running all day — there's a whole system behind it, and it's pretty wild.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `Who Makes Money?`,
           paragraphs: [
-            `In the United States, the government makes all official money. There are actually two separate agencies that do this job. The U.S. Mint is responsible for making coins — pennies, nickels, dimes, and quarters. The Bureau of Engraving and Printing makes paper bills — the ones and fives and twenties you see every day.`,
-            `These are two completely different organisations making two different types of money. The U.S. Mint stamps coins out of metal. The Bureau of Engraving and Printing prints paper notes. Together they produce enough money to keep the entire country's economy running — billions of coins and bills every single year.`,
-            `The U.S. Mint has facilities in Philadelphia, Denver, San Francisco, and West Point. The Bureau of Engraving and Printing operates in Washington D.C. and Fort Worth, Texas. Making money is serious, high-security work — and it never stops.`,
+            `In the United States, the government makes all official money. Two separate agencies do this job.`,
+            `The U.S. Mint makes all the coins — pennies, nickels, dimes, quarters. The Bureau of Engraving and Printing makes all the paper bills.`,
           ],
-          image:        '/explorer-assets/money-business/l01-magazine-who-makes-money.png',
-          imageCaption: `The U.S. Mint makes coins; the Bureau of Engraving and Printing makes paper bills`,
+          image:        '/explorer-assets/money-business/l01-s1-money-makers.png',
+          imageCaption: `Two government agencies make all U.S. money — the Mint makes coins, the Bureau prints bills`,
           vocab: [
-            { word: `U.S. Mint`,                      definition: `The government agency that produces all official coins in the United States — pennies, nickels, dimes, quarters, and more — stamped from metal at secure facilities.`,              audioPrompt: `U.S. Mint — the government agency that produces all official coins in the United States, including pennies, nickels, dimes, and quarters, stamped from metal at secure facilities.` },
-            { word: `Bureau of Engraving and Printing`, definition: `The government agency that designs and prints all paper money in the United States — from $1 bills to $100 bills — with security features built into every note.`, audioPrompt: `Bureau of Engraving and Printing — the government agency that designs and prints all paper money in the United States, from one dollar bills to one hundred dollar bills, with security features built into every note.` },
+            { word: 'currency',   definition: `The money used in a country — U.S. dollars, Mexican pesos, British pounds. Every country has its own currency.`, audioPrompt: `Currency — the money used in a country. U.S. dollars, Mexican pesos, British pounds. Every country has its own currency.` },
+            { word: 'government', definition: `The group of people who run a country — including the agencies that make and manage money.`, audioPrompt: `Government — the group of people who run a country, including the agencies that make and manage money.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Why Is Money So Hard to Fake?`,
+          totalSections: 6,
+          headline:      `The U.S. Mint`,
           paragraphs: [
-            `Paper money has many secret features built in to stop counterfeiting — which means making fake copies. The government designs these features so that even very sophisticated criminals can't successfully copy them. A standard $20 bill has multiple layers of protection, each harder to replicate than the last.`,
-            `Color-shifting ink changes colour when you tilt the bill — it shifts from gold to green. A thin security strip is hidden inside the paper itself and glows pink under special ultraviolet light. Tiny microprinting — so small you need a magnifying glass to read it — is hidden in several places. And a watermark portrait is built right into the paper, visible only when you hold the bill up to light.`,
-            `These aren't just clever tricks — they're the result of years of engineering and design work. The same bill also has raised ink you can feel with your fingertip, serial numbers printed in special ink, and a colour-coded design that has been updated regularly over the decades. Counterfeiting U.S. currency is a federal crime, and these features make it extremely difficult to get away with.`,
+            `The U.S. Mint stamps coins from metal at extremely high pressure. Giant presses can stamp thousands of coins per minute.`,
+            `The Mint has facilities in Philadelphia, Denver, San Francisco, and West Point. It makes about 14 billion coins every year.`,
           ],
-          image:        '/explorer-assets/money-business/l01-magazine-security-features.png',
-          imageCaption: `Security features — color-shifting ink, hidden strip, microprinting, and watermark protect every bill`,
+          image:        '/explorer-assets/money-business/l01-s2-mint-press.png',
+          imageCaption: `The U.S. Mint stamps 14 billion coins every year from metal blanks`,
           vocab: [
-            { word: `counterfeiting`, definition: `Making illegal fake copies of money — a serious crime in every country. Governments build security features into currency to make counterfeiting as difficult as possible.`,          audioPrompt: `Counterfeiting — making illegal fake copies of money. A serious crime in every country. Governments build security features into currency to make counterfeiting as difficult as possible.` },
-            { word: `watermark`,      definition: `A security feature built into paper money — a faint image or pattern visible only when the bill is held up to light, embedded in the paper itself during manufacturing.`, audioPrompt: `Watermark — a security feature built into paper money. A faint image or pattern visible only when the bill is held up to light, embedded in the paper itself during manufacturing.` },
+            { word: 'U.S. Mint', definition: `The government agency that makes all coins in the United States — at facilities in Philadelphia, Denver, San Francisco, and West Point.`, audioPrompt: `U.S. Mint — the government agency that makes all coins in the United States, at facilities in Philadelphia, Denver, San Francisco, and West Point.` },
+            { word: 'coin',      definition: `A small piece of metal money. Pennies, nickels, dimes, and quarters are all coins — stamped from metal at the U.S. Mint.`, audioPrompt: `Coin — a small piece of metal money. Pennies, nickels, dimes, and quarters are all coins, stamped from metal at the U.S. Mint.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `What About Coins?`,
+          totalSections: 6,
+          headline:      `The Bureau of Engraving and Printing`,
           paragraphs: [
-            `Coins are made through a completely different process than paper bills. At the U.S. Mint, giant presses stamp designs into flat metal discs at extremely high pressure — thousands of coins per minute. The design is pressed so deeply that it would take enormous force to alter it.`,
-            `Not all coins are made of the same metal. A penny looks copper but is actually 97.5% zinc with just a thin copper coating on the outside — pure copper pennies would be far too expensive. Quarters are a sandwich construction: a core of pure copper with layers of nickel on the outside, which gives them their silver appearance and distinct feel.`,
-            `The U.S. Mint makes approximately 14 billion coins every year. Each coin is inspected for quality, counted, and bagged before being shipped to Federal Reserve Banks, which distribute them to regular banks, and eventually to businesses and people. The next time you find a coin on the street, check the date — that's the year the Mint stamped it.`,
+            `The Bureau of Engraving and Printing makes paper money — every dollar bill in the country.`,
+            `It has two facilities, one in Washington D.C. and one in Fort Worth, Texas. Making money is serious, high-security work — and it never stops.`,
           ],
-          image:        '/explorer-assets/money-business/l01-magazine-coins.png',
-          imageCaption: `Coins — stamped from metal at high pressure, each made from a specific metal composition`,
+          image:        '/explorer-assets/money-business/l01-s3-printing-press.png',
+          imageCaption: `The Bureau of Engraving and Printing makes every paper dollar in the country`,
           vocab: [
-            { word: `denomination`, definition: `The face value of a coin or bill — the amount it represents, such as one cent (penny), 25 cents (quarter), or one dollar ($1 bill).`,                                                     audioPrompt: `Denomination — the face value of a coin or bill. The amount it represents, such as one cent for a penny, 25 cents for a quarter, or one dollar for a one-dollar bill.` },
-            { word: `alloy`,         definition: `A mixture of two or more metals — coins are made from alloys to balance cost, durability, and appearance. Pennies are a zinc-copper alloy; quarters are a copper-nickel alloy.`, audioPrompt: `Alloy — a mixture of two or more metals. Coins are made from alloys to balance cost, durability, and appearance. Pennies are a zinc-copper alloy; quarters are a copper-nickel alloy.` },
+            { word: 'Bureau of Engraving and Printing', definition: `The government agency that prints all paper money in the United States — bills from $1 to $100.`, audioPrompt: `Bureau of Engraving and Printing — the government agency that prints all paper money in the United States, bills from one dollar to one hundred dollars.` },
+            { word: 'bill',                              definition: `A piece of paper money — like a $1 bill or a $20 bill. Bills are printed, not stamped.`, audioPrompt: `Bill — a piece of paper money, like a one-dollar bill or a twenty-dollar bill. Bills are printed, not stamped.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Digital Money`,
+          totalSections: 6,
+          headline:      `Hidden Security Features`,
           paragraphs: [
-            `Here's something surprising: most money in the world today doesn't exist as paper or coins. It lives on computers. When your parents get paid, no truck delivers a bag of cash to your house — numbers simply move from their employer's computer system to their bank account. Money has become information.`,
-            `When your family pays for groceries with a card or phone, no physical money changes hands. A message is sent electronically from one bank to another, and numbers are subtracted from one account and added to another in seconds. This is called digital currency, and it's how the vast majority of money moves around the world today.`,
-            `Digital money is fast, convenient, and traceable — every transaction leaves a record. The physical coins and bills you hold are actually just a tiny fraction of all the money in existence. Most wealth exists only as numbers on computer servers around the world, moving between accounts millions of times per second.`,
+            `Paper money has secret features built in to stop counterfeiting — making fake copies.`,
+            `Tilt a $20 bill and color-shifting ink changes from gold to green. Hold it up to light and you'll see a hidden watermark portrait built right into the paper.`,
           ],
-          image:        '/explorer-assets/money-business/l01-magazine-digital-money.png',
-          imageCaption: `Digital money — most money exists as numbers on computers, moving between accounts instantly`,
+          image:        '/explorer-assets/money-business/l01-s4-security-features.png',
+          imageCaption: `Color-shifting ink, hidden strips, watermarks — every bill is packed with anti-counterfeiting tech`,
           vocab: [
-            { word: `digital currency`, definition: `Money that exists as electronic numbers in computer systems rather than as physical coins or bills — most transactions today happen digitally, moving numbers between bank accounts.`, audioPrompt: `Digital currency — money that exists as electronic numbers in computer systems rather than as physical coins or bills. Most transactions today happen digitally, moving numbers between bank accounts.` },
-            { word: `transaction`,      definition: `Any exchange of money — a deposit, withdrawal, payment, or transfer. Digital transactions move money electronically between accounts without any physical cash changing hands.`,     audioPrompt: `Transaction — any exchange of money, including a deposit, withdrawal, payment, or transfer. Digital transactions move money electronically between accounts without any physical cash changing hands.` },
+            { word: 'counterfeiting', definition: `Making illegal fake copies of money. A serious crime in every country. Governments build security features to stop it.`, audioPrompt: `Counterfeiting — making illegal fake copies of money. A serious crime in every country. Governments build security features to stop it.` },
+            { word: 'watermark',      definition: `A hidden image inside paper money — visible only when you hold the bill up to light. Built into the paper itself.`, audioPrompt: `Watermark — a hidden image inside paper money, visible only when you hold the bill up to light. Built into the paper itself.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Coins Are Metal Sandwiches`,
+          paragraphs: [
+            `Not all coins are made of the same metal. A penny looks copper, but it's actually 97.5% zinc with just a thin copper coating.`,
+            `A quarter is a sandwich — a core of pure copper with layers of nickel on the outside. That's what gives it the silver look.`,
+          ],
+          image:        '/explorer-assets/money-business/l01-s5-coin-sandwich.png',
+          imageCaption: `Coins are metal sandwiches — different alloys for different denominations`,
+          vocab: [
+            { word: 'alloy',        definition: `A mixture of two or more metals. Coins are made from alloys to balance cost, strength, and appearance.`, audioPrompt: `Alloy — a mixture of two or more metals. Coins are made from alloys to balance cost, strength, and appearance.` },
+            { word: 'denomination', definition: `The face value of a coin or bill — what it's worth. A penny's denomination is one cent. A quarter's is 25 cents.`, audioPrompt: `Denomination — the face value of a coin or bill, what it's worth. A penny's denomination is one cent. A quarter's is twenty-five cents.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Most Money Is Digital`,
+          paragraphs: [
+            `Here's something surprising: most money in the world doesn't exist as paper or coins. It lives on computers.`,
+            `When your parents get paid, numbers move from one computer to another. When you pay with a card, no physical cash changes hands. Money is information.`,
+          ],
+          image:        '/explorer-assets/money-business/l01-s6-digital-money.png',
+          imageCaption: `Most money is just numbers moving between computers — no paper, no coins, no physical exchange`,
+          vocab: [
+            { word: 'digital currency', definition: `Money that exists as numbers on computers — not as physical coins or bills. Most money in the world is now digital.`, audioPrompt: `Digital currency — money that exists as numbers on computers, not as physical coins or bills. Most money in the world is now digital.` },
+            { word: 'transaction',      definition: `Any exchange of money. Paying with a card, depositing in a bank, sending money to a friend — all are transactions.`, audioPrompt: `Transaction — any exchange of money. Paying with a card, depositing in a bank, sending money to a friend, all are transactions.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l01_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L01] Loaded: "How Money Is Made" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l01-magazine-who-makes-money.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l01-magazine-security-features.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l01-magazine-coins.png',            { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l01-magazine-digital-money.png',    { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L01] who-makes-money: ${r1.ok}, security-features: ${r2.ok}, coins: ${r3.ok}, digital-money: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l01-s1-money-makers.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l01-s2-mint-press.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l01-s3-printing-press.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l01-s4-security-features.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l01-s5-coin-sandwich.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l01-s6-digital-money.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L01] money-makers: ${r1.ok}, mint-press: ${r2.ok}, printing-press: ${r3.ok}, security-features: ${r4.ok}, coin-sandwich: ${r5.ok}, digital-money: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L01] Could not verify image assets — network check failed');
   });
