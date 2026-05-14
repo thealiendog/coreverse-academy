@@ -23,73 +23,101 @@ const moneybusiness_explorer_l16_screens = {
           guideText: `Here's the most important question in all of business. Not "how do I make money." The most important question is: what PROBLEM am I solving? Every great business answers this clearly. The ones that don't, fail.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Problem First, Solution Second`,
+          totalSections: 6,
+          headline:      'Problem First, Solution Second',
           paragraphs: [
-            `Most people think about starting a business backwards. They start with "I want to sell X" — a product idea they're excited about — before they've established who actually needs it or why anyone would pay for it. Then they build the thing, launch it, and wonder why nobody buys. The product isn't the problem. The sequence is.`,
-            `Smart entrepreneurs flip this. They identify a problem first — a real frustration, gap, or unmet need that real people have — and only then design a solution. The solution is the product. The problem is the foundation that the entire business rests on. Without a strong foundation, even the most polished product collapses.`,
-            `This shift in thinking changes everything about how you build a business. Instead of asking "what do I want to make?" you start asking "what do people wish existed?" Instead of hoping to find customers, you start by finding customers — and then build exactly what they told you they need. The product becomes almost inevitable once the problem is clear.`,
+            'Most people start a business backwards. They get excited about a product idea, then look for someone to sell it to.',
+            'Smart entrepreneurs flip it. Find a real problem first. THEN design a solution. The product is just the answer — the problem is the foundation.',
           ],
-          image:        '/explorer-assets/money-business/l16-magazine-problem-first.png',
-          imageCaption: `Problem first, solution second — the sequence that separates successful entrepreneurs from those who build things nobody needs`,
+          image:        '/explorer-assets/money-business/l16-s1-problem-then-solution.png',
+          imageCaption: 'Problem first. Solution second. Get the sequence wrong, and the business collapses.',
           vocab: [
-            { word: `problem-solution fit`, definition: `The match between a real problem people have and the solution a business offers — a strong fit means customers immediately understand why the product is valuable to them.`,             audioPrompt: `Problem-solution fit — the match between a real problem people have and the solution a business offers. A strong fit means customers immediately understand why the product is valuable to them.` },
-            { word: `customer discovery`,   definition: `The process of talking to potential customers to understand their real problems before building a product — entrepreneurs use discovery to avoid building things nobody needs.`, audioPrompt: `Customer discovery — the process of talking to potential customers to understand their real problems before building a product. Entrepreneurs use discovery to avoid building things nobody needs.` },
+            { word: 'problem-solution fit', definition: 'When a real problem matches a strong solution. The foundation that every successful business is built on.', audioPrompt: 'Problem-solution fit — when a real problem matches a strong solution. The foundation that every successful business is built on.' },
+            { word: 'sequence',             definition: 'The order things happen in. Getting the sequence right is often more important than the ideas themselves.', audioPrompt: 'Sequence — the order things happen in. Getting the sequence right is often more important than the ideas themselves.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Big Is the Problem?`,
+          totalSections: 6,
+          headline:      'Three Marks of a Good Problem',
           paragraphs: [
-            `Not every frustration is a business opportunity. The strongest business problems share three characteristics. First: they're common — lots of people have this problem, not just you. A problem only you experience is a hobby project, not a business. Second: they're annoying — people actively want the problem solved badly enough to pay for a solution. Third: they're unsolved or poorly solved — no one else is doing it well yet.`,
-            `When a problem is common, annoying, and unsolved, you've found a golden opportunity. Millions of people sharing a painful, unresolved frustration is a business waiting to be built. The bigger the problem and the more people who share it, the bigger the potential business. The best entrepreneurs spend as much time evaluating problems as they do designing solutions.`,
-            `Understanding the size of a problem is also about understanding who has it. A problem shared by millions of primary school students is a different opportunity than the same problem shared by a handful of specialists. Knowing your audience — who exactly has this problem and how much it bothers them — is as important as knowing the problem itself.`,
+            'Not every frustration is a business opportunity. The strongest problems share three traits.',
+            'Common: many people have it. Annoying: they want it fixed badly enough to pay. Unsolved: no one\'s doing it well yet.',
           ],
-          image:        '/explorer-assets/money-business/l16-magazine-how-big.png',
-          imageCaption: `The three qualities of a great business problem — common, annoying, and unsolved or poorly solved`,
+          image:        '/explorer-assets/money-business/l16-s2-three-marks.png',
+          imageCaption: 'Common. Annoying. Unsolved. All three — that\'s where real business opportunities live.',
           vocab: [
-            { word: `market size`,   definition: `The total number of people who have a problem or need that a business could address — the larger the market size, the bigger the potential opportunity for the right solution.`,    audioPrompt: `Market size — the total number of people who have a problem or need that a business could address. The larger the market size, the bigger the potential opportunity for the right solution.` },
-            { word: `pain point`,    definition: `A specific problem or frustration that customers experience repeatedly — the more painful and common the pain point, the more motivated customers are to pay for something that solves it.`, audioPrompt: `Pain point — a specific problem or frustration that customers experience repeatedly. The more painful and common the pain point, the more motivated customers are to pay for something that solves it.` },
+            { word: 'pain point', definition: 'A specific frustration customers experience repeatedly. The sharper the pain, the more willing customers are to pay.', audioPrompt: 'Pain point — a specific frustration customers experience repeatedly. The sharper the pain, the more willing customers are to pay.' },
+            { word: 'market',     definition: 'All the people who might want your solution. The bigger and more frustrated the market, the bigger the opportunity.', audioPrompt: 'Market — all the people who might want your solution. The bigger and more frustrated the market, the bigger the opportunity.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Talk to Real People`,
+          totalSections: 6,
+          headline:      'Know Your Audience',
           paragraphs: [
-            `The biggest mistake new entrepreneurs make is assuming they know what people want without asking. They build a product based on what they think would be useful, launch it, and then discover that real customers don't share their enthusiasm. Assumptions are cheap. Real conversations are expensive — but they're worth every minute.`,
-            `Before building anything, go talk to people who might be your customers. Ask open questions: What's the most frustrating part of your day? What do you wish someone would invent? What do you currently spend money on that you genuinely hate spending money on? What problem do you keep running into that nobody seems to have fixed? Listen more than you talk. What you hear will surprise you.`,
-            `Customer research is not a one-time step — it's an ongoing practice. Even after you've built something, the best entrepreneurs keep talking to customers. Markets change. Problems evolve. The businesses that listen continuously are the ones that stay relevant and keep growing. The ones that stop listening eventually lose touch with the people they were built to serve.`,
+            'A problem 10,000 college students share is a different opportunity than a problem 10 specialists share.',
+            'Who exactly has this problem? How badly? Where do they spend time? The clearer your audience, the easier everything else becomes.',
           ],
-          image:        '/explorer-assets/money-business/l16-magazine-talk-to-people.png',
-          imageCaption: `Talk to real people — listening to potential customers reveals what they actually need, not what you assumed they need`,
+          image:        '/explorer-assets/money-business/l16-s3-know-audience.png',
+          imageCaption: 'The same problem looks very different depending on WHO has it. Get specific.',
           vocab: [
-            { word: `assumption`,  definition: `Believing something is true without verifying it — in business, untested assumptions about what customers want are one of the most common reasons new products fail.`,                             audioPrompt: `Assumption — believing something is true without verifying it. In business, untested assumptions about what customers want are one of the most common reasons new products fail.` },
-            { word: `feedback`,    definition: `Information from real customers about how well a product or service meets their needs — honest feedback is more valuable than praise, because it shows where improvement is needed.`, audioPrompt: `Feedback — information from real customers about how well a product or service meets their needs. Honest feedback is more valuable than praise, because it shows where improvement is needed.` },
+            { word: 'audience', definition: 'The specific group of people you\'re solving the problem for. Knowing your audience makes every other decision easier.', audioPrompt: 'Audience — the specific group of people you\'re solving the problem for. Knowing your audience makes every other decision easier.' },
+            { word: 'niche',    definition: 'A small, specific group with a clear shared need. The best businesses often start by serving a niche perfectly.', audioPrompt: 'Niche — a small, specific group with a clear shared need. The best businesses often start by serving a niche perfectly.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Your Unique Angle`,
+          totalSections: 6,
+          headline:      'Don\'t Assume — Ask',
           paragraphs: [
-            `Once you've found a strong problem, the next question is: why would anyone choose your solution over everything else that exists? This is your unique value proposition — the clear, compelling reason customers should pick you instead of a competitor, an existing product, or simply doing nothing.`,
-            `Your unique angle might be speed: you solve the problem faster than anything else. It might be price: you make the solution affordable for people who couldn't afford it before. It might be quality: you solve it better than anyone currently does. Or it might be specificity: you solve it for a particular group that everyone else has overlooked. Any of these can be a powerful differentiator.`,
-            `The strongest businesses have unique value propositions that are difficult to copy quickly. If your only advantage is "we're cheaper," a competitor can match that overnight. If your advantage is deep expertise, a loyal community, or a solution designed specifically for an underserved group — those take years to replicate. Build something that's genuinely yours.`,
+            'The biggest mistake new entrepreneurs make is assuming they know what people want without asking.',
+            'Before building anything, go talk to real people. "What frustrates you?" "What do you wish existed?" Listen more than you talk. The answers will surprise you.',
           ],
-          image:        '/explorer-assets/money-business/l16-magazine-unique-angle.png',
-          imageCaption: `Your unique angle — the clear reason customers should choose your solution over every other alternative`,
+          image:        '/explorer-assets/money-business/l16-s4-listen.png',
+          imageCaption: 'Stop guessing. Start asking. Real conversations beat any business plan.',
           vocab: [
-            { word: `unique value proposition`, definition: `The specific reason customers should choose your business over every other option — your answer to "why you?" It must be clear, true, and meaningfully different from what competitors offer.`, audioPrompt: `Unique value proposition — the specific reason customers should choose your business over every other option. Your answer to "why you?" It must be clear, true, and meaningfully different from what competitors offer.` },
-            { word: `differentiator`,           definition: `What makes a product or business meaningfully different from its competitors — a strong differentiator is hard to copy and gives customers a clear reason to choose you.`,           audioPrompt: `Differentiator — what makes a product or business meaningfully different from its competitors. A strong differentiator is hard to copy and gives customers a clear reason to choose you.` },
+            { word: 'assumption', definition: 'Believing something is true without checking. Assumptions sink more new businesses than competition does.', audioPrompt: 'Assumption — believing something is true without checking. Assumptions sink more new businesses than competition does.' },
+            { word: 'research',   definition: 'Actually finding out by asking real people instead of guessing. The cheapest, fastest way to test if a business idea is real.', audioPrompt: 'Research — actually finding out by asking real people instead of guessing. The cheapest, fastest way to test if a business idea is real.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Your Unique Angle',
+          paragraphs: [
+            'Why would anyone choose your solution over everything else that exists? That\'s your unique value proposition.',
+            'It might be speed. Or price. Or quality. Or a specific group everyone else overlooked. Any of these can be a winning angle.',
+          ],
+          image:        '/explorer-assets/money-business/l16-s5-unique-angle.png',
+          imageCaption: 'Speed, price, quality, or focus on an overlooked group — pick the angle that\'s genuinely yours',
+          vocab: [
+            { word: 'unique value proposition', definition: 'The clear reason customers should choose YOU over every other option. Your answer to "why you?"', audioPrompt: 'Unique value proposition — the clear reason customers should choose you over every other option. Your answer to "why you?"' },
+            { word: 'differentiator',           definition: 'What makes you meaningfully different from competitors. A strong differentiator is hard to copy.', audioPrompt: 'Differentiator — what makes you meaningfully different from competitors. A strong differentiator is hard to copy.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Hard to Copy Wins',
+          paragraphs: [
+            'If your only advantage is "cheaper," a competitor can match that overnight.',
+            'But deep expertise, a loyal community, or a perfectly-built solution for an underserved group — those take years to replicate. Build something genuinely yours.',
+          ],
+          image:        '/explorer-assets/money-business/l16-s6-moat.png',
+          imageCaption: 'The strongest businesses have advantages competitors can\'t copy quickly. That\'s a moat.',
+          vocab: [
+            { word: 'competitive advantage', definition: 'Something your business has that competitors can\'t easily match. Expertise, community, brand — these all qualify.', audioPrompt: 'Competitive advantage — something your business has that competitors can\'t easily match. Expertise, community, brand, these all qualify.' },
+            { word: 'moat',                  definition: 'A durable advantage that protects your business from being copied. The deeper the moat, the safer the business long-term.', audioPrompt: 'Moat — a durable advantage that protects your business from being copied. The deeper the moat, the safer the business long-term.' },
           ],
         },
 
@@ -101,10 +129,10 @@ const moneybusiness_explorer_l16_screens = {
           guideText:     `The best business problems are common, annoying, and unsolved. If a problem is rare, or nobody really cares, or it's already solved perfectly — it's a weak business opportunity. Can you tell which is which?`,
           columnHeaders: [`The Problem`, `Strong or Weak?`],
           items: [
-            { image: 'l16-game-keys.png',    label: `Millions of people lose their keys every day and nobody has invented a reliable, affordable way to find them quickly.`,                              correctMatch: 'strong-problem', objectPosition: 'center 50%', matchPhrase: `Strong business problem! This checks all three boxes: common (millions of people), annoying (nobody wants to waste time searching), and unsolved or poorly solved (existing solutions are expensive or unreliable). When you find a problem that millions share, are frustrated by, and haven't found a great answer to — that's a golden opportunity worth building around.` },
+            { image: 'l16-game-keys.png',        label: `Millions of people lose their keys every day and nobody has invented a reliable, affordable way to find them quickly.`,                              correctMatch: 'strong-problem', objectPosition: 'center 50%', matchPhrase: `Strong business problem! This checks all three boxes: common (millions of people), annoying (nobody wants to waste time searching), and unsolved or poorly solved (existing solutions are expensive or unreliable). When you find a problem that millions share, are frustrated by, and haven't found a great answer to — that's a golden opportunity worth building around.` },
             { image: 'l16-game-sock-drawer.png', label: `You personally find it frustrating that your sock drawer gets messy, but no one else you've talked to cares about this.`,                    correctMatch: 'weak-problem',   objectPosition: 'center 50%', matchPhrase: `Weak business problem! A problem only you experience — or that only you care about deeply — is a very small market. Great business problems are widely shared. Before building any solution, always ask: do other people have this problem, and does it bother them enough to pay for a fix? If you're the only one who cares, you'd have very few customers.` },
-            { image: 'l16-game-homework.png', label: `Almost every student struggles to organise their homework and assignments, and most existing tools are confusing or designed for adults.`,       correctMatch: 'strong-problem', objectPosition: 'center 50%', matchPhrase: `Strong business problem! Common: nearly all students face it. Annoying: disorganisation causes real stress and missed deadlines. Poorly solved for this specific group: existing tools weren't built with students in mind. This trifecta — common, annoying, and unsolved for a specific audience — is exactly what makes a problem worth building a business around.` },
-            { image: 'l16-game-solved.png',  label: `A problem that five excellent, highly-rated products already solve perfectly, leaving nothing to improve and no unhappy customers.`,              correctMatch: 'weak-problem',   objectPosition: 'center 50%', matchPhrase: `Weak business problem! If a problem is already solved brilliantly by products that customers genuinely love, there's very little room to enter. Your unique value proposition needs to be compelling — and if customers are fully satisfied, it's extremely hard to give them a reason to switch. Look for frustrated customers, not satisfied ones.` },
+            { image: 'l16-game-homework.png',    label: `Almost every student struggles to organise their homework and assignments, and most existing tools are confusing or designed for adults.`,       correctMatch: 'strong-problem', objectPosition: 'center 50%', matchPhrase: `Strong business problem! Common: nearly all students face it. Annoying: disorganisation causes real stress and missed deadlines. Poorly solved for this specific group: existing tools weren't built with students in mind. This trifecta — common, annoying, and unsolved for a specific audience — is exactly what makes a problem worth building a business around.` },
+            { image: 'l16-game-solved.png',      label: `A problem that five excellent, highly-rated products already solve perfectly, leaving nothing to improve and no unhappy customers.`,              correctMatch: 'weak-problem',   objectPosition: 'center 50%', matchPhrase: `Weak business problem! If a problem is already solved brilliantly by products that customers genuinely love, there's very little room to enter. Your unique value proposition needs to be compelling — and if customers are fully satisfied, it's extremely hard to give them a reason to switch. Look for frustrated customers, not satisfied ones.` },
           ],
           buckets: [
             { id: 'strong-problem', label: `💡 Strong Business Problem`, color: '#34D399' },
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l16_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L16] Loaded: "What Problem Does Your Business Solve?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l16-magazine-problem-first.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l16-magazine-how-big.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l16-magazine-talk-to-people.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l16-magazine-unique-angle.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L16] problem-first: ${r1.ok}, how-big: ${r2.ok}, talk-to-people: ${r3.ok}, unique-angle: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l16-s1-problem-then-solution.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l16-s2-three-marks.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l16-s3-know-audience.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l16-s4-listen.png',                { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l16-s5-unique-angle.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l16-s6-moat.png',                  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L16] problem-then-solution: ${r1.ok}, three-marks: ${r2.ok}, know-audience: ${r3.ok}, listen: ${r4.ok}, unique-angle: ${r5.ok}, moat: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L16] Could not verify image assets — network check failed');
   });
