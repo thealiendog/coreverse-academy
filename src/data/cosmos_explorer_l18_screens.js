@@ -23,73 +23,101 @@ const cosmos_explorer_l18_screens = {
           guideText: `Hold two magnets near each other and you can feel an invisible force — pushing or pulling through empty air. That invisible force shapes compasses, runs electric motors, protects our atmosphere from the Sun, and makes MRI machines work. Magnetism is everywhere, and it's one of the most fundamental forces in nature.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Makes Something Magnetic?`,
+          totalSections: 6,
+          headline:      `Where Magnetism Comes From`,
           paragraphs: [
-            `Magnetism comes from electrons. As electrons move around an atom's nucleus, they behave like tiny magnets. In most materials, electrons spin in random directions and their magnetic effects cancel each other out. But in certain materials — iron, nickel, and cobalt — groups of atoms can align so their electrons all spin in the same direction. These aligned groups are called magnetic domains.`,
-            `In an ordinary piece of iron, the domains point in random directions and the overall magnetic effect is zero. But when you expose iron to a strong magnetic field, the domains can be forced to align in the same direction — and the iron becomes a magnet. This is how you can magnetise a paperclip by stroking it repeatedly with a magnet.`,
-            `Permanent magnets hold their domain alignment over time. Materials like steel (an iron alloy) can maintain their magnetism for years or indefinitely. Soft iron loses its magnetism easily when the external field is removed. The strongest permanent magnets in everyday use are neodymium magnets — small but extraordinarily powerful, used in headphones, hard drives, and wind turbines.`,
+            `Magnetism comes from electrons. In most materials, electrons spin in random directions and cancel each other out.`,
+            `But in iron, nickel, and cobalt, groups of electrons can align — all spinning the same way. These aligned groups are called magnetic domains.`,
           ],
-          image:        '/explorer-assets/cosmos/l18-magazine-magnetic-domains.png',
-          imageCaption: `Magnetic domains — aligned electron groups in iron, nickel, and cobalt create permanent magnetic force`,
+          image:        '/explorer-assets/cosmos/l18-s1-magnetic-domains.png',
+          imageCaption: `Magnetism is electrons all spinning in the same direction inside iron, nickel, or cobalt`,
           vocab: [
-            { word: 'magnetic domain', definition: `A region within a magnetic material where atomic magnets are aligned in the same direction — when domains align throughout a material, it becomes a magnet.`,                    audioPrompt: `Magnetic domain — a region within a magnetic material where atomic magnets are aligned in the same direction. When domains align throughout a material, it becomes a magnet.` },
-            { word: 'ferromagnetic',   definition: `A property of materials — like iron, nickel, and cobalt — that can be strongly magnetised because their electrons can align into magnetic domains pointing the same direction.`, audioPrompt: `Ferromagnetic — a property of materials like iron, nickel, and cobalt that can be strongly magnetised because their electrons can align into magnetic domains pointing the same direction.` },
+            { word: 'magnetic domain', definition: `A region inside a metal where atomic magnets are all aligned in the same direction. When enough align, the metal becomes a magnet.`, audioPrompt: `Magnetic domain — a region inside a metal where atomic magnets are all aligned in the same direction. When enough align, the metal becomes a magnet.` },
+            { word: 'ferromagnetic',   definition: `A property of metals — like iron, nickel, and cobalt — that can become magnetic because their electrons can align into domains.`, audioPrompt: `Ferromagnetic — a property of metals like iron, nickel, and cobalt that can become magnetic because their electrons can align into domains.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Poles and Magnetic Fields`,
+          totalSections: 6,
+          headline:      `Poles: Opposites Attract`,
           paragraphs: [
-            `Every magnet has two poles — a north pole and a south pole. The most fundamental rule of magnetism: opposite poles attract, like poles repel. A north pole and a south pole pull toward each other. Two north poles push each other apart. Two south poles push each other apart. This rule never breaks — it's one of the most reliable relationships in physics.`,
-            `The magnetic field of a magnet extends through space around it — an invisible region where magnetic force can be felt. We can visualise the field using field lines: imaginary lines that run from the north pole of a magnet, curve around, and enter the south pole. Where field lines are close together, the field is strong. Where they spread apart, the field is weaker.`,
-            `A compass needle is simply a small magnet free to rotate. Earth's magnetic field exerts force on it, rotating it until the needle aligns with the field. The north-seeking end of the compass needle points toward geographic north. Compasses have guided human navigation for over a thousand years — from sailors crossing oceans to hikers in forests — all by sensing an invisible field.`,
+            `Every magnet has two poles — a north pole and a south pole.`,
+            `Opposite poles attract. Like poles repel. A north pole and a south pole pull toward each other. Two norths push apart. This rule never breaks.`,
           ],
-          image:        '/explorer-assets/cosmos/l18-magazine-poles-fields.png',
-          imageCaption: `Poles and magnetic fields — field lines from north to south pole, with opposite poles attracting`,
+          image:        '/explorer-assets/cosmos/l18-s2-poles.png',
+          imageCaption: `Opposite poles attract. Like poles repel. The most reliable rule in magnetism.`,
           vocab: [
-            { word: 'magnetic pole',  definition: `One of the two ends of a magnet — the north pole and the south pole. Opposite poles attract each other; like poles repel. Every magnet has both a north and a south pole.`,    audioPrompt: `Magnetic pole — one of the two ends of a magnet. The north pole and the south pole. Opposite poles attract each other; like poles repel. Every magnet has both a north and a south pole.` },
-            { word: 'magnetic field', definition: `The invisible region of force surrounding a magnet or moving electric charge — it exerts forces on other magnets and magnetic materials within its reach, even through empty space.`, audioPrompt: `Magnetic field — the invisible region of force surrounding a magnet or moving electric charge. It exerts forces on other magnets and magnetic materials within its reach, even through empty space.` },
+            { word: 'magnetic pole', definition: `One of the two ends of a magnet. Every magnet has both a north pole and a south pole — you can't have just one.`, audioPrompt: `Magnetic pole — one of the two ends of a magnet. Every magnet has both a north pole and a south pole. You can't have just one.` },
+            { word: 'repel',         definition: `To push away. Like magnetic poles always repel each other — two norths push apart, and two souths push apart.`, audioPrompt: `Repel — to push away. Like magnetic poles always repel each other. Two norths push apart, and two souths push apart.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Earth's Magnetic Field`,
+          totalSections: 6,
+          headline:      `Invisible Force Fields`,
           paragraphs: [
-            `Earth itself is a giant magnet. At the centre, the outer core is liquid iron and nickel spinning as Earth rotates. This moving liquid metal generates electric currents, and those currents generate a magnetic field that extends far into space around our planet. This is the geomagnetic field — the same field that makes compasses work and that has guided animals for millions of years.`,
-            `Earth's magnetic field does something far more important than guide compasses: it protects life on the surface. The Sun constantly streams energetic charged particles outward — the solar wind. Without a magnetic field, this radiation would strip away Earth's atmosphere over millions of years and blast the surface with radiation. Earth's magnetic field deflects the solar wind, channelling it harmlessly around the planet.`,
-            `Mars once had a magnetic field — scientists can detect the ancient magnetism preserved in Martian rocks. But Mars's core cooled and solidified billions of years ago, shutting down the dynamo that generated the field. Without it, the solar wind slowly stripped away most of Mars's atmosphere. The thin, cold, airless Mars we see today is partly the result of losing its magnetic shield. Earth has kept its shield — and its atmosphere — because its core is still churning.`,
+            `Around every magnet, there's an invisible region where magnetic force can be felt — called the magnetic field.`,
+            `A compass needle is just a tiny magnet free to rotate. Earth's magnetic field pulls it until it points north. Compasses have guided travellers for over a thousand years.`,
           ],
-          image:        '/explorer-assets/cosmos/l18-magazine-earth-field.png',
-          imageCaption: `Earth's magnetic field — generated by the liquid iron outer core, deflecting solar wind and protecting life`,
+          image:        '/explorer-assets/cosmos/l18-s3-magnetic-field.png',
+          imageCaption: `The magnetic field is the invisible reach of a magnet's force — felt by every compass on Earth`,
           vocab: [
-            { word: 'geomagnetic field', definition: `Earth's magnetic field — generated by the movement of liquid iron in Earth's outer core. It extends far into space and protects the planet's atmosphere from the solar wind.`, audioPrompt: `Geomagnetic field — Earth's magnetic field, generated by the movement of liquid iron in Earth's outer core. It extends far into space and protects the planet's atmosphere from the solar wind.` },
-            { word: 'solar wind',        definition: `A continuous stream of charged particles — mostly electrons and protons — flowing outward from the Sun. Earth's magnetic field deflects the solar wind and prevents it from stripping away our atmosphere.`, audioPrompt: `Solar wind — a continuous stream of charged particles, mostly electrons and protons, flowing outward from the Sun. Earth's magnetic field deflects the solar wind and prevents it from stripping away our atmosphere.` },
+            { word: 'magnetic field', definition: `The invisible region of force around a magnet. Anything magnetic that enters the field will feel a pull or a push.`, audioPrompt: `Magnetic field — the invisible region of force around a magnet. Anything magnetic that enters the field will feel a pull or a push.` },
+            { word: 'compass',        definition: `A tool with a tiny magnet free to rotate. It aligns with Earth's magnetic field — telling you which way is north.`, audioPrompt: `Compass — a tool with a tiny magnet free to rotate. It aligns with Earth's magnetic field, telling you which way is north.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Electromagnets: Magnetism From Electricity`,
+          totalSections: 6,
+          headline:      `Earth Is a Giant Magnet`,
           paragraphs: [
-            `Electricity and magnetism are deeply connected. A moving electric charge always creates a magnetic field around it. When electric current flows through a straight wire, a weak circular magnetic field forms around the wire. But wind that wire into a coil and the magnetic fields from each loop add together — creating a much stronger field. This is an electromagnet.`,
-            `Electromagnets have a huge advantage over permanent magnets: they can be switched on and off by controlling the current. They can also be made far more powerful than any permanent magnet by increasing the current or the number of coil turns. The strongest electromagnets in laboratories are powerful enough to levitate frogs and derail trains.`,
-            `Electromagnets are everywhere in modern technology. Electric motors use them to convert electricity into rotation — every electric car, fan, and washing machine contains one. Speakers use electromagnets to vibrate a cone and produce sound. MRI machines in hospitals use enormous superconducting electromagnets to create detailed images of the inside of the human body. Magnetic levitation trains use electromagnets to float above their tracks. Understanding that electricity creates magnetism unlocked much of the modern world.`,
+            `Earth itself is a giant magnet. Deep inside, the outer core is liquid iron, spinning as Earth rotates.`,
+            `This moving liquid metal generates electric currents — and those currents generate a vast magnetic field that extends far into space around our planet.`,
           ],
-          image:        '/explorer-assets/cosmos/l18-magazine-electromagnets.png',
-          imageCaption: `Electromagnets — coiled wire carrying current creates a powerful magnetic field that can be switched on or off`,
+          image:        '/explorer-assets/cosmos/l18-s4-earth-magnet.png',
+          imageCaption: `Earth's spinning liquid iron core makes our entire planet a giant magnet`,
           vocab: [
-            { word: 'electromagnet', definition: `A magnet created by passing electric current through a coil of wire — unlike permanent magnets, electromagnets can be switched on and off and made extremely powerful.`,      audioPrompt: `Electromagnet — a magnet created by passing electric current through a coil of wire. Unlike permanent magnets, electromagnets can be switched on and off and made extremely powerful.` },
-            { word: 'electric motor', definition: `A device that converts electrical energy into mechanical rotation using the interaction between a magnetic field and electric current — used in fans, cars, appliances, and more.`, audioPrompt: `Electric motor — a device that converts electrical energy into mechanical rotation using the interaction between a magnetic field and electric current. Used in fans, cars, appliances, and more.` },
+            { word: 'geomagnetic field', definition: `Earth's magnetic field. Generated by the swirling liquid iron in Earth's outer core — it extends far into space.`, audioPrompt: `Geomagnetic field — Earth's magnetic field. Generated by the swirling liquid iron in Earth's outer core, it extends far into space.` },
+            { word: 'core',              definition: `The centre of Earth. The outer core is liquid iron; the inner core is solid iron under enormous pressure.`, audioPrompt: `Core — the centre of Earth. The outer core is liquid iron; the inner core is solid iron under enormous pressure.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `A Shield from Space`,
+          paragraphs: [
+            `Earth's magnetic field protects us. The Sun constantly streams out energetic particles — the solar wind.`,
+            `Mars once had a magnetic field too. But its core cooled, the field died, and the solar wind stripped away most of Mars's atmosphere. Earth still has its shield.`,
+          ],
+          image:        '/explorer-assets/cosmos/l18-s5-shield.png',
+          imageCaption: `Earth's magnetic field deflects the Sun's radiation. Mars lost its field — and its atmosphere.`,
+          vocab: [
+            { word: 'solar wind', definition: `A stream of charged particles flowing constantly from the Sun. Earth's magnetic field deflects it away from us.`, audioPrompt: `Solar wind — a stream of charged particles flowing constantly from the Sun. Earth's magnetic field deflects it away from us.` },
+            { word: 'shield',     definition: `Something that protects against harm. Earth's magnetic field is an invisible shield against the Sun's radiation.`, audioPrompt: `Shield — something that protects against harm. Earth's magnetic field is an invisible shield against the Sun's radiation.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Electromagnets`,
+          paragraphs: [
+            `Electricity and magnetism are deeply connected. When electric current flows through a coiled wire, it creates a powerful magnetic field. This is an electromagnet.`,
+            `Unlike permanent magnets, electromagnets can be switched on and off. They power electric motors, speakers, MRI machines, and even trains that float above their tracks.`,
+          ],
+          image:        '/explorer-assets/cosmos/l18-s6-electromagnet.png',
+          imageCaption: `An electromagnet is electricity making magnetism — powering motors, speakers, MRI machines, and floating trains`,
+          vocab: [
+            { word: 'electromagnet',  definition: `A magnet made by passing electric current through a coil of wire. It can be switched on and off — and made enormously powerful.`, audioPrompt: `Electromagnet — a magnet made by passing electric current through a coil of wire. It can be switched on and off, and made enormously powerful.` },
+            { word: 'electric motor', definition: `A device that turns electricity into spinning motion using electromagnets. Found in cars, fans, washing machines, and almost every appliance.`, audioPrompt: `Electric motor — a device that turns electricity into spinning motion using electromagnets. Found in cars, fans, washing machines, and almost every appliance.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l18_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L18] Loaded: "Magnets and Magnetic Fields" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l18-magazine-magnetic-domains.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l18-magazine-poles-fields.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l18-magazine-earth-field.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l18-magazine-electromagnets.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L18] magnetic-domains: ${r1.ok}, poles-fields: ${r2.ok}, earth-field: ${r3.ok}, electromagnets: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l18-s1-magnetic-domains.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l18-s2-poles.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l18-s3-magnetic-field.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l18-s4-earth-magnet.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l18-s5-shield.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l18-s6-electromagnet.png',    { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L18] magnetic-domains: ${r1.ok}, poles: ${r2.ok}, magnetic-field: ${r3.ok}, earth-magnet: ${r4.ok}, shield: ${r5.ok}, electromagnet: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L18] Could not verify image assets — network check failed');
   });
