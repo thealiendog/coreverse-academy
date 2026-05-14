@@ -23,73 +23,101 @@ const moneybusiness_explorer_l03_screens = {
           guideText: `Where does your family keep their money? Not in a mattress, right? It lives at a bank. But have you ever wondered what a bank actually IS and how it works? Banks are one of the most important inventions in human history.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is a Bank?`,
           paragraphs: [
-            `A bank is a business that stores money, keeps it safe, and helps move it around. When you put money into a bank, it's called a deposit. When you take money out, it's called a withdrawal. Your money is tracked in an account — think of it like a scoreboard that shows exactly how much you have at any moment.`,
-            `There are two main types of accounts. A checking account is for everyday money — the money you use regularly to pay for things. A savings account is for money you want to keep and grow over time. Both types are protected and trackable, and you can see every transaction in your account history.`,
-            `Banks don't just hold money in a vault waiting for you to come back. Your money is insured, protected, and actively working — which is why banks can pay you just for keeping money there. Understanding this changes how you think about banks entirely.`,
+            `A bank is a business that stores your money, keeps it safe, and helps move it around.`,
+            `Putting money IN is called a deposit. Taking money OUT is called a withdrawal. Your money is tracked in an account — like a scoreboard showing what you have.`,
           ],
-          image:        '/explorer-assets/money-business/l03-magazine-what-is-a-bank.png',
-          imageCaption: `A bank — a secure business that stores, protects, and moves money, tracking every dollar in your account`,
+          image:        '/explorer-assets/money-business/l03-s1-what-is-a-bank.png',
+          imageCaption: `A bank stores money, moves it around, and tracks every dollar in your account`,
           vocab: [
-            { word: `deposit`,    definition: `Putting money into a bank account — when your pay arrives or you add cash at a branch, that money is deposited and added to your account balance.`,                                                     audioPrompt: `Deposit — putting money into a bank account. When your pay arrives or you add cash at a branch, that money is deposited and added to your account balance.` },
-            { word: `withdrawal`, definition: `Taking money out of a bank account — when you use an ATM, make a purchase with your card, or transfer money out, that amount is withdrawn and subtracted from your balance.`, audioPrompt: `Withdrawal — taking money out of a bank account. When you use an ATM, make a purchase with your card, or transfer money out, that amount is withdrawn and subtracted from your balance.` },
+            { word: 'deposit',    definition: `Putting money INTO a bank account. When your pay arrives or you add cash, the money is deposited.`, audioPrompt: `Deposit — putting money into a bank account. When your pay arrives or you add cash, the money is deposited.` },
+            { word: 'withdrawal', definition: `Taking money OUT of a bank account. Using an ATM, paying with a card, or transferring money out is a withdrawal.`, audioPrompt: `Withdrawal — taking money out of a bank account. Using an ATM, paying with a card, or transferring money out is a withdrawal.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Banks Make Money`,
+          totalSections: 6,
+          headline:      `Two Kinds of Accounts`,
           paragraphs: [
-            `Here's what most people don't know about banks: they don't just sit on your money. They lend it to other people who need it — for cars, homes, education, and businesses. Those borrowers pay the money back over time, plus an extra charge called interest. Interest is the cost of borrowing money.`,
-            `The bank collects interest from borrowers and keeps most of it — that's how the bank earns its profit. But the bank also gives a small share of that interest back to you, just for keeping your money there. This is why a savings account grows over time even when you don't add anything to it.`,
-            `This system is called fractional reserve banking — the bank keeps a fraction of deposits in reserve and lends out the rest. It's been the foundation of the banking system for centuries. Your $100 deposit might be helping someone buy a car while still showing up as $100 in your account — because the bank has guaranteed it's yours whenever you need it.`,
+            `A checking account is for everyday money — the money you spend on things.`,
+            `A savings account is for money you want to keep and grow over time. Most adults have both — one for daily spending, one for the future.`,
           ],
-          image:        '/explorer-assets/money-business/l03-magazine-how-banks-work.png',
-          imageCaption: `How banks make money — lending deposits to borrowers at interest, sharing a portion back with savers`,
+          image:        '/explorer-assets/money-business/l03-s2-two-accounts.png',
+          imageCaption: `Checking is for spending. Savings is for keeping and growing.`,
           vocab: [
-            { word: `interest`,  definition: `The cost of borrowing money — borrowers pay interest to banks for loans. Banks also pay depositors interest as a reward for keeping money in savings accounts.`,                                        audioPrompt: `Interest — the cost of borrowing money. Borrowers pay interest to banks for loans. Banks also pay depositors interest as a reward for keeping money in savings accounts.` },
-            { word: `loan`,      definition: `Money borrowed from a bank that must be repaid over time, usually with interest added — common loans include mortgages for homes, car loans, and student loans for education.`, audioPrompt: `Loan — money borrowed from a bank that must be repaid over time, usually with interest added. Common loans include mortgages for homes, car loans, and student loans for education.` },
+            { word: 'checking account', definition: `A bank account for everyday spending. Money flows in and out frequently — used with debit cards, checks, and bill payments.`, audioPrompt: `Checking account — a bank account for everyday spending. Money flows in and out frequently, used with debit cards, checks, and bill payments.` },
+            { word: 'savings account',  definition: `A bank account for money you want to keep and grow. The bank pays you interest for keeping money there.`, audioPrompt: `Savings account — a bank account for money you want to keep and grow. The bank pays you interest for keeping money there.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Is Your Money Safe?`,
+          totalSections: 6,
+          headline:      `How Banks Make Money`,
           paragraphs: [
-            `Yes — and for a very specific, government-backed reason. In the United States, the Federal Deposit Insurance Corporation — the FDIC — protects money in bank accounts. Even if a bank has serious financial problems or goes out of business, the government guarantees your money up to $250,000 per account. Your money cannot disappear.`,
-            `This wasn't always the case. Before the FDIC was created in 1933, bank failures meant depositors could lose everything. After thousands of banks collapsed during the Great Depression, the government stepped in to guarantee deposits. Since then, not one depositor has lost a single dollar in an FDIC-insured account.`,
-            `This is why keeping money in a bank is far safer than keeping cash at home. Cash at home can be lost, stolen, or destroyed in a fire. Money in a bank is insured, traceable, and backed by the full authority of the federal government. The risk difference is enormous.`,
+            `Here's what most people don't know: banks don't just sit on your money. They lend it to other people who need it — for cars, homes, businesses.`,
+            `Those borrowers pay the money back over time, plus an extra charge called interest. Interest is the cost of borrowing money.`,
           ],
-          image:        '/explorer-assets/money-business/l03-magazine-fdic.png',
-          imageCaption: `FDIC insurance — government protection guaranteeing bank deposits up to $250,000 per account`,
+          image:        '/explorer-assets/money-business/l03-s3-banks-lend.png',
+          imageCaption: `Banks make money by lending deposits to borrowers, who pay back more than they borrowed`,
           vocab: [
-            { word: `FDIC`,          definition: `The Federal Deposit Insurance Corporation — a U.S. government agency that insures bank deposits up to $250,000 per account, protecting savers if a bank fails.`,                             audioPrompt: `FDIC — the Federal Deposit Insurance Corporation. A U.S. government agency that insures bank deposits up to $250,000 per account, protecting savers if a bank fails.` },
-            { word: `insured`,       definition: `Protected against loss by an insurance guarantee — FDIC-insured bank accounts are protected by the government, meaning your money is safe even if the bank has problems.`, audioPrompt: `Insured — protected against loss by an insurance guarantee. FDIC-insured bank accounts are protected by the government, meaning your money is safe even if the bank has problems.` },
+            { word: 'loan',     definition: `Money borrowed from a bank that must be paid back over time, usually with interest added. Car loans and mortgages are common loans.`, audioPrompt: `Loan — money borrowed from a bank that must be paid back over time, usually with interest added. Car loans and mortgages are common loans.` },
+            { word: 'borrower', definition: `A person who takes out a loan. They get money now and pay back more later — the extra is the interest.`, audioPrompt: `Borrower — a person who takes out a loan. They get money now and pay back more later. The extra is the interest.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Modern Banking`,
+          totalSections: 6,
+          headline:      `You Get Paid Too`,
           paragraphs: [
-            `Banking used to mean walking into a building, waiting in a queue, and handing cash to a teller. Today you don't need to go anywhere. Mobile banking apps let you check your balance, review transactions, transfer money between accounts, pay bills, and even deposit a cheque by taking a photo of it — all from your phone in seconds.`,
-            `Most adults handle the vast majority of their banking without ever setting foot in a branch. Direct deposit means pay arrives in your account automatically. Automatic bill payments mean rent, electricity, and subscriptions are paid without you remembering to do it. Alerts notify you when money comes in or goes out.`,
-            `The underlying banking system — the safeguards, the FDIC insurance, the accounts and interest — is exactly the same as it's always been. What's changed is the interface. Banking has moved from a physical building to a screen in your pocket, and it's more accessible, faster, and more transparent than at any point in history.`,
+            `The bank collects interest from borrowers and keeps most of it. That's how the bank makes its profit.`,
+            `But the bank also pays you a small share, just for keeping money there. That's why a savings account grows even when you don't add anything.`,
           ],
-          image:        '/explorer-assets/money-business/l03-magazine-mobile-banking.png',
-          imageCaption: `Modern banking — apps that let you manage your entire account from a phone, instantly and securely`,
+          image:        '/explorer-assets/money-business/l03-s4-interest-shared.png',
+          imageCaption: `The bank shares a slice of the interest with you — your savings grow without you adding a dollar`,
           vocab: [
-            { word: `mobile banking`,   definition: `Managing your bank account using a smartphone app — checking balances, transferring money, paying bills, and depositing cheques without visiting a physical branch.`,                        audioPrompt: `Mobile banking — managing your bank account using a smartphone app. Checking balances, transferring money, paying bills, and depositing cheques without visiting a physical branch.` },
-            { word: `direct deposit`,   definition: `An automatic transfer of payment directly into a bank account — employers use direct deposit to pay wages without issuing physical cheques or cash.`, audioPrompt: `Direct deposit — an automatic transfer of payment directly into a bank account. Employers use direct deposit to pay wages without issuing physical cheques or cash.` },
+            { word: 'interest', definition: `Extra money paid for borrowing OR for saving. Borrowers pay it to banks; banks pay it to savers.`, audioPrompt: `Interest — extra money paid for borrowing or for saving. Borrowers pay it to banks; banks pay it to savers.` },
+            { word: 'profit',   definition: `Money a business keeps after paying all its expenses. A bank's profit is what's left after paying savers and running the bank.`, audioPrompt: `Profit — money a business keeps after paying all its expenses. A bank's profit is what's left after paying savers and running the bank.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Is Your Money Safe?`,
+          paragraphs: [
+            `Yes — and for a specific government-backed reason. In the U.S., the FDIC protects bank deposits up to $250,000 per account.`,
+            `Even if a bank goes out of business, the government guarantees your money. Since 1933, not one person has lost a single dollar in an FDIC-insured account.`,
+          ],
+          image:        '/explorer-assets/money-business/l03-s5-fdic-shield.png',
+          imageCaption: `FDIC insurance has protected every U.S. bank deposit since 1933 — your money is safer than cash at home`,
+          vocab: [
+            { word: 'FDIC',    definition: `A U.S. government agency that protects bank deposits up to $250,000 per account. Even if the bank fails, your money is safe.`, audioPrompt: `FDIC — a U.S. government agency that protects bank deposits up to two hundred and fifty thousand dollars per account. Even if the bank fails, your money is safe.` },
+            { word: 'insured', definition: `Protected against loss. FDIC-insured accounts are protected by the government — your money can't disappear if the bank has problems.`, audioPrompt: `Insured — protected against loss. FDIC-insured accounts are protected by the government. Your money can't disappear if the bank has problems.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Banking on Your Phone`,
+          paragraphs: [
+            `Banking used to mean walking into a building, waiting in line, and handing cash to a teller. Today you don't need to go anywhere.`,
+            `Banking apps let you check your balance, transfer money, pay bills, and even deposit a check by taking a photo — all from your phone.`,
+          ],
+          image:        '/explorer-assets/money-business/l03-s6-mobile-banking.png',
+          imageCaption: `Banking moved from a building to your pocket — same safety, faster and easier`,
+          vocab: [
+            { word: 'mobile banking', definition: `Managing your bank account using a smartphone app — checking balances, transferring money, paying bills, depositing checks.`, audioPrompt: `Mobile banking — managing your bank account using a smartphone app. Checking balances, transferring money, paying bills, depositing checks.` },
+            { word: 'direct deposit', definition: `An automatic transfer of payment directly into a bank account. Employers use it to pay wages without issuing checks or cash.`, audioPrompt: `Direct deposit — an automatic transfer of payment directly into a bank account. Employers use it to pay wages without issuing checks or cash.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l03_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L03] Loaded: "Banks: Where Money Lives" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l03-magazine-what-is-a-bank.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l03-magazine-how-banks-work.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l03-magazine-fdic.png',           { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l03-magazine-mobile-banking.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L03] what-is-a-bank: ${r1.ok}, how-banks-work: ${r2.ok}, fdic: ${r3.ok}, mobile-banking: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l03-s1-what-is-a-bank.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l03-s2-two-accounts.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l03-s3-banks-lend.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l03-s4-interest-shared.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l03-s5-fdic-shield.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l03-s6-mobile-banking.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L03] what-is-a-bank: ${r1.ok}, two-accounts: ${r2.ok}, banks-lend: ${r3.ok}, interest-shared: ${r4.ok}, fdic-shield: ${r5.ok}, mobile-banking: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L03] Could not verify image assets — network check failed');
   });
