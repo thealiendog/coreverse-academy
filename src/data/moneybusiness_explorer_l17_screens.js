@@ -23,73 +23,101 @@ const moneybusiness_explorer_l17_screens = {
           guideText: `A business plan sounds like something only serious adults in suits write. But the truth is, a business plan is just answering a few key questions about your business idea — before you spend any time or money.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Why Write a Business Plan?`,
+          totalSections: 6,
+          headline:      'What\'s a Business Plan?',
           paragraphs: [
-            `A business plan forces you to think through every part of your idea. What exactly are you selling? Who will buy it? How will you reach them? What will it cost to get started? How much will you charge? Writing the answers down is a completely different process from just thinking about them — and the difference reveals gaps you didn't know were there.`,
-            `Gaps discovered on paper are free to fix. Gaps discovered after you've spent your savings are expensive. A business plan isn't a guarantee of success — nothing is. But it's a structured attempt to find the weakest points in your idea before reality does. Every hour spent planning saves multiple hours of fixing problems that didn't have to happen.`,
-            `A good plan also clarifies your thinking in a way that's useful when you talk to other people — potential partners, family members who might support your idea, or anyone whose help you need. If you can't explain your business clearly on paper, you'll struggle to explain it in conversation. The plan is as much a communication tool as it is a thinking tool.`,
+            'A business plan isn\'t a suit-and-tie document. It\'s just answering the key questions about your idea — before you spend any money.',
+            'Writing the answers down works differently than just thinking about them. Gaps you didn\'t know existed show up on paper.',
           ],
-          image:        '/explorer-assets/money-business/l17-magazine-why-plan.png',
-          imageCaption: `A business plan — structured thinking that reveals gaps before they cost you time, money, or both`,
+          image:        '/explorer-assets/money-business/l17-s1-plan-document.png',
+          imageCaption: 'A plan isn\'t about looking professional. It\'s about catching weaknesses before they cost you money.',
           vocab: [
-            { word: `business plan`, definition: `A document that answers the key questions about a business idea — what you sell, who buys it, how you'll find them, what it costs, and what makes you different. It helps you think clearly before spending.`, audioPrompt: `Business plan — a document that answers the key questions about a business idea. What you sell, who buys it, how you'll find them, what it costs, and what makes you different. It helps you think clearly before spending.` },
-            { word: `viable`,        definition: `Capable of working or succeeding — a viable business is one where the numbers, the market, and the problem all line up well enough to have a realistic chance of success.`,                                audioPrompt: `Viable — capable of working or succeeding. A viable business is one where the numbers, the market, and the problem all line up well enough to have a realistic chance of success.` },
+            { word: 'business plan', definition: 'A document that answers the key questions about a business idea before you start. Reveals gaps while they\'re still cheap to fix.', audioPrompt: 'Business plan — a document that answers the key questions about a business idea before you start. Reveals gaps while they\'re still cheap to fix.' },
+            { word: 'viable',        definition: 'Capable of working or succeeding. A business plan tests whether an idea is actually viable — before you invest in it.', audioPrompt: 'Viable — capable of working or succeeding. A business plan tests whether an idea is actually viable, before you invest in it.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Key Sections of a Business Plan`,
+          totalSections: 6,
+          headline:      'Six Key Questions',
           paragraphs: [
-            `A simple business plan covers six key areas. The Business Idea section answers: what do you sell, and what problem does it solve? The Target Market section answers: who exactly are your customers, how old are they, what do they care about, where do they spend time? These two sections are the foundation — without them, the rest of the plan has nothing to build on.`,
-            `The Competition section asks: who else is solving this problem, and what makes you different? The Marketing Plan asks: how will potential customers discover your business — through social media, word of mouth, local flyers, or something else? The Financial Plan asks: how much does it cost to start, what will you charge, how many sales do you need to break even?`,
-            `Finally, Action Steps: what will you do first, second, and third? Concrete next steps turn a plan from theory into motion. Each section reveals a different dimension of whether the idea is ready. Together, they answer the question every entrepreneur must honestly face before spending a dollar: is this actually going to work?`,
+            'A simple business plan answers six questions.',
+            'What do you sell? Who buys it? Who else is doing this? How will customers find you? What does it all cost? And what are your first three steps?',
           ],
-          image:        '/explorer-assets/money-business/l17-magazine-key-sections.png',
-          imageCaption: `The six key sections — Business Idea, Target Market, Competition, Marketing, Financial Plan, and Action Steps`,
+          image:        '/explorer-assets/money-business/l17-s2-six-questions.png',
+          imageCaption: 'Six questions. Answer all six clearly, and you have a plan that can guide a real business.',
           vocab: [
-            { word: `target market`,  definition: `The specific group of people most likely to buy your product — defined by their age, interests, habits, and needs. A focused target market makes every other part of the plan clearer.`, audioPrompt: `Target market — the specific group of people most likely to buy your product. Defined by their age, interests, habits, and needs. A focused target market makes every other part of the plan clearer.` },
-            { word: `competition`,    definition: `Other businesses or products that solve the same problem you're addressing — understanding your competition helps you define what makes your solution different and better.`,               audioPrompt: `Competition — other businesses or products that solve the same problem you're addressing. Understanding your competition helps you define what makes your solution different and better.` },
+            { word: 'structure', definition: 'An organized way of arranging things. Every good business plan has structure — the same six questions in the same order.', audioPrompt: 'Structure — an organized way of arranging things. Every good business plan has structure: the same six questions in the same order.' },
+            { word: 'clarity',   definition: 'Being clear and easy to understand. Clarity is what makes a plan useful — confusion makes a plan worthless.', audioPrompt: 'Clarity — being clear and easy to understand. Clarity is what makes a plan useful; confusion makes a plan worthless.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Test Before You Invest`,
+          totalSections: 6,
+          headline:      'The Idea and the Market',
           paragraphs: [
-            `The best business plans include a testing phase — a deliberate step before spending significant money on inventory, a website, or equipment. Testing means putting a real version of your idea in front of real people and watching what happens. Not asking friends if it sounds cool. Actually making something and seeing if anyone will pay for it.`,
-            `This might mean making five of your product and trying to sell them. Or offering your service to three people you don't know well and seeing if they'll pay your full price. Or running a very small online campaign to see if anyone clicks through. Whatever form it takes, the goal is the same: get real data about real customer behaviour before you've made a large commitment.`,
-            `A business plan should be a living document — not a finished product you write once and file away. Update it every time you learn something new from testing and customer conversations. The plan that gets you to your first customer will look different from the plan you use to get your hundredth. That evolution isn't a sign of failure — it's a sign of a business that's learning and adapting.`,
+            'First two questions: what do you sell, and who buys it?',
+            'A clear answer to both is the foundation of the whole plan. If you can\'t explain those in two sentences each, you\'re not ready to start.',
           ],
-          image:        '/explorer-assets/money-business/l17-magazine-test-first.png',
-          imageCaption: `Test before you invest — real feedback from real people is worth more than any assumption, no matter how confident you feel`,
+          image:        '/explorer-assets/money-business/l17-s3-offering-and-market.png',
+          imageCaption: 'The offering and the audience. Get these two crystal-clear before anything else.',
           vocab: [
-            { word: `prototype`,         definition: `An early test version of a product, built to gather real feedback before investing in full production — prototypes are built to be improved, not to be perfect.`,                      audioPrompt: `Prototype — an early test version of a product, built to gather real feedback before investing in full production. Prototypes are built to be improved, not to be perfect.` },
-            { word: `living document`,   definition: `A plan or document that is regularly updated as new information is learned — the best business plans are living documents that evolve with the business.`,                           audioPrompt: `Living document — a plan or document that is regularly updated as new information is learned. The best business plans are living documents that evolve with the business.` },
+            { word: 'offering',      definition: 'What you\'re selling — your product or service. The clearer your offering, the easier it is to explain.', audioPrompt: 'Offering — what you\'re selling: your product or service. The clearer your offering, the easier it is to explain.' },
+            { word: 'target market', definition: 'The specific group of people most likely to buy your offering. Defined by their age, interests, habits, and needs.', audioPrompt: 'Target market — the specific group of people most likely to buy your offering. Defined by their age, interests, habits, and needs.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Keep It Simple`,
+          totalSections: 6,
+          headline:      'Competition and Money',
           paragraphs: [
-            `A great business plan doesn't have to be long. In fact, length is often a sign of unclear thinking — when you truly understand your business, you can explain it concisely. Some of the most successful companies were built from plans that fit on a single page or even a single index card. What matters is not the word count but the clarity of the answers.`,
-            `The test of a good plan is simple: can you explain your business idea clearly and compellingly to someone who knows nothing about it in five minutes or less? If yes, the plan is solid enough to start. If you find yourself struggling to explain what you sell, who buys it, or why anyone would choose you — that confusion signals that more thinking, not more writing, is needed.`,
-            `Simplicity also has a practical advantage: a short plan is one you'll actually use. Long documents get filed. One-page plans get pinned to walls, reviewed weekly, and updated regularly. The plan is a tool, not an achievement. It exists to help you act — not to impress anyone who might read it.`,
+            'Next questions: Who already solves this problem, and what makes you different? Then: how will customers discover you?',
+            'Finally, the numbers. How much to start? What\'s your price? How many sales to break even? A plan without numbers is just a wish.',
           ],
-          image:        '/explorer-assets/money-business/l17-magazine-keep-simple.png',
-          imageCaption: `Keep it simple — a one-page plan that's actually used beats a fifty-page plan that sits in a drawer`,
+          image:        '/explorer-assets/money-business/l17-s4-competition-money.png',
+          imageCaption: 'The harder questions. Competitors, marketing, and money — where ideas meet reality.',
           vocab: [
-            { word: `startup`,   definition: `A new business in its early stages — typically small, testing its idea, and not yet generating consistent profit. Startups are defined by uncertainty and rapid learning.`,                                           audioPrompt: `Startup — a new business in its early stages. Typically small, testing its idea, and not yet generating consistent profit. Startups are defined by uncertainty and rapid learning.` },
-            { word: `pitch`,     definition: `A short, clear explanation of a business idea designed to persuade a listener — investors, customers, or partners. A strong pitch answers what the problem is, what the solution is, and why you.`, audioPrompt: `Pitch — a short, clear explanation of a business idea designed to persuade a listener. Investors, customers, or partners. A strong pitch answers what the problem is, what the solution is, and why you.` },
+            { word: 'competition', definition: 'Other businesses solving the same problem you are. Understanding competition tells you what makes you different.', audioPrompt: 'Competition — other businesses solving the same problem you are. Understanding competition tells you what makes you different.' },
+            { word: 'break-even',  definition: 'The point where revenue equals costs. Knowing your break-even tells you exactly what success looks like.', audioPrompt: 'Break-even — the point where revenue equals costs. Knowing your break-even tells you exactly what success looks like.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Test Before You Invest',
+          paragraphs: [
+            'Before spending real money, test the idea. Make 5 of your product and try to sell them. Offer your service to 3 strangers.',
+            'Not asking friends if it sounds cool — real people, paying real money. That\'s the only data that matters.',
+          ],
+          image:        '/explorer-assets/money-business/l17-s5-test-first.png',
+          imageCaption: 'Friends will say nice things. Strangers paying money tell you the truth.',
+          vocab: [
+            { word: 'testing',    definition: 'Trying something small to see if it works before going big. Cheap, fast, and often saves you from a huge mistake.', audioPrompt: 'Testing — trying something small to see if it works before going big. Cheap, fast, and often saves you from a huge mistake.' },
+            { word: 'validation', definition: 'Getting proof from real people that your idea actually works. Money paid is the strongest form of validation.', audioPrompt: 'Validation — getting proof from real people that your idea actually works. Money paid is the strongest form of validation.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Keep It Simple, Keep It Living',
+          paragraphs: [
+            'A great plan can fit on one page. Long plans are usually a sign of unclear thinking.',
+            'And the plan should KEEP changing. Update it as you learn. The plan that got you to customer one will look different from the one that gets you to customer 100.',
+          ],
+          image:        '/explorer-assets/money-business/l17-s6-living-plan.png',
+          imageCaption: 'One page beats fifty. And a plan that keeps updating beats one that sits in a drawer.',
+          vocab: [
+            { word: 'concise', definition: 'Short and to the point. Clear thinking is concise thinking. Long plans usually hide confusion.', audioPrompt: 'Concise — short and to the point. Clear thinking is concise thinking. Long plans usually hide confusion.' },
+            { word: 'iterate', definition: 'To repeat and improve. Good business plans iterate — they evolve as the business learns what works.', audioPrompt: 'Iterate — to repeat and improve. Good business plans iterate; they evolve as the business learns what works.' },
           ],
         },
 
@@ -101,10 +129,10 @@ const moneybusiness_explorer_l17_screens = {
           guideText:     `A business plan is made up of distinct sections, each answering a different critical question. Match each question to the section of the plan where it belongs — and you'll understand the full structure of a business plan.`,
           columnHeaders: [`The Planning Question`, `Which Section?`],
           items: [
-            { image: 'l17-game-what-am-i-selling.png',    label: `"What problem am I solving, and exactly what product or service am I selling to solve it?"`,                                                  correctMatch: 'business-idea',   objectPosition: 'center 50%', matchPhrase: `Business Idea! Every business plan starts here — a clear statement of the problem you're solving and the product or service you offer. If you can't write this in two sentences, the rest of the plan falls apart. Clarity about what you're building is the foundation everything else rests on.` },
-            { image: 'l17-game-who-are-customers.png',    label: `"Who are my ideal customers, what do they care about, and where do they spend their time?"`,                                                 correctMatch: 'target-market',   objectPosition: 'center 50%', matchPhrase: `Target Market! Knowing exactly who you're selling to is the second piece of every business plan. A business that tries to reach everyone usually reaches no one. Defining your target market precisely — their age, habits, and problems — helps you design the right product and reach the right people.` },
-            { image: 'l17-game-how-find-customers.png',   label: `"How will I make potential customers aware that my business exists — through social media, word of mouth, or other channels?"`,            correctMatch: 'marketing-plan',  objectPosition: 'center 50%', matchPhrase: `Marketing Plan! A great product that nobody knows about is a business nobody buys from. The marketing plan answers how people will discover you. It doesn't have to be expensive — word of mouth, a strong social presence, or a clever local campaign can be as powerful as paid advertising for an early business.` },
-            { image: 'l17-game-how-much-cost.png',        label: `"How much money do I need to start, what will I charge, and how long before the business makes a profit?"`,                                  correctMatch: 'financial-plan',  objectPosition: 'center 50%', matchPhrase: `Financial Plan! The financial plan is where ideas meet reality. How much does it cost to start? What price will you charge? How many sales do you need to break even? These numbers tell you if the business is viable before you spend a dollar. A plan without numbers is not a plan — it's a wish.` },
+            { image: 'l17-game-what-am-i-selling.png',  label: `"What problem am I solving, and exactly what product or service am I selling to solve it?"`,                                                  correctMatch: 'business-idea',   objectPosition: 'center 50%', matchPhrase: `Business Idea! Every business plan starts here — a clear statement of the problem you're solving and the product or service you offer. If you can't write this in two sentences, the rest of the plan falls apart. Clarity about what you're building is the foundation everything else rests on.` },
+            { image: 'l17-game-who-are-customers.png',  label: `"Who are my ideal customers, what do they care about, and where do they spend their time?"`,                                                 correctMatch: 'target-market',   objectPosition: 'center 50%', matchPhrase: `Target Market! Knowing exactly who you're selling to is the second piece of every business plan. A business that tries to reach everyone usually reaches no one. Defining your target market precisely — their age, habits, and problems — helps you design the right product and reach the right people.` },
+            { image: 'l17-game-how-find-customers.png', label: `"How will I make potential customers aware that my business exists — through social media, word of mouth, or other channels?"`,            correctMatch: 'marketing-plan',  objectPosition: 'center 50%', matchPhrase: `Marketing Plan! A great product that nobody knows about is a business nobody buys from. The marketing plan answers how people will discover you. It doesn't have to be expensive — word of mouth, a strong social presence, or a clever local campaign can be as powerful as paid advertising for an early business.` },
+            { image: 'l17-game-how-much-cost.png',      label: `"How much money do I need to start, what will I charge, and how long before the business makes a profit?"`,                                  correctMatch: 'financial-plan',  objectPosition: 'center 50%', matchPhrase: `Financial Plan! The financial plan is where ideas meet reality. How much does it cost to start? What price will you charge? How many sales do you need to break even? These numbers tell you if the business is viable before you spend a dollar. A plan without numbers is not a plan — it's a wish.` },
           ],
           buckets: [
             { id: 'business-idea',  label: `💡 Business Idea`,   color: '#60A5FA' },
@@ -186,12 +214,14 @@ const moneybusiness_explorer_l17_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L17] Loaded: "Making a Simple Business Plan" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l17-magazine-why-plan.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l17-magazine-key-sections.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l17-magazine-test-first.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l17-magazine-keep-simple.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L17] why-plan: ${r1.ok}, key-sections: ${r2.ok}, test-first: ${r3.ok}, keep-simple: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l17-s1-plan-document.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l17-s2-six-questions.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l17-s3-offering-and-market.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l17-s4-competition-money.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l17-s5-test-first.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l17-s6-living-plan.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L17] plan-document: ${r1.ok}, six-questions: ${r2.ok}, offering-and-market: ${r3.ok}, competition-money: ${r4.ok}, test-first: ${r5.ok}, living-plan: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L17] Could not verify image assets — network check failed');
   });
