@@ -477,8 +477,13 @@ export default function ExplorerLessonPlayer() {
     prewarmAudio(text).then(result => {
       if (result?.blobUrl) {
         console.log('[PREWARM] Welcome audio ready — tap cue active');
-        setWelcomeReady(true);
+      } else {
+        console.log('[PREWARM] Welcome audio unavailable — showing tap cue anyway');
       }
+      setWelcomeReady(true);
+    }).catch(() => {
+      console.log('[PREWARM] Welcome audio fetch failed — showing tap cue anyway');
+      setWelcomeReady(true);
     });
 
     // Prewarm first content screen (magazine or story-beat) in parallel — fire-and-forget.
