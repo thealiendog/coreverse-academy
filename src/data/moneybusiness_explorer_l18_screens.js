@@ -23,73 +23,101 @@ const moneybusiness_explorer_l18_screens = {
           guideText: `People talk about "the stock market going up" or "crashing" like it's some mysterious force. But the stock market is actually a pretty simple idea — it's just a giant market where people buy and sell tiny pieces of companies.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is a Stock?`,
+          totalSections: 6,
+          headline:      'What Is a Stock?',
           paragraphs: [
-            `A stock — also called a share — is a tiny piece of ownership in a company. When a company wants to raise money to grow, it can split itself into millions of small pieces and sell those pieces to the public. Each piece is a share. If a company has issued 1,000,000 shares and you own 1, you own one one-millionth of it.`,
-            `Own any shares in a company and you are technically a part-owner of it. That might feel abstract when the company is enormous and your holding is tiny — but the principle is real. If the company grows and becomes more profitable, your share typically becomes worth more. If the company struggles, your share can lose value.`,
-            `This is the fundamental deal behind every stock: you give a company money now, and in return you get a piece of its future success. The company gets capital to invest in growth. You get the possibility of sharing in that growth. It's a two-way bet — and understanding that bet is the foundation of everything else in investing.`,
+            'A stock — also called a share — is a tiny piece of ownership in a company. When a company wants to raise money to grow, it splits itself into millions of small pieces and sells them to the public.',
+            'Each piece is a share. Own one share of a company that has issued one million shares, and you own one one-millionth of it. Small — but real.',
           ],
-          image:        '/explorer-assets/money-business/l18-magazine-what-is-stock.png',
-          imageCaption: `A stock — a tiny piece of ownership in a company that rises in value when the company succeeds`,
+          image:        '/explorer-assets/money-business/l18-s1-stock-fragments.png',
+          imageCaption: 'A stock — a tiny piece of ownership in a company that rises in value when the company succeeds.',
           vocab: [
-            { word: `stock`,       definition: `A tiny piece of ownership in a company — also called a share. Owning stock means you own part of that company and share in its successes and setbacks.`,                                   audioPrompt: `Stock — a tiny piece of ownership in a company, also called a share. Owning stock means you own part of that company and share in its successes and setbacks.` },
-            { word: `shareholder`, definition: `A person who owns one or more shares in a company — shareholders are part-owners and benefit when the company grows in value.`,                                                            audioPrompt: `Shareholder — a person who owns one or more shares in a company. Shareholders are part-owners and benefit when the company grows in value.` },
+            { word: 'stock', definition: 'A tiny piece of ownership in a company — also called a share. Owning stock means you own part of that company and share in its successes and setbacks.', audioPrompt: 'Stock — a tiny piece of ownership in a company, also called a share. Owning stock means you own part of that company and share in its successes and setbacks.' },
+            { word: 'share', definition: 'One unit of stock in a company. The more shares you own, the larger your ownership stake in that company.', audioPrompt: 'Share — one unit of stock in a company. The more shares you own, the larger your ownership stake in that company.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `What Is the Stock Market?`,
+          totalSections: 6,
+          headline:      'The Deal',
           paragraphs: [
-            `The stock market is the system where buyers and sellers trade stocks. It's not one physical place — it's a network of exchanges, electronic systems, and participants all connected. The two largest stock exchanges in the United States are the New York Stock Exchange (NYSE) and NASDAQ. Together they list thousands of companies whose shares can be bought and sold.`,
-            `Stock prices update constantly during trading hours — from the moment markets open to the moment they close. Millions of trades happen every minute, each one reflecting someone's decision to buy or sell. Every time someone decides a company is worth more, they buy shares. Every time someone thinks a company is worth less, they sell. The price you see is the result of all those simultaneous decisions happening at once.`,
-            `This is supply and demand at its most visible and fast-moving. When more people want to buy a stock than sell it, the price goes up. When more people want to sell than buy, it goes down. The market is not a mysterious force — it's millions of people making individual decisions about value, all at the same time.`,
+            'Here\'s the deal behind every stock: you give a company money now, and in return you get a piece of its future success.',
+            'The company gets capital to invest in growth. You become a shareholder — a part-owner who benefits if the company does well, and loses if it doesn\'t.',
           ],
-          image:        '/explorer-assets/money-business/l18-magazine-stock-market.png',
-          imageCaption: `The stock market — a network of exchanges where millions of buyers and sellers trade ownership in companies every day`,
+          image:        '/explorer-assets/money-business/l18-s2-the-deal.png',
+          imageCaption: 'A two-way bet — the company gets capital, you get a share of whatever comes next.',
           vocab: [
-            { word: `stock exchange`, definition: `An organised marketplace where stocks are bought and sold — exchanges like the NYSE and NASDAQ provide the infrastructure that allows buyers and sellers to find each other.`, audioPrompt: `Stock exchange — an organised marketplace where stocks are bought and sold. Exchanges like the NYSE and NASDAQ provide the infrastructure that allows buyers and sellers to find each other.` },
-            { word: `trading`,        definition: `The buying and selling of stocks or other investments — active trading happens continuously during market hours as investors react to news, data, and changing views of a company's value.`, audioPrompt: `Trading — the buying and selling of stocks or other investments. Active trading happens continuously during market hours as investors react to news, data, and changing views of a company's value.` },
+            { word: 'shareholder', definition: 'A person who owns one or more shares in a company — shareholders are part-owners and benefit when the company grows in value.', audioPrompt: 'Shareholder — a person who owns one or more shares in a company. Shareholders are part-owners and benefit when the company grows in value.' },
+            { word: 'capital',     definition: 'Money used to start or grow a business. Companies raise capital by selling shares to investors who want a piece of the future.', audioPrompt: 'Capital — money used to start or grow a business. Companies raise capital by selling shares to investors who want a piece of the future.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Why Do Stocks Go Up and Down?`,
+          totalSections: 6,
+          headline:      'What Is the Stock Market?',
           paragraphs: [
-            `Stock prices move based on what investors collectively believe a company is worth. That belief shifts constantly with new information: company profits, new products, economic conditions, global events, leadership changes. Good news about a company's growth often pushes its stock up. Bad news — falling profits, a product failure, a scandal — often pushes it down.`,
-            `In the short term, stock prices can seem almost random. News, rumours, and emotion all influence prices in ways that are nearly impossible to predict from day to day. Professional investors who try to predict short-term movements are usually wrong more often than they're right. This is why short-term trading is considered far riskier than long-term investing.`,
-            `In the long term, the overall stock market has a very different record. Across every ten-, twenty-, or thirty-year period in modern history, the overall market has gone up — even accounting for crashes, recessions, and dramatic downturns. Short-term: unpredictable. Long-term: historically upward. That difference is the single most important thing to understand about the stock market.`,
+            'The stock market is where buyers and sellers trade stocks. It\'s not one physical place — it\'s a network of exchanges and electronic systems all connected. The two largest in the US are the NYSE and NASDAQ.',
+            'Prices update constantly during trading hours. Millions of trades happen every minute, each one reflecting someone\'s decision to buy or sell.',
           ],
-          image:        '/explorer-assets/money-business/l18-magazine-up-and-down.png',
-          imageCaption: `Why prices move — good news pushes stocks up, bad news pushes them down, but the long-term direction has always been up`,
+          image:        '/explorer-assets/money-business/l18-s3-stock-market-network.png',
+          imageCaption: 'The stock market — a network where millions of buyers and sellers trade ownership in companies every day.',
           vocab: [
-            { word: `investor`,  definition: `A person who puts money into stocks, businesses, or other assets with the goal of earning a return over time — investors accept risk in exchange for the possibility of growth.`,                audioPrompt: `Investor — a person who puts money into stocks, businesses, or other assets with the goal of earning a return over time. Investors accept risk in exchange for the possibility of growth.` },
-            { word: `volatility`, definition: `The degree to which a stock or market price moves up and down — high volatility means large, unpredictable swings. Stocks are more volatile in the short term than over long periods.`, audioPrompt: `Volatility — the degree to which a stock or market price moves up and down. High volatility means large, unpredictable swings. Stocks are more volatile in the short term than over long periods.` },
+            { word: 'stock exchange',  definition: 'An organised marketplace where stocks are bought and sold — exchanges like the NYSE and NASDAQ connect buyers and sellers.', audioPrompt: 'Stock exchange — an organised marketplace where stocks are bought and sold. Exchanges like the NYSE and NASDAQ connect buyers and sellers.' },
+            { word: 'public company', definition: 'A company that has sold shares to the public and is listed on a stock exchange. Anyone can buy a piece of a public company.', audioPrompt: 'Public company — a company that has sold shares to the public and is listed on a stock exchange. Anyone can buy a piece of a public company.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Why Young People Should Care`,
+          totalSections: 6,
+          headline:      'Why Prices Move',
           paragraphs: [
-            `The earlier you start investing, the more time your money has to grow. This is the core of a concept called compound interest — earning returns not just on your original investment, but on all the previous returns as well. Time is the variable that makes compound interest so powerful. And young people have more of it than anyone.`,
-            `$1,000 invested at age 10, growing at a 10% average annual return, becomes roughly $28,000 by age 55 — without adding a single additional dollar. The same $1,000 invested at age 35 becomes only about $4,000 by age 55. Same amount of money. Same return. The only difference is 25 years. Time, not genius, is the most powerful ingredient in building wealth through the stock market.`,
-            `The stock market rewards patience more than skill. The investors who consistently outperform aren't necessarily smarter — they're simply willing to stay invested for longer than everyone else. Understanding this early doesn't just give you a financial head start. It changes how you think about money, time, and the relationship between them.`,
+            'Stock prices move based on what investors believe a company is worth. That belief shifts with every piece of new information — profits, new products, economic news, leadership changes.',
+            'Good news pushes prices up. Bad news pushes them down. Every price you see is the result of millions of people making buy-or-sell decisions at once.',
           ],
-          image:        '/explorer-assets/money-business/l18-magazine-start-young.png',
-          imageCaption: `Why starting young matters — time in the market is the single most powerful factor in building long-term wealth`,
+          image:        '/explorer-assets/money-business/l18-s4-price-movement.png',
+          imageCaption: 'Every price reflects a verdict — what millions of investors collectively believe the company is worth right now.',
           vocab: [
-            { word: `compound interest`, definition: `Earning returns on both your original investment and on all your previous returns — the longer money compounds, the faster it grows. Time is the most important ingredient.`,                 audioPrompt: `Compound interest — earning returns on both your original investment and on all your previous returns. The longer money compounds, the faster it grows. Time is the most important ingredient.` },
-            { word: `return`,            definition: `The gain (or loss) made on an investment over time — expressed as a percentage of the original amount. A 10% annual return on $100 means earning $10 in the first year.`, audioPrompt: `Return — the gain or loss made on an investment over time. Expressed as a percentage of the original amount. A 10% annual return on $100 means earning $10 in the first year.` },
+            { word: 'investor', definition: 'A person who puts money into stocks or other assets with the goal of earning a return over time — investors accept risk in exchange for the possibility of growth.', audioPrompt: 'Investor — a person who puts money into stocks or other assets with the goal of earning a return over time. Investors accept risk in exchange for the possibility of growth.' },
+            { word: 'demand',   definition: 'How much buyers want a stock. When demand is high and more people want to buy than sell, the price goes up.', audioPrompt: 'Demand — how much buyers want a stock. When demand is high and more people want to buy than sell, the price goes up.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Short-Term Chaos, Long-Term Up',
+          paragraphs: [
+            'In the short term, stock prices can seem almost random. News, rumours, and emotion all move prices in ways that are nearly impossible to predict day to day.',
+            'But zoom out. Across every ten-, twenty-, or thirty-year period in modern history, the overall market has gone up — even after crashes, recessions, and dramatic drops.',
+          ],
+          image:        '/explorer-assets/money-business/l18-s5-long-term-arc.png',
+          imageCaption: 'Short-term: unpredictable. Long-term: historically upward. That difference is everything.',
+          vocab: [
+            { word: 'volatility', definition: 'The degree to which a price moves up and down — high volatility means large, unpredictable swings. Stocks are more volatile in the short term than over long periods.', audioPrompt: 'Volatility — the degree to which a price moves up and down. High volatility means large, unpredictable swings. Stocks are more volatile in the short term than over long periods.' },
+            { word: 'long-term',  definition: 'Holding investments over many years rather than trading frequently. Long-term investors have historically been rewarded more consistently than short-term traders.', audioPrompt: 'Long-term — holding investments over many years rather than trading frequently. Long-term investors have historically been rewarded more consistently than short-term traders.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Time Is Your Superpower',
+          paragraphs: [
+            '$1,000 invested at age 10, growing at a 10% average annual return, becomes roughly $28,000 by age 55 — without adding another dollar. The same $1,000 invested at age 35 becomes only about $4,000.',
+            'Same money. Same return. The only difference is time. Young people have more of it than anyone — and that\'s the most powerful investing advantage there is.',
+          ],
+          image:        '/explorer-assets/money-business/l18-s6-compound-snowball.png',
+          imageCaption: 'Time is the most powerful ingredient in wealth-building — and young people have more of it than anyone.',
+          vocab: [
+            { word: 'compound interest', definition: 'Earning returns on both your original investment and all your previous returns — the longer money compounds, the faster it grows.', audioPrompt: 'Compound interest — earning returns on both your original investment and all your previous returns. The longer money compounds, the faster it grows.' },
+            { word: 'return',            definition: 'The gain made on an investment over time — expressed as a percentage. A 10% annual return on $100 means earning $10 in the first year.', audioPrompt: 'Return — the gain made on an investment over time, expressed as a percentage. A 10% annual return on $100 means earning $10 in the first year.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const moneybusiness_explorer_l18_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L18] Loaded: "The Stock Market: Basics" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l18-magazine-what-is-stock.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l18-magazine-stock-market.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l18-magazine-up-and-down.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l18-magazine-start-young.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L18] what-is-stock: ${r1.ok}, stock-market: ${r2.ok}, up-and-down: ${r3.ok}, start-young: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l18-s1-stock-fragments.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l18-s2-the-deal.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l18-s3-stock-market-network.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l18-s4-price-movement.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l18-s5-long-term-arc.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l18-s6-compound-snowball.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L18] stock-fragments: ${r1.ok}, the-deal: ${r2.ok}, stock-market-network: ${r3.ok}, price-movement: ${r4.ok}, long-term-arc: ${r5.ok}, compound-snowball: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L18] Could not verify image assets — network check failed');
   });
