@@ -23,73 +23,101 @@ const cosmos_explorer_l13_screens = {
           guideText: `People sometimes say "it's cold today, so global warming must be fake." But that confuses two completely different things: weather and climate. Understanding the difference between them is one of the most important scientific literacy skills you can have.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Weather: What's Happening Right Now`,
+          totalSections: 6,
+          headline:      `Weather Is Now`,
           paragraphs: [
-            `Weather is the current condition of the atmosphere — the temperature, humidity, wind speed, cloud cover, and precipitation at a specific place and time. Weather changes constantly. It can be sunny one hour and raining the next. It varies enormously from one place to another even on the same day.`,
-            `The atmosphere is extraordinarily complex — millions of interacting variables of temperature, pressure, moisture, and wind, all influencing each other simultaneously. This complexity is why weather forecasts become less accurate the further out they go. A 3-day forecast is fairly reliable. A 10-day forecast is a rough guide. A 30-day forecast is little better than a statistical average.`,
-            `Weather is what you experience directly — the rain soaking your jacket, the wind lifting your hat, the heat of a summer afternoon. It's personal, immediate, and constantly changing. And it tells you almost nothing about climate.`,
+            `Weather is the current condition of the atmosphere — the temperature, wind, clouds, and rain at a specific place and time.`,
+            `Weather changes constantly. It can be sunny one hour and raining the next. It varies enormously from one place to another even on the same day.`,
           ],
-          image:        '/explorer-assets/cosmos/l13-magazine-weather.png',
-          imageCaption: `Weather — the current atmospheric conditions at a specific place and time, constantly changing`,
+          image:        '/explorer-assets/cosmos/l13-s1-weather.png',
+          imageCaption: `Weather — what's happening in the sky right now, in this exact place`,
           vocab: [
-            { word: 'weather',     definition: `The current condition of the atmosphere at a specific place and time — including temperature, humidity, wind, cloud cover, and precipitation. Weather changes constantly.`,  audioPrompt: `Weather — the current condition of the atmosphere at a specific place and time, including temperature, humidity, wind, cloud cover, and precipitation. Weather changes constantly.` },
-            { word: 'atmosphere',  definition: `The layer of gases surrounding Earth — it is the system where weather takes place, driven by temperature, pressure, moisture, and wind all interacting at once.`,             audioPrompt: `Atmosphere — the layer of gases surrounding Earth. It is the system where weather takes place, driven by temperature, pressure, moisture, and wind all interacting at once.` },
+            { word: 'weather',    definition: `The current condition of the atmosphere at a specific place and time — temperature, wind, clouds, and rain. Weather changes constantly.`, audioPrompt: `Weather — the current condition of the atmosphere at a specific place and time: temperature, wind, clouds, and rain. Weather changes constantly.` },
+            { word: 'atmosphere', definition: `The layer of gases surrounding Earth — the system where all weather takes place.`, audioPrompt: `Atmosphere — the layer of gases surrounding Earth, the system where all weather takes place.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Climate: The Long-Term Pattern`,
+          totalSections: 6,
+          headline:      `Climate Is the Pattern`,
           paragraphs: [
-            `Climate is the average pattern of weather in a region over a long period — typically 30 years or more. Climate tells you what weather is normal and expected in a place across seasons and years. A desert has a dry climate. A rainforest has a wet, warm climate. A coastal city has a mild, moderate climate.`,
-            `Here's the classic way to remember the difference: "Climate is what you expect; weather is what you get." If you're planning to move to a city, you'd look up its climate. When you step outside in the morning, you're dealing with weather.`,
-            `Climate determines where crops can grow, what plants and animals live in a region, how buildings are designed, and how people dress and live. The Amazon rainforest, the Sahara Desert, and the Arctic tundra all exist because of the climates that shaped them over millions of years.`,
+            `Climate is the average pattern of weather in a region over a long period — typically 30 years or more.`,
+            `A desert has a dry climate. A rainforest has a wet, warm climate. A coastal city has a mild, moderate climate.`,
           ],
-          image:        '/explorer-assets/cosmos/l13-magazine-climate.png',
-          imageCaption: `Climate — the long-term average pattern of weather in a region, shaping ecosystems and human life`,
+          image:        '/explorer-assets/cosmos/l13-s2-climate-pattern.png',
+          imageCaption: `Climate is the long-term pattern of weather — averaged across decades`,
           vocab: [
-            { word: 'climate',       definition: `The average pattern of weather in a region over a long period — typically 30 or more years. Climate tells you what weather conditions are typical and expected in a place.`, audioPrompt: `Climate — the average pattern of weather in a region over a long period, typically 30 or more years. Climate tells you what weather conditions are typical and expected in a place.` },
-            { word: 'precipitation', definition: `Any form of water falling from the atmosphere to Earth's surface — including rain, snow, sleet, and hail. Precipitation levels are a key characteristic of a region's climate.`,  audioPrompt: `Precipitation — any form of water falling from the atmosphere to Earth's surface, including rain, snow, sleet, and hail. Precipitation levels are a key characteristic of a region's climate.` },
+            { word: 'climate', definition: `The average pattern of weather in a region over a long period — typically 30 or more years. Climate tells you what weather to expect.`, audioPrompt: `Climate — the average pattern of weather in a region over a long period, typically 30 or more years. Climate tells you what weather to expect.` },
+            { word: 'pattern', definition: `A regular, repeating arrangement. Climate is the long-term pattern of weather in a place — what happens year after year.`, audioPrompt: `Pattern — a regular, repeating arrangement. Climate is the long-term pattern of weather in a place, what happens year after year.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `What Drives Climate?`,
+          totalSections: 6,
+          headline:      `What You Expect vs What You Get`,
           paragraphs: [
-            `Several factors determine a region's climate. Latitude — how far from the equator — is the most important. Near the equator, sunlight hits Earth's surface at a direct angle, concentrating heat and creating tropical climates. Near the poles, sunlight hits at a shallow angle and spreads over a larger area, creating cold polar climates.`,
-            `Altitude matters too — higher elevations are cooler, which is why mountains can have snow year-round even near the equator. Distance from the ocean moderates temperature — coastal regions tend to be milder than inland areas. Ocean currents carry warm or cold water across vast distances, affecting the climates of nearby coastlines.`,
-            `This is why two cities at the same latitude can have completely different climates. London and Calgary are at similar latitudes, but London has mild, rainy winters while Calgary has harsh, snowy ones. The ocean current off Britain's coast makes all the difference.`,
+            `Here's the classic way to remember the difference: "Climate is what you expect. Weather is what you get."`,
+            `If you're planning to move to a new city, you'd look up its climate. When you step outside in the morning, you're dealing with weather.`,
           ],
-          image:        '/explorer-assets/cosmos/l13-magazine-climate-drivers.png',
-          imageCaption: `What drives climate — latitude, altitude, ocean proximity, currents, and prevailing winds`,
+          image:        '/explorer-assets/cosmos/l13-s3-expect-vs-get.png',
+          imageCaption: `Climate is what you expect. Weather is what you get.`,
           vocab: [
-            { word: 'latitude', definition: `How far north or south of the equator a place is — latitude is the most important factor in determining climate, with equatorial regions being warm and polar regions cold.`,   audioPrompt: `Latitude — how far north or south of the equator a place is. Latitude is the most important factor in determining climate, with equatorial regions being warm and polar regions cold.` },
-            { word: 'altitude', definition: `The height above sea level — higher altitudes are cooler than lower ones, which is why mountains can have snow year-round even in regions that are otherwise warm near sea level.`, audioPrompt: `Altitude — the height above sea level. Higher altitudes are cooler than lower ones, which is why mountains can have snow year-round even in regions that are otherwise warm near sea level.` },
+            { word: 'average', definition: `The typical value over time. Climate is the average of weather over many, many years.`, audioPrompt: `Average — the typical value over time. Climate is the average of weather over many, many years.` },
+            { word: 'expect',  definition: `To think something will happen. Climate is what you EXPECT. Weather is what you actually GET.`, audioPrompt: `Expect — to think something will happen. Climate is what you expect. Weather is what you actually get.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Climate Zones of Earth`,
+          totalSections: 6,
+          headline:      `Latitude Matters Most`,
           paragraphs: [
-            `Earth is divided into major climate zones based on temperature and rainfall patterns. Tropical zones near the equator are warm year-round with high rainfall — home to rainforests and enormous biodiversity. Subtropical zones are hot, with distinct wet and dry seasons or very dry conditions.`,
-            `Temperate zones — where much of Europe, North America, and Asia lie — have four distinct seasons with moderate temperatures. Continental zones further inland have more extreme seasonal swings — very hot summers and very cold winters. Polar zones near the poles are cold year-round, with frozen landscapes and minimal precipitation.`,
-            `Highland zones exist wherever mountains rise — cooler and often wetter than the surrounding lowlands, they create their own microclimates. Each climate zone supports a different ecosystem and a different way of human life adapted to those conditions over thousands of years.`,
+            `Latitude — how far from the equator — is the most important factor in determining climate.`,
+            `Near the equator, sunlight hits Earth directly, creating warm tropical climates. Near the poles, sunlight hits at a shallow angle, creating cold polar climates.`,
           ],
-          image:        '/explorer-assets/cosmos/l13-magazine-climate-zones.png',
-          imageCaption: `Earth's climate zones — tropical, temperate, polar, and more, each shaping its own ecosystem`,
+          image:        '/explorer-assets/cosmos/l13-s4-latitude.png',
+          imageCaption: `Latitude determines climate — warm near the equator, cold near the poles`,
           vocab: [
-            { word: 'climate zone', definition: `A region of Earth defined by its long-term temperature and rainfall patterns — climate zones include tropical, subtropical, temperate, continental, polar, and highland.`,         audioPrompt: `Climate zone — a region of Earth defined by its long-term temperature and rainfall patterns. Climate zones include tropical, subtropical, temperate, continental, polar, and highland.` },
-            { word: 'temperate',    definition: `A climate zone with four distinct seasons and moderate temperatures — most of Europe, North America, and parts of Asia and South America have temperate climates.`, audioPrompt: `Temperate — a climate zone with four distinct seasons and moderate temperatures. Most of Europe, North America, and parts of Asia and South America have temperate climates.` },
+            { word: 'latitude', definition: `How far north or south of the equator a place is. Latitude is the biggest factor in determining a place's climate.`, audioPrompt: `Latitude — how far north or south of the equator a place is. Latitude is the biggest factor in determining a place's climate.` },
+            { word: 'equator',  definition: `The imaginary line around the middle of Earth. Places near the equator have warm tropical climates year-round.`, audioPrompt: `Equator — the imaginary line around the middle of Earth. Places near the equator have warm tropical climates year-round.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Other Climate Drivers`,
+          paragraphs: [
+            `Altitude matters too — higher elevations are cooler. That's why mountains can have snow year-round even near the equator.`,
+            `Distance from the ocean and ocean currents also shape climate. London and Calgary are at similar latitudes but have very different climates — because of the ocean.`,
+          ],
+          image:        '/explorer-assets/cosmos/l13-s5-altitude-currents.png',
+          imageCaption: `Altitude, oceans, and currents all shape climate alongside latitude`,
+          vocab: [
+            { word: 'altitude',      definition: `Height above sea level. Higher altitudes are cooler — which is why mountains can have snow even in warm regions.`, audioPrompt: `Altitude — height above sea level. Higher altitudes are cooler, which is why mountains can have snow even in warm regions.` },
+            { word: 'ocean current', definition: `A flow of water across the ocean that carries heat across vast distances — currents shape the climate of nearby coasts.`, audioPrompt: `Ocean current — a flow of water across the ocean that carries heat across vast distances. Currents shape the climate of nearby coasts.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Earth's Climate Zones`,
+          paragraphs: [
+            `Earth is divided into major climate zones. Tropical zones near the equator are warm and rainy. Temperate zones have four distinct seasons.`,
+            `Polar zones at the top and bottom of Earth are cold year-round. Each climate zone supports a different ecosystem — and a different way of life.`,
+          ],
+          image:        '/explorer-assets/cosmos/l13-s6-climate-zones.png',
+          imageCaption: `Earth's climate zones — from tropical bands to polar caps, each shaping its own world`,
+          vocab: [
+            { word: 'climate zone', definition: `A region of Earth defined by its long-term temperature and rainfall — tropical, temperate, polar, and others.`, audioPrompt: `Climate zone — a region of Earth defined by its long-term temperature and rainfall: tropical, temperate, polar, and others.` },
+            { word: 'temperate',    definition: `A climate zone with four distinct seasons and moderate temperatures. Most of Europe, North America, and parts of Asia are temperate.`, audioPrompt: `Temperate — a climate zone with four distinct seasons and moderate temperatures. Most of Europe, North America, and parts of Asia are temperate.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l13_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L13] Loaded: "Weather vs Climate" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l13-magazine-weather.png',         { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l13-magazine-climate.png',         { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l13-magazine-climate-drivers.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l13-magazine-climate-zones.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L13] weather: ${r1.ok}, climate: ${r2.ok}, climate-drivers: ${r3.ok}, climate-zones: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l13-s1-weather.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l13-s2-climate-pattern.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l13-s3-expect-vs-get.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l13-s4-latitude.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l13-s5-altitude-currents.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l13-s6-climate-zones.png',    { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L13] weather: ${r1.ok}, climate-pattern: ${r2.ok}, expect-vs-get: ${r3.ok}, latitude: ${r4.ok}, altitude-currents: ${r5.ok}, climate-zones: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L13] Could not verify image assets — network check failed');
   });
