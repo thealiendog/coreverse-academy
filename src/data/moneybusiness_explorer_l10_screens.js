@@ -23,73 +23,101 @@ const moneybusiness_explorer_l10_screens = {
           guideText: `Every adult you know has or had a job. But how does someone actually GET a job? What are employers looking for? And here's a bigger question — is a job the only way to earn money?`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is a Job?`,
           paragraphs: [
-            `A job is an agreement between two parties: you do work for a person or company, and they pay you money in exchange. Most jobs pay in one of two ways. Hourly wages pay you a set amount for each hour you work — the more hours you work, the more you earn. A salary is a fixed annual amount paid regularly, usually every two weeks, regardless of exactly how many hours you worked.`,
-            `When you have a job, the person or company paying you is your employer. You are their employee. The employer sets the work that needs doing and agrees to pay for it. The employee agrees to do the work to a required standard. This exchange — work for money — is the foundation of how most people in the world earn their income.`,
-            `Jobs come in enormous variety. A surgeon and a school bus driver both have jobs. A software engineer and a chef both have jobs. A professional athlete and a librarian both have jobs. What they share: an agreement to do specific work in exchange for specific pay. The content of the work, the pay, and the working conditions vary enormously — but the fundamental structure is the same.`,
+            `A job is an agreement: you do work for a person or company, and they pay you money in exchange.`,
+            `The person or company paying you is the employer. You are the employee. This trade — work for money — is how most adults earn their income.`,
           ],
-          image:        '/explorer-assets/money-business/l10-magazine-what-is-a-job.png',
-          imageCaption: `A job — an agreement to do work for an employer in exchange for wages or salary`,
+          image:        '/explorer-assets/money-business/l10-s1-employer-employee.png',
+          imageCaption: `A job is a trade — work for money. Employer pays. Employee works.`,
           vocab: [
-            { word: `employer`,  definition: `A person or organisation that hires workers and pays them for their work — employers create jobs, set requirements, and provide wages or salaries in exchange for employees' time and skills.`,  audioPrompt: `Employer — a person or organisation that hires workers and pays them for their work. Employers create jobs, set requirements, and provide wages or salaries in exchange for employees' time and skills.` },
-            { word: `employee`,  definition: `A person who works for an employer in exchange for pay — employees agree to do specific work to a required standard in return for wages, a salary, and often additional benefits.`,           audioPrompt: `Employee — a person who works for an employer in exchange for pay. Employees agree to do specific work to a required standard in return for wages, a salary, and often additional benefits.` },
+            { word: 'employer', definition: `A person or company that hires workers and pays them. Employers create jobs and set what the work is.`, audioPrompt: `Employer — a person or company that hires workers and pays them. Employers create jobs and set what the work is.` },
+            { word: 'employee', definition: `A person who works for an employer in exchange for pay. Employees do the work, employers do the paying.`, audioPrompt: `Employee — a person who works for an employer in exchange for pay. Employees do the work, employers do the paying.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Do You Get a Job?`,
+          totalSections: 6,
+          headline:      `Hourly vs Salary`,
           paragraphs: [
-            `Getting a job involves a specific process that most employers use. It begins with a resume — a document that summarises your skills, experience, and accomplishments. A good resume is clear, honest, and tailored to the specific job you're applying for. It's the first impression you make, often before anyone has met you in person.`,
-            `Along with the resume, many employers ask for a cover letter — a short written message explaining why you want this specific job and why you believe you'd be a strong fit for it. The cover letter is your chance to show personality and enthusiasm in a way the resume alone can't. Together, the resume and cover letter are your application package.`,
-            `If the employer finds your application interesting, they invite you to an interview — a conversation, in person or by video, where they ask questions to learn more about you. Common interview questions focus on your skills, your experience, how you handle challenges, and why you want to work there. If the interview goes well, the employer may make a job offer — a formal invitation to join, specifying your pay and start date.`,
+            `Jobs pay in one of two ways. Hourly wages pay you for each hour you work — more hours, more pay.`,
+            `A salary is a fixed annual amount paid regularly. Same paycheck whether you worked 35 hours or 50. Each has trade-offs.`,
           ],
-          image:        '/explorer-assets/money-business/l10-magazine-getting-a-job.png',
-          imageCaption: `Getting a job — resume, cover letter, interview, and offer: the four steps of the application process`,
+          image:        '/explorer-assets/money-business/l10-s2-hourly-salary.png',
+          imageCaption: `Hourly tracks each hour. Salary pays the same no matter what. Two ways jobs pay.`,
           vocab: [
-            { word: `resume`,       definition: `A document summarising a job applicant's skills, experience, and accomplishments — the first step in applying for a job, designed to show an employer why you're worth interviewing.`, audioPrompt: `Resume — a document summarising a job applicant's skills, experience, and accomplishments. The first step in applying for a job, designed to show an employer why you're worth interviewing.` },
-            { word: `interview`,    definition: `A conversation between a job applicant and an employer to determine whether the applicant is a good fit for the role — interviews assess skills, personality, and cultural fit.`,       audioPrompt: `Interview — a conversation between a job applicant and an employer to determine whether the applicant is a good fit for the role. Interviews assess skills, personality, and cultural fit.` },
+            { word: 'hourly wage', definition: `Pay calculated by the hour. Work more hours, earn more. The number on your paycheck depends on hours worked.`, audioPrompt: `Hourly wage — pay calculated by the hour. Work more hours, earn more. The number on your paycheck depends on hours worked.` },
+            { word: 'salary',      definition: `A fixed annual amount paid regularly, regardless of exact hours worked. Steady paycheck — but no extra pay for extra hours.`, audioPrompt: `Salary — a fixed annual amount paid regularly, regardless of exact hours worked. Steady paycheck, but no extra pay for extra hours.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `What Employers Actually Look For`,
+          totalSections: 6,
+          headline:      `How to Apply`,
           paragraphs: [
-            `When employers evaluate applicants, they're thinking about four things. Reliability: will this person actually show up, meet deadlines, and follow through on commitments? Skills: can this person do the work the job requires? Attitude: is this person positive, curious, and easy to work with? And problem-solving: can this person think independently and handle challenges without needing to be managed every minute?`,
-            `Here's something that surprises many people: a great attitude often beats more experience. An employer who has to choose between someone experienced but difficult to work with and someone eager, reliable, and easy to teach will very often choose the latter. Skills can be taught. Attitude is much harder to change.`,
-            `This means that even before you have significant work experience, you can already build the qualities that make employers want to hire you. Showing up on time, doing what you say you'll do, staying positive under pressure, and trying to solve problems rather than just report them — these behaviours distinguish great candidates from average ones at any level.`,
+            `Getting a job follows a specific process. You start with a resume — a document listing your skills, experience, and accomplishments.`,
+            `Then a cover letter explaining why you want this specific job. Then an interview to meet you. Then, if it all goes well, a job offer.`,
           ],
-          image:        '/explorer-assets/money-business/l10-magazine-employers-look-for.png',
-          imageCaption: `What employers look for — reliability, skills, attitude, and problem-solving, in that order of importance`,
+          image:        '/explorer-assets/money-business/l10-s3-application-flow.png',
+          imageCaption: `Resume → cover letter → interview → offer. The four steps to a job.`,
           vocab: [
-            { word: `reliability`,     definition: `Consistently doing what you say you will do, showing up when expected, and meeting your commitments — often the quality employers value most in employees at every level.`,                      audioPrompt: `Reliability — consistently doing what you say you will do, showing up when expected, and meeting your commitments. Often the quality employers value most in employees at every level.` },
-            { word: `problem-solving`, definition: `The ability to identify a challenge and work out a solution independently — employers value problem-solvers because they create less work for managers and more value for the organisation.`, audioPrompt: `Problem-solving — the ability to identify a challenge and work out a solution independently. Employers value problem-solvers because they create less work for managers and more value for the organisation.` },
+            { word: 'resume',    definition: `A document listing your skills, experience, and accomplishments. It's the first thing an employer sees — your written introduction.`, audioPrompt: `Resume — a document listing your skills, experience, and accomplishments. It's the first thing an employer sees, your written introduction.` },
+            { word: 'interview', definition: `A conversation where an employer asks you questions to decide if you're right for the job.`, audioPrompt: `Interview — a conversation where an employer asks you questions to decide if you're right for the job.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Beyond Jobs: Other Ways to Earn`,
+          totalSections: 6,
+          headline:      `What Employers Want`,
           paragraphs: [
-            `A job is one way to earn money — but it's not the only way, and it's worth knowing all your options. Starting a business means becoming your own employer. Instead of doing work for someone else's goals, you build something of your own, keep the profits, and make the decisions. This involves more risk than a job, but also more upside.`,
-            `Freelancing means doing skilled work — writing, designing, coding, consulting, photographing — for multiple clients instead of a single employer. Freelancers have more flexibility and often higher hourly rates, but they're responsible for finding their own clients and don't have the stability of a regular salary.`,
-            `Investing means putting money to work so it generates more money over time — through stocks, real estate, or other assets. Creating things — music, writing, art, online courses, software — and selling them repeatedly is another path. The most financially powerful people typically don't rely on a single income source; they build multiple streams over time. Understanding all your options early puts you ahead of most people.`,
+            `When employers hire, they look for four things. Reliability (will you show up?), skills (can you do the work?), attitude (are you positive?), and problem-solving.`,
+            `Reliability comes first. An employer can teach skills. They can't teach showing up on time.`,
           ],
-          image:        '/explorer-assets/money-business/l10-magazine-beyond-jobs.png',
-          imageCaption: `Beyond jobs — businesses, freelancing, investing, and creative work as other paths to earning`,
+          image:        '/explorer-assets/money-business/l10-s4-what-employers-want.png',
+          imageCaption: `Reliability, skills, attitude, problem-solving. Reliability matters most.`,
           vocab: [
-            { word: `freelance`,          definition: `Working independently for multiple clients or projects rather than as a permanent employee of one organisation — freelancers control their own time but find their own work.`,                        audioPrompt: `Freelance — working independently for multiple clients or projects rather than as a permanent employee of one organisation. Freelancers control their own time but find their own work.` },
-            { word: `income streams`,     definition: `Different sources of money flowing in — a salary from a job, profits from a business, and returns from investments are three separate income streams. Multiple streams reduce financial risk.`, audioPrompt: `Income streams — different sources of money flowing in. A salary from a job, profits from a business, and returns from investments are three separate income streams. Multiple streams reduce financial risk.` },
+            { word: 'reliability',     definition: `Doing what you say you will, when you said you would. The single most valuable quality in any employee.`, audioPrompt: `Reliability — doing what you say you will, when you said you would. The single most valuable quality in any employee.` },
+            { word: 'problem-solving', definition: `Figuring out solutions on your own without being told step-by-step. Employers love people who solve problems instead of just reporting them.`, audioPrompt: `Problem-solving — figuring out solutions on your own without being told step-by-step. Employers love people who solve problems instead of just reporting them.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Attitude Beats Experience`,
+          paragraphs: [
+            `Here's something that surprises most people: a great attitude often beats more experience.`,
+            `An employer choosing between an experienced grump and an eager, reliable, easy-to-teach person will often pick the latter. Skills can be taught. Attitude is much harder to change.`,
+          ],
+          image:        '/explorer-assets/money-business/l10-s5-attitude-wins.png',
+          imageCaption: `Skills can be taught. Attitude can't. Employers know this — and hire accordingly.`,
+          vocab: [
+            { word: 'attitude',   definition: `How you approach work and people. Positive, curious, willing to learn — these traits matter more than most people realize.`, audioPrompt: `Attitude — how you approach work and people. Positive, curious, willing to learn — these traits matter more than most people realize.` },
+            { word: 'experience', definition: `Time spent doing something. Experience is useful, but it isn't the only thing employers care about — and sometimes not the most important.`, audioPrompt: `Experience — time spent doing something. Experience is useful, but it isn't the only thing employers care about, and sometimes not the most important.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Beyond Jobs`,
+          paragraphs: [
+            `A job isn't the only way to earn money. You can start a business. Or freelance — work for many clients, not one employer.`,
+            `Or invest — put money to work so it grows. Or create things and sell them. The most powerful earners build many income streams.`,
+          ],
+          image:        '/explorer-assets/money-business/l10-s6-many-paths.png',
+          imageCaption: `Jobs are one path. Business, freelancing, investing, creating — all real paths too.`,
+          vocab: [
+            { word: 'freelance',     definition: `Working for multiple clients on your own instead of one employer. More flexibility, more freedom — but you find your own work.`, audioPrompt: `Freelance — working for multiple clients on your own instead of one employer. More flexibility, more freedom, but you find your own work.` },
+            { word: 'income stream', definition: `A source of money flowing in. A job is one income stream. The most financially powerful people build several streams.`, audioPrompt: `Income stream — a source of money flowing in. A job is one income stream. The most financially powerful people build several streams.` },
           ],
         },
 
@@ -186,12 +214,14 @@ const moneybusiness_explorer_l10_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L10] Loaded: "What Is a Job and How Do You Get One?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l10-magazine-what-is-a-job.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l10-magazine-getting-a-job.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l10-magazine-employers-look-for.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l10-magazine-beyond-jobs.png',        { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L10] what-is-a-job: ${r1.ok}, getting-a-job: ${r2.ok}, employers-look-for: ${r3.ok}, beyond-jobs: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l10-s1-employer-employee.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l10-s2-hourly-salary.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l10-s3-application-flow.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l10-s4-what-employers-want.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l10-s5-attitude-wins.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l10-s6-many-paths.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L10] employer-employee: ${r1.ok}, hourly-salary: ${r2.ok}, application-flow: ${r3.ok}, what-employers-want: ${r4.ok}, attitude-wins: ${r5.ok}, many-paths: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L10] Could not verify image assets — network check failed');
   });
