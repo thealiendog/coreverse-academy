@@ -23,73 +23,101 @@ const futureskills_explorer_l04_screens = {
           guideText: `In 1947, a computer at Harvard University stopped working. Engineers found the problem: a real moth was stuck inside the machine. They taped it into their logbook and wrote 'First actual case of bug being found.' That's why we call coding errors 'bugs' and fixing them 'debugging.' And debugging is one of the most important skills in all of programming.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is a Bug?`,
+          totalSections: 6,
+          headline:      'The First Bug',
           paragraphs: [
-            `A bug is any error in a program that causes it to behave incorrectly. Bugs can be tiny — a single missing character that crashes the whole program — or massive logic errors that cause wrong calculations silently, without any obvious sign that something is wrong. A program can run without crashing and still be completely wrong in what it produces, which is often the hardest kind of bug to track down.`,
-            `Some famous bugs have had enormous real-world consequences. A software bug caused a NASA spacecraft to be lost in 1999 because one engineering team used metric units and another used imperial units. Nobody caught the mismatch. A $327 million spacecraft — years of work — was destroyed over a unit conversion error in a few lines of code. Bugs are not abstract problems. They have real costs.`,
-            `This is why professional programmers spend so much time on debugging — and why it's treated as a serious discipline rather than just "fixing mistakes." The quality of a software system depends entirely on how thoroughly its bugs are found and eliminated. A program that mostly works is not the same as a program that works. In safety-critical systems, the difference can be catastrophic.`,
+            'In 1947, a Harvard computer stopped working. Engineers found a real moth stuck inside the machine.',
+            'They taped it into the logbook and wrote "First actual case of bug being found." That\'s why we call coding errors "bugs."',
           ],
-          image:        '/explorer-assets/future-skills/l04-magazine-what-is-bug.png',
-          imageCaption: `Bugs — errors that cause programs to behave incorrectly, ranging from tiny typos to logic flaws with serious real-world consequences`,
+          image:        '/explorer-assets/future-skills/l04-s1-first-bug-moth.png',
+          imageCaption: 'A literal moth caused a literal bug. The name stuck.',
           vocab: [
-            { word: `bug`,   definition: `An error in a program that causes it to behave incorrectly — bugs range from simple typos that crash programs immediately to subtle logic errors that produce wrong results without any obvious warning.`, audioPrompt: `Bug — an error in a program that causes it to behave incorrectly. Bugs range from simple typos that crash programs immediately to subtle logic errors that produce wrong results without any obvious warning.` },
-            { word: `crash`, definition: `When a program stops running unexpectedly due to an error it cannot handle — crashes are caused by bugs that the program has no instructions to recover from.`,                                              audioPrompt: `Crash — when a program stops running unexpectedly due to an error it cannot handle. Crashes are caused by bugs that the program has no instructions to recover from.` },
+            { word: 'bug',       definition: 'An error in a program that makes it behave wrong. Named after a real moth found in an early computer.', audioPrompt: 'Bug — an error in a program that makes it behave wrong. Named after a real moth found in an early computer.' },
+            { word: 'debugging', definition: 'The process of finding and fixing bugs in a program. One of the most important skills any programmer has.', audioPrompt: 'Debugging — the process of finding and fixing bugs in a program. One of the most important skills any programmer has.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Types of Bugs`,
+          totalSections: 6,
+          headline:      'What Bugs Cost',
           paragraphs: [
-            `There are three main types of bugs. Syntax errors are grammar mistakes — using the wrong spelling, punctuation, or structure in code. The computer usually catches these immediately when it tries to run the program, because the code doesn't follow the language's rules. A missing semicolon, a misspelled keyword, or a forgotten closing bracket can all cause syntax errors. They're the most common type for beginners, but also the easiest to fix once spotted.`,
-            `Logic errors are harder and more dangerous. The code runs perfectly — no syntax errors, no crash — but it produces the wrong result. It's like telling a robot to "walk forward 5 steps" when you meant "walk forward 5 meters." The robot followed the instructions perfectly. The instructions were just wrong. Logic errors require you to think carefully about what the code is actually doing versus what you intended it to do.`,
-            `Runtime errors crash the program while it's running — not when it starts, but partway through. Like trying to divide a number by zero, or accessing a file that doesn't exist. The program can't complete the instruction and has no recovery plan. Runtime errors are often caused by unexpected inputs or conditions the programmer didn't anticipate. Handling these gracefully — designing programs that recover from unexpected situations — is a hallmark of professional-grade software.`,
+            'A bug is any error that makes a program behave wrong. They can be tiny (a missing character) or massive (silent wrong calculations).',
+            'In 1999, NASA lost a $327 million spacecraft because one team used metric units and another used imperial. The mismatch wasn\'t caught. Bugs have real costs.',
           ],
-          image:        '/explorer-assets/future-skills/l04-magazine-types.png',
-          imageCaption: `Three types of bugs — syntax errors, logic errors, and runtime errors, each requiring a different approach to find and fix`,
+          image:        '/explorer-assets/future-skills/l04-s2-spacecraft-bug.png',
+          imageCaption: 'Bugs aren\'t just inconvenient. In real-world systems, they can cost millions — or lives.',
           vocab: [
-            { word: `syntax error`, definition: `A bug caused by a grammar mistake in code — like a misspelled keyword or missing punctuation. Syntax errors are usually caught immediately because the computer can't understand code that breaks the language's rules.`, audioPrompt: `Syntax error — a bug caused by a grammar mistake in code, like a misspelled keyword or missing punctuation. Syntax errors are usually caught immediately because the computer can't understand code that breaks the language's rules.` },
-            { word: `logic error`,  definition: `A bug where the code runs without crashing but produces the wrong result — logic errors happen when instructions are valid but incorrect, doing something different from what the programmer intended.`,                 audioPrompt: `Logic error — a bug where the code runs without crashing but produces the wrong result. Logic errors happen when instructions are valid but incorrect, doing something different from what the programmer intended.` },
+            { word: 'crash',       definition: 'When a program stops running unexpectedly because of an error it can\'t handle. Caused by bugs the program has no recovery plan for.', audioPrompt: 'Crash — when a program stops running unexpectedly because of an error it can\'t handle. Caused by bugs the program has no recovery plan for.' },
+            { word: 'consequence', definition: 'A result of an action. Bugs in important systems can have enormous consequences — lost money, lost data, even lost lives.', audioPrompt: 'Consequence — a result of an action. Bugs in important systems can have enormous consequences: lost money, lost data, even lost lives.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `How to Debug`,
+          totalSections: 6,
+          headline:      'Three Types of Bugs',
           paragraphs: [
-            `Professional debuggers follow a systematic process. Step one: reproduce the bug — make it happen consistently. If you can't reproduce it reliably, you can't know when you've actually fixed it. Step two: read the error message carefully. Error messages tell you what went wrong and often point to the exact line of code. Most beginners skip this step and start changing things immediately. Don't — the error message is free information.`,
-            `Step three: isolate the problem — narrow down which part of the code is causing the issue. Step four: form a hypothesis — what specifically do you think is wrong? Be precise: "I think the calculation on line 24 is using the wrong variable." Step five: test the fix. Step six: verify the fix didn't break anything else. Fixing one bug that creates three new ones is not progress.`,
-            `Each of these steps is deliberate and methodical. The whole process is designed to build understanding — not just make the error message go away. A bug fixed through understanding stays fixed. A bug "fixed" by random guessing usually returns, often in a different form. Debugging is not a sign that you wrote bad code. It's the expected process by which all code becomes good code.`,
+            'Syntax errors: grammar mistakes — wrong punctuation, misspelled keywords. Caught instantly by the computer.',
+            'Logic errors: code runs fine but produces wrong results. Dangerous. Runtime errors: program crashes partway through. Each type needs a different approach.',
           ],
-          image:        '/explorer-assets/future-skills/l04-magazine-how-to-debug.png',
-          imageCaption: `How to debug — reproduce, read the error, isolate, hypothesize, fix, verify: a systematic process that builds real understanding`,
+          image:        '/explorer-assets/future-skills/l04-s3-three-bug-types.png',
+          imageCaption: 'Syntax errors are loud and easy. Logic errors are silent and dangerous. Runtime errors strike mid-action.',
           vocab: [
-            { word: `reproduce`,  definition: `To make a bug happen consistently on demand — the first step in professional debugging. You can't confirm a fix until you can reliably reproduce the bug and verify it no longer occurs.`, audioPrompt: `Reproduce — to make a bug happen consistently on demand. The first step in professional debugging. You can't confirm a fix until you can reliably reproduce the bug and verify it no longer occurs.` },
-            { word: `hypothesis`, definition: `A specific, testable theory about what is causing a bug — forming a hypothesis focuses your debugging effort and prevents random guessing. A good hypothesis names exactly what you think is wrong and why.`, audioPrompt: `Hypothesis — a specific, testable theory about what is causing a bug. Forming a hypothesis focuses your debugging effort and prevents random guessing. A good hypothesis names exactly what you think is wrong and why.` },
+            { word: 'syntax error', definition: 'A grammar mistake in code — like a misspelled keyword or missing punctuation. Usually caught instantly.', audioPrompt: 'Syntax error — a grammar mistake in code, like a misspelled keyword or missing punctuation. Usually caught instantly.' },
+            { word: 'logic error',  definition: 'Code that runs fine but produces the wrong result. Hardest type of bug because there\'s no warning — the program just lies to you.', audioPrompt: 'Logic error — code that runs fine but produces the wrong result. Hardest type of bug because there\'s no warning; the program just lies to you.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `The Debugging Mindset`,
+          totalSections: 6,
+          headline:      'The Debugging Process',
           paragraphs: [
-            `The best programmers see bugs as puzzles, not failures. Every bug is the code telling you something you don't understand yet. When a bug appears, it means there's a gap between what you thought the code was doing and what it's actually doing. Finding that gap — and closing it — makes you a better programmer every single time. Experienced engineers actually get excited about interesting bugs because interesting bugs teach the most.`,
-            `There's a common bad habit called "shotgun debugging" — randomly changing things hoping the error message disappears. This is almost always counterproductive. It wastes time, can introduce new bugs, and — even when it "works" — leaves you with no understanding of what went wrong. If the error disappears after a random change, you still don't know why it appeared or whether it's truly fixed. Shotgun debugging doesn't build knowledge; it delays it.`,
-            `Senior engineers debug more slowly and methodically than beginners — not because they're worse, but because they've learned the value of the process. Read. Think. Hypothesize. Test. Each cycle, they understand the code a little better. The goal is not just to fix this specific bug — it's to understand the system well enough that bugs like this don't happen again. Patience and systematic thinking are the real superpowers in programming.`,
+            'Professionals follow a process. Reproduce the bug consistently. Read the error message carefully — it\'s free information.',
+            'Isolate the problem area. Form a specific hypothesis. Test the fix. Verify nothing else broke. Systematic — not random.',
           ],
-          image:        '/explorer-assets/future-skills/l04-magazine-mindset.png',
-          imageCaption: `The debugging mindset — bugs as puzzles to understand, not failures to hide; systematic thinking beats random guessing every time`,
+          image:        '/explorer-assets/future-skills/l04-s4-detective-code.png',
+          imageCaption: 'Reproduce. Read. Isolate. Hypothesize. Test. Verify. Six steps that turn debugging from luck into skill.',
           vocab: [
-            { word: `debugging`,  definition: `The systematic process of finding and fixing bugs in a program — professional debugging follows a structured approach of reproducing, isolating, hypothesizing, and testing rather than guessing.`, audioPrompt: `Debugging — the systematic process of finding and fixing bugs in a program. Professional debugging follows a structured approach of reproducing, isolating, hypothesizing, and testing rather than guessing.` },
-            { word: `systematic`, definition: `Done according to a fixed plan or method, step by step — systematic debugging means following a process deliberately rather than changing things at random and hoping the problem disappears.`,       audioPrompt: `Systematic — done according to a fixed plan or method, step by step. Systematic debugging means following a process deliberately rather than changing things at random and hoping the problem disappears.` },
+            { word: 'reproduce',  definition: 'To make a bug happen consistently on demand. The first step in fixing it — if you can\'t reproduce it, you can\'t confirm it\'s fixed.', audioPrompt: 'Reproduce — to make a bug happen consistently on demand. The first step in fixing it; if you can\'t reproduce it, you can\'t confirm it\'s fixed.' },
+            { word: 'hypothesis', definition: 'A specific, testable theory about what\'s causing the bug. Good debugging requires you to form one before changing anything.', audioPrompt: 'Hypothesis — a specific, testable theory about what\'s causing the bug. Good debugging requires you to form one before changing anything.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'No Shotgun Debugging',
+          paragraphs: [
+            'There\'s a bad habit called "shotgun debugging" — randomly changing things hoping the error disappears.',
+            'It wastes time, can introduce new bugs, and leaves you with no understanding. Bugs fixed by luck always come back.',
+          ],
+          image:        '/explorer-assets/future-skills/l04-s5-shotgun-vs-precise.png',
+          imageCaption: 'Random changes might make the error disappear. They almost never fix the actual problem.',
+          vocab: [
+            { word: 'shotgun debugging', definition: 'Randomly changing code hoping the error disappears. A bad habit that wastes time and creates new bugs.', audioPrompt: 'Shotgun debugging — randomly changing code hoping the error disappears. A bad habit that wastes time and creates new bugs.' },
+            { word: 'systematic',        definition: 'Following a clear process step by step instead of guessing. The mark of professional-grade debugging.', audioPrompt: 'Systematic — following a clear process step by step instead of guessing. The mark of professional-grade debugging.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Bugs Are Puzzles',
+          paragraphs: [
+            'The best programmers see bugs as puzzles, not failures. Every bug is the code telling you something you don\'t understand yet.',
+            'Finding that gap — between what you thought the code did and what it actually does — makes you a better programmer every time.',
+          ],
+          image:        '/explorer-assets/future-skills/l04-s6-bug-puzzle.png',
+          imageCaption: 'Every bug solved is one piece of understanding gained. That\'s why senior engineers actually enjoy interesting bugs.',
+          vocab: [
+            { word: 'puzzle',        definition: 'A problem to be solved through careful thinking. The best programmers treat every bug as a puzzle worth understanding.', audioPrompt: 'Puzzle — a problem to be solved through careful thinking. The best programmers treat every bug as a puzzle worth understanding.' },
+            { word: 'understanding', definition: 'Truly knowing how something works. The real goal of debugging — not just making the error message go away.', audioPrompt: 'Understanding — truly knowing how something works. The real goal of debugging, not just making the error message go away.' },
           ],
         },
 
@@ -101,14 +129,14 @@ const futureskills_explorer_l04_screens = {
           guideText:     `Good debugging is systematic — read the error, understand the cause, form a theory, test a fix. Shotgun debugging is random — change things and hope the error disappears. One builds knowledge. One wastes time and creates new problems. Can you tell the difference?`,
           columnHeaders: [`The Approach`, `Good Debugging or Shotgun?`],
           items: [
-            { image: 'l04-game-good1.png',     label: `Read the error message carefully and search what it means before touching any code.`,                                                       correctMatch: 'good-debugging',    objectPosition: 'center 50%', matchPhrase: `Good debugging! Reading and understanding the error message before touching anything is the single most important habit in debugging. Error messages are the computer telling you exactly what went wrong and often pointing to the exact location. Most beginners skip this step and start changing things immediately — which is how small bugs turn into large ones. The error message is free information. A professional uses it first, every time.` },
-            { image: 'l04-game-shotgun1.png',  label: `Start randomly changing parts of the code one by one until the error message goes away.`,                                                  correctMatch: 'shotgun-debugging', objectPosition: 'center 50%', matchPhrase: `Shotgun debugging! Randomly changing things doesn't fix bugs — it hides them, creates new ones, and leaves you with no understanding of what the program is actually doing. If the error disappears after a random change, you still don't know why it appeared or whether it's truly fixed. Bugs fixed by luck come back. Bugs fixed by understanding don't. Never trade one for the other.` },
-            { image: 'l04-game-good2.png',     label: `Reproduce the bug consistently, form a specific theory about what's causing it, then test one targeted fix.`,                             correctMatch: 'good-debugging',    objectPosition: 'center 50%', matchPhrase: `Good debugging! This is the professional process: reproduce consistently so you know when the fix works, form a specific hypothesis so your testing is focused, then test a single targeted change. Each step builds understanding. You're not just making the error message disappear — you're learning what the program actually does versus what you intended. That understanding is what prevents the same bug from appearing again.` },
-            { image: 'l04-game-shotgun2.png',  label: `Delete the broken section entirely and rewrite it from scratch without understanding why it failed.`,                                       correctMatch: 'shotgun-debugging', objectPosition: 'center 50%', matchPhrase: `Shotgun debugging! Deleting and rewriting without understanding why the code failed is one of the most common debugging mistakes. The bug exists because of a misunderstanding in your logic or knowledge — rewriting the code doesn't fix the misunderstanding, it just re-expresses it in new words. You'll write the same bug again, possibly in a different form. You must understand what went wrong before you can reliably fix it.` },
+            { image: 'l04-game-good1.png',    label: `Read the error message carefully and search what it means before touching any code.`,                                                       correctMatch: 'good-debugging',    objectPosition: 'center 50%', matchPhrase: `Good debugging! Reading and understanding the error message before touching anything is the single most important habit in debugging. Error messages are the computer telling you exactly what went wrong and often pointing to the exact location. Most beginners skip this step and start changing things immediately — which is how small bugs turn into large ones. The error message is free information. A professional uses it first, every time.` },
+            { image: 'l04-game-shotgun1.png', label: `Start randomly changing parts of the code one by one until the error message goes away.`,                                                  correctMatch: 'shotgun-debugging', objectPosition: 'center 50%', matchPhrase: `Shotgun debugging! Randomly changing things doesn't fix bugs — it hides them, creates new ones, and leaves you with no understanding of what the program is actually doing. If the error disappears after a random change, you still don't know why it appeared or whether it's truly fixed. Bugs fixed by luck come back. Bugs fixed by understanding don't. Never trade one for the other.` },
+            { image: 'l04-game-good2.png',    label: `Reproduce the bug consistently, form a specific theory about what's causing it, then test one targeted fix.`,                             correctMatch: 'good-debugging',    objectPosition: 'center 50%', matchPhrase: `Good debugging! This is the professional process: reproduce consistently so you know when the fix works, form a specific hypothesis so your testing is focused, then test a single targeted change. Each step builds understanding. You're not just making the error message disappear — you're learning what the program actually does versus what you intended. That understanding is what prevents the same bug from appearing again.` },
+            { image: 'l04-game-shotgun2.png', label: `Delete the broken section entirely and rewrite it from scratch without understanding why it failed.`,                                       correctMatch: 'shotgun-debugging', objectPosition: 'center 50%', matchPhrase: `Shotgun debugging! Deleting and rewriting without understanding why the code failed is one of the most common debugging mistakes. The bug exists because of a misunderstanding in your logic or knowledge — rewriting the code doesn't fix the misunderstanding, it just re-expresses it in new words. You'll write the same bug again, possibly in a different form. You must understand what went wrong before you can reliably fix it.` },
           ],
           buckets: [
-            { id: 'good-debugging',    label: `🔍 Good Debugging`,     color: '#34D399' },
-            { id: 'shotgun-debugging', label: `💥 Shotgun Debugging`,  color: '#60A5FA' },
+            { id: 'good-debugging',    label: `🔍 Good Debugging`,    color: '#34D399' },
+            { id: 'shotgun-debugging', label: `💥 Shotgun Debugging`, color: '#60A5FA' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l04_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L04] Loaded: "Debugging: Finding and Fixing Mistakes" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l04-magazine-what-is-bug.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l04-magazine-types.png',         { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l04-magazine-how-to-debug.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l04-magazine-mindset.png',       { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L04] what-is-bug: ${r1.ok}, types: ${r2.ok}, how-to-debug: ${r3.ok}, mindset: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l04-s1-first-bug-moth.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l04-s2-spacecraft-bug.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l04-s3-three-bug-types.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l04-s4-detective-code.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l04-s5-shotgun-vs-precise.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l04-s6-bug-puzzle.png',         { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L04] first-bug-moth: ${r1.ok}, spacecraft-bug: ${r2.ok}, three-bug-types: ${r3.ok}, detective-code: ${r4.ok}, shotgun-vs-precise: ${r5.ok}, bug-puzzle: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L04] Could not verify image assets — network check failed');
   });
