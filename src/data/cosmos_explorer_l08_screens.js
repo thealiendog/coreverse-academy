@@ -23,73 +23,101 @@ const cosmos_explorer_l08_screens = {
           guideText: `When a guitar string vibrates, it pushes the air around it. Those air vibrations travel to your ear, your eardrum vibrates, and somehow your brain turns all of that into the experience of music. Sound is one of the most beautiful and strange things in the universe.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is Sound?`,
           paragraphs: [
-            `Sound is a wave of vibrations moving through a medium — usually air, but also water, wood, metal, or almost any material. When something vibrates — a guitar string, a speaker, your vocal cords — it pushes the air molecules around it back and forth.`,
-            `That push creates a chain reaction: one layer of air bumps into the next, passing the energy along as a wave of compressed and stretched air travelling outward in all directions from the source. When those waves reach your ear, they make your eardrum vibrate — and your brain turns that vibration into the experience of sound.`,
-            `Everything you've ever heard was caused by something vibrating. A voice is vibrating vocal cords. Thunder is vibrating air. A drumbeat is a vibrating drum skin. Sound is the universe communicating through vibration.`,
+            `Sound is a wave of vibrations moving through a medium — usually air, but also water, wood, or metal.`,
+            `When something vibrates, it pushes the air molecules around it back and forth. That push spreads outward as a wave of sound.`,
           ],
-          image:        '/explorer-assets/cosmos/l08-magazine-what-is-sound.png',
-          imageCaption: `Sound — waves of vibration travelling through air, water, and solids to reach your ears`,
+          image:        '/explorer-assets/cosmos/l08-s1-sound-waves.png',
+          imageCaption: `Sound — waves of vibration travelling through air, water, or solid materials`,
           vocab: [
-            { word: 'sound wave',  definition: `A wave of vibrations moving through a medium — sound waves are created when something vibrates and pushes air molecules back and forth, spreading energy outward.`, audioPrompt: `Sound wave — a wave of vibrations moving through a medium. Sound waves are created when something vibrates and pushes air molecules back and forth, spreading energy outward.` },
-            { word: 'vibration',   definition: `A rapid back-and-forth movement — vibration is the source of all sound. When objects vibrate, they create sound waves that travel through the surrounding medium.`,   audioPrompt: `Vibration — a rapid back-and-forth movement. Vibration is the source of all sound. When objects vibrate, they create sound waves that travel through the surrounding medium.` },
+            { word: 'sound',  definition: `A wave of vibrations moving through a medium like air, water, or metal. Sound is how your ears hear the world.`, audioPrompt: `Sound — a wave of vibrations moving through a medium like air, water, or metal. Sound is how your ears hear the world.` },
+            { word: 'medium', definition: `The material that sound travels through — air, water, wood, or metal all work as a medium for sound.`, audioPrompt: `Medium — the material that sound travels through. Air, water, wood, or metal all work as a medium for sound.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Sound Travels`,
+          totalSections: 6,
+          headline:      `Everything That Vibrates`,
           paragraphs: [
-            `Sound needs a medium to travel through — it cannot travel through empty space. This is why space is completely silent. There are no air molecules for vibrations to push, so sound simply cannot exist there. No matter how enormous an explosion happens in space, no one can hear it.`,
-            `Sound travels at about 767 miles per hour through air — far slower than light at 186,000 miles per second. That's why you see lightning before you hear thunder. The light arrives almost instantly. The sound takes seconds to reach you.`,
-            `Sound actually travels faster through liquids than through air, and fastest through solids. In water, sound travels about four times faster than in air. This is how whales communicate — low-frequency sound travels so efficiently through ocean water that whales can hear each other across thousands of miles.`,
+            `Everything you've ever heard was caused by something vibrating.`,
+            `A voice is vibrating vocal cords. Thunder is vibrating air. A drumbeat is a vibrating drum skin. Sound is the universe communicating through vibration.`,
           ],
-          image:        '/explorer-assets/cosmos/l08-magazine-how-sound-travels.png',
-          imageCaption: `Sound travelling through air, water, and solids — faster in denser materials, silent in space`,
+          image:        '/explorer-assets/cosmos/l08-s2-everything-vibrates.png',
+          imageCaption: `Every sound starts with something vibrating — vocal cords, drum skins, guitar strings`,
           vocab: [
-            { word: 'medium',  definition: `The material through which sound travels — sound needs a medium like air, water, or a solid to move through. It cannot travel through the vacuum of empty space.`,                   audioPrompt: `Medium — the material through which sound travels. Sound needs a medium like air, water, or a solid to move through. It cannot travel through the vacuum of empty space.` },
-            { word: 'vacuum',  definition: `A space completely empty of matter — sound cannot travel through a vacuum because there are no molecules to carry the vibrations. This is why space is completely silent.`, audioPrompt: `Vacuum — a space completely empty of matter. Sound cannot travel through a vacuum because there are no molecules to carry the vibrations. This is why space is completely silent.` },
+            { word: 'vibration',   definition: `A rapid back-and-forth movement. Vibration is the source of every sound — voices, drums, instruments, thunder all vibrate.`, audioPrompt: `Vibration — a rapid back-and-forth movement. Vibration is the source of every sound. Voices, drums, instruments, thunder all vibrate.` },
+            { word: 'vocal cords', definition: `Tiny flaps of tissue in your throat. When air passes through them, they vibrate — that's how your voice works.`, audioPrompt: `Vocal cords — tiny flaps of tissue in your throat. When air passes through them, they vibrate. That's how your voice works.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Volume and Pitch`,
+          totalSections: 6,
+          headline:      `Sound Needs Air`,
           paragraphs: [
-            `Sound has two key properties: volume and pitch. Volume is how loud or quiet a sound is, and it depends on the energy of the vibration — bigger vibrations create louder sounds. Volume is measured in decibels (dB).`,
-            `A whisper is about 30 decibels. A normal conversation is about 60. A lawnmower is about 90. A jet engine is about 140 decibels — loud enough to damage your hearing instantly with prolonged exposure. Every 10 decibels is roughly a doubling of perceived loudness.`,
-            `Pitch is how high or low a sound is, and it depends on frequency — how fast the vibrations happen. Fast vibrations create a high pitch (like a whistle or a violin). Slow vibrations create a low pitch (like a bass drum or a tuba). Your ear is extraordinarily sensitive to the difference.`,
+            `Sound needs a medium to travel through — it cannot travel through empty space. This is why space is completely silent.`,
+            `There are no air molecules in space for vibrations to push. No matter how enormous an explosion happens out there, no one can hear it.`,
           ],
-          image:        '/explorer-assets/cosmos/l08-magazine-volume-pitch.png',
-          imageCaption: `Volume and pitch — how loud and how high a sound is, measured in decibels and frequency`,
+          image:        '/explorer-assets/cosmos/l08-s3-silent-space.png',
+          imageCaption: `Space is completely silent — no air molecules means no sound can travel`,
           vocab: [
-            { word: 'decibel',   definition: `The unit used to measure the volume (loudness) of a sound — a whisper is about 30 decibels, a lawnmower 90, and a jet engine 140 decibels.`,                              audioPrompt: `Decibel — the unit used to measure the volume of a sound. A whisper is about 30 decibels, a lawnmower 90, and a jet engine 140 decibels.` },
-            { word: 'frequency', definition: `How fast vibrations happen — high-frequency vibrations create high-pitched sounds like a whistle, and low-frequency vibrations create deep sounds like a bass drum.`, audioPrompt: `Frequency — how fast vibrations happen. High-frequency vibrations create high-pitched sounds like a whistle, and low-frequency vibrations create deep sounds like a bass drum.` },
+            { word: 'vacuum',   definition: `A space completely empty of matter — like outer space. Sound cannot travel through a vacuum because there's nothing to vibrate.`, audioPrompt: `Vacuum — a space completely empty of matter, like outer space. Sound cannot travel through a vacuum because there's nothing to vibrate.` },
+            { word: 'molecule', definition: `Tiny particles of matter that air is made of. Sound waves work by pushing molecules — no molecules means no sound.`, audioPrompt: `Molecule — tiny particles of matter that air is made of. Sound waves work by pushing molecules. No molecules means no sound.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Echoes and How We Use Them`,
+          totalSections: 6,
+          headline:      `Faster Through Water`,
           paragraphs: [
-            `When sound waves hit a hard surface, they bounce back — that's an echo. The harder and smoother the surface, the cleaner the echo. Shouting in a canyon or an empty room produces echoes because the sound bounces off the walls and returns to your ears moments later.`,
-            `Engineers design concert halls very carefully to control how sound reflects. They use curved walls, padded surfaces, and carefully calculated angles so that music sounds rich and clear from every seat — no dead zones, no unwanted echoes.`,
-            `Bats and dolphins take this even further with echolocation. They send out pulses of high-frequency sound and listen for the echoes bouncing back. From those echoes, they can build a precise picture of their surroundings — locating prey, navigating in darkness, and communicating. Sonar in submarines uses exactly the same principle.`,
+            `Sound travels about 767 miles per hour through air — far slower than light. That's why you see lightning before you hear thunder.`,
+            `But sound is even faster through water and solids. Whales use this — low-frequency calls travel so well through ocean water that whales hear each other thousands of miles away.`,
           ],
-          image:        '/explorer-assets/cosmos/l08-magazine-echoes.png',
-          imageCaption: `Echoes and echolocation — sound bouncing off surfaces, used by bats, dolphins, and submarines`,
+          image:        '/explorer-assets/cosmos/l08-s4-whale-song.png',
+          imageCaption: `Whales sing across thousands of miles — sound travels four times faster underwater than through air`,
           vocab: [
-            { word: 'echo',          definition: `A reflected sound — when sound waves hit a hard surface, they bounce back and you hear the same sound again moments later.`,                                                               audioPrompt: `Echo — a reflected sound. When sound waves hit a hard surface, they bounce back and you hear the same sound again moments later.` },
-            { word: 'echolocation',  definition: `A natural sonar system used by bats and dolphins — they send out sound pulses and use the returning echoes to "see" their surroundings and locate prey in complete darkness.`, audioPrompt: `Echolocation — a natural sonar system used by bats and dolphins. They send out sound pulses and use the returning echoes to see their surroundings and locate prey in complete darkness.` },
+            { word: 'speed of sound', definition: `About 767 miles per hour through air — much slower than light. That's why you see lightning before you hear thunder.`, audioPrompt: `Speed of sound — about 767 miles per hour through air, much slower than light. That's why you see lightning before you hear thunder.` },
+            { word: 'low-frequency',  definition: `Slow vibrations that create deep sounds. Low-frequency sound travels far through water — whales use it to communicate across oceans.`, audioPrompt: `Low-frequency — slow vibrations that create deep sounds. Low-frequency sound travels far through water. Whales use it to communicate across oceans.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Volume and Pitch`,
+          paragraphs: [
+            `Sound has two key properties. Volume is how loud or quiet — bigger vibrations create louder sounds. Volume is measured in decibels (dB).`,
+            `Pitch is how high or low. Fast vibrations make high-pitched sounds (a whistle). Slow vibrations make low-pitched sounds (a tuba).`,
+          ],
+          image:        '/explorer-assets/cosmos/l08-s5-volume-pitch.png',
+          imageCaption: `Volume = how loud. Pitch = how high or low. Two different properties of every sound.`,
+          vocab: [
+            { word: 'decibel', definition: `The unit used to measure how loud a sound is. A whisper is 30 decibels, a lawnmower 90, a jet engine 140.`, audioPrompt: `Decibel — the unit used to measure how loud a sound is. A whisper is 30 decibels, a lawnmower 90, a jet engine 140.` },
+            { word: 'pitch',   definition: `How high or low a sound is. Pitch depends on how fast the vibrations happen — fast = high, slow = low.`, audioPrompt: `Pitch — how high or low a sound is. Pitch depends on how fast the vibrations happen. Fast equals high, slow equals low.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Echoes and Echolocation`,
+          paragraphs: [
+            `When sound waves hit a hard surface, they bounce back — that's an echo. Shouting in a canyon gives clear echoes because the walls reflect the sound.`,
+            `Bats and dolphins use echoes to "see." They send out sound pulses and listen for them bouncing back, building a picture of their surroundings.`,
+          ],
+          image:        '/explorer-assets/cosmos/l08-s6-echolocation.png',
+          imageCaption: `Bats and dolphins "see" using echoes — sending pulses and listening for them to bounce back`,
+          vocab: [
+            { word: 'echo',         definition: `A sound that bounces back off a hard surface. Shouting in a canyon or empty room creates echoes.`, audioPrompt: `Echo — a sound that bounces back off a hard surface. Shouting in a canyon or empty room creates echoes.` },
+            { word: 'echolocation', definition: `Using echoes to "see." Bats and dolphins send out sound pulses and use the echoes that bounce back to find their way.`, audioPrompt: `Echolocation — using echoes to see. Bats and dolphins send out sound pulses and use the echoes that bounce back to find their way.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l08_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L08] Loaded: "Sound: Vibrations We Can Hear" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l08-magazine-what-is-sound.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l08-magazine-how-sound-travels.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l08-magazine-volume-pitch.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l08-magazine-echoes.png',              { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L08] what-is-sound: ${r1.ok}, how-sound-travels: ${r2.ok}, volume-pitch: ${r3.ok}, echoes: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l08-s1-sound-waves.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l08-s2-everything-vibrates.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l08-s3-silent-space.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l08-s4-whale-song.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l08-s5-volume-pitch.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l08-s6-echolocation.png',       { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L08] sound-waves: ${r1.ok}, everything-vibrates: ${r2.ok}, silent-space: ${r3.ok}, whale-song: ${r4.ok}, volume-pitch: ${r5.ok}, echolocation: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L08] Could not verify image assets — network check failed');
   });
