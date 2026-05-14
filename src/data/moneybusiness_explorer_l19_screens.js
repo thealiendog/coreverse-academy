@@ -23,73 +23,101 @@ const moneybusiness_explorer_l19_screens = {
           guideText: `Here's one of the most powerful money secrets: you don't have to trade your time for money. You can make your money work FOR you while you sleep, go to school, play outside. This is called investing.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Does Investing Mean?`,
+          totalSections: 6,
+          headline:      'Making Money Work for You',
           paragraphs: [
-            `Investing means using money to buy something that will hopefully grow in value or produce income over time. Instead of keeping your money sitting still — earning nothing — you put it to work. You buy something with it, and that something generates more money as time passes. The goal: your investment is eventually worth more than what you originally paid.`,
-            `There are four main types of investment. Stocks are tiny pieces of ownership in companies — when the company succeeds, your shares grow in value. Bonds are loans you make to governments or companies, which pay you regular interest in return. Real estate is land or buildings that generate rental income or appreciate in value. Business investments mean putting money into a company in exchange for a share of its future profits.`,
-            `Each type of investment has different characteristics: different levels of risk, different potential returns, different time horizons. A savings account at a bank is technically an investment too — you're lending the bank your money and they pay you a small interest rate. But historically, the most powerful long-term wealth builders have been stocks and property. Understanding your options is the first step to using them wisely.`,
+            'Most people trade time for money — they work, they earn.',
+            'Investing flips that. You buy something that grows in value while you sleep, study, or play. Your money works FOR you.',
           ],
-          image:        '/explorer-assets/money-business/l19-magazine-what-is-investing.png',
-          imageCaption: `Investing — using money to buy something that grows in value or produces income, so your money works for you`,
+          image:        '/explorer-assets/money-business/l19-s1-money-working.png',
+          imageCaption: 'Investing flips the equation: instead of you working for money, your money starts working for you',
           vocab: [
-            { word: `investing`, definition: `Using money to buy assets that grow in value or produce income over time — instead of spending money or leaving it idle, investors put it to work building future wealth.`, audioPrompt: `Investing — using money to buy assets that grow in value or produce income over time. Instead of spending money or leaving it idle, investors put it to work building future wealth.` },
-            { word: `asset`,     definition: `Something you own that has value and can generate income or grow in value over time — stocks, bonds, property, and businesses are all assets.`,                              audioPrompt: `Asset — something you own that has value and can generate income or grow in value over time. Stocks, bonds, property, and businesses are all assets.` },
+            { word: 'investing', definition: 'Using money to buy something that grows in value or produces income over time. Putting money to work instead of leaving it idle.', audioPrompt: 'Investing — using money to buy something that grows in value or produces income over time. Putting money to work instead of leaving it idle.' },
+            { word: 'asset',     definition: 'Anything you own that has value and can grow or earn money. Stocks, real estate, businesses, and bonds are all assets.', audioPrompt: 'Asset — anything you own that has value and can grow or earn money. Stocks, real estate, businesses, and bonds are all assets.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Superpower: Compound Interest`,
+          totalSections: 6,
+          headline:      'Four Ways to Invest',
           paragraphs: [
-            `Compound interest is the most powerful force in personal finance — and it works in your favour when you invest. The idea is simple: you earn returns not just on your original money, but on every previous return as well. Your gains build on your gains. Over time, this creates exponential growth that feels almost unbelievable when you first see the numbers.`,
-            `Here's how it works in practice. You invest $100 at a 10% annual return. After year 1: $110. After year 2: $121 (10% on $110, not just on the original $100). After year 3: $133. After year 10: $259. After year 40: $4,526 — from a single $100 investment, without ever adding another dollar. The money grows faster every year because there's more of it to grow.`,
-            `The critical insight is that time is the most important variable. A small amount invested early will consistently outperform a larger amount invested later. Someone who starts investing at age 10 doesn't need to invest more than someone who starts at 30 — they just need to start earlier and let time do the work. This is why understanding compound interest young gives you an advantage that money alone can't buy.`,
+            'There are four main ways to invest your money.',
+            'Stocks (pieces of companies). Bonds (loans you make to governments or companies). Real estate (land or buildings). And direct business investment.',
           ],
-          image:        '/explorer-assets/money-business/l19-magazine-compound-interest.png',
-          imageCaption: `Compound interest — earnings building on previous earnings, creating exponential growth that rewards whoever starts earliest`,
+          image:        '/explorer-assets/money-business/l19-s2-four-paths.png',
+          imageCaption: 'Stocks, bonds, real estate, businesses — each works differently. Smart investors use them all.',
           vocab: [
-            { word: `compound interest`, definition: `Earning returns on both your original investment and on all your previous returns — the longer money compounds, the faster it grows, making time the most valuable ingredient in investing.`, audioPrompt: `Compound interest — earning returns on both your original investment and on all your previous returns. The longer money compounds, the faster it grows, making time the most valuable ingredient in investing.` },
-            { word: `exponential growth`, definition: `Growth that accelerates over time because each gain builds on all previous gains — compound interest creates exponential growth, which is why long-term investing is so powerful.`,          audioPrompt: `Exponential growth — growth that accelerates over time because each gain builds on all previous gains. Compound interest creates exponential growth, which is why long-term investing is so powerful.` },
+            { word: 'bond',        definition: 'A loan you make to a government or company. They pay you regular interest, then return your money at the end.', audioPrompt: 'Bond — a loan you make to a government or company. They pay you regular interest, then return your money at the end.' },
+            { word: 'real estate', definition: 'Land and buildings. One of the oldest forms of investment — you earn through rent or by selling for more later.', audioPrompt: 'Real estate — land and buildings. One of the oldest forms of investment: you earn through rent or by selling for more later.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `What About Risk?`,
+          totalSections: 6,
+          headline:      'Compound Interest',
           paragraphs: [
-            `All investments carry some level of risk — the possibility that things don't go as hoped and your investment loses value. Stocks can fall sharply when companies struggle or markets decline. Real estate can drop in value during economic downturns. Even businesses can fail. Risk is not something to fear or ignore — it's something to understand and manage.`,
-            `Smart investors don't try to eliminate risk entirely. Instead, they diversify — spreading their money across different types of investments so that if one goes down significantly, others can hold steady or even rise. A portfolio that holds stocks, bonds, and other assets will typically experience less dramatic swings than one that holds only a single type of investment.`,
-            `Risk and return are closely linked. Higher-risk investments typically offer higher potential returns — because nobody would take on more risk without the possibility of being rewarded for it. Lower-risk investments usually offer lower returns. Understanding this relationship helps you make deliberate choices about how much risk you're comfortable taking, based on your goals and your time horizon.`,
+            'Compound interest is when you earn returns on your returns. The gains build on themselves.',
+            '$100 at 10% per year: $110 after year 1. $121 after year 2. $259 after year 10. $4,526 after year 40 — from a single $100.',
           ],
-          image:        '/explorer-assets/money-business/l19-magazine-risk.png',
-          imageCaption: `Managing risk — diversification spreads money across different investments so one loss doesn't sink everything`,
+          image:        '/explorer-assets/money-business/l19-s3-compound-snowball.png',
+          imageCaption: 'Compound interest is a snowball. Each year, it picks up more — and what it picks up makes the next year bigger.',
           vocab: [
-            { word: `diversification`, definition: `Spreading money across different types of investments to reduce risk — if one investment drops significantly, others may hold steady or rise, protecting the overall portfolio.`,        audioPrompt: `Diversification — spreading money across different types of investments to reduce risk. If one investment drops significantly, others may hold steady or rise, protecting the overall portfolio.` },
-            { word: `portfolio`,       definition: `The complete collection of all investments owned by a person — a well-diversified portfolio includes different types of assets to balance risk and potential return.`, audioPrompt: `Portfolio — the complete collection of all investments owned by a person. A well-diversified portfolio includes different types of assets to balance risk and potential return.` },
+            { word: 'compound interest',  definition: 'Earning returns on your returns. The snowball effect that makes investing so powerful over long periods.', audioPrompt: 'Compound interest — earning returns on your returns. The snowball effect that makes investing so powerful over long periods.' },
+            { word: 'exponential growth', definition: 'Growth that accelerates because each gain builds on every previous gain. Compound interest creates exponential growth.', audioPrompt: 'Exponential growth — growth that accelerates because each gain builds on every previous gain. Compound interest creates exponential growth.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Start Small, Start Now`,
+          totalSections: 6,
+          headline:      'Risk Is Real',
           paragraphs: [
-            `One of the most common misconceptions about investing is that you need a lot of money to get started. You don't. There are accounts designed specifically for beginners that allow you to invest with very small amounts. The amount matters far less than the act of starting — because the most powerful ingredient in investing is time, not capital.`,
-            `A young person who begins investing small regular amounts will, over decades, typically accumulate far more wealth than someone who waits until they have a "significant" amount to invest before starting. The person who starts early with little consistently beats the person who starts late with more. That advantage compounds with every year of delay — working in your favour if you start early, and against you if you wait.`,
-            `Time is the one ingredient in investing that cannot be bought, borrowed, or replaced. You can earn more money. You can learn new skills. But you cannot get back the years of compounding you missed by waiting. Every year you delay starting is a year of growth that's permanently gone. The best time to start was years ago. The second best time is now.`,
+            'Every investment carries risk — the chance your money loses value instead of growing.',
+            'Stocks can crash. Real estate can drop. Businesses can fail. Risk isn\'t something to fear or ignore. It\'s something to understand and manage.',
           ],
-          image:        '/explorer-assets/money-business/l19-magazine-start-now.png',
-          imageCaption: `Start small, start now — time is the ingredient that can't be bought, only used, and every year of delay costs compounding`,
+          image:        '/explorer-assets/money-business/l19-s4-risk-arrows.png',
+          imageCaption: 'Every investment can go up. Every investment can go down. Smart investors plan for both.',
           vocab: [
-            { word: `capital`,       definition: `Money used to invest or start a business — while more capital can accelerate growth, time and consistency matter more than starting with a large amount.`,                           audioPrompt: `Capital — money used to invest or start a business. While more capital can accelerate growth, time and consistency matter more than starting with a large amount.` },
-            { word: `time horizon`,  definition: `The length of time you plan to keep money invested before needing it — a longer time horizon allows for more risk and more compounding, producing greater long-term growth.`, audioPrompt: `Time horizon — the length of time you plan to keep money invested before needing it. A longer time horizon allows for more risk and more compounding, producing greater long-term growth.` },
+            { word: 'risk',   definition: 'The chance that an investment loses value rather than grows. Every investment has some risk — the question is how much.', audioPrompt: 'Risk — the chance that an investment loses value rather than grows. Every investment has some risk; the question is how much.' },
+            { word: 'return', definition: 'The gain or loss on an investment over time. A higher potential return usually comes with higher risk.', audioPrompt: 'Return — the gain or loss on an investment over time. A higher potential return usually comes with higher risk.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Don\'t Put All Your Eggs in One Basket',
+          paragraphs: [
+            'Smart investors don\'t bet everything on one thing. They diversify — spread money across different investments.',
+            'If one drops, others may hold steady or rise. A balanced portfolio handles bad days far better than a concentrated one.',
+          ],
+          image:        '/explorer-assets/money-business/l19-s5-many-baskets.png',
+          imageCaption: 'Spread across many baskets, no single broken basket can ruin everything',
+          vocab: [
+            { word: 'diversification', definition: 'Spreading money across different investments to reduce risk. The single most important rule of safe investing.', audioPrompt: 'Diversification — spreading money across different investments to reduce risk. The single most important rule of safe investing.' },
+            { word: 'portfolio',       definition: 'The full collection of investments a person owns. A balanced portfolio holds different types of assets together.', audioPrompt: 'Portfolio — the full collection of investments a person owns. A balanced portfolio holds different types of assets together.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Time Beats Money',
+          paragraphs: [
+            'You don\'t need a lot to start. You need time — and you have more of that than anyone.',
+            'A young person investing small amounts will usually outpace someone who waits until they\'re "rich" to start. Every year of delay is permanent.',
+          ],
+          image:        '/explorer-assets/money-business/l19-s6-time-becomes-money.png',
+          imageCaption: 'Time can\'t be bought back. Every year you wait is growth that\'s permanently gone.',
+          vocab: [
+            { word: 'capital',      definition: 'Money you have available to invest. Smart investing values time over having a huge amount of capital up front.', audioPrompt: 'Capital — money you have available to invest. Smart investing values time over having a huge amount of capital up front.' },
+            { word: 'time horizon', definition: 'How long you plan to keep money invested. The longer your time horizon, the more compound interest can work in your favor.', audioPrompt: 'Time horizon — how long you plan to keep money invested. The longer your time horizon, the more compound interest can work in your favor.' },
           ],
         },
 
@@ -186,12 +214,14 @@ const moneybusiness_explorer_l19_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-MONEY-L19] Loaded: "Investing: Making Money Work for You" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/money-business/l19-magazine-what-is-investing.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l19-magazine-compound-interest.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l19-magazine-risk.png',              { method: 'HEAD' }),
-    fetch('/explorer-assets/money-business/l19-magazine-start-now.png',         { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-MONEY-L19] what-is-investing: ${r1.ok}, compound-interest: ${r2.ok}, risk: ${r3.ok}, start-now: ${r4.ok}`);
+    fetch('/explorer-assets/money-business/l19-s1-money-working.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l19-s2-four-paths.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l19-s3-compound-snowball.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l19-s4-risk-arrows.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l19-s5-many-baskets.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/money-business/l19-s6-time-becomes-money.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-MONEY-L19] money-working: ${r1.ok}, four-paths: ${r2.ok}, compound-snowball: ${r3.ok}, risk-arrows: ${r4.ok}, many-baskets: ${r5.ok}, time-becomes-money: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-MONEY-L19] Could not verify image assets — network check failed');
   });
