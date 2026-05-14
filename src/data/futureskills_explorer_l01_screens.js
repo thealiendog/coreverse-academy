@@ -23,73 +23,101 @@ const futureskills_explorer_l01_screens = {
           guideText: `Every app on your phone, every video game you've played, every website you've visited — someone wrote instructions to make it work. Those instructions are called code. And here's the secret: code is just a language. And like any language, you can learn it.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is Code?`,
+          totalSections: 6,
+          headline:      'Code Is Instructions',
           paragraphs: [
-            `Code is a set of instructions written in a language computers can understand. Just like a building kit comes with a numbered instruction sheet telling you exactly where each piece goes, code tells a computer exactly what to do — step by step, line by line. There is no guesswork and no interpretation. Every instruction is followed precisely as written.`,
-            `Computers are extraordinarily powerful — they can process millions of operations per second, store information perfectly, and run programs without ever getting tired. But they have one serious limitation: zero common sense. They do exactly what you tell them, nothing more and nothing less. If your instruction is wrong, the computer follows the wrong instruction perfectly. Being exact isn't optional — it's the foundation of everything in coding.`,
-            `This is what makes coding both challenging and rewarding. When your code works, every instruction was precise enough for the computer to execute correctly. When it doesn't work — which happens constantly, even to professionals — it's almost always because a step was wrong, incomplete, or missing. Learning to write instructions with precision is the first and most important skill in all of programming.`,
+            'Every app, game, and website you\'ve ever used was built from instructions called code.',
+            'Code tells a computer exactly what to do, step by step. There\'s no guesswork. The computer follows every instruction perfectly.',
           ],
-          image:        '/explorer-assets/future-skills/l01-magazine-what-is-code.png',
-          imageCaption: `Code — precise instructions written in a language computers can follow exactly, without guesswork or common sense`,
+          image:        '/explorer-assets/future-skills/l01-s1-instructions.png',
+          imageCaption: 'Code is just a list of instructions — every program in the world is built from them',
           vocab: [
-            { word: `code`,    definition: `A set of precise instructions written in a language a computer can understand — code tells a computer exactly what to do, one step at a time, and computers follow it perfectly as written.`,    audioPrompt: `Code — a set of precise instructions written in a language a computer can understand. Code tells a computer exactly what to do, one step at a time, and computers follow it perfectly as written.` },
-            { word: `program`, definition: `A complete set of coded instructions that a computer runs to perform a specific task — every app, game, and website you use is a program made of thousands or millions of lines of code.`, audioPrompt: `Program — a complete set of coded instructions that a computer runs to perform a specific task. Every app, game, and website you use is a program made of thousands or millions of lines of code.` },
+            { word: 'code',        definition: 'A set of instructions a computer can follow exactly. Every program is made of code.', audioPrompt: 'Code — a set of instructions a computer can follow exactly. Every program is made of code.' },
+            { word: 'instruction', definition: 'A single step that tells the computer what to do. Programs are built from thousands of instructions strung together.', audioPrompt: 'Instruction — a single step that tells the computer what to do. Programs are built from thousands of instructions strung together.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Programming Languages`,
+          totalSections: 6,
+          headline:      'Computers Have No Common Sense',
           paragraphs: [
-            `Just like humans communicate in different languages — English, Spanish, Mandarin, French — computers have their own set of languages called programming languages. Each has its own vocabulary and grammar rules, called syntax. Some are designed to be easy for beginners. Others are built for speed, for building specific types of software, or for working with particular systems. There are hundreds of programming languages in existence.`,
-            `A few of the most widely used: Scratch is a beginner-friendly environment that uses visual building blocks instead of typing — a great place to start. Python is known for its clean, readable style and is used heavily for artificial intelligence, data science, and web applications. JavaScript powers almost every interactive element on every website. Swift is a modern language designed for building phone and tablet apps.`,
-            `Each language has strengths and is best suited for different tasks. A data scientist might reach for Python. A web developer might write JavaScript every day. A mobile app developer might work primarily in Swift. Learning your first programming language teaches you fundamentals that carry across every other language — the core concepts stay the same even when the specific syntax changes.`,
+            'Computers are extremely powerful — they can do millions of things per second. But they have ZERO common sense.',
+            'They do exactly what you tell them. If your instruction is wrong, the computer follows the wrong instruction perfectly. Precision matters more than anything.',
           ],
-          image:        '/explorer-assets/future-skills/l01-magazine-languages.png',
-          imageCaption: `Programming languages — each with its own rules and strengths, each a different way to give computers precise instructions`,
+          image:        '/explorer-assets/future-skills/l01-s2-no-common-sense.png',
+          imageCaption: 'A computer will follow a wrong instruction just as faithfully as a right one. Precision is everything.',
           vocab: [
-            { word: `programming language`, definition: `A formal language with its own rules and vocabulary that programmers use to write code — examples include Scratch, Python, JavaScript, and Swift, each suited to different types of tasks.`, audioPrompt: `Programming language — a formal language with its own rules and vocabulary that programmers use to write code. Examples include Scratch, Python, JavaScript, and Swift, each suited to different types of tasks.` },
-            { word: `syntax`,               definition: `The grammar rules of a programming language — syntax defines exactly how code must be written for a computer to understand it. A single syntax mistake can stop an entire program from running.`, audioPrompt: `Syntax — the grammar rules of a programming language. Syntax defines exactly how code must be written for a computer to understand it. A single syntax mistake can stop an entire program from running.` },
+            { word: 'precision', definition: 'Being exact in every detail. The single most important habit in coding — computers can\'t guess what you meant.', audioPrompt: 'Precision — being exact in every detail. The single most important habit in coding, because computers can\'t guess what you meant.' },
+            { word: 'bug',       definition: 'A mistake in code that makes the program behave wrong. Even professionals create bugs every single day.', audioPrompt: 'Bug — a mistake in code that makes the program behave wrong. Even professionals create bugs every single day.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `What Can You Build With Code?`,
+          totalSections: 6,
+          headline:      'Many Languages, One Idea',
           paragraphs: [
-            `Code can build almost anything digital: websites, apps, games, robots, artificial intelligence systems, music software, medical devices, financial tools, and more. If it runs on a computer or uses digital processing, it was built with code. The scope of what software can create is nearly unlimited — and it expands every year as tools improve and hardware becomes more powerful.`,
-            `Consider the range: a popular sandbox building game that lets millions of players create entire worlds was built with code. A popular photo-sharing app used by hundreds of millions of people was built with code. An automotive self-driving system that navigates real roads without a human driver is millions of lines of code running in real time. Even the rockets that carry satellites and explorers to space are guided by software written by engineers.`,
-            `If you can imagine it and it involves a computer, code can build it. The difference between an idea and a finished product is the knowledge and work required to write the instructions. Every application you've ever used — every game you've played, every video you've watched, every message you've sent — was written line by line by someone who started learning to code exactly the way you're starting now.`,
+            'Just like humans speak different languages, computers have their own languages called programming languages.',
+            'There are hundreds. Each has its own rules (called syntax) and is built for different jobs. But they all give instructions.',
           ],
-          image:        '/explorer-assets/future-skills/l01-magazine-what-to-build.png',
-          imageCaption: `What code can build — games, apps, robots, medical devices, and self-driving systems are all made from the same thing: instructions`,
+          image:        '/explorer-assets/future-skills/l01-s3-many-languages.png',
+          imageCaption: 'Hundreds of programming languages exist. Different syntax, same underlying idea: tell the computer what to do.',
           vocab: [
-            { word: `software`,    definition: `Programs and instructions that run on a computer — software is what code becomes when it's written, compiled, and ready to use, from simple apps to complex artificial intelligence systems.`,                        audioPrompt: `Software — programs and instructions that run on a computer. Software is what code becomes when it's written, compiled, and ready to use, from simple apps to complex artificial intelligence systems.` },
-            { word: `application`, definition: `A program designed for a specific purpose that a user can interact with — also called an app. Every app on a phone or computer is an application built from code written by one or more programmers.`, audioPrompt: `Application — a program designed for a specific purpose that a user can interact with, also called an app. Every app on a phone or computer is an application built from code written by one or more programmers.` },
+            { word: 'programming language', definition: 'A language used to write code — like Python, JavaScript, or Swift. Each has its own rules and strengths.', audioPrompt: 'Programming language — a language used to write code, like Python, JavaScript, or Swift. Each has its own rules and strengths.' },
+            { word: 'syntax',               definition: 'The grammar rules of a programming language. One wrong character can stop a whole program from running.', audioPrompt: 'Syntax — the grammar rules of a programming language. One wrong character can stop a whole program from running.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Anyone Can Learn to Code`,
+          totalSections: 6,
+          headline:      'Beginner-Friendly Tools',
           paragraphs: [
-            `You do not need to be a math genius to learn to code. The most important qualities are curiosity, patience, and the ability to break big problems into smaller, manageable steps. Mathematics helps in some areas — particularly game development and data science — but the day-to-day reality of coding is far more about logic, problem-solving, and persistence than arithmetic.`,
-            `The best professional programmers are not necessarily the smartest people in the room. They're the most persistent. Every working coder — no matter how experienced — spends significant time running into problems, searching for answers, making mistakes, and trying again. That process never stops. Getting comfortable with confusion and using it as a signal to learn more is one of the most important habits to build early.`,
-            `The only real barrier to learning to code is deciding to start. Resources are widely available and many are completely free. Block-based coding tools were created specifically to lower the barrier to entry for beginners. Every professional coder started somewhere. The gap between where they are now and where you are right now is not talent — it's time and practice. Both are entirely within your control.`,
+            'Scratch uses colorful drag-and-drop blocks instead of typing. Great for first-time coders building games and animations.',
+            'Python is text-based but written almost like plain English. Used everywhere from AI to data science. Most universities teach it first.',
           ],
-          image:        '/explorer-assets/future-skills/l01-magazine-anyone-can-code.png',
-          imageCaption: `Anyone can learn to code — curiosity and persistence matter far more than math ability or natural talent`,
+          image:        '/explorer-assets/future-skills/l01-s4-blocks-vs-text.png',
+          imageCaption: 'Scratch teaches the ideas without typing. Python is where most professional coders begin.',
           vocab: [
-            { word: `logic`,     definition: `The ability to think through a problem in a structured, step-by-step way — logical thinking is the core skill of programming, more important than math ability or memorizing syntax.`,      audioPrompt: `Logic — the ability to think through a problem in a structured, step-by-step way. Logical thinking is the core skill of programming, more important than math ability or memorizing syntax.` },
-            { word: `precision`, definition: `The quality of being exact and accurate in every detail — precision is essential in coding because computers follow instructions exactly as written, with no ability to guess what you meant.`, audioPrompt: `Precision — the quality of being exact and accurate in every detail. Precision is essential in coding because computers follow instructions exactly as written, with no ability to guess what you meant.` },
+            { word: 'block-based coding', definition: 'Building code by snapping visual blocks together. Scratch is the most famous example. No typing needed.', audioPrompt: 'Block-based coding — building code by snapping visual blocks together. Scratch is the most famous example. No typing needed.' },
+            { word: 'text-based coding',  definition: 'Writing code as typed text. Python, JavaScript, and Swift are all text-based languages.', audioPrompt: 'Text-based coding — writing code as typed text. Python, JavaScript, and Swift are all text-based languages.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'What Code Can Build',
+          paragraphs: [
+            'Code can build almost anything digital: websites, apps, games, robots, AI, medical devices, even rockets.',
+            'That sandbox game with millions of players — code. The photo app used by hundreds of millions — code. Self-driving cars — code.',
+          ],
+          image:        '/explorer-assets/future-skills/l01-s5-what-code-builds.png',
+          imageCaption: 'Every digital thing in your life was written, line by line, by someone',
+          vocab: [
+            { word: 'software',    definition: 'Programs that run on a computer. Apps, games, operating systems — all software, all built from code.', audioPrompt: 'Software — programs that run on a computer. Apps, games, operating systems, all software, all built from code.' },
+            { word: 'application', definition: 'A program built for a specific use — also called an "app." Every icon on your phone is an application.', audioPrompt: 'Application — a program built for a specific use, also called an app. Every icon on your phone is an application.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Anyone Can Learn',
+          paragraphs: [
+            'You don\'t need to be a math genius. The real skills are curiosity, patience, and breaking big problems into smaller steps.',
+            'The best coders aren\'t necessarily the smartest. They\'re the most persistent. Every working coder runs into problems daily — they just keep going.',
+          ],
+          image:        '/explorer-assets/future-skills/l01-s6-anyone-can-learn.png',
+          imageCaption: 'Coding rewards persistence over talent. The gap between you and a pro coder is time and practice — both of which you control.',
+          vocab: [
+            { word: 'persistence', definition: 'Continuing even when things are hard or confusing. The single most important quality in any working coder.', audioPrompt: 'Persistence — continuing even when things are hard or confusing. The single most important quality in any working coder.' },
+            { word: 'logic',       definition: 'Thinking through problems in a clear, step-by-step way. Logic matters more in coding than memorizing syntax or doing math.', audioPrompt: 'Logic — thinking through problems in a clear, step-by-step way. Logic matters more in coding than memorizing syntax or doing math.' },
           ],
         },
 
@@ -186,12 +214,14 @@ const futureskills_explorer_l01_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L01] Loaded: "What Is Coding?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l01-magazine-what-is-code.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l01-magazine-languages.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l01-magazine-what-to-build.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l01-magazine-anyone-can-code.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L01] what-is-code: ${r1.ok}, languages: ${r2.ok}, what-to-build: ${r3.ok}, anyone-can-code: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l01-s1-instructions.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l01-s2-no-common-sense.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l01-s3-many-languages.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l01-s4-blocks-vs-text.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l01-s5-what-code-builds.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l01-s6-anyone-can-learn.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L01] instructions: ${r1.ok}, no-common-sense: ${r2.ok}, many-languages: ${r3.ok}, blocks-vs-text: ${r4.ok}, what-code-builds: ${r5.ok}, anyone-can-learn: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L01] Could not verify image assets — network check failed');
   });
