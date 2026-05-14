@@ -23,73 +23,101 @@ const cosmos_explorer_l14_screens = {
           guideText: `Every star you can see in the night sky is a sun — some much bigger and brighter than our own. They look tiny only because they're unimaginably far away. The closest star to Earth other than our Sun is so far that light takes 4.2 years to travel from it to us. And there are more stars in the universe than grains of sand on all of Earth's beaches.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is a Star?`,
           paragraphs: [
-            `A star is a massive ball of hot plasma — superheated gas — held together by gravity and powered by nuclear fusion. In a star's core, hydrogen atoms are squeezed together under enormous pressure until they fuse into helium, releasing tremendous amounts of energy as light and heat. This is the process that makes stars shine.`,
-            `Our Sun is an average-sized star. Stars range from tiny red dwarfs — smaller and dimmer than our Sun — to supergiants so enormous that if placed where our Sun is, they would extend past Jupiter's orbit. There are stars in the universe that are over a billion kilometres in diameter.`,
-            `The light from a star that reaches your eyes began as nuclear fusion deep in a stellar core. For our Sun, that journey takes light about 8 minutes to reach Earth. For more distant stars, the same journey takes years, centuries, or millennia.`,
+            `A star is a massive ball of hot plasma — superheated gas — held together by gravity and powered by nuclear fusion.`,
+            `In a star's core, hydrogen atoms are squeezed together until they fuse into helium, releasing tremendous amounts of energy as light and heat.`,
           ],
-          image:        '/explorer-assets/cosmos/l14-magazine-what-is-a-star.png',
-          imageCaption: `A star — massive ball of hot plasma powered by nuclear fusion, producing light and heat`,
+          image:        '/explorer-assets/cosmos/l14-s1-what-is-a-star.png',
+          imageCaption: `A star — a ball of plasma powered by nuclear fusion at its core`,
           vocab: [
-            { word: 'nuclear fusion', definition: `The process that powers stars — hydrogen atoms fuse together under extreme pressure and heat to form helium, releasing enormous amounts of energy as light and heat.`, audioPrompt: `Nuclear fusion — the process that powers stars. Hydrogen atoms fuse together under extreme pressure and heat to form helium, releasing enormous amounts of energy as light and heat.` },
-            { word: 'plasma',         definition: `A state of matter like superheated gas, where particles are so energetic that electrons separate from atoms — stars are made almost entirely of plasma.`,            audioPrompt: `Plasma — a state of matter like superheated gas, where particles are so energetic that electrons separate from atoms. Stars are made almost entirely of plasma.` },
+            { word: 'plasma',         definition: `A state of matter like superheated gas. Stars are made almost entirely of plasma — the fourth state of matter beyond solid, liquid, and gas.`, audioPrompt: `Plasma — a state of matter like superheated gas. Stars are made almost entirely of plasma, the fourth state of matter beyond solid, liquid, and gas.` },
+            { word: 'nuclear fusion', definition: `The process that powers stars. Hydrogen atoms fuse together to form helium, releasing enormous energy as light and heat.`, audioPrompt: `Nuclear fusion — the process that powers stars. Hydrogen atoms fuse together to form helium, releasing enormous energy as light and heat.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Far Away Are Stars?`,
+          totalSections: 6,
+          headline:      `Sizes of Stars`,
           paragraphs: [
-            `Stars are so far away that kilometres and miles become meaningless for describing the distance. Instead, scientists measure stellar distances in light-years — the distance light travels in one year. One light-year is about 5.9 trillion miles. Numbers that large are almost impossible to feel — but they describe the true emptiness between stars.`,
-            `The nearest star beyond our Sun, Proxima Centauri, is 4.2 light-years away. A spacecraft travelling at the speed of our fastest probes would take about 75,000 years to reach it. The stars you can see in the night sky range from a few light-years to thousands of light-years away.`,
-            `Here's the most remarkable fact about stargazing: when you look at a star, you're seeing light that left it years, decades, or even thousands of years ago. You're not seeing the star as it is now — you're seeing it as it was in the past. Looking at the night sky is literally looking back in time.`,
+            `Our Sun is an average-sized star. Stars range from tiny red dwarfs — smaller and dimmer than our Sun — to supergiants beyond imagination.`,
+            `There are stars so enormous that if placed where our Sun is, they would extend past Jupiter's orbit. Over a billion kilometres across.`,
           ],
-          image:        '/explorer-assets/cosmos/l14-magazine-star-distances.png',
-          imageCaption: `Light-years — the enormous distances between stars, and the time-travel of stargazing`,
+          image:        '/explorer-assets/cosmos/l14-s2-star-sizes.png',
+          imageCaption: `From tiny red dwarfs to massive supergiants, stars span a vast range of sizes`,
           vocab: [
-            { word: 'light-year',        definition: `The distance light travels in one year — about 5.9 trillion miles. Used to measure the vast distances between stars, which are too far to express in kilometres or miles.`, audioPrompt: `Light-year — the distance light travels in one year, about 5.9 trillion miles. Used to measure the vast distances between stars, which are too far to express in kilometres or miles.` },
-            { word: 'Proxima Centauri',  definition: `The nearest star to our Sun, at 4.2 light-years away — so distant that even the fastest spacecraft would take tens of thousands of years to reach it.`,                     audioPrompt: `Proxima Centauri — the nearest star to our Sun, at 4.2 light-years away. So distant that even the fastest spacecraft would take tens of thousands of years to reach it.` },
+            { word: 'red dwarf',  definition: `A small, dim star — smaller and cooler than our Sun, but still a real star. Red dwarfs are the most common type of star in the galaxy.`, audioPrompt: `Red dwarf — a small, dim star, smaller and cooler than our Sun, but still a real star. Red dwarfs are the most common type of star in the galaxy.` },
+            { word: 'supergiant', definition: `An enormous star much bigger than our Sun. Some supergiants are over a billion kilometres across — large enough to swallow our entire inner solar system.`, audioPrompt: `Supergiant — an enormous star much bigger than our Sun. Some supergiants are over a billion kilometres across, large enough to swallow our entire inner solar system.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Constellations: Stories in the Sky`,
+          totalSections: 6,
+          headline:      `Looking Back in Time`,
           paragraphs: [
-            `Constellations are patterns that ancient cultures saw in groups of stars and connected with imaginary lines to tell stories. There are 88 officially recognised constellations, established by the International Astronomical Union. Different cultures around the world — Greek, Chinese, Aboriginal Australian, Indigenous American — each saw different patterns in the same stars and built their own sky stories.`,
-            `For thousands of years, constellations were navigation tools. Sailors crossing oceans with no GPS used the stars to find their direction. The North Star — Polaris — sits almost directly above Earth's North Pole. If you can find it, you know which way is north. It's been guiding travellers for thousands of years.`,
-            `The stars that form a constellation are not actually close to each other in space — they just happen to appear in the same direction from Earth, at vastly different distances. Orion's belt looks like three nearby stars, but the three stars are hundreds of light-years apart from each other. Constellations are a human invention, painted onto the sky.`,
+            `Stars are so far away that scientists measure distance in light-years — the distance light travels in one year, about 5.9 trillion miles.`,
+            `When you look at a star, you're seeing light that left it years or even thousands of years ago. Looking at the night sky is looking back in time.`,
           ],
-          image:        '/explorer-assets/cosmos/l14-magazine-constellations.png',
-          imageCaption: `Constellations — ancient star patterns used for storytelling and navigation across thousands of years`,
+          image:        '/explorer-assets/cosmos/l14-s3-light-back-in-time.png',
+          imageCaption: `Starlight takes years to reach you — every star you see is showing you its past`,
           vocab: [
-            { word: 'constellation', definition: `A pattern of stars as seen from Earth, connected by imaginary lines — there are 88 officially recognised constellations, used for navigation and storytelling for thousands of years.`, audioPrompt: `Constellation — a pattern of stars as seen from Earth, connected by imaginary lines. There are 88 officially recognised constellations, used for navigation and storytelling for thousands of years.` },
-            { word: 'Polaris',       definition: `The North Star — a star that sits almost directly above Earth's North Pole. Because it stays fixed in the sky while other stars appear to rotate around it, it has guided travellers for millennia.`, audioPrompt: `Polaris — the North Star, sitting almost directly above Earth's North Pole. Because it stays fixed in the sky while other stars appear to rotate around it, it has guided travellers for millennia.` },
+            { word: 'light-year',       definition: `The distance light travels in one year — about 5.9 trillion miles. Used to measure distances between stars.`, audioPrompt: `Light-year — the distance light travels in one year, about 5.9 trillion miles. Used to measure distances between stars.` },
+            { word: 'Proxima Centauri', definition: `The nearest star to our Sun. Just 4.2 light-years away, but still too far for any spacecraft to reach in a human lifetime.`, audioPrompt: `Proxima Centauri — the nearest star to our Sun. Just 4.2 light-years away, but still too far for any spacecraft to reach in a human lifetime.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `The Life and Death of Stars`,
+          totalSections: 6,
+          headline:      `Constellations`,
           paragraphs: [
-            `Stars are born in vast clouds of gas and dust called nebulae. Gravity slowly pulls the cloud together until the pressure and temperature at the centre become high enough to ignite nuclear fusion — and a star is born. Stars can shine for millions to billions of years, steadily fusing hydrogen into helium.`,
-            `When a star runs out of hydrogen fuel, it begins to change. Stars like our Sun expand into enormous red giants — swelling to hundreds of times their original size — before shedding their outer layers and collapsing into small, dense white dwarfs. Massive stars end more dramatically: they explode in catastrophic supernovas, briefly outshining entire galaxies, and can leave behind incredibly dense neutron stars or black holes.`,
-            `Here is the most profound fact in all of science: the atoms in your body — the iron in your blood, the calcium in your bones, the oxygen you breathe — were forged inside ancient stars that exploded billions of years ago and scattered their contents into space. You are literally made of star stuff.`,
+            `Constellations are patterns ancient cultures saw in groups of stars, connected with imaginary lines to tell stories. There are 88 officially recognised today.`,
+            `For thousands of years, sailors used them to navigate. The North Star — Polaris — sits above Earth's North Pole. Find it, and you know which way is north.`,
           ],
-          image:        '/explorer-assets/cosmos/l14-magazine-star-lifecycle.png',
-          imageCaption: `The stellar lifecycle — nebula to star to red giant to supernova, and atoms scattered to form new worlds`,
+          image:        '/explorer-assets/cosmos/l14-s4-constellations.png',
+          imageCaption: `Constellations are stories painted across the sky — and ancient navigation tools`,
           vocab: [
-            { word: 'nebula',    definition: `A vast cloud of gas and dust in space — nebulae are the birthplaces of stars, where gravity slowly pulls material together until nuclear fusion ignites at the centre.`,                        audioPrompt: `Nebula — a vast cloud of gas and dust in space. Nebulae are the birthplaces of stars, where gravity slowly pulls material together until nuclear fusion ignites at the centre.` },
-            { word: 'supernova', definition: `The catastrophic explosion of a massive star at the end of its life — supernovas briefly outshine entire galaxies and scatter heavy elements into space that form new planets and life.`, audioPrompt: `Supernova — the catastrophic explosion of a massive star at the end of its life. Supernovas briefly outshine entire galaxies and scatter heavy elements into space that form new planets and life.` },
+            { word: 'constellation', definition: `A pattern of stars connected by imaginary lines. There are 88 officially recognised constellations used for storytelling and navigation.`, audioPrompt: `Constellation — a pattern of stars connected by imaginary lines. There are 88 officially recognised constellations used for storytelling and navigation.` },
+            { word: 'Polaris',       definition: `The North Star. It sits almost directly above Earth's North Pole, so finding it tells you which way is north — used by travellers for thousands of years.`, audioPrompt: `Polaris — the North Star. It sits almost directly above Earth's North Pole, so finding it tells you which way is north. Used by travellers for thousands of years.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `How Stars Are Born`,
+          paragraphs: [
+            `Stars are born in vast clouds of gas and dust called nebulae. Gravity slowly pulls the cloud together.`,
+            `When pressure and temperature at the centre become high enough, nuclear fusion ignites — and a star is born. Stars can shine for billions of years.`,
+          ],
+          image:        '/explorer-assets/cosmos/l14-s5-nebula-birth.png',
+          imageCaption: `Stars are born in nebulae — clouds of gas and dust collapsing under gravity`,
+          vocab: [
+            { word: 'nebula',  definition: `A vast cloud of gas and dust in space. Nebulae are the birthplaces of stars — every star you see was born in one.`, audioPrompt: `Nebula — a vast cloud of gas and dust in space. Nebulae are the birthplaces of stars. Every star you see was born in one.` },
+            { word: 'gravity', definition: `The force that pulls matter together. Gravity is what slowly collapses a nebula until a new star ignites at its centre.`, audioPrompt: `Gravity — the force that pulls matter together. Gravity is what slowly collapses a nebula until a new star ignites at its centre.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `You Are Star Stuff`,
+          paragraphs: [
+            `When massive stars die, they explode in catastrophic supernovas — briefly outshining entire galaxies and scattering their atoms across space.`,
+            `The iron in your blood, the calcium in your bones, the oxygen you breathe — all forged inside ancient stars that exploded billions of years ago. You are made of star stuff.`,
+          ],
+          image:        '/explorer-assets/cosmos/l14-s6-star-stuff.png',
+          imageCaption: `Every atom in your body was forged inside an ancient star. You are made of star stuff.`,
+          vocab: [
+            { word: 'supernova',  definition: `The catastrophic explosion of a massive star at the end of its life. A supernova can briefly outshine an entire galaxy.`, audioPrompt: `Supernova — the catastrophic explosion of a massive star at the end of its life. A supernova can briefly outshine an entire galaxy.` },
+            { word: 'star stuff', definition: `The atoms in your body that were forged inside ancient stars. Every element heavier than hydrogen — including all of you — came from a star.`, audioPrompt: `Star stuff — the atoms in your body that were forged inside ancient stars. Every element heavier than hydrogen, including all of you, came from a star.` },
           ],
         },
 
@@ -186,12 +214,14 @@ const cosmos_explorer_l14_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L14] Loaded: "Stars and Constellations" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l14-magazine-what-is-a-star.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l14-magazine-star-distances.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l14-magazine-constellations.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l14-magazine-star-lifecycle.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L14] what-is-a-star: ${r1.ok}, star-distances: ${r2.ok}, constellations: ${r3.ok}, star-lifecycle: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l14-s1-what-is-a-star.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l14-s2-star-sizes.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l14-s3-light-back-in-time.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l14-s4-constellations.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l14-s5-nebula-birth.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l14-s6-star-stuff.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L14] what-is-a-star: ${r1.ok}, star-sizes: ${r2.ok}, light-back-in-time: ${r3.ok}, constellations: ${r4.ok}, nebula-birth: ${r5.ok}, star-stuff: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L14] Could not verify image assets — network check failed');
   });
