@@ -23,73 +23,101 @@ const cosmos_explorer_l03_screens = {
           guideText: `The water in your glass right now might have once been part of a dinosaur's drink. Or floated as a cloud over ancient Egypt. Or fell as snow on a mountain range ten thousand years ago. The same water has been cycling around Earth for billions of years — and today you're going to understand exactly how.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Evaporation: Water Becomes Invisible`,
+          totalSections: 6,
+          headline:      `The Water Cycle Begins`,
           paragraphs: [
-            `The water cycle is the continuous movement of water through Earth's systems — oceans, atmosphere, land, and back again. It has no beginning and no end. It's one of the most important processes on our entire planet.`,
-            `It all starts with the Sun. When sunlight heats water on the surface of oceans, lakes, rivers, and puddles, the water molecules get excited and transform from liquid into water vapour — an invisible gas that rises up into the air. This process is called evaporation.`,
-            `Every day, vast quantities of water evaporate from Earth's surface and drift silently up into the sky. You can't see it happening, but trillions of litres of water are rising invisibly into the atmosphere right now, all over the planet.`,
+            `The water cycle is the continuous movement of water through Earth's systems — oceans, atmosphere, land, and back again. It has no beginning and no end.`,
+            `It's powered by the Sun. The same water has been cycling around Earth for billions of years — the water in your glass right now is ancient.`,
           ],
-          image:        '/explorer-assets/cosmos/l03-magazine-evaporation.png',
-          imageCaption: `Evaporation — the Sun's heat turns liquid water into invisible vapour that rises into the sky`,
+          image:        '/explorer-assets/cosmos/l03-s1-water-cycle.png',
+          imageCaption: `The water cycle — water moving through Earth's systems forever`,
           vocab: [
-            { word: 'evaporation', definition: `The process by which liquid water is heated by the Sun and transforms into water vapour — an invisible gas that rises into the atmosphere.`, audioPrompt: `Evaporation — the process by which liquid water is heated by the Sun and transforms into water vapour, an invisible gas that rises into the atmosphere.` },
-            { word: 'water vapour', definition: `Water in its invisible gas form — created when liquid water evaporates and rises into the air, where it eventually cools and forms clouds.`, audioPrompt: `Water vapour — water in its invisible gas form, created when liquid water evaporates and rises into the air, where it eventually cools and forms clouds.` },
+            { word: 'water cycle', definition: `The continuous movement of water through Earth's systems — oceans, atmosphere, land, and back again.`, audioPrompt: `Water cycle — the continuous movement of water through Earth's systems: oceans, atmosphere, land, and back again.` },
+            { word: 'continuous',  definition: `Never stopping. The water cycle is continuous — it has no beginning and no end.`, audioPrompt: `Continuous — never stopping. The water cycle is continuous. It has no beginning and no end.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Condensation: Clouds Are Born`,
+          totalSections: 6,
+          headline:      `Evaporation`,
           paragraphs: [
-            `As water vapour rises higher into the atmosphere, the air gets cooler. When the vapour cools enough, it transforms back into tiny liquid droplets — a process called condensation. These tiny droplets cling to microscopic dust particles floating in the air, forming the fluffy white shapes we call clouds.`,
-            `Every cloud you've ever seen is made of millions of tiny water droplets suspended in the air. A single average cloud contains around 500 million litres of water — enough to fill hundreds of Olympic swimming pools. Clouds are not light and airy at all. They're extraordinarily heavy collections of water.`,
-            `The same process happens on your cold glass on a hot day — water vapour from the air condenses on the cold surface and forms droplets. That's condensation, and it's happening across the entire atmosphere all the time.`,
+            `When sunlight heats water on the surface of oceans, lakes, rivers, and puddles, the water molecules transform from liquid into water vapour — an invisible gas.`,
+            `This process is called evaporation. Trillions of litres of water rise silently into the atmosphere every day, all over the planet.`,
           ],
-          image:        '/explorer-assets/cosmos/l03-magazine-condensation.png',
-          imageCaption: `Condensation — water vapour cools and forms tiny droplets that gather into clouds`,
+          image:        '/explorer-assets/cosmos/l03-s2-evaporation.png',
+          imageCaption: `Evaporation — the Sun turns liquid water into invisible vapour that rises into the sky`,
           vocab: [
-            { word: 'condensation', definition: `The process by which water vapour cools and transforms back into liquid water droplets — this is how clouds form in the atmosphere.`, audioPrompt: `Condensation — the process by which water vapour cools and transforms back into liquid water droplets. This is how clouds form in the atmosphere.` },
-            { word: 'water droplets', definition: `Tiny liquid water particles formed when water vapour condenses — millions of them clump together around dust particles to form clouds.`, audioPrompt: `Water droplets — tiny liquid water particles formed when water vapour condenses. Millions of them clump together around dust particles to form clouds.` },
+            { word: 'evaporation',  definition: `When liquid water is heated by the Sun and turns into invisible water vapour that rises into the air.`, audioPrompt: `Evaporation — when liquid water is heated by the Sun and turns into invisible water vapour that rises into the air.` },
+            { word: 'water vapour', definition: `Water in its invisible gas form — created when liquid water evaporates and rises into the atmosphere.`, audioPrompt: `Water vapour — water in its invisible gas form, created when liquid water evaporates and rises into the atmosphere.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Precipitation: The Drop Falls Back`,
+          totalSections: 6,
+          headline:      `Condensation`,
           paragraphs: [
-            `As more and more water droplets collect inside a cloud, they join together and grow heavier. When they become too heavy for the air to support, they fall back to Earth as precipitation — rain, snow, sleet, or hail, depending on the temperature.`,
-            `About 75% of all precipitation falls directly into the ocean. The rest lands on continents — soaking into the soil, feeding rivers and lakes, or falling as snow on mountain ranges. Either way, the water is on its way back through the cycle.`,
-            `The atmosphere acts as a giant recycling system, lifting water from the surface, carrying it across continents in clouds, and dropping it back down where it's needed. Precipitation is the step that returns water to the land and makes all life on Earth possible.`,
+            `As water vapour rises higher, the air gets cooler. The vapour cools and transforms back into tiny liquid droplets — this is called condensation.`,
+            `The droplets cling to microscopic dust particles in the air and form clouds. Every cloud is made of millions of these tiny water droplets.`,
           ],
-          image:        '/explorer-assets/cosmos/l03-magazine-precipitation.png',
-          imageCaption: `Precipitation — clouds grow heavy and release water back to Earth as rain, snow, or hail`,
+          image:        '/explorer-assets/cosmos/l03-s3-condensation.png',
+          imageCaption: `Condensation — water vapour cools and forms tiny droplets that gather into clouds`,
           vocab: [
-            { word: 'precipitation', definition: `Water falling from clouds back to Earth's surface — it can take the form of rain, snow, sleet, or hail depending on the temperature.`, audioPrompt: `Precipitation — water falling from clouds back to Earth's surface. It can take the form of rain, snow, sleet, or hail depending on the temperature.` },
-            { word: 'atmosphere',    definition: `The layer of gases surrounding Earth — it acts as a giant water-recycling system, carrying water vapour and clouds across the planet and releasing it as precipitation.`, audioPrompt: `Atmosphere — the layer of gases surrounding Earth. It acts as a giant water-recycling system, carrying water vapour and clouds across the planet and releasing it as precipitation.` },
+            { word: 'condensation', definition: `When water vapour cools and turns back into tiny liquid droplets. This is how clouds form in the atmosphere.`, audioPrompt: `Condensation — when water vapour cools and turns back into tiny liquid droplets. This is how clouds form in the atmosphere.` },
+            { word: 'droplets',     definition: `Tiny water particles formed when vapour condenses. Millions of droplets gather together to form clouds.`, audioPrompt: `Droplets — tiny water particles formed when vapour condenses. Millions of droplets gather together to form clouds.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Collection and Runoff: Back to the Start`,
+          totalSections: 6,
+          headline:      `Precipitation`,
           paragraphs: [
-            `When precipitation lands on Earth, it collects. It flows into rivers, lakes, and streams. It soaks into the ground and fills underground reservoirs called aquifers, which store water beneath the soil and rock for thousands of years. It falls as snow on mountains and glaciers and stays frozen for centuries.`,
-            `Eventually, almost all of it finds its way back to the ocean — through rivers, through underground flow, through melting glaciers. And when it arrives back at the ocean, the Sun heats it again, and evaporation begins the whole cycle once more.`,
-            `The water cycle never stops. It has been running continuously since Earth's oceans first formed billions of years ago. The same water keeps moving through the same steps — evaporation, condensation, precipitation, collection — over and over, sustaining every living thing on this planet.`,
+            `As more droplets collect inside a cloud, they join together and grow heavier. When they become too heavy for the air to support, they fall back to Earth.`,
+            `This is called precipitation. Depending on the temperature, it falls as rain, snow, sleet, or hail.`,
           ],
-          image:        '/explorer-assets/cosmos/l03-magazine-collection.png',
-          imageCaption: `Collection — water gathers in rivers, lakes, and aquifers before flowing back to the ocean`,
+          image:        '/explorer-assets/cosmos/l03-s4-precipitation.png',
+          imageCaption: `Precipitation — clouds grow heavy and release water back to Earth as rain, snow, or hail`,
           vocab: [
-            { word: 'aquifer', definition: `An underground layer of rock or soil that stores water — aquifers hold enormous quantities of freshwater that can stay underground for thousands of years.`, audioPrompt: `Aquifer — an underground layer of rock or soil that stores water. Aquifers hold enormous quantities of freshwater that can stay underground for thousands of years.` },
-            { word: 'runoff',  definition: `Water that flows over land into rivers and streams after precipitation — it carries water back toward the ocean, completing the water cycle.`, audioPrompt: `Runoff — water that flows over land into rivers and streams after precipitation. It carries water back toward the ocean, completing the water cycle.` },
+            { word: 'precipitation', definition: `Water falling from clouds back to Earth — as rain, snow, sleet, or hail depending on the temperature.`, audioPrompt: `Precipitation — water falling from clouds back to Earth, as rain, snow, sleet, or hail depending on the temperature.` },
+            { word: 'temperature',   definition: `How hot or cold something is. Temperature decides whether precipitation falls as rain or snow.`, audioPrompt: `Temperature — how hot or cold something is. Temperature decides whether precipitation falls as rain or snow.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Collection`,
+          paragraphs: [
+            `When water lands on Earth, it collects. It flows into rivers and lakes. It soaks into the ground and fills underground reservoirs called aquifers.`,
+            `It falls as snow on mountains and stays frozen for centuries. Eventually, almost all of it finds its way back to the ocean.`,
+          ],
+          image:        '/explorer-assets/cosmos/l03-s5-collection.png',
+          imageCaption: `Collection — water gathers in rivers, lakes, aquifers, and glaciers before flowing back to the ocean`,
+          vocab: [
+            { word: 'aquifer', definition: `An underground layer of rock or soil that stores water. Aquifers can hold freshwater for thousands of years.`, audioPrompt: `Aquifer — an underground layer of rock or soil that stores water. Aquifers can hold freshwater for thousands of years.` },
+            { word: 'runoff',  definition: `Water flowing over land into rivers and streams after precipitation. Runoff carries water back toward the ocean.`, audioPrompt: `Runoff — water flowing over land into rivers and streams after precipitation. Runoff carries water back toward the ocean.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `It Never Stops`,
+          paragraphs: [
+            `When the water reaches the ocean, the Sun heats it again, and the cycle begins once more.`,
+            `The water cycle never stops. It has been running for billions of years — the same water, cycling through the same steps, sustaining all life on Earth.`,
+          ],
+          image:        '/explorer-assets/cosmos/l03-s6-eternal-cycle.png',
+          imageCaption: `The water cycle has been running for billions of years — and it sustains every living thing`,
+          vocab: [
+            { word: 'recycle', definition: `To use again and again. The water cycle recycles every drop of water on Earth — over and over forever.`, audioPrompt: `Recycle — to use again and again. The water cycle recycles every drop of water on Earth, over and over forever.` },
+            { word: 'sustain', definition: `To keep alive. The water cycle sustains every living thing on Earth — without it, no life would be possible.`, audioPrompt: `Sustain — to keep alive. The water cycle sustains every living thing on Earth. Without it, no life would be possible.` },
           ],
         },
 
@@ -186,12 +214,14 @@ const cosmos_explorer_l03_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L03] Loaded: "The Water Cycle: Rain's Amazing Journey" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l03-magazine-evaporation.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l03-magazine-condensation.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l03-magazine-precipitation.png',{ method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l03-magazine-collection.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L03] evaporation: ${r1.ok}, condensation: ${r2.ok}, precipitation: ${r3.ok}, collection: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l03-s1-water-cycle.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l03-s2-evaporation.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l03-s3-condensation.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l03-s4-precipitation.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l03-s5-collection.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l03-s6-eternal-cycle.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L03] water-cycle: ${r1.ok}, evaporation: ${r2.ok}, condensation: ${r3.ok}, precipitation: ${r4.ok}, collection: ${r5.ok}, eternal-cycle: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L03] Could not verify image assets — network check failed');
   });
