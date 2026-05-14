@@ -23,73 +23,101 @@ const cosmos_explorer_l12_screens = {
           guideText: `In the 1990s, scientists reintroduced wolves to Yellowstone National Park after they'd been gone for 70 years. What happened next shocked everyone. The wolves changed not just the animal populations, but the rivers. How could wolves change rivers? The answer reveals one of the most beautiful truths in science: everything is connected.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `What Is an Ecosystem?`,
           paragraphs: [
-            `An ecosystem is all the living things in an area — plants, animals, fungi, bacteria — interacting with each other AND with the non-living parts of their environment: water, sunlight, soil, temperature, and air. Everything in an ecosystem is connected to everything else.`,
-            `Ecosystems can be as large as an ocean or as small as a single puddle. The living parts of an ecosystem are called biotic factors. The non-living parts — sunlight, water, temperature, soil — are called abiotic factors. Both are essential. Remove the sunlight from a forest and the whole ecosystem collapses.`,
-            `Scientists study ecosystems to understand how nature works — and what happens when something changes. An ecosystem in balance is a remarkable, self-sustaining system. When something disrupts it, the effects ripple outward in ways that are often surprising and far-reaching.`,
+            `An ecosystem is all the living things in an area, interacting with each other and with the non-living parts of their environment.`,
+            `Ecosystems can be as huge as an ocean or as small as a single puddle. Everything in an ecosystem is connected to everything else.`,
           ],
-          image:        '/explorer-assets/cosmos/l12-magazine-ecosystem.png',
-          imageCaption: `An ecosystem — living things and their non-living environment, all connected and interdependent`,
+          image:        '/explorer-assets/cosmos/l12-s1-ecosystem.png',
+          imageCaption: `An ecosystem — living things and their environment, all woven together`,
           vocab: [
-            { word: 'ecosystem',     definition: `All living things in an area interacting with each other and with the non-living parts of their environment — a complex, connected system that sustains life.`,                                    audioPrompt: `Ecosystem — all living things in an area interacting with each other and with the non-living parts of their environment. A complex, connected system that sustains life.` },
-            { word: 'abiotic factor', definition: `A non-living component of an ecosystem — such as sunlight, water, temperature, and soil — that directly affects which living things can survive there.`, audioPrompt: `Abiotic factor — a non-living component of an ecosystem, such as sunlight, water, temperature, and soil, that directly affects which living things can survive there.` },
+            { word: 'ecosystem',   definition: `All living things in an area interacting with each other and with the non-living parts of their environment.`, audioPrompt: `Ecosystem — all living things in an area interacting with each other and with the non-living parts of their environment.` },
+            { word: 'environment', definition: `Everything around a living thing — both the other living things AND the non-living parts like sunlight, water, soil, and air.`, audioPrompt: `Environment — everything around a living thing. Both the other living things and the non-living parts like sunlight, water, soil, and air.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Wolves Changed Rivers`,
+          totalSections: 6,
+          headline:      `Biotic and Abiotic`,
           paragraphs: [
-            `When wolves returned to Yellowstone, they hunted elk. But the effect went far beyond just fewer elk. Elk started avoiding open valleys — easy places for wolves to hunt — and moved to higher, harder terrain. With fewer elk grazing in the valleys, the vegetation began to grow back. Grasses, wildflowers, shrubs, and trees reclaimed the riverbanks.`,
-            `As tree roots stabilised the soil along the rivers, the banks stopped eroding. Rivers that had been running wide and murky began to run clearer and straighter. Beaver populations returned — attracted by the new trees — and built dams that created new wetland habitats. Fish populations grew. Songbird populations grew.`,
-            `One species — the wolf — triggered a chain reaction through the entire ecosystem, all the way down to the shape of the rivers. This phenomenon is called a trophic cascade. It showed scientists that the most powerful force in an ecosystem isn't always the most numerous creature. Sometimes it's the one at the top.`,
+            `The living parts of an ecosystem are called biotic factors — plants, animals, fungi, bacteria.`,
+            `The non-living parts — sunlight, water, soil, temperature — are called abiotic factors. Both are essential. Remove the sunlight from a forest and the whole ecosystem collapses.`,
           ],
-          image:        '/explorer-assets/cosmos/l12-magazine-wolves-rivers.png',
-          imageCaption: `The Yellowstone trophic cascade — wolves returned and changed the rivers themselves`,
+          image:        '/explorer-assets/cosmos/l12-s2-biotic-abiotic.png',
+          imageCaption: `Every ecosystem has two kinds of parts — living (biotic) and non-living (abiotic)`,
           vocab: [
-            { word: 'trophic cascade', definition: `A chain of effects through an ecosystem triggered by one species — like wolves changing Yellowstone's rivers by changing elk behaviour, which allowed vegetation to regrow.`, audioPrompt: `Trophic cascade — a chain of effects through an ecosystem triggered by one species, like wolves changing Yellowstone's rivers by changing elk behaviour, which allowed vegetation to regrow.` },
-            { word: 'biotic factor',   definition: `A living component of an ecosystem — plants, animals, fungi, and bacteria are all biotic factors that interact with each other and with abiotic factors.`,               audioPrompt: `Biotic factor — a living component of an ecosystem. Plants, animals, fungi, and bacteria are all biotic factors that interact with each other and with abiotic factors.` },
+            { word: 'biotic factor',  definition: `A living part of an ecosystem — plants, animals, fungi, and bacteria are all biotic factors.`, audioPrompt: `Biotic factor — a living part of an ecosystem. Plants, animals, fungi, and bacteria are all biotic factors.` },
+            { word: 'abiotic factor', definition: `A non-living part of an ecosystem — sunlight, water, soil, and temperature. Without them, no life is possible.`, audioPrompt: `Abiotic factor — a non-living part of an ecosystem: sunlight, water, soil, and temperature. Without them, no life is possible.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Types of Ecosystems`,
+          totalSections: 6,
+          headline:      `The Wolves of Yellowstone`,
           paragraphs: [
-            `Earth has many types of ecosystems, each shaped by its temperature, rainfall, and geography. Tropical rainforests are the most biodiverse ecosystems on Earth — warm and wet year-round, they support more species per square kilometre than anywhere else. Temperate forests have four seasons. Grasslands stretch across vast flat plains where rainfall is too low for dense forests.`,
-            `Deserts are dry but far from lifeless — specialised plants and animals have evolved to survive with almost no water. Tundra ecosystems near the poles are cold and treeless, with a short summer growing season. Freshwater ecosystems — lakes, rivers, wetlands — cover a small fraction of Earth's surface but support an enormous diversity of life.`,
-            `Marine ecosystems — from shallow coral reefs to the deep ocean — cover over 70% of Earth's surface. Each ecosystem type supports its own community of organisms that have evolved together over millions of years. Move a species between ecosystem types and it usually can't survive.`,
+            `In the 1990s, scientists brought wolves back to Yellowstone National Park after they had been gone for 70 years.`,
+            `What happened next shocked everyone. The wolves didn't just change the animal populations — they changed the rivers themselves.`,
           ],
-          image:        '/explorer-assets/cosmos/l12-magazine-ecosystem-types.png',
-          imageCaption: `Earth's ecosystems — from tropical rainforests to polar tundra, each one a distinct living community`,
+          image:        '/explorer-assets/cosmos/l12-s3-wolves-return.png',
+          imageCaption: `Wolves returned to Yellowstone after 70 years — and changed everything`,
           vocab: [
-            { word: 'biodiversity', definition: `The variety of different species in an ecosystem — tropical rainforests have the highest biodiversity on Earth, supporting more species per area than any other ecosystem.`,            audioPrompt: `Biodiversity — the variety of different species in an ecosystem. Tropical rainforests have the highest biodiversity on Earth, supporting more species per area than any other ecosystem.` },
-            { word: 'habitat',      definition: `The natural environment where a species lives — each ecosystem type provides a distinct habitat, and organisms evolve over millions of years to suit the specific conditions.`, audioPrompt: `Habitat — the natural environment where a species lives. Each ecosystem type provides a distinct habitat, and organisms evolve over millions of years to suit the specific conditions.` },
+            { word: 'reintroduce', definition: `To bring a species back to a place it once lived but had disappeared from. Scientists reintroduced wolves to Yellowstone in the 1990s.`, audioPrompt: `Reintroduce — to bring a species back to a place it once lived but had disappeared from. Scientists reintroduced wolves to Yellowstone in the 1990s.` },
+            { word: 'Yellowstone', definition: `A famous National Park in the United States — the place where reintroducing wolves changed the rivers themselves.`, audioPrompt: `Yellowstone — a famous National Park in the United States. The place where reintroducing wolves changed the rivers themselves.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Ecosystem Services`,
+          totalSections: 6,
+          headline:      `A Trophic Cascade`,
           paragraphs: [
-            `Ecosystems don't just exist for their own sake — they provide services that all human life depends on. Clean air comes from plant photosynthesis. Clean water is filtered through wetlands and soil. Food depends on pollination by bees and other insects. Forests regulate the climate by absorbing carbon dioxide. Many medicines were first discovered in wild plants.`,
-            `Scientists estimate the economic value of ecosystem services to humanity is around $125–145 trillion per year — more than the entire global economy. These are services that would be impossible to replicate artificially at any realistic cost.`,
-            `When ecosystems are damaged or destroyed — through deforestation, pollution, or species extinction — these services are lost. The Yellowstone story showed that protecting one species can restore an entire ecosystem. Understanding ecosystems is not just science — it's essential to understanding how to protect the world we live in.`,
+            `The wolves hunted elk. Elk started avoiding open valleys. Trees and grasses regrew on the riverbanks. Tree roots stabilised the soil. Rivers ran clearer.`,
+            `One species — the wolf — triggered a chain reaction all the way down to the shape of the rivers. Scientists call this a trophic cascade.`,
           ],
-          image:        '/explorer-assets/cosmos/l12-magazine-ecosystem-services.png',
-          imageCaption: `Ecosystem services — clean air, clean water, food, climate regulation, and medicine, all from nature`,
+          image:        '/explorer-assets/cosmos/l12-s4-trophic-cascade.png',
+          imageCaption: `One species changed the elk, the trees, the riverbanks, and the rivers themselves`,
           vocab: [
-            { word: 'ecosystem services', definition: `The benefits that ecosystems provide to humans — including clean air, clean water, food, climate regulation, and medicines — estimated to be worth $125–145 trillion per year.`, audioPrompt: `Ecosystem services — the benefits that ecosystems provide to humans, including clean air, clean water, food, climate regulation, and medicines, estimated to be worth $125 to 145 trillion per year.` },
-            { word: 'pollinator',         definition: `An animal that carries pollen between flowers, enabling plant reproduction — bees, butterflies, birds, and bats are all pollinators that food crops depend on.`,                 audioPrompt: `Pollinator — an animal that carries pollen between flowers, enabling plant reproduction. Bees, butterflies, birds, and bats are all pollinators that food crops depend on.` },
+            { word: 'trophic cascade', definition: `A chain of effects through an ecosystem triggered by one species — like wolves changing Yellowstone's rivers.`, audioPrompt: `Trophic cascade — a chain of effects through an ecosystem triggered by one species, like wolves changing Yellowstone's rivers.` },
+            { word: 'chain reaction',  definition: `When one event causes another, which causes another, which causes another — like dominoes falling.`, audioPrompt: `Chain reaction — when one event causes another, which causes another, which causes another. Like dominoes falling.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Types of Ecosystems`,
+          paragraphs: [
+            `Earth has many types of ecosystems. Tropical rainforests are the most biodiverse on Earth — warm and wet, packed with life.`,
+            `Deserts are dry but full of specialised life. Tundras are cold and treeless. And marine ecosystems — oceans, reefs — cover 70% of Earth's surface.`,
+          ],
+          image:        '/explorer-assets/cosmos/l12-s5-ecosystem-types.png',
+          imageCaption: `Rainforest, desert, tundra, ocean — each one a distinct living world`,
+          vocab: [
+            { word: 'biodiversity', definition: `The variety of different species in an ecosystem. Tropical rainforests have the highest biodiversity on Earth.`, audioPrompt: `Biodiversity — the variety of different species in an ecosystem. Tropical rainforests have the highest biodiversity on Earth.` },
+            { word: 'habitat',      definition: `The natural environment where a species lives. Each ecosystem type is a different habitat for different creatures.`, audioPrompt: `Habitat — the natural environment where a species lives. Each ecosystem type is a different habitat for different creatures.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Why Ecosystems Matter`,
+          paragraphs: [
+            `Ecosystems give us things we can't live without — clean air from photosynthesis, clean water filtered through wetlands, food pollinated by bees, medicines from wild plants.`,
+            `Scientists estimate ecosystems provide humanity over $125 trillion in services every year — more than the entire global economy.`,
+          ],
+          image:        '/explorer-assets/cosmos/l12-s6-ecosystem-services.png',
+          imageCaption: `Air, water, food, medicine — all gifts from ecosystems we can't replace`,
+          vocab: [
+            { word: 'ecosystem services', definition: `The benefits ecosystems provide to humans — clean air, clean water, food, climate regulation, and medicines.`, audioPrompt: `Ecosystem services — the benefits ecosystems provide to humans: clean air, clean water, food, climate regulation, and medicines.` },
+            { word: 'conservation',       definition: `The act of protecting nature. Protecting ecosystems is essential to protecting human life too — we depend on them.`, audioPrompt: `Conservation — the act of protecting nature. Protecting ecosystems is essential to protecting human life too. We depend on them.` },
           ],
         },
 
@@ -184,12 +212,14 @@ const cosmos_explorer_l12_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L12] Loaded: "Ecosystems: Everything Is Connected" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l12-magazine-ecosystem.png',          { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l12-magazine-wolves-rivers.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l12-magazine-ecosystem-types.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l12-magazine-ecosystem-services.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L12] ecosystem: ${r1.ok}, wolves-rivers: ${r2.ok}, ecosystem-types: ${r3.ok}, ecosystem-services: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l12-s1-ecosystem.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l12-s2-biotic-abiotic.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l12-s3-wolves-return.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l12-s4-trophic-cascade.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l12-s5-ecosystem-types.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l12-s6-ecosystem-services.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L12] ecosystem: ${r1.ok}, biotic-abiotic: ${r2.ok}, wolves-return: ${r3.ok}, trophic-cascade: ${r4.ok}, ecosystem-types: ${r5.ok}, ecosystem-services: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L12] Could not verify image assets — network check failed');
   });
