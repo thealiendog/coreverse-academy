@@ -23,73 +23,101 @@ const cosmos_explorer_l11_screens = {
           guideText: `Plants do something no animal can do: they make food out of thin air and sunlight. They take carbon dioxide — a gas we breathe out — water, and light energy, and turn it into sugar to fuel their growth. And in the process, they release the oxygen we need to breathe. Plants keep us alive.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
+          totalSections: 6,
           headline:      `The Photosynthesis Recipe`,
           paragraphs: [
-            `Photosynthesis happens mainly in the leaves of plants. Here's the formula: carbon dioxide from the air, plus water absorbed by the roots, plus light energy from the Sun — these three ingredients are combined to make glucose, a sugar the plant uses for energy, and oxygen, which is released into the air.`,
-            `The green pigment in leaves called chlorophyll is what makes this possible. Chlorophyll captures light energy and uses it to power the chemical reaction. It absorbs red and blue light most effectively — and reflects green light back. That's why plants are green.`,
-            `Every green leaf you've ever seen is a solar-powered food factory, quietly running one of the most important chemical reactions on Earth. Right now, in billions of leaves across the planet, photosynthesis is happening — making food and releasing the oxygen in every breath you take.`,
+            `Photosynthesis happens mainly in the leaves of plants. The recipe: carbon dioxide from air + water from roots + sunlight = sugar for the plant, and oxygen released into the air.`,
+            `Three ingredients in. Two outputs. The most important chemical reaction on Earth, happening in every green leaf you've ever seen.`,
           ],
-          image:        '/explorer-assets/cosmos/l11-magazine-photosynthesis.png',
-          imageCaption: `Photosynthesis — sunlight, water, and CO₂ combining in a leaf to make food and release oxygen`,
+          image:        '/explorer-assets/cosmos/l11-s1-photosynthesis.png',
+          imageCaption: `Plants turn air, water, and sunlight into food — and release oxygen as a bonus`,
           vocab: [
-            { word: 'photosynthesis', definition: `The process plants use to convert sunlight, water, and carbon dioxide into glucose (sugar for energy) and oxygen — the chemical reaction that powers almost all life on Earth.`, audioPrompt: `Photosynthesis — the process plants use to convert sunlight, water, and carbon dioxide into glucose and oxygen. The chemical reaction that powers almost all life on Earth.` },
-            { word: 'chlorophyll',    definition: `The green pigment in plant leaves that captures light energy to power photosynthesis — it absorbs red and blue light and reflects green, which is why plants appear green.`,    audioPrompt: `Chlorophyll — the green pigment in plant leaves that captures light energy to power photosynthesis. It absorbs red and blue light and reflects green, which is why plants appear green.` },
+            { word: 'photosynthesis', definition: `How plants make food using sunlight, water, and carbon dioxide. The chemical reaction that powers almost all life on Earth.`, audioPrompt: `Photosynthesis — how plants make food using sunlight, water, and carbon dioxide. The chemical reaction that powers almost all life on Earth.` },
+            { word: 'glucose',        definition: `The sugar that plants make through photosynthesis — their energy source. Glucose is the food a plant feeds itself.`, audioPrompt: `Glucose — the sugar that plants make through photosynthesis, their energy source. Glucose is the food a plant feeds itself.` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Why Plants Matter So Much`,
+          totalSections: 6,
+          headline:      `Why Plants Are Green`,
           paragraphs: [
-            `Plants produce the oxygen in our atmosphere. Before plants evolved about 500 million years ago, Earth's atmosphere had almost no free oxygen. It was plants — and the algae and cyanobacteria before them — that filled the air with oxygen, transforming Earth into a world where complex animal life could exist.`,
-            `Plants also form the base of almost every food chain on land. Every herbivore, and every carnivore that eats herbivores, ultimately depends on plants for energy. And plants absorb carbon dioxide — a greenhouse gas — as they photosynthesize, playing a crucial role in regulating Earth's climate. Rainforests alone produce about 20% of Earth's oxygen.`,
-            `When you breathe out carbon dioxide, a plant somewhere breathes it in. When a plant releases oxygen, you breathe it in. Every breath you take is part of a cycle running between animals and plants that has continued unbroken for hundreds of millions of years.`,
+            `The green pigment in leaves is called chlorophyll. It captures the Sun's light energy and powers the whole reaction.`,
+            `Chlorophyll absorbs red and blue light — but reflects green light back. That reflected green is what reaches your eyes. That's why plants are green.`,
           ],
-          image:        '/explorer-assets/cosmos/l11-magazine-plants-matter.png',
-          imageCaption: `Plants and the oxygen cycle — every breath of air we breathe was produced by photosynthesis`,
+          image:        '/explorer-assets/cosmos/l11-s2-chlorophyll.png',
+          imageCaption: `Plants look green because chlorophyll reflects green light — and absorbs all the rest`,
           vocab: [
-            { word: 'atmosphere', definition: `The layer of gases surrounding Earth — before plants evolved, Earth's atmosphere had almost no oxygen. Plants changed it into the air-breathing world we live in today.`, audioPrompt: `Atmosphere — the layer of gases surrounding Earth. Before plants evolved, Earth's atmosphere had almost no oxygen. Plants changed it into the air-breathing world we live in today.` },
-            { word: 'carbon dioxide', definition: `A gas released by animals when they breathe out — plants absorb it during photosynthesis and convert it into glucose, removing it from the atmosphere.`,             audioPrompt: `Carbon dioxide — a gas released by animals when they breathe out. Plants absorb it during photosynthesis and convert it into glucose, removing it from the atmosphere.` },
+            { word: 'chlorophyll', definition: `The green pigment in plant leaves that captures sunlight to power photosynthesis. Chlorophyll is the engine of every leaf.`, audioPrompt: `Chlorophyll — the green pigment in plant leaves that captures sunlight to power photosynthesis. Chlorophyll is the engine of every leaf.` },
+            { word: 'pigment',     definition: `A substance that gives something its color. Chlorophyll is the pigment that makes leaves green.`, audioPrompt: `Pigment — a substance that gives something its color. Chlorophyll is the pigment that makes leaves green.` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Plant Parts and Their Jobs`,
+          totalSections: 6,
+          headline:      `Plants Made the Oxygen`,
           paragraphs: [
-            `Every part of a plant has a specific job. Roots anchor the plant in the ground and absorb water and minerals from the soil. The stem transports water and nutrients between the roots and the leaves, and supports the plant upright toward the light.`,
-            `Leaves are the main photosynthesis factories. Their flat, wide shape is designed to maximise surface area for catching sunlight. Flowers attract pollinators — bees, butterflies, birds — which carry pollen between plants so seeds can form. Fruits protect seeds and help disperse them, often by being eaten by animals.`,
-            `These parts work together as a complete system. Roots gather water. Stems move it upward. Leaves turn it into food. Flowers and fruits make the next generation. A plant is a beautifully engineered machine shaped by millions of years of evolution.`,
+            `Before plants evolved 500 million years ago, Earth's atmosphere had almost no free oxygen at all.`,
+            `It was plants — and the algae and bacteria before them — that filled the air with oxygen, transforming Earth into a world where complex animals could live.`,
           ],
-          image:        '/explorer-assets/cosmos/l11-magazine-plant-parts.png',
-          imageCaption: `Plant parts — roots, stem, leaves, flowers, and fruits, each with a precise job`,
+          image:        '/explorer-assets/cosmos/l11-s3-earth-transformed.png',
+          imageCaption: `Without plants, Earth's atmosphere would still be empty of oxygen — and we wouldn't exist`,
           vocab: [
-            { word: 'pollination', definition: `The transfer of pollen between flowers, often carried by bees, butterflies, or birds — it allows plants to reproduce by forming seeds.`,                                                       audioPrompt: `Pollination — the transfer of pollen between flowers, often carried by bees, butterflies, or birds. It allows plants to reproduce by forming seeds.` },
-            { word: 'seed dispersal', definition: `The process by which seeds are spread away from the parent plant — by animals eating fruits, by wind, or by water — giving seeds room to grow into new plants.`, audioPrompt: `Seed dispersal — the process by which seeds are spread away from the parent plant, by animals eating fruits, by wind, or by water, giving seeds room to grow into new plants.` },
+            { word: 'atmosphere', definition: `The layer of gases surrounding Earth. Plants filled it with oxygen over hundreds of millions of years.`, audioPrompt: `Atmosphere — the layer of gases surrounding Earth. Plants filled it with oxygen over hundreds of millions of years.` },
+            { word: 'oxygen',     definition: `The gas in the air that animals (including you) breathe. Plants make oxygen as a by-product of photosynthesis.`, audioPrompt: `Oxygen — the gas in the air that animals, including you, breathe. Plants make oxygen as a by-product of photosynthesis.` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Plants Are Incredibly Diverse`,
+          totalSections: 6,
+          headline:      `The Breath Cycle`,
           paragraphs: [
-            `There are about 390,000 known plant species on Earth — from microscopic aquatic algae to enormous trees. The tallest living thing on Earth is a coast redwood tree in California, standing at 380 feet tall — taller than a 30-storey building.`,
-            `The largest plant by area is a grove of quaking aspen trees in Utah called Pando. What looks like a forest of thousands of trees is actually a single organism — they all share one root system, spreading across 106 acres. Pando is estimated to be 80,000 years old.`,
-            `Some plants have evolved to capture and eat insects. The Venus flytrap snaps shut when an insect touches its trigger hairs — digesting it as a source of nutrients the plant can't get from the soil. Plants are far stranger and more inventive than most people realise.`,
+            `When you breathe out carbon dioxide, a plant somewhere breathes it in. When a plant releases oxygen, you breathe it in.`,
+            `Every breath you take is part of a cycle running between animals and plants that has continued unbroken for hundreds of millions of years.`,
           ],
-          image:        '/explorer-assets/cosmos/l11-magazine-plant-diversity.png',
-          imageCaption: `Plant diversity — from towering redwoods to carnivorous flytraps and ancient aspen superorganisms`,
+          image:        '/explorer-assets/cosmos/l11-s4-breath-cycle.png',
+          imageCaption: `Every breath you take is part of an unbroken cycle between plants and animals`,
           vocab: [
-            { word: 'species',      definition: `A group of living things that share the same characteristics and can reproduce together — there are about 390,000 known plant species on Earth.`,                                                        audioPrompt: `Species — a group of living things that share the same characteristics and can reproduce together. There are about 390,000 known plant species on Earth.` },
-            { word: 'superorganism', definition: `A collection of individuals that together function as a single organism — the Pando aspen grove in Utah is one plant superorganism covering 106 acres on a single shared root system.`, audioPrompt: `Superorganism — a collection of individuals that together function as a single organism. The Pando aspen grove in Utah is one plant superorganism covering 106 acres on a single shared root system.` },
+            { word: 'carbon dioxide', definition: `A gas animals breathe out. Plants absorb carbon dioxide during photosynthesis — using it to make their food.`, audioPrompt: `Carbon dioxide — a gas animals breathe out. Plants absorb carbon dioxide during photosynthesis, using it to make their food.` },
+            { word: 'cycle',          definition: `A process that repeats over and over. The breath cycle between plants and animals never stops — it's been running for hundreds of millions of years.`, audioPrompt: `Cycle — a process that repeats over and over. The breath cycle between plants and animals never stops. It's been running for hundreds of millions of years.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Plant Parts and Their Jobs`,
+          paragraphs: [
+            `Every part of a plant has a specific job. Roots anchor the plant and absorb water. Stems carry water up and hold the plant upright.`,
+            `Leaves are the photosynthesis factories. Flowers attract pollinators like bees. Fruits protect seeds and help them spread.`,
+          ],
+          image:        '/explorer-assets/cosmos/l11-s5-plant-parts.png',
+          imageCaption: `Roots, stem, leaves, flowers, fruits — each part has a specific job in keeping a plant alive`,
+          vocab: [
+            { word: 'root',       definition: `The underground part of a plant. Roots anchor the plant in the soil and absorb water and minerals.`, audioPrompt: `Root — the underground part of a plant. Roots anchor the plant in the soil and absorb water and minerals.` },
+            { word: 'pollinator', definition: `An animal like a bee or butterfly that carries pollen between flowers — letting plants reproduce.`, audioPrompt: `Pollinator — an animal like a bee or butterfly that carries pollen between flowers, letting plants reproduce.` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Strange and Wonderful`,
+          paragraphs: [
+            `There are about 390,000 known plant species — from tiny algae to massive trees. The tallest is a coast redwood in California, 380 feet tall.`,
+            `The Venus flytrap snaps shut to eat insects. The Pando aspen grove in Utah is a single connected plant covering 106 acres — 80,000 years old.`,
+          ],
+          image:        '/explorer-assets/cosmos/l11-s6-strange-plants.png',
+          imageCaption: `Plants are stranger than they look — flytraps that eat bugs, aspen groves that are one organism`,
+          vocab: [
+            { word: 'species',       definition: `A group of living things that share traits and can reproduce together. There are about 390,000 plant species on Earth.`, audioPrompt: `Species — a group of living things that share traits and can reproduce together. There are about 390,000 plant species on Earth.` },
+            { word: 'superorganism', definition: `Many individuals working as one. The Pando aspen grove is one superorganism — 106 acres of trees, all connected by shared roots.`, audioPrompt: `Superorganism — many individuals working as one. The Pando aspen grove is one superorganism, 106 acres of trees, all connected by shared roots.` },
           ],
         },
 
@@ -101,9 +129,9 @@ const cosmos_explorer_l11_screens = {
           guideText:     `Every part of a plant has its own important job — roots, stems, leaves, and flowers all work together to keep the plant alive and growing. Can you match each description to the right plant part?`,
           columnHeaders: [`What It Does`, `Plant Part`],
           items: [
-            { image: 'l11-game-roots.png',  label: `Reaching deep into soil to anchor the plant and absorb water and minerals.`,         correctMatch: 'root',   objectPosition: 'center 50%', matchPhrase: `Root! Roots have two vital jobs: anchoring the plant firmly in the ground so it doesn't fall over, and absorbing the water and minerals from soil that the plant needs to grow. Without roots, a plant would dry out and blow away.` },
-            { image: 'l11-game-stem.png',   label: `Carrying water up from the roots to the leaves while holding the plant upright.`,    correctMatch: 'stem',   objectPosition: 'center 50%', matchPhrase: `Stem! The stem is the plant's transport highway — moving water and minerals up from the roots to the leaves, and sending sugars made in the leaves back down to the rest of the plant. It also holds the plant upright so the leaves can reach the sunlight.` },
-            { image: 'l11-game-leaf.png',   label: `Spread wide and flat to catch sunlight and power photosynthesis.`,                   correctMatch: 'leaf',   objectPosition: 'center 50%', matchPhrase: `Leaf! Leaves are the plant's food factories — packed with chlorophyll that captures sunlight and uses it to convert carbon dioxide and water into glucose and oxygen. Their flat, wide shape is designed to maximise the surface area catching light.` },
+            { image: 'l11-game-roots.png',  label: `Reaching deep into soil to anchor the plant and absorb water and minerals.`,          correctMatch: 'root',   objectPosition: 'center 50%', matchPhrase: `Root! Roots have two vital jobs: anchoring the plant firmly in the ground so it doesn't fall over, and absorbing the water and minerals from soil that the plant needs to grow. Without roots, a plant would dry out and blow away.` },
+            { image: 'l11-game-stem.png',   label: `Carrying water up from the roots to the leaves while holding the plant upright.`,     correctMatch: 'stem',   objectPosition: 'center 50%', matchPhrase: `Stem! The stem is the plant's transport highway — moving water and minerals up from the roots to the leaves, and sending sugars made in the leaves back down to the rest of the plant. It also holds the plant upright so the leaves can reach the sunlight.` },
+            { image: 'l11-game-leaf.png',   label: `Spread wide and flat to catch sunlight and power photosynthesis.`,                    correctMatch: 'leaf',   objectPosition: 'center 50%', matchPhrase: `Leaf! Leaves are the plant's food factories — packed with chlorophyll that captures sunlight and uses it to convert carbon dioxide and water into glucose and oxygen. Their flat, wide shape is designed to maximise the surface area catching light.` },
             { image: 'l11-game-flower.png', label: `Producing bright colours and scents to attract bees and butterflies for pollination.`, correctMatch: 'flower', objectPosition: 'center 50%', matchPhrase: `Flower! Flowers exist for one purpose: reproduction. Their colours, shapes, and scents attract pollinators like bees and butterflies, which carry pollen between plants and allow seeds to form. Without flowers — and the pollinators they attract — most plants couldn't reproduce.` },
           ],
           buckets: [
@@ -186,12 +214,14 @@ const cosmos_explorer_l11_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-COSMOS-L11] Loaded: "Plants and Photosynthesis" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/cosmos/l11-magazine-photosynthesis.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l11-magazine-plants-matter.png',   { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l11-magazine-plant-parts.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/cosmos/l11-magazine-plant-diversity.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-COSMOS-L11] photosynthesis: ${r1.ok}, plants-matter: ${r2.ok}, plant-parts: ${r3.ok}, plant-diversity: ${r4.ok}`);
+    fetch('/explorer-assets/cosmos/l11-s1-photosynthesis.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l11-s2-chlorophyll.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l11-s3-earth-transformed.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l11-s4-breath-cycle.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l11-s5-plant-parts.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/cosmos/l11-s6-strange-plants.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-COSMOS-L11] photosynthesis: ${r1.ok}, chlorophyll: ${r2.ok}, earth-transformed: ${r3.ok}, breath-cycle: ${r4.ok}, plant-parts: ${r5.ok}, strange-plants: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-COSMOS-L11] Could not verify image assets — network check failed');
   });
