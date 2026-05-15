@@ -23,73 +23,101 @@ const futureskills_explorer_l10_screens = {
           guideText: `The designers at IDEO were asked to redesign a hospital experience to make it less frightening for sick children. Instead of sitting in a conference room guessing what kids wanted, they stayed in the hospital, rode in the beds, and experienced every step themselves. What they discovered changed everything. That approach — empathy first, then design — is called design thinking, and it's the most human-centered way to solve any problem.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is Design Thinking?`,
+          totalSections: 6,
+          headline:      'Start With People',
           paragraphs: [
-            `Design thinking is a problem-solving approach used by innovators around the world. It flips traditional problem solving: instead of starting with a solution and seeing if people want it, you start with people and understand their needs deeply before designing anything. The result is solutions that people actually want and use — not solutions that look good on paper but fail in real life.`,
-            `The approach was developed and popularized by the design firm IDEO and spread through institutions like Stanford's d.school, where it became a core framework for teaching innovation. What makes design thinking different isn't just the steps — it's the underlying attitude. Design thinkers start from a position of genuine curiosity and humility: "I don't know what people need yet. I need to find out before I can solve anything."`,
-            `Design thinking is now used far beyond product design. Hospitals use it to redesign patient experiences. Schools use it to redesign how learning happens. Cities use it to redesign public spaces. Aid organizations use it to design programs that actually serve the communities they're meant to help. Any time a solution must fit real human needs — rather than what someone in a conference room assumes those needs are — design thinking is the right approach.`,
+            'Most problem-solving starts with a solution and tries to make people want it. Design thinking flips that.',
+            'Start with the people. Understand their real needs. Then design. The result: solutions people actually want and use.',
           ],
-          image:        '/explorer-assets/future-skills/l10-magazine-what-is-design-thinking.png',
-          imageCaption: `What is design thinking — a human-centered approach that starts with deep empathy for real people before creating any solution`,
+          image:        '/explorer-assets/future-skills/l10-s1-person-centered.png',
+          imageCaption: 'Most "good ideas" fail because they were built without understanding who they\'s for. Design thinking fixes that.',
           vocab: [
-            { word: `design thinking`, definition: `A human-centered approach to problem solving that starts with deeply understanding the people you're designing for — their needs, frustrations, and experiences — before creating any solution.`,   audioPrompt: `Design thinking — a human-centered approach to problem solving that starts with deeply understanding the people you're designing for — their needs, frustrations, and experiences — before creating any solution.` },
-            { word: `human-centered`,  definition: `An approach that puts the needs, experiences, and perspectives of real people at the center of every decision — rather than starting from technical requirements or business goals.`,             audioPrompt: `Human-centered — an approach that puts the needs, experiences, and perspectives of real people at the center of every decision, rather than starting from technical requirements or business goals.` },
+            { word: 'design thinking', definition: 'A human-centered problem-solving approach that starts by deeply understanding people\'s real needs.', audioPrompt: 'Design thinking — a human-centered problem-solving approach that starts by deeply understanding people\'s real needs.' },
+            { word: 'human-centered',  definition: 'Starting from real people\'s needs and experiences — not from technical requirements or assumptions.', audioPrompt: 'Human-centered — starting from real people\'s needs and experiences, not from technical requirements or assumptions.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Five Stages`,
+          totalSections: 6,
+          headline:      'The Hospital Story',
           paragraphs: [
-            `Design thinking has five stages that form a cycle rather than a straight line. Empathize: understand the people you're designing for — observe them in their environment, interview them about their experiences, and if possible, experience their world yourself. Define: clearly state the problem you're solving based on what you actually learned — not what you assumed before you started. The Define stage is where you translate human insight into a clear challenge.`,
-            `Ideate: brainstorm as many solutions as possible — quantity over quality at first. The goal is to get every idea out of your head and onto paper, including the wild ones. The best idea is rarely the first one. Prototype: build a simple, rough version of your best idea quickly and cheaply. The goal of a prototype isn't to be perfect — it's to be testable. Test: try your prototype with real users, observe how they interact with it, listen to their feedback, and use what you learn to improve.`,
-            `The five stages aren't meant to be followed in strict sequence — they're meant to be looped. After testing, you might discover that you defined the problem wrong, so you go back to the Define stage. After prototyping, you might have new ideas, so you go back to Ideate. This iterative, non-linear approach is what allows design thinking to produce solutions that genuinely fit the real complexity of human needs. The willingness to go back and revise is a feature, not a weakness.`,
+            'IDEO was asked to make hospitals less scary for sick kids. Instead of guessing in a conference room, they rode in the beds.',
+            'They discovered the scariest moment wasn\'t the surgery. It was the long hallway ride staring at ceiling lights. No one would have guessed that.',
           ],
-          image:        '/explorer-assets/future-skills/l10-magazine-five-stages.png',
-          imageCaption: `The five stages of design thinking — Empathize, Define, Ideate, Prototype, Test — a cycle rather than a straight line`,
+          image:        '/explorer-assets/future-skills/l10-s2-hospital-corridor.png',
+          imageCaption: 'You\'d never know it from a meeting room. You only learn it by actually being there.',
           vocab: [
-            { word: `ideate`,    definition: `The design thinking stage where you brainstorm as many possible solutions as you can — without judging any of them. The goal is to generate a wide range of options before selecting the most promising ones.`,   audioPrompt: `Ideate — the design thinking stage where you brainstorm as many possible solutions as you can, without judging any of them. The goal is to generate a wide range of options before selecting the most promising ones.` },
-            { word: `iterative`, definition: `A process that repeats and improves in cycles — rather than moving forward in a straight line, iterative design circles back to earlier stages when new information reveals that something needs to change.`,       audioPrompt: `Iterative — a process that repeats and improves in cycles. Rather than moving forward in a straight line, iterative design circles back to earlier stages when new information reveals that something needs to change.` },
+            { word: 'IDEO',    definition: 'A design firm that pioneered design thinking and helped spread it to schools, hospitals, and companies worldwide.', audioPrompt: 'IDEO — a design firm that pioneered design thinking and helped spread it to schools, hospitals, and companies worldwide.' },
+            { word: 'insight', definition: 'A deep understanding of a real human need — usually discovered through observation, not from asking questions.', audioPrompt: 'Insight — a deep understanding of a real human need, usually discovered through observation, not from asking questions.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Empathy: The Most Important Step`,
+          totalSections: 6,
+          headline:      'Empathize & Define',
           paragraphs: [
-            `The empathy stage is what makes design thinking different from every other problem-solving approach. Before designing anything, you try to deeply understand the person who will use it. You observe them in their environment, interview them about their experiences, and if possible, experience the problem yourself. You're not looking for what they say they want — you're looking for what they actually need, which is often something different.`,
-            `The hospital redesign team that stayed in the beds discovered that the most frightening moment for children wasn't the medical procedures — it was the long ride through the corridor to surgery, staring up at fluorescent ceiling lights. No one in a conference room would have guessed that. So the team redesigned the ride as an adventure, with theme environments along the route and something interesting to look at on the ceiling. The children's fear decreased dramatically — because the solution addressed the real problem, not the assumed one.`,
-            `Empathy research produces insight — a deep understanding of the gap between how things are and how they could be for the people involved. A good insight statement captures not just what the problem is but why it matters to a specific person. "Elderly patients feel isolated in hospital rooms because the TV remote is too complicated to use independently" is an insight that points directly toward a solution. "Hospitals should have better technology" is not — it's a solution looking for a problem, not an insight from empathy.`,
+            'Empathize: observe people, interview them, experience their world. Don\'t ask what they want. Find what they actually need.',
+            'Define: state the problem in one clear sentence based on what you learned — not what you assumed before you started.',
           ],
-          image:        '/explorer-assets/future-skills/l10-magazine-empathy.png',
-          imageCaption: `Empathy — observing, interviewing, and experiencing the world of the people you're designing for, to find what they truly need`,
+          image:        '/explorer-assets/future-skills/l10-s3-observe-and-define.png',
+          imageCaption: 'Watch first. Define second. Most "obvious problems" turn out to be the wrong problem once you actually look.',
           vocab: [
-            { word: `empathy`,  definition: `The ability to understand and share the feelings and experiences of another person — in design thinking, empathy means immersing yourself in users' worlds to discover their real needs before designing anything.`, audioPrompt: `Empathy — the ability to understand and share the feelings and experiences of another person. In design thinking, empathy means immersing yourself in users' worlds to discover their real needs before designing anything.` },
-            { word: `insight`,  definition: `A deep understanding of a human need or problem, discovered through empathy research — a good insight explains not just what the problem is but why it matters, and points toward meaningful solutions.`,             audioPrompt: `Insight — a deep understanding of a human need or problem, discovered through empathy research. A good insight explains not just what the problem is but why it matters, and points toward meaningful solutions.` },
+            { word: 'empathize', definition: 'The design thinking stage where you deeply understand the people you\'re designing for through observation and interviews.', audioPrompt: 'Empathize — the design thinking stage where you deeply understand the people you\'re designing for through observation and interviews.' },
+            { word: 'define',    definition: 'The design thinking stage where you state the real problem clearly in one sentence, based on what you actually learned.', audioPrompt: 'Define — the design thinking stage where you state the real problem clearly in one sentence, based on what you actually learned.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Prototyping: Build Fast and Cheap`,
+          totalSections: 6,
+          headline:      'Ideate — Brainstorm Without Judgment',
           paragraphs: [
-            `A prototype is a rough, quick model of your idea built to test a concept — not to be perfect. The first prototypes of famous products were not polished: early airplane prototypes were built from bicycle parts, wood, and fabric. Early computing prototypes were built from salvaged electronic components. The point of a prototype isn't beauty or completeness — it's learning. A cheap model that fails quickly teaches you more than a perfect plan that's never tested.`,
-            `Prototyping forces you to make your abstract idea concrete. As long as a solution stays in your head or on paper, it can seem to work perfectly. The moment you try to build even a rough version, you discover the gaps, the contradictions, and the assumptions you didn't realize you were making. This is why design thinkers build prototypes early and often — not to finish, but to learn. Every failed prototype is a step closer to a solution that actually works.`,
-            `The mindset behind prototyping — build fast, test early, learn and improve — has spread well beyond product design. Software engineers use it in the form of minimum viable products: release a basic version to real users, get feedback, and improve rapidly. Scientists use it in the form of small-scale experiments before large studies. Entrepreneurs use it to test business ideas before investing heavily. The underlying principle is the same: real learning comes from real-world feedback, not planning alone.`,
+            'Ideate: brainstorm as many ideas as you can. No filtering. Wild ideas welcome.',
+            'The best idea is rarely the first one. Quantity comes before quality. Judge later — generate now.',
           ],
-          image:        '/explorer-assets/future-skills/l10-magazine-prototyping.png',
-          imageCaption: `Prototyping — build fast and cheap to test your idea in the real world; a prototype that fails teaches you more than a perfect plan`,
+          image:        '/explorer-assets/future-skills/l10-s4-ideate-whiteboard.png',
+          imageCaption: 'Thirty mediocre ideas beats five careful ones every time. The wild ones often hide the best solutions.',
           vocab: [
-            { word: `prototype`,              definition: `A rough, quick model of an idea built to test a concept with real users — not meant to be perfect or final. Prototypes let you learn what works before investing in a complete solution.`,   audioPrompt: `Prototype — a rough, quick model of an idea built to test a concept with real users. Not meant to be perfect or final. Prototypes let you learn what works before investing in a complete solution.` },
-            { word: `minimum viable product`, definition: `The simplest version of a product that can be tested with real users — a prototype scaled to real use. The goal is to learn as much as possible with as little investment as possible.`,          audioPrompt: `Minimum viable product — the simplest version of a product that can be tested with real users. A prototype scaled to real use. The goal is to learn as much as possible with as little investment as possible.` },
+            { word: 'ideate',     definition: 'The design thinking stage where you brainstorm many possible solutions without judging any of them.', audioPrompt: 'Ideate — the design thinking stage where you brainstorm many possible solutions without judging any of them.' },
+            { word: 'brainstorm', definition: 'Generating ideas freely with no criticism allowed. Criticism comes later — during brainstorming, every idea goes on the board.', audioPrompt: 'Brainstorm — generating ideas freely with no criticism allowed. Criticism comes later; during brainstorming, every idea goes on the board.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Prototype & Test',
+          paragraphs: [
+            'Prototype: build a fast, cheap version of your idea. Cardboard, tape, paper — whatever works. Not meant to be perfect.',
+            'Test it with real people. Watch how they use it. Listen. Improve. Repeat. A failed prototype teaches more than a flawless plan.',
+          ],
+          image:        '/explorer-assets/future-skills/l10-s5-cardboard-prototype.png',
+          imageCaption: 'Build something ugly fast. Watch what happens. Learn. Improve. That loop is where real solutions come from.',
+          vocab: [
+            { word: 'prototype', definition: 'A rough, quick model built to test an idea with real people. Made to learn from — not to be perfect.', audioPrompt: 'Prototype — a rough, quick model built to test an idea with real people. Made to learn from, not to be perfect.' },
+            { word: 'iterative', definition: 'A process that improves through repeated cycles of testing and learning. Not a straight line — a loop.', audioPrompt: 'Iterative — a process that improves through repeated cycles of testing and learning. Not a straight line; a loop.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Why It Works',
+          paragraphs: [
+            'Design thinking is used everywhere now — hospitals, schools, cities, aid organizations, product companies.',
+            'It works because it answers the most important question first: "What do these specific people actually need?" Then it builds backwards from there.',
+          ],
+          image:        '/explorer-assets/future-skills/l10-s6-design-thinking-world.png',
+          imageCaption: 'Schools, hospitals, cities, charities — anywhere solutions must fit real human needs, this is the approach that works.',
+          vocab: [
+            { word: 'user',                   definition: 'The actual person who will use a solution. Design thinking puts the user at the center of every decision.', audioPrompt: 'User — the actual person who will use a solution. Design thinking puts the user at the center of every decision.' },
+            { word: 'minimum viable product', definition: 'The simplest version of a product that can be tested with real users. Learn fast, invest little.', audioPrompt: 'Minimum viable product — the simplest version of a product that can be tested with real users. Learn fast, invest little.' },
           ],
         },
 
@@ -101,11 +129,11 @@ const futureskills_explorer_l10_screens = {
           guideText:     `The IDEO team redesigning the hospital experience for children went through every stage of design thinking. Each action below belongs to one stage: Empathize, Define, Ideate, or Prototype. Can you match them correctly?`,
           columnHeaders: [`The Action`, `Which Stage?`],
           items: [
-            { image: 'l10-game-empathize.png', label: `Riding in a hospital bed through the corridors and noticing how frightening the long hallway feels from a child's point of view.`,                                                correctMatch: 'empathize', objectPosition: 'center 50%', matchPhrase: `Empathize! Experiencing the hospital environment as a patient — riding the bed, seeing the ceiling lights, feeling the anxiety of the corridor — is empathy in action. This is how the team discovered the real problem: not the medical procedures, but the frightening ride to surgery. No interview or survey would have revealed this as vividly as living it. Empathy research finds what people truly experience, not just what they report when asked.` },
-            { image: 'l10-game-define.png',    label: `Writing down: 'The kids feel scared on the way to their procedures — they need the trip to feel safe and fun instead.'`,                                                           correctMatch: 'define',    objectPosition: 'center 50%', matchPhrase: `Define! Translating what the team observed into a clear, human-centered problem statement is the Define stage. "The kids feel scared on the way to their procedures — they need the trip to feel safe and fun instead" captures the real need discovered through empathy. A good Define statement describes the problem from the user's perspective, not the organization's. It points toward a solution without prescribing one — it says what needs to change without dictating how.` },
-            { image: 'l10-game-ideate.png',    label: `Filling a whiteboard with every possible way to make the hallway journey feel exciting rather than scary — no idea too wild to write down.`,                                       correctMatch: 'ideate',    objectPosition: 'center 50%', matchPhrase: `Ideate! Brainstorming every possible way to transform the corridor experience — from theme environments to interactive ceiling panels to storytelling — is the Ideate stage. Ideation works best when judgment is suspended: every idea goes on the board, including the ones that seem impractical. Wild ideas often contain the seeds of the best solutions, and volume matters. The team that generates thirty ideas is more likely to find an exceptional one than the team that evaluates five.` },
-            { image: 'l10-game-prototype.png', label: `Building a quick model of an adventure-themed ceiling out of cardboard to test whether kids enjoy looking up at it.`,                                                             correctMatch: 'prototype', objectPosition: 'center 50%', matchPhrase: `Prototype! Building a rough cardboard model of the adventure-themed ceiling before committing to a full installation is prototyping at its best. The prototype isn't beautiful or permanent — it's fast, cheap, and testable. By putting even a rough version in front of real children, the team could observe reactions, get feedback, and learn whether the concept worked before spending significant time and money on a full implementation. Build cheap. Learn fast. Improve.` },
-            { image: 'l10-game-empathize2.png',label: `Interviewing five children about what they find most frightening at hospitals and watching how they react during check-in.`,                                                      correctMatch: 'empathize', objectPosition: 'center 50%', matchPhrase: `Empathize again! Interviewing children and observing their behavior during real hospital experiences is empathy research. The team isn't asking "what do you want us to build?" — they're asking "what is your experience like?" and watching carefully. Observation during real experiences reveals what people can't always put into words. A child saying "the lights are too bright" during check-in is a data point that no conference-room assumption would have predicted.` },
+            { image: 'l10-game-empathize.png',  label: `Riding in a hospital bed through the corridors and noticing how frightening the long hallway feels from a child's point of view.`,                                                correctMatch: 'empathize', objectPosition: 'center 50%', matchPhrase: `Empathize! Experiencing the hospital environment as a patient — riding the bed, seeing the ceiling lights, feeling the anxiety of the corridor — is empathy in action. This is how the team discovered the real problem: not the medical procedures, but the frightening ride to surgery. No interview or survey would have revealed this as vividly as living it. Empathy research finds what people truly experience, not just what they report when asked.` },
+            { image: 'l10-game-define.png',     label: `Writing down: 'The kids feel scared on the way to their procedures — they need the trip to feel safe and fun instead.'`,                                                           correctMatch: 'define',    objectPosition: 'center 50%', matchPhrase: `Define! Translating what the team observed into a clear, human-centered problem statement is the Define stage. "The kids feel scared on the way to their procedures — they need the trip to feel safe and fun instead" captures the real need discovered through empathy. A good Define statement describes the problem from the user's perspective, not the organization's. It points toward a solution without prescribing one — it says what needs to change without dictating how.` },
+            { image: 'l10-game-ideate.png',     label: `Filling a whiteboard with every possible way to make the hallway journey feel exciting rather than scary — no idea too wild to write down.`,                                       correctMatch: 'ideate',    objectPosition: 'center 50%', matchPhrase: `Ideate! Brainstorming every possible way to transform the corridor experience — from theme environments to interactive ceiling panels to storytelling — is the Ideate stage. Ideation works best when judgment is suspended: every idea goes on the board, including the ones that seem impractical. Wild ideas often contain the seeds of the best solutions, and volume matters. The team that generates thirty ideas is more likely to find an exceptional one than the team that evaluates five.` },
+            { image: 'l10-game-prototype.png',  label: `Building a quick model of an adventure-themed ceiling out of cardboard to test whether kids enjoy looking up at it.`,                                                             correctMatch: 'prototype', objectPosition: 'center 50%', matchPhrase: `Prototype! Building a rough cardboard model of the adventure-themed ceiling before committing to a full installation is prototyping at its best. The prototype isn't beautiful or permanent — it's fast, cheap, and testable. By putting even a rough version in front of real children, the team could observe reactions, get feedback, and learn whether the concept worked before spending significant time and money on a full implementation. Build cheap. Learn fast. Improve.` },
+            { image: 'l10-game-empathize2.png', label: `Interviewing five children about what they find most frightening at hospitals and watching how they react during check-in.`,                                                      correctMatch: 'empathize', objectPosition: 'center 50%', matchPhrase: `Empathize again! Interviewing children and observing their behavior during real hospital experiences is empathy research. The team isn't asking "what do you want us to build?" — they're asking "what is your experience like?" and watching carefully. Observation during real experiences reveals what people can't always put into words. A child saying "the lights are too bright" during check-in is a data point that no conference-room assumption would have predicted.` },
           ],
           buckets: [
             { id: 'empathize', label: `❤️ Empathize`, color: '#F87171' },
@@ -187,12 +215,14 @@ const futureskills_explorer_l10_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L10] Loaded: "Design Thinking: Solving Problems Like a Designer" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l10-magazine-what-is-design-thinking.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l10-magazine-five-stages.png',             { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l10-magazine-empathy.png',                 { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l10-magazine-prototyping.png',             { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L10] what-is-design-thinking: ${r1.ok}, five-stages: ${r2.ok}, empathy: ${r3.ok}, prototyping: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l10-s1-person-centered.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l10-s2-hospital-corridor.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l10-s3-observe-and-define.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l10-s4-ideate-whiteboard.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l10-s5-cardboard-prototype.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l10-s6-design-thinking-world.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L10] person-centered: ${r1.ok}, hospital-corridor: ${r2.ok}, observe-and-define: ${r3.ok}, ideate-whiteboard: ${r4.ok}, cardboard-prototype: ${r5.ok}, design-thinking-world: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L10] Could not verify image assets — network check failed');
   });
