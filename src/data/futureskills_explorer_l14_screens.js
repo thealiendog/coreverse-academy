@@ -23,73 +23,101 @@ const futureskills_explorer_l14_screens = {
           guideText: `A photo of a shark swimming down a flooded highway. A quote from a famous person that they never said. A study that "proves" your favorite food is dangerous. The internet is full of misinformation — and it spreads faster than truth. Learning to evaluate information before believing or sharing it is one of the most important skills anyone can develop right now.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Why Misinformation Spreads`,
+          totalSections: 6,
+          headline:      'Truth Travels Slower Than Lies',
           paragraphs: [
-            `False information spreads faster than true information — research has consistently demonstrated this. One major study found that false news stories reached people six times faster on social media than true ones, and spread to far more people. The reason isn't that people are foolish or gullible. It's that false stories tend to be more emotionally charged — more surprising, more outrageous, more frightening — than the comparatively boring truth. Strong emotions drive shares.`,
-            `Social media platforms amplify this problem. Their algorithms are designed to maximize engagement — time spent on the platform, reactions, shares, comments. Content that triggers strong emotions (especially outrage, fear, or moral indignation) generates more engagement than calm, balanced reporting. So the algorithms promote it — not deliberately, but as a side effect of optimizing for engagement metrics. The result is a system that inadvertently rewards sensational, false, or misleading content over accurate but undramatic information.`,
-            `There's a third factor: the internet has no mandatory gatekeeping. Traditional news organizations employed editors and fact-checkers whose job was to verify information before it was published. Anyone can now publish anything online — a website, a social media account, a video — with no verification required. The infrastructure that once filtered out the most obvious falsehoods before they reached readers has been bypassed almost entirely. This puts the responsibility for verification on the reader — on you.`,
+            'Research has consistently shown that false news travels faster than true news.',
+            'One major study found false stories spread to people 6 TIMES faster on social media than true ones. The pattern is real and reliable.',
           ],
-          image:        '/explorer-assets/future-skills/l14-magazine-why-spreads.png',
-          imageCaption: `Why misinformation spreads — emotional content drives shares, algorithms reward engagement, and anyone can publish without fact-checking`,
+          image:        '/explorer-assets/future-skills/l14-s1-truth-vs-lies.png',
+          imageCaption: 'False stories don\'t just spread. They spread MUCH faster than true ones. That\'s not opinion — it\'s measured fact.',
           vocab: [
-            { word: `misinformation`, definition: `False or inaccurate information — whether spread deliberately or by accident. Misinformation spreads especially fast when it triggers strong emotions like outrage, fear, or excitement.`,         audioPrompt: `Misinformation — false or inaccurate information, whether spread deliberately or by accident. It spreads especially fast when it triggers strong emotions like outrage, fear, or excitement.` },
-            { word: `algorithm`,      definition: `In this context, the software that decides what content to show users based on predicted engagement — inadvertently amplifying content that triggers the strongest reactions, including false stories.`, audioPrompt: `Algorithm — in this context, the software that decides what content to show users based on predicted engagement. Inadvertently amplifying content that triggers the strongest reactions, including false stories.` },
+            { word: 'misinformation', definition: 'False or inaccurate information — whether spread on purpose or by accident.', audioPrompt: 'Misinformation — false or inaccurate information, whether spread on purpose or by accident.' },
+            { word: 'viral',          definition: 'Spreading very rapidly through sharing. Misinformation often goes viral faster than true content because it provokes stronger reactions.', audioPrompt: 'Viral — spreading very rapidly through sharing. Misinformation often goes viral faster than true content because it provokes stronger reactions.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The SIFT Method`,
+          totalSections: 6,
+          headline:      'Why Misinformation Wins',
           paragraphs: [
-            `SIFT is a practical four-step method for evaluating information before you believe or share it. Stop: when you encounter something surprising, emotional, or that makes you want to immediately share it — pause. Don't let the emotional momentum override your thinking. The moment you feel the urge to react immediately is exactly when you most need to slow down. Investigate the source: who wrote or published this? What's their expertise and track record? Do they have an obvious agenda or financial interest in this claim being believed?`,
-            `Find better coverage: search for the same claim from other independent sources. If something important actually happened, multiple credible outlets will be reporting it. If you can only find the claim on one website, or only on sites that consistently share similar content, that's a signal. Trace claims: if a specific statistic, quote, or study is cited, try to find the original source. Statistics often get distorted as they travel — a "study" cited by a viral post may turn out to be misrepresented, incomplete, or from a source with a clear agenda.`,
-            `The SIFT method works because it builds a habit of investigation before reaction. It doesn't require you to be an expert — it just requires you to pause and look before you leap. Most misinformation relies on the fact that people don't check. A false claim that takes thirty seconds to verify often falls apart the moment someone bothers to look it up. The single most powerful thing you can do to fight misinformation is to refuse to share anything you haven't verified.`,
+            'Three reasons. First: false stories are usually more emotional — shocking, frightening, outrageous. Strong emotions drive shares.',
+            'Second: social media algorithms reward engagement, so outrage gets boosted. Third: anyone can publish anything online — no fact-checkers required.',
           ],
-          image:        '/explorer-assets/future-skills/l14-magazine-sift.png',
-          imageCaption: `The SIFT method — Stop, Investigate the source, Find better coverage, Trace claims — a practical four-step verification habit`,
+          image:        '/explorer-assets/future-skills/l14-s2-amplified-misinfo.png',
+          imageCaption: 'Emotion + algorithm + no gatekeeper = misinformation\'s perfect storm. None of these three are accidents.',
           vocab: [
-            { word: `SIFT`,   definition: `A four-step method for evaluating online information: Stop, Investigate the source, Find better coverage, Trace claims to their origin.`,                                                              audioPrompt: `SIFT — a four-step method for evaluating online information. Stop, Investigate the source, Find better coverage, Trace claims to their origin.` },
-            { word: `source`, definition: `The person, organization, or publication that produced a piece of information — evaluating a source's expertise, credibility, and potential bias is the foundation of information literacy.`,          audioPrompt: `Source — the person, organization, or publication that produced a piece of information. Evaluating a source's expertise, credibility, and potential bias is the foundation of information literacy.` },
+            { word: 'engagement',  definition: 'The time, clicks, and reactions an audience gives content. Algorithms reward it — even when the engaging content is false.', audioPrompt: 'Engagement — the time, clicks, and reactions an audience gives content. Algorithms reward it, even when the engaging content is false.' },
+            { word: 'gatekeeping', definition: 'The editorial process that verifies information before it\'s published. Old media had it; the internet largely doesn\'t.', audioPrompt: 'Gatekeeping — the editorial process that verifies information before it\'s published. Old media had it; the internet largely doesn\'t.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Red Flags for Misinformation`,
+          totalSections: 6,
+          headline:      'The SIFT Method',
           paragraphs: [
-            `Certain patterns are reliable warning signs that something might be false or misleading. Extreme emotional language: headlines designed to outrage, frighten, or shock you are more likely to be misleading than headlines that inform calmly. No author named, no sources cited: credible reporting identifies who wrote it and where the information came from. Anonymous claims are impossible to verify. Headlines that don't match the article: some sites use misleading headlines to get clicks, then bury much more nuanced (or contradictory) information in the text.`,
-            `Suspicious web addresses: a site whose URL closely mimics a well-known outlet's name — but adds extra words, numbers, or unusual domain endings — is almost certainly fake. For example, a made-up address like "breakingnews-daily.co" or "worldnews-report.net" might be designed to look like a real news organization to someone who glances quickly. Check the full URL carefully before trusting a site you don't recognize. Legitimate, established outlets have straightforward, well-known web addresses.`,
-            `Photos and videos without context are another major red flag. Real events often get documented — but old photos get recycled to illustrate new false claims, and genuine images get paired with invented captions. A photo of a real flood might be labeled as a recent event that never happened. A real video from one country gets shared as if it's from another. Before believing or sharing an image, consider: is this showing what the caption claims? A reverse image search takes ten seconds and can reveal the real origin of a photo.`,
+            'SIFT is a four-step habit for checking information before you believe or share it.',
+            'Stop. Investigate the source (who wrote it?). Find better coverage (do others confirm?). Trace claims (where did this stat or quote come from?).',
           ],
-          image:        '/explorer-assets/future-skills/l14-magazine-red-flags.png',
-          imageCaption: `Red flags for misinformation — extreme emotional language, no sources, suspicious URLs, and images used without accurate context`,
+          image:        '/explorer-assets/future-skills/l14-s3-sift-method.png',
+          imageCaption: 'Four steps. Sixty seconds. SIFT catches most misinformation before it spreads any further through you.',
           vocab: [
-            { word: `confirmation bias`, definition: `The tendency to search for and believe information that confirms what you already think, while dismissing information that challenges it — one of the biggest obstacles to accurate thinking.`, audioPrompt: `Confirmation bias — the tendency to search for and believe information that confirms what you already think, while dismissing information that challenges it. One of the biggest obstacles to accurate thinking.` },
-            { word: `clickbait`,         definition: `Content designed primarily to attract attention and provoke clicks through misleading or exaggerated headlines — often at the expense of accuracy and depth.`,                               audioPrompt: `Clickbait — content designed primarily to attract attention and provoke clicks through misleading or exaggerated headlines. Often at the expense of accuracy and depth.` },
+            { word: 'SIFT',   definition: 'Stop, Investigate the source, Find better coverage, Trace claims. A four-step method for evaluating online information.', audioPrompt: 'SIFT — Stop, Investigate the source, Find better coverage, Trace claims. A four-step method for evaluating online information.' },
+            { word: 'verify', definition: 'Check that information is actually true before believing or sharing it. The single most powerful habit for fighting misinformation.', audioPrompt: 'Verify — check that information is actually true before believing or sharing it. The single most powerful habit for fighting misinformation.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Where to Find Reliable Information`,
+          totalSections: 6,
+          headline:      'Red Flags',
           paragraphs: [
-            `Not all sources are created equal, and that's not a matter of opinion — it's a function of standards. Peer-reviewed scientific journals publish research that has been independently evaluated by other experts in the field before publication. This process doesn't guarantee the research is right, but it filters out the most obvious errors. Major established news organizations — like AP, Reuters, and the BBC — employ professional journalists who follow editorial standards: verifying information with multiple sources, naming their sources, and issuing corrections when they're wrong.`,
-            `Official sources — government health agencies, universities, scientific institutions in their area of expertise — are generally more reliable than anonymous websites or social media posts. The key word is "in their area of expertise." A climate scientist's opinion on climate science is much more reliable than a celebrity's. A cardiologist's opinion on heart health is more reliable than an actor's. Expertise is domain-specific: being famous or wealthy does not make someone's claims about science, medicine, or law more reliable.`,
-            `The most insidious threat to good thinking is confirmation bias — the tendency to believe information that agrees with what you already think and dismiss information that doesn't. It feels like critical thinking, but it's actually the opposite. The most reliable thinkers actively seek out high-quality information that challenges their current views, because they know that's the only way to update beliefs toward accuracy. If all the information you read confirms what you already believed, that's often a sign that you're filtering too aggressively.`,
+            'Watch for these warning signs: extreme emotional language. No author named. No sources cited. Headlines that don\'t match the article.',
+            'Suspicious URLs that mimic real outlets ("breakingnews-daily.co"). Photos with no context — real images often get paired with false captions.',
           ],
-          image:        '/explorer-assets/future-skills/l14-magazine-reliable-sources.png',
-          imageCaption: `Where to find reliable information — peer review, editorial standards, domain expertise, and deliberately seeking out challenging perspectives`,
+          image:        '/explorer-assets/future-skills/l14-s4-red-flags.png',
+          imageCaption: 'Outrage + no source + sketchy URL + dramatic photo = almost certainly not what you should be sharing.',
           vocab: [
-            { word: `peer review`,       definition: `A process where scientific research is evaluated by independent experts in the same field before publication — the standard quality-control process for scientific knowledge.`,              audioPrompt: `Peer review — a process where scientific research is evaluated by independent experts in the same field before publication. The standard quality-control process for scientific knowledge.` },
-            { word: `editorial standards`, definition: `The professional rules and practices a news organization follows to verify information before publishing — including using named sources, checking facts, and issuing corrections when wrong.`, audioPrompt: `Editorial standards — the professional rules and practices a news organization follows to verify information before publishing. Including using named sources, checking facts, and issuing corrections when wrong.` },
+            { word: 'red flag',  definition: 'A warning sign that something might be misinformation. Examples: emotional headlines, missing sources, fake-looking URLs.', audioPrompt: 'Red flag — a warning sign that something might be misinformation. Examples: emotional headlines, missing sources, fake-looking URLs.' },
+            { word: 'clickbait', definition: 'Content designed to grab attention through misleading or exaggerated headlines. Often at the expense of accuracy.', audioPrompt: 'Clickbait — content designed to grab attention through misleading or exaggerated headlines. Often at the expense of accuracy.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Where Reliable Info Lives',
+          paragraphs: [
+            'Peer-reviewed scientific journals: research checked by independent experts before publication.',
+            'Established news organizations (AP, Reuters, BBC): named authors, multiple sources, corrections issued. Expertise matters — and it\'s domain-specific. A famous person isn\'t a science expert.',
+          ],
+          image:        '/explorer-assets/future-skills/l14-s5-reliable-sources.png',
+          imageCaption: 'Reliable sources have something in common: standards, named authors, expertise, and a process for correcting mistakes.',
+          vocab: [
+            { word: 'peer review',      definition: 'Research checked by independent experts in the same field before publication. The standard quality-control process for scientific knowledge.', audioPrompt: 'Peer review — research checked by independent experts in the same field before publication. The standard quality-control process for scientific knowledge.' },
+            { word: 'domain expertise', definition: 'Real knowledge in one specific field. A cardiologist on heart health is credible. A celebrity on heart health is not.', audioPrompt: 'Domain expertise — real knowledge in one specific field. A cardiologist on heart health is credible. A celebrity on heart health is not.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Confirmation Bias',
+          paragraphs: [
+            'The biggest trap isn\'t out there. It\'s in your own brain.',
+            'Confirmation bias = believing things that match what you already think, dismissing things that don\'t. If everything you read confirms your views, you\'re filtering too hard.',
+          ],
+          image:        '/explorer-assets/future-skills/l14-s6-confirmation-bias.png',
+          imageCaption: 'Your brain wants to be right. That\'s the problem. Real thinking means seeking out info that might prove you wrong.',
+          vocab: [
+            { word: 'confirmation bias', definition: 'Believing what agrees with your existing views and dismissing what doesn\'t. The biggest obstacle to accurate thinking.', audioPrompt: 'Confirmation bias — believing what agrees with your existing views and dismissing what doesn\'t. The biggest obstacle to accurate thinking.' },
+            { word: 'critical thinking', definition: 'Carefully evaluating information — including information you\'d LIKE to believe. Especially that information.', audioPrompt: 'Critical thinking — carefully evaluating information, including information you\'d like to believe. Especially that information.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l14_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L14] Loaded: "Information Literacy: Is This True?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l14-magazine-why-spreads.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l14-magazine-sift.png',             { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l14-magazine-red-flags.png',        { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l14-magazine-reliable-sources.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L14] why-spreads: ${r1.ok}, sift: ${r2.ok}, red-flags: ${r3.ok}, reliable-sources: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l14-s1-truth-vs-lies.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l14-s2-amplified-misinfo.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l14-s3-sift-method.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l14-s4-red-flags.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l14-s5-reliable-sources.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l14-s6-confirmation-bias.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L14] truth-vs-lies: ${r1.ok}, amplified-misinfo: ${r2.ok}, sift-method: ${r3.ok}, red-flags: ${r4.ok}, reliable-sources: ${r5.ok}, confirmation-bias: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L14] Could not verify image assets — network check failed');
   });
