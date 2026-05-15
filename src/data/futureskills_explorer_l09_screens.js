@@ -23,73 +23,101 @@ const futureskills_explorer_l09_screens = {
           guideText: `Most people think there's one right way to think about a problem. But what if you could put on different thinking hats and deliberately look at the same problem from six completely different angles? This technique — developed by psychologist Edward de Bono — is used by corporations, governments, and research teams around the world. It works. And you can use it starting today.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Why We Need Different Kinds of Thinking`,
+          totalSections: 6,
+          headline:      'One Way Isn\'t Enough',
           paragraphs: [
-            `Most people default to one type of thinking — usually either analytical (looking for problems) or optimistic (seeing the bright side). Both are valuable, but both are incomplete. The best solutions come from combining multiple types of thinking deliberately. Edward de Bono developed the Six Thinking Hats as a structured way to do this — to ensure no important perspective gets missed when solving a problem.`,
-            `When a group of people tries to solve a problem together, thinking often collides rather than combining. One person is worried about risks while another is excited about possibilities. One person wants more facts while another has already jumped to a solution. The result is confusion, conflict, and decisions shaped by whoever argues loudest — not by whoever has the best thinking. The Six Hats technique fixes this by synchronizing everyone's thinking so the whole group is focused on the same angle at the same time.`,
-            `Creative thinking isn't just for artists or inventors — it's a skill that makes you better at solving any kind of problem. Engineers, scientists, doctors, teachers, business leaders, and athletes all use creative thinking when they face challenges that don't have obvious answers. The ability to look at a problem from multiple angles, generate new ideas, and combine perspectives in unexpected ways is one of the most valuable skills a person can develop.`,
+            'Most people default to one way of thinking — usually either focusing on risks or focusing on possibilities. Both are useful. Both are incomplete.',
+            'The best decisions come from combining multiple kinds of thinking on purpose. Psychologist Edward de Bono created the Six Thinking Hats to make this possible.',
           ],
-          image:        '/explorer-assets/future-skills/l09-magazine-why-different-thinking.png',
-          imageCaption: `Why we need different kinds of thinking — the best decisions combine multiple perspectives, each examining a different angle of the problem`,
+          image:        '/explorer-assets/future-skills/l09-s1-brain-modes.png',
+          imageCaption: 'Different problems need different kinds of thinking. The trick is choosing the right mode on purpose, not by accident.',
           vocab: [
-            { word: `perspective`,      definition: `A particular point of view or way of looking at a situation — different perspectives reveal different aspects of the same problem, which is why combining them leads to better decisions.`,       audioPrompt: `Perspective — a particular point of view or way of looking at a situation. Different perspectives reveal different aspects of the same problem, which is why combining them leads to better decisions.` },
-            { word: `lateral thinking`, definition: `A term coined by Edward de Bono for solving problems through indirect, creative approaches — looking at a challenge from unexpected angles rather than following the most obvious path.`,        audioPrompt: `Lateral thinking — a term coined by Edward de Bono for solving problems through indirect, creative approaches. Looking at a challenge from unexpected angles rather than following the most obvious path.` },
+            { word: 'perspective',      definition: 'A point of view or way of looking at something. Different perspectives reveal different parts of the same problem.', audioPrompt: 'Perspective — a point of view or way of looking at something. Different perspectives reveal different parts of the same problem.' },
+            { word: 'lateral thinking', definition: 'Solving problems through indirect, creative approaches. Term coined by Edward de Bono.', audioPrompt: 'Lateral thinking — solving problems through indirect, creative approaches. Term coined by Edward de Bono.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `The Six Hats`,
+          totalSections: 6,
+          headline:      'Meet the Six Hats',
           paragraphs: [
-            `Edward de Bono's six hats each represent a different mode of thinking. White Hat: facts and information only — what do we know? What do we need to find out? Red Hat: emotions and gut feelings — how does this feel? What's your instinct? Black Hat: caution and risks — what could go wrong? What are the weaknesses? Yellow Hat: optimism and benefits — what's good about this? What's the best possible outcome? Green Hat: creativity and new ideas — what else could we try? Are there completely different approaches? Blue Hat: process and organization — how are we thinking? Are we on track?`,
-            `The power of the system is that each hat isolates one type of thinking. When wearing the Black Hat, even the most optimistic person must think about risks. When wearing the Green Hat, even a cautious person must generate creative ideas. This prevents one personality from dominating — the person who always worries can't derail a Yellow Hat session, and the person who's always enthusiastic can't skip the Black Hat reality check. Every type of thinking gets its full moment of attention.`,
-            `The six hats also change how disagreements work. Instead of debating whether an idea is good or bad, the group wears different hats in sequence — first gathering facts (White), then exploring risks (Black), then exploring benefits (Yellow), then generating alternatives (Green). Disagreements become productive because they're no longer about who's right; they're about making sure every angle gets examined. De Bono found that meetings using the six hats method were dramatically shorter and produced better decisions.`,
+            'Six hats. Six modes of thinking. Each one isolates one type of thought.',
+            'White (facts). Red (feelings). Black (risks). Yellow (benefits). Green (creativity). Blue (process). Put on a hat — and that\'s the only way you think for a minute.',
           ],
-          image:        '/explorer-assets/future-skills/l09-magazine-six-hats.png',
-          imageCaption: `The six thinking hats — White (facts), Red (feelings), Black (risks), Yellow (benefits), Green (creativity), Blue (process)`,
+          image:        '/explorer-assets/future-skills/l09-s2-six-hats-row.png',
+          imageCaption: 'Six hats. Six modes. Every important decision deserves a turn under each one.',
           vocab: [
-            { word: `White Hat`, definition: `The thinking mode focused on facts and information only — what do we know, what don't we know, and what do we need to find out? White Hat thinking separates verified facts from opinions and assumptions.`, audioPrompt: `White Hat — the thinking mode focused on facts and information only. What do we know, what don't we know, and what do we need to find out? White Hat thinking separates verified facts from opinions and assumptions.` },
-            { word: `Black Hat`, definition: `The thinking mode focused on caution and risks — what could go wrong, what are the weaknesses, and what dangers should we watch for? Black Hat thinking protects against problems before they happen.`,   audioPrompt: `Black Hat — the thinking mode focused on caution and risks. What could go wrong, what are the weaknesses, and what dangers should we watch for? Black Hat thinking protects against problems before they happen.` },
+            { word: 'Six Thinking Hats', definition: 'A method by Edward de Bono for deliberately switching between six different modes of thinking on the same problem.', audioPrompt: 'Six Thinking Hats — a method by Edward de Bono for deliberately switching between six different modes of thinking on the same problem.' },
+            { word: 'parallel thinking', definition: 'When everyone in a group focuses on the same mode of thinking at the same time. Prevents arguments and ensures every angle gets attention.', audioPrompt: 'Parallel thinking — when everyone in a group focuses on the same mode of thinking at the same time. Prevents arguments and ensures every angle gets attention.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `How It Works in Practice`,
+          totalSections: 6,
+          headline:      'White & Black — Facts and Risks',
           paragraphs: [
-            `In a Six Hats session, everyone in the group wears the same hat at the same time — hence the phrase "parallel thinking." When wearing the Black Hat, everyone focuses only on risks — even the most optimistic people must think about what could go wrong. This prevents one negative person from shooting everything down while everyone else is excited. It separates thinking types so each gets proper attention and doesn't get drowned out by other thinking modes.`,
-            `Teams that use this method follow a sequence that fits the decision they're making. For evaluating a new idea: White Hat first (what do we know?), then Yellow Hat (what's promising?), then Black Hat (what are the risks?), then Green Hat (how can we address those risks creatively?), then Red Hat (how does the team feel?), then Blue Hat (what's our next step?). The sequence can be adapted — but having a deliberate sequence ensures no perspective gets accidentally skipped.`,
-            `The six hats method is used in business strategy sessions, medical decision-making, school curriculum design, and political planning. It's particularly powerful for decisions that involve both factual analysis and values — where different types of thinking tend to collide. A team deciding whether to launch a new product, a school deciding on a new program, a family deciding on a big move — all of these benefit from structured parallel thinking rather than free-form debate.`,
+            'White Hat: only facts. What do we know? What don\'t we know? No guesses, no opinions.',
+            'Black Hat: only risks. What could go wrong? What dangers haven\'t we considered? Logical caution — not pessimism.',
           ],
-          image:        '/explorer-assets/future-skills/l09-magazine-how-it-works.png',
-          imageCaption: `How it works in practice — everyone wears the same hat at the same time, so all thinking is synchronized and every angle gets full attention`,
+          image:        '/explorer-assets/future-skills/l09-s3-white-black-hats.png',
+          imageCaption: 'White Hat asks "what\'s true?" Black Hat asks "what could go wrong?" Every plan needs both before it moves forward.',
           vocab: [
-            { word: `parallel thinking`, definition: `A technique where everyone in a group focuses on the same type of thinking at the same time — the foundation of the Six Hats method. It prevents conflicting thinking styles from clashing and ensures every perspective gets attention.`, audioPrompt: `Parallel thinking — a technique where everyone in a group focuses on the same type of thinking at the same time. The foundation of the Six Hats method. It prevents conflicting thinking styles from clashing and ensures every perspective gets attention.` },
-            { word: `Yellow Hat`,        definition: `The thinking mode focused on optimism and benefits — what's positive about this idea, what's the best possible outcome, and what value could it create? Yellow Hat thinking looks for reasons why something could work.`,                     audioPrompt: `Yellow Hat — the thinking mode focused on optimism and benefits. What's positive about this idea, what's the best possible outcome, and what value could it create? Yellow Hat thinking looks for reasons why something could work.` },
+            { word: 'White Hat', definition: 'Facts-only thinking. What\'s verified, what\'s unknown, what\'s an assumption. No opinions allowed.', audioPrompt: 'White Hat — facts-only thinking. What\'s verified, what\'s unknown, what\'s an assumption. No opinions allowed.' },
+            { word: 'Black Hat', definition: 'Risk-focused thinking. What could go wrong, what are the weaknesses, what dangers should we watch for. Logical caution.', audioPrompt: 'Black Hat — risk-focused thinking. What could go wrong, what are the weaknesses, what dangers should we watch for. Logical caution.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Creativity as a Skill`,
+          totalSections: 6,
+          headline:      'Yellow & Green — Benefits and Creativity',
           paragraphs: [
-            `Creativity isn't something you either have or don't have — it's a skill you can deliberately practice and improve. Research shows that people who practice creative thinking techniques produce more ideas, find more unexpected solutions, and are better at solving problems that have no obvious answers. Like any skill, creative thinking gets stronger with use. The more you practice looking at problems from different angles, the more naturally it comes.`,
-            `There are many techniques for building creative thinking beyond the six hats. Brainstorming — generating as many ideas as possible without judging any of them — trains your brain to keep producing rather than stopping at the first good idea. SCAMPER (Substitute, Combine, Adapt, Modify, Put to other uses, Eliminate, Reverse) gives you a checklist for finding new angles on an existing idea. Random word association forces your brain to make unexpected connections. All of these techniques work by disrupting habitual thinking patterns.`,
-            `The most important principle in creative thinking is separating generation from evaluation. When you're generating ideas, judgment kills creativity — a voice that says "that's a bad idea" stops the flow before the good ideas appear. The best approach is to generate freely and without judgment first, then evaluate afterward. This is why brainstorming has a rule: no criticism during the generation phase. Every idea gets recorded, including the wild ones — because sometimes the wildest idea contains the seed of the best solution.`,
+            'Yellow Hat: only benefits. What\'s good about this? What\'s the best possible outcome if it works?',
+            'Green Hat: only new ideas. What else could we try? What\'s the wildest approach? In Green Hat time, no idea is too strange.',
           ],
-          image:        '/explorer-assets/future-skills/l09-magazine-creativity-skill.png',
-          imageCaption: `Creativity as a skill — not something you're born with, but something you build through deliberate practice and technique`,
+          image:        '/explorer-assets/future-skills/l09-s4-yellow-green-hats.png',
+          imageCaption: 'Yellow Hat asks "what\'s the upside?" Green Hat asks "what haven\'t we tried?" Together they reveal options.',
           vocab: [
-            { word: `brainstorming`, definition: `A creativity technique where you generate as many ideas as possible without judging any of them — quantity over quality at first, so the best ideas aren't blocked by premature criticism.`,         audioPrompt: `Brainstorming — a creativity technique where you generate as many ideas as possible without judging any of them. Quantity over quality at first, so the best ideas aren't blocked by premature criticism.` },
-            { word: `Green Hat`,    definition: `The thinking mode focused on creativity and new ideas — what else could we try, are there completely different approaches, and what haven't we considered? Green Hat thinking generates alternatives and possibilities.`, audioPrompt: `Green Hat — the thinking mode focused on creativity and new ideas. What else could we try, are there completely different approaches, and what haven't we considered? Green Hat thinking generates alternatives and possibilities.` },
+            { word: 'Yellow Hat', definition: 'Benefits-focused thinking. What\'s positive, what could work, what value could this create.', audioPrompt: 'Yellow Hat — benefits-focused thinking. What\'s positive, what could work, what value could this create.' },
+            { word: 'Green Hat',  definition: 'Creativity-focused thinking. New ideas, wild alternatives, approaches no one has tried. Strange ideas are welcome.', audioPrompt: 'Green Hat — creativity-focused thinking. New ideas, wild alternatives, approaches no one has tried. Strange ideas are welcome.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Red & Blue — Feelings and Process',
+          paragraphs: [
+            'Red Hat: only feelings. How does this feel? What\'s your gut saying? No need to justify — just name the feeling.',
+            'Blue Hat: only process. How are we thinking? Which hat do we need next? The Blue Hat manages the others.',
+          ],
+          image:        '/explorer-assets/future-skills/l09-s5-red-blue-hats.png',
+          imageCaption: 'Red Hat asks "what does my gut say?" Blue Hat asks "what hat do we need next?" One feels. One conducts.',
+          vocab: [
+            { word: 'Red Hat',  definition: 'Feelings-focused thinking. Gut reactions, emotions, instincts. No explanations needed — just honest feelings.', audioPrompt: 'Red Hat — feelings-focused thinking. Gut reactions, emotions, instincts. No explanations needed; just honest feelings.' },
+            { word: 'Blue Hat', definition: 'Process-focused thinking. Managing how the group thinks — what hat to wear next, when to move on, when to decide.', audioPrompt: 'Blue Hat — process-focused thinking. Managing how the group thinks: what hat to wear next, when to move on, when to decide.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Creativity Is a Skill',
+          paragraphs: [
+            'Creativity isn\'t something you\'re born with. It\'s a skill that grows with practice — like any other.',
+            'The trick: separate generating from judging. When ideas are flowing, don\'t critique. Critique later. Judgment kills creativity in the moment.',
+          ],
+          image:        '/explorer-assets/future-skills/l09-s6-creativity-grows.png',
+          imageCaption: 'Generate first. Judge later. The most creative people don\'t have a different brain — they have a different process.',
+          vocab: [
+            { word: 'brainstorming',            definition: 'Generating as many ideas as possible without judging any of them. Quantity first; quality comes from sifting later.', audioPrompt: 'Brainstorming — generating as many ideas as possible without judging any of them. Quantity first; quality comes from sifting later.' },
+            { word: 'generation vs evaluation', definition: 'A core creativity principle: produce ideas freely first (generation), then evaluate them afterward. Doing both at once kills creativity.', audioPrompt: 'Generation versus evaluation — a core creativity principle: produce ideas freely first, then evaluate them afterward. Doing both at once kills creativity.' },
           ],
         },
 
@@ -187,12 +215,14 @@ const futureskills_explorer_l09_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L09] Loaded: "Creative Thinking: The Six Thinking Hats" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l09-magazine-why-different-thinking.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l09-magazine-six-hats.png',               { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l09-magazine-how-it-works.png',           { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l09-magazine-creativity-skill.png',       { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L09] why-different-thinking: ${r1.ok}, six-hats: ${r2.ok}, how-it-works: ${r3.ok}, creativity-skill: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l09-s1-brain-modes.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l09-s2-six-hats-row.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l09-s3-white-black-hats.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l09-s4-yellow-green-hats.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l09-s5-red-blue-hats.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l09-s6-creativity-grows.png',  { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L09] brain-modes: ${r1.ok}, six-hats-row: ${r2.ok}, white-black-hats: ${r3.ok}, yellow-green-hats: ${r4.ok}, red-blue-hats: ${r5.ok}, creativity-grows: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L09] Could not verify image assets — network check failed');
   });
