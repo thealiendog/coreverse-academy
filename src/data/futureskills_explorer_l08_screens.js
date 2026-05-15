@@ -23,73 +23,101 @@ const futureskills_explorer_l08_screens = {
           guideText: `A computer can do billions of calculations per second. It can store your entire life's memories in a device smaller than your thumbnail. But it can't understand a joke, feel happy, or decide what to have for lunch. How does something so powerful work — and why does it have such strange limitations? The answer starts with two numbers: 0 and 1.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `Binary: The Language of Computers`,
+          totalSections: 6,
+          headline:      'Binary: The Language of Computers',
           paragraphs: [
-            `Humans count in base-10 — we use digits 0 through 9. Computers count in base-2, called binary — they only use 0 and 1. Why? Because computers are built from billions of tiny switches called transistors that are either OFF (0) or ON (1). Each 0 or 1 is called a bit. 8 bits make a byte. A single letter takes 1 byte. A photo takes millions of bytes. Everything a computer does is ultimately flipping billions of switches on and off at incredible speed.`,
-            `Binary might seem like a limitation, but it's actually a strength. A switch that's either fully on or fully off is physically reliable — there's no ambiguity, no degradation, no confusion between states. That clarity is what allows computers to operate with near-perfect accuracy across trillions of operations. Any number, any letter, any color, any sound — all of it can be encoded as a pattern of 0s and 1s. The entire digital world is built on that simple foundation.`,
-            `You can count in binary yourself. Each position in a binary number represents a power of two: the rightmost position is 1, then 2, then 4, then 8, then 16, and so on. The binary number 101 means 1 four + 0 twos + 1 one = 5. The number 1000 means 1 eight + 0 fours + 0 twos + 0 ones = 8. With just 8 bits (one byte), you can represent any number from 0 to 255. It's a different way of counting — and once you see it, you understand computers at their most fundamental level.`,
+            'Humans count using 10 digits (0–9). Computers count using only 2: 0 and 1.',
+            'Why? Because computers are built from billions of tiny switches that are either OFF (0) or ON (1). No middle ground.',
           ],
-          image:        '/explorer-assets/future-skills/l08-magazine-binary.png',
-          imageCaption: `Binary — the language of computers, where everything is encoded as patterns of 0s and 1s, off and on, billions of times per second`,
+          image:        '/explorer-assets/future-skills/l08-s1-binary-switches.png',
+          imageCaption: 'Every computer in history runs on the same simple idea: switches that are either off or on. That\'s binary.',
           vocab: [
-            { word: `binary`, definition: `A number system using only 0 and 1 — the language computers use because their transistors are either off (0) or on (1). Every piece of digital information is ultimately stored as binary.`,                  audioPrompt: `Binary — a number system using only 0 and 1. The language computers use because their transistors are either off or on. Every piece of digital information is ultimately stored as binary.` },
-            { word: `bit`,    definition: `A single binary digit — either 0 or 1. The smallest unit of digital information. Eight bits make one byte, which can store a single character like a letter or number.`,                                   audioPrompt: `Bit — a single binary digit, either 0 or 1. The smallest unit of digital information. Eight bits make one byte, which can store a single character like a letter or number.` },
+            { word: 'binary',     definition: 'A number system using only 0 and 1. The fundamental language every computer uses.', audioPrompt: 'Binary — a number system using only 0 and 1. The fundamental language every computer uses.' },
+            { word: 'transistor', definition: 'A tiny switch inside a computer that is either off (0) or on (1). Billions of them are packed into every chip.', audioPrompt: 'Transistor — a tiny switch inside a computer that is either off (0) or on (1). Billions of them are packed into every chip.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `CPU: The Brain`,
+          totalSections: 6,
+          headline:      'Bits and Bytes',
           paragraphs: [
-            `The Central Processing Unit — CPU — is the main chip that runs programs. It fetches instructions from memory, decodes what they mean, and executes them — billions of times per second. A modern CPU can perform over three billion operations per second. It follows the stored program model: it reads instructions from memory and executes them in sequence. This simple idea, developed in the 1940s, is the foundation of all modern computing.`,
-            `Inside a CPU are billions of transistors — the same tiny switches that store binary data — arranged into circuits that perform arithmetic, compare values, and move data around. The CPU doesn't understand what it's doing in any meaningful sense; it just executes instructions at incredible speed. That speed is what creates the illusion of intelligence: billions of simple, mechanical steps happening so fast they look like fluid thinking.`,
-            `CPUs have improved at an extraordinary rate over decades. In the 1970s, a CPU had a few thousand transistors and performed a million operations per second. Today, a CPU the size of a fingernail contains tens of billions of transistors and performs trillions of operations per second. This exponential improvement in computing power is what made modern software, AI, video games, the internet, and smartphones possible. More transistors, faster switching, same basic principle.`,
+            'Each 0 or 1 is called a bit. Eight bits make a byte. A single letter takes 1 byte.',
+            'A photo takes millions of bytes. A movie takes billions. Everything you see on a computer is stored as bits — at incredible speed.',
           ],
-          image:        '/explorer-assets/future-skills/l08-magazine-cpu.png',
-          imageCaption: `The CPU — the brain of every computer, executing billions of instructions per second by fetching, decoding, and running code`,
+          image:        '/explorer-assets/future-skills/l08-s2-bits-to-bytes.png',
+          imageCaption: 'Letters → photos → movies. Everything digital scales up from the same building block: one bit at a time.',
           vocab: [
-            { word: `CPU`,        definition: `Central Processing Unit — the main chip in a computer that fetches, decodes, and executes instructions. Modern CPUs perform billions of operations per second.`,                                             audioPrompt: `CPU — Central Processing Unit. The main chip in a computer that fetches, decodes, and executes instructions. Modern CPUs perform billions of operations per second.` },
-            { word: `transistor`, definition: `A tiny electronic switch that is either off (0) or on (1) — billions of transistors are packed into every CPU and memory chip, forming the physical foundation of all digital computing.`,             audioPrompt: `Transistor — a tiny electronic switch that is either off or on. Billions of transistors are packed into every CPU and memory chip, forming the physical foundation of all digital computing.` },
+            { word: 'bit',  definition: 'A single 0 or 1. The smallest possible unit of digital information.', audioPrompt: 'Bit — a single 0 or 1. The smallest possible unit of digital information.' },
+            { word: 'byte', definition: 'Eight bits grouped together. Enough to store one character — a letter, a digit, a punctuation mark.', audioPrompt: 'Byte — eight bits grouped together. Enough to store one character: a letter, a digit, a punctuation mark.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Memory and Storage`,
+          totalSections: 6,
+          headline:      'The CPU — The Brain',
           paragraphs: [
-            `Computers have two types of memory that serve very different purposes. RAM — Random Access Memory — is fast, temporary memory that holds what the computer is currently working on. When you open an app, it loads from storage into RAM so the CPU can access it quickly. But RAM is erased the moment the computer powers off. Every unsaved document you've lost during a crash ended up in RAM that was wiped when the power went out.`,
-            `Storage — a hard drive or SSD — holds information permanently. Your files, photos, operating system, and apps all live in storage. It's much slower than RAM, but it keeps data when the computer is off. When you save a document, it moves from temporary RAM into permanent storage. Solid state drives (SSDs) are faster than traditional hard drives because they use flash memory chips with no moving parts — the same technology as a USB drive, scaled up.`,
-            `The relationship between RAM and storage explains many common computer behaviors. When your computer runs slowly with many programs open, RAM is probably full and the CPU is being forced to use slower storage instead. When restarting a computer fixes a problem, it's because RAM was cleared — any corrupt temporary state was wiped. When a program loads faster the second time you open it, your operating system is smart enough to keep recently used data in RAM a little longer.`,
+            'The CPU (Central Processing Unit) is the main chip that runs programs. It fetches instructions, decodes them, and executes them.',
+            'A modern CPU can do over 3 BILLION operations per second. That speed creates the illusion of intelligence.',
           ],
-          image:        '/explorer-assets/future-skills/l08-magazine-memory.png',
-          imageCaption: `Memory and storage — RAM is fast and temporary; storage is permanent but slower. Together they let computers work quickly and save data reliably`,
+          image:        '/explorer-assets/future-skills/l08-s3-cpu-flow.png',
+          imageCaption: 'The CPU isn\'t smart. It\'s just unbelievably fast at simple instructions. That speed is what feels like thinking.',
           vocab: [
-            { word: `RAM`,     definition: `Random Access Memory — fast, temporary memory that holds what a computer is currently working on. RAM is erased when the computer powers off.`,                                                          audioPrompt: `RAM — Random Access Memory. Fast, temporary memory that holds what a computer is currently working on. RAM is erased when the computer powers off.` },
-            { word: `storage`, definition: `Permanent memory — hard drives and SSDs — that keeps files, apps, and data even when a computer is powered off. Storage is slower than RAM but holds far more data.`,                                   audioPrompt: `Storage — permanent memory, including hard drives and SSDs, that keeps files, apps, and data even when a computer is powered off. Storage is slower than RAM but holds far more data.` },
+            { word: 'CPU',       definition: 'Central Processing Unit — the main chip that runs every program. The brain of every computer.', audioPrompt: 'CPU — Central Processing Unit. The main chip that runs every program. The brain of every computer.' },
+            { word: 'operation', definition: 'A single instruction the CPU executes — like adding two numbers. Modern CPUs do billions of operations per second.', audioPrompt: 'Operation — a single instruction the CPU executes, like adding two numbers. Modern CPUs do billions of operations per second.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Input, Processing, Output`,
+          totalSections: 6,
+          headline:      'RAM — Fast But Temporary',
           paragraphs: [
-            `Every computer interaction — from tapping a key to loading a website — follows the same pattern: Input → Processing → Output. Input is anything that goes into the computer: keyboard, mouse, microphone, touchscreen, camera. Processing is the CPU executing the relevant code. Output is the result: something appears on screen, plays through speakers, or prints on paper. Even the most complex AI follows this pattern — input goes in, processing happens, output comes out.`,
-            `Understanding this pattern gives you a mental model for troubleshooting any computer system. If the output is wrong, the problem is either in the input (bad data going in), the processing (code with bugs), or the output system (display or speaker problems). Professional engineers debug computer problems by asking: where in the input-processing-output chain did something go wrong? The same framework applies to everything from a broken phone app to a malfunctioning spacecraft.`,
-            `The input-processing-output model also reveals something important: computers don't originate anything. They transform inputs into outputs according to their programming. A computer that generates a beautiful painting is really transforming a text description (input) through learned statistical patterns (processing) into pixel data (output). A computer that answers a question transforms text (input) through pattern matching (processing) into a text response (output). The intelligence is in the design, the data, and the humans who built it.`,
+            'RAM is your computer\'s short-term memory — fast, but wiped the moment power goes off.',
+            'When you open an app, it loads from storage into RAM so the CPU can work with it quickly. More RAM = more apps at once.',
           ],
-          image:        '/explorer-assets/future-skills/l08-magazine-input-output.png',
-          imageCaption: `Input, processing, output — every computer interaction follows this pattern, from a single keystroke to a complex AI generating an answer`,
+          image:        '/explorer-assets/future-skills/l08-s4-ram-temporary.png',
+          imageCaption: 'RAM is fast and forgetful. It holds whatever the computer\'s actively using, then forgets it all when power cuts.',
           vocab: [
-            { word: `input`,  definition: `Anything that goes into a computer — keyboard presses, mouse clicks, microphone audio, touchscreen taps, or camera images. Input starts every computer interaction.`,                                        audioPrompt: `Input — anything that goes into a computer. Keyboard presses, mouse clicks, microphone audio, touchscreen taps, or camera images. Input starts every computer interaction.` },
-            { word: `output`, definition: `The result a computer produces after processing — text on screen, sound through speakers, a printed document, or data sent over a network.`,                                                              audioPrompt: `Output — the result a computer produces after processing. Text on screen, sound through speakers, a printed document, or data sent over a network.` },
+            { word: 'RAM',       definition: 'Random Access Memory — fast, temporary memory that holds whatever the computer is actively working on right now.', audioPrompt: 'RAM — Random Access Memory. Fast, temporary memory that holds whatever the computer is actively working on right now.' },
+            { word: 'temporary', definition: 'Not lasting. RAM only holds data while the computer is on — turn it off, and everything in RAM is gone.', audioPrompt: 'Temporary — not lasting. RAM only holds data while the computer is on; turn it off, and everything in RAM is gone.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Storage — Slow But Permanent',
+          paragraphs: [
+            'Storage holds your files, photos, and apps permanently. Hard drives and SSDs are the most common types.',
+            'It\'s much slower than RAM, but it keeps data even when the computer is off. SSDs are faster because they have no moving parts.',
+          ],
+          image:        '/explorer-assets/future-skills/l08-s5-storage-vault.png',
+          imageCaption: 'Storage is slow but loyal. It keeps your files safe whether the computer is on or off.',
+          vocab: [
+            { word: 'storage', definition: 'Permanent memory that keeps data even when the computer is powered off. Hard drives and SSDs are types of storage.', audioPrompt: 'Storage — permanent memory that keeps data even when the computer is powered off. Hard drives and SSDs are types of storage.' },
+            { word: 'SSD',     definition: 'Solid State Drive — a type of storage that uses flash memory with no moving parts. Much faster than older hard drives.', audioPrompt: 'SSD — Solid State Drive. A type of storage that uses flash memory with no moving parts. Much faster than older hard drives.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Input → Processing → Output',
+          paragraphs: [
+            'Every computer interaction follows the same pattern: Input → Processing → Output.',
+            'Input: a keystroke, a mouse click, a camera shot. Processing: the CPU runs code. Output: something appears on screen, plays sound, or prints.',
+          ],
+          image:        '/explorer-assets/future-skills/l08-s6-input-output-flow.png',
+          imageCaption: 'Three steps. Always. The most complex AI in the world follows the same pattern as pressing one key.',
+          vocab: [
+            { word: 'input',  definition: 'Anything that goes INTO a computer — keystrokes, clicks, camera images, microphone audio, touchscreen taps.', audioPrompt: 'Input — anything that goes into a computer: keystrokes, clicks, camera images, microphone audio, touchscreen taps.' },
+            { word: 'output', definition: 'Anything a computer produces OUT — text on screen, sound through speakers, a printed page, data sent across the network.', audioPrompt: 'Output — anything a computer produces out: text on screen, sound through speakers, a printed page, data sent across the network.' },
           ],
         },
 
@@ -187,12 +215,14 @@ const futureskills_explorer_l08_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L08] Loaded: "How Computers Think" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l08-magazine-binary.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l08-magazine-cpu.png',          { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l08-magazine-memory.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l08-magazine-input-output.png', { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L08] binary: ${r1.ok}, cpu: ${r2.ok}, memory: ${r3.ok}, input-output: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l08-s1-binary-switches.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l08-s2-bits-to-bytes.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l08-s3-cpu-flow.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l08-s4-ram-temporary.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l08-s5-storage-vault.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l08-s6-input-output-flow.png', { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L08] binary-switches: ${r1.ok}, bits-to-bytes: ${r2.ok}, cpu-flow: ${r3.ok}, ram-temporary: ${r4.ok}, storage-vault: ${r5.ok}, input-output-flow: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L08] Could not verify image assets — network check failed');
   });
