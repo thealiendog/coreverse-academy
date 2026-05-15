@@ -23,73 +23,101 @@ const futureskills_explorer_l12_screens = {
           guideText: `The World Economic Forum has estimated that the vast majority of jobs that will exist in 2030 haven't been invented yet. The careers your parents have might look completely different by the time you graduate — or might not exist at all. But here's what's exciting: entirely new fields are being created right now, and the people who thrive won't be those who memorized the right skills. They'll be those who know how to keep learning.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What's Changing and Why`,
+          totalSections: 6,
+          headline:      'Work Is Changing Fast',
           paragraphs: [
-            `Three forces are reshaping work at the same time. Automation is replacing repetitive physical tasks — machines now handle manufacturing, packaging, sorting, and logistics work that once required thousands of human workers. AI is replacing repetitive mental tasks — software now handles data entry, basic analysis, document processing, and routine customer service. And globalization means work can move to wherever it can be done best and most cost-effectively, regardless of country.`,
-            `Jobs involving predictable, routine tasks — whether physical or mental — are at high risk. If a task can be broken down into clear steps and done the same way every time, a machine can almost certainly be trained to do it. Jobs requiring unpredictable judgment, creative thinking, complex human interaction, and contextual understanding are much harder to automate. The question isn't "will my job be replaced?" but "which parts of my job involve things only humans can do?"`,
-            `This kind of transformation has happened before. The industrial revolution automated farm labor and forced millions of workers to develop new skills for factories. The computer revolution automated many factory and office jobs. Each time, new categories of work appeared that couldn't have been imagined beforehand. The transformation happening now is faster than previous ones — but the pattern is the same: old routines are automated, new human capabilities become the most valuable thing in the economy.`,
+            'Three forces are reshaping work at the same time: automation (machines), AI (software), and globalization (work moves anywhere).',
+            'This shift has happened before — farms to factories, factories to offices. The pattern is the same. The pace is faster.',
           ],
-          image:        '/explorer-assets/future-skills/l12-magazine-whats-changing.png',
-          imageCaption: `What's changing and why — automation, AI, and globalization are reshaping work faster than any previous transformation in history`,
+          image:        '/explorer-assets/future-skills/l12-s1-three-forces.png',
+          imageCaption: 'Every generation, technology reshapes what work looks like. This time it\'s happening faster than ever before.',
           vocab: [
-            { word: `automation`,    definition: `When machines or software take over tasks that humans used to do — especially repetitive, predictable physical or mental work.`,                                                                audioPrompt: `Automation — when machines or software take over tasks that humans used to do. Especially repetitive, predictable physical or mental work.` },
-            { word: `globalization`, definition: `The process by which work, trade, and information flow freely across national borders — meaning jobs can now be done by anyone with an internet connection, anywhere in the world.`,          audioPrompt: `Globalization — the process by which work, trade, and information flow freely across national borders. Jobs can now be done by anyone with an internet connection, anywhere in the world.` },
+            { word: 'automation',    definition: 'Machines and software taking over tasks humans used to do — especially repetitive, predictable work.', audioPrompt: 'Automation — machines and software taking over tasks humans used to do, especially repetitive, predictable work.' },
+            { word: 'globalization', definition: 'Work, trade, and information flowing freely across countries. Jobs can be done by anyone with an internet connection.', audioPrompt: 'Globalization — work, trade, and information flowing freely across countries. Jobs can be done by anyone with an internet connection.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Jobs That Are Growing`,
+          totalSections: 6,
+          headline:      'Jobs Most At Risk',
           paragraphs: [
-            `Some fields are growing faster than almost anything else. AI and machine learning — building, training, and maintaining AI systems — is one of the most in-demand skill sets on the planet. Cybersecurity — protecting networks, devices, and data from attacks — is a field where demand consistently outpaces the number of trained professionals available. Renewable energy — designing and building solar, wind, and battery systems — is expanding rapidly as the world transitions away from fossil fuels.`,
-            `Other fast-growing areas include mental health care (therapists, counselors, and coaches — human connection is one of the things technology can't replicate), content creation (video, writing, design, and podcasting at a professional level), data analysis (turning raw data into useful insights), and anything combining technical knowledge with human-facing skills. Healthcare technology, education technology, and climate technology are also generating entirely new types of roles that barely existed five years ago.`,
-            `The common thread across growing fields: they all require some combination of technical knowledge and genuinely human capabilities — creativity, judgment, empathy, or communication. The jobs being automated out of existence tend to be one or the other: purely mechanical, or purely data-processing. The jobs being created combine human and machine strengths in ways that neither could achieve alone. The most future-proof careers sit at exactly that intersection.`,
+            'Jobs at high risk: repetitive, predictable tasks.',
+            'If a job can be broken into the same exact steps every day, a machine can probably learn to do it. Data entry, basic sorting, routine customer service.',
           ],
-          image:        '/explorer-assets/future-skills/l12-magazine-jobs-growing.png',
-          imageCaption: `Jobs that are growing — cybersecurity, AI, renewable energy, mental health, and any field combining technical skill with human judgment`,
+          image:        '/explorer-assets/future-skills/l12-s2-repetitive-automation.png',
+          imageCaption: 'Same steps + same outcome every time = a job a machine can learn. That\'s the rule of thumb.',
           vocab: [
-            { word: `cybersecurity`,   definition: `The practice of protecting computers, networks, and data from attacks, unauthorized access, and damage — one of the fastest-growing career fields in technology.`,                            audioPrompt: `Cybersecurity — the practice of protecting computers, networks, and data from attacks, unauthorized access, and damage. One of the fastest-growing career fields in technology.` },
-            { word: `renewable energy`, definition: `Energy from sources that replenish naturally — like sunlight, wind, and water — as opposed to fossil fuels that take millions of years to form and release carbon when burned.`,            audioPrompt: `Renewable energy — energy from sources that replenish naturally, like sunlight, wind, and water. As opposed to fossil fuels that take millions of years to form and release carbon when burned.` },
+            { word: 'repetitive', definition: 'Doing the same thing over and over with little or no variation. Repetitive tasks are the easiest to automate.', audioPrompt: 'Repetitive — doing the same thing over and over with little or no variation. Repetitive tasks are the easiest to automate.' },
+            { word: 'routine',    definition: 'Predictable, day-after-day work with fixed steps. Routine tasks are the most likely to be replaced by automation.', audioPrompt: 'Routine — predictable, day-after-day work with fixed steps. Routine tasks are the most likely to be replaced by automation.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `The Skills That Will Always Matter`,
+          totalSections: 6,
+          headline:      'Jobs Most In Demand',
           paragraphs: [
-            `Regardless of what specific jobs exist in twenty years, certain abilities will remain valuable. Critical thinking: evaluating information carefully, identifying assumptions, and making well-reasoned decisions. Creativity: generating new ideas and solutions beyond recombining what already exists. Communication: explaining ideas clearly and persuasively to different audiences. Collaboration: working effectively with others toward shared goals. Adaptability: learning new skills as situations demand. Emotional intelligence: understanding and working well with people.`,
-            `These skills are hard to automate because they require the kind of contextual, flexible judgment that comes from lived experience. A machine can recognize patterns in data, but it can't sit across from a frightened person and know exactly what they need to hear. It can generate many possible solutions, but it can't feel the weight of a decision that affects real human lives. The uniquely human capacities — empathy, moral judgment, genuine creativity — grow in value precisely because machines are getting better at everything else.`,
-            `The good news: you're building these skills right now in every class, every conversation, every project, every disagreement you work through. School that feels unrelated to technology is often building the exact skills that will complement it most powerfully. Reading builds communication. Group projects build collaboration. Debate builds critical thinking. The subjects that seem least "techy" are often the ones creating the most future-proof capabilities — because they develop the human side of the human+machine combination.`,
+            'Fastest-growing fields right now: AI and machine learning. Cybersecurity. Renewable energy. Mental health care. Content creation. Data analysis.',
+            'All of them combine technical skill with something human — creativity, judgment, empathy, or communication. That combination is hardest to automate.',
           ],
-          image:        '/explorer-assets/future-skills/l12-magazine-skills-matter.png',
-          imageCaption: `The skills that always matter — critical thinking, creativity, communication, collaboration, adaptability, and emotional intelligence`,
+          image:        '/explorer-assets/future-skills/l12-s3-growing-fields.png',
+          imageCaption: 'These fields didn\'t exist (or barely existed) a generation ago. They\'re where the future is being built.',
           vocab: [
-            { word: `critical thinking`,    definition: `The ability to evaluate information carefully, identify assumptions, weigh evidence, and reach well-reasoned conclusions — one of the skills AI finds hardest to replicate.`,             audioPrompt: `Critical thinking — the ability to evaluate information carefully, identify assumptions, weigh evidence, and reach well-reasoned conclusions. One of the skills AI finds hardest to replicate.` },
-            { word: `emotional intelligence`, definition: `The ability to understand and manage your own emotions, and to work effectively with other people's emotions — a uniquely human skill that grows in value as machines take over routine work.`, audioPrompt: `Emotional intelligence — the ability to understand and manage your own emotions and work effectively with other people's emotions. A uniquely human skill that grows in value as machines take over routine work.` },
+            { word: 'cybersecurity',    definition: 'Protecting computers, networks, and data from attacks. One of the fastest-growing career fields in technology.', audioPrompt: 'Cybersecurity — protecting computers, networks, and data from attacks. One of the fastest-growing career fields in technology.' },
+            { word: 'renewable energy', definition: 'Power from sources that don\'t run out — sun, wind, water. The opposite of fossil fuels.', audioPrompt: 'Renewable energy — power from sources that don\'t run out: sun, wind, water. The opposite of fossil fuels.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `The Portfolio Career`,
+          totalSections: 6,
+          headline:      'Skills That Never Get Old',
           paragraphs: [
-            `The idea of working at one company for forty years, receiving a gold watch, and retiring comfortably is already a relic of the past. The future of work looks different: multiple careers over a lifetime, a mix of freelance and contract work alongside any permanent positions, constantly evolving skills, and for many people, running some form of their own business or independent practice. Loyalty to one employer is less common; building a set of valuable, transferable skills is more important than ever.`,
-            `The concept of the T-shaped professional describes what the most valuable workers look like: deep expertise in one specific area (the vertical bar of the T, going down into real mastery) combined with broad knowledge across many other fields (the horizontal bar, giving context and connection). A data scientist who also understands communication and design is more valuable than one who only knows data. A product designer who understands engineering and marketing makes better decisions. Depth plus breadth is the combination that creates genuinely exceptional work.`,
-            `The portfolio career also means that your education never stops. The skills most in demand five years from now don't all exist yet as formal courses. Staying current will mean learning from online resources, peer communities, and hands-on experimentation as much as from formal education. The people who thrive will be those who approach their own learning the way a growth mindset person approaches every challenge: as an ongoing, never-finished process that gets more rewarding the longer you stay with it.`,
+            'Some skills stay valuable no matter what tech exists: critical thinking, creativity, communication, collaboration, adaptability, emotional intelligence.',
+            'These are hard to automate because they need the kind of flexible judgment that comes from real human experience. They get MORE valuable as machines do everything else.',
           ],
-          image:        '/explorer-assets/future-skills/l12-magazine-portfolio-career.png',
-          imageCaption: `The portfolio career — T-shaped skills, lifelong learning, and multiple roles over a lifetime replace the single-employer model`,
+          image:        '/explorer-assets/future-skills/l12-s4-timeless-skills.png',
+          imageCaption: 'Technology will keep changing. These six skills won\'t. The more AI grows, the more valuable they become.',
           vocab: [
-            { word: `portfolio career`, definition: `A career path built from multiple skills, experiences, and often different types of work — rather than spending an entire career at one company doing one thing.`,                             audioPrompt: `Portfolio career — a career path built from multiple skills, experiences, and often different types of work, rather than spending an entire career at one company doing one thing.` },
-            { word: `T-shaped skills`,  definition: `Deep expertise in one specific area — the vertical bar of the T — combined with broad useful knowledge across many other fields — the horizontal bar.`,                                    audioPrompt: `T-shaped skills — deep expertise in one specific area, the vertical bar of the T, combined with broad useful knowledge across many other fields, the horizontal bar.` },
+            { word: 'critical thinking',     definition: 'Carefully evaluating information instead of just accepting it. One of the skills AI finds hardest to replicate.', audioPrompt: 'Critical thinking — carefully evaluating information instead of just accepting it. One of the skills AI finds hardest to replicate.' },
+            { word: 'emotional intelligence', definition: 'Understanding your own and other people\'s emotions, and working well with both. Uniquely human.', audioPrompt: 'Emotional intelligence — understanding your own and other people\'s emotions, and working well with both. Uniquely human.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'T-Shaped Careers',
+          paragraphs: [
+            'The most valuable workers are T-shaped: deep expertise in ONE area (the vertical of the T), plus broad knowledge across many fields (the horizontal).',
+            'A data scientist who also understands design. A designer who understands engineering. Depth plus breadth makes exceptional work.',
+          ],
+          image:        '/explorer-assets/future-skills/l12-s5-t-shaped.png',
+          imageCaption: 'Be excellent at ONE thing. Be aware across many things. That combination is what creates rare, irreplaceable workers.',
+          vocab: [
+            { word: 'T-shaped',       definition: 'Deep expertise in one field plus broad knowledge across many others. The most valuable career shape today.', audioPrompt: 'T-shaped — deep expertise in one field plus broad knowledge across many others. The most valuable career shape today.' },
+            { word: 'specialization', definition: 'Focused, deep expertise in one specific area. The vertical bar of the T-shaped career.', audioPrompt: 'Specialization — focused, deep expertise in one specific area. The vertical bar of the T-shaped career.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Lifelong Learning',
+          paragraphs: [
+            'The "work at one company for 40 years" model is over. Future work means multiple careers, side projects, and skills that keep evolving.',
+            'Your education never stops. The skills most valuable in 10 years don\'t even exist as courses yet. Stay curious — that\'s the real career strategy.',
+          ],
+          image:        '/explorer-assets/future-skills/l12-s6-lifelong-path.png',
+          imageCaption: 'One employer for life is out. Many careers, many skills, and continuous learning is the new normal.',
+          vocab: [
+            { word: 'portfolio career', definition: 'A career built from many skills, roles, and projects over time. Replaces the single-employer model.', audioPrompt: 'Portfolio career — a career built from many skills, roles, and projects over time. Replaces the single-employer model.' },
+            { word: 'lifelong learning', definition: 'Continuing to learn throughout your entire life — not just while you\'re in school. The new career requirement.', audioPrompt: 'Lifelong learning — continuing to learn throughout your entire life, not just while you\'re in school. The new career requirement.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l12_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L12] Loaded: "The Jobs of the Future" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l12-magazine-whats-changing.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l12-magazine-jobs-growing.png',      { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l12-magazine-skills-matter.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l12-magazine-portfolio-career.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L12] whats-changing: ${r1.ok}, jobs-growing: ${r2.ok}, skills-matter: ${r3.ok}, portfolio-career: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l12-s1-three-forces.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l12-s2-repetitive-automation.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l12-s3-growing-fields.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l12-s4-timeless-skills.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l12-s5-t-shaped.png',             { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l12-s6-lifelong-path.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L12] three-forces: ${r1.ok}, repetitive-automation: ${r2.ok}, growing-fields: ${r3.ok}, timeless-skills: ${r4.ok}, t-shaped: ${r5.ok}, lifelong-path: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L12] Could not verify image assets — network check failed');
   });
