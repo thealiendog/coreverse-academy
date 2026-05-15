@@ -23,73 +23,101 @@ const futureskills_explorer_l05_screens = {
           guideText: `Right now, billions of people around the world are sending messages, watching videos, reading news, and playing games — all at the same time. It all runs on a single global system: the internet. Most people use it every day but have no idea what it actually is or how it works. Let's fix that.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is the Internet?`,
+          totalSections: 6,
+          headline:      'The Internet Is a Network',
           paragraphs: [
-            `The internet is a global network of billions of computers and devices connected to each other. When you send a message or load a website, your data travels through this network as packets — small chunks of digital information. Each packet can take a different route through the network, and they reassemble at the destination in the correct order. The result arrives as a complete, coherent message or page.`,
-            `The internet was designed with a specific goal: resilience. The original engineers wanted a network that could survive damage to any part of it and keep functioning. If one route is blocked, packets find another. This distributed design means there's no single point of failure — no one cable, server, or location that, if destroyed, could take down the entire network. That resilience is baked into the architecture at the deepest level.`,
-            `What makes the internet remarkable is its scale. Billions of devices — phones, computers, servers, cameras, cars, smart appliances — are all part of the same network. Every second, trillions of packets are in transit, carrying messages, videos, web pages, phone calls, and data of every kind. All of it flowing through the same interconnected system, following the same set of rules, reaching its destination in milliseconds.`,
+            'The internet is a global network of billions of computers and devices, all connected to each other.',
+            'It was designed for resilience. If one route goes down, data finds another. No single point can take it down.',
           ],
-          image:        '/explorer-assets/future-skills/l05-magazine-what-is-internet.png',
-          imageCaption: `The internet — a global network of billions of connected devices, designed for resilience so no single point can bring it down`,
+          image:        '/explorer-assets/future-skills/l05-s1-global-network.png',
+          imageCaption: 'Not a cloud. Not a place. The internet is a literal network of billions of connected devices.',
           vocab: [
-            { word: `packet`, definition: `A small chunk of digital data that travels across the internet independently — large messages and files are broken into packets, which take different routes and reassemble in order at their destination.`, audioPrompt: `Packet — a small chunk of digital data that travels across the internet independently. Large messages and files are broken into packets, which take different routes and reassemble in order at their destination.` },
-            { word: `router`, definition: `A specialized device that directs data packets toward their destination across the network — routers read each packet's address and decide the best next step in its journey through the internet.`,           audioPrompt: `Router — a specialized device that directs data packets toward their destination across the network. Routers read each packet's address and decide the best next step in its journey through the internet.` },
+            { word: 'network',    definition: 'A group of computers connected so they can share data. The internet is the biggest network in the world.', audioPrompt: 'Network — a group of computers connected so they can share data. The internet is the biggest network in the world.' },
+            { word: 'resilience', definition: 'The ability to keep working even when parts fail. The internet is designed to route around any damaged section.', audioPrompt: 'Resilience — the ability to keep working even when parts fail. The internet is designed to route around any damaged section.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Data Travels`,
+          totalSections: 6,
+          headline:      'Data Travels in Packets',
           paragraphs: [
-            `When you watch a video on a streaming platform, that video doesn't travel as one giant file. It's broken into thousands of small packets, each labeled with where it's going and its position in the sequence. Those packets travel through routers — specialized computers that direct traffic — making their way across the network toward your device. They may take completely different paths and arrive out of order.`,
-            `The cables that carry most of this data are fiber optic cables — glass tubes so thin and clear that data can travel through them as pulses of light. Light moves at the speed of light, which is why the internet feels instant even when data is traveling thousands of miles. Fiber optic cables run under oceans, across continents, and into buildings, forming the physical backbone of the global internet.`,
-            `All of these packets — potentially thousands of them — arrive at your device, get reassembled in the correct order, and you see a smooth, complete video. This entire process happens in milliseconds. The fact that it works reliably for billions of simultaneous users is one of the greatest engineering achievements in human history, and most people using it have never thought about how it works.`,
+            'Big files don\'t travel as one giant blob. They\'re broken into thousands of small chunks called packets.',
+            'Each packet finds its own path through the network, then they reassemble in the right order at the destination. All in milliseconds.',
           ],
-          image:        '/explorer-assets/future-skills/l05-magazine-how-data-travels.png',
-          imageCaption: `How data travels — packets break apart, route across the network through fiber optic cables, and reassemble at the destination`,
+          image:        '/explorer-assets/future-skills/l05-s2-packets-routing.png',
+          imageCaption: 'A single video is thousands of packets, each taking a different route, all arriving in order',
           vocab: [
-            { word: `fiber optic`, definition: `A type of cable that carries data as pulses of light through glass or plastic fibers — fiber optic cables form the backbone of the internet, enabling data to travel at close to the speed of light.`, audioPrompt: `Fiber optic — a type of cable that carries data as pulses of light through glass or plastic fibers. Fiber optic cables form the backbone of the internet, enabling data to travel at close to the speed of light.` },
-            { word: `bandwidth`,   definition: `The capacity of a network connection to carry data — higher bandwidth means more data can travel at once, resulting in faster internet speeds for users.`,                                             audioPrompt: `Bandwidth — the capacity of a network connection to carry data. Higher bandwidth means more data can travel at once, resulting in faster internet speeds for users.` },
+            { word: 'packet', definition: 'A small chunk of data that travels independently across the internet. Big files become thousands of packets.', audioPrompt: 'Packet — a small chunk of data that travels independently across the internet. Big files become thousands of packets.' },
+            { word: 'router', definition: 'A device that reads each packet\'s address and directs it toward its destination. Every internet packet passes through many routers.', audioPrompt: 'Router — a device that reads each packet\'s address and directs it toward its destination. Every internet packet passes through many routers.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `IP Addresses and Domain Names`,
+          totalSections: 6,
+          headline:      'Fiber Optic Cables',
           paragraphs: [
-            `Every device on the internet has an IP address — a unique number that works like a home address for digital data. When you send a packet, it carries the IP address of where it's going so routers know how to direct it. An IP address looks something like 192.168.1.1 — a series of numbers that uniquely identifies one device among billions. Without IP addresses, the internet would have no way to route data to the right place.`,
-            `Humans are bad at remembering strings of numbers, so we use domain names instead — readable addresses like a search engine's web address. But computers don't understand domain names; they need IP addresses. The Domain Name System, or DNS, solves this: when you type a website address like google.com into your browser, DNS acts as the internet's phone book, translating that name into the numerical IP address of the destination server so your request knows where to go.`,
-            `The DNS system handles billions of lookups every day, almost instantaneously. It's distributed across thousands of servers worldwide so that no single server handles all the load. When you type an address and a page loads in milliseconds, a DNS lookup just happened invisibly in the background — translating a human-readable name into a machine-readable address and routing your request to the right place on Earth.`,
+            'Most internet data travels through fiber optic cables — glass tubes so thin that pulses of light carry information through them.',
+            'These cables run under oceans, across continents, into buildings. Light moves at the speed of light. That\'s why the internet feels instant.',
           ],
-          image:        '/explorer-assets/future-skills/l05-magazine-ip-dns.png',
-          imageCaption: `IP addresses and DNS — every device has a unique number address, and DNS translates human-readable names into those numbers`,
+          image:        '/explorer-assets/future-skills/l05-s3-fiber-optic-cables.png',
+          imageCaption: 'The internet runs on light. Real cables carry real photons across oceans every second.',
           vocab: [
-            { word: `IP address`, definition: `A unique number assigned to every device on the internet — like a home address for digital data. IP addresses allow routers to direct packets to exactly the right destination device.`,                                 audioPrompt: `IP address — a unique number assigned to every device on the internet, like a home address for digital data. IP addresses allow routers to direct packets to exactly the right destination device.` },
-            { word: `DNS`,        definition: `The Domain Name System — the internet's phone book that translates human-readable website names into the numerical IP addresses that computers use to locate each other on the network.`, audioPrompt: `DNS — the Domain Name System. The internet's phone book that translates human-readable website names into the numerical IP addresses that computers use to locate each other on the network.` },
+            { word: 'fiber optic', definition: 'A cable that carries data as pulses of light through thin glass fibers. The physical backbone of the internet.', audioPrompt: 'Fiber optic — a cable that carries data as pulses of light through thin glass fibers. The physical backbone of the internet.' },
+            { word: 'bandwidth',   definition: 'How much data a connection can carry at once. Higher bandwidth means faster internet — more lanes on the same highway.', audioPrompt: 'Bandwidth — how much data a connection can carry at once. Higher bandwidth means faster internet, like more lanes on the same highway.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `The Web vs The Internet`,
+          totalSections: 6,
+          headline:      'IP Addresses',
           paragraphs: [
-            `The internet and the World Wide Web are not the same thing — and the difference matters. The internet is the physical infrastructure: the global network of connected computers, cables, routers, and wireless signals. The web is a service that runs on top of that infrastructure: a system of linked pages and documents you access through a browser using web addresses. The internet is the road. The web is one type of vehicle that uses it.`,
-            `Email, online gaming, streaming video, video calls, and file transfers also run on the internet — but none of them are the web. They're separate services using the same underlying network. The web specifically refers to pages connected by hyperlinks, displayed in browsers, accessed via URLs. Tim Berners-Lee invented the web in 1989, but the internet itself is older — it existed as a research network for decades before the web was built on top of it.`,
-            `Understanding this distinction matters because it changes how you think about digital systems. When a service goes offline, it might be the internet itself (the network) or just a specific web service. When you're troubleshooting a connection, knowing whether the problem is at the network level or the application level points you in completely different directions. The layers of the internet — physical, network, application — each have their own rules, systems, and failure modes.`,
+            'Every device on the internet has an IP address — a unique number that works like a home address for digital data.',
+            'An IP address looks like 192.168.1.1 — a series of numbers. When you send a packet, it carries the IP address of where it\'s going.',
           ],
-          image:        '/explorer-assets/future-skills/l05-magazine-web-vs-internet.png',
-          imageCaption: `The web vs the internet — the internet is the physical network; the web is one service that runs on top of it`,
+          image:        '/explorer-assets/future-skills/l05-s4-ip-addresses.png',
+          imageCaption: 'Every phone, laptop, smart speaker — every device on the internet — has its own unique number',
           vocab: [
-            { word: `World Wide Web`, definition: `A system of linked web pages and documents accessed through browsers using web addresses — the web is one service that runs on the internet, not the internet itself.`,          audioPrompt: `World Wide Web — a system of linked web pages and documents accessed through browsers using web addresses. The web is one service that runs on the internet, not the internet itself.` },
-            { word: `protocol`,      definition: `A set of rules that defines how devices communicate on a network — protocols ensure that every device on the internet, no matter who built it, follows the same rules for sending and receiving data.`, audioPrompt: `Protocol — a set of rules that defines how devices communicate on a network. Protocols ensure that every device on the internet, no matter who built it, follows the same rules for sending and receiving data.` },
+            { word: 'IP address', definition: 'A unique number that identifies a device on the internet. Like a home address — but for digital data.', audioPrompt: 'IP address — a unique number that identifies a device on the internet. Like a home address, but for digital data.' },
+            { word: 'unique',     definition: 'One of a kind. Every IP address on the internet is unique to one device at a time so packets can be delivered correctly.', audioPrompt: 'Unique — one of a kind. Every IP address on the internet is unique to one device at a time so packets can be delivered correctly.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'DNS — The Internet\'s Phone Book',
+          paragraphs: [
+            'Humans can\'t remember numbers like 192.168.1.1. So we use names like "google.com" instead.',
+            'But computers only understand numbers. DNS is the system that translates names into IP addresses — billions of times every day, instantly.',
+          ],
+          image:        '/explorer-assets/future-skills/l05-s5-dns-phonebook.png',
+          imageCaption: 'You type a name. DNS looks up the number. Every web address you\'ve ever typed went through this lookup.',
+          vocab: [
+            { word: 'DNS',         definition: 'Domain Name System — the internet\'s phone book that translates readable names into numerical IP addresses.', audioPrompt: 'DNS — Domain Name System. The internet\'s phone book that translates readable names into numerical IP addresses.' },
+            { word: 'domain name', definition: 'A readable web address like "google.com." Easier for humans than the long numerical IP address underneath.', audioPrompt: 'Domain name — a readable web address like "google.com." Easier for humans than the long numerical IP address underneath.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'The Web Is Not the Internet',
+          paragraphs: [
+            'The internet and the World Wide Web are NOT the same thing. The internet is the physical network.',
+            'The web is one service running on top of it. So is email. So is gaming. The internet is the road. The web is just one vehicle.',
+          ],
+          image:        '/explorer-assets/future-skills/l05-s6-road-and-vehicles.png',
+          imageCaption: 'Internet = the network. Web, email, gaming, streaming = different services running on it. Don\'t confuse them.',
+          vocab: [
+            { word: 'World Wide Web', definition: 'A system of linked pages and documents accessed by browsers. ONE service that runs on the internet — not the internet itself.', audioPrompt: 'World Wide Web — a system of linked pages and documents accessed by browsers. One service that runs on the internet, not the internet itself.' },
+            { word: 'protocol',       definition: 'A set of rules for how devices communicate. Protocols let every device on the internet understand each other.', audioPrompt: 'Protocol — a set of rules for how devices communicate. Protocols let every device on the internet understand each other.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l05_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L05] Loaded: "What Is the Internet and How Does It Work?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l05-magazine-what-is-internet.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l05-magazine-how-data-travels.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l05-magazine-ip-dns.png',           { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l05-magazine-web-vs-internet.png',  { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L05] what-is-internet: ${r1.ok}, how-data-travels: ${r2.ok}, ip-dns: ${r3.ok}, web-vs-internet: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l05-s1-global-network.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l05-s2-packets-routing.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l05-s3-fiber-optic-cables.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l05-s4-ip-addresses.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l05-s5-dns-phonebook.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l05-s6-road-and-vehicles.png',   { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L05] global-network: ${r1.ok}, packets-routing: ${r2.ok}, fiber-optic-cables: ${r3.ok}, ip-addresses: ${r4.ok}, dns-phonebook: ${r5.ok}, road-and-vehicles: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L05] Could not verify image assets — network check failed');
   });
