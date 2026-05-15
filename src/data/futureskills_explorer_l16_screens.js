@@ -23,73 +23,101 @@ const futureskills_explorer_l16_screens = {
           guideText: `Cyberbullying affects millions of young people around the world. Unlike traditional bullying, it follows you home, can happen at any hour, and can reach a large audience in seconds. But here's what's equally true: it can be stopped, it can be reported, and one person choosing to speak up can change everything. Understanding what cyberbullying is — and what to do about it — is one of the most important skills of digital life.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is Cyberbullying?`,
+          totalSections: 6,
+          headline:      'What Cyberbullying Is',
           paragraphs: [
-            `Cyberbullying is the deliberate, repeated use of technology to harass, threaten, humiliate, or harm someone. The two key words are deliberate and repeated. A single unkind comment is hurtful — but it isn't cyberbullying. A pattern of targeted harm directed at the same person, over and over, is. The intention to hurt and the repetition together are what define it.`,
-            `Cyberbullying takes many forms: sending mean or threatening messages, spreading rumors online, sharing embarrassing photos or videos without permission, deliberately excluding someone from online groups, impersonating someone to damage their reputation, and creating fake profiles or accounts to mock someone. It can happen across any platform — messaging apps, gaming platforms, social media, comment sections, or anywhere people interact online.`,
-            `What makes cyberbullying different from a bad day online is the targeting. Someone who is cyberbullied isn't just experiencing general rudeness on the internet — they're being specifically, repeatedly singled out. That targeting changes the experience entirely. It creates a sense of being watched, followed, and unsafe in spaces that should feel normal. Understanding this distinction helps you recognize it clearly — whether it's happening to you, someone you know, or someone you witness online.`,
+            'Cyberbullying is when someone uses technology to harass, threaten, or humiliate another person — on purpose, over and over.',
+            'One unkind comment is hurtful, but it\'s not cyberbullying. A pattern of targeted harm at the same person, again and again, IS.',
           ],
-          image:        '/explorer-assets/future-skills/l16-magazine-what-is-cyberbullying.png',
-          imageCaption: `What is cyberbullying — deliberate, repeated digital harm targeting a specific person across any platform`,
+          image:        '/explorer-assets/future-skills/l16-s1-targeted-arrows.png',
+          imageCaption: 'Two words define cyberbullying: deliberate AND repeated. Not every mean comment counts. A pattern aimed at one person does.',
           vocab: [
-            { word: `cyberbullying`, definition: `The deliberate, repeated use of technology to harass, threaten, humiliate, or harm someone — distinguished from one-time rudeness by its targeting and repetition.`,                audioPrompt: `Cyberbullying — the deliberate, repeated use of technology to harass, threaten, humiliate, or harm someone. Distinguished from one-time rudeness by its targeting and repetition.` },
-            { word: `digital harm`,  definition: `Harm caused through digital tools and platforms — including mean messages, rumors, impersonation, and the sharing of embarrassing content without permission.`,                   audioPrompt: `Digital harm — harm caused through digital tools and platforms. Including mean messages, rumors, impersonation, and the sharing of embarrassing content without permission.` },
+            { word: 'cyberbullying', definition: 'Using technology to harass, threaten, or humiliate someone on purpose, repeatedly. Not a single rude comment — a pattern.', audioPrompt: 'Cyberbullying — using technology to harass, threaten, or humiliate someone on purpose, repeatedly. Not a single rude comment, a pattern.' },
+            { word: 'targeted',      definition: 'Aimed specifically at one person, again and again. Targeting is what turns rudeness into bullying.', audioPrompt: 'Targeted — aimed specifically at one person, again and again. Targeting is what turns rudeness into bullying.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Why Cyberbullying Is Especially Hard`,
+          totalSections: 6,
+          headline:      'Why It Hurts More',
           paragraphs: [
-            `Traditional bullying happens in specific places — a school hallway, a playground — and stops when you leave. Cyberbullying follows you home. It can appear on your phone at dinnertime, in the middle of the night, and during every quiet moment. There is no physical safe space where it can't reach you. This constant exposure is one of the things that makes it particularly exhausting and hard to cope with.`,
-            `Cyberbullying can also happen in front of an audience. A mean comment posted publicly can be seen, liked, and shared by many people — amplifying the humiliation far beyond what any in-person incident could reach. Screenshots and posts are permanent: evidence of what happened can persist and be reshared long after the original moment. The person doing the harm can also hide behind anonymity, making it harder to confront or report, and harder for the target to make sense of what's happening and why.`,
-            `Research consistently shows that cyberbullying is linked to higher rates of anxiety, sadness, and difficulty focusing than traditional bullying — likely because of this combination of constant access, public audiences, and permanence. None of this means it can't be addressed. It means understanding why it feels different is important — both for the people experiencing it and for the people around them who want to help. Knowing what you're dealing with is the first step to dealing with it effectively.`,
+            'Regular bullying stops when you leave the playground. Cyberbullying follows you home, into your bedroom, at midnight.',
+            'It can have an audience of hundreds. Screenshots make it permanent. The person doing it can hide behind anonymity. That combination is harder to handle.',
           ],
-          image:        '/explorer-assets/future-skills/l16-magazine-why-hard.png',
-          imageCaption: `Why cyberbullying is especially hard — it follows you home, can reach large audiences instantly, and the evidence is permanent`,
+          image:        '/explorer-assets/future-skills/l16-s2-follows-home.png',
+          imageCaption: 'No safe space. Big audience. Permanent record. Hidden identity. That\'s what makes online harm hit differently.',
           vocab: [
-            { word: `anonymity`,   definition: `Being able to act without revealing your identity — online anonymity makes it easier to say harmful things without accountability, which is one reason cyberbullying is harder to confront.`, audioPrompt: `Anonymity — being able to act without revealing your identity. Online anonymity makes it easier to say harmful things without accountability, which is one reason cyberbullying is harder to confront.` },
-            { word: `permanence`,  definition: `The quality of lasting a long time — digital content is permanent in the sense that screenshots, backups, and archives mean it can survive deletion and resurface later.`,                  audioPrompt: `Permanence — the quality of lasting a long time. Digital content is permanent in the sense that screenshots, backups, and archives mean it can survive deletion and resurface later.` },
+            { word: 'anonymity',  definition: 'When someone hides their identity online. Makes it easier for them to be cruel without facing consequences.', audioPrompt: 'Anonymity — when someone hides their identity online. Makes it easier for them to be cruel without facing consequences.' },
+            { word: 'permanence', definition: 'Digital content lasts. Screenshots, backups, and shares mean cyberbullying evidence doesn\'t just disappear.', audioPrompt: 'Permanence — digital content lasts. Screenshots, backups, and shares mean cyberbullying evidence doesn\'t just disappear.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `What To Do If It's Happening to You`,
+          totalSections: 6,
+          headline:      'Don\'t Respond, Document',
           paragraphs: [
-            `If you're being cyberbullied, the first and most important step is: don't respond. Responding often escalates the situation — it signals that the harassment is working, and it can make things worse. Instead, before you block or delete anything, take screenshots to document what's happening. Evidence matters if you need to report it to a platform, a school, or an adult who can help. Document first, then block.`,
-            `After documenting, block the person on every platform where they're contacting you. Then report the behavior to the platform — every major social media site, gaming service, and messaging app has a reporting system designed for exactly this purpose. Reports don't always lead to immediate action, but they create a record and may result in the account being removed. You are not responsible for tolerating someone else's cruelty because reporting feels awkward.`,
-            `The most important step is telling a trusted adult — a parent, teacher, school counselor, or other adult you feel safe with. Show them the documentation you've saved. Getting help is the strong choice, not the weak one. If the harassment includes threats of physical harm, it should be reported to school authorities or police. You don't have to handle any of this alone, and reaching out to someone who can actually help is exactly the right response.`,
+            'If it\'s happening to you: don\'t reply. Responding usually escalates it.',
+            'Before blocking or deleting anything, take screenshots. You need evidence to show a trusted adult or platform later. Document first, then act.',
           ],
-          image:        '/explorer-assets/future-skills/l16-magazine-what-to-do.png',
-          imageCaption: `What to do — document before deleting, block and report on the platform, and tell a trusted adult who can help`,
+          image:        '/explorer-assets/future-skills/l16-s3-screenshot-evidence.png',
+          imageCaption: 'Step one is NOT replying. Step two is screenshots — evidence first, before anything gets deleted.',
           vocab: [
-            { word: `documentation`, definition: `Saving evidence of what happened — taking screenshots of messages or posts before blocking or deleting them, so there's a record that can be shown to adults or used in reports.`,               audioPrompt: `Documentation — saving evidence of what happened. Taking screenshots of messages or posts before blocking or deleting them, so there's a record that can be shown to adults or used in reports.` },
-            { word: `trusted adult`, definition: `A parent, teacher, school counselor, or other adult in your life whom you feel safe telling about something serious — one of the most important resources when facing cyberbullying.`,    audioPrompt: `Trusted adult — a parent, teacher, school counselor, or other adult in your life whom you feel safe telling about something serious. One of the most important resources when facing cyberbullying.` },
+            { word: 'document', definition: 'Save evidence of what\'s happening. Screenshots of messages or posts before they\'re deleted or you block someone.', audioPrompt: 'Document — save evidence of what\'s happening. Screenshots of messages or posts before they\'re deleted or you block someone.' },
+            { word: 'escalate', definition: 'Make something worse or bigger. Responding to harassment usually escalates the situation, even if it feels like standing up for yourself.', audioPrompt: 'Escalate — make something worse or bigger. Responding to harassment usually escalates the situation, even if it feels like standing up for yourself.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `The Power of Bystanders`,
+          totalSections: 6,
+          headline:      'Block, Report, Tell',
           paragraphs: [
-            `Bystanders — people who witness bullying — have real power to change what happens next. Research consistently shows that when even one person chooses to speak up, the situation is much more likely to improve. Being an upstander doesn't always mean directly confronting the person doing the bullying. It can mean checking in privately with the person being targeted, refusing to like or share mean content, or letting a trusted adult know what you saw.`,
-            `There are many ways to be an upstander, and you can choose what fits your situation. You might leave a kind comment that shifts the tone in a public space. You might send a private message letting the targeted person know they're not alone. You might take screenshots and bring them to a parent or teacher who can take action. What matters is the decision to do something rather than let it continue — and the choice of what to do is yours to make based on what feels right and safe.`,
-            `Being an upstander gets easier with practice. Thinking ahead about what you'd say or do in different situations — before you're actually in one — makes it much easier to act when the moment arrives. Bullying tends to continue when it stays invisible. The simple act of telling a trusted adult what you witnessed breaks that silence. You don't have to solve everything alone, and you don't have to be fearless. You just have to care enough to do something.`,
+            'Block the person on every platform. Report them to the platform — every major app has a reporting tool.',
+            'Then tell a trusted adult: parent, teacher, school counselor. Show them the screenshots. Asking for help is the strong choice, not the weak one.',
           ],
-          image:        '/explorer-assets/future-skills/l16-magazine-upstander.png',
-          imageCaption: `The power of bystanders — speaking up, checking in, and refusing to participate can change the outcome for someone being targeted`,
+          image:        '/explorer-assets/future-skills/l16-s4-block-report-tell.png',
+          imageCaption: 'Three actions, in order: Block. Report. Tell a trusted adult. You don\'t have to handle this alone — and you shouldn\'t try.',
           vocab: [
-            { word: `upstander`, definition: `A person who witnesses bullying and chooses to take a positive action — defending the target, checking in with them, refusing to participate, or telling a trusted adult.`,                       audioPrompt: `Upstander — a person who witnesses bullying and chooses to take a positive action. Defending the target, checking in with them, refusing to participate, or telling a trusted adult.` },
-            { word: `bystander`, definition: `A person who witnesses something happening but does not get involved — in bullying situations, choosing to move from bystander to upstander can make a real difference for the person targeted.`, audioPrompt: `Bystander — a person who witnesses something happening but does not get involved. In bullying situations, choosing to move from bystander to upstander can make a real difference for the person targeted.` },
+            { word: 'block',         definition: 'Use a platform\'s tool to stop someone from contacting you or seeing your content. Available on every major app.', audioPrompt: 'Block — use a platform\'s tool to stop someone from contacting you or seeing your content. Available on every major app.' },
+            { word: 'trusted adult', definition: 'A grown-up you can rely on — parents, teachers, school counselors. They have tools and authority you don\'t.', audioPrompt: 'Trusted adult — a grown-up you can rely on: parents, teachers, school counselors. They have tools and authority you don\'t.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Bystanders vs Upstanders',
+          paragraphs: [
+            'A bystander sees bullying and does nothing. An upstander sees it and does something — anything — to help.',
+            'Research shows that when even ONE person speaks up, the situation almost always improves. One voice matters more than people realize.',
+          ],
+          image:        '/explorer-assets/future-skills/l16-s5-bystander-upstander.png',
+          imageCaption: 'Watching = bystander. Acting = upstander. One person speaking up can shift the whole situation.',
+          vocab: [
+            { word: 'bystander', definition: 'Someone who sees something happen but doesn\'t get involved. Staying silent is a choice — it just often doesn\'t feel like one.', audioPrompt: 'Bystander — someone who sees something happen but doesn\'t get involved. Staying silent is a choice; it just often doesn\'t feel like one.' },
+            { word: 'upstander', definition: 'Someone who sees harm happen and takes action — any action — to help. Doesn\'t require courage to confront. Just a choice to do something.', audioPrompt: 'Upstander — someone who sees harm happen and takes action, any action, to help. Doesn\'t require courage to confront. Just a choice to do something.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Small Acts That Help',
+          paragraphs: [
+            'You don\'t have to confront the bully. Smaller acts work too.',
+            'Send a private "are you okay?" message. Refuse to like or share mean content. Tell a trusted adult what you saw. Any of these counts.',
+          ],
+          image:        '/explorer-assets/future-skills/l16-s6-small-acts.png',
+          imageCaption: 'Being an upstander doesn\'t mean being a hero. Small, quiet acts of help count — and they add up.',
+          vocab: [
+            { word: 'check-in', definition: 'A private message asking if someone is okay. Small, easy, and one of the most powerful things an upstander can do.', audioPrompt: 'Check-in — a private message asking if someone is okay. Small, easy, and one of the most powerful things an upstander can do.' },
+            { word: 'empathy',  definition: 'Understanding and caring about how someone else feels. The foundation of every upstander action.', audioPrompt: 'Empathy — understanding and caring about how someone else feels. The foundation of every upstander action.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l16_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L16] Loaded: "Cyberbullying and How to Handle It" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l16-magazine-what-is-cyberbullying.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l16-magazine-why-hard.png',              { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l16-magazine-what-to-do.png',            { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l16-magazine-upstander.png',             { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L16] what-is-cyberbullying: ${r1.ok}, why-hard: ${r2.ok}, what-to-do: ${r3.ok}, upstander: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l16-s1-targeted-arrows.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l16-s2-follows-home.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l16-s3-screenshot-evidence.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l16-s4-block-report-tell.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l16-s5-bystander-upstander.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l16-s6-small-acts.png',           { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L16] targeted-arrows: ${r1.ok}, follows-home: ${r2.ok}, screenshot-evidence: ${r3.ok}, block-report-tell: ${r4.ok}, bystander-upstander: ${r5.ok}, small-acts: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L16] Could not verify image assets — network check failed');
   });
