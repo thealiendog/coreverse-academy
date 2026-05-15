@@ -23,73 +23,101 @@ const futureskills_explorer_l07_screens = {
           guideText: `A computer program beat the world's best chess player in 1997. Programs can now pass medical licensing exams, hold conversations, analyze X-rays, and generate artwork — all without being told the rules. Artificial intelligence isn't science fiction anymore. It's here, it's everywhere, and understanding what it actually is gives you a huge advantage.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is AI?`,
+          totalSections: 6,
+          headline:      'What Is AI?',
           paragraphs: [
-            `Artificial intelligence is the ability of a computer to perform tasks that normally require human intelligence: understanding language, recognizing faces, making decisions, translating between languages, and learning from experience. AI isn't one thing — it's a collection of techniques. The AI in your phone's face recognition works very differently from the AI that suggests what to watch next or guides a self-driving car.`,
-            `Traditional programs are rigid — a programmer writes rules for every possible situation, and the program follows them exactly. AI is different: instead of following fixed rules, AI systems learn from experience. They find patterns in large amounts of data and use those patterns to make decisions in situations they haven't explicitly been programmed for. This shift — from rule-following to pattern-learning — changed everything about what computers can do.`,
-            `The idea of artificial intelligence has been around since the 1950s, when scientists first asked whether machines could think. Early researchers predicted human-level AI was just around the corner. They were wrong about the timeline — AI turned out to be far harder than expected. But over the following decades, as computers got faster and the amount of available data exploded, AI made remarkable progress. Today it can do things that seemed like science fiction just twenty years ago.`,
+            'Artificial intelligence is when computers do tasks that normally need human intelligence — recognizing faces, understanding speech, translating languages, making decisions.',
+            'AI isn\'t one thing. It\'s a collection of techniques. Face unlock works very differently from a chatbot or a self-driving car.',
           ],
-          image:        '/explorer-assets/future-skills/l07-magazine-what-is-ai.png',
-          imageCaption: `What is AI — computers performing tasks that normally require human intelligence, from recognizing faces to understanding language`,
+          image:        '/explorer-assets/future-skills/l07-s1-ai-brain.png',
+          imageCaption: 'AI is computers doing things that used to require a human mind. It\'s many different techniques under one name.',
           vocab: [
-            { word: `artificial intelligence`, definition: `When computers perform tasks that normally require human intelligence — such as recognizing images, understanding language, or making decisions based on patterns in data.`,                                audioPrompt: `Artificial intelligence — when computers perform tasks that normally require human intelligence. This includes recognizing images, understanding language, and making decisions based on patterns in data.` },
-            { word: `machine learning`,        definition: `A type of artificial intelligence where a program learns patterns from large amounts of data rather than following fixed rules written by a programmer.`,                                                          audioPrompt: `Machine learning — a type of artificial intelligence where a program learns patterns from large amounts of data rather than following fixed rules written by a programmer.` },
+            { word: 'artificial intelligence', definition: 'Computers performing tasks that normally need human intelligence — recognizing images, understanding language, making decisions.', audioPrompt: 'Artificial intelligence — computers performing tasks that normally need human intelligence: recognizing images, understanding language, making decisions.' },
+            { word: 'intelligence',            definition: 'The ability to learn, understand, solve problems, and adapt to new situations.', audioPrompt: 'Intelligence — the ability to learn, understand, solve problems, and adapt to new situations.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How AI Learns`,
+          totalSections: 6,
+          headline:      'Rules vs Patterns',
           paragraphs: [
-            `Traditional programs follow rules humans write. AI programs learn patterns from data. To teach an AI to recognize cats, you show it millions of photos labeled 'cat' or 'not cat.' The AI finds patterns — pointy ears, whiskers, certain shapes — and uses those patterns to identify cats in new photos it's never seen before. This approach is called machine learning, and it's behind most modern AI.`,
-            `The most powerful form of machine learning today is called deep learning. It uses networks of mathematical nodes loosely inspired by how neurons connect in the human brain. These networks — called neural networks — can find extremely complex patterns across enormous datasets. The same architecture that learns to recognize faces also learns to translate languages, generate images, and understand speech. Deep learning is what made the AI revolution of the last decade possible.`,
-            `The quality of an AI depends almost entirely on the quality of its training data. An AI trained on biased data learns biased patterns. An AI trained on limited data makes confident mistakes outside that range. An AI trained on incorrect labels learns wrong conclusions. This means every AI system reflects the choices made by the people who built and trained it — not neutral, objective truth. Who builds AI, and what data they use, matters enormously.`,
+            'Traditional programs follow rules a person wrote: "IF this, THEN that." Predictable. Limited.',
+            'AI is different. It learns patterns from huge amounts of data and makes decisions in situations it was never directly programmed for.',
           ],
-          image:        '/explorer-assets/future-skills/l07-magazine-how-ai-learns.png',
-          imageCaption: `How AI learns — feeding millions of labeled examples so the system finds patterns, rather than following rules a programmer wrote`,
+          image:        '/explorer-assets/future-skills/l07-s2-rules-vs-patterns.png',
+          imageCaption: 'Traditional code follows fixed rules. AI learns patterns. That\'s the shift that changed everything.',
           vocab: [
-            { word: `neural network`,  definition: `A type of AI system loosely inspired by the brain — built from layers of mathematical nodes that find complex patterns in data. Neural networks are the foundation of most modern AI.`,                                  audioPrompt: `Neural network — a type of AI system loosely inspired by the brain, built from layers of mathematical nodes that find complex patterns in data. Neural networks are the foundation of most modern AI.` },
-            { word: `training data`,   definition: `The large collection of labeled examples used to teach an AI system — the quality and diversity of training data determines how well the AI performs and what biases it carries.`,                                     audioPrompt: `Training data — the large collection of labeled examples used to teach an AI system. The quality and diversity of training data determines how well the AI performs and what biases it carries.` },
+            { word: 'rule-based program', definition: 'A program that follows specific rules written by a programmer. Predictable but limited to what was explicitly programmed.', audioPrompt: 'Rule-based program — a program that follows specific rules written by a programmer. Predictable but limited to what was explicitly programmed.' },
+            { word: 'pattern',            definition: 'A regular feature found in data. AI finds patterns and uses them to make predictions about new situations.', audioPrompt: 'Pattern — a regular feature found in data. AI finds patterns and uses them to make predictions about new situations.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `AI All Around You`,
+          totalSections: 6,
+          headline:      'How AI Learns',
           paragraphs: [
-            `AI is already woven into daily life: voice assistants that answer spoken questions, recommendation systems that suggest what to watch or listen to next, spam filters that protect your email inbox, face recognition that unlocks your phone, and navigation apps that predict traffic in real time and reroute you around delays. You interact with AI dozens of times every day — most of the time without noticing.`,
-            `AI is also behind the search results you see, the autocorrect that fixes your typing, fraud detection systems that flag unusual activity on bank accounts, and medical tools that help doctors analyze scans for signs of disease. In factories, AI-powered systems build products with precision no human hand can match. In agriculture, AI analyzes satellite images to help farmers predict crop yields and spot problems early.`,
-            `The pace of progress has been remarkable. Just a few years ago, AI couldn't reliably hold a conversation, generate realistic images, or pass professional exams. Today it can do all of those things. This improvement isn't magic — it's the result of dramatically faster computers, vastly larger datasets, and refinements in training techniques. The AI tools available today are more powerful than the research systems of major universities just a decade ago.`,
+            'To teach an AI to recognize cats, you show it millions of photos labeled "cat" or "not cat."',
+            'It finds patterns — pointy ears, whiskers, certain shapes — and uses them on new photos. This is called machine learning.',
           ],
-          image:        '/explorer-assets/future-skills/l07-magazine-ai-around-you.png',
-          imageCaption: `AI all around you — voice assistants, recommendation systems, spam filters, face unlock, navigation, fraud detection, and more`,
+          image:        '/explorer-assets/future-skills/l07-s3-machine-learning.png',
+          imageCaption: 'AI learns the way we learned to recognize cats as kids — millions of examples, patterns absorbed over time',
           vocab: [
-            { word: `recommendation system`, definition: `An AI tool that predicts what a user might want to see, hear, or buy next, based on patterns in their past behavior and the behavior of similar users.`,                                                audioPrompt: `Recommendation system — an AI tool that predicts what a user might want to see, hear, or buy next, based on patterns in their past behavior and the behavior of similar users.` },
-            { word: `automation`,            definition: `Using machines or software to perform tasks that previously required human effort — AI has expanded automation from physical tasks to tasks that require pattern recognition and decision-making.`,   audioPrompt: `Automation — using machines or software to perform tasks that previously required human effort. AI has expanded automation from physical tasks to tasks that require pattern recognition and decision-making.` },
+            { word: 'machine learning', definition: 'AI that learns from data rather than following fixed rules. The technique behind almost every modern AI system.', audioPrompt: 'Machine learning — AI that learns from data rather than following fixed rules. The technique behind almost every modern AI system.' },
+            { word: 'training data',    definition: 'The labeled examples used to teach an AI. Quality and variety of training data directly determines how well the AI performs.', audioPrompt: 'Training data — the labeled examples used to teach an AI. Quality and variety of training data directly determines how well the AI performs.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `What AI Can and Can't Do`,
+          totalSections: 6,
+          headline:      'AI Is Already Everywhere',
           paragraphs: [
-            `AI is incredibly powerful at pattern recognition, processing huge amounts of data, and doing specific narrow tasks. An AI trained to detect disease in medical images can spot patterns that experienced doctors miss. An AI playing a strategy game can consider millions of possibilities per second and find moves no human would discover. At its best, AI is a precision instrument for doing one specific thing extraordinarily well.`,
-            `But AI has real limitations. It doesn't truly understand anything — it matches patterns without comprehension. It can be confidently wrong, stating false information with the same calm certainty it uses for true information. It reflects the biases in its training data. It struggles with genuinely new situations it wasn't trained on. And it has no common sense, emotional intelligence, moral judgment, or genuine creativity — it generates plausible outputs from patterns, not understanding.`,
-            `This means the most valuable skills in an AI-powered world aren't the ones AI does best — they're the ones AI does worst. Critical thinking to evaluate AI outputs. Judgment to decide when to trust and when to question. Creativity that goes beyond recombining existing patterns. Empathy and ethical reasoning. Human connection. The people who thrive alongside AI will be those who understand what it can do — and understand what only humans can.`,
+            'Voice assistants. Recommendation systems. Spam filters. Face unlock. Navigation apps. Autocorrect. Fraud detection. Medical scan analysis.',
+            'You interact with AI dozens of times every day — mostly without realizing it. AI is no longer the future. It\'s the present.',
           ],
-          image:        '/explorer-assets/future-skills/l07-magazine-ai-limits.png',
-          imageCaption: `What AI can and can't do — powerful at pattern recognition, but without true understanding, common sense, or emotional intelligence`,
+          image:        '/explorer-assets/future-skills/l07-s4-ai-everywhere.png',
+          imageCaption: 'AI runs your spam filter, your phone\'s face unlock, your search results, your nav app. It\'s already woven in.',
           vocab: [
-            { word: `bias`,     definition: `A pattern of unfair or inaccurate results caused by flawed or unrepresentative training data — AI systems can amplify human biases that were baked into the data they learned from.`,                                             audioPrompt: `Bias — a pattern of unfair or inaccurate results caused by flawed or unrepresentative training data. AI systems can amplify human biases that were baked into the data they learned from.` },
-            { word: `narrow AI`, definition: `AI designed to do one specific task very well — like recognizing faces or translating text — as opposed to general intelligence, which can reason flexibly across any domain.`,                                              audioPrompt: `Narrow AI — AI designed to do one specific task very well, like recognizing faces or translating text, as opposed to general intelligence, which can reason flexibly across any domain.` },
+            { word: 'recommendation system', definition: 'AI that predicts what you\'ll like next based on patterns in your past behavior and the behavior of others like you.', audioPrompt: 'Recommendation system — AI that predicts what you\'ll like next based on patterns in your past behavior and the behavior of others like you.' },
+            { word: 'voice assistant',       definition: 'AI you can talk to that responds with spoken or written answers. Siri, Alexa, and Google Assistant are voice assistants.', audioPrompt: 'Voice assistant — AI you can talk to that responds with spoken or written answers. Siri, Alexa, and Google Assistant are voice assistants.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'What AI Can\'t Do',
+          paragraphs: [
+            'AI is powerful — but it doesn\'t actually understand anything. It matches patterns without comprehension.',
+            'It can be confidently wrong. It reflects biases in its training data. It has no common sense, emotional intelligence, or moral judgment.',
+          ],
+          image:        '/explorer-assets/future-skills/l07-s5-ai-limits.png',
+          imageCaption: 'AI sounds smart and sometimes IS smart. But it can also be confidently, completely wrong. Always check.',
+          vocab: [
+            { word: 'bias',          definition: 'Unfair or skewed results caused by problems in the training data. AI can amplify human biases it learned from.', audioPrompt: 'Bias — unfair or skewed results caused by problems in the training data. AI can amplify human biases it learned from.' },
+            { word: 'comprehension', definition: 'Truly understanding meaning. Something AI doesn\'t actually do — it generates outputs that look like understanding without having any.', audioPrompt: 'Comprehension — truly understanding meaning. Something AI doesn\'t actually do; it generates outputs that look like understanding without having any.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'The Human Edge',
+          paragraphs: [
+            'The most valuable skills in an AI-powered world are the ones AI does worst.',
+            'Critical thinking. Real creativity. Empathy. Moral judgment. Human connection. AI helps with everything else. These remain uniquely yours.',
+          ],
+          image:        '/explorer-assets/future-skills/l07-s6-human-edge.png',
+          imageCaption: 'AI will keep getting better at tasks. But empathy, judgment, and genuine creativity stay uniquely yours.',
+          vocab: [
+            { word: 'critical thinking', definition: 'Carefully evaluating information instead of just accepting it. The most valuable skill in an age of AI-generated content.', audioPrompt: 'Critical thinking — carefully evaluating information instead of just accepting it. The most valuable skill in an age of AI-generated content.' },
+            { word: 'empathy',           definition: 'Understanding and sharing how someone else feels. Uniquely human — AI can mimic empathy but never actually feel it.', audioPrompt: 'Empathy — understanding and sharing how someone else feels. Uniquely human; AI can mimic empathy but never actually feel it.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l07_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L07] Loaded: "What Is Artificial Intelligence?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l07-magazine-what-is-ai.png',       { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l07-magazine-how-ai-learns.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l07-magazine-ai-around-you.png',    { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l07-magazine-ai-limits.png',        { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L07] what-is-ai: ${r1.ok}, how-ai-learns: ${r2.ok}, ai-around-you: ${r3.ok}, ai-limits: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l07-s1-ai-brain.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l07-s2-rules-vs-patterns.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l07-s3-machine-learning.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l07-s4-ai-everywhere.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l07-s5-ai-limits.png',         { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l07-s6-human-edge.png',        { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L07] ai-brain: ${r1.ok}, rules-vs-patterns: ${r2.ok}, machine-learning: ${r3.ok}, ai-everywhere: ${r4.ok}, ai-limits: ${r5.ok}, human-edge: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L07] Could not verify image assets — network check failed');
   });
