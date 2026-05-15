@@ -23,73 +23,101 @@ const futureskills_explorer_l15_screens = {
           guideText: `Imagine every comment you've ever made, every photo you've posted, every website you've visited, every purchase you've made online — all of it stored in a file with your name on it. That file exists. It's called your digital footprint, and it's already being read by colleges, employers, coaches, and advertisers — whether you know it or not. The good news: it's also something you can build intentionally.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is a Digital Footprint?`,
+          totalSections: 6,
+          headline:      'Your Digital Footprint Exists',
           paragraphs: [
-            `Your digital footprint is all the data that exists about you online. It has two parts. Your active footprint is everything you deliberately post or share: photos, comments, profiles, status updates, videos, and any content you publish. Your passive footprint is data collected about you automatically, without you actively choosing to share it: websites visited, location data, search history, time spent on different apps, and the patterns of your online behavior.`,
-            `Together, these create a detailed portrait of who you are, what you believe, where you go, what you buy, what you're interested in, and how you spend your time. Most people are surprised by how complete this picture is when they see it laid out. Every platform you use is adding to it — some visibly, some invisibly. And because it accumulates over time, a footprint that starts small at age eight can be quite substantial by age eighteen.`,
-            `Your digital footprint is also cross-referenced. Advertisers, data brokers, and analytics companies piece together information from many different sources — your browsing history, your social media activity, your purchase records, your location patterns — to build profiles that are often more detailed than what any single app holds. Understanding this helps explain why advertisements sometimes seem to know what you were just thinking about: they're drawing from a combined picture assembled from many separate data streams.`,
+            'Every comment, photo, post, search, click, and purchase you\'ve made online is stored somewhere.',
+            'That collected trail of data is called your digital footprint. It\'s already being read by colleges, employers, coaches, and advertisers.',
           ],
-          image:        '/explorer-assets/future-skills/l15-magazine-what-is-footprint.png',
-          imageCaption: `What is a digital footprint — active data you post deliberately, plus passive data collected about you automatically, building over time`,
+          image:        '/explorer-assets/future-skills/l15-s1-footprint-trail.png',
+          imageCaption: 'You leave a trail behind every time you go online. That trail has a name — and an audience.',
           vocab: [
-            { word: `digital footprint`, definition: `The trail of data that exists about you online — including what you actively post and what is automatically collected, such as locations visited, searches made, and websites browsed.`,        audioPrompt: `Digital footprint — the trail of data that exists about you online. Including what you actively post and what is automatically collected, such as locations visited, searches made, and websites browsed.` },
-            { word: `active footprint`,  definition: `The part of your digital footprint you create deliberately — photos you share, comments you write, profiles you set up, and any content you publish online.`,                               audioPrompt: `Active footprint — the part of your digital footprint you create deliberately. Photos you share, comments you write, profiles you set up, and any content you publish online.` },
+            { word: 'digital footprint', definition: 'The trail of data that exists about you online — what you post, what you click, where you go, what you buy.', audioPrompt: 'Digital footprint — the trail of data that exists about you online: what you post, what you click, where you go, what you buy.' },
+            { word: 'data trail',        definition: 'The record left behind by everything you do online. Grows even when you\'re not actively posting anything.', audioPrompt: 'Data trail — the record left behind by everything you do online. Grows even when you\'re not actively posting anything.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `How Long It Lasts`,
+          totalSections: 6,
+          headline:      'Active vs Passive',
           paragraphs: [
-            `The internet has a very long memory. Even when you delete something, it doesn't always disappear. Screenshots can be taken and saved before deletion. Server backups may hold copies. Other people may have already downloaded or shared what you removed. The Wayback Machine — a website that automatically archives billions of web pages — may have captured a version that persists indefinitely. Digital content that is published, even briefly, can resurface years or decades later.`,
-            `This permanence has real consequences. A photo posted carelessly at age twelve can still be found at age twenty-five. A comment made in frustration can be seen by people who were never meant to see it. An opinion expressed online during one phase of your life can follow you into another where your views have completely changed. The gap between "I posted this and forgot about it" and "this is still publicly accessible and searchable" is one of the most misunderstood aspects of digital life.`,
-            `Many employers, college admissions teams, and even sports coaches now look at people's online presence as part of evaluating them — what they see can really help or hurt their decisions. This isn't about surveillance for its own sake — it's that online behavior has become a window into character and judgment. Posts that show genuine curiosity, creativity, and integrity make a strong positive impression. Posts that show poor judgment, cruelty, or dishonesty make the opposite impression. The digital record speaks, whether you intend it to or not.`,
+            'Active footprint: things you deliberately post — photos, comments, profiles, videos. You chose to share these.',
+            'Passive footprint: data collected automatically — locations, search history, time spent on apps. You didn\'t choose.',
           ],
-          image:        '/explorer-assets/future-skills/l15-magazine-how-long-lasts.png',
-          imageCaption: `How long it lasts — deleted posts can persist in screenshots, backups, and archives, and online presence is increasingly evaluated by others`,
+          image:        '/explorer-assets/future-skills/l15-s2-active-vs-passive.png',
+          imageCaption: 'Half your footprint is what you post. The other half is collected silently, whether you know it or not.',
           vocab: [
-            { word: `passive footprint`, definition: `The part of your digital footprint collected about you without you actively choosing to share it — like your location, search history, browsing habits, and time spent on different apps.`,    audioPrompt: `Passive footprint — the part of your digital footprint collected about you without you actively choosing to share it. Like your location, search history, browsing habits, and time spent on different apps.` },
-            { word: `data permanence`,   definition: `The reality that digital information often persists far longer than expected — even after deletion, data can exist in screenshots, server backups, and internet archives.`,                  audioPrompt: `Data permanence — the reality that digital information often persists far longer than expected. Even after deletion, data can exist in screenshots, server backups, and internet archives.` },
+            { word: 'active footprint',  definition: 'The data you deliberately post — photos, comments, profiles, videos. The part of your footprint you author.', audioPrompt: 'Active footprint — the data you deliberately post: photos, comments, profiles, videos. The part of your footprint you author.' },
+            { word: 'passive footprint', definition: 'Data collected automatically without you choosing — locations, searches, browsing history, time spent on apps.', audioPrompt: 'Passive footprint — data collected automatically without you choosing: locations, searches, browsing history, time spent on apps.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `Building a Positive Digital Footprint`,
+          totalSections: 6,
+          headline:      'It Lasts Forever',
           paragraphs: [
-            `Your digital footprint isn't just something to manage carefully — it's something you can build intentionally. The same permanence that can work against you can also work for you. Work you share that shows genuine skill, curiosity, and creative thinking can remain visible and searchable for years. Projects, writing, art, code, or any other meaningful output that you publish thoughtfully becomes part of the record of who you are and what you can do.`,
-            `Many young people have received college scholarships, internship offers, and unexpected opportunities because someone found their online presence and was impressed by what they saw. A portfolio of genuine work — even informal work done out of interest — can speak more loudly than a resume or application. Young coders who shared projects, young writers who published their writing, young designers who documented their process: all found that a thoughtful digital presence opened doors that wouldn't otherwise have been open.`,
-            `The key question to ask before posting anything: "Does this represent the person I want to be?" Not "Will this get likes?" or "Will this be funny?" but "Is this consistent with my values and who I'm building myself into?" It doesn't require that everything you post be serious or impressive. It does require a moment of reflection about whether what you're sharing serves you or undermines you. That habit of intentional posting — developed early — pays dividends for the rest of your life.`,
+            'The internet has a very long memory. Even when you delete something, it doesn\'t always disappear.',
+            'Screenshots. Server backups. Internet archives (the Wayback Machine saves billions of pages). A post deleted in five seconds can still exist 20 years later.',
           ],
-          image:        '/explorer-assets/future-skills/l15-magazine-positive-footprint.png',
-          imageCaption: `Building a positive footprint — sharing genuine work and thinking intentionally about what you publish can open real doors over time`,
+          image:        '/explorer-assets/future-skills/l15-s3-deleted-but-saved.png',
+          imageCaption: '"Deleted" doesn\'t always mean gone. Screenshots and archives keep copies you can never get back.',
           vocab: [
-            { word: `personal brand`,      definition: `The impression your online presence creates about who you are — shaped by everything you post, share, and comment on, and increasingly visible to colleges, employers, and others.`,       audioPrompt: `Personal brand — the impression your online presence creates about who you are. Shaped by everything you post, share, and comment on, and increasingly visible to colleges, employers, and others.` },
-            { word: `intentional posting`, definition: `The practice of choosing what to share online with awareness of how it represents you — asking whether content reflects the person you want to be, not just what feels good in the moment.`, audioPrompt: `Intentional posting — the practice of choosing what to share online with awareness of how it represents you. Asking whether content reflects the person you want to be, not just what feels good in the moment.` },
+            { word: 'data permanence', definition: 'Digital information often lasts far longer than expected — even after deletion, it can persist in screenshots, backups, and archives.', audioPrompt: 'Data permanence — digital information often lasts far longer than expected. Even after deletion, it can persist in screenshots, backups, and archives.' },
+            { word: 'Wayback Machine', definition: 'A service that automatically archives billions of web pages — including ones that have since been deleted from their original sites.', audioPrompt: 'Wayback Machine — a service that automatically archives billions of web pages, including ones that have since been deleted from their original sites.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Privacy Settings and Data Rights`,
+          totalSections: 6,
+          headline:      'Who\'s Looking',
           paragraphs: [
-            `Most platforms include privacy settings that let you control who can see your content — but they only protect you if you actually use them. A public account means anyone in the world can access everything you post, now and in the future. Private settings limit who can see your posts, but they don't prevent the people who can see them from saving or sharing them. And even with the strictest privacy settings, the platform itself still holds all your data and may share it with third parties according to its terms of service.`,
-            `In some parts of the world — particularly in the European Union — people have legal rights around their digital data that go beyond what platforms voluntarily offer. The "right to be forgotten" allows EU citizens to request that companies delete personal data about them in certain circumstances. These laws reflect a growing recognition that personal data has real value and that individuals should have meaningful control over how it's used. In the United States, these legal protections are less comprehensive, though they are expanding in various states.`,
-            `Regardless of legal frameworks, the most reliable protection for your digital footprint is thoughtful behavior from the start. Privacy settings are a layer of protection, not a guarantee. Legal rights are useful when things go wrong, not a substitute for being careful. The most powerful tool you have is judgment: thinking before you share, knowing what you're agreeing to when you sign up for a service, and treating your digital presence as a long-term asset to be built rather than a disposable stream of moments that disappear. They don't always disappear.`,
+            'Colleges check applicants\' online presence. Employers Google candidates. Sports coaches scout social media.',
+            'It\'s not about being watched all the time. It\'s that your online behavior is increasingly seen as a window into your character and judgment.',
           ],
-          image:        '/explorer-assets/future-skills/l15-magazine-privacy-settings.png',
-          imageCaption: `Privacy settings and data rights — controls exist but don't guarantee protection; thoughtful behavior from the start is the most reliable strategy`,
+          image:        '/explorer-assets/future-skills/l15-s4-whos-looking.png',
+          imageCaption: 'Admissions officers, recruiters, scouts. Your online presence is part of how they evaluate you — whether you intend it or not.',
           vocab: [
-            { word: `privacy settings`,     definition: `Controls built into apps and platforms that limit who can see your content — only effective if actively used. Even with strong privacy settings, the platform itself still holds your data.`, audioPrompt: `Privacy settings — controls built into apps and platforms that limit who can see your content. Only effective if actively used. Even with strong privacy settings, the platform itself still holds your data.` },
-            { word: `right to be forgotten`, definition: `A legal right in some countries allowing people to request that companies delete their personal data — reflecting growing recognition of data privacy as a fundamental right.`,            audioPrompt: `Right to be forgotten — a legal right in some countries allowing people to request that companies delete their personal data. Reflecting growing recognition of data privacy as a fundamental right.` },
+            { word: 'background check', definition: 'When someone investigates your history — including your online presence — before making a decision about you.', audioPrompt: 'Background check — when someone investigates your history, including your online presence, before making a decision about you.' },
+            { word: 'reputation',       definition: 'How others see you. Increasingly shaped by your online presence, especially the parts that anyone can search.', audioPrompt: 'Reputation — how others see you. Increasingly shaped by your online presence, especially the parts that anyone can search.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'Build It On Purpose',
+          paragraphs: [
+            'The same permanence that can work against you can also work FOR you.',
+            'Projects, writing, art, code, anything you publish thoughtfully becomes part of your record. Many young people have gotten scholarships, internships, and opportunities because someone found their work online.',
+          ],
+          image:        '/explorer-assets/future-skills/l15-s5-build-on-purpose.png',
+          imageCaption: 'Permanence cuts both ways. A trail of genuine work follows you just as surely as a careless post does — and opens doors.',
+          vocab: [
+            { word: 'personal brand',      definition: 'The impression your online presence creates about who you are. Increasingly visible to colleges, employers, and others.', audioPrompt: 'Personal brand — the impression your online presence creates about who you are. Increasingly visible to colleges, employers, and others.' },
+            { word: 'intentional posting', definition: 'Choosing what to share with awareness of how it represents you — not just what gets attention in the moment.', audioPrompt: 'Intentional posting — choosing what to share with awareness of how it represents you, not just what gets attention in the moment.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'Privacy Settings and Your Rights',
+          paragraphs: [
+            'Most platforms let you control who sees your content — but only if you actually use the settings.',
+            'In Europe, the "right to be forgotten" lets people request that companies delete their data. Other countries are catching up. The strongest protection: think before you post.',
+          ],
+          image:        '/explorer-assets/future-skills/l15-s6-privacy-rights.png',
+          imageCaption: 'Settings help. Laws help. But the real protection is upstream: thoughtful choices about what to share in the first place.',
+          vocab: [
+            { word: 'privacy settings',      definition: 'Controls in apps that limit who can see your content. Only protect you if you actually turn them on and check them.', audioPrompt: 'Privacy settings — controls in apps that limit who can see your content. Only protect you if you actually turn them on and check them.' },
+            { word: 'right to be forgotten', definition: 'A legal right in some countries (especially in the EU) to ask companies to delete personal data about you.', audioPrompt: 'Right to be forgotten — a legal right in some countries, especially in the EU, to ask companies to delete personal data about you.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l15_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L15] Loaded: "Digital Footprint: What You Leave Behind Online" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l15-magazine-what-is-footprint.png',  { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l15-magazine-how-long-lasts.png',     { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l15-magazine-positive-footprint.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l15-magazine-privacy-settings.png',   { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L15] what-is-footprint: ${r1.ok}, how-long-lasts: ${r2.ok}, positive-footprint: ${r3.ok}, privacy-settings: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l15-s1-footprint-trail.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l15-s2-active-vs-passive.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l15-s3-deleted-but-saved.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l15-s4-whos-looking.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l15-s5-build-on-purpose.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l15-s6-privacy-rights.png',     { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L15] footprint-trail: ${r1.ok}, active-vs-passive: ${r2.ok}, deleted-but-saved: ${r3.ok}, whos-looking: ${r4.ok}, build-on-purpose: ${r5.ok}, privacy-rights: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L15] Could not verify image assets — network check failed');
   });
