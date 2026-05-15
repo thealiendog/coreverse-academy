@@ -23,73 +23,101 @@ const futureskills_explorer_l13_screens = {
           guideText: `Every time you use an app, watch a video, click a link, or make a purchase online, you create data. Companies collect this data, analyze it, and use it to understand you — sometimes better than you understand yourself. Data has been called "the new oil" of the digital economy. Understanding what data is and how it works gives you real power in a world that runs on it.`,
         },
 
-        // PHASE 2 — MAGAZINE STORY (4 sections)
+        // PHASE 2 — MAGAZINE STORY (6 sections)
         {
           type:          'magazine',
           section:       1,
-          totalSections: 4,
-          headline:      `What Is Data?`,
+          totalSections: 6,
+          headline:      'What Is Data?',
           paragraphs: [
-            `Data is any information that can be collected, stored, and analyzed. Numbers, text, images, videos, sounds, locations, temperatures, movement patterns — all of these are data. Digital data is information stored as binary code (0s and 1s), which is how computers handle everything from a single text message to a full-length film. Data doesn't have to be something you choose to share — it includes anything that can be measured and recorded.`,
-            `We create data constantly, whether we mean to or not. Every photo you take creates image data. Every message you send creates text data. Every website you visit creates browsing data. Every step your phone counts creates movement data. Every purchase you make creates transaction data. The amount of data created globally every single day is staggering — billions of photos, messages, searches, and interactions, all generating digital traces that persist long after the moment passes.`,
-            `Data has become one of the most valuable resources in the modern world — worth more than oil in some analyses. The reason is simple: data reveals patterns, and patterns enable predictions. A business that knows what its customers want before they ask can act faster and more effectively than one that's guessing. A hospital that can spot disease patterns early saves lives. A city that can predict traffic or energy demand can serve residents better. Data is the raw material that intelligence — human or artificial — runs on.`,
+            'Data is any information that can be collected, stored, and analyzed.',
+            'Numbers, text, images, videos, locations, temperatures, movement — anything measurable counts. People call data "the new oil" of the digital economy.',
           ],
-          image:        '/explorer-assets/future-skills/l13-magazine-what-is-data.png',
-          imageCaption: `What is data — any information that can be collected, stored, and analyzed, from numbers and text to images, locations, and movement`,
+          image:        '/explorer-assets/future-skills/l13-s1-data-universe.png',
+          imageCaption: 'Data isn\'t just numbers. It\'s anything that can be measured, recorded, and analyzed. Almost everything qualifies.',
           vocab: [
-            { word: `data`,         definition: `Any information that can be collected, stored, and analyzed — including numbers, text, images, sounds, locations, and measurements of any kind.`,                                                audioPrompt: `Data — any information that can be collected, stored, and analyzed. Including numbers, text, images, sounds, locations, and measurements of any kind.` },
-            { word: `digital data`, definition: `Information stored as binary code (0s and 1s) — the form in which computers store and process everything, from a single text message to a full-length film.`,                                   audioPrompt: `Digital data — information stored as binary code, 0s and 1s. The form in which computers store and process everything, from a single text message to a full-length film.` },
+            { word: 'data',         definition: 'Any information that can be collected, stored, and analyzed — numbers, text, images, sounds, locations, anything measurable.', audioPrompt: 'Data — any information that can be collected, stored, and analyzed: numbers, text, images, sounds, locations, anything measurable.' },
+            { word: 'digital data', definition: 'Information stored as binary code (0s and 1s). The form computers use for everything from a text message to a movie.', audioPrompt: 'Digital data — information stored as binary code, 0s and 1s. The form computers use for everything from a text message to a movie.' },
           ],
         },
         {
           type:          'magazine',
           section:       2,
-          totalSections: 4,
-          headline:      `Structured vs Unstructured Data`,
+          totalSections: 6,
+          headline:      'You Create Data Constantly',
           paragraphs: [
-            `Not all data looks the same. Structured data is organized in a clear, consistent format — like a spreadsheet with rows and columns. A school's database of student names, grades, and attendance is structured. A hospital's record of patient names, diagnoses, and test results is structured. Structured data is easy for traditional software to search, sort, and analyze because every piece of information has a defined place and format.`,
-            `Unstructured data has no standard format. Social media posts, emails, videos, photos, audio recordings, and handwritten notes are all unstructured. They can contain enormously valuable information — but it doesn't fit neatly into rows and columns. About 80% of all data created in the world is unstructured. For most of computing history, this data was very difficult to analyze at scale, because traditional database tools were designed for structured information.`,
-            `AI has dramatically changed what's possible with unstructured data. Machine learning systems can find patterns in social media posts, recognize objects in photos, transcribe audio, and extract meaning from documents that no human could read in a lifetime. This is one of the reasons AI has become so valuable: it makes the vast majority of the world's data — the unstructured 80% — actually analyzable. And the ability to find patterns in previously unanalyzable data creates entirely new types of insight.`,
+            'Every photo you take. Every message you send. Every site you visit. Every step your phone counts. All of it is data.',
+            'You create it whether you mean to or not. The digital traces you leave add up to billions of data points worldwide every day.',
           ],
-          image:        '/explorer-assets/future-skills/l13-magazine-structured-unstructured.png',
-          imageCaption: `Structured vs unstructured data — spreadsheets and databases vs. posts, videos, and photos — about 80% of all data is unstructured`,
+          image:        '/explorer-assets/future-skills/l13-s2-data-trail.png',
+          imageCaption: 'You don\'t have to "share" data to create it. Just using your phone leaves a constant trail behind you.',
           vocab: [
-            { word: `structured data`,   definition: `Data organized in a clear, consistent format — like rows and columns in a spreadsheet — making it easy for computers to search, sort, and analyze.`,                                      audioPrompt: `Structured data — data organized in a clear, consistent format, like rows and columns in a spreadsheet. Making it easy for computers to search, sort, and analyze.` },
-            { word: `unstructured data`, definition: `Data with no standard format — like social media posts, videos, photos, and emails — making it harder for traditional software to analyze, though AI is increasingly capable of it.`,     audioPrompt: `Unstructured data — data with no standard format, like social media posts, videos, photos, and emails. Harder for traditional software to analyze, though AI is increasingly capable of it.` },
+            { word: 'digital footprint', definition: 'The trail of data you leave behind every time you use the internet. Grows even when you\'re not paying attention.', audioPrompt: 'Digital footprint — the trail of data you leave behind every time you use the internet. Grows even when you\'re not paying attention.' },
+            { word: 'behavioral data',   definition: 'Information about what you do — clicks, taps, watches, purchases, scrolls. Some of the most valuable data companies collect.', audioPrompt: 'Behavioral data — information about what you do: clicks, taps, watches, purchases, scrolls. Some of the most valuable data companies collect.' },
           ],
         },
         {
           type:          'magazine',
           section:       3,
-          totalSections: 4,
-          headline:      `How Data Creates Value`,
+          totalSections: 6,
+          headline:      'Structured vs Unstructured',
           paragraphs: [
-            `Raw data alone isn't valuable — analysis is what creates value. A streaming service collects data on everything you watch: what you finish, what you quit halfway through, what you replay, what time of day you watch, and how long you browse before choosing something. Their algorithms analyze this data to build a model of your preferences — and use that model to predict what you'll want to watch next. The goal is to keep you engaged, because every minute you watch generates more data and more value.`,
-            `An online shop tracks your purchase history, browsing patterns, search terms, and even how long you hover over certain products before moving on. By analyzing millions of customers' behavior patterns, they can predict what any individual is likely to buy next and show it to them before they've thought to search for it. This kind of predictive recommendation drives a substantial portion of all online sales — not because customers were convinced by advertising, but because the data revealed what they already wanted.`,
-            `A music app tracks every song you play, skip, replay, or add to a playlist — and compares your patterns with those of millions of other listeners. From these patterns it builds a model of your musical taste that can predict, with surprising accuracy, what you'll enjoy from songs you've never heard. This is data analysis at scale: raw behavior generating predictions that feel almost personal. The pattern is the same across all of these examples — collect behavior data, find patterns, use patterns to predict what comes next, and make that prediction useful.`,
+            'Structured data fits neatly into rows and columns — a spreadsheet of names, grades, and scores. Easy for computers to sort and search.',
+            'Unstructured data doesn\'t fit a clean format. Photos, videos, social posts, emails. About 80% of all data created today is unstructured.',
           ],
-          image:        '/explorer-assets/future-skills/l13-magazine-data-value.png',
-          imageCaption: `How data creates value — raw behavior patterns, analyzed at scale, become predictions that feel personal and drive billions of decisions`,
+          image:        '/explorer-assets/future-skills/l13-s3-structured-unstructured.png',
+          imageCaption: 'Spreadsheets are tidy. Social media is messy. Both are data — they just need very different tools to analyze.',
           vocab: [
-            { word: `data analysis`, definition: `The process of examining raw data to find patterns, draw conclusions, and support decisions — what transforms raw collected information into something genuinely useful.`,                         audioPrompt: `Data analysis — the process of examining raw data to find patterns, draw conclusions, and support decisions. What transforms raw collected information into something genuinely useful.` },
-            { word: `algorithm`,     definition: `In this context, the software system that analyzes a user's data and uses discovered patterns to predict what they'll want to see, hear, or buy next.`,                                         audioPrompt: `Algorithm — in this context, the software system that analyzes a user's data and uses discovered patterns to predict what they'll want to see, hear, or buy next.` },
+            { word: 'structured data',   definition: 'Data organized in rows and columns — like a spreadsheet. Easy for computers to sort and search without AI.', audioPrompt: 'Structured data — data organized in rows and columns, like a spreadsheet. Easy for computers to sort and search without AI.' },
+            { word: 'unstructured data', definition: 'Data with no fixed format — photos, videos, social posts, emails. Hard for old software, but AI handles it well.', audioPrompt: 'Unstructured data — data with no fixed format: photos, videos, social posts, emails. Hard for old software, but AI handles it well.' },
           ],
         },
         {
           type:          'magazine',
           section:       4,
-          totalSections: 4,
-          headline:      `Your Data and Privacy`,
+          totalSections: 6,
+          headline:      'Data Becomes Valuable When Analyzed',
           paragraphs: [
-            `Every app you use is almost certainly collecting data about you. Location data tells companies where you go. Usage data tells them what you do and for how long. Contact data tells them who you know. Behavioral data tells them how you make decisions. Together, these paint a detailed picture of your habits, interests, relationships, and vulnerabilities. Most people are surprised, when they look carefully at app permissions, by how much they've agreed to share without realizing it.`,
-            `Free apps are often "free" because your data is the product — it's collected and sold to advertisers, data brokers, and other businesses who want to understand and influence your behavior. The business model is simple: the more you use the app for free, the more data they collect, the more they can charge advertisers to reach people like you. You've probably never read a terms of service agreement, but many of them grant companies very broad rights to collect, analyze, and share your information.`,
-            `Understanding that your attention and data have real commercial value is the first step to making smarter choices. You don't have to avoid all apps — but you can ask: does this app need the permissions it's asking for? What is the company's business model, and does it involve selling my data? Is the value I get from this service worth what I'm giving up? These questions won't always lead to the same answers — but asking them consistently is how you stay in control rather than being the product.`,
+            'Raw data alone isn\'t worth much. Analysis is what creates value.',
+            'A streaming service tracks what you watch, pause, replay, and quit — then uses those patterns to predict what you\'ll want next.',
           ],
-          image:        '/explorer-assets/future-skills/l13-magazine-data-privacy.png',
-          imageCaption: `Your data and privacy — every app collects information about you, and understanding that changes how thoughtfully you can choose what to share`,
+          image:        '/explorer-assets/future-skills/l13-s4-patterns-emerging.png',
+          imageCaption: 'Data without analysis is just a pile. Patterns are what turn data into predictions — and predictions into money.',
           vocab: [
-            { word: `data privacy`,    definition: `The right to control who can collect, access, use, and share information about you — increasingly important as more of daily life generates digital data.`,                                    audioPrompt: `Data privacy — the right to control who can collect, access, use, and share information about you. Increasingly important as more of daily life generates digital data.` },
-            { word: `terms of service`, definition: `The legal agreement between a user and a platform that outlines what the platform can do with your data — rarely read, but often granting broad rights to collect and use your information.`, audioPrompt: `Terms of service — the legal agreement between a user and a platform that outlines what the platform can do with your data. Rarely read, but often granting broad rights to collect and use your information.` },
+            { word: 'data analysis', definition: 'Finding patterns and insights in collected data. What transforms raw information into something useful.', audioPrompt: 'Data analysis — finding patterns and insights in collected data. What transforms raw information into something useful.' },
+            { word: 'pattern',       definition: 'A regular feature found in data — like always watching cooking shows after 8pm. Patterns enable predictions.', audioPrompt: 'Pattern — a regular feature found in data, like always watching cooking shows after 8pm. Patterns enable predictions.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      'How Apps Use Your Data',
+          paragraphs: [
+            'Apps use your data to predict what you\'ll like, buy, watch, or click next.',
+            'A music app analyzes every song you skip vs play. A shop tracks every product you hover over. Your behavior teaches their algorithm.',
+          ],
+          image:        '/explorer-assets/future-skills/l13-s5-algorithm-recommends.png',
+          imageCaption: 'The "for you" feed isn\'t magic. It\'s your own behavior being analyzed and fed back to you as predictions.',
+          vocab: [
+            { word: 'algorithm',      definition: 'A system that analyzes data and uses patterns to predict what you\'ll like next. Behind every "for you" feed.', audioPrompt: 'Algorithm — a system that analyzes data and uses patterns to predict what you\'ll like next. Behind every "for you" feed.' },
+            { word: 'recommendation', definition: 'A prediction-based suggestion: what to watch, buy, listen to, follow. Personalized by your behavioral data.', audioPrompt: 'Recommendation — a prediction-based suggestion: what to watch, buy, listen to, follow. Personalized by your behavioral data.' },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      'If It\'s Free, You\'re the Product',
+          paragraphs: [
+            'Free apps are often "free" because YOUR data is what they sell — to advertisers and companies who want to predict and influence your choices.',
+            'That\'s not bad on its own. But knowing the trade lets you ask: is the value I get worth what I\'m giving up?',
+          ],
+          image:        '/explorer-assets/future-skills/l13-s6-free-trade.png',
+          imageCaption: 'When the app costs nothing, the company is usually selling something else: your attention, your behavior, your data.',
+          vocab: [
+            { word: 'data privacy',     definition: 'The right to control who collects, uses, and shares information about you. Increasingly important as more of life is digital.', audioPrompt: 'Data privacy — the right to control who collects, uses, and shares information about you. Increasingly important as more of life is digital.' },
+            { word: 'terms of service', definition: 'The legal agreement that says what an app can do with your data. Rarely read; often grants very broad rights.', audioPrompt: 'Terms of service — the legal agreement that says what an app can do with your data. Rarely read; often grants very broad rights.' },
           ],
         },
 
@@ -184,12 +212,14 @@ const futureskills_explorer_l13_screens = {
   const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
   console.log(`[LESSON-FUTURESKILLS-L13] Loaded: "What Is Data?" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/future-skills/l13-magazine-what-is-data.png',            { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l13-magazine-structured-unstructured.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l13-magazine-data-value.png',              { method: 'HEAD' }),
-    fetch('/explorer-assets/future-skills/l13-magazine-data-privacy.png',            { method: 'HEAD' }),
-  ]).then(([r1, r2, r3, r4]) => {
-    console.log(`[ASSET-CHECK-FUTURESKILLS-L13] what-is-data: ${r1.ok}, structured-unstructured: ${r2.ok}, data-value: ${r3.ok}, data-privacy: ${r4.ok}`);
+    fetch('/explorer-assets/future-skills/l13-s1-data-universe.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l13-s2-data-trail.png',             { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l13-s3-structured-unstructured.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l13-s4-patterns-emerging.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l13-s5-algorithm-recommends.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/future-skills/l13-s6-free-trade.png',             { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-FUTURESKILLS-L13] data-universe: ${r1.ok}, data-trail: ${r2.ok}, structured-unstructured: ${r3.ok}, patterns-emerging: ${r4.ok}, algorithm-recommends: ${r5.ok}, free-trade: ${r6.ok}`);
   }).catch(() => {
     console.log('[ASSET-CHECK-FUTURESKILLS-L13] Could not verify image assets — network check failed');
   });
