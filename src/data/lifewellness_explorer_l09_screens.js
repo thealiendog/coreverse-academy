@@ -32,16 +32,17 @@ const LW_L09 = {
           id: `l09-mag-1`,
           type: `magazine`,
           section: 1,
-          headline: `How screens affect attention`,
+          headline: `Screens Aren't the Enemy`,
           paragraphs: [
-            `Screens are designed to deliver **constant novelty** — new content, new notifications, new stimulation — at a pace no real life can match. When you're used to this pace, slower activities (reading, conversation, being in nature) can feel boring by comparison. Your attention span has been calibrated for speed. Research shows that heavy screen users develop shorter attention spans and more difficulty sustaining focus on a single task. This affects how well you learn, how deeply you connect with people, and your ability to engage with the slower, more rewarding parts of life — the ones that aren't optimised for constant novelty.`,
+            `Screens aren't going away. They're how we connect, create, and learn.`,
+            `The real question isn't "should I avoid them?" but "what are they doing to my brain, and how do I use them in ways I actually feel good about?"`,
           ],
-          image: `/explorer-assets/wellness/l09-magazine-1.png`,
-          imageCaption: `Screens deliver constant novelty — which can make slower, deeper activities feel harder to enjoy`,
+          image: `/explorer-assets/wellness/l09-s1-not-the-enemy.png`,
+          imageCaption: `Screens aren't the problem. How you use them is. Understanding the difference puts you back in charge.`,
           vocab: [
-            { word: `novelty`, definition: `Something new or different — screens deliver constant novelty through new content, new notifications, and new stimulation at a pace that everyday life rarely matches.`, audioPrompt: `Novelty is what makes screens feel so compelling, {name}. Every scroll brings something new — a new image, a new video, a new notification. Your brain is naturally drawn to new information. Screens exploit that by delivering novelty at a pace nothing in real life can match. Once your brain is used to that speed, slower things — reading, conversations, being outside — can feel oddly underwhelming by comparison.` },
-            { word: `attention span`, definition: `The length of time you can focus on a single task — which research shows can shorten with heavy passive screen use as the brain adapts to rapid stimulation.`, audioPrompt: `Attention span is your brain's ability to stay with one thing, {name}. Think of it like a muscle — it grows with practice and weakens without it. Heavy passive screen use trains your brain for rapid switching between things, which makes sustained focus on slower activities progressively harder. That's not a character flaw. It's your brain responding to the environment it spends time in.` },
-            { word: `stimulation`, definition: `Input that activates your brain — screens provide very high levels of rapid stimulation, which can make lower-stimulation activities feel less engaging by comparison.`, audioPrompt: `Stimulation isn't bad, {name} — your brain needs it. The question is what kind and at what pace. Screens deliver extremely high stimulation very fast. When your brain gets calibrated to that level, ordinary life — which runs at a naturally slower pace — can feel flat or boring by comparison. That contrast is what makes it hard to put the screen down.` },
+            { word: `balanced`,  definition: `A measured approach to screens — not total avoidance, not unlimited use. Just thoughtful, conscious choice.`, audioPrompt: `Terra wants you to know there's a balanced position with screens, {name} — and it's not "never" or "always." It's "with awareness." Some screen time is genuinely valuable. Some is genuinely wasted. The skill is telling the difference and choosing accordingly. That kind of balance is more grown-up than any strict rule.` },
+            { word: `conscious`, definition: `Aware of what you're doing and why. The opposite of automatic screen use — and the key to real control.`, audioPrompt: `Conscious screen use means you're the one deciding, {name} — not the platform, not the habit, not boredom. You picked up the screen for a reason, you used it for that reason, and you put it down when the reason was done. That's conscious. The opposite is drifting in and out without ever quite choosing. Big difference.` },
+            { word: `choice`,    definition: `What you have when you understand the design. Instead of being managed by the platform, you stay in charge of the tool.`, audioPrompt: `Choice is what you protect by understanding how screens work, {name}. The platforms are designed by very smart people to keep you engaged — that's not a conspiracy, it's just business. Knowing that doesn't make screens evil. It just gives you back the power to choose deliberately instead of being managed by the design.` },
           ],
         },
 
@@ -49,16 +50,17 @@ const LW_L09 = {
           id: `l09-mag-2`,
           type: `magazine`,
           section: 2,
-          headline: `Active vs passive screen time`,
+          headline: `What Screens Do to Attention`,
           paragraphs: [
-            `Not all screen time is equal. **Active screen time** involves creating, learning, communicating, or solving problems: coding, video editing, digital art, learning through an app, video calling family, or playing strategic games. **Passive screen time** is mindless consumption: endless scrolling, autoplay videos, watching others play games without any interaction. Active use develops real skills and provides genuine value. Passive use delivers the sensation of entertainment without the substance — time passes, but nothing is built or learned. **The ratio of active to passive matters more than the total amount of time.**`,
+            `Screens deliver constant novelty at a pace nothing in real life can match.`,
+            `Once your brain is calibrated to that speed, slower activities — reading, conversation, being outside — start to feel boring. That's not a character flaw. It's training.`,
           ],
-          image: `/explorer-assets/wellness/l09-magazine-2.png`,
-          imageCaption: `Active screen time builds something — passive screen time consumes without creating. The ratio is what matters`,
+          image: `/explorer-assets/wellness/l09-s2-attention-and-screens.png`,
+          imageCaption: `Heavy screen use trains your brain for speed. Then slower, deeper things feel boring by comparison. That's training, not a flaw.`,
           vocab: [
-            { word: `active`, definition: `Screen use that involves creating, learning, communicating, or solving problems — the kind that builds real skills or meaningful connections.`, audioPrompt: `Active screen time is when you're the one driving, {name}. Creating something, learning something, having a real conversation, solving a problem. Your brain is engaged, challenged, and building. Coding, digital art, video calling someone you love, following a tutorial — these are active uses. They leave you with something you didn't have before.` },
-            { word: `passive`, definition: `Mindless screen use that consumes without creating — like endless scrolling or watching videos without purpose or engagement.`, audioPrompt: `Passive screen time is when the platform is driving, not you, {name}. Scroll, scroll, scroll — content just appearing without you choosing it, without building anything, without connecting meaningfully with anyone. Time passes, but nothing is created or learned. Occasional passive use is fine. The question is whether it's become the default.` },
-            { word: `ratio`, definition: `The proportion of one thing relative to another — in screen use, the ratio of active to passive time matters more than the total hours spent on screens.`, audioPrompt: `It's not just how long you're on a screen that shapes how it affects you, {name} — it's the ratio of active to passive. Two hours creating and learning is very different from two hours scrolling. Terra believes the most useful question to ask isn't "how long?" but "what was I doing, and did I feel better or worse afterward?"` },
+            { word: `novelty`,        definition: `Something new or different. Screens deliver constant novelty at a pace real life can rarely match.`, audioPrompt: `Novelty is what makes screens feel so compelling, {name}. Every scroll brings something new — a new image, a new video, a new notification. Your brain is naturally drawn to new information. Screens exploit that by delivering novelty at a pace nothing in real life can match. Once your brain is used to that speed, slower things — reading, conversations, being outside — can feel oddly underwhelming by comparison.` },
+            { word: `attention span`, definition: `Your brain's ability to stay with one thing. Like a muscle — strengthened by practice, weakened by constant switching.`, audioPrompt: `Attention span is your brain's ability to stay with one thing, {name}. Think of it like a muscle — it grows with practice and weakens without it. Heavy passive screen use trains your brain for rapid switching between things, which makes sustained focus on slower activities progressively harder. That's not a character flaw. It's your brain responding to the environment it spends time in.` },
+            { word: `stimulation`,    definition: `Input that activates your brain. Screens provide very high stimulation — which can make ordinary life feel flat by comparison.`, audioPrompt: `Stimulation isn't bad, {name} — your brain needs it. The question is what kind and at what pace. Screens deliver extremely high stimulation very fast. When your brain gets calibrated to that level, ordinary life — which runs at a naturally slower pace — can feel flat or boring by comparison. That contrast is what makes it hard to put the screen down.` },
           ],
         },
 
@@ -66,16 +68,17 @@ const LW_L09 = {
           id: `l09-mag-3`,
           type: `magazine`,
           section: 3,
-          headline: `Social media and the developing brain`,
+          headline: `Active vs Passive`,
           paragraphs: [
-            `Social media platforms are particularly impactful on young developing brains. The **like system** activates dopamine reward circuits — every notification creates a small hit of social approval. This can create approval-seeking behaviour and anxiety when posts don't get responses. **Social comparison** — seeing curated highlight reels of other people's lives — consistently decreases wellbeing, because you're comparing your full experience (including the hard parts) to someone else's edited best moments. Research has linked heavy social media use in young people to higher rates of anxiety and loneliness — understanding why these platforms are designed the way they are helps you use them more intentionally.`,
+            `Not all screen time is the same.`,
+            `ACTIVE: creating, learning, connecting, problem-solving. PASSIVE: endless scrolling, autoplay, watching without engaging. Time passes either way — but only active screen time builds something.`,
           ],
-          image: `/explorer-assets/wellness/l09-magazine-3.png`,
-          imageCaption: `Likes, notifications, highlight reels — understanding how these work puts you back in control`,
+          image: `/explorer-assets/wellness/l09-s3-active-vs-passive.png`,
+          imageCaption: `Active screen time leaves you with something — a skill, a connection, knowledge. Passive time just passes.`,
           vocab: [
-            { word: `social comparison`, definition: `The act of measuring yourself against others — amplified by social media, where you compare your full experience to curated highlight reels of other people's best moments.`, audioPrompt: `Social comparison is something humans have always done, {name} — but social media makes it almost unavoidable, and it stacks the comparison unfairly against you. You're comparing your whole life, including the hard and ordinary parts, to someone else's carefully chosen, often edited best moments. That's not an honest comparison. Knowing it's happening is the first step to not letting it land so hard.` },
-            { word: `approval`, definition: `Validation from others — what likes, comments, and notifications deliver in small doses, activating the brain's reward system and driving the urge to seek more.`, audioPrompt: `Social approval feels good to every human brain, {name} — we're wired for it. Platforms are designed knowing that, building in likes and notifications that deliver small hits of approval and keep you checking back for more. Understanding that design doesn't make you immune to it. But it does help you see it clearly, and choose how much weight to give it.` },
-            { word: `curated`, definition: `Carefully selected and edited to look its best — what people share on social media is curated, showing highlights rather than the full range of their experience.`, audioPrompt: `What you see on someone's profile is curated, {name} — the best photos, the exciting moments, the achievements worth posting. Nobody shares the boring Tuesday or the hard week. When you scroll through curated highlight reels and compare them to your unedited daily life, the comparison is almost always going to make your life look less impressive. That's the design, not the reality.` },
+            { word: `active`,  definition: `Screen use that creates, learns, connects, or solves problems. You're the one driving — and your brain is engaged.`, audioPrompt: `Active screen time is when you're the one driving, {name}. Creating something, learning something, having a real conversation, solving a problem. Your brain is engaged, challenged, and building. Coding, digital art, video calling someone you love, following a tutorial — these are active uses. They leave you with something you didn't have before.` },
+            { word: `passive`, definition: `Mindless screen use that consumes without creating. Endless scrolling, autoplay, watching without engagement.`, audioPrompt: `Passive screen time is when the platform is driving, not you, {name}. Scroll, scroll, scroll — content just appearing without you choosing it, without building anything, without connecting meaningfully with anyone. Time passes, but nothing is created or learned. Occasional passive use is fine. The question is whether it's become the default.` },
+            { word: `ratio`,   definition: `The proportion of active to passive time. Matters more than total hours on screens.`, audioPrompt: `It's not just how long you're on a screen that shapes how it affects you, {name} — it's the ratio of active to passive. Two hours creating and learning is very different from two hours scrolling. Terra believes the most useful question to ask isn't "how long?" but "what was I doing, and did I feel better or worse afterward?"` },
           ],
         },
 
@@ -83,16 +86,53 @@ const LW_L09 = {
           id: `l09-mag-4`,
           type: `magazine`,
           section: 4,
-          headline: `Building healthy screen habits`,
+          headline: `Social Media's Hidden Mechanics`,
           paragraphs: [
-            `Practical healthy screen habits: set **specific screen-free times** — meals, one hour before bed, the first hour after waking. Use **app timers** to prevent endless use without deciding to keep going. Keep **phones out of bedrooms at night**. Front-load your day with non-screen activities so screens don't fill time by default. Most importantly: **notice how you feel before, during, and after different types of screen use** — this awareness is what keeps you in control. The goal isn't to eliminate screens. It's to stay conscious about how and why you're using them, rather than defaulting to automatic use without thinking.`,
+            `Social media is designed to keep you coming back.`,
+            `Likes deliver hits of social APPROVAL. Notifications keep you checking. You compare your full life to other people's CURATED highlight reels. Knowing the design helps you not get caught by it.`,
           ],
-          image: `/explorer-assets/wellness/l09-magazine-4.png`,
-          imageCaption: `Screen-free times, app timers, phones out of bedrooms — small habits that keep you in control`,
+          image: `/explorer-assets/wellness/l09-s4-social-media-design.png`,
+          imageCaption: `Likes. Notifications. Highlight reels. Each one engineered. Knowing the design doesn't make you immune — but it does break the spell.`,
           vocab: [
-            { word: `awareness`, definition: `Conscious attention to what you're doing and why — the most powerful tool for building a healthier relationship with screens, more effective than any strict rule.`, audioPrompt: `Awareness is the superpower here, {name}. Noticing how you feel before picking up a screen, what you're actually doing while on it, and how you feel when you put it down — that noticing is what keeps you in control. Rules can be broken. Awareness is something you carry with you. It changes decisions from the inside.` },
-            { word: `intention`, definition: `Choosing to use a screen for a specific purpose rather than picking it up by default — what separates conscious screen use from automatic habit.`, audioPrompt: `Intention is the difference between choosing and drifting, {name}. "I'm going to video call my friend" is intention. Picking up your phone because it was there and you were bored is automatic. Both lead to screen time — but only one leaves you feeling like you were in control. Building the habit of asking "why am I picking this up?" changes everything.` },
-            { word: `default`, definition: `Your automatic behavior when you're not making a conscious choice — and building healthy screen habits means changing what your default behavior looks like.`, audioPrompt: `A default is what you do when you're not deciding, {name} — and for many people, screens have become the default for every moment of boredom, transition, or discomfort. Building healthy habits means designing new defaults: reach for a book, go outside, call someone. Not rules, just new automatic choices that you set up deliberately.` },
+            { word: `approval`,   definition: `Validation from others. What likes and notifications deliver in small doses — activating reward circuits and driving more checking.`, audioPrompt: `Social approval feels good to every human brain, {name} — we're wired for it. Platforms are designed knowing that, building in likes and notifications that deliver small hits of approval and keep you checking back for more. Understanding that design doesn't make you immune to it. But it does help you see it clearly, and choose how much weight to give it.` },
+            { word: `curated`,    definition: `Carefully selected and edited to look its best. What people share on social media — not the full range of their experience.`, audioPrompt: `What you see on someone's profile is curated, {name} — the best photos, the exciting moments, the achievements worth posting. Nobody shares the boring Tuesday or the hard week. When you scroll through curated highlight reels and compare them to your unedited daily life, the comparison is almost always going to make your life look less impressive. That's the design, not the reality.` },
+            { word: `comparison`, definition: `Measuring yourself against others. Amplified unfairly by social media — your full life against their best moments.`, audioPrompt: `Social comparison is something humans have always done, {name} — but social media makes it almost unavoidable, and it stacks the comparison unfairly against you. You're comparing your whole life, including the hard and ordinary parts, to someone else's carefully chosen, often edited best moments. That's not an honest comparison. Knowing it's happening is the first step to not letting it land so hard.` },
+          ],
+        },
+
+        {
+          id: `l09-mag-5`,
+          type: `magazine`,
+          section: 5,
+          headline: `Notice How You Feel`,
+          paragraphs: [
+            `The most powerful tool isn't a strict rule. It's AWARENESS.`,
+            `Notice how you feel BEFORE picking up a screen. DURING using it. AFTER putting it down. When you actually pay attention, you naturally start making different choices.`,
+          ],
+          image: `/explorer-assets/wellness/l09-s5-notice-how-you-feel.png`,
+          imageCaption: `Rules can be broken. Awareness travels with you. Noticing how you feel changes decisions from the inside.`,
+          vocab: [
+            { word: `awareness`, definition: `Paying attention to what you're actually doing and how it makes you feel. The most powerful screen-management tool there is.`, audioPrompt: `Awareness is the superpower here, {name}. Noticing how you feel before picking up a screen, what you're actually doing while on it, and how you feel when you put it down — that noticing is what keeps you in control. Rules can be broken. Awareness is something you carry with you. It changes decisions from the inside.` },
+            { word: `intention`, definition: `Choosing on purpose vs picking up automatically. The difference between conscious use and habit.`, audioPrompt: `Intention is the difference between choosing and drifting, {name}. "I'm going to video call my friend" is intention. Picking up your phone because it was there and you were bored is automatic. Both lead to screen time — but only one leaves you feeling like you were in control. Building the habit of asking "why am I picking this up?" changes everything.` },
+            { word: `check-in`,  definition: `A brief moment of asking yourself how you're feeling. Before, during, and after a screen session — quietly, without judgment.`, audioPrompt: `A check-in is just a brief pause to notice, {name} — how am I feeling right now? Energized? Bored? Anxious? Restless? Doing that before a screen session, once during, and once after will teach you more about your own patterns than any rule could. Three short check-ins, repeated, build the awareness that genuinely changes how you use screens.` },
+          ],
+        },
+
+        {
+          id: `l09-mag-6`,
+          type: `magazine`,
+          section: 6,
+          headline: `Build New Defaults`,
+          paragraphs: [
+            `For many people, screens have become the default for every moment of boredom or transition.`,
+            `Build new defaults: phones out of bedrooms at night. Screen-free meals. App timers. Reach for a book or go outside first. Small changes, real difference.`,
+          ],
+          image: `/explorer-assets/wellness/l09-s6-new-defaults.png`,
+          imageCaption: `Defaults are powerful because they run on habit. Designing new ones means screens stop being the answer to every quiet moment.`,
+          vocab: [
+            { word: `default`,     definition: `What you do without thinking. For many people, screens have become the default for every moment of boredom — but defaults can be redesigned.`, audioPrompt: `A default is what you do when you're not deciding, {name} — and for many people, screens have become the default for every moment of boredom, transition, or discomfort. Building healthy habits means designing new defaults: reach for a book, go outside, call someone. Not rules, just new automatic choices that you set up deliberately.` },
+            { word: `environment`, definition: `The physical setup around you. Affects screen use without requiring willpower — phone in another room is harder to scroll.`, audioPrompt: `Environment is one of the most underrated tools for changing screen habits, {name}. A phone in another room is harder to scroll than one on your bedside table. A book within arm's reach is more likely to get picked up. You don't need to white-knuckle your way to better habits — you can just rearrange the environment so the better choice becomes the easier one.` },
+            { word: `substitute`,  definition: `An alternative activity ready to step in when you reach for a screen out of boredom. The replacement that makes new defaults possible.`, audioPrompt: `A substitute is what you reach for INSTEAD, {name}. Bored? Pick up a book. Restless? Go outside. Lonely? Call someone. The substitute matters because just trying to "use screens less" without something else to do almost always fails. The new behavior fills the same need the old one did — and that's what makes it stick.` },
           ],
         },
 
@@ -256,10 +296,12 @@ if (import.meta.env?.DEV) {
   const quiz  = LW_L09.lessons[0].screens.find(s => s.type === 'quiz')?.questions?.length ?? 0;
   console.log(`[LESSON-WELLNESS-L09] Loaded: "Screen Time and Your Brain" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/wellness/l09-magazine-1.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l09-magazine-2.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l09-magazine-3.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l09-magazine-4.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l09-s1-not-the-enemy.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l09-s2-attention-and-screens.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l09-s3-active-vs-passive.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l09-s4-social-media-design.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l09-s5-notice-how-you-feel.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l09-s6-new-defaults.png', { method: 'HEAD' }),
   ]).then(() => console.log('[LESSON-WELLNESS-L09] Magazine assets OK'))
     .catch(() => console.warn('[LESSON-WELLNESS-L09] One or more magazine assets missing'));
 }
