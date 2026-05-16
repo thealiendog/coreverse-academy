@@ -22,7 +22,7 @@ const HW_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, Lyra wants to take you on a journey today — a long, LONG way back in time. We're going to visit a place with giant stone triangles, kings who thought they were gods, and a magical river that made everything possible. Ready? Let's go!`,
+          guideText: `{name}, I want to take you on a journey today — a long, LONG way back in time. We're going to visit a place with giant stone triangles, kings who thought they were gods, and a magical river that made everything possible. Ready? Let's go!`,
           headline: `Ancient Egypt: Pyramids and Pharaohs`,
           subtitle: `A civilization that lasted over 3,000 years — longer than almost anything else in history`,
           visual: `/explorer-assets/history/l01-welcome.png`,
@@ -41,9 +41,9 @@ const HW_L01 = {
           imageCaption: `3,000 years! Egypt was around longer than almost any civilization in all of history.`,
           vocab: [
             { word: `ancient`, definition: `Something from a very, very long time ago — thousands of years in the past.`,
-              audioPrompt: `Ancient means very, very old, {name} — like thousands and thousands of years ago! Ancient Egypt is so old that even the dinosaurs were long gone before Egypt started. Pretty mind-blowing, right? Lyra has been keeping these stories safe for a very long time.` },
+              audioPrompt: `Ancient means very, very old, {name} — like thousands and thousands of years ago! Ancient Egypt is so old that even the dinosaurs were long gone before Egypt started. Pretty mind-blowing, right? I've been keeping these stories safe for a very long time.` },
             { word: `Egypt`, definition: `A country in Africa where one of the greatest civilizations in history grew up — along a magical river called the Nile.`,
-              audioPrompt: `Egypt is a country in Africa, {name}. It's still there today — you can visit it! But thousands of years ago, something amazing grew there. People built enormous stone pyramids, wrote with little pictures, and had kings who thought they were gods. Lyra loves Egypt's story so much.` },
+              audioPrompt: `Egypt is a country in Africa, {name}. It's still there today — you can visit it! But thousands of years ago, something amazing grew there. People built enormous stone pyramids, wrote with little pictures, and had kings who thought they were gods. I love Egypt's story so much.` },
             { word: `thousands`, definition: `A really, really big number — 1,000 is one thousand. Egypt lasted over THREE thousands of years!`,
               audioPrompt: `Thousands means a really, really big number, {name}. One thousand is already huge — imagine counting to one thousand! Now Egypt lasted THREE thousand years. That's like if you started counting today and didn't stop until your great-great-great-great-great grandchildren were old. That's how long Egypt lasted!` },
           ],
@@ -62,9 +62,9 @@ const HW_L01 = {
           imageCaption: `The Nile River made everything possible. Without it, Egypt would just be a desert.`,
           vocab: [
             { word: `desert`, definition: `A very dry, hot place with almost no rain — like a giant sandbox. Most of Egypt is desert!`,
-              audioPrompt: `A desert is a very dry, hot place where it almost never rains, {name}. Imagine a giant sandbox that goes on forever — that's what most of Egypt looks like! Without the Nile River, nobody could have lived there. Lyra thinks it's amazing that people built one of the greatest civilizations ever in the middle of a desert.` },
+              audioPrompt: `A desert is a very dry, hot place where it almost never rains, {name}. Imagine a giant sandbox that goes on forever — that's what most of Egypt looks like! Without the Nile River, nobody could have lived there. I think it's amazing that people built one of the greatest civilizations ever in the middle of a desert.` },
             { word: `Nile`, definition: `The longest river in Africa. The Nile gave ancient Egypt everything it needed to grow and thrive.`,
-              audioPrompt: `The Nile is a giant river in Africa — the longest river on the whole continent, {name}! Every year it flooded and left behind special dark soil that was perfect for growing food. The Egyptians loved the Nile so much. Without it, there would have been no Egypt at all. Lyra thinks of it like the river was Egypt's best friend.` },
+              audioPrompt: `The Nile is a giant river in Africa — the longest river on the whole continent, {name}! Every year it flooded and left behind special dark soil that was perfect for growing food. The Egyptians loved the Nile so much. Without it, there would have been no Egypt at all. I think of it like the river was Egypt's best friend.` },
             { word: `flood`, definition: `When a river overflows its banks and spreads water everywhere. For Egypt, the Nile's floods were a wonderful gift!`,
               audioPrompt: `Usually floods are scary, {name} — but the ancient Egyptians LOVED when the Nile flooded! When it flooded each year, it spread dark, rich soil across the land. That soil was perfect for growing food. So instead of being sad about the flood, Egyptians celebrated it. It was their yearly gift from the river. Isn't that cool?` },
           ],
@@ -83,11 +83,11 @@ const HW_L01 = {
           imageCaption: `Pharaohs weren't just kings — Egyptians believed they were gods on Earth!`,
           vocab: [
             { word: `pharaoh`, definition: `An ancient Egyptian king or queen. Egyptians believed pharaohs were gods living in human form.`,
-              audioPrompt: `A pharaoh was the ruler of Egypt, {name} — but not just a regular ruler. Egyptians believed the pharaoh was actually a god in a human body! That means everyone treated the pharaoh like they were the most important, most powerful being in the whole world. Lyra finds it fascinating that a belief about a person could make them so powerful.` },
+              audioPrompt: `A pharaoh was the ruler of Egypt, {name} — but not just a regular ruler. Egyptians believed the pharaoh was actually a god in a human body! That means everyone treated the pharaoh like they were the most important, most powerful being in the whole world. I find it fascinating that a belief about a person could make them so powerful.` },
             { word: `god`, definition: `A being that people believe has magical powers and control over the world. Egyptians thought pharaohs were gods!`,
               audioPrompt: `The ancient Egyptians believed in many gods, {name} — gods for the sun, gods for the river, gods for the dead. And they believed the pharaoh was one too! Imagine if you thought your leader was actually a magical god. You'd do anything they said! That's how powerful the pharaohs were in Egypt.` },
             { word: `Hatshepsut`, definition: `One of ancient Egypt's greatest pharaohs — and she was a woman! She ruled for over 20 years and built amazing things.`,
-              audioPrompt: `Hatshepsut is one of Lyra's favorite people in all of history, {name}. She was a woman who became pharaoh — and she was AMAZING at it. She ruled for more than twenty years, sent ships on big trading journeys, and built beautiful temples. Some people tried to forget her after she died. But we still know her name today. That's how great she was.` },
+              audioPrompt: `Hatshepsut is one of my favorite people in all of history, {name}. She was a woman who became pharaoh — and she was AMAZING at it. She ruled for more than twenty years, sent ships on big trading journeys, and built beautiful temples. Some people tried to forget her after she died. But we still know her name today. That's how great she was.` },
           ],
         },
 
@@ -104,9 +104,9 @@ const HW_L01 = {
           imageCaption: `2.3 million stone blocks — stacked perfectly into a giant triangle! No cranes, no machines. Just really, really hard work.`,
           vocab: [
             { word: `pyramid`, definition: `A giant stone structure shaped like a triangle. Built as a special resting place (tomb) for a pharaoh.`,
-              audioPrompt: `A pyramid is a giant stone building shaped like a triangle, {name}. The Egyptians built them as special tombs for their pharaohs — places where the pharaoh's body would rest forever. The Great Pyramid is so huge that you could fit almost ten football fields inside it. And it's still standing today, thousands of years later! Lyra thinks pyramids might be the most impressive things humans ever built.` },
+              audioPrompt: `A pyramid is a giant stone building shaped like a triangle, {name}. The Egyptians built them as special tombs for their pharaohs — places where the pharaoh's body would rest forever. The Great Pyramid is so huge that you could fit almost ten football fields inside it. And it's still standing today, thousands of years later! I think pyramids might be the most impressive things humans ever built.` },
             { word: `stone`, definition: `Hard rock used to build things. The pyramid builders used millions and millions of stone blocks!`,
-              audioPrompt: `The pyramid builders used stone, {name} — but not little stones. Giant blocks of stone, some as heavy as a car! They had to cut them, move them, and stack them perfectly. And they did it without any machines. No cranes, no trucks, no forklifts. Just strong people, wooden sleds, and a lot of teamwork. Lyra is still amazed by it.` },
+              audioPrompt: `The pyramid builders used stone, {name} — but not little stones. Giant blocks of stone, some as heavy as a car! They had to cut them, move them, and stack them perfectly. And they did it without any machines. No cranes, no trucks, no forklifts. Just strong people, wooden sleds, and a lot of teamwork. I'm still amazed by it.` },
             { word: `worker`, definition: `A person who does hard work. The pyramid workers were skilled builders who were fed and cared for — not forced to work.`,
               audioPrompt: `A lot of people think the pyramids were built by slaves, {name} — but that's not what happened! They were built by skilled workers who were paid, fed, and taken care of. We've found the villages where they lived and even the bread they ate! They were hardworking, talented builders who were proud of what they made. Isn't that amazing?` },
           ],
@@ -150,7 +150,7 @@ const HW_L01 = {
             { word: `math`, definition: `Using numbers to count, measure, and solve problems. Ancient Egyptians were early math experts — they used it to build pyramids!`,
               audioPrompt: `Math might feel like just school stuff, {name}, but the ancient Egyptians used math to build the most amazing structures in the world! They had to figure out how many stones they needed, how to make the sides perfectly even, how to aim the pyramid at the stars. Their math ideas spread to other civilizations and helped build the world we live in. Pretty cool, right?` },
             { word: `medicine`, definition: `The science of healing sick people. Ancient Egyptians were some of the first people to write down medical knowledge to help others.`,
-              audioPrompt: `When you go to the doctor and they know how to help you, {name}, part of that knowledge has roots going way, way back — all the way to ancient Egypt! Egyptian healers wrote down what worked when people were sick. They figured out how bones and organs worked. They wrote it all down so future healers could learn. They were some of the first real doctors in history. Lyra thinks that's one of Egypt's most important gifts.` },
+              audioPrompt: `When you go to the doctor and they know how to help you, {name}, part of that knowledge has roots going way, way back — all the way to ancient Egypt! Egyptian healers wrote down what worked when people were sick. They figured out how bones and organs worked. They wrote it all down so future healers could learn. They were some of the first real doctors in history. I think that's one of Egypt's most important gifts.` },
           ],
         },
 
@@ -206,7 +206,7 @@ const HW_L01 = {
         {
           id: `l01-quiz`,
           type: `quiz`,
-          guideText: `Let's see what you remember, {name}! Do your best — Lyra believes in you.`,
+          guideText: `Let's see what you remember, {name}! Do your best — I believe in you.`,
           questions: [
             {
               id: `l01-q1`,
@@ -294,7 +294,7 @@ const HW_L01 = {
         {
           id: `l01-celebration`,
           type: `celebration`,
-          message: `Amazing work, {name}! You just learned about one of the greatest civilizations that ever existed — ancient Egypt! You know about the magic Nile River, the powerful pharaohs, the giant pyramids, the picture writing, and all the things Egypt gave to the world. Lyra is so proud of you for carrying these ancient stories with you!`,
+          message: `Amazing work, {name}! You just learned about one of the greatest civilizations that ever existed — ancient Egypt! You know about the magic Nile River, the powerful pharaohs, the giant pyramids, the picture writing, and all the things Egypt gave to the world. I am so proud of you for carrying these ancient stories with you!`,
           badge: `egypt-explorer`,
           badgeName: `Egypt Explorer`,
           xpEarned: 50,
