@@ -1477,7 +1477,7 @@ export default function ExplorerLessonPlayer() {
           position: relative;
           width: 100%;
           flex-shrink: 0;
-          max-height: 25vh;
+          max-height: 33vh;
           background: #080618;
           overflow: hidden;
         }

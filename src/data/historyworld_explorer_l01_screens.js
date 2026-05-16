@@ -32,6 +32,7 @@ const HW_L01 = {
           id: `l01-mag-1`,
           type: `magazine`,
           section: 1,
+          totalSections: 6,
           headline: `A Really, Really Long Time Ago`,
           paragraphs: [
             `Ancient Egypt started more than 5,000 years ago. That is SO long ago that your great-great-great (keep going!) grandparents weren't even born yet.`,
@@ -53,6 +54,7 @@ const HW_L01 = {
           id: `l01-mag-2`,
           type: `magazine`,
           section: 2,
+          totalSections: 6,
           headline: `The Magic River`,
           paragraphs: [
             `Most of Egypt is hot, dry DESERT. So how did people live there?`,
@@ -74,6 +76,7 @@ const HW_L01 = {
           id: `l01-mag-3`,
           type: `magazine`,
           section: 3,
+          totalSections: 6,
           headline: `Kings Who Were Like Gods`,
           paragraphs: [
             `Egypt was ruled by kings called PHARAOHS. But not just any kings — Egyptians believed pharaohs were actually gods living in human bodies!`,
@@ -95,6 +98,7 @@ const HW_L01 = {
           id: `l01-mag-4`,
           type: `magazine`,
           section: 4,
+          totalSections: 6,
           headline: `Giant Stone Triangles`,
           paragraphs: [
             `The pyramids were built as tombs — special resting places — for the pharaohs.`,
@@ -116,6 +120,7 @@ const HW_L01 = {
           id: `l01-mag-5`,
           type: `magazine`,
           section: 5,
+          totalSections: 6,
           headline: `Writing With Little Pictures`,
           paragraphs: [
             `Egyptians invented their own way of writing — using little pictures and symbols called HIEROGLYPHICS.`,
@@ -137,6 +142,7 @@ const HW_L01 = {
           id: `l01-mag-6`,
           type: `magazine`,
           section: 6,
+          totalSections: 6,
           headline: `What Egypt Gave Us`,
           paragraphs: [
             `Ancient Egypt didn't just leave us pyramids — they gave ideas that we STILL use today!`,
