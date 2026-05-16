@@ -180,28 +180,28 @@ const HW_L01 = {
           items: [
             {
               id: `l01-g1`,
-              image: `l01-game-1.png`,
+              image: `/explorer-assets/history/l01-game-1.png`,
               label: `The Nile flooded and helped food grow.`,
               matchPhrase: `Yes! The Nile's flood left rich black dirt that was perfect for growing food. That's how everything in Ancient Egypt got started.`,
               correctMatch: `fact`,
             },
             {
               id: `l01-g2`,
-              image: `l01-game-2.png`,
+              image: `/explorer-assets/history/l01-game-2.png`,
               label: `Pyramid workers got paid for their work.`,
               matchPhrase: `True! People used to think slaves built the pyramids — but scientists figured out the workers were actually paid. They got food, beer, and a place to live. It was a real job.`,
               correctMatch: `fact`,
             },
             {
               id: `l01-g3`,
-              image: `l01-game-3.png`,
+              image: `/explorer-assets/history/l01-game-3.png`,
               label: `Aliens built the pyramids.`,
               matchPhrase: `Ha! No way. The pyramids were built by people — really hardworking people, with ropes, ramps, and lots of teamwork. No aliens needed.`,
               correctMatch: `myth`,
             },
             {
               id: `l01-g4`,
-              image: `l01-game-4.png`,
+              image: `/explorer-assets/history/l01-game-4.png`,
               label: `Egyptians wrote on phones and tablets.`,
               matchPhrase: `Definitely not! Phones and tablets weren't invented yet. Ancient Egyptians wrote with little pictures called hieroglyphics — on papyrus paper or carved into stone.`,
               correctMatch: `myth`,
