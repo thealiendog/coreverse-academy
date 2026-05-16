@@ -70,6 +70,8 @@ const NEW_FORMAT_LESSONS = {
   'creative-arts': ['ca-6-8-01', 'ca-6-8-02', 'ca-6-8-03', 'ca-6-8-04', 'ca-6-8-05', 'ca-6-8-06', 'ca-6-8-07', 'ca-6-8-08', 'ca-6-8-09', 'ca-6-8-10', 'ca-6-8-11', 'ca-6-8-12', 'ca-6-8-13', 'ca-6-8-14', 'ca-6-8-15', 'ca-6-8-16', 'ca-6-8-17', 'ca-6-8-18', 'ca-6-8-19', 'ca-6-8-20'],
   // Spanish lessons added here as screen files are authored
   'languages':     ['sp-6-8-01', 'sp-6-8-02', 'sp-6-8-03', 'sp-6-8-04', 'sp-6-8-05'],
+  // History & World — pilot: L01 only; L02-L20 remain on legacy player
+  'history':       ['hw-6-8-01'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
@@ -98,6 +100,9 @@ function getExplorerLessonId(subjectId, level, index) {
   }
   if (subjectId === 'languages' && level === 2) {
     return `sp-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'history' && level === 2) {
+    return `hw-6-8-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
