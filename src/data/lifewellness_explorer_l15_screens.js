@@ -32,11 +32,30 @@ const LW_L15 = {
           id: `l15-mag-1`,
           type: `magazine`,
           section: 1,
-          headline: `Your skeleton: more than just structure`,
+          headline: `206 Bones, 600 Muscles`,
           paragraphs: [
-            `Your 206 bones do far more than hold you up. They **protect vital organs** — the skull protects your brain, the ribcage protects your heart and lungs. They **produce blood cells in their marrow** — both red blood cells that carry oxygen and immune cells that protect you. They **store minerals**, especially calcium and phosphorus, that the rest of your body draws on as needed. And bones are not static — they are constantly being broken down and rebuilt through a process called **bone remodelling**. About **10% of your skeleton is replaced each year**. Your skeleton is a living, dynamic system.`,
+            `There are **206 bones** in your body and more than **600 muscles** — and together they form your **musculoskeletal system**: a machine of extraordinary sophistication. Your skeleton isn't just a frame that holds you up. Your muscles aren't just tools that make you move. They work together as a single, integrated system — one of the most complex and well-engineered structures in the natural world.`,
+            `What makes this system remarkable is how it **responds** to what you do. Bones grow denser when you load them. Muscles strengthen when you challenge them. The system adapts to the demands placed on it — which means what you do now, during childhood, genuinely shapes the musculoskeletal system you'll carry for the rest of your life.`,
           ],
-          image: `/explorer-assets/wellness/l15-magazine-1.png`,
+          image: `/explorer-assets/wellness/l15-s1-206-bones-600-muscles.png`,
+          imageCaption: `206 bones and over 600 muscles working together as a single, integrated system`,
+          vocab: [
+            { word: `musculoskeletal`, definition: `Relating to both the muscles and the skeleton together — the combined system that gives your body structure, protects organs, and enables every movement you make.`, audioPrompt: `The word musculoskeletal combines muscular and skeletal, {name} — because these two systems are so deeply connected that they function as one. Your skeleton gives your muscles something to pull against. Your muscles move your bones. Together they produce every action your body takes — from standing upright to running, climbing, or playing. Understanding them together is understanding your body's most fundamental capability.` },
+            { word: `machine`, definition: `A complex system of coordinated parts working together — the musculoskeletal system functions with the precision and coordination of a machine, though it also repairs and adapts itself in ways no human-made machine can.`, audioPrompt: `When we call the body a machine, {name}, we don't mean it's mechanical — we mean it works with the precision of one. 206 bones, over 600 muscles, thousands of tendons and ligaments, all coordinated to produce controlled movement. The engineering is extraordinary. And unlike any machine you can buy, this one repairs itself, adapts to demands, and gets stronger with use.` },
+            { word: `respond`, definition: `To change in response to demand — bones and muscles both respond to the loads and challenges placed on them, growing stronger with use and weaker without it.`, audioPrompt: `One of the most powerful things about your musculoskeletal system, {name}, is that it responds to what you do. Bones that bear weight grow denser. Muscles that are challenged get stronger. The system is built to adapt. This is why exercise during childhood is so valuable — it's not just good for today, it's building a stronger foundation for everything that comes after.` },
+          ],
+        },
+
+        {
+          id: `l15-mag-2`,
+          type: `magazine`,
+          section: 2,
+          headline: `Bones Are Alive`,
+          paragraphs: [
+            `Your bones do far more than hold you up. They **protect vital organs** — the skull protects your brain, the ribcage protects your heart and lungs. Inside them, **bone marrow** produces new blood cells continuously: red blood cells that carry oxygen, immune cells that protect you, and platelets that stop bleeding — about two million new red blood cells every second.`,
+            `Bones also **store minerals** — especially calcium and phosphorus — that the rest of your body draws on as needed. And they are constantly being broken down and rebuilt through a process called **bone remodelling**. About **10% of your skeleton is replaced each year**. Far from being a fixed, inert frame, your skeleton is a living, dynamic system that never stops working.`,
+          ],
+          image: `/explorer-assets/wellness/l15-s2-bones-are-alive.png`,
           imageCaption: `Bones protect organs, produce blood cells, store minerals, and are constantly being rebuilt`,
           vocab: [
             { word: `bone remodeling`, definition: `The continuous process of old bone being broken down and new bone being built — meaning your skeleton is always renewing itself, about 10% replaced each year.`, audioPrompt: `Your skeleton isn't a fixed structure, {name} — it's in constant renewal. Specialized cells called osteoclasts break down old bone while osteoblasts build new bone in its place. This remodeling is how bones respond to the demands placed on them, repair microscopic damage, and grow denser with regular weight-bearing exercise. About ten percent of your skeleton is replaced every year.` },
@@ -46,14 +65,15 @@ const LW_L15 = {
         },
 
         {
-          id: `l15-mag-2`,
+          id: `l15-mag-3`,
           type: `magazine`,
-          section: 2,
-          headline: `Building bone density in childhood`,
+          section: 3,
+          headline: `The Childhood Window`,
           paragraphs: [
-            `Childhood and adolescence are the **critical window** for building **bone density** — the amount of mineral packed into your bones. Peak bone mass is typically reached by your late 20s. After that, you can maintain or slowly lose bone density, but you cannot significantly increase it. This means the bone you build right now — through weight-bearing exercise, calcium, and vitamin D — is the bone you'll carry for the rest of your life. What you do now genuinely matters in a way that nothing later can fully replace. It's one of the most compelling reasons to take care of your body during childhood.`,
+            `Childhood and adolescence are the **critical window** for building **bone density** — the amount of mineral packed into your bones. **Peak bone mass** is typically reached by your late 20s. After that, you can maintain bone density or slowly lose it, but you cannot significantly increase it. The bone you build during childhood is, in many ways, the bone you'll carry for life.`,
+            `This is why **weight-bearing exercise** — running, jumping, sports — matters so much right now. The impact sends a signal through your skeleton: grow stronger. Combined with adequate calcium and vitamin D, this is how bone density is built. What you do now is an investment that nothing later can fully replace.`,
           ],
-          image: `/explorer-assets/wellness/l15-magazine-2.png`,
+          image: `/explorer-assets/wellness/l15-s3-childhood-window.png`,
           imageCaption: `Peak bone density is built by your late 20s — what you build now is what you carry for life`,
           vocab: [
             { word: `bone density`, definition: `The amount of mineral packed into your bones — greater density means stronger, more resilient bones that are less likely to fracture and less likely to weaken with age.`, audioPrompt: `Bone density is like the thickness of the walls of a building, {name}. Denser bones are stronger, more resistant to fracture, and better equipped to last a lifetime. The density you build now — through weight-bearing exercise, calcium, and vitamin D — is the bank balance you'll carry into adulthood. After your late twenties, you can maintain it but can't significantly increase it. What you build now is what you keep.` },
@@ -63,35 +83,55 @@ const LW_L15 = {
         },
 
         {
-          id: `l15-mag-3`,
+          id: `l15-mag-4`,
           type: `magazine`,
-          section: 3,
-          headline: `Your muscles: types and function`,
+          section: 4,
+          headline: `Three Types of Muscle`,
           paragraphs: [
-            `You have three types of muscle. **Skeletal muscle** (voluntary) — attached to bones via tendons, these are the muscles you consciously control for movement. **Smooth muscle** (involuntary) — lines your digestive tract, blood vessels, and organs, working automatically without any conscious effort. **Cardiac muscle** — found only in your heart, it never fatigues and works continuously for your entire life. Skeletal muscles work in **pairs** — when one contracts, its partner relaxes. Your bicep contracts to bend your arm; your tricep relaxes. When you straighten your arm, they swap roles. Every movement you make involves this coordinated partnership.`,
+            `You have three types of muscle. **Skeletal muscle** is voluntary — attached to bones via tendons, these are the muscles you consciously control for all movement. **Smooth muscle** lines your digestive tract, blood vessels, and organs, working automatically without any conscious effort. And **cardiac muscle** is found only in your heart.`,
+            `Cardiac muscle is remarkable: it never fatigues, never rests, and works continuously for your entire life. Unlike every other muscle in your body, it doesn't need you to think about it — it has been contracting since before you were born, and it will keep going without pause for your whole life. Your heart is quite literally extraordinary.`,
           ],
-          image: `/explorer-assets/wellness/l15-magazine-3.png`,
+          image: `/explorer-assets/wellness/l15-s4-three-muscle-types.png`,
           imageCaption: `Skeletal, smooth, and cardiac muscle — each type with its own role, working in precise coordination`,
           vocab: [
             { word: `skeletal muscle`, definition: `Voluntary muscle attached to bones via tendons — the muscles you consciously control for all movement, from walking to lifting to sport.`, audioPrompt: `Every movement you make, {name}, is powered by skeletal muscle. These are the muscles you can feel and control — bending your arm, kicking a ball, turning your head. They attach to your bones via tendons and work in pairs: one contracts while the other relaxes, allowing smooth, coordinated movement. Over 600 of them working together make up most of the physical capability your body has.` },
+            { word: `smooth muscle`, definition: `Involuntary muscle lining the walls of your digestive tract, blood vessels, and organs — working automatically, without any conscious instruction, controlled by your autonomic nervous system.`, audioPrompt: `Smooth muscle is the muscle you never have to think about, {name}. It lines the walls of your digestive tract, blood vessels, airways, and organs — and it works automatically, controlled by your autonomic nervous system. When food moves through your intestines, when your blood vessels dilate or constrict, when your lungs adjust their airways — that's smooth muscle working without any conscious instruction from you.` },
             { word: `cardiac muscle`, definition: `The unique muscle of the heart — which never fatigues, never rests, and works continuously from before birth until the last moment of life.`, audioPrompt: `Cardiac muscle is extraordinary, {name}. It's found only in your heart, and unlike every other muscle in your body, it never fatigues and never needs to rest. It has been contracting continuously since before you were born — and it will keep going for your entire life. No other muscle in your body has this combination of endurance and reliability. Your heart is quite literally remarkable.` },
-            { word: `tendon`, definition: `A tough cord of tissue that connects a muscle to a bone — transmitting the force of muscle contractions to produce movement.`, audioPrompt: `Tendons are the connectors in your movement system, {name}. When a muscle contracts, the force needs to travel to the bone to create movement — and tendons are what make that transmission possible. Strong, flexible tendons are important for injury prevention, which is why warming up before vigorous activity and cooling down afterward supports the health of your whole musculoskeletal system.` },
           ],
         },
 
         {
-          id: `l15-mag-4`,
+          id: `l15-mag-5`,
           type: `magazine`,
-          section: 4,
-          headline: `Maintaining musculoskeletal health`,
+          section: 5,
+          headline: `How Muscles Work`,
           paragraphs: [
-            `For **strong bones**: weight-bearing exercise (running, jumping, sports) — the impact signals bones to grow denser and stronger; adequate calcium (dairy, leafy greens, fortified foods); and vitamin D (sunlight, fatty fish) which is needed to absorb calcium properly. For **strong muscles**: progressive resistance (bodyweight exercises, sports, lifting), adequate protein for repair, and **rest between sessions** — muscles grow during recovery, not during exercise itself. For **joint health**: stay flexible through stretching, and avoid overuse injuries by varying the activities you do rather than repeating the same movement patterns every day.`,
+            `Skeletal muscles work in **pairs** — when one contracts, its partner relaxes. Your bicep contracts to bend your elbow; your tricep relaxes. To straighten your arm, they swap roles. This coordinated partnership happens throughout your entire body with every movement you make — hundreds of muscle pairs working together in precise sequence.`,
+            `The force of muscle contraction travels to your bones through tough cords of tissue called **tendons**. Strong, flexible tendons are important for injury prevention — which is why warming up before activity matters. And muscles don't grow during exercise: **recovery** time between sessions is when repair and strengthening actually happen. Exercise is the signal; rest is where adaptation occurs.`,
           ],
-          image: `/explorer-assets/wellness/l15-magazine-4.png`,
+          image: `/explorer-assets/wellness/l15-s5-muscle-pair.png`,
+          imageCaption: `Muscles work in pairs — one contracts while the other relaxes, swapping roles for opposite movements`,
+          vocab: [
+            { word: `pair`, definition: `Two muscles working in opposition — one contracting while the other relaxes — that together produce smooth, controlled movement in both directions.`, audioPrompt: `Muscle pairs are what allow smooth, controlled movement in both directions, {name}. Without an opposing muscle to control the return, movements would be jerky and imprecise. Think about bending and straightening your arm — the bicep and tricep are doing that together. This paired system runs throughout your body, coordinating every action from a blink to a jump.` },
+            { word: `tendon`, definition: `A tough cord of tissue that connects a muscle to a bone — transmitting the force of muscle contractions to produce movement.`, audioPrompt: `Tendons are the connectors in your movement system, {name}. When a muscle contracts, the force needs to travel to the bone to create movement — and tendons are what make that transmission possible. Strong, flexible tendons are important for injury prevention, which is why warming up before vigorous activity and cooling down afterward supports the health of your whole musculoskeletal system.` },
+            { word: `recovery`, definition: `The period of rest between exercise sessions — when muscle repair actually happens and muscles grow stronger than before.`, audioPrompt: `Muscles don't grow during exercise, {name} — they grow during recovery. Exercise creates small amounts of muscle fiber damage. Rest is when your body repairs those fibers, slightly stronger than before. That's why rest between sessions isn't optional — it's the actual mechanism of getting stronger. Exercise is the signal. Recovery is where the adaptation happens.` },
+          ],
+        },
+
+        {
+          id: `l15-mag-6`,
+          type: `magazine`,
+          section: 6,
+          headline: `How to Build and Care`,
+          paragraphs: [
+            `For **strong bones**: weight-bearing exercise (running, jumping, sports) sends the signal to grow denser; **calcium** from dairy, leafy greens, and fortified foods provides the building material; and **vitamin D** — from sunlight and fatty fish — is needed to absorb calcium properly. These three work together. Without all three, the bone-building signal is weakened.`,
+            `For **strong muscles**: progressive resistance activities, adequate protein for repair, and rest between sessions — because muscles grow during recovery, not during exercise itself. For **joint health**: maintain flexibility through stretching and vary your activities to avoid overuse injuries. Together, these habits build a musculoskeletal system that will serve you well for decades.`,
+          ],
+          image: `/explorer-assets/wellness/l15-s6-build-and-care.png`,
           imageCaption: `Weight-bearing exercise, calcium, vitamin D, protein, and rest — the foundations of musculoskeletal health`,
           vocab: [
             { word: `calcium`, definition: `The main mineral your bones are built from — found in dairy products, leafy greens, and fortified foods, and requires Vitamin D to be properly absorbed.`, audioPrompt: `Calcium is the primary building material of bone, {name}. Without enough of it — through dairy, leafy greens, or fortified foods — your body can't build or maintain the bone density it needs. But calcium alone isn't enough: Vitamin D is what allows calcium to be absorbed from your digestive system into your bloodstream. Both together, alongside weight-bearing activity, are what bone-building requires.` },
-            { word: `recovery`, definition: `The period of rest between exercise sessions — when muscle repair actually happens and muscles grow stronger than before.`, audioPrompt: `Muscles don't grow during exercise, {name} — they grow during recovery. Exercise creates small amounts of muscle fiber damage. Rest is when your body repairs those fibers, slightly stronger than before. That's why rest between sessions isn't optional — it's the actual mechanism of getting stronger. Exercise is the signal. Recovery is where the adaptation happens.` },
+            { word: `vitamin D`, definition: `A nutrient made by the skin in sunlight and found in fatty fish — that allows the body to absorb calcium from food, making it essential for bone building.`, audioPrompt: `Vitamin D is what unlocks calcium for your body, {name}. Without it, calcium from food can't be properly absorbed from your digestive system — so no matter how much calcium you eat, your bones can't use it efficiently. Your skin makes vitamin D when exposed to sunlight, and it's also found in fatty fish and fortified foods. Calcium and vitamin D work as a team — you need both.` },
             { word: `joint`, definition: `Where two bones meet — cushioned by cartilage and kept mobile by synovial fluid, and supported by maintaining flexibility through regular varied movement.`, audioPrompt: `Joints are where your skeleton's movement happens, {name} — the connections between bones that let you bend, rotate, and flex. They're cushioned by cartilage and kept lubricated by fluid. Varied movement, stretching, and avoiding overuse of any single pattern all support healthy joints. A joint that only ever moves in one way tends to become less flexible and more prone to strain over time.` },
           ],
         },
@@ -256,10 +296,12 @@ if (import.meta.env?.DEV) {
   const quiz  = LW_L15.lessons[0].screens.find(s => s.type === 'quiz')?.questions?.length ?? 0;
   console.log(`[LESSON-WELLNESS-L15] Loaded: "The Musculoskeletal System: Bones and Muscles" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/wellness/l15-magazine-1.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l15-magazine-2.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l15-magazine-3.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l15-magazine-4.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l15-s1-206-bones-600-muscles.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l15-s2-bones-are-alive.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l15-s3-childhood-window.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l15-s4-three-muscle-types.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l15-s5-muscle-pair.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l15-s6-build-and-care.png', { method: 'HEAD' }),
   ]).then(() => console.log('[LESSON-WELLNESS-L15] Magazine assets OK'))
     .catch(() => console.warn('[LESSON-WELLNESS-L15] One or more magazine assets missing'));
 }
