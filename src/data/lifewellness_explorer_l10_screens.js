@@ -32,16 +32,17 @@ const LW_L10 = {
           id: `l10-mag-1`,
           type: `magazine`,
           section: 1,
-          headline: `Why friendships matter so much`,
+          headline: `Friendships Are Health`,
           paragraphs: [
-            `The longest-running study on human happiness ever conducted — tracking people for over 80 years — found that the **single most important factor in long-term health and happiness was the quality of close relationships**. Not wealth, not fame, not achievement — relationships. People with strong social connections live longer, recover from illness faster, experience less cognitive decline as they age, and consistently report higher happiness. Loneliness, on the other hand, activates the **same brain regions as physical pain**. Social connection is not a nice extra — it's a fundamental human need.`,
+            `The longest-running study on human happiness ran 80+ years.`,
+            `Its conclusion: the single biggest factor in long-term health and happiness wasn't wealth, fame, or achievement. It was the quality of close relationships.`,
           ],
-          image: `/explorer-assets/wellness/l10-magazine-1.png`,
-          imageCaption: `Decades of research agree: the quality of your relationships is the biggest factor in long-term happiness`,
+          image: `/explorer-assets/wellness/l10-s1-friendships-are-health.png`,
+          imageCaption: `Not wealth. Not fame. Not achievement. The quality of close relationships — over decades — predicts wellbeing better than anything else researchers measured.`,
           vocab: [
-            { word: `connection`, definition: `A genuine sense of closeness and mutual care between people — the quality of social connection, not the number of relationships, is what most strongly predicts wellbeing.`, audioPrompt: `Connection is more than knowing a lot of people, {name}. It's the feeling of being genuinely known and cared about by someone — and knowing and caring about them in return. Research on human happiness keeps finding the same thing: it's the quality of those real connections that matters most, far more than how many you have.` },
-            { word: `loneliness`, definition: `The experience of feeling disconnected from others — which activates the same brain regions as physical pain, and has measurable effects on health and longevity.`, audioPrompt: `Loneliness activates the same brain regions as physical pain, {name} — and that's not metaphor, that's neuroscience. Your body registers social disconnection as a genuine harm, because humans are deeply wired for belonging. Understanding this is why caring for your relationships isn't a soft priority. It's one of the most serious things you can do for your health.` },
-            { word: `wellbeing`, definition: `Your overall state of physical, emotional, and social health — shaped substantially by the quality and closeness of your relationships.`, audioPrompt: `Wellbeing is how well you're actually doing across all the dimensions of your life, {name} — not just your body, but your mood, your sense of meaning, your feeling of belonging. The research is clear: close, high-quality relationships are one of the most reliable contributions to genuine wellbeing. They're not an extra. They're part of the foundation.` },
+            { word: `connection`,  definition: `A genuine sense of closeness and mutual care. Quality matters more than count — a few real friends beats many surface ones.`, audioPrompt: `Connection is more than knowing a lot of people, {name}. It's the feeling of being genuinely known and cared about by someone — and knowing and caring about them in return. Research on human happiness keeps finding the same thing: it's the quality of those real connections that matters most, far more than how many you have.` },
+            { word: `wellbeing`,   definition: `Your overall state across body, emotions, and social health. Shaped substantially by the quality of your close relationships.`, audioPrompt: `Wellbeing is how well you're actually doing across all the dimensions of your life, {name} — not just your body, but your mood, your sense of meaning, your feeling of belonging. The research is clear: close, high-quality relationships are one of the most reliable contributions to genuine wellbeing. They're not an extra. They're part of the foundation.` },
+            { word: `loneliness`,  definition: `The experience of feeling disconnected. Activates the same brain regions as physical pain — and has measurable effects on health.`, audioPrompt: `Loneliness activates the same brain regions as physical pain, {name} — and that's not metaphor, that's neuroscience. Your body registers social disconnection as a genuine harm, because humans are deeply wired for belonging. Understanding this is why caring for your relationships isn't a soft priority. It's one of the most serious things you can do for your health.` },
           ],
         },
 
@@ -49,16 +50,17 @@ const LW_L10 = {
           id: `l10-mag-2`,
           type: `magazine`,
           section: 2,
-          headline: `What makes a good friend`,
+          headline: `What Makes a Good Friend`,
           paragraphs: [
-            `Research on friendship consistently identifies the same qualities. **Reliability** — they show up when they said they would. **Honesty** — they tell you the truth, kindly. **Reciprocity** — they're as interested in your life as you are in theirs. **Support** — they're there when things are hard, not just when things are easy. **Consistency** — they're the same person in private as in public. Friendships where these qualities are missing often feel **draining rather than energising** — that's usually a sign the relationship isn't balanced. The most sustaining friendships are ones where both people genuinely show up for each other.`,
+            `Research keeps finding the same qualities.`,
+            `RELIABILITY (shows up). HONESTY (tells you the truth, kindly). RECIPROCITY (interested in your life too). SUPPORT (there in hard moments). CONSISTENCY (same person in public as private).`,
           ],
-          image: `/explorer-assets/wellness/l10-magazine-2.png`,
-          imageCaption: `Reliability, honesty, reciprocity, support, consistency — these are what make friendship feel safe`,
+          image: `/explorer-assets/wellness/l10-s2-good-friend-qualities.png`,
+          imageCaption: `Five qualities. Each one a piece of why a friendship feels safe. When all five are present, friendship becomes one of life's deepest goods.`,
           vocab: [
-            { word: `reciprocity`, definition: `A mutual exchange of care and investment — where both people in a friendship give and receive, rather than one person always doing the work.`, audioPrompt: `Reciprocity is the balance that keeps a friendship feeling fair, {name}. Both people reach out. Both people listen. Both people show up for the other. When that flow runs only one direction — one person always giving, the other always receiving — the friendship often starts to feel draining rather than energizing. Balance matters.` },
-            { word: `reliability`, definition: `Following through on what you say you'll do — showing up when you said you would and being someone others can count on.`, audioPrompt: `Reliability builds trust faster than almost anything else, {name}. When you say you'll be somewhere, and you are — when you say you'll keep something private, and you do — people learn they can count on you. That safety is the foundation real friendship is built on. Without it, even fun friendships stay shallow.` },
-            { word: `draining`, definition: `A word for relationships that consistently take more energy than they give — often a sign that the balance of care and investment is significantly one-sided.`, audioPrompt: `Have you ever noticed that some friendships leave you feeling lighter afterward, and others leave you feeling tired, {name}? Energizing versus draining is a real distinction. The relationships that consistently drain you — where you give more than you receive, or where you never quite feel safe to be yourself — are worth paying attention to. That feeling is information.` },
+            { word: `reliability`, definition: `Following through on what you said you'd do. Showing up when expected. Being someone others can count on.`, audioPrompt: `Reliability builds trust faster than almost anything else, {name}. When you say you'll be somewhere, and you are — when you say you'll keep something private, and you do — people learn they can count on you. That safety is the foundation real friendship is built on. Without it, even fun friendships stay shallow.` },
+            { word: `reciprocity`, definition: `Mutual exchange of care and investment. Both people give and receive — not one person always doing the work.`, audioPrompt: `Reciprocity is the balance that keeps a friendship feeling fair, {name}. Both people reach out. Both people listen. Both people show up for the other. When that flow runs only one direction — one person always giving, the other always receiving — the friendship often starts to feel draining rather than energizing. Balance matters.` },
+            { word: `consistency`, definition: `Being the same person in public as in private. The behavior that makes a friend feel safe to be around.`, audioPrompt: `Consistency is one of the quiet markers of a real friend, {name}. They're the same person whether you're alone together or with a group. They don't treat you differently to fit in. They don't speak about you differently behind your back than they do to your face. That kind of consistency makes a friendship feel genuinely safe.` },
           ],
         },
 
@@ -66,16 +68,17 @@ const LW_L10 = {
           id: `l10-mag-3`,
           type: `magazine`,
           section: 3,
-          headline: `How to build real friendships`,
+          headline: `How Friendships Are Built`,
           paragraphs: [
-            `Research by psychologist Robin Dunbar found that close friendships require **regular in-person interaction and shared experiences** — you can't build deep friendship purely online. The recipe for building friendship: **proximity** (spend time in the same places), **repetition** (see each other regularly), **vulnerability** (share something real, not just surface topics), and **reciprocity** (both people invest). The single biggest friendship-builder is also the simplest: **show genuine interest in the other person's life, remember what they told you, and ask about it later**. This one habit communicates care more powerfully than almost anything else.`,
+            `Deep friendship has a recipe, and it's not complicated.`,
+            `PROXIMITY (same places regularly). REPETITION (seeing each other often). VULNERABILITY (sharing real things, not just surface). RECIPROCITY (both invest). You can't build it purely online — it needs real time together.`,
           ],
-          image: `/explorer-assets/wellness/l10-magazine-3.png`,
-          imageCaption: `Proximity, repetition, vulnerability, reciprocity — and genuine interest in the other person's life`,
+          image: `/explorer-assets/wellness/l10-s3-friendships-built.png`,
+          imageCaption: `Real friendships are built in person, over time, through real moments shared. Online connection helps — but it isn't enough on its own.`,
           vocab: [
-            { word: `vulnerability`, definition: `Sharing something real and personal — not just surface topics — which is one of the key ingredients that deepens friendship from acquaintance to genuine closeness.`, audioPrompt: `Vulnerability is what takes a friendship from pleasant to real, {name}. Sharing something true about yourself — a worry, an embarrassing moment, something you actually care about — invites the other person to do the same. That mutual openness is where genuine closeness comes from. You can't build a deep friendship staying only on the surface.` },
-            { word: `proximity`, definition: `Being in the same physical space regularly — one of the key conditions for friendship to develop, since deep connection is built through repeated in-person time together.`, audioPrompt: `Proximity is one of the quiet secrets of friendship formation, {name}. The people who end up closest to you are often the ones you're simply around most often — in the same class, on the same team, in the same neighborhood. Regular physical presence is one of the foundations. It's why online friendships rarely become as deep as the ones built face-to-face.` },
-            { word: `genuine interest`, definition: `Real curiosity about another person's life — demonstrated by remembering what they told you and asking about it later, one of the most powerful friendship-building habits.`, audioPrompt: `Genuine interest is the single most powerful friendship signal there is, {name} — and it costs nothing. Remembering something your friend mentioned last week and asking "how did that go?" tells them something simple: I was actually listening. I care about your life. Most people feel that kind of attention so rarely that it's genuinely memorable when they receive it.` },
+            { word: `proximity`,     definition: `Being in the same physical space regularly. One of the quiet foundations of friendship — your closest friends are usually who you're around most.`, audioPrompt: `Proximity is one of the quiet secrets of friendship formation, {name}. The people who end up closest to you are often the ones you're simply around most often — in the same class, on the same team, in the same neighborhood. Regular physical presence is one of the foundations. It's why online friendships rarely become as deep as the ones built face-to-face.` },
+            { word: `repetition`,    definition: `Seeing each other often, over time. The accumulation of shared moments is what turns acquaintance into friendship.`, audioPrompt: `Repetition is what turns acquaintance into friendship, {name}. You don't become close to someone after one conversation — closeness is built through dozens of small moments, repeated over weeks and months. Seeing each other regularly is what creates the conditions for real connection to grow. It's quietly one of the most important ingredients.` },
+            { word: `vulnerability`, definition: `Sharing something real and personal — not just surface topics. The willingness to be seen is what deepens friendship.`, audioPrompt: `Vulnerability is what takes a friendship from pleasant to real, {name}. Sharing something true about yourself — a worry, an embarrassing moment, something you actually care about — invites the other person to do the same. That mutual openness is where genuine closeness comes from. You can't build a deep friendship staying only on the surface.` },
           ],
         },
 
@@ -83,16 +86,53 @@ const LW_L10 = {
           id: `l10-mag-4`,
           type: `magazine`,
           section: 4,
-          headline: `Navigating friendship challenges`,
+          headline: `The Most Powerful Habit`,
           paragraphs: [
-            `Friendships hit bumps. Some common ones: a friend changes and you grow apart, a friend says something hurtful, a third person causes conflict between friends, a friend treats you differently when others are around. These situations are normal — almost every close friendship experiences them. The friendships that survive these moments often become stronger for it. The key skills: **address issues directly and privately** rather than through other people, **use I-statements** ("I felt hurt when..."), **give people the benefit of the doubt** before assuming bad intent, and know that **not every friendship is meant to last forever** — and that's okay too.`,
+            `The single biggest friendship-builder is also the simplest.`,
+            `Remember what they told you. Ask about it later. "How did your audition go?" "What happened with that test?" Most people feel this kind of attention so rarely it's memorable.`,
           ],
-          image: `/explorer-assets/wellness/l10-magazine-4.png`,
-          imageCaption: `Every close friendship hits bumps — addressing them directly and privately is what lets them survive`,
+          image: `/explorer-assets/wellness/l10-s4-most-powerful-habit.png`,
+          imageCaption: `Remembering and following up — costs nothing, lands harder than almost anything else. Most people never receive this kind of attention.`,
           vocab: [
-            { word: `I-statement`, definition: `A way of expressing a concern that focuses on how you felt rather than accusing the other person — like "I felt hurt when..." instead of "You always..."`, audioPrompt: `I-statements change the whole feeling of a hard conversation, {name}. "I felt left out when that happened" is very different from "You never include me." One opens a door. The other raises defenses. When a friendship hits a rough patch, I-statements give the other person something to respond to rather than something to argue against. That small shift can keep a conversation from becoming a fight.` },
-            { word: `benefit of the doubt`, definition: `Assuming the best possible explanation before concluding someone acted badly — a first step in addressing friendship problems that preserves trust and goodwill.`, audioPrompt: `Giving someone the benefit of the doubt means your first thought isn't "they meant to hurt me," {name}. Maybe they were having a hard day. Maybe they didn't realize how it landed. Approaching a friendship problem with that openness — rather than certain blame — keeps the conversation from starting in accusation and gives the friendship a real chance to recover.` },
-            { word: `conflict`, definition: `A disagreement or tension between people — normal in every close friendship, and not necessarily a sign something is wrong, but an opportunity to communicate and rebuild trust.`, audioPrompt: `Conflict isn't a sign a friendship is broken, {name} — it's a sign people care enough to be honest with each other. Terra believes this: the friendships that survive conflict are often stronger for it. The question isn't whether conflict happens but how you handle it. Directly, privately, kindly — that combination resolves more than most people expect.` },
+            { word: `genuine interest`, definition: `Real curiosity about another person's life. Demonstrated by remembering what they told you and asking later.`, audioPrompt: `Genuine interest is the single most powerful friendship signal there is, {name} — and it costs nothing. Remembering something your friend mentioned last week and asking "how did that go?" tells them something simple: I was actually listening. I care about your life. Most people feel that kind of attention so rarely that it's genuinely memorable when they receive it.` },
+            { word: `remember`,         definition: `Holding onto what your friend told you so you can bring it up later. A small act that signals something big: you were really listening.`, audioPrompt: `Remembering is more powerful than people realize, {name}. When someone mentions in passing that they have a big test on Tuesday — and then on Wednesday you ask "how did Tuesday go?" — something shifts in the friendship. They feel seen. Heard. Held in mind. That feeling of being remembered is one of the most underrated gifts of any close relationship.` },
+            { word: `attention`,        definition: `Noticing what's happening in your friend's life. One of the most underestimated gifts you can offer anyone.`, audioPrompt: `Attention is one of the rarest and most valuable things you can give another person, {name}. Not surface attention — real attention. The kind where you actually listen, actually notice, actually follow up. People can tell instantly when they're receiving it and when they're not. The friends who pay real attention often become the most important people in our lives.` },
+          ],
+        },
+
+        {
+          id: `l10-mag-5`,
+          type: `magazine`,
+          section: 5,
+          headline: `When Friendships Hit Bumps`,
+          paragraphs: [
+            `Every close friendship hits bumps. That's normal.`,
+            `When it happens: address it DIRECTLY and PRIVATELY (not through other people). Use I-statements ("I felt hurt when..."). Give them the benefit of the doubt before assuming bad intent.`,
+          ],
+          image: `/explorer-assets/wellness/l10-s5-friendship-bumps.png`,
+          imageCaption: `Bumps aren't a sign the friendship is broken — they're a sign you care enough to be honest. How you handle them is what matters.`,
+          vocab: [
+            { word: `I-statement`,          definition: `A way of expressing concern that focuses on how you felt — not on accusing the other person. Opens a door instead of raising defenses.`, audioPrompt: `I-statements change the whole feeling of a hard conversation, {name}. "I felt left out when that happened" is very different from "You never include me." One opens a door. The other raises defenses. When a friendship hits a rough patch, I-statements give the other person something to respond to rather than something to argue against. That small shift can keep a conversation from becoming a fight.` },
+            { word: `benefit of the doubt`, definition: `Assuming the best possible explanation before concluding someone meant harm. Keeps a hard conversation from starting in accusation.`, audioPrompt: `Giving someone the benefit of the doubt means your first thought isn't "they meant to hurt me," {name}. Maybe they were having a hard day. Maybe they didn't realize how it landed. Approaching a friendship problem with that openness — rather than certain blame — keeps the conversation from starting in accusation and gives the friendship a real chance to recover.` },
+            { word: `directly`,             definition: `Talking to the person yourself, not through other people. Resolves the actual issue and preserves trust.`, audioPrompt: `Going directly to your friend with a problem is almost always the right move, {name}. Talking to other people about it instead adds layers of interpretation and hurt that weren't originally there. It also signals you didn't trust the friendship enough to bring it up directly. Direct, private, kind conversation is how almost all friendship problems actually get resolved.` },
+          ],
+        },
+
+        {
+          id: `l10-mag-6`,
+          type: `magazine`,
+          section: 6,
+          headline: `When Friendships Change`,
+          paragraphs: [
+            `Not all friendships are meant to last forever, and that's okay.`,
+            `People change. Lives diverge. Sometimes friends grow apart — and that doesn't mean either of you failed. It means the season changed. Honor what it was without forcing it to keep being.`,
+          ],
+          image: `/explorer-assets/wellness/l10-s6-friendships-change.png`,
+          imageCaption: `Some friendships are for a season, not forever. That's not failure. It's how human lives change. Honoring what was matters more than forcing what isn't.`,
+          vocab: [
+            { word: `season`, definition: `A period of life. Many friendships belong to specific seasons — and may not transfer when the season changes.`, audioPrompt: `Friendships often belong to seasons, {name} — to a particular class, a particular team, a particular phase of your life. When the season ends, some friendships move with you, and some don't. That's not anyone's fault. It's just how human lives unfold. Knowing this helps you appreciate the friendships of each season without needing them all to last forever.` },
+            { word: `honor`,  definition: `Appreciate what something was, even as it changes. The right response to a friendship that's quietly fading without anyone failing.`, audioPrompt: `To honor a friendship that's ending is different from clinging to it, {name}. It means recognizing what it gave you. Being grateful for the time it lasted. Wishing the other person well. Then letting it become what it's becoming. That kind of honoring — without bitterness, without forcing — is part of how mature people hold the friendships in their lives.` },
+            { word: `evolve`, definition: `Change over time. What friendships and people both do — and what makes some friendships transform rather than end.`, audioPrompt: `Friendships evolve, {name} — they don't stay frozen. Sometimes they evolve into something deeper. Sometimes they evolve into something more distant but still warm. Sometimes they evolve into a chapter that closes peacefully. Letting them evolve, rather than expecting them to stay exactly as they were, is part of staying present to who both people are becoming.` },
           ],
         },
 
@@ -256,10 +296,12 @@ if (import.meta.env?.DEV) {
   const quiz  = LW_L10.lessons[0].screens.find(s => s.type === 'quiz')?.questions?.length ?? 0;
   console.log(`[LESSON-WELLNESS-L10] Loaded: "Friendship and Social Health" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/wellness/l10-magazine-1.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l10-magazine-2.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l10-magazine-3.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/wellness/l10-magazine-4.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l10-s1-friendships-are-health.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l10-s2-good-friend-qualities.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l10-s3-friendships-built.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l10-s4-most-powerful-habit.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l10-s5-friendship-bumps.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/wellness/l10-s6-friendships-change.png', { method: 'HEAD' }),
   ]).then(() => console.log('[LESSON-WELLNESS-L10] Magazine assets OK'))
     .catch(() => console.warn('[LESSON-WELLNESS-L10] One or more magazine assets missing'));
 }
