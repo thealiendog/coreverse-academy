@@ -391,6 +391,7 @@ export default function ExplorerLessonPlayer() {
   const [audioPaused,     setAudioPaused]     = useState(false);
   const [audioFallback,   setAudioFallback]   = useState(false); // Fix 1/5: show "Tap to hear Sage"
   const [welcomeReady,    setWelcomeReady]    = useState(false); // Fix 2: prewarm complete, show tap cue
+  const [audioMissing,    setAudioMissing]    = useState(false); // true when TTS fails silently — suppress auto-advance, show manual tap cue
 
   // ── Refs ──────────────────────────────────────────────────────────────────
   const persistentAudioRef        = useRef(null);
@@ -409,6 +410,7 @@ export default function ExplorerLessonPlayer() {
   const audioPrewarmRef           = useRef(new Map()); // text → Promise | { blobUrl, alignment } pre-fetched results
   const isPausedRef               = useRef(false);    // true while user has paused — blocks all audio triggers
   const audioFailTimerRef         = useRef(null);     // Fix 5: 500ms timer to detect audio-never-started
+  const speakStartTimeRef         = useRef(0);        // timestamp when speak() was called for current screen — used to detect silent TTS failure
   const welcomePlayedRef          = useRef(false);    // Fix 2: true after welcome audio tap-to-play fired
   const welcomePlayFnRef          = useRef(null);     // Fix 2: stores the speak() chain, called from onWelcomeTap
   const lessonStartTimeRef        = useRef(Date.now()); // set once on mount
@@ -1021,6 +1023,7 @@ export default function ExplorerLessonPlayer() {
         countdownIntervalRef.current = null;
       }
       setCountdown(null);
+      setAudioMissing(false); // reset silent-TTS-failure flag for next screen
     };
 
     if (!audioEnabled) return cleanup;
@@ -1095,8 +1098,18 @@ export default function ExplorerLessonPlayer() {
         }
       }
 
+      speakStartTimeRef.current = Date.now();
       speak(fullText, () => {
         if (cancelled) return;
+        // Detect silent TTS failure: onDone fired in under 1s while audio was enabled.
+        // This means the TTS fetch failed and speak() called onDone() immediately.
+        // In this case, suppress auto-advance and show a manual tap-to-continue cue.
+        const audioDurationMs = Date.now() - speakStartTimeRef.current;
+        if (audioEnabledRef.current && audioDurationMs < 1000) {
+          console.log(`[TTS-FAIL] onDone fired in ${audioDurationMs}ms — TTS likely failed, suppressing auto-advance`);
+          setAudioMissing(true);
+          return;
+        }
         console.log(`[AUTO-ADVANCE] Audio ended at ${new Date().toISOString()}, starting 1s buffer...`);
             // One-time vocab hint / tutorial
             if (screen.vocab?.length > 0 && !localStorage.getItem('explorer_vocab_hint_shown')) {
@@ -1189,8 +1202,16 @@ export default function ExplorerLessonPlayer() {
         welcomePlayFnRef.current = () => {
           if (cancelled) return;
           console.log('[TTS] Screen welcome — starting Sage greeting via gesture');
+          speakStartTimeRef.current = Date.now();
           speak(text, () => {
             if (cancelled) return;
+            // Detect silent TTS failure on welcome screen
+            const audioDurationMs = Date.now() - speakStartTimeRef.current;
+            if (audioEnabledRef.current && audioDurationMs < 1000) {
+              console.log(`[TTS-FAIL] Welcome onDone fired in ${audioDurationMs}ms — TTS likely failed, suppressing auto-advance`);
+              setAudioMissing(true);
+              return;
+            }
             console.log('[AUTO-ADVANCE] Welcome audio ended, starting 1s buffer...');
             const tBuffer = setTimeout(() => {
               if (cancelled) return;
@@ -1530,6 +1551,30 @@ export default function ExplorerLessonPlayer() {
           {renderScreen(currentScreen)}
         </div>
       </div>
+
+      {/* Manual tap-to-continue cue — shown when TTS fails silently (no audio generated yet) */}
+      {audioMissing && (currentScreen?.type === 'magazine' || currentScreen?.type === 'welcome' || currentScreen?.type === 'story-beat') && (
+        <div style={{ flexShrink: 0, padding: '6px 16px 2px', display: 'flex', justifyContent: 'center' }}>
+          <button
+            onClick={goNext}
+            style={{
+              background:    `linear-gradient(135deg, ${accent}22, ${accent}44)`,
+              border:        `1.5px solid ${accent}88`,
+              borderRadius:  24,
+              color:         accent,
+              fontSize:      '0.88rem',
+              fontWeight:    700,
+              letterSpacing: '0.03em',
+              padding:       '8px 22px',
+              cursor:        'pointer',
+              touchAction:   'manipulation',
+              animation:     'ex-ring 2s ease-in-out infinite',
+            }}
+          >
+            Tap to continue →
+          </button>
+        </div>
+      )}
 
       {/* Navigation bar */}
       <ExplorerNavigation
