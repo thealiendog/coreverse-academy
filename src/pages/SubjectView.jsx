@@ -74,6 +74,8 @@ const NEW_FORMAT_LESSONS = {
   'history':       ['hw-6-8-01', 'hw-6-8-02', 'hw-6-8-05', 'hw-6-8-06', 'hw-6-8-08', 'hw-6-8-11', 'hw-6-8-14', 'hw-6-8-16', 'hw-6-8-19', 'hw-6-8-20'],
   // ELA — L01 wired; remaining lessons wired as screen files are authored
   'ela':           ['ela-6-8-01', 'ela-6-8-02', 'ela-6-8-03', 'ela-6-8-04', 'ela-6-8-05', 'ela-6-8-06', 'ela-6-8-07', 'ela-6-8-08', 'ela-6-8-09', 'ela-6-8-10', 'ela-6-8-11', 'ela-6-8-12', 'ela-6-8-13', 'ela-6-8-14', 'ela-6-8-15', 'ela-6-8-16', 'ela-6-8-17', 'ela-6-8-18', 'ela-6-8-19', 'ela-6-8-20'],
+  // Science — L01 wired; remaining lessons wired as screen files are authored
+  'science':       ['science-6-8-01'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
@@ -108,6 +110,9 @@ function getExplorerLessonId(subjectId, level, index) {
   }
   if (subjectId === 'ela' && level === 2) {
     return `ela-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'science' && level === 2) {
+    return `science-6-8-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
@@ -156,6 +161,7 @@ export default function SubjectView() {
     : subjectId === 'history'                    ? HISTORYWORLD_EXPLORERS
     : subjectId === 'languages'                  ? SPANISH_EXPLORERS
     : subjectId === 'ss'                         ? SS_EXPLORERS
+    : subjectId === 'science'                    ? SCI_EXPLORERS
     : getLevel2Lessons(subjectId);
   // Subject-specific Upper Explorers curricula override level 3
   const l3Lessons = subjectId === 'ela'          ? ELA_UPPEREXPLORERS

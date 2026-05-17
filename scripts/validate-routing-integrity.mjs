@@ -46,6 +46,7 @@ const SLUG_TO_SUBJECT = {
   creativearts:     'creative-arts',
   historyworld:     'history',
   ela:              'ela',
+  science:          'science',
   sci:              'sci',
   ss:               'ss',
   math:             'math',
