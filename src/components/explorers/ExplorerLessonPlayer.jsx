@@ -128,6 +128,7 @@ import SL_L19 from '../../data/socialleadership_explorer_l19_screens';
 import SL_L20 from '../../data/socialleadership_explorer_l20_screens';
 
 import HW_L01 from '../../data/historyworld_explorer_l01_screens';
+import HW_L02 from '../../data/historyworld_explorer_l02_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -231,12 +232,12 @@ const EXPLORER_DATA = {
     lessons:   [...SP_L01.lessons, ...SP_L02.lessons, ...SP_L03.lessons, ...SP_L04.lessons, ...SP_L05.lessons],
   },
 
-  // History & World — pilot: L01 only; L02-L20 remain on legacy player
+  // History & World — pilot: L01-L02; L03-L20 remain on legacy player
   'history': {
     ageBand:   'explorers',
     subjectId: 'history',
     guide:     'Lyra',
-    lessons:   [...HW_L01.lessons],
+    lessons:   [...HW_L01.lessons, ...HW_L02.lessons],
   },
 };
 
