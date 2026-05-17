@@ -73,7 +73,7 @@ const NEW_FORMAT_LESSONS = {
   // History & World — L01, L02, L05, L06, L08, L11, L14, L16, L19, L20 (CAPSTONE) — 10/20 wired
   'history':       ['hw-6-8-01', 'hw-6-8-02', 'hw-6-8-05', 'hw-6-8-06', 'hw-6-8-08', 'hw-6-8-11', 'hw-6-8-14', 'hw-6-8-16', 'hw-6-8-19', 'hw-6-8-20'],
   // ELA — L01 wired; remaining lessons wired as screen files are authored
-  'ela':           ['ela-6-8-01', 'ela-6-8-02', 'ela-6-8-03', 'ela-6-8-04', 'ela-6-8-05', 'ela-6-8-06', 'ela-6-8-07', 'ela-6-8-08', 'ela-6-8-09', 'ela-6-8-10', 'ela-6-8-11', 'ela-6-8-12', 'ela-6-8-13', 'ela-6-8-14', 'ela-6-8-15', 'ela-6-8-16', 'ela-6-8-19', 'ela-6-8-20'],
+  'ela':           ['ela-6-8-01', 'ela-6-8-02', 'ela-6-8-03', 'ela-6-8-04', 'ela-6-8-05', 'ela-6-8-06', 'ela-6-8-07', 'ela-6-8-08', 'ela-6-8-09', 'ela-6-8-10', 'ela-6-8-11', 'ela-6-8-12', 'ela-6-8-13', 'ela-6-8-14', 'ela-6-8-15', 'ela-6-8-16', 'ela-6-8-17', 'ela-6-8-19', 'ela-6-8-20'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
