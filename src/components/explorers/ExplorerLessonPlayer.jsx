@@ -131,6 +131,7 @@ import HW_L01 from '../../data/historyworld_explorer_l01_screens';
 import HW_L02 from '../../data/historyworld_explorer_l02_screens';
 import HW_L05 from '../../data/historyworld_explorer_l05_screens';
 import HW_L06 from '../../data/historyworld_explorer_l06_screens';
+import HW_L08 from '../../data/historyworld_explorer_l08_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -239,7 +240,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'history',
     guide:     'Lyra',
-    lessons:   [...HW_L01.lessons, ...HW_L02.lessons, ...HW_L05.lessons, ...HW_L06.lessons],
+    lessons:   [...HW_L01.lessons, ...HW_L02.lessons, ...HW_L05.lessons, ...HW_L06.lessons, ...HW_L08.lessons],
   },
 };
 
