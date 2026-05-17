@@ -102,6 +102,7 @@ export default function StoryBeatScreen({
         <img
           src={image}
           alt={headline}
+          loading="lazy"
           style={{
             width: '100%', height: '100%',
             objectFit: 'cover', objectPosition: 'center', display: 'block',

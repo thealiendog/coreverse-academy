@@ -25,7 +25,7 @@ const HW_L01 = {
           guideText: `{name}, I want to take you on a journey today — a long, LONG way back in time. We're going to visit a place with giant stone triangles, kings who thought they were gods, and a magical river that made everything possible. Ready? Let's go!`,
           headline: `Ancient Egypt: Pyramids and Pharaohs`,
           subtitle: `A civilization that lasted over 3,000 years — longer than almost anything else in history`,
-          visual: `/explorer-assets/history/l01-welcome.png`,
+          visual: `/explorer-assets/history/l01-welcome.webp`,
         },
 
         {
@@ -38,7 +38,7 @@ const HW_L01 = {
             `Ancient Egypt started more than 5,000 years ago. That is SO long ago that your great-great-great (keep going!) grandparents weren't even born yet.`,
             `Egypt didn't last for just a few years — it lasted for over 3,000 years. That's longer than almost any other civilization ever!`,
           ],
-          image: `/explorer-assets/history/l01-s1-civilization-endured.png`,
+          image: `/explorer-assets/history/l01-s1-civilization-endured.webp`,
           imageCaption: `3,000 years! Egypt was around longer than almost any civilization in all of history.`,
           vocab: [
             { word: `ancient`, definition: `Something from a very, very long time ago — thousands of years in the past.`,
@@ -60,7 +60,7 @@ const HW_L01 = {
             `Most of Egypt is hot, dry DESERT. So how did people live there?`,
             `The NILE RIVER! Every year it flooded and left behind super-rich, dark soil — perfect for growing food. No Nile? No Egypt. It was like magic!`,
           ],
-          image: `/explorer-assets/history/l01-s2-gift-of-the-nile.png`,
+          image: `/explorer-assets/history/l01-s2-gift-of-the-nile.webp`,
           imageCaption: `The Nile River made everything possible. Without it, Egypt would just be a desert.`,
           vocab: [
             { word: `desert`, definition: `A very dry, hot place with almost no rain — like a giant sandbox. Most of Egypt is desert!`,
@@ -82,7 +82,7 @@ const HW_L01 = {
             `Egypt was ruled by kings called PHARAOHS. But not just any kings — Egyptians believed pharaohs were actually gods living in human bodies!`,
             `Some famous pharaohs: TUTANKHAMUN (King Tut), RAMESSES II, and HATSHEPSUT — a powerful woman who was one of the greatest rulers Egypt ever had.`,
           ],
-          image: `/explorer-assets/history/l01-s3-pharaohs-gods.png`,
+          image: `/explorer-assets/history/l01-s3-pharaohs-gods.webp`,
           imageCaption: `Pharaohs weren't just kings — Egyptians believed they were gods on Earth!`,
           vocab: [
             { word: `pharaoh`, definition: `An ancient Egyptian king or queen. Egyptians believed pharaohs were gods living in human form.`,
@@ -104,7 +104,7 @@ const HW_L01 = {
             `The pyramids were built as tombs — special resting places — for the pharaohs.`,
             `The Great Pyramid used 2.3 MILLION giant stone blocks! Workers moved them without any trucks or machines — just people power. The pyramid was the tallest building on Earth for thousands of years!`,
           ],
-          image: `/explorer-assets/history/l01-s4-pyramids.png`,
+          image: `/explorer-assets/history/l01-s4-pyramids.webp`,
           imageCaption: `2.3 million stone blocks — stacked perfectly into a giant triangle! No cranes, no machines. Just really, really hard work.`,
           vocab: [
             { word: `pyramid`, definition: `A giant stone structure shaped like a triangle. Built as a special resting place (tomb) for a pharaoh.`,
@@ -126,7 +126,7 @@ const HW_L01 = {
             `Egyptians invented their own way of writing — using little pictures and symbols called HIEROGLYPHICS.`,
             `Each picture meant a sound or an idea. They wrote on stone walls AND on paper made from a river plant called PAPYRUS. Some of this writing is still readable today — 4,000 years later!`,
           ],
-          image: `/explorer-assets/history/l01-s5-hieroglyphics.png`,
+          image: `/explorer-assets/history/l01-s5-hieroglyphics.webp`,
           imageCaption: `Little pictures that tell stories — the ancient Egyptian writing system, used for 4,000 years.`,
           vocab: [
             { word: `hieroglyphics`, definition: `The ancient Egyptian writing system — made of little pictures and symbols that represent sounds and ideas.`,
@@ -148,7 +148,7 @@ const HW_L01 = {
             `Ancient Egypt didn't just leave us pyramids — they gave ideas that we STILL use today!`,
             `They made one of the first CALENDARS (365 days, 12 months — sound familiar?). They were early math experts. They wrote some of the first MEDICINE books ever. Egypt's ideas shaped the whole world!`,
           ],
-          image: `/explorer-assets/history/l01-s6-egypts-legacy.png`,
+          image: `/explorer-assets/history/l01-s6-egypts-legacy.webp`,
           imageCaption: `The calendar we use today, early math, early medicine — Egypt's gifts to the whole world.`,
           vocab: [
             { word: `calendar`, definition: `A way of tracking days, months, and years. Ancient Egyptians made one of the first calendars — with 365 days and 12 months, just like ours!`,
@@ -180,28 +180,28 @@ const HW_L01 = {
           items: [
             {
               id: `l01-g1`,
-              image: `/explorer-assets/history/l01-game-1.png`,
+              image: `/explorer-assets/history/l01-game-1.webp`,
               label: `The Nile flooded and helped food grow.`,
               matchPhrase: `Yes! The Nile's flood left rich black dirt that was perfect for growing food. That's how everything in Ancient Egypt got started.`,
               correctMatch: `fact`,
             },
             {
               id: `l01-g2`,
-              image: `/explorer-assets/history/l01-game-2.png`,
+              image: `/explorer-assets/history/l01-game-2.webp`,
               label: `Pyramid workers got paid for their work.`,
               matchPhrase: `True! People used to think slaves built the pyramids — but scientists figured out the workers were actually paid. They got food, beer, and a place to live. It was a real job.`,
               correctMatch: `fact`,
             },
             {
               id: `l01-g3`,
-              image: `/explorer-assets/history/l01-game-3.png`,
+              image: `/explorer-assets/history/l01-game-3.webp`,
               label: `Aliens built the pyramids.`,
               matchPhrase: `Ha! No way. The pyramids were built by people — really hardworking people, with ropes, ramps, and lots of teamwork. No aliens needed.`,
               correctMatch: `myth`,
             },
             {
               id: `l01-g4`,
-              image: `/explorer-assets/history/l01-game-4.png`,
+              image: `/explorer-assets/history/l01-game-4.webp`,
               label: `Egyptians wrote on phones and tablets.`,
               matchPhrase: `Definitely not! Phones and tablets weren't invented yet. Ancient Egyptians wrote with little pictures called hieroglyphics — on papyrus paper or carved into stone.`,
               correctMatch: `myth`,
@@ -320,12 +320,12 @@ if (import.meta.env?.DEV) {
   const quiz  = HW_L01.lessons[0].screens.find(s => s.type === 'quiz')?.questions?.length ?? 0;
   console.log(`[LESSON-HISTORY-L01] Loaded: "Ancient Egypt: Pyramids and Pharaohs" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
   Promise.all([
-    fetch('/explorer-assets/history/l01-s1-civilization-endured.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/history/l01-s2-gift-of-the-nile.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/history/l01-s3-pharaohs-gods.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/history/l01-s4-pyramids.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/history/l01-s5-hieroglyphics.png', { method: 'HEAD' }),
-    fetch('/explorer-assets/history/l01-s6-egypts-legacy.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/history/l01-s1-civilization-endured.webp', { method: 'HEAD' }),
+    fetch('/explorer-assets/history/l01-s2-gift-of-the-nile.webp', { method: 'HEAD' }),
+    fetch('/explorer-assets/history/l01-s3-pharaohs-gods.webp', { method: 'HEAD' }),
+    fetch('/explorer-assets/history/l01-s4-pyramids.webp', { method: 'HEAD' }),
+    fetch('/explorer-assets/history/l01-s5-hieroglyphics.webp', { method: 'HEAD' }),
+    fetch('/explorer-assets/history/l01-s6-egypts-legacy.webp', { method: 'HEAD' }),
   ]).then(() => console.log('[LESSON-HISTORY-L01] Magazine assets OK'))
     .catch(() => console.warn('[LESSON-HISTORY-L01] One or more magazine assets missing'));
 }
