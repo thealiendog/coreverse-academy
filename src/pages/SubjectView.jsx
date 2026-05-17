@@ -72,6 +72,8 @@ const NEW_FORMAT_LESSONS = {
   'languages':     ['sp-6-8-01', 'sp-6-8-02', 'sp-6-8-03', 'sp-6-8-04', 'sp-6-8-05'],
   // History & World — L01, L02, L05, L06, L08, L11, L14, L16, L19, L20 (CAPSTONE) — 10/20 wired
   'history':       ['hw-6-8-01', 'hw-6-8-02', 'hw-6-8-05', 'hw-6-8-06', 'hw-6-8-08', 'hw-6-8-11', 'hw-6-8-14', 'hw-6-8-16', 'hw-6-8-19', 'hw-6-8-20'],
+  // ELA — L01 wired; remaining lessons wired as screen files are authored
+  'ela':           ['ela-6-8-01'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
@@ -103,6 +105,9 @@ function getExplorerLessonId(subjectId, level, index) {
   }
   if (subjectId === 'history' && level === 2) {
     return `hw-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'ela' && level === 2) {
+    return `ela-6-8-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
