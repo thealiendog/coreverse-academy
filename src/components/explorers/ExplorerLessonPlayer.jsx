@@ -144,6 +144,7 @@ import ELA_L04 from '../../data/ela_explorer_l04_screens';
 import ELA_L05 from '../../data/ela_explorer_l05_screens';
 import ELA_L06 from '../../data/ela_explorer_l06_screens';
 import ELA_L07 from '../../data/ela_explorer_l07_screens';
+import ELA_L08 from '../../data/ela_explorer_l08_screens';
 import ELA_L10 from '../../data/ela_explorer_l10_screens';
 import ELA_L13 from '../../data/ela_explorer_l13_screens';
 import ELA_L16 from '../../data/ela_explorer_l16_screens';
@@ -265,7 +266,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'ela',
     guide:     'Quill',
-    lessons:   [...ELA_L01.lessons, ...ELA_L02.lessons, ...ELA_L03.lessons, ...ELA_L04.lessons, ...ELA_L05.lessons, ...ELA_L06.lessons, ...ELA_L07.lessons, ...ELA_L10.lessons, ...ELA_L13.lessons, ...ELA_L16.lessons, ...ELA_L19.lessons, ...ELA_L20.lessons],
+    lessons:   [...ELA_L01.lessons, ...ELA_L02.lessons, ...ELA_L03.lessons, ...ELA_L04.lessons, ...ELA_L05.lessons, ...ELA_L06.lessons, ...ELA_L07.lessons, ...ELA_L08.lessons, ...ELA_L10.lessons, ...ELA_L13.lessons, ...ELA_L16.lessons, ...ELA_L19.lessons, ...ELA_L20.lessons],
   },
 };
 
