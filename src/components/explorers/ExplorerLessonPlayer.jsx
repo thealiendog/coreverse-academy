@@ -158,6 +158,7 @@ import ELA_L18 from '../../data/ela_explorer_l18_screens';
 import ELA_L19 from '../../data/ela_explorer_l19_screens';
 import ELA_L20 from '../../data/ela_explorer_l20_screens';
 import SCIENCE_L01 from '../../data/science_explorer_l01_screens';
+import SCIENCE_L02 from '../../data/science_explorer_l02_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -282,7 +283,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'science',
     guide:     'Cosmo',
-    lessons:   [...SCIENCE_L01.lessons],
+    lessons:   [...SCIENCE_L01.lessons, ...SCIENCE_L02.lessons],
   },
 };
 
