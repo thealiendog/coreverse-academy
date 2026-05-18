@@ -200,6 +200,7 @@ import SOCIAL_STUDIES_L20 from '../../data/social_studies_explorer_l20_screens';
 import MATH_L01 from '../../data/math_explorer_l01_screens';
 import MATH_L02 from '../../data/math_explorer_l02_screens';
 import MATH_L03 from '../../data/math_explorer_l03_screens';
+import MATH_L04 from '../../data/math_explorer_l04_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -340,7 +341,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'math',
     guide:     'Remi',
-    lessons:   [...MATH_L01.lessons, ...MATH_L02.lessons, ...MATH_L03.lessons],
+    lessons:   [...MATH_L01.lessons, ...MATH_L02.lessons, ...MATH_L03.lessons, ...MATH_L04.lessons],
   },
 };
 
