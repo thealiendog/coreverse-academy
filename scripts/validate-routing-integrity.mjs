@@ -52,6 +52,7 @@ const SLUG_TO_SUBJECT = {
   math:             'math',
   frontier:         'frontier',
   spanish:          'languages',
+  social_studies:   'social_studies',
 };
 
 // Inverse: runtime subjectId → file slug prefix
