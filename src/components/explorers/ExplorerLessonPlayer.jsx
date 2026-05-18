@@ -175,6 +175,7 @@ import SCIENCE_L15 from '../../data/science_explorer_l15_screens';
 import SCIENCE_L16 from '../../data/science_explorer_l16_screens';
 import SCIENCE_L17 from '../../data/science_explorer_l17_screens';
 import SCIENCE_L18 from '../../data/science_explorer_l18_screens';
+import SCIENCE_L19 from '../../data/science_explorer_l19_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -299,7 +300,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'science',
     guide:     'Cosmo',
-    lessons:   [...SCIENCE_L01.lessons, ...SCIENCE_L02.lessons, ...SCIENCE_L03.lessons, ...SCIENCE_L04.lessons, ...SCIENCE_L05.lessons, ...SCIENCE_L06.lessons, ...SCIENCE_L07.lessons, ...SCIENCE_L08.lessons, ...SCIENCE_L09.lessons, ...SCIENCE_L10.lessons, ...SCIENCE_L11.lessons, ...SCIENCE_L12.lessons, ...SCIENCE_L13.lessons, ...SCIENCE_L14.lessons, ...SCIENCE_L15.lessons, ...SCIENCE_L16.lessons, ...SCIENCE_L17.lessons, ...SCIENCE_L18.lessons],
+    lessons:   [...SCIENCE_L01.lessons, ...SCIENCE_L02.lessons, ...SCIENCE_L03.lessons, ...SCIENCE_L04.lessons, ...SCIENCE_L05.lessons, ...SCIENCE_L06.lessons, ...SCIENCE_L07.lessons, ...SCIENCE_L08.lessons, ...SCIENCE_L09.lessons, ...SCIENCE_L10.lessons, ...SCIENCE_L11.lessons, ...SCIENCE_L12.lessons, ...SCIENCE_L13.lessons, ...SCIENCE_L14.lessons, ...SCIENCE_L15.lessons, ...SCIENCE_L16.lessons, ...SCIENCE_L17.lessons, ...SCIENCE_L18.lessons, ...SCIENCE_L19.lessons],
   },
 };
 
