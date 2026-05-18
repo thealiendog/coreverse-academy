@@ -182,6 +182,7 @@ import SOCIAL_STUDIES_L02 from '../../data/social_studies_explorer_l02_screens';
 import SOCIAL_STUDIES_L03 from '../../data/social_studies_explorer_l03_screens';
 import SOCIAL_STUDIES_L04 from '../../data/social_studies_explorer_l04_screens';
 import SOCIAL_STUDIES_L05 from '../../data/social_studies_explorer_l05_screens';
+import SOCIAL_STUDIES_L06 from '../../data/social_studies_explorer_l06_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -314,7 +315,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'social_studies',
     guide:     'Atlas',
-    lessons:   [...SOCIAL_STUDIES_L01.lessons, ...SOCIAL_STUDIES_L02.lessons, ...SOCIAL_STUDIES_L03.lessons, ...SOCIAL_STUDIES_L04.lessons, ...SOCIAL_STUDIES_L05.lessons],
+    lessons:   [...SOCIAL_STUDIES_L01.lessons, ...SOCIAL_STUDIES_L02.lessons, ...SOCIAL_STUDIES_L03.lessons, ...SOCIAL_STUDIES_L04.lessons, ...SOCIAL_STUDIES_L05.lessons, ...SOCIAL_STUDIES_L06.lessons],
   },
 };
 
