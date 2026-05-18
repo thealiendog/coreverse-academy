@@ -80,7 +80,7 @@ const NEW_FORMAT_LESSONS = {
   // Social Studies — lessons wired as screen files are authored
   'social_studies': ['social-studies-6-8-01', 'social-studies-6-8-02', 'social-studies-6-8-03', 'social-studies-6-8-04', 'social-studies-6-8-05', 'social-studies-6-8-06', 'social-studies-6-8-07', 'social-studies-6-8-08', 'social-studies-6-8-09', 'social-studies-6-8-10', 'social-studies-6-8-11', 'social-studies-6-8-12', 'social-studies-6-8-13', 'social-studies-6-8-14', 'social-studies-6-8-15', 'social-studies-6-8-16', 'social-studies-6-8-17', 'social-studies-6-8-18', 'social-studies-6-8-19', 'social-studies-6-8-20'],
   // Math — L01 wired; remaining lessons wired as screen files are authored
-  'math':            ['math-6-8-01', 'math-6-8-02', 'math-6-8-03', 'math-6-8-04', 'math-6-8-05', 'math-6-8-06'],
+  'math':            ['math-6-8-01', 'math-6-8-02', 'math-6-8-03', 'math-6-8-04', 'math-6-8-05', 'math-6-8-06', 'math-6-8-07'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
