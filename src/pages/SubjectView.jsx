@@ -77,7 +77,7 @@ const NEW_FORMAT_LESSONS = {
   // Science — L01 wired; remaining lessons wired as screen files are authored
   'science':       ['science-6-8-01', 'science-6-8-02', 'science-6-8-03', 'science-6-8-04', 'science-6-8-05', 'science-6-8-06', 'science-6-8-07', 'science-6-8-08', 'science-6-8-09', 'science-6-8-10', 'science-6-8-11', 'science-6-8-12', 'science-6-8-13', 'science-6-8-14', 'science-6-8-15', 'science-6-8-16', 'science-6-8-17', 'science-6-8-18', 'science-6-8-19', 'science-6-8-20'],
   // Social Studies — lessons wired as screen files are authored
-  'social_studies': ['social-studies-6-8-01', 'social-studies-6-8-02', 'social-studies-6-8-03', 'social-studies-6-8-04', 'social-studies-6-8-05', 'social-studies-6-8-06', 'social-studies-6-8-07', 'social-studies-6-8-08', 'social-studies-6-8-09', 'social-studies-6-8-10', 'social-studies-6-8-11', 'social-studies-6-8-12', 'social-studies-6-8-13', 'social-studies-6-8-14', 'social-studies-6-8-15', 'social-studies-6-8-16', 'social-studies-6-8-17', 'social-studies-6-8-18'],
+  'social_studies': ['social-studies-6-8-01', 'social-studies-6-8-02', 'social-studies-6-8-03', 'social-studies-6-8-04', 'social-studies-6-8-05', 'social-studies-6-8-06', 'social-studies-6-8-07', 'social-studies-6-8-08', 'social-studies-6-8-09', 'social-studies-6-8-10', 'social-studies-6-8-11', 'social-studies-6-8-12', 'social-studies-6-8-13', 'social-studies-6-8-14', 'social-studies-6-8-15', 'social-studies-6-8-16', 'social-studies-6-8-17', 'social-studies-6-8-18', 'social-studies-6-8-19'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
