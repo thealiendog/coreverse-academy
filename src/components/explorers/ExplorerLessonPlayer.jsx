@@ -136,6 +136,7 @@ import HW_L06 from '../../data/historyworld_explorer_l06_screens';
 import HW_L07 from '../../data/historyworld_explorer_l07_screens';
 import HW_L08 from '../../data/historyworld_explorer_l08_screens';
 import HW_L09 from '../../data/historyworld_explorer_l09_screens';
+import HW_L10 from '../../data/historyworld_explorer_l10_screens';
 import HW_L11 from '../../data/historyworld_explorer_l11_screens';
 import HW_L14 from '../../data/historyworld_explorer_l14_screens';
 import HW_L16 from '../../data/historyworld_explorer_l16_screens';
@@ -329,7 +330,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'history',
     guide:     'Lyra',
-    lessons:   [...HW_L01.lessons, ...HW_L02.lessons, ...HW_L03.lessons, ...HW_L04.lessons, ...HW_L05.lessons, ...HW_L06.lessons, ...HW_L07.lessons, ...HW_L08.lessons, ...HW_L09.lessons, ...HW_L11.lessons, ...HW_L14.lessons, ...HW_L16.lessons, ...HW_L19.lessons, ...HW_L20.lessons],
+    lessons:   [...HW_L01.lessons, ...HW_L02.lessons, ...HW_L03.lessons, ...HW_L04.lessons, ...HW_L05.lessons, ...HW_L06.lessons, ...HW_L07.lessons, ...HW_L08.lessons, ...HW_L09.lessons, ...HW_L10.lessons, ...HW_L11.lessons, ...HW_L14.lessons, ...HW_L16.lessons, ...HW_L19.lessons, ...HW_L20.lessons],
   },
 
   // ELA — L01 wired; remaining lessons wired as screen files are authored
