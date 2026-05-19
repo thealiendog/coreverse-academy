@@ -215,6 +215,7 @@ import MATH_L15 from '../../data/math_explorer_l15_screens';
 import MATH_L16 from '../../data/math_explorer_l16_screens';
 import MATH_L17 from '../../data/math_explorer_l17_screens';
 import MATH_L18 from '../../data/math_explorer_l18_screens';
+import MATH_L19 from '../../data/math_explorer_l19_screens';
 import LW_L01 from '../../data/lifewellness_explorer_l01_screens';
 import LW_L02 from '../../data/lifewellness_explorer_l02_screens';
 import LW_L03 from '../../data/lifewellness_explorer_l03_screens';
@@ -355,7 +356,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'math',
     guide:     'Remi',
-    lessons:   [...MATH_L01.lessons, ...MATH_L02.lessons, ...MATH_L03.lessons, ...MATH_L04.lessons, ...MATH_L05.lessons, ...MATH_L06.lessons, ...MATH_L07.lessons, ...MATH_L08.lessons, ...MATH_L09.lessons, ...MATH_L10.lessons, ...MATH_L11.lessons, ...MATH_L12.lessons, ...MATH_L13.lessons, ...MATH_L14.lessons, ...MATH_L15.lessons, ...MATH_L16.lessons, ...MATH_L17.lessons, ...MATH_L18.lessons],
+    lessons:   [...MATH_L01.lessons, ...MATH_L02.lessons, ...MATH_L03.lessons, ...MATH_L04.lessons, ...MATH_L05.lessons, ...MATH_L06.lessons, ...MATH_L07.lessons, ...MATH_L08.lessons, ...MATH_L09.lessons, ...MATH_L10.lessons, ...MATH_L11.lessons, ...MATH_L12.lessons, ...MATH_L13.lessons, ...MATH_L14.lessons, ...MATH_L15.lessons, ...MATH_L16.lessons, ...MATH_L17.lessons, ...MATH_L18.lessons, ...MATH_L19.lessons],
   },
 };
 
