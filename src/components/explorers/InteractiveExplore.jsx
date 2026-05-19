@@ -332,14 +332,7 @@ export default function InteractiveExplore({
                   src={`${imgBase}${item.image}`}
                   alt={item.label}
                   style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: item.objectPosition || 'center center', display: 'block', opacity: locked ? 0.3 : 1, transition: 'opacity 0.2s' }}
-                  onError={e => {
-                    console.log(`[INTERACTIVE] Missing image: ${item.image} — using placeholder`);
-                    // Replace src with inline SVG placeholder showing the label
-                    e.currentTarget.src = `data:image/svg+xml,${encodeURIComponent(
-                      `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="110"><rect width="200" height="110" fill="#1e293b"/><text x="100" y="62" font-family="sans-serif" font-size="18" font-weight="bold" fill="rgba(255,255,255,0.55)" text-anchor="middle">${item.label}</text></svg>`
-                    )}`;
-                    e.currentTarget.onerror = null; // prevent infinite loop
-                  }}
+                  onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.onerror = null; }}
                 />
                 {/* Label overlay — always visible on unlocked cards */}
                 {!locked && (
