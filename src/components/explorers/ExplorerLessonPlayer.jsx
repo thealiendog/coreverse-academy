@@ -290,6 +290,28 @@ import SP_L18 from '../../data/spanish_explorer_l18_screens';
 import SP_L19 from '../../data/spanish_explorer_l19_screens';
 import SP_L20 from '../../data/spanish_explorer_l20_screens';
 
+// ── Frontier & Philosophy lesson imports ──────────────────────────────────────
+import FRONTIER_L01 from '../../data/frontier_explorer_l01_screens';
+import FRONTIER_L02 from '../../data/frontier_explorer_l02_screens';
+import FRONTIER_L03 from '../../data/frontier_explorer_l03_screens';
+import FRONTIER_L04 from '../../data/frontier_explorer_l04_screens';
+import FRONTIER_L05 from '../../data/frontier_explorer_l05_screens';
+import FRONTIER_L06 from '../../data/frontier_explorer_l06_screens';
+import FRONTIER_L07 from '../../data/frontier_explorer_l07_screens';
+import FRONTIER_L08 from '../../data/frontier_explorer_l08_screens';
+import FRONTIER_L09 from '../../data/frontier_explorer_l09_screens';
+import FRONTIER_L10 from '../../data/frontier_explorer_l10_screens';
+import FRONTIER_L11 from '../../data/frontier_explorer_l11_screens';
+import FRONTIER_L12 from '../../data/frontier_explorer_l12_screens';
+import FRONTIER_L13 from '../../data/frontier_explorer_l13_screens';
+import FRONTIER_L14 from '../../data/frontier_explorer_l14_screens';
+import FRONTIER_L15 from '../../data/frontier_explorer_l15_screens';
+import FRONTIER_L16 from '../../data/frontier_explorer_l16_screens';
+import FRONTIER_L17 from '../../data/frontier_explorer_l17_screens';
+import FRONTIER_L18 from '../../data/frontier_explorer_l18_screens';
+import FRONTIER_L19 from '../../data/frontier_explorer_l19_screens';
+import FRONTIER_L20 from '../../data/frontier_explorer_l20_screens';
+
 const EXPLORER_DATA = {
   'inner-world': {
     ...INNERWORLD_SCREENS,
@@ -387,6 +409,14 @@ const EXPLORER_DATA = {
     subjectId: 'math',
     guide:     'Remi',
     lessons:   [...MATH_L01.lessons, ...MATH_L02.lessons, ...MATH_L03.lessons, ...MATH_L04.lessons, ...MATH_L05.lessons, ...MATH_L06.lessons, ...MATH_L07.lessons, ...MATH_L08.lessons, ...MATH_L09.lessons, ...MATH_L10.lessons, ...MATH_L11.lessons, ...MATH_L12.lessons, ...MATH_L13.lessons, ...MATH_L14.lessons, ...MATH_L15.lessons, ...MATH_L16.lessons, ...MATH_L17.lessons, ...MATH_L18.lessons, ...MATH_L19.lessons, ...MATH_L20.lessons],
+  },
+
+  // Frontier & Philosophy — all 20 lessons
+  'frontier': {
+    ageBand:   'explorers',
+    subjectId: 'frontier',
+    guide:     'Orion',
+    lessons:   [...FRONTIER_L01.lessons, ...FRONTIER_L02.lessons, ...FRONTIER_L03.lessons, ...FRONTIER_L04.lessons, ...FRONTIER_L05.lessons, ...FRONTIER_L06.lessons, ...FRONTIER_L07.lessons, ...FRONTIER_L08.lessons, ...FRONTIER_L09.lessons, ...FRONTIER_L10.lessons, ...FRONTIER_L11.lessons, ...FRONTIER_L12.lessons, ...FRONTIER_L13.lessons, ...FRONTIER_L14.lessons, ...FRONTIER_L15.lessons, ...FRONTIER_L16.lessons, ...FRONTIER_L17.lessons, ...FRONTIER_L18.lessons, ...FRONTIER_L19.lessons, ...FRONTIER_L20.lessons],
   },
 };
 

@@ -57,6 +57,7 @@ import CREATIVEARTS_LITTLESTARS      from '../data/creativearts_littlestars_adap
 import HISTORYWORLD_LITTLESTARS      from '../data/historyworld_littlestars_adapter';
 import SPANISH_LITTLESTARS           from '../data/spanish_littlestars_adapter';
 import FRONTIER_LITTLESTARS          from '../data/frontier_littlestars_adapter';
+import FRONTIER_EXPLORERS            from '../data/frontier_explorers_adapter';
 
 // ── Subject ID aliases ────────────────────────────────────────────────────────
 // constants.js uses short IDs ('sci', 'ss') for some subjects. The new-format
@@ -92,6 +93,8 @@ const NEW_FORMAT_LESSONS = {
   'social_studies': ['social-studies-6-8-01', 'social-studies-6-8-02', 'social-studies-6-8-03', 'social-studies-6-8-04', 'social-studies-6-8-05', 'social-studies-6-8-06', 'social-studies-6-8-07', 'social-studies-6-8-08', 'social-studies-6-8-09', 'social-studies-6-8-10', 'social-studies-6-8-11', 'social-studies-6-8-12', 'social-studies-6-8-13', 'social-studies-6-8-14', 'social-studies-6-8-15', 'social-studies-6-8-16', 'social-studies-6-8-17', 'social-studies-6-8-18', 'social-studies-6-8-19', 'social-studies-6-8-20'],
   // Math — L01 wired; remaining lessons wired as screen files are authored
   'math':            ['math-6-8-01', 'math-6-8-02', 'math-6-8-03', 'math-6-8-04', 'math-6-8-05', 'math-6-8-06', 'math-6-8-07', 'math-6-8-08', 'math-6-8-09', 'math-6-8-10', 'math-6-8-11', 'math-6-8-12', 'math-6-8-13', 'math-6-8-14', 'math-6-8-15', 'math-6-8-16', 'math-6-8-17', 'math-6-8-18', 'math-6-8-19', 'math-6-8-20'],
+  // Frontier & Philosophy — all 20 lessons
+  'frontier':        ['fp-6-8-01', 'fp-6-8-02', 'fp-6-8-03', 'fp-6-8-04', 'fp-6-8-05', 'fp-6-8-06', 'fp-6-8-07', 'fp-6-8-08', 'fp-6-8-09', 'fp-6-8-10', 'fp-6-8-11', 'fp-6-8-12', 'fp-6-8-13', 'fp-6-8-14', 'fp-6-8-15', 'fp-6-8-16', 'fp-6-8-17', 'fp-6-8-18', 'fp-6-8-19', 'fp-6-8-20'],
 };
 
 // Returns the new-format lesson ID for a given subject/level/index, or null if
@@ -135,6 +138,9 @@ function getExplorerLessonId(subjectId, level, index) {
   }
   if (subjectId === 'math' && level === 2) {
     return `math-6-8-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'frontier' && level === 2) {
+    return `fp-6-8-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
@@ -186,6 +192,7 @@ export default function SubjectView() {
     : subjectId === 'science'                    ? SCI_EXPLORERS
     : subjectId === 'social_studies'             ? getLevel2Lessons(subjectId)
     : subjectId === 'math'                       ? MATH_EXPLORERS
+    : subjectId === 'frontier'                   ? FRONTIER_EXPLORERS
     : getLevel2Lessons(subjectId);
   // Subject-specific Upper Explorers curricula override level 3
   const l3Lessons = subjectId === 'ela'          ? ELA_UPPEREXPLORERS
