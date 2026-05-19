@@ -274,6 +274,7 @@ import SP_L02 from '../../data/spanish_explorer_l02_screens';
 import SP_L03 from '../../data/spanish_explorer_l03_screens';
 import SP_L04 from '../../data/spanish_explorer_l04_screens';
 import SP_L05 from '../../data/spanish_explorer_l05_screens';
+import SP_L06 from '../../data/spanish_explorer_l06_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -327,7 +328,7 @@ const EXPLORER_DATA = {
     ageBand:   'explorers',
     subjectId: 'languages',
     guide:     'Luna',
-    lessons:   [...SP_L01.lessons, ...SP_L02.lessons, ...SP_L03.lessons, ...SP_L04.lessons, ...SP_L05.lessons],
+    lessons:   [...SP_L01.lessons, ...SP_L02.lessons, ...SP_L03.lessons, ...SP_L04.lessons, ...SP_L05.lessons, ...SP_L06.lessons],
   },
 
   // History & World — pilot: L01, L02, L05; remaining lessons wired as screen files are authored
