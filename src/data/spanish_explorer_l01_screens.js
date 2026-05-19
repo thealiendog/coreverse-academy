@@ -1,185 +1,230 @@
-const SpanishExplorerL01Screens = {
+// ─────────────────────────────────────────────────────────────────────────────
+// SPANISH (LANGUAGES)  |  L01 — Hola y Adiós (Greetings)
+// Age band : explorers (6–8)   Guide: luna
+// REWRITTEN for age-appropriate Explorer band per SPANISH_CALIBRATION_SPEC
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SP_L01 = {
+  ageBand:   `explorers`,
+  subjectId: `languages`,
+  guideId:   `luna`,
+
   lessons: [
     {
-      id:        'sp-6-8-01',
-      subjectId: 'languages',
-      title:     'Hola y Adiós — Greetings',
-      guideId:   'luna',
+      id:        `sp-6-8-01`,
+      title:     `Hola y Adiós — Greetings`,
+      duration:  12,
       xpReward:  50,
+      badge:     `languages-l01`,
+      badgeName: `First Greeting`,
+
       screens: [
+
+        // ─── WELCOME ──────────────────────────────────────────────────────
         {
-          id:        'sp01-welcome',
-          type:      'welcome',
-          guideText: `Spanish is spoken by more than 500 million people — and every one of those conversations starts the same way: with a greeting. I'm Luna, {name}, and today we begin right there. Let's learn how Spanish speakers say hello, goodbye, and everything in between.`,
+          id: `sp01-welcome`,
+          type: `welcome`,
+          guideText: `¡Hola, {name}! I'm Luna. Today we learn to say HELLO in Spanish. Spanish is spoken by millions of people. By the end of today, you can say hello like they do! ¿Listos? Let's go!`,
+          headline: `Hola y Adiós`,
+          subtitle: `Hello and goodbye in Spanish`,
+          visual: `/explorer-assets/languages/sp01-welcome.png`,
         },
+
+        // ─── MAGAZINE 1 — HELLO ───────────────────────────────────────────
         {
-          id:           'sp01-beat-1',
-          type:         'story-beat',
-          headline:     `Every day starts with a hello`,
-          paragraph:    `The day begins with light through the window and a voice from the kitchen. Abuela smiles and says, "Hello (hola — OH-lah), mi amor." The h in hola is always silent — the word opens up like a warm breath. Hola starts every conversation in the Spanish-speaking world: morning, afternoon, or night.`,
-          image:        `/explorer-assets/languages/sp01-beat1.png`,
-          imageCaption: `A warm kitchen morning with a family greeting each other`,
-          keyVocab: {
-            word:        `hola`,
-            definition:  `Hello in Spanish — the most common greeting, used any time of day. The h is always silent.`,
-            audioPrompt: `Hola — OH-lah — hello, {name}. The h is always silent in Spanish. The word just opens up: oh-lah. Hola, {name}. That's how every Spanish conversation begins — warm, simple, welcoming. Say it right now: hola. You've already started.`,
-          },
+          id: `sp01-mag-1`,
+          type: `magazine`,
+          section: 1,
+          totalSections: 3,
+          headline: `Hola — Hello!`,
+          paragraphs: [
+            `In Spanish, we say HOLA — OH-lah. That means hello! It is the first word everyone learns.`,
+            `Try it now, {name}. Say it: HOLA! In Spanish, the H is quiet. So we say "OH-lah" — not "HO-lah." Easy!`,
+          ],
+          image: `/explorer-assets/languages/sp01-mag-1.png`,
+          imageCaption: `Two kids waving and saying "Hola!" to each other.`,
+          vocab: [
+            {
+              word: `hola`,
+              definition: `Hello — OH-lah.`,
+              audioPrompt: `Hola, {name}! Say it like OH-lah. The H is quiet, like a whisper. Now you say it with me: hola!`,
+            },
+            {
+              word: `¿cómo estás?`,
+              definition: `How are you? — KOH-moh es-TAHS.`,
+              audioPrompt: `¿Cómo estás?, {name}. Say it like KOH-moh es-TAHS. It means "how are you?" Spanish kids ask this all day. Try it: ¿cómo estás?`,
+            },
+            {
+              word: `bien`,
+              definition: `Good or fine — bee-EN.`,
+              audioPrompt: `Bien, {name}. Say it like bee-EN. It means good or fine. When someone asks ¿cómo estás?, you say bien! That means "I'm good."`,
+            },
+          ],
         },
+
+        // ─── MAGAZINE 2 — MORNING / AFTERNOON / NIGHT ─────────────────────
         {
-          id:           'sp01-beat-2',
-          type:         'story-beat',
-          headline:     `Good morning has its own special words`,
-          paragraph:    `At breakfast, the family greets each other with good morning (buenos días — BWAY-nos DEE-ahs). Buenos means good, días means days — good days, plural. In Mexico you say buenos días. In Argentina, it's often buen día — just one. Morning has its own greeting in Spanish, and it carries warmth already baked in.`,
-          image:        `/explorer-assets/languages/sp01-beat2.png`,
-          imageCaption: `A family at breakfast, sunlight on the table`,
-          keyVocab: {
-            word:        `buenos días`,
-            definition:  `Good morning in Spanish — used from sunrise until noon. Literally "good days."`,
-            audioPrompt: `Buenos días — BWAY-nos DEE-ahs — good morning, {name}. Buenos means good. Días means days. Not just a good day — good days, plural. Like wishing someone a whole stack of good mornings at once. Use it until noon. BWAY-nos DEE-ahs.`,
-          },
+          id: `sp01-mag-2`,
+          type: `magazine`,
+          section: 2,
+          totalSections: 3,
+          headline: `Morning, Afternoon, Night`,
+          paragraphs: [
+            `In Spanish, we say good morning, good afternoon, and good night. Three different greetings for three times of day!`,
+            `BUENOS DÍAS — good morning. BUENAS TARDES — good afternoon. BUENAS NOCHES — good night. Use the right one and people will smile!`,
+          ],
+          image: `/explorer-assets/languages/sp01-mag-2.png`,
+          imageCaption: `Sun rising, sun in the sky, and stars at night — three times of day.`,
+          vocab: [
+            {
+              word: `buenos días`,
+              definition: `Good morning — BWAY-nos DEE-ahs.`,
+              audioPrompt: `Buenos días, {name}! Say it like BWAY-nos DEE-ahs. It means good morning! Use it when you wake up. Try it: buenos días!`,
+            },
+            {
+              word: `buenas tardes`,
+              definition: `Good afternoon — BWAY-nas TAR-des.`,
+              audioPrompt: `Buenas tardes, {name}. Say it like BWAY-nas TAR-des. It means good afternoon! Use it after lunch. Try it: buenas tardes!`,
+            },
+            {
+              word: `buenas noches`,
+              definition: `Good night — BWAY-nas NO-ches.`,
+              audioPrompt: `Buenas noches, {name}. Say it like BWAY-nas NO-ches. It means good night! Use it before bed. Try it: buenas noches!`,
+            },
+          ],
         },
+
+        // ─── MAGAZINE 3 — GOODBYE ─────────────────────────────────────────
         {
-          id:           'sp01-beat-3',
-          type:         'story-beat',
-          headline:     `Hello again, all day long`,
-          paragraph:    `Outside, the child passes a neighbor who asks: how are you (¿cómo estás? — KOH-moh es-TAHS)? In Spanish-speaking communities, you greet everyone you pass — neighbors, shopkeepers, strangers. It is not optional. It is culture. The answer: bien, gracias — fine, thank you. Or muy bien — very well.`,
-          image:        `/explorer-assets/languages/sp01-beat3.png`,
-          imageCaption: `A child greeting a neighbor on a sunny street`,
-          keyVocab: {
-            word:        `¿cómo estás?`,
-            definition:  `How are you? in Spanish — the question asked all day, to everyone you pass.`,
-            audioPrompt: `¿Cómo estás? — KOH-moh es-TAHS — how are you, {name}? Spanish speakers ask this all day. Everyone they pass. Answer with bien, gracias — fine, thank you. Or muy bien — very well. KOH-moh es-TAHS. ¿Cómo estás?`,
-          },
+          id: `sp01-mag-3`,
+          type: `magazine`,
+          section: 3,
+          totalSections: 3,
+          headline: `Adiós — Goodbye!`,
+          paragraphs: [
+            `When you leave, you say ADIÓS — ah-dee-OHS. That means goodbye!`,
+            `You can also say HASTA LUEGO — see you later. Or just CHAO — bye! Pick your favorite, {name}. They all work!`,
+          ],
+          image: `/explorer-assets/languages/sp01-mag-3.png`,
+          imageCaption: `A child waving goodbye to a friend.`,
+          vocab: [
+            {
+              word: `adiós`,
+              definition: `Goodbye — ah-dee-OHS.`,
+              audioPrompt: `Adiós, {name}. Say it like ah-dee-OHS. It means goodbye! Wave your hand when you say it. Try it: adiós!`,
+            },
+            {
+              word: `hasta luego`,
+              definition: `See you later — AH-stah LWEH-goh.`,
+              audioPrompt: `Hasta luego, {name}. Say it like AH-stah LWEH-goh. It means see you later! It's a happy goodbye. Try it: hasta luego!`,
+            },
+            {
+              word: `chao`,
+              definition: `Bye — CHOW.`,
+              audioPrompt: `Chao, {name}. Say it like CHOW. It means bye! It's short and easy. Kids and friends use it. Try it: chao!`,
+            },
+          ],
         },
+
+        // ─── INTERACTIVE GAME ─────────────────────────────────────────────
         {
-          id:           'sp01-beat-4',
-          type:         'story-beat',
-          headline:     `Telling someone who you are`,
-          paragraph:    `At the park, two kids meet. One says, "My name is (me llamo — meh YAH-moh) Sofia." The other asks, "¿Cómo te llamas?" — what's your name? They shake hands and say mucho gusto — nice to meet you. Three phrases. A whole friendship started.`,
-          image:        `/explorer-assets/languages/sp01-beat4.png`,
-          imageCaption: `Two children meeting and shaking hands at a park`,
-          keyVocab: {
-            word:        `me llamo`,
-            definition:  `My name is in Spanish — literally "I call myself."`,
-            audioPrompt: `Me llamo — meh YAH-moh — my name is, {name}. Literally: I call myself. Me llamo {name}. Say it right now — that's how you introduce yourself in Spanish. Me llamo... go ahead.`,
-          },
-        },
-        {
-          id:           'sp01-beat-5',
-          type:         'story-beat',
-          headline:     `Saying goodnight to everyone`,
-          paragraph:    `When the sun goes down, the family says good night (buenas noches — BWAY-nas NOH-ches) to each other. Some say it when arriving somewhere in the evening. Others say it just before sleep. It's the same phrase — buenas noches — but the warmth shifts with the hour. Spanish greetings know what time it is.`,
-          image:        `/explorer-assets/languages/sp01-beat5.png`,
-          imageCaption: `A family saying goodnight under a starlit sky`,
-          keyVocab: {
-            word:        `buenas noches`,
-            definition:  `Good night in Spanish — used both as an evening greeting and a farewell before sleep.`,
-            audioPrompt: `Buenas noches — BWAY-nas NOH-ches — good night, {name}. Noches means nights. Spanish uses this when you arrive somewhere in the evening and when you say goodnight. One phrase, two moments. BWAY-nas NOH-ches — say it softly.`,
-          },
-        },
-        {
-          id:           'sp01-beat-6',
-          type:         'story-beat',
-          headline:     `Spanish goodbyes have their own beauty`,
-          paragraph:    `The day ends. In Spanish, there are many ways to say goodbye. See you later (hasta luego — AH-stah LWEH-goh) is one of the warmest. Adiós is the classic. Nos vemos means we'll see each other. In Colombia and Argentina, you might even hear chao — borrowed from Italian. Language travels the world, collecting warmth.`,
-          image:        `/explorer-assets/languages/sp01-beat6.png`,
-          imageCaption: `Friends waving goodbye at sunset`,
-          keyVocab: {
-            word:        `hasta luego`,
-            definition:  `See you later in Spanish — literally "until later," warm and full of the promise of return.`,
-            audioPrompt: `Hasta luego — AH-stah LWEH-goh — see you later, {name}. Hasta means until. Luego means later. Until later. AH-stah LWEH-goh. It's warmer than goodbye — it promises you'll meet again.`,
-          },
-        },
-        {
-          id:            'sp01-game',
-          type:          'interactive',
-          guideText:     `Match each Spanish greeting to what it means, {name}!`,
-          columnHeaders: ['Spanish', 'Meaning'],
+          id: `sp01-game`,
+          type: `interactive`,
+          guideText: `Match the Spanish word to what it means, {name}!`,
+          columnHeaders: [`Spanish`, `English`],
           items: [
-            { id: 'hola-i',   label: 'hola',        correctMatch: 'hello' },
-            { id: 'adios-i',  label: 'adiós',       correctMatch: 'goodbye' },
-            { id: 'bdiaz-i',  label: 'buenos días', correctMatch: 'good-morning' },
-            { id: 'mgusto-i', label: 'mucho gusto', correctMatch: 'nice-to-meet' },
+            { id: `sp01-i1`, label: `hola`,         correctMatch: `hello` },
+            { id: `sp01-i2`, label: `adiós`,        correctMatch: `goodbye` },
+            { id: `sp01-i3`, label: `buenos días`,  correctMatch: `good morning` },
+            { id: `sp01-i4`, label: `buenas noches`,correctMatch: `good night` },
           ],
           buckets: [
-            { id: 'hello',        label: 'hello',            color: '#60A5FA' },
-            { id: 'goodbye',      label: 'goodbye',          color: '#F87171' },
-            { id: 'good-morning', label: 'good morning',     color: '#FBBF24' },
-            { id: 'nice-to-meet', label: 'nice to meet you', color: '#34D399' },
+            { id: `hello`,        label: `hello`,        color: `#60A5FA` },
+            { id: `goodbye`,      label: `goodbye`,      color: `#F87171` },
+            { id: `good morning`, label: `good morning`, color: `#FBBF24` },
+            { id: `good night`,   label: `good night`,   color: `#34D399` },
           ],
         },
+
+        // ─── QUIZ ─────────────────────────────────────────────────────────
         {
-          id:        'sp01-quiz',
-          type:      'quiz',
-          guideText: `¿Listos, {name}? Let's see what you remember!`,
+          id: `sp01-quiz`,
+          type: `quiz`,
+          guideText: `¡Vamos, {name}! Let's see what you remember!`,
           questions: [
             {
-              id:           'q1',
-              format:       'multiple-choice',
-              question:     `How do you say "good morning" in Spanish?`,
-              options:      ['buenas noches', 'buenas tardes', 'buenos días', 'hasta luego'],
+              id: `sp01-q1`,
+              format: `multiple-choice`,
+              question: `How do you say "hello" in Spanish?`,
+              options: [`adiós`, `hola`, `bien`, `chao`],
+              correctIndex: 1,
+              explanation: `Hola means hello! Say it like OH-lah — with a quiet H.`,
+            },
+            {
+              id: `sp01-q2`,
+              format: `multiple-choice`,
+              question: `What does "buenos días" mean?`,
+              options: [`good night`, `goodbye`, `good morning`, `see you later`],
               correctIndex: 2,
-              explanation:  `Buenos días (BWAY-nos DEE-ahs) means good morning — used from sunrise until noon.`,
+              explanation: `Buenos días means good morning! Use it when you wake up.`,
             },
             {
-              id:           'q2',
-              format:       'multiple-choice',
-              question:     `What does "¿cómo estás?" mean?`,
-              options:      ['What is your name?', 'How are you?', 'Nice to meet you', 'See you later'],
-              correctIndex: 1,
-              explanation:  `¿Cómo estás? (KOH-moh es-TAHS) is the essential question for starting a conversation: how are you?`,
-            },
-            {
-              id:           'q3',
-              format:       'multiple-choice',
-              question:     `"Me llamo" literally means which of the following?`,
-              options:      ['My name is', 'I call myself', 'Nice to meet you', 'What is your name?'],
-              correctIndex: 1,
-              explanation:  `Me llamo literally translates as "I call myself" — a poetic way Spanish speakers introduce their name.`,
-            },
-            {
-              id:            'q4',
-              format:        'true-false',
-              question:      `In Spanish, the letter h is always silent.`,
+              id: `sp01-q3`,
+              format: `true-false`,
+              question: `The "H" in "hola" is silent.`,
               correctAnswer: true,
-              explanation:   `Yes — the h in Spanish is always silent. Hola sounds like "oh-lah," not "hoh-lah."`,
+              explanation: `True! In Spanish, the H is always quiet. Hola sounds like OH-lah.`,
             },
             {
-              id:           'q5',
-              format:       'multiple-choice',
-              question:     `Complete the farewell: "Hasta ___" (see you later).`,
-              options:      ['pronto', 'luego', 'vemos', 'noches'],
-              correctIndex: 1,
-              explanation:  `Hasta luego (AH-stah LWEH-goh) means see you later — hasta means until, luego means later.`,
-            },
-            {
-              id:           'q6',
-              format:       'multiple-choice',
-              question:     `Which greeting is used from noon until sunset?`,
-              options:      ['buenos días', 'buenas noches', 'buenas tardes', 'mucho gusto'],
+              id: `sp01-q4`,
+              format: `multiple-choice`,
+              question: `Which word means "goodbye"?`,
+              options: [`hola`, `bien`, `adiós`, `buenas noches`],
               correctIndex: 2,
-              explanation:  `Buenas tardes (BWAY-nas TAR-des) means good afternoon — the greeting for noon until sunset.`,
+              explanation: `Adiós means goodbye! Say it like ah-dee-OHS and wave your hand.`,
+            },
+            {
+              id: `sp01-q5`,
+              format: `multiple-choice`,
+              question: `Someone asks "¿cómo estás?" What do you say back?`,
+              options: [`adiós`, `bien`, `hola`, `chao`],
+              correctIndex: 1,
+              explanation: `Say bien! That means "I'm good." Easy answer to a friendly question.`,
+            },
+            {
+              id: `sp01-q6`,
+              format: `fill-blank`,
+              question: `Before bed, say "buenas ___" for good night.`,
+              options: [`noches`, `días`, `tardes`, `hola`],
+              correctIndex: 0,
+              explanation: `Buenas noches means good night! Noches means nights.`,
             },
           ],
         },
+
+        // ─── REAL WORLD ───────────────────────────────────────────────────
         {
-          id:              'sp01-realworld',
-          type:            'real-world',
-          guideText:       `Bring Spanish greetings into your whole day, {name}!`,
-          familyAdventure: `For one whole day, use Spanish greetings with your family: buenos días in the morning, buenas tardes after lunch, and buenas noches at bedtime. See if you can get everyone to say it back. At dinner, take turns asking ¿cómo estás? and answering bien, gracias or muy bien.`,
-          creativePrompt:  `Draw a clock face and divide it into three sections: morning, afternoon, and night. In each section, write the Spanish greeting that belongs there, and illustrate what that time of day looks like in your world. At the center of the clock, write: ¡Hola! Me llamo [your name].`,
+          id: `sp01-realworld`,
+          type: `real-world`,
+          guideText: `Try Spanish greetings TODAY, {name}! You don't have to wait. Just say "hola" to someone you love.`,
+          familyAdventure: `For ONE day, try Spanish greetings at home! Say "buenos días" in the morning. Say "buenas noches" before bed. See if your family says it back!`,
+          creativePrompt: `Draw a picture of YOU saying "¡Hola!" to a friend or pet. Write the word HOLA in big letters. Show off your new Spanish word!`,
         },
+
+        // ─── CELEBRATION ──────────────────────────────────────────────────
         {
-          id:        'sp01-celebration',
-          type:      'celebration',
-          message:   `¡Excelente, {name}! You've learned to greet, introduce yourself, and say farewell in Spanish — the full shape of a first conversation. Luna is so proud of you. Every Spanish speaker you meet from now on, you'll know exactly how to begin. ¡Hasta la próxima!`,
-          badge:     'languages-l01',
-          badgeName: 'First Greeting',
-          xpEarned:  50,
+          id: `sp01-celebration`,
+          type: `celebration`,
+          message: `¡Excelente, {name}! You learned to say HELLO, GOODBYE, and times of day in Spanish! Hola, adiós, buenos días, buenas tardes, buenas noches. Nine new Spanish words — that's amazing! ¡Hasta la próxima!`,
+          badge: `languages-l01`,
+          badgeName: `First Greeting`,
+          xpEarned: 50,
         },
+
       ],
     },
   ],
 };
 
-export default SpanishExplorerL01Screens;
+export default SP_L01;
+

@@ -275,6 +275,20 @@ import SP_L03 from '../../data/spanish_explorer_l03_screens';
 import SP_L04 from '../../data/spanish_explorer_l04_screens';
 import SP_L05 from '../../data/spanish_explorer_l05_screens';
 import SP_L06 from '../../data/spanish_explorer_l06_screens';
+import SP_L07 from '../../data/spanish_explorer_l07_screens';
+import SP_L08 from '../../data/spanish_explorer_l08_screens';
+import SP_L09 from '../../data/spanish_explorer_l09_screens';
+import SP_L10 from '../../data/spanish_explorer_l10_screens';
+import SP_L11 from '../../data/spanish_explorer_l11_screens';
+import SP_L12 from '../../data/spanish_explorer_l12_screens';
+import SP_L13 from '../../data/spanish_explorer_l13_screens';
+import SP_L14 from '../../data/spanish_explorer_l14_screens';
+import SP_L15 from '../../data/spanish_explorer_l15_screens';
+import SP_L16 from '../../data/spanish_explorer_l16_screens';
+import SP_L17 from '../../data/spanish_explorer_l17_screens';
+import SP_L18 from '../../data/spanish_explorer_l18_screens';
+import SP_L19 from '../../data/spanish_explorer_l19_screens';
+import SP_L20 from '../../data/spanish_explorer_l20_screens';
 
 const EXPLORER_DATA = {
   'inner-world': {
@@ -323,12 +337,16 @@ const EXPLORER_DATA = {
   },
 
   // Subject 8 — Spanish (guide: Luna, eleven_multilingual_v2)
-  // Add ...SP_L0N.lessons here as each screen file is authored
   'languages': {
     ageBand:   'explorers',
     subjectId: 'languages',
     guide:     'Luna',
-    lessons:   [...SP_L01.lessons, ...SP_L02.lessons, ...SP_L03.lessons, ...SP_L04.lessons, ...SP_L05.lessons, ...SP_L06.lessons],
+    lessons:   [
+      ...SP_L01.lessons, ...SP_L02.lessons, ...SP_L03.lessons, ...SP_L04.lessons, ...SP_L05.lessons,
+      ...SP_L06.lessons, ...SP_L07.lessons, ...SP_L08.lessons, ...SP_L09.lessons, ...SP_L10.lessons,
+      ...SP_L11.lessons, ...SP_L12.lessons, ...SP_L13.lessons, ...SP_L14.lessons, ...SP_L15.lessons,
+      ...SP_L16.lessons, ...SP_L17.lessons, ...SP_L18.lessons, ...SP_L19.lessons, ...SP_L20.lessons,
+    ],
   },
 
   // History & World — pilot: L01, L02, L05; remaining lessons wired as screen files are authored
