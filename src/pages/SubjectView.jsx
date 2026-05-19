@@ -58,6 +58,17 @@ import HISTORYWORLD_LITTLESTARS      from '../data/historyworld_littlestars_adap
 import SPANISH_LITTLESTARS           from '../data/spanish_littlestars_adapter';
 import FRONTIER_LITTLESTARS          from '../data/frontier_littlestars_adapter';
 
+// ── Subject ID aliases ────────────────────────────────────────────────────────
+// constants.js uses short IDs ('sci', 'ss') for some subjects. The new-format
+// infrastructure (NEW_FORMAT_LESSONS, EXPLORER_DATA, screen file prefixes) uses
+// the longer canonical keys ('science', 'social_studies'). This map bridges the
+// gap so URL param subjectId can differ from the canonical new-format key.
+const SUBJECT_ID_ALIASES = {
+  'sci': 'science',
+  'ss':  'social_studies',
+};
+const resolveSubjectId = (rawId) => SUBJECT_ID_ALIASES[rawId] || rawId;
+
 // ── New-format lesson routing ─────────────────────────────────────────────────
 // Add a lesson ID here when it's been converted to the screen-based format.
 // Its card will then route to /explorer/:subjectId/:lessonId instead of /lesson/*.
@@ -213,9 +224,10 @@ export default function SubjectView() {
   function handleLessonClick(i) {
     if (!hasContent) return;
     if (!child) { navigate('/child/select'); return; }
-    const lessonId = getExplorerLessonId(subjectId, level, i);
-    if (lessonId && NEW_FORMAT_LESSONS[subjectId]?.includes(lessonId)) {
-      navigate(`/explorer/${subjectId}/${lessonId}`);
+    const canonicalId = resolveSubjectId(subjectId);
+    const lessonId = getExplorerLessonId(canonicalId, level, i);
+    if (lessonId && NEW_FORMAT_LESSONS[canonicalId]?.includes(lessonId)) {
+      navigate(`/explorer/${canonicalId}/${lessonId}`);
       return;
     }
     navigate(`/child/lesson/${subjectId}/${i}?level=${level}`);
