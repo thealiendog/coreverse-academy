@@ -71,8 +71,8 @@ const NEW_FORMAT_LESSONS = {
   'creative-arts': ['ca-6-8-01', 'ca-6-8-02', 'ca-6-8-03', 'ca-6-8-04', 'ca-6-8-05', 'ca-6-8-06', 'ca-6-8-07', 'ca-6-8-08', 'ca-6-8-09', 'ca-6-8-10', 'ca-6-8-11', 'ca-6-8-12', 'ca-6-8-13', 'ca-6-8-14', 'ca-6-8-15', 'ca-6-8-16', 'ca-6-8-17', 'ca-6-8-18', 'ca-6-8-19', 'ca-6-8-20'],
   // Spanish lessons added here as screen files are authored
   'languages':     ['sp-6-8-01', 'sp-6-8-02', 'sp-6-8-03', 'sp-6-8-04', 'sp-6-8-05'],
-  // History & World — L01, L02, L03, L04, L05, L06, L07, L08, L11, L14, L16, L19, L20 (CAPSTONE) — 13/20 wired
-  'history':       ['hw-6-8-01', 'hw-6-8-02', 'hw-6-8-03', 'hw-6-8-04', 'hw-6-8-05', 'hw-6-8-06', 'hw-6-8-07', 'hw-6-8-08', 'hw-6-8-11', 'hw-6-8-14', 'hw-6-8-16', 'hw-6-8-19', 'hw-6-8-20'],
+  // History & World — L01–L09, L11, L14, L16, L19, L20 (CAPSTONE) — 14/20 wired
+  'history':       ['hw-6-8-01', 'hw-6-8-02', 'hw-6-8-03', 'hw-6-8-04', 'hw-6-8-05', 'hw-6-8-06', 'hw-6-8-07', 'hw-6-8-08', 'hw-6-8-09', 'hw-6-8-11', 'hw-6-8-14', 'hw-6-8-16', 'hw-6-8-19', 'hw-6-8-20'],
   // ELA — L01 wired; remaining lessons wired as screen files are authored
   'ela':           ['ela-6-8-01', 'ela-6-8-02', 'ela-6-8-03', 'ela-6-8-04', 'ela-6-8-05', 'ela-6-8-06', 'ela-6-8-07', 'ela-6-8-08', 'ela-6-8-09', 'ela-6-8-10', 'ela-6-8-11', 'ela-6-8-12', 'ela-6-8-13', 'ela-6-8-14', 'ela-6-8-15', 'ela-6-8-16', 'ela-6-8-17', 'ela-6-8-18', 'ela-6-8-19', 'ela-6-8-20'],
   // Science — L01 wired; remaining lessons wired as screen files are authored
