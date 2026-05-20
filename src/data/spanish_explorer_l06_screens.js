@@ -1,230 +1,172 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// SPANISH (LANGUAGES)  |  L06 — La Comida (Food)
-// Age band : explorers (6–8)   Guide: luna
-// REWRITTEN for age-appropriate Explorer band per SPANISH_CALIBRATION_SPEC
-// ─────────────────────────────────────────────────────────────────────────────
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 6
+// "¡Los Animales! Animals in Spanish"
+// ============================================================
 
-const SP_L06 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-
+const spanish_explorer_l06_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
   lessons: [
     {
-      id:        `sp-6-8-06`,
-      title:     `La Comida — Food`,
+      id:        'sp-6-8-06',
+      title:     `¡Los Animales! Animals in Spanish`,
       duration:  12,
       xpReward:  50,
-      badge:     `languages-l06`,
-      badgeName: `Food Friend`,
-
+      badge:     'animal-amigo',
+      badgeName: `Animal Amigo`,
       screens: [
-
-        // ─── WELCOME ──────────────────────────────────────────────────────
         {
-          id: `sp06-welcome`,
-          type: `welcome`,
-          guideText: `¡Hola, {name}! Today we learn FOOD words in Spanish. Bread, milk, apple, water — we'll learn them all! Let's go!`,
-          headline: `La Comida`,
-          subtitle: `Food in Spanish`,
-          visual: `/explorer-assets/languages/sp06-welcome.png`,
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: ANIMALS in Spanish! ¡Los animales! Cats — gatos! Dogs — perros! Birds — pájaros! Make the animal sounds with Luna! ¡Vamos!`,
         },
-
-        // ─── MAGAZINE 1 — BREAKFAST FOODS ─────────────────────────────────
         {
-          id: `sp06-mag-1`,
-          type: `magazine`,
-          section: 1,
-          totalSections: 3,
-          headline: `Breakfast Foods`,
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Gato y Perro! (Say: GAH-toh and PEH-rro)`,
           paragraphs: [
-            `Time to eat, {name}! Let's start with breakfast words. In Spanish, bread is PAN — PAHN. Easy, right?`,
-            `Milk is LECHE — LEH-cheh. And an egg is HUEVO — WAY-voh. Pan, leche, huevo. Try saying them!`,
+            `GATO means CAT! Make a cat sound: "Meow!" PERRO means DOG! Make a dog sound: "¡Guau guau!"`,
+            `In Spanish, dogs say "¡Guau guau!" not "Woof woof!" Try it: ¡GATO! ¡PERRO! Meow! ¡Guau guau!`,
           ],
-          image: `/explorer-assets/languages/sp06-mag-1.png`,
-          imageCaption: `A breakfast plate: bread, milk in a glass, and an egg.`,
+          image:        '/explorer-assets/languages/l06-s1-gato-perro.png',
+          imageCaption: `¡Gato! Cat. ¡Perro! Dog.`,
           vocab: [
-            {
-              word: `pan`,
-              definition: `Bread — PAHN.`,
-              audioPrompt: `Pan, {name}. Say it like PAHN. It means bread! Just one syllable. Try it: pan!`,
-            },
-            {
-              word: `leche`,
-              definition: `Milk — LEH-cheh.`,
-              audioPrompt: `Leche, {name}. Say it like LEH-cheh. It means milk! Two soft sounds. Try it: leche!`,
-            },
-            {
-              word: `huevo`,
-              definition: `Egg — WAY-voh.`,
-              audioPrompt: `Huevo, {name}. Say it like WAY-voh. It means egg! The H is quiet, remember? Try it: huevo!`,
-            },
+            { word: 'gato',  definition: `Cat in Spanish. Say it like: GAH-toh.`,  audioPrompt: `Gato — say it like GAH-toh. Gato means cat. Meow!` },
+            { word: 'perro', definition: `Dog in Spanish. Say it like: PEH-rro.`,  audioPrompt: `Perro — say it like PEH-rro. Perro means dog. Guau guau!` },
           ],
         },
-
-        // ─── MAGAZINE 2 — FRUITS ──────────────────────────────────────────
         {
-          id: `sp06-mag-2`,
-          type: `magazine`,
-          section: 2,
-          totalSections: 3,
-          headline: `Fruits`,
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Pájaro y Pez! (Say: PAH-hah-roh and PEZ)`,
           paragraphs: [
-            `Fruits in Spanish are fun, {name}! An apple is MANZANA — mahn-SAH-nah. A banana is PLÁTANO — PLAH-tah-noh.`,
-            `An orange is NARANJA — nah-RAHN-hah. Manzana, plátano, naranja. Three yummy words!`,
+            `PÁJARO means BIRD! Flap your arms like wings! PEZ means FISH! Pucker your lips like a fish.`,
+            `Say them: ¡PÁJARO! ¡PEZ! Tweet tweet, swim swim!`,
           ],
-          image: `/explorer-assets/languages/sp06-mag-2.png`,
-          imageCaption: `Three fruits: a red apple, a yellow banana, and an orange.`,
+          image:        '/explorer-assets/languages/l06-s2-pajaro-pez.png',
+          imageCaption: `¡Pájaro! Bird. ¡Pez! Fish.`,
           vocab: [
-            {
-              word: `manzana`,
-              definition: `Apple — mahn-SAH-nah.`,
-              audioPrompt: `Manzana, {name}. Say it like mahn-SAH-nah. It means apple! Three little parts. Try it: manzana!`,
-            },
-            {
-              word: `plátano`,
-              definition: `Banana — PLAH-tah-noh.`,
-              audioPrompt: `Plátano, {name}. Say it like PLAH-tah-noh. It means banana! The first part is loudest. Try it: plátano!`,
-            },
-            {
-              word: `naranja`,
-              definition: `Orange — nah-RAHN-hah.`,
-              audioPrompt: `Naranja, {name}. Say it like nah-RAHN-hah. It means orange — the fruit AND the color! Try it: naranja!`,
-            },
+            { word: 'pájaro', definition: `Bird in Spanish. Say it like: PAH-hah-roh.`, audioPrompt: `Pájaro — say it like PAH-hah-roh. Pájaro means bird. Flap your wings!` },
+            { word: 'pez',    definition: `Fish in Spanish. Say it like: PEZ.`,         audioPrompt: `Pez — say it like PEZ. Pez means fish!` },
           ],
         },
-
-        // ─── MAGAZINE 3 — DRINKS + ASKING FOR FOOD ────────────────────────
         {
-          id: `sp06-mag-3`,
-          type: `magazine`,
-          section: 3,
-          totalSections: 3,
-          headline: `Drinks and Asking`,
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Vaca y Caballo! (Say: VAH-kah and kah-BAH-yo)`,
           paragraphs: [
-            `Now drinks, {name}! Water is AGUA — AH-gwah. Juice is JUGO — HOO-goh.`,
-            `Here's a magic phrase: YO QUIERO — YOH kee-EH-roh — I want. So "yo quiero agua" means "I want water!" Try it: yo quiero agua!`,
+            `VACA means COW! Make a moo sound. CABALLO means HORSE! Make a neigh sound.`,
+            `Spanish cows say "¡MUU!" Spanish horses say "¡IIIIIII!" Try them: ¡VACA! ¡CABALLO!`,
           ],
-          image: `/explorer-assets/languages/sp06-mag-3.png`,
-          imageCaption: `A glass of water and a glass of orange juice on a table.`,
+          image:        '/explorer-assets/languages/l06-s3-vaca-caballo.png',
+          imageCaption: `¡Vaca! Cow. ¡Caballo! Horse.`,
           vocab: [
-            {
-              word: `agua`,
-              definition: `Water — AH-gwah.`,
-              audioPrompt: `Agua, {name}. Say it like AH-gwah. It means water! Two sounds. Try it: agua!`,
-            },
-            {
-              word: `jugo`,
-              definition: `Juice — HOO-goh.`,
-              audioPrompt: `Jugo, {name}. Say it like HOO-goh. It means juice! The J sounds like H in Spanish. Try it: jugo!`,
-            },
-            {
-              word: `yo quiero`,
-              definition: `I want — YOH kee-EH-roh.`,
-              audioPrompt: `Yo quiero, {name}. Say it like YOH kee-EH-roh. It means "I want." Put any food word after it! Yo quiero pan. Yo quiero agua. Try it!`,
-            },
+            { word: 'vaca',    definition: `Cow in Spanish. Say it like: VAH-kah.`,         audioPrompt: `Vaca — say it like VAH-kah. Vaca means cow. Muu!` },
+            { word: 'caballo', definition: `Horse in Spanish. Say it like: kah-BAH-yo.`,    audioPrompt: `Caballo — say it like kah-BAH-yo. Caballo means horse!` },
           ],
         },
-
-        // ─── INTERACTIVE GAME ─────────────────────────────────────────────
         {
-          id: `sp06-game`,
-          type: `interactive`,
-          guideText: `Match each Spanish food to what it means, {name}!`,
-          columnHeaders: [`Spanish`, `English`],
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `Animal Sounds in Spanish!`,
+          paragraphs: [
+            `Spanish animals make different sounds! Dogs say "¡Guau guau!" Cats say "¡Miau!" Cows say "¡Muu!"`,
+            `Try all the sounds: GATO ¡miau! PERRO ¡guau guau! VACA ¡muu! Animals are bilingual too!`,
+          ],
+          image:        '/explorer-assets/languages/l06-s4-sounds.png',
+          imageCaption: `Animal sounds in Spanish!`,
+          vocab: [
+            { word: 'sound', definition: `What you hear — like a moo, a bark, a meow.`,                      audioPrompt: `Sound — what you hear. Animal sounds in Spanish! Guau guau! Miau! Muu!` },
+            { word: 'bilingual', definition: `Speaking TWO languages! Just like you're learning!`,           audioPrompt: `Bilingual — speaking two languages. You're becoming bilingual!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `My Favorite Animal!`,
+          paragraphs: [
+            `What's YOUR favorite animal? In Spanish, you say "Mi animal favorito es..." (My favorite animal is...).`,
+            `Try it! "Mi animal favorito es el GATO!" Or "Mi animal favorito es el PERRO!" Your turn!`,
+          ],
+          image:        '/explorer-assets/languages/l06-s5-favorito.png',
+          imageCaption: `Mi animal favorito es... what?`,
+          vocab: [
+            { word: 'favorito', definition: `Favorite in Spanish. Say it like: fah-vo-REE-toh.`,            audioPrompt: `Favorito — say it like fah-vo-REE-toh. Favorito means favorite!` },
+            { word: 'animal',   definition: `Animal in Spanish — same word, just different sound!`,         audioPrompt: `Animal — same word in Spanish, just pronounced ah-nee-MAHL!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's Animal Chant!`,
+          paragraphs: [
+            `Time to CHANT animals! Make each animal's sound after you say it!`,
+            `¡GATO! miau! ¡PERRO! guau! ¡PÁJARO! tweet! ¡PEZ! splash! ¡VACA! muu! ¡CABALLO! neigh! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l06-s6-chant.png',
+          imageCaption: `Chant and make animal sounds!`,
+          vocab: [
+            { word: 'zoo',     definition: `A place where you see many animals!`,                          audioPrompt: `Zoo — a place where you see many animals. Let's chant! Gato miau! Perro guau! Pájaro tweet! Pez splash! Vaca muu! Caballo neigh! Olé!` },
+            { word: 'noise',   definition: `A loud sound!`,                                                audioPrompt: `Noise — a loud sound. Make animal noises!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish animal word to the right English word!`,
+          guideText:     `Tap a Spanish animal, then tap what it is in English!`,
+          columnHeaders: [`Spanish Animal`, `English Animal`],
           items: [
-            { id: `sp06-i1`, label: `pan`,      correctMatch: `bread` },
-            { id: `sp06-i2`, label: `leche`,    correctMatch: `milk` },
-            { id: `sp06-i3`, label: `manzana`,  correctMatch: `apple` },
-            { id: `sp06-i4`, label: `agua`,     correctMatch: `water` },
+            { image: 'l06-game-gato.png',    label: `Gato`,    correctMatch: 'cat',   objectPosition: 'center 50%', matchPhrase: `¡Sí! Gato is CAT! Meow!` },
+            { image: 'l06-game-perro.png',   label: `Perro`,   correctMatch: 'dog',   objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Perro is DOG! Guau guau!` },
+            { image: 'l06-game-pajaro.png',  label: `Pájaro`,  correctMatch: 'bird',  objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Pájaro is BIRD! Flap flap!` },
+            { image: 'l06-game-vaca.png',    label: `Vaca`,    correctMatch: 'cow',   objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Vaca is COW! Muu!` },
           ],
           buckets: [
-            { id: `bread`, label: `bread`, color: `#FBBF24` },
-            { id: `milk`,  label: `milk`,  color: `#60A5FA` },
-            { id: `apple`, label: `apple`, color: `#F87171` },
-            { id: `water`, label: `water`, color: `#34D399` },
+            { id: 'cat',  label: `Cat`,  color: '#FBBF24' },
+            { id: 'dog',  label: `Dog`,  color: '#A78BFA' },
+            { id: 'bird', label: `Bird`, color: '#60A5FA' },
+            { id: 'cow',  label: `Cow`,  color: '#F472B6' },
           ],
         },
-
-        // ─── QUIZ ─────────────────────────────────────────────────────────
         {
-          id: `sp06-quiz`,
-          type: `quiz`,
-          guideText: `¡Vamos, {name}! Let's see what you remember!`,
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Answer all 6 questions to earn your Animal Amigo badge!`,
           questions: [
-            {
-              id: `sp06-q1`,
-              format: `multiple-choice`,
-              question: `How do you say "bread" in Spanish?`,
-              options: [`leche`, `pan`, `agua`, `huevo`],
-              correctIndex: 1,
-              explanation: `Pan means bread! Say it like PAHN — just one syllable.`,
-            },
-            {
-              id: `sp06-q2`,
-              format: `multiple-choice`,
-              question: `What does "leche" mean?`,
-              options: [`bread`, `egg`, `milk`, `water`],
-              correctIndex: 2,
-              explanation: `Leche means milk! Say it like LEH-cheh.`,
-            },
-            {
-              id: `sp06-q3`,
-              format: `multiple-choice`,
-              question: `Which word means "apple"?`,
-              options: [`naranja`, `plátano`, `manzana`, `pan`],
-              correctIndex: 2,
-              explanation: `Manzana means apple! Say it like mahn-SAH-nah.`,
-            },
-            {
-              id: `sp06-q4`,
-              format: `true-false`,
-              question: `"Yo quiero" means "I want" in Spanish.`,
-              correctAnswer: true,
-              explanation: `True! Yo quiero means I want. Use it with any food word: yo quiero pan!`,
-            },
-            {
-              id: `sp06-q5`,
-              format: `multiple-choice`,
-              question: `How do you say "I want water" in Spanish?`,
-              options: [`yo quiero pan`, `yo quiero agua`, `yo quiero leche`, `yo quiero jugo`],
-              correctIndex: 1,
-              explanation: `Yo quiero agua! Agua means water — say it like AH-gwah.`,
-            },
-            {
-              id: `sp06-q6`,
-              format: `fill-blank`,
-              question: `Orange (the fruit) in Spanish is ___.`,
-              options: [`naranja`, `manzana`, `plátano`, `huevo`],
-              correctIndex: 0,
-              explanation: `Naranja! Say it like nah-RAHN-hah. It means orange — both the fruit AND the color!`,
-            },
+            { format: 'multiple-choice', question: `What does "gato" mean?`,                                                     options: [`Dog`, `Cat`, `Bird`, `Fish`],            correctIndex: 1 },
+            { format: 'multiple-choice', question: `What does "perro" mean?`,                                                    options: [`Cow`, `Horse`, `Dog`, `Fish`],            correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which Spanish word means BIRD?`,                                             options: [`Vaca`, `Pájaro`, `Caballo`, `Pez`],      correctIndex: 1 },
+            { format: 'true-false', question: `In Spanish, dogs say "¡Guau guau!"`,                                              correctAnswer: true },
+            { format: 'fill-blank', question: `My favorite animal is... "Mi animal ___ es el gato."`,                            options: [`favorito`, `grande`, `pequeño`, `rojo`],  correctIndex: 0 },
+            { format: 'multiple-choice', question: `Which animal says "¡muu!"?`,                                                 options: [`Pez`, `Pájaro`, `Vaca`, `Gato`],          correctIndex: 2 },
           ],
         },
-
-        // ─── REAL WORLD ───────────────────────────────────────────────────
         {
-          id: `sp06-realworld`,
-          type: `real-world`,
-          guideText: `Try Spanish at your next meal, {name}! Say "pan" when you reach for bread. Say "agua" with your water. Your mouth will remember!`,
-          familyAdventure: `Tonight at dinner, name 3 foods on your plate in Spanish! Pan? Leche? Manzana? See who in your family can name the most!`,
-          creativePrompt: `Draw your perfect plate of food! Label each food in Spanish: pan, leche, manzana, agua. Show off your tasty Spanish words!`,
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Now let's bring animals into Spanish life!`,
+          familyAdventure: `On a walk or at home, point to every animal you see (or in a book!) and say it in Spanish. Make the sound! ¡PERRO! Guau guau! ¡GATO! Miau! See how many animals you can name today!`,
+          creativePrompt:  `Draw a "Spanish Zoo" picture! Draw 6 animals from this lesson — gato, perro, pájaro, pez, vaca, caballo. Label each one in Spanish. Add their sounds in speech bubbles!`,
         },
-
-        // ─── CELEBRATION ──────────────────────────────────────────────────
         {
-          id: `sp06-celebration`,
-          type: `celebration`,
-          message: `¡Excelente, {name}! You learned 9 food words in Spanish! Pan, leche, huevo, manzana, plátano, naranja, agua, jugo, and yo quiero. That's a whole meal of new words! ¡Hasta la próxima!`,
-          badge: `languages-l06`,
-          badgeName: `Food Friend`,
-          xpEarned: 50,
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'animal-amigo',
+          badgeName: `Animal Amigo`,
+          message:   `¡EXCELENTE, {name}! You learned 6 animals in Spanish — AND their Spanish sounds! Now every animal you see can be your Spanish friend. Luna is so proud! ¡Hasta luego!`,
         },
-
       ],
     },
   ],
 };
 
-export default SP_L06;
+(() => {
+  const l = spanish_explorer_l06_screens.lessons[0];
+  const mags = l.screens.filter(s => s.type === 'magazine').length;
+  console.log(`[LESSON-SPANISH-L06] Loaded with ${mags} magazine sections`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l06-s1-gato-perro.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l06-s2-pajaro-pez.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l06-s3-vaca-caballo.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l06-s4-sounds.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l06-s5-favorito.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l06-s6-chant.png',         { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L06] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l06_screens;

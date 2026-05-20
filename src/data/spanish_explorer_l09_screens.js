@@ -1,161 +1,170 @@
-// SPANISH (LANGUAGES)  |  L09 — La Naturaleza (Nature)
-// Age band : explorers (6–8)   Guide: luna
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 9
+// "¡El Clima! Weather in Spanish"
+// ============================================================
 
-const SP_L09 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-  lessons: [{
-    id:        `sp-6-8-09`,
-    title:     `La Naturaleza — Nature`,
-    duration:  12,
-    xpReward:  50,
-    badge:     `languages-l09`,
-    badgeName: `Nature Friend`,
-    screens: [
-      {
-        id: `sp09-welcome`,
-        type: `welcome`,
-        guideText: `¡Hola, {name}! Today we go OUTSIDE in Spanish! Trees, flowers, mountains, rivers — let's name them all! ¡Vamos!`,
-        headline: `La Naturaleza`,
-        subtitle: `Nature words in Spanish`,
-        visual: `/explorer-assets/languages/sp09-welcome.png`,
-      },
-      {
-        id: `sp09-mag-1`,
-        type: `magazine`,
-        section: 1,
-        totalSections: 3,
-        headline: `Trees and Flowers`,
-        paragraphs: [
-          `Plants first, {name}! ÁRBOL — AHR-bohl — means tree. FLOR — FLOHR — means flower.`,
-          `HOJA — OH-hah — means leaf. Trees have hojas. Flowers grow on plants. All living things!`,
-        ],
-        image: `/explorer-assets/languages/sp09-mag-1.png`,
-        imageCaption: `A tree with green leaves and a flower beside it.`,
-        vocab: [
-          { word: `árbol`, definition: `Tree — AHR-bohl.`,
-            audioPrompt: `Árbol, {name}. Say it like AHR-bohl. It means tree! Big and tall. Try it: árbol!` },
-          { word: `flor`, definition: `Flower — FLOHR.`,
-            audioPrompt: `Flor, {name}. Say it like FLOHR. It means flower! Pretty colors. Try it: flor!` },
-          { word: `hoja`, definition: `Leaf — OH-hah.`,
-            audioPrompt: `Hoja, {name}. Say it like OH-hah. It means leaf! Green and growing. Try it: hoja!` },
-        ],
-      },
-      {
-        id: `sp09-mag-2`,
-        type: `magazine`,
-        section: 2,
-        totalSections: 3,
-        headline: `Sky and Water`,
-        paragraphs: [
-          `Look up and around, {name}! CIELO — see-EH-loh — means sky. LUNA — LOO-nah — means moon. (Yes, like my name!)`,
-          `MAR — MAR — means sea. RÍO — REE-oh — means river. Water everywhere!`,
-        ],
-        image: `/explorer-assets/languages/sp09-mag-2.png`,
-        imageCaption: `Blue sky, the moon, and a river flowing into the sea.`,
-        vocab: [
-          { word: `cielo`, definition: `Sky — see-EH-loh.`,
-            audioPrompt: `Cielo, {name}. Say it like see-EH-loh. It means sky! Look up. Try it: cielo!` },
-          { word: `luna`, definition: `Moon — LOO-nah.`,
-            audioPrompt: `Luna, {name}. Say it like LOO-nah. It means moon — and it's MY name too! Try it: luna!` },
-          { word: `río`, definition: `River — REE-oh.`,
-            audioPrompt: `Río, {name}. Say it like REE-oh. It means river! Water flowing. Try it: río!` },
-        ],
-      },
-      {
-        id: `sp09-mag-3`,
-        type: `magazine`,
-        section: 3,
-        totalSections: 3,
-        headline: `Mountains and Land`,
-        paragraphs: [
-          `Big land features now, {name}! MONTAÑA — mohn-TAH-nyah — means mountain. PLAYA — PLAH-yah — means beach.`,
-          `TIERRA — tee-EH-rrah — means earth or ground. The whole world is our home!`,
-        ],
-        image: `/explorer-assets/languages/sp09-mag-3.png`,
-        imageCaption: `A tall mountain, a sandy beach, and green earth.`,
-        vocab: [
-          { word: `montaña`, definition: `Mountain — mohn-TAH-nyah.`,
-            audioPrompt: `Montaña, {name}. Say it like mohn-TAH-nyah. The Ñ makes a "ny" sound! It means mountain. Try it: montaña!` },
-          { word: `playa`, definition: `Beach — PLAH-yah.`,
-            audioPrompt: `Playa, {name}. Say it like PLAH-yah. It means beach! Sand and waves. Try it: playa!` },
-          { word: `tierra`, definition: `Earth — tee-EH-rrah.`,
-            audioPrompt: `Tierra, {name}. Say it like tee-EH-rrah. It means earth or ground. Our planet! Try it: tierra!` },
-        ],
-      },
-      {
-        id: `sp09-game`,
-        type: `interactive`,
-        guideText: `Match each nature word, {name}!`,
-        columnHeaders: [`Spanish`, `English`],
-        items: [
-          { id: `sp09-i1`, label: `árbol`,    correctMatch: `tree` },
-          { id: `sp09-i2`, label: `flor`,     correctMatch: `flower` },
-          { id: `sp09-i3`, label: `luna`,     correctMatch: `moon` },
-          { id: `sp09-i4`, label: `montaña`,  correctMatch: `mountain` },
-        ],
-        buckets: [
-          { id: `tree`,     label: `tree`,     color: `#34D399` },
-          { id: `flower`,   label: `flower`,   color: `#F472B6` },
-          { id: `moon`,     label: `moon`,     color: `#A78BFA` },
-          { id: `mountain`, label: `mountain`, color: `#FBBF24` },
-        ],
-      },
-      {
-        id: `sp09-quiz`,
-        type: `quiz`,
-        guideText: `¡Vamos, {name}!`,
-        questions: [
-          { id: `sp09-q1`, format: `multiple-choice`,
-            question: `What does "árbol" mean?`,
-            options: [`flower`, `tree`, `leaf`, `river`],
-            correctIndex: 1,
-            explanation: `Árbol means tree! Big and tall.` },
-          { id: `sp09-q2`, format: `multiple-choice`,
-            question: `Which word means "flower"?`,
-            options: [`flor`, `hoja`, `río`, `cielo`],
-            correctIndex: 0,
-            explanation: `Flor means flower! Say it like FLOHR.` },
-          { id: `sp09-q3`, format: `multiple-choice`,
-            question: `"Luna" means:`,
-            options: [`sun`, `star`, `moon`, `sky`],
-            correctIndex: 2,
-            explanation: `Luna means moon — and it's my name too!` },
-          { id: `sp09-q4`, format: `true-false`,
-            question: `"Río" means river in Spanish.`,
-            correctAnswer: true,
-            explanation: `True! Río means river. Water flowing through nature.` },
-          { id: `sp09-q5`, format: `multiple-choice`,
-            question: `What's "playa"?`,
-            options: [`mountain`, `beach`, `forest`, `lake`],
-            correctIndex: 1,
-            explanation: `Playa is beach! Sand and waves and fun.` },
-          { id: `sp09-q6`, format: `fill-blank`,
-            question: `Sky in Spanish is ___.`,
-            options: [`cielo`, `mar`, `luna`, `flor`],
-            correctIndex: 0,
-            explanation: `Cielo means sky! Look up — that's the cielo.` },
-        ],
-      },
-      {
-        id: `sp09-realworld`,
-        type: `real-world`,
-        guideText: `Go outside today, {name}! Name what you see in Spanish. Árbol? Flor? Cielo? Easy spotting!`,
-        familyAdventure: `Take a nature walk with your family. Count árboles. Find flores. Look at the cielo. Name everything in Spanish!`,
-        creativePrompt: `Draw your favorite nature scene! Label everything in Spanish: árbol, flor, hoja, cielo, montaña.`,
-      },
-      {
-        id: `sp09-celebration`,
-        type: `celebration`,
-        message: `¡Excelente, {name}! You can talk about nature in Spanish! Árbol, flor, hoja, cielo, luna, río, mar, montaña, playa, tierra. The whole world in Spanish! ¡Hasta la próxima!`,
-        badge: `languages-l09`,
-        badgeName: `Nature Friend`,
-        xpEarned: 50,
-      },
-    ],
-  }],
+const spanish_explorer_l09_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
+  lessons: [
+    {
+      id:        'sp-6-8-09',
+      title:     `¡El Clima! Weather in Spanish`,
+      duration:  12,
+      xpReward:  50,
+      badge:     'weather-watcher',
+      badgeName: `Weather Watcher`,
+      screens: [
+        {
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Look outside! Is it sunny? Rainy? Today: WEATHER in Spanish! Sol, lluvia, viento, nieve. ¡Vamos! Let's go!`,
+        },
+        {
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Sol! (Say: SOL)`,
+          paragraphs: [
+            `SOL means SUN! When it's bright outside, the SOL is shining!`,
+            `Raise your arms like the sun: ¡SOL! ¡SOL! ¡SOL! Hace SOL means "it's sunny!"`,
+          ],
+          image:        '/explorer-assets/languages/l09-s1-sol.png',
+          imageCaption: `¡Sol! Sun! Bright and warm!`,
+          vocab: [
+            { word: 'sol',     definition: `Sun in Spanish. Say it like: SOL.`,                                audioPrompt: `Sol — say it like SOL. Sol means sun! Raise your arms!` },
+            { word: 'hace sol', definition: `It's sunny in Spanish. Say: AH-seh sol.`,                          audioPrompt: `Hace sol — it's sunny! Hace sol!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Lluvia! (Say: YOO-vee-ah)`,
+          paragraphs: [
+            `LLUVIA means RAIN! Wiggle your fingers down like raindrops!`,
+            `Try it! ¡LLUVIA! ¡LLUVIA! "Hace lluvia" or "Está lloviendo" means "it's raining!"`,
+          ],
+          image:        '/explorer-assets/languages/l09-s2-lluvia.png',
+          imageCaption: `¡Lluvia! Rain falling down!`,
+          vocab: [
+            { word: 'lluvia',  definition: `Rain in Spanish. Say it like: YOO-vee-ah.`,                       audioPrompt: `Lluvia — say it like YOO-vee-ah. Lluvia means rain! Wiggle your fingers down!` },
+            { word: 'paraguas', definition: `Umbrella in Spanish! Say it like: pah-RAH-gwahs.`,               audioPrompt: `Paraguas — say it like pah-RAH-gwahs. Paraguas means umbrella!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Viento! (Say: vee-EN-toh)`,
+          paragraphs: [
+            `VIENTO means WIND! Whoosh your arms like wind! "¡WHOOOOSH!"`,
+            `Try it! ¡VIENTO! "Hace viento" means "it's windy!" Hold on to your hat!`,
+          ],
+          image:        '/explorer-assets/languages/l09-s3-viento.png',
+          imageCaption: `¡Viento! Wind! Whoosh!`,
+          vocab: [
+            { word: 'viento',     definition: `Wind in Spanish. Say it like: vee-EN-toh.`,                    audioPrompt: `Viento — say it like vee-EN-toh. Viento means wind! Whoosh!` },
+            { word: 'hace viento', definition: `It's windy in Spanish. Say: AH-seh vee-EN-toh.`,              audioPrompt: `Hace viento — it's windy!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Nieve! (Say: nee-EH-veh)`,
+          paragraphs: [
+            `NIEVE means SNOW! Brrrr! Cold! Shiver your shoulders!`,
+            `Try it! ¡NIEVE! "Hace frío" means "it's cold!" Spanish kids in cold places love nieve!`,
+          ],
+          image:        '/explorer-assets/languages/l09-s4-nieve.png',
+          imageCaption: `¡Nieve! Snow! ¡Hace frío! It's cold!`,
+          vocab: [
+            { word: 'nieve',  definition: `Snow in Spanish. Say it like: nee-EH-veh.`,                       audioPrompt: `Nieve — say it like nee-EH-veh. Nieve means snow! Brr!` },
+            { word: 'frío',   definition: `Cold in Spanish. Say it like: FREE-oh.`,                            audioPrompt: `Frío — say it like FREE-oh. Frío means cold!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¿Qué tiempo hace?`,
+          paragraphs: [
+            `¿QUÉ TIEMPO HACE? means "What's the weather like?" In Spanish, weather has the word "hace" — it sort of means "it makes."`,
+            `Look outside! Answer: "Hace sol!" or "Hace lluvia!" or "Hace frío!" Tell Luna the weather!`,
+          ],
+          image:        '/explorer-assets/languages/l09-s5-que-tiempo.png',
+          imageCaption: `¿Qué tiempo hace? What's the weather?`,
+          vocab: [
+            { word: '¿qué tiempo hace?', definition: `What's the weather? in Spanish.`,                       audioPrompt: `Qué tiempo hace — what's the weather? Ask: ¿Qué tiempo hace?` },
+            { word: 'calor',             definition: `Heat or hot in Spanish. Say: ka-LOR.`,                  audioPrompt: `Calor — say it like ka-LOR. Calor means hot! Hace calor!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's Weather Chant!`,
+          paragraphs: [
+            `Time to CHANT! Do the action for each weather word!`,
+            `¡SOL! ¡LLUVIA! ¡VIENTO! ¡NIEVE! ¡SOL! ¡LLUVIA! ¡VIENTO! ¡NIEVE! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l09-s6-chant.png',
+          imageCaption: `Chant the weather!`,
+          vocab: [
+            { word: 'weather', definition: `What's happening in the sky — sun, rain, wind, snow!`,             audioPrompt: `Weather — what's happening in the sky. Chant! Sol! Lluvia! Viento! Nieve! Sol! Lluvia! Viento! Nieve! Olé!` },
+            { word: 'sky',     definition: `The big blue (or grey, or stormy) thing above us!`,              audioPrompt: `Sky — the big thing above us. Look at the sky!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish weather word to the right English word!`,
+          guideText:     `Tap a Spanish weather word, then tap what it is!`,
+          columnHeaders: [`Spanish`, `English`],
+          items: [
+            { image: 'l09-game-sol.png',    label: `Sol`,    correctMatch: 'sun',  objectPosition: 'center 50%', matchPhrase: `¡Sí! Sol is SUN! Bright!` },
+            { image: 'l09-game-lluvia.png', label: `Lluvia`, correctMatch: 'rain', objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Lluvia is RAIN!` },
+            { image: 'l09-game-viento.png', label: `Viento`, correctMatch: 'wind', objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Viento is WIND! Whoosh!` },
+            { image: 'l09-game-nieve.png',  label: `Nieve`,  correctMatch: 'snow', objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Nieve is SNOW! Brr!` },
+          ],
+          buckets: [
+            { id: 'sun',  label: `Sun`,  color: '#FBBF24' },
+            { id: 'rain', label: `Rain`, color: '#60A5FA' },
+            { id: 'wind', label: `Wind`, color: '#A78BFA' },
+            { id: 'snow', label: `Snow`, color: '#FFFFFF' },
+          ],
+        },
+        {
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your Weather Watcher badge!`,
+          questions: [
+            { format: 'multiple-choice', question: `What is "sol"?`,                                                            options: [`Rain`, `Sun`, `Wind`, `Snow`],                  correctIndex: 1 },
+            { format: 'multiple-choice', question: `What is "lluvia"?`,                                                         options: [`Sun`, `Snow`, `Rain`, `Wind`],                  correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which Spanish word means SNOW?`,                                            options: [`Viento`, `Sol`, `Nieve`, `Lluvia`],              correctIndex: 2 },
+            { format: 'true-false', question: `"Hace frío" means it's cold.`,                                                   correctAnswer: true },
+            { format: 'fill-blank', question: `When you want to know the weather: "¿Qué tiempo ___?"`,                          options: [`hace`, `tiene`, `está`, `viene`],                correctIndex: 0 },
+            { format: 'multiple-choice', question: `If it's WINDY in Spanish, you say...`,                                      options: [`Hace sol`, `Hace nieve`, `Hace viento`, `Hace lluvia`], correctIndex: 2 },
+          ],
+        },
+        {
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Use Spanish weather every day!`,
+          familyAdventure: `Every morning this week, look outside and tell your family the weather in Spanish! "¡HACE SOL!" or "¡HACE LLUVIA!" or "¡HACE FRÍO!" Make it part of your morning routine!`,
+          creativePrompt:  `Make a "Weather Wheel" in Spanish. Cut a circle. Divide it into 4 parts. Draw and label each one: SOL, LLUVIA, VIENTO, NIEVE. Add an arrow you can spin to today's weather!`,
+        },
+        {
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'weather-watcher',
+          badgeName: `Weather Watcher`,
+          message:   `¡EXCELENTE, {name}! Now you can talk about weather in Spanish — every single day! Luna is so proud. ¡Hasta luego!`,
+        },
+      ],
+    },
+  ],
 };
 
-export default SP_L09;
+(() => {
+  console.log(`[LESSON-SPANISH-L09] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l09-s1-sol.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l09-s2-lluvia.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l09-s3-viento.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l09-s4-nieve.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l09-s5-que-tiempo.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l09-s6-chant.png',     { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L09] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l09_screens;

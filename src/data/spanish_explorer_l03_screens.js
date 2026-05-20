@@ -1,229 +1,200 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// SPANISH (LANGUAGES)  |  L03 — Mi Familia (My Family)
-// Age band : explorers (6–8)   Guide: luna
-// REWRITTEN for age-appropriate Explorer band
-// ─────────────────────────────────────────────────────────────────────────────
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 3
+// "¡Los Colores! Colors in Spanish"
+// Ages 6–8 | Guide: Luna the Parrot
+// ============================================================
 
-const SP_L03 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-
+const spanish_explorer_l03_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
   lessons: [
     {
-      id:        `sp-6-8-03`,
-      title:     `Mi Familia — My Family`,
+      id:        'sp-6-8-03',
+      title:     `¡Los Colores! Colors in Spanish`,
       duration:  12,
       xpReward:  50,
-      badge:     `languages-l03`,
-      badgeName: `Family Storyteller`,
-
+      badge:     'color-painter',
+      badgeName: `Color Painter`,
       screens: [
-
         {
-          id: `sp03-welcome`,
-          type: `welcome`,
-          guideText: `¡Hola, {name}! Today we meet FAMILY in Spanish. Mom, dad, brother, sister, grandma, grandpa — all the people we love! ¡Vamos!`,
-          headline: `Mi Familia`,
-          subtitle: `Family words in Spanish`,
-          visual: `/explorer-assets/languages/sp03-welcome.png`,
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today you learn COLORS in Spanish — los colores! Point to something RED in your room. ROJO! Now something BLUE. AZUL! Spanish kids see the same colors you do — just with different names. ¿Listo? ¡Vamos!`,
         },
-
-        // ─── MAGAZINE 1 — MAMÁ Y PAPÁ ────────────────────────────────────
         {
-          id: `sp03-mag-1`,
-          type: `magazine`,
-          section: 1,
-          totalSections: 3,
-          headline: `Mamá and Papá`,
+          type:          'magazine',
+          section:       1,
+          totalSections: 6,
+          headline:      `¡Rojo y Azul! (Say: ROH-ho and ah-SOOL)`,
           paragraphs: [
-            `Start with the most important, {name}! MAMÁ — mah-MAH — means mom! PAPÁ — pah-PAH — means dad!`,
-            `In Spanish, the second part is loudest: mah-MAH and pah-PAH. So fun to say. Try it!`,
+            `ROJO means RED! Like a fire truck or a strawberry. AZUL means BLUE! Like the sky or the ocean.`,
+            `Point to something ROJO in your room! Now something AZUL! Say them: ¡ROJO! ¡AZUL!`,
           ],
-          image: `/explorer-assets/languages/sp03-mag-1.png`,
-          imageCaption: `A mom and dad hugging their child.`,
+          image:        '/explorer-assets/languages/l03-s1-rojo-azul.png',
+          imageCaption: `¡Rojo! Red. ¡Azul! Blue.`,
           vocab: [
-            {
-              word: `mamá`,
-              definition: `Mom — mah-MAH.`,
-              audioPrompt: `Mamá, {name}. Say it like mah-MAH. The second part is louder. It means mom! Try it: mamá!`,
-            },
-            {
-              word: `papá`,
-              definition: `Dad — pah-PAH.`,
-              audioPrompt: `Papá, {name}. Say it like pah-PAH. The second part is louder. It means dad! Try it: papá!`,
-            },
-            {
-              word: `mi familia`,
-              definition: `My family — mee fah-MEE-lee-ah.`,
-              audioPrompt: `Mi familia, {name}. Say it like mee fah-MEE-lee-ah. It means my family! Mi means my. Try it: mi familia!`,
-            },
+            { word: 'rojo', definition: `Red in Spanish. Say it like: ROH-ho.`,                                 audioPrompt: `Rojo — say it like ROH-ho. Rojo means red. Point to something rojo!` },
+            { word: 'azul', definition: `Blue in Spanish. Say it like: ah-SOOL.`,                               audioPrompt: `Azul — say it like ah-SOOL. Azul means blue. Point to something azul!` },
           ],
         },
-
-        // ─── MAGAZINE 2 — HERMANOS ───────────────────────────────────────
         {
-          id: `sp03-mag-2`,
-          type: `magazine`,
-          section: 2,
-          totalSections: 3,
-          headline: `Brothers and Sisters`,
+          type:          'magazine',
+          section:       2,
+          totalSections: 6,
+          headline:      `¡Amarillo y Verde! (Say: ah-mah-REE-yo and VER-deh)`,
           paragraphs: [
-            `Brothers and sisters now, {name}! HERMANO — ehr-MAH-noh — means brother. HERMANA — ehr-MAH-nah — means sister.`,
-            `One letter changes — O for boy, A for girl. Spanish does this a lot! Try both: hermano, hermana.`,
+            `AMARILLO means YELLOW! Like the sun or a banana. VERDE means GREEN! Like grass or a frog.`,
+            `Point to something amarillo! Now something verde! Say them: ¡AMARILLO! ¡VERDE!`,
           ],
-          image: `/explorer-assets/languages/sp03-mag-2.png`,
-          imageCaption: `A brother and a sister playing together.`,
+          image:        '/explorer-assets/languages/l03-s2-amarillo-verde.png',
+          imageCaption: `¡Amarillo! Yellow. ¡Verde! Green.`,
           vocab: [
-            {
-              word: `hermano`,
-              definition: `Brother — ehr-MAH-noh.`,
-              audioPrompt: `Hermano, {name}. Say it like ehr-MAH-noh. Remember, the H is quiet! It means brother. Try it: hermano!`,
-            },
-            {
-              word: `hermana`,
-              definition: `Sister — ehr-MAH-nah.`,
-              audioPrompt: `Hermana, {name}. Say it like ehr-MAH-nah. It means sister! Just change the O to A. Try it: hermana!`,
-            },
-            {
-              word: `bebé`,
-              definition: `Baby — beh-BEH.`,
-              audioPrompt: `Bebé, {name}. Say it like beh-BEH. It means baby! Easy and cute. Try it: bebé!`,
-            },
+            { word: 'amarillo', definition: `Yellow in Spanish. Say it like: ah-mah-REE-yo.`,                  audioPrompt: `Amarillo — say it like ah-mah-REE-yo. Amarillo means yellow. Like the sun!` },
+            { word: 'verde',    definition: `Green in Spanish. Say it like: VER-deh.`,                          audioPrompt: `Verde — say it like VER-deh. Verde means green. Like grass!` },
           ],
         },
-
-        // ─── MAGAZINE 3 — ABUELOS ─────────────────────────────────────────
         {
-          id: `sp03-mag-3`,
-          type: `magazine`,
-          section: 3,
-          totalSections: 3,
-          headline: `Grandma and Grandpa`,
+          type:          'magazine',
+          section:       3,
+          totalSections: 6,
+          headline:      `¡Negro y Blanco! (Say: NEH-gro and BLAHN-ko)`,
           paragraphs: [
-            `Grandparents are special, {name}! ABUELA — ah-BWAY-lah — means grandma. ABUELO — ah-BWAY-loh — means grandpa.`,
-            `Many Spanish kids call them ABUELA and ABUELO, or sometimes ABUELITA and ABUELITO — that's grandma and grandpa with EXTRA love!`,
+            `NEGRO means BLACK! Like the night sky or a panther. BLANCO means WHITE! Like snow or a cloud.`,
+            `Find something negro near you. Now something blanco! ¡NEGRO! ¡BLANCO!`,
           ],
-          image: `/explorer-assets/languages/sp03-mag-3.png`,
-          imageCaption: `A grandma and grandpa with their grandchild.`,
+          image:        '/explorer-assets/languages/l03-s3-negro-blanco.png',
+          imageCaption: `¡Negro! Black. ¡Blanco! White.`,
           vocab: [
-            {
-              word: `abuela`,
-              definition: `Grandma — ah-BWAY-lah.`,
-              audioPrompt: `Abuela, {name}. Say it like ah-BWAY-lah. It means grandma! Some kids say abuelita — that's grandma with extra love. Try it: abuela!`,
-            },
-            {
-              word: `abuelo`,
-              definition: `Grandpa — ah-BWAY-loh.`,
-              audioPrompt: `Abuelo, {name}. Say it like ah-BWAY-loh. It means grandpa! Try it: abuelo!`,
-            },
-            {
-              word: `amor`,
-              definition: `Love — ah-MOR.`,
-              audioPrompt: `Amor, {name}. Say it like ah-MOR. It means love! Family is all about amor. Try it: amor!`,
-            },
+            { word: 'negro',  definition: `Black in Spanish. Say it like: NEH-gro.`,                            audioPrompt: `Negro — say it like NEH-gro. Negro means black. Like the night!` },
+            { word: 'blanco', definition: `White in Spanish. Say it like: BLAHN-ko.`,                           audioPrompt: `Blanco — say it like BLAHN-ko. Blanco means white. Like a cloud!` },
           ],
         },
-
-        // ─── INTERACTIVE GAME ─────────────────────────────────────────────
         {
-          id: `sp03-game`,
-          type: `interactive`,
-          guideText: `Match each family word to who they are, {name}!`,
-          columnHeaders: [`Spanish`, `Family member`],
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Mix and Match!`,
+          paragraphs: [
+            `Spanish kids love describing things by COLOR. "Una manzana ROJA" means a RED APPLE. "Un cielo AZUL" means a BLUE SKY.`,
+            `Try it! Look at things around you. What color are they? Say it in Spanish! ¡ROJO! ¡AZUL! ¡VERDE!`,
+          ],
+          image:        '/explorer-assets/languages/l03-s4-things.png',
+          imageCaption: `Spanish colors describe everything around you!`,
+          vocab: [
+            { word: 'manzana', definition: `Apple in Spanish! Say it like: mahn-SAH-nah.`,                      audioPrompt: `Manzana — say it like mahn-SAH-nah. Manzana means apple. Una manzana roja is a red apple!` },
+            { word: 'cielo',   definition: `Sky in Spanish! Say it like: see-EH-lo.`,                            audioPrompt: `Cielo — say it like see-EH-lo. Cielo means sky. El cielo azul is the blue sky!` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Color Hunt!`,
+          paragraphs: [
+            `Let's do a COLOR HUNT! Look around the room you're in right now.`,
+            `Can you find something ROJO? AZUL? AMARILLO? VERDE? NEGRO? BLANCO? Point to each one as you find it!`,
+          ],
+          image:        '/explorer-assets/languages/l03-s5-hunt.png',
+          imageCaption: `Hunt for colors all around you!`,
+          vocab: [
+            { word: 'hunt',  definition: `To search for something — to look around for it.`,                    audioPrompt: `Hunt — to search for something. Let's hunt for colors!` },
+            { word: 'find',  definition: `To see something you were looking for.`,                              audioPrompt: `Find — to see something you were looking for. Find something rojo!` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Luna's Color Chant!`,
+          paragraphs: [
+            `Time to CHANT! Touch something of each color as you say the word!`,
+            `¡ROJO! ¡AZUL! ¡AMARILLO! ¡VERDE! ¡NEGRO! ¡BLANCO! ¡ROJO! ¡AZUL! ¡AMARILLO! ¡VERDE! ¡NEGRO! ¡BLANCO! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l03-s6-chant.png',
+          imageCaption: `Chant the colors with Luna!`,
+          vocab: [
+            { word: 'color',  definition: `What something looks like — red, blue, green, etc.`,                 audioPrompt: `Color — what something looks like. Let's chant! Rojo, azul, amarillo, verde, negro, blanco! Rojo, azul, amarillo, verde, negro, blanco! Olé!` },
+            { word: 'touch',  definition: `To put your hand on something.`,                                     audioPrompt: `Touch — to put your hand on something. Touch a color as you say it!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish color to the right English color!`,
+          guideText:     `Tap a Spanish color, then tap what it means. ¡Vamos!`,
+          columnHeaders: [`Spanish Color`, `English Color`],
           items: [
-            { id: `sp03-i1`, label: `mamá`,    correctMatch: `mom` },
-            { id: `sp03-i2`, label: `papá`,    correctMatch: `dad` },
-            { id: `sp03-i3`, label: `hermana`, correctMatch: `sister` },
-            { id: `sp03-i4`, label: `abuelo`,  correctMatch: `grandpa` },
+            { image: 'l03-game-rojo.png',     label: `Rojo`,     correctMatch: 'red',    objectPosition: 'center 50%', matchPhrase: `¡Sí! Rojo means RED — like a fire truck!` },
+            { image: 'l03-game-azul.png',     label: `Azul`,     correctMatch: 'blue',   objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Azul means BLUE — like the sky!` },
+            { image: 'l03-game-amarillo.png', label: `Amarillo`, correctMatch: 'yellow', objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Amarillo means YELLOW — like the sun!` },
+            { image: 'l03-game-verde.png',    label: `Verde`,    correctMatch: 'green',  objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Verde means GREEN — like grass!` },
           ],
           buckets: [
-            { id: `mom`,     label: `mom`,     color: `#F472B6` },
-            { id: `dad`,     label: `dad`,     color: `#60A5FA` },
-            { id: `sister`,  label: `sister`,  color: `#FBBF24` },
-            { id: `grandpa`, label: `grandpa`, color: `#34D399` },
+            { id: 'red',    label: `Red`,    color: '#EF4444' },
+            { id: 'blue',   label: `Blue`,   color: '#3B82F6' },
+            { id: 'yellow', label: `Yellow`, color: '#FBBF24' },
+            { id: 'green',  label: `Green`,  color: '#10B981' },
           ],
         },
-
-        // ─── QUIZ ─────────────────────────────────────────────────────────
         {
-          id: `sp03-quiz`,
-          type: `quiz`,
-          guideText: `¡Vamos, {name}!`,
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Answer all 6 questions to earn your Color Painter badge!`,
           questions: [
-            {
-              id: `sp03-q1`,
-              format: `multiple-choice`,
-              question: `How do you say "mom" in Spanish?`,
-              options: [`papá`, `mamá`, `bebé`, `abuela`],
-              correctIndex: 1,
-              explanation: `Mamá means mom! Say it like mah-MAH.`,
-            },
-            {
-              id: `sp03-q2`,
-              format: `multiple-choice`,
-              question: `What does "hermano" mean?`,
-              options: [`sister`, `mom`, `brother`, `grandpa`],
-              correctIndex: 2,
-              explanation: `Hermano means brother! Say it like ehr-MAH-noh.`,
-            },
-            {
-              id: `sp03-q3`,
-              format: `multiple-choice`,
-              question: `Which word means "sister"?`,
-              options: [`hermano`, `hermana`, `mamá`, `bebé`],
-              correctIndex: 1,
-              explanation: `Hermana means sister! It ends in A. Brother ends in O.`,
-            },
-            {
-              id: `sp03-q4`,
-              format: `true-false`,
-              question: `"Abuela" means grandma in Spanish.`,
-              correctAnswer: true,
-              explanation: `True! Abuela means grandma. Some kids say abuelita — grandma with extra love!`,
-            },
-            {
-              id: `sp03-q5`,
-              format: `multiple-choice`,
-              question: `In Spanish, "mi familia" means:`,
-              options: [`my friends`, `my family`, `my home`, `my pet`],
-              correctIndex: 1,
-              explanation: `Mi familia means my family! Mi means my, familia means family.`,
-            },
-            {
-              id: `sp03-q6`,
-              format: `fill-blank`,
-              question: `In Spanish, "love" is ___.`,
-              options: [`amor`, `bebé`, `papá`, `casa`],
-              correctIndex: 0,
-              explanation: `Amor means love! Family is full of amor.`,
-            },
+            { format: 'multiple-choice', question: `What color is "rojo"?`,
+              options: [`Blue`, `Red`, `Green`, `Yellow`],
+              correctIndex: 1 },
+            { format: 'multiple-choice', question: `What color is "azul"?`,
+              options: [`Black`, `White`, `Blue`, `Red`],
+              correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which Spanish color means YELLOW?`,
+              options: [`Verde`, `Amarillo`, `Negro`, `Blanco`],
+              correctIndex: 1 },
+            { format: 'true-false', question: `"Verde" means GREEN in Spanish.`,
+              correctAnswer: true },
+            { format: 'fill-blank', question: `Snow is ___ in Spanish!`,
+              options: [`blanco`, `negro`, `rojo`, `azul`],
+              correctIndex: 0 },
+            { format: 'multiple-choice', question: `The night sky is...`,
+              options: [`Rojo`, `Negro`, `Blanco`, `Verde`],
+              correctIndex: 1 },
           ],
         },
-
-        // ─── REAL WORLD ───────────────────────────────────────────────────
         {
-          id: `sp03-realworld`,
-          type: `real-world`,
-          guideText: `Try Spanish family words TODAY, {name}! Call out "mamá!" or "papá!" — they'll smile big!`,
-          familyAdventure: `Tonight, say each family member's Spanish name out loud! Mamá! Papá! Hermano! Hermana! Give everyone a hug.`,
-          creativePrompt: `Draw your family! Label each person in Spanish: mamá, papá, hermano, hermana, abuela, abuelo. Your Spanish family tree!`,
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Now let's bring colors into real life!`,
+          familyAdventure: `Play "Yo veo" (I see) with your family! Say "Yo veo algo ROJO!" (I see something red!) Then they have to guess what you see. Take turns. Use all your new colors!`,
+          creativePrompt:  `Make a "Rainbow in Spanish" picture. Draw a rainbow with 6 colors. Under each color, write the Spanish name: ROJO, AMARILLO, VERDE, AZUL, NEGRO, BLANCO. Decorate it with stars!`,
         },
-
-        // ─── CELEBRATION ──────────────────────────────────────────────────
         {
-          id: `sp03-celebration`,
-          type: `celebration`,
-          message: `¡Excelente, {name}! You learned Spanish names for all your favorite people! Mamá, papá, hermano, hermana, abuela, abuelo, bebé, mi familia, amor. So much love! ¡Hasta la próxima!`,
-          badge: `languages-l03`,
-          badgeName: `Family Storyteller`,
-          xpEarned: 50,
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'color-painter',
+          badgeName: `Color Painter`,
+          message:   `¡EXCELENTE, {name}! You learned 6 colors in Spanish! Now the whole world looks more colorful — and you can describe it in TWO languages! Luna is so proud. ¡Hasta luego, mi amigo!`,
         },
-
       ],
     },
   ],
 };
 
-export default SP_L03;
+(() => {
+  const l    = spanish_explorer_l03_screens.lessons[0];
+  const mags = l.screens.filter(s => s.type === 'magazine').length;
+  const game = l.screens.find(s => s.type === 'interactive')?.items?.length || 0;
+  const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
+  console.log(`[LESSON-SPANISH-L03] Loaded: "Colores" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l03-s1-rojo-azul.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l03-s2-amarillo-verde.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l03-s3-negro-blanco.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l03-s4-things.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l03-s5-hunt.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l03-s6-chant.png',           { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L03] s1: ${r1.ok}, s2: ${r2.ok}, s3: ${r3.ok}, s4: ${r4.ok}, s5: ${r5.ok}, s6: ${r6.ok}`);
+  }).catch(() => {
+    console.log('[ASSET-CHECK-SPANISH-L03] Could not verify image assets — network check failed');
+  });
+})();
 
+export default spanish_explorer_l03_screens;

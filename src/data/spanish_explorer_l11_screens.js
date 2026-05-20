@@ -1,153 +1,170 @@
-// SPANISH (LANGUAGES)  |  L11 — La Escuela (School)
-const SP_L11 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-  lessons: [{
-    id:        `sp-6-8-11`,
-    title:     `La Escuela — School`,
-    duration:  12,
-    xpReward:  50,
-    badge:     `languages-l11`,
-    badgeName: `School Star`,
-    screens: [
-      {
-        id: `sp11-welcome`,
-        type: `welcome`,
-        guideText: `¡Hola, {name}! Today: SCHOOL words in Spanish! Books, pencils, teachers, friends! ¡Vamos a la escuela!`,
-        headline: `La Escuela`,
-        subtitle: `School words in Spanish`,
-        visual: `/explorer-assets/languages/sp11-welcome.png`,
-      },
-      {
-        id: `sp11-mag-1`,
-        type: `magazine`, section: 1, totalSections: 3,
-        headline: `Where We Learn`,
-        paragraphs: [
-          `Start big, {name}! ESCUELA — es-KWEH-lah — means school. CLASE — KLAH-seh — means class.`,
-          `MAESTRO — my-EHS-troh — is a male teacher. MAESTRA — my-EHS-trah — is a female teacher. Boys end in O, girls in A. Remember?`,
-        ],
-        image: `/explorer-assets/languages/sp11-mag-1.png`,
-        imageCaption: `A school building and a classroom with a teacher.`,
-        vocab: [
-          { word: `escuela`, definition: `School — es-KWEH-lah.`,
-            audioPrompt: `Escuela, {name}. Say it like es-KWEH-lah. It means school! Where you learn. Try it: escuela!` },
-          { word: `clase`, definition: `Class — KLAH-seh.`,
-            audioPrompt: `Clase, {name}. Say it like KLAH-seh. It means class! Try it: clase!` },
-          { word: `maestra`, definition: `Teacher (female) — my-EHS-trah.`,
-            audioPrompt: `Maestra, {name}. Say it like my-EHS-trah. It means female teacher! For boy teacher: maestro. Try it: maestra!` },
-        ],
-      },
-      {
-        id: `sp11-mag-2`,
-        type: `magazine`, section: 2, totalSections: 3,
-        headline: `School Supplies`,
-        paragraphs: [
-          `Your supplies, {name}! LIBRO — LEE-broh — means book. LÁPIZ — LAH-pees — means pencil.`,
-          `PAPEL — pah-PEHL — means paper. You need libros, lápices, and papel to learn!`,
-        ],
-        image: `/explorer-assets/languages/sp11-mag-2.png`,
-        imageCaption: `A book, a pencil, and a piece of paper on a desk.`,
-        vocab: [
-          { word: `libro`, definition: `Book — LEE-broh.`,
-            audioPrompt: `Libro, {name}. Say it like LEE-broh. It means book! Like the one you're using now. Try it: libro!` },
-          { word: `lápiz`, definition: `Pencil — LAH-pees.`,
-            audioPrompt: `Lápiz, {name}. Say it like LAH-pees. It means pencil! Try it: lápiz!` },
-          { word: `papel`, definition: `Paper — pah-PEHL.`,
-            audioPrompt: `Papel, {name}. Say it like pah-PEHL. It means paper! Try it: papel!` },
-        ],
-      },
-      {
-        id: `sp11-mag-3`,
-        type: `magazine`, section: 3, totalSections: 3,
-        headline: `Friends and Fun`,
-        paragraphs: [
-          `Best part of school, {name}! AMIGO — ah-MEE-goh — male friend. AMIGA — ah-MEE-gah — female friend.`,
-          `RECREO — reh-KREH-oh — means recess! That's playtime at school. ¡Diversión!`,
-        ],
-        image: `/explorer-assets/languages/sp11-mag-3.png`,
-        imageCaption: `Kids playing together at recess.`,
-        vocab: [
-          { word: `amigo`, definition: `Friend (boy) — ah-MEE-goh.`,
-            audioPrompt: `Amigo, {name}. Say it like ah-MEE-goh. It means friend (boy)! Try it: amigo!` },
-          { word: `amiga`, definition: `Friend (girl) — ah-MEE-gah.`,
-            audioPrompt: `Amiga, {name}. Say it like ah-MEE-gah. It means friend (girl)! Try it: amiga!` },
-          { word: `recreo`, definition: `Recess — reh-KREH-oh.`,
-            audioPrompt: `Recreo, {name}. Say it like reh-KREH-oh. It means recess! Playtime! Try it: recreo!` },
-        ],
-      },
-      {
-        id: `sp11-game`,
-        type: `interactive`,
-        guideText: `Match school words, {name}!`,
-        columnHeaders: [`Spanish`, `English`],
-        items: [
-          { id: `sp11-i1`, label: `escuela`, correctMatch: `school` },
-          { id: `sp11-i2`, label: `libro`,   correctMatch: `book` },
-          { id: `sp11-i3`, label: `lápiz`,   correctMatch: `pencil` },
-          { id: `sp11-i4`, label: `amigo`,   correctMatch: `friend` },
-        ],
-        buckets: [
-          { id: `school`, label: `school`, color: `#60A5FA` },
-          { id: `book`,   label: `book`,   color: `#FBBF24` },
-          { id: `pencil`, label: `pencil`, color: `#F87171` },
-          { id: `friend`, label: `friend`, color: `#34D399` },
-        ],
-      },
-      {
-        id: `sp11-quiz`,
-        type: `quiz`,
-        guideText: `¡Vamos, {name}!`,
-        questions: [
-          { id: `sp11-q1`, format: `multiple-choice`,
-            question: `What does "escuela" mean?`,
-            options: [`book`, `school`, `pencil`, `friend`],
-            correctIndex: 1,
-            explanation: `Escuela means school!` },
-          { id: `sp11-q2`, format: `multiple-choice`,
-            question: `Which word means "book"?`,
-            options: [`lápiz`, `papel`, `libro`, `clase`],
-            correctIndex: 2,
-            explanation: `Libro means book! Like the ones you read.` },
-          { id: `sp11-q3`, format: `multiple-choice`,
-            question: `"Maestra" means:`,
-            options: [`student`, `teacher (female)`, `principal`, `friend`],
-            correctIndex: 1,
-            explanation: `Maestra is a female teacher! Maestro for male teacher.` },
-          { id: `sp11-q4`, format: `true-false`,
-            question: `"Recreo" means recess in Spanish.`,
-            correctAnswer: true,
-            explanation: `True! Recreo is recess — playtime at school!` },
-          { id: `sp11-q5`, format: `multiple-choice`,
-            question: `If your friend is a boy, you say:`,
-            options: [`amiga`, `amigo`, `maestro`, `clase`],
-            correctIndex: 1,
-            explanation: `Amigo for boy friend. Amiga for girl friend. O for boy, A for girl!` },
-          { id: `sp11-q6`, format: `fill-blank`,
-            question: `Pencil in Spanish is ___.`,
-            options: [`lápiz`, `papel`, `libro`, `clase`],
-            correctIndex: 0,
-            explanation: `Lápiz means pencil!` },
-        ],
-      },
-      {
-        id: `sp11-realworld`,
-        type: `real-world`,
-        guideText: `Look at your school stuff, {name}! Libro? Lápiz? Papel? Say each one in Spanish!`,
-        familyAdventure: `Tonight, pack your backpack out loud in Spanish! "Mi libro" (my book). "Mi lápiz" (my pencil). Easy practice!`,
-        creativePrompt: `Draw your classroom! Label things in Spanish: maestra, libro, lápiz, papel, amigos. Your Spanish classroom!`,
-      },
-      {
-        id: `sp11-celebration`,
-        type: `celebration`,
-        message: `¡Excelente, {name}! School in Spanish! Escuela, clase, maestra, libro, lápiz, papel, amigo, amiga, recreo. You're a Spanish student now! ¡Hasta la próxima!`,
-        badge: `languages-l11`,
-        badgeName: `School Star`,
-        xpEarned: 50,
-      },
-    ],
-  }],
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 11
+// "¡La Escuela! School in Spanish"
+// ============================================================
+
+const spanish_explorer_l11_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
+  lessons: [
+    {
+      id:        'sp-6-8-11',
+      title:     `¡La Escuela! School in Spanish`,
+      duration:  12,
+      xpReward:  50,
+      badge:     'school-star',
+      badgeName: `School Star`,
+      screens: [
+        {
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: SCHOOL words in Spanish! ¡La escuela! Book, pencil, teacher, friend. Spanish school is so much like yours! ¡Vamos!`,
+        },
+        {
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Libro y Lápiz! (Say: LEE-bro and LAH-pees)`,
+          paragraphs: [
+            `LIBRO means BOOK! LÁPIZ means PENCIL!`,
+            `Pretend to open a libro: ¡LIBRO! Pretend to write with a lápiz: ¡LÁPIZ!`,
+          ],
+          image:        '/explorer-assets/languages/l11-s1-libro-lapiz.png',
+          imageCaption: `¡Libro! Book. ¡Lápiz! Pencil.`,
+          vocab: [
+            { word: 'libro', definition: `Book in Spanish. Say: LEE-bro.`,                                    audioPrompt: `Libro — say it like LEE-bro. Libro means book!` },
+            { word: 'lápiz', definition: `Pencil in Spanish. Say: LAH-pees.`,                                  audioPrompt: `Lápiz — say it like LAH-pees. Lápiz means pencil!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Mesa y Silla! (Say: MEH-sah and SEE-yah)`,
+          paragraphs: [
+            `MESA means TABLE! SILLA means CHAIR!`,
+            `Tap on your table: ¡MESA! Sit on your chair: ¡SILLA! ¡MESA! ¡SILLA!`,
+          ],
+          image:        '/explorer-assets/languages/l11-s2-mesa-silla.png',
+          imageCaption: `¡Mesa! Table. ¡Silla! Chair.`,
+          vocab: [
+            { word: 'mesa',  definition: `Table in Spanish. Say: MEH-sah.`,                                   audioPrompt: `Mesa — say it like MEH-sah. Mesa means table!` },
+            { word: 'silla', definition: `Chair in Spanish. Say: SEE-yah.`,                                   audioPrompt: `Silla — say it like SEE-yah. Silla means chair!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Maestro y Amigo! (Say: ma-EHS-troh and ah-MEE-goh)`,
+          paragraphs: [
+            `MAESTRO means TEACHER (or MAESTRA for a female teacher)! AMIGO means FRIEND (or AMIGA)!`,
+            `Wave to your maestro: ¡MAESTRO! Hug your amigo: ¡AMIGO! Remember — O for boys, A for girls!`,
+          ],
+          image:        '/explorer-assets/languages/l11-s3-maestro-amigo.png',
+          imageCaption: `¡Maestro! Teacher. ¡Amigo! Friend.`,
+          vocab: [
+            { word: 'maestro', definition: `Teacher in Spanish (male). Say: ma-EHS-troh.`,                    audioPrompt: `Maestro — say it like ma-EHS-troh. Maestro means teacher!` },
+            { word: 'amigo',   definition: `Friend in Spanish (boy). Say: ah-MEE-goh.`,                       audioPrompt: `Amigo — say it like ah-MEE-goh. Amigo means friend!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Estudiar! (Say: es-too-dee-AHR)`,
+          paragraphs: [
+            `ESTUDIAR means TO STUDY! It's what you do in la escuela!`,
+            `Pretend to read a book carefully: ¡ESTUDIAR! ¡ESTUDIAR! Smart kids estudiar a lot!`,
+          ],
+          image:        '/explorer-assets/languages/l11-s4-estudiar.png',
+          imageCaption: `¡Estudiar! Study! Smart kids do this!`,
+          vocab: [
+            { word: 'estudiar', definition: `To study in Spanish. Say: es-too-dee-AHR.`,                       audioPrompt: `Estudiar — say it like es-too-dee-AHR. Estudiar means to study!` },
+            { word: 'aprender', definition: `To learn in Spanish! Say: ah-pren-DEHR.`,                         audioPrompt: `Aprender — say it like ah-pren-DEHR. Aprender means to learn!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¡Mi Escuela!`,
+          paragraphs: [
+            `ESCUELA means SCHOOL! "MI ESCUELA" means "my school!"`,
+            `Spanish schools have classrooms, friends, and teachers — just like yours! Try it: ¡MI ESCUELA! Where you go to LEARN!`,
+          ],
+          image:        '/explorer-assets/languages/l11-s5-escuela.png',
+          imageCaption: `¡Mi escuela! My school!`,
+          vocab: [
+            { word: 'escuela', definition: `School in Spanish. Say: es-KWEH-lah.`,                            audioPrompt: `Escuela — say it like es-KWEH-lah. Escuela means school!` },
+            { word: 'clase',   definition: `Class in Spanish. Say: KLAH-seh.`,                                 audioPrompt: `Clase — say it like KLAH-seh. Clase means class!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's School Chant!`,
+          paragraphs: [
+            `Time to CHANT school words!`,
+            `¡LIBRO! ¡LÁPIZ! ¡MESA! ¡SILLA! ¡MAESTRO! ¡AMIGO! ¡ESCUELA! ¡ESTUDIAR! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l11-s6-chant.png',
+          imageCaption: `Chant your school words!`,
+          vocab: [
+            { word: 'school',  definition: `Where you go to learn — with friends and teachers!`,              audioPrompt: `School — where you go to learn. Chant! Libro! Lápiz! Mesa! Silla! Maestro! Amigo! Escuela! Estudiar! Olé!` },
+            { word: 'learn',   definition: `To find out new things — like Spanish words!`,                    audioPrompt: `Learn — to find out new things. You're learning Spanish!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish school word to the right English word!`,
+          guideText:     `Tap a Spanish school word, then tap what it is!`,
+          columnHeaders: [`Spanish`, `English`],
+          items: [
+            { image: 'l11-game-libro.png',   label: `Libro`,   correctMatch: 'book',    objectPosition: 'center 50%', matchPhrase: `¡Sí! Libro is BOOK!` },
+            { image: 'l11-game-lapiz.png',   label: `Lápiz`,   correctMatch: 'pencil',  objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Lápiz is PENCIL!` },
+            { image: 'l11-game-maestro.png', label: `Maestro`, correctMatch: 'teacher', objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Maestro is TEACHER!` },
+            { image: 'l11-game-amigo.png',   label: `Amigo`,   correctMatch: 'friend',  objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Amigo is FRIEND!` },
+          ],
+          buckets: [
+            { id: 'book',    label: `Book`,    color: '#FBBF24' },
+            { id: 'pencil',  label: `Pencil`,  color: '#A78BFA' },
+            { id: 'teacher', label: `Teacher`, color: '#60A5FA' },
+            { id: 'friend',  label: `Friend`,  color: '#F472B6' },
+          ],
+        },
+        {
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your School Star badge!`,
+          questions: [
+            { format: 'multiple-choice', question: `What does "libro" mean?`,                                                   options: [`Pencil`, `Book`, `Chair`, `Table`],          correctIndex: 1 },
+            { format: 'multiple-choice', question: `What does "amigo" mean?`,                                                   options: [`Teacher`, `Book`, `Friend`, `School`],        correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which Spanish word means TEACHER?`,                                         options: [`Amigo`, `Maestro`, `Lápiz`, `Mesa`],          correctIndex: 1 },
+            { format: 'true-false', question: `"Escuela" means SCHOOL in Spanish.`,                                             correctAnswer: true },
+            { format: 'fill-blank', question: `You write with a ___ in school.`,                                                options: [`lápiz`, `libro`, `silla`, `mesa`],            correctIndex: 0 },
+            { format: 'multiple-choice', question: `What does ESTUDIAR mean?`,                                                  options: [`Play`, `Eat`, `Study`, `Sleep`],              correctIndex: 2 },
+          ],
+        },
+        {
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Use Spanish school words today!`,
+          familyAdventure: `Look around your room. Find your LIBRO, LÁPIZ, MESA, SILLA. Tell your family what each one is called in Spanish! Then call your teacher MAESTRO/MAESTRA in your head — you'll never forget!`,
+          creativePrompt:  `Draw your dream classroom in Spanish! Label everything: LIBRO, LÁPIZ, MESA, SILLA, MAESTRO, ESCUELA. Add your AMIGOS sitting at desks!`,
+        },
+        {
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'school-star',
+          badgeName: `School Star`,
+          message:   `¡EXCELENTE, {name}! You can talk about school in Spanish! That's amazing for an Explorer. Luna is so proud! ¡Hasta luego!`,
+        },
+      ],
+    },
+  ],
 };
 
-export default SP_L11;
+(() => {
+  console.log(`[LESSON-SPANISH-L11] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l11-s1-libro-lapiz.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l11-s2-mesa-silla.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l11-s3-maestro-amigo.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l11-s4-estudiar.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l11-s5-escuela.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l11-s6-chant.png',          { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L11] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l11_screens;

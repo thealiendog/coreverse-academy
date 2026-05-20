@@ -1,229 +1,201 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// SPANISH (LANGUAGES)  |  L02 — Números y Colores (Numbers and Colors)
-// Age band : explorers (6–8)   Guide: luna
-// REWRITTEN for age-appropriate Explorer band
-// ─────────────────────────────────────────────────────────────────────────────
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 2
+// "¡Uno, Dos, Tres! Numbers 1 to 6"
+// Ages 6–8 | Guide: Luna the Parrot | ExplorerLessonPlayer format
+// Calibration: TPR (finger counting) + chant + 6 words
+// ============================================================
 
-const SP_L02 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-
+const spanish_explorer_l02_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
   lessons: [
     {
-      id:        `sp-6-8-02`,
-      title:     `Números y Colores — Numbers and Colors`,
+      id:        'sp-6-8-02',
+      title:     `¡Uno, Dos, Tres! Numbers 1 to 6 in Spanish`,
       duration:  12,
       xpReward:  50,
-      badge:     `languages-l02`,
-      badgeName: `Color Counter`,
-
+      badge:     'number-counter',
+      badgeName: `Number Counter`,
       screens: [
-
         {
-          id: `sp02-welcome`,
-          type: `welcome`,
-          guideText: `¡Hola otra vez, {name}! Today we count and learn colors in Spanish! Uno, dos, tres! Rojo, azul, verde! Ready? ¡Vamos!`,
-          headline: `Números y Colores`,
-          subtitle: `Numbers and colors in Spanish`,
-          visual: `/explorer-assets/languages/sp02-welcome.png`,
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today you learn to COUNT in Spanish! Hold up your fingers and count with me: ¡UNO! ¡DOS! ¡TRES! ¡CUATRO! ¡CINCO! ¡SEIS! Each number gets a finger. By the end you'll count to SIX in Spanish! ¿Listo? Ready? ¡Vamos!`,
         },
-
-        // ─── MAGAZINE 1 — NUMBERS 1-5 ─────────────────────────────────────
         {
-          id: `sp02-mag-1`,
-          type: `magazine`,
-          section: 1,
-          totalSections: 3,
-          headline: `Numbers 1 to 5`,
+          type:          'magazine',
+          section:       1,
+          totalSections: 6,
+          headline:      `¡Uno y Dos! (Say: OO-no and DOS)`,
           paragraphs: [
-            `Let's count, {name}! UNO — OO-noh — that's one. DOS — DOHS — that's two. TRES — TREHS — three!`,
-            `Keep going: CUATRO — KWAH-troh — four. CINCO — SEEN-koh — five. Now you can count to five in Spanish!`,
+            `UNO means ONE. Hold up ONE finger! DOS means TWO. Hold up TWO fingers!`,
+            `Say it with Luna! Hold up one finger: ¡UNO! Hold up two fingers: ¡DOS! ¡Uno, dos! ¡Uno, dos!`,
           ],
-          image: `/explorer-assets/languages/sp02-mag-1.png`,
-          imageCaption: `Five fingers up, counting from 1 to 5.`,
+          image:        '/explorer-assets/languages/l02-s1-uno-dos.png',
+          imageCaption: `¡Uno! One finger. ¡Dos! Two fingers.`,
           vocab: [
-            {
-              word: `uno`,
-              definition: `One — OO-noh.`,
-              audioPrompt: `Uno, {name}. Say it like OO-noh. It means one! Hold up one finger. Try it: uno!`,
-            },
-            {
-              word: `dos`,
-              definition: `Two — DOHS.`,
-              audioPrompt: `Dos, {name}. Say it like DOHS. It means two! Hold up two fingers. Try it: dos!`,
-            },
-            {
-              word: `tres`,
-              definition: `Three — TREHS.`,
-              audioPrompt: `Tres, {name}. Say it like TREHS. It means three! Roll the R a tiny bit. Try it: tres!`,
-            },
+            { word: 'uno', definition: `One in Spanish. Say it like: OO-no.`,                                  audioPrompt: `Uno — say it like OO-no. Uno means one. Hold up one finger. Uno!` },
+            { word: 'dos', definition: `Two in Spanish. Say it like: DOS.`,                                    audioPrompt: `Dos — say it like DOS. Dos means two. Hold up two fingers. Dos!` },
           ],
         },
-
-        // ─── MAGAZINE 2 — NUMBERS 6-10 ────────────────────────────────────
         {
-          id: `sp02-mag-2`,
-          type: `magazine`,
-          section: 2,
-          totalSections: 3,
-          headline: `Numbers 6 to 10`,
+          type:          'magazine',
+          section:       2,
+          totalSections: 6,
+          headline:      `¡Tres y Cuatro! (Say: TRESS and KWAH-tro)`,
           paragraphs: [
-            `Now the higher numbers, {name}! SEIS — SAYS — six. SIETE — see-EH-teh — seven. OCHO — OH-choh — eight.`,
-            `Almost done! NUEVE — noo-EH-veh — nine. DIEZ — dee-EHS — ten! You can count to TEN in Spanish now!`,
+            `TRES means THREE. Hold up THREE fingers! CUATRO means FOUR. Hold up FOUR fingers!`,
+            `Try them: ¡TRES! ¡CUATRO! ¡TRES! ¡CUATRO! Your hand is filling up with fingers!`,
           ],
-          image: `/explorer-assets/languages/sp02-mag-2.png`,
-          imageCaption: `Ten fingers up. Two hands counting together.`,
+          image:        '/explorer-assets/languages/l02-s2-tres-cuatro.png',
+          imageCaption: `¡Tres! Three fingers. ¡Cuatro! Four fingers.`,
           vocab: [
-            {
-              word: `cinco`,
-              definition: `Five — SEEN-koh.`,
-              audioPrompt: `Cinco, {name}. Say it like SEEN-koh. It means five! High five! Try it: cinco!`,
-            },
-            {
-              word: `ocho`,
-              definition: `Eight — OH-choh.`,
-              audioPrompt: `Ocho, {name}. Say it like OH-choh. It means eight! The CH sounds like in "cheese." Try it: ocho!`,
-            },
-            {
-              word: `diez`,
-              definition: `Ten — dee-EHS.`,
-              audioPrompt: `Diez, {name}. Say it like dee-EHS. It means ten! All ten fingers up. Try it: diez!`,
-            },
+            { word: 'tres',   definition: `Three in Spanish. Say it like: TRESS.`,                              audioPrompt: `Tres — say it like TRESS. Tres means three. Hold up three fingers. Tres!` },
+            { word: 'cuatro', definition: `Four in Spanish. Say it like: KWAH-tro.`,                            audioPrompt: `Cuatro — say it like KWAH-tro. Cuatro means four. Hold up four fingers. Cuatro!` },
           ],
         },
-
-        // ─── MAGAZINE 3 — COLORS ──────────────────────────────────────────
         {
-          id: `sp02-mag-3`,
-          type: `magazine`,
-          section: 3,
-          totalSections: 3,
-          headline: `Colors`,
+          type:          'magazine',
+          section:       3,
+          totalSections: 6,
+          headline:      `¡Cinco y Seis! (Say: SEEN-ko and SAYS)`,
           paragraphs: [
-            `Now colors, {name}! ROJO — ROH-hoh — red. AZUL — ah-SOOL — blue. AMARILLO — ah-mah-REE-yoh — yellow.`,
-            `More colors: VERDE — VEHR-deh — green. NEGRO — NEH-groh — black. BLANCO — BLAHN-koh — white. Six new colors!`,
+            `CINCO means FIVE. Show me your whole HAND — five fingers! SEIS means SIX. Hold up one finger from your other hand!`,
+            `Try them! ¡CINCO! ¡SEIS! Now you can count all the way to SIX in Spanish!`,
           ],
-          image: `/explorer-assets/languages/sp02-mag-3.png`,
-          imageCaption: `A rainbow with colors labeled in Spanish: rojo, azul, amarillo, verde.`,
+          image:        '/explorer-assets/languages/l02-s3-cinco-seis.png',
+          imageCaption: `¡Cinco! Whole hand! ¡Seis! Six fingers!`,
           vocab: [
-            {
-              word: `rojo`,
-              definition: `Red — ROH-hoh.`,
-              audioPrompt: `Rojo, {name}. Say it like ROH-hoh. It means red! The J sounds like H. Try it: rojo!`,
-            },
-            {
-              word: `azul`,
-              definition: `Blue — ah-SOOL.`,
-              audioPrompt: `Azul, {name}. Say it like ah-SOOL. It means blue! Like the sky and the sea. Try it: azul!`,
-            },
-            {
-              word: `verde`,
-              definition: `Green — VEHR-deh.`,
-              audioPrompt: `Verde, {name}. Say it like VEHR-deh. It means green! Like grass and leaves. Try it: verde!`,
-            },
+            { word: 'cinco', definition: `Five in Spanish. Say it like: SEEN-ko.`,                              audioPrompt: `Cinco — say it like SEEN-ko. Cinco means five. Show your whole hand. Cinco!` },
+            { word: 'seis',  definition: `Six in Spanish. Say it like: SAYS.`,                                  audioPrompt: `Seis — say it like SAYS. Seis means six. Six fingers! Seis!` },
           ],
         },
-
-        // ─── INTERACTIVE GAME ─────────────────────────────────────────────
         {
-          id: `sp02-game`,
-          type: `interactive`,
-          guideText: `Match the Spanish word to the English meaning, {name}!`,
-          columnHeaders: [`Spanish`, `English`],
+          type:          'magazine',
+          section:       4,
+          totalSections: 6,
+          headline:      `Count Up!`,
+          paragraphs: [
+            `Now let's count UP! Hold up one finger at a time and count with Luna.`,
+            `¡UNO! ¡DOS! ¡TRES! ¡CUATRO! ¡CINCO! ¡SEIS! ¡SEIS fingers! You did it!`,
+          ],
+          image:        '/explorer-assets/languages/l02-s4-count-up.png',
+          imageCaption: `Count up: uno, dos, tres, cuatro, cinco, seis!`,
+          vocab: [
+            { word: 'count',  definition: `To say numbers one after another, like 1, 2, 3.`,                    audioPrompt: `Count — to say numbers one after another. Let's count in Spanish! Uno, dos, tres, cuatro, cinco, seis!` },
+            { word: 'finger', definition: `One of the 5 things on your hand!`,                                  audioPrompt: `Finger — one of the five things on your hand. Hold up your fingers to count!` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       5,
+          totalSections: 6,
+          headline:      `Count Down!`,
+          paragraphs: [
+            `Now count DOWN! Start with all six fingers and put one down each time.`,
+            `¡SEIS! ¡CINCO! ¡CUATRO! ¡TRES! ¡DOS! ¡UNO! ¡CERO! Cero means zero! No fingers left!`,
+          ],
+          image:        '/explorer-assets/languages/l02-s5-count-down.png',
+          imageCaption: `Count down: seis, cinco, cuatro, tres, dos, uno!`,
+          vocab: [
+            { word: 'count down', definition: `To say numbers going backwards — like 6, 5, 4, 3, 2, 1!`,        audioPrompt: `Count down — to say numbers going backwards. Seis, cinco, cuatro, tres, dos, uno!` },
+            { word: 'cero',       definition: `Zero in Spanish. Say it like: SEH-ro.`,                          audioPrompt: `Cero — say it like SEH-ro. Cero means zero. No fingers up!` },
+          ],
+        },
+        {
+          type:          'magazine',
+          section:       6,
+          totalSections: 6,
+          headline:      `Luna's Number Chant!`,
+          paragraphs: [
+            `Time to CHANT! Clap your hands to each number. Say it loud!`,
+            `¡UNO, DOS, TRES! ¡CUATRO, CINCO, SEIS! ¡UNO, DOS, TRES! ¡CUATRO, CINCO, SEIS! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l02-s6-chant.png',
+          imageCaption: `Clap and chant the numbers!`,
+          vocab: [
+            { word: 'rhythm', definition: `A pattern of beats — like clap, clap, clap.`,                        audioPrompt: `Rhythm — a pattern of beats. Let's chant! Uno, dos, tres! Cuatro, cinco, seis! Uno, dos, tres! Cuatro, cinco, seis! Olé!` },
+            { word: 'clap',   definition: `When you put your hands together to make a sound.`,                  audioPrompt: `Clap — when you put your hands together to make a sound. Clap to the chant!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish number to the right amount!`,
+          guideText:     `Tap a Spanish number, then tap how many it means. ¡Vamos, {name}!`,
+          columnHeaders: [`Spanish Number`, `How Many?`],
           items: [
-            { id: `sp02-i1`, label: `tres`,  correctMatch: `three` },
-            { id: `sp02-i2`, label: `diez`,  correctMatch: `ten` },
-            { id: `sp02-i3`, label: `rojo`,  correctMatch: `red` },
-            { id: `sp02-i4`, label: `azul`,  correctMatch: `blue` },
+            { image: 'l02-game-uno.png',    label: `¡Uno!`,    correctMatch: 'one',   objectPosition: 'center 50%', matchPhrase: `¡Sí! Uno is ONE! One finger!` },
+            { image: 'l02-game-tres.png',   label: `¡Tres!`,   correctMatch: 'three', objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Tres is THREE! Three fingers!` },
+            { image: 'l02-game-cinco.png',  label: `¡Cinco!`,  correctMatch: 'five',  objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Cinco is FIVE! Whole hand!` },
+            { image: 'l02-game-seis.png',   label: `¡Seis!`,   correctMatch: 'six',   objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Seis is SIX! Six fingers!` },
           ],
           buckets: [
-            { id: `three`, label: `three`, color: `#FBBF24` },
-            { id: `ten`,   label: `ten`,   color: `#A78BFA` },
-            { id: `red`,   label: `red`,   color: `#F87171` },
-            { id: `blue`,  label: `blue`,  color: `#60A5FA` },
+            { id: 'one',   label: `1 (one)`,   color: '#FBBF24' },
+            { id: 'three', label: `3 (three)`, color: '#A78BFA' },
+            { id: 'five',  label: `5 (five)`,  color: '#F472B6' },
+            { id: 'six',   label: `6 (six)`,   color: '#34D399' },
           ],
         },
-
-        // ─── QUIZ ─────────────────────────────────────────────────────────
         {
-          id: `sp02-quiz`,
-          type: `quiz`,
-          guideText: `¡Vamos, {name}!`,
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Answer all 6 questions to earn your Number Counter badge!`,
           questions: [
-            {
-              id: `sp02-q1`,
-              format: `multiple-choice`,
-              question: `How do you say "one" in Spanish?`,
-              options: [`dos`, `uno`, `tres`, `cinco`],
-              correctIndex: 1,
-              explanation: `Uno means one! Say it like OO-noh.`,
-            },
-            {
-              id: `sp02-q2`,
-              format: `multiple-choice`,
-              question: `What number is "cinco"?`,
-              options: [`3`, `5`, `7`, `10`],
-              correctIndex: 1,
-              explanation: `Cinco is five! Like a high five.`,
-            },
-            {
-              id: `sp02-q3`,
-              format: `multiple-choice`,
-              question: `Which Spanish word means "red"?`,
-              options: [`azul`, `verde`, `rojo`, `amarillo`],
-              correctIndex: 2,
-              explanation: `Rojo means red! Say it like ROH-hoh.`,
-            },
-            {
-              id: `sp02-q4`,
-              format: `true-false`,
-              question: `"Diez" means ten in Spanish.`,
-              correctAnswer: true,
-              explanation: `True! Diez means ten. Say it like dee-EHS.`,
-            },
-            {
-              id: `sp02-q5`,
-              format: `multiple-choice`,
-              question: `What color is "verde"?`,
-              options: [`yellow`, `blue`, `green`, `white`],
-              correctIndex: 2,
-              explanation: `Verde is green — like grass and leaves!`,
-            },
-            {
-              id: `sp02-q6`,
-              format: `fill-blank`,
-              question: `The Spanish word for blue is ___.`,
-              options: [`azul`, `rojo`, `verde`, `negro`],
-              correctIndex: 0,
-              explanation: `Azul means blue! Like the sky.`,
-            },
+            { format: 'multiple-choice', question: `What does "uno" mean?`,
+              options: [`Two`, `One`, `Three`, `Four`],
+              correctIndex: 1 },
+            { format: 'multiple-choice', question: `What does "tres" mean?`,
+              options: [`Three`, `Four`, `Five`, `Six`],
+              correctIndex: 0 },
+            { format: 'multiple-choice', question: `Which number is FIVE in Spanish?`,
+              options: [`Seis`, `Cuatro`, `Cinco`, `Dos`],
+              correctIndex: 2 },
+            { format: 'true-false', question: `"Seis" means SIX in Spanish.`,
+              correctAnswer: true },
+            { format: 'fill-blank', question: `Count with Luna: uno, dos, ___, cuatro!`,
+              options: [`tres`, `cinco`, `seis`, `cero`],
+              correctIndex: 0 },
+            { format: 'multiple-choice', question: `Which is the SMALLEST number?`,
+              options: [`Cinco`, `Tres`, `Uno`, `Seis`],
+              correctIndex: 2 },
           ],
         },
-
-        // ─── REAL WORLD ───────────────────────────────────────────────────
         {
-          id: `sp02-realworld`,
-          type: `real-world`,
-          guideText: `Practice today, {name}! Look around. Count things in Spanish. Name colors in Spanish. Easy!`,
-          familyAdventure: `Tonight, count things together in Spanish! Count toys: uno, dos, tres! Name the colors of your clothes in Spanish too!`,
-          creativePrompt: `Draw a rainbow! Label each color in Spanish: rojo, naranja, amarillo, verde, azul. A Spanish rainbow!`,
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Now let's bring your numbers into real life. Counting in Spanish is FUN!`,
+          familyAdventure: `At dinner tonight, count the people at the table in Spanish! "¡Uno! ¡Dos! ¡Tres! ¡Cuatro!" Then count things on the table — plates, cups, forks. How high can you count tonight in Spanish?`,
+          creativePrompt:  `Make a "Number Hand" poster. Trace your hand on paper. On each finger, write a Spanish number: pulgar (thumb) = UNO, then DOS, TRES, CUATRO, CINCO. Add a SEIS finger from your other hand. Color it bright!`,
         },
-
-        // ─── CELEBRATION ──────────────────────────────────────────────────
         {
-          id: `sp02-celebration`,
-          type: `celebration`,
-          message: `¡Excelente, {name}! You can count to TEN in Spanish AND name colors! Uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez! Rojo, azul, verde — colorful! ¡Hasta la próxima!`,
-          badge: `languages-l02`,
-          badgeName: `Color Counter`,
-          xpEarned: 50,
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'number-counter',
+          badgeName: `Number Counter`,
+          message:   `¡EXCELENTE, {name}! You can count to SEIS in Spanish! Spanish-speaking kids from Mexico to Spain to Colombia count the same way. You just joined them! Luna is so proud. ¡Hasta luego, mi amigo!`,
         },
-
       ],
     },
   ],
 };
 
-export default SP_L02;
+(() => {
+  const l    = spanish_explorer_l02_screens.lessons[0];
+  const mags = l.screens.filter(s => s.type === 'magazine').length;
+  const game = l.screens.find(s => s.type === 'interactive')?.items?.length || 0;
+  const quiz = l.screens.find(s => s.type === 'quiz')?.questions?.length || 0;
+  console.log(`[LESSON-SPANISH-L02] Loaded: "Uno Dos Tres" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l02-s1-uno-dos.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l02-s2-tres-cuatro.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l02-s3-cinco-seis.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l02-s4-count-up.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l02-s5-count-down.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l02-s6-chant.png',       { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L02] s1: ${r1.ok}, s2: ${r2.ok}, s3: ${r3.ok}, s4: ${r4.ok}, s5: ${r5.ok}, s6: ${r6.ok}`);
+  }).catch(() => {
+    console.log('[ASSET-CHECK-SPANISH-L02] Could not verify image assets — network check failed');
+  });
+})();
 
+export default spanish_explorer_l02_screens;

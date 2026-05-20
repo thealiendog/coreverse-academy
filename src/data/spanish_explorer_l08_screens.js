@@ -1,221 +1,171 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// SPANISH (LANGUAGES)  |  L08 — El Tiempo (Weather and Seasons)
-// Age band : explorers (6–8)   Guide: luna
-// ─────────────────────────────────────────────────────────────────────────────
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 8
+// "¡Los Días! Days of the Week in Spanish"
+// ============================================================
 
-const SP_L08 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-
+const spanish_explorer_l08_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
   lessons: [
     {
-      id:        `sp-6-8-08`,
-      title:     `El Tiempo — Weather and Seasons`,
+      id:        'sp-6-8-08',
+      title:     `¡Los Días! Days of the Week`,
       duration:  12,
       xpReward:  50,
-      badge:     `languages-l08`,
-      badgeName: `Weather Watcher`,
-
+      badge:     'week-walker',
+      badgeName: `Week Walker`,
       screens: [
-
         {
-          id: `sp08-welcome`,
-          type: `welcome`,
-          guideText: `¡Hola, {name}! Today we learn the weather in Spanish! Sunny, rainy, cold — every kind of day has a Spanish word! ¡Vamos!`,
-          headline: `El Tiempo`,
-          subtitle: `Weather and seasons in Spanish`,
-          visual: `/explorer-assets/languages/sp08-welcome.png`,
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: DAYS of the week in Spanish! Lunes, martes, miércoles... Spanish kids start their week with LUNES (Monday), not Sunday like in English calendars! ¡Vamos!`,
         },
-
         {
-          id: `sp08-mag-1`,
-          type: `magazine`,
-          section: 1,
-          totalSections: 3,
-          headline: `Hot and Cold Days`,
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Lunes y Martes! (Say: LOO-nehs and MAR-tehs)`,
           paragraphs: [
-            `Let's start with how the day feels, {name}! HACE SOL — AH-seh SOHL — means "it is sunny." HACE FRÍO — AH-seh FREE-oh — "it is cold."`,
-            `HACE CALOR — AH-seh kah-LOHR — "it is hot." All start with "hace" — that means "it is." Easy pattern!`,
+            `LUNES means MONDAY — first day of the week in Spanish! MARTES means TUESDAY.`,
+            `Spanish kids start their school week on LUNES! Try them: ¡LUNES! ¡MARTES! Clap each one!`,
           ],
-          image: `/explorer-assets/languages/sp08-mag-1.png`,
-          imageCaption: `A sunny day, a snowy day, a hot summer day.`,
+          image:        '/explorer-assets/languages/l08-s1-lunes-martes.png',
+          imageCaption: `¡Lunes! Monday. ¡Martes! Tuesday.`,
           vocab: [
-            {
-              word: `sol`,
-              definition: `Sun — SOHL.`,
-              audioPrompt: `Sol, {name}. Say it like SOHL. It means sun! Bright and warm. Try it: sol!`,
-            },
-            {
-              word: `frío`,
-              definition: `Cold — FREE-oh.`,
-              audioPrompt: `Frío, {name}. Say it like FREE-oh. It means cold! Brrr! Try it: frío!`,
-            },
-            {
-              word: `calor`,
-              definition: `Hot — kah-LOHR.`,
-              audioPrompt: `Calor, {name}. Say it like kah-LOHR. It means hot! Summer days! Try it: calor!`,
-            },
+            { word: 'lunes',  definition: `Monday in Spanish. Say it like: LOO-nehs.`,                       audioPrompt: `Lunes — say it like LOO-nehs. Lunes means Monday!` },
+            { word: 'martes', definition: `Tuesday in Spanish. Say it like: MAR-tehs.`,                      audioPrompt: `Martes — say it like MAR-tehs. Martes means Tuesday!` },
           ],
         },
-
         {
-          id: `sp08-mag-2`,
-          type: `magazine`,
-          section: 2,
-          totalSections: 3,
-          headline: `Rain and Wind`,
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Miércoles y Jueves! (Say: mee-EHR-ko-lehs and HWEH-vehs)`,
           paragraphs: [
-            `Rainy days now, {name}! LLUEVE — YWEH-veh — means "it is raining." NIEVE — nee-EH-veh — means "snow!"`,
-            `And VIENTO — bee-EHN-toh — means "wind." Spanish has a word for every kind of weather!`,
+            `MIÉRCOLES means WEDNESDAY! It's a long word — say it slowly: mee-EHR-ko-lehs.`,
+            `JUEVES means THURSDAY! Try them: ¡MIÉRCOLES! ¡JUEVES! Halfway through the week!`,
           ],
-          image: `/explorer-assets/languages/sp08-mag-2.png`,
-          imageCaption: `Rain falling, snow on a tree, and wind blowing leaves.`,
+          image:        '/explorer-assets/languages/l08-s2-miercoles-jueves.png',
+          imageCaption: `¡Miércoles! Wednesday. ¡Jueves! Thursday.`,
           vocab: [
-            {
-              word: `lluvia`,
-              definition: `Rain — YOO-bee-ah.`,
-              audioPrompt: `Lluvia, {name}. Say it like YOO-bee-ah. The LL sounds like Y! It means rain. Try it: lluvia!`,
-            },
-            {
-              word: `nieve`,
-              definition: `Snow — nee-EH-veh.`,
-              audioPrompt: `Nieve, {name}. Say it like nee-EH-veh. It means snow! Cold and white. Try it: nieve!`,
-            },
-            {
-              word: `viento`,
-              definition: `Wind — bee-EHN-toh.`,
-              audioPrompt: `Viento, {name}. Say it like bee-EHN-toh. It means wind! Whoosh! Try it: viento!`,
-            },
+            { word: 'miércoles', definition: `Wednesday in Spanish. Say it like: mee-EHR-ko-lehs.`,         audioPrompt: `Miércoles — say it like mee-EHR-ko-lehs. Miércoles means Wednesday!` },
+            { word: 'jueves',    definition: `Thursday in Spanish. Say it like: HWEH-vehs.`,                 audioPrompt: `Jueves — say it like HWEH-vehs. Jueves means Thursday!` },
           ],
         },
-
         {
-          id: `sp08-mag-3`,
-          type: `magazine`,
-          section: 3,
-          totalSections: 3,
-          headline: `The 4 Seasons`,
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Viernes! (Say: vee-EHR-nehs)`,
           paragraphs: [
-            `Now the seasons, {name}! PRIMAVERA — pree-mah-BEH-rah — spring. VERANO — beh-RAH-noh — summer.`,
-            `OTOÑO — oh-TOH-nyoh — fall. INVIERNO — een-bee-EHR-noh — winter. All four seasons!`,
+            `VIERNES means FRIDAY! The BEST day! Almost the weekend!`,
+            `Cheer with Luna: ¡VIERNES! ¡VIERNES! ¡VIERNES! Spanish kids LOVE viernes — like you!`,
           ],
-          image: `/explorer-assets/languages/sp08-mag-3.png`,
-          imageCaption: `Four seasons in one picture: spring flowers, summer sun, fall leaves, winter snow.`,
+          image:        '/explorer-assets/languages/l08-s3-viernes.png',
+          imageCaption: `¡Viernes! Friday! Almost weekend!`,
           vocab: [
-            {
-              word: `primavera`,
-              definition: `Spring — pree-mah-BEH-rah.`,
-              audioPrompt: `Primavera, {name}. Say it like pree-mah-BEH-rah. It means spring! Flowers bloom. Try it: primavera!`,
-            },
-            {
-              word: `verano`,
-              definition: `Summer — beh-RAH-noh.`,
-              audioPrompt: `Verano, {name}. Say it like beh-RAH-noh. It means summer! Hot and sunny. Try it: verano!`,
-            },
-            {
-              word: `invierno`,
-              definition: `Winter — een-bee-EHR-noh.`,
-              audioPrompt: `Invierno, {name}. Say it like een-bee-EHR-noh. It means winter! Cold and snowy. Try it: invierno!`,
-            },
+            { word: 'viernes', definition: `Friday in Spanish. Say it like: vee-EHR-nehs.`,                  audioPrompt: `Viernes — say it like vee-EHR-nehs. Viernes means Friday! The best day!` },
+            { word: 'cheer',   definition: `To shout happily for something!`,                                 audioPrompt: `Cheer — to shout happily. Cheer for viernes!` },
           ],
         },
-
         {
-          id: `sp08-game`,
-          type: `interactive`,
-          guideText: `Match each weather word to what it means, {name}!`,
-          columnHeaders: [`Spanish`, `English`],
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Sábado y Domingo! (Say: SAH-bah-do and do-MEEN-go)`,
+          paragraphs: [
+            `SÁBADO means SATURDAY! DOMINGO means SUNDAY! THE WEEKEND! ¡El fin de semana!`,
+            `Dance and say: ¡SÁBADO! ¡DOMINGO! Time for play, family, and fun!`,
+          ],
+          image:        '/explorer-assets/languages/l08-s4-sabado-domingo.png',
+          imageCaption: `¡Sábado! Saturday. ¡Domingo! Sunday. WEEKEND!`,
+          vocab: [
+            { word: 'sábado',  definition: `Saturday in Spanish. Say it like: SAH-bah-do.`,                 audioPrompt: `Sábado — say it like SAH-bah-do. Sábado means Saturday!` },
+            { word: 'domingo', definition: `Sunday in Spanish. Say it like: do-MEEN-go.`,                    audioPrompt: `Domingo — say it like do-MEEN-go. Domingo means Sunday!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¿Qué día es hoy?`,
+          paragraphs: [
+            `¿QUÉ DÍA ES HOY? means "What day is today?" Ask your family!`,
+            `Answer: "Hoy es ___" (Today is ___). Like "Hoy es LUNES!" Try it for today: "Hoy es..."!`,
+          ],
+          image:        '/explorer-assets/languages/l08-s5-que-dia.png',
+          imageCaption: `What day is it today? ¿Qué día es hoy?`,
+          vocab: [
+            { word: 'hoy', definition: `Today in Spanish. Say it like: OY.`,                                  audioPrompt: `Hoy — say it like OY. Hoy means today!` },
+            { word: 'día', definition: `Day in Spanish. Say it like: DEE-ah.`,                                audioPrompt: `Día — say it like DEE-ah. Día means day!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's Week Chant!`,
+          paragraphs: [
+            `Time to CHANT the days! Hold up a finger for each one!`,
+            `¡LUNES! ¡MARTES! ¡MIÉRCOLES! ¡JUEVES! ¡VIERNES! ¡SÁBADO! ¡DOMINGO! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l08-s6-chant.png',
+          imageCaption: `Chant all 7 days of the week!`,
+          vocab: [
+            { word: 'week',  definition: `Seven days together!`,                                              audioPrompt: `Week — seven days together. Chant the week! Lunes! Martes! Miércoles! Jueves! Viernes! Sábado! Domingo! Olé!` },
+            { word: 'seven', definition: `The number 7 — how many days are in a week!`,                       audioPrompt: `Seven — the number seven. Seven days in a week!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish day to the right English day!`,
+          guideText:     `Tap a Spanish day, then tap what day it is!`,
+          columnHeaders: [`Spanish Day`, `English Day`],
           items: [
-            { id: `sp08-i1`, label: `sol`,       correctMatch: `sun` },
-            { id: `sp08-i2`, label: `lluvia`,    correctMatch: `rain` },
-            { id: `sp08-i3`, label: `nieve`,     correctMatch: `snow` },
-            { id: `sp08-i4`, label: `verano`,    correctMatch: `summer` },
+            { image: 'l08-game-lunes.png',    label: `Lunes`,    correctMatch: 'monday',   objectPosition: 'center 50%', matchPhrase: `¡Sí! Lunes is MONDAY! First day!` },
+            { image: 'l08-game-viernes.png',  label: `Viernes`,  correctMatch: 'friday',   objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Viernes is FRIDAY! Best day!` },
+            { image: 'l08-game-sabado.png',   label: `Sábado`,   correctMatch: 'saturday', objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Sábado is SATURDAY! Weekend!` },
+            { image: 'l08-game-domingo.png',  label: `Domingo`,  correctMatch: 'sunday',   objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Domingo is SUNDAY!` },
           ],
           buckets: [
-            { id: `sun`,    label: `sun`,    color: `#FBBF24` },
-            { id: `rain`,   label: `rain`,   color: `#60A5FA` },
-            { id: `snow`,   label: `snow`,   color: `#A78BFA` },
-            { id: `summer`, label: `summer`, color: `#F87171` },
+            { id: 'monday',   label: `Monday`,   color: '#60A5FA' },
+            { id: 'friday',   label: `Friday`,   color: '#FBBF24' },
+            { id: 'saturday', label: `Saturday`, color: '#F472B6' },
+            { id: 'sunday',   label: `Sunday`,   color: '#A78BFA' },
           ],
         },
-
         {
-          id: `sp08-quiz`,
-          type: `quiz`,
-          guideText: `¡Vamos, {name}!`,
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your Week Walker badge!`,
           questions: [
-            {
-              id: `sp08-q1`,
-              format: `multiple-choice`,
-              question: `What does "sol" mean?`,
-              options: [`rain`, `sun`, `snow`, `wind`],
-              correctIndex: 1,
-              explanation: `Sol means sun! Bright and warm.`,
-            },
-            {
-              id: `sp08-q2`,
-              format: `multiple-choice`,
-              question: `Which word means "cold"?`,
-              options: [`calor`, `frío`, `sol`, `viento`],
-              correctIndex: 1,
-              explanation: `Frío means cold! Brrr!`,
-            },
-            {
-              id: `sp08-q3`,
-              format: `multiple-choice`,
-              question: `"Verano" is what season?`,
-              options: [`spring`, `summer`, `fall`, `winter`],
-              correctIndex: 1,
-              explanation: `Verano is summer! Hot days at the beach!`,
-            },
-            {
-              id: `sp08-q4`,
-              format: `true-false`,
-              question: `"Nieve" means snow in Spanish.`,
-              correctAnswer: true,
-              explanation: `True! Nieve means snow. Say it like nee-EH-veh.`,
-            },
-            {
-              id: `sp08-q5`,
-              format: `multiple-choice`,
-              question: `What's "invierno"?`,
-              options: [`summer`, `spring`, `winter`, `fall`],
-              correctIndex: 2,
-              explanation: `Invierno is winter! Cold and snowy season.`,
-            },
-            {
-              id: `sp08-q6`,
-              format: `fill-blank`,
-              question: `Rain in Spanish is ___.`,
-              options: [`lluvia`, `viento`, `sol`, `nieve`],
-              correctIndex: 0,
-              explanation: `Lluvia means rain! Remember LL sounds like Y!`,
-            },
+            { format: 'multiple-choice', question: `What day is "lunes"?`,                                                     options: [`Sunday`, `Monday`, `Tuesday`, `Friday`],          correctIndex: 1 },
+            { format: 'multiple-choice', question: `What day is "viernes"?`,                                                   options: [`Tuesday`, `Wednesday`, `Friday`, `Saturday`],     correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which day is SATURDAY in Spanish?`,                                        options: [`Domingo`, `Sábado`, `Jueves`, `Martes`],          correctIndex: 1 },
+            { format: 'true-false', question: `"Domingo" means SUNDAY in Spanish.`,                                            correctAnswer: true },
+            { format: 'fill-blank', question: `What day is today? "___ es..."`,                                                options: [`Hoy`, `Mañana`, `Ayer`, `Esta`],                 correctIndex: 0 },
+            { format: 'multiple-choice', question: `Which day starts the Spanish week?`,                                       options: [`Domingo`, `Lunes`, `Viernes`, `Miércoles`],       correctIndex: 1 },
           ],
         },
-
         {
-          id: `sp08-realworld`,
-          type: `real-world`,
-          guideText: `Look outside, {name}! What's the weather? Say it in Spanish today! Hace sol? Hace frío? Llueve?`,
-          familyAdventure: `Tonight, check tomorrow's weather. Say it in Spanish! "Mañana hace sol" = "Tomorrow is sunny." Try every day this week!`,
-          creativePrompt: `Draw four pictures — one for each season in Spanish! Label each: primavera, verano, otoño, invierno!`,
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Now use the days in real life!`,
+          familyAdventure: `Every morning this week, ask your family: "¿Qué día es hoy?" (What day is today?) Then say "Hoy es ___!" in Spanish. By Sunday you'll know all 7 days by heart!`,
+          creativePrompt:  `Make a "Spanish Week Calendar" for your wall. Draw 7 boxes in a row. Label each one: LUNES, MARTES, MIÉRCOLES, JUEVES, VIERNES, SÁBADO, DOMINGO. Add a fun activity drawing for each day!`,
         },
-
         {
-          id: `sp08-celebration`,
-          type: `celebration`,
-          message: `¡Excelente, {name}! You know weather and seasons in Spanish! Sol, frío, calor, lluvia, nieve, viento, and all 4 seasons! You can talk about any day in Spanish now! ¡Hasta la próxima!`,
-          badge: `languages-l08`,
-          badgeName: `Weather Watcher`,
-          xpEarned: 50,
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'week-walker',
+          badgeName: `Week Walker`,
+          message:   `¡EXCELENTE, {name}! You learned all 7 days of the week in Spanish! Now you can plan your whole week in TWO languages. Luna is so proud! ¡Hasta luego, mi amigo!`,
         },
-
       ],
     },
   ],
 };
 
-export default SP_L08;
+(() => {
+  const l = spanish_explorer_l08_screens.lessons[0];
+  console.log(`[LESSON-SPANISH-L08] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l08-s1-lunes-martes.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l08-s2-miercoles-jueves.png',  { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l08-s3-viernes.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l08-s4-sabado-domingo.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l08-s5-que-dia.png',           { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l08-s6-chant.png',             { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L08] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l08_screens;

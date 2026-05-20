@@ -1,161 +1,170 @@
-// SPANISH (LANGUAGES)  |  L10 — Acciones (Action Verbs)
-// Age band : explorers (6–8)   Guide: luna
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 10
+// "¡Acciones! Action Verbs in Spanish"
+// ============================================================
 
-const SP_L10 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-  lessons: [{
-    id:        `sp-6-8-10`,
-    title:     `Acciones — Action Verbs`,
-    duration:  12,
-    xpReward:  50,
-    badge:     `languages-l10`,
-    badgeName: `Action Hero`,
-    screens: [
-      {
-        id: `sp10-welcome`,
-        type: `welcome`,
-        guideText: `¡Hola, {name}! Today we LEARN ACTIONS in Spanish! Run! Jump! Eat! Sleep! Get moving! ¡Vamos!`,
-        headline: `Acciones`,
-        subtitle: `Action verbs in Spanish`,
-        visual: `/explorer-assets/languages/sp10-welcome.png`,
-      },
-      {
-        id: `sp10-mag-1`,
-        type: `magazine`,
-        section: 1,
-        totalSections: 3,
-        headline: `Moving Actions`,
-        paragraphs: [
-          `Let's MOVE, {name}! CORRER — koh-RRER — means to run. SALTAR — sahl-TAR — means to jump.`,
-          `Stand up! Practice while you say it: corrrrer (run in place!) saltar (jump up!) Your body remembers better!`,
-        ],
-        image: `/explorer-assets/languages/sp10-mag-1.png`,
-        imageCaption: `A kid running and a kid jumping high.`,
-        vocab: [
-          { word: `correr`, definition: `To run — koh-RRER.`,
-            audioPrompt: `Correr, {name}. Say it like koh-RRER. Roll the R! It means to run. Try it: correr!` },
-          { word: `saltar`, definition: `To jump — sahl-TAR.`,
-            audioPrompt: `Saltar, {name}. Say it like sahl-TAR. It means to jump. Try it: saltar!` },
-          { word: `bailar`, definition: `To dance — bye-LAR.`,
-            audioPrompt: `Bailar, {name}. Say it like bye-LAR. It means to dance! Move those feet! Try it: bailar!` },
-        ],
-      },
-      {
-        id: `sp10-mag-2`,
-        type: `magazine`,
-        section: 2,
-        totalSections: 3,
-        headline: `Eating and Drinking`,
-        paragraphs: [
-          `Time to eat, {name}! COMER — koh-MER — means to eat. BEBER — beh-BER — means to drink.`,
-          `Yo como pan (I eat bread). Yo bebo agua (I drink water). Try saying them!`,
-        ],
-        image: `/explorer-assets/languages/sp10-mag-2.png`,
-        imageCaption: `A child eating a sandwich and drinking from a glass.`,
-        vocab: [
-          { word: `comer`, definition: `To eat — koh-MER.`,
-            audioPrompt: `Comer, {name}. Say it like koh-MER. It means to eat! Yo como — I eat. Try it: comer!` },
-          { word: `beber`, definition: `To drink — beh-BER.`,
-            audioPrompt: `Beber, {name}. Say it like beh-BER. It means to drink! Yo bebo — I drink. Try it: beber!` },
-          { word: `dormir`, definition: `To sleep — dohr-MEER.`,
-            audioPrompt: `Dormir, {name}. Say it like dohr-MEER. It means to sleep! Zzz! Try it: dormir!` },
-        ],
-      },
-      {
-        id: `sp10-mag-3`,
-        type: `magazine`,
-        section: 3,
-        totalSections: 3,
-        headline: `Learning Actions`,
-        paragraphs: [
-          `School-time actions, {name}! LEER — leh-EHR — means to read. ESCRIBIR — es-kree-BEER — means to write.`,
-          `JUGAR — hoo-GAR — means to play. Yo juego (I play). Yo leo (I read). You're doing it now!`,
-        ],
-        image: `/explorer-assets/languages/sp10-mag-3.png`,
-        imageCaption: `Kids reading, writing, and playing together.`,
-        vocab: [
-          { word: `leer`, definition: `To read — leh-EHR.`,
-            audioPrompt: `Leer, {name}. Say it like leh-EHR. It means to read! Yo leo libros (I read books). Try it: leer!` },
-          { word: `jugar`, definition: `To play — hoo-GAR.`,
-            audioPrompt: `Jugar, {name}. Say it like hoo-GAR. It means to play! The J sounds like H. Try it: jugar!` },
-          { word: `cantar`, definition: `To sing — kahn-TAR.`,
-            audioPrompt: `Cantar, {name}. Say it like kahn-TAR. It means to sing! La la la! Try it: cantar!` },
-        ],
-      },
-      {
-        id: `sp10-game`,
-        type: `interactive`,
-        guideText: `Match each action to what it means, {name}!`,
-        columnHeaders: [`Spanish`, `Action`],
-        items: [
-          { id: `sp10-i1`, label: `correr`,  correctMatch: `run` },
-          { id: `sp10-i2`, label: `comer`,   correctMatch: `eat` },
-          { id: `sp10-i3`, label: `dormir`,  correctMatch: `sleep` },
-          { id: `sp10-i4`, label: `jugar`,   correctMatch: `play` },
-        ],
-        buckets: [
-          { id: `run`,   label: `run`,   color: `#F87171` },
-          { id: `eat`,   label: `eat`,   color: `#FBBF24` },
-          { id: `sleep`, label: `sleep`, color: `#A78BFA` },
-          { id: `play`,  label: `play`,  color: `#34D399` },
-        ],
-      },
-      {
-        id: `sp10-quiz`,
-        type: `quiz`,
-        guideText: `¡Vamos, {name}!`,
-        questions: [
-          { id: `sp10-q1`, format: `multiple-choice`,
-            question: `What does "correr" mean?`,
-            options: [`walk`, `run`, `jump`, `eat`],
-            correctIndex: 1,
-            explanation: `Correr means to run! Roll that R!` },
-          { id: `sp10-q2`, format: `multiple-choice`,
-            question: `Which means "to eat"?`,
-            options: [`beber`, `comer`, `dormir`, `cantar`],
-            correctIndex: 1,
-            explanation: `Comer means to eat! Yo como — I eat.` },
-          { id: `sp10-q3`, format: `multiple-choice`,
-            question: `"Dormir" means:`,
-            options: [`play`, `dance`, `sleep`, `sing`],
-            correctIndex: 2,
-            explanation: `Dormir means to sleep! Zzz!` },
-          { id: `sp10-q4`, format: `true-false`,
-            question: `"Jugar" means "to play" in Spanish.`,
-            correctAnswer: true,
-            explanation: `True! Jugar means to play. The J sounds like H — hoo-GAR.` },
-          { id: `sp10-q5`, format: `multiple-choice`,
-            question: `What does "cantar" mean?`,
-            options: [`to dance`, `to sing`, `to play`, `to read`],
-            correctIndex: 1,
-            explanation: `Cantar means to sing! La la la!` },
-          { id: `sp10-q6`, format: `fill-blank`,
-            question: `To read in Spanish is ___.`,
-            options: [`leer`, `correr`, `bailar`, `dormir`],
-            correctIndex: 0,
-            explanation: `Leer means to read! Yo leo — I read.` },
-        ],
-      },
-      {
-        id: `sp10-realworld`,
-        type: `real-world`,
-        guideText: `Do actions and say them in Spanish, {name}! Run? Say "¡corro!" Jump? "¡salto!" Move and learn!`,
-        familyAdventure: `Tonight, play "Simon Says" in Spanish! "¡Corre!" (Run!) "¡Salta!" (Jump!) "¡Baila!" (Dance!) Take turns being Simon!`,
-        creativePrompt: `Draw yourself doing 3 different actions! Label each in Spanish: corriendo (running), saltando (jumping), comiendo (eating)!`,
-      },
-      {
-        id: `sp10-celebration`,
-        type: `celebration`,
-        message: `¡Excelente, {name}! You know action words in Spanish! Correr, saltar, bailar, comer, beber, dormir, leer, jugar, cantar. You can DO things in Spanish now! ¡Hasta la próxima!`,
-        badge: `languages-l10`,
-        badgeName: `Action Hero`,
-        xpEarned: 50,
-      },
-    ],
-  }],
+const spanish_explorer_l10_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
+  lessons: [
+    {
+      id:        'sp-6-8-10',
+      title:     `¡Acciones! Action Verbs in Spanish`,
+      duration:  12,
+      xpReward:  50,
+      badge:     'action-hero',
+      badgeName: `Action Hero`,
+      screens: [
+        {
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: ACTION WORDS in Spanish! Run, jump, sing, dance, sleep, eat. Get ready to MOVE — this is the most fun lesson! ¡Vamos!`,
+        },
+        {
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Correr y Saltar! (Say: ko-RREHR and sal-TAHR)`,
+          paragraphs: [
+            `CORRER means TO RUN! SALTAR means TO JUMP!`,
+            `Run in place: ¡CORRER! Now jump up: ¡SALTAR! ¡CORRER! ¡SALTAR!`,
+          ],
+          image:        '/explorer-assets/languages/l10-s1-correr-saltar.png',
+          imageCaption: `¡Correr! Run. ¡Saltar! Jump.`,
+          vocab: [
+            { word: 'correr', definition: `To run in Spanish. Say: ko-RREHR.`,                                audioPrompt: `Correr — say it like ko-RREHR. Correr means to run! Run in place!` },
+            { word: 'saltar', definition: `To jump in Spanish. Say: sal-TAHR.`,                               audioPrompt: `Saltar — say it like sal-TAHR. Saltar means to jump! Jump up!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Cantar y Bailar! (Say: kan-TAHR and bai-LAHR)`,
+          paragraphs: [
+            `CANTAR means TO SING! BAILAR means TO DANCE!`,
+            `Sing "la la la": ¡CANTAR! Now dance: ¡BAILAR! Spanish is so FUN!`,
+          ],
+          image:        '/explorer-assets/languages/l10-s2-cantar-bailar.png',
+          imageCaption: `¡Cantar! Sing. ¡Bailar! Dance.`,
+          vocab: [
+            { word: 'cantar', definition: `To sing in Spanish. Say: kan-TAHR.`,                                audioPrompt: `Cantar — say it like kan-TAHR. Cantar means to sing! La la la!` },
+            { word: 'bailar', definition: `To dance in Spanish. Say: bai-LAHR.`,                               audioPrompt: `Bailar — say it like bai-LAHR. Bailar means to dance! Let's bailar!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Comer y Dormir! (Say: ko-MEHR and dor-MEER)`,
+          paragraphs: [
+            `COMER means TO EAT! DORMIR means TO SLEEP!`,
+            `Pretend to chew: ¡COMER! Pretend to sleep (hands under cheek): ¡DORMIR!`,
+          ],
+          image:        '/explorer-assets/languages/l10-s3-comer-dormir.png',
+          imageCaption: `¡Comer! Eat. ¡Dormir! Sleep.`,
+          vocab: [
+            { word: 'comer',  definition: `To eat in Spanish. Say: ko-MEHR.`,                                  audioPrompt: `Comer — say it like ko-MEHR. Comer means to eat! Chew!` },
+            { word: 'dormir', definition: `To sleep in Spanish. Say: dor-MEER.`,                               audioPrompt: `Dormir — say it like dor-MEER. Dormir means to sleep! Zzz!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Simón Dice!`,
+          paragraphs: [
+            `Simón Dice — Spanish Simon Says with our new verbs!`,
+            `Listen and DO: "Simón dice ¡CORRER!" Run! "Simón dice ¡SALTAR!" Jump! "Simón dice ¡CANTAR!" Sing!`,
+          ],
+          image:        '/explorer-assets/languages/l10-s4-simon-dice.png',
+          imageCaption: `Simón Dice — do what Luna says!`,
+          vocab: [
+            { word: 'simón dice', definition: `Simon says in Spanish — the fun action game!`,                   audioPrompt: `Simón dice — Simon says! Simón dice correr! Simón dice saltar! Simón dice cantar!` },
+            { word: 'do',         definition: `To make an action happen — like running or jumping.`,            audioPrompt: `Do — to make an action happen. Do what Simón says!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¡Yo Puedo!`,
+          paragraphs: [
+            `YO PUEDO means "I CAN!" Use it to show off what you can do!`,
+            `Try it! "Yo puedo CORRER!" "Yo puedo BAILAR!" "Yo puedo CANTAR!" You can do anything!`,
+          ],
+          image:        '/explorer-assets/languages/l10-s5-yo-puedo.png',
+          imageCaption: `¡Yo puedo! I can do it!`,
+          vocab: [
+            { word: 'yo puedo', definition: `I can in Spanish. Say: yo PWEH-doh.`,                              audioPrompt: `Yo puedo — say it like yo PWEH-doh. Yo puedo means I can!` },
+            { word: 'fuerte',   definition: `Strong in Spanish. Say: FWEHR-teh.`,                                audioPrompt: `Fuerte — say it like FWEHR-teh. Fuerte means strong! You are fuerte!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's Action Chant!`,
+          paragraphs: [
+            `Time to CHANT and MOVE! Do each action as you say it!`,
+            `¡CORRER! ¡SALTAR! ¡CANTAR! ¡BAILAR! ¡COMER! ¡DORMIR! ¡YO PUEDO! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l10-s6-chant.png',
+          imageCaption: `Chant and move with each word!`,
+          vocab: [
+            { word: 'action', definition: `Something you DO — like running, jumping, dancing!`,                audioPrompt: `Action — something you do. Chant! Correr! Saltar! Cantar! Bailar! Comer! Dormir! Yo puedo! Olé!` },
+            { word: 'energy', definition: `The power inside you that lets you move!`,                          audioPrompt: `Energy — the power inside you. Show your energy!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish action to the right English action!`,
+          guideText:     `Tap a Spanish verb, then tap what it means!`,
+          columnHeaders: [`Spanish`, `English`],
+          items: [
+            { image: 'l10-game-correr.png', label: `Correr`, correctMatch: 'run',   objectPosition: 'center 50%', matchPhrase: `¡Sí! Correr means TO RUN!` },
+            { image: 'l10-game-saltar.png', label: `Saltar`, correctMatch: 'jump',  objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Saltar means TO JUMP!` },
+            { image: 'l10-game-cantar.png', label: `Cantar`, correctMatch: 'sing',  objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Cantar means TO SING!` },
+            { image: 'l10-game-dormir.png', label: `Dormir`, correctMatch: 'sleep', objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Dormir means TO SLEEP! Zzz!` },
+          ],
+          buckets: [
+            { id: 'run',   label: `Run`,   color: '#EF4444' },
+            { id: 'jump',  label: `Jump`,  color: '#FBBF24' },
+            { id: 'sing',  label: `Sing`,  color: '#F472B6' },
+            { id: 'sleep', label: `Sleep`, color: '#A78BFA' },
+          ],
+        },
+        {
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your Action Hero badge!`,
+          questions: [
+            { format: 'multiple-choice', question: `What does "correr" mean?`,                                                  options: [`Walk`, `Run`, `Jump`, `Dance`],                  correctIndex: 1 },
+            { format: 'multiple-choice', question: `What does "bailar" mean?`,                                                  options: [`Eat`, `Sleep`, `Dance`, `Sing`],                  correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which Spanish word means TO JUMP?`,                                         options: [`Cantar`, `Saltar`, `Dormir`, `Comer`],            correctIndex: 1 },
+            { format: 'true-false', question: `"Yo puedo" means I CAN!`,                                                        correctAnswer: true },
+            { format: 'fill-blank', question: `When you're tired and want to sleep: "Yo quiero ___"`,                           options: [`dormir`, `cantar`, `correr`, `bailar`],          correctIndex: 0 },
+            { format: 'multiple-choice', question: `Which verb is for eating?`,                                                 options: [`Saltar`, `Cantar`, `Comer`, `Dormir`],           correctIndex: 2 },
+          ],
+        },
+        {
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Use your verbs all day!`,
+          familyAdventure: `Play "Spanish Simon Says" with your family! Take turns being Simón. Say "Simón dice CORRER!" or "Simón dice BAILAR!" Get everyone moving!`,
+          creativePrompt:  `Draw 6 stick figures doing each action: CORRER (running), SALTAR (jumping), CANTAR (singing), BAILAR (dancing), COMER (eating), DORMIR (sleeping). Label each one!`,
+        },
+        {
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'action-hero',
+          badgeName: `Action Hero`,
+          message:   `¡EXCELENTE, {name}! You learned 6 action verbs in Spanish! Now you can describe everything you DO. Luna is so proud! ¡Hasta luego, Action Hero!`,
+        },
+      ],
+    },
+  ],
 };
 
-export default SP_L10;
+(() => {
+  console.log(`[LESSON-SPANISH-L10] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l10-s1-correr-saltar.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l10-s2-cantar-bailar.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l10-s3-comer-dormir.png',    { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l10-s4-simon-dice.png',      { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l10-s5-yo-puedo.png',        { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l10-s6-chant.png',           { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L10] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l10_screens;

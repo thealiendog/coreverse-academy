@@ -1,153 +1,170 @@
-// SPANISH (LANGUAGES)  |  L16 — Cultura y Tradiciones (Culture and Traditions)
-const SP_L16 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-  lessons: [{
-    id:        `sp-6-8-16`,
-    title:     `Cultura y Tradiciones — Culture and Traditions`,
-    duration:  12,
-    xpReward:  50,
-    badge:     `languages-l16`,
-    badgeName: `Culture Keeper`,
-    screens: [
-      {
-        id: `sp16-welcome`,
-        type: `welcome`,
-        guideText: `¡Hola, {name}! Today we explore Spanish CULTURE! Music, dance, food, holidays — Spanish-speaking life is full of color! ¡Vamos!`,
-        headline: `Cultura y Tradiciones`,
-        subtitle: `Culture and traditions`,
-        visual: `/explorer-assets/languages/sp16-welcome.png`,
-      },
-      {
-        id: `sp16-mag-1`,
-        type: `magazine`, section: 1, totalSections: 3,
-        headline: `Music and Dance`,
-        paragraphs: [
-          `Spanish music is famous, {name}! SALSA — SAHL-sah — is a fun, fast dance from Cuba and Puerto Rico.`,
-          `FLAMENCO — flah-MEN-koh — is a passionate dance from Spain. People clap, stomp, and twirl! ¡Olé!`,
-        ],
-        image: `/explorer-assets/languages/sp16-mag-1.png`,
-        imageCaption: `A salsa dancer and a flamenco dancer in colorful clothes.`,
-        vocab: [
-          { word: `música`, definition: `Music — MOO-see-kah.`,
-            audioPrompt: `Música, {name}. Say it like MOO-see-kah. Spanish music is full of life! Try it: música!` },
-          { word: `baile`, definition: `Dance — BYE-leh.`,
-            audioPrompt: `Baile, {name}. Say it like BYE-leh. It means dance! From "bailar" — to dance. Try it: baile!` },
-          { word: `fiesta`, definition: `Party — fee-EHS-tah.`,
-            audioPrompt: `Fiesta, {name}. Say it like fee-EHS-tah. It means party! You may already know this word! Try it: fiesta!` },
-        ],
-      },
-      {
-        id: `sp16-mag-2`,
-        type: `magazine`, section: 2, totalSections: 3,
-        headline: `Famous Foods`,
-        paragraphs: [
-          `Spanish-speaking food is yummy, {name}! TACOS — TAH-kohs — from Mexico. TORTILLA — tor-TEE-yah — a soft round flatbread.`,
-          `ARROZ — ah-ROHS — means rice. People eat arroz all over Latin America. So tasty!`,
-        ],
-        image: `/explorer-assets/languages/sp16-mag-2.png`,
-        imageCaption: `Tacos, tortillas, and a bowl of rice.`,
-        vocab: [
-          { word: `tacos`, definition: `Tacos — TAH-kohs.`,
-            audioPrompt: `Tacos, {name}. Say it like TAH-kohs. From Mexico — yum! Try it: tacos!` },
-          { word: `tortilla`, definition: `Tortilla — tor-TEE-yah.`,
-            audioPrompt: `Tortilla, {name}. Say it like tor-TEE-yah. The LL sounds like Y! A soft round flatbread. Try it: tortilla!` },
-          { word: `arroz`, definition: `Rice — ah-ROHS.`,
-            audioPrompt: `Arroz, {name}. Say it like ah-ROHS. It means rice! Try it: arroz!` },
-        ],
-      },
-      {
-        id: `sp16-mag-3`,
-        type: `magazine`, section: 3, totalSections: 3,
-        headline: `Holidays`,
-        paragraphs: [
-          `Special celebrations, {name}! NAVIDAD — nah-bee-DAHD — means Christmas. AÑO NUEVO — AH-nyoh noo-EH-voh — New Year.`,
-          `DÍA DE LOS MUERTOS — DEE-ah deh los moo-EHR-tohs — is a special Mexican holiday to remember loved ones. Beautiful colors and flowers!`,
-        ],
-        image: `/explorer-assets/languages/sp16-mag-3.png`,
-        imageCaption: `A Christmas tree, fireworks for New Year, and colorful Day of the Dead decorations.`,
-        vocab: [
-          { word: `Navidad`, definition: `Christmas — nah-bee-DAHD.`,
-            audioPrompt: `Navidad, {name}. Say it like nah-bee-DAHD. It means Christmas! ¡Feliz Navidad! Try it: Navidad!` },
-          { word: `Año Nuevo`, definition: `New Year — AH-nyoh noo-EH-voh.`,
-            audioPrompt: `Año Nuevo, {name}. Say it like AH-nyoh noo-EH-voh. It means New Year! ¡Feliz Año Nuevo! Try it: Año Nuevo!` },
-          { word: `Día de los Muertos`, definition: `Day of the Dead — Mexican holiday.`,
-            audioPrompt: `Día de los Muertos, {name}. It's a Mexican holiday to remember family who have passed away. People decorate with flowers and color. It's beautiful! Try it: Día de los Muertos!` },
-        ],
-      },
-      {
-        id: `sp16-game`,
-        type: `interactive`,
-        guideText: `Match each cultural word, {name}!`,
-        columnHeaders: [`Spanish`, `What it is`],
-        items: [
-          { id: `sp16-i1`, label: `salsa`,     correctMatch: `dance` },
-          { id: `sp16-i2`, label: `tacos`,     correctMatch: `food` },
-          { id: `sp16-i3`, label: `Navidad`,   correctMatch: `holiday` },
-          { id: `sp16-i4`, label: `fiesta`,    correctMatch: `party` },
-        ],
-        buckets: [
-          { id: `dance`,   label: `a dance`,   color: `#F472B6` },
-          { id: `food`,    label: `a food`,    color: `#FBBF24` },
-          { id: `holiday`, label: `a holiday`, color: `#34D399` },
-          { id: `party`,   label: `a party`,   color: `#A78BFA` },
-        ],
-      },
-      {
-        id: `sp16-quiz`,
-        type: `quiz`,
-        guideText: `¡Vamos, {name}!`,
-        questions: [
-          { id: `sp16-q1`, format: `multiple-choice`,
-            question: `What is "salsa"?`,
-            options: [`a food only`, `a fun dance`, `a holiday`, `a song`],
-            correctIndex: 1,
-            explanation: `Salsa is a fun, fast dance! (Salsa is also a yummy sauce — same word!)` },
-          { id: `sp16-q2`, format: `multiple-choice`,
-            question: `"Tortilla" is:`,
-            options: [`a dance`, `a country`, `a soft flatbread`, `a song`],
-            correctIndex: 2,
-            explanation: `Tortilla is a soft round flatbread — used for tacos and more!` },
-          { id: `sp16-q3`, format: `multiple-choice`,
-            question: `What does "Navidad" mean?`,
-            options: [`New Year`, `Christmas`, `Easter`, `birthday`],
-            correctIndex: 1,
-            explanation: `Navidad means Christmas! ¡Feliz Navidad!` },
-          { id: `sp16-q4`, format: `true-false`,
-            question: `"Fiesta" means party in Spanish.`,
-            correctAnswer: true,
-            explanation: `True! Fiesta means party! Time to celebrate!` },
-          { id: `sp16-q5`, format: `multiple-choice`,
-            question: `Where is "flamenco" dance from?`,
-            options: [`Mexico`, `Spain`, `Cuba`, `Peru`],
-            correctIndex: 1,
-            explanation: `Flamenco is from Spain — passionate clapping, stomping, and twirling!` },
-          { id: `sp16-q6`, format: `fill-blank`,
-            question: `Rice in Spanish is ___.`,
-            options: [`arroz`, `tacos`, `pan`, `agua`],
-            correctIndex: 0,
-            explanation: `Arroz means rice! Spanish-speaking countries eat lots of arroz.` },
-        ],
-      },
-      {
-        id: `sp16-realworld`,
-        type: `real-world`,
-        guideText: `Try Spanish culture today, {name}! Listen to a Spanish song. Eat tacos. Watch dancers on video. Have your own fiesta!`,
-        familyAdventure: `Tonight, listen to Spanish music together! Salsa? Flamenco? Mariachi? See which song makes you want to BAILAR (dance)!`,
-        creativePrompt: `Draw a colorful Spanish-speaking fiesta! Music, dance, food, friends! Show off the joy of la cultura!`,
-      },
-      {
-        id: `sp16-celebration`,
-        type: `celebration`,
-        message: `¡Excelente, {name}! You know Spanish culture! Salsa, flamenco, tacos, tortilla, arroz, Navidad, fiesta. Spanish-speaking life is full of color and joy! ¡Hasta la próxima!`,
-        badge: `languages-l16`,
-        badgeName: `Culture Keeper`,
-        xpEarned: 50,
-      },
-    ],
-  }],
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 16
+// "¡Las Tradiciones! Spanish Culture & Traditions"
+// ============================================================
+
+const spanish_explorer_l16_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
+  lessons: [
+    {
+      id:        'sp-6-8-16',
+      title:     `¡Las Tradiciones! Culture & Traditions`,
+      duration:  12,
+      xpReward:  50,
+      badge:     'culture-keeper',
+      badgeName: `Culture Keeper`,
+      screens: [
+        {
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: TRADITIONS — special celebrations Spanish families love! Piñatas, fiestas, special holidays. So much fun! ¡Vamos!`,
+        },
+        {
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Fiesta! (Say: fee-EHS-tah)`,
+          paragraphs: [
+            `FIESTA means PARTY! Spanish kids LOVE fiestas — for birthdays, holidays, anything!`,
+            `Dance and say: ¡FIESTA! ¡FIESTA! Throw your hands up: ¡FIESTA!`,
+          ],
+          image:        '/explorer-assets/languages/l16-s1-fiesta.png',
+          imageCaption: `¡Fiesta! Party time!`,
+          vocab: [
+            { word: 'fiesta', definition: `Party in Spanish. Say: fee-EHS-tah.`,                              audioPrompt: `Fiesta — say it like fee-EHS-tah. Fiesta means party!` },
+            { word: 'celebrar', definition: `To celebrate in Spanish! Say: seh-leh-BRAR.`,                    audioPrompt: `Celebrar — say it like seh-leh-BRAR. Celebrar means to celebrate!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Piñata! (Say: peen-YAH-tah)`,
+          paragraphs: [
+            `PIÑATA is a colorful paper toy filled with CANDY! Kids hit it with a stick — and candy falls out!`,
+            `Pretend to swing a stick: ¡PIÑATA! ¡PIÑATA! Spanish kids LOVE breaking piñatas at birthday fiestas!`,
+          ],
+          image:        '/explorer-assets/languages/l16-s2-pinata.png',
+          imageCaption: `¡Piñata! Hit it for candy!`,
+          vocab: [
+            { word: 'piñata',  definition: `A paper toy filled with candy that you hit at parties!`,         audioPrompt: `Piñata — a paper toy filled with candy! You hit it and candy falls out!` },
+            { word: 'dulces',  definition: `Candy in Spanish! Say: DOOL-sehs.`,                                audioPrompt: `Dulces — say it like DOOL-sehs. Dulces means candy!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Cumpleaños! (Say: koom-pleh-AH-nyos)`,
+          paragraphs: [
+            `CUMPLEAÑOS means BIRTHDAY! Spanish kids sing "Las Mañanitas" (their version of "Happy Birthday")!`,
+            `Try it: ¡CUMPLEAÑOS! Don't forget the piñata for a real Spanish birthday party!`,
+          ],
+          image:        '/explorer-assets/languages/l16-s3-cumpleanos.png',
+          imageCaption: `¡Feliz cumpleaños! Happy birthday!`,
+          vocab: [
+            { word: 'cumpleaños',     definition: `Birthday in Spanish. Say: koom-pleh-AH-nyos.`,            audioPrompt: `Cumpleaños — say it like koom-pleh-AH-nyos. Cumpleaños means birthday!` },
+            { word: 'feliz cumpleaños', definition: `Happy birthday in Spanish!`,                             audioPrompt: `Feliz cumpleaños — happy birthday in Spanish!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Día de los Muertos!`,
+          paragraphs: [
+            `DÍA DE LOS MUERTOS means DAY OF THE DEAD! It's a Mexican tradition to REMEMBER loved ones with flowers, candles, and pictures.`,
+            `It's not scary — it's beautiful! Families put up "altares" with photos. ¡Tradición especial!`,
+          ],
+          image:        '/explorer-assets/languages/l16-s4-dia-muertos.png',
+          imageCaption: `Día de los Muertos — remembering loved ones.`,
+          vocab: [
+            { word: 'tradición', definition: `A tradition — something special that families do!`,            audioPrompt: `Tradición — say it like trah-dee-see-OHN. Tradición means tradition!` },
+            { word: 'flores',    definition: `Flowers in Spanish! Say: FLO-rehs.`,                            audioPrompt: `Flores — say it like FLO-rehs. Flores means flowers!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¡Carnaval! (Say: kar-nah-VAHL)`,
+          paragraphs: [
+            `CARNAVAL means CARNIVAL! In Colombia, Brazil, and Spain, there are HUGE Carnival parades with costumes, dancing, and música!`,
+            `Pretend to dance in a parade: ¡CARNAVAL! ¡CARNAVAL! Everyone dresses up and celebrates!`,
+          ],
+          image:        '/explorer-assets/languages/l16-s5-carnaval.png',
+          imageCaption: `¡Carnaval! Costumes and dancing!`,
+          vocab: [
+            { word: 'carnaval', definition: `A huge dancing parade festival!`,                                audioPrompt: `Carnaval — a huge dancing parade festival! Costumes and música!` },
+            { word: 'disfraz',  definition: `Costume in Spanish! Say: dees-FRAS.`,                            audioPrompt: `Disfraz — say it like dees-FRAS. Disfraz means costume!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's Tradition Chant!`,
+          paragraphs: [
+            `Time to CHANT the traditions! Dance with each word!`,
+            `¡FIESTA! ¡PIÑATA! ¡CUMPLEAÑOS! ¡CARNAVAL! ¡TRADICIÓN! ¡CELEBRAR! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l16-s6-chant.png',
+          imageCaption: `Chant and celebrate Spanish traditions!`,
+          vocab: [
+            { word: 'culture',     definition: `Special things a group of people do together!`,               audioPrompt: `Culture — special things people do together. Chant! Fiesta! Piñata! Cumpleaños! Carnaval! Tradición! Celebrar! Olé!` },
+            { word: 'celebrate',   definition: `To do something fun and special for an event!`,               audioPrompt: `Celebrate — to do something fun and special!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish tradition to what it is!`,
+          guideText:     `Tap a tradition, then tap what it means!`,
+          columnHeaders: [`Spanish`, `What is it?`],
+          items: [
+            { image: 'l16-game-fiesta.png',     label: `Fiesta`,     correctMatch: 'party',    objectPosition: 'center 50%', matchPhrase: `¡Sí! Fiesta is PARTY! Let's celebrate!` },
+            { image: 'l16-game-pinata.png',    label: `Piñata`,     correctMatch: 'candy-toy', objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Piñata is the CANDY TOY!` },
+            { image: 'l16-game-cumple.png',    label: `Cumpleaños`, correctMatch: 'birthday',  objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Cumpleaños is BIRTHDAY!` },
+            { image: 'l16-game-carnaval.png',  label: `Carnaval`,   correctMatch: 'parade',    objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Carnaval is the big PARADE festival!` },
+          ],
+          buckets: [
+            { id: 'party',     label: `Party`,     color: '#F472B6' },
+            { id: 'candy-toy', label: `Candy Toy`, color: '#FBBF24' },
+            { id: 'birthday',  label: `Birthday`,  color: '#A78BFA' },
+            { id: 'parade',    label: `Parade`,    color: '#34D399' },
+          ],
+        },
+        {
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your Culture Keeper badge!`,
+          questions: [
+            { format: 'multiple-choice', question: `What does "fiesta" mean?`,                                                    options: [`Birthday`, `Party`, `Parade`, `Costume`],            correctIndex: 1 },
+            { format: 'multiple-choice', question: `What is a "piñata"?`,                                                         options: [`A dance`, `A song`, `A toy filled with candy`, `A holiday`], correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which means BIRTHDAY?`,                                                       options: [`Fiesta`, `Cumpleaños`, `Carnaval`, `Tradición`],     correctIndex: 1 },
+            { format: 'true-false', question: `Día de los Muertos remembers loved ones with flowers and photos.`,                 correctAnswer: true },
+            { format: 'fill-blank', question: `A costume for Carnaval is called a "___" in Spanish.`,                             options: [`disfraz`, `dulces`, `flores`, `juego`],             correctIndex: 0 },
+            { format: 'multiple-choice', question: `Which word means "to celebrate"?`,                                            options: [`Cantar`, `Bailar`, `Celebrar`, `Comer`],             correctIndex: 2 },
+          ],
+        },
+        {
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Bring Spanish traditions to YOUR life!`,
+          familyAdventure: `Ask your family about YOUR traditions! What does your family celebrate? Birthdays? Holidays? Tell them the Spanish names: FIESTA, CUMPLEAÑOS, TRADICIÓN. Maybe try making a piñata for your next party!`,
+          creativePrompt:  `Design YOUR own piñata! Draw what shape it would be (a star, an animal, a planet?). Color it bright with rojo, azul, amarillo, verde! Add candy spilling out!`,
+        },
+        {
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'culture-keeper',
+          badgeName: `Culture Keeper`,
+          message:   `¡EXCELENTE, {name}! Now you know how Spanish-speaking families celebrate! Traditions make us special and connected. Luna is so proud! ¡Hasta luego!`,
+        },
+      ],
+    },
+  ],
 };
 
-export default SP_L16;
+(() => {
+  console.log(`[LESSON-SPANISH-L16] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l16-s1-fiesta.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l16-s2-pinata.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l16-s3-cumpleanos.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l16-s4-dia-muertos.png',{ method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l16-s5-carnaval.png',   { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l16-s6-chant.png',      { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L16] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l16_screens;

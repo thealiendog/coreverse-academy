@@ -1,153 +1,170 @@
-// SPANISH (LANGUAGES)  |  L13 — La Ropa (Clothes)
-const SP_L13 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-  lessons: [{
-    id:        `sp-6-8-13`,
-    title:     `La Ropa — Clothes`,
-    duration:  12,
-    xpReward:  50,
-    badge:     `languages-l13`,
-    badgeName: `Style Speller`,
-    screens: [
-      {
-        id: `sp13-welcome`,
-        type: `welcome`,
-        guideText: `¡Hola, {name}! Today we get DRESSED in Spanish! Shirts, pants, shoes — every kind of clothes! ¡Vamos!`,
-        headline: `La Ropa`,
-        subtitle: `Clothes in Spanish`,
-        visual: `/explorer-assets/languages/sp13-welcome.png`,
-      },
-      {
-        id: `sp13-mag-1`,
-        type: `magazine`, section: 1, totalSections: 3,
-        headline: `Tops`,
-        paragraphs: [
-          `Top half first, {name}! CAMISA — kah-MEE-sah — means shirt. CAMISETA — kah-mee-SEH-tah — means t-shirt!`,
-          `SUÉTER — SWEH-tehr — means sweater. Easy — sounds like "sweater" in English!`,
-        ],
-        image: `/explorer-assets/languages/sp13-mag-1.png`,
-        imageCaption: `A shirt, a t-shirt, and a sweater hanging in a closet.`,
-        vocab: [
-          { word: `camisa`, definition: `Shirt — kah-MEE-sah.`,
-            audioPrompt: `Camisa, {name}. Say it like kah-MEE-sah. It means shirt! Try it: camisa!` },
-          { word: `camiseta`, definition: `T-shirt — kah-mee-SEH-tah.`,
-            audioPrompt: `Camiseta, {name}. Say it like kah-mee-SEH-tah. It means t-shirt — like a smaller shirt! Try it: camiseta!` },
-          { word: `suéter`, definition: `Sweater — SWEH-tehr.`,
-            audioPrompt: `Suéter, {name}. Say it like SWEH-tehr. It means sweater! Almost the same in English! Try it: suéter!` },
-        ],
-      },
-      {
-        id: `sp13-mag-2`,
-        type: `magazine`, section: 2, totalSections: 3,
-        headline: `Bottoms`,
-        paragraphs: [
-          `Bottom half, {name}! PANTALONES — pahn-tah-LOH-nes — means pants. FALDA — FAHL-dah — means skirt.`,
-          `VESTIDO — beh-STEE-doh — means dress. Pants, skirts, dresses — all your favorites!`,
-        ],
-        image: `/explorer-assets/languages/sp13-mag-2.png`,
-        imageCaption: `Pants, a skirt, and a dress in different colors.`,
-        vocab: [
-          { word: `pantalones`, definition: `Pants — pahn-tah-LOH-nes.`,
-            audioPrompt: `Pantalones, {name}. Say it like pahn-tah-LOH-nes. It means pants! Try it: pantalones!` },
-          { word: `falda`, definition: `Skirt — FAHL-dah.`,
-            audioPrompt: `Falda, {name}. Say it like FAHL-dah. It means skirt! Try it: falda!` },
-          { word: `vestido`, definition: `Dress — beh-STEE-doh.`,
-            audioPrompt: `Vestido, {name}. Say it like beh-STEE-doh. It means dress! Try it: vestido!` },
-        ],
-      },
-      {
-        id: `sp13-mag-3`,
-        type: `magazine`, section: 3, totalSections: 3,
-        headline: `Shoes and Hats`,
-        paragraphs: [
-          `Feet and head, {name}! ZAPATOS — sah-PAH-tohs — means shoes. SOMBRERO — sohm-BREH-roh — means hat.`,
-          `CALCETINES — kahl-seh-TEE-nes — means socks. Now you're dressed head to toe!`,
-        ],
-        image: `/explorer-assets/languages/sp13-mag-3.png`,
-        imageCaption: `Shoes, a hat, and socks ready to wear.`,
-        vocab: [
-          { word: `zapatos`, definition: `Shoes — sah-PAH-tohs.`,
-            audioPrompt: `Zapatos, {name}. Say it like sah-PAH-tohs. It means shoes! Try it: zapatos!` },
-          { word: `sombrero`, definition: `Hat — sohm-BREH-roh.`,
-            audioPrompt: `Sombrero, {name}. Say it like sohm-BREH-roh. It means hat — you may know this word! Try it: sombrero!` },
-          { word: `calcetines`, definition: `Socks — kahl-seh-TEE-nes.`,
-            audioPrompt: `Calcetines, {name}. Say it like kahl-seh-TEE-nes. It means socks! Try it: calcetines!` },
-        ],
-      },
-      {
-        id: `sp13-game`,
-        type: `interactive`,
-        guideText: `Match each clothes word, {name}!`,
-        columnHeaders: [`Spanish`, `English`],
-        items: [
-          { id: `sp13-i1`, label: `camisa`,    correctMatch: `shirt` },
-          { id: `sp13-i2`, label: `pantalones`,correctMatch: `pants` },
-          { id: `sp13-i3`, label: `zapatos`,   correctMatch: `shoes` },
-          { id: `sp13-i4`, label: `sombrero`,  correctMatch: `hat` },
-        ],
-        buckets: [
-          { id: `shirt`, label: `shirt`, color: `#60A5FA` },
-          { id: `pants`, label: `pants`, color: `#A78BFA` },
-          { id: `shoes`, label: `shoes`, color: `#F87171` },
-          { id: `hat`,   label: `hat`,   color: `#FBBF24` },
-        ],
-      },
-      {
-        id: `sp13-quiz`,
-        type: `quiz`,
-        guideText: `¡Vamos, {name}!`,
-        questions: [
-          { id: `sp13-q1`, format: `multiple-choice`,
-            question: `What does "camisa" mean?`,
-            options: [`pants`, `shirt`, `shoes`, `hat`],
-            correctIndex: 1,
-            explanation: `Camisa means shirt!` },
-          { id: `sp13-q2`, format: `multiple-choice`,
-            question: `Which word means "pants"?`,
-            options: [`falda`, `vestido`, `pantalones`, `suéter`],
-            correctIndex: 2,
-            explanation: `Pantalones means pants!` },
-          { id: `sp13-q3`, format: `multiple-choice`,
-            question: `"Sombrero" is:`,
-            options: [`a hat`, `a shirt`, `shoes`, `socks`],
-            correctIndex: 0,
-            explanation: `Sombrero is a hat! Big shade!` },
-          { id: `sp13-q4`, format: `true-false`,
-            question: `"Zapatos" means shoes.`,
-            correctAnswer: true,
-            explanation: `True! Zapatos means shoes. Say it like sah-PAH-tohs.` },
-          { id: `sp13-q5`, format: `multiple-choice`,
-            question: `What is "vestido"?`,
-            options: [`pants`, `dress`, `skirt`, `shoes`],
-            correctIndex: 1,
-            explanation: `Vestido is dress!` },
-          { id: `sp13-q6`, format: `fill-blank`,
-            question: `Socks in Spanish are ___.`,
-            options: [`calcetines`, `zapatos`, `sombrero`, `suéter`],
-            correctIndex: 0,
-            explanation: `Calcetines means socks!` },
-        ],
-      },
-      {
-        id: `sp13-realworld`,
-        type: `real-world`,
-        guideText: `Get dressed in Spanish, {name}! When you put on each piece, say it out loud! "Mi camisa! Mis zapatos!"`,
-        familyAdventure: `Tonight, pick tomorrow's clothes and name each piece in Spanish! Can your family guess which item you mean?`,
-        creativePrompt: `Draw yourself in your favorite outfit! Label every piece in Spanish: camisa, pantalones, zapatos. Fashion show!`,
-      },
-      {
-        id: `sp13-celebration`,
-        type: `celebration`,
-        message: `¡Excelente, {name}! You can dress in Spanish! Camisa, camiseta, suéter, pantalones, falda, vestido, zapatos, sombrero, calcetines. Fashion ready! ¡Hasta la próxima!`,
-        badge: `languages-l13`,
-        badgeName: `Style Speller`,
-        xpEarned: 50,
-      },
-    ],
-  }],
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 13
+// "¡La Ropa! Clothes in Spanish"
+// ============================================================
+
+const spanish_explorer_l13_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
+  lessons: [
+    {
+      id:        'sp-6-8-13',
+      title:     `¡La Ropa! Clothes in Spanish`,
+      duration:  12,
+      xpReward:  50,
+      badge:     'clothes-explorer',
+      badgeName: `Clothes Explorer`,
+      screens: [
+        {
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: CLOTHES in Spanish! ¡La ropa! Shirt, pants, shoes, hat — let's name what you wear! Look at what you have on. ¡Vamos!`,
+        },
+        {
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Camisa! (Say: kah-MEE-sah)`,
+          paragraphs: [
+            `CAMISA means SHIRT! Touch your shirt!`,
+            `Try it: ¡CAMISA! ¡CAMISA! Your shirt has a Spanish name now!`,
+          ],
+          image:        '/explorer-assets/languages/l13-s1-camisa.png',
+          imageCaption: `¡Camisa! Shirt!`,
+          vocab: [
+            { word: 'camisa', definition: `Shirt in Spanish. Say: kah-MEE-sah.`,                              audioPrompt: `Camisa — say it like kah-MEE-sah. Camisa means shirt!` },
+            { word: 'ropa',   definition: `Clothes in Spanish. Say: ROH-pah.`,                                audioPrompt: `Ropa — say it like ROH-pah. Ropa means clothes!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¡Pantalones! (Say: pan-tah-LO-nehs)`,
+          paragraphs: [
+            `PANTALONES means PANTS! Pat your legs!`,
+            `Spanish kids say "pantalones" — even just for one pair! Try it: ¡PANTALONES! ¡PANTALONES!`,
+          ],
+          image:        '/explorer-assets/languages/l13-s2-pantalones.png',
+          imageCaption: `¡Pantalones! Pants!`,
+          vocab: [
+            { word: 'pantalones', definition: `Pants in Spanish. Say: pan-tah-LO-nehs.`,                       audioPrompt: `Pantalones — say it like pan-tah-LO-nehs. Pantalones means pants!` },
+            { word: 'falda',      definition: `Skirt in Spanish! Say: FAHL-dah.`,                              audioPrompt: `Falda — say it like FAHL-dah. Falda means skirt!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Zapatos! (Say: sah-PAH-tohs)`,
+          paragraphs: [
+            `ZAPATOS means SHOES! Tap your feet!`,
+            `Try it: ¡ZAPATOS! Spanish kids put on zapatos every morning — just like you!`,
+          ],
+          image:        '/explorer-assets/languages/l13-s3-zapatos.png',
+          imageCaption: `¡Zapatos! Shoes!`,
+          vocab: [
+            { word: 'zapatos', definition: `Shoes in Spanish. Say: sah-PAH-tohs.`,                            audioPrompt: `Zapatos — say it like sah-PAH-tohs. Zapatos means shoes!` },
+            { word: 'pies',   definition: `Feet in Spanish — what zapatos go on!`,                            audioPrompt: `Pies — feet! Zapatos go on your pies!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Sombrero! (Say: som-BREH-roh)`,
+          paragraphs: [
+            `SOMBRERO means HAT! Tap your head!`,
+            `Spanish hats are famous — like the big ones in Mexico! Try it: ¡SOMBRERO!`,
+          ],
+          image:        '/explorer-assets/languages/l13-s4-sombrero.png',
+          imageCaption: `¡Sombrero! Hat!`,
+          vocab: [
+            { word: 'sombrero', definition: `Hat in Spanish. Say: som-BREH-roh.`,                             audioPrompt: `Sombrero — say it like som-BREH-roh. Sombrero means hat!` },
+            { word: 'gorro',    definition: `Cap in Spanish! Say: GOH-rro.`,                                  audioPrompt: `Gorro — say it like GOH-rro. Gorro means cap!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¡Chaqueta y Calcetines! (Say: chah-KEH-tah and kal-seh-TEE-nehs)`,
+          paragraphs: [
+            `CHAQUETA means JACKET! CALCETINES means SOCKS!`,
+            `Wrap your arms around yourself: ¡CHAQUETA! Touch your ankles: ¡CALCETINES!`,
+          ],
+          image:        '/explorer-assets/languages/l13-s5-chaqueta-calcetines.png',
+          imageCaption: `¡Chaqueta! Jacket. ¡Calcetines! Socks.`,
+          vocab: [
+            { word: 'chaqueta',    definition: `Jacket in Spanish. Say: chah-KEH-tah.`,                       audioPrompt: `Chaqueta — say it like chah-KEH-tah. Chaqueta means jacket!` },
+            { word: 'calcetines',  definition: `Socks in Spanish. Say: kal-seh-TEE-nehs.`,                    audioPrompt: `Calcetines — say it like kal-seh-TEE-nehs. Calcetines means socks!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's Clothes Chant!`,
+          paragraphs: [
+            `Time to CHANT! Touch each piece of clothing as you say it!`,
+            `¡CAMISA! ¡PANTALONES! ¡ZAPATOS! ¡SOMBRERO! ¡CHAQUETA! ¡CALCETINES! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l13-s6-chant.png',
+          imageCaption: `Touch and chant your ropa!`,
+          vocab: [
+            { word: 'wear', definition: `To have clothes on your body!`,                                       audioPrompt: `Wear — to have clothes on. Chant! Camisa! Pantalones! Zapatos! Sombrero! Chaqueta! Calcetines! Olé!` },
+            { word: 'outfit', definition: `All the clothes you're wearing together!`,                          audioPrompt: `Outfit — all your clothes together! Your outfit in Spanish!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish clothes word to the right English word!`,
+          guideText:     `Tap a Spanish clothes word, then tap what it is!`,
+          columnHeaders: [`Spanish`, `English`],
+          items: [
+            { image: 'l13-game-camisa.png',    label: `Camisa`,     correctMatch: 'shirt', objectPosition: 'center 50%', matchPhrase: `¡Sí! Camisa is SHIRT!` },
+            { image: 'l13-game-zapatos.png',   label: `Zapatos`,    correctMatch: 'shoes', objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Zapatos is SHOES!` },
+            { image: 'l13-game-sombrero.png',  label: `Sombrero`,   correctMatch: 'hat',   objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Sombrero is HAT!` },
+            { image: 'l13-game-chaqueta.png',  label: `Chaqueta`,   correctMatch: 'jacket',objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Chaqueta is JACKET!` },
+          ],
+          buckets: [
+            { id: 'shirt',  label: `Shirt`,  color: '#60A5FA' },
+            { id: 'shoes',  label: `Shoes`,  color: '#A78BFA' },
+            { id: 'hat',    label: `Hat`,    color: '#FBBF24' },
+            { id: 'jacket', label: `Jacket`, color: '#F472B6' },
+          ],
+        },
+        {
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your Clothes Explorer badge!`,
+          questions: [
+            { format: 'multiple-choice', question: `What does "camisa" mean?`,                                                  options: [`Pants`, `Shirt`, `Shoes`, `Hat`],                  correctIndex: 1 },
+            { format: 'multiple-choice', question: `What does "zapatos" mean?`,                                                 options: [`Socks`, `Pants`, `Shoes`, `Jacket`],               correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which Spanish word means HAT?`,                                             options: [`Camisa`, `Sombrero`, `Falda`, `Gorro`],             correctIndex: 1 },
+            { format: 'true-false', question: `"Pantalones" means PANTS in Spanish.`,                                           correctAnswer: true },
+            { format: 'fill-blank', question: `In winter you wear a ___ to stay warm.`,                                         options: [`chaqueta`, `falda`, `zapatos`, `sombrero`],         correctIndex: 0 },
+            { format: 'multiple-choice', question: `What goes on your feet?`,                                                   options: [`Camisa`, `Sombrero`, `Zapatos`, `Pantalones`],      correctIndex: 2 },
+          ],
+        },
+        {
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Get dressed in Spanish today!`,
+          familyAdventure: `Tomorrow morning when you get dressed, name EVERY piece of clothing in Spanish! "¡CAMISA!" as you put it on. "¡PANTALONES!" "¡ZAPATOS!" "¡CHAQUETA!" Make getting dressed an adventure!`,
+          creativePrompt:  `Draw your favorite outfit. Label every piece in Spanish — CAMISA, PANTALONES, ZAPATOS. Add a SOMBRERO on top! Color it with the colors you learned!`,
+        },
+        {
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'clothes-explorer',
+          badgeName: `Clothes Explorer`,
+          message:   `¡EXCELENTE, {name}! You learned 6 clothes words in Spanish! Now you can describe what you wear in TWO languages. Luna is so proud! ¡Hasta luego!`,
+        },
+      ],
+    },
+  ],
 };
 
-export default SP_L13;
+(() => {
+  console.log(`[LESSON-SPANISH-L13] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l13-s1-camisa.png',              { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l13-s2-pantalones.png',          { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l13-s3-zapatos.png',             { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l13-s4-sombrero.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l13-s5-chaqueta-calcetines.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l13-s6-chant.png',               { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L13] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l13_screens;

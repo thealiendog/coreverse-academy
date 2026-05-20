@@ -1,153 +1,170 @@
-// SPANISH (LANGUAGES)  |  L19 — Mis Cosas Favoritas (My Favorite Things)
-const SP_L19 = {
-  ageBand:   `explorers`,
-  subjectId: `languages`,
-  guideId:   `luna`,
-  lessons: [{
-    id:        `sp-6-8-19`,
-    title:     `Mis Cosas Favoritas — My Favorite Things`,
-    duration:  12,
-    xpReward:  50,
-    badge:     `languages-l19`,
-    badgeName: `Favorites Finder`,
-    screens: [
-      {
-        id: `sp19-welcome`,
-        type: `welcome`,
-        guideText: `¡Hola, {name}! Today we share what YOU love most! Favorite food? Color? Animal? Tell the world in Spanish! ¡Vamos!`,
-        headline: `Mis Cosas Favoritas`,
-        subtitle: `My favorite things in Spanish`,
-        visual: `/explorer-assets/languages/sp19-welcome.png`,
-      },
-      {
-        id: `sp19-mag-1`,
-        type: `magazine`, section: 1, totalSections: 3,
-        headline: `The Magic Word: Favorite`,
-        paragraphs: [
-          `Big word, {name}! FAVORITO — fah-bor-EE-toh — means favorite!`,
-          `So MI FAVORITO means "my favorite!" Now you can talk about everything you love most!`,
-        ],
-        image: `/explorer-assets/languages/sp19-mag-1.png`,
-        imageCaption: `A child showing off their favorite toy with a big smile.`,
-        vocab: [
-          { word: `favorito`, definition: `Favorite (boy word) — fah-bor-EE-toh.`,
-            audioPrompt: `Favorito, {name}. Say it like fah-bor-EE-toh. It means favorite — for boy words! Like "perro favorito" — favorite dog. Try it: favorito!` },
-          { word: `favorita`, definition: `Favorite (girl word) — fah-bor-EE-tah.`,
-            audioPrompt: `Favorita, {name}. Say it like fah-bor-EE-tah. It means favorite — for girl words! Like "comida favorita" — favorite food. Try it: favorita!` },
-          { word: `me gusta`, definition: `I like — meh GOOS-tah.`,
-            audioPrompt: `Me gusta, {name}. Say it like meh GOOS-tah. It means "I like!" Try it: me gusta!` },
-        ],
-      },
-      {
-        id: `sp19-mag-2`,
-        type: `magazine`, section: 2, totalSections: 3,
-        headline: `Tell People What You Love`,
-        paragraphs: [
-          `Now share, {name}! "Mi color favorito es azul" — My favorite color is blue! "Mi animal favorito es el gato" — My favorite animal is the cat!`,
-          `Use the words you've learned! Mi pan favorito. Mi maestra favorita. So many ways to share!`,
-        ],
-        image: `/explorer-assets/languages/sp19-mag-2.png`,
-        imageCaption: `A child pointing to favorite color (blue), favorite animal (cat), favorite food (pizza).`,
-        vocab: [
-          { word: `mi color favorito`, definition: `My favorite color.`,
-            audioPrompt: `Mi color favorito, {name}. It means "my favorite color." Then add a color! Mi color favorito es azul (blue). Try it: mi color favorito es ___!` },
-          { word: `mi animal favorito`, definition: `My favorite animal.`,
-            audioPrompt: `Mi animal favorito, {name}. It means "my favorite animal." Add an animal! Mi animal favorito es el perro (dog). Try it!` },
-          { word: `mi comida favorita`, definition: `My favorite food — koh-MEE-dah.`,
-            audioPrompt: `Mi comida favorita, {name}. Comida means food! Add your favorite! Mi comida favorita es pan (bread). Try it!` },
-        ],
-      },
-      {
-        id: `sp19-mag-3`,
-        type: `magazine`, section: 3, totalSections: 3,
-        headline: `What Don't You Like?`,
-        paragraphs: [
-          `Sometimes we DON'T like things, {name}! NO ME GUSTA — no meh GOOS-tah — I don't like.`,
-          `It's okay to have opinions! "No me gusta el frío" — I don't like the cold. "Me gusta el verano" — I like summer!`,
-        ],
-        image: `/explorer-assets/languages/sp19-mag-3.png`,
-        imageCaption: `A child making a happy face for something they like and a sad face for something they don't.`,
-        vocab: [
-          { word: `no me gusta`, definition: `I don't like — no meh GOOS-tah.`,
-            audioPrompt: `No me gusta, {name}. Say it like no meh GOOS-tah. It means "I don't like." Try it: no me gusta!` },
-          { word: `mucho`, definition: `A lot — MOO-choh.`,
-            audioPrompt: `Mucho, {name}. Say it like MOO-choh. It means a lot! "Me gusta mucho" — I like it a LOT! Try it: mucho!` },
-          { word: `también`, definition: `Also/too — tahm-bee-EHN.`,
-            audioPrompt: `También, {name}. Say it like tahm-bee-EHN. It means also or too! "Me gusta también" — I like it too! Try it: también!` },
-        ],
-      },
-      {
-        id: `sp19-game`,
-        type: `interactive`,
-        guideText: `Match each phrase, {name}!`,
-        columnHeaders: [`Spanish`, `English`],
-        items: [
-          { id: `sp19-i1`, label: `me gusta`,    correctMatch: `i like` },
-          { id: `sp19-i2`, label: `no me gusta`, correctMatch: `i don't like` },
-          { id: `sp19-i3`, label: `favorito`,    correctMatch: `favorite` },
-          { id: `sp19-i4`, label: `mucho`,       correctMatch: `a lot` },
-        ],
-        buckets: [
-          { id: `i like`,       label: `i like`,       color: `#34D399` },
-          { id: `i don't like`, label: `i don't like`, color: `#F87171` },
-          { id: `favorite`,     label: `favorite`,     color: `#FBBF24` },
-          { id: `a lot`,        label: `a lot`,        color: `#A78BFA` },
-        ],
-      },
-      {
-        id: `sp19-quiz`,
-        type: `quiz`,
-        guideText: `¡Vamos, {name}!`,
-        questions: [
-          { id: `sp19-q1`, format: `multiple-choice`,
-            question: `How do you say "I like" in Spanish?`,
-            options: [`no me gusta`, `me gusta`, `mi favorito`, `mucho`],
-            correctIndex: 1,
-            explanation: `Me gusta means "I like!"` },
-          { id: `sp19-q2`, format: `multiple-choice`,
-            question: `"Favorito" means:`,
-            options: [`good`, `favorite`, `big`, `red`],
-            correctIndex: 1,
-            explanation: `Favorito (or favorita) means favorite!` },
-          { id: `sp19-q3`, format: `multiple-choice`,
-            question: `"Mi comida favorita es pan" means:`,
-            options: [`I like bread`, `My favorite food is bread`, `Bread is yummy`, `I want bread`],
-            correctIndex: 1,
-            explanation: `My favorite food is bread! Mi (my) + comida (food) + favorita (favorite) = my favorite food.` },
-          { id: `sp19-q4`, format: `true-false`,
-            question: `"No me gusta" means "I don't like."`,
-            correctAnswer: true,
-            explanation: `True! It's okay to have opinions in any language!` },
-          { id: `sp19-q5`, format: `multiple-choice`,
-            question: `What does "mucho" mean?`,
-            options: [`a little`, `a lot`, `none`, `some`],
-            correctIndex: 1,
-            explanation: `Mucho means a lot! "Me gusta mucho" — I like it a LOT!` },
-          { id: `sp19-q6`, format: `fill-blank`,
-            question: `"Me gusta ___" means "I like it too."`,
-            options: [`también`, `mucho`, `no`, `favorito`],
-            correctIndex: 0,
-            explanation: `También means too or also! "Me gusta también" — I like it too!` },
-        ],
-      },
-      {
-        id: `sp19-realworld`,
-        type: `real-world`,
-        guideText: `Share favorites today, {name}! Tell someone: "Mi color favorito es ___!" Use a color you learned in Spanish!`,
-        familyAdventure: `Tonight, do "Spanish Favorites" with your family! Each person shares their favorite color, food, and animal — IN SPANISH! Mi color favorito es...`,
-        creativePrompt: `Draw a "My Favorites" page! Write your favorite color, food, animal, and hobby — all in Spanish! Mi color favorito... Mi comida favorita...`,
-      },
-      {
-        id: `sp19-celebration`,
-        type: `celebration`,
-        message: `¡Excelente, {name}! You can share your favorites in Spanish! Me gusta, no me gusta, favorito, favorita, mucho, también. You can talk about YOU now! ¡Hasta la próxima!`,
-        badge: `languages-l19`,
-        badgeName: `Favorites Finder`,
-        xpEarned: 50,
-      },
-    ],
-  }],
+// ============================================================
+// COREVERSE EXPLORERS — Spanish · Lesson 19
+// "¡Mis Favoritos! Talking About Your Favorites"
+// ============================================================
+
+const spanish_explorer_l19_screens = {
+  ageBand:   'explorers',
+  subjectId: 'languages',
+  guide:     'luna',
+  lessons: [
+    {
+      id:        'sp-6-8-19',
+      title:     `¡Mis Favoritos! Talking About Your Favorites`,
+      duration:  12,
+      xpReward:  50,
+      badge:     'favorite-finder',
+      badgeName: `Favorite Finder`,
+      screens: [
+        {
+          type:      'welcome',
+          guideText: `¡Hola, {name}! Today: how to talk about YOURSELF in Spanish! Your name, your favorites, your likes — all the things that make you YOU! ¡Vamos!`,
+        },
+        {
+          type:          'magazine', section: 1, totalSections: 6,
+          headline:      `¡Me llamo! (Say: meh YAH-mo)`,
+          paragraphs: [
+            `ME LLAMO means "MY NAME IS"! Use it to tell someone your name!`,
+            `Try it: "ME LLAMO {name}!" Point to yourself: ¡ME LLAMO! ¡ME LLAMO!`,
+          ],
+          image:        '/explorer-assets/languages/l19-s1-me-llamo.png',
+          imageCaption: `¡Me llamo! My name is!`,
+          vocab: [
+            { word: 'me llamo', definition: `My name is in Spanish. Say: meh YAH-mo.`,                        audioPrompt: `Me llamo — say it like meh YAH-mo. Me llamo means my name is!` },
+            { word: 'nombre',   definition: `Name in Spanish! Say: NOM-breh.`,                                 audioPrompt: `Nombre — say it like NOM-breh. Nombre means name!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 2, totalSections: 6,
+          headline:      `¿Cómo te llamas? (Say: KOH-mo teh YAH-mahs)`,
+          paragraphs: [
+            `¿CÓMO TE LLAMAS? means "WHAT'S YOUR NAME?" Ask someone with a smile!`,
+            `Try it: ¿CÓMO TE LLAMAS? Then they answer: "ME LLAMO ___" Easy conversation!`,
+          ],
+          image:        '/explorer-assets/languages/l19-s2-como-te-llamas.png',
+          imageCaption: `¿Cómo te llamas? What's your name?`,
+          vocab: [
+            { word: '¿cómo te llamas?', definition: `What's your name? in Spanish.`,                          audioPrompt: `Cómo te llamas — what's your name? Ask: ¿Cómo te llamas?` },
+            { word: 'mucho gusto',      definition: `Nice to meet you in Spanish!`,                            audioPrompt: `Mucho gusto — nice to meet you! Say it after meeting someone new!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 3, totalSections: 6,
+          headline:      `¡Mi color favorito!`,
+          paragraphs: [
+            `Use FAVORITO to share what you LOVE! "Mi color favorito es..." means "My favorite color is..."`,
+            `Try it! "Mi color favorito es AZUL!" Or VERDE, ROJO, AMARILLO — whatever YOUR favorite is!`,
+          ],
+          image:        '/explorer-assets/languages/l19-s3-color-favorito.png',
+          imageCaption: `¡Mi color favorito! My favorite color!`,
+          vocab: [
+            { word: 'mi',       definition: `My in Spanish. Say: MEE.`,                                       audioPrompt: `Mi — say it like MEE. Mi means my!` },
+            { word: 'favorito', definition: `Favorite in Spanish! Say: fah-vo-REE-toh.`,                       audioPrompt: `Favorito — say it like fah-vo-REE-toh. Favorito means favorite!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 4, totalSections: 6,
+          headline:      `¡Tengo años! (I am ___ years old!)`,
+          paragraphs: [
+            `TENGO ___ AÑOS means "I AM ___ YEARS OLD!" Tell people how old you are!`,
+            `If you're 7: "Tengo SIETE años!" If you're 8: "Tengo OCHO años!" Try it for your age!`,
+          ],
+          image:        '/explorer-assets/languages/l19-s4-tengo-anos.png',
+          imageCaption: `¡Tengo ___ años! I am ___ years old!`,
+          vocab: [
+            { word: 'tengo años', definition: `I am ___ years old in Spanish.`,                              audioPrompt: `Tengo años — I am years old. Tengo siete años or tengo ocho años!` },
+            { word: 'edad',       definition: `Age in Spanish! Say: eh-DAHD.`,                                 audioPrompt: `Edad — say it like eh-DAHD. Edad means age!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 5, totalSections: 6,
+          headline:      `¡Soy! (Say: SOY)`,
+          paragraphs: [
+            `SOY means "I AM"! Tell people about YOU!`,
+            `Try it: "Soy AMABLE!" (I am kind!) "Soy INTELIGENTE!" (I am smart!) "Soy FUERTE!" (I am strong!) You ARE all these things!`,
+          ],
+          image:        '/explorer-assets/languages/l19-s5-soy.png',
+          imageCaption: `¡Soy! I am! Tell who YOU are!`,
+          vocab: [
+            { word: 'soy',         definition: `I am in Spanish. Say: SOY.`,                                  audioPrompt: `Soy — say it like SOY. Soy means I am! You are amable, inteligente, fuerte!` },
+            { word: 'inteligente', definition: `Smart in Spanish! Say: in-teh-lee-HEN-teh.`,                  audioPrompt: `Inteligente — say it like in-teh-lee-HEN-teh. Inteligente means smart!` },
+          ],
+        },
+        {
+          type:          'magazine', section: 6, totalSections: 6,
+          headline:      `Luna's About-Me Chant!`,
+          paragraphs: [
+            `Time to CHANT! Make it about YOU!`,
+            `¡ME LLAMO! ¡TENGO AÑOS! ¡SOY AMABLE! ¡SOY INTELIGENTE! ¡SOY FUERTE! ¡MI FAVORITO! ¡OLÉ!`,
+          ],
+          image:        '/explorer-assets/languages/l19-s6-chant.png',
+          imageCaption: `Chant about YOU!`,
+          vocab: [
+            { word: 'me',     definition: `Spanish for "I" or "me" — talking about YOU!`,                    audioPrompt: `Me — about you! Chant! Me llamo! Tengo años! Soy amable! Soy inteligente! Soy fuerte! Mi favorito! Olé!` },
+            { word: 'identity', definition: `Who YOU are — your name, age, what you like!`,                  audioPrompt: `Identity — who you are. You're amazing!` },
+          ],
+        },
+        {
+          type:          'interactive',
+          activityType:  'drag-match',
+          instruction:   `Match each Spanish phrase to what it means!`,
+          guideText:     `Tap a Spanish phrase, then tap what it means!`,
+          columnHeaders: [`Spanish`, `English`],
+          items: [
+            { image: 'l19-game-mellamo.png',  label: `Me llamo`,      correctMatch: 'my-name',  objectPosition: 'center 50%', matchPhrase: `¡Sí! Me llamo means MY NAME IS!` },
+            { image: 'l19-game-tengo.png',    label: `Tengo años`,    correctMatch: 'years-old',objectPosition: 'center 50%', matchPhrase: `¡Muy bien! Tengo años means I'M ___ YEARS OLD!` },
+            { image: 'l19-game-soy.png',      label: `Soy`,           correctMatch: 'i-am',     objectPosition: 'center 50%', matchPhrase: `¡Perfecto! Soy means I AM!` },
+            { image: 'l19-game-favorito.png', label: `Mi favorito`,   correctMatch: 'my-fav',   objectPosition: 'center 50%', matchPhrase: `¡Sí, sí! Mi favorito means MY FAVORITE!` },
+          ],
+          buckets: [
+            { id: 'my-name',   label: `My name is`,    color: '#FBBF24' },
+            { id: 'years-old', label: `I'm years old`, color: '#60A5FA' },
+            { id: 'i-am',      label: `I am`,          color: '#F472B6' },
+            { id: 'my-fav',    label: `My favorite`,   color: '#34D399' },
+          ],
+        },
+        {
+          type:      'quiz',
+          guideText: `¡Quiz time, {name}! Earn your Favorite Finder badge!`,
+          questions: [
+            { format: 'multiple-choice', question: `What does "Me llamo" mean?`,                                                  options: [`I am sad`, `My name is`, `I want`, `I have`],          correctIndex: 1 },
+            { format: 'multiple-choice', question: `If someone asks "¿Cómo te llamas?" they want to know your...`,                options: [`Color`, `Age`, `Name`, `Food`],                       correctIndex: 2 },
+            { format: 'multiple-choice', question: `Which means "I am" in Spanish?`,                                              options: [`Tengo`, `Soy`, `Mi`, `Me`],                           correctIndex: 1 },
+            { format: 'true-false', question: `"Tengo siete años" means I'm 7 years old.`,                                        correctAnswer: true },
+            { format: 'fill-blank', question: `"___ favorito es el azul" — My favorite is blue.`,                                  options: [`Mi`, `Tu`, `Su`, `El`],                              correctIndex: 0 },
+            { format: 'multiple-choice', question: `What does "inteligente" mean?`,                                               options: [`Kind`, `Strong`, `Smart`, `Tall`],                    correctIndex: 2 },
+          ],
+        },
+        {
+          type:            'real-world',
+          guideText:       `¡Muy bien, {name}! Introduce yourself in Spanish today!`,
+          familyAdventure: `Introduce yourself in Spanish to your family! Say: "ME LLAMO ___! TENGO ___ AÑOS! ¡SOY INTELIGENTE Y AMABLE! ¡MI COLOR FAVORITO ES ___!" Watch them be amazed!`,
+          creativePrompt:  `Make a "Spanish Me!" poster! Draw a picture of yourself. Around it, write in Spanish: ME LLAMO ___, TENGO ___ AÑOS, MI COLOR FAVORITO ES ___, MI COMIDA FAVORITA ES ___, SOY ___. Hang it on your door!`,
+        },
+        {
+          type:      'celebration',
+          xpEarned:  50,
+          badge:     'favorite-finder',
+          badgeName: `Favorite Finder`,
+          message:   `¡EXCELENTE, {name}! Now you can introduce YOURSELF in Spanish! That's the FIRST thing kids in any language learn to do. Luna is so proud! ¡Hasta luego, mi amigo!`,
+        },
+      ],
+    },
+  ],
 };
 
-export default SP_L19;
+(() => {
+  console.log(`[LESSON-SPANISH-L19] Loaded`);
+  Promise.all([
+    fetch('/explorer-assets/languages/l19-s1-me-llamo.png',       { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l19-s2-como-te-llamas.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l19-s3-color-favorito.png', { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l19-s4-tengo-anos.png',     { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l19-s5-soy.png',            { method: 'HEAD' }),
+    fetch('/explorer-assets/languages/l19-s6-chant.png',          { method: 'HEAD' }),
+  ]).then(([r1, r2, r3, r4, r5, r6]) => {
+    console.log(`[ASSET-CHECK-SPANISH-L19] ${r1.ok} ${r2.ok} ${r3.ok} ${r4.ok} ${r5.ok} ${r6.ok}`);
+  }).catch(() => {});
+})();
 
+export default spanish_explorer_l19_screens;
