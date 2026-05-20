@@ -22,7 +22,7 @@ const spanish_explorer_l06_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Gato y Perro! (Say: GAH-toh and PEH-rro)`,
+          headline:      `¡Gato y Perro!`,
           paragraphs: [
             `GATO means CAT! Make a cat sound: "Meow!" PERRO means DOG! Make a dog sound: "¡Guau guau!"`,
             `In Spanish, dogs say "¡Guau guau!" not "Woof woof!" Try it: ¡GATO! ¡PERRO! Meow! ¡Guau guau!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l06_screens = {
           image:        '/explorer-assets/languages/l06-s1-gato-perro.png',
           imageCaption: `¡Gato! Cat. ¡Perro! Dog.`,
           vocab: [
-            { word: 'gato',  definition: `Cat in Spanish. Say it like: GAH-toh.`,  audioPrompt: `Gato — say it like GAH-toh. Gato means cat. Meow!` },
-            { word: 'perro', definition: `Dog in Spanish. Say it like: PEH-rro.`,  audioPrompt: `Perro — say it like PEH-rro. Perro means dog. Guau guau!` },
+            { word: 'gato',  definition: `Cat in Spanish.`,  audioPrompt: `Gato. Gato means cat. Meow!` },
+            { word: 'perro', definition: `Dog in Spanish.`,  audioPrompt: `Perro. Perro means dog. Guau guau!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Pájaro y Pez! (Say: PAH-hah-roh and PEZ)`,
+          headline:      `¡Pájaro y Pez!`,
           paragraphs: [
             `PÁJARO means BIRD! Flap your arms like wings! PEZ means FISH! Pucker your lips like a fish.`,
             `Say them: ¡PÁJARO! ¡PEZ! Tweet tweet, swim swim!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l06_screens = {
           image:        '/explorer-assets/languages/l06-s2-pajaro-pez.png',
           imageCaption: `¡Pájaro! Bird. ¡Pez! Fish.`,
           vocab: [
-            { word: 'pájaro', definition: `Bird in Spanish. Say it like: PAH-hah-roh.`, audioPrompt: `Pájaro — say it like PAH-hah-roh. Pájaro means bird. Flap your wings!` },
-            { word: 'pez',    definition: `Fish in Spanish. Say it like: PEZ.`,         audioPrompt: `Pez — say it like PEZ. Pez means fish!` },
+            { word: 'pájaro', definition: `Bird in Spanish.`, audioPrompt: `Pájaro. Pájaro means bird. Flap your wings!` },
+            { word: 'pez',    definition: `Fish in Spanish.`,         audioPrompt: `Pez. Pez means fish!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Vaca y Caballo! (Say: VAH-kah and kah-BAH-yo)`,
+          headline:      `¡Vaca y Caballo!`,
           paragraphs: [
             `VACA means COW! Make a moo sound. CABALLO means HORSE! Make a neigh sound.`,
             `Spanish cows say "¡MUU!" Spanish horses say "¡IIIIIII!" Try them: ¡VACA! ¡CABALLO!`,
@@ -58,8 +58,8 @@ const spanish_explorer_l06_screens = {
           image:        '/explorer-assets/languages/l06-s3-vaca-caballo.png',
           imageCaption: `¡Vaca! Cow. ¡Caballo! Horse.`,
           vocab: [
-            { word: 'vaca',    definition: `Cow in Spanish. Say it like: VAH-kah.`,         audioPrompt: `Vaca — say it like VAH-kah. Vaca means cow. Muu!` },
-            { word: 'caballo', definition: `Horse in Spanish. Say it like: kah-BAH-yo.`,    audioPrompt: `Caballo — say it like kah-BAH-yo. Caballo means horse!` },
+            { word: 'vaca',    definition: `Cow in Spanish.`,         audioPrompt: `Vaca. Vaca means cow. Muu!` },
+            { word: 'caballo', definition: `Horse in Spanish.`,    audioPrompt: `Caballo. Caballo means horse!` },
           ],
         },
         {
@@ -86,7 +86,7 @@ const spanish_explorer_l06_screens = {
           image:        '/explorer-assets/languages/l06-s5-favorito.png',
           imageCaption: `Mi animal favorito es... what?`,
           vocab: [
-            { word: 'favorito', definition: `Favorite in Spanish. Say it like: fah-vo-REE-toh.`,            audioPrompt: `Favorito — say it like fah-vo-REE-toh. Favorito means favorite!` },
+            { word: 'favorito', definition: `Favorite in Spanish.`,            audioPrompt: `Favorito. Favorito means favorite!` },
             { word: 'animal',   definition: `Animal in Spanish — same word, just different sound!`,         audioPrompt: `Animal — same word in Spanish, just pronounced ah-nee-MAHL!` },
           ],
         },

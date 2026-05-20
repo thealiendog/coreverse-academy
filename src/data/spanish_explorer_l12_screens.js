@@ -22,7 +22,7 @@ const spanish_explorer_l12_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Casa! (Say: KAH-sah)`,
+          headline:      `¡Casa!`,
           paragraphs: [
             `CASA means HOUSE! "Mi casa" means "my house."`,
             `Open your arms wide and say: ¡MI CASA! ¡MI CASA! Welcome to your home in Spanish!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l12_screens = {
           image:        '/explorer-assets/languages/l12-s1-casa.png',
           imageCaption: `¡Mi casa! My home!`,
           vocab: [
-            { word: 'casa', definition: `House in Spanish. Say: KAH-sah.`,                                    audioPrompt: `Casa — say it like KAH-sah. Casa means house!` },
+            { word: 'casa', definition: `House in Spanish.`,                                    audioPrompt: `Casa. Casa means house!` },
             { word: 'mi casa', definition: `My house in Spanish!`,                                            audioPrompt: `Mi casa — my house! Mi casa!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Cuarto y Cama! (Say: KWAR-toh and KAH-mah)`,
+          headline:      `¡Cuarto y Cama!`,
           paragraphs: [
             `CUARTO means ROOM! CAMA means BED!`,
             `Point to where you sleep: ¡CUARTO! Lay your hands like a bed: ¡CAMA! ¡CUARTO! ¡CAMA!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l12_screens = {
           image:        '/explorer-assets/languages/l12-s2-cuarto-cama.png',
           imageCaption: `¡Cuarto! Room. ¡Cama! Bed.`,
           vocab: [
-            { word: 'cuarto', definition: `Room in Spanish. Say: KWAR-toh.`,                                  audioPrompt: `Cuarto — say it like KWAR-toh. Cuarto means room!` },
-            { word: 'cama',   definition: `Bed in Spanish. Say: KAH-mah.`,                                    audioPrompt: `Cama — say it like KAH-mah. Cama means bed!` },
+            { word: 'cuarto', definition: `Room in Spanish.`,                                  audioPrompt: `Cuarto. Cuarto means room!` },
+            { word: 'cama',   definition: `Bed in Spanish.`,                                    audioPrompt: `Cama. Cama means bed!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Cocina! (Say: ko-SEE-nah)`,
+          headline:      `¡Cocina!`,
           paragraphs: [
             `COCINA means KITCHEN! It's where food is made!`,
             `Pretend to cook: ¡COCINA! "En la cocina hay comida" means "In the kitchen there's food!"`,
@@ -58,13 +58,13 @@ const spanish_explorer_l12_screens = {
           image:        '/explorer-assets/languages/l12-s3-cocina.png',
           imageCaption: `¡Cocina! Kitchen!`,
           vocab: [
-            { word: 'cocina', definition: `Kitchen in Spanish. Say: ko-SEE-nah.`,                            audioPrompt: `Cocina — say it like ko-SEE-nah. Cocina means kitchen!` },
-            { word: 'cocinar', definition: `To cook in Spanish! Say: ko-see-NAR.`,                            audioPrompt: `Cocinar — say it like ko-see-NAR. Cocinar means to cook!` },
+            { word: 'cocina', definition: `Kitchen in Spanish.`,                            audioPrompt: `Cocina. Cocina means kitchen!` },
+            { word: 'cocinar', definition: `To cook in Spanish!`,                            audioPrompt: `Cocinar. Cocinar means to cook!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Baño! (Say: BAH-nyo)`,
+          headline:      `¡Baño!`,
           paragraphs: [
             `BAÑO means BATHROOM! Notice the ñ — it makes a "ny" sound!`,
             `Pretend to wash your hands: ¡BAÑO! Spanish kids say "Voy al baño" — "I'm going to the bathroom!"`,
@@ -72,13 +72,13 @@ const spanish_explorer_l12_screens = {
           image:        '/explorer-assets/languages/l12-s4-bano.png',
           imageCaption: `¡Baño! Bathroom!`,
           vocab: [
-            { word: 'baño',  definition: `Bathroom in Spanish. Say: BAH-nyo.`,                                audioPrompt: `Baño — say it like BAH-nyo. Baño means bathroom!` },
-            { word: 'agua',  definition: `Water in Spanish — for washing! Say: AH-gwah.`,                     audioPrompt: `Agua — water! For washing hands.` },
+            { word: 'baño',  definition: `Bathroom in Spanish.`,                                audioPrompt: `Baño. Baño means bathroom!` },
+            { word: 'agua',  definition: `Water in Spanish — for washing!`,                     audioPrompt: `Agua — water! For washing hands.` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Puerta y Ventana! (Say: PWEHR-tah and ven-TAH-nah)`,
+          headline:      `¡Puerta y Ventana!`,
           paragraphs: [
             `PUERTA means DOOR! VENTANA means WINDOW!`,
             `Pretend to open a door: ¡PUERTA! Pretend to look through a window: ¡VENTANA!`,
@@ -86,8 +86,8 @@ const spanish_explorer_l12_screens = {
           image:        '/explorer-assets/languages/l12-s5-puerta-ventana.png',
           imageCaption: `¡Puerta! Door. ¡Ventana! Window.`,
           vocab: [
-            { word: 'puerta',  definition: `Door in Spanish. Say: PWEHR-tah.`,                                audioPrompt: `Puerta — say it like PWEHR-tah. Puerta means door!` },
-            { word: 'ventana', definition: `Window in Spanish. Say: ven-TAH-nah.`,                            audioPrompt: `Ventana — say it like ven-TAH-nah. Ventana means window!` },
+            { word: 'puerta',  definition: `Door in Spanish.`,                                audioPrompt: `Puerta. Puerta means door!` },
+            { word: 'ventana', definition: `Window in Spanish.`,                            audioPrompt: `Ventana. Ventana means window!` },
           ],
         },
         {

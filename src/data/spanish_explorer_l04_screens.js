@@ -25,7 +25,7 @@ const spanish_explorer_l04_screens = {
           type:          'magazine',
           section:       1,
           totalSections: 6,
-          headline:      `¡Mamá y Papá! (Say: mah-MAH and pah-PAH)`,
+          headline:      `¡Mamá y Papá!`,
           paragraphs: [
             `MAMÁ means MOM! PAPÁ means DAD! Easy, right? They sound almost the same in English.`,
             `Give a big HUG and say: ¡MAMÁ! ¡PAPÁ! ¡MAMÁ! ¡PAPÁ! Spanish kids say it just like you!`,
@@ -33,15 +33,15 @@ const spanish_explorer_l04_screens = {
           image:        '/explorer-assets/languages/l04-s1-mama-papa.png',
           imageCaption: `¡Mamá! Mom! ¡Papá! Dad!`,
           vocab: [
-            { word: 'mamá', definition: `Mom in Spanish. Say it like: mah-MAH.`,                                audioPrompt: `Mamá — say it like mah-MAH. Mamá means mom. Mamá! Mamá!` },
-            { word: 'papá', definition: `Dad in Spanish. Say it like: pah-PAH.`,                                audioPrompt: `Papá — say it like pah-PAH. Papá means dad. Papá! Papá!` },
+            { word: 'mamá', definition: `Mom in Spanish.`,                                audioPrompt: `Mamá. Mamá means mom. Mamá! Mamá!` },
+            { word: 'papá', definition: `Dad in Spanish.`,                                audioPrompt: `Papá. Papá means dad. Papá! Papá!` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
           totalSections: 6,
-          headline:      `¡Hermano y Hermana! (Say: er-MAH-no and er-MAH-nah)`,
+          headline:      `¡Hermano y Hermana!`,
           paragraphs: [
             `HERMANO means BROTHER! HERMANA means SISTER! Notice — they look almost the same.`,
             `Hermano ends in O (boy). Hermana ends in A (girl). That's a Spanish secret! Try them: ¡HERMANO! ¡HERMANA!`,
@@ -49,15 +49,15 @@ const spanish_explorer_l04_screens = {
           image:        '/explorer-assets/languages/l04-s2-hermano-hermana.png',
           imageCaption: `¡Hermano! Brother. ¡Hermana! Sister.`,
           vocab: [
-            { word: 'hermano', definition: `Brother in Spanish. Say it like: er-MAH-no.`,                       audioPrompt: `Hermano — say it like er-MAH-no. Hermano means brother. Hermano!` },
-            { word: 'hermana', definition: `Sister in Spanish. Say it like: er-MAH-nah.`,                       audioPrompt: `Hermana — say it like er-MAH-nah. Hermana means sister. Hermana!` },
+            { word: 'hermano', definition: `Brother in Spanish.`,                       audioPrompt: `Hermano. Hermano means brother. Hermano!` },
+            { word: 'hermana', definition: `Sister in Spanish.`,                       audioPrompt: `Hermana. Hermana means sister. Hermana!` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
           totalSections: 6,
-          headline:      `¡Abuelo y Abuela! (Say: ah-BWEH-lo and ah-BWEH-lah)`,
+          headline:      `¡Abuelo y Abuela!`,
           paragraphs: [
             `ABUELO means GRANDPA! ABUELA means GRANDMA! Same trick — abuelo ends in O (boy), abuela ends in A (girl).`,
             `Spanish kids LOVE their abuelos! Say it: ¡ABUELO! ¡ABUELA! Big hugs to all the grandparents!`,
@@ -65,8 +65,8 @@ const spanish_explorer_l04_screens = {
           image:        '/explorer-assets/languages/l04-s3-abuelos.png',
           imageCaption: `¡Abuelo! Grandpa. ¡Abuela! Grandma.`,
           vocab: [
-            { word: 'abuelo', definition: `Grandpa in Spanish. Say it like: ah-BWEH-lo.`,                       audioPrompt: `Abuelo — say it like ah-BWEH-lo. Abuelo means grandpa!` },
-            { word: 'abuela', definition: `Grandma in Spanish. Say it like: ah-BWEH-lah.`,                      audioPrompt: `Abuela — say it like ah-BWEH-lah. Abuela means grandma!` },
+            { word: 'abuelo', definition: `Grandpa in Spanish.`,                       audioPrompt: `Abuelo. Abuelo means grandpa!` },
+            { word: 'abuela', definition: `Grandma in Spanish.`,                      audioPrompt: `Abuela. Abuela means grandma!` },
           ],
         },
         {
@@ -76,20 +76,20 @@ const spanish_explorer_l04_screens = {
           headline:      `¡Mi Familia!`,
           paragraphs: [
             `FAMILIA means FAMILY! It sounds just like English — easy!`,
-            `Your familia is everyone you love. Say: "¡MI FAMILIA!" That means "my family!" ¡MI FAMILIA! ¡MI FAMILIA!`,
+            `Your familia is everyone you love." That means "my family!" ¡MI FAMILIA! ¡MI FAMILIA!`,
           ],
           image:        '/explorer-assets/languages/l04-s4-familia.png',
           imageCaption: `¡Familia! Family.`,
           vocab: [
-            { word: 'familia', definition: `Family in Spanish. Say it like: fah-MEE-lee-ah.`,                  audioPrompt: `Familia — say it like fah-MEE-lee-ah. Familia means family! Mi familia!` },
-            { word: 'mi',      definition: `My in Spanish. Say it like: MEE.`,                                  audioPrompt: `Mi — say it like MEE. Mi means my. Mi familia means my family!` },
+            { word: 'familia', definition: `Family in Spanish.`,                  audioPrompt: `Familia. Familia means family! Mi familia!` },
+            { word: 'mi',      definition: `My in Spanish.`,                                  audioPrompt: `Mi. Mi means my. Mi familia means my family!` },
           ],
         },
         {
           type:          'magazine',
           section:       5,
           totalSections: 6,
-          headline:      `¡Te Quiero! (Say: teh KEH-ro)`,
+          headline:      `¡Te Quiero!`,
           paragraphs: [
             `TE QUIERO means I LOVE YOU! It's one of the sweetest things you can say in Spanish.`,
             `Family hug time! Give yourself a hug and say: ¡TE QUIERO, FAMILIA! I love you, family!`,
@@ -97,8 +97,8 @@ const spanish_explorer_l04_screens = {
           image:        '/explorer-assets/languages/l04-s5-te-quiero.png',
           imageCaption: `¡Te quiero! I love you!`,
           vocab: [
-            { word: 'te quiero', definition: `I love you in Spanish. Say it like: teh KEH-ro.`,                audioPrompt: `Te quiero — say it like teh KEH-ro. Te quiero means I love you!` },
-            { word: 'amor',      definition: `Love in Spanish. Say it like: ah-MOR.`,                           audioPrompt: `Amor — say it like ah-MOR. Amor means love.` },
+            { word: 'te quiero', definition: `I love you in Spanish.`,                audioPrompt: `Te quiero. Te quiero means I love you!` },
+            { word: 'amor',      definition: `Love in Spanish.`,                           audioPrompt: `Amor. Amor means love.` },
           ],
         },
         {

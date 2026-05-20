@@ -45,7 +45,7 @@ const spanish_explorer_l20_screens = {
           image:        '/explorer-assets/languages/l20-s2-desayuno.png',
           imageCaption: `Spanish breakfast! ¡Pan, leche, manzana!`,
           vocab: [
-            { word: 'desayuno', definition: `Breakfast in Spanish! Say: deh-sah-YOO-no.`,                    audioPrompt: `Desayuno — say it like deh-sah-YOO-no. Desayuno means breakfast!` },
+            { word: 'desayuno', definition: `Breakfast in Spanish!`,                    audioPrompt: `Desayuno. Desayuno means breakfast!` },
             { word: 'tengo hambre', definition: `I'm hungry in Spanish!`,                                     audioPrompt: `Tengo hambre — I'm hungry! Rub your tummy!` },
           ],
         },
@@ -59,8 +59,8 @@ const spanish_explorer_l20_screens = {
           image:        '/explorer-assets/languages/l20-s3-escuela.png',
           imageCaption: `Off to la escuela!`,
           vocab: [
-            { word: 'vamos', definition: `Let's go in Spanish! Say: VAH-mos.`,                                 audioPrompt: `Vamos — say it like VAH-mos. Vamos means let's go!` },
-            { word: 'divertido', definition: `Fun in Spanish! Say: dee-vehr-TEE-doh.`,                          audioPrompt: `Divertido — say it like dee-vehr-TEE-doh. Divertido means fun!` },
+            { word: 'vamos', definition: `Let's go in Spanish!`,                                 audioPrompt: `Vamos. Vamos means let's go!` },
+            { word: 'divertido', definition: `Fun in Spanish!`,                          audioPrompt: `Divertido. Divertido means fun!` },
           ],
         },
         {
@@ -88,7 +88,7 @@ const spanish_explorer_l20_screens = {
           imageCaption: `¡Buenas noches! Good night!`,
           vocab: [
             { word: 'buenas noches', definition: `Good night in Spanish!`,                                    audioPrompt: `Buenas noches — good night! Say it before bed!` },
-            { word: 'increíble',     definition: `Incredible in Spanish! Say: in-kreh-EE-bleh.`,             audioPrompt: `Increíble — say it like in-kreh-EE-bleh. Increíble means incredible!` },
+            { word: 'increíble',     definition: `Incredible in Spanish!`,             audioPrompt: `Increíble. Increíble means incredible!` },
           ],
         },
         {

@@ -22,7 +22,7 @@ const spanish_explorer_l16_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Fiesta! (Say: fee-EHS-tah)`,
+          headline:      `¡Fiesta!`,
           paragraphs: [
             `FIESTA means PARTY! Spanish kids LOVE fiestas — for birthdays, holidays, anything!`,
             `Dance and say: ¡FIESTA! ¡FIESTA! Throw your hands up: ¡FIESTA!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l16_screens = {
           image:        '/explorer-assets/languages/l16-s1-fiesta.png',
           imageCaption: `¡Fiesta! Party time!`,
           vocab: [
-            { word: 'fiesta', definition: `Party in Spanish. Say: fee-EHS-tah.`,                              audioPrompt: `Fiesta — say it like fee-EHS-tah. Fiesta means party!` },
-            { word: 'celebrar', definition: `To celebrate in Spanish! Say: seh-leh-BRAR.`,                    audioPrompt: `Celebrar — say it like seh-leh-BRAR. Celebrar means to celebrate!` },
+            { word: 'fiesta', definition: `Party in Spanish.`,                              audioPrompt: `Fiesta. Fiesta means party!` },
+            { word: 'celebrar', definition: `To celebrate in Spanish!`,                    audioPrompt: `Celebrar. Celebrar means to celebrate!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Piñata! (Say: peen-YAH-tah)`,
+          headline:      `¡Piñata!`,
           paragraphs: [
             `PIÑATA is a colorful paper toy filled with CANDY! Kids hit it with a stick — and candy falls out!`,
             `Pretend to swing a stick: ¡PIÑATA! ¡PIÑATA! Spanish kids LOVE breaking piñatas at birthday fiestas!`,
@@ -45,12 +45,12 @@ const spanish_explorer_l16_screens = {
           imageCaption: `¡Piñata! Hit it for candy!`,
           vocab: [
             { word: 'piñata',  definition: `A paper toy filled with candy that you hit at parties!`,         audioPrompt: `Piñata — a paper toy filled with candy! You hit it and candy falls out!` },
-            { word: 'dulces',  definition: `Candy in Spanish! Say: DOOL-sehs.`,                                audioPrompt: `Dulces — say it like DOOL-sehs. Dulces means candy!` },
+            { word: 'dulces',  definition: `Candy in Spanish!`,                                audioPrompt: `Dulces. Dulces means candy!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Cumpleaños! (Say: koom-pleh-AH-nyos)`,
+          headline:      `¡Cumpleaños!`,
           paragraphs: [
             `CUMPLEAÑOS means BIRTHDAY! Spanish kids sing "Las Mañanitas" (their version of "Happy Birthday")!`,
             `Try it: ¡CUMPLEAÑOS! Don't forget the piñata for a real Spanish birthday party!`,
@@ -58,7 +58,7 @@ const spanish_explorer_l16_screens = {
           image:        '/explorer-assets/languages/l16-s3-cumpleanos.png',
           imageCaption: `¡Feliz cumpleaños! Happy birthday!`,
           vocab: [
-            { word: 'cumpleaños',     definition: `Birthday in Spanish. Say: koom-pleh-AH-nyos.`,            audioPrompt: `Cumpleaños — say it like koom-pleh-AH-nyos. Cumpleaños means birthday!` },
+            { word: 'cumpleaños',     definition: `Birthday in Spanish.`,            audioPrompt: `Cumpleaños. Cumpleaños means birthday!` },
             { word: 'feliz cumpleaños', definition: `Happy birthday in Spanish!`,                             audioPrompt: `Feliz cumpleaños — happy birthday in Spanish!` },
           ],
         },
@@ -72,13 +72,13 @@ const spanish_explorer_l16_screens = {
           image:        '/explorer-assets/languages/l16-s4-dia-muertos.png',
           imageCaption: `Día de los Muertos — remembering loved ones.`,
           vocab: [
-            { word: 'tradición', definition: `A tradition — something special that families do!`,            audioPrompt: `Tradición — say it like trah-dee-see-OHN. Tradición means tradition!` },
-            { word: 'flores',    definition: `Flowers in Spanish! Say: FLO-rehs.`,                            audioPrompt: `Flores — say it like FLO-rehs. Flores means flowers!` },
+            { word: 'tradición', definition: `A tradition — something special that families do!`,            audioPrompt: `Tradición. Tradición means tradition!` },
+            { word: 'flores',    definition: `Flowers in Spanish!`,                            audioPrompt: `Flores. Flores means flowers!` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Carnaval! (Say: kar-nah-VAHL)`,
+          headline:      `¡Carnaval!`,
           paragraphs: [
             `CARNAVAL means CARNIVAL! In Colombia, Brazil, and Spain, there are HUGE Carnival parades with costumes, dancing, and música!`,
             `Pretend to dance in a parade: ¡CARNAVAL! ¡CARNAVAL! Everyone dresses up and celebrates!`,
@@ -87,7 +87,7 @@ const spanish_explorer_l16_screens = {
           imageCaption: `¡Carnaval! Costumes and dancing!`,
           vocab: [
             { word: 'carnaval', definition: `A huge dancing parade festival!`,                                audioPrompt: `Carnaval — a huge dancing parade festival! Costumes and música!` },
-            { word: 'disfraz',  definition: `Costume in Spanish! Say: dees-FRAS.`,                            audioPrompt: `Disfraz — say it like dees-FRAS. Disfraz means costume!` },
+            { word: 'disfraz',  definition: `Costume in Spanish!`,                            audioPrompt: `Disfraz. Disfraz means costume!` },
           ],
         },
         {

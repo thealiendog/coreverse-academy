@@ -22,7 +22,7 @@ const spanish_explorer_l08_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Lunes y Martes! (Say: LOO-nehs and MAR-tehs)`,
+          headline:      `¡Lunes y Martes!`,
           paragraphs: [
             `LUNES means MONDAY — first day of the week in Spanish! MARTES means TUESDAY.`,
             `Spanish kids start their school week on LUNES! Try them: ¡LUNES! ¡MARTES! Clap each one!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l08_screens = {
           image:        '/explorer-assets/languages/l08-s1-lunes-martes.png',
           imageCaption: `¡Lunes! Monday. ¡Martes! Tuesday.`,
           vocab: [
-            { word: 'lunes',  definition: `Monday in Spanish. Say it like: LOO-nehs.`,                       audioPrompt: `Lunes — say it like LOO-nehs. Lunes means Monday!` },
-            { word: 'martes', definition: `Tuesday in Spanish. Say it like: MAR-tehs.`,                      audioPrompt: `Martes — say it like MAR-tehs. Martes means Tuesday!` },
+            { word: 'lunes',  definition: `Monday in Spanish.`,                       audioPrompt: `Lunes. Lunes means Monday!` },
+            { word: 'martes', definition: `Tuesday in Spanish.`,                      audioPrompt: `Martes. Martes means Tuesday!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Miércoles y Jueves! (Say: mee-EHR-ko-lehs and HWEH-vehs)`,
+          headline:      `¡Miércoles y Jueves!`,
           paragraphs: [
             `MIÉRCOLES means WEDNESDAY! It's a long word — say it slowly: mee-EHR-ko-lehs.`,
             `JUEVES means THURSDAY! Try them: ¡MIÉRCOLES! ¡JUEVES! Halfway through the week!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l08_screens = {
           image:        '/explorer-assets/languages/l08-s2-miercoles-jueves.png',
           imageCaption: `¡Miércoles! Wednesday. ¡Jueves! Thursday.`,
           vocab: [
-            { word: 'miércoles', definition: `Wednesday in Spanish. Say it like: mee-EHR-ko-lehs.`,         audioPrompt: `Miércoles — say it like mee-EHR-ko-lehs. Miércoles means Wednesday!` },
-            { word: 'jueves',    definition: `Thursday in Spanish. Say it like: HWEH-vehs.`,                 audioPrompt: `Jueves — say it like HWEH-vehs. Jueves means Thursday!` },
+            { word: 'miércoles', definition: `Wednesday in Spanish.`,         audioPrompt: `Miércoles. Miércoles means Wednesday!` },
+            { word: 'jueves',    definition: `Thursday in Spanish.`,                 audioPrompt: `Jueves. Jueves means Thursday!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Viernes! (Say: vee-EHR-nehs)`,
+          headline:      `¡Viernes!`,
           paragraphs: [
             `VIERNES means FRIDAY! The BEST day! Almost the weekend!`,
             `Cheer with Luna: ¡VIERNES! ¡VIERNES! ¡VIERNES! Spanish kids LOVE viernes — like you!`,
@@ -58,13 +58,13 @@ const spanish_explorer_l08_screens = {
           image:        '/explorer-assets/languages/l08-s3-viernes.png',
           imageCaption: `¡Viernes! Friday! Almost weekend!`,
           vocab: [
-            { word: 'viernes', definition: `Friday in Spanish. Say it like: vee-EHR-nehs.`,                  audioPrompt: `Viernes — say it like vee-EHR-nehs. Viernes means Friday! The best day!` },
+            { word: 'viernes', definition: `Friday in Spanish.`,                  audioPrompt: `Viernes. Viernes means Friday! The best day!` },
             { word: 'cheer',   definition: `To shout happily for something!`,                                 audioPrompt: `Cheer — to shout happily. Cheer for viernes!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Sábado y Domingo! (Say: SAH-bah-do and do-MEEN-go)`,
+          headline:      `¡Sábado y Domingo!`,
           paragraphs: [
             `SÁBADO means SATURDAY! DOMINGO means SUNDAY! THE WEEKEND! ¡El fin de semana!`,
             `Dance and say: ¡SÁBADO! ¡DOMINGO! Time for play, family, and fun!`,
@@ -72,8 +72,8 @@ const spanish_explorer_l08_screens = {
           image:        '/explorer-assets/languages/l08-s4-sabado-domingo.png',
           imageCaption: `¡Sábado! Saturday. ¡Domingo! Sunday. WEEKEND!`,
           vocab: [
-            { word: 'sábado',  definition: `Saturday in Spanish. Say it like: SAH-bah-do.`,                 audioPrompt: `Sábado — say it like SAH-bah-do. Sábado means Saturday!` },
-            { word: 'domingo', definition: `Sunday in Spanish. Say it like: do-MEEN-go.`,                    audioPrompt: `Domingo — say it like do-MEEN-go. Domingo means Sunday!` },
+            { word: 'sábado',  definition: `Saturday in Spanish.`,                 audioPrompt: `Sábado. Sábado means Saturday!` },
+            { word: 'domingo', definition: `Sunday in Spanish.`,                    audioPrompt: `Domingo. Domingo means Sunday!` },
           ],
         },
         {
@@ -86,8 +86,8 @@ const spanish_explorer_l08_screens = {
           image:        '/explorer-assets/languages/l08-s5-que-dia.png',
           imageCaption: `What day is it today? ¿Qué día es hoy?`,
           vocab: [
-            { word: 'hoy', definition: `Today in Spanish. Say it like: OY.`,                                  audioPrompt: `Hoy — say it like OY. Hoy means today!` },
-            { word: 'día', definition: `Day in Spanish. Say it like: DEE-ah.`,                                audioPrompt: `Día — say it like DEE-ah. Día means day!` },
+            { word: 'hoy', definition: `Today in Spanish.`,                                  audioPrompt: `Hoy. Hoy means today!` },
+            { word: 'día', definition: `Day in Spanish.`,                                audioPrompt: `Día. Día means day!` },
           ],
         },
         {

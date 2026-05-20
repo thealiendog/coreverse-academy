@@ -22,7 +22,7 @@ const spanish_explorer_l19_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Me llamo! (Say: meh YAH-mo)`,
+          headline:      `¡Me llamo!`,
           paragraphs: [
             `ME LLAMO means "MY NAME IS"! Use it to tell someone your name!`,
             `Try it: "ME LLAMO {name}!" Point to yourself: ¡ME LLAMO! ¡ME LLAMO!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l19_screens = {
           image:        '/explorer-assets/languages/l19-s1-me-llamo.png',
           imageCaption: `¡Me llamo! My name is!`,
           vocab: [
-            { word: 'me llamo', definition: `My name is in Spanish. Say: meh YAH-mo.`,                        audioPrompt: `Me llamo — say it like meh YAH-mo. Me llamo means my name is!` },
-            { word: 'nombre',   definition: `Name in Spanish! Say: NOM-breh.`,                                 audioPrompt: `Nombre — say it like NOM-breh. Nombre means name!` },
+            { word: 'me llamo', definition: `My name is in Spanish.`,                        audioPrompt: `Me llamo. Me llamo means my name is!` },
+            { word: 'nombre',   definition: `Name in Spanish!`,                                 audioPrompt: `Nombre. Nombre means name!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¿Cómo te llamas? (Say: KOH-mo teh YAH-mahs)`,
+          headline:      `¿Cómo te llamas?`,
           paragraphs: [
             `¿CÓMO TE LLAMAS? means "WHAT'S YOUR NAME?" Ask someone with a smile!`,
             `Try it: ¿CÓMO TE LLAMAS? Then they answer: "ME LLAMO ___" Easy conversation!`,
@@ -58,8 +58,8 @@ const spanish_explorer_l19_screens = {
           image:        '/explorer-assets/languages/l19-s3-color-favorito.png',
           imageCaption: `¡Mi color favorito! My favorite color!`,
           vocab: [
-            { word: 'mi',       definition: `My in Spanish. Say: MEE.`,                                       audioPrompt: `Mi — say it like MEE. Mi means my!` },
-            { word: 'favorito', definition: `Favorite in Spanish! Say: fah-vo-REE-toh.`,                       audioPrompt: `Favorito — say it like fah-vo-REE-toh. Favorito means favorite!` },
+            { word: 'mi',       definition: `My in Spanish.`,                                       audioPrompt: `Mi. Mi means my!` },
+            { word: 'favorito', definition: `Favorite in Spanish!`,                       audioPrompt: `Favorito. Favorito means favorite!` },
           ],
         },
         {
@@ -73,12 +73,12 @@ const spanish_explorer_l19_screens = {
           imageCaption: `¡Tengo ___ años! I am ___ years old!`,
           vocab: [
             { word: 'tengo años', definition: `I am ___ years old in Spanish.`,                              audioPrompt: `Tengo años — I am years old. Tengo siete años or tengo ocho años!` },
-            { word: 'edad',       definition: `Age in Spanish! Say: eh-DAHD.`,                                 audioPrompt: `Edad — say it like eh-DAHD. Edad means age!` },
+            { word: 'edad',       definition: `Age in Spanish!`,                                 audioPrompt: `Edad. Edad means age!` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Soy! (Say: SOY)`,
+          headline:      `¡Soy!`,
           paragraphs: [
             `SOY means "I AM"! Tell people about YOU!`,
             `Try it: "Soy AMABLE!" (I am kind!) "Soy INTELIGENTE!" (I am smart!) "Soy FUERTE!" (I am strong!) You ARE all these things!`,
@@ -86,8 +86,8 @@ const spanish_explorer_l19_screens = {
           image:        '/explorer-assets/languages/l19-s5-soy.png',
           imageCaption: `¡Soy! I am! Tell who YOU are!`,
           vocab: [
-            { word: 'soy',         definition: `I am in Spanish. Say: SOY.`,                                  audioPrompt: `Soy — say it like SOY. Soy means I am! You are amable, inteligente, fuerte!` },
-            { word: 'inteligente', definition: `Smart in Spanish! Say: in-teh-lee-HEN-teh.`,                  audioPrompt: `Inteligente — say it like in-teh-lee-HEN-teh. Inteligente means smart!` },
+            { word: 'soy',         definition: `I am in Spanish.`,                                  audioPrompt: `Soy. Soy means I am! You are amable, inteligente, fuerte!` },
+            { word: 'inteligente', definition: `Smart in Spanish!`,                  audioPrompt: `Inteligente. Inteligente means smart!` },
           ],
         },
         {
@@ -138,7 +138,7 @@ const spanish_explorer_l19_screens = {
         {
           type:            'real-world',
           guideText:       `¡Muy bien, {name}! Introduce yourself in Spanish today!`,
-          familyAdventure: `Introduce yourself in Spanish to your family! Say: "ME LLAMO ___! TENGO ___ AÑOS! ¡SOY INTELIGENTE Y AMABLE! ¡MI COLOR FAVORITO ES ___!" Watch them be amazed!`,
+          familyAdventure: `Introduce yourself in Spanish to your family! TENGO ___ AÑOS! ¡SOY INTELIGENTE Y AMABLE! ¡MI COLOR FAVORITO ES ___!" Watch them be amazed!`,
           creativePrompt:  `Make a "Spanish Me!" poster! Draw a picture of yourself. Around it, write in Spanish: ME LLAMO ___, TENGO ___ AÑOS, MI COLOR FAVORITO ES ___, MI COMIDA FAVORITA ES ___, SOY ___. Hang it on your door!`,
         },
         {

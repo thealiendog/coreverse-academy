@@ -22,7 +22,7 @@ const spanish_explorer_l10_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Correr y Saltar! (Say: ko-RREHR and sal-TAHR)`,
+          headline:      `¡Correr y Saltar!`,
           paragraphs: [
             `CORRER means TO RUN! SALTAR means TO JUMP!`,
             `Run in place: ¡CORRER! Now jump up: ¡SALTAR! ¡CORRER! ¡SALTAR!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l10_screens = {
           image:        '/explorer-assets/languages/l10-s1-correr-saltar.png',
           imageCaption: `¡Correr! Run. ¡Saltar! Jump.`,
           vocab: [
-            { word: 'correr', definition: `To run in Spanish. Say: ko-RREHR.`,                                audioPrompt: `Correr — say it like ko-RREHR. Correr means to run! Run in place!` },
-            { word: 'saltar', definition: `To jump in Spanish. Say: sal-TAHR.`,                               audioPrompt: `Saltar — say it like sal-TAHR. Saltar means to jump! Jump up!` },
+            { word: 'correr', definition: `To run in Spanish.`,                                audioPrompt: `Correr. Correr means to run! Run in place!` },
+            { word: 'saltar', definition: `To jump in Spanish.`,                               audioPrompt: `Saltar. Saltar means to jump! Jump up!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Cantar y Bailar! (Say: kan-TAHR and bai-LAHR)`,
+          headline:      `¡Cantar y Bailar!`,
           paragraphs: [
             `CANTAR means TO SING! BAILAR means TO DANCE!`,
             `Sing "la la la": ¡CANTAR! Now dance: ¡BAILAR! Spanish is so FUN!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l10_screens = {
           image:        '/explorer-assets/languages/l10-s2-cantar-bailar.png',
           imageCaption: `¡Cantar! Sing. ¡Bailar! Dance.`,
           vocab: [
-            { word: 'cantar', definition: `To sing in Spanish. Say: kan-TAHR.`,                                audioPrompt: `Cantar — say it like kan-TAHR. Cantar means to sing! La la la!` },
-            { word: 'bailar', definition: `To dance in Spanish. Say: bai-LAHR.`,                               audioPrompt: `Bailar — say it like bai-LAHR. Bailar means to dance! Let's bailar!` },
+            { word: 'cantar', definition: `To sing in Spanish.`,                                audioPrompt: `Cantar. Cantar means to sing! La la la!` },
+            { word: 'bailar', definition: `To dance in Spanish.`,                               audioPrompt: `Bailar. Bailar means to dance! Let's bailar!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Comer y Dormir! (Say: ko-MEHR and dor-MEER)`,
+          headline:      `¡Comer y Dormir!`,
           paragraphs: [
             `COMER means TO EAT! DORMIR means TO SLEEP!`,
             `Pretend to chew: ¡COMER! Pretend to sleep (hands under cheek): ¡DORMIR!`,
@@ -58,8 +58,8 @@ const spanish_explorer_l10_screens = {
           image:        '/explorer-assets/languages/l10-s3-comer-dormir.png',
           imageCaption: `¡Comer! Eat. ¡Dormir! Sleep.`,
           vocab: [
-            { word: 'comer',  definition: `To eat in Spanish. Say: ko-MEHR.`,                                  audioPrompt: `Comer — say it like ko-MEHR. Comer means to eat! Chew!` },
-            { word: 'dormir', definition: `To sleep in Spanish. Say: dor-MEER.`,                               audioPrompt: `Dormir — say it like dor-MEER. Dormir means to sleep! Zzz!` },
+            { word: 'comer',  definition: `To eat in Spanish.`,                                  audioPrompt: `Comer. Comer means to eat! Chew!` },
+            { word: 'dormir', definition: `To sleep in Spanish.`,                               audioPrompt: `Dormir. Dormir means to sleep! Zzz!` },
           ],
         },
         {
@@ -86,8 +86,8 @@ const spanish_explorer_l10_screens = {
           image:        '/explorer-assets/languages/l10-s5-yo-puedo.png',
           imageCaption: `¡Yo puedo! I can do it!`,
           vocab: [
-            { word: 'yo puedo', definition: `I can in Spanish. Say: yo PWEH-doh.`,                              audioPrompt: `Yo puedo — say it like yo PWEH-doh. Yo puedo means I can!` },
-            { word: 'fuerte',   definition: `Strong in Spanish. Say: FWEHR-teh.`,                                audioPrompt: `Fuerte — say it like FWEHR-teh. Fuerte means strong! You are fuerte!` },
+            { word: 'yo puedo', definition: `I can in Spanish.`,                              audioPrompt: `Yo puedo. Yo puedo means I can!` },
+            { word: 'fuerte',   definition: `Strong in Spanish.`,                                audioPrompt: `Fuerte. Fuerte means strong! You are fuerte!` },
           ],
         },
         {

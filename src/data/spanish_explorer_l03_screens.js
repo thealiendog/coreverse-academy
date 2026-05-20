@@ -25,7 +25,7 @@ const spanish_explorer_l03_screens = {
           type:          'magazine',
           section:       1,
           totalSections: 6,
-          headline:      `¡Rojo y Azul! (Say: ROH-ho and ah-SOOL)`,
+          headline:      `¡Rojo y Azul!`,
           paragraphs: [
             `ROJO means RED! Like a fire truck or a strawberry. AZUL means BLUE! Like the sky or the ocean.`,
             `Point to something ROJO in your room! Now something AZUL! Say them: ¡ROJO! ¡AZUL!`,
@@ -33,15 +33,15 @@ const spanish_explorer_l03_screens = {
           image:        '/explorer-assets/languages/l03-s1-rojo-azul.png',
           imageCaption: `¡Rojo! Red. ¡Azul! Blue.`,
           vocab: [
-            { word: 'rojo', definition: `Red in Spanish. Say it like: ROH-ho.`,                                 audioPrompt: `Rojo — say it like ROH-ho. Rojo means red. Point to something rojo!` },
-            { word: 'azul', definition: `Blue in Spanish. Say it like: ah-SOOL.`,                               audioPrompt: `Azul — say it like ah-SOOL. Azul means blue. Point to something azul!` },
+            { word: 'rojo', definition: `Red in Spanish.`,                                 audioPrompt: `Rojo. Rojo means red. Point to something rojo!` },
+            { word: 'azul', definition: `Blue in Spanish.`,                               audioPrompt: `Azul. Azul means blue. Point to something azul!` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
           totalSections: 6,
-          headline:      `¡Amarillo y Verde! (Say: ah-mah-REE-yo and VER-deh)`,
+          headline:      `¡Amarillo y Verde!`,
           paragraphs: [
             `AMARILLO means YELLOW! Like the sun or a banana. VERDE means GREEN! Like grass or a frog.`,
             `Point to something amarillo! Now something verde! Say them: ¡AMARILLO! ¡VERDE!`,
@@ -49,15 +49,15 @@ const spanish_explorer_l03_screens = {
           image:        '/explorer-assets/languages/l03-s2-amarillo-verde.png',
           imageCaption: `¡Amarillo! Yellow. ¡Verde! Green.`,
           vocab: [
-            { word: 'amarillo', definition: `Yellow in Spanish. Say it like: ah-mah-REE-yo.`,                  audioPrompt: `Amarillo — say it like ah-mah-REE-yo. Amarillo means yellow. Like the sun!` },
-            { word: 'verde',    definition: `Green in Spanish. Say it like: VER-deh.`,                          audioPrompt: `Verde — say it like VER-deh. Verde means green. Like grass!` },
+            { word: 'amarillo', definition: `Yellow in Spanish.`,                  audioPrompt: `Amarillo. Amarillo means yellow. Like the sun!` },
+            { word: 'verde',    definition: `Green in Spanish.`,                          audioPrompt: `Verde. Verde means green. Like grass!` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
           totalSections: 6,
-          headline:      `¡Negro y Blanco! (Say: NEH-gro and BLAHN-ko)`,
+          headline:      `¡Negro y Blanco!`,
           paragraphs: [
             `NEGRO means BLACK! Like the night sky or a panther. BLANCO means WHITE! Like snow or a cloud.`,
             `Find something negro near you. Now something blanco! ¡NEGRO! ¡BLANCO!`,
@@ -65,8 +65,8 @@ const spanish_explorer_l03_screens = {
           image:        '/explorer-assets/languages/l03-s3-negro-blanco.png',
           imageCaption: `¡Negro! Black. ¡Blanco! White.`,
           vocab: [
-            { word: 'negro',  definition: `Black in Spanish. Say it like: NEH-gro.`,                            audioPrompt: `Negro — say it like NEH-gro. Negro means black. Like the night!` },
-            { word: 'blanco', definition: `White in Spanish. Say it like: BLAHN-ko.`,                           audioPrompt: `Blanco — say it like BLAHN-ko. Blanco means white. Like a cloud!` },
+            { word: 'negro',  definition: `Black in Spanish.`,                            audioPrompt: `Negro. Negro means black. Like the night!` },
+            { word: 'blanco', definition: `White in Spanish.`,                           audioPrompt: `Blanco. Blanco means white. Like a cloud!` },
           ],
         },
         {
@@ -81,8 +81,8 @@ const spanish_explorer_l03_screens = {
           image:        '/explorer-assets/languages/l03-s4-things.png',
           imageCaption: `Spanish colors describe everything around you!`,
           vocab: [
-            { word: 'manzana', definition: `Apple in Spanish! Say it like: mahn-SAH-nah.`,                      audioPrompt: `Manzana — say it like mahn-SAH-nah. Manzana means apple. Una manzana roja is a red apple!` },
-            { word: 'cielo',   definition: `Sky in Spanish! Say it like: see-EH-lo.`,                            audioPrompt: `Cielo — say it like see-EH-lo. Cielo means sky. El cielo azul is the blue sky!` },
+            { word: 'manzana', definition: `Apple in Spanish!`,                      audioPrompt: `Manzana. Manzana means apple. Una manzana roja is a red apple!` },
+            { word: 'cielo',   definition: `Sky in Spanish!`,                            audioPrompt: `Cielo. Cielo means sky. El cielo azul is the blue sky!` },
           ],
         },
         {

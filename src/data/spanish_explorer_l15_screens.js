@@ -22,7 +22,7 @@ const spanish_explorer_l15_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡México! (Say: MEH-hee-koh)`,
+          headline:      `¡México!`,
           paragraphs: [
             `MÉXICO is a HUGE country just south of the United States! Famous for tacos, sombreros, and ancient pyramids!`,
             `Try it: ¡MÉXICO! "Soy de México" means "I'm from Mexico!"`,
@@ -31,12 +31,12 @@ const spanish_explorer_l15_screens = {
           imageCaption: `¡México! Tacos, sombreros, pyramids!`,
           vocab: [
             { word: 'México', definition: `A big country south of the USA where they speak Spanish!`,         audioPrompt: `México — a big country south of the USA. They speak Spanish there!` },
-            { word: 'país',   definition: `Country in Spanish. Say: pah-EES.`,                                 audioPrompt: `País — say it like pah-EES. País means country!` },
+            { word: 'país',   definition: `Country in Spanish.`,                                 audioPrompt: `País. País means country!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡España! (Say: es-PAH-nyah)`,
+          headline:      `¡España!`,
           paragraphs: [
             `ESPAÑA is SPAIN — across the ocean in Europe! It's where Spanish first started!`,
             `Try it: ¡ESPAÑA! Famous for flamenco dancing and yummy food called paella!`,
@@ -45,12 +45,12 @@ const spanish_explorer_l15_screens = {
           imageCaption: `¡España! Where Spanish was born!`,
           vocab: [
             { word: 'España',  definition: `The country of Spain — where Spanish started!`,                  audioPrompt: `España — Spain! Where Spanish started! Across the ocean in Europe.` },
-            { word: 'español', definition: `The Spanish language! Say: es-pah-NYOL.`,                          audioPrompt: `Español — say it like es-pah-NYOL. Español means the Spanish language!` },
+            { word: 'español', definition: `The Spanish language!`,                          audioPrompt: `Español. Español means the Spanish language!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Colombia! (Say: ko-LOM-bee-ah)`,
+          headline:      `¡Colombia!`,
           paragraphs: [
             `COLOMBIA is in South America! Famous for coffee, music, and Carnival!`,
             `Try it: ¡COLOMBIA! Spanish-speaking kids from Colombia are bilingual amigos!`,
@@ -59,12 +59,12 @@ const spanish_explorer_l15_screens = {
           imageCaption: `¡Colombia! Coffee, music, Carnival!`,
           vocab: [
             { word: 'Colombia',       definition: `A country in South America where they speak Spanish!`,    audioPrompt: `Colombia — a country in South America! Famous for coffee!` },
-            { word: 'Sudamérica',     definition: `South America in Spanish! Say: sood-ah-MEH-ree-kah.`,    audioPrompt: `Sudamérica — say it like sood-ah-MEH-ree-kah. Sudamérica means South America!` },
+            { word: 'Sudamérica',     definition: `South America in Spanish!`,    audioPrompt: `Sudamérica. Sudamérica means South America!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Argentina! (Say: ar-hen-TEE-nah)`,
+          headline:      `¡Argentina!`,
           paragraphs: [
             `ARGENTINA is far down in South America! Famous for soccer stars and tango dancing!`,
             `Try it: ¡ARGENTINA! It's so big it has mountains AND beaches AND ice glaciers!`,
@@ -73,12 +73,12 @@ const spanish_explorer_l15_screens = {
           imageCaption: `¡Argentina! Soccer, tango, mountains!`,
           vocab: [
             { word: 'Argentina', definition: `A big South American country famous for soccer!`,              audioPrompt: `Argentina — a big country in South America! Famous for fútbol!` },
-            { word: 'tango',     definition: `A famous Argentinian dance! Say: TAHN-go.`,                     audioPrompt: `Tango — a famous dance from Argentina!` },
+            { word: 'tango',     definition: `A famous Argentinian dance!`,                     audioPrompt: `Tango — a famous dance from Argentina!` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Perú y Cuba! (Say: peh-ROO and KOO-bah)`,
+          headline:      `¡Perú y Cuba!`,
           paragraphs: [
             `PERÚ is home to Machu Picchu — ancient stone cities in the mountains!`,
             `CUBA is a beautiful ISLAND in the Caribbean Sea! Try them: ¡PERÚ! ¡CUBA!`,

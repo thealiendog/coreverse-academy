@@ -29,7 +29,7 @@ const spanish_explorer_l01_screens = {
           type:          'magazine',
           section:       1,
           totalSections: 6,
-          headline:      `¡Hola! (Say: OH-lah)`,
+          headline:      `¡Hola!`,
           paragraphs: [
             `HOLA means HELLO in Spanish! When you see a friend, you say "¡Hola!" Just like "Hi!" or "Hello!" in English.`,
             `Try it! Wave your hand and say it loud: ¡HOLA! ¡HOLA! ¡HOLA! Do you feel like saying hi to everyone now? That's how Spanish kids feel too!`,
@@ -37,7 +37,7 @@ const spanish_explorer_l01_screens = {
           image:        '/explorer-assets/languages/l01-s1-hola.png',
           imageCaption: `¡Hola! — Wave and say HELLO!`,
           vocab: [
-            { word: 'hola',  definition: `Hello in Spanish. Say it like: OH-lah.`,                              audioPrompt: `Hola — say it like oh-lah. It means hello in Spanish. Hola! Hola!` },
+            { word: 'hola',  definition: `Hello in Spanish.`,                              audioPrompt: `Hola. It means hello in Spanish. Hola! Hola!` },
             { word: 'wave',  definition: `When you move your hand back and forth to say hi.`,                  audioPrompt: `Wave — when you move your hand back and forth to say hi. Wave and say hola!` },
           ],
         },
@@ -45,7 +45,7 @@ const spanish_explorer_l01_screens = {
           type:          'magazine',
           section:       2,
           totalSections: 6,
-          headline:      `¡Adiós! (Say: ah-dee-OHS)`,
+          headline:      `¡Adiós!`,
           paragraphs: [
             `ADIÓS means GOODBYE in Spanish! When you leave a friend, you say "¡Adiós!" It sounds like "ah-dee-OHS."`,
             `Try it! Wave your hand as if saying bye. Now say: ¡ADIÓS! ¡ADIÓS! ¡ADIÓS! See? You already know TWO Spanish words!`,
@@ -53,7 +53,7 @@ const spanish_explorer_l01_screens = {
           image:        '/explorer-assets/languages/l01-s2-adios.png',
           imageCaption: `¡Adiós! — Wave goodbye!`,
           vocab: [
-            { word: 'adiós', definition: `Goodbye in Spanish. Say it like: ah-dee-OHS.`,                       audioPrompt: `Adiós — say it like ah-dee-OHS. It means goodbye in Spanish. Adiós! Adiós!` },
+            { word: 'adiós', definition: `Goodbye in Spanish.`,                       audioPrompt: `Adiós. It means goodbye in Spanish. Adiós! Adiós!` },
             { word: 'leave', definition: `When you go away from a place — like leaving school to go home.`,    audioPrompt: `Leave — when you go away from a place. We say adiós when we leave.` },
           ],
         },
@@ -61,7 +61,7 @@ const spanish_explorer_l01_screens = {
           type:          'magazine',
           section:       3,
           totalSections: 6,
-          headline:      `¡Sí y No! (Say: SEE and NO)`,
+          headline:      `¡Sí y No!`,
           paragraphs: [
             `Two more easy ones! SÍ means YES. NO means NO. They sound just like the English NO — easy!`,
             `When Luna says ¿Sí? you nod your head YES. When Luna says ¿No? you shake your head NO. Try it now! NOD: ¡SÍ! SHAKE: ¡NO!`,
@@ -69,7 +69,7 @@ const spanish_explorer_l01_screens = {
           image:        '/explorer-assets/languages/l01-s3-si-no.png',
           imageCaption: `¡Sí! Nod your head YES. ¡No! Shake your head NO.`,
           vocab: [
-            { word: 'sí', definition: `Yes in Spanish. Say it like: SEE. Nod your head!`,                       audioPrompt: `Sí — say it like SEE. It means yes in Spanish. Sí! Sí! Nod your head!` },
+            { word: 'sí', definition: `Yes in Spanish. Nod your head!`,                       audioPrompt: `Sí. It means yes in Spanish. Sí! Sí! Nod your head!` },
             { word: 'no', definition: `No in Spanish. Sounds just like English NO. Shake your head!`,           audioPrompt: `No — it sounds just like the English no. Shake your head! No! No!` },
           ],
         },
@@ -77,7 +77,7 @@ const spanish_explorer_l01_screens = {
           type:          'magazine',
           section:       4,
           totalSections: 6,
-          headline:      `¡Gracias! (Say: GRAH-see-ahs)`,
+          headline:      `¡Gracias!`,
           paragraphs: [
             `GRACIAS means THANK YOU in Spanish! It's one of the most important words you can know — in ANY language.`,
             `When someone gives you something, you put your hands together near your heart and say: ¡GRACIAS! Try it! ¡GRACIAS! ¡GRACIAS! ¡GRACIAS!`,
@@ -85,7 +85,7 @@ const spanish_explorer_l01_screens = {
           image:        '/explorer-assets/languages/l01-s4-gracias.png',
           imageCaption: `¡Gracias! — Hands on heart, say THANK YOU!`,
           vocab: [
-            { word: 'gracias',   definition: `Thank you in Spanish. Say it like: GRAH-see-ahs.`,                audioPrompt: `Gracias — say it like GRAH-see-ahs. It means thank you in Spanish. Gracias! Gracias!` },
+            { word: 'gracias',   definition: `Thank you in Spanish.`,                audioPrompt: `Gracias. It means thank you in Spanish. Gracias! Gracias!` },
             { word: 'thank you', definition: `Words you say when someone does something kind for you.`,         audioPrompt: `Thank you — words you say when someone does something kind for you. We say gracias!` },
           ],
         },
@@ -93,7 +93,7 @@ const spanish_explorer_l01_screens = {
           type:          'magazine',
           section:       5,
           totalSections: 6,
-          headline:      `¡Por favor! (Say: por fah-VOR)`,
+          headline:      `¡Por favor!`,
           paragraphs: [
             `POR FAVOR means PLEASE in Spanish! When you ask for something nicely, you say "por favor" — just like saying "please" in English.`,
             `Practice with Luna! "Una galleta, ¡por favor!" That means "A cookie, please!" Say it: ¡POR FAVOR! ¡POR FAVOR!`,
@@ -101,7 +101,7 @@ const spanish_explorer_l01_screens = {
           image:        '/explorer-assets/languages/l01-s5-por-favor.png',
           imageCaption: `¡Por favor! — Asking nicely with PLEASE!`,
           vocab: [
-            { word: 'por favor', definition: `Please in Spanish. Say it like: por fah-VOR.`,                   audioPrompt: `Por favor — say it like por fah-VOR. It means please in Spanish. Por favor!` },
+            { word: 'por favor', definition: `Please in Spanish.`,                   audioPrompt: `Por favor. It means please in Spanish. Por favor!` },
             { word: 'please',    definition: `A nice word you say when you ask for something.`,                 audioPrompt: `Please — a nice word you say when you ask for something. In Spanish: por favor!` },
           ],
         },

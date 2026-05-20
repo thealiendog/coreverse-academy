@@ -22,7 +22,7 @@ const spanish_explorer_l18_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Ayuda! (Say: ah-YOO-dah)`,
+          headline:      `¡Ayuda!`,
           paragraphs: [
             `AYUDA means HELP! If you need help, just say it!`,
             `Reach out your hands: ¡AYUDA! ¡AYUDA! Strong kids ask for ayuda when they need it!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l18_screens = {
           image:        '/explorer-assets/languages/l18-s1-ayuda.png',
           imageCaption: `¡Ayuda! Help!`,
           vocab: [
-            { word: 'ayuda', definition: `Help in Spanish. Say: ah-YOO-dah.`,                                 audioPrompt: `Ayuda — say it like ah-YOO-dah. Ayuda means help!` },
-            { word: 'ayudar', definition: `To help in Spanish! Say: ah-yoo-DAR.`,                              audioPrompt: `Ayudar — say it like ah-yoo-DAR. Ayudar means to help!` },
+            { word: 'ayuda', definition: `Help in Spanish.`,                                 audioPrompt: `Ayuda. Ayuda means help!` },
+            { word: 'ayudar', definition: `To help in Spanish!`,                              audioPrompt: `Ayudar. Ayudar means to help!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡No entiendo! (Say: no en-tee-EN-do)`,
+          headline:      `¡No entiendo!`,
           paragraphs: [
             `NO ENTIENDO means "I DON'T UNDERSTAND!" Super useful when something is confusing!`,
             `Shrug your shoulders: ¡NO ENTIENDO! It's brave to admit you don't understand!`,
@@ -50,7 +50,7 @@ const spanish_explorer_l18_screens = {
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¿Dónde está? (Say: DOHN-deh es-TAH)`,
+          headline:      `¿Dónde está?`,
           paragraphs: [
             `¿DÓNDE ESTÁ? means "WHERE IS IT?" Lost something? Ask this!`,
             `Hold up your hands like searching: ¿DÓNDE ESTÁ? "¿Dónde está mi libro?" "Where is my book?"`,
@@ -59,12 +59,12 @@ const spanish_explorer_l18_screens = {
           imageCaption: `¿Dónde está? Where is it?`,
           vocab: [
             { word: '¿dónde está?', definition: `Where is it? in Spanish.`,                                   audioPrompt: `Dónde está — where is it? Ask: ¿Dónde está?` },
-            { word: 'aquí',         definition: `Here in Spanish! Say: ah-KEE.`,                              audioPrompt: `Aquí — say it like ah-KEE. Aquí means here!` },
+            { word: 'aquí',         definition: `Here in Spanish!`,                              audioPrompt: `Aquí. Aquí means here!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Lo siento! (Say: lo see-EN-toh)`,
+          headline:      `¡Lo siento!`,
           paragraphs: [
             `LO SIENTO means I'M SORRY! When you make a mistake, this is the word!`,
             `Put your hand on your heart: ¡LO SIENTO! Brave kids say lo siento when they mess up!`,
@@ -72,13 +72,13 @@ const spanish_explorer_l18_screens = {
           image:        '/explorer-assets/languages/l18-s4-lo-siento.png',
           imageCaption: `¡Lo siento! I'm sorry!`,
           vocab: [
-            { word: 'lo siento', definition: `I'm sorry in Spanish. Say: lo see-EN-toh.`,                     audioPrompt: `Lo siento — say it like lo see-EN-toh. Lo siento means I'm sorry!` },
-            { word: 'perdón',    definition: `Pardon me / sorry in Spanish! Say: pehr-DOHN.`,                 audioPrompt: `Perdón — say it like pehr-DOHN. Perdón means pardon me or sorry!` },
+            { word: 'lo siento', definition: `I'm sorry in Spanish.`,                     audioPrompt: `Lo siento. Lo siento means I'm sorry!` },
+            { word: 'perdón',    definition: `Pardon me / sorry in Spanish!`,                 audioPrompt: `Perdón. Perdón means pardon me or sorry!` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Más despacio! (Say: mahs des-PAH-see-oh)`,
+          headline:      `¡Más despacio!`,
           paragraphs: [
             `MÁS DESPACIO means SLOWER, PLEASE! Spanish speakers can talk FAST!`,
             `Wave your hands down slowly: ¡MÁS DESPACIO! "Por favor, MÁS DESPACIO!" Polite way to ask!`,
@@ -86,8 +86,8 @@ const spanish_explorer_l18_screens = {
           image:        '/explorer-assets/languages/l18-s5-mas-despacio.png',
           imageCaption: `¡Más despacio! Slower, please!`,
           vocab: [
-            { word: 'más despacio', definition: `Slower in Spanish. Say: mahs des-PAH-see-oh.`,              audioPrompt: `Más despacio — say it like mahs des-PAH-see-oh. Más despacio means slower!` },
-            { word: 'repetir',      definition: `To repeat in Spanish! Say: reh-peh-TEER.`,                  audioPrompt: `Repetir — say it like reh-peh-TEER. Repetir means to repeat!` },
+            { word: 'más despacio', definition: `Slower in Spanish.`,              audioPrompt: `Más despacio. Más despacio means slower!` },
+            { word: 'repetir',      definition: `To repeat in Spanish!`,                  audioPrompt: `Repetir. Repetir means to repeat!` },
           ],
         },
         {

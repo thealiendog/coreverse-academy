@@ -22,7 +22,7 @@ const spanish_explorer_l13_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Camisa! (Say: kah-MEE-sah)`,
+          headline:      `¡Camisa!`,
           paragraphs: [
             `CAMISA means SHIRT! Touch your shirt!`,
             `Try it: ¡CAMISA! ¡CAMISA! Your shirt has a Spanish name now!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l13_screens = {
           image:        '/explorer-assets/languages/l13-s1-camisa.png',
           imageCaption: `¡Camisa! Shirt!`,
           vocab: [
-            { word: 'camisa', definition: `Shirt in Spanish. Say: kah-MEE-sah.`,                              audioPrompt: `Camisa — say it like kah-MEE-sah. Camisa means shirt!` },
-            { word: 'ropa',   definition: `Clothes in Spanish. Say: ROH-pah.`,                                audioPrompt: `Ropa — say it like ROH-pah. Ropa means clothes!` },
+            { word: 'camisa', definition: `Shirt in Spanish.`,                              audioPrompt: `Camisa. Camisa means shirt!` },
+            { word: 'ropa',   definition: `Clothes in Spanish.`,                                audioPrompt: `Ropa. Ropa means clothes!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Pantalones! (Say: pan-tah-LO-nehs)`,
+          headline:      `¡Pantalones!`,
           paragraphs: [
             `PANTALONES means PANTS! Pat your legs!`,
             `Spanish kids say "pantalones" — even just for one pair! Try it: ¡PANTALONES! ¡PANTALONES!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l13_screens = {
           image:        '/explorer-assets/languages/l13-s2-pantalones.png',
           imageCaption: `¡Pantalones! Pants!`,
           vocab: [
-            { word: 'pantalones', definition: `Pants in Spanish. Say: pan-tah-LO-nehs.`,                       audioPrompt: `Pantalones — say it like pan-tah-LO-nehs. Pantalones means pants!` },
-            { word: 'falda',      definition: `Skirt in Spanish! Say: FAHL-dah.`,                              audioPrompt: `Falda — say it like FAHL-dah. Falda means skirt!` },
+            { word: 'pantalones', definition: `Pants in Spanish.`,                       audioPrompt: `Pantalones. Pantalones means pants!` },
+            { word: 'falda',      definition: `Skirt in Spanish!`,                              audioPrompt: `Falda. Falda means skirt!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Zapatos! (Say: sah-PAH-tohs)`,
+          headline:      `¡Zapatos!`,
           paragraphs: [
             `ZAPATOS means SHOES! Tap your feet!`,
             `Try it: ¡ZAPATOS! Spanish kids put on zapatos every morning — just like you!`,
@@ -58,13 +58,13 @@ const spanish_explorer_l13_screens = {
           image:        '/explorer-assets/languages/l13-s3-zapatos.png',
           imageCaption: `¡Zapatos! Shoes!`,
           vocab: [
-            { word: 'zapatos', definition: `Shoes in Spanish. Say: sah-PAH-tohs.`,                            audioPrompt: `Zapatos — say it like sah-PAH-tohs. Zapatos means shoes!` },
+            { word: 'zapatos', definition: `Shoes in Spanish.`,                            audioPrompt: `Zapatos. Zapatos means shoes!` },
             { word: 'pies',   definition: `Feet in Spanish — what zapatos go on!`,                            audioPrompt: `Pies — feet! Zapatos go on your pies!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Sombrero! (Say: som-BREH-roh)`,
+          headline:      `¡Sombrero!`,
           paragraphs: [
             `SOMBRERO means HAT! Tap your head!`,
             `Spanish hats are famous — like the big ones in Mexico! Try it: ¡SOMBRERO!`,
@@ -72,13 +72,13 @@ const spanish_explorer_l13_screens = {
           image:        '/explorer-assets/languages/l13-s4-sombrero.png',
           imageCaption: `¡Sombrero! Hat!`,
           vocab: [
-            { word: 'sombrero', definition: `Hat in Spanish. Say: som-BREH-roh.`,                             audioPrompt: `Sombrero — say it like som-BREH-roh. Sombrero means hat!` },
-            { word: 'gorro',    definition: `Cap in Spanish! Say: GOH-rro.`,                                  audioPrompt: `Gorro — say it like GOH-rro. Gorro means cap!` },
+            { word: 'sombrero', definition: `Hat in Spanish.`,                             audioPrompt: `Sombrero. Sombrero means hat!` },
+            { word: 'gorro',    definition: `Cap in Spanish!`,                                  audioPrompt: `Gorro. Gorro means cap!` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Chaqueta y Calcetines! (Say: chah-KEH-tah and kal-seh-TEE-nehs)`,
+          headline:      `¡Chaqueta y Calcetines!`,
           paragraphs: [
             `CHAQUETA means JACKET! CALCETINES means SOCKS!`,
             `Wrap your arms around yourself: ¡CHAQUETA! Touch your ankles: ¡CALCETINES!`,
@@ -86,8 +86,8 @@ const spanish_explorer_l13_screens = {
           image:        '/explorer-assets/languages/l13-s5-chaqueta-calcetines.png',
           imageCaption: `¡Chaqueta! Jacket. ¡Calcetines! Socks.`,
           vocab: [
-            { word: 'chaqueta',    definition: `Jacket in Spanish. Say: chah-KEH-tah.`,                       audioPrompt: `Chaqueta — say it like chah-KEH-tah. Chaqueta means jacket!` },
-            { word: 'calcetines',  definition: `Socks in Spanish. Say: kal-seh-TEE-nehs.`,                    audioPrompt: `Calcetines — say it like kal-seh-TEE-nehs. Calcetines means socks!` },
+            { word: 'chaqueta',    definition: `Jacket in Spanish.`,                       audioPrompt: `Chaqueta. Chaqueta means jacket!` },
+            { word: 'calcetines',  definition: `Socks in Spanish.`,                    audioPrompt: `Calcetines. Calcetines means socks!` },
           ],
         },
         {

@@ -22,7 +22,7 @@ const spanish_explorer_l14_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Leer! (Say: leh-EHR)`,
+          headline:      `¡Leer!`,
           paragraphs: [
             `LEER means TO READ! Hold up an invisible book!`,
             `Pretend to read: ¡LEER! ¡LEER! "Me gusta leer" means "I like to read!"`,
@@ -30,13 +30,13 @@ const spanish_explorer_l14_screens = {
           image:        '/explorer-assets/languages/l14-s1-leer.png',
           imageCaption: `¡Leer! Read!`,
           vocab: [
-            { word: 'leer',     definition: `To read in Spanish. Say: leh-EHR.`,                              audioPrompt: `Leer — say it like leh-EHR. Leer means to read!` },
-            { word: 'me gusta', definition: `I like in Spanish. Say: meh GOOS-tah.`,                          audioPrompt: `Me gusta — say it like meh GOOS-tah. Me gusta means I like!` },
+            { word: 'leer',     definition: `To read in Spanish.`,                              audioPrompt: `Leer. Leer means to read!` },
+            { word: 'me gusta', definition: `I like in Spanish.`,                          audioPrompt: `Me gusta. Me gusta means I like!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Dibujar! (Say: dee-boo-HAR)`,
+          headline:      `¡Dibujar!`,
           paragraphs: [
             `DIBUJAR means TO DRAW! Pretend to draw in the air!`,
             `Try it: ¡DIBUJAR! ¡DIBUJAR! "Me gusta dibujar" means "I like to draw!"`,
@@ -44,13 +44,13 @@ const spanish_explorer_l14_screens = {
           image:        '/explorer-assets/languages/l14-s2-dibujar.png',
           imageCaption: `¡Dibujar! Draw!`,
           vocab: [
-            { word: 'dibujar', definition: `To draw in Spanish. Say: dee-boo-HAR.`,                           audioPrompt: `Dibujar — say it like dee-boo-HAR. Dibujar means to draw!` },
-            { word: 'dibujo',  definition: `Drawing (the picture) in Spanish! Say: dee-BOO-ho.`,             audioPrompt: `Dibujo — say it like dee-BOO-ho. Dibujo means a drawing!` },
+            { word: 'dibujar', definition: `To draw in Spanish.`,                           audioPrompt: `Dibujar. Dibujar means to draw!` },
+            { word: 'dibujo',  definition: `Drawing (the picture) in Spanish!`,             audioPrompt: `Dibujo. Dibujo means a drawing!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Jugar! (Say: hoo-GAR)`,
+          headline:      `¡Jugar!`,
           paragraphs: [
             `JUGAR means TO PLAY! The BEST verb of all!`,
             `Jump around: ¡JUGAR! "Me gusta jugar" means "I like to play!" Every kid loves to jugar!`,
@@ -58,13 +58,13 @@ const spanish_explorer_l14_screens = {
           image:        '/explorer-assets/languages/l14-s3-jugar.png',
           imageCaption: `¡Jugar! Play!`,
           vocab: [
-            { word: 'jugar',  definition: `To play in Spanish. Say: hoo-GAR.`,                                audioPrompt: `Jugar — say it like hoo-GAR. Jugar means to play!` },
-            { word: 'juego',  definition: `A game in Spanish! Say: HWEH-go.`,                                 audioPrompt: `Juego — say it like HWEH-go. Juego means a game!` },
+            { word: 'jugar',  definition: `To play in Spanish.`,                                audioPrompt: `Jugar. Jugar means to play!` },
+            { word: 'juego',  definition: `A game in Spanish!`,                                 audioPrompt: `Juego. Juego means a game!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Deporte! (Say: deh-POR-teh)`,
+          headline:      `¡Deporte!`,
           paragraphs: [
             `DEPORTE means SPORT! Like soccer, basketball, swimming!`,
             `Pretend to kick a ball: ¡DEPORTE! "Mi deporte favorito es el fútbol!" "My favorite sport is soccer!"`,
@@ -72,13 +72,13 @@ const spanish_explorer_l14_screens = {
           image:        '/explorer-assets/languages/l14-s4-deporte.png',
           imageCaption: `¡Deporte! Sport!`,
           vocab: [
-            { word: 'deporte', definition: `Sport in Spanish. Say: deh-POR-teh.`,                             audioPrompt: `Deporte — say it like deh-POR-teh. Deporte means sport!` },
-            { word: 'fútbol',  definition: `Soccer in Spanish! Say: FOOT-bol.`,                                audioPrompt: `Fútbol — say it like FOOT-bol. Fútbol means soccer — the favorite sport in many Spanish countries!` },
+            { word: 'deporte', definition: `Sport in Spanish.`,                             audioPrompt: `Deporte. Deporte means sport!` },
+            { word: 'fútbol',  definition: `Soccer in Spanish!`,                                audioPrompt: `Fútbol. Fútbol means soccer — the favorite sport in many Spanish countries!` },
           ],
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡Música! (Say: MOO-see-kah)`,
+          headline:      `¡Música!`,
           paragraphs: [
             `MÚSICA means MUSIC! Wave your hands like a conductor!`,
             `Try it: ¡MÚSICA! "Me gusta la música" means "I like music!" What kind of música do you like?`,
@@ -86,7 +86,7 @@ const spanish_explorer_l14_screens = {
           image:        '/explorer-assets/languages/l14-s5-musica.png',
           imageCaption: `¡Música! Music!`,
           vocab: [
-            { word: 'música', definition: `Music in Spanish. Say: MOO-see-kah.`,                              audioPrompt: `Música — say it like MOO-see-kah. Música means music!` },
+            { word: 'música', definition: `Music in Spanish.`,                              audioPrompt: `Música. Música means music!` },
             { word: 'bailar', definition: `To dance in Spanish — with música!`,                               audioPrompt: `Bailar — to dance! Música and bailar go together!` },
           ],
         },

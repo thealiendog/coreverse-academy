@@ -22,7 +22,7 @@ const spanish_explorer_l07_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Pan y Leche! (Say: PAHN and LEH-cheh)`,
+          headline:      `¡Pan y Leche!`,
           paragraphs: [
             `PAN means BREAD! LECHE means MILK! Two foods kids around the world love.`,
             `Pretend to take a bite of pan: ¡PAN! Now pretend to drink leche: ¡LECHE! ¡PAN! ¡LECHE!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l07_screens = {
           image:        '/explorer-assets/languages/l07-s1-pan-leche.png',
           imageCaption: `¡Pan! Bread. ¡Leche! Milk.`,
           vocab: [
-            { word: 'pan',   definition: `Bread in Spanish. Say it like: PAHN.`,                              audioPrompt: `Pan — say it like PAHN. Pan means bread!` },
-            { word: 'leche', definition: `Milk in Spanish. Say it like: LEH-cheh.`,                           audioPrompt: `Leche — say it like LEH-cheh. Leche means milk!` },
+            { word: 'pan',   definition: `Bread in Spanish.`,                              audioPrompt: `Pan. Pan means bread!` },
+            { word: 'leche', definition: `Milk in Spanish.`,                           audioPrompt: `Leche. Leche means milk!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Agua y Manzana! (Say: AH-gwah and mahn-SAH-nah)`,
+          headline:      `¡Agua y Manzana!`,
           paragraphs: [
             `AGUA means WATER! MANZANA means APPLE! Healthy choices!`,
             `Pretend to drink agua: ¡AGUA! Pretend to bite a manzana: ¡MANZANA! Crunch crunch!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l07_screens = {
           image:        '/explorer-assets/languages/l07-s2-agua-manzana.png',
           imageCaption: `¡Agua! Water. ¡Manzana! Apple.`,
           vocab: [
-            { word: 'agua',    definition: `Water in Spanish. Say it like: AH-gwah.`,                         audioPrompt: `Agua — say it like AH-gwah. Agua means water!` },
-            { word: 'manzana', definition: `Apple in Spanish. Say it like: mahn-SAH-nah.`,                    audioPrompt: `Manzana — say it like mahn-SAH-nah. Manzana means apple!` },
+            { word: 'agua',    definition: `Water in Spanish.`,                         audioPrompt: `Agua. Agua means water!` },
+            { word: 'manzana', definition: `Apple in Spanish.`,                    audioPrompt: `Manzana. Manzana means apple!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Galleta y Queso! (Say: gah-YEH-tah and KEH-so)`,
+          headline:      `¡Galleta y Queso!`,
           paragraphs: [
             `GALLETA means COOKIE! YUM! QUESO means CHEESE! Like in quesadilla!`,
             `Try them: ¡GALLETA! ¡QUESO! Spanish kids love them too!`,
@@ -58,8 +58,8 @@ const spanish_explorer_l07_screens = {
           image:        '/explorer-assets/languages/l07-s3-galleta-queso.png',
           imageCaption: `¡Galleta! Cookie. ¡Queso! Cheese.`,
           vocab: [
-            { word: 'galleta', definition: `Cookie in Spanish. Say it like: gah-YEH-tah.`,                    audioPrompt: `Galleta — say it like gah-YEH-tah. Galleta means cookie!` },
-            { word: 'queso',   definition: `Cheese in Spanish. Say it like: KEH-so.`,                          audioPrompt: `Queso — say it like KEH-so. Queso means cheese!` },
+            { word: 'galleta', definition: `Cookie in Spanish.`,                    audioPrompt: `Galleta. Galleta means cookie!` },
+            { word: 'queso',   definition: `Cheese in Spanish.`,                          audioPrompt: `Queso. Queso means cheese!` },
           ],
         },
         {
@@ -72,8 +72,8 @@ const spanish_explorer_l07_screens = {
           image:        '/explorer-assets/languages/l07-s4-hambre-sed.png',
           imageCaption: `¡Tengo hambre! I'm hungry! ¡Tengo sed! I'm thirsty!`,
           vocab: [
-            { word: 'tengo hambre', definition: `I'm hungry in Spanish. Say: TEN-go AHM-breh.`,             audioPrompt: `Tengo hambre — say it like TEN-go AHM-breh. It means I'm hungry!` },
-            { word: 'tengo sed',    definition: `I'm thirsty in Spanish. Say: TEN-go SED.`,                  audioPrompt: `Tengo sed — say it like TEN-go SED. It means I'm thirsty!` },
+            { word: 'tengo hambre', definition: `I'm hungry in Spanish.`,             audioPrompt: `Tengo hambre. It means I'm hungry!` },
+            { word: 'tengo sed',    definition: `I'm thirsty in Spanish.`,                  audioPrompt: `Tengo sed. It means I'm thirsty!` },
           ],
         },
         {
@@ -86,8 +86,8 @@ const spanish_explorer_l07_screens = {
           image:        '/explorer-assets/languages/l07-s5-rico.png',
           imageCaption: `¡Está rico! It's YUMMY!`,
           vocab: [
-            { word: 'está rico', definition: `It's yummy in Spanish. Say: es-TAH REE-koh.`,                 audioPrompt: `Está rico — say it like es-TAH REE-koh. It means it's yummy!` },
-            { word: 'comer',     definition: `To eat in Spanish. Say: ko-MEHR.`,                             audioPrompt: `Comer — say it like ko-MEHR. Comer means to eat!` },
+            { word: 'está rico', definition: `It's yummy in Spanish.`,                 audioPrompt: `Está rico. It means it's yummy!` },
+            { word: 'comer',     definition: `To eat in Spanish.`,                             audioPrompt: `Comer. Comer means to eat!` },
           ],
         },
         {

@@ -22,7 +22,7 @@ const spanish_explorer_l11_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Libro y Lápiz! (Say: LEE-bro and LAH-pees)`,
+          headline:      `¡Libro y Lápiz!`,
           paragraphs: [
             `LIBRO means BOOK! LÁPIZ means PENCIL!`,
             `Pretend to open a libro: ¡LIBRO! Pretend to write with a lápiz: ¡LÁPIZ!`,
@@ -30,13 +30,13 @@ const spanish_explorer_l11_screens = {
           image:        '/explorer-assets/languages/l11-s1-libro-lapiz.png',
           imageCaption: `¡Libro! Book. ¡Lápiz! Pencil.`,
           vocab: [
-            { word: 'libro', definition: `Book in Spanish. Say: LEE-bro.`,                                    audioPrompt: `Libro — say it like LEE-bro. Libro means book!` },
-            { word: 'lápiz', definition: `Pencil in Spanish. Say: LAH-pees.`,                                  audioPrompt: `Lápiz — say it like LAH-pees. Lápiz means pencil!` },
+            { word: 'libro', definition: `Book in Spanish.`,                                    audioPrompt: `Libro. Libro means book!` },
+            { word: 'lápiz', definition: `Pencil in Spanish.`,                                  audioPrompt: `Lápiz. Lápiz means pencil!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Mesa y Silla! (Say: MEH-sah and SEE-yah)`,
+          headline:      `¡Mesa y Silla!`,
           paragraphs: [
             `MESA means TABLE! SILLA means CHAIR!`,
             `Tap on your table: ¡MESA! Sit on your chair: ¡SILLA! ¡MESA! ¡SILLA!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l11_screens = {
           image:        '/explorer-assets/languages/l11-s2-mesa-silla.png',
           imageCaption: `¡Mesa! Table. ¡Silla! Chair.`,
           vocab: [
-            { word: 'mesa',  definition: `Table in Spanish. Say: MEH-sah.`,                                   audioPrompt: `Mesa — say it like MEH-sah. Mesa means table!` },
-            { word: 'silla', definition: `Chair in Spanish. Say: SEE-yah.`,                                   audioPrompt: `Silla — say it like SEE-yah. Silla means chair!` },
+            { word: 'mesa',  definition: `Table in Spanish.`,                                   audioPrompt: `Mesa. Mesa means table!` },
+            { word: 'silla', definition: `Chair in Spanish.`,                                   audioPrompt: `Silla. Silla means chair!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Maestro y Amigo! (Say: ma-EHS-troh and ah-MEE-goh)`,
+          headline:      `¡Maestro y Amigo!`,
           paragraphs: [
             `MAESTRO means TEACHER (or MAESTRA for a female teacher)! AMIGO means FRIEND (or AMIGA)!`,
             `Wave to your maestro: ¡MAESTRO! Hug your amigo: ¡AMIGO! Remember — O for boys, A for girls!`,
@@ -58,13 +58,13 @@ const spanish_explorer_l11_screens = {
           image:        '/explorer-assets/languages/l11-s3-maestro-amigo.png',
           imageCaption: `¡Maestro! Teacher. ¡Amigo! Friend.`,
           vocab: [
-            { word: 'maestro', definition: `Teacher in Spanish (male). Say: ma-EHS-troh.`,                    audioPrompt: `Maestro — say it like ma-EHS-troh. Maestro means teacher!` },
-            { word: 'amigo',   definition: `Friend in Spanish (boy). Say: ah-MEE-goh.`,                       audioPrompt: `Amigo — say it like ah-MEE-goh. Amigo means friend!` },
+            { word: 'maestro', definition: `Teacher in Spanish (male).`,                    audioPrompt: `Maestro. Maestro means teacher!` },
+            { word: 'amigo',   definition: `Friend in Spanish (boy).`,                       audioPrompt: `Amigo. Amigo means friend!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Estudiar! (Say: es-too-dee-AHR)`,
+          headline:      `¡Estudiar!`,
           paragraphs: [
             `ESTUDIAR means TO STUDY! It's what you do in la escuela!`,
             `Pretend to read a book carefully: ¡ESTUDIAR! ¡ESTUDIAR! Smart kids estudiar a lot!`,
@@ -72,8 +72,8 @@ const spanish_explorer_l11_screens = {
           image:        '/explorer-assets/languages/l11-s4-estudiar.png',
           imageCaption: `¡Estudiar! Study! Smart kids do this!`,
           vocab: [
-            { word: 'estudiar', definition: `To study in Spanish. Say: es-too-dee-AHR.`,                       audioPrompt: `Estudiar — say it like es-too-dee-AHR. Estudiar means to study!` },
-            { word: 'aprender', definition: `To learn in Spanish! Say: ah-pren-DEHR.`,                         audioPrompt: `Aprender — say it like ah-pren-DEHR. Aprender means to learn!` },
+            { word: 'estudiar', definition: `To study in Spanish.`,                       audioPrompt: `Estudiar. Estudiar means to study!` },
+            { word: 'aprender', definition: `To learn in Spanish!`,                         audioPrompt: `Aprender. Aprender means to learn!` },
           ],
         },
         {
@@ -86,8 +86,8 @@ const spanish_explorer_l11_screens = {
           image:        '/explorer-assets/languages/l11-s5-escuela.png',
           imageCaption: `¡Mi escuela! My school!`,
           vocab: [
-            { word: 'escuela', definition: `School in Spanish. Say: es-KWEH-lah.`,                            audioPrompt: `Escuela — say it like es-KWEH-lah. Escuela means school!` },
-            { word: 'clase',   definition: `Class in Spanish. Say: KLAH-seh.`,                                 audioPrompt: `Clase — say it like KLAH-seh. Clase means class!` },
+            { word: 'escuela', definition: `School in Spanish.`,                            audioPrompt: `Escuela. Escuela means school!` },
+            { word: 'clase',   definition: `Class in Spanish.`,                                 audioPrompt: `Clase. Clase means class!` },
           ],
         },
         {

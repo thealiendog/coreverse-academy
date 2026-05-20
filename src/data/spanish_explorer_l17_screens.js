@@ -22,7 +22,7 @@ const spanish_explorer_l17_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡La Tienda! (Say: lah tee-EN-dah)`,
+          headline:      `¡La Tienda!`,
           paragraphs: [
             `TIENDA means STORE! Where you buy things!`,
             `Pretend to walk into a store: ¡TIENDA! "Voy a la tienda" means "I'm going to the store!"`,
@@ -30,13 +30,13 @@ const spanish_explorer_l17_screens = {
           image:        '/explorer-assets/languages/l17-s1-tienda.png',
           imageCaption: `¡La tienda! The store!`,
           vocab: [
-            { word: 'tienda', definition: `Store in Spanish. Say: tee-EN-dah.`,                               audioPrompt: `Tienda — say it like tee-EN-dah. Tienda means store!` },
-            { word: 'comprar', definition: `To buy in Spanish! Say: kom-PRAR.`,                               audioPrompt: `Comprar — say it like kom-PRAR. Comprar means to buy!` },
+            { word: 'tienda', definition: `Store in Spanish.`,                               audioPrompt: `Tienda. Tienda means store!` },
+            { word: 'comprar', definition: `To buy in Spanish!`,                               audioPrompt: `Comprar. Comprar means to buy!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Quiero! (Say: kee-EH-ro)`,
+          headline:      `¡Quiero!`,
           paragraphs: [
             `QUIERO means I WANT! When you want something at the tienda, say it!`,
             `Try it: "Quiero pan" means "I want bread!" "Quiero leche!" "I want milk!" ¡QUIERO! ¡QUIERO!`,
@@ -44,13 +44,13 @@ const spanish_explorer_l17_screens = {
           image:        '/explorer-assets/languages/l17-s2-quiero.png',
           imageCaption: `¡Quiero! I want!`,
           vocab: [
-            { word: 'quiero', definition: `I want in Spanish. Say: kee-EH-ro.`,                                audioPrompt: `Quiero — say it like kee-EH-ro. Quiero means I want!` },
-            { word: 'tengo',  definition: `I have in Spanish! Say: TEN-go.`,                                  audioPrompt: `Tengo — say it like TEN-go. Tengo means I have!` },
+            { word: 'quiero', definition: `I want in Spanish.`,                                audioPrompt: `Quiero. Quiero means I want!` },
+            { word: 'tengo',  definition: `I have in Spanish!`,                                  audioPrompt: `Tengo. Tengo means I have!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¿Cuánto cuesta? (Say: KWAN-toh KWEHS-tah)`,
+          headline:      `¿Cuánto cuesta?`,
           paragraphs: [
             `¿CUÁNTO CUESTA? means "How much does it cost?" The MOST important question at the tienda!`,
             `Pretend to point at something: ¿CUÁNTO CUESTA? Then someone tells you the price!`,
@@ -59,7 +59,7 @@ const spanish_explorer_l17_screens = {
           imageCaption: `¿Cuánto cuesta? How much?`,
           vocab: [
             { word: '¿cuánto cuesta?', definition: `How much does it cost? in Spanish.`,                      audioPrompt: `Cuánto cuesta — how much does it cost? Ask: ¿Cuánto cuesta?` },
-            { word: 'dinero',         definition: `Money in Spanish! Say: dee-NEH-ro.`,                       audioPrompt: `Dinero — say it like dee-NEH-ro. Dinero means money!` },
+            { word: 'dinero',         definition: `Money in Spanish!`,                       audioPrompt: `Dinero. Dinero means money!` },
           ],
         },
         {
@@ -78,7 +78,7 @@ const spanish_explorer_l17_screens = {
         },
         {
           type:          'magazine', section: 5, totalSections: 6,
-          headline:      `¡De Nada! (Say: deh NAH-dah)`,
+          headline:      `¡De Nada!`,
           paragraphs: [
             `DE NADA means YOU'RE WELCOME! When someone says GRACIAS to you, you say "¡DE NADA!"`,
             `Try it: When mom helps you, say "¡GRACIAS, MAMÁ!" She'll say "¡DE NADA!" Polite conversation!`,
@@ -86,8 +86,8 @@ const spanish_explorer_l17_screens = {
           image:        '/explorer-assets/languages/l17-s5-de-nada.png',
           imageCaption: `¡De nada! You're welcome!`,
           vocab: [
-            { word: 'de nada', definition: `You're welcome in Spanish. Say: deh NAH-dah.`,                    audioPrompt: `De nada — say it like deh NAH-dah. De nada means you're welcome!` },
-            { word: 'amable',  definition: `Kind in Spanish! Say: ah-MAH-bleh.`,                              audioPrompt: `Amable — say it like ah-MAH-bleh. Amable means kind!` },
+            { word: 'de nada', definition: `You're welcome in Spanish.`,                    audioPrompt: `De nada. De nada means you're welcome!` },
+            { word: 'amable',  definition: `Kind in Spanish!`,                              audioPrompt: `Amable. Amable means kind!` },
           ],
         },
         {

@@ -22,7 +22,7 @@ const spanish_explorer_l09_screens = {
         },
         {
           type:          'magazine', section: 1, totalSections: 6,
-          headline:      `¡Sol! (Say: SOL)`,
+          headline:      `¡Sol!`,
           paragraphs: [
             `SOL means SUN! When it's bright outside, the SOL is shining!`,
             `Raise your arms like the sun: ¡SOL! ¡SOL! ¡SOL! Hace SOL means "it's sunny!"`,
@@ -30,13 +30,13 @@ const spanish_explorer_l09_screens = {
           image:        '/explorer-assets/languages/l09-s1-sol.png',
           imageCaption: `¡Sol! Sun! Bright and warm!`,
           vocab: [
-            { word: 'sol',     definition: `Sun in Spanish. Say it like: SOL.`,                                audioPrompt: `Sol — say it like SOL. Sol means sun! Raise your arms!` },
-            { word: 'hace sol', definition: `It's sunny in Spanish. Say: AH-seh sol.`,                          audioPrompt: `Hace sol — it's sunny! Hace sol!` },
+            { word: 'sol',     definition: `Sun in Spanish.`,                                audioPrompt: `Sol. Sol means sun! Raise your arms!` },
+            { word: 'hace sol', definition: `It's sunny in Spanish.`,                          audioPrompt: `Hace sol — it's sunny! Hace sol!` },
           ],
         },
         {
           type:          'magazine', section: 2, totalSections: 6,
-          headline:      `¡Lluvia! (Say: YOO-vee-ah)`,
+          headline:      `¡Lluvia!`,
           paragraphs: [
             `LLUVIA means RAIN! Wiggle your fingers down like raindrops!`,
             `Try it! ¡LLUVIA! ¡LLUVIA! "Hace lluvia" or "Está lloviendo" means "it's raining!"`,
@@ -44,13 +44,13 @@ const spanish_explorer_l09_screens = {
           image:        '/explorer-assets/languages/l09-s2-lluvia.png',
           imageCaption: `¡Lluvia! Rain falling down!`,
           vocab: [
-            { word: 'lluvia',  definition: `Rain in Spanish. Say it like: YOO-vee-ah.`,                       audioPrompt: `Lluvia — say it like YOO-vee-ah. Lluvia means rain! Wiggle your fingers down!` },
-            { word: 'paraguas', definition: `Umbrella in Spanish! Say it like: pah-RAH-gwahs.`,               audioPrompt: `Paraguas — say it like pah-RAH-gwahs. Paraguas means umbrella!` },
+            { word: 'lluvia',  definition: `Rain in Spanish.`,                       audioPrompt: `Lluvia. Lluvia means rain! Wiggle your fingers down!` },
+            { word: 'paraguas', definition: `Umbrella in Spanish!`,               audioPrompt: `Paraguas. Paraguas means umbrella!` },
           ],
         },
         {
           type:          'magazine', section: 3, totalSections: 6,
-          headline:      `¡Viento! (Say: vee-EN-toh)`,
+          headline:      `¡Viento!`,
           paragraphs: [
             `VIENTO means WIND! Whoosh your arms like wind! "¡WHOOOOSH!"`,
             `Try it! ¡VIENTO! "Hace viento" means "it's windy!" Hold on to your hat!`,
@@ -58,13 +58,13 @@ const spanish_explorer_l09_screens = {
           image:        '/explorer-assets/languages/l09-s3-viento.png',
           imageCaption: `¡Viento! Wind! Whoosh!`,
           vocab: [
-            { word: 'viento',     definition: `Wind in Spanish. Say it like: vee-EN-toh.`,                    audioPrompt: `Viento — say it like vee-EN-toh. Viento means wind! Whoosh!` },
-            { word: 'hace viento', definition: `It's windy in Spanish. Say: AH-seh vee-EN-toh.`,              audioPrompt: `Hace viento — it's windy!` },
+            { word: 'viento',     definition: `Wind in Spanish.`,                    audioPrompt: `Viento. Viento means wind! Whoosh!` },
+            { word: 'hace viento', definition: `It's windy in Spanish.`,              audioPrompt: `Hace viento — it's windy!` },
           ],
         },
         {
           type:          'magazine', section: 4, totalSections: 6,
-          headline:      `¡Nieve! (Say: nee-EH-veh)`,
+          headline:      `¡Nieve!`,
           paragraphs: [
             `NIEVE means SNOW! Brrrr! Cold! Shiver your shoulders!`,
             `Try it! ¡NIEVE! "Hace frío" means "it's cold!" Spanish kids in cold places love nieve!`,
@@ -72,8 +72,8 @@ const spanish_explorer_l09_screens = {
           image:        '/explorer-assets/languages/l09-s4-nieve.png',
           imageCaption: `¡Nieve! Snow! ¡Hace frío! It's cold!`,
           vocab: [
-            { word: 'nieve',  definition: `Snow in Spanish. Say it like: nee-EH-veh.`,                       audioPrompt: `Nieve — say it like nee-EH-veh. Nieve means snow! Brr!` },
-            { word: 'frío',   definition: `Cold in Spanish. Say it like: FREE-oh.`,                            audioPrompt: `Frío — say it like FREE-oh. Frío means cold!` },
+            { word: 'nieve',  definition: `Snow in Spanish.`,                       audioPrompt: `Nieve. Nieve means snow! Brr!` },
+            { word: 'frío',   definition: `Cold in Spanish.`,                            audioPrompt: `Frío. Frío means cold!` },
           ],
         },
         {
@@ -87,7 +87,7 @@ const spanish_explorer_l09_screens = {
           imageCaption: `¿Qué tiempo hace? What's the weather?`,
           vocab: [
             { word: '¿qué tiempo hace?', definition: `What's the weather? in Spanish.`,                       audioPrompt: `Qué tiempo hace — what's the weather? Ask: ¿Qué tiempo hace?` },
-            { word: 'calor',             definition: `Heat or hot in Spanish. Say: ka-LOR.`,                  audioPrompt: `Calor — say it like ka-LOR. Calor means hot! Hace calor!` },
+            { word: 'calor',             definition: `Heat or hot in Spanish.`,                  audioPrompt: `Calor. Calor means hot! Hace calor!` },
           ],
         },
         {

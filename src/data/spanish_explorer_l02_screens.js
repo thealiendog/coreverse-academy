@@ -26,7 +26,7 @@ const spanish_explorer_l02_screens = {
           type:          'magazine',
           section:       1,
           totalSections: 6,
-          headline:      `¡Uno y Dos! (Say: OO-no and DOS)`,
+          headline:      `¡Uno y Dos!`,
           paragraphs: [
             `UNO means ONE. Hold up ONE finger! DOS means TWO. Hold up TWO fingers!`,
             `Say it with Luna! Hold up one finger: ¡UNO! Hold up two fingers: ¡DOS! ¡Uno, dos! ¡Uno, dos!`,
@@ -34,15 +34,15 @@ const spanish_explorer_l02_screens = {
           image:        '/explorer-assets/languages/l02-s1-uno-dos.png',
           imageCaption: `¡Uno! One finger. ¡Dos! Two fingers.`,
           vocab: [
-            { word: 'uno', definition: `One in Spanish. Say it like: OO-no.`,                                  audioPrompt: `Uno — say it like OO-no. Uno means one. Hold up one finger. Uno!` },
-            { word: 'dos', definition: `Two in Spanish. Say it like: DOS.`,                                    audioPrompt: `Dos — say it like DOS. Dos means two. Hold up two fingers. Dos!` },
+            { word: 'uno', definition: `One in Spanish.`,                                  audioPrompt: `Uno. Uno means one. Hold up one finger. Uno!` },
+            { word: 'dos', definition: `Two in Spanish.`,                                    audioPrompt: `Dos. Dos means two. Hold up two fingers. Dos!` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
           totalSections: 6,
-          headline:      `¡Tres y Cuatro! (Say: TRESS and KWAH-tro)`,
+          headline:      `¡Tres y Cuatro!`,
           paragraphs: [
             `TRES means THREE. Hold up THREE fingers! CUATRO means FOUR. Hold up FOUR fingers!`,
             `Try them: ¡TRES! ¡CUATRO! ¡TRES! ¡CUATRO! Your hand is filling up with fingers!`,
@@ -50,15 +50,15 @@ const spanish_explorer_l02_screens = {
           image:        '/explorer-assets/languages/l02-s2-tres-cuatro.png',
           imageCaption: `¡Tres! Three fingers. ¡Cuatro! Four fingers.`,
           vocab: [
-            { word: 'tres',   definition: `Three in Spanish. Say it like: TRESS.`,                              audioPrompt: `Tres — say it like TRESS. Tres means three. Hold up three fingers. Tres!` },
-            { word: 'cuatro', definition: `Four in Spanish. Say it like: KWAH-tro.`,                            audioPrompt: `Cuatro — say it like KWAH-tro. Cuatro means four. Hold up four fingers. Cuatro!` },
+            { word: 'tres',   definition: `Three in Spanish.`,                              audioPrompt: `Tres. Tres means three. Hold up three fingers. Tres!` },
+            { word: 'cuatro', definition: `Four in Spanish.`,                            audioPrompt: `Cuatro. Cuatro means four. Hold up four fingers. Cuatro!` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
           totalSections: 6,
-          headline:      `¡Cinco y Seis! (Say: SEEN-ko and SAYS)`,
+          headline:      `¡Cinco y Seis!`,
           paragraphs: [
             `CINCO means FIVE. Show me your whole HAND — five fingers! SEIS means SIX. Hold up one finger from your other hand!`,
             `Try them! ¡CINCO! ¡SEIS! Now you can count all the way to SIX in Spanish!`,
@@ -66,8 +66,8 @@ const spanish_explorer_l02_screens = {
           image:        '/explorer-assets/languages/l02-s3-cinco-seis.png',
           imageCaption: `¡Cinco! Whole hand! ¡Seis! Six fingers!`,
           vocab: [
-            { word: 'cinco', definition: `Five in Spanish. Say it like: SEEN-ko.`,                              audioPrompt: `Cinco — say it like SEEN-ko. Cinco means five. Show your whole hand. Cinco!` },
-            { word: 'seis',  definition: `Six in Spanish. Say it like: SAYS.`,                                  audioPrompt: `Seis — say it like SAYS. Seis means six. Six fingers! Seis!` },
+            { word: 'cinco', definition: `Five in Spanish.`,                              audioPrompt: `Cinco. Cinco means five. Show your whole hand. Cinco!` },
+            { word: 'seis',  definition: `Six in Spanish.`,                                  audioPrompt: `Seis. Seis means six. Six fingers! Seis!` },
           ],
         },
         {
@@ -99,7 +99,7 @@ const spanish_explorer_l02_screens = {
           imageCaption: `Count down: seis, cinco, cuatro, tres, dos, uno!`,
           vocab: [
             { word: 'count down', definition: `To say numbers going backwards — like 6, 5, 4, 3, 2, 1!`,        audioPrompt: `Count down — to say numbers going backwards. Seis, cinco, cuatro, tres, dos, uno!` },
-            { word: 'cero',       definition: `Zero in Spanish. Say it like: SEH-ro.`,                          audioPrompt: `Cero — say it like SEH-ro. Cero means zero. No fingers up!` },
+            { word: 'cero',       definition: `Zero in Spanish.`,                          audioPrompt: `Cero. Cero means zero. No fingers up!` },
           ],
         },
         {

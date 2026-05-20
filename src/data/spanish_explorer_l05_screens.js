@@ -25,7 +25,7 @@ const spanish_explorer_l05_screens = {
           type:          'magazine',
           section:       1,
           totalSections: 6,
-          headline:      `¡Cabeza y Pelo! (Say: kah-BEH-sah and PEH-lo)`,
+          headline:      `¡Cabeza y Pelo!`,
           paragraphs: [
             `CABEZA means HEAD! Touch your head! PELO means HAIR! Touch your hair!`,
             `Try it! Touch your cabeza: ¡CABEZA! Touch your pelo: ¡PELO! Easy, right?`,
@@ -33,15 +33,15 @@ const spanish_explorer_l05_screens = {
           image:        '/explorer-assets/languages/l05-s1-cabeza-pelo.png',
           imageCaption: `¡Cabeza! Head. ¡Pelo! Hair.`,
           vocab: [
-            { word: 'cabeza', definition: `Head in Spanish. Say it like: kah-BEH-sah.`,                         audioPrompt: `Cabeza — say it like kah-BEH-sah. Cabeza means head. Touch your cabeza!` },
-            { word: 'pelo',   definition: `Hair in Spanish. Say it like: PEH-lo.`,                              audioPrompt: `Pelo — say it like PEH-lo. Pelo means hair. Touch your pelo!` },
+            { word: 'cabeza', definition: `Head in Spanish.`,                         audioPrompt: `Cabeza. Cabeza means head. Touch your cabeza!` },
+            { word: 'pelo',   definition: `Hair in Spanish.`,                              audioPrompt: `Pelo. Pelo means hair. Touch your pelo!` },
           ],
         },
         {
           type:          'magazine',
           section:       2,
           totalSections: 6,
-          headline:      `¡Ojos y Nariz! (Say: OH-hos and nah-REES)`,
+          headline:      `¡Ojos y Nariz!`,
           paragraphs: [
             `OJOS means EYES! Point to your eyes! NARIZ means NOSE! Touch your nose!`,
             `Say it! Point to your ojos: ¡OJOS! Touch your nariz: ¡NARIZ! You have TWO ojos and ONE nariz!`,
@@ -49,15 +49,15 @@ const spanish_explorer_l05_screens = {
           image:        '/explorer-assets/languages/l05-s2-ojos-nariz.png',
           imageCaption: `¡Ojos! Eyes. ¡Nariz! Nose.`,
           vocab: [
-            { word: 'ojos',  definition: `Eyes in Spanish. Say it like: OH-hos.`,                               audioPrompt: `Ojos — say it like OH-hos. Ojos means eyes. Point to your ojos!` },
-            { word: 'nariz', definition: `Nose in Spanish. Say it like: nah-REES.`,                             audioPrompt: `Nariz — say it like nah-REES. Nariz means nose. Touch your nariz!` },
+            { word: 'ojos',  definition: `Eyes in Spanish.`,                               audioPrompt: `Ojos. Ojos means eyes. Point to your ojos!` },
+            { word: 'nariz', definition: `Nose in Spanish.`,                             audioPrompt: `Nariz. Nariz means nose. Touch your nariz!` },
           ],
         },
         {
           type:          'magazine',
           section:       3,
           totalSections: 6,
-          headline:      `¡Boca y Orejas! (Say: BO-kah and oh-REH-hahs)`,
+          headline:      `¡Boca y Orejas!`,
           paragraphs: [
             `BOCA means MOUTH! Open your mouth! OREJAS means EARS! Wiggle your ears (or try!).`,
             `Say it: ¡BOCA! ¡OREJAS! Use your boca to talk, your orejas to listen!`,
@@ -65,15 +65,15 @@ const spanish_explorer_l05_screens = {
           image:        '/explorer-assets/languages/l05-s3-boca-orejas.png',
           imageCaption: `¡Boca! Mouth. ¡Orejas! Ears.`,
           vocab: [
-            { word: 'boca',   definition: `Mouth in Spanish. Say it like: BO-kah.`,                              audioPrompt: `Boca — say it like BO-kah. Boca means mouth. Open your boca!` },
-            { word: 'orejas', definition: `Ears in Spanish. Say it like: oh-REH-hahs.`,                          audioPrompt: `Orejas — say it like oh-REH-hahs. Orejas means ears. Wiggle your orejas!` },
+            { word: 'boca',   definition: `Mouth in Spanish.`,                              audioPrompt: `Boca. Boca means mouth. Open your boca!` },
+            { word: 'orejas', definition: `Ears in Spanish.`,                          audioPrompt: `Orejas. Orejas means ears. Wiggle your orejas!` },
           ],
         },
         {
           type:          'magazine',
           section:       4,
           totalSections: 6,
-          headline:      `¡Manos y Pies! (Say: MAH-nos and pee-EHS)`,
+          headline:      `¡Manos y Pies!`,
           paragraphs: [
             `MANOS means HANDS! Clap your hands! PIES means FEET! Stomp your feet!`,
             `Try it! Clap your manos: ¡MANOS! Stomp your pies: ¡PIES! ¡MANOS! ¡PIES!`,
@@ -81,8 +81,8 @@ const spanish_explorer_l05_screens = {
           image:        '/explorer-assets/languages/l05-s4-manos-pies.png',
           imageCaption: `¡Manos! Hands. ¡Pies! Feet.`,
           vocab: [
-            { word: 'manos', definition: `Hands in Spanish. Say it like: MAH-nos.`,                              audioPrompt: `Manos — say it like MAH-nos. Manos means hands. Clap your manos!` },
-            { word: 'pies',  definition: `Feet in Spanish. Say it like: pee-EHS.`,                               audioPrompt: `Pies — say it like pee-EHS. Pies means feet. Stomp your pies!` },
+            { word: 'manos', definition: `Hands in Spanish.`,                              audioPrompt: `Manos. Manos means hands. Clap your manos!` },
+            { word: 'pies',  definition: `Feet in Spanish.`,                               audioPrompt: `Pies. Pies means feet. Stomp your pies!` },
           ],
         },
         {
@@ -98,7 +98,7 @@ const spanish_explorer_l05_screens = {
           imageCaption: `Simón Dice — Simon Says in Spanish!`,
           vocab: [
             { word: 'simón dice', definition: `Simon says in Spanish. The fun game where you do what Simon says!`, audioPrompt: `Simón dice — Simon says! Simón dice toca tu cabeza! Touch your head! Simón dice toca tu nariz!` },
-            { word: 'toca',       definition: `Touch in Spanish. Say it like: TOH-kah.`,                            audioPrompt: `Toca — say it like TOH-kah. Toca means touch!` },
+            { word: 'toca',       definition: `Touch in Spanish.`,                            audioPrompt: `Toca. Toca means touch!` },
           ],
         },
         {
