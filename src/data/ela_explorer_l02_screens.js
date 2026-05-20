@@ -42,7 +42,7 @@ const ELA_L02 = {
           imageCaption: `Main idea = the biggest, most important point of a text. The heart that everything else supports.`,
           vocab: [
             { word: `main idea`,      definition: `The biggest, most important point of a text. What it's MOSTLY about.`,
-              audioPrompt: `The main idea, {name}, is the biggest, most important point of a text. What the WHOLE text is mostly about. Not just one word. A complete sentence that tells you the heart of what the text is saying. Every great reader looks for the main idea. Once you find it, everything else makes more sense.` },
+              audioPrompt: `The main idea, {name}, is the biggest, most important point of a text. What the WHOLE text is mostly about. Not just one word. A complete sentence that tells you the heart of what the text is saying.` },
             { word: `mostly about`,   definition: `The thing the text spends most time on. Helps you find the MAIN IDEA.`,
               audioPrompt: `Mostly about, {name}, is the thing a text spends most time on. To find the main idea, ask yourself: what is this MOSTLY about? Not just a side topic. Not one quick detail. The main thing. The thing the text keeps coming back to. That's almost always the main idea.` },
             { word: `important`,      definition: `Worth paying attention to. Main ideas are the most IMPORTANT points.`,
@@ -63,9 +63,9 @@ const ELA_L02 = {
           imageCaption: `Topic = one word (dogs). Main idea = a whole sentence (dogs are great pets because...). Don't mix up.`,
           vocab: [
             { word: `topic`,          definition: `One word naming what the text is about. Different from main idea.`,
-              audioPrompt: `A topic, {name}, is one word — or a short phrase — naming what the text is about. Dogs. Volcanoes. Friendship. Music. The topic is short. The MAIN IDEA goes deeper — it's a whole sentence saying something about that topic. Topic is the subject. Main idea is what the text SAYS about the subject.` },
+              audioPrompt: `A topic, {name}, is one word — or a short phrase — naming what the text is about. Dogs. Volcanoes. Friendship. Music. The topic is short. The MAIN IDEA goes deeper — it's a whole sentence saying something about that topic.` },
             { word: `whole sentence`, definition: `A full thought with subject and verb. Main ideas are WHOLE SENTENCES.`,
-              audioPrompt: `A whole sentence, {name}, is a full thought with subject and verb. Main ideas are always whole sentences. Not just one word. Not a fragment. A complete sentence that says something about the topic. Dogs is just a topic. Dogs make wonderful pets is a main idea — it's a whole sentence.` },
+              audioPrompt: `A whole sentence, {name}, is a full thought with subject and verb. Main ideas are always whole sentences. Not just one word. Not a fragment. A complete sentence that says something about the topic. Dogs is just a topic.` },
             { word: `specific`,       definition: `Detailed and exact. Main ideas are SPECIFIC — not vague.`,
               audioPrompt: `Specific, {name}, means detailed and exact. Main ideas are specific. They don't just say dogs are interesting. They say something specific — dogs make wonderful pets BECAUSE they are loyal companions. Specific main ideas are stronger than vague ones. They tell readers exactly what to think about the topic.` },
           ],
@@ -84,11 +84,11 @@ const ELA_L02 = {
           imageCaption: `Key details = smaller facts supporting the main idea. Together they make the main idea convincing.`,
           vocab: [
             { word: `key detail`,     definition: `A smaller fact that supports the main idea. Texts have multiple key details.`,
-              audioPrompt: `A key detail, {name}, is a smaller fact that supports the main idea. Texts usually have multiple key details. Each one adds evidence. Each one helps prove the main idea is true. Key details are like the bricks in a wall. The main idea is the wall. Without bricks, there's no wall.` },
+              audioPrompt: `A key detail, {name}, is a smaller fact that supports the main idea. Texts usually have multiple key details. Each one adds evidence. Each one helps prove the main idea is true.` },
             { word: `support`,        definition: `To back up. Key details SUPPORT the main idea.`,
               audioPrompt: `To support, {name}, means to back up. Key details support the main idea. They show evidence. They give examples. They prove the main idea is true. Without supporting details, a main idea is just an opinion. With them, it becomes convincing — even powerful.` },
             { word: `convincing`,     definition: `Easy to believe. Key details make the main idea CONVINCING.`,
-              audioPrompt: `Convincing, {name}, means easy to believe. Key details make the main idea convincing. If someone says dogs are great pets without proof, you might not believe them. But if they give you three solid reasons, you start to nod along. That's the power of supporting details — they turn claims into convincing arguments.` },
+              audioPrompt: `Convincing, {name}, means easy to believe. Key details make the main idea convincing. If someone says dogs are great pets without proof, you might not believe them. But if they give you three solid reasons, you start to nod along.` },
           ],
         },
 
@@ -107,9 +107,9 @@ const ELA_L02 = {
             { word: `practice`,       definition: `Doing something over and over to get better. Finding main ideas takes PRACTICE.`,
               audioPrompt: `Practice, {name}, means doing something over and over to get better. Finding main ideas takes practice. At first, you might miss them. With practice, you'll spot them faster. By the time you're an adult, you'll find main ideas automatically — almost without thinking. Practice makes the skill stick.` },
             { word: `summarize`,      definition: `To say the most important parts in fewer words. Try to SUMMARIZE the text in one sentence.`,
-              audioPrompt: `To summarize, {name}, is to say the most important parts of something in fewer words. When you summarize a text in one sentence, that summary is usually the main idea. This text is about how dogs are loyal pets who help their families. That's a summary. That's the main idea. Same thing.` },
+              audioPrompt: `To summarize, {name}, is to say the most important parts of something in fewer words. When you summarize a text in one sentence, that summary is usually the main idea.` },
             { word: `repeated`,       definition: `Said again and again. Main ideas often appear as REPEATED themes in a text.`,
-              audioPrompt: `Repeated, {name}, means said again and again. Main ideas often show up as repeated themes throughout a text. If a text mentions loyalty in five different paragraphs, loyalty is probably part of the main idea. Authors repeat what matters most. So when you spot repeated ideas, you've probably found the main idea.` },
+              audioPrompt: `Repeated, {name}, means said again and again. Main ideas often show up as repeated themes throughout a text. If a text mentions loyalty in five different paragraphs, loyalty is probably part of the main idea. Authors repeat what matters most.` },
           ],
         },
 
@@ -126,7 +126,7 @@ const ELA_L02 = {
           imageCaption: `Topic sentence = first sentence of paragraph. Often holds the main idea in nonfiction. Check there first.`,
           vocab: [
             { word: `topic sentence`, definition: `The first sentence of a paragraph. Often states the main idea.`,
-              audioPrompt: `A topic sentence, {name}, is the first sentence of a paragraph. In nonfiction, it often states the main idea right up front. The rest of the paragraph then supports that main idea with key details. When you're looking for the main idea, check the topic sentence first. It's the fastest place to find it.` },
+              audioPrompt: `A topic sentence, {name}, is the first sentence of a paragraph. In nonfiction, it often states the main idea right up front. The rest of the paragraph then supports that main idea with key details.` },
             { word: `nonfiction`,     definition: `Writing about real things. NONFICTION often uses topic sentences to state main ideas.`,
               audioPrompt: `Nonfiction, {name}, is writing about real things. Real animals. Real history. Real science. Nonfiction often uses topic sentences to state main ideas right at the start. Fiction — made-up stories — doesn't always do this. Main ideas in stories can be hidden more deeply. But nonfiction usually puts them up front.` },
             { word: `start`,          definition: `The beginning. Topic sentences are usually at the START of a paragraph.`,
@@ -147,9 +147,9 @@ const ELA_L02 = {
           imageCaption: `Step back to see the whole text — not just the details. Finding the main idea = seeing the big picture.`,
           vocab: [
             { word: `big picture`,    definition: `The whole thing, not just the parts. Main idea is the BIG PICTURE of a text.`,
-              audioPrompt: `The big picture, {name}, is the whole thing — not just the parts. Finding the main idea is seeing the big picture of a text. Some readers only see one detail at a time. Big-picture readers step back and see the whole. They understand WHAT the text is saying overall. That's a powerful reading skill.` },
+              audioPrompt: `The big picture, {name}, is the whole thing — not just the parts. Finding the main idea is seeing the big picture of a text. Some readers only see one detail at a time.` },
             { word: `step back`,      definition: `To take a wider view. STEP BACK to see the whole text, not just one part.`,
-              audioPrompt: `To step back, {name}, is to take a wider view. Step back to see the whole text — not just one paragraph or sentence. When you step back, the main idea becomes easier to spot. Up close, all the words look equal. From farther back, you see which idea is biggest. That's the main idea.` },
+              audioPrompt: `To step back, {name}, is to take a wider view. Step back to see the whole text — not just one paragraph or sentence. When you step back, the main idea becomes easier to spot.` },
             { word: `superpower`,     definition: `An amazing ability. Finding main ideas is a real reading SUPERPOWER.`,
               audioPrompt: `A superpower, {name}, is an amazing ability. Finding main ideas is a real reading superpower. Adults use it all day — reading news, emails, reports, books. Strong main-idea readers understand more, faster. They don't get lost in small details. They see what matters. That's the gift of this lesson.` },
           ],

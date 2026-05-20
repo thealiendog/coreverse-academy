@@ -63,7 +63,7 @@ const ELA_L18 = {
           imageCaption: `Period — full stop. Marks the end of a complete sentence. Readers take a breath here.`,
           vocab: [
             { word: `period`,         definition: `A dot ( . ) that ends a complete sentence. Means STOP.`,
-              audioPrompt: `A period, {name}, is a dot at the end of a sentence. It means STOP. Every complete sentence ends with a period — unless it ends with a question mark or exclamation point. The period is the most common punctuation mark. It's how readers know one thought has ended and a new one is about to begin.` },
+              audioPrompt: `A period, {name}, is a dot at the end of a sentence. It means STOP. Every complete sentence ends with a period — unless it ends with a question mark or exclamation point. The period is the most common punctuation mark.` },
             { word: `complete`,       definition: `Having all the parts. A COMPLETE sentence needs a period.`,
               audioPrompt: `Complete, {name}, means having all the parts. A complete sentence has a noun, a verb, and a full thought. It ends with a period. Incomplete sentences are called fragments — pieces of sentences that aren't whole. Periods belong on complete thoughts.` },
             { word: `breath`,         definition: `Air in and out. Periods give readers a BREATH between thoughts.`,
@@ -84,7 +84,7 @@ const ELA_L18 = {
           imageCaption: `Comma — slow down, but don't stop. Separates lists, comes before names, after intro words.`,
           vocab: [
             { word: `comma`,          definition: `A small mark ( , ) that means a brief pause — not a full stop.`,
-              audioPrompt: `A comma, {name}, is a small mark that means a brief pause — not a full stop. It looks like a tiny tail at the bottom of the line. Commas separate items in lists. They come before names when you're talking to someone. They come after introductory words. They're like little breath-spots in the middle of sentences.` },
+              audioPrompt: `A comma, {name}, is a small mark that means a brief pause — not a full stop. It looks like a tiny tail at the bottom of the line. Commas separate items in lists.` },
             { word: `list`,           definition: `A series of things. Commas separate items in a LIST.`,
               audioPrompt: `A list, {name}, is a series of things. Commas separate items in a list. 'I love apples, bananas, and grapes.' Each comma separates one item from the next. The last item usually has 'and' before it. Lists make writing clearer when you have multiple things to mention.` },
             { word: `pause`,          definition: `A short break. Commas signal a PAUSE in the sentence.`,
@@ -107,7 +107,7 @@ const ELA_L18 = {
             { word: `question mark`,  definition: `A mark ( ? ) at the end of a question. Tells readers to raise their voice.`,
               audioPrompt: `A question mark, {name}, is a mark at the end of a question. It looks like a curvy thing with a dot. 'Are you ready?' That's a question. Your voice goes UP at the end when you read it. Question marks tell readers — this sentence is asking something, not telling.` },
             { word: `exclamation point`, definition: `A mark ( ! ) showing excitement, surprise, or strong feeling.`,
-              audioPrompt: `An exclamation point, {name} — also called an exclamation mark — shows excitement, surprise, or strong feeling. 'I won!' 'Watch out!' The mark looks like a straight line with a dot under it. Use exclamation points for moments that really feel strong. Don't use them too much. Their power comes from being rare.` },
+              audioPrompt: `An exclamation point, {name} — also called an exclamation mark — shows excitement, surprise, or strong feeling. 'I won! ' 'Watch out! ' The mark looks like a straight line with a dot under it. Use exclamation points for moments that really feel strong.` },
             { word: `right moments`,  definition: `The correct times. Use special marks for the RIGHT MOMENTS — not all the time.`,
               audioPrompt: `Right moments, {name}, means the correct times. Use exclamation points and question marks for the right moments — not all the time. If every sentence ends with an exclamation point, none of them feel exciting. Save them for when they really matter. That's how to keep their power.` },
           ],
@@ -151,7 +151,7 @@ const ELA_L18 = {
             { word: `proper noun`,    definition: `A noun naming a SPECIFIC person, place, or thing. Always capitalized.`,
               audioPrompt: `A proper noun, {name}, is a noun naming a specific person, place, or thing. Maya. Quill. New York. Coreverse Academy. Tuesday. July. The Atlantic Ocean. All proper nouns. All capitalized — always. Different from regular nouns like 'dog' or 'city' or 'day' that aren't capitalized.` },
             { word: `the word I`,     definition: `When you talk about yourself. ALWAYS capitalized, anywhere in a sentence.`,
-              audioPrompt: `The word 'I,' {name} — when you talk about yourself — is ALWAYS capitalized. Anywhere in a sentence. 'I went to the park.' (Start of sentence — makes sense to be capital.) 'My friend and I went to the park.' (Middle of sentence — still capital!) That's a special rule for the word 'I' alone.` },
+              audioPrompt: `The word 'I,' {name} — when you talk about yourself — is ALWAYS capitalized. Anywhere in a sentence. 'I went to the park. ' (Start of sentence — makes sense to be capital. ) 'My friend and I went to the park.` },
           ],
         },
 

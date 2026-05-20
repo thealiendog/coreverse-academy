@@ -42,11 +42,11 @@ const ELA_L04 = {
           imageCaption: `Every reader hits unknown words. The trick is what you do next.`,
           vocab: [
             { word: `unknown`,      definition: `Not known. A word you've never seen or don't remember.`,
-              audioPrompt: `Unknown means not known, {name}. An unknown word is one you've never seen before, or one you don't remember. Everyone has unknown words. As a 6-year-old, you have MORE unknown words than an 8-year-old. As an 8-year-old, you have more than an adult. As you read more, fewer words are unknown. That's how it works.` },
+              audioPrompt: `Unknown means not known, {name}. An unknown word is one you've never seen before, or one you don't remember. Everyone has unknown words. As a 6-year-old, you have MORE unknown words than an 8-year-old.` },
             { word: `context`,      definition: `The words and sentences AROUND a tricky word. Context gives clues.`,
-              audioPrompt: `Context, {name}, means the words and sentences AROUND a tricky word. Context is a magic word in reading. Because it's where the clues live. The word you don't know is sitting in a sentence — and that sentence has OTHER words. Those other words usually give you hints about what the unknown word might mean.` },
+              audioPrompt: `Context, {name}, means the words and sentences AROUND a tricky word. Context is a magic word in reading. Because it's where the clues live. The word you don't know is sitting in a sentence — and that sentence has OTHER words.` },
             { word: `panic`,        definition: `To get really upset or scared. You DON'T have to panic when you see an unknown word.`,
-              audioPrompt: `To panic means to get really upset or scared, {name}. When kids see an unknown word, sometimes they PANIC. They think 'oh no, I don't know that word, I can't read!' But that's not true. Even the BEST readers hit unknown words. The trick isn't knowing every word. The trick is having strategies for when you don't. Don't panic. Use context.` },
+              audioPrompt: `To panic means to get really upset or scared, {name}. When kids see an unknown word, sometimes they PANIC. They think 'oh no, I don't know that word, I can't read! ' But that's not true.` },
           ],
         },
 
@@ -63,11 +63,11 @@ const ELA_L04 = {
           imageCaption: `Neighbor words help. Read the WHOLE sentence — even the parts after the tricky word.`,
           vocab: [
             { word: `neighbor`,     definition: `Someone who lives near you. Words have neighbors too — the words next to them.`,
-              audioPrompt: `A neighbor is someone who lives near you, {name}. Words have neighbors too — the words right next to them in a sentence. Just like real neighbors help each other, word neighbors help readers. They give context. They explain. They drop hints. Pay attention to word neighbors. They're full of helpful information.` },
+              audioPrompt: `A neighbor is someone who lives near you, {name}. Words have neighbors too — the words right next to them in a sentence. Just like real neighbors help each other, word neighbors help readers. They give context. They explain.` },
             { word: `hint`,         definition: `A small clue. Neighbor words give HINTS about what tricky words mean.`,
               audioPrompt: `A hint is a small clue, {name}. Sometimes a clear one. Sometimes a sneaky one. Neighbor words give hints about what tricky words mean. They might use similar words. They might give examples. They might use opposite words. Watch for the hints. They're there to help you.` },
             { word: `whole`,        definition: `All of it. Read the WHOLE sentence to find clues — not just one part.`,
-              audioPrompt: `Whole means all of it, {name}. Read the WHOLE sentence — beginning, middle, and end — to find context clues. Many kids hit a tricky word and STOP. But the clue might be in the NEXT few words. So always read past the tricky word too. Then come back. You'll often find the answer was right there.` },
+              audioPrompt: `Whole means all of it, {name}. Read the WHOLE sentence — beginning, middle, and end — to find context clues. Many kids hit a tricky word and STOP. But the clue might be in the NEXT few words.` },
           ],
         },
 
@@ -84,9 +84,9 @@ const ELA_L04 = {
           imageCaption: `Definition clue — the meaning is right in the sentence, often after a comma or in parentheses.`,
           vocab: [
             { word: `definition`,   definition: `What a word means. Authors sometimes give definitions right in the sentence.`,
-              audioPrompt: `A definition is what a word means, {name}. Like in a dictionary. Sometimes authors put a definition RIGHT in the sentence, especially when they use a fancy or technical word. They might use dashes — like this — or parentheses (like this) or just a comma. The definition is sitting there waiting for you. Use it.` },
+              audioPrompt: `A definition is what a word means, {name}. Like in a dictionary. Sometimes authors put a definition RIGHT in the sentence, especially when they use a fancy or technical word.` },
             { word: `astronomer`,   definition: `A person who studies stars and space. Cool word, right?`,
-              audioPrompt: `An astronomer is a person who studies stars and space, {name}. It's a wonderful word. The 'astro' part comes from a Greek word meaning star. The 'nomer' part is from a Greek word for one who names or arranges. So an astronomer is, literally, a star-namer. People have been astronomers for thousands of years. Maybe you'll be one someday.` },
+              audioPrompt: `An astronomer is a person who studies stars and space, {name}. It's a wonderful word. The 'astro' part comes from a Greek word meaning star. The 'nomer' part is from a Greek word for one who names or arranges.` },
             { word: `purpose`,      definition: `A reason for doing something. Authors give definitions ON PURPOSE — to help you.`,
               audioPrompt: `Purpose means a reason for doing something, {name}. Authors put definition clues in their sentences ON PURPOSE. They know readers might not know all their words. They want you to keep reading. So they help. Knowing that authors are on your side is a great thing to remember.` },
           ],
@@ -105,11 +105,11 @@ const ELA_L04 = {
           imageCaption: `Example clue — specific things that show what the word means. "Like" and "such as" are big signal words.`,
           vocab: [
             { word: `example`,      definition: `A specific thing that shows what something is like. Examples teach you what tricky words mean.`,
-              audioPrompt: `An example is a specific thing that shows what something is like, {name}. Examples are super useful in writing. They turn abstract ideas into concrete pictures. If a sentence says 'she loved citrus fruits like oranges and lemons,' the examples (oranges, lemons) teach you what citrus means. Watch for example clues. They're often signaled by words like 'such as' or 'like.'` },
+              audioPrompt: `An example is a specific thing that shows what something is like, {name}. Examples are super useful in writing. They turn abstract ideas into concrete pictures.` },
             { word: `citrus`,       definition: `A type of tangy, juicy fruit — oranges, lemons, limes, grapefruits.`,
-              audioPrompt: `Citrus is a type of tangy, juicy fruit, {name}. Oranges. Lemons. Limes. Grapefruits. Tangerines. All citrus. They have something in common — they all grow on trees in warm places, they all have a juicy inside surrounded by a thick peel, and they all have a tangy taste. Citrus fruits are full of vitamin C, which is great for your health.` },
+              audioPrompt: `Citrus is a type of tangy, juicy fruit, {name}. Oranges. Lemons. Limes. Grapefruits. Tangerines. All citrus.` },
             { word: `signal`,       definition: `A sign or hint. Words like 'such as' and 'for example' SIGNAL that examples are coming.`,
-              audioPrompt: `A signal is a sign or hint, {name}. Some words SIGNAL that examples are coming. 'Such as.' 'Like.' 'For example.' 'Including.' When you see these signal words, get ready — examples are about to help you understand. Signal words are friendly little flags. They wave at readers and say 'hey, helpful info incoming.'` },
+              audioPrompt: `A signal is a sign or hint, {name}. Some words SIGNAL that examples are coming. 'Such as. ' 'Like. ' 'For example. ' 'Including. ' When you see these signal words, get ready — examples are about to help you understand.` },
           ],
         },
 
@@ -130,7 +130,7 @@ const ELA_L04 = {
             { word: `enormous`,     definition: `Very, very big. Bigger than huge. Almost overwhelming in size.`,
               audioPrompt: `Enormous means very, very big, {name}. Bigger than huge. Like elephant-big. Whale-big. Mountain-big. It comes from old Latin words meaning 'out of the normal' — so big it's beyond normal. Enormous is a great word to know. You'll see it a lot in books.` },
             { word: `but`,          definition: `A signal word that means a change or opposite is coming.`,
-              audioPrompt: `'But' is a signal word, {name}. It means a change or opposite is coming. 'I like cookies, BUT not raisin cookies.' That 'but' tells you the next part is different from the first. Watch for 'but' — it's often a signal that an opposite clue is right next to it. 'However' works the same way.` },
+              audioPrompt: `'But' is a signal word, {name}. It means a change or opposite is coming. 'I like cookies, BUT not raisin cookies. ' That 'but' tells you the next part is different from the first.` },
           ],
         },
 
@@ -151,7 +151,7 @@ const ELA_L04 = {
             { word: `strategy`,     definition: `A smart plan. Context clues are a STRATEGY for figuring out unknown words.`,
               audioPrompt: `A strategy is a smart plan, {name}. Context clues are a strategy. Inferring is a strategy. Summarizing is a strategy. As you grow as a reader, you collect more strategies. Each one helps you tackle different reading challenges. Strategies are what separate okay readers from great ones.` },
             { word: `keep going`,   definition: `Don't stop. When you hit an unknown word, KEEP GOING — clues might be ahead.`,
-              audioPrompt: `'Keep going' means don't stop, {name}. When you hit an unknown word, the worst thing to do is stop completely. Often the very next words or sentences will help you understand. Make a smart guess. Keep reading. Come back later if you want to look it up. Reading flow is precious. Don't break it for one tricky word.` },
+              audioPrompt: `'Keep going' means don't stop, {name}. When you hit an unknown word, the worst thing to do is stop completely. Often the very next words or sentences will help you understand. Make a smart guess. Keep reading.` },
           ],
         },
 

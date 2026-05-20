@@ -42,11 +42,11 @@ const ELA_L07 = {
           imageCaption: `Cause and effect is like dominos falling. One thing makes the next thing happen.`,
           vocab: [
             { word: `cause`,        definition: `The thing that makes something happen. Causes come BEFORE effects.`,
-              audioPrompt: `A cause, {name}, is the thing that makes something happen. Causes come BEFORE effects. The cause is the first domino. It pushes the next one. Without a cause, nothing happens. Behind every effect in the world, there's a cause. Finding causes is one of the best ways to understand WHY things happen.` },
+              audioPrompt: `A cause, {name}, is the thing that makes something happen. Causes come BEFORE effects. The cause is the first domino. It pushes the next one. Without a cause, nothing happens. Behind every effect in the world, there's a cause.` },
             { word: `effect`,       definition: `What happens BECAUSE of a cause. Effects come AFTER causes.`,
-              audioPrompt: `An effect, {name}, is what happens because of a cause. Effects come AFTER causes. The first domino falls (cause). The second falls (effect). When we see an effect, we can trace back to find its cause. Authors leave trails of causes and effects for readers to follow. Smart readers follow the trail.` },
+              audioPrompt: `An effect, {name}, is what happens because of a cause. Effects come AFTER causes. The first domino falls (cause). The second falls (effect). When we see an effect, we can trace back to find its cause.` },
             { word: `domino`,       definition: `A flat piece that falls and knocks down the next one. Cause-and-effect is like dominos.`,
-              audioPrompt: `A domino, {name}, is a flat piece that's good for standing in lines. When you push the first one, it knocks down the next, which knocks down the next, and so on. The 'domino effect' is a phrase people use when one event sets off a chain of other events. Cause-and-effect is literally domino thinking. One thing makes another thing happen.` },
+              audioPrompt: `A domino, {name}, is a flat piece that's good for standing in lines. When you push the first one, it knocks down the next, which knocks down the next, and so on.` },
           ],
         },
 
@@ -63,11 +63,11 @@ const ELA_L07 = {
           imageCaption: `Cause = the WHY. Why did this happen? Trace back to find the reason. Detective work.`,
           vocab: [
             { word: `why`,          definition: `The question that finds the cause. WHY did this happen?`,
-              audioPrompt: `Why, {name}, is the question that finds the cause. Whenever something happens in a story or article, asking 'why?' leads you to the cause. Why did the character do that? Why did this event happen? Why did things change? Curious readers ask 'why' a lot. Every why is a chance to understand more deeply.` },
+              audioPrompt: `Why, {name}, is the question that finds the cause. Whenever something happens in a story or article, asking 'why? ' leads you to the cause. Why did the character do that? Why did this event happen? Why did things change?` },
             { word: `reason`,       definition: `Why something happened. The cause is the reason.`,
               audioPrompt: `A reason, {name}, is why something happened. The cause is the reason. 'I ate dinner BECAUSE I was hungry.' Hungry was the reason. Hungry was the cause. Authors fill texts with reasons. Once you start looking for them, you'll see them everywhere. Reasons help you understand the world.` },
             { word: `trace back`,   definition: `To follow back to find the start. You trace back to find the cause.`,
-              audioPrompt: `To trace back, {name}, means to follow back to find the start. To find the cause of something, you trace back from the effect. Sometimes the cause is right there in the next sentence. Sometimes it's farther back in the text. Tracing back is a skill. It helps you find roots and reasons.` },
+              audioPrompt: `To trace back, {name}, means to follow back to find the start. To find the cause of something, you trace back from the effect. Sometimes the cause is right there in the next sentence.` },
           ],
         },
 
@@ -84,11 +84,11 @@ const ELA_L07 = {
           imageCaption: `Effect = the RESULT. What happened? Effects are visible. Causes are what made them happen.`,
           vocab: [
             { word: `result`,       definition: `What happened in the end. Effects are results.`,
-              audioPrompt: `A result, {name}, is what happened in the end. Effects are results. The result of pushing the first domino is — all the dominoes fall. The result of studying is — better grades. The result of being kind is — friends who care about you. Texts are full of results. They're the visible part. Causes are the hidden part behind them.` },
+              audioPrompt: `A result, {name}, is what happened in the end. Effects are results. The result of pushing the first domino is — all the dominoes fall. The result of studying is — better grades.` },
             { word: `because`,      definition: `A signal word that connects effect to cause. "I'm happy BECAUSE..."`,
               audioPrompt: `Because, {name}, is a signal word that connects effect to cause. 'I'm happy BECAUSE my friend is here.' Happy = effect. Friend being here = cause. 'Because' is one of the friendliest cause-effect words. When you see it, you know — a cause is about to be revealed. Watch for 'because' everywhere.` },
             { word: `visible`,      definition: `Easy to see. Effects are VISIBLE — they're the part you notice first.`,
-              audioPrompt: `Visible, {name}, means easy to see. Effects are visible — they're the part you notice first. The picnic IS canceled. That's the effect. Easy to see. The rain (cause) might be hidden. The cause might be invisible. To find it, you have to ask 'why?' Visible effects lead you to hidden causes.` },
+              audioPrompt: `Visible, {name}, means easy to see. Effects are visible — they're the part you notice first. The picnic IS canceled. That's the effect. Easy to see. The rain (cause) might be hidden. The cause might be invisible.` },
           ],
         },
 
@@ -105,11 +105,11 @@ const ELA_L07 = {
           imageCaption: `Chains of cause and effect. One effect becomes the cause of the next. Stories and history grow this way.`,
           vocab: [
             { word: `chain`,        definition: `A connected series of events. Cause-and-effect often forms chains.`,
-              audioPrompt: `A chain, {name}, is a connected series of events. Cause-and-effect often forms chains. One effect becomes the cause of the next. The chain can be short — two or three events. Or it can be long — a whole story of one thing leading to another to another. Skilled readers follow the chain. Each link in the chain is a cause-effect pair.` },
+              audioPrompt: `A chain, {name}, is a connected series of events. Cause-and-effect often forms chains. One effect becomes the cause of the next. The chain can be short — two or three events.` },
             { word: `lead to`,      definition: `When one thing causes another. Causes LEAD TO effects.`,
               audioPrompt: `'Lead to,' {name}, means when one thing causes another. 'Studying hard LEADS TO good grades.' Studying = cause. Good grades = effect. 'Lead to' is one of many cause-effect signal phrases. Others include 'results in,' 'brings about,' and 'causes.' All do similar work — they connect a cause to its effect.` },
             { word: `grows`,        definition: `Gets bigger or longer. Chains of cause-and-effect can GROW long.`,
-              audioPrompt: `To grow, {name}, means to get bigger or longer. Chains of cause-and-effect can grow long. In a short text, the chain might have two links. In a whole book, it might have hundreds. History is a giant chain. Each event causes the next. Each decision leads to consequences. Tracing chains is how we understand stories — and the past.` },
+              audioPrompt: `To grow, {name}, means to get bigger or longer. Chains of cause-and-effect can grow long. In a short text, the chain might have two links. In a whole book, it might have hundreds. History is a giant chain.` },
           ],
         },
 
@@ -149,9 +149,9 @@ const ELA_L07 = {
             { word: `understand`,   definition: `To really get what something means. Cause-and-effect helps you UNDERSTAND.`,
               audioPrompt: `To understand, {name}, is to really get what something means. Cause-and-effect helps you understand. When you know WHY something happened, you understand it deeply. Just knowing WHAT happened is shallow. Knowing WHY makes you wise. Curious people are always asking 'why.' Curious people end up understanding the most.` },
             { word: `scientist`,    definition: `A person who studies how the world works. Scientists are masters of cause-and-effect.`,
-              audioPrompt: `A scientist, {name}, is a person who studies how the world works. Scientists are MASTERS of cause-and-effect. Why does ice melt? Why do plants grow toward light? Why do diseases spread? Scientists trace causes and effects to figure out how the world works. You can think like a scientist too. Just ask why.` },
+              audioPrompt: `A scientist, {name}, is a person who studies how the world works. Scientists are MASTERS of cause-and-effect. Why does ice melt? Why do plants grow toward light? Why do diseases spread?` },
             { word: `everything`,   definition: `All things. Cause-and-effect helps you understand EVERYTHING.`,
-              audioPrompt: `Everything, {name}, means all things. Cause-and-effect helps you understand everything. Every story has cause-and-effect. Every history event has causes and effects. Every science experiment is about causes and effects. Every choice you make causes effects. This is one of the most powerful thinking tools you'll ever own. Use it everywhere.` },
+              audioPrompt: `Everything, {name}, means all things. Cause-and-effect helps you understand everything. Every story has cause-and-effect. Every history event has causes and effects. Every science experiment is about causes and effects. Every choice you make causes effects.` },
           ],
         },
 

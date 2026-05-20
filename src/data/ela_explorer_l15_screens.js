@@ -65,9 +65,9 @@ const ELA_L15 = {
             { word: `topic`,          definition: `What your writing is about. Pick a TOPIC you care about.`,
               audioPrompt: `A topic, {name}, is what your writing is about. Picking a topic is the first step in informational writing. The best topics are ones you genuinely care about. Or really want to learn about. Care creates better writing. Boredom creates boring writing. Always pick a topic that excites you.` },
             { word: `care about`,     definition: `To feel interested in or attached to. Care creates BETTER writing.`,
-              audioPrompt: `To care about, {name}, means to feel interested in or attached to something. Care creates better writing. When you care about your topic, your readers can tell. Your enthusiasm comes through the words. When you DON'T care, that comes through too. Always write about things you care about. Or find a way to care about what you're writing about.` },
+              audioPrompt: `To care about, {name}, means to feel interested in or attached to something. Care creates better writing. When you care about your topic, your readers can tell. Your enthusiasm comes through the words.` },
             { word: `tiny topic`,     definition: `A small, focused subject. TINY topics are easier to write about than huge ones.`,
-              audioPrompt: `A tiny topic, {name}, is a small, focused subject. Like 'what penguins eat' instead of 'all about penguins.' Or 'how a seed grows' instead of 'plants.' Tiny topics are way easier to write about than huge ones. You can actually cover them. With huge topics, you barely scratch the surface. Go tiny when you can.` },
+              audioPrompt: `A tiny topic, {name}, is a small, focused subject. Like 'what penguins eat' instead of 'all about penguins. ' Or 'how a seed grows' instead of 'plants. ' Tiny topics are way easier to write about than huge ones.` },
           ],
         },
 

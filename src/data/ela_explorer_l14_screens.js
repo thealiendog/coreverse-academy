@@ -42,7 +42,7 @@ const ELA_L14 = {
           imageCaption: `You as storyteller. Thousands of years of humans telling stories. Now it's your turn.`,
           vocab: [
             { word: `narrative`,      definition: `A story. Narrative writing means STORY writing.`,
-              audioPrompt: `Narrative, {name}, is a fancy word that just means STORY. Narrative writing is story writing. Whenever a teacher asks for a 'narrative,' they're asking for a story. You're the storyteller. You make up what happens. You choose the characters. Narratives are the most fun kind of writing for many kids. They're a chance to use your imagination fully.` },
+              audioPrompt: `Narrative, {name}, is a fancy word that just means STORY. Narrative writing is story writing. Whenever a teacher asks for a 'narrative,' they're asking for a story. You're the storyteller. You make up what happens. You choose the characters.` },
             { word: `storyteller`,    definition: `A person who tells stories. You are one now.`,
               audioPrompt: `A storyteller, {name}, is a person who tells stories. Humans have been storytellers since the very beginning. Around fires. In drawings on cave walls. In songs. In books. Now in movies and videos. You join this long, beautiful tradition every time you write a story. That's a real honor.` },
             { word: `imagination`,    definition: `The picture-maker inside your mind. Writers use imagination to build stories.`,
@@ -67,7 +67,7 @@ const ELA_L14 = {
             { word: `before`,         definition: `Coming first. Plan BEFORE you start writing.`,
               audioPrompt: `Before, {name}, means coming first. Plan before you start writing. That's the order: plan first, write second. Some kids think the best stories come from just jumping in. Sometimes that works. But usually, even a quick plan makes the story way better. The plan saves you from getting stuck.` },
             { word: `scribble`,       definition: `To write quickly and roughly. Scribble your plan — it doesn't need to be neat.`,
-              audioPrompt: `To scribble, {name}, is to write quickly and roughly. When you plan, you can scribble. Your plan doesn't need to be neat. It doesn't need to be in full sentences. It just needs to capture your ideas. Scribbled plans are fine. They're for YOU — to remind you what you wanted to write.` },
+              audioPrompt: `To scribble, {name}, is to write quickly and roughly. When you plan, you can scribble. Your plan doesn't need to be neat. It doesn't need to be in full sentences. It just needs to capture your ideas.` },
           ],
         },
 
@@ -84,7 +84,7 @@ const ELA_L14 = {
           imageCaption: `Beginning — introduce character, show setting, hint at the problem coming. Hook your reader.`,
           vocab: [
             { word: `beginning`,      definition: `The start of a story. Introduces character, setting, and hints at conflict.`,
-              audioPrompt: `The beginning, {name}, is the start of a story. It has a big job. It introduces the character — who the story is about. It shows the setting — where and when. It hints at the conflict — what's the problem coming. All in just a few sentences. Beginnings are how you HOOK your reader. Make them want to keep reading.` },
+              audioPrompt: `The beginning, {name}, is the start of a story. It has a big job. It introduces the character — who the story is about. It shows the setting — where and when. It hints at the conflict — what's the problem coming.` },
             { word: `hook`,           definition: `To grab someone's attention. Story beginnings should HOOK the reader.`,
               audioPrompt: `To hook, {name}, is to grab someone's attention. Like a fishing hook catches a fish. Story beginnings should hook the reader. Make them curious. Make them want to know what happens next. Boring beginnings lose readers. Interesting beginnings keep them turning pages. The hook matters a lot.` },
             { word: `introduce`,      definition: `To bring something into the story for the first time. Beginnings INTRODUCE the character.`,
@@ -105,11 +105,11 @@ const ELA_L14 = {
           imageCaption: `Middle — the action. Character faces the problem, tries things, feels things, grows.`,
           vocab: [
             { word: `middle`,         definition: `The center of a story. Where most of the action happens.`,
-              audioPrompt: `The middle, {name}, is the center of a story. Where most of the action happens. The character faces the conflict. They try things. Some things work. Some don't. They feel emotions — fear, hope, determination. They might get help. They might face new problems. The middle is where stories really live. Usually it's the longest part.` },
+              audioPrompt: `The middle, {name}, is the center of a story. Where most of the action happens. The character faces the conflict. They try things. Some things work. Some don't. They feel emotions — fear, hope, determination. They might get help.` },
             { word: `action`,         definition: `Things happening. The middle is full of ACTION.`,
               audioPrompt: `Action, {name}, means things happening. The middle is full of action. The character isn't sitting still — they're DOING things. Searching. Trying. Running. Asking. Looking. Without action, a story stops moving. With action, it pulls the reader forward.` },
             { word: `tries`,          definition: `Attempts to do something. Characters often TRY many things in the middle.`,
-              audioPrompt: `To try, {name}, is to attempt to do something. Characters in stories often try many things before they succeed. They try one solution. It fails. They try another. It fails too. Then they try a third — and that works. Or they learn from all the trying. Stories love characters who try. Trying is what shows their courage.` },
+              audioPrompt: `To try, {name}, is to attempt to do something. Characters in stories often try many things before they succeed. They try one solution. It fails. They try another. It fails too. Then they try a third — and that works.` },
           ],
         },
 
@@ -128,9 +128,9 @@ const ELA_L14 = {
             { word: `ending`,         definition: `The finish of a story. Resolves the conflict and shows growth.`,
               audioPrompt: `The ending, {name}, is the finish of a story. It resolves the conflict — the problem gets solved, or sometimes is left unsolved on purpose. It shows growth — how the character changed. It satisfies the reader. A good ending doesn't just STOP. It actually ENDS. There's a difference.` },
             { word: `resolve`,        definition: `To find an answer or solution. Endings RESOLVE the conflict.`,
-              audioPrompt: `To resolve, {name}, is to find an answer or solution. Endings resolve the conflict. The problem from the beginning gets addressed. Sometimes it's solved completely. Sometimes only partly. Sometimes the character realizes they don't need to solve it — they need to accept it. Either way, the ending faces the problem head-on.` },
+              audioPrompt: `To resolve, {name}, is to find an answer or solution. Endings resolve the conflict. The problem from the beginning gets addressed. Sometimes it's solved completely. Sometimes only partly.` },
             { word: `satisfying`,     definition: `Feeling complete and right. Good endings are SATISFYING.`,
-              audioPrompt: `Satisfying, {name}, means feeling complete and right. Good endings are satisfying. The reader closes the book feeling good — even if the ending is sad. They feel like the story EARNED its ending. Bad endings feel rushed or random. Good endings feel inevitable. Like there's no other way it could have ended.` },
+              audioPrompt: `Satisfying, {name}, means feeling complete and right. Good endings are satisfying. The reader closes the book feeling good — even if the ending is sad. They feel like the story EARNED its ending. Bad endings feel rushed or random.` },
           ],
         },
 
@@ -149,9 +149,9 @@ const ELA_L14 = {
             { word: `voice`,          definition: `The way your writing sounds. Every writer has a unique VOICE.`,
               audioPrompt: `Voice, {name} — in writing — is the way your writing sounds. Different from anyone else's. Your sense of humor. Your favorite words. Your way of describing things. Your perspective. All of these together make your voice. Writers develop voice over time. The more you write, the more YOU comes through.` },
             { word: `unique`,         definition: `One of a kind. Your voice is UNIQUE — no one else has it.`,
-              audioPrompt: `Unique, {name}, means one of a kind. Your voice is unique. No one else writes the way you write. No one else sees the world quite like you. That's what makes your stories worth telling. Be proud of your unique voice. Don't try to copy other writers. The world already has them. Now it gets to have YOU.` },
+              audioPrompt: `Unique, {name}, means one of a kind. Your voice is unique. No one else writes the way you write. No one else sees the world quite like you. That's what makes your stories worth telling.` },
             { word: `yourself`,       definition: `Be who you are. Writing well means being YOURSELF on the page.`,
-              audioPrompt: `Yourself, {name}, means be who you are. Writing well means being YOURSELF on the page. Not pretending to be smarter or fancier. Just real. Honest. You. When writers try too hard to sound like someone else, their writing feels fake. When they write as themselves, it feels alive. Your real voice is your superpower.` },
+              audioPrompt: `Yourself, {name}, means be who you are. Writing well means being YOURSELF on the page. Not pretending to be smarter or fancier. Just real. Honest. You. When writers try too hard to sound like someone else, their writing feels fake.` },
           ],
         },
 

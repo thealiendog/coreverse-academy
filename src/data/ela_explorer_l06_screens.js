@@ -46,7 +46,7 @@ const ELA_L06 = {
             { word: `contrast`,       definition: `To find what's DIFFERENT between two things.`,
               audioPrompt: `To contrast, {name}, is to find what's different between two things. A dog barks; a cat meows. One friend loves sports; another loves books. One story is funny; another is sad. When you contrast, you spot the differences. That's the other half of compare-and-contrast thinking.` },
             { word: `side by side`,   definition: `Next to each other for thinking. Compare and contrast puts things SIDE BY SIDE.`,
-              audioPrompt: `Side by side, {name}, means next to each other for thinking. Compare and contrast puts two things side by side. By looking at them together, you see things about each one you'd never notice if you looked at only one. That's why this skill is so powerful — it shows you more than studying each alone would.` },
+              audioPrompt: `Side by side, {name}, means next to each other for thinking. Compare and contrast puts two things side by side. By looking at them together, you see things about each one you'd never notice if you looked at only one.` },
           ],
         },
 
@@ -147,7 +147,7 @@ const ELA_L06 = {
           imageCaption: `Compare and contrast = life skill. Better decisions. Deeper understanding. Used everywhere by everyone.`,
           vocab: [
             { word: `useful`,         definition: `Helpful in many situations. Compare and contrast is super USEFUL.`,
-              audioPrompt: `Useful, {name}, means helpful in many situations. Compare and contrast is super useful. You use it when shopping. When choosing friends to play with. When deciding which book to read. When figuring out which sport you like best. Every choice involves a little compare-and-contrast. That's why this skill matters.` },
+              audioPrompt: `Useful, {name}, means helpful in many situations. Compare and contrast is super useful. You use it when shopping. When choosing friends to play with. When deciding which book to read. When figuring out which sport you like best.` },
             { word: `decision`,       definition: `A choice. Compare and contrast helps you make better DECISIONS.`,
               audioPrompt: `A decision, {name}, is a choice. Compare and contrast helps you make better decisions. Should I choose this book or that one? Compare them. Should I have a peanut butter sandwich or a turkey one? Contrast them. Whenever you have to choose, compare-and-contrast thinking helps you pick smarter.` },
             { word: `life skill`,     definition: `A skill you use your whole LIFE — not just in school.`,

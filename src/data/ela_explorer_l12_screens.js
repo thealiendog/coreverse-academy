@@ -63,11 +63,11 @@ const ELA_L12 = {
           imageCaption: `Headings — bold titles that tell you what each section is about. Like signposts guiding your reading.`,
           vocab: [
             { word: `heading`,        definition: `A bold title at the start of a section. Tells you what's in that section.`,
-              audioPrompt: `A heading, {name}, is a bold title at the start of a section. It tells you what's in that section. Like a sign at a store that says 'TOYS' or 'BOOKS.' Headings are usually in BIGGER or BOLDER print so they jump out at you. They're one of the best tools nonfiction has.` },
+              audioPrompt: `A heading, {name}, is a bold title at the start of a section. It tells you what's in that section. Like a sign at a store that says 'TOYS' or 'BOOKS.` },
             { word: `section`,        definition: `A chunk of a book or article. Each section often has its own heading.`,
               audioPrompt: `A section, {name}, is a chunk of a book or article. Nonfiction books are usually divided into sections. Each section covers one part of the topic. Each section often starts with a heading. Sections help organize information — like rooms in a house. Each one holds its own thing.` },
             { word: `signpost`,       definition: `A sign that points the way. Headings are like signposts for readers.`,
-              audioPrompt: `A signpost, {name}, is a sign that points the way. You see signposts on roads — 'this way to the park,' 'that way to the store.' Headings are signposts inside books. They tell you what's coming and help you find what you want. Without headings, nonfiction would be much harder to navigate.` },
+              audioPrompt: `A signpost, {name}, is a sign that points the way. You see signposts on roads — 'this way to the park,' 'that way to the store. ' Headings are signposts inside books.` },
           ],
         },
 
@@ -84,11 +84,11 @@ const ELA_L12 = {
           imageCaption: `Bold words = key vocabulary. The author is saying "learn this word — it matters."`,
           vocab: [
             { word: `bold`,           definition: `Darker, thicker letters. Authors use BOLD to make important words stand out.`,
-              audioPrompt: `Bold, {name}, means darker, thicker letters. Authors use bold to make important words stand out. When a word is bold in a nonfiction book, the author is sending you a signal — 'this word matters. Pay attention. Learn it.' Bold is one of the easiest features to spot. Just look for words that look thicker than the others.` },
+              audioPrompt: `Bold, {name}, means darker, thicker letters. Authors use bold to make important words stand out. When a word is bold in a nonfiction book, the author is sending you a signal — 'this word matters. Pay attention. Learn it.` },
             { word: `vocabulary`,     definition: `The collection of words you know. Bold words help you learn new VOCABULARY.`,
               audioPrompt: `Vocabulary, {name}, is the collection of words you know. The more you know, the bigger your vocabulary. Bold words in nonfiction help you grow your vocabulary fast. They show you which new words are worth learning. Every bold word you understand is a new tool for your brain.` },
             { word: `definition`,     definition: `The meaning of a word. Bold words often have definitions nearby.`,
-              audioPrompt: `A definition, {name}, is the meaning of a word. Bold words often have definitions nearby — either right in the sentence, or in a special box, or in a glossary at the back of the book. When you see a bold word, look for its definition. Authors put them there to help you.` },
+              audioPrompt: `A definition, {name}, is the meaning of a word. Bold words often have definitions nearby — either right in the sentence, or in a special box, or in a glossary at the back of the book.` },
           ],
         },
 
@@ -109,7 +109,7 @@ const ELA_L12 = {
             { word: `caption`,        definition: `A short sentence under a picture telling you what it shows.`,
               audioPrompt: `A caption, {name}, is a short sentence under a picture telling you what it shows. Captions are SUPER important. They often have facts that aren't in the main text. So if you skip the captions, you miss information. Always read the captions. They're tiny treasure chests of info.` },
             { word: `illustration`,   definition: `A drawing made to show something. Books use illustrations alongside photos.`,
-              audioPrompt: `An illustration, {name}, is a drawing made to show something. Books use illustrations when a photo wouldn't work — like for showing inside a body, or what dinosaurs looked like, or how something works step by step. Illustrations are often more detailed than photos can be. They're another way nonfiction shares information.` },
+              audioPrompt: `An illustration, {name}, is a drawing made to show something. Books use illustrations when a photo wouldn't work — like for showing inside a body, or what dinosaurs looked like, or how something works step by step.` },
           ],
         },
 
@@ -126,9 +126,9 @@ const ELA_L12 = {
           imageCaption: `Diagrams pack big information into one picture. Always read every label.`,
           vocab: [
             { word: `diagram`,        definition: `A drawing with labels pointing to different parts. Used in nonfiction.`,
-              audioPrompt: `A diagram, {name}, is a drawing with labels pointing to different parts. Like a map of a thing. Diagrams help you understand how something is built or how its parts work together. A bike diagram. A flower diagram. A body diagram. They pack lots of information into one picture. Worth slowing down for.` },
+              audioPrompt: `A diagram, {name}, is a drawing with labels pointing to different parts. Like a map of a thing. Diagrams help you understand how something is built or how its parts work together. A bike diagram. A flower diagram.` },
             { word: `label`,          definition: `A small word pointing to a part. Diagrams use LABELS to name each part.`,
-              audioPrompt: `A label, {name}, is a small word pointing to a part. Diagrams use labels to name each part. The label might point to it with an arrow or a line. By reading all the labels, you learn what each part of the thing is called. It's like getting a tour with names attached.` },
+              audioPrompt: `A label, {name}, is a small word pointing to a part. Diagrams use labels to name each part. The label might point to it with an arrow or a line.` },
             { word: `slow down`,      definition: `Read more carefully. SLOW DOWN when you see a diagram — take it in.`,
               audioPrompt: `Slow down, {name} — reading diagrams takes a slower pace. Don't rush past them. Take a moment to look at the whole picture. Then read each label. Then think about how the parts connect. Diagrams have a lot of information packed into them. Slowing down lets you actually absorb it.` },
           ],
@@ -147,9 +147,9 @@ const ELA_L12 = {
           imageCaption: `Table of contents, index, glossary. Tools that let you find info fast. Smart readers use them.`,
           vocab: [
             { word: `contents`,       definition: `A list at the front of a book showing what's in each chapter.`,
-              audioPrompt: `Contents, {name} — short for 'table of contents' — is a list at the front of a book showing what's in each chapter. It helps you see the whole book at a glance. You can jump to the chapter you want. Most nonfiction books have one. Always check it first. It tells you what's in the book.` },
+              audioPrompt: `Contents, {name} — short for 'table of contents' — is a list at the front of a book showing what's in each chapter. It helps you see the whole book at a glance. You can jump to the chapter you want.` },
             { word: `index`,          definition: `A list at the back of a book showing topics in alphabetical order with page numbers.`,
-              audioPrompt: `An index, {name}, is a list at the back of a book showing topics in alphabetical order with page numbers. Want to find info about 'penguins' in an animal book? Look up 'penguins' in the index — it tells you what page to flip to. The index is one of the most useful tools in nonfiction. Like a search bar for the book.` },
+              audioPrompt: `An index, {name}, is a list at the back of a book showing topics in alphabetical order with page numbers. Want to find info about 'penguins' in an animal book?` },
             { word: `glossary`,       definition: `A list of important words and their definitions, usually at the back of a book.`,
               audioPrompt: `A glossary, {name}, is a list of important words and their definitions, usually at the back of a book. Like a mini dictionary just for that book. If you forget what a bold word means, check the glossary. Glossaries are especially useful in nonfiction full of technical words.` },
           ],

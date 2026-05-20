@@ -63,7 +63,7 @@ const ELA_L17 = {
           imageCaption: `Nouns name PERSON, PLACE, or THING. Maya, school, book, dog. The building blocks of sentences.`,
           vocab: [
             { word: `noun`,           definition: `A word that names a person, place, thing, or idea.`,
-              audioPrompt: `A noun, {name}, is a word that names a person, place, thing, or idea. Maya, school, book, love — all nouns. Nouns are usually the FIRST kind of word kids learn to recognize. Most sentences have at least one noun. Often several. Nouns are the building blocks. They tell us WHO and WHAT a sentence is about.` },
+              audioPrompt: `A noun, {name}, is a word that names a person, place, thing, or idea. Maya, school, book, love — all nouns. Nouns are usually the FIRST kind of word kids learn to recognize. Most sentences have at least one noun.` },
             { word: `person`,         definition: `A human. People's names and roles are nouns.`,
               audioPrompt: `A person, {name}, is a human. People's names — Maya, Sam, Quill — are nouns. People's roles — doctor, teacher, mom, friend — are also nouns. Anything that names a human counts as a noun.` },
             { word: `thing`,          definition: `An object or idea. Toys, books, dreams — all things, all nouns.`,

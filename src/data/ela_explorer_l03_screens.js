@@ -42,11 +42,11 @@ const ELA_L03 = {
           imageCaption: `Reading between the lines. The text shows. You figure out the meaning. That's inferring.`,
           vocab: [
             { word: `inference`,    definition: `A smart guess based on clues from the text plus what you already know.`,
-              audioPrompt: `An inference, {name}, is a smart guess based on clues from the text plus what you already know. Authors don't say everything. They leave things for the reader to figure out. When you put together the clues with your own brain, you make an inference. The text says one thing. You understand MORE than what's actually written. That's reading between the lines.` },
+              audioPrompt: `An inference, {name}, is a smart guess based on clues from the text plus what you already know. Authors don't say everything. They leave things for the reader to figure out.` },
             { word: `between`,      definition: `In the space between two things. Reading BETWEEN the lines means figuring out what's not said directly.`,
-              audioPrompt: `Between means in the space between two things, {name}. Reading 'between the lines' is a beautiful old saying. It means figuring out what's not said directly. The text gives you what's on the page. But in the space between — the meaning, the feeling, the hidden parts — you have to bring your own brain. That's where inferences live.` },
+              audioPrompt: `Between means in the space between two things, {name}. Reading 'between the lines' is a beautiful old saying. It means figuring out what's not said directly. The text gives you what's on the page.` },
             { word: `figure out`,   definition: `To understand by thinking. Inferring is FIGURING OUT what the text doesn't say.`,
-              audioPrompt: `To figure out means to understand by thinking, {name}. Inferring is figuring out what the text doesn't say. The clues are there. Your brain does the work. It's like solving a puzzle. Sometimes the answer is obvious. Sometimes you have to think harder. Either way — when you figure it out, that's an inference.` },
+              audioPrompt: `To figure out means to understand by thinking, {name}. Inferring is figuring out what the text doesn't say. The clues are there. Your brain does the work. It's like solving a puzzle. Sometimes the answer is obvious.` },
           ],
         },
 
@@ -63,11 +63,11 @@ const ELA_L03 = {
           imageCaption: `Detectives figure things out. Readers do too. Notice clues. Put them together. Solve the meaning.`,
           vocab: [
             { word: `detective`,    definition: `A person who solves mysteries by looking at clues. Readers are like detectives.`,
-              audioPrompt: `A detective is a person who solves mysteries by looking at clues, {name}. Famous detectives in stories — like Sherlock Holmes or Encyclopedia Brown — are great at noticing tiny details and putting them together. Readers do the same thing. The book is the mystery. The clues are in the words. The reader-detective solves what's REALLY going on.` },
+              audioPrompt: `A detective is a person who solves mysteries by looking at clues, {name}. Famous detectives in stories — like Sherlock Holmes or Encyclopedia Brown — are great at noticing tiny details and putting them together. Readers do the same thing.` },
             { word: `notice`,       definition: `To pay attention to something. Good readers NOTICE small clues.`,
-              audioPrompt: `To notice means to pay attention to something, {name}. Good readers NOTICE small clues that others might miss. A character's facial expression. The weather in a scene. A small object mentioned in passing. Authors put these things in for a reason. The more you notice, the more inferences you can make. Practice noticing.` },
+              audioPrompt: `To notice means to pay attention to something, {name}. Good readers NOTICE small clues that others might miss. A character's facial expression. The weather in a scene. A small object mentioned in passing.` },
             { word: `solve`,        definition: `To figure out the answer to a mystery or puzzle. Readers SOLVE the meaning of texts.`,
-              audioPrompt: `To solve means to figure out the answer to a mystery or puzzle, {name}. When you read, you're constantly solving little mysteries. Why did this character act that way? What's about to happen? What does this scene really mean? Each inference SOLVES a little mystery. By the end of a book, you've solved hundreds of them. That's what makes reading so engaging.` },
+              audioPrompt: `To solve means to figure out the answer to a mystery or puzzle, {name}. When you read, you're constantly solving little mysteries. Why did this character act that way? What's about to happen? What does this scene really mean?` },
           ],
         },
 
@@ -88,7 +88,7 @@ const ELA_L03 = {
             { word: `clue`,         definition: `A small piece of evidence. Texts have clues all over them.`,
               audioPrompt: `A clue is a small piece of evidence, {name}. Texts have clues ALL over them. What characters say. What they do. What the setting looks like. What time of day it is. Each clue is a little hint from the author. Good readers spot the clues. Then they use them.` },
             { word: `knowledge`,    definition: `Things you already know. Your KNOWLEDGE helps you understand texts.`,
-              audioPrompt: `Knowledge means things you already know, {name}. You bring your own knowledge to every book you read. You know that snow is cold. You know that people sleep at night. You know that a clenched fist often means anger. All this knowledge helps you understand stories. The more you know, the better you can infer.` },
+              audioPrompt: `Knowledge means things you already know, {name}. You bring your own knowledge to every book you read. You know that snow is cold. You know that people sleep at night. You know that a clenched fist often means anger.` },
           ],
         },
 
@@ -107,7 +107,7 @@ const ELA_L03 = {
             { word: `smart`,        definition: `Thoughtful, careful, based on real evidence. Smart inferences stay close to the clues.`,
               audioPrompt: `Smart means thoughtful and careful, {name}. Smart inferences stay close to the clues in the text. They use real evidence. They make sense. The opposite would be silly or wild guesses — ones that ignore the text and just make stuff up. Always make SMART inferences. Stick with the clues.` },
             { word: `evidence`,     definition: `Proof. Facts. Things that show something is true. Inferences need evidence.`,
-              audioPrompt: `Evidence is proof, {name}. Facts. Things that show something is true. Every inference needs evidence from the text. If someone asks 'how do you know?' a good reader can point to specific words or sentences as evidence. 'I know Maya was upset because the text says she slammed her door.' That's evidence-backed thinking.` },
+              audioPrompt: `Evidence is proof, {name}. Facts. Things that show something is true. Every inference needs evidence from the text. If someone asks 'how do you know? ' a good reader can point to specific words or sentences as evidence.` },
             { word: `invent`,       definition: `To make something up. Inferring is NOT inventing — it's using real clues.`,
               audioPrompt: `To invent means to make something up, {name}. Inferring is NOT inventing. Inventing means creating something from nothing. Inferring means using real clues to figure out something the author didn't directly say. Inferences stay grounded in the text. Inventions just float away on their own.` },
           ],
@@ -126,11 +126,11 @@ const ELA_L03 = {
           imageCaption: `Authors SHOW feelings — slumped shoulders, soft voice. Readers INFER the feelings from the clues.`,
           vocab: [
             { word: `character`,    definition: `A person, animal, or being in a story. Characters have feelings that readers infer.`,
-              audioPrompt: `A character is a person, animal, or being in a story, {name}. Characters have feelings, thoughts, and reasons for what they do. Authors RARELY say 'this character is happy' or 'this character is scared.' Instead they SHOW it through actions, words, and choices. The reader infers what the character is feeling. That's how stories work.` },
+              audioPrompt: `A character is a person, animal, or being in a story, {name}. Characters have feelings, thoughts, and reasons for what they do. Authors RARELY say 'this character is happy' or 'this character is scared.` },
             { word: `show`,         definition: `To demonstrate through action or detail. Good writing SHOWS feelings instead of telling them.`,
-              audioPrompt: `To show means to demonstrate through action or detail, {name}. There's an old writing rule: 'Show, don't tell.' Instead of TELLING the reader 'Joe was scared,' the author SHOWS Joe's hands shaking, his eyes wide, his voice cracking. The reader feels the fear because they see it. Showing makes stories come alive.` },
+              audioPrompt: `To show means to demonstrate through action or detail, {name}. There's an old writing rule: 'Show, don't tell. ' Instead of TELLING the reader 'Joe was scared,' the author SHOWS Joe's hands shaking, his eyes wide, his voice cracking.` },
             { word: `slump`,        definition: `When shoulders or body sink down. Slumped shoulders often show sadness or tiredness.`,
-              audioPrompt: `To slump means when shoulders or body sink down, {name}. Slumped shoulders are a body language clue. When someone is sad, tired, or defeated, their shoulders often slump. Authors use these clues constantly. As a reader, when you notice slumped shoulders in a story, you can infer the character is feeling something heavy.` },
+              audioPrompt: `To slump means when shoulders or body sink down, {name}. Slumped shoulders are a body language clue. When someone is sad, tired, or defeated, their shoulders often slump. Authors use these clues constantly.` },
           ],
         },
 
@@ -151,7 +151,7 @@ const ELA_L03 = {
             { word: `useful`,       definition: `Helpful. Makes life easier. Inferring is one of the most USEFUL skills.`,
               audioPrompt: `Useful means helpful, {name}. Makes life easier. Inferring is one of the most useful skills you'll ever build. It helps you understand books deeply. It helps you understand people. It helps you understand situations. Useful skills are worth practicing. This is one of them.` },
             { word: `superpower`,   definition: `An amazing ability. Inferring is a kind of superpower for understanding the world.`,
-              audioPrompt: `A superpower is an amazing ability, {name}. Inferring is a kind of real-life superpower. People who can infer well notice more, understand more, and connect more dots than people who can't. The good news? Everyone can build this superpower. The way you build it is by reading. By practicing. By paying attention to clues.` },
+              audioPrompt: `A superpower is an amazing ability, {name}. Inferring is a kind of real-life superpower. People who can infer well notice more, understand more, and connect more dots than people who can't. The good news? Everyone can build this superpower.` },
           ],
         },
 

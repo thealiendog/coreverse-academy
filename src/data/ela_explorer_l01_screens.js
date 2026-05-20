@@ -42,11 +42,11 @@ const ELA_L01 = {
           imageCaption: `Letters become words. Words become pictures in your mind. That's the magic of reading.`,
           vocab: [
             { word: `reading`,    definition: `Looking at letters and words on a page and understanding what they mean.`,
-              audioPrompt: `Reading, {name}, is one of the most amazing things humans do. We take little marks on a page — letters — and our brains turn them into meaning. Into stories. Into facts. Into feelings. Reading is a SKILL. Babies can't do it. We learn it. The more you practice, the better you get. And once you can read well, the WHOLE world of books opens up to you. Books about anything. Anything at all.` },
+              audioPrompt: `Reading, {name}, is one of the most amazing things humans do. We take little marks on a page — letters — and our brains turn them into meaning. Into stories. Into facts. Into feelings. Reading is a SKILL. Babies can't do it.` },
             { word: `letter`,     definition: `One symbol that stands for a sound. English has 26 letters in its alphabet.`,
-              audioPrompt: `A letter is one symbol that stands for a sound, {name}. English has 26 letters. A through Z. Each letter makes a sound — sometimes more than one. When we put letters together in the right order, they make WORDS. C-A-T makes 'cat.' D-O-G makes 'dog.' Letters are the tiny building blocks of all reading. Every book you'll ever read is made of these same 26 letters, arranged in different ways.` },
+              audioPrompt: `A letter is one symbol that stands for a sound, {name}. English has 26 letters. A through Z. Each letter makes a sound — sometimes more than one. When we put letters together in the right order, they make WORDS.` },
             { word: `meaning`,    definition: `What a word or sentence is trying to tell you. The whole point of reading is understanding meaning.`,
-              audioPrompt: `Meaning is what a word or sentence is trying to tell you, {name}. It's the whole point of reading. You can sound out every word on a page perfectly — but if you don't understand the MEANING, you haven't really read. Good reading isn't just about saying words out loud. It's about understanding what those words mean. That's where the magic happens.` },
+              audioPrompt: `Meaning is what a word or sentence is trying to tell you, {name}. It's the whole point of reading. You can sound out every word on a page perfectly — but if you don't understand the MEANING, you haven't really read.` },
           ],
         },
 
@@ -63,11 +63,11 @@ const ELA_L01 = {
           imageCaption: `Accuracy — reading the right words. Each word is a careful step on the path of the story.`,
           vocab: [
             { word: `fluency`,    definition: `Reading that's smooth and easy — not bumpy or stuck.`,
-              audioPrompt: `Fluency means reading that's smooth and easy, {name}. Not bumpy. Not stuck on every other word. Smooth like a river. When you're FLUENT, you can read without all your brain power going into figuring out each letter. That frees your brain to focus on the actual story. Fluency is a goal every reader works toward — including grown-up readers reading hard books.` },
+              audioPrompt: `Fluency means reading that's smooth and easy, {name}. Not bumpy. Not stuck on every other word. Smooth like a river. When you're FLUENT, you can read without all your brain power going into figuring out each letter.` },
             { word: `accuracy`,   definition: `Reading the right words exactly as they appear on the page.`,
-              audioPrompt: `Accuracy means reading the right words exactly as they appear on the page, {name}. Not skipping. Not guessing. Not swapping one word for another. If the page says BEAR, you read BEAR — not BIRD. Accuracy is the foundation of fluency. Without it, the story you're reading isn't actually the story the author wrote. It becomes something else entirely.` },
+              audioPrompt: `Accuracy means reading the right words exactly as they appear on the page, {name}. Not skipping. Not guessing. Not swapping one word for another. If the page says BEAR, you read BEAR — not BIRD. Accuracy is the foundation of fluency.` },
             { word: `skip`,       definition: `To miss or leave out. Skipping words is one common reading mistake.`,
-              audioPrompt: `Skip means to miss or leave out, {name}. Skipping words is one of the most common reading mistakes. Especially small words like THE or A or IS. Our brains sometimes try to read FAST and just leave them out. But every word matters! Every word is there for a reason. Slow down enough to read each one. It's okay to be careful. Careful is GOOD.` },
+              audioPrompt: `Skip means to miss or leave out, {name}. Skipping words is one of the most common reading mistakes. Especially small words like THE or A or IS. Our brains sometimes try to read FAST and just leave them out.` },
           ],
         },
 
@@ -84,11 +84,11 @@ const ELA_L01 = {
           imageCaption: `Rate — a comfortable, steady pace. Not racing. Not crawling. Just right, like a gentle river.`,
           vocab: [
             { word: `rate`,       definition: `How fast (or slow) you read. Good reading has a comfortable, steady rate.`,
-              audioPrompt: `Rate means how fast or slow you read, {name}. Some kids read super slow because every word is hard. Some kids read super fast because they want to seem smart. Neither is great. The BEST rate is COMFORTABLE — a pace where your brain can keep up with meaning. Like walking comfortably, not racing, not crawling. As you practice, your good reading rate naturally gets faster.` },
+              audioPrompt: `Rate means how fast or slow you read, {name}. Some kids read super slow because every word is hard. Some kids read super fast because they want to seem smart. Neither is great.` },
             { word: `pace`,       definition: `Another word for speed. A good reading pace feels comfortable and steady.`,
-              audioPrompt: `Pace is another word for speed, {name}. We use it when we want to talk about a steady, even speed. 'A walking pace.' 'A reading pace.' Good readers find a pace that works for them — and for the kind of book they're reading. Hard books often need a slower pace. Easy books can be read at a faster pace. Smart readers ADJUST their pace to fit what they're reading.` },
+              audioPrompt: `Pace is another word for speed, {name}. We use it when we want to talk about a steady, even speed. 'A walking pace. ' 'A reading pace.` },
             { word: `comfortable`, definition: `Feeling good and easy. Reading at a comfortable pace helps you understand.`,
-              audioPrompt: `Comfortable means feeling good and easy, {name}. When reading is COMFORTABLE, it's not stressful. It's not exhausting. It's not racing. It's just RIGHT for you. As you grow as a reader, your comfortable pace changes. What was comfortable at age 6 will feel slow at age 8. That's GROWTH. That's how it should work.` },
+              audioPrompt: `Comfortable means feeling good and easy, {name}. When reading is COMFORTABLE, it's not stressful. It's not exhausting. It's not racing. It's just RIGHT for you. As you grow as a reader, your comfortable pace changes.` },
           ],
         },
 
@@ -105,11 +105,11 @@ const ELA_L01 = {
           imageCaption: `Expression — reading with feeling. Voice rising, falling, whispering, exclaiming. The story comes alive.`,
           vocab: [
             { word: `expression`, definition: `Reading with feeling in your voice — happy, sad, surprised, excited.`,
-              audioPrompt: `Expression means reading with feeling in your voice, {name}. Happy. Sad. Surprised. Mysterious. Excited. Quiet. When a reader uses expression, the story becomes a PERFORMANCE. Listeners feel what the characters feel. Expression is what makes audiobooks so much better than a robot reading the same words. It's the human heart, coming through the words.` },
+              audioPrompt: `Expression means reading with feeling in your voice, {name}. Happy. Sad. Surprised. Mysterious. Excited. Quiet. When a reader uses expression, the story becomes a PERFORMANCE. Listeners feel what the characters feel.` },
             { word: `voice`,      definition: `The sound that comes out when you talk or read aloud. Your voice can show feelings.`,
-              audioPrompt: `Your voice is the sound that comes out when you talk or read aloud, {name}. Voices can do so many things! Get loud. Get soft. Go high. Go low. Get fast. Get slow. Get serious. Get playful. Your voice is one of your superpowers. When you read aloud, you get to USE your voice to bring stories to life. Try it. Make a story sound exactly how you imagine it.` },
+              audioPrompt: `Your voice is the sound that comes out when you talk or read aloud, {name}. Voices can do so many things! Get loud. Get soft. Go high. Go low. Get fast. Get slow. Get serious. Get playful.` },
             { word: `feeling`,    definition: `An emotion like happy, sad, scared, or excited. Stories are full of feelings.`,
-              audioPrompt: `A feeling is an emotion, {name}. Happy. Sad. Scared. Excited. Curious. Brave. Stories are FULL of feelings — because life is full of feelings. When you read with expression, you SHOW the feelings in your voice. That helps you UNDERSTAND the story better too. Because feelings are a huge part of every story ever written.` },
+              audioPrompt: `A feeling is an emotion, {name}. Happy. Sad. Scared. Excited. Curious. Brave. Stories are FULL of feelings — because life is full of feelings. When you read with expression, you SHOW the feelings in your voice.` },
           ],
         },
 
@@ -126,11 +126,11 @@ const ELA_L01 = {
           imageCaption: `Fluent readers don't just read — they LIVE inside the story. The words disappear. The world appears.`,
           vocab: [
             { word: `brain`,      definition: `The part of your body that thinks. When you read fluently, your brain can focus on meaning.`,
-              audioPrompt: `Your brain is the part of your body that thinks, {name}. When you're learning to read, your brain works HARD on the words themselves. What letter is that? What sound does it make? What's this word? It takes up a lot of brain power. But as you become fluent, that work gets EASIER. Your brain doesn't have to think as much about the words — so it has more energy for the STORY. That's when reading becomes truly fun.` },
+              audioPrompt: `Your brain is the part of your body that thinks, {name}. When you're learning to read, your brain works HARD on the words themselves. What letter is that? What sound does it make? What's this word?` },
             { word: `lost`,       definition: `When you're so into something, you forget everything else. Fluent readers get lost in books.`,
-              audioPrompt: `Getting lost in a book is one of the best feelings ever, {name}. It means you're so caught up in the story that you forget about everything else. The time. The room you're in. What you were supposed to do next. The story takes over. Adult readers love getting lost in books too. It's a kind of magical vacation your imagination takes. The more fluent you become, the more often you can have this experience.` },
+              audioPrompt: `Getting lost in a book is one of the best feelings ever, {name}. It means you're so caught up in the story that you forget about everything else. The time. The room you're in.` },
             { word: `worth it`,   definition: `Valuable enough that the effort pays off. Practicing reading is WORTH IT.`,
-              audioPrompt: `When something is WORTH IT, {name}, it means the effort pays off. Practicing reading takes time. It takes work. Sometimes it's frustrating. But it is SO worth it. Every fluent reader you know — every adult who loves books — went through this same practice. They struggled with words too. They kept going. And now they can read ANYTHING they want. That's what's coming for you. Keep going.` },
+              audioPrompt: `When something is WORTH IT, {name}, it means the effort pays off. Practicing reading takes time. It takes work. Sometimes it's frustrating. But it is SO worth it.` },
           ],
         },
 
@@ -147,11 +147,11 @@ const ELA_L01 = {
           imageCaption: `Practice. Every day. Reread favorites. Read aloud. Listen to others. Don't worry about perfect. Just keep going.`,
           vocab: [
             { word: `practice`,   definition: `Doing something over and over to get better at it. Practice makes readers fluent.`,
-              audioPrompt: `Practice is doing something over and over to get better at it, {name}. Nobody is born knowing how to read. EVERY reader practiced their way to fluency. Just like soccer players practice kicking. Just like musicians practice instruments. Practice doesn't have to feel like work. Reading a fun book IS practice. Listening to stories IS practice. Talking about books IS practice. Practice is everywhere.` },
+              audioPrompt: `Practice is doing something over and over to get better at it, {name}. Nobody is born knowing how to read. EVERY reader practiced their way to fluency. Just like soccer players practice kicking. Just like musicians practice instruments.` },
             { word: `reread`,     definition: `To read something again. Rereading helps you get more fluent and notice new things.`,
-              audioPrompt: `To reread means to read something again, {name}. And here's a beautiful truth — rereading is GOOD. It's not boring. It's not babyish. Every time you reread, you read it BETTER. You notice things you missed. You read more fluently. Adult readers reread favorite books for their whole lives. Some books are even MORE wonderful the second or third time. Reread the books you love.` },
+              audioPrompt: `To reread means to read something again, {name}. And here's a beautiful truth — rereading is GOOD. It's not boring. It's not babyish. Every time you reread, you read it BETTER. You notice things you missed. You read more fluently.` },
             { word: `beginner`,   definition: `Someone just starting to learn. Every reader was once a beginner.`,
-              audioPrompt: `A beginner is someone just starting to learn, {name}. EVERY single fluent reader you know was once a beginner. Your parents. Your teachers. The author of your favorite book. Me. There's no shame in being a beginner. It's how every skill starts. The only way to become an EXPERT is to start as a BEGINNER. So if reading is hard right now — you're doing it right. You're at the very beginning of something wonderful.` },
+              audioPrompt: `A beginner is someone just starting to learn, {name}. EVERY single fluent reader you know was once a beginner. Your parents. Your teachers. The author of your favorite book. Me. There's no shame in being a beginner.` },
           ],
         },
 

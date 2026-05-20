@@ -42,11 +42,11 @@ const ELA_L11 = {
           imageCaption: `Poetry is word-magic. Sounds, shapes, pictures, feelings. Big things in small spaces.`,
           vocab: [
             { word: `poetry`,         definition: `A special kind of writing that uses sound, rhythm, and images.`,
-              audioPrompt: `Poetry, {name}, is a special kind of writing. It uses sound and rhythm and images to make readers feel and see and think. Poems are often shorter than stories. But they can pack just as much — sometimes MORE — into their tiny space. Poetry is one of the oldest forms of writing. People have been making poems for thousands of years.` },
+              audioPrompt: `Poetry, {name}, is a special kind of writing. It uses sound and rhythm and images to make readers feel and see and think. Poems are often shorter than stories.` },
             { word: `poem`,           definition: `A single piece of poetry. Poems can be very short or pages long.`,
               audioPrompt: `A poem, {name}, is a single piece of poetry. Some poems are just a few lines long. Others fill many pages. Some poems rhyme. Others don't. Some are funny. Others are sad. Poems come in many shapes and sizes — but they all use words in special, careful ways.` },
             { word: `image`,          definition: `A picture made by words. Poems are full of word IMAGES.`,
-              audioPrompt: `An image, {name}, is a picture made by words. Poems are full of word images. When a poet writes 'the lake was a sheet of silver,' you can SEE the lake in your mind. That's an image. Good poetry makes images bloom in your imagination. Reading a poem is like watching a tiny movie inside your head.` },
+              audioPrompt: `An image, {name}, is a picture made by words. Poems are full of word images. When a poet writes 'the lake was a sheet of silver,' you can SEE the lake in your mind. That's an image.` },
           ],
         },
 
@@ -63,11 +63,11 @@ const ELA_L11 = {
           imageCaption: `Rhyme — words that end alike. Cat/hat. Star/far. The musical click at the end of a line.`,
           vocab: [
             { word: `rhyme`,          definition: `Words that end with the same sound. Cat and hat RHYME.`,
-              audioPrompt: `A rhyme, {name}, is when two words end with the same sound. Cat and hat. Bat and sat. Star and far. Day and play. Rhyming words have matching endings. Poets use rhyme to make their poems feel like music. Rhyme is one of the most beloved tools in all of poetry.` },
+              audioPrompt: `A rhyme, {name}, is when two words end with the same sound. Cat and hat. Bat and sat. Star and far. Day and play. Rhyming words have matching endings. Poets use rhyme to make their poems feel like music.` },
             { word: `sound`,          definition: `What you hear with your ears. Rhyme is all about matching SOUNDS.`,
-              audioPrompt: `Sound, {name}, is what you hear with your ears. Rhyme is all about matching sounds. Two words can be spelled differently — like 'bee' and 'tree' — but still rhyme because they SOUND alike at the end. Reading poems out loud helps you hear the sounds. That's why poetry is so fun to read aloud.` },
+              audioPrompt: `Sound, {name}, is what you hear with your ears. Rhyme is all about matching sounds. Two words can be spelled differently — like 'bee' and 'tree' — but still rhyme because they SOUND alike at the end.` },
             { word: `memorable`,      definition: `Easy to remember. Rhymes make poems MEMORABLE.`,
-              audioPrompt: `Memorable, {name}, means easy to remember. Rhymes make poems memorable. Songs work the same way — that's why you can sing songs you haven't heard in years. The rhyme and music help your brain hold onto them. Many adults still remember nursery rhymes from when they were three. That's the power of rhyme.` },
+              audioPrompt: `Memorable, {name}, means easy to remember. Rhymes make poems memorable. Songs work the same way — that's why you can sing songs you haven't heard in years. The rhyme and music help your brain hold onto them.` },
           ],
         },
 
@@ -84,11 +84,11 @@ const ELA_L11 = {
           imageCaption: `Rhythm — the beat of words. Strong syllables, soft syllables. Words that dance. Read aloud to feel it.`,
           vocab: [
             { word: `rhythm`,         definition: `The beat or pattern of strong and soft syllables in a poem.`,
-              audioPrompt: `Rhythm, {name}, is the beat or pattern of strong and soft syllables in a poem. Like a drumbeat. Boom-tap-boom-tap. Poets choose their words carefully so the syllables BEAT in a way that feels good. Rhythm is what makes poems sound smooth and musical when you read them out loud. Try clapping while reading a poem — you'll feel the rhythm.` },
+              audioPrompt: `Rhythm, {name}, is the beat or pattern of strong and soft syllables in a poem. Like a drumbeat. Boom-tap-boom-tap. Poets choose their words carefully so the syllables BEAT in a way that feels good.` },
             { word: `beat`,           definition: `A pulse or thump. Rhythm is made of beats.`,
-              audioPrompt: `A beat, {name}, is a pulse or thump. Your heart has a beat. Music has a beat. Poems have a beat too. The beat is the pattern of strong stresses in the words. BUMP-tap-BUMP-tap. Once your ears tune in to a poem's beat, the whole poem starts to feel like a tiny song.` },
+              audioPrompt: `A beat, {name}, is a pulse or thump. Your heart has a beat. Music has a beat. Poems have a beat too. The beat is the pattern of strong stresses in the words. BUMP-tap-BUMP-tap.` },
             { word: `syllable`,       definition: `A small chunk of sound in a word. Cat has ONE syllable. Rabbit has TWO.`,
-              audioPrompt: `A syllable, {name}, is a small chunk of sound in a word. 'Cat' has ONE syllable. 'Rabbit' has TWO — rab-bit. 'Butterfly' has THREE — but-ter-fly. Syllables are the building blocks of rhythm. Strong syllables and soft syllables together make the beat of a poem. Try clapping each syllable of your name. That's syllables in action.` },
+              audioPrompt: `A syllable, {name}, is a small chunk of sound in a word. 'Cat' has ONE syllable. 'Rabbit' has TWO — rab-bit. 'Butterfly' has THREE — but-ter-fly. Syllables are the building blocks of rhythm.` },
           ],
         },
 
@@ -105,11 +105,11 @@ const ELA_L11 = {
           imageCaption: `Simile — compares two different things using LIKE or AS. "Her eyes were like stars."`,
           vocab: [
             { word: `simile`,         definition: `A comparison using LIKE or AS. "Brave AS a lion" is a simile.`,
-              audioPrompt: `A simile, {name}, is a comparison using LIKE or AS. 'She was brave as a lion.' 'The clouds looked like cotton balls.' 'His feet thundered like an elephant's.' Similes connect two different things to show something fresh. They're one of the most common tools in poetry — and in regular speaking too.` },
+              audioPrompt: `A simile, {name}, is a comparison using LIKE or AS. 'She was brave as a lion. ' 'The clouds looked like cotton balls. ' 'His feet thundered like an elephant's. ' Similes connect two different things to show something fresh.` },
             { word: `comparison`,     definition: `Putting two things next to each other to see how they relate.`,
-              audioPrompt: `A comparison, {name}, is putting two things next to each other to see how they relate. We learned about compare and contrast already. Similes are tiny comparisons. They put one thing next to another for a quick glimpse — to show how the first thing is LIKE the second. Comparisons help us understand new things by relating them to familiar things.` },
+              audioPrompt: `A comparison, {name}, is putting two things next to each other to see how they relate. We learned about compare and contrast already. Similes are tiny comparisons.` },
             { word: `like or as`,     definition: `The signal words of a simile. If a comparison uses LIKE or AS, it's a simile.`,
-              audioPrompt: `'Like' and 'as,' {name}, are the signal words of a simile. They're the giveaway. If you see one thing being compared to another using 'like' or 'as,' that's a simile. 'Quiet as a mouse.' 'Sweet like honey.' 'Tough as nails.' These words make the simile a SIMILE — not a metaphor, which we'll learn next.` },
+              audioPrompt: `'Like' and 'as,' {name}, are the signal words of a simile. They're the giveaway. If you see one thing being compared to another using 'like' or 'as,' that's a simile. 'Quiet as a mouse. ' 'Sweet like honey. ' 'Tough as nails.` },
           ],
         },
 
@@ -126,9 +126,9 @@ const ELA_L11 = {
           imageCaption: `Metaphor — one thing IS another. No like or as. "Her heart was a stone." Bold and direct.`,
           vocab: [
             { word: `metaphor`,       definition: `A comparison without LIKE or AS. "The moon IS a silver coin."`,
-              audioPrompt: `A metaphor, {name}, is a comparison without using 'like' or 'as.' It says one thing IS another. 'The moon is a silver coin.' 'My brother is a tornado in the morning.' 'Time is a thief.' Metaphors are bold. They don't say things are LIKE something — they say things ARE something. That makes them feel stronger and more dramatic.` },
+              audioPrompt: `A metaphor, {name}, is a comparison without using 'like' or 'as. ' It says one thing IS another. 'The moon is a silver coin. ' 'My brother is a tornado in the morning. ' 'Time is a thief. ' Metaphors are bold.` },
             { word: `is`,             definition: `The word that makes a metaphor. "Her smile IS sunshine."`,
-              audioPrompt: `Is, {name}, is the word that makes a metaphor. Or 'are' or 'was' or 'were.' These words connect the two things being compared. 'Her smile is sunshine.' 'My grandpa was a rock.' 'Those kids are angels.' When you see one thing claimed to BE another (not really, but in feeling), you've found a metaphor.` },
+              audioPrompt: `Is, {name}, is the word that makes a metaphor. Or 'are' or 'was' or 'were. ' These words connect the two things being compared. 'Her smile is sunshine. ' 'My grandpa was a rock. ' 'Those kids are angels.` },
             { word: `not really`,     definition: `Metaphors aren't LITERALLY true — they're a way of describing feelings.`,
               audioPrompt: `Not really, {name} — metaphors aren't literally true. Her heart wasn't ACTUALLY a stone. The classroom wasn't ACTUALLY a zoo. But metaphors describe how things FEEL — and that feeling is more important than the literal facts. Smart readers don't take metaphors literally. They read them as feeling-pictures.` },
           ],
@@ -147,11 +147,11 @@ const ELA_L11 = {
           imageCaption: `Poetry makes you feel. Happy, sad, hopeful, brave. Big feelings packed into small spaces.`,
           vocab: [
             { word: `feel`,           definition: `To experience an emotion. Poetry makes you FEEL things deeply.`,
-              audioPrompt: `To feel, {name}, is to experience an emotion. Poetry makes you feel. Joy. Sadness. Wonder. Hope. Sometimes feelings you don't even have words for. That's part of poetry's magic — it can give a name to feelings you didn't know you had. Reading poems regularly makes you better at understanding your own feelings.` },
+              audioPrompt: `To feel, {name}, is to experience an emotion. Poetry makes you feel. Joy. Sadness. Wonder. Hope. Sometimes feelings you don't even have words for.` },
             { word: `out loud`,       definition: `Speaking so others can hear. Poetry is best read OUT LOUD.`,
-              audioPrompt: `Out loud, {name}, means speaking so others can hear — or just loud enough to hear yourself. Poetry is best read out loud. Reading silently misses the rhythm. Reading silently misses the rhyme. Reading silently misses the music. Read poetry out loud. Even if you're alone. Even just whispering. The sound is half the magic.` },
+              audioPrompt: `Out loud, {name}, means speaking so others can hear — or just loud enough to hear yourself. Poetry is best read out loud. Reading silently misses the rhythm. Reading silently misses the rhyme. Reading silently misses the music.` },
             { word: `friend`,         definition: `Someone close to you. Some poems become FRIENDS you keep your whole life.`,
-              audioPrompt: `A friend, {name}, is someone close to you. Some poems become friends. You read them when you're sad. You read them when you're happy. You memorize them. You share them. They become PART of you. Adults often have poems they've loved since they were kids. Maybe you'll find one of those poems someday. Maybe today.` },
+              audioPrompt: `A friend, {name}, is someone close to you. Some poems become friends. You read them when you're sad. You read them when you're happy. You memorize them. You share them. They become PART of you.` },
           ],
         },
 

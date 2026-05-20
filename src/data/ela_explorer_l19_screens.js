@@ -46,7 +46,7 @@ const ELA_L19 = {
             { word: `strategy`,       definition: `A smart way of doing something. Spelling has STRATEGIES.`,
               audioPrompt: `A strategy, {name}, is a smart way of doing something. Spelling has strategies. Sound it out. Look for patterns. Use word families. Remember tricky words. Each strategy is a tool. The more tools you have, the more words you can spell. Strategies make hard things easier.` },
             { word: `tool`,           definition: `Something that helps you do a job. Spelling strategies are TOOLS.`,
-              audioPrompt: `A tool, {name}, is something that helps you do a job. Spelling strategies are tools. Each one helps with a different kind of word. Phonics (sounding out) is a tool. Word families are a tool. Memorizing tricky words is a tool. Your spelling toolkit grows over time. Each tool makes you a better speller.` },
+              audioPrompt: `A tool, {name}, is something that helps you do a job. Spelling strategies are tools. Each one helps with a different kind of word. Phonics (sounding out) is a tool. Word families are a tool.` },
           ],
         },
 
@@ -67,7 +67,7 @@ const ELA_L19 = {
             { word: `slowly`,         definition: `Not fast. Say words SLOWLY to hear all the sounds.`,
               audioPrompt: `Slowly, {name}, means not fast. Say words slowly to hear all the sounds. Fast-spoken words blend together — you miss sounds. Slow-spoken words let you hear each piece. C... A... T. Slow your voice down when you're sounding out. It's a smart spelling habit.` },
             { word: `letter`,         definition: `One symbol that stands for a sound. For each sound, write a LETTER.`,
-              audioPrompt: `A letter, {name}, is one symbol that stands for a sound. When you sound out a word, for each sound, you write a letter. The sound 'k' might be written 'c' or 'k.' The sound 'f' might be written 'f' or 'ph.' Letters and sounds usually match — but not always. Reading lots helps you learn the matches.` },
+              audioPrompt: `A letter, {name}, is one symbol that stands for a sound. When you sound out a word, for each sound, you write a letter. The sound 'k' might be written 'c' or 'k.` },
           ],
         },
 
@@ -84,7 +84,7 @@ const ELA_L19 = {
           imageCaption: `Word families share endings. -at family. -ing family. -ight family. Spot one, spell all.`,
           vocab: [
             { word: `word family`,    definition: `A group of words sharing the same ending pattern.`,
-              audioPrompt: `A word family, {name}, is a group of words sharing the same ending pattern. Cat, hat, bat — all in the -AT family. Ring, sing, king — all in the -ING family. When you know one word in a family, you can usually spell the others. Just change the front. Word families are huge spelling helpers.` },
+              audioPrompt: `A word family, {name}, is a group of words sharing the same ending pattern. Cat, hat, bat — all in the -AT family. Ring, sing, king — all in the -ING family.` },
             { word: `pattern`,        definition: `A repeating shape or order. Spelling has PATTERNS — like word families.`,
               audioPrompt: `A pattern, {name}, is a repeating shape or order. Spelling has patterns. The -AT pattern. The -ING pattern. The -IGHT pattern. Patterns are everywhere. Once you spot a pattern, you can use it to spell many words. Spelling becomes pattern recognition, not memorization.` },
             { word: `change the front`, definition: `Swap the beginning letters. CHANGE THE FRONT to make new words in the same family.`,
@@ -105,7 +105,7 @@ const ELA_L19 = {
           imageCaption: `Sight words = common words you recognize instantly. The. Was. Said. You. Learn by sight, not by sounding out.`,
           vocab: [
             { word: `sight word`,     definition: `A common word recognized by SIGHT — instantly, without sounding out.`,
-              audioPrompt: `A sight word, {name}, is a common word recognized by sight — instantly, without sounding out. The. Was. Said. You. Are. Have. These show up SO often that your brain just knows them. By the time you're in second grade, you'll know hundreds of sight words automatically. They're the building blocks of fast reading.` },
+              audioPrompt: `A sight word, {name}, is a common word recognized by sight — instantly, without sounding out. The. Was. Said. You. Are. Have. These show up SO often that your brain just knows them.` },
             { word: `recognize`,      definition: `To know something when you see it. You RECOGNIZE sight words instantly.`,
               audioPrompt: `To recognize, {name}, is to know something when you see it. You recognize sight words instantly. You don't need to sound them out. Your brain just knows. 'The.' That's THE. 'Said.' That's SAID. Recognition is faster than sounding out. That's why sight words help your reading speed up.` },
             { word: `automatic`,      definition: `Happening without thinking. With practice, sight words become AUTOMATIC.`,
@@ -126,9 +126,9 @@ const ELA_L19 = {
           imageCaption: `Tricky words. Silent letters. Weird spellings. Knee, write, island, through. Learn one at a time.`,
           vocab: [
             { word: `tricky word`,    definition: `A word with unusual spelling that doesn't follow normal rules.`,
-              audioPrompt: `A tricky word, {name}, is a word with unusual spelling that doesn't follow normal rules. Knee with a silent K. Write with a silent W. Through with letters you don't really hear. English has lots of tricky words. They come from many old languages, which is why they look weird. We just have to learn them one at a time.` },
+              audioPrompt: `A tricky word, {name}, is a word with unusual spelling that doesn't follow normal rules. Knee with a silent K. Write with a silent W. Through with letters you don't really hear. English has lots of tricky words.` },
             { word: `silent letter`,  definition: `A letter you DON'T pronounce. Many tricky words have silent letters.`,
-              audioPrompt: `A silent letter, {name}, is a letter you don't pronounce. KNEE has a silent K. You don't say 'kuh-nee' — you just say 'nee.' But the K is there in writing. WRITE has a silent W. ISLAND has a silent S. Silent letters are sneaky. They're there in writing but not in speaking.` },
+              audioPrompt: `A silent letter, {name}, is a letter you don't pronounce. KNEE has a silent K. You don't say 'kuh-nee' — you just say 'nee. ' But the K is there in writing. WRITE has a silent W.` },
             { word: `practice`,       definition: `Doing something over and over. PRACTICE tricky words to learn them.`,
               audioPrompt: `Practice, {name}, is doing something over and over. Practice tricky words to learn them. Write them out. Use them in sentences. See them in books. Each time you encounter a tricky word, it gets a little more familiar. Practice is how tricky words eventually become easy.` },
           ],

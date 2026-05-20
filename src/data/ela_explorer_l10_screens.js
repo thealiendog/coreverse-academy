@@ -63,9 +63,9 @@ const ELA_L10 = {
           imageCaption: `Character — the WHO of the story. The people, animals, beings. Some main, some side. All with feelings.`,
           vocab: [
             { word: `character`,     definition: `A person, animal, or being in a story. Stories need CHARACTERS.`,
-              audioPrompt: `A character, {name}, is a person, animal, or being in a story. Characters are the heart of stories. We connect with them. We feel along with them. We learn from them. Some are real (in true stories). Some are made up. Either way, they matter. Without characters, a story is just a list of events.` },
+              audioPrompt: `A character, {name}, is a person, animal, or being in a story. Characters are the heart of stories. We connect with them. We feel along with them. We learn from them. Some are real (in true stories).` },
             { word: `main character`, definition: `The most important character. The one the story is mostly about.`,
-              audioPrompt: `A main character, {name}, is the most important character. The one the story is mostly about. They appear the most. They face the conflict. They grow and change. Harry Potter is the main character of his books. Ramona is the main character of hers. Knowing the main character helps you understand the story's heart.` },
+              audioPrompt: `A main character, {name}, is the most important character. The one the story is mostly about. They appear the most. They face the conflict. They grow and change. Harry Potter is the main character of his books.` },
             { word: `side character`, definition: `A supporting character. Helps, hurts, or changes the main character.`,
               audioPrompt: `A side character, {name}, supports the main character. They help. They hurt. They challenge. They befriend. Side characters are like the family and friends in the main character's world. Some are super important. Some appear only briefly. But all of them shape what happens.` },
           ],
@@ -84,11 +84,11 @@ const ELA_L10 = {
           imageCaption: `Setting — WHERE and WHEN. The world of the story. From tiny rooms to giant galaxies. Past, present, future.`,
           vocab: [
             { word: `setting`,       definition: `WHERE and WHEN a story takes place. The location and time.`,
-              audioPrompt: `Setting, {name}, is where and when a story takes place. Where = the location. When = the time. A story might be set in a small town in 1980. Or on Mars in the year 3000. Or in a magical forest with no specific time at all. Setting paints the world the characters live in. It shapes everything possible in their story.` },
+              audioPrompt: `Setting, {name}, is where and when a story takes place. Where = the location. When = the time. A story might be set in a small town in 1980. Or on Mars in the year 3000.` },
             { word: `location`,      definition: `WHERE. The place a story happens. Forest, school, planet — all locations.`,
               audioPrompt: `Location, {name}, is where — the place a story happens. A bedroom. A school. A spaceship. A forest. A planet. Location is half of setting. It tells you what the characters see, hear, smell, and touch every day. Different locations create different stories.` },
             { word: `time`,          definition: `WHEN. Past, present, future. Time is the second half of setting.`,
-              audioPrompt: `Time, {name}, is when — the time period of a story. Past, present, or future. The 1500s. The 1990s. Tomorrow. A hundred years from now. Even just morning vs. midnight matters. Time is the second half of setting. It changes what the characters can do, who they meet, what tools they have.` },
+              audioPrompt: `Time, {name}, is when — the time period of a story. Past, present, or future. The 1500s. The 1990s. Tomorrow. A hundred years from now. Even just morning vs. midnight matters. Time is the second half of setting.` },
           ],
         },
 
@@ -105,7 +105,7 @@ const ELA_L10 = {
           imageCaption: `Conflict — the PROBLEM. Something wrong that needs fixing. Without conflict, there's no story.`,
           vocab: [
             { word: `conflict`,      definition: `A problem in a story. The thing that needs to be solved.`,
-              audioPrompt: `Conflict, {name}, is a problem in a story. The thing that needs to be solved. Conflict is the ENGINE of every story. It's what makes characters DO things. Without a problem, characters wouldn't need to act. With one, they have to. Conflict can be tiny (lost mitten) or huge (saving the world). Either way, it's what drives the story.` },
+              audioPrompt: `Conflict, {name}, is a problem in a story. The thing that needs to be solved. Conflict is the ENGINE of every story. It's what makes characters DO things. Without a problem, characters wouldn't need to act.` },
             { word: `problem`,       definition: `Something wrong that needs fixing. Conflict = PROBLEM in story language.`,
               audioPrompt: `A problem, {name}, is something wrong that needs fixing. In stories, we usually call problems CONFLICTS. Same idea. Different word. A problem creates tension. Tension makes us want to know what happens. We keep reading because we want to see the problem solved. That's the power of conflict.` },
             { word: `engine`,        definition: `What drives something forward. Conflict is the ENGINE of every story.`,
@@ -126,11 +126,11 @@ const ELA_L10 = {
           imageCaption: `Plot — the arc. Beginning, middle, end. The journey from problem to solution. The path the characters travel.`,
           vocab: [
             { word: `plot`,          definition: `What happens in a story. The events from beginning to end.`,
-              audioPrompt: `Plot, {name}, is what happens in a story. The events. The actions. The journey from beginning to end. Plot is what makes a story FEEL like a story. Things happen. They lead to other things. They build toward an ending. Plot is the path your eyes travel from page one to page last.` },
+              audioPrompt: `Plot, {name}, is what happens in a story. The events. The actions. The journey from beginning to end. Plot is what makes a story FEEL like a story. Things happen. They lead to other things. They build toward an ending.` },
             { word: `beginning`,     definition: `The start. The beginning introduces characters, setting, and conflict.`,
               audioPrompt: `The beginning, {name}, is the start of a story. The beginning has an important job. It introduces the characters — who's the story about? It shows the setting — where and when? It hints at the conflict — what's the problem? A good beginning hooks you. It makes you want to keep reading.` },
             { word: `end`,           definition: `The finish. The end resolves the conflict and shows how characters changed.`,
-              audioPrompt: `The end, {name}, is the finish of a story. By the end, the conflict is usually resolved. The problem is solved (or sometimes left unsolved on purpose). The characters have changed. We've learned something. A great ending makes us feel something — joy, sadness, satisfaction, hope. It's the moment we close the book and sit with the story.` },
+              audioPrompt: `The end, {name}, is the finish of a story. By the end, the conflict is usually resolved. The problem is solved (or sometimes left unsolved on purpose). The characters have changed. We've learned something.` },
           ],
         },
 
@@ -147,11 +147,11 @@ const ELA_L10 = {
           imageCaption: `All four elements together = a story. Character + setting + conflict + plot. The blueprint of all stories.`,
           vocab: [
             { word: `together`,      definition: `Working as one. All four elements work TOGETHER to make a story.`,
-              audioPrompt: `Together, {name}, means working as one. The four story elements work TOGETHER. None of them alone makes a story. But together — they make magic. Take any one away and the story falls apart. No character? No one to follow. No setting? Floating in a void. No conflict? Nothing to fix. No plot? Nothing happens. All four together = story.` },
+              audioPrompt: `Together, {name}, means working as one. The four story elements work TOGETHER. None of them alone makes a story. But together — they make magic. Take any one away and the story falls apart. No character? No one to follow.` },
             { word: `story`,         definition: `A tale made of all four elements. STORIES are why we read.`,
-              audioPrompt: `A story, {name}, is a tale made of all four elements — character, setting, conflict, and plot. Humans have been telling stories since the beginning of time. Around campfires. In caves. In books. Through movies. Stories are how we share what matters. They're how we learn. They're how we feel. They're why we read.` },
+              audioPrompt: `A story, {name}, is a tale made of all four elements — character, setting, conflict, and plot. Humans have been telling stories since the beginning of time. Around campfires. In caves. In books. Through movies.` },
             { word: `see`,           definition: `To notice clearly. You can now SEE the four elements in any story.`,
-              audioPrompt: `To see, {name}, means to notice clearly. You can now SEE the four elements in any story you read. Character — who is this about? Setting — where and when? Conflict — what's the problem? Plot — what happens? Seeing the building blocks gives you reader X-ray vision. You'll never read the same way again.` },
+              audioPrompt: `To see, {name}, means to notice clearly. You can now SEE the four elements in any story you read. Character — who is this about? Setting — where and when? Conflict — what's the problem? Plot — what happens?` },
           ],
         },
 

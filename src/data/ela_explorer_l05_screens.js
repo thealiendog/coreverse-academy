@@ -42,7 +42,7 @@ const ELA_L05 = {
           imageCaption: `Texts have blueprints — invisible patterns underneath the words. Learn to spot them = X-ray vision.`,
           vocab: [
             { word: `text structure`, definition: `The organizational pattern an author uses to arrange information.`,
-              audioPrompt: `Text structure, {name}, is the organizational pattern an author uses to arrange their information. It's the invisible blueprint behind the words. Some texts go in time order. Some describe one thing in detail. Some compare two things. Each is a different structure. Authors choose the structure that fits their message best.` },
+              audioPrompt: `Text structure, {name}, is the organizational pattern an author uses to arrange their information. It's the invisible blueprint behind the words. Some texts go in time order. Some describe one thing in detail. Some compare two things.` },
             { word: `pattern`,        definition: `A repeating way of doing something. Texts follow PATTERNS.`,
               audioPrompt: `A pattern, {name}, is a repeating way of doing something. Texts follow patterns. Same patterns show up in many texts. Once you learn them, you'll spot them everywhere. It's a powerful skill — like recognizing songs by their first few notes. Patterns help you predict what's coming next.` },
             { word: `blueprint`,      definition: `A building plan. Text structure is like a BLUEPRINT for the text.`,
@@ -84,7 +84,7 @@ const ELA_L05 = {
           imageCaption: `Description — author paints a detailed picture of ONE thing. Lots of details. For example, such as, features.`,
           vocab: [
             { word: `description`,    definition: `A structure that gives lots of DETAILS about one topic.`,
-              audioPrompt: `Description, {name}, is a structure that gives lots of details about one topic. The author picks something — an animal, a place, a person — and tells you many things about it. Description doesn't have to happen in order. The details can come in any sequence. The goal is to paint a vivid, complete picture of the topic.` },
+              audioPrompt: `Description, {name}, is a structure that gives lots of details about one topic. The author picks something — an animal, a place, a person — and tells you many things about it. Description doesn't have to happen in order.` },
             { word: `detail`,         definition: `A small fact that adds to the bigger picture. Description uses many DETAILS.`,
               audioPrompt: `A detail, {name}, is a small fact that adds to the bigger picture. Description structure uses many details. Color details. Size details. Sound details. Feeling details. The more vivid the details, the more the reader can SEE the thing being described. Details bring topics to life.` },
             { word: `for example`,    definition: `Signal phrase for description. "FOR EXAMPLE..." often introduces a detail.`,
@@ -126,11 +126,11 @@ const ELA_L05 = {
           imageCaption: `Signal words = decoder keys. Each pattern has its own. Spot them, know the structure.`,
           vocab: [
             { word: `decoder`,        definition: `Something that helps you understand a hidden code. Signal words are DECODERS for text structure.`,
-              audioPrompt: `A decoder, {name}, is something that helps you understand a hidden code. Signal words are decoders for text structure. They unlock the pattern the author is using. Once you know the signal words for each pattern, you can decode any text quickly. Like having a secret cheat sheet for understanding nonfiction.` },
+              audioPrompt: `A decoder, {name}, is something that helps you understand a hidden code. Signal words are decoders for text structure. They unlock the pattern the author is using.` },
             { word: `clue`,           definition: `A hint that helps solve a mystery. Signal words are CLUES to text structure.`,
               audioPrompt: `A clue, {name}, is a hint that helps solve a mystery. Signal words are clues to text structure. They're hints the author leaves about how the text is organized. Spot the clues — solve the mystery of the pattern. Strong readers always look for clues.` },
             { word: `decoder keys`,   definition: `Tools that unlock something hidden. Signal words are DECODER KEYS for nonfiction.`,
-              audioPrompt: `Decoder keys, {name}, are tools that unlock something hidden. Signal words are decoder keys for nonfiction. They unlock how the text is organized. Once you know them, every nonfiction text becomes easier to navigate. You can predict what's coming next. You can find the important parts faster. Decoder keys are powerful tools.` },
+              audioPrompt: `Decoder keys, {name}, are tools that unlock something hidden. Signal words are decoder keys for nonfiction. They unlock how the text is organized. Once you know them, every nonfiction text becomes easier to navigate. You can predict what's coming next.` },
           ],
         },
 
@@ -149,7 +149,7 @@ const ELA_L05 = {
             { word: `identify`,       definition: `To name what something is. IDENTIFY the structure to read smarter.`,
               audioPrompt: `To identify, {name}, is to name what something is. Identify the structure before diving deep into a text. Is it sequence? Description? Problem/solution? Once you know, you can read smarter. You know what to expect. You know what to look for. You know how the text is organized.` },
             { word: `map`,            definition: `A guide showing how to navigate. Text structure is like a MAP for the text.`,
-              audioPrompt: `A map, {name}, is a guide showing how to navigate. Text structure is like a map for the text. Without knowing the structure, you might wander. With it, you know exactly where things are. The main idea here. The supporting details there. The signal words pointing the way. Maps make reading more efficient.` },
+              audioPrompt: `A map, {name}, is a guide showing how to navigate. Text structure is like a map for the text. Without knowing the structure, you might wander. With it, you know exactly where things are. The main idea here.` },
             { word: `efficient`,      definition: `Doing more with less effort. Knowing structure makes reading more EFFICIENT.`,
               audioPrompt: `Efficient, {name}, means doing more with less effort. Knowing text structure makes reading more efficient. You don't waste time getting lost. You don't re-read paragraphs trying to figure out what's happening. You spot the pattern, follow it, and absorb the information. That's efficient reading.` },
           ],

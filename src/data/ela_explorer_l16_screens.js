@@ -67,7 +67,7 @@ const ELA_L16 = {
             { word: `proven`,         definition: `Shown to be true with evidence. Facts can be PROVEN.`,
               audioPrompt: `Proven, {name}, means shown to be true with evidence. Facts can be proven. Opinions can't. You can prove cats have whiskers (look at one!). You can't prove cats are the best pets — because some people prefer dogs. That's a personal view. Proving is for facts. Sharing is for opinions.` },
             { word: `support`,        definition: `Back up. Facts can SUPPORT opinions — but they're not the same thing.`,
-              audioPrompt: `To support, {name}, is to back up. Facts can support opinions — but they're not the same thing. 'I think dogs are great pets BECAUSE they keep you active — research shows dog owners walk more.' The fact (research about walking) supports the opinion (dogs are great pets). They work together. But the opinion stays the main thing.` },
+              audioPrompt: `To support, {name}, is to back up. Facts can support opinions — but they're not the same thing. 'I think dogs are great pets BECAUSE they keep you active — research shows dog owners walk more.` },
           ],
         },
 
@@ -130,7 +130,7 @@ const ELA_L16 = {
             { word: `respectfully`,   definition: `In a kind, polite way. Disagree RESPECTFULLY — without being mean.`,
               audioPrompt: `Respectfully, {name}, means in a kind, polite way. Disagree respectfully. Use phrases like 'I see it differently' or 'My experience is different.' Don't call people names. Don't shout. Listen first. Then share your view. That's how grown-ups have meaningful conversations about hard topics.` },
             { word: `listen`,         definition: `To pay attention to what someone says. LISTEN to others' opinions too.`,
-              audioPrompt: `To listen, {name}, means to pay attention to what someone says. Listen to others' opinions. Even ones you disagree with. Sometimes the BEST conversations happen when two people with different views actually listen to each other. You might learn something. You might change your mind. Or you might just feel respected — and respect them too.` },
+              audioPrompt: `To listen, {name}, means to pay attention to what someone says. Listen to others' opinions. Even ones you disagree with. Sometimes the BEST conversations happen when two people with different views actually listen to each other. You might learn something.` },
           ],
         },
 

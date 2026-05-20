@@ -42,9 +42,9 @@ const ELA_L08 = {
           imageCaption: `Same party. Three points of view. Each tells a different story. That's the power of POV.`,
           vocab: [
             { word: `point of view`, definition: `The perspective from which a story is told. Sometimes called POV.`,
-              audioPrompt: `Point of view, {name} — sometimes called POV — is the perspective from which a story is told. Who's the narrator? Are they in the story? Outside the story? Their point of view shapes EVERYTHING. What you see. What you don't see. How you feel about the characters. POV is one of the biggest choices an author makes.` },
+              audioPrompt: `Point of view, {name} — sometimes called POV — is the perspective from which a story is told. Who's the narrator? Are they in the story? Outside the story? Their point of view shapes EVERYTHING. What you see. What you don't see.` },
             { word: `narrator`,      definition: `The voice telling the story. Every story has a narrator.`,
-              audioPrompt: `A narrator, {name}, is the voice telling the story. Every story has one. Sometimes the narrator is a CHARACTER in the story. Sometimes the narrator is OUTSIDE the story, watching everything. Either way, the narrator decides what to show you and what to hide. The narrator is your guide through the story.` },
+              audioPrompt: `A narrator, {name}, is the voice telling the story. Every story has one. Sometimes the narrator is a CHARACTER in the story. Sometimes the narrator is OUTSIDE the story, watching everything.` },
             { word: `perspective`,   definition: `How someone sees things. Each character has their own perspective.`,
               audioPrompt: `Perspective, {name}, is how someone sees things. Every person has their own perspective. So does every character. The birthday girl's perspective is different from the loud kid's. The fly's perspective is different from both. When you understand perspective, you understand stories — and people — more deeply.` },
           ],
@@ -63,11 +63,11 @@ const ELA_L08 = {
           imageCaption: `First person — character tells their own story. I, me, my, mine. You're INSIDE their head.`,
           vocab: [
             { word: `first person`,  definition: `When the narrator is a character in the story and uses "I."`,
-              audioPrompt: `First person, {name}, is when the narrator is a character IN the story and uses 'I.' Like writing in your own journal. 'I went to the park.' 'I saw a dog.' 'I felt happy.' First person feels close and personal. The reader gets right into the narrator's head and heart. Many beloved books are first person — Diary of a Wimpy Kid, for example.` },
+              audioPrompt: `First person, {name}, is when the narrator is a character IN the story and uses 'I. ' Like writing in your own journal. 'I went to the park. ' 'I saw a dog. ' 'I felt happy. ' First person feels close and personal.` },
             { word: `I`,             definition: `The pronoun you use for yourself. "I" is the BIG signal of first person.`,
               audioPrompt: `'I,' {name}, is the pronoun you use for yourself. 'I am Quill.' 'I love books.' In first person stories, the narrator says 'I' a lot. Whenever you see 'I' outside of quoted dialogue, you're probably in first person. 'I' is the biggest clue.` },
             { word: `inside`,        definition: `In first person, the narrator is INSIDE the story — they live in it.`,
-              audioPrompt: `Inside, {name} — in first person, the narrator is INSIDE the story. They live in it. They experience things directly. They tell you their own version of what happens. You're not watching them from a distance. You're right beside them — or even right inside their head, hearing their thoughts. First person is up-close storytelling.` },
+              audioPrompt: `Inside, {name} — in first person, the narrator is INSIDE the story. They live in it. They experience things directly. They tell you their own version of what happens. You're not watching them from a distance.` },
           ],
         },
 
@@ -84,7 +84,7 @@ const ELA_L08 = {
           imageCaption: `Third person — narrator outside, watching. She, he, they, names. Storyteller-style.`,
           vocab: [
             { word: `third person`,  definition: `When the narrator is outside the story and uses "she," "he," "they."`,
-              audioPrompt: `Third person, {name}, is when the narrator is OUTSIDE the story. Watching the characters. Telling you what happens like a storyteller. They use 'she,' 'he,' 'they,' and the characters' names. Many of the most famous children's books are written in third person. It lets the storyteller move around. See different characters. Tell a bigger story.` },
+              audioPrompt: `Third person, {name}, is when the narrator is OUTSIDE the story. Watching the characters. Telling you what happens like a storyteller. They use 'she,' 'he,' 'they,' and the characters' names.` },
             { word: `she/he/they`,   definition: `Pronouns that signal third person. The narrator uses them to refer to characters.`,
               audioPrompt: `'She,' 'he,' and 'they,' {name}, are pronouns that signal third person. The narrator uses them to refer to characters. 'She walked to school.' 'He was scared.' 'They laughed together.' Whenever the narrator uses these pronouns to talk about the main characters — not 'I' — you're in third person.` },
             { word: `outside`,       definition: `In third person, the narrator is OUTSIDE the story — they're not a character.`,
@@ -105,9 +105,9 @@ const ELA_L08 = {
           imageCaption: `Narrators only know SOME things. First person = one character's view. Third person can see more.`,
           vocab: [
             { word: `knows`,         definition: `What the narrator has information about. Different narrators KNOW different amounts.`,
-              audioPrompt: `Knows, {name}, means what the narrator has information about. First person narrators only know what their own character knows. They don't know what other characters are secretly thinking. Third person narrators often know more. Sometimes they know EVERYTHING. Sometimes they only know what one main character knows. The narrator's knowledge shapes the whole story.` },
+              audioPrompt: `Knows, {name}, means what the narrator has information about. First person narrators only know what their own character knows. They don't know what other characters are secretly thinking. Third person narrators often know more. Sometimes they know EVERYTHING.` },
             { word: `hidden`,        definition: `Kept out of sight. Some things are HIDDEN from certain narrators.`,
-              audioPrompt: `Hidden, {name}, means kept out of sight. In every story, SOME things are hidden from the narrator. The reader doesn't know everything either — only what the narrator shows. Authors use this carefully. They hide things to create mystery. They reveal things to surprise readers. Hiding and revealing is part of every story's magic.` },
+              audioPrompt: `Hidden, {name}, means kept out of sight. In every story, SOME things are hidden from the narrator. The reader doesn't know everything either — only what the narrator shows. Authors use this carefully. They hide things to create mystery.` },
             { word: `thinking`,      definition: `What's going on in someone's head. Narrators can sometimes share characters' thinking.`,
               audioPrompt: `Thinking, {name}, is what's going on in someone's head. In real life, you can't read minds. But narrators can sometimes tell you what characters are thinking. First person narrators only share their OWN thinking. Third person narrators can sometimes share many characters' thinking. It depends on the story.` },
           ],
@@ -147,11 +147,11 @@ const ELA_L08 = {
           imageCaption: `Same event, different POVs = different stories. The Three Little Pigs vs. the Wolf's version. Wild.`,
           vocab: [
             { word: `event`,         definition: `Something that happens. The same EVENT can be told different ways.`,
-              audioPrompt: `An event, {name}, is something that happens. A birthday party. A storm. A first day of school. The same event can be told different ways depending on who's telling it. Each person who was there sees it slightly differently. Each person remembers different details. Each person feels different feelings. That's why stories can multiply.` },
+              audioPrompt: `An event, {name}, is something that happens. A birthday party. A storm. A first day of school. The same event can be told different ways depending on who's telling it. Each person who was there sees it slightly differently.` },
             { word: `wolf`,          definition: `The story character from the Three Little Pigs. The wolf's POV makes a different story.`,
-              audioPrompt: `The wolf, {name}, is famously the villain of the Three Little Pigs. But there's a book where the wolf gets to tell his side. From HIS point of view, he's misunderstood. He just had a cold. He just got blamed for things. That book — 'The True Story of the Three Little Pigs' by Jon Scieszka — is a great example of point of view at work.` },
+              audioPrompt: `The wolf, {name}, is famously the villain of the Three Little Pigs. But there's a book where the wolf gets to tell his side. From HIS point of view, he's misunderstood. He just had a cold.` },
             { word: `everything`,    definition: `All things. Point of view changes EVERYTHING about how a story feels.`,
-              audioPrompt: `Everything, {name}, means all things. Point of view changes everything about how a story feels. Which character we feel for. What we know. What's hidden. How we judge the events. As a reader, knowing the POV is one of the most important things you can do. As a writer someday, choosing the POV is one of your biggest decisions.` },
+              audioPrompt: `Everything, {name}, means all things. Point of view changes everything about how a story feels. Which character we feel for. What we know. What's hidden. How we judge the events.` },
           ],
         },
 
