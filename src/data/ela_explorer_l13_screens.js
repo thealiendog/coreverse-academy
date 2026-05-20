@@ -1,7 +1,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // ELA  |  L13 — Writing Paragraphs: Topic, Details, and Conclusion
 // Age band : explorers (6–8)   Guide: quill
-// Standards: CCSS.ELA-LITERACY.W.2-3.1-3
+// Standards: CCSS.ELA-LITERACY.W.1-3.1, W.1-3.2 — paragraph composition
+// REWRITE v2 (May 2026): reading level lowered for 6yo accessibility,
+// audio prompts shortened to ~30-40 words, identification game replaces
+// fact/myth, linking words added per CCSS, two-tier creative prompt
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ELA_L13 = {
@@ -23,9 +26,9 @@ const ELA_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `Welcome, {name}. Big moment. For 12 lessons, we've been READING. Today — you become a WRITER. The building block of all writing is the PARAGRAPH. Master the paragraph, and you can write anything. Stories. Reports. Letters. Speeches. Books one day, maybe. It all starts here. The paragraph. Let's build one together.`,
+          guideText: `Welcome, {name}! Big news today. For 12 lessons, you have been a READER. Today, you become a WRITER too! Every writer starts with one thing — a paragraph. Today we learn how to build one. Ready? Let's go!`,
           headline: `Writing Paragraphs: Topic, Details, and Conclusion`,
-          subtitle: `The building block of all writing — and how to build one yourself`,
+          subtitle: `The building block of writing — and how to build one yourself`,
           visual: `/explorer-assets/ela/l13-welcome.webp`,
         },
 
@@ -35,18 +38,18 @@ const ELA_L13 = {
           section: 1,
           headline: `Your Turn to Write`,
           paragraphs: [
-            `For all our lessons so far, you've been a READER. Today you become a WRITER too.`,
-            `Don't worry — every great writer started exactly where you are. With one paragraph. The PARAGRAPH is the building block of all writing. Once you can build a strong one, you can build long stories, big reports, even whole books one day. Paragraphs are how thoughts get organized on paper. Today, we'll build one together.`,
+            `For 12 lessons, you have been a READER. You read stories. You found main ideas. You learned about characters and themes.`,
+            `Today, something new! You become a WRITER. Every great writer started with one thing — a PARAGRAPH. A paragraph is a group of sentences all about ONE topic. Once you can write a strong paragraph, you can write stories, reports, even books one day. Let's build one together!`,
           ],
           image: `/explorer-assets/ela/l13-s1-writers-turn.webp`,
-          imageCaption: `Your turn to write. Every great writer started where you are — with one paragraph.`,
+          imageCaption: `Your turn to write. Every writer started here — with one paragraph.`,
           vocab: [
-            { word: `paragraph`,      definition: `A group of sentences all about ONE topic. The building block of writing.`,
-              audioPrompt: `A paragraph, {name}, is a group of sentences all about one topic. The building block of writing. A paragraph usually starts with an indented line — meaning it's pushed in a little from the left margin. All the sentences inside the paragraph work together. They all relate to the same idea. Master paragraphs, and you can write anything.` },
-            { word: `writer`,         definition: `A person who writes. You're becoming a writer today.`,
-              audioPrompt: `A writer, {name}, is a person who writes. Today, you're becoming a writer. Anyone who writes a paragraph is a writer. You don't have to write a book to be one. You don't have to be published. If you put words on a page, you're a writer. Welcome to the club.` },
-            { word: `building block`, definition: `A basic unit you use to build something bigger. Paragraphs are writing's BUILDING BLOCKS.`,
-              audioPrompt: `A building block, {name}, is a basic unit you use to build something bigger. Bricks build houses. Cells build bodies. Paragraphs build essays, stories, and books. The paragraph is the writing world's most important building block. Get good at the block, and you can build anything.` },
+            { word: `paragraph`,      definition: `A group of sentences all about ONE topic.`,
+              audioPrompt: `A paragraph is a group of sentences all about ONE topic. A paragraph about dogs has sentences ALL about dogs. That's a paragraph!` },
+            { word: `writer`,         definition: `A person who writes. Today, that's you.`,
+              audioPrompt: `A writer is a person who writes. When YOU write a paragraph, you're a writer too! No book needed. Just words on a page.` },
+            { word: `building block`, definition: `A small piece you use to make something bigger.`,
+              audioPrompt: `A building block is a small piece you use to make something bigger. Bricks build houses. Paragraphs build stories and books!` },
           ],
         },
 
@@ -56,18 +59,18 @@ const ELA_L13 = {
           section: 2,
           headline: `The Sandwich Shape`,
           paragraphs: [
-            `A good paragraph has a SHAPE. Think of it as a SANDWICH.`,
-            `TOP BREAD = the TOPIC SENTENCE. The first sentence. It says what the paragraph is about. FILLING = the SUPPORTING DETAILS. The middle sentences. They give facts, examples, or reasons. BOTTOM BREAD = the CONCLUSION. The last sentence. It wraps things up. Top + filling + bottom = a complete sandwich. A complete paragraph. Three parts. Each one matters.`,
+            `A good paragraph has a SHAPE. It looks like a SANDWICH!`,
+            `TOP BREAD is the TOPIC SENTENCE — the first sentence. It tells what the paragraph is about. FILLING is the DETAILS — the middle sentences. They give facts and reasons. BOTTOM BREAD is the CONCLUSION — the last sentence. It wraps things up. Top + middle + bottom = a whole sandwich. A whole paragraph!`,
           ],
           image: `/explorer-assets/ela/l13-s2-sandwich.webp`,
           imageCaption: `A paragraph is a sandwich. Top bread = topic. Filling = details. Bottom bread = conclusion.`,
           vocab: [
-            { word: `sandwich`,       definition: `A food with bread, filling, and bread. A paragraph is shaped like one.`,
-              audioPrompt: `A sandwich, {name}, is a food with bread on top, filling in the middle, and bread on the bottom. A paragraph is shaped the same way. Top bread = topic sentence. Filling = supporting details. Bottom bread = conclusion. This is one of the easiest ways to picture how a paragraph works.` },
-            { word: `shape`,          definition: `The form something has. Paragraphs have a SHAPE — sandwich shape.`,
-              audioPrompt: `Shape, {name}, is the form something has. Paragraphs have a shape — sandwich shape. Top, middle, bottom. Every part has a purpose. When you build a paragraph, you build that shape. Skip the topic sentence — you have no top. Skip the conclusion — you have no bottom. Sandwich needs all three.` },
-            { word: `complete`,       definition: `Having all the parts. A complete paragraph has topic + details + conclusion.`,
-              audioPrompt: `Complete, {name}, means having all the parts. A complete paragraph has a topic sentence, supporting details, and a conclusion. Missing any of those — incomplete. Like a sandwich missing the bread. Complete paragraphs are satisfying to read. Readers know where they're going and how it wraps up.` },
+            { word: `sandwich`,       definition: `A food with bread, filling, and bread. A paragraph has the same shape.`,
+              audioPrompt: `A sandwich has bread on top, filling in the middle, and bread on the bottom. A paragraph is shaped just like one!` },
+            { word: `shape`,          definition: `The form something has. Paragraphs have a sandwich shape.`,
+              audioPrompt: `Shape is the form something has. Paragraphs have a sandwich shape — top, middle, and bottom!` },
+            { word: `whole`,          definition: `Having all the parts. A whole paragraph has topic + details + conclusion.`,
+              audioPrompt: `Whole means having ALL the parts. A whole paragraph has a topic, details, AND a conclusion. All three together!` },
           ],
         },
 
@@ -77,18 +80,18 @@ const ELA_L13 = {
           section: 3,
           headline: `Part 1: TOPIC SENTENCE`,
           paragraphs: [
-            `The first sentence of a paragraph is the TOPIC SENTENCE. It tells the reader what's coming.`,
-            `Example: "Dogs make wonderful pets." That's a topic sentence. It announces — this paragraph is going to be about dogs being wonderful pets. Topic sentences are usually CLEAR and SHORT. They don't try to say everything — they just open the door. The rest of the paragraph keeps the promise. Good topic sentences make readers want to keep reading.`,
+            `The FIRST sentence of a paragraph is the TOPIC SENTENCE. It tells the reader what the paragraph is about.`,
+            `Here's an example: "Dogs make wonderful pets." That's a topic sentence! It tells you the paragraph will be about dogs being great pets. Topic sentences are short and clear. They open the door. Then the rest of the paragraph tells you more!`,
           ],
           image: `/explorer-assets/ela/l13-s3-topic-sentence.webp`,
-          imageCaption: `Topic sentence — the first sentence. Announces what the paragraph is about. Clear and short.`,
+          imageCaption: `Topic sentence — the first sentence. Tells what the paragraph is about. Short and clear.`,
           vocab: [
-            { word: `topic sentence`, definition: `The first sentence of a paragraph. Announces what the paragraph is about.`,
-              audioPrompt: `A topic sentence, {name}, is the first sentence of a paragraph. It announces what the paragraph is about. Like a headline for the paragraph. 'Dogs make wonderful pets.' 'Recess is my favorite time of day.' 'Volcanoes are powerful natural events.' All clear topic sentences. They tell the reader exactly what's coming.` },
-            { word: `announce`,       definition: `To tell people something is coming. Topic sentences ANNOUNCE the paragraph's idea.`,
-              audioPrompt: `To announce, {name}, is to tell people something is coming. Topic sentences announce the paragraph's idea. They're like a teacher saying 'today we're going to learn about volcanoes.' Now the listeners know what to expect. A good topic sentence makes the reader's job easier — they know what's coming.` },
-            { word: `promise`,        definition: `Something you say you'll do. Topic sentences make a PROMISE the paragraph must keep.`,
-              audioPrompt: `A promise, {name}, is something you say you'll do. Topic sentences make a promise. If your topic sentence says 'dogs are great pets,' the rest of the paragraph has to be ABOUT dogs being great pets. Not about cats. Not about pizza. The paragraph has to KEEP the promise the topic sentence made. That's how good writing works.` },
+            { word: `topic sentence`, definition: `The first sentence of a paragraph. Tells what the paragraph is about.`,
+              audioPrompt: `A topic sentence is the FIRST sentence of a paragraph. It tells the reader what the paragraph is about. Like a sign that says here comes the topic!` },
+            { word: `announce`,       definition: `To tell people something is coming.`,
+              audioPrompt: `To announce means to tell people something is coming. Topic sentences announce what the paragraph is about!` },
+            { word: `promise`,        definition: `Something you say you'll do. A topic sentence makes a promise the paragraph keeps.`,
+              audioPrompt: `A promise is something you say you'll do. A topic sentence promises what the paragraph will be about. The rest of the paragraph has to keep that promise!` },
           ],
         },
 
@@ -98,18 +101,18 @@ const ELA_L13 = {
           section: 4,
           headline: `Part 2: SUPPORTING DETAILS`,
           paragraphs: [
-            `The MIDDLE of the paragraph is the SUPPORTING DETAILS. These prove the topic sentence.`,
-            `If your topic sentence is "Dogs make wonderful pets," supporting details might be: "They are loyal and stick by your side." "They love to play and keep you active." "They sense when you're sad and try to comfort you." Each detail SUPPORTS the topic sentence. Each one is a reason or example. Usually 2-4 supporting details is just right. They're the heart of the paragraph.`,
+            `The MIDDLE of the paragraph is the SUPPORTING DETAILS. They give reasons for the topic sentence.`,
+            `If your topic sentence is "Dogs make wonderful pets," your details could be: "They are loyal and stay by your side." "They love to play and have fun." "They cheer you up when you're sad." Each detail SUPPORTS the topic. Good writers use LINKING WORDS like BECAUSE, ALSO, FIRST, and NEXT to connect their details. Linking words make the paragraph flow!`,
           ],
           image: `/explorer-assets/ela/l13-s4-supporting-details.webp`,
-          imageCaption: `Supporting details — the middle of the paragraph. Each one supports the topic. Usually 2-4 details.`,
+          imageCaption: `Supporting details — the middle. Each one supports the topic. Connect them with linking words.`,
           vocab: [
-            { word: `supporting detail`, definition: `A sentence that backs up the topic sentence with a fact, reason, or example.`,
-              audioPrompt: `A supporting detail, {name}, is a sentence that backs up the topic sentence with a fact, reason, or example. Supporting details are the PROOF that the topic sentence is true. They're the meat of the sandwich. Without supporting details, the topic sentence is just a claim. With them, it becomes convincing.` },
-            { word: `prove`,          definition: `To show something is true. Supporting details PROVE the topic sentence.`,
-              audioPrompt: `To prove, {name}, is to show something is true. Supporting details prove the topic sentence. The topic sentence makes a claim. The details give evidence. Together, they make the paragraph believable. Without proof, claims don't hold up. With proof, they become powerful.` },
-            { word: `reason`,         definition: `Why something is true. Supporting details give REASONS.`,
-              audioPrompt: `A reason, {name}, is why something is true. Supporting details give reasons. 'Dogs are great pets — because they're loyal, because they're playful, because they sense your moods.' Each 'because' is a reason. The more good reasons you have, the stronger your paragraph. Reasons are the muscle of writing.` },
+            { word: `supporting detail`, definition: `A sentence that backs up the topic sentence with a reason or example.`,
+              audioPrompt: `A supporting detail is a sentence that gives a reason or example for the topic. Details prove the topic is true!` },
+            { word: `prove`,          definition: `To show something is true.`,
+              audioPrompt: `To prove means to show something is true. Supporting details prove the topic sentence with reasons and examples!` },
+            { word: `linking words`,  definition: `Words that connect ideas. Like BECAUSE, ALSO, FIRST, and NEXT.`,
+              audioPrompt: `Linking words connect your ideas. Words like BECAUSE, ALSO, FIRST, and NEXT help your sentences flow together. They make your paragraph easier to read!` },
           ],
         },
 
@@ -119,18 +122,18 @@ const ELA_L13 = {
           section: 5,
           headline: `Part 3: CONCLUSION`,
           paragraphs: [
-            `The LAST sentence is the CONCLUSION. It wraps things up.`,
-            `A conclusion sentence doesn't add new info. It REPEATS the main idea in a fresh way. It might also leave the reader with a thought. Example: "If you want a loyal friend, a dog might be the perfect pet for you." See how it loops back to the topic? It wraps up the sandwich. Without a conclusion, paragraphs feel like they just STOP. With one, they feel finished.`,
+            `The LAST sentence is the CONCLUSION. It wraps everything up.`,
+            `A conclusion doesn't add new information. It says the main idea again in fresh words. Example: "If you want a loyal friend, a dog might be the perfect pet for you!" See how it goes back to the topic? That wraps up the sandwich. Without a conclusion, the paragraph feels unfinished!`,
           ],
           image: `/explorer-assets/ela/l13-s5-conclusion.webp`,
-          imageCaption: `Conclusion — the last sentence. Loops back to the topic. Wraps things up. Makes the paragraph feel finished.`,
+          imageCaption: `Conclusion — the last sentence. Loops back to the topic. Makes the paragraph feel finished.`,
           vocab: [
             { word: `conclusion`,     definition: `The last sentence of a paragraph. Wraps everything up.`,
-              audioPrompt: `A conclusion, {name}, is the last sentence of a paragraph. It wraps everything up. It might repeat the main idea in fresh words. It might leave the reader thinking. What it doesn't do is introduce brand new information. The conclusion's job is to CLOSE the paragraph, not open new ones.` },
-            { word: `wrap up`,        definition: `To finish neatly. The conclusion WRAPS UP the paragraph.`,
-              audioPrompt: `To wrap up, {name}, is to finish neatly. The conclusion wraps up the paragraph. Like tying a bow on a present. A wrapped-up paragraph feels complete. Readers know they're done. Without wrapping up, paragraphs feel like a thought left hanging. The conclusion is the tidy ending.` },
-            { word: `loop back`,      definition: `To return to where you started. Good conclusions LOOP BACK to the topic sentence.`,
-              audioPrompt: `Loop back, {name}, means to return to where you started. Good conclusions loop back to the topic sentence. They remind the reader of the main idea — but in fresh words. It's like coming home after a journey. You ended where you started, but you've learned something along the way.` },
+              audioPrompt: `A conclusion is the LAST sentence of a paragraph. It wraps everything up. Like the bottom of the sandwich!` },
+            { word: `wrap up`,        definition: `To finish neatly. The conclusion wraps up the paragraph.`,
+              audioPrompt: `To wrap up means to finish neatly. The conclusion wraps up the paragraph so it feels complete!` },
+            { word: `loop back`,      definition: `To come back to where you started. Good conclusions loop back to the topic.`,
+              audioPrompt: `Loop back means to come back to where you started. Good conclusions loop back to the topic — but in fresh words!` },
           ],
         },
 
@@ -140,18 +143,18 @@ const ELA_L13 = {
           section: 6,
           headline: `Putting It All Together`,
           paragraphs: [
-            `Here's a complete paragraph using all THREE parts.`,
-            `TOPIC: "Recess is the best part of my school day." DETAILS: "I get to run around with my friends. I can play soccer or invent new games. The fresh air wakes me up for the rest of class." CONCLUSION: "Recess gives me energy and joy — it's why I look forward to lunchtime every morning." Topic + details + conclusion = a strong paragraph. That's the formula. Use it for everything you write.`,
+            `Here's a whole paragraph using all THREE parts!`,
+            `TOPIC: "Recess is my favorite part of the day." DETAILS: "First, I get to run with my friends. Also, I can play soccer or make up new games. Next, the fresh air wakes me up for class." CONCLUSION: "Recess makes me happy — it's why I look forward to it every morning!" Topic + details + conclusion = a strong paragraph. That's the recipe!`,
           ],
           image: `/explorer-assets/ela/l13-s6-paragraph-power.webp`,
-          imageCaption: `Topic + details + conclusion = a strong paragraph. The formula for writing power.`,
+          imageCaption: `Topic + details + conclusion = a strong paragraph. The writing recipe!`,
           vocab: [
-            { word: `formula`,        definition: `A pattern that works every time. Topic + details + conclusion is the paragraph FORMULA.`,
-              audioPrompt: `A formula, {name}, is a pattern that works every time. Topic sentence + supporting details + conclusion is the paragraph formula. It works for any topic. It works at any age. Adults use this same formula in work writing. Authors use it in books. It's that fundamental. Learn it now. Use it forever.` },
-            { word: `strong`,         definition: `Powerful and well-built. A complete paragraph is STRONG writing.`,
-              audioPrompt: `Strong, {name}, means powerful and well-built. A complete paragraph is strong writing. It says something. It backs it up. It wraps up cleanly. Readers trust strong writing. They follow strong writing easily. Building strong paragraphs is one of the most important writing skills you'll ever learn.` },
-            { word: `everything`,     definition: `All things. Use the paragraph formula for EVERYTHING you write.`,
-              audioPrompt: `Everything, {name}, means all things. Use the paragraph formula for everything you write. Reports. Stories. Letters. Emails one day. Even text messages can use it. The formula doesn't go away as you grow up. It just gets used in bigger and bigger ways. Master it now.` },
+            { word: `recipe`,         definition: `A pattern that works every time. Paragraphs have a recipe.`,
+              audioPrompt: `A recipe is a pattern that works every time. Topic + details + conclusion is the paragraph recipe!` },
+            { word: `strong`,         definition: `Well-made and powerful. A whole paragraph is strong writing.`,
+              audioPrompt: `Strong means well-made and powerful. A whole paragraph is strong writing — readers can follow it easily!` },
+            { word: `everything`,     definition: `All things. Use the paragraph recipe for everything you write.`,
+              audioPrompt: `Everything means all things. Use the paragraph recipe for EVERYTHING you write — stories, letters, reports, all of it!` },
           ],
         },
 
@@ -159,76 +162,85 @@ const ELA_L13 = {
           id: `l13-game`,
           type: `interactive`,
           format: `drag-match`,
-          guideText: `Let's see what you remember, {name}.`,
+          guideText: `Let's try it, {name}! Here are 4 sentences from a paragraph about dogs. Drag each one to its correct part of the sandwich!`,
           buckets: [
-            { id: `fact`, label: `✅ Yes, that's true!`, color: `#34D399` },
-            { id: `myth`, label: `❌ No way!`,         color: `#F87171` },
+            { id: `topic`,      label: `🥪 TOP — Topic Sentence`,      color: `#FBBF24` },
+            { id: `detail`,     label: `🥬 FILLING — Supporting Detail`, color: `#34D399` },
+            { id: `conclusion`, label: `🥪 BOTTOM — Conclusion`,         color: `#A78BFA` },
           ],
           items: [
-            { id: `l13-g1`, image: `l13-game-1.webp`, label: `The topic sentence is the FIRST sentence and announces what the paragraph is about.`,
-              matchPhrase: `Yes! Topic sentence = the opener. It tells readers what's coming. Clear and short. Like a headline for the paragraph.`,
-              correctMatch: `fact` },
-            { id: `l13-g2`, image: `l13-game-2.webp`, label: `Supporting details SUPPORT the topic sentence with facts, reasons, or examples.`,
-              matchPhrase: `True! Supporting details are the proof. They back up the topic sentence with facts, reasons, examples. Usually 2-4 details is just right.`,
-              correctMatch: `fact` },
-            { id: `l13-g3`, image: `l13-game-3.webp`, label: `A paragraph is just ONE single sentence — no need for more.`,
-              matchPhrase: `Not at all! A paragraph has multiple sentences working together. Topic sentence + supporting details + conclusion = the formula.`,
-              correctMatch: `myth` },
-            { id: `l13-g4`, image: `l13-game-4.webp`, label: `It's fine to stuff a paragraph with random sentences about pizza, dinosaurs, and weather all together.`,
-              matchPhrase: `Definitely not! All sentences in a paragraph should be about the SAME topic. Random unrelated sentences confuse readers.`,
-              correctMatch: `myth` },
+            { id: `l13-g1`, image: `l13-game-1.webp`, label: `Dogs make wonderful pets.`,
+              matchPhrase: `Yes! "Dogs make wonderful pets" is the TOPIC SENTENCE. It tells what the paragraph is about — dogs and why they're great!`,
+              correctMatch: `topic` },
+            { id: `l13-g2`, image: `l13-game-2.webp`, label: `They are loyal and stay by your side.`,
+              matchPhrase: `Great! That's a SUPPORTING DETAIL. It tells WHY dogs are wonderful — because they're loyal!`,
+              correctMatch: `detail` },
+            { id: `l13-g3`, image: `l13-game-3.webp`, label: `They love to play games and have fun.`,
+              matchPhrase: `Yes! That's another SUPPORTING DETAIL. It gives another reason dogs are wonderful — they're playful!`,
+              correctMatch: `detail` },
+            { id: `l13-g4`, image: `l13-game-4.webp`, label: `If you want a loyal friend, get a dog!`,
+              matchPhrase: `Perfect! That's the CONCLUSION. It wraps up the paragraph and reminds us of the main idea!`,
+              correctMatch: `conclusion` },
           ],
         },
 
         {
           id: `l13-quiz`,
           type: `quiz`,
-          guideText: `Let's see how much you remember, {name}.`,
+          guideText: `Let's see what you remember, {name}!`,
           questions: [
             { id: `l13-q1`, format: `multiple-choice`,
-              question: `What are the THREE parts of a complete paragraph?`,
+              question: `What are the THREE parts of a whole paragraph?`,
               options: [`Beginning, middle, end`, `Topic sentence, supporting details, conclusion`, `Title, picture, author`, `Bread, cheese, lettuce`],
               correctIndex: 1,
-              explanation: `Topic sentence, supporting details, conclusion. That's the paragraph formula. Topic announces. Details support. Conclusion wraps up.` },
+              explanation: `Topic sentence, supporting details, conclusion. That's the paragraph recipe! Topic opens. Details support. Conclusion wraps up.` },
             { id: `l13-q2`, format: `multiple-choice`,
               question: `What does a TOPIC SENTENCE do?`,
-              options: [`Tells the reader what the paragraph is about`, `Ends the paragraph`, `Has only one letter`, `Has nothing to do with anything`],
+              options: [`Tells the reader what the paragraph is about`, `Ends the paragraph`, `Has only one letter`, `Is at the bottom`],
               correctIndex: 0,
-              explanation: `The topic sentence tells the reader what the paragraph is about. It's the opener. The announcement. The headline for the paragraph.` },
+              explanation: `The topic sentence tells the reader what the paragraph is about. It's the opener — the top bread of the sandwich!` },
             { id: `l13-q3`, format: `multiple-choice`,
               question: `What do SUPPORTING DETAILS do?`,
-              options: [`They distract from the topic`, `They support the topic sentence with facts, reasons, or examples`, `They have nothing to do with the topic`, `They're decoration`],
+              options: [`They have nothing to do with the topic`, `They support the topic sentence with reasons or examples`, `They distract the reader`, `They are decoration`],
               correctIndex: 1,
-              explanation: `Supporting details support the topic sentence with facts, reasons, or examples. They're the proof. They make the paragraph believable.` },
+              explanation: `Supporting details support the topic sentence with reasons or examples. They're the proof. They're the filling of the sandwich!` },
             { id: `l13-q4`, format: `true-false`,
               question: `The conclusion is the LAST sentence and wraps the paragraph up.`,
               correctAnswer: true,
-              explanation: `True! The conclusion is the final sentence. It loops back to the topic and wraps things up. Makes the paragraph feel finished.` },
-            { id: `l13-q5`, format: `fill-blank`,
-              question: `A paragraph is the ___ block of all writing.`,
-              options: [`building`, `swimming`, `pizza`, `sleeping`],
-              correctIndex: 0,
-              explanation: `Building! The paragraph is the building block of all writing. Master paragraphs, and you can build stories, reports, essays, and books.` },
-            { id: `l13-q6`, format: `multiple-choice`,
-              question: `If your topic sentence is "Dogs make wonderful pets," what should the supporting details be about?`,
-              options: [`Pizza`, `Cars`, `Reasons why dogs make wonderful pets — loyal, playful, comforting`, `The weather`],
+              explanation: `True! The conclusion is the final sentence. It loops back to the topic and wraps things up — like the bottom bread!` },
+            { id: `l13-q5`, format: `multiple-choice`,
+              question: `Which of these is a LINKING WORD that connects ideas?`,
+              options: [`Pizza`, `Mountain`, `Because`, `Banana`],
               correctIndex: 2,
-              explanation: `The supporting details should be reasons why dogs make wonderful pets — like they're loyal, playful, and comforting. All details must support the topic sentence.` },
+              explanation: `Because! Linking words like BECAUSE, ALSO, FIRST, and NEXT connect your ideas and help your paragraph flow.` },
+            { id: `l13-q6`, format: `multiple-choice`,
+              question: `If your topic sentence is "Dogs make wonderful pets," what should the details be about?`,
+              options: [`Pizza`, `Cars`, `Reasons dogs are wonderful — loyal, playful, comforting`, `The weather`],
+              correctIndex: 2,
+              explanation: `The details should give reasons why dogs are wonderful pets. All sentences in a paragraph must stay on the SAME topic!` },
           ],
         },
 
         {
           id: `l13-realworld`,
           type: `real-world`,
-          guideText: `Here's something cool, {name}. The paragraph formula doesn't stop in elementary school. PROFESSIONAL WRITERS use it. Journalists. Lawyers. Scientists. Business writers. Even the email your parents wrote to your teacher this morning probably uses topic sentence + details + conclusion. The reason it works is simple — it matches how human brains take in information. Lead. Back up. Wrap up. Once learned, never forgotten.`,
-          familyAdventure: `Tonight at dinner, play PARAGRAPH GAME. One person picks a topic — "my favorite snack" or "the best day ever." Then they speak a TOPIC SENTENCE out loud, then THREE supporting details, then a CONCLUSION. Other family members listen and clap when they hear each part. Take turns. Notice how easy it is to organize thoughts this way.`,
-          creativePrompt: `Write your VERY FIRST paragraph. Pick a topic you love — your pet, your favorite food, a fun place. Write ONE topic sentence. Write THREE supporting details. Write ONE conclusion that loops back. That's 5 sentences total. Read your paragraph aloud. Notice how complete it feels. Save it — it's the first of many.`,
+          guideText: `Here's something cool, {name}! The paragraph recipe doesn't stop with kids. GROWN-UPS use it too! Writers, teachers, doctors — even the emails your parents send today probably use topic + details + conclusion. It works because our brains LIKE this pattern. Tell us what's coming. Back it up. Wrap it up. Once you learn the recipe, you'll use it your whole life!`,
+          familyAdventure: `Tonight at dinner, play the PARAGRAPH GAME! One person picks a topic — like "my favorite snack" or "the best day ever." Then they say a TOPIC SENTENCE out loud, then THREE supporting details, then a CONCLUSION. Other family members listen and clap when they hear each part. Take turns. Notice how easy it is to organize your thoughts this way!`,
+          creativePrompt: `Write your VERY FIRST paragraph! Pick a topic you love — your pet, your favorite food, a place you like to go.
+
+JUST STARTING? Write 3 sentences. ONE topic sentence + ONE detail + ONE conclusion.
+
+READY FOR MORE? Write 5 sentences. ONE topic + THREE details + ONE conclusion.
+
+Use these starters if you want: "My favorite ___ is ___." "First, ___." "Also, ___." "That's why I love ___!"
+
+Read your paragraph out loud. Save it — it's the first of MANY!`,
         },
 
         {
           id: `l13-celebration`,
           type: `celebration`,
-          message: `Wonderful, {name}! You are now officially a WRITER. You know the paragraph formula — topic sentence, supporting details, conclusion. The same formula adults use for everything from emails to reports to articles. This is the foundation of all writing. From here on, every writing skill builds on this. I'm proud of you. Thank you for journeying with me.`,
+          message: `Wonderful, {name}! You are officially a WRITER! You learned the paragraph recipe — topic sentence, supporting details, conclusion. This recipe works for stories, for facts, AND for opinions. You'll use it in every writing lesson coming up. This is the foundation of ALL writing. Quill is so proud of you!`,
           badge: `paragraph-explorer`,
           badgeName: `Paragraph Explorer`,
           xpEarned: 50,
@@ -246,5 +258,5 @@ if (import.meta.env?.DEV) {
   const mags  = ELA_L13.lessons[0].screens.filter(s => s.type === 'magazine').length;
   const game  = ELA_L13.lessons[0].screens.find(s => s.type === 'interactive')?.items?.length ?? 0;
   const quiz  = ELA_L13.lessons[0].screens.find(s => s.type === 'quiz')?.questions?.length ?? 0;
-  console.log(`[LESSON-ELA-L13] Loaded: "Writing Paragraphs: Topic, Details, and Conclusion" with ${mags} magazine sections, ${game} game pairs, ${quiz} quiz questions`);
+  console.log(`[LESSON-ELA-L13] Loaded: "Writing Paragraphs" with ${mags} magazine sections, ${game} game items, ${quiz} quiz questions`);
 }
