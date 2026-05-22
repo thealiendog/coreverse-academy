@@ -70,6 +70,21 @@ const SUBJECT_ID_ALIASES = {
 };
 const resolveSubjectId = (rawId) => SUBJECT_ID_ALIASES[rawId] || rawId;
 
+// ── Upper Explorer (ages 9-10) new-format lesson routing ─────────────────────
+// Lesson IDs here route to /upper-explorer/:subjectId/:lessonId.
+// Add IDs as UE screen files are authored (one per wave).
+const NEW_FORMAT_UE_LESSONS = {
+  // Social Studies UE — L01 wired; remaining added as screen files are authored
+  'social_studies': ['social-studies-9-10-01'],
+};
+
+function getUELessonId(subjectId, level, index) {
+  if (subjectId === 'social_studies' && level === 3) {
+    return `social-studies-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  return null;
+}
+
 // ── New-format lesson routing ─────────────────────────────────────────────────
 // Add a lesson ID here when it's been converted to the screen-based format.
 // Its card will then route to /explorer/:subjectId/:lessonId instead of /lesson/*.
@@ -232,11 +247,21 @@ export default function SubjectView() {
     if (!hasContent) return;
     if (!child) { navigate('/child/select'); return; }
     const canonicalId = resolveSubjectId(subjectId);
+
+    // Check UE screen-based format first (level 3)
+    const ueId = getUELessonId(canonicalId, level, i);
+    if (ueId && NEW_FORMAT_UE_LESSONS[canonicalId]?.includes(ueId)) {
+      navigate(`/upper-explorer/${canonicalId}/${ueId}`);
+      return;
+    }
+
+    // Check Explorer screen-based format (level 2)
     const lessonId = getExplorerLessonId(canonicalId, level, i);
     if (lessonId && NEW_FORMAT_LESSONS[canonicalId]?.includes(lessonId)) {
       navigate(`/explorer/${canonicalId}/${lessonId}`);
       return;
     }
+
     navigate(`/child/lesson/${subjectId}/${i}?level=${level}`);
   }
 

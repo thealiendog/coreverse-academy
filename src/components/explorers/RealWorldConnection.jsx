@@ -41,6 +41,15 @@ export default function RealWorldConnection({
   const isCreativeObj = cpRaw && typeof cpRaw === 'object';
   const creativePrompt = isCreativeObj ? (cpRaw.intro || '') : (cpRaw || '');
 
+  const tiers     = isCreativeObj && cpRaw.open ? ['floor', 'stretch', 'open'] : ['floor', 'stretch'];
+  const tierLabel = (t) => {
+    if (isCreativeObj && cpRaw.open) {
+      if (t === 'floor')   return '5 sentences';
+      if (t === 'stretch') return '8–10 sentences';
+      return 'Open ended';
+    }
+    return t === 'floor' ? 'Write 3 sentences' : 'Write 5 sentences';
+  };
   const [creativeLevel, setCreativeLevel] = useState('floor');
   const [writeText,     setWriteText]     = useState('');
 
@@ -106,24 +115,24 @@ export default function RealWorldConnection({
 
               {/* Level toggle */}
               <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
-                {['floor', 'stretch'].map(level => (
+                {tiers.map(tier => (
                   <button
-                    key={level}
-                    onClick={() => setCreativeLevel(level)}
+                    key={tier}
+                    onClick={() => setCreativeLevel(tier)}
                     style={{
                       flex: 1,
                       padding: '8px 0',
                       borderRadius: 10,
-                      border: `2px solid ${creativeLevel === level ? '#A78BFA' : '#A78BFA44'}`,
-                      background: creativeLevel === level ? 'rgba(167,139,250,0.2)' : 'transparent',
-                      color: creativeLevel === level ? '#A78BFA' : 'rgba(255,255,255,0.5)',
+                      border: `2px solid ${creativeLevel === tier ? '#A78BFA' : '#A78BFA44'}`,
+                      background: creativeLevel === tier ? 'rgba(167,139,250,0.2)' : 'transparent',
+                      color: creativeLevel === tier ? '#A78BFA' : 'rgba(255,255,255,0.5)',
                       fontWeight: 700,
                       fontSize: '0.85rem',
                       cursor: 'pointer',
                       transition: 'all 0.12s',
                     }}
                   >
-                    {level === 'floor' ? 'Write 3 sentences' : 'Write 5 sentences'}
+                    {tierLabel(tier)}
                   </button>
                 ))}
               </div>

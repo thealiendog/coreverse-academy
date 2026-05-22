@@ -46,7 +46,8 @@ import ChildDashboard  from './pages/ChildDashboard';
 import SubjectView     from './pages/SubjectView';
 import LessonPlayer         from './pages/LessonPlayer';
 import GameLessonPlayer     from './components/games/GameLessonPlayer';
-import ExplorerLessonPlayer from './components/explorers/ExplorerLessonPlayer';
+import ExplorerLessonPlayer      from './components/explorers/ExplorerLessonPlayer';
+import UpperExplorerLessonPlayer from './components/explorers/UpperExplorerLessonPlayer';
 import TemplateTest         from './pages/TemplateTest';
 
 // Dispatches to GameLessonPlayer for Little Stars (?level=1) lessons
@@ -95,6 +96,9 @@ export default function App() {
 
         {/* Explorers engine (ages 6-8) */}
         <Route path="/explorer/:subjectId/:lessonId" element={<ErrorBoundary><ExplorerLessonPlayer /></ErrorBoundary>} />
+
+        {/* Upper Explorers engine (ages 9-10) */}
+        <Route path="/upper-explorer/:subjectId/:lessonId" element={<ErrorBoundary><UpperExplorerLessonPlayer /></ErrorBoundary>} />
 
         {/* Dev: template testing */}
         <Route path="/template-test" element={<TemplateTest />} />
