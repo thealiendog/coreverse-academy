@@ -289,8 +289,18 @@ export default function SubjectView() {
 
         {/* Subject header */}
         <div className="text-center mb-10">
-          <div className="mb-4 flex justify-center" style={{ filter: `drop-shadow(0 0 8px ${s.color}60)` }}>
-            <AnimalIcon subjectId={subjectId} color={s.color} size={88} />
+          <div className="mb-4 flex justify-center">
+            <img
+              src={guideAvatar.image}
+              alt={guideAvatar.name}
+              style={{
+                width: 88, height: 88,
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: `3px solid ${s.color}55`,
+                boxShadow: `0 0 24px ${s.color}55`,
+              }}
+            />
           </div>
           <h1 className="text-4xl font-semibold text-white mb-3" style={{ fontFamily: 'Georgia, serif' }}>
             {s.label}

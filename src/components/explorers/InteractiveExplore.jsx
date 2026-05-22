@@ -230,9 +230,9 @@ export default function InteractiveExplore({
           aspect-ratio: 1 / 1;
           min-height: 180px;
         }
-        /* Bucket buttons — flex:1 forces all 4 to identical height regardless of label length */
-        .game-bucket       { flex: 1; width: 100%; min-height: 80px; padding: 16px 12px; text-align: center; }
-        .game-bucket-label { font-size: 1.5rem; font-weight: 800; text-align: center; }
+        /* Bucket buttons */
+        .game-bucket       { min-height: 70px; padding: 12px 10px; text-align: center; }
+        .game-bucket-label { font-size: 1.2rem; font-weight: 800; text-align: center; width: 100%; word-break: break-word; overflow-wrap: break-word; line-height: 1.2; }
         /* Column headers */
         .game-col-header   { font-size: 0.875rem; letter-spacing: 0.08em; }
         /* Sage instruction bar — most important text on screen, tell kid how to play */
@@ -242,7 +242,7 @@ export default function InteractiveExplore({
         @media (min-width: 768px) {
           .game-item            { min-height: 220px; }
           .game-bucket          { min-height: 100px; padding: 20px 12px; }
-          .game-bucket-label    { font-size: 1.875rem; text-align: center; }
+          .game-bucket-label    { font-size: 1.5rem; }
           .game-col-header      { font-size: 1rem; }
           .game-instruction     { font-size: 1.5rem; }
           .game-sage-avatar     { width: 72px; height: 72px; }
@@ -371,14 +371,27 @@ export default function InteractiveExplore({
           })}
         </div>
 
-        {/* Right column — feeling labels (buckets) */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: n === 4 ? 'row' : 'column', flexWrap: n === 4 ? 'wrap' : 'nowrap', gap: 8, alignContent: 'flex-start' }}>
-          {shuffledBuckets.map(bucket => {
+        {/* Right column — bucket labels */}
+        {/* n≥3: two-column wrap layout so labels have room to breathe.
+              n=3 → 2+1 (last bucket auto-centered via margin).
+              n=4 → 2×2.
+              n≤2: single column, buckets fill height equally. */}
+        <div style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: n >= 3 ? 'row' : 'column',
+          flexWrap:      n >= 3 ? 'wrap' : 'nowrap',
+          gap: 8,
+          alignContent: 'flex-start',
+        }}>
+          {shuffledBuckets.map((bucket, idx) => {
             // Bucket is "done" when every item that maps to it has been matched
             const bucketItems = items.filter(it => it.correctMatch === bucket.id);
             const locked   = bucketItems.length > 0 && bucketItems.every(it => lockedPairs.has(it.id));
             const shaking  = shakeBucket === bucket.id;
             const isTarget = selectedKey !== null && !locked; // highlight when item is selected
+            // For the lone last bucket in an odd-count grid, center it horizontally
+            const isOddLastItem = n % 2 !== 0 && idx === n - 1;
             return (
               <button
                 key={bucket.id}
@@ -400,9 +413,12 @@ export default function InteractiveExplore({
                   touchAction:    'manipulation',
                   transition:     'border-color 0.14s, background 0.14s',
                   WebkitTapHighlightColor: 'transparent',
-                  flex:           n === 4 ? '0 0 calc(50% - 4px)' : 1,
-                  width:          n === 4 ? 'calc(50% - 4px)' : '100%',
-                  minHeight:      n >= 3 ? 56 : undefined,
+                  // n≥3: 2-col wrap; each bucket is half-width minus gap
+                  flex:           n >= 3 ? '0 0 calc(50% - 4px)' : 1,
+                  width:          n >= 3 ? 'calc(50% - 4px)' : '100%',
+                  // Center the lone last bucket in an odd grid (e.g. 3rd of 3)
+                  marginLeft:     isOddLastItem ? 'auto' : undefined,
+                  marginRight:    isOddLastItem ? 'auto' : undefined,
                 }}
               >
                 {locked ? (
