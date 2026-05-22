@@ -89,14 +89,22 @@ const RULES = {
     ],
   },
   interactive: {
-    required: ['guideText', 'buckets', 'items'],
+    required: ['guideText'],
     forbidden: ['config'],
     checks: [
-      s => Array.isArray(s.items)   || `items must be an array`,
-      s => Array.isArray(s.buckets) || `buckets must be an array`,
-      s => s.items.every(it => 'correctMatch' in it)
+      // investigation format: needs cases + options, not buckets/items
+      s => s.format === 'investigation'
+           ? (Array.isArray(s.cases) || `investigation format must have a cases array`)
+           : true,
+      s => s.format === 'investigation'
+           ? (Array.isArray(s.options) || `investigation format must have an options array`)
+           : true,
+      // drag-identify format (default): needs buckets + items
+      s => s.format === 'investigation' || Array.isArray(s.items)   || `items must be an array`,
+      s => s.format === 'investigation' || Array.isArray(s.buckets) || `buckets must be an array`,
+      s => s.format === 'investigation' || s.items.every(it => 'correctMatch' in it)
            || `all items must have correctMatch (not correctBucket)`,
-      s => s.items.every(it => !('correctBucket' in it))
+      s => s.format === 'investigation' || s.items.every(it => !('correctBucket' in it))
            || `items must not have correctBucket (rename to correctMatch)`,
     ],
   },

@@ -104,6 +104,387 @@ function getGrade(acc) {
   return 'Practice More';
 }
 
+// ── Shared karaoke block renderer ────────────────────────────────────────────
+// Used by InvestigationGame and ReflectionScreen to highlight spoken words.
+function KaraokeText({ text, karaokeWords, karaokeIdx, color }) {
+  if (!text) return null;
+  const sectionWords = text.split(/\s+/).filter(Boolean);
+  const isActive = karaokeWords.length > 0 && karaokeWords.join(' ') === sectionWords.join(' ');
+  const chunks = text.split(/(\s+)/);
+  let wordCount = 0;
+  return chunks.map((chunk, i) => {
+    if (!chunk || /^\s+$/.test(chunk)) return <span key={i}>{chunk}</span>;
+    const idx = wordCount++;
+    const hl  = isActive && idx === karaokeIdx;
+    return (
+      <span key={i} style={{
+        color:      hl ? color : 'inherit',
+        textShadow: hl ? `0 0 14px ${color}99` : 'none',
+        fontWeight: hl ? 700 : 'inherit',
+        transition: 'color 0.08s ease, text-shadow 0.08s ease',
+      }}>{chunk}</span>
+    );
+  });
+}
+
+// ── Investigation game (inline) ───────────────────────────────────────────────
+// Detective mystery flow: intro → 4 cases (one clue at a time) → done.
+// Audio: Atlas reads guideText, each clue on reveal, and feedback after answer.
+function InvestigationGame({
+  screen, guideAvatar, accent, childName, lessonId,
+  onSpeak, onPrewarm, onComplete, onInteractiveComplete,
+  karaokeWords, karaokeIdx, speaking,
+}) {
+  const { guideText = '', options = [], cases = [] } = screen;
+  const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
+
+  // ── Restore saved progress ───────────────────────────────────────────────
+  const storageKey = `investigation_${lessonId}_progress`;
+  const saved = (() => {
+    try { return JSON.parse(localStorage.getItem(storageKey) || 'null'); } catch { return null; }
+  })();
+
+  const [phase,          setPhase]          = useState('intro');
+  const [caseIdx,        setCaseIdx]        = useState(saved?.caseIdx ?? 0);
+  const [revealedClues,  setRevealedClues]  = useState(1);
+  const [showOptions,    setShowOptions]    = useState(false);
+  const [pickedId,       setPickedId]       = useState(null);
+  const [feedbackVisible,setFeedbackVisible]= useState(false);
+  const [caseResults,    setCaseResults]    = useState(saved?.results ?? {});
+  const [btnVisible,     setBtnVisible]     = useState(false);
+
+  const mountedRef = useRef(true);
+  useEffect(() => () => { mountedRef.current = false; }, []);
+
+  const currentCase = cases[caseIdx] || null;
+  const isLastCase  = caseIdx === cases.length - 1;
+
+  // ── Persist progress ─────────────────────────────────────────────────────
+  useEffect(() => {
+    try { localStorage.setItem(storageKey, JSON.stringify({ caseIdx, results: caseResults })); } catch { /* ok */ }
+  }, [caseIdx, caseResults]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Intro mount: speak guideText, prewarm first clue ──────────────────────
+  useEffect(() => {
+    const text = r(guideText);
+    setBtnVisible(false);
+    if (text) {
+      onSpeak?.(text, () => { if (mountedRef.current) setBtnVisible(true); });
+    } else {
+      setBtnVisible(true);
+    }
+    if (cases[0]?.clues?.[0]?.text) onPrewarm?.(cases[0].clues[0].text);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Start / resume a case ────────────────────────────────────────────────
+  function startCase(idx) {
+    setCaseIdx(idx);
+    setRevealedClues(1);
+    setShowOptions(false);
+    setPickedId(null);
+    setFeedbackVisible(false);
+    setBtnVisible(false);
+    setPhase('case');
+    const clue = cases[idx]?.clues?.[0];
+    if (clue?.text) {
+      onSpeak?.(clue.text, () => { if (mountedRef.current) setBtnVisible(true); });
+    } else {
+      setBtnVisible(true);
+    }
+    if (cases[idx]?.clues?.[1]?.text) onPrewarm?.(cases[idx].clues[1].text);
+  }
+
+  // ── Reveal next clue ──────────────────────────────────────────────────────
+  function revealNextClue() {
+    const nextClueIdx = revealedClues; // 0-based index of next clue
+    const clue = currentCase?.clues?.[nextClueIdx];
+    if (!clue) return;
+    setRevealedClues(nextClueIdx + 1);
+    setBtnVisible(false);
+    onSpeak?.(clue.text, () => { if (mountedRef.current) setBtnVisible(true); });
+    const after = currentCase?.clues?.[nextClueIdx + 1];
+    if (after?.text) onPrewarm?.(after.text);
+  }
+
+  // ── Answer a case ─────────────────────────────────────────────────────────
+  function handlePick(optionId) {
+    if (pickedId) return;
+    const correct = optionId === currentCase?.correctAnswer;
+    setPickedId(optionId);
+    setFeedbackVisible(true);
+    setBtnVisible(false);
+    setCaseResults(prev => ({ ...prev, [currentCase.id]: { picked: optionId, correct } }));
+    const feedback = [currentCase.realWorldExample, currentCase.explanation].filter(Boolean).join(' ');
+    if (feedback) {
+      onSpeak?.(feedback, () => { if (mountedRef.current) setBtnVisible(true); });
+    } else {
+      setBtnVisible(true);
+    }
+  }
+
+  // ── Advance to next case or done screen ───────────────────────────────────
+  function advanceCase() {
+    const updatedResults = { ...caseResults, [currentCase.id]: { picked: pickedId, correct: pickedId === currentCase?.correctAnswer } };
+    if (isLastCase) {
+      const correctCount = Object.values(updatedResults).filter(r => r.correct).length;
+      onInteractiveComplete?.({
+        correctCases:  correctCount,
+        totalCases:    cases.length,
+        caseResults:   updatedResults,
+      });
+      try { localStorage.removeItem(storageKey); } catch { /* ok */ }
+      setPhase('done');
+    } else {
+      startCase(caseIdx + 1);
+    }
+  }
+
+  // ── Derived ───────────────────────────────────────────────────────────────
+  const allCluesRevealed = currentCase && revealedClues >= currentCase.clues.length;
+  const correctCount = Object.values(caseResults).filter(r => r.correct).length;
+  const pickedOption = options.find(o => o.id === pickedId);
+  const correctOption = options.find(o => o.id === currentCase?.correctAnswer);
+  const feedbackText  = currentCase
+    ? [currentCase.realWorldExample, currentCase.explanation].filter(Boolean).join(' ')
+    : '';
+
+  // ── Shared styles ─────────────────────────────────────────────────────────
+  const cardBase = {
+    background:   'rgba(255,255,255,0.05)',
+    border:       '1px solid rgba(255,255,255,0.10)',
+    borderRadius: 14,
+    padding:      '14px 16px',
+  };
+  const btn = (color = accent, secondary = false) => ({
+    width:        '100%',
+    padding:      '13px 0',
+    borderRadius: 12,
+    border:       secondary ? `1.5px solid ${color}55` : 'none',
+    background:   secondary ? 'transparent' : color,
+    color:        secondary ? color : '#000',
+    fontWeight:   700,
+    fontSize:     '1rem',
+    cursor:       'pointer',
+    fontFamily:   'inherit',
+    touchAction:  'manipulation',
+    transition:   'opacity 0.12s',
+  });
+
+  // ── INTRO PHASE ───────────────────────────────────────────────────────────
+  if (phase === 'intro') {
+    return (
+      <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+        {/* Atlas guideText */}
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+          <img
+            src={guideAvatar?.image || '/avatars/atlas.png'} alt=""
+            style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${accent}`, flexShrink: 0 }}
+          />
+          <div style={{ ...cardBase, flex: 1, fontSize: '1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.65 }}>
+            <KaraokeText text={r(guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+          </div>
+        </div>
+
+        {/* Case count preview */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
+          {cases.map((_, i) => (
+            <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: `${accent}44`, border: `2px solid ${accent}66` }} />
+          ))}
+        </div>
+
+        {btnVisible && (
+          <button onClick={() => startCase(caseIdx)} style={btn(accent)}>
+            Start Investigation
+          </button>
+        )}
+        {!btnVisible && (
+          <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.25)', fontSize: '0.85rem' }}>
+            {speaking ? 'Atlas is briefing you...' : 'Loading...'}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── DONE PHASE ────────────────────────────────────────────────────────────
+  if (phase === 'done') {
+    const total = cases.length;
+    const finalCorrect = Object.values(caseResults).filter(r => r.correct).length;
+    return (
+      <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px', display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ fontSize: '3rem' }}>🔎</div>
+        <div style={{ textAlign: 'center' }}>
+          <h2 style={{ color: '#fff', fontWeight: 800, fontSize: '1.4rem', margin: '0 0 8px' }}>Investigation complete!</h2>
+          <p style={{ color: accent, fontWeight: 700, fontSize: '1.1rem', margin: '0 0 4px' }}>
+            {finalCorrect} of {total} cases correctly identified
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, margin: 0, maxWidth: 340 }}>
+            Knowing how to spot these patterns is one of the most important things a citizen can learn. Atlas is impressed regardless.
+          </p>
+        </div>
+        <button onClick={onComplete} style={{ ...btn(accent), maxWidth: 340 }}>
+          Continue to Quiz
+        </button>
+      </div>
+    );
+  }
+
+  // ── CASE PHASE ───────────────────────────────────────────────────────────
+  if (!currentCase) return null;
+  const isCorrectPick = pickedId === currentCase.correctAnswer;
+
+  return (
+    <div style={{ height: '100%', overflowY: 'auto', padding: '16px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+
+      {/* Progress header */}
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+        <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+          Case {caseIdx + 1} of {cases.length}
+        </span>
+        <div style={{ display: 'flex', gap: 5 }}>
+          {cases.map((c, i) => {
+            const done = caseResults[c.id];
+            const isCur = i === caseIdx;
+            return (
+              <div key={i} style={{
+                width: 8, height: 8, borderRadius: '50%',
+                background: done ? (done.correct ? '#10B981' : '#F87171') : isCur ? accent : 'rgba(255,255,255,0.15)',
+                transition: 'background 0.3s',
+              }} />
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Case title */}
+      <h2 style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem', margin: 0 }}>
+        {currentCase.caseTitle}
+      </h2>
+
+      {/* Clue cards */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        {currentCase.clues.slice(0, revealedClues).map((clue, i) => {
+          const isNewest = i === revealedClues - 1;
+          const clueText = clue.text;
+          return (
+            <div
+              key={i}
+              style={{
+                ...cardBase,
+                borderColor: isNewest ? `${accent}55` : 'rgba(255,255,255,0.10)',
+                animation:   isNewest ? 'explorer-enter 0.28s ease both' : 'none',
+              }}
+            >
+              <div style={{ color: accent, fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 6 }}>
+                Clue {i + 1}
+              </div>
+              <p style={{ color: 'rgba(255,255,255,0.88)', fontSize: '0.97rem', lineHeight: 1.65, margin: 0 }}>
+                {isNewest
+                  ? <KaraokeText text={clueText} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+                  : clueText
+                }
+              </p>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Options (after "Make Your Call" tapped) */}
+      {showOptions && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', textAlign: 'center' }}>
+            Your call
+          </div>
+          {options.map(opt => {
+            const isPicked   = pickedId === opt.id;
+            const isCorrectOpt = opt.id === currentCase.correctAnswer;
+            // After picking: highlight correct green, wrong red, others dim
+            const borderColor = feedbackVisible
+              ? isCorrectOpt ? '#10B981' : isPicked ? '#F87171' : 'rgba(255,255,255,0.08)'
+              : `${opt.color}66`;
+            const bgColor = feedbackVisible
+              ? isCorrectOpt ? 'rgba(16,185,129,0.12)' : isPicked ? 'rgba(248,113,113,0.10)' : 'rgba(255,255,255,0.02)'
+              : `${opt.color}12`;
+            const opacity = feedbackVisible && !isCorrectOpt && !isPicked ? 0.4 : 1;
+            return (
+              <button
+                key={opt.id}
+                disabled={!!pickedId}
+                onClick={() => handlePick(opt.id)}
+                style={{
+                  width:        '100%',
+                  padding:      '14px 16px',
+                  borderRadius: 14,
+                  border:       `2px solid ${borderColor}`,
+                  background:   bgColor,
+                  cursor:       pickedId ? 'default' : 'pointer',
+                  opacity,
+                  textAlign:    'left',
+                  transition:   'border-color 0.2s, background 0.2s, opacity 0.2s',
+                  fontFamily:   'inherit',
+                  touchAction:  'manipulation',
+                }}
+              >
+                <div style={{ color: feedbackVisible ? (isCorrectOpt ? '#10B981' : isPicked ? '#F87171' : opt.color) : opt.color, fontWeight: 800, fontSize: '1rem', marginBottom: 3 }}>
+                  {opt.label}
+                  {feedbackVisible && isCorrectOpt && <span style={{ marginLeft: 8 }}>✓</span>}
+                  {feedbackVisible && isPicked && !isCorrectOpt && <span style={{ marginLeft: 8 }}>✗</span>}
+                </div>
+                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.85rem', lineHeight: 1.4 }}>
+                  {opt.description}
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Feedback panel */}
+      {feedbackVisible && (
+        <div style={{
+          ...cardBase,
+          borderColor:  isCorrectPick ? '#10B981' : '#F87171',
+          background:   isCorrectPick ? 'rgba(16,185,129,0.08)' : 'rgba(248,113,113,0.06)',
+          animation:    'explorer-enter 0.3s ease both',
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+            <span style={{ fontSize: '1.4rem' }}>{isCorrectPick ? '✅' : '🔍'}</span>
+            <span style={{ fontWeight: 800, fontSize: '1rem', color: isCorrectPick ? '#10B981' : '#F59E0B' }}>
+              {isCorrectPick ? 'Got it!' : `Not quite — it's ${correctOption?.label}`}
+            </span>
+          </div>
+          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.92rem', lineHeight: 1.65, margin: 0 }}>
+            <KaraokeText text={feedbackText} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={isCorrectPick ? '#10B981' : '#F59E0B'} />
+          </p>
+        </div>
+      )}
+
+      {/* Action buttons */}
+      {!feedbackVisible && !showOptions && btnVisible && allCluesRevealed && (
+        <button onClick={() => setShowOptions(true)} style={btn(accent)}>
+          Make Your Call
+        </button>
+      )}
+      {!feedbackVisible && !showOptions && btnVisible && !allCluesRevealed && (
+        <button onClick={revealNextClue} style={btn(accent, true)}>
+          Next clue ({revealedClues} of {currentCase.clues.length} revealed)
+        </button>
+      )}
+      {!feedbackVisible && (speaking || !btnVisible) && (
+        <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.25)', fontSize: '0.85rem', padding: '4px 0' }}>
+          {speaking ? 'Atlas is reading...' : ''}
+        </div>
+      )}
+      {feedbackVisible && btnVisible && (
+        <button onClick={advanceCase} style={btn(accent)}>
+          {isLastCase ? 'Finish Investigation' : `Next case →`}
+        </button>
+      )}
+
+    </div>
+  );
+}
+
 // ── Reflection screen (inline) ───────────────────────────────────────────────
 // Shows Atlas guideText, 4 prompt cards, optional textarea, Save & Continue.
 function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, onComplete }) {
@@ -1066,7 +1447,26 @@ export default function UpperExplorerLessonPlayer() {
       case 'welcome':    return <ExplorerWelcomeScreen {...commonProps} />;
       case 'magazine':   return <MagazineScreen        {...commonProps} />;
       case 'story-beat': return <StoryBeatScreen       {...commonProps} />;
-      case 'interactive':return <InteractiveExplore    {...commonProps} />;
+      case 'interactive':
+        if (screen.format === 'investigation') {
+          return (
+            <InvestigationGame
+              screen={screen}
+              guideAvatar={guideAvatar}
+              accent={accent}
+              childName={childName}
+              lessonId={lessonId}
+              onSpeak={speak}
+              onPrewarm={prewarmAudio}
+              onComplete={goNext}
+              onInteractiveComplete={onInteractiveComplete}
+              karaokeWords={karaokeWords}
+              karaokeIdx={karaokeIdx}
+              speaking={speaking}
+            />
+          );
+        }
+        return <InteractiveExplore {...commonProps} />;
       case 'quiz':       return <MasteryQuiz           {...commonProps} />;
       case 'reflection': return (
         <ReflectionScreen
