@@ -36,6 +36,7 @@ export default function InteractiveExplore({
     items.map((item, idx) => item.id ? item : { ...item, id: item.image ?? String(idx) })
   ));
   const [shuffledBuckets] = useState(() => shuffle([...buckets]));
+  const n = shuffledBuckets.length;
 
   const [selectedKey,   setSelectedKey]   = useState(null);   // id of selected item
   const [speakingItemId, setSpeakingItemId] = useState(null); // id of item whose label is currently playing
@@ -371,7 +372,7 @@ export default function InteractiveExplore({
         </div>
 
         {/* Right column — feeling labels (buckets) */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: n === 4 ? 'row' : 'column', flexWrap: n === 4 ? 'wrap' : 'nowrap', gap: 8, alignContent: 'flex-start' }}>
           {shuffledBuckets.map(bucket => {
             // Bucket is "done" when every item that maps to it has been matched
             const bucketItems = items.filter(it => it.correctMatch === bucket.id);
@@ -399,6 +400,9 @@ export default function InteractiveExplore({
                   touchAction:    'manipulation',
                   transition:     'border-color 0.14s, background 0.14s',
                   WebkitTapHighlightColor: 'transparent',
+                  flex:           n === 4 ? '0 0 calc(50% - 4px)' : 1,
+                  width:          n === 4 ? 'calc(50% - 4px)' : '100%',
+                  minHeight:      n >= 3 ? 56 : undefined,
                 }}
               >
                 {locked ? (

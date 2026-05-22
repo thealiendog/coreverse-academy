@@ -1069,12 +1069,14 @@ export default function ExplorerLessonPlayer() {
     const nextScreen = screens[nextIdx];
     if (!nextScreen || nextScreen.type !== 'real-world') return;
     const r = t => (t || '').replace(/\{name\}/g, childName);
+    const cpRaw2   = nextScreen.creativePrompt;
+    const cpAudio2 = cpRaw2 && typeof cpRaw2 === 'object' ? (cpRaw2.intro || '') : (cpRaw2 || '');
     const toPrewarm = [
       r(nextScreen.guideText),
       'Family Adventure',
       nextScreen.familyAdventure || '',
       'Create Something',
-      nextScreen.creativePrompt  || '',
+      cpAudio2,
     ].filter(Boolean);
     console.log('[PREWARM] Last quiz question — prefetching RealWorldConnection audio');
     toPrewarm.forEach(t => prewarmAudio(t));
@@ -1337,7 +1339,8 @@ export default function ExplorerLessonPlayer() {
       //   → creativePrompt description (karaoke)
       const guideText       = r(screen.guideText);
       const familyAdventure = screen.familyAdventure || '';
-      const creativePrompt  = screen.creativePrompt  || '';
+      const cpRaw           = screen.creativePrompt;
+      const creativePrompt  = cpRaw && typeof cpRaw === 'object' ? (cpRaw.intro || '') : (cpRaw || '');
 
       speak(guideText, () => {
         if (cancelled) return;

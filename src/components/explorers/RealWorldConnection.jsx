@@ -1,6 +1,7 @@
 // RealWorldConnection — Phase 5: family adventure + creative prompt
 // Karaoke highlight active word in whichever section is currently being spoken.
-import { useEffect } from 'react';
+// creativePrompt may be a plain string OR an object { intro, floor, stretch, frames[] }
+import { useState, useEffect } from 'react';
 
 // Render a text block with per-word karaoke. Determines if THIS section is active
 // by comparing the joined karaokeWords against this section's word list.
@@ -35,7 +36,13 @@ export default function RealWorldConnection({
   const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
   const guideText       = r(screen.guideText);
   const familyAdventure = screen.familyAdventure || '';
-  const creativePrompt  = screen.creativePrompt  || '';
+
+  const cpRaw         = screen.creativePrompt;
+  const isCreativeObj = cpRaw && typeof cpRaw === 'object';
+  const creativePrompt = isCreativeObj ? (cpRaw.intro || '') : (cpRaw || '');
+
+  const [creativeLevel, setCreativeLevel] = useState('floor');
+  const [writeText,     setWriteText]     = useState('');
 
   // Karaoke log — title sections log every word, body sections every 5th word
   useEffect(() => {
@@ -80,8 +87,8 @@ export default function RealWorldConnection({
         </div>
       )}
 
-      {/* Creative Prompt with karaoke */}
-      {creativePrompt && (
+      {/* Creative Prompt */}
+      {(creativePrompt || isCreativeObj) && (
         <div className="real-world-card" style={{ background: 'rgba(167,139,250,0.1)', border: '1.5px solid #A78BFA44', borderRadius: 16, padding: '18px 16px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
             <span style={{ fontSize: '1.4rem' }}>✏️</span>
@@ -89,9 +96,97 @@ export default function RealWorldConnection({
               {renderKaraokeBlock('Create Something', karaokeWords, karaokeIdx, '#A78BFA')}
             </span>
           </div>
-          <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
-            {renderKaraokeBlock(creativePrompt, karaokeWords, karaokeIdx, '#A78BFA')}
-          </p>
+
+          {isCreativeObj ? (
+            <>
+              {/* Intro paragraph — read aloud by guide, karaoke active */}
+              <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: '0 0 14px' }}>
+                {renderKaraokeBlock(creativePrompt, karaokeWords, karaokeIdx, '#A78BFA')}
+              </p>
+
+              {/* Level toggle */}
+              <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
+                {['floor', 'stretch'].map(level => (
+                  <button
+                    key={level}
+                    onClick={() => setCreativeLevel(level)}
+                    style={{
+                      flex: 1,
+                      padding: '8px 0',
+                      borderRadius: 10,
+                      border: `2px solid ${creativeLevel === level ? '#A78BFA' : '#A78BFA44'}`,
+                      background: creativeLevel === level ? 'rgba(167,139,250,0.2)' : 'transparent',
+                      color: creativeLevel === level ? '#A78BFA' : 'rgba(255,255,255,0.5)',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.12s',
+                    }}
+                  >
+                    {level === 'floor' ? 'Write 3 sentences' : 'Write 5 sentences'}
+                  </button>
+                ))}
+              </div>
+
+              {/* Level instruction */}
+              {cpRaw[creativeLevel] && (
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', lineHeight: 1.6, margin: '0 0 14px' }}>
+                  {cpRaw[creativeLevel]}
+                </p>
+              )}
+
+              {/* Sentence frames as tappable insert cards */}
+              {Array.isArray(cpRaw.frames) && cpRaw.frames.length > 0 && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
+                  {cpRaw.frames.map((frame, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setWriteText(prev => prev ? `${prev} ${frame}` : frame)}
+                      style={{
+                        textAlign: 'left',
+                        padding: '8px 12px',
+                        borderRadius: 10,
+                        border: '1.5px solid #A78BFA55',
+                        background: 'rgba(167,139,250,0.08)',
+                        color: 'rgba(255,255,255,0.75)',
+                        fontSize: '0.88rem',
+                        cursor: 'pointer',
+                        fontStyle: 'italic',
+                        transition: 'background 0.1s',
+                      }}
+                    >
+                      + {frame}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Writing textarea */}
+              <textarea
+                value={writeText}
+                onChange={e => setWriteText(e.target.value)}
+                placeholder="Tap a sentence starter above, or write your own here..."
+                rows={5}
+                style={{
+                  width: '100%',
+                  boxSizing: 'border-box',
+                  borderRadius: 10,
+                  border: '1.5px solid #A78BFA55',
+                  background: 'rgba(255,255,255,0.05)',
+                  color: 'rgba(255,255,255,0.9)',
+                  fontSize: '0.92rem',
+                  lineHeight: 1.6,
+                  padding: '10px 12px',
+                  resize: 'vertical',
+                  outline: 'none',
+                }}
+              />
+            </>
+          ) : (
+            <p className="real-world-text" style={{ color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, fontSize: '0.97rem', margin: 0 }}>
+              {renderKaraokeBlock(creativePrompt, karaokeWords, karaokeIdx, '#A78BFA')}
+            </p>
+          )}
         </div>
       )}
     </div>
