@@ -44,7 +44,7 @@ import SCI_UPPEREXPLORERS            from '../data/sci_upperexplorers_adapter';
 import SCI_VOYAGERS                  from '../data/sci_voyagers_adapter';
 import SS_LITTLESTARS                from '../data/ss_littlestars_adapter';
 import SS_EXPLORERS                  from '../data/ss_explorers_adapter';
-import SS_UPPEREXPLORERS             from '../data/ss_upperexplorers_adapter';
+import SS_UPPEREXPLORERS_UE          from '../data/ss_upperexplorers_ue_adapter';
 import SS_VOYAGERS                   from '../data/ss_voyagers_adapter';
 import INNERWORLD_LITTLESTARS        from '../data/innerworld_littlestars_adapter';
 import COSMOS_LITTLESTARS            from '../data/cosmos_littlestars_adapter';
@@ -81,6 +81,10 @@ const NEW_FORMAT_UE_LESSONS = {
     'social-studies-9-10-03',
     'social-studies-9-10-04',
     'social-studies-9-10-05',
+    'social-studies-9-10-06',
+    'social-studies-9-10-07',
+    'social-studies-9-10-08',
+    'social-studies-9-10-09',
   ],
 };
 
@@ -226,7 +230,7 @@ export default function SubjectView() {
     : subjectId === 'wellness'                   ? LIFEWELLNESS_UPPEREXPLORERS
     : subjectId === 'creative-arts'              ? CREATIVEARTS_UPPEREXPLORERS
     : subjectId === 'history'                    ? HISTORYWORLD_UPPEREXPLORERS
-    : subjectId === 'ss'                         ? SS_UPPEREXPLORERS
+    : subjectId === 'ss'                         ? SS_UPPEREXPLORERS_UE
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
   const l4Lessons = subjectId === 'ela'          ? ELA_VOYAGERS
