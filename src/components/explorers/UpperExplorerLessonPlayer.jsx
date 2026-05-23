@@ -500,28 +500,29 @@ function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak
   const r = t => (t || '').replace(/\{name\}/g, childName);
   const { decisions = [], completionMessage = '', scenarioTitle = '' } = screen;
 
-  const [phase, setPhase]         = useState('intro');   // 'intro' | 'decision' | 'done'
+  const [phase, setPhase]           = useState('intro');   // 'intro' | 'decision' | 'done'
   const [decisionIdx, setDecisionIdx] = useState(0);
-  const [pickedId, setPickedId]   = useState(null);
+  const [pickedId, setPickedId]     = useState(null);
   const [feedbackVisible, setFeedbackVisible] = useState(false);
-  const [btnVisible, setBtnVisible] = useState(false);
-  const [doneResults, setDoneResults] = useState([]);
+  const [beginBtnVisible, setBeginBtnVisible] = useState(false);
+  const [nextBtnVisible, setNextBtnVisible]   = useState(false);
   const hasSpoken = useRef(false);
 
   // Intro: speak guideText then show Begin button
   useEffect(() => {
     if (phase !== 'intro' || hasSpoken.current) return;
     hasSpoken.current = true;
-    onSpeak(r(screen.guideText), () => setBtnVisible(true));
+    onSpeak(r(screen.guideText), () => setBeginBtnVisible(true));
   }, [phase]);
 
   function startDecision(idx) {
     setDecisionIdx(idx);
     setPickedId(null);
     setFeedbackVisible(false);
+    setNextBtnVisible(false);
     setPhase('decision');
     const d = decisions[idx];
-    if (d) onSpeak(`${d.situation} ${d.context}`);
+    if (d) onSpeak(r(`${d.situation} ${d.context}`));
   }
 
   function handlePick(optId) {
@@ -529,7 +530,7 @@ function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak
     setPickedId(optId);
     setFeedbackVisible(true);
     const d = decisions[decisionIdx];
-    if (d) onSpeak(r(d.explanation));
+    if (d) onSpeak(r(d.explanation), () => setNextBtnVisible(true));
   }
 
   function advanceDecision() {
@@ -537,7 +538,6 @@ function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak
     if (next < decisions.length) {
       startDecision(next);
     } else {
-      setDoneResults(doneResults);
       setPhase('done');
       onSpeak(r(completionMessage));
     }
@@ -566,7 +566,7 @@ function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak
           <KaraokeText text={r(screen.guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
         </p>
       </div>
-      {btnVisible && (
+      {beginBtnVisible && (
         <button onClick={() => startDecision(0)} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
           Begin
         </button>
@@ -587,66 +587,69 @@ function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak
     </div>
   );
 
-  // Decision phase
+  // Decision phase — scrollable column layout so long explanations + button are always reachable
   return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px 16px 48px', boxSizing: 'border-box' }}>
-      {/* Progress dots */}
-      <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
-        {decisions.map((_, i) => (
-          <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i < decisionIdx ? '#34D399' : i === decisionIdx ? accent : '#2a1a4a', border: `2px solid ${i <= decisionIdx ? accent : '#2a1a4a'}`, transition: 'background 0.3s' }} />
-        ))}
-      </div>
+    <div style={{ background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', minHeight: '100vh', boxSizing: 'border-box' }}>
+      <div style={{ maxWidth: '480px', margin: '0 auto', padding: '20px 16px 56px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
-      {/* Situation card */}
-      <div style={{ ...cardBase, maxWidth: '480px', width: '100%', border: `1px solid ${accent}55`, marginBottom: '16px' }}>
-        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision {decisionIdx + 1} of {decisions.length}</div>
-        <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>{d.situation}</div>
-        <p style={{ color: '#b8a9d4', fontSize: '0.88rem', lineHeight: 1.55, margin: 0 }}>
-          <KaraokeText text={`${d.situation} ${d.context}`} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
-        </p>
-      </div>
+        {/* Progress dots */}
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+          {decisions.map((_, i) => (
+            <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i < decisionIdx ? '#34D399' : i === decisionIdx ? accent : '#2a1a4a', border: `2px solid ${i <= decisionIdx ? accent : '#2a1a4a'}`, transition: 'background 0.3s' }} />
+          ))}
+        </div>
 
-      {/* Option cards */}
-      <div style={{ maxWidth: '480px', width: '100%', marginBottom: '16px' }}>
-        {(d.options || []).map(opt => {
-          const isPicked   = pickedId === opt.id;
-          const isHistoric = opt.id === d.historicalChoice;
-          const dimmed     = pickedId && !isPicked;
-          let borderColor  = '#2a1a4a';
-          if (pickedId) borderColor = isPicked ? (isPicked === isHistoric ? '#34D399' : accent) : (feedbackVisible && isHistoric ? '#34D399' : '#2a1a4a');
-          if (isPicked) borderColor = accent;
-          if (feedbackVisible && isHistoric) borderColor = '#34D399';
-          return (
-            <div key={opt.id} onClick={() => handlePick(opt.id)}
-              style={{ ...cardBase, border: `2px solid ${borderColor}`, cursor: pickedId ? 'default' : 'pointer', opacity: dimmed ? 0.45 : 1, transition: 'all 0.2s', marginBottom: '8px' }}>
-              <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.95rem', marginBottom: '6px' }}>{opt.label}</div>
-              <div style={{ color: '#8a7aa8', fontSize: '0.82rem', fontStyle: 'italic' }}>{opt.preview}</div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Feedback panel */}
-      {feedbackVisible && (
-        <div style={{ maxWidth: '480px', width: '100%', background: '#0d1a12', border: '1px solid #34D39955', borderRadius: '14px', padding: '16px 18px', marginBottom: '16px' }}>
-          <div style={{ fontWeight: 700, color: pickedId === d.historicalChoice ? '#34D399' : '#A78BFA', fontSize: '0.95rem', marginBottom: '8px' }}>
-            {pickedId === d.historicalChoice
-              ? '✅ You picked what the Framers did!'
-              : `You picked differently from the Framers. Here's what they chose and why:`}
-          </div>
-          <p style={{ color: '#c4b5e0', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
-            <KaraokeText text={r(d.explanation)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        {/* Situation card */}
+        <div style={{ ...cardBase, width: '100%', border: `1px solid ${accent}55`, marginBottom: '16px' }}>
+          <div style={{ fontSize: '0.7rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision {decisionIdx + 1} of {decisions.length}</div>
+          <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>{d.situation}</div>
+          <p style={{ color: '#b8a9d4', fontSize: '0.88rem', lineHeight: 1.55, margin: 0 }}>
+            <KaraokeText text={r(`${d.situation} ${d.context}`)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
           </p>
         </div>
-      )}
 
-      {/* Next / Finish button — shown only after picking */}
-      {pickedId && !speaking && (
-        <button onClick={advanceDecision}
-          style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66`, marginTop: '8px' }}>
-          {isLast ? 'Finish' : 'Next Decision'}
-        </button>
-      )}
+        {/* Option cards */}
+        <div style={{ width: '100%', marginBottom: '16px' }}>
+          {(d.options || []).map(opt => {
+            const isPicked   = pickedId === opt.id;
+            const isHistoric = opt.id === d.historicalChoice;
+            const dimmed     = pickedId && !isPicked;
+            let borderColor  = '#2a1a4a';
+            if (isPicked) borderColor = accent;
+            if (feedbackVisible && isHistoric) borderColor = '#34D399';
+            return (
+              <div key={opt.id} onClick={() => handlePick(opt.id)}
+                style={{ ...cardBase, border: `2px solid ${borderColor}`, cursor: pickedId ? 'default' : 'pointer', opacity: dimmed ? 0.45 : 1, transition: 'all 0.2s', marginBottom: '8px' }}>
+                <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.95rem', marginBottom: '6px' }}>{opt.label}</div>
+                <div style={{ color: '#8a7aa8', fontSize: '0.82rem', fontStyle: 'italic' }}>{opt.preview}</div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Feedback panel — slides in after pick, full text visible via natural scroll */}
+        {feedbackVisible && (
+          <div style={{ width: '100%', background: '#0d1a12', border: '1px solid #34D39955', borderRadius: '14px', padding: '16px 18px', marginBottom: '20px' }}>
+            <div style={{ fontWeight: 700, color: pickedId === d.historicalChoice ? '#34D399' : '#A78BFA', fontSize: '0.95rem', marginBottom: '8px' }}>
+              {pickedId === d.historicalChoice
+                ? '✅ You picked what the Framers did!'
+                : `You picked differently from the Framers. Here's what they chose and why:`}
+            </div>
+            <p style={{ color: '#c4b5e0', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
+              <KaraokeText text={r(d.explanation)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+            </p>
+          </div>
+        )}
+
+        {/* Next / Finish button — appears after Atlas finishes reading the explanation */}
+        {nextBtnVisible && (
+          <button onClick={advanceDecision}
+            style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+            {isLast ? 'Finish' : 'Next Decision'}
+          </button>
+        )}
+
+      </div>
     </div>
   );
 }
