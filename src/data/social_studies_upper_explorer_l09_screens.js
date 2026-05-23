@@ -1,0 +1,352 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// SOCIAL STUDIES UE  |  L09 — Personal Finance
+// Age band : upper_explorers (9–10)   Guide: atlas
+// Standards: C3 D2.Eco.6.3-5 / D2.Eco.11.3-5
+// CALIBRATED: UE spec v1.1 + game toolkit v1
+// Game format: resource-allocation (You're 16 with $400/month — allocate it)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SOCIAL_STUDIES_UE_L09 = {
+  ageBand: `upper_explorers`,
+  subjectId: `social_studies`,
+  guide: `atlas`,
+
+  lessons: [
+    {
+      id: `social-studies-9-10-09`,
+      title: `Personal Finance`,
+      duration: 23,
+      xpReward: 75,
+      badge: `money-master`,
+      badgeName: `Money Master`,
+
+      screens: [
+        {
+          id: `l09-welcome`,
+          type: `welcome`,
+          guideText: `Hey {name}. We just spent two lessons on how big economic systems work. Now we get personal. Today is about YOUR money — how to think about it, how to make it grow, and how to avoid traps that catch most adults. Honestly, most adults are bad with money. Not because they're dumb. Because nobody ever actually taught them the basics. Today we fix that for you, six years early.`,
+          headline: `Personal Finance`,
+          subtitle: `How to be smart with money, before most people learn`,
+          visual: `/ue-assets/social-studies/l09-welcome.webp`,
+        },
+
+        {
+          id: `l09-mag-1`,
+          type: `magazine`,
+          section: 1,
+          headline: `Income, Expenses, and the Gap Between Them`,
+          paragraphs: [
+            `The first concept in personal finance is the simplest. Income is money coming in. Expenses are money going out. The gap between them — whether positive or negative — is what determines whether you're getting wealthier or going into debt.`,
+            `Income for a kid your age might be allowance, gifts, or what you earn from small jobs. For adults, it's salary, business income, or investments. Expenses include needs (food, housing, transportation) and wants (entertainment, snacks, clothes you don't strictly need).`,
+            `The math is brutally simple. Income greater than expenses = you're getting wealthier over time. Income less than expenses = you're going into debt. There are only two ways to fix a negative gap: earn more, or spend less. Adults often refuse to face this. People who do face it become wealthy.`,
+          ],
+          image: `/ue-assets/social-studies/l09-s1-income-expenses.webp`,
+          imageCaption: `Income minus expenses. The most important number in personal finance.`,
+          vocab: [
+            { word: `income`,
+              definition: `Money coming in — from jobs, allowance, investments, or gifts.`,
+              audioPrompt: `Income is money coming in, {name}. For a kid, this might be allowance, gifts, money from small jobs like babysitting or yardwork. For adults, it's salary from work, money from running a business, or income from investments. Income alone doesn't make someone wealthy — it's how income compares to expenses that matters. Some people with high incomes still go broke. Some people with modest incomes build wealth steadily over years. The habit matters more than the amount.` },
+            { word: `expenses`,
+              definition: `Money going out — what you spend on needs and wants.`,
+              audioPrompt: `Expenses are money going out, {name}. Some are needs — things you have to spend on, like food, rent, transportation. Others are wants — things that are nice but not necessary, like entertainment, snacks, new clothes you don't strictly need. Tracking expenses is one of the most useful habits in personal finance. Most people are shocked when they actually add up what they spend in a month. Awareness alone — just knowing where your money goes — is the first step to controlling it.` },
+          ],
+        },
+
+        {
+          id: `l09-mag-2`,
+          type: `magazine`,
+          section: 2,
+          headline: `Saving and Why It Matters`,
+          paragraphs: [
+            `Saving is the simple act of NOT spending some of your income. You set it aside instead. That money is your safety net, your future house down payment, your college fund, your business startup capital, your emergency reserve.`,
+            `Here's the trick most people miss: saving works best when you save BEFORE you spend. The common mistake is to wait until the end of the month and save whatever's left. There's almost never anything left. The smart move is to take a percentage off the top — say 20 percent — and put it aside immediately. Then spend what remains. This habit is called "pay yourself first."`,
+            `Even small amounts add up over time. Saving fifty dollars a month from age 20 to age 65, if invested wisely, can grow to several hundred thousand dollars. Most adults haven't started yet. If you start understanding this at 9 or 10, you're decades ahead.`,
+          ],
+          image: `/ue-assets/social-studies/l09-s2-saving.webp`,
+          imageCaption: `Pay yourself first. Small amounts, started early, become large amounts.`,
+          vocab: [
+            { word: `saving`,
+              definition: `Setting aside money instead of spending it, usually for future goals or emergencies.`,
+              audioPrompt: `Saving is setting money aside instead of spending it, {name}. It's the foundation of personal finance. Saving lets you handle emergencies, take advantage of opportunities, build toward goals, and eventually become wealthy enough that money worries don't dominate your life. The key habit is "pay yourself first" — set aside some percentage of any income BEFORE you spend on anything else. Most people try to save what's left over and discover nothing's left. Reversing that order is a small change that makes a huge difference over time.` },
+            { word: `budget`,
+              definition: `A plan for how you will spend and save your money over a set period of time.`,
+              audioPrompt: `A budget is a plan for how you'll use your money, {name}. It maps out your income, your expected expenses, and how much you want to save. People who budget tend to spend less on things that don't matter and more on things that do — because they're making choices intentionally rather than just letting money flow wherever. A budget doesn't have to be complicated. It can be as simple as writing down income, needs, wants, and savings targets.` },
+          ],
+        },
+
+        {
+          id: `l09-mag-3`,
+          type: `magazine`,
+          section: 3,
+          headline: `Compound Interest: The Eighth Wonder`,
+          paragraphs: [
+            `Albert Einstein supposedly called compound interest "the eighth wonder of the world." Whether he actually said that, the math is real, and it's one of the most powerful forces in personal finance.`,
+            `Here's how it works. If you put a hundred dollars in an account that earns 10 percent a year, after one year you have a hundred and ten dollars. Easy. But the next year, you earn 10 percent on a HUNDRED AND TEN, not on the original hundred. So you have a hundred and twenty-one. Then 10 percent on that. The earnings start earning their own earnings. Over decades, the snowball gets huge.`,
+            `Real example. Saving and investing one hundred dollars a month from age 25 to age 65 at a 7 percent return turns into about two hundred and sixty thousand dollars. The total amount you actually put in is just forty-eight thousand. The rest — over two hundred thousand dollars — is interest building on interest. Starting earlier makes the snowball way bigger. Starting late makes it almost impossible to catch up.`,
+          ],
+          image: `/ue-assets/social-studies/l09-s3-compound-interest.webp`,
+          imageCaption: `Time and compounding. Started early, becomes huge.`,
+          vocab: [
+            { word: `compound interest`,
+              definition: `Earning interest on your interest — when your earnings start generating their own earnings over time.`,
+              audioPrompt: `Compound interest is earning interest on your interest, {name}. It's how money grows exponentially over time. If you save and invest steadily over decades, compound interest does most of the heavy lifting — you put in a small amount each month, and the returns build on returns. The catch is that compound interest takes TIME to work its magic. Starting at age 20 is dramatically better than starting at age 40. Time is the most valuable asset in compound interest.` },
+            { word: `interest rate`,
+              definition: `The percentage of a borrowed or invested amount that is charged or paid per year.`,
+              audioPrompt: `An interest rate is the percentage you earn on savings or pay on debt per year, {name}. A savings account might pay 4 or 5 percent interest. A credit card might charge 20 percent interest. A mortgage typically charges between 3 and 7 percent. The higher the interest rate on your savings, the faster your money grows. The higher the interest rate on your debt, the faster you fall behind. Interest rates are one of the most important numbers in personal finance.` },
+          ],
+        },
+
+        {
+          id: `l09-mag-4`,
+          type: `magazine`,
+          section: 4,
+          headline: `Debt: The Compound Interest Trap`,
+          paragraphs: [
+            `Compound interest works in the OTHER direction too — and that's how it traps people. When you borrow money and don't pay it back fast enough, the interest builds on itself the same way. Except now you owe MORE every month, not less.`,
+            `Credit card debt is the most famous example. Credit cards typically charge around 20 percent interest. Imagine you owe a thousand dollars and only pay the minimum each month. The interest piles up faster than your payments. After a year, you might owe more than you started with — even though you've been paying. Many adults are trapped in credit card debt for years because they don't realize how the math works.`,
+            `The smart move is to NEVER carry a credit card balance. Pay it off in full every month. Treat credit cards as a convenience for tracking spending, not as a loan. If you wouldn't pay cash for something today, don't put it on a credit card.`,
+          ],
+          image: `/ue-assets/social-studies/l09-s4-debt.webp`,
+          imageCaption: `Compound interest reversed. The trap most adults fall into.`,
+          vocab: [
+            { word: `debt`,
+              definition: `Money you owe to someone else, usually with interest you also have to pay back.`,
+              audioPrompt: `Debt is money you owe to someone else, {name}. It usually comes with interest — extra money you have to pay on top of what you borrowed. Some debt can be useful — like a mortgage to buy a house you'll own for decades. Some debt is dangerous — like high-interest credit card debt that grows faster than you can pay it off. The danger of debt is that compound interest works against you instead of for you. Each month you don't pay it off, the amount owed grows.` },
+            { word: `credit`,
+              definition: `The ability to borrow money now with the agreement to pay it back later, usually with interest.`,
+              audioPrompt: `Credit is the ability to borrow money now and pay it back later, {name}. When you use a credit card, you're using credit — the bank is lending you money for each purchase. Credit can be useful when used carefully. It lets you make large purchases like a car or house without having all the money upfront. But credit always comes with interest — the cost of borrowing. The key is using credit as a tool, not treating borrowed money as income. One way destroys wealth. The other builds it.` },
+          ],
+        },
+
+        // ── RESOURCE ALLOCATION GAME — You're 16 with $400/month ──────────────
+        {
+          id: `l09-game`,
+          type: `interactive`,
+          format: `resource-allocation`,
+          guideText: `Time jump again, {name}. You're 16. You've got a part-time job that brings in $400 a month after taxes. You need to decide what to do with each dollar. Drag the sliders. The total has to add up to exactly $400. When you're done, I'll show you what your choices mean for your future self.`,
+          scenarioTitle: `You're 16. You Make $400 a Month.`,
+          totalBudget: 400,
+          currency: `dollars`,
+          categories: [
+            {
+              id: `savings`,
+              label: `Savings`,
+              emoji: `🏦`,
+              color: `#34D399`,
+              description: `Money you set aside and don't touch. The foundation of everything else.`,
+              min: 0,
+              max: 200,
+              default: 60,
+              outcomes: {
+                low:  { threshold: 40, message: `You're saving almost nothing. You're vulnerable to any emergency, and your future self is starting from zero.` },
+                mid:  { message: `You're saving consistently. By age 18, you'll have a couple thousand saved. Real safety net forming.` },
+                high: { threshold: 120, message: `You're a savings monster. By age 18 you'll have over $5,000 — and if invested, that becomes serious money over decades.` },
+              },
+            },
+            {
+              id: `investing`,
+              label: `Investing`,
+              emoji: `📈`,
+              color: `#A78BFA`,
+              description: `Money in stocks, index funds, or other investments where it can GROW over time through compound interest.`,
+              min: 0,
+              max: 150,
+              default: 40,
+              outcomes: {
+                low:  { threshold: 25, message: `Tiny investment. You won't get the compound interest benefit until you start putting in more.` },
+                mid:  { message: `Solid early investing. Even $40/month from age 16 grows hugely by the time you're 30.` },
+                high: { threshold: 100, message: `You're investing seriously early. The compound interest will be massive — likely six figures by your 30s.` },
+              },
+            },
+            {
+              id: `needs`,
+              label: `Needs`,
+              emoji: `🍎`,
+              color: `#FBBF24`,
+              description: `Things you actually need at 16 — phone bill, gas for the car you drive to work, school supplies, food when out.`,
+              min: 50,
+              max: 200,
+              default: 120,
+              outcomes: {
+                low:  { threshold: 80, message: `You might be cutting corners on things you actually need. Phone gets shut off. Lunch gets skipped.` },
+                mid:  { message: `You're covering your actual needs without overspending. Solid.` },
+                high: { threshold: 170, message: `You're spending a lot on "needs" that might actually be wants. Check if these are really necessary.` },
+              },
+            },
+            {
+              id: `wants`,
+              label: `Wants`,
+              emoji: `🎮`,
+              color: `#0EA5E9`,
+              description: `Fun stuff — going out with friends, games, clothes you don't strictly need, treats.`,
+              min: 0,
+              max: 200,
+              default: 80,
+              outcomes: {
+                low:  { threshold: 25, message: `You're in spartan mode. Smart for the long run, but watch out for burnout.` },
+                mid:  { message: `You're enjoying being 16 while still saving for the future. Balanced.` },
+                high: { threshold: 140, message: `You're spending most of your income on fun. Fine at 16 — but if this becomes a habit, future you will be unhappy.` },
+              },
+            },
+            {
+              id: `giving`,
+              label: `Giving / Charity`,
+              emoji: `❤️`,
+              color: `#EC4899`,
+              description: `Money to causes, charities, or people you want to help.`,
+              min: 0,
+              max: 100,
+              default: 20,
+              outcomes: {
+                low:  { threshold: 5, message: `Not giving anything. Fine choice — but most people who eventually become wealthy started giving small amounts early.` },
+                mid:  { message: `You're building a giving habit. It feels small now, but the habit matters more than the amount.` },
+                high: { threshold: 70, message: `You're giving generously even at 16. Most adults don't give this much by percentage.` },
+              },
+            },
+            {
+              id: `emergency`,
+              label: `Emergency Fund`,
+              emoji: `🚨`,
+              color: `#F87171`,
+              description: `A separate stash for surprise expenses — broken phone, car repair, etc. Separate from regular savings.`,
+              min: 0,
+              max: 100,
+              default: 80,
+              outcomes: {
+                low:  { threshold: 20, message: `No emergency cushion. The first surprise expense will set you back hard.` },
+                mid:  { message: `You're building a cushion. After a year you'll have enough to absorb most emergencies.` },
+                high: { threshold: 80, message: `Strong emergency fund. You'll be ready for almost any surprise.` },
+              },
+            },
+          ],
+          completionMessage: `Look at what you built, {name}. The choices you just made matter. Notice that there's no perfect split — you traded off saving against fun, needs against wants, the present against the future. That's the central problem in personal finance, and you'll be making this exact tradeoff your whole life. The good news: now you know the rules. Most adults are still figuring them out.`,
+        },
+
+        {
+          id: `l09-quiz`,
+          type: `quiz`,
+          guideText: `Test what stuck, {name}.`,
+          questions: [
+            { id: `l09-q1`, format: `multiple-choice`,
+              question: `What's the simplest definition of personal finance?`,
+              options: [
+                `Investing in stocks`,
+                `Money coming in, money going out, and the gap between them`,
+                `Saving everything you earn`,
+                `Becoming a millionaire`,
+              ],
+              correctIndex: 1,
+              explanation: `Personal finance starts with income vs expenses. The gap determines whether you're building wealth or going into debt. The math is simple even if practicing it isn't easy.` },
+            { id: `l09-q2`, format: `multiple-choice`,
+              question: `What does "pay yourself first" mean?`,
+              options: [
+                `Pay your bills before doing anything else`,
+                `Set aside savings BEFORE spending on anything else`,
+                `Hire yourself a financial advisor`,
+                `Pay your boss to keep working`,
+              ],
+              correctIndex: 1,
+              explanation: `"Pay yourself first" means saving comes BEFORE spending, not after. The mistake is waiting until the end of the month to save whatever's left — almost nothing usually is.` },
+            { id: `l09-q3`, format: `multiple-choice`,
+              question: `What is compound interest?`,
+              options: [
+                `Interest you pay to your parents`,
+                `Earning interest on your interest, so your money grows faster over time`,
+                `A type of bank account`,
+                `Tax on savings`,
+              ],
+              correctIndex: 1,
+              explanation: `Compound interest is when your earnings start earning their own earnings. Over decades, it makes a small amount grow into a large amount. It's why starting young matters so much.` },
+            { id: `l09-q4`, format: `true-false`,
+              question: `True or false: Compound interest only works in your favor — it never works against you.`,
+              correctAnswer: false,
+              explanation: `False. Compound interest works in BOTH directions. When you save and invest, it works for you. When you carry debt (especially high-interest debt like credit cards), it works against you and the amount you owe grows over time.` },
+            { id: `l09-q5`, format: `multiple-choice`,
+              question: `What's the smartest way to handle a credit card?`,
+              options: [
+                `Pay only the minimum each month`,
+                `Pay it off in full every single month`,
+                `Use it to buy whatever you want, even if you don't have the cash`,
+                `Never use one`,
+              ],
+              correctIndex: 1,
+              explanation: `Pay it off in full every month. Carrying a balance triggers high interest that compounds against you. Used right, a credit card is a convenience. Used wrong, it's a debt trap.` },
+            { id: `l09-q6`, format: `multiple-choice`,
+              question: `Why does starting to save and invest at age 20 work so much better than starting at age 40?`,
+              options: [
+                `You have more money at 20`,
+                `Compound interest needs TIME to work, and starting earlier gives the snowball way more time to grow`,
+                `Banks pay higher interest to young people`,
+                `It doesn't matter when you start`,
+              ],
+              correctIndex: 1,
+              explanation: `Time is the most powerful ingredient in compound interest. An extra 20 years of growth can mean tens or hundreds of thousands of extra dollars. Starting young is a huge advantage even with small amounts.` },
+            { id: `l09-q7`, format: `multiple-choice`,
+              question: `In the budget game, what was the main lesson?`,
+              options: [
+                `Save everything, spend nothing`,
+                `Spend everything, save nothing`,
+                `Every dollar going to one priority is a dollar not going to another — tradeoffs are everywhere`,
+                `Always borrow to spend more`,
+              ],
+              correctIndex: 2,
+              explanation: `Tradeoffs are the heart of personal finance. Every dollar has many possible uses, and choosing one means giving up the others. That's the same problem governments face with budgets — just on a personal scale.` },
+            { id: `l09-q8`, format: `multiple-choice`,
+              question: `What's the difference between needs and wants?`,
+              options: [
+                `Needs are bigger than wants`,
+                `Needs are things you have to spend on; wants are things that are nice but not necessary`,
+                `Wants are illegal`,
+                `There's no real difference`,
+              ],
+              correctIndex: 1,
+              explanation: `Needs are essentials — food, shelter, transportation, basic clothing. Wants are nice-to-haves — entertainment, fancy versions of things, treats. Many people confuse the two, which leads to overspending.` },
+            ],
+        },
+
+        {
+          id: `l09-reflection`,
+          type: `reflection`,
+          guideText: `One real minute, {name}. Pick a prompt.`,
+          prompts: [
+            { id: `r1`, text: `What's one thing you spend money on that's a "want" you've been calling a "need"?` },
+            { id: `r2`, text: `If you started saving $20 a week starting today, what could you build toward?` },
+            { id: `r3`, text: `In the budget game, which slider was hardest to set? Why?` },
+            { id: `r4`, text: `What's one money habit you'd like to start before you turn 18?` },
+          ],
+        },
+
+        {
+          id: `l09-realworld`,
+          type: `real-world`,
+          guideText: `Most adults struggle with money. Not because they don't earn enough — many people who earn six figures are broke. They struggle because nobody taught them the basics. They don't pay themselves first. They carry credit card debt. They don't understand compound interest. They never tracked where their money actually goes. The wild thing is that the basics aren't complicated. They're just rarely taught. By learning them at 9 or 10, you're decades ahead of where most adults will ever be.`,
+          familyAdventure: `Together, do this: track every dollar your family spends for ONE WEEK. Get a notebook or a spreadsheet. Write down every purchase, no matter how small. At the end of the week, total it up by category — food, entertainment, transportation, whatever. Most families are surprised by what they find. Discuss: any surprises? Anything you'd cut?`,
+          creativePrompt: {
+            intro: `Imagine it's 20 years from now. You're in your early 30s. You've built solid money habits ever since you were a teenager. Describe what your finances look like and what those early habits made possible.`,
+            floor: `Write at least 5 sentences. Use the sentence starters if helpful.`,
+            stretch: `Write 8-10 sentences. Make it specific — name actual numbers, actual goals you reached, actual moments where your habits paid off.`,
+            open: `Write as much as you want. Future-you is grateful.`,
+            frames: [
+              `The habit I started at 16 was ___.`,
+              `By 30, that habit had grown into ___.`,
+              `One specific moment when it paid off was ___.`,
+              `What my friends who didn't have this habit struggle with is ___.`,
+              `What I'd tell a younger version of myself is ___.`,
+            ],
+          },
+        },
+
+        {
+          id: `l09-celebration`,
+          type: `celebration`,
+          message: `Major skills unlocked, {name}. You can now define income, expenses, savings, compound interest, and debt. You understand "pay yourself first" and why starting young is a huge advantage. You walked through what a 16-year-old's budget actually looks like. Next lesson we shift again — we look at world geography and the patterns of how humans spread across the planet. — Atlas.`,
+          badge: `money-master`,
+          badgeName: `Money Master`,
+          xpEarned: 75,
+        },
+      ],
+    },
+  ],
+};
+
+export default SOCIAL_STUDIES_UE_L09;
