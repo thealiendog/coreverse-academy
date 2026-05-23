@@ -24,13 +24,23 @@ import VocabPopup             from './VocabPopup';
 
 // ── UE lesson data (one import per lesson wave as they are authored) ───────────
 import SS_UE_L01 from '../../data/social_studies_upper_explorer_l01_screens';
+import SS_UE_L02 from '../../data/social_studies_upper_explorer_l02_screens';
+import SS_UE_L03 from '../../data/social_studies_upper_explorer_l03_screens';
+import SS_UE_L04 from '../../data/social_studies_upper_explorer_l04_screens';
+import SS_UE_L05 from '../../data/social_studies_upper_explorer_l05_screens';
 
 const UE_DATA = {
   'social_studies': {
     ageBand:   'upper_explorers',
     subjectId: 'social_studies',
     guide:     'Atlas',
-    lessons:   [...SS_UE_L01.lessons],
+    lessons:   [
+      ...SS_UE_L01.lessons,
+      ...SS_UE_L02.lessons,
+      ...SS_UE_L03.lessons,
+      ...SS_UE_L04.lessons,
+      ...SS_UE_L05.lessons,
+    ],
   },
 };
 
@@ -481,6 +491,327 @@ function InvestigationGame({
         </button>
       )}
 
+    </div>
+  );
+}
+
+// ── Branching Decision game (inline) ────────────────────────────────────────
+function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak, onComplete, onInteractiveComplete, karaokeWords, karaokeIdx, speaking }) {
+  const r = t => (t || '').replace(/\{name\}/g, childName);
+  const { decisions = [], completionMessage = '', scenarioTitle = '' } = screen;
+
+  const [phase, setPhase]         = useState('intro');   // 'intro' | 'decision' | 'done'
+  const [decisionIdx, setDecisionIdx] = useState(0);
+  const [pickedId, setPickedId]   = useState(null);
+  const [feedbackVisible, setFeedbackVisible] = useState(false);
+  const [btnVisible, setBtnVisible] = useState(false);
+  const [doneResults, setDoneResults] = useState([]);
+  const hasSpoken = useRef(false);
+
+  // Intro: speak guideText then show Begin button
+  useEffect(() => {
+    if (phase !== 'intro' || hasSpoken.current) return;
+    hasSpoken.current = true;
+    onSpeak(r(screen.guideText), () => setBtnVisible(true));
+  }, [phase]);
+
+  function startDecision(idx) {
+    setDecisionIdx(idx);
+    setPickedId(null);
+    setFeedbackVisible(false);
+    setPhase('decision');
+    const d = decisions[idx];
+    if (d) onSpeak(`${d.situation} ${d.context}`);
+  }
+
+  function handlePick(optId) {
+    if (pickedId) return;
+    setPickedId(optId);
+    setFeedbackVisible(true);
+    const d = decisions[decisionIdx];
+    if (d) onSpeak(r(d.explanation));
+  }
+
+  function advanceDecision() {
+    const next = decisionIdx + 1;
+    if (next < decisions.length) {
+      startDecision(next);
+    } else {
+      setDoneResults(doneResults);
+      setPhase('done');
+      onSpeak(r(completionMessage));
+    }
+  }
+
+  const d = decisions[decisionIdx] || {};
+  const isLast = decisionIdx === decisions.length - 1;
+
+  const cardBase = {
+    background: '#12082a',
+    border: '1px solid rgba(255,255,255,0.10)',
+    borderRadius: '14px',
+    padding: '16px 18px',
+    marginBottom: '10px',
+  };
+
+  if (phase === 'intro') return (
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px 16px 40px', boxSizing: 'border-box' }}>
+      <div style={{ width: '80px', height: '80px', borderRadius: '50%', overflow: 'hidden', border: `3px solid ${accent}`, boxShadow: `0 0 18px ${accent}55`, marginBottom: '18px', flexShrink: 0 }}>
+        <img src={guideAvatar.image} alt="Atlas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+      <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', maxWidth: '480px', width: '100%', marginBottom: '24px', textAlign: 'center' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>Historical Decision Game</div>
+        <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '14px' }}>{scenarioTitle}</div>
+        <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+          <KaraokeText text={r(screen.guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        </p>
+      </div>
+      {btnVisible && (
+        <button onClick={() => startDecision(0)} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+          Begin
+        </button>
+      )}
+    </div>
+  );
+
+  if (phase === 'done') return (
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '32px 16px 48px', boxSizing: 'border-box' }}>
+      <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🏛️</div>
+      <div style={{ color: accent, fontWeight: 700, fontSize: '1.15rem', marginBottom: '16px', textAlign: 'center' }}>Convention Complete</div>
+      <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', maxWidth: '480px', width: '100%', marginBottom: '28px', textAlign: 'center', color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6 }}>
+        <KaraokeText text={r(completionMessage)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+      </div>
+      <button onClick={() => { onInteractiveComplete?.(); onComplete(); }} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+        Continue to Quiz
+      </button>
+    </div>
+  );
+
+  // Decision phase
+  return (
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px 16px 48px', boxSizing: 'border-box' }}>
+      {/* Progress dots */}
+      <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+        {decisions.map((_, i) => (
+          <div key={i} style={{ width: '10px', height: '10px', borderRadius: '50%', background: i < decisionIdx ? '#34D399' : i === decisionIdx ? accent : '#2a1a4a', border: `2px solid ${i <= decisionIdx ? accent : '#2a1a4a'}`, transition: 'background 0.3s' }} />
+        ))}
+      </div>
+
+      {/* Situation card */}
+      <div style={{ ...cardBase, maxWidth: '480px', width: '100%', border: `1px solid ${accent}55`, marginBottom: '16px' }}>
+        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '8px' }}>Decision {decisionIdx + 1} of {decisions.length}</div>
+        <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff', marginBottom: '10px' }}>{d.situation}</div>
+        <p style={{ color: '#b8a9d4', fontSize: '0.88rem', lineHeight: 1.55, margin: 0 }}>
+          <KaraokeText text={`${d.situation} ${d.context}`} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        </p>
+      </div>
+
+      {/* Option cards */}
+      <div style={{ maxWidth: '480px', width: '100%', marginBottom: '16px' }}>
+        {(d.options || []).map(opt => {
+          const isPicked   = pickedId === opt.id;
+          const isHistoric = opt.id === d.historicalChoice;
+          const dimmed     = pickedId && !isPicked;
+          let borderColor  = '#2a1a4a';
+          if (pickedId) borderColor = isPicked ? (isPicked === isHistoric ? '#34D399' : accent) : (feedbackVisible && isHistoric ? '#34D399' : '#2a1a4a');
+          if (isPicked) borderColor = accent;
+          if (feedbackVisible && isHistoric) borderColor = '#34D399';
+          return (
+            <div key={opt.id} onClick={() => handlePick(opt.id)}
+              style={{ ...cardBase, border: `2px solid ${borderColor}`, cursor: pickedId ? 'default' : 'pointer', opacity: dimmed ? 0.45 : 1, transition: 'all 0.2s', marginBottom: '8px' }}>
+              <div style={{ fontWeight: 700, color: '#fff', fontSize: '0.95rem', marginBottom: '6px' }}>{opt.label}</div>
+              <div style={{ color: '#8a7aa8', fontSize: '0.82rem', fontStyle: 'italic' }}>{opt.preview}</div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Feedback panel */}
+      {feedbackVisible && (
+        <div style={{ maxWidth: '480px', width: '100%', background: '#0d1a12', border: '1px solid #34D39955', borderRadius: '14px', padding: '16px 18px', marginBottom: '16px' }}>
+          <div style={{ fontWeight: 700, color: pickedId === d.historicalChoice ? '#34D399' : '#A78BFA', fontSize: '0.95rem', marginBottom: '8px' }}>
+            {pickedId === d.historicalChoice
+              ? '✅ You picked what the Framers did!'
+              : `You picked differently from the Framers. Here's what they chose and why:`}
+          </div>
+          <p style={{ color: '#c4b5e0', fontSize: '0.88rem', lineHeight: 1.6, margin: 0 }}>
+            <KaraokeText text={r(d.explanation)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+          </p>
+        </div>
+      )}
+
+      {/* Next / Finish button — shown only after picking */}
+      {pickedId && !speaking && (
+        <button onClick={advanceDecision}
+          style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66`, marginTop: '8px' }}>
+          {isLast ? 'Finish' : 'Next Decision'}
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ── Resource Allocation game (inline) ────────────────────────────────────────
+function ResourceAllocationGame({ screen, guideAvatar, accent, childName, onSpeak, onComplete, onInteractiveComplete, karaokeWords, karaokeIdx, speaking }) {
+  const r = t => (t || '').replace(/\{name\}/g, childName);
+  const { categories = [], totalBudget = 1000000, completionMessage = '', scenarioTitle = '' } = screen;
+
+  const [phase, setPhase]       = useState('intro');  // 'intro' | 'budget' | 'results'
+  const [btnVisible, setBtnVisible] = useState(false);
+  const [allocations, setAllocations] = useState(() =>
+    Object.fromEntries(categories.map(c => [c.id, c.default]))
+  );
+  const [revealIdx, setRevealIdx] = useState(0);
+  const hasSpoken = useRef(false);
+
+  useEffect(() => {
+    if (phase !== 'intro' || hasSpoken.current) return;
+    hasSpoken.current = true;
+    onSpeak(r(screen.guideText), () => setBtnVisible(true));
+  }, [phase]);
+
+  const totalAllocated = categories.reduce((sum, c) => sum + (allocations[c.id] || 0), 0);
+  const remaining = totalBudget - totalAllocated;
+  const canLock = remaining === 0;
+
+  function fmt(n) {
+    if (n >= 1000000) return `$${(n / 1000000).toFixed(1)}M`;
+    if (n >= 1000) return `$${Math.round(n / 1000)}k`;
+    return `$${n}`;
+  }
+
+  function handleSlider(catId, val) {
+    setAllocations(prev => ({ ...prev, [catId]: Number(val) }));
+  }
+
+  function getOutcome(cat) {
+    const amt = allocations[cat.id] || 0;
+    if (cat.outcomes.low?.threshold && amt < cat.outcomes.low.threshold) return { msg: cat.outcomes.low.message, tier: 'low' };
+    if (cat.outcomes.high?.threshold && amt > cat.outcomes.high.threshold) return { msg: cat.outcomes.high.message, tier: 'high' };
+    return { msg: cat.outcomes.mid.message, tier: 'mid' };
+  }
+
+  function lockBudget() {
+    if (!canLock) return;
+    setPhase('results');
+    setRevealIdx(0);
+    // Speak first outcome
+    const firstOutcome = getOutcome(categories[0]);
+    onSpeak(firstOutcome.msg, () => {
+      if (categories.length > 1) {
+        const second = getOutcome(categories[1]);
+        setRevealIdx(1);
+        onSpeak(second.msg);
+      }
+    });
+  }
+
+  // On results phase, advance reading as revealIdx progresses
+  useEffect(() => {
+    if (phase !== 'results' || revealIdx === 0) return;
+    if (revealIdx >= categories.length - 1) return;
+    // spoken via callback chain in lockBudget for first two; after that auto-advance
+  }, [revealIdx, phase]);
+
+  const cardBase = {
+    background: '#12082a',
+    border: '1px solid rgba(255,255,255,0.10)',
+    borderRadius: '14px',
+    padding: '16px 18px',
+    marginBottom: '10px',
+    boxSizing: 'border-box',
+  };
+
+  if (phase === 'intro') return (
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px 16px 40px', boxSizing: 'border-box' }}>
+      <div style={{ width: '80px', height: '80px', borderRadius: '50%', overflow: 'hidden', border: `3px solid ${accent}`, boxShadow: `0 0 18px ${accent}55`, marginBottom: '18px', flexShrink: 0 }}>
+        <img src={guideAvatar.image} alt="Atlas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      </div>
+      <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', maxWidth: '480px', width: '100%', marginBottom: '24px', textAlign: 'center' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>Budget Simulation</div>
+        <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '14px' }}>{scenarioTitle}</div>
+        <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+          <KaraokeText text={r(screen.guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        </p>
+      </div>
+      {btnVisible && (
+        <button onClick={() => setPhase('budget')} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+          Begin Budgeting
+        </button>
+      )}
+    </div>
+  );
+
+  if (phase === 'results') {
+    const outcomes = categories.map(c => ({ cat: c, ...getOutcome(c) }));
+    return (
+      <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px 16px 48px', boxSizing: 'border-box' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '16px' }}>Your City Results</div>
+        <div style={{ maxWidth: '480px', width: '100%', marginBottom: '24px' }}>
+          {outcomes.map(({ cat, msg, tier }) => (
+            <div key={cat.id} style={{ ...cardBase, border: `2px solid ${cat.color}44` }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                <span style={{ fontSize: '1.4rem' }}>{cat.emoji}</span>
+                <span style={{ fontWeight: 700, color: cat.color }}>{cat.label}</span>
+                <span style={{ marginLeft: 'auto', fontSize: '0.85rem', color: '#8a7aa8' }}>{fmt(allocations[cat.id])}</span>
+              </div>
+              <p style={{ color: '#c4b5e0', fontSize: '0.88rem', lineHeight: 1.55, margin: 0 }}>
+                <KaraokeText text={msg} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={cat.color} />
+              </p>
+            </div>
+          ))}
+        </div>
+        <div style={{ maxWidth: '480px', width: '100%', background: '#0d1a12', border: '1px solid #34D39955', borderRadius: '14px', padding: '16px 18px', marginBottom: '24px', color: '#c4b5e0', fontSize: '0.92rem', lineHeight: 1.6 }}>
+          <KaraokeText text={r(completionMessage)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        </div>
+        <button onClick={() => { onInteractiveComplete?.(); onComplete(); }} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+          Continue to Quiz
+        </button>
+      </div>
+    );
+  }
+
+  // Budget phase
+  return (
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px 16px 48px', boxSizing: 'border-box' }}>
+      {/* Budget header */}
+      <div style={{ maxWidth: '480px', width: '100%', marginBottom: '20px', textAlign: 'center' }}>
+        <div style={{ fontSize: '1rem', fontWeight: 700, color: canLock ? '#34D399' : remaining < 0 ? '#F87171' : '#FBBF24', marginBottom: '4px' }}>
+          {fmt(totalAllocated)} allocated / {fmt(totalBudget)} total
+        </div>
+        <div style={{ fontSize: '0.82rem', color: remaining === 0 ? '#34D399' : remaining < 0 ? '#F87171' : '#8a7aa8' }}>
+          {remaining === 0 ? '✓ Budget balanced — ready to lock in' : remaining > 0 ? `${fmt(remaining)} left to allocate` : `${fmt(Math.abs(remaining))} over budget — reduce a category`}
+        </div>
+      </div>
+
+      {/* Category sliders */}
+      <div style={{ maxWidth: '480px', width: '100%', marginBottom: '24px' }}>
+        {categories.map(cat => (
+          <div key={cat.id} style={{ ...cardBase, border: `1px solid ${cat.color}33` }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+              <span style={{ fontSize: '1.4rem' }}>{cat.emoji}</span>
+              <span style={{ fontWeight: 700, color: cat.color, fontSize: '1rem' }}>{cat.label}</span>
+              <span style={{ marginLeft: 'auto', fontWeight: 700, color: '#fff', fontSize: '1rem' }}>{fmt(allocations[cat.id])}</span>
+            </div>
+            <div style={{ color: '#8a7aa8', fontSize: '0.8rem', marginBottom: '10px' }}>{cat.description}</div>
+            <input type="range"
+              min={cat.min} max={cat.max} step={25000}
+              value={allocations[cat.id]}
+              onChange={e => handleSlider(cat.id, e.target.value)}
+              style={{ width: '100%', accentColor: cat.color, cursor: 'pointer' }}
+            />
+            <div style={{ display: 'flex', justifyContent: 'space-between', color: '#6a5a88', fontSize: '0.72rem', marginTop: '4px' }}>
+              <span>{fmt(cat.min)}</span><span>{fmt(cat.max)}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lock in button */}
+      <button onClick={lockBudget} disabled={!canLock}
+        style={{ padding: '14px 36px', background: canLock ? accent : '#2a1a4a', color: canLock ? '#fff' : '#6a5a88', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: canLock ? 'pointer' : 'not-allowed', boxShadow: canLock ? `0 0 18px ${accent}66` : 'none', transition: 'all 0.2s' }}>
+        Lock In Budget
+      </button>
     </div>
   );
 }
@@ -1447,26 +1778,13 @@ export default function UpperExplorerLessonPlayer() {
       case 'welcome':    return <ExplorerWelcomeScreen {...commonProps} />;
       case 'magazine':   return <MagazineScreen        {...commonProps} />;
       case 'story-beat': return <StoryBeatScreen       {...commonProps} />;
-      case 'interactive':
-        if (screen.format === 'investigation') {
-          return (
-            <InvestigationGame
-              screen={screen}
-              guideAvatar={guideAvatar}
-              accent={accent}
-              childName={childName}
-              lessonId={lessonId}
-              onSpeak={speak}
-              onPrewarm={prewarmAudio}
-              onComplete={goNext}
-              onInteractiveComplete={onInteractiveComplete}
-              karaokeWords={karaokeWords}
-              karaokeIdx={karaokeIdx}
-              speaking={speaking}
-            />
-          );
-        }
+      case 'interactive': {
+        const gameProps = { screen, guideAvatar, accent, childName, lessonId, onSpeak: speak, onPrewarm: prewarmAudio, onComplete: goNext, onInteractiveComplete, karaokeWords, karaokeIdx, speaking };
+        if (screen.format === 'investigation')      return <InvestigationGame      {...gameProps} />;
+        if (screen.format === 'branching-decision') return <BranchingDecisionGame  {...gameProps} />;
+        if (screen.format === 'resource-allocation') return <ResourceAllocationGame {...gameProps} />;
         return <InteractiveExplore {...commonProps} />;
+      }
       case 'quiz':       return <MasteryQuiz           {...commonProps} />;
       case 'reflection': return (
         <ReflectionScreen

@@ -75,7 +75,13 @@ const resolveSubjectId = (rawId) => SUBJECT_ID_ALIASES[rawId] || rawId;
 // Add IDs as UE screen files are authored (one per wave).
 const NEW_FORMAT_UE_LESSONS = {
   // Social Studies UE — L01 wired; remaining added as screen files are authored
-  'social_studies': ['social-studies-9-10-01'],
+  'social_studies': [
+    'social-studies-9-10-01',
+    'social-studies-9-10-02',
+    'social-studies-9-10-03',
+    'social-studies-9-10-04',
+    'social-studies-9-10-05',
+  ],
 };
 
 function getUELessonId(subjectId, level, index) {

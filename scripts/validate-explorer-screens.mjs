@@ -92,19 +92,30 @@ const RULES = {
     required: ['guideText'],
     forbidden: ['config'],
     checks: [
-      // investigation format: needs cases + options, not buckets/items
+      // investigation format: needs cases + options
       s => s.format === 'investigation'
            ? (Array.isArray(s.cases) || `investigation format must have a cases array`)
            : true,
       s => s.format === 'investigation'
            ? (Array.isArray(s.options) || `investigation format must have an options array`)
            : true,
+      // branching-decision format: needs decisions array
+      s => s.format === 'branching-decision'
+           ? (Array.isArray(s.decisions) || `branching-decision format must have a decisions array`)
+           : true,
+      // resource-allocation format: needs categories array + totalBudget
+      s => s.format === 'resource-allocation'
+           ? (Array.isArray(s.categories) || `resource-allocation format must have a categories array`)
+           : true,
+      s => s.format === 'resource-allocation'
+           ? (typeof s.totalBudget === 'number' || `resource-allocation format must have a totalBudget number`)
+           : true,
       // drag-identify format (default): needs buckets + items
-      s => s.format === 'investigation' || Array.isArray(s.items)   || `items must be an array`,
-      s => s.format === 'investigation' || Array.isArray(s.buckets) || `buckets must be an array`,
-      s => s.format === 'investigation' || s.items.every(it => 'correctMatch' in it)
+      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || Array.isArray(s.items)   || `items must be an array`,
+      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || Array.isArray(s.buckets) || `buckets must be an array`,
+      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || s.items.every(it => 'correctMatch' in it)
            || `all items must have correctMatch (not correctBucket)`,
-      s => s.format === 'investigation' || s.items.every(it => !('correctBucket' in it))
+      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || s.items.every(it => !('correctBucket' in it))
            || `items must not have correctBucket (rename to correctMatch)`,
     ],
   },
