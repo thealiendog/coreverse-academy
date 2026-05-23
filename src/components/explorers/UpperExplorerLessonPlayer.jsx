@@ -554,43 +554,51 @@ function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak
     marginBottom: '10px',
   };
 
+  // Shared scroll container — fills the parent's overflow:hidden box and scrolls internally
+  const scrollBox = { height: '100%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', boxSizing: 'border-box' };
+  const innerCol  = { maxWidth: '480px', margin: '0 auto', padding: '24px 16px 56px', display: 'flex', flexDirection: 'column', alignItems: 'center' };
+
   if (phase === 'intro') return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '24px 16px 40px', boxSizing: 'border-box' }}>
-      <div style={{ width: '80px', height: '80px', borderRadius: '50%', overflow: 'hidden', border: `3px solid ${accent}`, boxShadow: `0 0 18px ${accent}55`, marginBottom: '18px', flexShrink: 0 }}>
-        <img src={guideAvatar.image} alt="Atlas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+    <div style={scrollBox}>
+      <div style={innerCol}>
+        <div style={{ width: '80px', height: '80px', borderRadius: '50%', overflow: 'hidden', border: `3px solid ${accent}`, boxShadow: `0 0 18px ${accent}55`, marginBottom: '18px', flexShrink: 0 }}>
+          <img src={guideAvatar.image} alt="Atlas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+        <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', width: '100%', marginBottom: '24px', textAlign: 'center' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>Historical Decision Game</div>
+          <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '14px' }}>{scenarioTitle}</div>
+          <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+            <KaraokeText text={r(screen.guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+          </p>
+        </div>
+        {beginBtnVisible && (
+          <button onClick={() => startDecision(0)} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+            Begin
+          </button>
+        )}
       </div>
-      <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', maxWidth: '480px', width: '100%', marginBottom: '24px', textAlign: 'center' }}>
-        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '10px' }}>Historical Decision Game</div>
-        <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginBottom: '14px' }}>{scenarioTitle}</div>
-        <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
-          <KaraokeText text={r(screen.guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
-        </p>
-      </div>
-      {beginBtnVisible && (
-        <button onClick={() => startDecision(0)} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
-          Begin
-        </button>
-      )}
     </div>
   );
 
   if (phase === 'done') return (
-    <div style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '32px 16px 48px', boxSizing: 'border-box' }}>
-      <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🏛️</div>
-      <div style={{ color: accent, fontWeight: 700, fontSize: '1.15rem', marginBottom: '16px', textAlign: 'center' }}>Convention Complete</div>
-      <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', maxWidth: '480px', width: '100%', marginBottom: '28px', textAlign: 'center', color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6 }}>
-        <KaraokeText text={r(completionMessage)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+    <div style={scrollBox}>
+      <div style={{ ...innerCol, alignItems: 'center', textAlign: 'center' }}>
+        <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🏛️</div>
+        <div style={{ color: accent, fontWeight: 700, fontSize: '1.15rem', marginBottom: '16px' }}>Convention Complete</div>
+        <div style={{ background: '#12082a', border: `1px solid ${accent}44`, borderRadius: '16px', padding: '20px', width: '100%', marginBottom: '28px', color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          <KaraokeText text={r(completionMessage)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        </div>
+        <button onClick={() => { onInteractiveComplete?.(); onComplete(); }} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
+          Continue to Quiz
+        </button>
       </div>
-      <button onClick={() => { onInteractiveComplete?.(); onComplete(); }} style={{ padding: '14px 36px', background: accent, color: '#fff', fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: '12px', cursor: 'pointer', boxShadow: `0 0 18px ${accent}66` }}>
-        Continue to Quiz
-      </button>
     </div>
   );
 
-  // Decision phase — scrollable column layout so long explanations + button are always reachable
+  // Decision phase — scrollable within parent's fixed viewport
   return (
-    <div style={{ background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', minHeight: '100vh', boxSizing: 'border-box' }}>
-      <div style={{ maxWidth: '480px', margin: '0 auto', padding: '20px 16px 56px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div style={scrollBox}>
+      <div style={innerCol}>
 
         {/* Progress dots */}
         <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>

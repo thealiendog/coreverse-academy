@@ -36,16 +36,16 @@ const SOCIAL_STUDIES_UE_L03 = {
           section: 1,
           headline: `What Is the Bill of Rights?`,
           paragraphs: [
-            `The Bill of Rights is the name we give to the first 10 amendments to the Constitution. They were added in 1791, just two years after the Constitution itself took effect.`,
+            `The Bill of Rights is the name we give to the first 10 amendments to the Constitution. They were added in seventeen ninety-one, just two years after the Constitution itself took effect.`,
             `Why so fast? Because a lot of Americans were nervous. They had just escaped from a king. Now they were being asked to support a new central government. Many of them said: "We need this in writing — what exactly can the government NOT do to us?" Without those guarantees, several states refused to support the Constitution at all.`,
             `So James Madison drafted a list. After debate, 10 amendments were ratified together. Each one defines a right or protection that the government can't take away. They form the backbone of American liberty, and they affect your real life more directly than almost any other part of the Constitution.`,
           ],
           image: `/ue-assets/social-studies/l03-s1-bill-of-rights.webp`,
-          imageCaption: `Ten amendments. Added in 1791. The deal that made the Constitution stick.`,
+          imageCaption: `Ten amendments. Added in seventeen ninety-one. The deal that made the Constitution stick.`,
           vocab: [
             { word: `Bill of Rights`,
               definition: `The first 10 amendments to the US Constitution, listing rights the government cannot take away.`,
-              audioPrompt: `The Bill of Rights is the name for the first 10 amendments to the US Constitution, {name}. They were added in 1791, right after the Constitution took effect. People were worried the new government might become too powerful, so these amendments were added as guarantees — specific rights the government cannot take away. They cover things like free speech, freedom of religion, protection from unfair searches, and the right to a fair trial. Knowing these is one of the most useful things you can learn as a citizen.` },
+              audioPrompt: `The Bill of Rights is the name for the first 10 amendments to the US Constitution, {name}. They were added in seventeen ninety-one, right after the Constitution took effect. People were worried the new government might become too powerful, so these amendments were added as guarantees — specific rights the government cannot take away. They cover things like free speech, freedom of religion, protection from unfair searches, and the right to a fair trial. Knowing these is one of the most useful things you can learn as a citizen.` },
             { word: `ratify`,
               definition: `To officially approve a law, treaty, or amendment so it takes effect.`,
               audioPrompt: `Ratify means to officially approve something so it takes effect, {name}. The Constitution had to be ratified by at least nine of the thirteen states before it could take effect. The Bill of Rights was ratified by three-fourths of the states. Ratification is the final approval step, usually by a larger group than just one body. Today, constitutional amendments require ratification by three-fourths of all fifty states. If that sounds hard, it's supposed to be — big changes to the rules should require big agreement.` },
@@ -70,7 +70,7 @@ const SOCIAL_STUDIES_UE_L03 = {
               audioPrompt: `Freedom of speech is the right to express your opinions without the government punishing you, {name} — even if your opinion is unpopular. This is one of the most important protections in the Bill of Rights. A free country must allow people to criticize their leaders, or citizens get scared into silence. There are limits — you can't make direct threats of violence — but the protection is very broad. It applies even to opinions most people disagree with.` },
             { word: `freedom of religion`,
               definition: `The right to believe and practice whatever religion you choose, or no religion at all.`,
-              audioPrompt: `Freedom of religion is the right to believe and practice any religion you want, or no religion at all, {name}. The government can't tell you what to believe. It can't make one religion the official one. It can't force you to attend any place of worship. It also can't punish you for following your religion's practices, as long as you don't hurt others. This was a HUGE deal in 1791 because most countries at the time had an official state religion. The Framers wanted Americans to be free to choose.` },
+              audioPrompt: `Freedom of religion is the right to believe and practice any religion you want, or no religion at all, {name}. The government can't tell you what to believe. It can't make one religion the official one. It can't force you to attend any place of worship. It can't punish you for following your religion's practices, as long as you don't hurt others. This was a HUGE deal in seventeen ninety-one because most countries at the time had an official state religion. The Framers wanted Americans to be free to choose.` },
           ],
         },
 
@@ -114,7 +114,7 @@ const SOCIAL_STUDIES_UE_L03 = {
               audioPrompt: `Due process means the right to fair treatment and proper legal procedures before the government can punish you, {name}. It comes from the Fifth Amendment. The government can't just decide you're guilty and punish you — it has to follow specific steps: informing you of the charges, giving you a fair trial, letting you defend yourself, and proving the case with evidence. Due process is what stands between an accused person and an unfair government. Even people accused of terrible things get due process — that's the deal.` },
             { word: `right to counsel`,
               definition: `Your right to have a lawyer help you if you're accused of a crime, even if you can't afford one.`,
-              audioPrompt: `Right to counsel means your right to have a lawyer if you're accused of a crime, {name}, even if you can't afford one. The Sixth Amendment guarantees this. If you can't pay for a lawyer, the government has to provide one for free. This matters because the law is complicated, and going up against trained prosecutors without a lawyer almost guarantees you lose, whether or not you're guilty. The right to counsel was strengthened in 1963 by a famous Supreme Court case called Gideon v. Wainwright.` },
+              audioPrompt: `Right to counsel means your right to have a lawyer if you're accused of a crime, {name}, even if you can't afford one. The Sixth Amendment guarantees this. If you can't pay for a lawyer, the government has to provide one for free. This matters because the law is complicated, and going up against trained prosecutors without a lawyer almost guarantees you lose, whether or not you're guilty. The right to counsel was strengthened in nineteen sixty-three by a famous Supreme Court case called Gideon v. Wainwright.` },
           ],
         },
 
@@ -140,7 +140,7 @@ const SOCIAL_STUDIES_UE_L03 = {
                 { text: `The student wonders whether the school can actually do that.` },
               ],
               correctAnswer: `first`,
-              realWorldExample: `This is based on a famous Supreme Court case called Tinker v. Des Moines (1969), which protected student speech.`,
+              realWorldExample: `This is based on a famous Supreme Court case called Tinker v. Des Moines (nineteen sixty-nine), which protected student speech.`,
               explanation: `First Amendment. Public schools are part of the government, and the government can't punish you for criticizing it — even if you're a student. The student has freedom of speech and freedom of the press. A private school is different, but this is a public school, so the First Amendment applies.`,
             },
             {
@@ -164,7 +164,7 @@ const SOCIAL_STUDIES_UE_L03 = {
                 { text: `The person isn't sure what to do — they don't know the law.` },
               ],
               correctAnswer: `sixth`,
-              realWorldExample: `This is exactly what happened in Gideon v. Wainwright (1963). Gideon was forced to defend himself, lost, and went to prison — until the Supreme Court ruled the government MUST provide a lawyer to anyone who can't afford one.`,
+              realWorldExample: `This is exactly what happened in Gideon v. Wainwright (nineteen sixty-three). Gideon was forced to defend himself, lost, and went to prison — until the Supreme Court ruled the government MUST provide a lawyer to anyone who can't afford one.`,
               explanation: `Sixth Amendment. If you're accused of a crime and can't afford a lawyer, the government has to provide one for free. The judge in this scenario was wrong — and the person's Sixth Amendment rights are being violated.`,
             },
             {
@@ -196,7 +196,7 @@ const SOCIAL_STUDIES_UE_L03 = {
                 `The first part of the Declaration of Independence`,
               ],
               correctIndex: 0,
-              explanation: `The Bill of Rights is the first 10 amendments, added in 1791. Each one limits what the government can do to citizens.` },
+              explanation: `The Bill of Rights is the first 10 amendments, added in seventeen ninety-one. Each one limits what the government can do to citizens.` },
             { id: `l03-q2`, format: `multiple-choice`,
               question: `Which of these is NOT one of the five freedoms in the First Amendment?`,
               options: [
@@ -240,7 +240,7 @@ const SOCIAL_STUDIES_UE_L03 = {
                 `They have to wait until they can save up`,
               ],
               correctIndex: 1,
-              explanation: `Sixth Amendment. If you can't afford a lawyer, the government provides one for free. This was made absolute in 1963 by the Gideon v. Wainwright case.` },
+              explanation: `Sixth Amendment. If you can't afford a lawyer, the government provides one for free. This was made absolute in nineteen sixty-three by the Gideon v. Wainwright case.` },
             { id: `l03-q7`, format: `multiple-choice`,
               question: `Why was the Bill of Rights added so quickly after the Constitution?`,
               options: [

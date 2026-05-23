@@ -37,7 +37,7 @@ const SOCIAL_STUDIES_UE_L02 = {
           headline: `What Is a Constitution?`,
           paragraphs: [
             `A constitution is a written document that sets the basic rules for how a country's government works. It explains what the government CAN do, what it CAN'T do, and how power is divided up. Think of it as the rulebook everyone agrees to follow — including the people running the government.`,
-            `Most modern countries have one. The United States Constitution is one of the most famous because it was one of the first, and because it's still the same document, mostly, after more than two centuries. It was written in 1787 in Philadelphia by 55 delegates from 13 newly-independent states.`,
+            `Most modern countries have one. The United States Constitution is one of the most famous because it was one of the first, and because it's still the same document, mostly, after more than two centuries. It was written in seventeen eighty-seven in Philadelphia by 55 delegates from 13 newly-independent states.`,
             `Why bother having a constitution at all? Because written rules are harder to break or twist than spoken ones. Without one, whoever has the most power can just decide what the rules are. A constitution is what stops that. Even the President of the United States is bound by it.`,
           ],
           image: `/ue-assets/social-studies/l02-s1-what-is-constitution.webp`,
@@ -45,10 +45,10 @@ const SOCIAL_STUDIES_UE_L02 = {
           vocab: [
             { word: `constitution`,
               definition: `A written document that sets the basic rules for how a government works.`,
-              audioPrompt: `A constitution is a written document that sets the basic rules for how a country's government works, {name}. It defines what the government can do, what it can't do, and how power is divided. The United States Constitution was written in 1787 and is still the same core document today, with some updates added over the years. Most countries now have one. The big idea is that having rules in writing protects citizens — including from the government itself.` },
+              audioPrompt: `A constitution is a written document that sets the basic rules for how a country's government works, {name}. It defines what the government can do, what it can't do, and how power is divided. The United States Constitution was written in seventeen eighty-seven and is still the same core document today, with some updates added over the years. Most countries now have one. The big idea is that having rules in writing protects citizens — including from the government itself.` },
             { word: `delegate`,
               definition: `A person chosen to represent a group at an important meeting or conference.`,
-              audioPrompt: `A delegate is a person chosen to represent a group at an important meeting or conference, {name}. When the Constitution was written in 1787, each state sent delegates to Philadelphia for the Constitutional Convention. These fifty-five people represented over three million Americans. Their job was to debate and design a new government. A delegate speaks and votes on behalf of others, not just for themselves. Today you can see delegates at political conventions, where they vote to choose candidates for President on behalf of their home state.` },
+              audioPrompt: `A delegate is a person chosen to represent a group at an important meeting or conference, {name}. When the Constitution was written in seventeen eighty-seven, each state sent delegates to Philadelphia for the Constitutional Convention. These fifty-five people represented over three million Americans. Their job was to debate and design a new government. A delegate speaks and votes on behalf of others, not just for themselves. Today you can see delegates at political conventions, where they vote to choose candidates for President on behalf of their home state.` },
           ],
         },
 
@@ -59,7 +59,7 @@ const SOCIAL_STUDIES_UE_L02 = {
           headline: `The Preamble: "We the People"`,
           paragraphs: [
             `The Constitution opens with one of the most famous sentences in American history. It's called the Preamble. It starts with three words: "We the People." Those three words were a revolutionary statement at the time.`,
-            `Why? Because in 1787, almost every other country in the world was ruled by kings who claimed their power came from God or from inheritance. The Framers said something different. They said the government's power comes from the citizens — from us — and exists to serve us. Not the other way around.`,
+            `Why? Because in seventeen eighty-seven, almost every other country in the world was ruled by kings who claimed their power came from God or from inheritance. The Framers said something different. They said the government's power comes from the citizens — from us — and exists to serve us. Not the other way around.`,
             `The full Preamble lists six goals: form a more perfect union, establish justice, ensure peace at home, provide for defense, promote the general welfare, and secure liberty for ourselves and our descendants. These aren't decorations. They're the reason the whole document exists. Every rule that follows ties back to one of those six goals.`,
           ],
           image: `/ue-assets/social-studies/l02-s2-preamble.webp`,
@@ -70,7 +70,7 @@ const SOCIAL_STUDIES_UE_L02 = {
               audioPrompt: `A preamble is the opening section of a document that explains its purpose, {name}. The Constitution's Preamble is the most famous one. It starts with "We the People" and lists six goals — including establishing justice and securing liberty. The whole rest of the Constitution exists to achieve those goals. When people debate whether a law is "constitutional," they're really asking: does this law serve those six goals, or work against them?` },
             { word: `popular sovereignty`,
               definition: `The idea that a government's power comes from the people, not from kings or inherited authority.`,
-              audioPrompt: `Popular sovereignty is the idea that government's power comes from the people, {name}. It's why the Constitution starts with "We the People" instead of "We the Rulers." Before 1787, most governments got power from kings who claimed God gave it to them. The Framers said no — in America, the people are the source of power, and government exists to serve citizens. Every elected official holds power on behalf of voters. When voters disagree, they can vote officials out. That's the deal.` },
+              audioPrompt: `Popular sovereignty is the idea that government's power comes from the people, {name}. It's why the Constitution starts with "We the People" instead of "We the Rulers." Before seventeen eighty-seven, most governments got power from kings who claimed God gave it to them. The Framers said no — in America, the people are the source of power, and government exists to serve citizens. Every elected official holds power on behalf of voters. When voters disagree, they can vote officials out. That's the deal.` },
           ],
         },
 
@@ -103,7 +103,7 @@ const SOCIAL_STUDIES_UE_L02 = {
           section: 4,
           headline: `Why It Still Matters`,
           paragraphs: [
-            `The Constitution was written when there were no cars, no airplanes, no internet, no electricity. So why does a 1787 document still rule a country in 2026? Because what it actually defines — how to divide power, how to protect citizens, how to make changes — works across centuries.`,
+            `The Constitution was written when there were no cars, no airplanes, no internet, no electricity. So why does a seventeen eighty-seven document still rule a country in twenty twenty-six? Because what it actually defines — how to divide power, how to protect citizens, how to make changes — works across centuries.`,
             `Every single law passed by Congress, every order signed by the President, every ruling by the Supreme Court has to fit within the Constitution. When something doesn't fit, the courts can strike it down. The Constitution is the ceiling no one can break through, even the most powerful person in the country.`,
             `Here's a thing most people miss: the Constitution doesn't give YOU rights. The Framers believed rights come from being human — they're not granted by government. The Constitution just says the government can't TAKE them away. That's a different relationship between citizen and government than almost any country had before, and it's why this document matters.`,
           ],
@@ -124,8 +124,8 @@ const SOCIAL_STUDIES_UE_L02 = {
           id: `l02-game`,
           type: `interactive`,
           format: `branching-decision`,
-          guideText: `Now it's your turn, {name}. The year is 1787. You are a delegate at the Constitutional Convention in Philadelphia. Fifty-five people just like you are gathered to design a new government from scratch. You'll face four big decisions. For each one, choose what YOU think is best. Then I'll show you what the actual Framers picked — and why.`,
-          scenarioTitle: `The Constitutional Convention, 1787`,
+          guideText: `Now it's your turn, {name}. The year is seventeen eighty-seven. You are a delegate at the Constitutional Convention in Philadelphia. Fifty-five people just like you are gathered to design a new government from scratch. You'll face four big decisions. For each one, choose what YOU think is best. Then I'll show you what the actual Framers picked — and why.`,
+          scenarioTitle: `The Constitutional Convention, seventeen eighty-seven`,
           decisions: [
             {
               id: `d1`,
@@ -173,7 +173,7 @@ const SOCIAL_STUDIES_UE_L02 = {
                 },
               ],
               historicalChoice: `b`,
-              explanation: `The Framers picked option B — 4 years, no limit. But here's the twist: George Washington voluntarily stepped down after two terms, setting a tradition. That tradition held for 150 years. Then in 1940, Franklin Roosevelt won a third term, and a fourth. After he died, the country added the 22nd Amendment in 1951, which made option C the actual rule. So you and the Framers were both partly right.`,
+              explanation: `The Framers picked option B — 4 years, no limit. But here's the twist: George Washington voluntarily stepped down after two terms, setting a tradition. That tradition held for 150 years. Then in nineteen forty, Franklin Roosevelt won a third term, and a fourth. After he died, the country added the 22nd Amendment in nineteen fifty-one, which made option C the actual rule. So you and the Framers were both partly right.`,
             },
             {
               id: `d3`,
@@ -183,7 +183,7 @@ const SOCIAL_STUDIES_UE_L02 = {
                 {
                   id: `a`,
                   label: `No changes ever — the document is final`,
-                  preview: `Stable, but frozen in 1787 forever.`,
+                  preview: `Stable, but frozen in seventeen eighty-seven forever.`,
                 },
                 {
                   id: `b`,
@@ -243,7 +243,7 @@ const SOCIAL_STUDIES_UE_L02 = {
               correctIndex: 1,
               explanation: `A constitution is the rulebook for a government. It defines what government can and can't do, and how power is divided.` },
             { id: `l02-q2`, format: `multiple-choice`,
-              question: `Why were the first three words of the Preamble — "We the People" — revolutionary in 1787?`,
+              question: `Why were the first three words of the Preamble — "We the People" — revolutionary in seventeen eighty-seven?`,
               options: [
                 `They were written in beautiful handwriting`,
                 `They said government's power comes from citizens, not from kings or inheritance`,
@@ -263,7 +263,7 @@ const SOCIAL_STUDIES_UE_L02 = {
               correctIndex: 2,
               explanation: `Federalism splits power between national and state governments. National handles things like defense and currency. States handle things like schools and licenses.` },
             { id: `l02-q4`, format: `multiple-choice`,
-              question: `Approximately how many amendments have been added to the Constitution since 1787?`,
+              question: `Approximately how many amendments have been added to the Constitution since seventeen eighty-seven?`,
               options: [
                 `5`,
                 `27`,
@@ -324,7 +324,7 @@ const SOCIAL_STUDIES_UE_L02 = {
         {
           id: `l02-realworld`,
           type: `real-world`,
-          guideText: `Every single day in the United States, lawyers argue in courts about whether something violates the Constitution. School policies get challenged. Police actions get reviewed. Laws get struck down or upheld. A document written in 1787 is being applied to questions about social media, AI, and technology the Framers couldn't have imagined. The fact that it still works is partly because of how carefully it was built — and partly because each generation keeps figuring out how to apply it to new questions.`,
+          guideText: `Every single day in the United States, lawyers argue in courts about whether something violates the Constitution. School policies get challenged. Police actions get reviewed. Laws get struck down or upheld. A document written in seventeen eighty-seven is being applied to questions about social media, AI, and technology the Framers couldn't have imagined. The fact that it still works is partly because of how carefully it was built — and partly because each generation keeps figuring out how to apply it to new questions.`,
           familyAdventure: `Read the Preamble of the Constitution out loud together. Then write a "Family Preamble" — what is your family for? What are its goals? Write it in the same style: "We the [Family Name], in order to..." Hang it somewhere everyone can see it. Then talk: was it harder than you expected to write?`,
           creativePrompt: {
             intro: `Imagine you and your friends are forming a brand new country together. You have to write ONE rule into your founding document that you think is the most important. What is it, and why?`,
