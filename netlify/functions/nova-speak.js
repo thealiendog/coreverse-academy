@@ -31,6 +31,7 @@ exports.handler = async (event) => {
           similarity_boost: 0.75,
           style:            0.3,
           use_speaker_boost: true,
+          speed:            0.85,
         },
       }),
     });
