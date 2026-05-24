@@ -24,13 +24,23 @@ export const MATH_L01_V2 = {
         "Hey {name}. Today we're going to BUILD numbers. Not read about them — build them. With actual blocks you can drag around. Ready? Let's go.",
     },
 
-    // ── Screen 2: Explore (free play) ─────────────────────────────────────────
+    // ── Screen 2: Block Introduction ──────────────────────────────────────────
+    {
+      id:   'block-intro',
+      type: 'block-intro',
+      audioPrompt:
+        "Before we start building — let me show you what we're working with. This little blue square is a UNIT. It means ONE. This green rod is a TEN. See those segments on it? That's 10 ones stacked together. So one rod equals ten units. And this orange square is a HUNDRED. It's 10 rods packed together, or 100 units. A whole hundred. Got it? Let's build.",
+      // Rough ms offsets when each block should pulse (matches ElevenLabs at 0.85× speed)
+      highlightTimings: { unit: 4400, rod: 9800, flat: 17200, none: 24000 },
+    },
+
+    // ── Screen 3: Explore (free play) ─────────────────────────────────────────
     {
       id:             'explore',
       type:           'explore',
       minDurationSec: 60,
       audioPrompt:
-        "Drag some blocks up. See what happens. The number at the top shows what you've made. Just play with it for a minute.",
+        "Try tapping each of the three blocks — unit, rod, and flat. See how the number at the top changes. Mix them up. Just play with it for a minute.",
     },
 
     // ── Screen 3: Guided Tasks ────────────────────────────────────────────────

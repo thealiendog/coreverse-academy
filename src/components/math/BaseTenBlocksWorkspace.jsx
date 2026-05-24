@@ -21,6 +21,29 @@ const VALUE = { unit: 1, rod: 10, flat: 100 };
 let _id = 0;
 const uid = () => `b${++_id}`;
 
+// ── Auto-arrange spawn regions (full scale, compact=false only) ───────────────
+// Workspace reads top → bottom: flats | rods | units (matches place value order).
+// Units form a classic ten-frame (2 rows × 5 cols).
+// These are fixed pixel offsets; interactive workspaces are always ~500px+ tall.
+const SPAWN = {
+  flat: { x0: 8, y0: 8,   xStep: FLAT_S_BASE + 6, perRow: 2 },
+  rod:  { x0: 8, y0: FLAT_S_BASE + 18, xStep: ROD_W_BASE + 6, perRow: 9 },
+  // Ten-frame: y0 = below rod zone
+  unit: { x0: 8, y0: FLAT_S_BASE + ROD_H_BASE + 26, xStep: UNIT_S_BASE + 4, perRow: 5 },
+};
+
+function getSpawnPos(type, nth) {
+  const r = SPAWN[type];
+  if (!r) return { x: 8, y: 8 };
+  const col = nth % r.perRow;
+  const row = Math.floor(nth / r.perRow);
+  const xStep = r.xStep;
+  const yStep = type === 'rod' ? ROD_H_BASE + 6
+              : type === 'flat' ? FLAT_S_BASE + 6
+              : UNIT_S_BASE + 4;
+  return { x: r.x0 + col * xStep, y: r.y0 + row * yStep };
+}
+
 // ── Generate initial block layout from a count spec ───────────────────────────
 // compact: use half-size dimensions so preloaded blocks fit compact display areas
 function generateInitialBlocks(spec, compact) {
@@ -178,12 +201,15 @@ export default function BaseTenBlocksWorkspace({
   }, [blocks, onChange]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Spawn (disabled in readOnly) ───────────────────────────────────────────
+  // Each block type spawns into its assigned region so blocks never pile up.
+  // nth = how many of this type already exist → determines grid position.
   function spawnBlock(type) {
     if (readOnly) return;
-    setBlocks(prev => [
-      ...prev,
-      { id: uid(), type, x: 24 + Math.random() * 56, y: 24 + Math.random() * 56 },
-    ]);
+    setBlocks(prev => {
+      const nth = prev.filter(b => b.type === type && !dissolvingIdsRef.current.has(b.id)).length;
+      const pos = compact ? { x: 8, y: 8 } : getSpawnPos(type, nth);
+      return [...prev, { id: uid(), type, x: pos.x, y: pos.y }];
+    });
   }
 
   // ── Auto-regroup ───────────────────────────────────────────────────────────
@@ -370,7 +396,7 @@ export default function BaseTenBlocksWorkspace({
             <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>
               Your Number
             </div>
-            <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.38)', marginTop: 5, letterSpacing: '0.02em', minHeight: '1.1em' }}>
+            <div style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.5)', marginTop: 6, letterSpacing: '0.01em', minHeight: '1.1em', fontWeight: 500 }}>
               {breakdown || 'Add blocks below ↓'}
             </div>
           </>
@@ -540,7 +566,7 @@ export default function BaseTenBlocksWorkspace({
               <PalettePreview type={type} />
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.83rem' }}>{label}</span>
-                <span style={{ color: 'rgba(255,255,255,0.38)', fontSize: '0.7rem' }}>+{value}</span>
+                <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1rem', fontWeight: 600 }}>+{value}</span>
               </div>
             </button>
           ))}

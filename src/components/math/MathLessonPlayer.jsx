@@ -234,7 +234,116 @@ function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
   );
 }
 
-// ── 2. ExploreScreen ──────────────────────────────────────────────────────────
+// ── 2. BlockIntroScreen ───────────────────────────────────────────────────────
+// Introduces the three block types before free explore.
+// Highlights each block in turn as Remi speaks about it.
+function BlockIntroScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+  const [highlighted, setHighlighted] = useState(null); // 'unit' | 'rod' | 'flat' | null
+
+  useEffect(() => {
+    speak(screen.audioPrompt);
+    const timings = screen.highlightTimings || { unit: 4400, rod: 9800, flat: 17200, none: 24000 };
+    const t1 = setTimeout(() => setHighlighted('unit'), timings.unit);
+    const t2 = setTimeout(() => setHighlighted('rod'),  timings.rod);
+    const t3 = setTimeout(() => setHighlighted('flat'), timings.flat);
+    const t4 = setTimeout(() => setHighlighted(null),   timings.none);
+    return () => { stopAudio(); [t1,t2,t3,t4].forEach(clearTimeout); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const blocks = [
+    { type: 'unit', label: 'Unit',  value: '1',   fill: '#60A5FA', stroke: '#2563EB', icon: '🔵' },
+    { type: 'rod',  label: 'Rod',   value: '10',  fill: '#34D399', stroke: '#10B981', icon: '🟩' },
+    { type: 'flat', label: 'Flat',  value: '100', fill: '#FBBF24', stroke: '#D97706', icon: '🟨' },
+  ];
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '24px 20px', gap: 20 }}>
+      <style>{`
+        @keyframes blockGlow {
+          0%,100% { transform: scale(1); }
+          50%      { transform: scale(1.06); }
+        }
+      `}</style>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <RemiAvatar size={44} speaking={speaking} />
+        <div style={{ flex: 1 }}>
+          <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff' }}>Meet your blocks</div>
+          <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>Each one represents a different value</div>
+        </div>
+        <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
+      </div>
+
+      {/* Three block cards */}
+      <div style={{ display: 'flex', gap: 10, flex: 1, alignItems: 'stretch' }}>
+        {blocks.map(({ type, label, value, fill, stroke }) => {
+          const isLit = highlighted === type;
+          return (
+            <div
+              key={type}
+              style={{
+                flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
+                justifyContent: 'center', gap: 10, padding: '18px 8px', borderRadius: 18,
+                background: isLit ? `${fill}1a` : 'rgba(255,255,255,0.04)',
+                border: `2px solid ${isLit ? fill : 'rgba(255,255,255,0.09)'}`,
+                boxShadow: isLit ? `0 0 24px ${fill}55` : 'none',
+                transition: 'all 0.35s ease',
+                animation: isLit ? 'blockGlow 0.9s ease-in-out infinite' : undefined,
+              }}
+            >
+              {/* Mini block visual */}
+              {type === 'unit' && (
+                <svg width={40} height={40}>
+                  <rect x={1} y={1} width={38} height={38} fill={fill} stroke={stroke} strokeWidth={2} rx={6} />
+                </svg>
+              )}
+              {type === 'rod' && (
+                <svg width={22} height={80}>
+                  <rect x={1} y={1} width={20} height={78} fill={fill} stroke={stroke} strokeWidth={2} rx={4} />
+                  {[1,2,3,4,5,6,7].map(i => (
+                    <line key={i} x1={2} y1={i*10} x2={20} y2={i*10} stroke={stroke} strokeWidth={1} />
+                  ))}
+                </svg>
+              )}
+              {type === 'flat' && (
+                <svg width={68} height={68}>
+                  <rect x={1} y={1} width={66} height={66} fill={fill} stroke={stroke} strokeWidth={2} rx={5} />
+                  {[1,2,3].map(i => (
+                    <line key={`h${i}`} x1={2} y1={i*16.5} x2={66} y2={i*16.5} stroke={stroke} strokeWidth={0.8} />
+                  ))}
+                  {[1,2,3].map(i => (
+                    <line key={`v${i}`} x1={i*16.5} y1={2} x2={i*16.5} y2={66} stroke={stroke} strokeWidth={0.8} />
+                  ))}
+                </svg>
+              )}
+
+              <div style={{ fontWeight: 800, fontSize: '0.9rem', color: isLit ? fill : '#fff', transition: 'color 0.3s' }}>
+                {label}
+              </div>
+              <div style={{
+                fontWeight: 900, fontSize: '1.4rem', color: fill,
+                background: `${fill}18`, borderRadius: 8, padding: '3px 12px',
+              }}>
+                {value}
+              </div>
+              {isLit && (
+                <div style={{ fontSize: '0.72rem', color: fill, fontWeight: 600, textAlign: 'center', lineHeight: 1.4, opacity: 0.85 }}>
+                  {type === 'unit' && 'means ONE'}
+                  {type === 'rod'  && '= 10 units'}
+                  {type === 'flat' && '= 100 units'}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <PrimaryBtn onClick={onAdvance}>Got it, let's build →</PrimaryBtn>
+    </div>
+  );
+}
+
+// ── 3. ExploreScreen ──────────────────────────────────────────────────────────
 function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
   const [elapsed,    setElapsed]    = useState(0);
   const [canContinue, setCanContinue] = useState(false);
@@ -266,7 +375,7 @@ function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: '0.82rem', fontWeight: 700, color: ACCENT }}>Free Explore</div>
           <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
-            {canContinue ? 'Great exploring! Ready to continue?' : `Explore for ${remaining}s more…`}
+            {canContinue ? 'Ready when you are!' : 'Try each block — unit, rod, flat!'}
           </div>
         </div>
         <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
@@ -454,7 +563,8 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
   const [feedbackMsg, setFeedbackMsg] = useState('');
   const [tensInput,   setTensInput]   = useState('');
   const [onesInput,   setOnesInput]   = useState('');
-  const [tapFeedback, setTapFeedback] = useState(null); // for tap-identify
+  const [tapFeedback,    setTapFeedback]    = useState(null); // for tap-identify
+  const [highlightBlanks, setHighlightBlanks] = useState(false); // Case A: blanks need attention
 
   const problems = screen.problems || [];
   const prob = problems[probIdx];
@@ -464,6 +574,7 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
     setFeedback(null);
     setFeedbackMsg('');
     setTapFeedback(null);
+    setHighlightBlanks(false);
     setTensInput('');
     setOnesInput('');
     const t = setTimeout(() => speak(prob.audioPrompt), 300);
@@ -517,20 +628,40 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
 
   function handleBuildWriteCheck() {
     if (!prob) return;
-    const tensOk = tensInput.trim() === String(prob.correctTens);
-    const onesOk = onesInput.trim() === String(prob.correctOnes);
+    const tensOk  = tensInput.trim() === String(prob.correctTens);
+    const onesOk  = onesInput.trim() === String(prob.correctOnes);
     const buildOk = wsState.total === prob.target;
+    const blanksOk = tensOk && onesOk;
 
-    if (tensOk && onesOk && buildOk) {
+    if (buildOk && blanksOk) {
+      // Case D: both correct
+      const msg = `You got it! ${prob.target} equals ${prob.correctTens} tens plus ${prob.correctOnes} ones.`;
       setFeedback('correct');
-      setFeedbackMsg('Both the blocks AND the blanks are right. Excellent!');
-      speak('Both the blocks and the blanks are right. Excellent!');
-      setTimeout(advance, 2500);
-    } else {
+      setFeedbackMsg(`You got it! ${prob.target} = ${prob.correctTens} tens + ${prob.correctOnes} ones.`);
+      speak(msg);
+      setTimeout(advance, 2600);
+    } else if (buildOk && !blanksOk) {
+      // Case A: blocks right, blanks wrong/empty — highlight inputs
+      const msg = "Your blocks look perfect! Now fill in the blanks below — how many rods did you use? How many units?";
       setFeedback('wrong');
-      setFeedbackMsg(prob.wrongHint || 'Check your blocks and your blanks.');
-      speak(prob.wrongHint || 'Check your blocks and your blanks.');
-      setTimeout(() => setFeedback(null), 3200);
+      setFeedbackMsg(msg);
+      speak(msg);
+      setHighlightBlanks(true);
+      setTimeout(() => { setFeedback(null); setHighlightBlanks(false); }, 4500);
+    } else if (!buildOk && blanksOk) {
+      // Case B: blanks right, blocks wrong
+      const msg = `Your blanks are right! But check your blocks — you built ${wsState.total}. We want ${prob.target}.`;
+      setFeedback('wrong');
+      setFeedbackMsg(msg);
+      speak(msg);
+      setTimeout(() => setFeedback(null), 3800);
+    } else {
+      // Case C: both wrong
+      const msg = `Let's check both. We're building ${prob.target} — that's ${prob.correctTens} tens (rods) and ${prob.correctOnes} ones (units). Try again.`;
+      setFeedback('wrong');
+      setFeedbackMsg(msg);
+      speak(msg);
+      setTimeout(() => setFeedback(null), 4000);
     }
   }
 
@@ -589,8 +720,11 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
               placeholder="?"
               style={{
                 width: 48, height: 38, textAlign: 'center', borderRadius: 8,
-                border: `1.5px solid ${ACCENT}44`, background: ACCENT_DIM,
+                border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
+                background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
                 color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
+                boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
+                transition: 'border-color 0.3s, box-shadow 0.3s',
               }}
             />
             <span>tens +</span>
@@ -603,8 +737,11 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
               placeholder="?"
               style={{
                 width: 48, height: 38, textAlign: 'center', borderRadius: 8,
-                border: `1.5px solid ${ACCENT}44`, background: ACCENT_DIM,
+                border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
+                background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
                 color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
+                boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
+                transition: 'border-color 0.3s, box-shadow 0.3s',
               }}
             />
             <span>ones</span>
@@ -950,6 +1087,7 @@ export default function MathLessonPlayer() {
       {/* Current screen */}
       <div style={{ flex: 1, minHeight: 0, overflow: 'hidden', marginTop: 3 }}>
         {screen.type === 'welcome'           && <WelcomeScreen          {...sharedProps} />}
+        {screen.type === 'block-intro'       && <BlockIntroScreen       {...sharedProps} />}
         {screen.type === 'explore'           && <ExploreScreen          {...sharedProps} />}
         {screen.type === 'guided-tasks'      && <GuidedTasksScreen      {...sharedProps} />}
         {screen.type === 'concept-name'      && <ConceptNameScreen      {...sharedProps} />}
