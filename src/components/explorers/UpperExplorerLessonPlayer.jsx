@@ -1433,6 +1433,87 @@ function ProblemSolvingGame({
       );
     }
 
+    if (type === 'coordinate-grid') {
+      const { xMax = 10, yMax = 10, points = [], lines = [], caption = '' } = data;
+      const PAD_L = 30, PAD_B = 22, PAD_T = 8, PAD_R = 8;
+      const VW = 260, VH = 260;
+      const plotX0 = PAD_L, plotY0 = PAD_T;
+      const plotX1 = VW - PAD_R, plotY1 = VH - PAD_B;
+      const plotW  = plotX1 - plotX0;
+      const plotH  = plotY1 - plotY0;
+      const toSX   = x => plotX0 + (x / (xMax || 1)) * plotW;
+      const toSY   = y => plotY1 - (y / (yMax || 1)) * plotH;
+      const xStep  = xMax > 8 ? 2 : 1;
+      const yStep  = yMax > 8 ? 2 : 1;
+      return (
+        <div style={wrap}>
+          {vizLabel('Coordinate Grid')}
+          <svg width="100%" viewBox={`0 0 ${VW} ${VH}`} style={{ maxWidth: 300 }}>
+            {/* Vertical gridlines */}
+            {Array.from({ length: xMax + 1 }, (_, i) => (
+              <line key={`vg${i}`}
+                x1={toSX(i)} y1={plotY0} x2={toSX(i)} y2={plotY1}
+                stroke={i === 0 ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.10)'}
+                strokeWidth={i === 0 ? 1.5 : 0.8}
+              />
+            ))}
+            {/* Horizontal gridlines */}
+            {Array.from({ length: yMax + 1 }, (_, j) => (
+              <line key={`hg${j}`}
+                x1={plotX0} y1={toSY(j)} x2={plotX1} y2={toSY(j)}
+                stroke={j === 0 ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.10)'}
+                strokeWidth={j === 0 ? 1.5 : 0.8}
+              />
+            ))}
+            {/* X-axis labels */}
+            {Array.from({ length: xMax + 1 }, (_, i) => i % xStep === 0 && (
+              <text key={`xl${i}`}
+                x={toSX(i)} y={plotY1 + 14}
+                textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize={8}
+              >{i}</text>
+            ))}
+            {/* Y-axis labels */}
+            {Array.from({ length: yMax + 1 }, (_, j) => j % yStep === 0 && (
+              <text key={`yl${j}`}
+                x={plotX0 - 5} y={toSY(j) + 3}
+                textAnchor="end" fill="rgba(255,255,255,0.45)" fontSize={8}
+              >{j}</text>
+            ))}
+            {/* Axis name labels */}
+            <text x={(plotX0 + plotX1) / 2} y={VH - 1} textAnchor="middle" fill="rgba(255,255,255,0.30)" fontSize={7}>x</text>
+            <text x={4} y={(plotY0 + plotY1) / 2 + 3} textAnchor="middle" fill="rgba(255,255,255,0.30)" fontSize={7}>y</text>
+            {/* Line segments between points */}
+            {lines.map((seg, i) => {
+              const a = points[seg.from], b = points[seg.to];
+              if (!a || !b) return null;
+              return (
+                <line key={`ln${i}`}
+                  x1={toSX(a.x)} y1={toSY(a.y)} x2={toSX(b.x)} y2={toSY(b.y)}
+                  stroke={`${accent}99`} strokeWidth={1.5}
+                />
+              );
+            })}
+            {/* Points */}
+            {points.map((pt, i) => (
+              <g key={`pt${i}`}>
+                <circle cx={toSX(pt.x)} cy={toSY(pt.y)} r={5} fill={accent} />
+                {pt.label && (
+                  <text x={toSX(pt.x) + 8} y={toSY(pt.y) - 6}
+                    fill={accent} fontSize={10} fontWeight={700}
+                  >{pt.label}</text>
+                )}
+              </g>
+            ))}
+          </svg>
+          {caption && (
+            <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem', textAlign: 'center', marginTop: 2 }}>
+              {caption}
+            </div>
+          )}
+        </div>
+      );
+    }
+
     return null;
   }
 
