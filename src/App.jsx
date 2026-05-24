@@ -49,6 +49,7 @@ import GameLessonPlayer     from './components/games/GameLessonPlayer';
 import ExplorerLessonPlayer      from './components/explorers/ExplorerLessonPlayer';
 import UpperExplorerLessonPlayer from './components/explorers/UpperExplorerLessonPlayer';
 import TemplateTest         from './pages/TemplateTest';
+import MathSandbox          from './pages/MathSandbox';
 
 // Dispatches to GameLessonPlayer for Little Stars (?level=1) lessons
 // that have a gameSequence; falls back to LessonPlayer otherwise.
@@ -102,6 +103,9 @@ export default function App() {
 
         {/* Dev: template testing */}
         <Route path="/template-test" element={<TemplateTest />} />
+
+        {/* Dev: math manipulative sandbox */}
+        <Route path="/math-sandbox" element={<MathSandbox />} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
