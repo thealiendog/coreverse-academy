@@ -48,6 +48,10 @@ import MATH_UE_L01 from '../../data/math_upper_explorer_l01_screens';
 import MATH_UE_L02 from '../../data/math_upper_explorer_l02_screens';
 import MATH_UE_L03 from '../../data/math_upper_explorer_l03_screens';
 import MATH_UE_L04 from '../../data/math_upper_explorer_l04_screens';
+import MATH_UE_L05 from '../../data/math_upper_explorer_l05_screens';
+import MATH_UE_L06 from '../../data/math_upper_explorer_l06_screens';
+import MATH_UE_L07 from '../../data/math_upper_explorer_l07_screens';
+import MATH_UE_L08 from '../../data/math_upper_explorer_l08_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -86,6 +90,10 @@ const UE_DATA = {
       ...MATH_UE_L02.lessons,
       ...MATH_UE_L03.lessons,
       ...MATH_UE_L04.lessons,
+      ...MATH_UE_L05.lessons,
+      ...MATH_UE_L06.lessons,
+      ...MATH_UE_L07.lessons,
+      ...MATH_UE_L08.lessons,
     ],
   },
 };
@@ -1283,7 +1291,51 @@ function ProblemSolvingGame({
     }
 
     if (type === 'fraction-bar') {
-      const { numerator = 1, denominator = 4, label = '' } = data;
+      const { numerator = 1, denominator = 4, compareNumerator, compareDenominator, caption = '', label = '' } = data;
+      const hasCompare = compareNumerator !== undefined && compareDenominator !== undefined;
+
+      if (hasCompare) {
+        // Comparison mode — two bars stacked for side-by-side fraction comparison
+        const segW1 = 270 / (denominator || 1);
+        const segW2 = 270 / (compareDenominator || 1);
+        const compColor = '#60A5FA';
+        return (
+          <div style={wrap}>
+            {vizLabel('Fraction Comparison')}
+            <svg width="100%" viewBox="0 0 290 108" style={{ maxWidth: 320 }}>
+              {/* Top bar: main fraction (accent color) */}
+              {Array.from({ length: denominator }).map((_, i) => (
+                <rect key={`a-${i}`}
+                  x={10 + i * segW1} y={5} width={segW1 - 2} height={28}
+                  fill={i < numerator ? `${accent}55` : 'rgba(255,255,255,0.06)'}
+                  stroke={`${accent}77`} strokeWidth={1} rx={2}
+                />
+              ))}
+              <text x={145} y={44} textAnchor="middle" fill={accent} fontSize={11} fontWeight="600">
+                {numerator}/{denominator}
+              </text>
+              {/* Bottom bar: compare fraction (blue) */}
+              {Array.from({ length: compareDenominator }).map((_, i) => (
+                <rect key={`b-${i}`}
+                  x={10 + i * segW2} y={54} width={segW2 - 2} height={28}
+                  fill={i < compareNumerator ? `${compColor}55` : 'rgba(255,255,255,0.06)'}
+                  stroke={`${compColor}77`} strokeWidth={1} rx={2}
+                />
+              ))}
+              <text x={145} y={94} textAnchor="middle" fill={compColor} fontSize={11} fontWeight="600">
+                {compareNumerator}/{compareDenominator}
+              </text>
+            </svg>
+            {(caption || label) && (
+              <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem', textAlign: 'center', marginTop: 2 }}>
+                {caption || label}
+              </div>
+            )}
+          </div>
+        );
+      }
+
+      // Single fraction mode
       const segW = 270 / (denominator || 1);
       return (
         <div style={wrap}>
@@ -1300,6 +1352,11 @@ function ProblemSolvingGame({
               {label || `${numerator}/${denominator}`}
             </text>
           </svg>
+          {caption && (
+            <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem', textAlign: 'center', marginTop: 2 }}>
+              {caption}
+            </div>
+          )}
         </div>
       );
     }

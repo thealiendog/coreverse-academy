@@ -98,12 +98,16 @@ const NEW_FORMAT_UE_LESSONS = {
     'social-studies-9-10-19',
     'social-studies-9-10-20',
   ],
-  // Math UE — Wave 1 (L01–L04 wired; remaining added per wave)
+  // Math UE — Wave 1 (L01–L04) + Wave 2 (L05–L08)
   'math': [
     'math-9-10-01',
     'math-9-10-02',
     'math-9-10-03',
     'math-9-10-04',
+    'math-9-10-05',
+    'math-9-10-06',
+    'math-9-10-07',
+    'math-9-10-08',
   ],
 };
 
