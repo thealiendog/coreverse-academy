@@ -108,6 +108,10 @@ const NEW_FORMAT_UE_LESSONS = {
     'math-9-10-06',
     'math-9-10-07',
     'math-9-10-08',
+    'math-9-10-09',
+    'math-9-10-10',
+    'math-9-10-11',
+    'math-9-10-12',
   ],
 };
 
