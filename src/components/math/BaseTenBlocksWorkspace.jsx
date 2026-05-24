@@ -1,26 +1,71 @@
 // BaseTenBlocksWorkspace — interactive base-ten block manipulative for ages 9-10.
 // Supports: spawn, drag, delete, auto-regroup (10→1), break-apart, clear-all.
 // Standalone — no parent props required. Designed mobile-first (pointer events).
+//
+// Optional props for lesson integration:
+//   onChange(state)    — called whenever blocks change: { flats, rods, units, total, blocks }
+//   initialState       — { flats, rods, units } OR [{id,type,x,y}] to preload blocks
+//   readOnly           — if true: no spawn/drag/delete. Blocks are tappable via onBlockTap.
+//   onBlockTap(block)  — called when kid taps a block (overrides break-apart dialog)
+//   compact            — if true: renders blocks at 50% size for read-only display panels
 import { useState, useEffect, useRef } from 'react';
 
-// ── Dimensions (px) ───────────────────────────────────────────────────────────
-const UNIT_S = 28;
-const ROD_W  = 28;
-const ROD_H  = 280;   // 10 × 28
-const FLAT_S = 140;   // 10 × 14 cells
+// ── Base dimensions (full scale) ──────────────────────────────────────────────
+const UNIT_S_BASE = 28;
+const ROD_W_BASE  = 28;
+const ROD_H_BASE  = 280;   // 10 × 28
+const FLAT_S_BASE = 140;   // 10 × 14 cells
 
-const DIMS = {
-  unit: { w: UNIT_S, h: UNIT_S },
-  rod:  { w: ROD_W,  h: ROD_H  },
-  flat: { w: FLAT_S, h: FLAT_S },
-};
 const VALUE = { unit: 1, rod: 10, flat: 100 };
 
 let _id = 0;
 const uid = () => `b${++_id}`;
 
-// ── SVG Block Renderers ───────────────────────────────────────────────────────
-function UnitSVG({ s = UNIT_S }) {
+// ── Generate initial block layout from a count spec ───────────────────────────
+// compact: use half-size dimensions so preloaded blocks fit compact display areas
+function generateInitialBlocks(spec, compact) {
+  const S  = compact ? 0.5 : 1.0;
+  const US = Math.round(UNIT_S_BASE * S);
+  const RW = Math.round(ROD_W_BASE  * S);
+  const RH = Math.round(ROD_H_BASE  * S);
+  const FS = Math.round(FLAT_S_BASE * S);
+
+  const blocks = [];
+  const nextId = () => `init_${uid()}`;
+  const GAP = 4;
+
+  // Flats in a 2-column grid from top-left
+  for (let i = 0; i < (spec.flats || 0); i++) {
+    const col = i % 2;
+    const row = Math.floor(i / 2);
+    blocks.push({ id: nextId(), type: 'flat', x: GAP + col * (FS + GAP), y: GAP + row * (FS + GAP) });
+  }
+
+  // X offset: right of flat columns (or 0 if no flats)
+  const flatCols = Math.min(spec.flats || 0, 2);
+  const afterFlatsX = flatCols > 0 ? GAP + flatCols * (FS + GAP) : 0;
+
+  // Rods stacked horizontally from top-right area
+  for (let i = 0; i < (spec.rods || 0); i++) {
+    blocks.push({ id: nextId(), type: 'rod', x: afterFlatsX + GAP + i * (RW + GAP), y: GAP });
+  }
+
+  // Units below the flat rows (or below rods if no flats)
+  const flatRows  = spec.flats ? Math.ceil(spec.flats / 2) : 0;
+  const flatH     = flatRows > 0 ? GAP + flatRows * (FS + GAP) : 0;
+  const unitStartY = Math.max(flatH, RH + GAP * 2);
+
+  for (let i = 0; i < (spec.units || 0); i++) {
+    const col = i % 2;
+    const row = Math.floor(i / 2);
+    blocks.push({ id: nextId(), type: 'unit', x: GAP + col * (US + GAP + 2), y: unitStartY + row * (US + GAP) });
+  }
+
+  return blocks;
+}
+
+// ── SVG Block Renderers (scale-aware) ─────────────────────────────────────────
+function UnitSVG({ s }) {
   return (
     <svg width={s} height={s} style={{ display: 'block' }}>
       <rect x={1} y={1} width={s - 2} height={s - 2}
@@ -29,7 +74,7 @@ function UnitSVG({ s = UNIT_S }) {
   );
 }
 
-function RodSVG({ w = ROD_W, h = ROD_H, segs = 10 }) {
+function RodSVG({ w, h, segs = 10 }) {
   const segH = h / segs;
   return (
     <svg width={w} height={h} style={{ display: 'block' }}>
@@ -43,7 +88,7 @@ function RodSVG({ w = ROD_W, h = ROD_H, segs = 10 }) {
   );
 }
 
-function FlatSVG({ s = FLAT_S, cells = 10 }) {
+function FlatSVG({ s, cells = 10 }) {
   const cell = s / cells;
   return (
     <svg width={s} height={s} style={{ display: 'block' }}>
@@ -61,7 +106,7 @@ function FlatSVG({ s = FLAT_S, cells = 10 }) {
   );
 }
 
-// Small previews for the palette buttons
+// Small previews for the palette buttons (always full-ish scale)
 function PalettePreview({ type }) {
   if (type === 'unit') return <UnitSVG s={26} />;
   if (type === 'rod')  return <RodSVG w={14} h={52} segs={5} />;
@@ -76,32 +121,65 @@ const PALETTE = [
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
-export default function BaseTenBlocksWorkspace() {
-  // blocks: { id, type, x, y }
-  const [blocks, setBlocks] = useState([]);
-  // IDs currently in the dissolve animation (phase 1 of regroup)
-  const [dissolvingIds, setDissolvingIds] = useState(new Set());
-  // ID of the newly spawned block getting the bounce-in animation
-  const [bouncingId, setBouncingId] = useState(null);
-  // ID of the block currently being dragged (for cursor + z-index)
-  const [draggingId, setDraggingId] = useState(null);
-  // Block tapped for break-apart dialog
-  const [splitTarget, setSplitTarget] = useState(null);
-  // Clear-all confirmation dialog
-  const [showClearConfirm, setShowClearConfirm] = useState(false);
+export default function BaseTenBlocksWorkspace({
+  onChange,
+  initialState,
+  readOnly = false,
+  onBlockTap,
+  compact = false,
+}) {
+  // ── Scale-derived dimensions ───────────────────────────────────────────────
+  const SC = compact ? 0.5 : 1.0;
+  const UNIT_S = Math.round(UNIT_S_BASE * SC);
+  const ROD_W  = Math.round(ROD_W_BASE  * SC);
+  const ROD_H  = Math.round(ROD_H_BASE  * SC);
+  const FLAT_S = Math.round(FLAT_S_BASE * SC);
 
-  const workspaceRef    = useRef(null);
-  const isRegroupingRef = useRef(false);
-  // Ref copy of dissolving IDs so the effect closure sees current value
+  const DIMS = {
+    unit: { w: UNIT_S, h: UNIT_S },
+    rod:  { w: ROD_W,  h: ROD_H  },
+    flat: { w: FLAT_S, h: FLAT_S },
+  };
+
+  // ── State ──────────────────────────────────────────────────────────────────
+  const [blocks, setBlocks] = useState(() => {
+    if (Array.isArray(initialState)) {
+      return initialState.map(b => ({ ...b, id: b.id || uid() }));
+    }
+    if (initialState && typeof initialState === 'object') {
+      return generateInitialBlocks(initialState, compact);
+    }
+    return [];
+  });
+
+  const [dissolvingIds,  setDissolvingIds]  = useState(new Set());
+  const [bouncingId,     setBouncingId]     = useState(null);
+  const [draggingId,     setDraggingId]     = useState(null);
+  const [splitTarget,    setSplitTarget]    = useState(null);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
+  // Which block is highlighted (for tap-identify feedback)
+  const [highlightId, setHighlightId] = useState(null);
+
+  const workspaceRef     = useRef(null);
+  const isRegroupingRef  = useRef(false);
   const dissolvingIdsRef = useRef(new Set());
-  // Drag state: { id, type, startPX, startPY, startBX, startBY, hasMoved }
-  const dragRef = useRef(null);
+  const dragRef          = useRef(null);
 
   // ── Total ──────────────────────────────────────────────────────────────────
   const total = blocks.reduce((sum, b) => sum + (VALUE[b.type] || 0), 0);
 
-  // ── Spawn ──────────────────────────────────────────────────────────────────
+  // ── onChange callback ──────────────────────────────────────────────────────
+  useEffect(() => {
+    if (!onChange) return;
+    const flats = blocks.filter(b => b.type === 'flat').length;
+    const rods  = blocks.filter(b => b.type === 'rod').length;
+    const units = blocks.filter(b => b.type === 'unit').length;
+    onChange({ flats, rods, units, total, blocks });
+  }, [blocks, onChange]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Spawn (disabled in readOnly) ───────────────────────────────────────────
   function spawnBlock(type) {
+    if (readOnly) return;
     setBlocks(prev => [
       ...prev,
       { id: uid(), type, x: 24 + Math.random() * 56, y: 24 + Math.random() * 56 },
@@ -109,9 +187,6 @@ export default function BaseTenBlocksWorkspace() {
   }
 
   // ── Auto-regroup ───────────────────────────────────────────────────────────
-  // Triggers whenever blocks array changes.
-  // Phase 1 (320ms): dissolve animation on the 10 source blocks.
-  // Phase 2 (500ms): new block bounces in at their average position.
   useEffect(() => {
     if (isRegroupingRef.current) return;
 
@@ -133,7 +208,6 @@ export default function BaseTenBlocksWorkspace() {
     dissolvingIdsRef.current = targetIds;
     setDissolvingIds(new Set(targetIds));
 
-    // Phase 2: after dissolve CSS completes
     setTimeout(() => {
       const newId = uid();
       const { w: nw } = DIMS[toType];
@@ -145,7 +219,6 @@ export default function BaseTenBlocksWorkspace() {
       setDissolvingIds(new Set());
       setBouncingId(newId);
 
-      // Clear bounce flag + unlock after animation finishes
       setTimeout(() => {
         setBouncingId(null);
         isRegroupingRef.current = false;
@@ -156,7 +229,7 @@ export default function BaseTenBlocksWorkspace() {
   // ── Drag ───────────────────────────────────────────────────────────────────
   function handlePointerDown(e, id, type) {
     e.stopPropagation();
-    if (dissolvingIdsRef.current.has(id)) return;
+    if (readOnly || dissolvingIdsRef.current.has(id)) return;
     const block = blocks.find(b => b.id === id);
     if (!block) return;
     dragRef.current = {
@@ -174,7 +247,6 @@ export default function BaseTenBlocksWorkspace() {
     if (!d || d.id !== id) return;
     const dx = e.clientX - d.startPX;
     const dy = e.clientY - d.startPY;
-
     if (!d.hasMoved && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) d.hasMoved = true;
     if (!d.hasMoved) return;
 
@@ -192,14 +264,22 @@ export default function BaseTenBlocksWorkspace() {
 
   function handlePointerUp(e, id) {
     const d = dragRef.current;
-    if (!d || d.id !== id) return;
-    const wasTap = !d.hasMoved;
-    dragRef.current = null;
-    setDraggingId(null);
+    const wasD = !!d && d.id === id;
+    const wasTap = wasD ? !d.hasMoved : false;
+    if (wasD) { dragRef.current = null; setDraggingId(null); }
 
-    if (wasTap) {
+    if (wasTap || (readOnly && !wasD)) {
+      // In readOnly mode or when a tap (not drag) occurred
       const block = blocks.find(b => b.id === id);
-      if (block && (block.type === 'rod' || block.type === 'flat')) {
+      if (!block) return;
+
+      if (onBlockTap) {
+        // Parent handles the tap (e.g., Applied Problem 1 "tap the flat")
+        setHighlightId(id);
+        setTimeout(() => setHighlightId(null), 600);
+        onBlockTap(block);
+      } else if (!readOnly && (block.type === 'rod' || block.type === 'flat')) {
+        // Default: show split dialog
         setSplitTarget(block);
       }
     }
@@ -219,11 +299,9 @@ export default function BaseTenBlocksWorkspace() {
     const childType = type === 'rod' ? 'unit' : 'rod';
     const { w: cw, h: ch } = DIMS[childType];
 
-    // Lay children out in a column (rod → units) or row (flat → rods)
     const children = Array.from({ length: 10 }, (_, i) => ({
       id: uid(),
       type: childType,
-      // units stack vertically under the rod position; rods lay horizontally
       x: childType === 'rod'  ? x + i * (cw + 4) : x,
       y: childType === 'unit' ? y + i * (ch + 3) : y,
     }));
@@ -245,13 +323,13 @@ export default function BaseTenBlocksWorkspace() {
   }
 
   // ── Block count breakdown ──────────────────────────────────────────────────
-  const flats = blocks.filter(b => b.type === 'flat').length;
-  const rods  = blocks.filter(b => b.type === 'rod').length;
-  const units = blocks.filter(b => b.type === 'unit').length;
+  const flatsCount = blocks.filter(b => b.type === 'flat').length;
+  const rodsCount  = blocks.filter(b => b.type === 'rod').length;
+  const unitsCount = blocks.filter(b => b.type === 'unit').length;
   const breakdown = [
-    flats && `${flats} flat${flats > 1 ? 's' : ''}`,
-    rods  && `${rods}  rod${rods  > 1 ? 's' : ''}`,
-    units && `${units} unit${units > 1 ? 's' : ''}`,
+    flatsCount && `${flatsCount} flat${flatsCount > 1 ? 's' : ''}`,
+    rodsCount  && `${rodsCount}  rod${rodsCount  > 1 ? 's' : ''}`,
+    unitsCount && `${unitsCount} unit${unitsCount > 1 ? 's' : ''}`,
   ].filter(Boolean).join('  ·  ');
 
   // ── Render ─────────────────────────────────────────────────────────────────
@@ -264,7 +342,7 @@ export default function BaseTenBlocksWorkspace() {
     }}>
       <style>{`
         @keyframes blockDissolve {
-          0%   { transform: scale(1) rotate(0deg);   opacity: 1; }
+          0%   { transform: scale(1) rotate(0deg);    opacity: 1; }
           100% { transform: scale(0.05) rotate(25deg); opacity: 0; }
         }
         @keyframes blockBounce {
@@ -273,33 +351,30 @@ export default function BaseTenBlocksWorkspace() {
           78%  { transform: scale(0.93) rotate(-2deg); }
           100% { transform: scale(1)    rotate(0deg); }
         }
-        @keyframes flashRing {
-          0%, 100% { box-shadow: 0 0 0 0px rgba(255,255,255,0); }
-          50%       { box-shadow: 0 0 0 8px rgba(255,255,255,0.35); }
+        @keyframes blockHighlight {
+          0%,100% { box-shadow: 0 0 0 0px rgba(196,181,253,0); }
+          40%      { box-shadow: 0 0 0 8px rgba(196,181,253,0.5); }
         }
       `}</style>
 
       {/* ── Counter ────────────────────────────────────────────────────────── */}
-      <div style={{ textAlign: 'center', padding: '18px 0 6px', flexShrink: 0 }}>
+      <div style={{ textAlign: 'center', padding: compact ? '8px 0 4px' : '18px 0 6px', flexShrink: 0 }}>
         <div style={{
-          fontSize: 'clamp(3rem, 14vw, 5rem)', fontWeight: 800,
-          letterSpacing: '-0.04em', lineHeight: 1, color: '#fff',
-          transition: 'color 0.12s',
+          fontSize: compact ? '2rem' : 'clamp(3rem, 14vw, 5rem)',
+          fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: '#fff',
         }}>
           {total}
         </div>
-        <div style={{
-          fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em',
-          textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginTop: 4,
-        }}>
-          Your Number
-        </div>
-        <div style={{
-          fontSize: '0.8rem', color: 'rgba(255,255,255,0.38)', marginTop: 5,
-          letterSpacing: '0.02em', minHeight: '1.1em',
-        }}>
-          {breakdown || 'Add blocks below ↓'}
-        </div>
+        {!compact && (
+          <>
+            <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>
+              Your Number
+            </div>
+            <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.38)', marginTop: 5, letterSpacing: '0.02em', minHeight: '1.1em' }}>
+              {breakdown || 'Add blocks below ↓'}
+            </div>
+          </>
+        )}
       </div>
 
       {/* ── Workspace ──────────────────────────────────────────────────────── */}
@@ -307,35 +382,36 @@ export default function BaseTenBlocksWorkspace() {
         ref={workspaceRef}
         style={{
           flex: 1, position: 'relative',
-          margin: '8px 12px',
+          margin: compact ? '4px 8px' : '8px 12px',
           borderRadius: 16,
           background: 'rgba(255,255,255,0.025)',
-          border: '1.5px solid rgba(255,255,255,0.07)',
-          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.11) 1px, transparent 1px)',
+          border: `1.5px solid rgba(255,255,255,${readOnly ? '0.05' : '0.07'})`,
+          backgroundImage: readOnly ? 'none' : 'radial-gradient(circle, rgba(255,255,255,0.11) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
           overflow: 'hidden',
           touchAction: 'none',
         }}
       >
-        {/* Clear button */}
-        <button
-          onClick={() => blocks.length > 0 && setShowClearConfirm(true)}
-          style={{
-            position: 'absolute', top: 10, right: 10, zIndex: 20,
-            padding: '5px 13px', borderRadius: 20,
-            border: '1.5px solid rgba(255,255,255,0.13)',
-            background: 'rgba(8,6,24,0.72)', color: 'rgba(255,255,255,0.5)',
-            fontSize: '0.74rem', fontWeight: 600, cursor: 'pointer',
-            backdropFilter: 'blur(8px)',
-            opacity: blocks.length > 0 ? 1 : 0.25,
-            transition: 'opacity 0.2s',
-          }}
-        >
-          Clear
-        </button>
+        {/* Clear button — hidden in readOnly */}
+        {!readOnly && (
+          <button
+            onClick={() => blocks.length > 0 && setShowClearConfirm(true)}
+            style={{
+              position: 'absolute', top: 10, right: 10, zIndex: 20,
+              padding: '5px 13px', borderRadius: 20,
+              border: '1.5px solid rgba(255,255,255,0.13)',
+              background: 'rgba(8,6,24,0.72)', color: 'rgba(255,255,255,0.5)',
+              fontSize: '0.74rem', fontWeight: 600, cursor: 'pointer',
+              backdropFilter: 'blur(8px)',
+              opacity: blocks.length > 0 ? 1 : 0.25, transition: 'opacity 0.2s',
+            }}
+          >
+            Clear
+          </button>
+        )}
 
-        {/* Regroup hint — shown briefly when 8-9 units are present */}
-        {units + rods * 10 + flats * 100 > 0 && (units === 8 || units === 9) && !isRegroupingRef.current && (
+        {/* Regroup hint (non-compact, non-readOnly, 8-9 units) */}
+        {!compact && !readOnly && (unitsCount === 8 || unitsCount === 9) && !isRegroupingRef.current && (
           <div style={{
             position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)',
             background: 'rgba(52,211,153,0.15)', border: '1px solid rgba(52,211,153,0.3)',
@@ -343,7 +419,7 @@ export default function BaseTenBlocksWorkspace() {
             color: '#34D399', fontSize: '0.73rem', fontWeight: 600,
             pointerEvents: 'none', whiteSpace: 'nowrap', zIndex: 5,
           }}>
-            {10 - units} more unit{10 - units !== 1 ? 's' : ''} → auto-group!
+            {10 - unitsCount} more unit{10 - unitsCount !== 1 ? 's' : ''} → auto-group!
           </div>
         )}
 
@@ -352,33 +428,43 @@ export default function BaseTenBlocksWorkspace() {
           const isDissolving = dissolvingIds.has(block.id);
           const isBouncing   = bouncingId === block.id;
           const isDragging   = draggingId === block.id;
+          const isHighlit    = highlightId === block.id;
+          const { w: bw, h: bh } = DIMS[block.type];
+
           return (
             <div
               key={block.id}
               style={{
                 position: 'absolute',
                 left: block.x, top: block.y,
-                width:  DIMS[block.type].w,
-                height: DIMS[block.type].h,
+                width: bw, height: bh,
                 touchAction: 'none',
-                cursor:  isDragging ? 'grabbing' : 'grab',
+                cursor:  readOnly ? (onBlockTap ? 'pointer' : 'default') : (isDragging ? 'grabbing' : 'grab'),
                 zIndex:  isDragging ? 100 : 2,
                 transformOrigin: 'center center',
                 animation: isDissolving ? 'blockDissolve 340ms ease-in forwards'
                           : isBouncing  ? 'blockBounce 520ms cubic-bezier(0.34,1.56,0.64,1) forwards'
+                          : isHighlit   ? 'blockHighlight 600ms ease-out'
                           : undefined,
                 borderRadius: 6,
               }}
-              onPointerDown={e => handlePointerDown(e, block.id, block.type)}
+              onPointerDown={e => readOnly ? e.stopPropagation() : handlePointerDown(e, block.id, block.type)}
               onPointerMove={e => handlePointerMove(e, block.id)}
-              onPointerUp={e => handlePointerUp(e, block.id)}
+              onPointerUp={e => {
+                if (readOnly) {
+                  e.stopPropagation();
+                  handlePointerUp(e, block.id);
+                } else {
+                  handlePointerUp(e, block.id);
+                }
+              }}
             >
-              {block.type === 'unit' && <UnitSVG />}
-              {block.type === 'rod'  && <RodSVG />}
-              {block.type === 'flat' && <FlatSVG />}
+              {block.type === 'unit' && <UnitSVG s={UNIT_S} />}
+              {block.type === 'rod'  && <RodSVG  w={ROD_W} h={ROD_H} />}
+              {block.type === 'flat' && <FlatSVG s={FLAT_S} />}
 
-              {/* Delete button — sits in top-right corner */}
-              {!isDissolving && (
+              {/* Delete button — hidden in readOnly or compact */}
+              {!isDissolving && !readOnly && !compact && (
                 <button
                   onPointerDown={e => e.stopPropagation()}
                   onClick={e => { e.stopPropagation(); deleteBlock(block.id); }}
@@ -401,12 +487,11 @@ export default function BaseTenBlocksWorkspace() {
           );
         })}
 
-        {/* Empty state hint */}
-        {blocks.length === 0 && (
+        {/* Empty state hint (non-readOnly, non-compact only) */}
+        {!readOnly && !compact && blocks.length === 0 && (
           <div style={{
             position: 'absolute', inset: 0, display: 'flex',
-            alignItems: 'center', justifyContent: 'center',
-            pointerEvents: 'none',
+            alignItems: 'center', justifyContent: 'center', pointerEvents: 'none',
           }}>
             <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.18)' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: 8 }}>📦</div>
@@ -418,48 +503,49 @@ export default function BaseTenBlocksWorkspace() {
         )}
       </div>
 
-      {/* ── Palette ────────────────────────────────────────────────────────── */}
-      <div style={{
-        display: 'flex', gap: 10,
-        padding: '10px 12px 20px',
-        flexShrink: 0, justifyContent: 'center',
-      }}>
-        {PALETTE.map(({ type, label, value }) => (
-          <button
-            key={type}
-            onClick={() => spawnBlock(type)}
-            style={{
-              flex: 1, maxWidth: 116, minHeight: 74,
-              display: 'flex', flexDirection: 'column',
-              alignItems: 'center', justifyContent: 'center', gap: 7,
-              background: 'rgba(255,255,255,0.05)',
-              border: '1.5px solid rgba(255,255,255,0.1)',
-              borderRadius: 14, cursor: 'pointer',
-              touchAction: 'manipulation',
-              padding: '10px 6px',
-              WebkitTapHighlightColor: 'transparent',
-            }}
-            onPointerDown={e => {
-              e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
-              e.currentTarget.style.transform = 'scale(0.96)';
-            }}
-            onPointerUp={e => {
-              e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-            onPointerLeave={e => {
-              e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
-          >
-            <PalettePreview type={type} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
-              <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.83rem' }}>{label}</span>
-              <span style={{ color: 'rgba(255,255,255,0.38)', fontSize: '0.7rem' }}>+{value}</span>
-            </div>
-          </button>
-        ))}
-      </div>
+      {/* ── Palette — hidden in readOnly ────────────────────────────────────── */}
+      {!readOnly && (
+        <div style={{
+          display: 'flex', gap: 10,
+          padding: compact ? '6px 8px 10px' : '10px 12px 20px',
+          flexShrink: 0, justifyContent: 'center',
+        }}>
+          {PALETTE.map(({ type, label, value }) => (
+            <button
+              key={type}
+              onClick={() => spawnBlock(type)}
+              style={{
+                flex: 1, maxWidth: 116, minHeight: compact ? 56 : 74,
+                display: 'flex', flexDirection: 'column',
+                alignItems: 'center', justifyContent: 'center', gap: 7,
+                background: 'rgba(255,255,255,0.05)',
+                border: '1.5px solid rgba(255,255,255,0.1)',
+                borderRadius: 14, cursor: 'pointer',
+                touchAction: 'manipulation', padding: '10px 6px',
+                WebkitTapHighlightColor: 'transparent',
+              }}
+              onPointerDown={e => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+                e.currentTarget.style.transform = 'scale(0.96)';
+              }}
+              onPointerUp={e => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+              onPointerLeave={e => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              <PalettePreview type={type} />
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 1 }}>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.83rem' }}>{label}</span>
+                <span style={{ color: 'rgba(255,255,255,0.38)', fontSize: '0.7rem' }}>+{value}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* ── Break-apart dialog ─────────────────────────────────────────────── */}
       {splitTarget && (
@@ -468,8 +554,7 @@ export default function BaseTenBlocksWorkspace() {
             position: 'fixed', inset: 0, zIndex: 300,
             background: 'rgba(0,0,0,0.72)', backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: 24,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24,
           }}
           onClick={() => setSplitTarget(null)}
         >
@@ -488,10 +573,7 @@ export default function BaseTenBlocksWorkspace() {
             <div style={{ fontWeight: 800, fontSize: '1.15rem', marginBottom: 8, color: '#fff' }}>
               Break apart this {splitTarget.type}?
             </div>
-            <div style={{
-              color: 'rgba(255,255,255,0.52)', fontSize: '0.92rem',
-              marginBottom: 28, lineHeight: 1.55,
-            }}>
+            <div style={{ color: 'rgba(255,255,255,0.52)', fontSize: '0.92rem', marginBottom: 28, lineHeight: 1.55 }}>
               {splitTarget.type === 'rod'
                 ? 'Turn 1 rod (10) into 10 individual units (1s)'
                 : 'Turn 1 flat (100) into 10 individual rods (10s)'}
@@ -499,25 +581,13 @@ export default function BaseTenBlocksWorkspace() {
             <div style={{ display: 'flex', gap: 10 }}>
               <button
                 onClick={() => setSplitTarget(null)}
-                style={{
-                  flex: 1, padding: '13px', borderRadius: 13,
-                  border: '1.5px solid rgba(255,255,255,0.18)',
-                  background: 'transparent', color: 'rgba(255,255,255,0.58)',
-                  fontWeight: 600, fontSize: '0.92rem', cursor: 'pointer',
-                  touchAction: 'manipulation',
-                }}
+                style={{ flex: 1, padding: '13px', borderRadius: 13, border: '1.5px solid rgba(255,255,255,0.18)', background: 'transparent', color: 'rgba(255,255,255,0.58)', fontWeight: 600, fontSize: '0.92rem', cursor: 'pointer', touchAction: 'manipulation' }}
               >
                 Cancel
               </button>
               <button
                 onClick={confirmSplit}
-                style={{
-                  flex: 1, padding: '13px', borderRadius: 13, border: 'none',
-                  background: splitTarget.type === 'rod' ? '#34D399' : '#FBBF24',
-                  color: '#000',
-                  fontWeight: 800, fontSize: '0.92rem', cursor: 'pointer',
-                  touchAction: 'manipulation',
-                }}
+                style={{ flex: 1, padding: '13px', borderRadius: 13, border: 'none', background: splitTarget.type === 'rod' ? '#34D399' : '#FBBF24', color: '#000', fontWeight: 800, fontSize: '0.92rem', cursor: 'pointer', touchAction: 'manipulation' }}
               >
                 Yes, split!
               </button>
@@ -526,15 +596,14 @@ export default function BaseTenBlocksWorkspace() {
         </div>
       )}
 
-      {/* ── Clear-all confirmation dialog ──────────────────────────────────── */}
+      {/* ── Clear-all confirmation ──────────────────────────────────────────── */}
       {showClearConfirm && (
         <div
           style={{
             position: 'fixed', inset: 0, zIndex: 300,
             background: 'rgba(0,0,0,0.72)', backdropFilter: 'blur(8px)',
             WebkitBackdropFilter: 'blur(8px)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            padding: 24,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24,
           }}
           onClick={() => setShowClearConfirm(false)}
         >
@@ -556,24 +625,13 @@ export default function BaseTenBlocksWorkspace() {
             <div style={{ display: 'flex', gap: 10 }}>
               <button
                 onClick={() => setShowClearConfirm(false)}
-                style={{
-                  flex: 1, padding: '13px', borderRadius: 13,
-                  border: '1.5px solid rgba(255,255,255,0.18)',
-                  background: 'transparent', color: 'rgba(255,255,255,0.58)',
-                  fontWeight: 600, fontSize: '0.92rem', cursor: 'pointer',
-                  touchAction: 'manipulation',
-                }}
+                style={{ flex: 1, padding: '13px', borderRadius: 13, border: '1.5px solid rgba(255,255,255,0.18)', background: 'transparent', color: 'rgba(255,255,255,0.58)', fontWeight: 600, fontSize: '0.92rem', cursor: 'pointer', touchAction: 'manipulation' }}
               >
                 Cancel
               </button>
               <button
                 onClick={confirmClear}
-                style={{
-                  flex: 1, padding: '13px', borderRadius: 13, border: 'none',
-                  background: '#EF4444', color: '#fff',
-                  fontWeight: 800, fontSize: '0.92rem', cursor: 'pointer',
-                  touchAction: 'manipulation',
-                }}
+                style={{ flex: 1, padding: '13px', borderRadius: 13, border: 'none', background: '#EF4444', color: '#fff', fontWeight: 800, fontSize: '0.92rem', cursor: 'pointer', touchAction: 'manipulation' }}
               >
                 Clear
               </button>

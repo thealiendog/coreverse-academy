@@ -50,6 +50,7 @@ import ExplorerLessonPlayer      from './components/explorers/ExplorerLessonPlay
 import UpperExplorerLessonPlayer from './components/explorers/UpperExplorerLessonPlayer';
 import TemplateTest         from './pages/TemplateTest';
 import MathSandbox          from './pages/MathSandbox';
+import MathLessonPlayer     from './components/math/MathLessonPlayer';
 
 // Dispatches to GameLessonPlayer for Little Stars (?level=1) lessons
 // that have a gameSequence; falls back to LessonPlayer otherwise.
@@ -106,6 +107,9 @@ export default function App() {
 
         {/* Dev: math manipulative sandbox */}
         <Route path="/math-sandbox" element={<MathSandbox />} />
+
+        {/* Math v2 manipulative-first lessons */}
+        <Route path="/math-lesson/:lessonId" element={<ErrorBoundary><MathLessonPlayer /></ErrorBoundary>} />
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />

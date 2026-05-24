@@ -292,6 +292,10 @@ export default function SubjectView() {
   const doneLessons = progress[progressKey] || 0;
   const hasContent = lessonData.length > 0;
 
+  // Math v2 lessons use MathLessonPlayer instead of UpperExplorerLessonPlayer.
+  // Add lesson IDs here as they are rebuilt in the manipulative-first format.
+  const MATH_V2_LESSONS = new Set(['math-9-10-01']);
+
   function handleLessonClick(i) {
     if (!hasContent) return;
     if (!child) { navigate('/child/select'); return; }
@@ -300,6 +304,11 @@ export default function SubjectView() {
     // Check UE screen-based format first (level 3)
     const ueId = getUELessonId(canonicalId, level, i);
     if (ueId && NEW_FORMAT_UE_LESSONS[canonicalId]?.includes(ueId)) {
+      // Math v2 override: route to MathLessonPlayer for rebuilt lessons
+      if (canonicalId === 'math' && MATH_V2_LESSONS.has(ueId)) {
+        navigate(`/math-lesson/${ueId}`);
+        return;
+      }
       navigate(`/upper-explorer/${canonicalId}/${ueId}`);
       return;
     }
