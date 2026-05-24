@@ -40,6 +40,9 @@ import SS_UE_L14 from '../../data/social_studies_upper_explorer_l14_screens';
 import SS_UE_L15 from '../../data/social_studies_upper_explorer_l15_screens';
 import SS_UE_L16 from '../../data/social_studies_upper_explorer_l16_screens';
 import SS_UE_L17 from '../../data/social_studies_upper_explorer_l17_screens';
+import SS_UE_L18 from '../../data/social_studies_upper_explorer_l18_screens';
+import SS_UE_L19 from '../../data/social_studies_upper_explorer_l19_screens';
+import SS_UE_L20 from '../../data/social_studies_upper_explorer_l20_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -64,6 +67,9 @@ const UE_DATA = {
       ...SS_UE_L15.lessons,
       ...SS_UE_L16.lessons,
       ...SS_UE_L17.lessons,
+      ...SS_UE_L18.lessons,
+      ...SS_UE_L19.lessons,
+      ...SS_UE_L20.lessons,
     ],
   },
 };

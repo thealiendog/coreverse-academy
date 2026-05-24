@@ -20,6 +20,9 @@ import SS_UE_L14 from './social_studies_upper_explorer_l14_screens';
 import SS_UE_L15 from './social_studies_upper_explorer_l15_screens';
 import SS_UE_L16 from './social_studies_upper_explorer_l16_screens';
 import SS_UE_L17 from './social_studies_upper_explorer_l17_screens';
+import SS_UE_L18 from './social_studies_upper_explorer_l18_screens';
+import SS_UE_L19 from './social_studies_upper_explorer_l19_screens';
+import SS_UE_L20 from './social_studies_upper_explorer_l20_screens';
 
 const SS_UPPEREXPLORERS_UE = [
   ...SS_UE_L01.lessons,
@@ -39,6 +42,9 @@ const SS_UPPEREXPLORERS_UE = [
   ...SS_UE_L15.lessons,
   ...SS_UE_L16.lessons,
   ...SS_UE_L17.lessons,
+  ...SS_UE_L18.lessons,
+  ...SS_UE_L19.lessons,
+  ...SS_UE_L20.lessons,
 ];
 
 export default SS_UPPEREXPLORERS_UE;
