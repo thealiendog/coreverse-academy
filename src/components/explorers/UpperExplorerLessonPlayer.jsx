@@ -56,6 +56,10 @@ import MATH_UE_L09 from '../../data/math_upper_explorer_l09_screens';
 import MATH_UE_L10 from '../../data/math_upper_explorer_l10_screens';
 import MATH_UE_L11 from '../../data/math_upper_explorer_l11_screens';
 import MATH_UE_L12 from '../../data/math_upper_explorer_l12_screens';
+import MATH_UE_L13 from '../../data/math_upper_explorer_l13_screens';
+import MATH_UE_L14 from '../../data/math_upper_explorer_l14_screens';
+import MATH_UE_L15 from '../../data/math_upper_explorer_l15_screens';
+import MATH_UE_L16 from '../../data/math_upper_explorer_l16_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -102,6 +106,10 @@ const UE_DATA = {
       ...MATH_UE_L10.lessons,
       ...MATH_UE_L11.lessons,
       ...MATH_UE_L12.lessons,
+      ...MATH_UE_L13.lessons,
+      ...MATH_UE_L14.lessons,
+      ...MATH_UE_L15.lessons,
+      ...MATH_UE_L16.lessons,
     ],
   },
 };
