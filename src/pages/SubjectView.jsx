@@ -89,6 +89,10 @@ const NEW_FORMAT_UE_LESSONS = {
     'social-studies-9-10-11',
     'social-studies-9-10-12',
     'social-studies-9-10-13',
+    'social-studies-9-10-14',
+    'social-studies-9-10-15',
+    'social-studies-9-10-16',
+    'social-studies-9-10-17',
   ],
 };
 

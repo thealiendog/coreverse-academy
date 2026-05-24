@@ -1,0 +1,352 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// SOCIAL STUDIES UE  |  L16 — Globalization
+// Age band : upper_explorers (9–10)   Guide: atlas
+// Standards: C3 D2.Geo.7.3-5 / D2.Eco.4.3-5 / D2.Eco.14.3-5
+// CALIBRATED: UE spec v1.1 + game toolkit v1
+// Game format: resource-allocation (You lead a country — set trade priorities)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const SOCIAL_STUDIES_UE_L16 = {
+  ageBand: `upper_explorers`,
+  subjectId: `social_studies`,
+  guide: `atlas`,
+
+  lessons: [
+    {
+      id: `social-studies-9-10-16`,
+      title: `Globalization`,
+      duration: 22,
+      xpReward: 75,
+      badge: `globalization-strategist`,
+      badgeName: `Globalization Strategist`,
+
+      screens: [
+        {
+          id: `l16-welcome`,
+          type: `welcome`,
+          guideText: `Welcome back, {name}. Today we look at globalization — the process that has connected the entire planet into one interconnected economy. Your phone was likely designed in California, has chips from Taiwan, was assembled in China or Vietnam, and uses minerals from Africa and South America. Globalization made that possible. It also reshaped wages, jobs, and inequality across the world. By the end of this lesson, you'll have stepped into the shoes of a country's leader and felt the actual tradeoffs.`,
+          headline: `Globalization`,
+          subtitle: `How the whole world became interconnected`,
+          visual: `/ue-assets/social-studies/l16-welcome.webp`,
+        },
+
+        {
+          id: `l16-mag-1`,
+          type: `magazine`,
+          section: 1,
+          headline: `What Globalization Means`,
+          paragraphs: [
+            `Globalization is the process by which the world has become more interconnected. It includes trade across countries, businesses operating worldwide, money flowing across borders, ideas spreading instantly, and people migrating between countries more than ever before.`,
+            `Globalization isn't new — humans have traded across long distances for thousands of years. The Silk Road connected China and Europe. The Indian Ocean trade routes connected Africa, the Middle East, and Asia. But modern globalization, especially since the nineteen ninetiess, is on a totally different scale. Shipping, internet, and free trade agreements made it possible to move goods, money, and information almost anywhere within hours or days.`,
+            `Look around right now. Almost everything you own — your clothes, your phone, the food in your kitchen — touched multiple countries on its way to you. That's globalization in action. It made many products cheaper and more available. It also created new dependencies and new vulnerabilities.`,
+          ],
+          image: `/ue-assets/social-studies/l16-s1-globalization.webp`,
+          imageCaption: `Goods. Money. People. Ideas. Moving across the planet at unprecedented speed.`,
+          vocab: [
+            { word: `globalization`,
+              definition: `The process by which the world has become more interconnected through trade, communication, travel, and the spread of ideas.`,
+              audioPrompt: `Globalization is the process by which the world has become more interconnected, {name}. It includes trade across countries, businesses operating worldwide, money flowing across borders, and ideas spreading instantly. Modern globalization is much faster and bigger than any earlier era. A product made today might have parts from a dozen countries. A company headquartered in one country might have customers in 50 others. Globalization shapes prices, jobs, cultures, and even climate. It's one of the biggest forces in the modern world.` },
+            { word: `supply chain`,
+              definition: `The network of people, companies, and countries involved in making and delivering a product.`,
+              audioPrompt: `A supply chain is the network of people, companies, and countries involved in making and delivering a product, {name}. When you hold a smartphone, you're holding a supply chain. The minerals might come from Congo or Australia. The chips might be designed in the US and made in Taiwan. Assembly might happen in China or Vietnam. Software might come from India. Each step involves a different company, country, and set of workers. Globalization made supply chains longer — and more vulnerable when any one link breaks.` },
+          ],
+        },
+
+        {
+          id: `l16-mag-2`,
+          type: `magazine`,
+          section: 2,
+          headline: `International Trade`,
+          paragraphs: [
+            `At the heart of globalization is trade between countries. Countries sell goods and services they produce well (exports) and buy goods and services other countries produce well (imports). The pattern of who sells what to whom is one of the biggest forces shaping the global economy.`,
+            `Why do countries specialize? Because different places have different advantages. Saudi Arabia has oil. Brazil has farmland for soybeans and coffee. Bangladesh has lots of workers willing to make clothes for low wages. Germany has decades of engineering expertise. Each country tends to specialize in what it does best and trades for what others do better.`,
+            `The benefits of trade: cheaper products, more variety, faster spread of new technology. The downsides: some local industries can't compete with cheaper imports and shut down. Workers in those industries lose jobs. Some countries become too dependent on selling one or two products. When trade is going well, almost everyone benefits. When trade gets disrupted — wars, pandemics, political fights — countries learn how dependent on each other they really are.`,
+          ],
+          image: `/ue-assets/social-studies/l16-s2-trade.webp`,
+          imageCaption: `Exports out. Imports in. Specialization plus trade equals more for everyone — most of the time.`,
+          vocab: [
+            { word: `export`,
+              definition: `A good or service produced in one country and sold to another.`,
+              audioPrompt: `An export is a good or service produced in one country and sold to another, {name}. The US is one of the biggest exporters in the world — major exports include airplanes, machinery, software, food, and entertainment. China is the world's largest exporter overall — electronics, machinery, textiles, toys. Saudi Arabia's biggest export is oil. Exports bring money into a country. Many countries' economies depend heavily on what they sell to others.` },
+            { word: `import`,
+              definition: `A good or service brought into a country from another country.`,
+              audioPrompt: `An import is a good or service brought into a country from another, {name}. The US imports huge amounts — electronics, oil, cars, clothing. Most of the products you see in any American store came partly or fully from imports. Imports give consumers more variety and often lower prices, but they can also hurt local industries that can't compete. Most countries try to find a balance — enough imports to keep prices reasonable and consumers happy, enough domestic production to keep jobs in the country.` },
+          ],
+        },
+
+        {
+          id: `l16-mag-3`,
+          type: `magazine`,
+          section: 3,
+          headline: `Multinational Companies`,
+          paragraphs: [
+            `Some of the most influential players in globalization aren't countries — they're companies. Multinational corporations are companies that operate in multiple countries. Apple, Toyota, Samsung, McDonald's, Nestlé, Coca-Cola, Microsoft, Shell, Amazon — these are some of the giants.`,
+            `Multinationals can be larger economically than entire countries. Apple's annual revenue is bigger than the entire economy of about 90 percent of the world's nations. These companies make decisions about where to put factories, where to hire workers, where to register their headquarters for tax purposes. Their choices affect millions of people who don't get to vote on them.`,
+            `Supporters argue that multinationals create jobs, bring new technology to countries that need it, and make life-improving products more affordable. Critics argue they exploit cheap labor in poor countries, dodge taxes, and have too much political power. Both arguments have evidence on their side. The reality is usually mixed — multinationals do both good and harm at the same time.`,
+          ],
+          image: `/ue-assets/social-studies/l16-s3-multinationals.webp`,
+          imageCaption: `Companies bigger than many countries. Operating across continents. Shaping the modern world.`,
+          vocab: [
+            { word: `multinational corporation`,
+              definition: `A company that operates in multiple countries.`,
+              audioPrompt: `A multinational corporation is a company that operates in multiple countries, {name}. They have factories, offices, and customers around the world. Apple is one example — headquartered in California, with chips designed in many places, factories in China and Vietnam, retail stores in dozens of countries. The biggest multinationals have annual revenues larger than the entire economies of most countries. Some people see them as engines of progress. Others see them as too powerful and unaccountable. Most are both, depending on which part you focus on.` },
+            { word: `free trade`,
+              definition: `An economic policy where countries trade without taxes or restrictions on imports and exports.`,
+              audioPrompt: `Free trade is an economic policy where countries trade without taxes or restrictions on imports and exports, {name}. When countries sign free trade agreements, they agree to lower tariffs on each other's goods. This lets each country focus on what it does best and trade freely for everything else. Supporters say free trade lowers prices, boosts growth, and helps all countries involved. Critics say it can destroy local industries and worsen inequality. Most countries practice some version of free trade with some exceptions.` },
+          ],
+        },
+
+        {
+          id: `l16-mag-4`,
+          type: `magazine`,
+          section: 4,
+          headline: `The Good and the Hard`,
+          paragraphs: [
+            `Globalization has done remarkable things. Hundreds of millions of people in China and India have moved out of extreme poverty since the nineteen ninetiess, largely because of globalization-driven economic growth. Many products that were luxuries a generation ago are now affordable for most people. Information moves around the world in seconds. Cultural exchange happens at unprecedented levels.`,
+            `Globalization has also created real problems. Manufacturing jobs that used to pay middle-class wages in places like the US Midwest were shifted to lower-wage countries, leaving many communities devastated. Workers in those lower-wage countries often had unsafe and poorly paid working conditions. Environmental damage was outsourced to countries with weaker rules. Inequality within many countries grew sharply.`,
+            `The honest answer is that globalization has been a mixed blessing. It has lifted some out of poverty while leaving others behind. It has made things cheaper while making other things more fragile. There's a real debate happening right now about how much to embrace it, how much to push back, and how to make sure its benefits are shared more fairly. There's no single right answer.`,
+          ],
+          image: `/ue-assets/social-studies/l16-s4-mixed-bag.webp`,
+          imageCaption: `Hundreds of millions out of poverty. Whole communities left behind. Both true at once.`,
+          vocab: [
+            { word: `outsourcing`,
+              definition: `When a company moves work — like manufacturing or customer service — to another country, usually to save money.`,
+              audioPrompt: `Outsourcing is when a company moves work to another country, usually to save money, {name}. American companies have outsourced clothing manufacturing to Bangladesh, customer service to the Philippines, technology work to India. The companies save money because wages are lower in those countries. The workers in those countries get jobs they otherwise might not have. But workers in the home country can lose their jobs when work is moved abroad. Outsourcing is one of the most debated parts of globalization — it has clear benefits and real costs.` },
+            { word: `tariff`,
+              definition: `A tax placed on goods coming into a country from abroad.`,
+              audioPrompt: `A tariff is a tax placed on goods coming into a country from abroad, {name}. When a government adds a tariff to an imported product, it makes that product more expensive in the domestic market. This helps local producers compete — their prices look better against the now-more-expensive imports. But tariffs also raise prices for consumers and can trigger retaliation from other countries. If one country adds tariffs, others often add their own in response. Tariffs are one of the most debated tools in trade policy.` },
+          ],
+        },
+
+        // ── RESOURCE ALLOCATION GAME — Lead a Country: Set Trade Priorities ────
+        {
+          id: `l16-game`,
+          type: `interactive`,
+          format: `resource-allocation`,
+          guideText: `You're leading a country, {name}. Population: 50 million. You have to decide how much of your country's economic energy to put into different trade strategies. Each one has tradeoffs. The total has to add up to 100 percent of your strategy. When you're done, I'll show you what your country looks like in 20 years.`,
+          scenarioTitle: `You're Leading a Country. Set Trade Priorities.`,
+          totalBudget: 100,
+          currency: `percent`,
+          categories: [
+            {
+              id: `exports`,
+              label: `Focus on Exports`,
+              emoji: `📦`,
+              color: `#34D399`,
+              description: `Build industries that produce goods to sell to other countries. Boosts foreign currency coming in.`,
+              min: 5,
+              max: 50,
+              default: 25,
+              outcomes: {
+                low:  { threshold: 10, message: `Your country produces almost nothing for foreign sale. Limited foreign income. Heavy reliance on imports.` },
+                mid:  { message: `Healthy export sector. Foreign currency flows in. Your country has a balanced trade position.` },
+                high: { threshold: 40, message: `Powerhouse export economy. Lots of foreign income — but vulnerable if global demand drops or trade gets disrupted.` },
+              },
+            },
+            {
+              id: `domestic`,
+              label: `Strengthen Domestic Industries`,
+              emoji: `🏭`,
+              color: `#A78BFA`,
+              description: `Build local industries that serve your own people. Less dependent on imports. Often higher prices than imports.`,
+              min: 5,
+              max: 50,
+              default: 25,
+              outcomes: {
+                low:  { threshold: 10, message: `Your country imports almost everything. Cheaper for consumers but very dependent on other countries. One disruption could be devastating.` },
+                mid:  { message: `Solid mix of local production and imports. You make important things at home but trade for others.` },
+                high: { threshold: 40, message: `Strong local industries. Less dependent on imports. But consumers pay more than they would with global competition.` },
+              },
+            },
+            {
+              id: `education`,
+              label: `Education and Workforce`,
+              emoji: `🎓`,
+              color: `#FBBF24`,
+              description: `Invest in schools, universities, and training so your workers can do skilled, well-paid work in the global economy.`,
+              min: 5,
+              max: 40,
+              default: 20,
+              outcomes: {
+                low:  { threshold: 10, message: `Your workforce isn't well prepared for skilled work. Your country gets stuck doing low-wage labor for richer countries.` },
+                mid:  { message: `Workforce can compete in mid-skill global industries. Wages and quality of life are reasonable.` },
+                high: { threshold: 30, message: `Highly educated workforce able to do top-end skilled work. Your country competes on quality, not just price.` },
+              },
+            },
+            {
+              id: `infrastructure`,
+              label: `Infrastructure (Ports, Roads, Internet)`,
+              emoji: `🌉`,
+              color: `#0EA5E9`,
+              description: `Build the ports, highways, airports, and digital infrastructure that let trade and business actually function.`,
+              min: 5,
+              max: 30,
+              default: 15,
+              outcomes: {
+                low:  { threshold: 10, message: `Bad roads, slow ports, unreliable internet. Companies don't want to operate here. You miss out on globalization's benefits.` },
+                mid:  { message: `Functional infrastructure. Businesses can operate. Things move in and out reasonably.` },
+                high: { threshold: 25, message: `World-class infrastructure. Lots of foreign investment. Your country becomes a major hub.` },
+              },
+            },
+            {
+              id: `protection`,
+              label: `Protect Local Workers (Tariffs)`,
+              emoji: `🛡️`,
+              color: `#F87171`,
+              description: `Put taxes (tariffs) on imports so local industries don't get crushed by cheaper foreign competition.`,
+              min: 0,
+              max: 30,
+              default: 10,
+              outcomes: {
+                low:  { threshold: 3, message: `No protection. Local industries get destroyed by cheaper imports. Cheaper for consumers, but jobs disappear.` },
+                mid:  { message: `Moderate protection. Some industries shielded, others compete openly. Mixed results.` },
+                high: { threshold: 20, message: `Heavy protection. Local industries thrive but products cost more. Other countries retaliate with their own tariffs.` },
+              },
+            },
+            {
+              id: `tech`,
+              label: `Technology and Innovation`,
+              emoji: `🔬`,
+              color: `#EC4899`,
+              description: `Invest in research, technology, and new industries that don't exist yet but might in 20 years.`,
+              min: 0,
+              max: 30,
+              default: 5,
+              outcomes: {
+                low:  { threshold: 3, message: `No serious investment in future industries. Your country falls behind in the long run.` },
+                mid:  { message: `Steady tech investment. Some new industries emerge. Your country keeps up.` },
+                high: { threshold: 20, message: `Major tech investment. Your country becomes a leader in next-generation industries — could be the new Silicon Valley.` },
+              },
+            },
+          ],
+          completionMessage: `Look at what you built, {name}. Notice that there was no perfect mix — you had to choose. Trade openness versus protecting jobs. Cheap imports versus strong local industries. Investing in the future versus solving today's problems. Real countries face these exact tradeoffs. Singapore picked one mix. France picked a different one. The US is currently arguing about its mix. None of the answers are obvious.`,
+        },
+
+        {
+          id: `l16-quiz`,
+          type: `quiz`,
+          guideText: `Quick check, {name}.`,
+          questions: [
+            { id: `l16-q1`, format: `multiple-choice`,
+              question: `What is globalization?`,
+              options: [
+                `A type of food`,
+                `The process by which the world has become more interconnected through trade, communication, travel, and the spread of ideas`,
+                `A government program`,
+                `A type of war`,
+              ],
+              correctIndex: 1,
+              explanation: `Globalization is the process by which the world has become more interconnected. Trade across countries, businesses operating worldwide, money flowing across borders, ideas spreading instantly — all part of it.` },
+            { id: `l16-q2`, format: `multiple-choice`,
+              question: `What's an export?`,
+              options: [
+                `A type of import`,
+                `A good or service produced in one country and sold to another`,
+                `Something you can't buy`,
+                `A type of vacation`,
+              ],
+              correctIndex: 1,
+              explanation: `An export is a good or service produced in one country and sold to another. The US, China, Germany, and Japan are some of the world's biggest exporters.` },
+            { id: `l16-q3`, format: `multiple-choice`,
+              question: `What's a multinational corporation?`,
+              options: [
+                `A company that hates other countries`,
+                `A company that operates in multiple countries`,
+                `A type of government`,
+                `A small local store`,
+              ],
+              correctIndex: 1,
+              explanation: `A multinational corporation operates in multiple countries. Apple, Toyota, Samsung, McDonald's — companies that are sometimes economically bigger than entire countries.` },
+            { id: `l16-q4`, format: `multiple-choice`,
+              question: `What is outsourcing?`,
+              options: [
+                `Sending kids to school`,
+                `When a company moves work to another country, usually to save money`,
+                `Going on vacation`,
+                `Buying something online`,
+              ],
+              correctIndex: 1,
+              explanation: `Outsourcing is moving work to another country, usually for lower costs. Common examples include manufacturing moved to China or Bangladesh, customer service to the Philippines, technology work to India.` },
+            { id: `l16-q5`, format: `true-false`,
+              question: `True or false: Globalization has made some products cheaper while costing some workers their jobs.`,
+              correctAnswer: true,
+              explanation: `True. This is one of the central tradeoffs of globalization. Cheaper imports mean lower prices for consumers but can devastate local industries that can't compete on cost. Both effects are real.` },
+            { id: `l16-q6`, format: `multiple-choice`,
+              question: `Why might a country choose to put tariffs (taxes) on imports?`,
+              options: [
+                `To make foreign things more expensive`,
+                `To protect local industries from cheaper foreign competition`,
+                `Both of the above`,
+                `No reason`,
+              ],
+              correctIndex: 2,
+              explanation: `Tariffs make imports more expensive, which helps local industries compete. But they also raise prices for consumers, and other countries often respond with their own tariffs. It's a balancing act.` },
+            { id: `l16-q7`, format: `multiple-choice`,
+              question: `How has globalization affected poverty in places like China and India?`,
+              options: [
+                `It hasn't affected them`,
+                `Hundreds of millions of people have moved out of extreme poverty, largely because of globalization-driven economic growth`,
+                `Poverty got worse`,
+                `Only rich people benefited`,
+              ],
+              correctIndex: 1,
+              explanation: `Globalization helped lift hundreds of millions out of extreme poverty in places like China and India. That's a real, massive benefit. At the same time, it created other problems. Both can be true.` },
+            { id: `l16-q8`, format: `multiple-choice`,
+              question: `In the game, what was the main lesson about leading a country's trade strategy?`,
+              options: [
+                `Always pick exports`,
+                `Every strategy has tradeoffs — no choice is perfect, and what works depends on what you value`,
+                `Always protect local workers`,
+                `Trade doesn't matter`,
+              ],
+              correctIndex: 1,
+              explanation: `Real countries face real tradeoffs. Singapore picked a mix focused on exports and infrastructure. France picked one focused on local industry. The US debates its mix constantly. There's no single right answer.` },
+          ],
+        },
+
+        {
+          id: `l16-reflection`,
+          type: `reflection`,
+          guideText: `Pick a prompt, {name}.`,
+          prompts: [
+            { id: `r1`, text: `Pick up any object near you. Try to figure out how many countries probably touched it before it got to you.` },
+            { id: `r2`, text: `What's one part of globalization you think is mostly good? One part that's mostly bad?` },
+            { id: `r3`, text: `If you were leading a country, what would your trade strategy look like and why?` },
+            { id: `r4`, text: `Should companies be required to follow the same labor standards in every country they operate in?` },
+          ],
+        },
+
+        {
+          id: `l16-realworld`,
+          type: `real-world`,
+          guideText: `Right now, ships full of goods are moving across every ocean. Billions of dollars are flowing between countries every minute. Multinational companies are deciding where to put their next factory. Workers in dozens of countries are showing up to jobs that exist because of globalization. There's real political debate everywhere about whether globalization has gone too far, not far enough, or needs fundamental changes. There's no neutral position — being thoughtful about globalization is part of being a thoughtful citizen of the modern world.`,
+          familyAdventure: `Together, look at a few items in your house — clothes, electronics, food, toys. Find where they were made. List them. Talk about: why those countries? What does that mix of places tell you about how the modern world works?`,
+          creativePrompt: {
+            intro: `You've been hired as the trade advisor for a small country. Pick a real or imaginary country and describe your strategy. What does it specialize in? What does it import? How does it balance openness with protection?`,
+            floor: `Write at least 5 sentences. Use the sentence starters if helpful.`,
+            stretch: `Write 8-10 sentences. Defend your strategy — explain the tradeoffs and why you think it'll work.`,
+            open: `Write as much as you want. Imagine your country's economy 20 years from now.`,
+            frames: [
+              `My country is ___.`,
+              `Its biggest advantages are ___.`,
+              `It should focus its economy on ___.`,
+              `One thing it should import is ___.`,
+              `One thing it should protect is ___.`,
+            ],
+          },
+        },
+
+        {
+          id: `l16-celebration`,
+          type: `celebration`,
+          message: `Solid work, {name}. You can now define globalization, explain why countries trade, name multinational corporations and what they do, and recognize the real tradeoffs that come with global integration. You also got to lead a country's trade strategy. Next lesson, we look at one of humanity's biggest achievements and biggest unfinished projects — human rights. — Atlas.`,
+          badge: `globalization-strategist`,
+          badgeName: `Globalization Strategist`,
+          xpEarned: 75,
+        },
+      ],
+    },
+  ],
+};
+
+export default SOCIAL_STUDIES_UE_L16;
