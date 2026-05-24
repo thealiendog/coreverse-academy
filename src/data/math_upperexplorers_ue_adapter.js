@@ -19,6 +19,10 @@ import MATH_UE_L13 from './math_upper_explorer_l13_screens';
 import MATH_UE_L14 from './math_upper_explorer_l14_screens';
 import MATH_UE_L15 from './math_upper_explorer_l15_screens';
 import MATH_UE_L16 from './math_upper_explorer_l16_screens';
+import MATH_UE_L17 from './math_upper_explorer_l17_screens';
+import MATH_UE_L18 from './math_upper_explorer_l18_screens';
+import MATH_UE_L19 from './math_upper_explorer_l19_screens';
+import MATH_UE_L20 from './math_upper_explorer_l20_screens';
 
 const MATH_UPPEREXPLORERS_UE = [
   ...MATH_UE_L01.lessons,
@@ -37,6 +41,10 @@ const MATH_UPPEREXPLORERS_UE = [
   ...MATH_UE_L14.lessons,
   ...MATH_UE_L15.lessons,
   ...MATH_UE_L16.lessons,
+  ...MATH_UE_L17.lessons,
+  ...MATH_UE_L18.lessons,
+  ...MATH_UE_L19.lessons,
+  ...MATH_UE_L20.lessons,
 ];
 
 export default MATH_UPPEREXPLORERS_UE;
