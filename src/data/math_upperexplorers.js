@@ -1,3 +1,6 @@
+// LEGACY: This file is the old Math UE (Grade 6-8 content). It is NO LONGER routed to.
+//         To be repurposed as Math Voyager (ages 11-12) scaffolding in a future band.
+//         DO NOT MODIFY for Math UE — see math_upper_explorer_l*_screens.js files.
 // ============================================================
 // COREVERSE ACADEMY — MATHEMATICS · UPPER EXPLORERS (Ages 9-10)
 // All 20 Lessons · Standards: Common Core State Standards (CCSS)

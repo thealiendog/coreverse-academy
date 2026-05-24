@@ -111,11 +111,11 @@ const RULES = {
            ? (typeof s.totalBudget === 'number' || `resource-allocation format must have a totalBudget number`)
            : true,
       // drag-identify format (default): needs buckets + items
-      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || Array.isArray(s.items)   || `items must be an array`,
-      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || Array.isArray(s.buckets) || `buckets must be an array`,
-      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || s.items.every(it => 'correctMatch' in it)
+      s => ['investigation','branching-decision','resource-allocation','problem-solving'].includes(s.format) || Array.isArray(s.items)   || `items must be an array`,
+      s => ['investigation','branching-decision','resource-allocation','problem-solving'].includes(s.format) || Array.isArray(s.buckets) || `buckets must be an array`,
+      s => ['investigation','branching-decision','resource-allocation','problem-solving'].includes(s.format) || s.items.every(it => 'correctMatch' in it)
            || `all items must have correctMatch (not correctBucket)`,
-      s => ['investigation','branching-decision','resource-allocation'].includes(s.format) || s.items.every(it => !('correctBucket' in it))
+      s => ['investigation','branching-decision','resource-allocation','problem-solving'].includes(s.format) || s.items.every(it => !('correctBucket' in it))
            || `items must not have correctBucket (rename to correctMatch)`,
     ],
   },

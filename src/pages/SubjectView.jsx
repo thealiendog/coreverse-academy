@@ -45,6 +45,7 @@ import SCI_VOYAGERS                  from '../data/sci_voyagers_adapter';
 import SS_LITTLESTARS                from '../data/ss_littlestars_adapter';
 import SS_EXPLORERS                  from '../data/ss_explorers_adapter';
 import SS_UPPEREXPLORERS_UE          from '../data/ss_upperexplorers_ue_adapter';
+import MATH_UPPEREXPLORERS_UE        from '../data/math_upperexplorers_ue_adapter';
 import SS_VOYAGERS                   from '../data/ss_voyagers_adapter';
 import INNERWORLD_LITTLESTARS        from '../data/innerworld_littlestars_adapter';
 import COSMOS_LITTLESTARS            from '../data/cosmos_littlestars_adapter';
@@ -74,7 +75,7 @@ const resolveSubjectId = (rawId) => SUBJECT_ID_ALIASES[rawId] || rawId;
 // Lesson IDs here route to /upper-explorer/:subjectId/:lessonId.
 // Add IDs as UE screen files are authored (one per wave).
 const NEW_FORMAT_UE_LESSONS = {
-  // Social Studies UE — L01 wired; remaining added as screen files are authored
+  // Social Studies UE — all 20 lessons wired
   'social_studies': [
     'social-studies-9-10-01',
     'social-studies-9-10-02',
@@ -97,11 +98,21 @@ const NEW_FORMAT_UE_LESSONS = {
     'social-studies-9-10-19',
     'social-studies-9-10-20',
   ],
+  // Math UE — Wave 1 (L01–L04 wired; remaining added per wave)
+  'math': [
+    'math-9-10-01',
+    'math-9-10-02',
+    'math-9-10-03',
+    'math-9-10-04',
+  ],
 };
 
 function getUELessonId(subjectId, level, index) {
   if (subjectId === 'social_studies' && level === 3) {
     return `social-studies-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'math' && level === 3) {
+    return `math-9-10-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
@@ -242,6 +253,7 @@ export default function SubjectView() {
     : subjectId === 'creative-arts'              ? CREATIVEARTS_UPPEREXPLORERS
     : subjectId === 'history'                    ? HISTORYWORLD_UPPEREXPLORERS
     : subjectId === 'ss'                         ? SS_UPPEREXPLORERS_UE
+    : subjectId === 'math'                       ? MATH_UPPEREXPLORERS_UE
     : getLevel3Lessons(subjectId);
   // Subject-specific Voyagers curricula override level 4
   const l4Lessons = subjectId === 'ela'          ? ELA_VOYAGERS
