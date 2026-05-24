@@ -1,7 +1,300 @@
 // MagazineScreen — Phase 2: image + headline + karaoke paragraphs + vocab + inline hint
 // Responsive: single-column on mobile, two-column on iPad landscape (CSS classes from ExplorerLessonPlayer style block)
 // DAY 2.11: Scroll hint chevron — bouncing icon at viewport bottom when vocab is below fold.
+// visual field: optional structured visual replacing or augmenting the image slot.
+//   type 'math-block'  → <pre> with monospace, preserved whitespace
+//   type 'diagram'     → one of the 6 UE SVG primitives (same data shapes as the game)
+//   type 'illustration'→ <img src> with graceful error handling
 import { useState, useEffect, useRef } from 'react';
+
+// ── Magazine visual renderer ──────────────────────────────────────────────────
+// Renders the `visual` field on a magazine section. Three types supported:
+//   'math-block'  : <pre> monospace block for stacked arithmetic notation
+//   'diagram'     : one of the 6 UE SVG primitives (same data shapes as the game)
+//   'illustration': <img> with graceful fallback (no broken-image icon)
+// Returns null for unrecognized types.
+function renderMagVisual(visual, accent) {
+  if (!visual) return null;
+  const { type, content = '', src = '', caption = '', primitive = '', data = {} } = visual;
+
+  const centeredBox = {
+    display: 'flex', flexDirection: 'column', alignItems: 'center',
+    justifyContent: 'center', width: '100%', height: '100%',
+    padding: '10px 14px', boxSizing: 'border-box',
+  };
+  const captionStyle = {
+    color: 'rgba(255,255,255,0.5)', fontSize: '0.74rem', fontStyle: 'italic',
+    textAlign: 'center', marginTop: 6, lineHeight: 1.4,
+  };
+  const vizLabel = txt => (
+    <div style={{ fontSize: '0.68rem', color: accent, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>
+      {txt}
+    </div>
+  );
+
+  // ── math-block ──────────────────────────────────────────────────────────────
+  if (type === 'math-block') {
+    return (
+      <div style={centeredBox}>
+        <pre style={{
+          fontFamily: "'JetBrains Mono', 'Menlo', Consolas, 'Courier New', monospace",
+          fontSize: '1.05rem',
+          lineHeight: 1.75,
+          color: 'rgba(255,255,255,0.92)',
+          background: 'rgba(255,255,255,0.05)',
+          border: `1px solid ${accent}44`,
+          borderRadius: 10,
+          padding: '14px 20px',
+          whiteSpace: 'pre',
+          overflowX: 'auto',
+          margin: 0,
+          maxWidth: '100%',
+          boxSizing: 'border-box',
+          textAlign: 'left',
+        }}>
+          {content}
+        </pre>
+        {caption && <div style={captionStyle}>{caption}</div>}
+      </div>
+    );
+  }
+
+  // ── illustration ────────────────────────────────────────────────────────────
+  if (type === 'illustration') {
+    return (
+      <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+        <img
+          src={src}
+          alt={caption || ''}
+          loading="lazy"
+          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }}
+          onError={e => { e.currentTarget.style.display = 'none'; }}
+        />
+        {caption && (
+          <div style={{
+            position: 'absolute', bottom: 0, left: 0, right: 0,
+            padding: '6px 14px', fontSize: '0.75rem',
+            color: 'rgba(255,255,255,0.6)', fontStyle: 'italic', textAlign: 'center',
+            background: 'linear-gradient(transparent, rgba(0,0,0,0.55))',
+          }}>
+            {caption}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // ── diagram — 6 SVG primitives ──────────────────────────────────────────────
+  if (type === 'diagram') {
+    const svgWrap = {
+      ...centeredBox, gap: 6,
+      background: 'rgba(255,255,255,0.03)',
+    };
+
+    if (primitive === 'area-model') {
+      const { parts = [], totalLabel = '' } = data;
+      const totalWidth = parts.reduce((s, p) => s + (p.width || 0), 0) || 1;
+      const SVGW = 260;
+      const palette = ['#A78BFA', '#34D399', '#60A5FA', '#F59E0B'];
+      let xCursor = 0;
+      return (
+        <div style={svgWrap}>
+          {vizLabel('Area Model')}
+          <svg width="100%" viewBox={`0 0 ${SVGW} 80`} style={{ maxWidth: 300 }}>
+            {parts.map((p, i) => {
+              const segW = Math.round((p.width / totalWidth) * SVGW);
+              const x = xCursor; xCursor += segW;
+              const col = palette[i % palette.length];
+              return (
+                <g key={i}>
+                  <rect x={x} y={2} width={segW - 2} height={60} fill={`${col}33`} stroke={`${col}88`} strokeWidth={1.5} rx={3} />
+                  <text x={x + (segW - 2) / 2} y={22} textAnchor="middle" fill="#fff" fontSize={11} fontWeight={700}>{p.topLabel}</text>
+                  <text x={x + (segW - 2) / 2} y={40} textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize={9}>{p.sideLabel}</text>
+                  <text x={x + (segW - 2) / 2} y={55} textAnchor="middle" fill={col} fontSize={11} fontWeight={700}>{p.product}</text>
+                </g>
+              );
+            })}
+            {totalLabel && <text x={SVGW / 2} y={76} textAnchor="middle" fill={accent} fontSize={10} fontWeight={700}>{totalLabel}</text>}
+          </svg>
+          {caption && <div style={captionStyle}>{caption}</div>}
+        </div>
+      );
+    }
+
+    if (primitive === 'number-line') {
+      const { min = 0, max = 10, marked = [], labels: lbls = [] } = data;
+      const range = max - min || 1;
+      const toX = v => Math.round(((v - min) / range) * 240) + 20;
+      return (
+        <div style={svgWrap}>
+          {vizLabel('Number Line')}
+          <svg width="100%" viewBox="0 0 280 56" style={{ maxWidth: 320 }}>
+            <line x1={20} y1={30} x2={260} y2={30} stroke="rgba(255,255,255,0.3)" strokeWidth={2} />
+            {[min, max].map((v, i) => (
+              <g key={i}>
+                <line x1={toX(v)} y1={22} x2={toX(v)} y2={38} stroke="rgba(255,255,255,0.4)" strokeWidth={1.5} />
+                <text x={toX(v)} y={52} textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize={9}>{v}</text>
+              </g>
+            ))}
+            {marked.map((v, i) => (
+              <g key={i}>
+                <circle cx={toX(v)} cy={30} r={5} fill={accent} />
+                <text x={toX(v)} y={18} textAnchor="middle" fill={accent} fontSize={9} fontWeight={700}>{v}</text>
+              </g>
+            ))}
+            {lbls.map((lbl, i) => (
+              <text key={i} x={toX(lbl.value)} y={52} textAnchor="middle" fill="rgba(255,255,255,0.55)" fontSize={8}>{lbl.label}</text>
+            ))}
+          </svg>
+          {caption && <div style={captionStyle}>{caption}</div>}
+        </div>
+      );
+    }
+
+    if (primitive === 'fraction-bar') {
+      const { numerator = 1, denominator = 4, compareNumerator, compareDenominator, label = '' } = data;
+      const hasCompare = compareNumerator !== undefined && compareDenominator !== undefined;
+      if (hasCompare) {
+        const segW1 = 250 / (denominator || 1);
+        const segW2 = 250 / (compareDenominator || 1);
+        const compColor = '#60A5FA';
+        return (
+          <div style={svgWrap}>
+            {vizLabel('Fraction Comparison')}
+            <svg width="100%" viewBox="0 0 270 100" style={{ maxWidth: 300 }}>
+              {Array.from({ length: denominator }).map((_, i) => (
+                <rect key={`a-${i}`} x={10 + i * segW1} y={4} width={segW1 - 2} height={26}
+                  fill={i < numerator ? `${accent}55` : 'rgba(255,255,255,0.06)'} stroke={`${accent}77`} strokeWidth={1} rx={2} />
+              ))}
+              <text x={135} y={42} textAnchor="middle" fill={accent} fontSize={10} fontWeight="600">{numerator}/{denominator}</text>
+              {Array.from({ length: compareDenominator }).map((_, i) => (
+                <rect key={`b-${i}`} x={10 + i * segW2} y={50} width={segW2 - 2} height={26}
+                  fill={i < compareNumerator ? `${compColor}55` : 'rgba(255,255,255,0.06)'} stroke={`${compColor}77`} strokeWidth={1} rx={2} />
+              ))}
+              <text x={135} y={90} textAnchor="middle" fill={compColor} fontSize={10} fontWeight="600">{compareNumerator}/{compareDenominator}</text>
+            </svg>
+            {caption && <div style={captionStyle}>{caption}</div>}
+          </div>
+        );
+      }
+      const segW = 250 / (denominator || 1);
+      return (
+        <div style={svgWrap}>
+          {vizLabel('Fraction Bar')}
+          <svg width="100%" viewBox="0 0 270 46" style={{ maxWidth: 300 }}>
+            {Array.from({ length: denominator }).map((_, i) => (
+              <rect key={i} x={10 + i * segW} y={6} width={segW - 2} height={26}
+                fill={i < numerator ? `${accent}55` : 'rgba(255,255,255,0.06)'} stroke={`${accent}77`} strokeWidth={1} rx={2} />
+            ))}
+            <text x={135} y={42} textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize={10}>{label || `${numerator}/${denominator}`}</text>
+          </svg>
+          {caption && <div style={captionStyle}>{caption}</div>}
+        </div>
+      );
+    }
+
+    if (primitive === 'array') {
+      const { rows = 3, cols = 4, highlightRows = 0 } = data;
+      const D = 11, G = 5;
+      const W = cols * (D + G) + 10, H = rows * (D + G) + 10;
+      return (
+        <div style={svgWrap}>
+          {vizLabel(`Array — ${rows} × ${cols}`)}
+          <svg width="100%" viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: Math.min(W * 2, 260) }}>
+            {Array.from({ length: rows }).map((_, ri) =>
+              Array.from({ length: cols }).map((_, ci) => (
+                <circle key={`${ri}-${ci}`}
+                  cx={5 + ci * (D + G) + D / 2} cy={5 + ri * (D + G) + D / 2} r={D / 2}
+                  fill={ri < highlightRows ? accent : `${accent}44`}
+                />
+              ))
+            )}
+          </svg>
+          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.75rem' }}>{rows} rows × {cols} cols = {rows * cols}</div>
+          {caption && <div style={captionStyle}>{caption}</div>}
+        </div>
+      );
+    }
+
+    if (primitive === 'place-value-blocks') {
+      const { thousands = 0, hundreds = 0, tens = 0, ones = 0 } = data;
+      const blocks = [
+        { label: 'Thousands', count: thousands, color: '#F59E0B' },
+        { label: 'Hundreds',  count: hundreds,  color: '#A78BFA' },
+        { label: 'Tens',      count: tens,       color: '#34D399' },
+        { label: 'Ones',      count: ones,       color: '#60A5FA' },
+      ].filter(b => b.count > 0);
+      return (
+        <div style={svgWrap}>
+          {vizLabel('Place Value')}
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', justifyContent: 'center' }}>
+            {blocks.map(b => (
+              <div key={b.label} style={{ textAlign: 'center' }}>
+                <div style={{ color: b.color, fontWeight: 800, fontSize: '1.4rem' }}>{b.count}</div>
+                <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.68rem', marginTop: 2 }}>{b.label}</div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center', maxWidth: 48, marginTop: 4 }}>
+                  {Array.from({ length: Math.min(b.count, 9) }).map((_, i) => (
+                    <div key={i} style={{ width: 7, height: 7, borderRadius: 2, background: b.color, opacity: 0.8 }} />
+                  ))}
+                  {b.count > 9 && <span style={{ fontSize: '0.6rem', color: b.color }}>×{b.count}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+          {caption && <div style={captionStyle}>{caption}</div>}
+        </div>
+      );
+    }
+
+    if (primitive === 'coordinate-grid') {
+      const { xMax = 10, yMax = 10, points = [], lines = [] } = data;
+      const PAD_L = 28, PAD_B = 20, PAD_T = 6, PAD_R = 6;
+      const VW = 240, VH = 240;
+      const plotX0 = PAD_L, plotY0 = PAD_T, plotX1 = VW - PAD_R, plotY1 = VH - PAD_B;
+      const plotW = plotX1 - plotX0, plotH = plotY1 - plotY0;
+      const toSX = x => plotX0 + (x / (xMax || 1)) * plotW;
+      const toSY = y => plotY1 - (y / (yMax || 1)) * plotH;
+      const xStep = xMax > 8 ? 2 : 1, yStep = yMax > 8 ? 2 : 1;
+      return (
+        <div style={svgWrap}>
+          {vizLabel('Coordinate Grid')}
+          <svg width="100%" viewBox={`0 0 ${VW} ${VH}`} style={{ maxWidth: 260 }}>
+            {Array.from({ length: xMax + 1 }, (_, i) => (
+              <line key={`vg${i}`} x1={toSX(i)} y1={plotY0} x2={toSX(i)} y2={plotY1}
+                stroke={i === 0 ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.10)'}
+                strokeWidth={i === 0 ? 1.5 : 0.8} />
+            ))}
+            {Array.from({ length: yMax + 1 }, (_, j) => (
+              <line key={`hg${j}`} x1={plotX0} y1={toSY(j)} x2={plotX1} y2={toSY(j)}
+                stroke={j === 0 ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.10)'}
+                strokeWidth={j === 0 ? 1.5 : 0.8} />
+            ))}
+            {Array.from({ length: xMax + 1 }, (_, i) => i % xStep === 0 && (
+              <text key={`xl${i}`} x={toSX(i)} y={plotY1 + 13} textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize={7}>{i}</text>
+            ))}
+            {Array.from({ length: yMax + 1 }, (_, j) => j % yStep === 0 && (
+              <text key={`yl${j}`} x={plotX0 - 4} y={toSY(j) + 3} textAnchor="end" fill="rgba(255,255,255,0.45)" fontSize={7}>{j}</text>
+            ))}
+            {lines.map((seg, i) => {
+              const a = points[seg.from], b = points[seg.to];
+              if (!a || !b) return null;
+              return <line key={`ln${i}`} x1={toSX(a.x)} y1={toSY(a.y)} x2={toSX(b.x)} y2={toSY(b.y)} stroke={`${accent}99`} strokeWidth={1.5} />;
+            })}
+            {points.map((pt, i) => (
+              <g key={`pt${i}`}>
+                <circle cx={toSX(pt.x)} cy={toSY(pt.y)} r={4} fill={accent} />
+                {pt.label && <text x={toSX(pt.x) + 7} y={toSY(pt.y) - 5} fill={accent} fontSize={9} fontWeight={700}>{pt.label}</text>}
+              </g>
+            ))}
+          </svg>
+          {caption && <div style={captionStyle}>{caption}</div>}
+        </div>
+      );
+    }
+  }
+
+  return null;
+}
 
 // Render a plain string with per-word karaoke highlighting.
 // wordOffset: global word index at which this text starts (headline words come first).
@@ -107,7 +400,8 @@ export default function MagazineScreen({
   accent, onReplay, onPauseResume, onVocabTap, showVocabHint, onDismissVocabHint,
   headlineWordCount = 0,
 }) {
-  const { section, totalSections, headline, paragraphs = [], image, imageCaption, vocab = [] } = screen;
+  const { section, totalSections, headline, paragraphs = [], image, imageCaption, visual, vocab = [] } = screen;
+  const [imageError, setImageError] = useState(false);
 
   // ── Scroll hint state (DAY 2.11) ─────────────────────────────────────────────
   // Component re-mounts per screen (key={screenIdx} in ExplorerLessonPlayer),
@@ -164,15 +458,25 @@ export default function MagazineScreen({
         }
       `}</style>
 
-      {/* Image column — full-width on mobile, left-side on iPad landscape */}
-      <div className="magazine-image-col">
-        <img
-          src={image}
-          alt={headline}
-          loading="lazy"
-          style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }}
-          onError={e => { e.currentTarget.style.opacity = '0.2'; }}
-        />
+      {/* Image/visual column — full-width on mobile, left-side on iPad landscape */}
+      {/* Collapsed to minimal height when there is no displayable content */}
+      <div
+        className="magazine-image-col"
+        style={!visual && (!image || imageError) ? { minHeight: 52, height: 52 } : undefined}
+      >
+        {/* Prefer structured `visual` field over legacy `image` */}
+        {visual
+          ? renderMagVisual(visual, accent)
+          : (image && !imageError) && (
+            <img
+              src={image}
+              alt={headline}
+              loading="lazy"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', display: 'block' }}
+              onError={() => setImageError(true)}
+            />
+          )
+        }
         {/* Pause / Resume / Replay button */}
         <button
           className="mag-replay-btn"
@@ -189,8 +493,8 @@ export default function MagazineScreen({
         >
           {audioPaused ? '▶' : (speaking || loadingAudio) ? '⏸' : '▶'}
         </button>
-        {/* Caption */}
-        {imageCaption && (
+        {/* Caption (legacy image path only) */}
+        {!visual && imageCaption && !imageError && (
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
             padding: '6px 14px', fontSize: '0.75rem',
