@@ -1021,6 +1021,590 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
   );
 }
 
+// ── Problem Solving game (inline) ─────────────────────────────────────────────
+// Math-first but subject-agnostic. Step-by-step problem solving with:
+//   • approach selection (2-3 strategies per problem)
+//   • SVG visual models (area-model, number-line, fraction-bar, array, place-value-blocks)
+//   • per-step input + 3-attempt limit with kind mistake framing
+//   • hint system (productive struggle with safety net)
+//   • commonMistakes matching — specific explanations for known wrong answers
+// NEVER uses "wrong" / "try again" framing. NEVER shows speed pressure.
+function ProblemSolvingGame({
+  screen, guideAvatar, accent, childName,
+  onSpeak, onComplete, onInteractiveComplete,
+  karaokeWords, karaokeIdx, speaking,
+}) {
+  const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
+  const {
+    guideText        = '',
+    scenarioTitle    = '',
+    problems         = [],
+    completionMessage= '',
+  } = screen;
+
+  // ── State ────────────────────────────────────────────────────────────────
+  const [phase,            setPhase]            = useState('intro');   // 'intro' | 'problem' | 'done'
+  const [problemIdx,       setProblemIdx]        = useState(0);
+  const [approachId,       setApproachId]        = useState(null);     // null = picker visible
+  const [stepIdx,          setStepIdx]           = useState(0);
+  const [stepInput,        setStepInput]         = useState('');
+  const [attempts,         setAttempts]          = useState(0);
+  const [hintVisible,      setHintVisible]       = useState(false);
+  const [stepRevealed,     setStepRevealed]      = useState(false);    // auto-shown after 3 wrong
+  const [stepCorrect,      setStepCorrect]       = useState(null);     // null | true | false
+  const [wrongExplanation, setWrongExplanation]  = useState('');
+  const [problemDone,      setProblemDone]       = useState(false);    // showing finalExplanation
+  const [btnVisible,       setBtnVisible]        = useState(false);    // intro button gating
+  const [problemResults,   setProblemResults]    = useState({});
+
+  const mountedRef   = useRef(true);
+  const hasSpokenIntro = useRef(false);
+  useEffect(() => () => { mountedRef.current = false; }, []);
+
+  const problem       = problems[problemIdx] || null;
+  const isLastProblem = problemIdx === problems.length - 1;
+  const approach      = problem?.approaches?.find(a => a.id === approachId) || null;
+  const currentStep   = approach?.steps?.[stepIdx] || null;
+
+  // ── Intro: speak guideText then show "Start Solving" ─────────────────────
+  useEffect(() => {
+    if (phase !== 'intro' || hasSpokenIntro.current) return;
+    hasSpokenIntro.current = true;
+    const text = r(guideText);
+    if (text) {
+      onSpeak(text, () => { if (mountedRef.current) setBtnVisible(true); });
+    } else {
+      setBtnVisible(true);
+    }
+  }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Enter a problem ───────────────────────────────────────────────────────
+  function startProblem(idx) {
+    setProblemIdx(idx);
+    setApproachId(null);
+    setStepIdx(0);
+    setStepInput('');
+    setAttempts(0);
+    setHintVisible(false);
+    setStepRevealed(false);
+    setStepCorrect(null);
+    setWrongExplanation('');
+    setProblemDone(false);
+    setPhase('problem');
+    const prob = problems[idx];
+    if (prob?.problemStatement) onSpeak(r(prob.problemStatement));
+  }
+
+  // ── Select an approach ────────────────────────────────────────────────────
+  function selectApproach(aId) {
+    setApproachId(aId);
+    setStepIdx(0);
+    setStepInput('');
+    setAttempts(0);
+    setHintVisible(false);
+    setStepRevealed(false);
+    setStepCorrect(null);
+    setWrongExplanation('');
+    const app = problem?.approaches?.find(a => a.id === aId);
+    const firstStep = app?.steps?.[0];
+    if (firstStep?.prompt) onSpeak(firstStep.prompt);
+  }
+
+  // ── Check the current step ────────────────────────────────────────────────
+  function checkAnswer() {
+    if (!currentStep) return;
+    const parsed  = parseFloat(stepInput.trim().replace(/,/g, ''));
+    const correct = Number.isFinite(parsed) && Math.abs(parsed - currentStep.answer) < 0.001;
+
+    if (correct) {
+      setStepCorrect(true);
+      setWrongExplanation('');
+      onSpeak(r('Exactly — nice work.'));
+      return;
+    }
+
+    const newAttempts = attempts + 1;
+    setAttempts(newAttempts);
+    setStepCorrect(false);
+
+    if (newAttempts >= 3) {
+      // Auto-reveal after 3 wrong attempts — never leave a child stuck
+      setStepRevealed(true);
+      onSpeak(r(`The answer is ${currentStep.answer}. ${currentStep.hint || ''}`));
+      return;
+    }
+
+    // Check against known mistake patterns first
+    const match = approach?.commonMistakes?.find(
+      m => Number.isFinite(parseFloat(String(m.wrongAnswer))) &&
+           Math.abs(parseFloat(String(m.wrongAnswer)) - parsed) < 0.001
+    );
+    if (match) {
+      setWrongExplanation(match.explanation);
+      onSpeak(r(match.explanation));
+    } else {
+      const generic = newAttempts === 1
+        ? "That answer is giving us information — let's think about what happened. The hint points right at the tricky part."
+        : "Let's look at the hint together — it points right at what to check.";
+      setWrongExplanation(generic);
+      onSpeak(r(generic));
+    }
+  }
+
+  // ── Advance to the next step ──────────────────────────────────────────────
+  function advanceStep() {
+    const totalSteps = approach?.steps?.length || 0;
+    if (stepIdx + 1 < totalSteps) {
+      const next = stepIdx + 1;
+      setStepIdx(next);
+      setStepInput('');
+      setAttempts(0);
+      setHintVisible(false);
+      setStepRevealed(false);
+      setStepCorrect(null);
+      setWrongExplanation('');
+      if (approach.steps[next]?.prompt) onSpeak(approach.steps[next].prompt);
+    } else {
+      // All steps done — show finalExplanation
+      setProblemDone(true);
+      setProblemResults(prev => ({ ...prev, [problem.id]: { approachId, completed: true } }));
+      if (problem.finalExplanation) onSpeak(r(problem.finalExplanation));
+    }
+  }
+
+  // ── Advance to the next problem or finish ─────────────────────────────────
+  function advanceProblem() {
+    if (isLastProblem) {
+      onInteractiveComplete?.({
+        problemsCompleted: Object.keys(problemResults).length + 1,
+        totalProblems:     problems.length,
+      });
+      setPhase('done');
+      if (completionMessage) onSpeak(r(completionMessage));
+    } else {
+      startProblem(problemIdx + 1);
+    }
+  }
+
+  // ── Visual model renderers ────────────────────────────────────────────────
+  function renderVisual(visual) {
+    if (!visual || visual.type === 'none') return null;
+    const { type, data = {} } = visual;
+    const wrap = {
+      background:    'rgba(255,255,255,0.04)',
+      border:        `1px solid ${accent}44`,
+      borderRadius:  12,
+      padding:       '14px 16px',
+      margin:        '10px 0',
+      display:       'flex',
+      flexDirection: 'column',
+      alignItems:    'center',
+      gap:           8,
+    };
+    const vizLabel = txt => (
+      <div style={{ fontSize: '0.68rem', color: accent, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{txt}</div>
+    );
+
+    if (type === 'area-model') {
+      const { parts = [], totalLabel = '' } = data;
+      const totalWidth = parts.reduce((s, p) => s + (p.width || 0), 0) || 1;
+      const SVGW = 290;
+      const palette = ['#A78BFA', '#34D399', '#60A5FA', '#F59E0B'];
+      let xCursor = 0;
+      return (
+        <div style={wrap}>
+          {vizLabel('Area Model')}
+          <svg width="100%" viewBox={`0 0 ${SVGW} 90`} style={{ maxWidth: 340 }}>
+            {parts.map((p, i) => {
+              const segW = Math.round((p.width / totalWidth) * SVGW);
+              const x    = xCursor;
+              xCursor   += segW;
+              const col  = palette[i % palette.length];
+              return (
+                <g key={i}>
+                  <rect x={x} y={2} width={segW - 2} height={70} fill={`${col}33`} stroke={`${col}88`} strokeWidth={1.5} rx={3} />
+                  <text x={x + (segW - 2) / 2} y={26} textAnchor="middle" fill="#fff"         fontSize={12} fontWeight={700}>{p.topLabel}</text>
+                  <text x={x + (segW - 2) / 2} y={46} textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize={10}>{p.sideLabel}</text>
+                  <text x={x + (segW - 2) / 2} y={62} textAnchor="middle" fill={col}          fontSize={12} fontWeight={700}>{p.product}</text>
+                </g>
+              );
+            })}
+            {totalLabel && (
+              <text x={SVGW / 2} y={86} textAnchor="middle" fill={accent} fontSize={11} fontWeight={700}>{totalLabel}</text>
+            )}
+          </svg>
+        </div>
+      );
+    }
+
+    if (type === 'number-line') {
+      const { min = 0, max = 10, marked = [], labels = [] } = data;
+      const range = max - min || 1;
+      const toX   = v => Math.round(((v - min) / range) * 260) + 20;
+      return (
+        <div style={wrap}>
+          {vizLabel('Number Line')}
+          <svg width="100%" viewBox="0 0 300 60" style={{ maxWidth: 340 }}>
+            <line x1={20} y1={32} x2={280} y2={32} stroke="rgba(255,255,255,0.3)" strokeWidth={2} />
+            {[min, max].map((v, i) => (
+              <g key={i}>
+                <line x1={toX(v)} y1={24} x2={toX(v)} y2={40} stroke="rgba(255,255,255,0.4)" strokeWidth={1.5} />
+                <text x={toX(v)} y={54} textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize={10}>{v}</text>
+              </g>
+            ))}
+            {marked.map((v, i) => (
+              <g key={i}>
+                <circle cx={toX(v)} cy={32} r={5} fill={accent} />
+                <text   x={toX(v)} y={20}  textAnchor="middle" fill={accent} fontSize={10} fontWeight={700}>{v}</text>
+              </g>
+            ))}
+            {labels.map((lbl, i) => (
+              <text key={i} x={toX(lbl.value)} y={54} textAnchor="middle" fill="rgba(255,255,255,0.55)" fontSize={9}>{lbl.label}</text>
+            ))}
+          </svg>
+        </div>
+      );
+    }
+
+    if (type === 'fraction-bar') {
+      const { numerator = 1, denominator = 4, label = '' } = data;
+      const segW = 270 / (denominator || 1);
+      return (
+        <div style={wrap}>
+          {vizLabel('Fraction Bar')}
+          <svg width="100%" viewBox="0 0 290 50" style={{ maxWidth: 320 }}>
+            {Array.from({ length: denominator }).map((_, i) => (
+              <rect key={i}
+                x={10 + i * segW} y={8} width={segW - 2} height={28}
+                fill={i < numerator ? `${accent}55` : 'rgba(255,255,255,0.06)'}
+                stroke={`${accent}77`} strokeWidth={1} rx={2}
+              />
+            ))}
+            <text x={145} y={46} textAnchor="middle" fill="rgba(255,255,255,0.5)" fontSize={11}>
+              {label || `${numerator}/${denominator}`}
+            </text>
+          </svg>
+        </div>
+      );
+    }
+
+    if (type === 'array') {
+      const { rows = 3, cols = 4, highlightRows = 0 } = data;
+      const D = 11, G = 5;
+      const W = cols * (D + G) + 10;
+      const H = rows * (D + G) + 10;
+      return (
+        <div style={wrap}>
+          {vizLabel(`Array — ${rows} × ${cols}`)}
+          <svg width="100%" viewBox={`0 0 ${W} ${H}`} style={{ maxWidth: Math.min(W * 2, 280) }}>
+            {Array.from({ length: rows }).map((_, ri) =>
+              Array.from({ length: cols }).map((_, ci) => (
+                <circle key={`${ri}-${ci}`}
+                  cx={5 + ci * (D + G) + D / 2}
+                  cy={5 + ri * (D + G) + D / 2}
+                  r={D / 2}
+                  fill={ri < highlightRows ? accent : `${accent}44`}
+                />
+              ))
+            )}
+          </svg>
+          <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem' }}>
+            {rows} rows × {cols} columns = {rows * cols}
+          </div>
+        </div>
+      );
+    }
+
+    if (type === 'place-value-blocks') {
+      const { thousands = 0, hundreds = 0, tens = 0, ones = 0 } = data;
+      const blocks = [
+        { label: 'Thousands', count: thousands, color: '#F59E0B' },
+        { label: 'Hundreds',  count: hundreds,  color: '#A78BFA' },
+        { label: 'Tens',      count: tens,       color: '#34D399' },
+        { label: 'Ones',      count: ones,       color: '#60A5FA' },
+      ].filter(b => b.count > 0);
+      return (
+        <div style={wrap}>
+          {vizLabel('Place Value')}
+          <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', justifyContent: 'center' }}>
+            {blocks.map(b => (
+              <div key={b.label} style={{ textAlign: 'center' }}>
+                <div style={{ color: b.color, fontWeight: 800, fontSize: '1.5rem' }}>{b.count}</div>
+                <div style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', marginTop: 2 }}>{b.label}</div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center', maxWidth: 52, marginTop: 4 }}>
+                  {Array.from({ length: Math.min(b.count, 9) }).map((_, i) => (
+                    <div key={i} style={{ width: 8, height: 8, borderRadius: 2, background: b.color, opacity: 0.8 }} />
+                  ))}
+                  {b.count > 9 && <span style={{ fontSize: '0.65rem', color: b.color }}>×{b.count}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    return null;
+  }
+
+  // ── Shared styles ─────────────────────────────────────────────────────────
+  const scrollBox  = { height: '100%', overflowY: 'auto', WebkitOverflowScrolling: 'touch', background: 'linear-gradient(160deg,#0d0521 0%,#080618 100%)', boxSizing: 'border-box' };
+  const innerCol   = { maxWidth: '480px', margin: '0 auto', padding: '20px 16px 64px', display: 'flex', flexDirection: 'column' };
+  const cardBase   = { background: '#12082a', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '14px', padding: '16px 18px', marginBottom: '12px', boxSizing: 'border-box' };
+  const primaryBtn = (disabled = false) => ({
+    padding: '14px 20px', background: disabled ? '#2a1a4a' : accent,
+    color: disabled ? '#6a5a88' : '#fff', fontWeight: 700, fontSize: '1rem',
+    border: 'none', borderRadius: '12px', cursor: disabled ? 'not-allowed' : 'pointer',
+    boxShadow: disabled ? 'none' : `0 0 18px ${accent}66`,
+    width: '100%', fontFamily: 'inherit', touchAction: 'manipulation',
+    transition: 'all 0.15s',
+  });
+  const ghostBtn = () => ({
+    padding: '11px 18px', background: 'transparent',
+    color: accent, fontWeight: 600, fontSize: '0.88rem',
+    border: `1.5px solid ${accent}55`, borderRadius: '10px',
+    cursor: 'pointer', width: '100%', fontFamily: 'inherit',
+    touchAction: 'manipulation',
+  });
+
+  // ── INTRO PHASE ───────────────────────────────────────────────────────────
+  if (phase === 'intro') return (
+    <div style={scrollBox}>
+      <div style={{ ...innerCol, alignItems: 'center' }}>
+        <div style={{ width: 80, height: 80, borderRadius: '50%', overflow: 'hidden', border: `3px solid ${accent}`, boxShadow: `0 0 18px ${accent}55`, marginBottom: 18, flexShrink: 0 }}>
+          <img src={guideAvatar?.image} alt="Guide" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+        <div style={{ ...cardBase, width: '100%', border: `1px solid ${accent}44`, textAlign: 'center', marginBottom: 20 }}>
+          <div style={{ fontSize: '0.72rem', fontWeight: 700, color: accent, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 10 }}>Problem Solving</div>
+          <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#fff', marginBottom: 14 }}>{scenarioTitle}</div>
+          <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+            <KaraokeText text={r(guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+          </p>
+        </div>
+        <div style={{ display: 'flex', gap: 8, marginBottom: 24 }}>
+          {problems.map((_, i) => (
+            <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: `${accent}33`, border: `2px solid ${accent}66` }} />
+          ))}
+        </div>
+        {btnVisible
+          ? <button onClick={() => startProblem(0)} style={primaryBtn()}>Start Solving</button>
+          : <div style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.85rem' }}>{speaking ? 'Remi is talking...' : 'Loading...'}</div>
+        }
+      </div>
+    </div>
+  );
+
+  // ── DONE PHASE ────────────────────────────────────────────────────────────
+  if (phase === 'done') return (
+    <div style={scrollBox}>
+      <div style={{ ...innerCol, alignItems: 'center', textAlign: 'center' }}>
+        <div style={{ fontSize: '3rem', marginBottom: 16 }}>🧮</div>
+        <div style={{ color: accent, fontWeight: 700, fontSize: '1.15rem', marginBottom: 16 }}>Problems solved!</div>
+        <div style={{ ...cardBase, width: '100%', border: `1px solid ${accent}44`, marginBottom: 28, color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          <KaraokeText text={r(completionMessage)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+        </div>
+        <button onClick={() => { onInteractiveComplete?.({ problemsCompleted: problems.length, totalProblems: problems.length }); onComplete(); }} style={primaryBtn()}>
+          Continue to Quiz
+        </button>
+      </div>
+    </div>
+  );
+
+  // ── PROBLEM PHASE ─────────────────────────────────────────────────────────
+  if (!problem) return null;
+
+  return (
+    <div style={scrollBox}>
+      <div style={innerCol}>
+
+        {/* Progress header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <span style={{ color: 'rgba(255,255,255,0.38)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+            {scenarioTitle}
+          </span>
+          <div style={{ display: 'flex', gap: 5 }}>
+            {problems.map((_, i) => (
+              <div key={i} style={{
+                width: 8, height: 8, borderRadius: '50%',
+                background: i < problemIdx ? '#10B981' : i === problemIdx ? accent : 'rgba(255,255,255,0.12)',
+                transition: 'background 0.3s',
+              }} />
+            ))}
+          </div>
+        </div>
+
+        {/* Problem counter + statement */}
+        <div style={{ fontSize: '0.68rem', fontWeight: 700, color: accent, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>
+          Problem {problemIdx + 1} of {problems.length}
+        </div>
+        <div style={{ ...cardBase, border: `1px solid ${accent}44` }}>
+          <p style={{ color: '#fff', fontSize: '1rem', lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
+            {problem.problemStatement}
+          </p>
+        </div>
+
+        {/* Visual model */}
+        {renderVisual(problem.visual)}
+
+        {/* ── APPROACH PICKER ── */}
+        {approachId === null && !problemDone && (
+          <>
+            <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'rgba(255,255,255,0.38)', letterSpacing: '0.06em', textTransform: 'uppercase', margin: '14px 0 10px' }}>
+              Pick your approach
+            </div>
+            {(problem.approaches || []).map(app => (
+              <button
+                key={app.id}
+                onClick={() => selectApproach(app.id)}
+                style={{
+                  ...cardBase,
+                  cursor: 'pointer', textAlign: 'left', width: '100%',
+                  border: `1.5px solid ${accent}55`, fontFamily: 'inherit',
+                  touchAction: 'manipulation', marginBottom: 10,
+                }}
+              >
+                <div style={{ color: accent, fontWeight: 700, fontSize: '0.97rem', marginBottom: 4 }}>{app.label}</div>
+                <div style={{ color: 'rgba(255,255,255,0.52)', fontSize: '0.85rem', lineHeight: 1.45 }}>{app.description}</div>
+              </button>
+            ))}
+          </>
+        )}
+
+        {/* ── STEPS ── */}
+        {approachId !== null && !problemDone && approach && (
+          <>
+            {/* Approach label + step progress bar */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, margin: '14px 0 8px' }}>
+              <div style={{ width: 6, height: 6, borderRadius: '50%', background: accent, flexShrink: 0 }} />
+              <span style={{ color: accent, fontWeight: 700, fontSize: '0.83rem' }}>{approach.label}</span>
+            </div>
+            <div style={{ display: 'flex', gap: 4, marginBottom: 14 }}>
+              {approach.steps.map((_, i) => (
+                <div key={i} style={{
+                  flex: 1, height: 3, borderRadius: 2,
+                  background: i < stepIdx ? '#10B981' : i === stepIdx ? accent : 'rgba(255,255,255,0.12)',
+                  transition: 'background 0.3s',
+                }} />
+              ))}
+            </div>
+
+            {/* Current step card */}
+            {currentStep && (
+              <div style={{ ...cardBase, border: `1px solid ${accent}33` }}>
+
+                {/* Prompt */}
+                <div style={{ color: '#fff', fontWeight: 600, fontSize: '1rem', lineHeight: 1.6, marginBottom: 14 }}>
+                  {currentStep.prompt}
+                </div>
+
+                {/* Input row — hidden once answered or auto-revealed */}
+                {stepCorrect !== true && !stepRevealed && (
+                  <div style={{ display: 'flex', gap: 10, marginBottom: 10 }}>
+                    <input
+                      type="number"
+                      inputMode="decimal"
+                      value={stepInput}
+                      onChange={e => { setStepInput(e.target.value); setStepCorrect(null); setWrongExplanation(''); }}
+                      onKeyDown={e => { if (e.key === 'Enter' && stepInput.trim()) checkAnswer(); }}
+                      placeholder="Your answer…"
+                      style={{
+                        flex: 1, padding: '11px 14px', borderRadius: 10,
+                        border: `1.5px solid ${stepCorrect === false ? '#F87171' : `${accent}55`}`,
+                        background: 'rgba(255,255,255,0.06)', color: '#fff',
+                        fontSize: '1.05rem', fontFamily: 'inherit', outline: 'none',
+                        WebkitUserSelect: 'text', userSelect: 'text',
+                      }}
+                    />
+                    <button
+                      onClick={checkAnswer}
+                      disabled={!stepInput.trim()}
+                      style={{ ...primaryBtn(!stepInput.trim()), width: 'auto', padding: '11px 22px' }}
+                    >
+                      Check
+                    </button>
+                  </div>
+                )}
+
+                {/* Attempt counter (2nd attempt onward) */}
+                {stepCorrect === false && !stepRevealed && attempts > 0 && (
+                  <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem', marginBottom: 8 }}>
+                    Attempt {attempts} of 3
+                  </div>
+                )}
+
+                {/* Hint toggle */}
+                {stepCorrect !== true && !stepRevealed && !hintVisible && (
+                  <button onClick={() => setHintVisible(true)} style={ghostBtn()}>Need a hint?</button>
+                )}
+                {hintVisible && stepCorrect !== true && !stepRevealed && (
+                  <div style={{ background: `${accent}14`, border: `1px solid ${accent}44`, borderRadius: 10, padding: '10px 14px', marginTop: 8 }}>
+                    <div style={{ color: accent, fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 5 }}>Hint</div>
+                    <div style={{ color: 'rgba(255,255,255,0.82)', fontSize: '0.9rem', lineHeight: 1.55 }}>{currentStep.hint}</div>
+                  </div>
+                )}
+
+                {/* Wrong + known-mistake explanation */}
+                {stepCorrect === false && wrongExplanation && !stepRevealed && (
+                  <div style={{ background: 'rgba(251,191,36,0.07)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: 10, padding: '10px 14px', marginTop: 10 }}>
+                    <div style={{ color: '#FBBF24', fontWeight: 700, fontSize: '0.78rem', marginBottom: 4 }}>
+                      Many students try this — here's what's happening
+                    </div>
+                    <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', lineHeight: 1.55 }}>{wrongExplanation}</div>
+                  </div>
+                )}
+
+                {/* Auto-revealed answer (3 wrong attempts) */}
+                {stepRevealed && (
+                  <div style={{ background: 'rgba(16,185,129,0.07)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: 10, padding: '10px 14px' }}>
+                    <div style={{ color: '#10B981', fontWeight: 700, fontSize: '0.85rem', marginBottom: 4 }}>
+                      Answer: {currentStep.answer}
+                    </div>
+                    <div style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.88rem', lineHeight: 1.55 }}>{currentStep.hint}</div>
+                  </div>
+                )}
+
+                {/* Correct feedback */}
+                {stepCorrect === true && (
+                  <div style={{ background: 'rgba(16,185,129,0.09)', border: '1px solid rgba(16,185,129,0.35)', borderRadius: 10, padding: '10px 14px' }}>
+                    <div style={{ color: '#10B981', fontWeight: 700, fontSize: '0.9rem' }}>
+                      ✓ {currentStep.answer} — exactly right.
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Advance step / complete problem */}
+            {(stepCorrect === true || stepRevealed) && (
+              <button onClick={advanceStep} style={{ ...primaryBtn(), marginTop: 4 }}>
+                {stepIdx + 1 < (approach.steps?.length || 0) ? 'Next Step →' : 'See How It All Connects'}
+              </button>
+            )}
+          </>
+        )}
+
+        {/* ── PROBLEM DONE — finalExplanation + advance ── */}
+        {problemDone && (
+          <>
+            <div style={{ ...cardBase, background: 'rgba(16,185,129,0.05)', border: '1px solid rgba(16,185,129,0.28)', marginTop: 16 }}>
+              <div style={{ color: '#10B981', fontWeight: 700, fontSize: '0.88rem', marginBottom: 8 }}>
+                Answer: {problem.finalAnswer}
+              </div>
+              <p style={{ color: '#c4b5e0', fontSize: '0.92rem', lineHeight: 1.65, margin: 0 }}>
+                <KaraokeText text={r(problem.finalExplanation || '')} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+              </p>
+            </div>
+            <button onClick={advanceProblem} style={{ ...primaryBtn(), marginTop: 4 }}>
+              {isLastProblem ? 'Finish' : 'Next Problem →'}
+            </button>
+          </>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
 // ── Audio session unlock — module-level, persists for the SPA session ────────
 let _ueAudioSessionUnlocked = false;
 function markAudioSessionUnlocked() {
@@ -1821,9 +2405,10 @@ export default function UpperExplorerLessonPlayer() {
       case 'story-beat': return <StoryBeatScreen       {...commonProps} />;
       case 'interactive': {
         const gameProps = { screen, guideAvatar, accent, childName, lessonId, onSpeak: speak, onPrewarm: prewarmAudio, onComplete: goNext, onInteractiveComplete, karaokeWords, karaokeIdx, speaking };
-        if (screen.format === 'investigation')      return <InvestigationGame      {...gameProps} />;
-        if (screen.format === 'branching-decision') return <BranchingDecisionGame  {...gameProps} />;
+        if (screen.format === 'investigation')       return <InvestigationGame      {...gameProps} />;
+        if (screen.format === 'branching-decision')  return <BranchingDecisionGame  {...gameProps} />;
         if (screen.format === 'resource-allocation') return <ResourceAllocationGame {...gameProps} />;
+        if (screen.format === 'problem-solving')     return <ProblemSolvingGame     {...gameProps} />;
         return <InteractiveExplore {...commonProps} />;
       }
       case 'quiz':       return <MasteryQuiz           {...commonProps} />;
