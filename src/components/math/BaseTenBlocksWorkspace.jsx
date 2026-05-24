@@ -22,14 +22,19 @@ let _id = 0;
 const uid = () => `b${++_id}`;
 
 // ── Auto-arrange spawn regions (full scale, compact=false only) ───────────────
-// Workspace reads top → bottom: flats | rods | units (matches place value order).
-// Units form a classic ten-frame (2 rows × 5 cols).
-// These are fixed pixel offsets; interactive workspaces are always ~500px+ tall.
+// Flats: top-left, 2 per row.
+// Rods: below flats, left side (y = FLAT_S_BASE + 16).
+// Units: same y as rods but RIGHT side (x0=175) — always visible on mobile,
+//        never overlaps rods because rods max out around x=140 for 9 rods at 34px each.
+//        Ten-frame: 5 columns × 2 rows.
+const FLAT_ZONE_Y  = 8;
+const ROD_UNIT_Y   = FLAT_S_BASE + 16;  // 156 — below 1 flat row
+const UNIT_X_START = 175;               // right lane; avoids overlapping rods
+
 const SPAWN = {
-  flat: { x0: 8, y0: 8,   xStep: FLAT_S_BASE + 6, perRow: 2 },
-  rod:  { x0: 8, y0: FLAT_S_BASE + 18, xStep: ROD_W_BASE + 6, perRow: 9 },
-  // Ten-frame: y0 = below rod zone
-  unit: { x0: 8, y0: FLAT_S_BASE + ROD_H_BASE + 26, xStep: UNIT_S_BASE + 4, perRow: 5 },
+  flat: { x0: 8,             y0: FLAT_ZONE_Y,  xStep: FLAT_S_BASE + 6, perRow: 2 },
+  rod:  { x0: 8,             y0: ROD_UNIT_Y,   xStep: ROD_W_BASE  + 6, perRow: 9 },
+  unit: { x0: UNIT_X_START,  y0: ROD_UNIT_Y,   xStep: UNIT_S_BASE + 4, perRow: 5 },
 };
 
 function getSpawnPos(type, nth) {
@@ -45,45 +50,54 @@ function getSpawnPos(type, nth) {
 }
 
 // ── Generate initial block layout from a count spec ───────────────────────────
-// compact: use half-size dimensions so preloaded blocks fit compact display areas
+// Non-compact: reuses the same SPAWN regions as user-spawned blocks so preloaded
+// blocks are spread across the workspace identically to how the kid would place them.
+// Compact: uses a scaled layout for small read-only display panels.
 function generateInitialBlocks(spec, compact) {
-  const S  = compact ? 0.5 : 1.0;
+  if (!compact) {
+    // Use same auto-arrange regions as spawnBlock() so preloaded blocks
+    // spread across the workspace instead of piling in one corner.
+    const blocks = [];
+    for (let i = 0; i < (spec.flats || 0); i++) {
+      blocks.push({ id: uid(), type: 'flat', ...getSpawnPos('flat', i) });
+    }
+    for (let i = 0; i < (spec.rods || 0); i++) {
+      blocks.push({ id: uid(), type: 'rod', ...getSpawnPos('rod', i) });
+    }
+    for (let i = 0; i < (spec.units || 0); i++) {
+      blocks.push({ id: uid(), type: 'unit', ...getSpawnPos('unit', i) });
+    }
+    return blocks;
+  }
+
+  // Compact layout (50% scale, for read-only display panels)
+  const S  = 0.5;
   const US = Math.round(UNIT_S_BASE * S);
   const RW = Math.round(ROD_W_BASE  * S);
   const RH = Math.round(ROD_H_BASE  * S);
   const FS = Math.round(FLAT_S_BASE * S);
-
+  const GAP = 3;
   const blocks = [];
-  const nextId = () => `init_${uid()}`;
-  const GAP = 4;
 
-  // Flats in a 2-column grid from top-left
+  // Flats: 2-column grid from top-left
   for (let i = 0; i < (spec.flats || 0); i++) {
     const col = i % 2;
     const row = Math.floor(i / 2);
-    blocks.push({ id: nextId(), type: 'flat', x: GAP + col * (FS + GAP), y: GAP + row * (FS + GAP) });
+    blocks.push({ id: uid(), type: 'flat', x: GAP + col * (FS + GAP), y: GAP + row * (FS + GAP) });
   }
-
-  // X offset: right of flat columns (or 0 if no flats)
-  const flatCols = Math.min(spec.flats || 0, 2);
-  const afterFlatsX = flatCols > 0 ? GAP + flatCols * (FS + GAP) : 0;
-
-  // Rods stacked horizontally from top-right area
+  // Rods: right of flats at top
+  const afterFlatsX = Math.min(spec.flats || 0, 2) * (FS + GAP) + GAP;
   for (let i = 0; i < (spec.rods || 0); i++) {
-    blocks.push({ id: nextId(), type: 'rod', x: afterFlatsX + GAP + i * (RW + GAP), y: GAP });
+    blocks.push({ id: uid(), type: 'rod', x: afterFlatsX + i * (RW + GAP), y: GAP });
   }
-
-  // Units below the flat rows (or below rods if no flats)
-  const flatRows  = spec.flats ? Math.ceil(spec.flats / 2) : 0;
-  const flatH     = flatRows > 0 ? GAP + flatRows * (FS + GAP) : 0;
-  const unitStartY = Math.max(flatH, RH + GAP * 2);
-
+  // Units: below flat rows
+  const flatRows   = Math.ceil((spec.flats || 0) / 2);
+  const unitStartY = flatRows > 0 ? GAP + flatRows * (FS + GAP) : (spec.rods ? RH + GAP * 2 : GAP);
   for (let i = 0; i < (spec.units || 0); i++) {
-    const col = i % 2;
-    const row = Math.floor(i / 2);
-    blocks.push({ id: nextId(), type: 'unit', x: GAP + col * (US + GAP + 2), y: unitStartY + row * (US + GAP) });
+    const col = i % 5;
+    const row = Math.floor(i / 5);
+    blocks.push({ id: uid(), type: 'unit', x: GAP + col * (US + GAP), y: unitStartY + row * (US + GAP) });
   }
-
   return blocks;
 }
 
@@ -150,6 +164,7 @@ export default function BaseTenBlocksWorkspace({
   readOnly = false,
   onBlockTap,
   compact = false,
+  hideCounter = false,  // hides the numeric total (prevents giving away quiz answers)
 }) {
   // ── Scale-derived dimensions ───────────────────────────────────────────────
   const SC = compact ? 0.5 : 1.0;
@@ -384,24 +399,26 @@ export default function BaseTenBlocksWorkspace({
       `}</style>
 
       {/* ── Counter ────────────────────────────────────────────────────────── */}
-      <div style={{ textAlign: 'center', padding: compact ? '8px 0 4px' : '18px 0 6px', flexShrink: 0 }}>
-        <div style={{
-          fontSize: compact ? '2rem' : 'clamp(3rem, 14vw, 5rem)',
-          fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: '#fff',
-        }}>
-          {total}
+      {!hideCounter && (
+        <div style={{ textAlign: 'center', padding: compact ? '8px 0 4px' : '18px 0 6px', flexShrink: 0 }}>
+          <div style={{
+            fontSize: compact ? '2rem' : 'clamp(3rem, 14vw, 5rem)',
+            fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1, color: '#fff',
+          }}>
+            {total}
+          </div>
+          {!compact && (
+            <>
+              <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>
+                Your Number
+              </div>
+              <div style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.5)', marginTop: 6, letterSpacing: '0.01em', minHeight: '1.1em', fontWeight: 500 }}>
+                {breakdown || 'Add blocks below ↓'}
+              </div>
+            </>
+          )}
         </div>
-        {!compact && (
-          <>
-            <div style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginTop: 4 }}>
-              Your Number
-            </div>
-            <div style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.5)', marginTop: 6, letterSpacing: '0.01em', minHeight: '1.1em', fontWeight: 500 }}>
-              {breakdown || 'Add blocks below ↓'}
-            </div>
-          </>
-        )}
-      </div>
+      )}
 
       {/* ── Workspace ──────────────────────────────────────────────────────── */}
       <div

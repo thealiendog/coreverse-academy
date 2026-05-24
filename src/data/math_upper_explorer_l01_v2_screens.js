@@ -2,7 +2,7 @@
 // Player: MathLessonPlayer (NOT UpperExplorerLessonPlayer)
 // Guide: Remi (raccoon)
 // XP: 75 | Badge: Place Value Pro
-// 8 screens: welcome → explore → guided-tasks → concept-name →
+// 8 screens: welcome → block-intro → explore → guided-tasks → concept-name →
 //            applied-problems → quick-check → real-world → celebration
 
 export const MATH_L01_V2 = {
@@ -30,7 +30,6 @@ export const MATH_L01_V2 = {
       type: 'block-intro',
       audioPrompt:
         "Before we start building — let me show you what we're working with. This little blue square is a UNIT. It means ONE. This green rod is a TEN. See those segments on it? That's 10 ones stacked together. So one rod equals ten units. And this orange square is a HUNDRED. It's 10 rods packed together, or 100 units. A whole hundred. Got it? Let's build.",
-      // Rough ms offsets when each block should pulse (matches ElevenLabs at 0.85× speed)
       highlightTimings: { unit: 4400, rod: 9800, flat: 17200, none: 24000 },
     },
 
@@ -43,7 +42,7 @@ export const MATH_L01_V2 = {
         "Try tapping each of the three blocks — unit, rod, and flat. See how the number at the top changes. Mix them up. Just play with it for a minute.",
     },
 
-    // ── Screen 3: Guided Tasks ────────────────────────────────────────────────
+    // ── Screen 4: Guided Tasks ────────────────────────────────────────────────
     {
       id:   'guided-tasks',
       type: 'guided-tasks',
@@ -54,6 +53,16 @@ export const MATH_L01_V2 = {
           audioPrompt:
             "Let's start easy. Make the number 23 using the blocks. You'll need some rods and some units. Tap Check My Answer when you think you've got it.",
           wrongHint:   "Hmm, not quite. We want 23. Think about how many groups of ten and how many ones that is.",
+          teachingMoment: {
+            headline: 'That was Place Value!',
+            equation: '23 = 2 tens + 3 ones',
+            audioPrompt:
+              "Look at the number you built — 23. The 2 in 23 is in the TENS place. See those 2 rods? That's what 2 tens looks like. The 3 in 23 is in the ONES place. Those 3 small blocks are 3 ones. That's place value at work.",
+            rows: [
+              { digit: '2', placeLabel: 'TENS',  blockType: 'rod',  count: 2, color: '#34D399' },
+              { digit: '3', placeLabel: 'ONES',  blockType: 'unit', count: 3, color: '#60A5FA' },
+            ],
+          },
         },
         {
           target:      50,
@@ -61,6 +70,16 @@ export const MATH_L01_V2 = {
           audioPrompt:
             "Nice. Now make 50. This one's interesting — you don't need any units at all. Just rods. How many rods make 50?",
           wrongHint:   "Almost. We want 50. That's five groups of ten. So five rods — and zero units.",
+          teachingMoment: {
+            headline: 'Zero ones — that matters!',
+            equation: '50 = 5 tens + 0 ones',
+            audioPrompt:
+              "Check it out — 50 equals 5 tens and 0 ones. Notice the 0 in the ones place. Zero ones means no small blocks needed. But the 0 is doing a real job — it says no ones here. Without that 0, 5 tens would just look like the number 5. The zero holds the ones place open.",
+            rows: [
+              { digit: '5', placeLabel: 'TENS',  blockType: 'rod',  count: 5, color: '#34D399' },
+              { digit: '0', placeLabel: 'ONES',  blockType: 'unit', count: 0, color: '#60A5FA' },
+            ],
+          },
         },
         {
           target:      147,
@@ -68,6 +87,17 @@ export const MATH_L01_V2 = {
           audioPrompt:
             "Big one. Make 147. You'll need a flat, some rods, and some units. Think about how each digit maps to a kind of block.",
           wrongHint:   "Not quite. We want 147. That's 1 flat for the hundred, 4 rods for the tens, and 7 units for the ones.",
+          teachingMoment: {
+            headline: 'Three places — hundreds, tens, ones!',
+            equation: '147 = 1 hundred + 4 tens + 7 ones',
+            audioPrompt:
+              "Now you're using all three places. 147 equals 1 hundred, 4 tens, and 7 ones. The 1 is in the HUNDREDS place — that's the flat. The 4 is in the TENS place — those are the rods. The 7 is in the ONES place — the small blocks. Three different places, three different values.",
+            rows: [
+              { digit: '1', placeLabel: 'HUNDREDS', blockType: 'flat', count: 1, color: '#FBBF24' },
+              { digit: '4', placeLabel: 'TENS',     blockType: 'rod',  count: 4, color: '#34D399' },
+              { digit: '7', placeLabel: 'ONES',     blockType: 'unit', count: 7, color: '#60A5FA' },
+            ],
+          },
         },
         {
           target:      200,
@@ -75,22 +105,33 @@ export const MATH_L01_V2 = {
           audioPrompt:
             "Last one. Make 200. There are a few ways to do this — try the simplest one you can think of.",
           wrongHint:   "We want 200. That's exactly 2 flats. You can also use 20 rods — the blocks will auto-group for you.",
+          teachingMoment: {
+            headline: 'Two zeros holding the line!',
+            equation: '200 = 2 hundreds + 0 tens + 0 ones',
+            audioPrompt:
+              "200 equals 2 hundreds, 0 tens, and 0 ones. Two zeros! But they're not doing nothing — they're holding two places open, keeping the 2 exactly in the hundreds place. Take away those zeros and you'd have just the number 2. The zeros make 200 mean something completely different.",
+            rows: [
+              { digit: '2', placeLabel: 'HUNDREDS', blockType: 'flat', count: 2, color: '#FBBF24' },
+              { digit: '0', placeLabel: 'TENS',     blockType: 'rod',  count: 0, color: '#34D399' },
+              { digit: '0', placeLabel: 'ONES',     blockType: 'unit', count: 0, color: '#60A5FA' },
+            ],
+          },
         },
       ],
     },
 
-    // ── Screen 4: Concept Name ────────────────────────────────────────────────
+    // ── Screen 5: Concept Name ────────────────────────────────────────────────
     {
       id:   'concept-name',
       type: 'concept-name',
-      headline: 'That was Place Value.',
+      headline: 'The Secret Code Behind Every Number',
       body:
-        "Every number you built had three kinds of places — ones (the small blocks), tens (the rods), and hundreds (the flats). Each place is 10 times bigger than the one to its right. This is the secret code behind every number you'll ever see.",
+        "Every number lives in PLACES — ones, tens, hundreds. Each place is 10 times bigger than the one to its right. Every flat = one HUNDRED. Every rod = one TEN. Every unit = one ONE.",
       audioPrompt:
-        "You just did something amazing. Every number you built had THREE KINDS of places — ones, the small blocks, tens, the rods, and hundreds, the flats. Each one is 10 TIMES bigger than the one to its right. This is called PLACE VALUE. It's the secret code behind every number you'll ever see. And you just used it.",
+        "You just built four different numbers. Let me show you the pattern. Every number lives in PLACES. There's a ones place, a tens place, and a hundreds place — and they always sit in the same order. Look at 247. The 7 is in the ONES place. The 4 is in the TENS place. The 2 is in the HUNDREDS place. Every flat equals one HUNDRED. Every rod equals one TEN. Every unit equals one ONE. That's the secret code behind every number you'll ever see. Numbers aren't just symbols — every digit has a JOB based on its PLACE. And now you know how to read that code.",
     },
 
-    // ── Screen 5: Applied Problems ────────────────────────────────────────────
+    // ── Screen 6: Applied Problems ────────────────────────────────────────────
     {
       id:   'applied-problems',
       type: 'applied-problems',
@@ -100,12 +141,12 @@ export const MATH_L01_V2 = {
           subtype:          'tap-identify',
           preload:          { flats: 4, rods: 5, units: 8 }, // represents 458
           displayNumber:    458,
-          prompt:           "In the number 458, what does the 4 mean? Tap the blocks that show '4 hundred'.",
+          prompt:           "In 458, what does the 4 mean? Tap the blocks that show '4 hundreds'.",
           audioPrompt:
-            "Look at the number you see — 458. Now tap the blocks that show what the '4' in that number means.",
+            "Look at the number 458. Tap the blocks that show what the 4 in that number means.",
           correctBlockType: 'flat',
           correctFeedback:  "Exactly! The 4 flats show 400. The 4 is in the hundreds place.",
-          wrongFeedback:    "Not quite. The '4' in 458 is in the hundreds place — that means tap the big square blocks.",
+          wrongFeedback:    "Not quite. The 4 in 458 is in the hundreds place — tap the big orange square blocks.",
         },
         {
           id:          'build-zero',
@@ -135,43 +176,53 @@ export const MATH_L01_V2 = {
       ],
     },
 
-    // ── Screen 6: Quick Check ─────────────────────────────────────────────────
+    // ── Screen 7: Quick Check ─────────────────────────────────────────────────
     {
       id:   'quick-check',
       type: 'quick-check',
+      quizIntroAudio: "Quick check time, {name}! Let's see what you learned. Four short questions. Take your time.",
       questions: [
         {
           id:      'q1',
           subtype: 'workspace-read',
           preload: { flats: 3, rods: 2, units: 6 }, // 326
-          prompt:  'What number do these blocks show?',
+          prompt:  'How many is this number?',
+          audioPrompt: "Look at this number. How many is it?",
           options: ['326', '236', '632', '263'],
           correct: '326',
+          explanation: "You read the blocks just like a number — hundreds, tens, ones.",
         },
         {
           id:      'q2',
           subtype: 'text-choice',
-          prompt:  'In the number 8,471, which digit is in the hundreds place?',
-          options: ['8', '4', '7', '1'],
-          correct: '4',
+          prompt:  'In the number 471, which digit is in the TENS place?',
+          audioPrompt: "In the number 471, which digit is in the TENS place?",
+          options: ['4', '7', '1', '471'],
+          correct: '7',
+          explanation: "The 7 is in the tens place. The 4 is in hundreds, the 1 is in ones.",
         },
         {
           id:      'q3',
-          subtype: 'fill-in',
-          prompt:  '60 = ___ tens',
-          correct: '6',
+          subtype: 'workspace-fill',
+          preload: { flats: 2, rods: 5, units: 3 }, // 253
+          prompt:  'What number is shown here?',
+          audioPrompt: "Look at the blocks. What number do they show? Type it in.",
+          correct: '253',
+          explanation: "2 hundreds + 5 tens + 3 ones = 253. You can read the blocks like digits.",
         },
         {
           id:      'q4',
           subtype: 'text-choice',
-          prompt:  'Which number has a 5 in the ones place?',
-          options: ['5,000', '500', '50', '25'],
-          correct: '25',
+          prompt:  "What number means '3 hundreds, 0 tens, 8 ones'?",
+          audioPrompt: "What number means 3 hundreds, 0 tens, 8 ones?",
+          options: ['38', '308', '380', '3008'],
+          correct: '308',
+          explanation: "The 0 in 308 holds the tens place open, keeping the 3 in hundreds and the 8 in ones.",
         },
       ],
     },
 
-    // ── Screen 7: Real-World ──────────────────────────────────────────────────
+    // ── Screen 8: Real-World ──────────────────────────────────────────────────
     {
       id:   'real-world',
       type: 'real-world',
@@ -182,7 +233,7 @@ export const MATH_L01_V2 = {
         "Place value is everywhere. The number on your house. The price of stuff at the store. Phone numbers. All using the same system you just learned. Tonight, find three numbers around your house. Tell someone in your family which digit is in which place. That's your Family Adventure.",
     },
 
-    // ── Screen 8: Celebration ─────────────────────────────────────────────────
+    // ── Screen 9: Celebration ─────────────────────────────────────────────────
     {
       id:    'celebration',
       type:  'celebration',
