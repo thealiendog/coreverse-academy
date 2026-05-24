@@ -32,6 +32,33 @@ function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, sho
   let firstVocabPulsed = false; // only the very first vocab word gets the tutorial pulse
 
   return paragraphs.map((para, pIdx) => {
+    // Math blocks: paragraphs containing literal newlines (stacked column notation).
+    // Render as <pre> with monospace font so spacing is preserved.
+    // Still count "words" so karaokeIdx stays aligned for subsequent paragraphs.
+    if (para.includes('\n')) {
+      para.split(/(\s+)/).forEach(chunk => {
+        if (chunk && !/^\s+$/.test(chunk)) wordCount++;
+      });
+      return (
+        <pre key={pIdx} style={{
+          fontFamily: "'Courier New', Courier, monospace",
+          fontSize: '0.92rem',
+          lineHeight: 1.65,
+          color: 'rgba(255,255,255,0.9)',
+          background: 'rgba(255,255,255,0.05)',
+          border: '1px solid rgba(255,255,255,0.12)',
+          borderRadius: 8,
+          padding: '10px 14px',
+          margin: '6px 0 14px',
+          whiteSpace: 'pre',
+          overflowX: 'auto',
+          boxSizing: 'border-box',
+        }}>
+          {para}
+        </pre>
+      );
+    }
+
     const chunks = para.split(/(\s+)/);
     const spans = chunks.map((chunk, cIdx) => {
       if (!chunk) return null;
