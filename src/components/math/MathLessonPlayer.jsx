@@ -45,6 +45,51 @@ const GLOBAL_STYLES = `
   }
 `;
 
+// ── Sound effects (Web Audio API — no file deps, respects silent mode) ────────
+function playChime() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
+    notes.forEach((freq, i) => {
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const t = ctx.currentTime + i * 0.12;
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.18, t + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.45);
+      osc.start(t);
+      osc.stop(t + 0.45);
+    });
+    setTimeout(() => ctx.close(), 1500);
+  } catch { /* silent mode / unsupported — no-op */ }
+}
+
+function playFanfare() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    notes.forEach((freq, i) => {
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const t = ctx.currentTime + i * 0.16;
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.22, t + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.55);
+      osc.start(t);
+      osc.stop(t + 0.55);
+    });
+    setTimeout(() => ctx.close(), 1800);
+  } catch { /* silent mode / unsupported — no-op */ }
+}
+
 // ── Shared UI atoms ───────────────────────────────────────────────────────────
 function ProgressBar({ current, total }) {
   const pct = total > 1 ? (current / (total - 1)) * 100 : 100;
@@ -415,22 +460,23 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
 
   return (
     <div style={{
-      flexShrink: 0,
+      flex: 1, minHeight: 0,
+      display: 'flex', flexDirection: 'column',
       background: 'rgba(8,6,24,0.97)',
       borderTop: `1.5px solid ${ACCENT}33`,
       padding: '14px 16px 18px',
       animation: 'slideUp 0.35s cubic-bezier(0.34,1,0.64,1)',
     }}>
       {/* Equation headline */}
-      <div style={{ fontSize: '0.7rem', fontWeight: 700, color: ACCENT, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, textAlign: 'center' }}>
+      <div style={{ fontSize: '0.7rem', fontWeight: 700, color: ACCENT, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, textAlign: 'center', flexShrink: 0 }}>
         Place Value
       </div>
-      <div style={{ fontSize: 'clamp(0.95rem,3.5vw,1.15rem)', fontWeight: 900, color: '#fff', textAlign: 'center', marginBottom: 12, letterSpacing: '-0.01em' }}>
+      <div style={{ fontSize: 'clamp(0.95rem,3.5vw,1.15rem)', fontWeight: 900, color: '#fff', textAlign: 'center', marginBottom: 12, letterSpacing: '-0.01em', flexShrink: 0 }}>
         {tm.equation}
       </div>
 
       {/* Color-coded rows: digit | = | place | mini blocks */}
-      <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 14, flex: 1, minHeight: 0 }}>
         {tm.rows.map((row, i) => (
           <div key={i} style={{
             flex: 1,
@@ -438,7 +484,7 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
             border: `1.5px solid ${row.color}40`,
             borderRadius: 12,
             padding: '10px 6px',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5,
+            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 5,
           }}>
             <div style={{ fontSize: '1.6rem', fontWeight: 900, color: row.color, lineHeight: 1 }}>
               {row.digit}
@@ -451,9 +497,11 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
         ))}
       </div>
 
-      <PrimaryBtn onClick={onNext} color="#34D399">
-        Next task →
-      </PrimaryBtn>
+      <div style={{ flexShrink: 0 }}>
+        <PrimaryBtn onClick={onNext} color="#34D399">
+          Next task →
+        </PrimaryBtn>
+      </div>
     </div>
   );
 }
@@ -530,7 +578,7 @@ function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
       {/* Remi self-intro — prominent on-screen text so it's visible even before audio plays */}
       <div style={{ textAlign: 'center' }}>
         <div style={{ fontSize: '1.2rem', fontWeight: 800, color: ACCENT, marginBottom: 10, lineHeight: 1.3 }}>
-          Hi! I'm Remi the Raccoon 🦝
+          Hi! I'm Remi the Raccoon
         </div>
         <h1 style={{ fontSize: 'clamp(1.6rem,6.5vw,2.4rem)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.03em', lineHeight: 1.15 }}>
           {screen.headline}
@@ -796,6 +844,7 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
     setFeedbackMsg('');
 
     if (wsState.total === task.target) {
+      playChime();
       setFeedback('correct');
       setFeedbackMsg('Perfect! That is exactly right.');
       // After Remi celebrates, transition to teaching moment
@@ -884,11 +933,11 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
         )}
       </div>
 
-      {/* Workspace — during teaching mode, show the actual blocks the kid built
-           in compact (50% scale) read-only mode so they stay visible and match
-           the teaching panel below. On task change or build mode, full workspace. */}
-      <div style={{ flex: 1, minHeight: 0 }}>
-        {showTeaching ? (
+      {/* Workspace — during teaching mode, compact frozen snapshot at fixed height
+           so teaching panel can flex to fill the rest of the screen.
+           In build mode, workspace fills all remaining space. */}
+      {showTeaching ? (
+        <div style={{ height: 200, flexShrink: 0 }}>
           <BaseTenBlocksWorkspace
             key={`task-${taskIdx}-frozen`}
             initialState={{ flats: wsState.flats || 0, rods: wsState.rods || 0, units: wsState.units || 0 }}
@@ -896,13 +945,15 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
             compact
             hideCounter
           />
-        ) : (
+        </div>
+      ) : (
+        <div style={{ flex: 1, minHeight: 0 }}>
           <BaseTenBlocksWorkspace
             key={`task-${taskIdx}`}
             onChange={handleWsChange}
           />
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Footer: teaching moment OR check button */}
       {showTeaching ? (
@@ -1121,15 +1172,14 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
         <FeedbackBanner type={feedback} message={feedbackMsg} />
       </div>
 
-      {/* Workspace — always compact so blocks fit on any device height.
-           Full-scale rods (280px) and multi-row flats (3×146=438px) clip on
-           smaller phones; compact scale (50%) keeps everything visible.
-           tap-identify is readOnly + hideCounter; build/build-write are interactive. */}
+      {/* Workspace — tap-identify uses full scale so the individual blocks are
+           large enough to tap accurately. Build/build-write stay compact so
+           multi-row layouts fit on smaller phones. */}
       <div style={{ flex: 1, minHeight: 0 }}>
         <BaseTenBlocksWorkspace
           key={`prob-${probIdx}`}
           initialState={prob.preload || null}
-          compact
+          compact={prob.subtype !== 'tap-identify'}
           readOnly={prob.subtype === 'tap-identify'}
           hideCounter={prob.subtype === 'tap-identify'}
           onBlockTap={prob.subtype === 'tap-identify' ? handleTapIdentify : undefined}
@@ -1426,22 +1476,13 @@ function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onA
 // ── 9. CelebrationScreen ──────────────────────────────────────────────────────
 function CelebrationScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
   useEffect(() => {
+    playFanfare();
     speak(screen.audioPrompt);
     return stopAudio;
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '32px 24px', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: 20 }}>
-      <div style={{
-        width: 120, height: 120, borderRadius: '50%',
-        background: `linear-gradient(135deg, ${ACCENT}, #818CF8)`,
-        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-        boxShadow: `0 0 40px ${ACCENT}44`,
-        animation: 'badgePop 0.6s cubic-bezier(0.34,1.56,0.64,1)',
-      }}>
-        <div style={{ fontSize: '2.8rem', lineHeight: 1 }}>🎯</div>
-      </div>
-
       <div>
         <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>
           {screen.badge}
