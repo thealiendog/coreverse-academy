@@ -80,30 +80,31 @@ const COMPACT_RH  = Math.round(ROD_H_BASE  * 0.5); // 140
 const COMPACT_FS  = Math.round(FLAT_S_BASE * 0.5); // 70
 const COMPACT_GAP = 3;
 
+// Layout: three side-by-side columns — flats | rods | units
+// Units are placed to the RIGHT of both flats and rods so they never
+// overlap or hide behind blocks of other types.
 function getCompactPos(type, nth, { flats = 0, rods = 0 }) {
-  const { COMPACT_FS: FS, COMPACT_RW: RW, COMPACT_RH: RH, COMPACT_US: US, COMPACT_GAP: GAP } =
-    { COMPACT_FS, COMPACT_RW, COMPACT_RH, COMPACT_US, COMPACT_GAP };
+  const FS = COMPACT_FS, RW = COMPACT_RW, US = COMPACT_US, GAP = COMPACT_GAP;
 
   if (type === 'flat') {
+    // 2-column grid for flats (top-left)
     const col = nth % 2;
     const row = Math.floor(nth / 2);
     return { x: GAP + col * (FS + GAP), y: GAP + row * (FS + GAP) };
   }
 
-  // Rods: right of the flat columns
-  const afterFlatsX = Math.min(flats, 2) * (FS + GAP) + GAP;
+  // Rods: right of flat columns (1 or 2 cols depending on count)
+  const flatCols = flats > 0 ? Math.min(flats, 2) : 0;
+  const rodColX  = GAP + flatCols * (FS + GAP);
   if (type === 'rod') {
-    return { x: afterFlatsX + nth * (RW + GAP), y: GAP };
+    return { x: rodColX + nth * (RW + GAP), y: GAP };
   }
 
-  // Units: below flat rows, or below rod height when there are no flats
-  const flatRows   = Math.ceil(flats / 2);
-  const unitStartY = flatRows > 0
-    ? GAP + flatRows * (FS + GAP)
-    : rods > 0 ? RH + GAP * 2 : GAP;
-  const col = nth % 5;
-  const row = Math.floor(nth / 5);
-  return { x: GAP + col * (US + GAP), y: unitStartY + row * (US + GAP) };
+  // Units: right of rods (or right of flats if no rods) — never overlaps anything
+  const unitColX = rodColX + (rods > 0 ? rods * (RW + GAP) : 0);
+  const col = nth % 4;
+  const row = Math.floor(nth / 4);
+  return { x: unitColX + col * (US + GAP), y: GAP + row * (US + GAP) };
 }
 
 // ── Generate initial block layout from a count spec ───────────────────────────

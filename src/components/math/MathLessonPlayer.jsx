@@ -144,9 +144,9 @@ function BackChevron({ onClick }) {
     <button
       onClick={onClick}
       style={{
-        width: 34, height: 34, borderRadius: '50%', border: 'none', flexShrink: 0,
-        background: 'rgba(255,255,255,0.08)',
-        color: 'rgba(255,255,255,0.55)', fontSize: '1.3rem', lineHeight: 1,
+        width: 44, height: 44, borderRadius: '50%', border: 'none', flexShrink: 0,
+        background: 'rgba(255,255,255,0.12)',
+        color: 'rgba(255,255,255,0.8)', fontSize: '1.6rem', lineHeight: 1,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         cursor: 'pointer', touchAction: 'manipulation', padding: 0,
       }}
@@ -333,52 +333,66 @@ function useCounterNarration(speak) {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
-// Teaching moment mini-block icons (inline SVG, tiny scale)
+// Teaching card block icons — large, visually dominant.
+// Used in TeachingMomentPanel and TripleRepVisual so kids clearly see what
+// each digit value looks like as physical blocks.
 // ══════════════════════════════════════════════════════════════════════════════
-function MiniBlockIcons({ blockType, count, color }) {
+function CardBlockIcon({ blockType, count, color }) {
   if (count === 0) {
     return (
-      <div style={{ fontSize: '0.72rem', color, opacity: 0.55, fontWeight: 700 }}>
-        (none)
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 0' }}>
+        <div style={{ fontSize: '0.75rem', color, opacity: 0.4, fontWeight: 700 }}>(none)</div>
       </div>
     );
   }
-  const n = Math.min(count, 5); // cap display at 5
-  return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: 'center' }}>
-      {Array.from({ length: n }).map((_, i) => {
-        if (blockType === 'flat') {
-          return (
-            <svg key={i} width={16} height={16}>
-              <rect x={0.5} y={0.5} width={15} height={15} fill={color} stroke={color} strokeWidth={0.8} rx={2} opacity={0.9} />
-              <line x1={5.5} y1={0.5} x2={5.5} y2={15.5} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
-              <line x1={10.5} y1={0.5} x2={10.5} y2={15.5} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
-              <line x1={0.5} y1={5.5} x2={15.5} y2={5.5} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
-              <line x1={0.5} y1={10.5} x2={15.5} y2={10.5} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
-            </svg>
-          );
-        }
-        if (blockType === 'rod') {
-          return (
-            <svg key={i} width={8} height={28}>
-              <rect x={0.5} y={0.5} width={7} height={27} fill={color} stroke={color} strokeWidth={0.8} rx={1.5} opacity={0.9} />
-              <line x1={1} y1={9.5} x2={7} y2={9.5} stroke="rgba(0,0,0,0.2)" strokeWidth={0.5} />
-              <line x1={1} y1={18.5} x2={7} y2={18.5} stroke="rgba(0,0,0,0.2)" strokeWidth={0.5} />
-            </svg>
-          );
-        }
-        // unit
-        return (
-          <svg key={i} width={10} height={10}>
-            <rect x={0.5} y={0.5} width={9} height={9} fill={color} stroke={color} strokeWidth={0.8} rx={2} opacity={0.9} />
+
+  if (blockType === 'flat') {
+    const n = Math.min(count, 2);
+    return (
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, alignItems: 'center', justifyContent: 'center' }}>
+        {Array.from({ length: n }).map((_, i) => (
+          <svg key={i} width={60} height={60} viewBox="0 0 60 60">
+            <rect x={1} y={1} width={58} height={58} fill={color} stroke={color} strokeWidth={1.5} rx={5} opacity={0.9} />
+            {[1,2,3,4,5,6,7,8,9].map(j => (
+              <line key={`h${j}`} x1={1} y1={j * 6} x2={59} y2={j * 6} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
+            ))}
+            {[1,2,3,4,5,6,7,8,9].map(j => (
+              <line key={`v${j}`} x1={j * 6} y1={1} x2={j * 6} y2={59} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
+            ))}
           </svg>
-        );
-      })}
-      {count > 5 && (
-        <span style={{ fontSize: '0.7rem', color, fontWeight: 700, alignSelf: 'center' }}>
-          ×{count}
-        </span>
-      )}
+        ))}
+        {count > 2 && <span style={{ fontSize: '0.85rem', color, fontWeight: 800, marginLeft: 2 }}>×{count}</span>}
+      </div>
+    );
+  }
+
+  if (blockType === 'rod') {
+    const n = Math.min(count, 9);
+    return (
+      <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', gap: 3, flexWrap: 'wrap' }}>
+        {Array.from({ length: n }).map((_, i) => (
+          <svg key={i} width={10} height={62} viewBox="0 0 10 62">
+            <rect x={0.5} y={0.5} width={9} height={61} fill={color} stroke={color} strokeWidth={1} rx={2} opacity={0.9} />
+            {[1,2,3,4,5,6,7,8,9].map(j => (
+              <line key={j} x1={1} y1={j * 6.1} x2={9} y2={j * 6.1} stroke="rgba(0,0,0,0.2)" strokeWidth={0.5} />
+            ))}
+          </svg>
+        ))}
+        {count > 9 && <span style={{ fontSize: '0.85rem', color, fontWeight: 800, alignSelf: 'center' }}>×{count}</span>}
+      </div>
+    );
+  }
+
+  // unit
+  const n = Math.min(count, 9);
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'center', maxWidth: 84 }}>
+      {Array.from({ length: n }).map((_, i) => (
+        <svg key={i} width={18} height={18}>
+          <rect x={0.5} y={0.5} width={17} height={17} fill={color} stroke={color} strokeWidth={1} rx={3} opacity={0.9} />
+        </svg>
+      ))}
+      {count > 9 && <span style={{ fontSize: '0.85rem', color, fontWeight: 800 }}>×{count}</span>}
     </div>
   );
 }
@@ -475,7 +489,7 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
         {tm.equation}
       </div>
 
-      {/* Color-coded rows: digit | = | place | mini blocks */}
+      {/* Color-coded cards: digit top, big block icon middle, place label bottom */}
       <div style={{ display: 'flex', gap: 6, marginBottom: 14, flex: 1, minHeight: 0 }}>
         {tm.rows.map((row, i) => (
           <div key={i} style={{
@@ -483,16 +497,21 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
             background: `${row.color}12`,
             border: `1.5px solid ${row.color}40`,
             borderRadius: 12,
-            padding: '10px 6px',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 5,
+            padding: '10px 6px 8px',
+            display: 'flex', flexDirection: 'column', alignItems: 'center',
           }}>
-            <div style={{ fontSize: '1.6rem', fontWeight: 900, color: row.color, lineHeight: 1 }}>
+            {/* Digit — top anchor */}
+            <div style={{ fontSize: '1.8rem', fontWeight: 900, color: row.color, lineHeight: 1, flexShrink: 0 }}>
               {row.digit}
             </div>
-            <div style={{ fontSize: '0.6rem', fontWeight: 800, color: row.color, letterSpacing: '0.1em', textTransform: 'uppercase', textAlign: 'center' }}>
+            {/* Block icon — fills available space so it's visually dominant */}
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', overflow: 'hidden', padding: '6px 0' }}>
+              <CardBlockIcon blockType={row.blockType} count={row.count} color={row.color} />
+            </div>
+            {/* Place label — bottom anchor */}
+            <div style={{ fontSize: '0.58rem', fontWeight: 800, color: row.color, letterSpacing: '0.1em', textTransform: 'uppercase', textAlign: 'center', flexShrink: 0 }}>
               {row.placeLabel}
             </div>
-            <MiniBlockIcons blockType={row.blockType} count={row.count} color={row.color} />
           </div>
         ))}
       </div>
@@ -529,24 +548,26 @@ function TripleRepVisual() {
         </span>
       </div>
 
-      {/* Three columns */}
+      {/* Three columns — digit top, big icon middle, label bottom */}
       <div style={{ display: 'flex', gap: 8 }}>
         {cols.map(({ digit, place, blockType, count, color }) => (
           <div key={place} style={{
-            flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
+            flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
             background: `${color}12`, border: `1.5px solid ${color}40`,
-            borderRadius: 14, padding: '12px 6px',
+            borderRadius: 14, padding: '12px 6px 10px', minHeight: 140,
           }}>
-            {/* Block icons */}
-            <MiniBlockIcons blockType={blockType} count={count} color={color} />
-
             {/* Digit */}
-            <div style={{ fontSize: '1.8rem', fontWeight: 900, color, lineHeight: 1 }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: 900, color, lineHeight: 1, flexShrink: 0 }}>
               {digit}
             </div>
 
+            {/* Block icons — dominant visual in the middle */}
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 0', width: '100%', overflow: 'hidden' }}>
+              <CardBlockIcon blockType={blockType} count={count} color={color} />
+            </div>
+
             {/* Place label */}
-            <div style={{ fontSize: '0.57rem', fontWeight: 800, color, textTransform: 'uppercase', letterSpacing: '0.08em', textAlign: 'center' }}>
+            <div style={{ fontSize: '0.57rem', fontWeight: 800, color, textTransform: 'uppercase', letterSpacing: '0.08em', textAlign: 'center', flexShrink: 0 }}>
               {place}
             </div>
           </div>
