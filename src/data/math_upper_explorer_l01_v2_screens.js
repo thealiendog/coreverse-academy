@@ -21,7 +21,7 @@ export const MATH_L01_V2 = {
       headline: 'Building Numbers',
       subtitle:  'Place Value with Base-Ten Blocks',
       audioPrompt:
-        "Hey {name}. Today we're going to BUILD numbers. Not read about them — build them. With actual blocks you can drag around. Ready? Let's go.",
+        "Hi {name}! I'm Remi the Raccoon, your math guide. Today we're going to BUILD numbers — not read about them, build them. With actual blocks you can drag around. Ready? Let's go.",
     },
 
     // ── Screen 2: Block Introduction ──────────────────────────────────────────

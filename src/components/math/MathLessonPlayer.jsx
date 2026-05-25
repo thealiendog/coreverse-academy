@@ -239,17 +239,20 @@ function useCounterNarration(speak) {
   const narrate = useCallback((total) => {
     if (!mountedRef.current) return;
     if (prevTotalRef.current === null) {
-      // First call is always the initial workspace state — don't speak it.
+      // First call is the initial workspace state — record it, don't speak.
       prevTotalRef.current = total;
       return;
     }
+    // Guard: don't restart the debounce timer when the total hasn't changed.
+    // Without this guard, frequent re-renders (e.g. every-second elapsed timer
+    // in ExploreScreen) would continuously reset the 600ms timer via a stale
+    // inline onChange closure in the workspace's useEffect([blocks, onChange]).
+    if (total === prevTotalRef.current) return;
     clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
       if (!mountedRef.current) return;
-      if (total !== prevTotalRef.current) {
-        prevTotalRef.current = total;
-        speak(String(total));
-      }
+      prevTotalRef.current = total;
+      speak(String(total));
     }, 600);
   }, [speak]);
 
@@ -303,6 +306,41 @@ function MiniBlockIcons({ blockType, count, color }) {
           ×{count}
         </span>
       )}
+    </div>
+  );
+}
+
+// What the kid built — shown instead of full workspace during teaching mode.
+// Avoids layout issues where full-size rods (280px tall) clip in a short container.
+function BuildSnapshot({ wsState }) {
+  const { flats = 0, rods = 0, units = 0, total = 0 } = wsState || {};
+  const parts = [
+    flats > 0 && `${flats} flat${flats > 1 ? 's' : ''}`,
+    rods  > 0 && `${rods} rod${rods > 1 ? 's' : ''}`,
+    units > 0 && `${units} unit${units > 1 ? 's' : ''}`,
+  ].filter(Boolean);
+
+  return (
+    <div style={{
+      flexShrink: 0,
+      margin: '0 16px 8px',
+      padding: '12px 18px',
+      borderRadius: 14,
+      background: 'rgba(255,255,255,0.04)',
+      border: `1.5px solid ${ACCENT}22`,
+      display: 'flex', alignItems: 'center', gap: 16,
+    }}>
+      <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1 }}>
+        {total}
+      </div>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 3 }}>
+          You built
+        </div>
+        <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontWeight: 500 }}>
+          {parts.length > 0 ? parts.join(' · ') : '(empty)'}
+        </div>
+      </div>
     </div>
   );
 }
@@ -435,7 +473,7 @@ function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.4)', fontSize: '0.88rem', fontStyle: 'italic', maxWidth: 300 }}>
         <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-        <span>Remi is your guide for math</span>
+        <span>Hi! I'm Remi the Raccoon, your math guide</span>
       </div>
       <div style={{ width: '100%', maxWidth: 340, marginTop: 16 }}>
         <PrimaryBtn onClick={onAdvance}>Let's go →</PrimaryBtn>
@@ -547,6 +585,14 @@ function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
   const minSec = screen.minDurationSec || 60;
   const { narrate } = useCounterNarration(speak);
 
+  // Memoized so BaseTenBlocksWorkspace's useEffect([blocks, onChange]) doesn't
+  // re-fire every second from the setElapsed tick → avoids resetting the
+  // narration debounce timer on every render.
+  const handleWsChange = useCallback(ws => {
+    setWsState(ws);
+    narrate(ws.total);
+  }, [narrate]); // eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     speak(screen.audioPrompt);
     return stopAudio;
@@ -579,9 +625,7 @@ function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
       </div>
 
       <div style={{ flex: 1, minHeight: 0 }}>
-        <BaseTenBlocksWorkspace
-          onChange={ws => { setWsState(ws); narrate(ws.total); }}
-        />
+        <BaseTenBlocksWorkspace onChange={handleWsChange} />
       </div>
 
       <div style={{ padding: '12px 16px 20px', flexShrink: 0 }}>
@@ -607,6 +651,13 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
   const task  = tasks[taskIdx];
 
   const { narrate: narrateCount, reset: resetNarrate } = useCounterNarration(speak);
+
+  // Memoized onChange so workspace useEffect([blocks, onChange]) only fires
+  // on actual block changes, not on every re-render of GuidedTasksScreen.
+  const handleWsChange = useCallback(ws => {
+    setWsState(ws);
+    narrateCount(ws.total);
+  }, [narrateCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Speak task audio on mount and on task change
   useEffect(() => {
@@ -729,13 +780,19 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
         )}
       </div>
 
-      {/* Workspace — key forces remount (clears blocks) on task change */}
-      <div style={{ flex: 1, minHeight: 0 }}>
-        <BaseTenBlocksWorkspace
-          key={`task-${taskIdx}`}
-          onChange={ws => { setWsState(ws); narrateCount(ws.total); }}
-        />
-      </div>
+      {/* Workspace — during teaching mode, show compact snapshot so the blocks
+           stay visible without clipping (full-size rods at y=156 extend 280px
+           which overflows a post-header workspace on smaller phones). */}
+      {showTeaching ? (
+        <BuildSnapshot wsState={wsState} />
+      ) : (
+        <div style={{ flex: 1, minHeight: 0 }}>
+          <BaseTenBlocksWorkspace
+            key={`task-${taskIdx}`}
+            onChange={handleWsChange}
+          />
+        </div>
+      )}
 
       {/* Footer: teaching moment OR check button */}
       {showTeaching ? (
@@ -935,12 +992,15 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
         <FeedbackBanner type={feedback} message={feedbackMsg} />
       </div>
 
-      {/* Workspace — tap-identify uses full-size (not compact) so blocks spread out */}
+      {/* Workspace — tap-identify uses compact so all pre-loaded blocks fit the
+           visible area (4 flats + 5 rods + 8 units = 458 needs ~183px at 50% scale). */}
       <div style={{ flex: 1, minHeight: 0 }}>
         <BaseTenBlocksWorkspace
           key={`prob-${probIdx}`}
           initialState={prob.preload || null}
           readOnly={prob.subtype === 'tap-identify'}
+          compact={prob.subtype === 'tap-identify'}
+          hideCounter={prob.subtype === 'tap-identify'}
           onBlockTap={prob.subtype === 'tap-identify' ? handleTapIdentify : undefined}
           onChange={setWsState}
         />
@@ -1092,13 +1152,15 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
         </div>
       </div>
 
-      {/* Workspace (hideCounter so answer isn't given away) */}
+      {/* Workspace — compact so all pre-loaded blocks fit (e.g. 3 flats + 2 rods +
+           6 units needs ~183px at 50% scale). hideCounter prevents giving away answer. */}
       {wsSubtype && (
-        <div style={{ height: q.subtype === 'workspace-fill' ? 220 : 180, flexShrink: 0, margin: '0 12px' }}>
+        <div style={{ height: 210, flexShrink: 0, margin: '0 12px' }}>
           <BaseTenBlocksWorkspace
             key={`q-${qIdx}`}
             initialState={q.preload}
             readOnly
+            compact
             hideCounter
           />
         </div>
