@@ -91,6 +91,27 @@ function PrimaryBtn({ children, onClick, disabled = false, color = ACCENT }) {
   );
 }
 
+// Back chevron — used inside each screen's header row so it can handle
+// sub-state back (prev task / prev problem / prev question) before calling
+// the player-level onBack that decrements screenIdx.
+function BackChevron({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        width: 34, height: 34, borderRadius: '50%', border: 'none', flexShrink: 0,
+        background: 'rgba(255,255,255,0.08)',
+        color: 'rgba(255,255,255,0.55)', fontSize: '1.3rem', lineHeight: 1,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        cursor: 'pointer', touchAction: 'manipulation', padding: 0,
+      }}
+      aria-label="Go back"
+    >
+      ‹
+    </button>
+  );
+}
+
 function SpeakerBtn({ onClick, speaking, loading }) {
   return (
     <button
@@ -254,13 +275,13 @@ function useCounterNarration(speak) {
       return;
     }
     clearTimeout(timerRef.current);
-    console.log('[narration] scheduling debounce (600ms) for total:', total);
+    console.log('[narration] scheduling debounce (1000ms) for total:', total);
     timerRef.current = setTimeout(() => {
       if (!mountedRef.current) return;
       prevTotalRef.current = total;
       console.log('[narration] debounce fired — speaking:', total);
       speak(String(total));
-    }, 600);
+    }, 1000);
   }, [speak]);
 
   return { narrate, reset };
@@ -430,12 +451,8 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
         ))}
       </div>
 
-      <PrimaryBtn
-        onClick={onNext}
-        disabled={speaking}
-        color={speaking ? undefined : '#34D399'}
-      >
-        {speaking ? 'Remi is explaining…' : 'Next task →'}
+      <PrimaryBtn onClick={onNext} color="#34D399">
+        Next task →
       </PrimaryBtn>
     </div>
   );
@@ -496,7 +513,7 @@ function TripleRepVisual() {
 // ══════════════════════════════════════════════════════════════════════════════
 
 // ── 1. WelcomeScreen ──────────────────────────────────────────────────────────
-function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   useEffect(() => {
     speak(screen.audioPrompt);
     return stopAudio;
@@ -504,6 +521,10 @@ function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', textAlign: 'center', gap: 20 }}>
+      {/* Back exits the lesson from Welcome screen */}
+      <div style={{ position: 'absolute', top: 14, left: 12 }}>
+        <BackChevron onClick={onBack} />
+      </div>
       <RemiAvatar size={88} speaking={speaking} />
 
       {/* Remi self-intro — prominent on-screen text so it's visible even before audio plays */}
@@ -532,7 +553,7 @@ function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
 }
 
 // ── 2. BlockIntroScreen ───────────────────────────────────────────────────────
-function BlockIntroScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function BlockIntroScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   const [highlighted, setHighlighted] = useState(null);
 
   useEffect(() => {
@@ -554,6 +575,7 @@ function BlockIntroScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '24px 20px', gap: 20 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <BackChevron onClick={onBack} />
         <RemiAvatar size={44} speaking={speaking} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff' }}>Meet your blocks</div>
@@ -627,7 +649,7 @@ function BlockIntroScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
 }
 
 // ── 3. ExploreScreen ──────────────────────────────────────────────────────────
-function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   const [elapsed,     setElapsed]     = useState(0);
   const [canContinue, setCanContinue] = useState(false);
   const [wsState,     setWsState]     = useState({ total: 0 });
@@ -664,6 +686,7 @@ function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <div style={{ padding: '14px 16px 8px', display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+        <BackChevron onClick={onBack} />
         <RemiAvatar size={36} speaking={speaking} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: '0.82rem', fontWeight: 700, color: ACCENT }}>Free Explore</div>
@@ -688,7 +711,7 @@ function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
 }
 
 // ── 4. GuidedTasksScreen ──────────────────────────────────────────────────────
-function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   const [taskIdx,      setTaskIdx]      = useState(0);
   const [wsState,      setWsState]      = useState({ total: 0 });
   const [feedback,     setFeedback]     = useState(null);
@@ -702,12 +725,19 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 
   const { narrate: narrateCount, reset: resetNarrate } = useCounterNarration(speak);
 
+  // Track speaking state via ref so handleWsChange (a stable useCallback) can
+  // check it without adding speaking to its dep array (which would recreate the
+  // callback every time speaking toggles and flood the workspace's onChange effect).
+  const speakingRef = useRef(speaking);
+  useEffect(() => { speakingRef.current = speaking; }, [speaking]);
+
   // Memoized onChange so workspace useEffect([blocks, onChange]) only fires
   // on actual block changes, not on every re-render of GuidedTasksScreen.
+  // Guard: skip counter narration while Remi is already speaking lesson audio.
   const handleWsChange = useCallback(ws => {
     console.log('[workspace/guided] onChange — total:', ws.total, '| task target:', task?.target);
     setWsState(ws);
-    narrateCount(ws.total);
+    if (!speakingRef.current) narrateCount(ws.total);
   }, [narrateCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Speak task audio on mount and on task change
@@ -734,6 +764,28 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
       setWsState({ total: 0 });
     } else {
       onAdvance();
+    }
+  }
+
+  // FIX 3: back within sub-tasks goes to previous task; at first task goes to previous screen
+  function handleBack() {
+    stopAudio();
+    if (showTeaching) {
+      // If teaching panel is showing, close it and stay on current task
+      setShowTeaching(false);
+      setFeedback(null);
+      setFeedbackMsg('');
+      return;
+    }
+    if (taskIdx > 0) {
+      setTaskIdx(i => i - 1);
+      setWsState({ total: 0 });
+      setFeedback(null);
+      setFeedbackMsg('');
+      setWrongCount(0);
+      setShowDemo(false);
+    } else {
+      onBack();
     }
   }
 
@@ -778,6 +830,7 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
       {/* Header */}
       <div style={{ padding: '12px 16px 8px', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+          <BackChevron onClick={handleBack} />
           <RemiAvatar size={36} speaking={speaking} />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: '0.73rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
@@ -831,19 +884,25 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
         )}
       </div>
 
-      {/* Workspace — during teaching mode, show a frozen block display so the
-           blocks the kid built remain visible (actual colored SVG icons) without
-           the full-height workspace that overflows on smaller phones. */}
-      {showTeaching ? (
-        <FrozenBlockDisplay wsState={wsState} />
-      ) : (
-        <div style={{ flex: 1, minHeight: 0 }}>
+      {/* Workspace — during teaching mode, show the actual blocks the kid built
+           in compact (50% scale) read-only mode so they stay visible and match
+           the teaching panel below. On task change or build mode, full workspace. */}
+      <div style={{ flex: 1, minHeight: 0 }}>
+        {showTeaching ? (
+          <BaseTenBlocksWorkspace
+            key={`task-${taskIdx}-frozen`}
+            initialState={{ flats: wsState.flats || 0, rods: wsState.rods || 0, units: wsState.units || 0 }}
+            readOnly
+            compact
+            hideCounter
+          />
+        ) : (
           <BaseTenBlocksWorkspace
             key={`task-${taskIdx}`}
             onChange={handleWsChange}
           />
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Footer: teaching moment OR check button */}
       {showTeaching ? (
@@ -863,7 +922,7 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 }
 
 // ── 5. ConceptNameScreen ──────────────────────────────────────────────────────
-function ConceptNameScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function ConceptNameScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   useEffect(() => {
     speak(screen.audioPrompt);
     return stopAudio;
@@ -872,6 +931,7 @@ function ConceptNameScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '20px 20px 24px', overflow: 'auto' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+        <BackChevron onClick={onBack} />
         <RemiAvatar size={44} speaking={speaking} />
         <div style={{ flex: 1 }}>
           <h2 style={{ fontSize: 'clamp(1.1rem,4.5vw,1.5rem)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>
@@ -902,7 +962,7 @@ function ConceptNameScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 }
 
 // ── 6. AppliedProblemsScreen ──────────────────────────────────────────────────
-function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   const [probIdx,     setProbIdx]     = useState(0);
   const [wsState,     setWsState]     = useState({ total: 0, blocks: [] });
   const [feedback,    setFeedback]    = useState(null);
@@ -937,6 +997,23 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
     } else {
       stopAudio();
       onAdvance();
+    }
+  }
+
+  // FIX 3: back within sub-problems goes to previous problem; at first goes to previous screen
+  function handleBack() {
+    stopAudio();
+    if (probIdx > 0) {
+      setProbIdx(i => i - 1);
+      setWsState({ total: 0, blocks: [] });
+      setFeedback(null);
+      setFeedbackMsg('');
+      setTapFeedback(null);
+      setHighlightBlanks(false);
+      setTensInput('');
+      setOnesInput('');
+    } else {
+      onBack();
     }
   }
 
@@ -1021,6 +1098,7 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
       {/* Header */}
       <div style={{ padding: '12px 16px 6px', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+          <BackChevron onClick={handleBack} />
           <RemiAvatar size={32} speaking={speaking} />
           <div style={{ flex: 1 }}>
             <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.3)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
@@ -1043,14 +1121,16 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
         <FeedbackBanner type={feedback} message={feedbackMsg} />
       </div>
 
-      {/* Workspace — tap-identify uses compact so all pre-loaded blocks fit the
-           visible area (4 flats + 5 rods + 8 units = 458 needs ~183px at 50% scale). */}
+      {/* Workspace — always compact so blocks fit on any device height.
+           Full-scale rods (280px) and multi-row flats (3×146=438px) clip on
+           smaller phones; compact scale (50%) keeps everything visible.
+           tap-identify is readOnly + hideCounter; build/build-write are interactive. */}
       <div style={{ flex: 1, minHeight: 0 }}>
         <BaseTenBlocksWorkspace
           key={`prob-${probIdx}`}
           initialState={prob.preload || null}
+          compact
           readOnly={prob.subtype === 'tap-identify'}
-          compact={prob.subtype === 'tap-identify'}
           hideCounter={prob.subtype === 'tap-identify'}
           onBlockTap={prob.subtype === 'tap-identify' ? handleTapIdentify : undefined}
           onChange={setWsState}
@@ -1110,7 +1190,7 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
 }
 
 // ── 7. QuickCheckScreen ───────────────────────────────────────────────────────
-function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, childName }) {
+function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack, childName }) {
   const [qIdx,       setQIdx]      = useState(0);
   const [selected,   setSelected]  = useState(null);
   const [fillAnswer, setFillAnswer] = useState('');
@@ -1152,6 +1232,16 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
     }
   }
 
+  // FIX 3: back within questions or exit to previous screen
+  function handleBack() {
+    stopAudio();
+    if (qIdx > 0) {
+      setQIdx(i => i - 1);
+    } else {
+      onBack();
+    }
+  }
+
   function checkAnswer(answer) {
     if (!q || feedback === 'correct') return;
     const isCorrect = answer.trim() === q.correct;
@@ -1189,6 +1279,7 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
       {/* Header */}
       <div style={{ padding: '12px 16px 8px', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+          <BackChevron onClick={handleBack} />
           <RemiAvatar size={32} speaking={speaking} />
           <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.3)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             Q{qIdx + 1} of {questions.length}
@@ -1294,7 +1385,7 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
 }
 
 // ── 8. RealWorldScreen ────────────────────────────────────────────────────────
-function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
   useEffect(() => {
     speak(screen.audioPrompt);
     return stopAudio;
@@ -1303,6 +1394,7 @@ function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onA
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '28px 24px', gap: 20 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <BackChevron onClick={onBack} />
         <RemiAvatar size={52} speaking={speaking} />
         <div style={{ flex: 1 }}>
           <div style={{ fontSize: 'clamp(1.2rem,5vw,1.6rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>
@@ -1431,32 +1523,15 @@ export default function MathLessonPlayer() {
     }
   }
 
-  const sharedProps = { screen, speak, stopAudio, speaking, loadingAudio, onAdvance: advance, childName };
+  // Each screen handles its own back button with sub-state awareness.
+  // Back buttons in screens call onBack (this goBack) when they've exhausted internal state.
+  const sharedProps = { screen, speak, stopAudio, speaking, loadingAudio, onAdvance: advance, onBack: goBack, childName };
 
   return (
     <div style={{ position: 'fixed', inset: 0, background: BG, color: '#fff', fontFamily: FONT, display: 'flex', flexDirection: 'column' }}>
       <style>{GLOBAL_STYLES}</style>
 
       <ProgressBar current={screenIdx} total={screens.length} />
-
-      {/* Back button — shown on all screens except Celebration */}
-      {screen.type !== 'celebration' && (
-        <button
-          onClick={goBack}
-          style={{
-            position: 'absolute', top: 14, left: 12, zIndex: 30,
-            width: 34, height: 34, borderRadius: '50%', border: 'none',
-            background: 'rgba(255,255,255,0.08)',
-            color: 'rgba(255,255,255,0.55)', fontSize: '1.25rem',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            cursor: 'pointer', touchAction: 'manipulation',
-            lineHeight: 1, padding: 0,
-          }}
-          aria-label="Go back"
-        >
-          ‹
-        </button>
-      )}
 
       <div style={{ flex: 1, minHeight: 0, overflow: 'hidden', marginTop: 3 }}>
         {screen.type === 'welcome'          && <WelcomeScreen         {...sharedProps} />}

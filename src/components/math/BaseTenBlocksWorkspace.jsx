@@ -66,15 +66,51 @@ function getSpawnPos(type, nth, flatCount = 0) {
   return { x: UNIT_X_START + col * (UNIT_S_BASE + 4), y: baseY + row * (UNIT_S_BASE + 4) };
 }
 
+// ── Compact spawn positions (50% scale) ───────────────────────────────────────
+// Used by both generateInitialBlocks(compact=true) and spawnBlock(compact=true)
+// so pre-loaded and manually-spawned blocks share the same layout logic.
+//
+// Layout:
+//   Flats:  2-column grid, top-left
+//   Rods:   right of flat columns, same top row
+//   Units:  below flat rows (or below rods if no flats)
+const COMPACT_US  = Math.round(UNIT_S_BASE * 0.5); // 14
+const COMPACT_RW  = Math.round(ROD_W_BASE  * 0.5); // 14
+const COMPACT_RH  = Math.round(ROD_H_BASE  * 0.5); // 140
+const COMPACT_FS  = Math.round(FLAT_S_BASE * 0.5); // 70
+const COMPACT_GAP = 3;
+
+function getCompactPos(type, nth, { flats = 0, rods = 0 }) {
+  const { COMPACT_FS: FS, COMPACT_RW: RW, COMPACT_RH: RH, COMPACT_US: US, COMPACT_GAP: GAP } =
+    { COMPACT_FS, COMPACT_RW, COMPACT_RH, COMPACT_US, COMPACT_GAP };
+
+  if (type === 'flat') {
+    const col = nth % 2;
+    const row = Math.floor(nth / 2);
+    return { x: GAP + col * (FS + GAP), y: GAP + row * (FS + GAP) };
+  }
+
+  // Rods: right of the flat columns
+  const afterFlatsX = Math.min(flats, 2) * (FS + GAP) + GAP;
+  if (type === 'rod') {
+    return { x: afterFlatsX + nth * (RW + GAP), y: GAP };
+  }
+
+  // Units: below flat rows, or below rod height when there are no flats
+  const flatRows   = Math.ceil(flats / 2);
+  const unitStartY = flatRows > 0
+    ? GAP + flatRows * (FS + GAP)
+    : rods > 0 ? RH + GAP * 2 : GAP;
+  const col = nth % 5;
+  const row = Math.floor(nth / 5);
+  return { x: GAP + col * (US + GAP), y: unitStartY + row * (US + GAP) };
+}
+
 // ── Generate initial block layout from a count spec ───────────────────────────
-// Non-compact: reuses the same SPAWN regions as user-spawned blocks so preloaded
-// blocks are spread across the workspace identically to how the kid would place them.
-// Compact: uses a scaled layout for small read-only display panels.
+// Non-compact: reuses the same SPAWN regions as user-spawned blocks.
+// Compact: uses getCompactPos so pre-loaded and spawned blocks share one layout.
 function generateInitialBlocks(spec, compact) {
   if (!compact) {
-    // Use same auto-arrange regions as spawnBlock() so preloaded blocks
-    // spread across the workspace instead of piling in one corner.
-    // Pass flatCount to rods/units so they spawn BELOW the flat rows (FIX 5).
     const blocks = [];
     const flatCount = spec.flats || 0;
     for (let i = 0; i < flatCount; i++) {
@@ -89,33 +125,18 @@ function generateInitialBlocks(spec, compact) {
     return blocks;
   }
 
-  // Compact layout (50% scale, for read-only display panels)
-  const S  = 0.5;
-  const US = Math.round(UNIT_S_BASE * S);
-  const RW = Math.round(ROD_W_BASE  * S);
-  const RH = Math.round(ROD_H_BASE  * S);
-  const FS = Math.round(FLAT_S_BASE * S);
-  const GAP = 3;
+  // Compact layout — delegate to getCompactPos for consistency with spawnBlock
+  const flatCount = spec.flats || 0;
+  const rodCount  = spec.rods  || 0;
   const blocks = [];
-
-  // Flats: 2-column grid from top-left
-  for (let i = 0; i < (spec.flats || 0); i++) {
-    const col = i % 2;
-    const row = Math.floor(i / 2);
-    blocks.push({ id: uid(), type: 'flat', x: GAP + col * (FS + GAP), y: GAP + row * (FS + GAP) });
+  for (let i = 0; i < flatCount; i++) {
+    blocks.push({ id: uid(), type: 'flat', ...getCompactPos('flat', i, { flats: 0,         rods: 0        }) });
   }
-  // Rods: right of flats at top
-  const afterFlatsX = Math.min(spec.flats || 0, 2) * (FS + GAP) + GAP;
-  for (let i = 0; i < (spec.rods || 0); i++) {
-    blocks.push({ id: uid(), type: 'rod', x: afterFlatsX + i * (RW + GAP), y: GAP });
+  for (let i = 0; i < rodCount; i++) {
+    blocks.push({ id: uid(), type: 'rod',  ...getCompactPos('rod',  i, { flats: flatCount,  rods: 0        }) });
   }
-  // Units: below flat rows
-  const flatRows   = Math.ceil((spec.flats || 0) / 2);
-  const unitStartY = flatRows > 0 ? GAP + flatRows * (FS + GAP) : (spec.rods ? RH + GAP * 2 : GAP);
   for (let i = 0; i < (spec.units || 0); i++) {
-    const col = i % 5;
-    const row = Math.floor(i / 5);
-    blocks.push({ id: uid(), type: 'unit', x: GAP + col * (US + GAP), y: unitStartY + row * (US + GAP) });
+    blocks.push({ id: uid(), type: 'unit', ...getCompactPos('unit', i, { flats: flatCount,  rods: rodCount }) });
   }
   return blocks;
 }
@@ -241,9 +262,12 @@ export default function BaseTenBlocksWorkspace({
     if (readOnly) return;
     setBlocks(prev => {
       const active = prev.filter(b => !dissolvingIdsRef.current.has(b.id));
-      const nth = active.filter(b => b.type === type).length;
+      const nth       = active.filter(b => b.type === type).length;
       const flatCount = active.filter(b => b.type === 'flat').length;
-      const pos = compact ? { x: 8, y: 8 } : getSpawnPos(type, nth, flatCount);
+      const rodCount  = active.filter(b => b.type === 'rod').length;
+      const pos = compact
+        ? getCompactPos(type, nth, { flats: flatCount, rods: rodCount })
+        : getSpawnPos(type, nth, flatCount);
       return [...prev, { id: uid(), type, x: pos.x, y: pos.y }];
     });
   }
