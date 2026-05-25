@@ -237,21 +237,28 @@ function useCounterNarration(speak) {
   }, []);
 
   const narrate = useCallback((total) => {
+    console.log('[narration] narrate() called — total:', total, '| prev:', prevTotalRef.current, '| mounted:', mountedRef.current);
     if (!mountedRef.current) return;
     if (prevTotalRef.current === null) {
       // First call is the initial workspace state — record it, don't speak.
       prevTotalRef.current = total;
+      console.log('[narration] first call — recorded initial total, skipping audio');
       return;
     }
     // Guard: don't restart the debounce timer when the total hasn't changed.
     // Without this guard, frequent re-renders (e.g. every-second elapsed timer
     // in ExploreScreen) would continuously reset the 600ms timer via a stale
     // inline onChange closure in the workspace's useEffect([blocks, onChange]).
-    if (total === prevTotalRef.current) return;
+    if (total === prevTotalRef.current) {
+      console.log('[narration] total unchanged — debounce skipped');
+      return;
+    }
     clearTimeout(timerRef.current);
+    console.log('[narration] scheduling debounce (600ms) for total:', total);
     timerRef.current = setTimeout(() => {
       if (!mountedRef.current) return;
       prevTotalRef.current = total;
+      console.log('[narration] debounce fired — speaking:', total);
       speak(String(total));
     }, 600);
   }, [speak]);
@@ -311,36 +318,71 @@ function MiniBlockIcons({ blockType, count, color }) {
 }
 
 // What the kid built — shown instead of full workspace during teaching mode.
-// Avoids layout issues where full-size rods (280px tall) clip in a short container.
-function BuildSnapshot({ wsState }) {
+// Renders actual colored mini-block SVGs so the kid can see what they built.
+// (Replaces the text-only BuildSnapshot from Wave A.1.)
+function FrozenBlockDisplay({ wsState }) {
   const { flats = 0, rods = 0, units = 0, total = 0 } = wsState || {};
-  const parts = [
-    flats > 0 && `${flats} flat${flats > 1 ? 's' : ''}`,
-    rods  > 0 && `${rods} rod${rods > 1 ? 's' : ''}`,
-    units > 0 && `${units} unit${units > 1 ? 's' : ''}`,
-  ].filter(Boolean);
 
   return (
     <div style={{
-      flexShrink: 0,
-      margin: '0 16px 8px',
-      padding: '12px 18px',
-      borderRadius: 14,
-      background: 'rgba(255,255,255,0.04)',
+      flexShrink: 0, margin: '6px 16px 10px', padding: '12px 14px',
+      borderRadius: 14, background: 'rgba(255,255,255,0.04)',
       border: `1.5px solid ${ACCENT}22`,
-      display: 'flex', alignItems: 'center', gap: 16,
+      display: 'flex', flexDirection: 'column', gap: 10,
     }}>
-      <div style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1 }}>
+      {/* Total */}
+      <div style={{ fontSize: '2.6rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1 }}>
         {total}
       </div>
-      <div style={{ flex: 1 }}>
-        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 3 }}>
-          You built
+
+      {/* Flat row */}
+      {flats > 0 && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexWrap: 'wrap' }}>
+          {Array.from({ length: flats }, (_, i) => (
+            <svg key={i} width={40} height={40}>
+              <rect x={1} y={1} width={38} height={38} fill="#FBBF24" stroke="#D97706" strokeWidth={1.5} rx={4} />
+              {[1,2,3].map(j => <line key={`h${j}`} x1={1} y1={j*9.5} x2={39} y2={j*9.5} stroke="#B45309" strokeWidth={0.6} />)}
+              {[1,2,3].map(j => <line key={`v${j}`} x1={j*9.5} y1={1} x2={j*9.5} y2={39} stroke="#B45309" strokeWidth={0.6} />)}
+            </svg>
+          ))}
+          <span style={{ color: '#FBBF24', fontSize: '0.75rem', fontWeight: 700, marginLeft: 2 }}>
+            ×{flats} flat{flats > 1 ? 's' : ''}
+          </span>
         </div>
-        <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)', fontWeight: 500 }}>
-          {parts.length > 0 ? parts.join(' · ') : '(empty)'}
+      )}
+
+      {/* Rod row */}
+      {rods > 0 && (
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, flexWrap: 'wrap' }}>
+          {Array.from({ length: rods }, (_, i) => (
+            <svg key={i} width={12} height={56}>
+              <rect x={1} y={1} width={10} height={54} fill="#34D399" stroke="#10B981" strokeWidth={1.5} rx={2} />
+              {[1,2,3,4].map(j => <line key={j} x1={1} y1={j*10.8} x2={11} y2={j*10.8} stroke="#059669" strokeWidth={0.8} />)}
+            </svg>
+          ))}
+          <span style={{ color: '#34D399', fontSize: '0.75rem', fontWeight: 700, paddingBottom: 2, marginLeft: 2 }}>
+            ×{rods} rod{rods > 1 ? 's' : ''}
+          </span>
         </div>
-      </div>
+      )}
+
+      {/* Unit row */}
+      {units > 0 && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
+          {Array.from({ length: units }, (_, i) => (
+            <svg key={i} width={16} height={16}>
+              <rect x={1} y={1} width={14} height={14} fill="#60A5FA" stroke="#2563EB" strokeWidth={1.5} rx={3} />
+            </svg>
+          ))}
+          <span style={{ color: '#60A5FA', fontSize: '0.75rem', fontWeight: 700, marginLeft: 2 }}>
+            ×{units} unit{units > 1 ? 's' : ''}
+          </span>
+        </div>
+      )}
+
+      {flats === 0 && rods === 0 && units === 0 && (
+        <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8rem' }}>(empty)</div>
+      )}
     </div>
   );
 }
@@ -461,21 +503,28 @@ function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', textAlign: 'center', gap: 24 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', textAlign: 'center', gap: 20 }}>
       <RemiAvatar size={88} speaking={speaking} />
-      <div>
-        <h1 style={{ fontSize: 'clamp(1.8rem,7vw,2.6rem)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.03em', lineHeight: 1.15 }}>
+
+      {/* Remi self-intro — prominent on-screen text so it's visible even before audio plays */}
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ fontSize: '1.2rem', fontWeight: 800, color: ACCENT, marginBottom: 10, lineHeight: 1.3 }}>
+          Hi! I'm Remi the Raccoon 🦝
+        </div>
+        <h1 style={{ fontSize: 'clamp(1.6rem,6.5vw,2.4rem)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.03em', lineHeight: 1.15 }}>
           {screen.headline}
         </h1>
-        <p style={{ fontSize: '1rem', color: ACCENT, fontWeight: 600, marginTop: 10, marginBottom: 0 }}>
+        <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', fontWeight: 500, marginTop: 8, marginBottom: 0 }}>
           {screen.subtitle}
         </p>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.4)', fontSize: '0.88rem', fontStyle: 'italic', maxWidth: 300 }}>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.35)', fontSize: '0.82rem', maxWidth: 300 }}>
         <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-        <span>Hi! I'm Remi the Raccoon, your math guide</span>
+        <span>Tap to replay my intro</span>
       </div>
-      <div style={{ width: '100%', maxWidth: 340, marginTop: 16 }}>
+
+      <div style={{ width: '100%', maxWidth: 340, marginTop: 8 }}>
         <PrimaryBtn onClick={onAdvance}>Let's go →</PrimaryBtn>
       </div>
     </div>
@@ -589,6 +638,7 @@ function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdv
   // re-fire every second from the setElapsed tick → avoids resetting the
   // narration debounce timer on every render.
   const handleWsChange = useCallback(ws => {
+    console.log('[workspace/explore] onChange — total:', ws.total);
     setWsState(ws);
     narrate(ws.total);
   }, [narrate]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -655,6 +705,7 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
   // Memoized onChange so workspace useEffect([blocks, onChange]) only fires
   // on actual block changes, not on every re-render of GuidedTasksScreen.
   const handleWsChange = useCallback(ws => {
+    console.log('[workspace/guided] onChange — total:', ws.total, '| task target:', task?.target);
     setWsState(ws);
     narrateCount(ws.total);
   }, [narrateCount]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -780,11 +831,11 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
         )}
       </div>
 
-      {/* Workspace — during teaching mode, show compact snapshot so the blocks
-           stay visible without clipping (full-size rods at y=156 extend 280px
-           which overflows a post-header workspace on smaller phones). */}
+      {/* Workspace — during teaching mode, show a frozen block display so the
+           blocks the kid built remain visible (actual colored SVG icons) without
+           the full-height workspace that overflows on smaller phones. */}
       {showTeaching ? (
-        <BuildSnapshot wsState={wsState} />
+        <FrozenBlockDisplay wsState={wsState} />
       ) : (
         <div style={{ flex: 1, minHeight: 0 }}>
           <BaseTenBlocksWorkspace
@@ -1370,6 +1421,16 @@ export default function MathLessonPlayer() {
     }
   }
 
+  // Back navigation: decrement screen, or exit lesson on Welcome screen (FIX 6)
+  function goBack() {
+    stopAudio();
+    if (screenIdx > 0) {
+      setScreenIdx(i => i - 1);
+    } else {
+      navigate('/child/subject/math');
+    }
+  }
+
   const sharedProps = { screen, speak, stopAudio, speaking, loadingAudio, onAdvance: advance, childName };
 
   return (
@@ -1377,6 +1438,25 @@ export default function MathLessonPlayer() {
       <style>{GLOBAL_STYLES}</style>
 
       <ProgressBar current={screenIdx} total={screens.length} />
+
+      {/* Back button — shown on all screens except Celebration */}
+      {screen.type !== 'celebration' && (
+        <button
+          onClick={goBack}
+          style={{
+            position: 'absolute', top: 14, left: 12, zIndex: 30,
+            width: 34, height: 34, borderRadius: '50%', border: 'none',
+            background: 'rgba(255,255,255,0.08)',
+            color: 'rgba(255,255,255,0.55)', fontSize: '1.25rem',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'pointer', touchAction: 'manipulation',
+            lineHeight: 1, padding: 0,
+          }}
+          aria-label="Go back"
+        >
+          ‹
+        </button>
+      )}
 
       <div style={{ flex: 1, minHeight: 0, overflow: 'hidden', marginTop: 3 }}>
         {screen.type === 'welcome'          && <WelcomeScreen         {...sharedProps} />}

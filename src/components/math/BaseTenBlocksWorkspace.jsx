@@ -37,16 +37,33 @@ const SPAWN = {
   unit: { x0: UNIT_X_START,  y0: ROD_UNIT_Y,   xStep: UNIT_S_BASE + 4, perRow: 5 },
 };
 
-function getSpawnPos(type, nth) {
-  const r = SPAWN[type];
-  if (!r) return { x: 8, y: 8 };
-  const col = nth % r.perRow;
-  const row = Math.floor(nth / r.perRow);
-  const xStep = r.xStep;
-  const yStep = type === 'rod' ? ROD_H_BASE + 6
-              : type === 'flat' ? FLAT_S_BASE + 6
-              : UNIT_S_BASE + 4;
-  return { x: r.x0 + col * xStep, y: r.y0 + row * yStep };
+// flatCount: number of flats already on the workspace.
+// For rods/units, Y is pushed below all flat rows so they never overlap.
+// With 0 flats: rods/units at ROD_UNIT_Y = 156 (original position, backward-compat).
+// With 1-2 flats (1 row): base Y = 8 + 1*(140+6)+8 = 162.
+// With 3-4 flats (2 rows): base Y = 8 + 2*(140+6)+8 = 308.
+function getSpawnPos(type, nth, flatCount = 0) {
+  if (type === 'flat') {
+    const col = nth % 2;
+    const row = Math.floor(nth / 2);
+    return { x: 8 + col * (FLAT_S_BASE + 6), y: FLAT_ZONE_Y + row * (FLAT_S_BASE + 6) };
+  }
+
+  // Rods and units: dynamically push below current flat rows
+  const flatRows = Math.ceil(flatCount / 2); // 0 if no flats
+  const baseY = flatCount === 0
+    ? ROD_UNIT_Y   // 156 — same as before when there are no flats
+    : FLAT_ZONE_Y + flatRows * (FLAT_S_BASE + 6) + 8;  // 8px gap below flats
+
+  if (type === 'rod') {
+    const col = nth % 9;
+    const row = Math.floor(nth / 9);
+    return { x: 8 + col * (ROD_W_BASE + 6), y: baseY + row * (ROD_H_BASE + 6) };
+  }
+  // unit
+  const col = nth % 5;
+  const row = Math.floor(nth / 5);
+  return { x: UNIT_X_START + col * (UNIT_S_BASE + 4), y: baseY + row * (UNIT_S_BASE + 4) };
 }
 
 // ── Generate initial block layout from a count spec ───────────────────────────
@@ -57,15 +74,17 @@ function generateInitialBlocks(spec, compact) {
   if (!compact) {
     // Use same auto-arrange regions as spawnBlock() so preloaded blocks
     // spread across the workspace instead of piling in one corner.
+    // Pass flatCount to rods/units so they spawn BELOW the flat rows (FIX 5).
     const blocks = [];
-    for (let i = 0; i < (spec.flats || 0); i++) {
-      blocks.push({ id: uid(), type: 'flat', ...getSpawnPos('flat', i) });
+    const flatCount = spec.flats || 0;
+    for (let i = 0; i < flatCount; i++) {
+      blocks.push({ id: uid(), type: 'flat', ...getSpawnPos('flat', i, 0) });
     }
     for (let i = 0; i < (spec.rods || 0); i++) {
-      blocks.push({ id: uid(), type: 'rod', ...getSpawnPos('rod', i) });
+      blocks.push({ id: uid(), type: 'rod', ...getSpawnPos('rod', i, flatCount) });
     }
     for (let i = 0; i < (spec.units || 0); i++) {
-      blocks.push({ id: uid(), type: 'unit', ...getSpawnPos('unit', i) });
+      blocks.push({ id: uid(), type: 'unit', ...getSpawnPos('unit', i, flatCount) });
     }
     return blocks;
   }
@@ -221,8 +240,10 @@ export default function BaseTenBlocksWorkspace({
   function spawnBlock(type) {
     if (readOnly) return;
     setBlocks(prev => {
-      const nth = prev.filter(b => b.type === type && !dissolvingIdsRef.current.has(b.id)).length;
-      const pos = compact ? { x: 8, y: 8 } : getSpawnPos(type, nth);
+      const active = prev.filter(b => !dissolvingIdsRef.current.has(b.id));
+      const nth = active.filter(b => b.type === type).length;
+      const flatCount = active.filter(b => b.type === 'flat').length;
+      const pos = compact ? { x: 8, y: 8 } : getSpawnPos(type, nth, flatCount);
       return [...prev, { id: uid(), type, x: pos.x, y: pos.y }];
     });
   }
