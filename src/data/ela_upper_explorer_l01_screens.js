@@ -1,11 +1,13 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// ELA UE  |  L01 — Close Reading: Analyzing Texts in Depth
+// ELA UE  |  L01 — Close Reading: Analyzing Texts in Depth  (v2 — tightened)
 // Age band : upper_explorers (9–10)   Guide: quill
 // Standards: CCSS RL.4.1 / RL.5.1 / RI.4.1 / RI.5.1 — cite textual evidence, analyze in detail
 //            CCSS RL.4.4 / RL.5.4 / RI.4.4 / RI.5.4 — word choice and meaning
 // CALIBRATED: UE spec v1.1 (May 2026)
-// SCOPE: 5 concepts — what close reading is + the three reads (comprehension, structure, craft) + annotation
-// CUT: skimming/scanning theory, speed reading, rhetorical analysis (moved to later lessons)
+// SCOPE: 4 sections — the three reads (comprehension, structure, craft) + annotation
+//        "What close reading is" folded into welcome (was a separate section in v1)
+// CHANGES v1→v2: 5 sections→4, 3 paragraphs→2, audio prompts trimmed to 60–70 words,
+//                "ELA guide" → "English guide" (kid-friendly term)
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ELA_UE_L01 = {
@@ -17,7 +19,7 @@ const ELA_UE_L01 = {
     {
       id: `ela-9-10-01`,
       title: `Close Reading: Analyzing Texts in Depth`,
-      duration: 22,
+      duration: 20,
       xpReward: 75,
       badge: `close-reader`,
       badgeName: `Close Reader`,
@@ -26,7 +28,7 @@ const ELA_UE_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `Hey {name}, Quill here. I've been your ELA guide since the Little Stars days — back when letters became sounds, sounds became words, and words became stories. Now we step into something deeper: reading like a scholar. Today's question — what if reading something once means you've barely read it at all? By the end of this lesson, you'll know how the sharpest readers in the world get more out of one page than most people get out of a whole book.`,
+          guideText: `Hey {name}, Quill here. We've been together for English since the Little Stars days — letters, words, stories. Today we level up. The question: what if reading something once means you barely read it at all? Close readers go through a passage two or three times, each pass with a different goal. You'll learn how. By the end, you'll pull more from one page than most people get from a whole book.`,
           headline: `Close Reading`,
           subtitle: `How to read a passage three times — and find something new each time`,
           visual: `/ue-assets/ela/l01-welcome.webp`,
@@ -37,21 +39,20 @@ const ELA_UE_L01 = {
           id: `l01-mag-1`,
           type: `magazine`,
           section: 1,
-          headline: `What Close Reading Actually Is`,
+          headline: `First Read: What Does It Say?`,
           paragraphs: [
-            `Most reading looks like this. Eyes move across the page. The brain catches the gist. Done. That kind of reading works fine for menus, group chats, and the back of a cereal box. But for anything that actually matters — a book that changed people's lives, a speech that shaped a country, a poem written 200 years ago — that kind of reading misses almost everything.`,
-            `Close reading is the opposite. You slow down. You read the same passage twice, three times, even four times — but with a different goal each pass. First time: what does it say? Second time: how is it built? Third time: why every word? Each reading uncovers something the others walked right past.`,
-            `Scholars do this. Lawyers do it with contracts. Judges do it with the Constitution. Literary critics do it with novels. They aren't smarter than you — they're just more patient. And once you know how to do it, you'll spot things in any text that most readers miss completely.`,
+            `The first read has one job: understanding. What's this passage about? Who's in it? What happens? You're not analyzing yet. You're not asking why. You're just getting the surface.`,
+            `After your first read, you should be able to summarize the passage in two or three sentences. Can't? Read it again. Also: circle words you don't know. A word you skip becomes a hole — and the hole gets bigger on every read after.`,
           ],
-          image: `/ue-assets/ela/l01-s1-close-reading.webp`,
-          imageCaption: `One passage. Three readings. Three different things to find.`,
+          image: `/ue-assets/ela/l01-s1-first-read.webp`,
+          imageCaption: `First read = comprehension. Just get the surface.`,
           vocab: [
-            { word: `close reading`,
-              definition: `Reading the same text more than once, with a different focus each pass, to uncover layers of meaning a single read misses.`,
-              audioPrompt: `Close reading is reading the same passage more than once, with a different goal each time, {name}. First pass — what does it say? Second pass — how is it built? Third pass — why these particular words? Each reading reveals what the others missed. Scholars, judges, and literary critics all work this way. It's slower, but it makes you sharper than readers who only ever read something once. The first text you close-read will surprise you with how much was hiding in plain sight.` },
-            { word: `passage`,
-              definition: `A short section of a text — usually a paragraph or a few sentences — that a reader pulls out to read closely.`,
-              audioPrompt: `A passage is a short chunk of text, {name} — usually a paragraph or a few sentences — that you pull out to read closely. You don't close-read a whole book. You pick the passage that seems most important, most strange, or most beautiful, and you focus there. The opening of a story. The climax. A paragraph that confused you. A line that made you stop. Skilled readers learn to spot which passages reward slowing down — that's a skill in itself.` },
+            { word: `comprehension`,
+              definition: `Understanding the basic meaning of a text — who, what, where, when, and what happens.`,
+              audioPrompt: `Comprehension is basic understanding, {name}. Who's in the passage. What happens. What's the point. A lot of readers skip this step and try to analyze before they actually understand — that's like debating a movie you only half-watched. Get the basics first. If you can't summarize the passage in two or three sentences, you don't have comprehension yet. That's not failure — it's information. Read it again.` },
+            { word: `summary`,
+              definition: `A short statement of the main ideas of a text, in your own words.`,
+              audioPrompt: `A summary is a short statement of the main ideas in your own words, {name} — two or three sentences usually. It captures the surface, what the passage is about, without going into analysis. After every first read, try writing one. It forces your brain to commit to what you actually understood. Can't write it? You don't fully understand the passage yet. Read it again.` },
           ],
         },
 
@@ -60,21 +61,20 @@ const ELA_UE_L01 = {
           id: `l01-mag-2`,
           type: `magazine`,
           section: 2,
-          headline: `First Read: What Does It Say?`,
+          headline: `Second Read: How Is It Built?`,
           paragraphs: [
-            `The first read has one job: understanding. What is this passage about? Who's in it? What happens? What's the main idea? You're not analyzing yet. You're not asking deep questions. You're just getting the surface.`,
-            `After your first read, you should be able to say what the passage is about in two or three sentences. If you can't — read it again. Comprehension is the foundation for everything else. You can't ask why an author made a choice if you don't first know what they actually said.`,
-            `The first read also catches the words you don't know. Circle them. Look them up if you can. A word you skip becomes a hole in your understanding — and that hole grows bigger on every read after. Fix the holes before they cause problems later.`,
+            `Now things get interesting. The second read isn't about what the passage says — it's about HOW the author put it together. What's the structure? Where do the paragraph breaks fall? What evidence supports the claims?`,
+            `You're looking at the text like a mechanic looks at an engine — not whether it runs, but how. Notice the long sentences and the short ones. Notice where the author slows down with detail. Authors don't pace by accident. Every choice is a choice.`,
           ],
-          image: `/ue-assets/ela/l01-s2-first-read.webp`,
-          imageCaption: `First read = comprehension. Just get the surface.`,
+          image: `/ue-assets/ela/l01-s2-second-read.webp`,
+          imageCaption: `Second read = structure. How is the text built?`,
           vocab: [
-            { word: `comprehension`,
-              definition: `Understanding the basic meaning of a text — who, what, where, when, and what happens.`,
-              audioPrompt: `Comprehension is the basic understanding of what a text says, {name}. Who's in it. What happens. What's the point. It sounds simple, but a lot of readers skip past comprehension and try to analyze before they actually understand. That's like debating a movie you only half-watched. Get the basics first. Be able to summarize the passage in two or three sentences. If you can't, read it again. Comprehension is the floor everything else stands on — never the ceiling.` },
-            { word: `summary`,
-              definition: `A short statement of the main ideas of a text, in your own words.`,
-              audioPrompt: `A summary is a short statement of the main ideas of a passage in your own words, {name} — usually two or three sentences. It captures the surface, what the passage is about and what happens, without going into analysis. After every first read, try writing a summary. It forces your brain to commit to what you actually understood. If you can't write one, you don't understand the passage yet. That's not a failure — that's useful information. Read it again.` },
+            { word: `structure`,
+              definition: `The way a text is organized — its parts, sections, order, and the connections between ideas.`,
+              audioPrompt: `Structure is the architecture of a text, {name} — how the author arranged the parts. Where the paragraph breaks fall. What comes first. What gets the middle. What comes last. A persuasive essay that saves its strongest evidence for the end hits harder than one that opens with it. Authors choose structure deliberately. Once you see it, you start seeing the design behind every text.` },
+            { word: `evidence`,
+              definition: `Facts, examples, statistics, or quotations an author uses to support a claim.`,
+              audioPrompt: `Evidence is what an author uses to back up a claim, {name}. Facts. Statistics. Examples. Quotes from experts. Without evidence, a claim is just an opinion floating in the air. With evidence, the claim becomes an argument. On your second read, notice what the author chose. Why this fact and not that one? The pattern shows you what they think will convince you.` },
           ],
         },
 
@@ -83,21 +83,20 @@ const ELA_UE_L01 = {
           id: `l01-mag-3`,
           type: `magazine`,
           section: 3,
-          headline: `Second Read: How Is It Built?`,
+          headline: `Third Read: Why These Choices?`,
           paragraphs: [
-            `Now things get interesting. The second read isn't about what the passage says — it's about how the author put it together. What's the structure? Where do the paragraph breaks fall? What order are the ideas in? What evidence supports the claims?`,
-            `You're looking at the text the way a mechanic looks at an engine — not whether it runs, but how. Notice the long sentences and the short ones. Notice where the author slows down with detail. Notice where they speed up and skip ahead. Authors don't pace by accident. Every choice is a choice.`,
-            `The second read often reveals the author's strategy. If a persuasive essay starts with a story, that's a hook. If a science article saves the most surprising fact for last, that's a payoff. Once you see the structure, the text stops feeling random — and starts feeling designed.`,
+            `The third read is the deepest, and a lot of readers never make it this far. The question stops being WHAT or HOW — and becomes WHY. Why did the author pick this word and not a simpler one? Why include this detail but leave that one out?`,
+            `Every word in well-crafted writing was chosen on purpose. A character called "hollow" instead of "sad" — that's a clue. A speech ending on a one-word sentence — that's a strategy. Once you start asking why, you can't unsee it.`,
           ],
-          image: `/ue-assets/ela/l01-s3-second-read.webp`,
-          imageCaption: `Second read = structure. How is the text built?`,
+          image: `/ue-assets/ela/l01-s3-third-read.webp`,
+          imageCaption: `Third read = craft. Why every word is there.`,
           vocab: [
-            { word: `structure`,
-              definition: `The way a text is organized — its parts, sections, order, and the connections between ideas.`,
-              audioPrompt: `Structure is the architecture of a text, {name} — how the author arranged the parts. Where the paragraph breaks fall. What comes first, what comes last. A persuasive essay that saves its strongest evidence for the end hits harder than one that opens with it. A story that starts in the middle of the action lands differently than one that starts at the beginning. Authors choose structure deliberately. Once you see it, you start seeing the design behind every text.` },
-            { word: `evidence`,
-              definition: `Facts, examples, statistics, or quotations an author uses to support a claim.`,
-              audioPrompt: `Evidence is what an author uses to back up a claim, {name}. Facts. Statistics. Examples. Quotes from experts. Stories from real people. Without evidence, a claim is just an opinion floating in the air. With evidence, the claim becomes an argument. On your second read, notice what evidence the author chose. Why this fact and not that one? Why an expert here and a story there? The pattern shows you what the author thinks is convincing.` },
+            { word: `craft`,
+              definition: `The deliberate, skilled choices an author makes — about words, structure, pacing, and detail — to shape how a text affects readers.`,
+              audioPrompt: `Craft is the deliberate work behind a text, {name}. Word choice. Sentence rhythm. What to include, what to leave out. Pacing. Tone. Every one is a decision the author made on purpose. When you read for craft, you stop treating the text like it just happened — and start seeing the author as a maker. Like a carpenter who picked this wood and that joint for specific reasons.` },
+            { word: `deliberate`,
+              definition: `Done on purpose, with thought and intention — not random or accidental.`,
+              audioPrompt: `Deliberate means done on purpose, {name}. With thought. With intention. The opposite of random or accidental. Once you start assuming authors are deliberate, your reading changes. Strange word? Not random — deliberate. Weird sentence break? Not a mistake — deliberate. A detail that seems out of place? Probably there on purpose. The question becomes: why?` },
           ],
         },
 
@@ -106,44 +105,20 @@ const ELA_UE_L01 = {
           id: `l01-mag-4`,
           type: `magazine`,
           section: 4,
-          headline: `Third Read: Why These Choices?`,
-          paragraphs: [
-            `The third read is the deepest, and a lot of readers never make it this far. The question stops being what or how — and becomes why. Why did the author pick this word and not a simpler one? Why open with this sentence? Why include this detail but leave that one out?`,
-            `Every word in well-crafted writing was chosen on purpose. The author had options — different words, different sentence orders, different details. They picked these specific ones. The third read asks why. When you can answer that, you stop reading the text and start reading the author.`,
-            `This is where critical thinking lives. A character is called "hollow" instead of "sad" — that's a clue. A speech ends on a one-word sentence — that's a strategy. A news article quotes one expert by name and another only as "officials said" — that's a choice with consequences. Once you start asking why, you can't unsee it.`,
-          ],
-          image: `/ue-assets/ela/l01-s4-third-read.webp`,
-          imageCaption: `Third read = craft. Why every word is there.`,
-          vocab: [
-            { word: `craft`,
-              definition: `The deliberate, skilled choices an author makes — about words, structure, pacing, and detail — to shape how a text affects readers.`,
-              audioPrompt: `Craft is the deliberate, skilled work behind a text, {name}. Word choice. Sentence rhythm. What to include and what to leave out. Pacing. Tone. Every one of those is a decision made on purpose. When you read for craft, you stop treating the text like it just happened — and start seeing the author as a maker. Like a carpenter who picked this wood and that joint for specific reasons. Reading for craft is what scholars and writers do.` },
-            { word: `deliberate`,
-              definition: `Done on purpose, with thought and intention — not random or accidental.`,
-              audioPrompt: `Deliberate means done on purpose, {name}. With thought. With intention. The opposite of random or accidental. When we say an author was deliberate about a word choice, we mean they picked it on purpose — they had other options and chose this one. Once you start assuming authors are deliberate, your reading changes. Strange word? Not random — deliberate. Weird sentence break? Not a mistake — deliberate. A detail that seems out of place? Probably there on purpose. The question becomes why.` },
-          ],
-        },
-
-        // ── SECTION 5 ─────────────────────────────────────────────────────────
-        {
-          id: `l01-mag-5`,
-          type: `magazine`,
-          section: 5,
           headline: `Annotation: Making the Page Talk Back`,
           paragraphs: [
             `Close readers annotate. That means they mark up the text as they read — underlining, circling, writing notes in the margins. It looks messy. That's the point. A clean book at the end of a close read usually means you weren't really thinking.`,
-            `There's no one right way to annotate. Some readers underline key phrases. Some circle unfamiliar words. Some write questions in the margin: "Why this word?" "What does this remind me of?" Some draw arrows between connected ideas. The system doesn't matter as much as the habit. Active reading leaves marks.`,
-            `Annotation isn't decoration. It's evidence of thinking. Look back at any well-annotated book — the marks aren't random. Each one captured something the reader noticed. The page becomes a record of the conversation between you and the text. When you come back a year later, your annotations bring the whole thing back.`,
+            `There's no one right way. Some underline key phrases. Some circle unfamiliar words. Some write questions in the margin: "Why this word?" "What does this remind me of?" The system doesn't matter — the habit does. Annotation isn't decoration. It's evidence of thinking.`,
           ],
-          image: `/ue-assets/ela/l01-s5-annotation.webp`,
+          image: `/ue-assets/ela/l01-s4-annotation.webp`,
           imageCaption: `Annotation = the reader thinking on the page.`,
           vocab: [
             { word: `annotate`,
               definition: `To mark up a text while reading — with underlines, circles, notes, questions, and arrows — to track your thinking.`,
-              audioPrompt: `To annotate is to mark up a text while you read it, {name}. Underline key phrases. Circle words you don't know. Write questions in the margin. Draw arrows between connected ideas. Star surprising lines. The point isn't to follow a system — it's to leave evidence of your thinking on the page. A clean book at the end of a close read usually means the reader was passive. A messy one means they were active. Annotation slows you down in the best possible way.` },
+              audioPrompt: `To annotate is to mark up a text while you read, {name}. Underline key phrases. Circle words you don't know. Write questions in the margin. Star surprising lines. The point isn't to follow a system — it's to leave evidence of your thinking on the page. A clean book at the end of a close read usually means a passive reader. A messy one means an active one.` },
             { word: `margin`,
               definition: `The blank space at the edges of a page, used by close readers for notes, questions, and reactions.`,
-              audioPrompt: `The margin is the blank space at the edges of a page, {name}. For most readers, it stays empty. For close readers, it's where the conversation happens. That's where you write questions — "Why this word?" "What does this remind me of?" That's where you note reactions: surprise, confusion, recognition. The margin is the place where you stop being a passive reader and start being an active one. Good annotators come back to their margins later and remember exactly what they were thinking.` },
+              audioPrompt: `The margin is the blank space at the edges of a page, {name}. For most readers, it stays empty. For close readers, it's where the conversation happens. That's where you write questions — why this word, what does this remind me of. That's where you note reactions: surprise, confusion, recognition. The margin is where you stop being a passive reader.` },
           ],
         },
 
@@ -338,7 +313,7 @@ const ELA_UE_L01 = {
         {
           id: `l01-celebration`,
           type: `celebration`,
-          message: `Solid work, {name}. You can now explain what close reading actually is, walk through the three reads — comprehension, structure, craft — and tell the difference between a reader who's marking up a page and a reader who's actually thinking. Next lesson, we go after a different question: every author writes for a reason. Inform, persuade, entertain — how do you tell which one? See you there. — Quill.`,
+          message: `Solid work, {name}. You can now walk through the three reads — comprehension, structure, craft — and tell the difference between a reader who marks up a page and a reader who actually thinks. Next lesson: every author writes for a reason. Inform, persuade, entertain — how do you tell which one? See you there. — Quill.`,
           badge: `close-reader`,
           badgeName: `Close Reader`,
           xpEarned: 75,
@@ -358,5 +333,5 @@ if (import.meta.env?.DEV) {
   const quiz = screens.find(s => s.type === 'quiz')?.questions?.length ?? 0;
   const refl = screens.find(s => s.type === 'reflection')?.prompts?.length ?? 0;
   const totalVocab = screens.filter(s => s.type === 'magazine').reduce((sum, s) => sum + (s.vocab?.length || 0), 0);
-  console.log(`[LESSON-ELA-UE-L01 v1] Loaded with ${mags} magazine sections, ${totalVocab} vocab terms, ${game} game cases, ${quiz} quiz Qs, ${refl} reflection prompts`);
+  console.log(`[LESSON-ELA-UE-L01 v2] Loaded with ${mags} magazine sections, ${totalVocab} vocab terms, ${game} game cases, ${quiz} quiz Qs, ${refl} reflection prompts`);
 }
