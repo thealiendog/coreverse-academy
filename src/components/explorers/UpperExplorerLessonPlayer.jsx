@@ -65,6 +65,8 @@ import MATH_UE_L18 from '../../data/math_upper_explorer_l18_screens';
 import MATH_UE_L19 from '../../data/math_upper_explorer_l19_screens';
 import MATH_UE_L20 from '../../data/math_upper_explorer_l20_screens';
 
+import ELA_UE_L01 from '../../data/ela_upper_explorer_l01_screens';
+
 const UE_DATA = {
   'social_studies': {
     ageBand:   'upper_explorers',
@@ -118,6 +120,14 @@ const UE_DATA = {
       ...MATH_UE_L18.lessons,
       ...MATH_UE_L19.lessons,
       ...MATH_UE_L20.lessons,
+    ],
+  },
+  'ela': {
+    ageBand:   'upper_explorers',
+    subjectId: 'ela',
+    guide:     'quill',
+    lessons:   [
+      ...ELA_UE_L01.lessons,
     ],
   },
 };
