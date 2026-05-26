@@ -1226,9 +1226,9 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
       </div>
 
       {/* Workspace — tap-identify uses full scale so the individual blocks are
-           large enough to tap accurately. Build/build-write stay compact so
-           multi-row layouts fit on smaller phones. */}
-      <div style={{ flex: 1, minHeight: 0 }}>
+           large enough to tap accurately. Build/build-write stay compact with a
+           fixed height so the palette + blanks + Check button aren't buried below. */}
+      <div style={prob.subtype === 'tap-identify' ? { flex: 1, minHeight: 0 } : { height: 300, flexShrink: 0 }}>
         <BaseTenBlocksWorkspace
           key={`prob-${probIdx}`}
           initialState={prob.preload || null}
@@ -1357,7 +1357,7 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
     if (isCorrect) {
       if (!scored) { setScore(s => s + 1); setScored(true); }
       const explanation = q.explanation || 'Correct!';
-      speak(explanation, () => setTimeout(advanceQuestion, 500));
+      speak(explanation); // Next → button handles advancing — no stale callback
     } else {
       speak('Not quite — try again!');
       // Wrong stays until they answer again (no auto-advance)

@@ -552,20 +552,25 @@ export default function BaseTenBlocksWorkspace({
               {block.type === 'rod'  && <RodSVG  w={ROD_W} h={ROD_H} />}
               {block.type === 'flat' && <FlatSVG s={FLAT_S} />}
 
-              {/* Delete button — hidden in readOnly or compact */}
-              {!isDissolving && !readOnly && !compact && (
+              {/* Delete button — hidden in readOnly; shown in both full and compact mode */}
+              {!isDissolving && !readOnly && (
                 <button
                   onPointerDown={e => e.stopPropagation()}
                   onClick={e => { e.stopPropagation(); deleteBlock(block.id); }}
                   style={{
-                    position: 'absolute', top: -9, right: -9,
-                    width: 20, height: 20, borderRadius: '50%',
+                    position: 'absolute',
+                    top:   compact ? -7  : -9,
+                    right: compact ? -7  : -9,
+                    width:  compact ? 20 : 26,
+                    height: compact ? 20 : 26,
+                    borderRadius: '50%',
                     border: '1.5px solid rgba(255,255,255,0.25)',
-                    background: '#1a0a2e', color: 'rgba(255,255,255,0.6)',
-                    fontSize: '0.82rem', fontWeight: 800,
+                    background: '#1a0a2e', color: 'rgba(255,255,255,0.65)',
+                    fontSize: compact ? '0.72rem' : '0.85rem', fontWeight: 800,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     cursor: 'pointer', lineHeight: 1, padding: 0, margin: 0,
                     zIndex: 10, boxShadow: '0 1px 6px rgba(0,0,0,0.5)',
+                    touchAction: 'manipulation',
                   }}
                   aria-label="Delete block"
                 >
