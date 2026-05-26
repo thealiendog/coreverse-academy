@@ -18,7 +18,7 @@ export const guideVoices = {
   Terra: 't5ztDJA7pj9EyW9QIcJ2',  // Life & Wellness
   Lyra:  'NTqGiNK8P02i66yY2GOH',  // History & World
   Remi:  'ShhDvxS4N0arXxn6PD5o',  // Math
-  Quill: 'J5DQLSCZaWrvT9yRCZNJ',  // ELA
+  Quill: 'XfNU2rGpBa01ckF309OY',  // ELA
   Cosmo: 'ZoiZ8fuDWInAcwPXaVeq',  // Science
   Atlas: 'NOpBlnGInO9m6vDvFkFC',  // Social Studies
   Luna:  'b2htR0pMe28pYwCY9gnP',  // Spanish
