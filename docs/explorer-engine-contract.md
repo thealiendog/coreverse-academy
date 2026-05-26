@@ -389,7 +389,7 @@ Each subject's guide is set in `EXPLORER_DATA` in `ExplorerLessonPlayer.jsx`. Th
 | Guide | Subject | Language | Voice ID | Model |
 |---|---|---|---|---|
 | Sage | Inner World | English | `xYa75LlayhWHCRl1yJSH` | eleven_turbo_v2_5 |
-| Nova | Cosmos | English | `aUNOP2y8xEvi4nZebjIw` | eleven_turbo_v2_5 |
+| Nova | Cosmos | English | `XfNU2rGpBa01ckF309OY` | eleven_turbo_v2_5 |
 | Byte | Future Skills | English | `wP7XBmkAmRwrjtfK2KeY` | eleven_turbo_v2_5 |
 | Ace | Money & Business | English | `RPEIZnKMqlQiZyZd1Dae` | eleven_turbo_v2_5 |
 | Muse | Creative Arts | English | `HfRsWv6W0kiMbBILCEFI` | eleven_turbo_v2_5 |

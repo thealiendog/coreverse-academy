@@ -5,7 +5,7 @@ exports.handler = async (event) => {
     const { text, voiceId: requestedVoiceId, modelId: requestedModelId } = JSON.parse(event.body || '{}');
     if (!text) return { statusCode: 400, body: JSON.stringify({ error: 'Missing text' }) };
 
-    const voiceId = requestedVoiceId || process.env.ELEVENLABS_VOICE_ID || 'aUNOP2y8xEvi4nZebjIw';
+    const voiceId = requestedVoiceId || process.env.ELEVENLABS_VOICE_ID || 'XfNU2rGpBa01ckF309OY';
     const modelId = requestedModelId || 'eleven_turbo_v2_5';
     const apiKey  = process.env.ELEVENLABS_API_KEY;
     console.log(`[nova-speak] requestedVoiceId="${requestedVoiceId}" resolvedVoiceId="${voiceId}" modelId="${modelId}" textLen=${text?.length}`);

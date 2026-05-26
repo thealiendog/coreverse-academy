@@ -6,11 +6,11 @@
 // All other guides use eleven_turbo_v2_5 (default).
 // ============================================================
 
-export const DEFAULT_VOICE_ID = 'aUNOP2y8xEvi4nZebjIw'; // Nova
+export const DEFAULT_VOICE_ID = 'XfNU2rGpBa01ckF309OY'; // Nova
 
 export const guideVoices = {
   Sage:  'xYa75LlayhWHCRl1yJSH',  // Inner World
-  Nova:  'aUNOP2y8xEvi4nZebjIw',  // Cosmos
+  Nova:  'XfNU2rGpBa01ckF309OY',  // Cosmos
   Byte:  'wP7XBmkAmRwrjtfK2KeY',  // Future Skills
   Ace:   'RPEIZnKMqlQiZyZd1Dae',  // Money & Business
   Muse:  'HfRsWv6W0kiMbBILCEFI',  // Creative Arts
