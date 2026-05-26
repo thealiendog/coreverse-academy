@@ -799,19 +799,60 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 
   const { narrate: narrateCount, reset: resetNarrate } = useCounterNarration(speak);
 
-  // Auto-advance timer: fires 1.5s after teaching audio ends.
-  // Cleared if kid taps Next manually or navigates back.
+  // ── Stable taskIdx ref — lets advanceTask (useCallback) always read current taskIdx
+  //    without needing it in its dependency array (which would make it unstable).
+  const taskIdxRef = useRef(taskIdx);
+  useEffect(() => { taskIdxRef.current = taskIdx; }, [taskIdx]);
+
+  // ── Auto-advance timer ref — shared across renders, cleared on manual advance or back.
   const autoAdvanceRef = useRef(null);
 
+  // ── Stable advanceTask — same function object across all renders.
+  //    Reads taskIdx from taskIdxRef.current so it's never stale.
+  //    Both the Next button and the auto-advance timer call this same function.
+  const advanceTask = useCallback(() => {
+    clearTimeout(autoAdvanceRef.current);
+    autoAdvanceRef.current = null;
+    stopAudio();
+    setFeedback(null);
+    setFeedbackMsg('');
+    setWrongCount(0);
+    setShowDemo(false);
+    setShowTeaching(false);
+    const idx = taskIdxRef.current;
+    if (idx < tasks.length - 1) {
+      setTaskIdx(idx + 1);
+      setWsState({ total: 0 });
+    } else {
+      onAdvance();
+    }
+  }, [stopAudio, onAdvance]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // ── Teaching panel effect — fires when showTeaching becomes true.
+  //    Speaks teaching audio and sets up auto-advance timer.
+  //    Moving this OUT of the speak callback chain makes it immune to
+  //    narration-timer race conditions that could abort "Perfect!..." audio.
+  useEffect(() => {
+    if (!showTeaching || !task) return;
+    clearTimeout(autoAdvanceRef.current);
+
+    if (task.teachingMoment?.audioPrompt) {
+      speak(task.teachingMoment.audioPrompt, () => {
+        autoAdvanceRef.current = setTimeout(advanceTask, 1500);
+      });
+    } else {
+      autoAdvanceRef.current = setTimeout(advanceTask, 1500);
+    }
+
+    return () => { clearTimeout(autoAdvanceRef.current); };
+  }, [showTeaching]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Track speaking state via ref so handleWsChange (a stable useCallback) can
-  // check it without adding speaking to its dep array (which would recreate the
-  // callback every time speaking toggles and flood the workspace's onChange effect).
+  // check it without adding speaking to its dep array.
   const speakingRef = useRef(speaking);
   useEffect(() => { speakingRef.current = speaking; }, [speaking]);
 
-  // Memoized onChange so workspace useEffect([blocks, onChange]) only fires
-  // on actual block changes, not on every re-render of GuidedTasksScreen.
-  // Guard: skip counter narration while Remi is already speaking lesson audio.
+  // Memoized onChange — stable so workspace's onChange effect only fires on block changes.
   const handleWsChange = useCallback(ws => {
     console.log('[workspace/guided] onChange — total:', ws.total, '| task target:', task?.target);
     setWsState(ws);
@@ -825,35 +866,16 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
     return () => { clearTimeout(t); stopAudio(); };
   }, [taskIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Reset counter narration when task changes (workspace remounts)
+  // Reset counter narration when task changes
   useEffect(() => {
     resetNarrate();
   }, [taskIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  function advanceTask() {
-    clearTimeout(autoAdvanceRef.current);
-    autoAdvanceRef.current = null;
-    stopAudio();
-    setFeedback(null);
-    setFeedbackMsg('');
-    setWrongCount(0);
-    setShowDemo(false);
-    setShowTeaching(false);
-    if (taskIdx < tasks.length - 1) {
-      setTaskIdx(i => i + 1);
-      setWsState({ total: 0 });
-    } else {
-      onAdvance();
-    }
-  }
-
-  // FIX 3: back within sub-tasks goes to previous task; at first task goes to previous screen
   function handleBack() {
     clearTimeout(autoAdvanceRef.current);
     autoAdvanceRef.current = null;
     stopAudio();
     if (showTeaching) {
-      // If teaching panel is showing, close it and stay on current task
       setShowTeaching(false);
       setFeedback(null);
       setFeedbackMsg('');
@@ -873,28 +895,20 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 
   function handleCheck() {
     if (!task || showTeaching) return;
-    // Clear previous feedback first so wrong→wrong shows fresh animation
     setFeedback(null);
     setFeedbackMsg('');
 
     if (wsState.total === task.target) {
       playChime();
+      resetNarrate(); // cancel any pending narration so it can't abort "Perfect!..."
       setFeedback('correct');
       setFeedbackMsg('Perfect! That is exactly right.');
-      // After Remi celebrates, transition to teaching moment
+      // speak "Perfect!" → callback only needs to flip showTeaching.
+      // Teaching audio + auto-advance are wired up in useEffect([showTeaching]).
       speak("Perfect! That's exactly right.", () => {
         setFeedback(null);
         setFeedbackMsg('');
         setShowTeaching(true);
-        if (task.teachingMoment?.audioPrompt) {
-          speak(task.teachingMoment.audioPrompt, () => {
-            // Auto-advance 1.5s after teaching audio finishes.
-            // Kid can also tap Next manually — that clears this timer.
-            autoAdvanceRef.current = setTimeout(advanceTask, 1500);
-          });
-        } else {
-          autoAdvanceRef.current = setTimeout(advanceTask, 1500);
-        }
       });
     } else {
       const newWrong = wrongCount + 1;
@@ -903,7 +917,6 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
       const hint = task.wrongHint || `We want ${task.target}. You have ${wsState.total}. Try again.`;
       setFeedbackMsg(hint);
       speak(hint);
-      // Wrong feedback STAYS until next check attempt (no auto-dismiss)
       if (newWrong >= 2) setShowDemo(true);
     }
   }
