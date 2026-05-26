@@ -1264,12 +1264,16 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
         </div>
       )}
 
-      {/* Footer button — only for build/build-write; tap-identify auto-advances */}
-      {(prob.subtype === 'build' || prob.subtype === 'build-write') && (
+      {/* Footer: Next when correct (all subtypes), Check when building, nothing for tap-identify pre-answer */}
+      {feedback === 'correct' ? (
+        <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
+          <PrimaryBtn onClick={advance} color="#34D399">Next →</PrimaryBtn>
+        </div>
+      ) : (prob.subtype === 'build' || prob.subtype === 'build-write') && (
         <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
           <PrimaryBtn
             onClick={prob.subtype === 'build-write' ? handleBuildWriteCheck : handleBuildCheck}
-            disabled={feedback === 'correct' || wsState.total === 0}
+            disabled={wsState.total === 0}
           >
             Check My Answer
           </PrimaryBtn>
@@ -1414,7 +1418,7 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
       </div>
 
       {/* Answer area */}
-      <div style={{ flex: 1, padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div style={{ flex: 1, minHeight: 0, padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10, overflowY: 'auto' }}>
         {/* Multiple choice */}
         {(q.subtype === 'text-choice' || q.subtype === 'workspace-read') && (q.options || []).map(opt => {
           const isSelected   = selected === opt;
@@ -1470,6 +1474,14 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
           </div>
         )}
       </div>
+
+      {/* Next button — pinned at bottom, visible immediately when correct.
+           Kid doesn't need to wait for audio to finish to advance. */}
+      {feedback === 'correct' && (
+        <div style={{ padding: '8px 16px 20px', flexShrink: 0 }}>
+          <PrimaryBtn onClick={advanceQuestion} color="#34D399">Next →</PrimaryBtn>
+        </div>
+      )}
     </div>
   );
 }
