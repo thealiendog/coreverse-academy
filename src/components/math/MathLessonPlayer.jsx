@@ -807,10 +807,18 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
   // ── Auto-advance timer ref — shared across renders, cleared on manual advance or back.
   const autoAdvanceRef = useRef(null);
 
+  // ── Callback generation counter — incremented on every advanceTask / handleBack call.
+  //    speak() onDone callbacks capture the gen at the time they're created and guard
+  //    with `if (myGen !== callbackGenRef.current) return;`
+  //    This prevents stale callbacks (e.g. from audio onerror firing after stopAudio())
+  //    from silently advancing the task mid-build.
+  const callbackGenRef = useRef(0);
+
   // ── Stable advanceTask — same function object across all renders.
   //    Reads taskIdx from taskIdxRef.current so it's never stale.
   //    Both the Next button and the auto-advance timer call this same function.
   const advanceTask = useCallback(() => {
+    callbackGenRef.current++;        // invalidate all in-flight speak callbacks
     clearTimeout(autoAdvanceRef.current);
     autoAdvanceRef.current = null;
     stopAudio();
@@ -837,7 +845,12 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
     clearTimeout(autoAdvanceRef.current);
 
     if (task.teachingMoment?.audioPrompt) {
+      // Capture gen at effect-run time. If advanceTask or handleBack fires before
+      // this callback completes (e.g. user taps Next, or stopAudio triggers onerror),
+      // the gen will have incremented and the callback becomes a no-op.
+      const myGen = callbackGenRef.current;
       speak(task.teachingMoment.audioPrompt, () => {
+        if (myGen !== callbackGenRef.current) return; // stale — already advanced or backed
         autoAdvanceRef.current = setTimeout(advanceTask, 1500);
       });
     } else {
@@ -872,6 +885,7 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
   }, [taskIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleBack() {
+    callbackGenRef.current++;        // invalidate all in-flight speak callbacks
     clearTimeout(autoAdvanceRef.current);
     autoAdvanceRef.current = null;
     stopAudio();
@@ -905,7 +919,11 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
       setFeedbackMsg('Perfect! That is exactly right.');
       // speak "Perfect!" → callback only needs to flip showTeaching.
       // Teaching audio + auto-advance are wired up in useEffect([showTeaching]).
+      // Gen guard: if handleBack fires while "Perfect!" is loading (e.g. user rage-backs),
+      // the callback is invalidated and showTeaching is never set.
+      const myGen = callbackGenRef.current;
       speak("Perfect! That's exactly right.", () => {
+        if (myGen !== callbackGenRef.current) return; // stale — user already backed out
         setFeedback(null);
         setFeedbackMsg('');
         setShowTeaching(true);
