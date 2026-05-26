@@ -1225,71 +1225,93 @@ function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudi
         <FeedbackBanner type={feedback} message={feedbackMsg} />
       </div>
 
-      {/* Workspace — tap-identify uses full scale so the individual blocks are
-           large enough to tap accurately. Build/build-write stay compact with a
-           fixed height so the palette + blanks + Check button aren't buried below. */}
-      <div style={prob.subtype === 'tap-identify' ? { flex: 1, minHeight: 0 } : { height: 300, flexShrink: 0 }}>
-        <BaseTenBlocksWorkspace
-          key={`prob-${probIdx}`}
-          initialState={prob.preload || null}
-          compact={prob.subtype !== 'tap-identify'}
-          readOnly={prob.subtype === 'tap-identify'}
-          hideCounter={prob.subtype === 'tap-identify'}
-          onBlockTap={prob.subtype === 'tap-identify' ? handleTapIdentify : undefined}
-          onChange={setWsState}
-        />
-      </div>
-
-      {/* Build-write blanks */}
-      {prob.subtype === 'build-write' && (
-        <div style={{ padding: '8px 16px', flexShrink: 0 }}>
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1.5px solid rgba(255,255,255,0.1)', borderRadius: 14, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontSize: '1rem', color: 'rgba(255,255,255,0.8)' }}>
-            <span>{prob.target} =</span>
-            <input
-              type="number" inputMode="numeric" pattern="[0-9]*"
-              value={tensInput} onChange={e => { setTensInput(e.target.value); setHighlightBlanks(false); }}
-              placeholder="?"
-              style={{
-                width: 48, height: 38, textAlign: 'center', borderRadius: 8,
-                border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
-                background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
-                color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
-                boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
-                transition: 'border-color 0.3s, box-shadow 0.3s',
-              }}
-            />
-            <span>tens +</span>
-            <input
-              type="number" inputMode="numeric" pattern="[0-9]*"
-              value={onesInput} onChange={e => { setOnesInput(e.target.value); setHighlightBlanks(false); }}
-              placeholder="?"
-              style={{
-                width: 48, height: 38, textAlign: 'center', borderRadius: 8,
-                border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
-                background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
-                color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
-                boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
-                transition: 'border-color 0.3s, box-shadow 0.3s',
-              }}
-            />
-            <span>ones</span>
-          </div>
+      {/* Workspace area:
+           – tap-identify: full-scale, fills remaining height
+           – build / build-write: compact 300 px, vertically centered; footer pinned below */}
+      {prob.subtype === 'tap-identify' ? (
+        <div style={{ flex: 1, minHeight: 0 }}>
+          <BaseTenBlocksWorkspace
+            key={`prob-${probIdx}`}
+            initialState={prob.preload || null}
+            readOnly
+            hideCounter
+            onBlockTap={handleTapIdentify}
+            onChange={setWsState}
+          />
         </div>
+      ) : (
+        <>
+          {/* Scrollable centered section — workspace + blanks sit in vertical center;
+               minHeight:100% + justifyContent:center = centered when short, scrollable when tall */}
+          <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '100%', boxSizing: 'border-box' }}>
+              <div style={{ height: 300, flexShrink: 0 }}>
+                <BaseTenBlocksWorkspace
+                  key={`prob-${probIdx}`}
+                  initialState={prob.preload || null}
+                  compact
+                  onChange={setWsState}
+                />
+              </div>
+              {prob.subtype === 'build-write' && (
+                <div style={{ padding: '8px 16px', flexShrink: 0 }}>
+                  <div style={{ background: 'rgba(255,255,255,0.05)', border: '1.5px solid rgba(255,255,255,0.1)', borderRadius: 14, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontSize: '1rem', color: 'rgba(255,255,255,0.8)' }}>
+                    <span>{prob.target} =</span>
+                    <input
+                      type="number" inputMode="numeric" pattern="[0-9]*"
+                      value={tensInput} onChange={e => { setTensInput(e.target.value); setHighlightBlanks(false); }}
+                      placeholder="?"
+                      style={{
+                        width: 48, height: 38, textAlign: 'center', borderRadius: 8,
+                        border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
+                        background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
+                        color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
+                        boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
+                        transition: 'border-color 0.3s, box-shadow 0.3s',
+                      }}
+                    />
+                    <span>tens +</span>
+                    <input
+                      type="number" inputMode="numeric" pattern="[0-9]*"
+                      value={onesInput} onChange={e => { setOnesInput(e.target.value); setHighlightBlanks(false); }}
+                      placeholder="?"
+                      style={{
+                        width: 48, height: 38, textAlign: 'center', borderRadius: 8,
+                        border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
+                        background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
+                        color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
+                        boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
+                        transition: 'border-color 0.3s, box-shadow 0.3s',
+                      }}
+                    />
+                    <span>ones</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          {/* Footer — always pinned at bottom for build/build-write */}
+          {feedback === 'correct' ? (
+            <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
+              <PrimaryBtn onClick={advance} color="#34D399">Next →</PrimaryBtn>
+            </div>
+          ) : (
+            <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
+              <PrimaryBtn
+                onClick={prob.subtype === 'build-write' ? handleBuildWriteCheck : handleBuildCheck}
+                disabled={wsState.total === 0}
+              >
+                Check My Answer
+              </PrimaryBtn>
+            </div>
+          )}
+        </>
       )}
 
-      {/* Footer: Next when correct (all subtypes), Check when building, nothing for tap-identify pre-answer */}
-      {feedback === 'correct' ? (
+      {/* Tap-identify: Next button only appears after a correct tap */}
+      {prob.subtype === 'tap-identify' && feedback === 'correct' && (
         <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
           <PrimaryBtn onClick={advance} color="#34D399">Next →</PrimaryBtn>
-        </div>
-      ) : (prob.subtype === 'build' || prob.subtype === 'build-write') && (
-        <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
-          <PrimaryBtn
-            onClick={prob.subtype === 'build-write' ? handleBuildWriteCheck : handleBuildCheck}
-            disabled={wsState.total === 0}
-          >
-            Check My Answer
-          </PrimaryBtn>
         </div>
       )}
     </div>
@@ -1401,95 +1423,101 @@ function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, on
         </div>
       </div>
 
-      {/* Workspace — compact so all pre-loaded blocks fit (e.g. 3 flats + 2 rods +
-           6 units needs ~183px at 50% scale). hideCounter prevents giving away answer. */}
-      {wsSubtype && (
-        <div style={{ height: 210, flexShrink: 0, margin: '0 12px' }}>
-          <BaseTenBlocksWorkspace
-            key={`q-${qIdx}`}
-            initialState={q.preload}
-            readOnly
-            compact
-            hideCounter
-          />
-        </div>
-      )}
-
-      {/* Question prompt + feedback */}
-      <div style={{ padding: '10px 16px 8px', flexShrink: 0 }}>
-        <div style={{ fontSize: 'clamp(1rem,4vw,1.2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.35 }}>
-          {q.prompt}
-        </div>
-        {feedback && (
-          <FeedbackBanner
-            type={feedback}
-            message={feedback === 'correct'
-              ? (q.explanation || 'Correct!')
-              : 'Not quite — try again!'}
-          />
-        )}
-      </div>
-
-      {/* Answer area */}
-      <div style={{ flex: 1, minHeight: 0, padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10, overflowY: 'auto' }}>
-        {/* Multiple choice */}
-        {(q.subtype === 'text-choice' || q.subtype === 'workspace-read') && (q.options || []).map(opt => {
-          const isSelected   = selected === opt;
-          const isCorrectOpt = opt === q.correct;
-          let bg = 'rgba(255,255,255,0.05)';
-          let border = 'rgba(255,255,255,0.1)';
-          let color = '#fff';
-          if (feedback === 'correct' && isSelected && isCorrectOpt)  { bg = 'rgba(52,211,153,0.18)'; border = '#34D399'; color = '#34D399'; }
-          if (feedback === 'wrong'   && isSelected && !isCorrectOpt) { bg = 'rgba(239,68,68,0.14)';  border = '#EF4444'; color = '#FCA5A5'; }
-          // Don't highlight correct option on wrong — preserves challenge for retry
-
-          return (
-            <button
-              key={opt}
-              onClick={() => handleOptionTap(opt)}
-              disabled={feedback === 'correct'}
-              style={{
-                width: '100%', padding: '14px 18px', borderRadius: 13,
-                border: `1.5px solid ${border}`, background: bg, color,
-                fontWeight: 700, fontSize: '0.95rem',
-                cursor: feedback === 'correct' ? 'default' : 'pointer',
-                textAlign: 'left', transition: 'background 0.15s, border-color 0.15s',
-                touchAction: 'manipulation', fontFamily: FONT,
-              }}
-            >
-              {opt}
-            </button>
-          );
-        })}
-
-        {/* Fill-in (standalone or workspace-fill) */}
-        {(q.subtype === 'fill-in' || q.subtype === 'workspace-fill') && (
-          <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-            <input
-              type="number" inputMode="numeric" pattern="[0-9]*"
-              value={fillAnswer}
-              onChange={e => { setFillAnswer(e.target.value); if (feedback === 'wrong') setFeedback(null); }}
-              onKeyDown={e => e.key === 'Enter' && feedback !== 'correct' && handleFillSubmit()}
-              placeholder="Type your answer"
-              disabled={feedback === 'correct'}
-              autoFocus
-              style={{
-                flex: 1, height: 52, padding: '0 16px', borderRadius: 13,
-                border: `1.5px solid ${ACCENT}44`, background: ACCENT_DIM,
-                color: '#fff', fontWeight: 700, fontSize: '1.1rem', fontFamily: FONT,
-              }}
-            />
-            <div style={{ width: 60 }}>
-              <PrimaryBtn onClick={handleFillSubmit} disabled={feedback === 'correct' || !fillAnswer}>
-                →
-              </PrimaryBtn>
+      {/* Scrollable centered area — workspace + prompt + answers center vertically
+           when content is short (iPad), scroll when tall (many options on small phone).
+           minHeight:100% + justifyContent:center = the standard CSS centering trick
+           that also handles overflow correctly. */}
+      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '100%', boxSizing: 'border-box', padding: '4px 0 8px' }}>
+          {/* Workspace compact — hideCounter prevents giving away answer */}
+          {wsSubtype && (
+            <div style={{ height: 210, flexShrink: 0, margin: '0 12px 4px' }}>
+              <BaseTenBlocksWorkspace
+                key={`q-${qIdx}`}
+                initialState={q.preload}
+                readOnly
+                compact
+                hideCounter
+              />
             </div>
+          )}
+
+          {/* Question prompt + feedback */}
+          <div style={{ padding: '8px 16px 8px', flexShrink: 0 }}>
+            <div style={{ fontSize: 'clamp(1rem,4vw,1.2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.35 }}>
+              {q.prompt}
+            </div>
+            {feedback && (
+              <FeedbackBanner
+                type={feedback}
+                message={feedback === 'correct'
+                  ? (q.explanation || 'Correct!')
+                  : 'Not quite — try again!'}
+              />
+            )}
           </div>
-        )}
+
+          {/* Answer options / fill-in — natural height, no flex:1 flex-growth */}
+          <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {/* Multiple choice */}
+            {(q.subtype === 'text-choice' || q.subtype === 'workspace-read') && (q.options || []).map(opt => {
+              const isSelected   = selected === opt;
+              const isCorrectOpt = opt === q.correct;
+              let bg = 'rgba(255,255,255,0.05)';
+              let border = 'rgba(255,255,255,0.1)';
+              let color = '#fff';
+              if (feedback === 'correct' && isSelected && isCorrectOpt)  { bg = 'rgba(52,211,153,0.18)'; border = '#34D399'; color = '#34D399'; }
+              if (feedback === 'wrong'   && isSelected && !isCorrectOpt) { bg = 'rgba(239,68,68,0.14)';  border = '#EF4444'; color = '#FCA5A5'; }
+              // Don't highlight correct option on wrong — preserves challenge for retry
+
+              return (
+                <button
+                  key={opt}
+                  onClick={() => handleOptionTap(opt)}
+                  disabled={feedback === 'correct'}
+                  style={{
+                    width: '100%', padding: '14px 18px', borderRadius: 13,
+                    border: `1.5px solid ${border}`, background: bg, color,
+                    fontWeight: 700, fontSize: '0.95rem',
+                    cursor: feedback === 'correct' ? 'default' : 'pointer',
+                    textAlign: 'left', transition: 'background 0.15s, border-color 0.15s',
+                    touchAction: 'manipulation', fontFamily: FONT,
+                  }}
+                >
+                  {opt}
+                </button>
+              );
+            })}
+
+            {/* Fill-in (standalone or workspace-fill) */}
+            {(q.subtype === 'fill-in' || q.subtype === 'workspace-fill') && (
+              <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+                <input
+                  type="number" inputMode="numeric" pattern="[0-9]*"
+                  value={fillAnswer}
+                  onChange={e => { setFillAnswer(e.target.value); if (feedback === 'wrong') setFeedback(null); }}
+                  onKeyDown={e => e.key === 'Enter' && feedback !== 'correct' && handleFillSubmit()}
+                  placeholder="Type your answer"
+                  disabled={feedback === 'correct'}
+                  autoFocus
+                  style={{
+                    flex: 1, height: 52, padding: '0 16px', borderRadius: 13,
+                    border: `1.5px solid ${ACCENT}44`, background: ACCENT_DIM,
+                    color: '#fff', fontWeight: 700, fontSize: '1.1rem', fontFamily: FONT,
+                  }}
+                />
+                <div style={{ width: 60 }}>
+                  <PrimaryBtn onClick={handleFillSubmit} disabled={feedback === 'correct' || !fillAnswer}>
+                    →
+                  </PrimaryBtn>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
-      {/* Next button — pinned at bottom, visible immediately when correct.
-           Kid doesn't need to wait for audio to finish to advance. */}
+      {/* Next button — pinned at bottom, visible immediately when correct */}
       {feedback === 'correct' && (
         <div style={{ padding: '8px 16px 20px', flexShrink: 0 }}>
           <PrimaryBtn onClick={advanceQuestion} color="#34D399">Next →</PrimaryBtn>
@@ -1507,8 +1535,9 @@ function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onA
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '28px 24px', gap: 20 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '24px 24px' }}>
+      {/* Header — pinned at top */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0 }}>
         <BackChevron onClick={onBack} />
         <RemiAvatar size={52} speaking={speaking} />
         <div style={{ flex: 1 }}>
@@ -1519,21 +1548,25 @@ function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onA
         <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
       </div>
 
-      <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, margin: 0 }}>
-        {screen.body}
-      </p>
-
-      <div style={{ background: `${ACCENT}12`, border: `1.5px solid ${ACCENT}33`, borderRadius: 16, padding: '18px 20px' }}>
-        <div style={{ fontSize: '0.72rem', fontWeight: 700, color: ACCENT, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
-          Family Adventure
-        </div>
-        <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65, margin: 0 }}>
-          {screen.familyAdventure}
+      {/* Content — vertically centered in remaining space so no void accumulates */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
+        <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, margin: 0 }}>
+          {screen.body}
         </p>
+        <div style={{ background: `${ACCENT}12`, border: `1.5px solid ${ACCENT}33`, borderRadius: 16, padding: '18px 20px' }}>
+          <div style={{ fontSize: '0.72rem', fontWeight: 700, color: ACCENT, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
+            Family Adventure
+          </div>
+          <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65, margin: 0 }}>
+            {screen.familyAdventure}
+          </p>
+        </div>
       </div>
 
-      <div style={{ flex: 1 }} />
-      <PrimaryBtn onClick={onAdvance}>I'm done →</PrimaryBtn>
+      {/* Button — pinned at bottom */}
+      <div style={{ paddingTop: 16, flexShrink: 0 }}>
+        <PrimaryBtn onClick={onAdvance}>I'm done →</PrimaryBtn>
+      </div>
     </div>
   );
 }
@@ -1639,16 +1672,20 @@ export default function MathLessonPlayer() {
 
       <ProgressBar current={screenIdx} total={screens.length} />
 
-      <div style={{ flex: 1, minHeight: 0, overflow: 'hidden', marginTop: 3 }}>
-        {screen.type === 'welcome'          && <WelcomeScreen         {...sharedProps} />}
-        {screen.type === 'block-intro'      && <BlockIntroScreen      {...sharedProps} />}
-        {screen.type === 'explore'          && <ExploreScreen         {...sharedProps} />}
-        {screen.type === 'guided-tasks'     && <GuidedTasksScreen     {...sharedProps} />}
-        {screen.type === 'concept-name'     && <ConceptNameScreen     {...sharedProps} />}
-        {screen.type === 'applied-problems' && <AppliedProblemsScreen {...sharedProps} />}
-        {screen.type === 'quick-check'      && <QuickCheckScreen      {...sharedProps} />}
-        {screen.type === 'real-world'       && <RealWorldScreen       {...sharedProps} />}
-        {screen.type === 'celebration'      && <CelebrationScreen     {...sharedProps} />}
+      {/* maxWidth: 600 centres content on iPad/tablet; alignItems:stretch
+           preserves full height so every screen's height:100% still works */}
+      <div style={{ flex: 1, minHeight: 0, marginTop: 3, display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
+        <div style={{ flex: '1 1 0', maxWidth: 600, minWidth: 0, overflow: 'hidden' }}>
+          {screen.type === 'welcome'          && <WelcomeScreen         {...sharedProps} />}
+          {screen.type === 'block-intro'      && <BlockIntroScreen      {...sharedProps} />}
+          {screen.type === 'explore'          && <ExploreScreen         {...sharedProps} />}
+          {screen.type === 'guided-tasks'     && <GuidedTasksScreen     {...sharedProps} />}
+          {screen.type === 'concept-name'     && <ConceptNameScreen     {...sharedProps} />}
+          {screen.type === 'applied-problems' && <AppliedProblemsScreen {...sharedProps} />}
+          {screen.type === 'quick-check'      && <QuickCheckScreen      {...sharedProps} />}
+          {screen.type === 'real-world'       && <RealWorldScreen       {...sharedProps} />}
+          {screen.type === 'celebration'      && <CelebrationScreen     {...sharedProps} />}
+        </div>
       </div>
     </div>
   );
