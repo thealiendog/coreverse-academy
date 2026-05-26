@@ -467,8 +467,10 @@ function FrozenBlockDisplay({ wsState }) {
   );
 }
 
-// Teaching moment panel — slides up from bottom after correct answer
-function TeachingMomentPanel({ task, speaking, onNext }) {
+// Teaching moment panel — slides up from bottom after correct answer.
+// Layout: scrollable content area above a pinned Next button so the
+// button is always visible regardless of card icon height.
+function TeachingMomentPanel({ task, onNext }) {
   const tm = task.teachingMoment;
   if (!tm) return null;
 
@@ -478,45 +480,48 @@ function TeachingMomentPanel({ task, speaking, onNext }) {
       display: 'flex', flexDirection: 'column',
       background: 'rgba(8,6,24,0.97)',
       borderTop: `1.5px solid ${ACCENT}33`,
-      padding: '14px 16px 18px',
       animation: 'slideUp 0.35s cubic-bezier(0.34,1,0.64,1)',
     }}>
-      {/* Equation headline */}
-      <div style={{ fontSize: '0.7rem', fontWeight: 700, color: ACCENT, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, textAlign: 'center', flexShrink: 0 }}>
-        Place Value
-      </div>
-      <div style={{ fontSize: 'clamp(0.95rem,3.5vw,1.15rem)', fontWeight: 900, color: '#fff', textAlign: 'center', marginBottom: 12, letterSpacing: '-0.01em', flexShrink: 0 }}>
-        {tm.equation}
+      {/* Scrollable content — cards can be taller than the available space */}
+      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '14px 16px 8px' }}>
+        {/* Equation headline */}
+        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: ACCENT, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, textAlign: 'center' }}>
+          Place Value
+        </div>
+        <div style={{ fontSize: 'clamp(0.95rem,3.5vw,1.15rem)', fontWeight: 900, color: '#fff', textAlign: 'center', marginBottom: 12, letterSpacing: '-0.01em' }}>
+          {tm.equation}
+        </div>
+
+        {/* Color-coded cards: digit top, big block icon middle, place label bottom */}
+        <div style={{ display: 'flex', gap: 6 }}>
+          {tm.rows.map((row, i) => (
+            <div key={i} style={{
+              flex: 1,
+              background: `${row.color}12`,
+              border: `1.5px solid ${row.color}40`,
+              borderRadius: 12,
+              padding: '10px 6px 8px',
+              display: 'flex', flexDirection: 'column', alignItems: 'center',
+            }}>
+              {/* Digit — top anchor */}
+              <div style={{ fontSize: '1.8rem', fontWeight: 900, color: row.color, lineHeight: 1, marginBottom: 8 }}>
+                {row.digit}
+              </div>
+              {/* Block icon — dominant visual */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', padding: '4px 0 8px' }}>
+                <CardBlockIcon blockType={row.blockType} count={row.count} color={row.color} />
+              </div>
+              {/* Place label — bottom anchor */}
+              <div style={{ fontSize: '0.58rem', fontWeight: 800, color: row.color, letterSpacing: '0.1em', textTransform: 'uppercase', textAlign: 'center' }}>
+                {row.placeLabel}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Color-coded cards: digit top, big block icon middle, place label bottom */}
-      <div style={{ display: 'flex', gap: 6, marginBottom: 14, flex: 1, minHeight: 0 }}>
-        {tm.rows.map((row, i) => (
-          <div key={i} style={{
-            flex: 1,
-            background: `${row.color}12`,
-            border: `1.5px solid ${row.color}40`,
-            borderRadius: 12,
-            padding: '10px 6px 8px',
-            display: 'flex', flexDirection: 'column', alignItems: 'center',
-          }}>
-            {/* Digit — top anchor */}
-            <div style={{ fontSize: '1.8rem', fontWeight: 900, color: row.color, lineHeight: 1, flexShrink: 0 }}>
-              {row.digit}
-            </div>
-            {/* Block icon — fills available space so it's visually dominant */}
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', overflow: 'hidden', padding: '6px 0' }}>
-              <CardBlockIcon blockType={row.blockType} count={row.count} color={row.color} />
-            </div>
-            {/* Place label — bottom anchor */}
-            <div style={{ fontSize: '0.58rem', fontWeight: 800, color: row.color, letterSpacing: '0.1em', textTransform: 'uppercase', textAlign: 'center', flexShrink: 0 }}>
-              {row.placeLabel}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div style={{ flexShrink: 0 }}>
+      {/* Next button — always pinned at the bottom, never scrolls away */}
+      <div style={{ padding: '8px 16px 18px', flexShrink: 0 }}>
         <PrimaryBtn onClick={onNext} color="#34D399">
           Next task →
         </PrimaryBtn>
@@ -794,6 +799,10 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 
   const { narrate: narrateCount, reset: resetNarrate } = useCounterNarration(speak);
 
+  // Auto-advance timer: fires 1.5s after teaching audio ends.
+  // Cleared if kid taps Next manually or navigates back.
+  const autoAdvanceRef = useRef(null);
+
   // Track speaking state via ref so handleWsChange (a stable useCallback) can
   // check it without adding speaking to its dep array (which would recreate the
   // callback every time speaking toggles and flood the workspace's onChange effect).
@@ -822,6 +831,8 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
   }, [taskIdx]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function advanceTask() {
+    clearTimeout(autoAdvanceRef.current);
+    autoAdvanceRef.current = null;
     stopAudio();
     setFeedback(null);
     setFeedbackMsg('');
@@ -838,6 +849,8 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 
   // FIX 3: back within sub-tasks goes to previous task; at first task goes to previous screen
   function handleBack() {
+    clearTimeout(autoAdvanceRef.current);
+    autoAdvanceRef.current = null;
     stopAudio();
     if (showTeaching) {
       // If teaching panel is showing, close it and stay on current task
@@ -874,7 +887,13 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
         setFeedbackMsg('');
         setShowTeaching(true);
         if (task.teachingMoment?.audioPrompt) {
-          speak(task.teachingMoment.audioPrompt);
+          speak(task.teachingMoment.audioPrompt, () => {
+            // Auto-advance 1.5s after teaching audio finishes.
+            // Kid can also tap Next manually — that clears this timer.
+            autoAdvanceRef.current = setTimeout(advanceTask, 1500);
+          });
+        } else {
+          autoAdvanceRef.current = setTimeout(advanceTask, 1500);
         }
       });
     } else {
@@ -978,7 +997,7 @@ function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, o
 
       {/* Footer: teaching moment OR check button */}
       {showTeaching ? (
-        <TeachingMomentPanel task={task} speaking={speaking} onNext={advanceTask} />
+        <TeachingMomentPanel task={task} onNext={advanceTask} />
       ) : (
         <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
           <PrimaryBtn
