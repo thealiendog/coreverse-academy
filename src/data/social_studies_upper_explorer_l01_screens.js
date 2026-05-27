@@ -26,7 +26,7 @@ const SOCIAL_STUDIES_UE_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `Hey {name}, Atlas here. I've been your social studies guide since the Little Stars days, when we explored families and helpers in your community. Now we're stepping into some bigger questions about how the wider world works. Today's question: why does every country on Earth have something called a government? And what does it actually do for YOU? By the end of this lesson you'll be able to explain both, in real words, like someone who actually understands it.`,
+          guideText: `Hey {name}, Atlas here. I'm your guide for Social Studies, and I'm a bear for a reason. Bears see the whole landscape and stay steady when things get complicated. Social studies is exactly that. Today's question: why does every country on Earth have something called a government? And what does it actually do for YOU? By the end of this lesson you'll be able to explain both, in real words, like someone who actually understands it.`,
           headline: `Principles of Government`,
           subtitle: `What government is, what it does, and the main ways societies organize it`,
           visual: `/ue-assets/social-studies/l01-welcome.webp`,
