@@ -87,6 +87,10 @@ import ELA_UE_L19 from '../../data/ela_upper_explorer_l19_screens';
 import ELA_UE_L20 from '../../data/ela_upper_explorer_l20_screens';
 
 import HISTORY_UE_L01 from '../../data/history_upper_explorer_l01_screens';
+import HISTORY_UE_L02 from '../../data/history_upper_explorer_l02_screens';
+import HISTORY_UE_L03 from '../../data/history_upper_explorer_l03_screens';
+import HISTORY_UE_L04 from '../../data/history_upper_explorer_l04_screens';
+import HISTORY_UE_L05 from '../../data/history_upper_explorer_l05_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -176,6 +180,10 @@ const UE_DATA = {
     guide:     'lyra',
     lessons:   [
       ...HISTORY_UE_L01.lessons,
+      ...HISTORY_UE_L02.lessons,
+      ...HISTORY_UE_L03.lessons,
+      ...HISTORY_UE_L04.lessons,
+      ...HISTORY_UE_L05.lessons,
     ],
   },
 };
