@@ -144,7 +144,7 @@ const NEW_FORMAT_UE_LESSONS = {
     'hw-9-10-19',
     'hw-9-10-20',
   ],
-  // Science UE — Wave 1 (L01–L05) + Wave 2 (L06–L09)
+  // Science UE — Wave 1 (L01–L05) + Wave 2 (L06–L09) + Wave 3 (L10–L13)
   'science': [
     'science-9-10-01',
     'science-9-10-02',
@@ -155,6 +155,10 @@ const NEW_FORMAT_UE_LESSONS = {
     'science-9-10-07',
     'science-9-10-08',
     'science-9-10-09',
+    'science-9-10-10',
+    'science-9-10-11',
+    'science-9-10-12',
+    'science-9-10-13',
   ],
   // Math UE — Wave 1 (L01–L04) + Wave 2 (L05–L08)
   'math': [
