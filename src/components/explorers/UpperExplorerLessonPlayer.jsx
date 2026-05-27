@@ -70,6 +70,9 @@ import ELA_UE_L02 from '../../data/ela_upper_explorer_l02_screens';
 import ELA_UE_L03 from '../../data/ela_upper_explorer_l03_screens';
 import ELA_UE_L04 from '../../data/ela_upper_explorer_l04_screens';
 import ELA_UE_L05 from '../../data/ela_upper_explorer_l05_screens';
+import ELA_UE_L06 from '../../data/ela_upper_explorer_l06_screens';
+import ELA_UE_L07 from '../../data/ela_upper_explorer_l07_screens';
+import ELA_UE_L08 from '../../data/ela_upper_explorer_l08_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -136,6 +139,9 @@ const UE_DATA = {
       ...ELA_UE_L03.lessons,
       ...ELA_UE_L04.lessons,
       ...ELA_UE_L05.lessons,
+      ...ELA_UE_L06.lessons,
+      ...ELA_UE_L07.lessons,
+      ...ELA_UE_L08.lessons,
     ],
   },
 };

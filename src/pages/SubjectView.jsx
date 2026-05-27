@@ -98,13 +98,16 @@ const NEW_FORMAT_UE_LESSONS = {
     'social-studies-9-10-19',
     'social-studies-9-10-20',
   ],
-  // ELA UE — Wave 1 (L01–L05)
+  // ELA UE — Wave 1 (L01–L08)
   'ela': [
     'ela-9-10-01',
     'ela-9-10-02',
     'ela-9-10-03',
     'ela-9-10-04',
     'ela-9-10-05',
+    'ela-9-10-06',
+    'ela-9-10-07',
+    'ela-9-10-08',
   ],
   // Math UE — Wave 1 (L01–L04) + Wave 2 (L05–L08)
   'math': [
