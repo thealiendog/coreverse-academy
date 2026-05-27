@@ -163,6 +163,9 @@ const NEW_FORMAT_UE_LESSONS = {
     'science-9-10-15',
     'science-9-10-16',
     'science-9-10-17',
+    'science-9-10-18',
+    'science-9-10-19',
+    'science-9-10-20',
   ],
   // Math UE — Wave 1 (L01–L04) + Wave 2 (L05–L08)
   'math': [
