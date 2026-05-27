@@ -121,6 +121,10 @@ const NEW_FORMAT_UE_LESSONS = {
     'ela-9-10-19',
     'ela-9-10-20',
   ],
+  // History & World UE — Wave 1 (L01)
+  'history': [
+    'hw-9-10-01',
+  ],
   // Math UE — Wave 1 (L01–L04) + Wave 2 (L05–L08)
   'math': [
     'math-9-10-01',
@@ -155,6 +159,9 @@ function getUELessonId(subjectId, level, index) {
   }
   if (subjectId === 'ela' && level === 3) {
     return `ela-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'history' && level === 3) {
+    return `hw-9-10-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
