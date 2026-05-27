@@ -119,6 +119,10 @@ import SCIENCE_UE_L10 from '../../data/science_upper_explorer_l10_screens';
 import SCIENCE_UE_L11 from '../../data/science_upper_explorer_l11_screens';
 import SCIENCE_UE_L12 from '../../data/science_upper_explorer_l12_screens';
 import SCIENCE_UE_L13 from '../../data/science_upper_explorer_l13_screens';
+import SCIENCE_UE_L14 from '../../data/science_upper_explorer_l14_screens';
+import SCIENCE_UE_L15 from '../../data/science_upper_explorer_l15_screens';
+import SCIENCE_UE_L16 from '../../data/science_upper_explorer_l16_screens';
+import SCIENCE_UE_L17 from '../../data/science_upper_explorer_l17_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -220,6 +224,10 @@ const UE_DATA = {
       ...SCIENCE_UE_L11.lessons,
       ...SCIENCE_UE_L12.lessons,
       ...SCIENCE_UE_L13.lessons,
+      ...SCIENCE_UE_L14.lessons,
+      ...SCIENCE_UE_L15.lessons,
+      ...SCIENCE_UE_L16.lessons,
+      ...SCIENCE_UE_L17.lessons,
     ],
   },
   'history': {
