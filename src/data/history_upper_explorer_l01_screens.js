@@ -28,7 +28,7 @@ const HISTORY_UE_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `Hey {name}, Lyra here. I've been your guide for history since the Little Stars days, when we told stories about families and communities. Now we go way deeper. Today we travel to a time BEFORE writing existed. For most of human history, nobody could write anything down. That stretch is called prehistory, and it covers tens of thousands of years. By the end of today, you'll know how we figure out what happened in a time when nobody wrote it down. Let's go.`,
+          guideText: `Hey {name}, Lyra here. I'm your guide for History and World, and I'm an elephant for a reason. Elephants never forget, and history is the art of remembering. Today we travel WAY back. To a time BEFORE writing existed. For most of human history, nobody could write anything down. That stretch is called prehistory, and it covers tens of thousands of years. By the end of today, you'll know how we figure out what happened in a time when nobody wrote it down. Let's go.`,
           headline: `Prehistory: Before Written Records`,
           subtitle: `How we know what happened in a time before anyone could write`,
           visual: `/ue-assets/history/l01-welcome.webp`,
