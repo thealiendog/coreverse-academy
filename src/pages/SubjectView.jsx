@@ -121,7 +121,7 @@ const NEW_FORMAT_UE_LESSONS = {
     'ela-9-10-19',
     'ela-9-10-20',
   ],
-  // History & World UE — Wave 1 (L01–L09)
+  // History & World UE — Wave 1 (L01–L13)
   'history': [
     'hw-9-10-01',
     'hw-9-10-02',
@@ -132,6 +132,10 @@ const NEW_FORMAT_UE_LESSONS = {
     'hw-9-10-07',
     'hw-9-10-08',
     'hw-9-10-09',
+    'hw-9-10-10',
+    'hw-9-10-11',
+    'hw-9-10-12',
+    'hw-9-10-13',
   ],
   // Math UE — Wave 1 (L01–L04) + Wave 2 (L05–L08)
   'math': [
