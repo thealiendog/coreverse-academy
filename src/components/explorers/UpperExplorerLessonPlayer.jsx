@@ -91,6 +91,10 @@ import HISTORY_UE_L02 from '../../data/history_upper_explorer_l02_screens';
 import HISTORY_UE_L03 from '../../data/history_upper_explorer_l03_screens';
 import HISTORY_UE_L04 from '../../data/history_upper_explorer_l04_screens';
 import HISTORY_UE_L05 from '../../data/history_upper_explorer_l05_screens';
+import HISTORY_UE_L06 from '../../data/history_upper_explorer_l06_screens';
+import HISTORY_UE_L07 from '../../data/history_upper_explorer_l07_screens';
+import HISTORY_UE_L08 from '../../data/history_upper_explorer_l08_screens';
+import HISTORY_UE_L09 from '../../data/history_upper_explorer_l09_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -184,6 +188,10 @@ const UE_DATA = {
       ...HISTORY_UE_L03.lessons,
       ...HISTORY_UE_L04.lessons,
       ...HISTORY_UE_L05.lessons,
+      ...HISTORY_UE_L06.lessons,
+      ...HISTORY_UE_L07.lessons,
+      ...HISTORY_UE_L08.lessons,
+      ...HISTORY_UE_L09.lessons,
     ],
   },
 };
