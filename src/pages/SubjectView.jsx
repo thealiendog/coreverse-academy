@@ -190,6 +190,8 @@ const NEW_FORMAT_UE_LESSONS = {
     'math-9-10-19',
     'math-9-10-20',
   ],
+  // Money & Business UE — Wave 1 (L01)
+  'money': ['mb-9-10-01'],
 };
 
 function getUELessonId(subjectId, level, index) {
@@ -207,6 +209,9 @@ function getUELessonId(subjectId, level, index) {
   }
   if (subjectId === 'science' && level === 3) {
     return `science-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'money' && level === 3) {
+    return `mb-9-10-${String(index + 1).padStart(2, '0')}`;
   }
   return null;
 }
