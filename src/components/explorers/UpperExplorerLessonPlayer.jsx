@@ -135,6 +135,10 @@ import MONEY_UE_L06 from '../../data/moneybusiness_upper_explorer_l06_screens';
 import MONEY_UE_L07 from '../../data/moneybusiness_upper_explorer_l07_screens';
 import MONEY_UE_L08 from '../../data/moneybusiness_upper_explorer_l08_screens';
 import MONEY_UE_L09 from '../../data/moneybusiness_upper_explorer_l09_screens';
+import MONEY_UE_L10 from '../../data/moneybusiness_upper_explorer_l10_screens';
+import MONEY_UE_L11 from '../../data/moneybusiness_upper_explorer_l11_screens';
+import MONEY_UE_L12 from '../../data/moneybusiness_upper_explorer_l12_screens';
+import MONEY_UE_L13 from '../../data/moneybusiness_upper_explorer_l13_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -286,6 +290,10 @@ const UE_DATA = {
       ...MONEY_UE_L07.lessons,
       ...MONEY_UE_L08.lessons,
       ...MONEY_UE_L09.lessons,
+      ...MONEY_UE_L10.lessons,
+      ...MONEY_UE_L11.lessons,
+      ...MONEY_UE_L12.lessons,
+      ...MONEY_UE_L13.lessons,
     ],
   },
 };
