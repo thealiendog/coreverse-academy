@@ -190,8 +190,8 @@ const NEW_FORMAT_UE_LESSONS = {
     'math-9-10-19',
     'math-9-10-20',
   ],
-  // Money & Business UE — Wave 1 (L01–L13)
-  'money': ['mb-9-10-01', 'mb-9-10-02', 'mb-9-10-03', 'mb-9-10-04', 'mb-9-10-05', 'mb-9-10-06', 'mb-9-10-07', 'mb-9-10-08', 'mb-9-10-09', 'mb-9-10-10', 'mb-9-10-11', 'mb-9-10-12', 'mb-9-10-13'],
+  // Money & Business UE — Wave 1 (L01–L17)
+  'money': ['mb-9-10-01', 'mb-9-10-02', 'mb-9-10-03', 'mb-9-10-04', 'mb-9-10-05', 'mb-9-10-06', 'mb-9-10-07', 'mb-9-10-08', 'mb-9-10-09', 'mb-9-10-10', 'mb-9-10-11', 'mb-9-10-12', 'mb-9-10-13', 'mb-9-10-14', 'mb-9-10-15', 'mb-9-10-16', 'mb-9-10-17'],
 };
 
 function getUELessonId(subjectId, level, index) {
