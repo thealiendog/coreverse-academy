@@ -772,6 +772,273 @@ function InvestigationGame({
   );
 }
 
+// ── Sequence game (inline) ───────────────────────────────────────────────────
+// Data shape:
+//   screen.guideText      — intro instruction string (supports {name})
+//   screen.items          — array of { id, label, position }
+//                           position: 1-based correct index in the final order
+//   screen.completionMessage — optional string spoken on correct completion
+function SequenceGame({ screen, guideAvatar, accent, childName, onSpeak, onPrewarm, onComplete, onInteractiveComplete, karaokeWords, karaokeIdx, speaking }) {
+  const r = t => (t || '').replace(/\{name\}/g, childName || 'friend');
+  const { guideText = '', items = [], completionMessage = '' } = screen;
+
+  function shuffleArr(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  const [phase,      setPhase]      = useState('intro');
+  const [order,      setOrder]      = useState(() => shuffleArr(items));
+  const [checked,    setChecked]    = useState(false);
+  const [btnVisible, setBtnVisible] = useState(false);
+  const [attempts,   setAttempts]   = useState(0);
+  const mountedRef    = useRef(true);
+  const completeFired = useRef(false);
+  useEffect(() => () => { mountedRef.current = false; }, []);
+
+  useEffect(() => {
+    const text = r(guideText);
+    setBtnVisible(false);
+    if (text) {
+      onPrewarm?.(text);
+      onSpeak?.(text, () => { if (mountedRef.current) setBtnVisible(true); });
+    } else {
+      setBtnVisible(true);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function moveItem(idx, dir) {
+    if (checked) return;
+    const next = [...order];
+    const swapIdx = idx + dir;
+    if (swapIdx < 0 || swapIdx >= next.length) return;
+    [next[idx], next[swapIdx]] = [next[swapIdx], next[idx]];
+    setOrder(next);
+  }
+
+  function handleCheck() {
+    setAttempts(a => a + 1);
+    setChecked(true);
+    setPhase('feedback');
+  }
+
+  const correctness = order.map((item, idx) => item.position === idx + 1);
+  const allCorrect  = checked && correctness.every(Boolean);
+
+  function handleRetry() {
+    setOrder(shuffleArr(items));
+    setChecked(false);
+    setPhase('arrange');
+  }
+
+  function handleDone() {
+    if (completeFired.current) return;
+    completeFired.current = true;
+    onInteractiveComplete?.({ sequenceAttempts: attempts, correct: true });
+    const msg = r(completionMessage) || r(`Perfect, {name}! That's exactly the right order.`);
+    onSpeak?.(msg, () => { if (mountedRef.current) onComplete?.(); });
+    setPhase('done');
+  }
+
+  const cardBase = {
+    background:   'rgba(255,255,255,0.05)',
+    border:       '1px solid rgba(255,255,255,0.10)',
+    borderRadius: 14,
+    padding:      '14px 16px',
+  };
+  const btn = (color = accent, secondary = false) => ({
+    width:       '100%',
+    padding:     '13px 0',
+    borderRadius: 12,
+    border:      secondary ? `1.5px solid ${color}55` : 'none',
+    background:  secondary ? 'transparent' : color,
+    color:       secondary ? color : '#000',
+    fontWeight:  700,
+    fontSize:    '1rem',
+    cursor:      'pointer',
+    fontFamily:  'inherit',
+    touchAction: 'manipulation',
+    transition:  'opacity 0.12s',
+  });
+
+  if (phase === 'intro') {
+    return (
+      <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+          <img
+            src={guideAvatar?.image || '/avatars/nova.png'} alt=""
+            style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${accent}`, flexShrink: 0 }}
+          />
+          <div style={{ ...cardBase, flex: 1, fontSize: '1rem', color: 'rgba(255,255,255,0.88)', lineHeight: 1.65 }}>
+            <KaraokeText text={r(guideText)} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx} color={accent} />
+          </div>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8 }}>
+          {items.map((_, i) => (
+            <div key={i} style={{ width: 10, height: 10, borderRadius: '50%', background: `${accent}44`, border: `2px solid ${accent}66` }} />
+          ))}
+        </div>
+        {btnVisible ? (
+          <button onClick={() => setPhase('arrange')} style={btn(accent)}>
+            Arrange the Steps
+          </button>
+        ) : (
+          <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.25)', fontSize: '0.85rem' }}>
+            {speaking ? 'Nova is briefing you...' : 'Loading...'}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (phase === 'done') {
+    return (
+      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, padding: '24px 18px' }}>
+        <div style={{ fontSize: '3rem' }}>🏆</div>
+        <div style={{ textAlign: 'center' }}>
+          <h2 style={{ color: '#fff', fontWeight: 800, fontSize: '1.4rem', margin: '0 0 8px' }}>Perfect order!</h2>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, margin: 0 }}>Moving on...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // arrange + feedback phase
+  return (
+    <div style={{ height: '100%', overflowY: 'auto', padding: '16px 18px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
+
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+        <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+          {checked ? (allCorrect ? 'Correct order!' : 'Not quite — keep trying') : 'Arrange in order'}
+        </span>
+        {attempts > 0 && (
+          <span style={{ color: `${accent}99`, fontSize: '0.75rem', fontWeight: 700 }}>
+            Attempt {attempts}
+          </span>
+        )}
+      </div>
+
+      {!checked && (
+        <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.88rem', lineHeight: 1.5 }}>
+          Use the arrows to move steps up or down into the correct order.
+        </div>
+      )}
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        {order.map((item, idx) => {
+          const isCorrect = checked && correctness[idx];
+          const isWrong   = checked && !correctness[idx];
+          return (
+            <div
+              key={item.id}
+              style={{
+                display:      'flex',
+                alignItems:   'center',
+                gap:          10,
+                background:   isCorrect ? 'rgba(16,185,129,0.1)' : isWrong ? 'rgba(248,113,113,0.08)' : 'rgba(255,255,255,0.05)',
+                border:       `2px solid ${isCorrect ? '#10B981' : isWrong ? '#F87171' : `${accent}33`}`,
+                borderRadius: 14,
+                padding:      '12px 10px 12px 14px',
+                transition:   'border-color 0.2s, background 0.2s',
+                animation:    'explorer-enter 0.22s ease both',
+              }}
+            >
+              <div style={{
+                width:          28,
+                height:         28,
+                borderRadius:   '50%',
+                background:     isCorrect ? '#10B981' : isWrong ? '#F87171' : `${accent}33`,
+                color:          isCorrect ? '#fff' : isWrong ? '#fff' : accent,
+                fontWeight:     800,
+                fontSize:       '0.85rem',
+                display:        'flex',
+                alignItems:     'center',
+                justifyContent: 'center',
+                flexShrink:     0,
+                transition:     'background 0.2s',
+              }}>
+                {isCorrect ? '✓' : isWrong ? '✗' : idx + 1}
+              </div>
+              <span style={{
+                flex:       1,
+                color:      isCorrect ? '#10B981' : isWrong ? '#F87171' : 'rgba(255,255,255,0.88)',
+                fontWeight: 600,
+                fontSize:   '0.97rem',
+                lineHeight: 1.4,
+                transition: 'color 0.2s',
+              }}>
+                {item.label}
+              </span>
+              {!checked && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flexShrink: 0 }}>
+                  <button
+                    onClick={() => moveItem(idx, -1)}
+                    disabled={idx === 0}
+                    aria-label="Move up"
+                    style={{
+                      width: 32, height: 28, borderRadius: 8, padding: 0,
+                      border:      `1.5px solid ${accent}44`,
+                      background:  idx === 0 ? 'rgba(255,255,255,0.03)' : `${accent}18`,
+                      color:       idx === 0 ? 'rgba(255,255,255,0.2)' : accent,
+                      fontWeight:  700, fontSize: '0.9rem',
+                      cursor:      idx === 0 ? 'default' : 'pointer',
+                      fontFamily:  'inherit', touchAction: 'manipulation',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >▲</button>
+                  <button
+                    onClick={() => moveItem(idx, 1)}
+                    disabled={idx === order.length - 1}
+                    aria-label="Move down"
+                    style={{
+                      width: 32, height: 28, borderRadius: 8, padding: 0,
+                      border:      `1.5px solid ${accent}44`,
+                      background:  idx === order.length - 1 ? 'rgba(255,255,255,0.03)' : `${accent}18`,
+                      color:       idx === order.length - 1 ? 'rgba(255,255,255,0.2)' : accent,
+                      fontWeight:  700, fontSize: '0.9rem',
+                      cursor:      idx === order.length - 1 ? 'default' : 'pointer',
+                      fontFamily:  'inherit', touchAction: 'manipulation',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >▼</button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {!checked && (
+        <button onClick={handleCheck} style={btn(accent)}>
+          Check My Order
+        </button>
+      )}
+      {checked && allCorrect && (
+        <button onClick={handleDone} style={btn(accent)}>
+          Continue →
+        </button>
+      )}
+      {checked && !allCorrect && (
+        <>
+          <div style={{ ...cardBase, borderColor: '#F87171', background: 'rgba(248,113,113,0.06)', textAlign: 'center' }}>
+            <span style={{ color: '#F87171', fontWeight: 700, fontSize: '0.95rem' }}>
+              {correctness.filter(Boolean).length} of {items.length} in the right spot — move some around.
+            </span>
+          </div>
+          <button onClick={handleRetry} style={btn(accent, true)}>
+            Try Again
+          </button>
+        </>
+      )}
+
+    </div>
+  );
+}
+
 // ── Branching Decision game (inline) ────────────────────────────────────────
 function BranchingDecisionGame({ screen, guideAvatar, accent, childName, onSpeak, onComplete, onInteractiveComplete, karaokeWords, karaokeIdx, speaking }) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
@@ -2783,6 +3050,7 @@ export default function UpperExplorerLessonPlayer() {
       case 'interactive': {
         const gameProps = { screen, guideAvatar, accent, childName, lessonId, onSpeak: speak, onPrewarm: prewarmAudio, onComplete: goNext, onInteractiveComplete, karaokeWords, karaokeIdx, speaking };
         if (screen.format === 'investigation')       return <InvestigationGame      {...gameProps} />;
+        if (screen.format === 'sequence')            return <SequenceGame           {...gameProps} />;
         if (screen.format === 'branching-decision')  return <BranchingDecisionGame  {...gameProps} />;
         if (screen.format === 'resource-allocation') return <ResourceAllocationGame {...gameProps} />;
         if (screen.format === 'problem-solving')     return <ProblemSolvingGame     {...gameProps} />;
