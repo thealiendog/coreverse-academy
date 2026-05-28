@@ -172,6 +172,7 @@ import INNERWORLD_UE_L03 from '../../data/innerworld_upper_explorer_l03_screens'
 import INNERWORLD_UE_L04 from '../../data/innerworld_upper_explorer_l04_screens';
 import INNERWORLD_UE_L05 from '../../data/innerworld_upper_explorer_l05_screens';
 import INNERWORLD_UE_L06 from '../../data/innerworld_upper_explorer_l06_screens';
+import INNERWORLD_UE_L07 from '../../data/innerworld_upper_explorer_l07_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -374,6 +375,7 @@ const UE_DATA = {
       ...INNERWORLD_UE_L04.lessons,
       ...INNERWORLD_UE_L05.lessons,
       ...INNERWORLD_UE_L06.lessons,
+      ...INNERWORLD_UE_L07.lessons,
     ],
   },
 };
