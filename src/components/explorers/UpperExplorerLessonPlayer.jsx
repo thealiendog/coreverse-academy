@@ -151,6 +151,10 @@ import COSMOS_UE_L02 from '../../data/cosmos_upper_explorer_l02_screens';
 import COSMOS_UE_L03 from '../../data/cosmos_upper_explorer_l03_screens';
 import COSMOS_UE_L04 from '../../data/cosmos_upper_explorer_l04_screens';
 import COSMOS_UE_L05 from '../../data/cosmos_upper_explorer_l05_screens';
+import COSMOS_UE_L06 from '../../data/cosmos_upper_explorer_l06_screens';
+import COSMOS_UE_L07 from '../../data/cosmos_upper_explorer_l07_screens';
+import COSMOS_UE_L08 from '../../data/cosmos_upper_explorer_l08_screens';
+import COSMOS_UE_L09 from '../../data/cosmos_upper_explorer_l09_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -325,6 +329,10 @@ const UE_DATA = {
       ...COSMOS_UE_L03.lessons,
       ...COSMOS_UE_L04.lessons,
       ...COSMOS_UE_L05.lessons,
+      ...COSMOS_UE_L06.lessons,
+      ...COSMOS_UE_L07.lessons,
+      ...COSMOS_UE_L08.lessons,
+      ...COSMOS_UE_L09.lessons,
     ],
   },
 };
