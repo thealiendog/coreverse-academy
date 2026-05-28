@@ -146,6 +146,7 @@ import MONEY_UE_L17 from '../../data/moneybusiness_upper_explorer_l17_screens';
 import MONEY_UE_L18 from '../../data/moneybusiness_upper_explorer_l18_screens';
 import MONEY_UE_L19 from '../../data/moneybusiness_upper_explorer_l19_screens';
 import MONEY_UE_L20 from '../../data/moneybusiness_upper_explorer_l20_screens';
+import COSMOS_UE_L01 from '../../data/cosmos_upper_explorer_l01_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -308,6 +309,14 @@ const UE_DATA = {
       ...MONEY_UE_L18.lessons,
       ...MONEY_UE_L19.lessons,
       ...MONEY_UE_L20.lessons,
+    ],
+  },
+  'cosmos': {
+    ageBand:   'upper_explorers',
+    subjectId: 'cosmos',
+    guide:     'nova',
+    lessons:   [
+      ...COSMOS_UE_L01.lessons,
     ],
   },
 };
