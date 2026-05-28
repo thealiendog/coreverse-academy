@@ -127,6 +127,10 @@ import SCIENCE_UE_L18 from '../../data/science_upper_explorer_l18_screens';
 import SCIENCE_UE_L19 from '../../data/science_upper_explorer_l19_screens';
 import SCIENCE_UE_L20 from '../../data/science_upper_explorer_l20_screens';
 import MONEY_UE_L01 from '../../data/moneybusiness_upper_explorer_l01_screens';
+import MONEY_UE_L02 from '../../data/moneybusiness_upper_explorer_l02_screens';
+import MONEY_UE_L03 from '../../data/moneybusiness_upper_explorer_l03_screens';
+import MONEY_UE_L04 from '../../data/moneybusiness_upper_explorer_l04_screens';
+import MONEY_UE_L05 from '../../data/moneybusiness_upper_explorer_l05_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -270,6 +274,10 @@ const UE_DATA = {
     guide:     'ace',
     lessons:   [
       ...MONEY_UE_L01.lessons,
+      ...MONEY_UE_L02.lessons,
+      ...MONEY_UE_L03.lessons,
+      ...MONEY_UE_L04.lessons,
+      ...MONEY_UE_L05.lessons,
     ],
   },
 };
