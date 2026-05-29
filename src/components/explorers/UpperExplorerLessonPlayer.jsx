@@ -235,6 +235,8 @@ import FUTURESKILLS_UE_L09 from '../../data/futureskills_upper_explorer_l09_scre
 import FUTURESKILLS_UE_L10 from '../../data/futureskills_upper_explorer_l10_screens';
 import FUTURESKILLS_UE_L11 from '../../data/futureskills_upper_explorer_l11_screens';
 import FUTURESKILLS_UE_L12 from '../../data/futureskills_upper_explorer_l12_screens';
+import FUTURESKILLS_UE_L13 from '../../data/futureskills_upper_explorer_l13_screens';
+import FUTURESKILLS_UE_L14 from '../../data/futureskills_upper_explorer_l14_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -521,6 +523,8 @@ const UE_DATA = {
       ...FUTURESKILLS_UE_L10.lessons,
       ...FUTURESKILLS_UE_L11.lessons,
       ...FUTURESKILLS_UE_L12.lessons,
+      ...FUTURESKILLS_UE_L13.lessons,
+      ...FUTURESKILLS_UE_L14.lessons,
     ],
   },
 };
