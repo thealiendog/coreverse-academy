@@ -215,6 +215,8 @@ import LIFEWELLNESS_UE_L09 from '../../data/lifewellness_upper_explorer_l09_scre
 import LIFEWELLNESS_UE_L10 from '../../data/lifewellness_upper_explorer_l10_screens';
 import LIFEWELLNESS_UE_L11 from '../../data/lifewellness_upper_explorer_l11_screens';
 import LIFEWELLNESS_UE_L12 from '../../data/lifewellness_upper_explorer_l12_screens';
+import LIFEWELLNESS_UE_L13 from '../../data/lifewellness_upper_explorer_l13_screens';
+import LIFEWELLNESS_UE_L14 from '../../data/lifewellness_upper_explorer_l14_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -474,6 +476,8 @@ const UE_DATA = {
       ...LIFEWELLNESS_UE_L10.lessons,
       ...LIFEWELLNESS_UE_L11.lessons,
       ...LIFEWELLNESS_UE_L12.lessons,
+      ...LIFEWELLNESS_UE_L13.lessons,
+      ...LIFEWELLNESS_UE_L14.lessons,
     ],
   },
 };
