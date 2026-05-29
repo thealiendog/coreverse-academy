@@ -205,6 +205,8 @@ import SOCIALLEADERSHIP_UE_L19 from '../../data/socialleadership_upper_explorer_
 import SOCIALLEADERSHIP_UE_L20 from '../../data/socialleadership_upper_explorer_l20_screens';
 import LIFEWELLNESS_UE_L01 from '../../data/lifewellness_upper_explorer_l01_screens';
 import LIFEWELLNESS_UE_L02 from '../../data/lifewellness_upper_explorer_l02_screens';
+import LIFEWELLNESS_UE_L03 from '../../data/lifewellness_upper_explorer_l03_screens';
+import LIFEWELLNESS_UE_L04 from '../../data/lifewellness_upper_explorer_l04_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -454,6 +456,8 @@ const UE_DATA = {
     lessons:   [
       ...LIFEWELLNESS_UE_L01.lessons,
       ...LIFEWELLNESS_UE_L02.lessons,
+      ...LIFEWELLNESS_UE_L03.lessons,
+      ...LIFEWELLNESS_UE_L04.lessons,
     ],
   },
 };
