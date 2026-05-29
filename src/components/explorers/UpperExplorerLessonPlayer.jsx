@@ -223,6 +223,8 @@ import LIFEWELLNESS_UE_L17 from '../../data/lifewellness_upper_explorer_l17_scre
 import LIFEWELLNESS_UE_L18 from '../../data/lifewellness_upper_explorer_l18_screens';
 import LIFEWELLNESS_UE_L19 from '../../data/lifewellness_upper_explorer_l19_screens';
 import LIFEWELLNESS_UE_L20 from '../../data/lifewellness_upper_explorer_l20_screens';
+import FUTURESKILLS_UE_L01 from '../../data/futureskills_upper_explorer_l01_screens';
+import FUTURESKILLS_UE_L02 from '../../data/futureskills_upper_explorer_l02_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -490,6 +492,15 @@ const UE_DATA = {
       ...LIFEWELLNESS_UE_L18.lessons,
       ...LIFEWELLNESS_UE_L19.lessons,
       ...LIFEWELLNESS_UE_L20.lessons,
+    ],
+  },
+  'fs': {
+    ageBand:   'upper_explorers',
+    subjectId: 'fs',
+    guide:     'byte',
+    lessons:   [
+      ...FUTURESKILLS_UE_L01.lessons,
+      ...FUTURESKILLS_UE_L02.lessons,
     ],
   },
 };
