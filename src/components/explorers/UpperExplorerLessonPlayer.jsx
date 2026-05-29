@@ -186,6 +186,7 @@ import INNERWORLD_UE_L18 from '../../data/innerworld_upper_explorer_l18_screens'
 import INNERWORLD_UE_L19 from '../../data/innerworld_upper_explorer_l19_screens';
 import INNERWORLD_UE_L20 from '../../data/innerworld_upper_explorer_l20_screens';
 import SOCIALLEADERSHIP_UE_L01 from '../../data/socialleadership_upper_explorer_l01_screens';
+import SOCIALLEADERSHIP_UE_L02 from '../../data/socialleadership_upper_explorer_l02_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -409,6 +410,7 @@ const UE_DATA = {
     guide:     'valor',
     lessons:   [
       ...SOCIALLEADERSHIP_UE_L01.lessons,
+      ...SOCIALLEADERSHIP_UE_L02.lessons,
     ],
   },
 };
