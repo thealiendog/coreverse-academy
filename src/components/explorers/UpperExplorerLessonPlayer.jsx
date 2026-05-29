@@ -190,6 +190,7 @@ import SOCIALLEADERSHIP_UE_L02 from '../../data/socialleadership_upper_explorer_
 import SOCIALLEADERSHIP_UE_L03 from '../../data/socialleadership_upper_explorer_l03_screens';
 import SOCIALLEADERSHIP_UE_L04 from '../../data/socialleadership_upper_explorer_l04_screens';
 import SOCIALLEADERSHIP_UE_L05 from '../../data/socialleadership_upper_explorer_l05_screens';
+import SOCIALLEADERSHIP_UE_L06 from '../../data/socialleadership_upper_explorer_l06_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -417,6 +418,7 @@ const UE_DATA = {
       ...SOCIALLEADERSHIP_UE_L03.lessons,
       ...SOCIALLEADERSHIP_UE_L04.lessons,
       ...SOCIALLEADERSHIP_UE_L05.lessons,
+      ...SOCIALLEADERSHIP_UE_L06.lessons,
     ],
   },
 };
