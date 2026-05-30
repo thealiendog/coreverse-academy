@@ -233,6 +233,21 @@ function getUELessonId(subjectId, level, index) {
   if (subjectId === 'inner-world' && level === 3) {
     return `iw-9-10-${String(index + 1).padStart(2, '0')}`;
   }
+  if (subjectId === 'leadership' && level === 3) {
+    return `sl-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'wellness' && level === 3) {
+    return `lw-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'future-skills' && level === 3) {
+    return `fs-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'creative-arts' && level === 3) {
+    return `ca-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
+  if (subjectId === 'frontier' && level === 3) {
+    return `fp-9-10-${String(index + 1).padStart(2, '0')}`;
+  }
   return null;
 }
 
