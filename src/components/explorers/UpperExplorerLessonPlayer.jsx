@@ -257,6 +257,8 @@ import CREATIVEARTS_UE_L11 from '../../data/creativearts_upper_explorer_l11_scre
 import CREATIVEARTS_UE_L12 from '../../data/creativearts_upper_explorer_l12_screens';
 import CREATIVEARTS_UE_L13 from '../../data/creativearts_upper_explorer_l13_screens';
 import CREATIVEARTS_UE_L14 from '../../data/creativearts_upper_explorer_l14_screens';
+import CREATIVEARTS_UE_L15 from '../../data/creativearts_upper_explorer_l15_screens';
+import CREATIVEARTS_UE_L16 from '../../data/creativearts_upper_explorer_l16_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -572,6 +574,8 @@ const UE_DATA = {
       ...CREATIVEARTS_UE_L12.lessons,
       ...CREATIVEARTS_UE_L13.lessons,
       ...CREATIVEARTS_UE_L14.lessons,
+      ...CREATIVEARTS_UE_L15.lessons,
+      ...CREATIVEARTS_UE_L16.lessons,
     ],
   },
 };
