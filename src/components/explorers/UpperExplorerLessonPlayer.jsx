@@ -267,6 +267,8 @@ import FRONTIER_UE_L01 from '../../data/frontier_upper_explorer_l01_screens';
 import FRONTIER_UE_L02 from '../../data/frontier_upper_explorer_l02_screens';
 import FRONTIER_UE_L03 from '../../data/frontier_upper_explorer_l03_screens';
 import FRONTIER_UE_L04 from '../../data/frontier_upper_explorer_l04_screens';
+import FRONTIER_UE_L05 from '../../data/frontier_upper_explorer_l05_screens';
+import FRONTIER_UE_L06 from '../../data/frontier_upper_explorer_l06_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -599,6 +601,8 @@ const UE_DATA = {
       ...FRONTIER_UE_L02.lessons,
       ...FRONTIER_UE_L03.lessons,
       ...FRONTIER_UE_L04.lessons,
+      ...FRONTIER_UE_L05.lessons,
+      ...FRONTIER_UE_L06.lessons,
     ],
   },
 };
