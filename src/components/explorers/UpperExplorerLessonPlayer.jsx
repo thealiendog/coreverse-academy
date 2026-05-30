@@ -263,6 +263,8 @@ import CREATIVEARTS_UE_L17 from '../../data/creativearts_upper_explorer_l17_scre
 import CREATIVEARTS_UE_L18 from '../../data/creativearts_upper_explorer_l18_screens';
 import CREATIVEARTS_UE_L19 from '../../data/creativearts_upper_explorer_l19_screens';
 import CREATIVEARTS_UE_L20 from '../../data/creativearts_upper_explorer_l20_screens';
+import FRONTIER_UE_L01 from '../../data/frontier_upper_explorer_l01_screens';
+import FRONTIER_UE_L02 from '../../data/frontier_upper_explorer_l02_screens';
 
 const UE_DATA = {
   'social_studies': {
@@ -584,6 +586,15 @@ const UE_DATA = {
       ...CREATIVEARTS_UE_L18.lessons,
       ...CREATIVEARTS_UE_L19.lessons,
       ...CREATIVEARTS_UE_L20.lessons,
+    ],
+  },
+  'fp': {
+    ageBand:   'upper_explorers',
+    subjectId: 'fp',
+    guide:     'orion',
+    lessons:   [
+      ...FRONTIER_UE_L01.lessons,
+      ...FRONTIER_UE_L02.lessons,
     ],
   },
 };
