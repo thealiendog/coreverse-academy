@@ -500,7 +500,7 @@ const UE_DATA = {
       ...INNERWORLD_UE_L20.lessons,
     ],
   },
-  'sl': {
+  'leadership': {
     ageBand:   'upper_explorers',
     subjectId: 'sl',
     guide:     'valor',
@@ -525,7 +525,7 @@ const UE_DATA = {
       ...SOCIALLEADERSHIP_UE_L20.lessons,
     ],
   },
-  'lw': {
+  'wellness': {
     ageBand:   'upper_explorers',
     subjectId: 'lw',
     guide:     'terra',
@@ -552,7 +552,7 @@ const UE_DATA = {
       ...LIFEWELLNESS_UE_L20.lessons,
     ],
   },
-  'fs': {
+  'future-skills': {
     ageBand:   'upper_explorers',
     subjectId: 'fs',
     guide:     'byte',
@@ -579,7 +579,7 @@ const UE_DATA = {
       ...FUTURESKILLS_UE_L20.lessons,
     ],
   },
-  'ca': {
+  'creative-arts': {
     ageBand:   'upper_explorers',
     subjectId: 'ca',
     guide:     'muse',
@@ -606,7 +606,7 @@ const UE_DATA = {
       ...CREATIVEARTS_UE_L20.lessons,
     ],
   },
-  'fp': {
+  'frontier': {
     ageBand:   'upper_explorers',
     subjectId: 'fp',
     guide:     'orion',
