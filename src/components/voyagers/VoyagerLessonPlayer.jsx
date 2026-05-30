@@ -22,6 +22,13 @@ import ExplorerCelebration   from '../explorers/ExplorerCelebration';
 import ExplorerNavigation    from '../explorers/ExplorerNavigation';
 import VocabPopup            from '../explorers/VocabPopup';
 
+// ── Voyager interaction components ────────────────────────────────────────
+import ArgumentBuilder    from './ArgumentBuilder';
+import CaseStudy          from './CaseStudy';
+import SourceEvaluation   from './SourceEvaluation';
+import Annotate           from './Annotate';
+import { buildSpacedQuiz } from './SpacedRetrievalEngine';
+
 // ── Voyager lesson data ────────────────────────────────────────────────────
 // Add one import per lesson as content is authored. Start with Inner World L01.
 import INNERWORLD_VOY_L01 from '../../data/innerworld_voyager_l01_screens';
@@ -870,15 +877,15 @@ export default function VoyagerLessonPlayer() {
           </div>
         );
       case 'quiz': {
-        // Normalize: new files use q.type; MasteryQuiz / QuizQuestion read q.format.
-        // Map 'inference' → 'multiple-choice' (same data shape: options + correctIndex).
-        const quizScreen = {
-          ...screen,
-          questions: (screen.questions || []).map(q => ({
-            ...q,
-            format: q.format || (q.type === 'inference' ? 'multiple-choice' : q.type),
-          })),
-        };
+        // Normalize type → format, map 'inference' → 'multiple-choice'.
+        // Then run SpacedRetrievalEngine to substitute 0-2 questions with
+        // review questions from earlier lessons in the same subject.
+        const normalizedQuestions = (screen.questions || []).map(q => ({
+          ...q,
+          format: q.format || (q.type === 'inference' ? 'multiple-choice' : q.type),
+        }));
+        const spacedQuestions = buildSpacedQuiz(normalizedQuestions, lessonId, subjectData);
+        const quizScreen = { ...screen, questions: spacedQuestions };
         return <MasteryQuiz {...commonProps} screen={quizScreen} />;
       }
       case 'reflection':
@@ -912,6 +919,36 @@ export default function VoyagerLessonPlayer() {
             screen={currentScreen} guideAvatar={guideAvatar} accent={accent}
             childName={childName} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx}
             onComplete={goNext}
+          />
+        );
+      case 'argument-builder':
+        return (
+          <ArgumentBuilder
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
+      case 'case-study':
+        return (
+          <CaseStudy
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
+      case 'source-evaluation':
+        return (
+          <SourceEvaluation
+            screen={currentScreen} accent={accent}
+            childName={childName} onComplete={goNext}
+          />
+        );
+      case 'annotate':
+        return (
+          <Annotate
+            screen={currentScreen} accent={accent}
+            childName={childName} onComplete={goNext}
           />
         );
       case 'identity-hook':
