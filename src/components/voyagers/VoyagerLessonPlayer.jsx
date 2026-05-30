@@ -30,7 +30,7 @@ import INNERWORLD_VOY_L01 from '../../data/innerworld_voyager_l01_screens';
 function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
   switch (screen.type) {
-    case 'welcome':       return r(screen.audioPrompt || screen.bodyText || screen.heading || '');
+    case 'welcome':       return r(screen.audioPrompt || screen.guideText || screen.bodyText || screen.heading || '');
     case 'magazine':      return r(screen.audioPrompt || '');
     case 'story-beat':    return r(screen.audioPrompt || screen.paragraph || '');
     case 'reflection':    return r(screen.guideText   || '');
@@ -121,17 +121,18 @@ function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWor
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: expanded === idx ? 12 : 0 }}>
               <span style={{ color: accent, fontWeight: 700, fontSize: '0.9rem', letterSpacing: '0.02em' }}>
-                {pos.thinker_name}
+                {pos.thinker || pos.thinker_name}
                 {viewed.has(idx) && <span style={{ color: 'rgba(255,255,255,0.35)', fontWeight: 400, marginLeft: 8, fontSize: '0.75rem' }}>✓</span>}
               </span>
               <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem' }}>{expanded === idx ? '▲' : '▼'}</span>
             </div>
             {expanded === idx && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{pos.position_summary}</p>
+                {(pos.positionLabel) && <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em', margin: '0 0 4px', textTransform: 'uppercase' }}>{pos.positionLabel}</p>}
+                <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{pos.summary || pos.position_summary}</p>
                 <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '10px 12px' }}>
                   <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.73rem', fontWeight: 700, letterSpacing: '0.05em', margin: '0 0 5px', textTransform: 'uppercase' }}>Strongest argument</p>
-                  <p style={{ color: '#a8d5ba', fontSize: '0.92rem', lineHeight: 1.55, margin: 0 }}>{pos.strongest_argument}</p>
+                  <p style={{ color: '#a8d5ba', fontSize: '0.92rem', lineHeight: 1.55, margin: 0 }}>{pos.strongestArgument || pos.strongest_argument}</p>
                 </div>
               </div>
             )}
@@ -173,41 +174,88 @@ function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWor
 }
 
 // ── Identity Hook Screen ───────────────────────────────────────────────────
-// Single question + free-text response saved to localStorage under 'identity_responses'.
+// Free-text response saved to localStorage. Supports both old (question) and
+// new (headline + prompt + placeholder + examples + saveKey) field formats.
 function IdentityHookScreen({ screen, guideAvatar, accent, childName, onComplete }) {
   const [value, setValue] = useState('');
   const [saved,  setSaved]  = useState(false);
-  const question = (screen.question || '').replace(/\{name\}/g, childName);
+  const r = t => (t || '').replace(/\{name\}/g, childName);
+
+  const headline    = r(screen.headline || screen.question || '');
+  const subPrompt   = r(screen.prompt || '');
+  const placeholder = screen.placeholder || 'Write your response here…';
+  const examples    = screen.examples || [];
+  const saveKey     = screen.saveKey || 'identity_responses';
 
   function handleSave() {
     if (!value.trim()) return;
     try {
-      const existing = JSON.parse(localStorage.getItem('identity_responses') || '[]');
-      existing.push({
-        lessonId:  screen.lessonId || '',
-        question,
+      // Save to lesson-specific key (if provided)
+      if (screen.saveKey) {
+        const existing = JSON.parse(localStorage.getItem(screen.saveKey) || '[]');
+        existing.push({ response: value.trim(), savedAt: new Date().toISOString() });
+        localStorage.setItem(screen.saveKey, JSON.stringify(existing));
+      }
+      // Always also save to global identity_responses array
+      const global = JSON.parse(localStorage.getItem('identity_responses') || '[]');
+      global.push({
+        lessonId:  saveKey,
+        question:  headline,
         response:  value.trim(),
         savedAt:   new Date().toISOString(),
       });
-      localStorage.setItem('identity_responses', JSON.stringify(existing));
+      localStorage.setItem('identity_responses', JSON.stringify(global));
     } catch { /* storage unavailable */ }
     setSaved(true);
     setTimeout(onComplete, 700);
   }
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: '28px 18px', display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'center' }}>
+    <div style={{ height: '100%', overflowY: 'auto', padding: '28px 18px', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
       {guideAvatar && (
         <img src={guideAvatar.src} alt={guideAvatar.name} style={{ width: 56, height: 56, borderRadius: '50%', border: `2.5px solid ${accent}66` }} />
       )}
-      <p style={{ color: '#e2d9f3', fontSize: '1.1rem', lineHeight: 1.65, margin: 0, textAlign: 'center', fontWeight: 500, maxWidth: 440 }}>
-        {question}
-      </p>
+      {headline && (
+        <p style={{ color: '#e2d9f3', fontSize: '1.15rem', lineHeight: 1.55, margin: 0, textAlign: 'center', fontWeight: 700, maxWidth: 440 }}>
+          {headline}
+        </p>
+      )}
+      {subPrompt && (
+        <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, margin: 0, textAlign: 'center', maxWidth: 420 }}>
+          {subPrompt}
+        </p>
+      )}
+      {examples.length > 0 && (
+        <div style={{ width: '100%', maxWidth: 480, display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {examples.map((ex, i) => (
+            <button
+              key={i}
+              onClick={() => setValue(ex)}
+              style={{
+                textAlign:    'left',
+                padding:      '10px 14px',
+                background:   value === ex ? `${accent}22` : 'rgba(255,255,255,0.05)',
+                border:       `1.5px solid ${value === ex ? accent + '66' : 'rgba(255,255,255,0.1)'}`,
+                borderRadius: 10,
+                color:        'rgba(255,255,255,0.7)',
+                fontSize:     '0.88rem',
+                lineHeight:   1.5,
+                cursor:       'pointer',
+                fontStyle:    'italic',
+                transition:   'all 0.15s',
+                fontFamily:   'inherit',
+              }}
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
+      )}
       <textarea
         value={value}
         onChange={e => setValue(e.target.value)}
-        placeholder="Write your response here…"
-        rows={5}
+        placeholder={placeholder}
+        rows={4}
         style={{
           width:        '100%',
           maxWidth:     480,
@@ -248,12 +296,24 @@ function IdentityHookScreen({ screen, guideAvatar, accent, childName, onComplete
 }
 
 // ── Reflection Screen ──────────────────────────────────────────────────────
+// Supports both old (single screen.prompt) and new (screen.prompts[] array) formats.
 function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, onComplete }) {
+  const [selectedIdx, setSelectedIdx] = useState(null);
   const [value, setValue] = useState('');
   const r = t => (t || '').replace(/\{name\}/g, childName);
 
+  // Multi-prompt format: screen.prompts is an array of { id, category, prompt }
+  const multiPrompts = Array.isArray(screen.prompts) && screen.prompts.length > 0 ? screen.prompts : null;
+
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px 32px', display: 'flex', flexDirection: 'column', gap: 18 }}>
+    <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px 32px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+
+      {/* Headline */}
+      {screen.headline && (
+        <p style={{ color: '#e2d9f3', fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>{r(screen.headline)}</p>
+      )}
+
+      {/* Guide bubble (legacy guideText) */}
       {screen.guideText && (
         <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
           {guideAvatar && (
@@ -266,31 +326,64 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
           </div>
         </div>
       )}
-      {screen.prompt && (
+
+      {/* Intro text (multi-prompt format) */}
+      {screen.intro && (
+        <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', lineHeight: 1.6, margin: 0 }}>{r(screen.intro)}</p>
+      )}
+
+      {/* Single prompt (legacy) */}
+      {!multiPrompts && screen.prompt && (
         <div style={{ background: `${accent}10`, border: `1px solid ${accent}30`, borderRadius: 12, padding: '14px 16px' }}>
           <p style={{ color: '#e2d9f3', fontSize: '0.98rem', lineHeight: 1.6, margin: 0 }}>{r(screen.prompt)}</p>
         </div>
       )}
-      <textarea
-        value={value}
-        onChange={e => setValue(e.target.value)}
-        placeholder={screen.placeholder || 'Write your reflection here…'}
-        rows={4}
-        style={{
-          width:        '100%',
-          padding:      '14px 16px',
-          background:   'rgba(255,255,255,0.06)',
-          border:       `1.5px solid ${value ? accent + '66' : 'rgba(255,255,255,0.12)'}`,
-          borderRadius: 12,
-          color:        '#fff',
-          fontSize:     '0.98rem',
-          lineHeight:   1.6,
-          resize:       'vertical',
-          outline:      'none',
-          fontFamily:   'inherit',
-          boxSizing:    'border-box',
-        }}
-      />
+
+      {/* Multi-prompt list */}
+      {multiPrompts && multiPrompts.map((p, idx) => (
+        <div
+          key={p.id || idx}
+          onClick={() => { setSelectedIdx(prev => prev === idx ? null : idx); setValue(''); }}
+          style={{
+            background:   selectedIdx === idx ? `${accent}16` : 'rgba(255,255,255,0.04)',
+            border:       `1.5px solid ${selectedIdx === idx ? accent + '55' : 'rgba(255,255,255,0.1)'}`,
+            borderRadius: 14,
+            padding:      '12px 16px',
+            cursor:       'pointer',
+            transition:   'all 0.18s ease',
+          }}
+        >
+          {p.category && (
+            <p style={{ color: accent, fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 5px' }}>{p.category}</p>
+          )}
+          <p style={{ color: selectedIdx === idx ? '#e2d9f3' : 'rgba(255,255,255,0.7)', fontSize: '0.93rem', lineHeight: 1.6, margin: 0 }}>{p.prompt}</p>
+        </div>
+      ))}
+
+      {/* Textarea — shown when a prompt is selected (multi) or always (legacy) */}
+      {(!multiPrompts || selectedIdx !== null) && (
+        <textarea
+          value={value}
+          onChange={e => setValue(e.target.value)}
+          placeholder={screen.placeholder || 'Write your reflection here…'}
+          rows={4}
+          style={{
+            width:        '100%',
+            padding:      '14px 16px',
+            background:   'rgba(255,255,255,0.06)',
+            border:       `1.5px solid ${value ? accent + '66' : 'rgba(255,255,255,0.12)'}`,
+            borderRadius: 12,
+            color:        '#fff',
+            fontSize:     '0.98rem',
+            lineHeight:   1.6,
+            resize:       'vertical',
+            outline:      'none',
+            fontFamily:   'inherit',
+            boxSizing:    'border-box',
+          }}
+        />
+      )}
+
       <button
         onClick={onComplete}
         style={{
@@ -776,8 +869,18 @@ export default function VoyagerLessonPlayer() {
             <button onClick={goNext} style={{ padding: '12px 28px', background: accent, color: '#fff', border: 'none', borderRadius: 12, fontWeight: 700, cursor: 'pointer' }}>Continue →</button>
           </div>
         );
-      case 'quiz':
-        return <MasteryQuiz {...commonProps} />;
+      case 'quiz': {
+        // Normalize: new files use q.type; MasteryQuiz / QuizQuestion read q.format.
+        // Map 'inference' → 'multiple-choice' (same data shape: options + correctIndex).
+        const quizScreen = {
+          ...screen,
+          questions: (screen.questions || []).map(q => ({
+            ...q,
+            format: q.format || (q.type === 'inference' ? 'multiple-choice' : q.type),
+          })),
+        };
+        return <MasteryQuiz {...commonProps} screen={quizScreen} />;
+      }
       case 'reflection':
         return (
           <ReflectionScreen
@@ -786,8 +889,23 @@ export default function VoyagerLessonPlayer() {
             onComplete={goNext}
           />
         );
-      case 'real-world':
-        return <RealWorldConnection {...commonProps} />;
+      case 'real-world': {
+        // Normalize Voyager real-world format → what RealWorldConnection expects.
+        // guideContext → guideText, familyActivity.description → familyAdventure (string),
+        // projectOption → creativePrompt (plain string).
+        const rwScreen = {
+          ...screen,
+          guideText:      screen.guideText || screen.guideContext || '',
+          familyAdventure: typeof screen.familyAdventure === 'string'
+            ? screen.familyAdventure
+            : (screen.familyActivity?.description || ''),
+          creativePrompt:  screen.creativePrompt ||
+            (screen.projectOption
+              ? `${screen.projectOption.title ? screen.projectOption.title + ': ' : ''}${screen.projectOption.description || ''}`
+              : undefined),
+        };
+        return <RealWorldConnection {...commonProps} screen={rwScreen} />;
+      }
       case 'perspectives':
         return (
           <PerspectivesScreen
