@@ -18,9 +18,12 @@ const MAX_EVIDENCE = 4;
 export default function ArgumentBuilder({ screen, accent, childName, guideAvatar, onComplete }) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
 
-  const positions       = screen.positions       || [];
-  const evidencePool    = screen.evidence        || [];
-  const counterargument = screen.counterargument || '';
+  const positions        = screen.positions || [];
+  const evidencePool     = screen.evidence  || [];
+  // counterargument: accept string or {id, text, promptInstruction} object
+  const counterObj       = typeof screen.counterargument === 'object' ? screen.counterargument : null;
+  const counterargument  = counterObj ? counterObj.text : (screen.counterargument || '');
+  const counterPromptHint = counterObj?.promptInstruction || 'Write 2–3 sentences responding to this objection.';
   const reflectionPrompt = screen.reflectionPrompt || '';
 
   // ── State ──────────────────────────────────────────────────────────────────
@@ -138,7 +141,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
               }}
             >
               <p style={{ color: selected ? '#34D399' : '#e2d9f3', fontSize: '0.9rem', lineHeight: 1.55, margin: '0 0 4px', fontWeight: selected ? 600 : 400 }}>
-                {ev.claim}
+                {ev.claim || ev.text}
               </p>
               {ev.source && (
                 <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.75rem', margin: 0 }}>Source: {ev.source}</p>
@@ -165,7 +168,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
                   </div>
                   <div style={{ ...card(true, '#34D399'), flex: 1, padding: '10px 14px' }}>
                     <p style={{ color: '#34D399', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.04em', margin: '0 0 3px' }}>#{idx + 1}</p>
-                    <p style={{ color: '#e2d9f3', fontSize: '0.88rem', lineHeight: 1.5, margin: 0 }}>{ev.claim}</p>
+                    <p style={{ color: '#e2d9f3', fontSize: '0.88rem', lineHeight: 1.5, margin: 0 }}>{ev.claim || ev.text}</p>
                   </div>
                 </div>
               );
@@ -197,7 +200,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
             const ev = getEvidence(evId);
             return ev ? (
               <p key={evId} style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', lineHeight: 1.5, margin: '0 0 4px', paddingLeft: 8, borderLeft: `2px solid ${accent}44` }}>
-                {idx + 1}. {ev.claim}
+                {idx + 1}. {ev.claim || ev.text}
               </p>
             ) : null;
           })}
@@ -209,7 +212,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
           <p style={{ color: '#FCA5A5', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{r(counterargument)}</p>
         </div>
 
-        <p style={sub}>Write 2–3 sentences responding to this objection. What does it get wrong, or what does your position say about it?</p>
+        <p style={sub}>{counterPromptHint}</p>
 
         <textarea
           value={counterText}

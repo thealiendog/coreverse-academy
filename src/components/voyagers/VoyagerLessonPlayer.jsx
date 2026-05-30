@@ -30,8 +30,9 @@ import Annotate           from './Annotate';
 import { buildSpacedQuiz } from './SpacedRetrievalEngine';
 
 // ── Voyager lesson data ────────────────────────────────────────────────────
-// Add one import per lesson as content is authored. Start with Inner World L01.
 import INNERWORLD_VOY_L01 from '../../data/innerworld_voyager_l01_screens';
+import INNERWORLD_VOY_L02 from '../../data/innerworld_voyager_l02_screens';
+import INNERWORLD_VOY_L03 from '../../data/innerworld_voyager_l03_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -416,6 +417,8 @@ const VOY_DATA = {
     guide:     'sage',
     lessons: [
       ...INNERWORLD_VOY_L01.lessons,
+      ...INNERWORLD_VOY_L02.lessons,
+      ...INNERWORLD_VOY_L03.lessons,
     ],
   },
 };

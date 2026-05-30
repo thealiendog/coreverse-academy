@@ -4,8 +4,9 @@
 //
 // Screen schema:
 //   { type: 'annotate', source, sourceCitation, passage, labels[], annotationPrompts[], expertAnnotation }
-//   labels[]:            string — the label names (e.g. 'evidence', 'opinion', 'assumption')
-//   annotationPrompts[]: { sentenceIdx, prompt } — sentences that need a reasoning note
+//   passage:             string OR string[] (array of pre-split sentences)
+//   labels[]:            string OR {id, label, color} object
+//   annotationPrompts[]: { sentenceIdx|targetSentenceIndex, prompt }
 //   expertAnnotation:    string or array of { sentenceIdx, label, note }
 //
 // Mobile UX: tap a sentence to select it → label palette appears → tap label to assign.
@@ -13,30 +14,48 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState, useMemo } from 'react';
 
-// Split passage into sentences. Preserves trailing punctuation in each sentence.
+// Split passage into sentences (only used when passage is a plain string).
 function splitSentences(text) {
   if (!text) return [];
-  // Split on . ! ? followed by space or end, but not on abbreviations like "e.g."
   return text
     .split(/(?<=[.!?])\s+(?=[A-Z"'])/)
     .map(s => s.trim())
     .filter(Boolean);
 }
 
-// Palette of colors per label index (cycles if > 8 labels)
+// Normalize labels to { text, color } regardless of whether they're strings or objects.
+// Fallback color palette when labels don't specify their own color.
 const LABEL_COLORS = [
   '#60A5FA', '#34D399', '#FBBF24', '#F87171',
   '#A78BFA', '#F472B6', '#38BDF8', '#FB923C',
 ];
+function normalizeLabels(rawLabels) {
+  return (rawLabels || []).map((l, i) => {
+    if (typeof l === 'string') return { text: l, color: LABEL_COLORS[i % LABEL_COLORS.length] };
+    return { text: l.label || l.text || String(l), color: l.color || LABEL_COLORS[i % LABEL_COLORS.length] };
+  });
+}
+
+// Normalize annotationPrompts: accept sentenceIdx or targetSentenceIndex.
+function normalizeAnnotationPrompts(rawPrompts) {
+  return (rawPrompts || []).map(p => ({
+    ...p,
+    sentenceIdx: p.sentenceIdx ?? p.targetSentenceIndex ?? 0,
+  }));
+}
 
 export default function Annotate({ screen, accent, childName, onComplete }) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
 
-  const labels            = screen.labels            || [];
-  const annotationPrompts = screen.annotationPrompts || [];
+  const labels            = useMemo(() => normalizeLabels(screen.labels), [screen.labels]);
+  const annotationPrompts = useMemo(() => normalizeAnnotationPrompts(screen.annotationPrompts), [screen.annotationPrompts]);
   const expertAnnotation  = screen.expertAnnotation  || '';
 
-  const sentences = useMemo(() => splitSentences(screen.passage || ''), [screen.passage]);
+  // passage: accept string or pre-split string[]
+  const sentences = useMemo(() => {
+    if (Array.isArray(screen.passage)) return screen.passage.filter(Boolean);
+    return splitSentences(screen.passage || '');
+  }, [screen.passage]);
 
   // ── State ──────────────────────────────────────────────────────────────────
   const [selectedSentenceIdx, setSelectedSentenceIdx] = useState(null);
@@ -52,15 +71,15 @@ export default function Annotate({ screen, accent, childName, onComplete }) {
     annotations[ap.sentenceIdx] !== undefined && !reasoningMap[ap.sentenceIdx]
   );
 
-  function assignLabel(label) {
+  function assignLabel(labelText) {
     if (selectedSentenceIdx === null) return;
-    setAnnotations(prev => ({ ...prev, [selectedSentenceIdx]: label }));
+    setAnnotations(prev => ({ ...prev, [selectedSentenceIdx]: labelText }));
     setSelectedSentenceIdx(null);
   }
 
-  function colorForLabel(label) {
-    const idx = labels.indexOf(label);
-    return idx >= 0 ? LABEL_COLORS[idx % LABEL_COLORS.length] : accent;
+  function colorForLabel(labelText) {
+    const found = labels.find(l => l.text === labelText);
+    return found?.color || accent;
   }
 
   // ── Phase: reveal ──────────────────────────────────────────────────────────
@@ -205,17 +224,17 @@ export default function Annotate({ screen, accent, childName, onComplete }) {
             {labels.map((label, li) => (
               <button
                 key={li}
-                onClick={() => assignLabel(label)}
+                onClick={() => assignLabel(label.text)}
                 style={{
                   padding: '6px 14px', borderRadius: 20,
-                  border:      `1.5px solid ${LABEL_COLORS[li % LABEL_COLORS.length]}88`,
-                  background:  `${LABEL_COLORS[li % LABEL_COLORS.length]}20`,
-                  color:       LABEL_COLORS[li % LABEL_COLORS.length],
+                  border:      `1.5px solid ${label.color}88`,
+                  background:  `${label.color}20`,
+                  color:       label.color,
                   fontWeight:  700, fontSize: '0.85rem', cursor: 'pointer',
                   transition: 'all 0.12s',
                 }}
               >
-                {label}
+                {label.text}
               </button>
             ))}
             <button
