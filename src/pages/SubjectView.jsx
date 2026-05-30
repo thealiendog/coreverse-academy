@@ -251,6 +251,33 @@ function getUELessonId(subjectId, level, index) {
   return null;
 }
 
+// ── Voyager (ages 11-12) new-format lesson routing ────────────────────────
+function getVoyagerLessonId(subjectId, level, index) {
+  if (level !== 4) return null;
+  const n = String(index + 1).padStart(2, '0');
+  if (subjectId === 'inner-world')    return `iw-11-12-${n}`;
+  if (subjectId === 'cosmos')         return `cs-11-12-${n}`;
+  if (subjectId === 'money')          return `mb-11-12-${n}`;
+  if (subjectId === 'future-skills')  return `fs-11-12-${n}`;
+  if (subjectId === 'leadership')     return `sl-11-12-${n}`;
+  if (subjectId === 'wellness')       return `lw-11-12-${n}`;
+  if (subjectId === 'creative-arts')  return `ca-11-12-${n}`;
+  if (subjectId === 'frontier')       return `fp-11-12-${n}`;
+  if (subjectId === 'ela')            return `ela-11-12-${n}`;
+  if (subjectId === 'science')        return `science-11-12-${n}`;
+  if (subjectId === 'social_studies') return `social-studies-11-12-${n}`;
+  if (subjectId === 'history')        return `hw-11-12-${n}`;
+  if (subjectId === 'math')           return `math-11-12-${n}`;
+  return null;
+}
+
+// Voyager lesson IDs registered here route to /voyager/:subjectId/:lessonId.
+// Add IDs as Voyager screen files are authored (one subject at a time).
+// Keys must match URL subjectId (canonical IDs from constants.js ORIGINALS).
+const NEW_FORMAT_VOYAGER_LESSONS = {
+  'inner-world': ['iw-11-12-01'],
+};
+
 // ── New-format lesson routing ─────────────────────────────────────────────────
 // Add a lesson ID here when it's been converted to the screen-based format.
 // Its card will then route to /explorer/:subjectId/:lessonId instead of /lesson/*.
@@ -419,7 +446,14 @@ export default function SubjectView() {
     if (!child) { navigate('/child/select'); return; }
     const canonicalId = resolveSubjectId(subjectId);
 
-    // Check UE screen-based format first (level 3)
+    // Check Voyager screen-based format (level 4)
+    const voyagerId = getVoyagerLessonId(canonicalId, level, i);
+    if (voyagerId && NEW_FORMAT_VOYAGER_LESSONS[canonicalId]?.includes(voyagerId)) {
+      navigate(`/voyager/${canonicalId}/${voyagerId}`);
+      return;
+    }
+
+    // Check UE screen-based format (level 3)
     const ueId = getUELessonId(canonicalId, level, i);
     if (ueId && NEW_FORMAT_UE_LESSONS[canonicalId]?.includes(ueId)) {
       // Math v2 override: route to MathLessonPlayer for rebuilt lessons

@@ -48,6 +48,7 @@ import LessonPlayer         from './pages/LessonPlayer';
 import GameLessonPlayer     from './components/games/GameLessonPlayer';
 import ExplorerLessonPlayer      from './components/explorers/ExplorerLessonPlayer';
 import UpperExplorerLessonPlayer from './components/explorers/UpperExplorerLessonPlayer';
+import VoyagerLessonPlayer       from './components/voyagers/VoyagerLessonPlayer';
 import TemplateTest         from './pages/TemplateTest';
 import MathSandbox          from './pages/MathSandbox';
 import MathLessonPlayer     from './components/math/MathLessonPlayer';
@@ -101,6 +102,9 @@ export default function App() {
 
         {/* Upper Explorers engine (ages 9-10) */}
         <Route path="/upper-explorer/:subjectId/:lessonId" element={<ErrorBoundary><UpperExplorerLessonPlayer /></ErrorBoundary>} />
+
+        {/* Voyagers engine (ages 11-12) */}
+        <Route path="/voyager/:subjectId/:lessonId" element={<ErrorBoundary><VoyagerLessonPlayer /></ErrorBoundary>} />
 
         {/* Dev: template testing */}
         <Route path="/template-test" element={<TemplateTest />} />
