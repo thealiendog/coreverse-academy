@@ -203,8 +203,8 @@ const NEW_FORMAT_UE_LESSONS = {
   // Future Skills UE — L01–L20
   'fs': ['fs-9-10-01', 'fs-9-10-02', 'fs-9-10-03', 'fs-9-10-04', 'fs-9-10-05', 'fs-9-10-06', 'fs-9-10-07', 'fs-9-10-08', 'fs-9-10-09', 'fs-9-10-10', 'fs-9-10-11', 'fs-9-10-12', 'fs-9-10-13', 'fs-9-10-14', 'fs-9-10-15', 'fs-9-10-16', 'fs-9-10-17', 'fs-9-10-18', 'fs-9-10-19', 'fs-9-10-20'],
   // Creative Arts UE — L01–L02
-  // Creative Arts UE — L01–L04
-  'ca': ['ca-9-10-01', 'ca-9-10-02', 'ca-9-10-03', 'ca-9-10-04'],
+  // Creative Arts UE — L01–L06
+  'ca': ['ca-9-10-01', 'ca-9-10-02', 'ca-9-10-03', 'ca-9-10-04', 'ca-9-10-05', 'ca-9-10-06'],
 };
 
 function getUELessonId(subjectId, level, index) {
