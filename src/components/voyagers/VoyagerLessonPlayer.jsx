@@ -103,7 +103,7 @@ function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWor
   const r = t => (t || '').replace(/\{name\}/g, childName);
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: '20px 18px 28px', display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div className="voy-reading-shell" style={{ height: '100%', overflowY: 'auto', padding: '20px 18px 28px', display: 'flex', flexDirection: 'column', gap: 20 }}>
 
       {/* Guide avatar + question */}
       <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
@@ -224,7 +224,7 @@ function IdentityHookScreen({ screen, guideAvatar, accent, childName, speaking, 
   }
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: '28px 18px', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
+    <div className="voy-reading-shell" style={{ height: '100%', overflowY: 'auto', padding: '28px 18px', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
       {guideAvatar && (
         <img src={guideAvatar.image} alt={guideAvatar.name} style={{ width: 56, height: 56, borderRadius: '50%', border: `2.5px solid ${accent}66`, boxShadow: speaking ? `0 0 20px ${accent}88` : 'none', transition: 'box-shadow 0.3s' }} />
       )}
@@ -319,7 +319,7 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
   const multiPrompts = Array.isArray(screen.prompts) && screen.prompts.length > 0 ? screen.prompts : null;
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto', padding: '24px 18px 32px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+    <div className="voy-reading-shell" style={{ height: '100%', overflowY: 'auto', padding: '24px 18px 32px', display: 'flex', flexDirection: 'column', gap: 16 }}>
 
       {/* Headline */}
       {screen.headline && (
@@ -879,8 +879,10 @@ export default function VoyagerLessonPlayer() {
     switch (screen.type) {
       case 'welcome':
         return <ExplorerWelcomeScreen {...commonProps} />;
-      case 'magazine':
-        return <MagazineScreen {...commonProps} />;
+      case 'magazine': {
+        const totalSections = screens.filter(s => s.type === 'magazine').length;
+        return <MagazineScreen {...commonProps} screen={{ ...currentScreen, totalSections }} />;
+      }
       case 'story-beat':
         return <StoryBeatScreen {...commonProps} />;
       case 'interactive':
@@ -1014,8 +1016,58 @@ export default function VoyagerLessonPlayer() {
         button:active { opacity: 0.82 !important; }
         @keyframes ex-ring { 0%,100%{opacity:.4;transform:scale(1)} 50%{opacity:1;transform:scale(1.14)} }
         @keyframes explorer-enter { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes vocab-pulse { 0%,100%{text-shadow:none} 50%{text-shadow:0 0 10px #60A5FA} }
+        .vocab-tutorial-pulse { animation: vocab-pulse 1s ease-in-out infinite; display: inline; }
         .explorer-shell { width: 100%; max-width: 100%; }
         @media (min-width: 768px) { .explorer-shell { font-size: 20px; } .explorer-header { padding: 16px 32px 14px !important; } }
+
+        /* ── Magazine layout ───────────────────────────────────────────── */
+        .magazine-outer { height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+        .magazine-image-col { position: relative; width: 100%; flex-shrink: 0; max-height: 33vh; background: #080618; overflow: hidden; }
+        .magazine-text-col { flex: 1; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 16px 20px 24px; }
+        .mag-scroll-hint { display: flex; }
+        @media (min-height: 700px) { .mag-scroll-hint { display: none !important; } }
+        @media (min-width: 768px) {
+          .magazine-image-col { max-height: 40vh; }
+          .magazine-text-col  { padding: 28px 44px 36px; }
+          .mag-headline       { font-size: 2.2rem !important; }
+          .mag-para           { font-size: 1.1rem !important; line-height: 1.85 !important; }
+          .mag-replay-btn     { width: 56px !important; height: 56px !important; font-size: 1.4rem !important; top: 12px !important; right: 12px !important; }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .magazine-text-col { max-width: 720px; margin-left: auto; margin-right: auto; }
+        }
+        @media (min-width: 1024px) {
+          .magazine-outer     { flex-direction: row; }
+          .magazine-image-col { width: 44%; max-height: unset; height: 100%; }
+          .magazine-text-col  { padding: 32px 52px 36px; max-width: 680px; }
+          .mag-headline       { font-size: 2.4rem !important; }
+          .mag-para           { font-size: 1.15rem !important; }
+        }
+
+        /* ── Real-world layout ────────────────────────────────────────── */
+        @media (min-width: 768px) {
+          .real-world-scroll { padding: 36px 48px !important; }
+          .real-world-card   { padding: 26px 24px !important; }
+          .real-world-text   { font-size: 1.2rem !important; }
+        }
+        @media (min-width: 1024px) {
+          .real-world-scroll { max-width: 820px; margin: 0 auto; }
+          .real-world-text   { font-size: 1.25rem !important; }
+        }
+
+        /* ── Celebration layout ───────────────────────────────────────── */
+        @media (min-width: 768px) { .celebration-wrap { max-width: 620px; margin: 0 auto; } }
+
+        /* ── Voyager reading/interaction screens — desktop centering ───── */
+        /* Uses padding to clamp content to ~720px on wide viewports.       */
+        /* max() keeps at least 20px on small screens, never negative.      */
+        @media (min-width: 768px) {
+          .voy-reading-shell {
+            padding-left:  max(20px, calc(50% - 360px)) !important;
+            padding-right: max(20px, calc(50% - 360px)) !important;
+          }
+        }
       `}</style>
 
       {/* Lesson header */}

@@ -89,7 +89,7 @@ export default function Annotate({ screen, accent, childName, onComplete }) {
       : (expertAnnotation ? [{ note: expertAnnotation }] : []);
 
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         <p style={badgeStyle}>Expert annotation</p>
 
         {/* Their annotations */}
@@ -152,7 +152,7 @@ export default function Annotate({ screen, accent, childName, onComplete }) {
     const sent = sentences[currentPrompt.sentenceIdx];
     const assignedLabel = annotations[currentPrompt.sentenceIdx];
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         <p style={sectionLabelStyle}>Reasoning check</p>
         <p style={{ color: '#e2d9f3', fontSize: '1rem', fontWeight: 700, lineHeight: 1.45, margin: 0 }}>{r(currentPrompt.prompt || 'Why did you annotate this that way?')}</p>
 

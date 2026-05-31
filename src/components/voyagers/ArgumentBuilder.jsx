@@ -83,7 +83,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
   // ── Phase: pick a position ─────────────────────────────────────────────────
   if (phase === 'position') {
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         {/* Headline */}
         <p style={headline}>{r(screen.headline || '')}</p>
         <p style={sub}>Pick the position you want to defend. You'll build an argument for it using evidence from this lesson.</p>
@@ -117,7 +117,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
   if (phase === 'evidence') {
     const pos = getPosition(selectedPosition);
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         <div style={{ background: `${accent}14`, border: `1px solid ${accent}33`, borderRadius: 12, padding: '10px 14px' }}>
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 4px' }}>Your position</p>
           <p style={{ color: accent, fontWeight: 700, fontSize: '0.95rem', margin: 0 }}>{pos?.label}</p>
@@ -189,7 +189,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
   // ── Phase: counterargument response ───────────────────────────────────────
   if (phase === 'counter') {
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         <p style={headline}>Handle the counterargument</p>
 
         {/* Their built argument summary */}
@@ -235,7 +235,7 @@ export default function ArgumentBuilder({ screen, accent, childName, guideAvatar
   // ── Phase: reflection ──────────────────────────────────────────────────────
   if (phase === 'reflection') {
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         <p style={headline}>Reflect</p>
 
         <div style={{ background: `${accent}10`, border: `1px solid ${accent}30`, borderRadius: 12, padding: '14px 16px' }}>
