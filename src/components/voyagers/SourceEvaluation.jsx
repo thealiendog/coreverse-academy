@@ -25,7 +25,14 @@ export default function SourceEvaluation({ screen, accent, childName, onComplete
   const sources         = screen.sources       || [];
   const rankingPrompt   = screen.rankingPrompt  || 'Rank these sources by credibility.';
   const reasoningPrompt = screen.reasoningPrompt || 'Explain your ranking in 2–3 sentences.';
-  const reveal          = screen.reveal         || '';
+
+  // Normalize reveal: accept plain string OR { title, content[] } object
+  const revealRaw   = screen.reveal || '';
+  const revealIsObj = typeof revealRaw === 'object' && revealRaw !== null;
+  const revealTitle = revealIsObj ? (revealRaw.title || '') : '';
+  const reveal      = revealIsObj
+    ? (revealRaw.content || []).join('\n')
+    : revealRaw;
 
   // ── State ──────────────────────────────────────────────────────────────────
   // rankings: { most: sourceIdx|null, somewhat: sourceIdx|null, least: sourceIdx|null }
@@ -109,11 +116,14 @@ export default function SourceEvaluation({ screen, accent, childName, onComplete
   // ── Reveal view ────────────────────────────────────────────────────────────
   if (showReveal) {
     return (
-      <div style={shell}>
+      <div className="voy-reading-shell" style={shell}>
         <p style={badge}>Expert source evaluation</p>
+        {revealTitle && (
+          <p style={{ color: '#e2d9f3', fontSize: '1rem', fontWeight: 700, margin: 0 }}>{revealTitle}</p>
+        )}
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, padding: '16px 16px' }}>
           {reveal.split('\n').filter(Boolean).map((para, i) => (
-            <p key={i} style={{ color: '#e2d9f3', fontSize: '0.93rem', lineHeight: 1.7, margin: i === 0 ? 0 : '10px 0 0' }}>{r(para)}</p>
+            <p key={i} style={{ color: '#e2d9f3', fontSize: '0.93rem', lineHeight: 1.7, margin: i === 0 ? 0 : '12px 0 0' }}>{r(para)}</p>
           ))}
         </div>
         <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', lineHeight: 1.55, margin: 0 }}>
@@ -126,7 +136,7 @@ export default function SourceEvaluation({ screen, accent, childName, onComplete
 
   // ── Main view ──────────────────────────────────────────────────────────────
   return (
-    <div style={shell}>
+    <div className="voy-reading-shell" style={shell}>
       {/* Topic */}
       <div>
         <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 4px' }}>Topic</p>
