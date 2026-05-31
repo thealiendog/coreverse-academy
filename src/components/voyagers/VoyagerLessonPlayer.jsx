@@ -44,6 +44,9 @@ import INNERWORLD_VOY_L11 from '../../data/innerworld_voyager_l11_screens';
 import INNERWORLD_VOY_L15 from '../../data/innerworld_voyager_l15_screens';
 import INNERWORLD_VOY_L16 from '../../data/innerworld_voyager_l16_screens';
 import INNERWORLD_VOY_L17 from '../../data/innerworld_voyager_l17_screens';
+import INNERWORLD_VOY_L18 from '../../data/innerworld_voyager_l18_screens';
+import INNERWORLD_VOY_L19 from '../../data/innerworld_voyager_l19_screens';
+import INNERWORLD_VOY_L20 from '../../data/innerworld_voyager_l20_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -470,6 +473,9 @@ const VOY_DATA = {
       ...INNERWORLD_VOY_L15.lessons,
       ...INNERWORLD_VOY_L16.lessons,
       ...INNERWORLD_VOY_L17.lessons,
+      ...INNERWORLD_VOY_L18.lessons,
+      ...INNERWORLD_VOY_L19.lessons,
+      ...INNERWORLD_VOY_L20.lessons,
     ],
   },
 };
