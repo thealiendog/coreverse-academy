@@ -50,6 +50,9 @@ import INNERWORLD_VOY_L20 from '../../data/innerworld_voyager_l20_screens';
 import MONEYBUSINESS_VOY_L01 from '../../data/moneybusiness_voyager_l01_screens';
 import MONEYBUSINESS_VOY_L02 from '../../data/moneybusiness_voyager_l02_screens';
 import MONEYBUSINESS_VOY_L03 from '../../data/moneybusiness_voyager_l03_screens';
+import MONEYBUSINESS_VOY_L04 from '../../data/moneybusiness_voyager_l04_screens';
+import MONEYBUSINESS_VOY_L05 from '../../data/moneybusiness_voyager_l05_screens';
+import MONEYBUSINESS_VOY_L06 from '../../data/moneybusiness_voyager_l06_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -489,6 +492,9 @@ const VOY_DATA = {
       ...MONEYBUSINESS_VOY_L01.lessons,
       ...MONEYBUSINESS_VOY_L02.lessons,
       ...MONEYBUSINESS_VOY_L03.lessons,
+      ...MONEYBUSINESS_VOY_L04.lessons,
+      ...MONEYBUSINESS_VOY_L05.lessons,
+      ...MONEYBUSINESS_VOY_L06.lessons,
     ],
   },
 };
