@@ -86,24 +86,27 @@ export default function CaseStudy({ screen, accent, childName, guideAvatar, onCo
 
         <p style={headlineStyle}>{r(currentDecision.prompt || '')}</p>
 
-        {(currentDecision.options || []).map((opt, idx) => (
-          <div
-            key={idx}
-            onClick={() => !showConseq && pickOption(idx)}
-            style={{
-              borderRadius: 14, padding: '14px 16px', cursor: showConseq ? 'default' : 'pointer',
-              border: `1.5px solid ${chosenOptionIdx === idx && showConseq ? accent + '77' : 'rgba(255,255,255,0.12)'}`,
-              background: chosenOptionIdx === idx && showConseq ? `${accent}18` : 'rgba(255,255,255,0.04)',
-              transition: 'all 0.18s ease',
-              opacity: showConseq && chosenOptionIdx !== idx ? 0.4 : 1,
-            }}
-          >
-            <span style={{ color: accent, fontWeight: 700, fontSize: '0.8rem', marginRight: 8 }}>
-              {String.fromCharCode(65 + idx)}.
-            </span>
-            <span style={{ color: '#e2d9f3', fontSize: '0.93rem', lineHeight: 1.55 }}>{r(opt)}</span>
-          </div>
-        ))}
+        {(currentDecision.options || []).map((opt, idx) => {
+          const optLabel = typeof opt === 'string' ? opt : (opt.label || '');
+          return (
+            <div
+              key={idx}
+              onClick={() => !showConseq && pickOption(idx)}
+              style={{
+                borderRadius: 14, padding: '14px 16px', cursor: showConseq ? 'default' : 'pointer',
+                border: `1.5px solid ${chosenOptionIdx === idx && showConseq ? accent + '77' : 'rgba(255,255,255,0.12)'}`,
+                background: chosenOptionIdx === idx && showConseq ? `${accent}18` : 'rgba(255,255,255,0.04)',
+                transition: 'all 0.18s ease',
+                opacity: showConseq && chosenOptionIdx !== idx ? 0.4 : 1,
+              }}
+            >
+              <span style={{ color: accent, fontWeight: 700, fontSize: '0.8rem', marginRight: 8 }}>
+                {String.fromCharCode(65 + idx)}.
+              </span>
+              <span style={{ color: '#e2d9f3', fontSize: '0.93rem', lineHeight: 1.55 }}>{r(optLabel)}</span>
+            </div>
+          );
+        })}
 
         {/* Consequence reveal */}
         {showConseq && chosenOptionIdx !== undefined && (
@@ -111,7 +114,11 @@ export default function CaseStudy({ screen, accent, childName, guideAvatar, onCo
             <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 14, padding: '14px 16px' }}>
               <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 6px' }}>What happens</p>
               <p style={{ color: '#e2d9f3', fontSize: '0.93rem', lineHeight: 1.65, margin: 0 }}>
-                {r((currentDecision.consequences || [])[chosenOptionIdx] || 'The situation continues.')}
+                {r(
+                  (currentDecision.options?.[chosenOptionIdx]?.consequence) ||
+                  ((currentDecision.consequences || [])[chosenOptionIdx]) ||
+                  'The situation continues.'
+                )}
               </p>
             </div>
 
@@ -134,7 +141,8 @@ export default function CaseStudy({ screen, accent, childName, guideAvatar, onCo
         {/* Summary of their choices */}
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 14, padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
           {decisions.map((d, idx) => {
-            const chosen = (d.options || [])[chosenIdxs[idx]];
+            const chosenRaw = (d.options || [])[chosenIdxs[idx]];
+            const chosen = typeof chosenRaw === 'string' ? chosenRaw : (chosenRaw?.label || '');
             return chosen ? (
               <div key={idx}>
                 <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.04em', margin: '0 0 2px' }}>Decision {idx + 1}</p>
