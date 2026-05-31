@@ -310,7 +310,8 @@ function IdentityHookScreen({ screen, guideAvatar, accent, childName, speaking, 
 
 // ── Reflection Screen ──────────────────────────────────────────────────────
 // Supports both old (single screen.prompt) and new (screen.prompts[] array) formats.
-function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, speaking, onComplete }) {
+// Bug fixes: sticky Continue button (never buried), prompt-tap fires Sage audio.
+function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, speaking, onSpeak, onComplete }) {
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [value, setValue] = useState('');
   const r = t => (t || '').replace(/\{name\}/g, childName);
@@ -318,8 +319,17 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
   // Multi-prompt format: screen.prompts is an array of { id, category, prompt }
   const multiPrompts = Array.isArray(screen.prompts) && screen.prompts.length > 0 ? screen.prompts : null;
 
+  function handlePromptTap(idx, promptText) {
+    const isDeselecting = selectedIdx === idx;
+    setSelectedIdx(isDeselecting ? null : idx);
+    setValue('');
+    // Speak the prompt when selecting (not deselecting)
+    if (!isDeselecting && onSpeak) onSpeak(r(promptText));
+  }
+
   return (
-    <div className="voy-reading-shell" style={{ height: '100%', overflowY: 'auto', padding: '24px 18px 32px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+    // padding-bottom: 0 — bottom space is owned by the sticky button footer
+    <div className="voy-reading-shell" style={{ height: '100%', overflowY: 'auto', padding: '24px 18px 0', display: 'flex', flexDirection: 'column', gap: 16 }}>
 
       {/* Headline */}
       {screen.headline && (
@@ -352,11 +362,11 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
         </div>
       )}
 
-      {/* Multi-prompt list */}
+      {/* Multi-prompt list — tapping selects AND reads the prompt aloud */}
       {multiPrompts && multiPrompts.map((p, idx) => (
         <div
           key={p.id || idx}
-          onClick={() => { setSelectedIdx(prev => prev === idx ? null : idx); setValue(''); }}
+          onClick={() => handlePromptTap(idx, p.prompt)}
           style={{
             background:   selectedIdx === idx ? `${accent}16` : 'rgba(255,255,255,0.04)',
             border:       `1.5px solid ${selectedIdx === idx ? accent + '55' : 'rgba(255,255,255,0.1)'}`,
@@ -393,20 +403,32 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
             outline:      'none',
             fontFamily:   'inherit',
             boxSizing:    'border-box',
+            marginBottom: 8,
           }}
         />
       )}
 
-      <button
-        onClick={onComplete}
-        style={{
-          padding: '14px 28px', background: accent, color: '#fff', fontWeight: 700,
-          fontSize: '1rem', border: 'none', borderRadius: 12, cursor: 'pointer',
-          boxShadow: `0 0 18px ${accent}44`,
-        }}
-      >
-        Continue →
-      </button>
+      {/* Sticky Continue button — always visible at the bottom of the scroll area.
+          Gradient fade-in masks the content scrolling beneath it on iOS/desktop.   */}
+      <div style={{
+        position:   'sticky',
+        bottom:     0,
+        marginTop:  'auto',
+        paddingTop: 20,
+        paddingBottom: 20,
+        background: `linear-gradient(to bottom, transparent, #0f172a 36%)`,
+      }}>
+        <button
+          onClick={onComplete}
+          style={{
+            width: '100%', padding: '14px 28px', background: accent, color: '#fff',
+            fontWeight: 700, fontSize: '1rem', border: 'none', borderRadius: 12,
+            cursor: 'pointer', boxShadow: `0 0 18px ${accent}44`,
+          }}
+        >
+          Continue →
+        </button>
+      </div>
     </div>
   );
 }
@@ -913,7 +935,7 @@ export default function VoyagerLessonPlayer() {
           <ReflectionScreen
             screen={currentScreen} guideAvatar={guideAvatar} accent={accent}
             childName={childName} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx}
-            speaking={speaking} onComplete={goNext}
+            speaking={speaking} onSpeak={speak} onComplete={goNext}
           />
         );
       case 'real-world': {
@@ -1025,6 +1047,7 @@ export default function VoyagerLessonPlayer() {
         .magazine-outer { height: 100%; display: flex; flex-direction: column; overflow: hidden; }
         .magazine-image-col { position: relative; width: 100%; flex-shrink: 0; max-height: 33vh; background: #080618; overflow: hidden; }
         .magazine-text-col { flex: 1; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding: 16px 20px 24px; }
+        .mag-para { line-height: 1.75 !important; margin-bottom: 20px !important; }
         .mag-scroll-hint { display: flex; }
         @media (min-height: 700px) { .mag-scroll-hint { display: none !important; } }
         @media (min-width: 768px) {
