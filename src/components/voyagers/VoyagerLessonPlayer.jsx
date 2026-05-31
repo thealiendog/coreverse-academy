@@ -35,6 +35,9 @@ import INNERWORLD_VOY_L02 from '../../data/innerworld_voyager_l02_screens';
 import INNERWORLD_VOY_L03 from '../../data/innerworld_voyager_l03_screens';
 import INNERWORLD_VOY_L04 from '../../data/innerworld_voyager_l04_screens';
 import INNERWORLD_VOY_L05 from '../../data/innerworld_voyager_l05_screens';
+import INNERWORLD_VOY_L06 from '../../data/innerworld_voyager_l06_screens';
+import INNERWORLD_VOY_L07 from '../../data/innerworld_voyager_l07_screens';
+import INNERWORLD_VOY_L08 from '../../data/innerworld_voyager_l08_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -144,11 +147,13 @@ function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWor
             {expanded === idx && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {(pos.positionLabel) && <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em', margin: '0 0 4px', textTransform: 'uppercase' }}>{pos.positionLabel}</p>}
-                <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{pos.summary || pos.position_summary}</p>
-                <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '10px 12px' }}>
-                  <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.73rem', fontWeight: 700, letterSpacing: '0.05em', margin: '0 0 5px', textTransform: 'uppercase' }}>Strongest argument</p>
-                  <p style={{ color: '#a8d5ba', fontSize: '0.92rem', lineHeight: 1.55, margin: 0 }}>{pos.strongestArgument || pos.strongest_argument}</p>
-                </div>
+                <p style={{ color: '#c4b5e0', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{pos.summary || pos.position_summary || pos.statement}</p>
+                {(pos.strongestArgument || pos.strongest_argument) && (
+                  <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '10px 12px' }}>
+                    <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.73rem', fontWeight: 700, letterSpacing: '0.05em', margin: '0 0 5px', textTransform: 'uppercase' }}>Strongest argument</p>
+                    <p style={{ color: '#a8d5ba', fontSize: '0.92rem', lineHeight: 1.55, margin: 0 }}>{pos.strongestArgument || pos.strongest_argument}</p>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -450,6 +455,9 @@ const VOY_DATA = {
       ...INNERWORLD_VOY_L03.lessons,
       ...INNERWORLD_VOY_L04.lessons,
       ...INNERWORLD_VOY_L05.lessons,
+      ...INNERWORLD_VOY_L06.lessons,
+      ...INNERWORLD_VOY_L07.lessons,
+      ...INNERWORLD_VOY_L08.lessons,
     ],
   },
 };
