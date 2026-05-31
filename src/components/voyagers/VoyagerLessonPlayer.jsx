@@ -59,6 +59,9 @@ import MONEYBUSINESS_VOY_L09 from '../../data/moneybusiness_voyager_l09_screens'
 import MONEYBUSINESS_VOY_L10 from '../../data/moneybusiness_voyager_l10_screens';
 import MONEYBUSINESS_VOY_L11 from '../../data/moneybusiness_voyager_l11_screens';
 import MONEYBUSINESS_VOY_L12 from '../../data/moneybusiness_voyager_l12_screens';
+import MONEYBUSINESS_VOY_L13 from '../../data/moneybusiness_voyager_l13_screens';
+import MONEYBUSINESS_VOY_L14 from '../../data/moneybusiness_voyager_l14_screens';
+import MONEYBUSINESS_VOY_L15 from '../../data/moneybusiness_voyager_l15_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -507,6 +510,9 @@ const VOY_DATA = {
       ...MONEYBUSINESS_VOY_L10.lessons,
       ...MONEYBUSINESS_VOY_L11.lessons,
       ...MONEYBUSINESS_VOY_L12.lessons,
+      ...MONEYBUSINESS_VOY_L13.lessons,
+      ...MONEYBUSINESS_VOY_L14.lessons,
+      ...MONEYBUSINESS_VOY_L15.lessons,
     ],
   },
 };
