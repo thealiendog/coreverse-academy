@@ -275,7 +275,7 @@ function getVoyagerLessonId(subjectId, level, index) {
 // Add IDs as Voyager screen files are authored (one subject at a time).
 // Keys must match URL subjectId (canonical IDs from constants.js ORIGINALS).
 const NEW_FORMAT_VOYAGER_LESSONS = {
-  'inner-world': ['iw-11-12-01', 'iw-11-12-02', 'iw-11-12-03', 'iw-11-12-04', 'iw-11-12-05', 'iw-11-12-06', 'iw-11-12-07', 'iw-11-12-08'],
+  'inner-world': ['iw-11-12-01', 'iw-11-12-02', 'iw-11-12-03', 'iw-11-12-04', 'iw-11-12-05', 'iw-11-12-06', 'iw-11-12-07', 'iw-11-12-08', 'iw-11-12-09', 'iw-11-12-10', 'iw-11-12-11'],
 };
 
 // ── New-format lesson routing ─────────────────────────────────────────────────
