@@ -38,14 +38,19 @@ import INNERWORLD_VOY_L03 from '../../data/innerworld_voyager_l03_screens';
 function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
   switch (screen.type) {
-    case 'welcome':       return r(screen.audioPrompt || screen.guideText || screen.bodyText || screen.heading || '');
-    case 'magazine':      return r(screen.audioPrompt || '');
-    case 'story-beat':    return r(screen.audioPrompt || screen.paragraph || '');
-    case 'reflection':    return r(screen.guideText   || '');
-    case 'real-world':    return r(screen.guideText   || '');
-    case 'perspectives':  return r(screen.audioPrompt || screen.question || '');
-    case 'identity-hook': return r(screen.audioPrompt || screen.question || '');
-    default:              return '';
+    case 'welcome':            return r(screen.audioPrompt || screen.guideText || screen.bodyText || screen.heading || '');
+    case 'magazine':           return r(screen.audioPrompt || (screen.paragraphs?.join(' ')) || '');
+    case 'story-beat':         return r(screen.audioPrompt || screen.paragraph || '');
+    case 'reflection':         return r(screen.guideText   || screen.intro || screen.headline || '');
+    case 'real-world':         return r(screen.guideText   || screen.guideContext || '');
+    case 'perspectives':       return r(screen.audioPrompt || screen.intro || screen.question || screen.headline || '');
+    case 'identity-hook':      return r(screen.audioPrompt || screen.headline || screen.prompt || screen.question || '');
+    case 'celebration':        return r(screen.guideText   || screen.headline || '');
+    case 'argument-builder':   return r(screen.intro       || screen.headline || '');
+    case 'case-study':         return r(screen.intro       || screen.headline || '');
+    case 'source-evaluation':  return r(screen.intro       || screen.rankingPrompt || screen.topic || '');
+    case 'annotate':           return r(screen.intro       || screen.headline || '');
+    default:                   return '';
   }
 }
 
@@ -84,7 +89,7 @@ function KaraokeText({ text, karaokeWords, karaokeIdx, color }) {
 // ── Perspectives Screen ────────────────────────────────────────────────────
 // Shows a question + 2-3 thinker position cards + reflection prompt.
 // No correct answer — learner explores all positions, then continues.
-function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, onComplete }) {
+function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, speaking, onComplete }) {
   const [expanded, setExpanded] = useState(null);
   const [viewed, setViewed]     = useState(new Set());
   const positions = screen.positions || [];
@@ -103,7 +108,7 @@ function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWor
       {/* Guide avatar + question */}
       <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
         {guideAvatar && (
-          <img src={guideAvatar.src} alt={guideAvatar.name} style={{ width: 44, height: 44, borderRadius: '50%', flexShrink: 0, border: `2px solid ${accent}55` }} />
+          <img src={guideAvatar.image} alt={guideAvatar.name} style={{ width: 44, height: 44, borderRadius: '50%', flexShrink: 0, border: `2px solid ${accent}55`, boxShadow: speaking ? `0 0 16px ${accent}88` : 'none', transition: 'box-shadow 0.3s' }} />
         )}
         <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 14, padding: '14px 16px', flex: 1 }}>
           <p style={{ color: '#e2d9f3', fontSize: '1rem', lineHeight: 1.65, margin: 0, fontWeight: 500 }}>
@@ -184,7 +189,7 @@ function PerspectivesScreen({ screen, guideAvatar, accent, childName, karaokeWor
 // ── Identity Hook Screen ───────────────────────────────────────────────────
 // Free-text response saved to localStorage. Supports both old (question) and
 // new (headline + prompt + placeholder + examples + saveKey) field formats.
-function IdentityHookScreen({ screen, guideAvatar, accent, childName, onComplete }) {
+function IdentityHookScreen({ screen, guideAvatar, accent, childName, speaking, onComplete }) {
   const [value, setValue] = useState('');
   const [saved,  setSaved]  = useState(false);
   const r = t => (t || '').replace(/\{name\}/g, childName);
@@ -221,7 +226,7 @@ function IdentityHookScreen({ screen, guideAvatar, accent, childName, onComplete
   return (
     <div style={{ height: '100%', overflowY: 'auto', padding: '28px 18px', display: 'flex', flexDirection: 'column', gap: 18, alignItems: 'center' }}>
       {guideAvatar && (
-        <img src={guideAvatar.src} alt={guideAvatar.name} style={{ width: 56, height: 56, borderRadius: '50%', border: `2.5px solid ${accent}66` }} />
+        <img src={guideAvatar.image} alt={guideAvatar.name} style={{ width: 56, height: 56, borderRadius: '50%', border: `2.5px solid ${accent}66`, boxShadow: speaking ? `0 0 20px ${accent}88` : 'none', transition: 'box-shadow 0.3s' }} />
       )}
       {headline && (
         <p style={{ color: '#e2d9f3', fontSize: '1.15rem', lineHeight: 1.55, margin: 0, textAlign: 'center', fontWeight: 700, maxWidth: 440 }}>
@@ -305,7 +310,7 @@ function IdentityHookScreen({ screen, guideAvatar, accent, childName, onComplete
 
 // ── Reflection Screen ──────────────────────────────────────────────────────
 // Supports both old (single screen.prompt) and new (screen.prompts[] array) formats.
-function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, onComplete }) {
+function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords, karaokeIdx, speaking, onComplete }) {
   const [selectedIdx, setSelectedIdx] = useState(null);
   const [value, setValue] = useState('');
   const r = t => (t || '').replace(/\{name\}/g, childName);
@@ -325,7 +330,7 @@ function ReflectionScreen({ screen, guideAvatar, accent, childName, karaokeWords
       {screen.guideText && (
         <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
           {guideAvatar && (
-            <img src={guideAvatar.src} alt={guideAvatar.name} style={{ width: 44, height: 44, borderRadius: '50%', flexShrink: 0, border: `2px solid ${accent}44` }} />
+            <img src={guideAvatar.image} alt={guideAvatar.name} style={{ width: 44, height: 44, borderRadius: '50%', flexShrink: 0, border: `2px solid ${accent}44`, boxShadow: speaking ? `0 0 16px ${accent}88` : 'none', transition: 'box-shadow 0.3s' }} />
           )}
           <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 14, padding: '14px 16px', flex: 1 }}>
             <p style={{ color: '#e2d9f3', fontSize: '0.98rem', lineHeight: 1.65, margin: 0 }}>
@@ -750,7 +755,17 @@ export default function VoyagerLessonPlayer() {
         const t = setTimeout(() => { if (!cancelled) startCountdownForScreen(); }, 1000);
         timers.push(t);
       });
-    } else if (screen.type === 'reflection' || screen.type === 'perspectives' || screen.type === 'identity-hook') {
+    } else if (
+      screen.type === 'reflection'       ||
+      screen.type === 'perspectives'     ||
+      screen.type === 'identity-hook'    ||
+      screen.type === 'real-world'       ||
+      screen.type === 'celebration'      ||
+      screen.type === 'argument-builder' ||
+      screen.type === 'case-study'       ||
+      screen.type === 'source-evaluation'||
+      screen.type === 'annotate'
+    ) {
       const text = getScreenText(screen, childName);
       if (text) speak(text);
     } else if (screen.type === 'welcome') {
@@ -896,7 +911,7 @@ export default function VoyagerLessonPlayer() {
           <ReflectionScreen
             screen={currentScreen} guideAvatar={guideAvatar} accent={accent}
             childName={childName} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx}
-            onComplete={goNext}
+            speaking={speaking} onComplete={goNext}
           />
         );
       case 'real-world': {
@@ -921,7 +936,7 @@ export default function VoyagerLessonPlayer() {
           <PerspectivesScreen
             screen={currentScreen} guideAvatar={guideAvatar} accent={accent}
             childName={childName} karaokeWords={karaokeWords} karaokeIdx={karaokeIdx}
-            onComplete={goNext}
+            speaking={speaking} onComplete={goNext}
           />
         );
       case 'argument-builder':
@@ -958,7 +973,7 @@ export default function VoyagerLessonPlayer() {
         return (
           <IdentityHookScreen
             screen={currentScreen} guideAvatar={guideAvatar} accent={accent}
-            childName={childName} onComplete={goNext}
+            childName={childName} speaking={speaking} onComplete={goNext}
           />
         );
       case 'celebration': {
