@@ -138,6 +138,9 @@ import SOCIALLEADERSHIP_VOY_L20 from '../../data/socialleadership_voyager_l20_sc
 import LIFEWELLNESS_VOY_L01 from '../../data/lifewellness_voyager_l01_screens';
 import LIFEWELLNESS_VOY_L02 from '../../data/lifewellness_voyager_l02_screens';
 import LIFEWELLNESS_VOY_L03 from '../../data/lifewellness_voyager_l03_screens';
+import LIFEWELLNESS_VOY_L04 from '../../data/lifewellness_voyager_l04_screens';
+import LIFEWELLNESS_VOY_L05 from '../../data/lifewellness_voyager_l05_screens';
+import LIFEWELLNESS_VOY_L06 from '../../data/lifewellness_voyager_l06_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -694,6 +697,9 @@ const VOY_DATA = {
       ...LIFEWELLNESS_VOY_L01.lessons,
       ...LIFEWELLNESS_VOY_L02.lessons,
       ...LIFEWELLNESS_VOY_L03.lessons,
+      ...LIFEWELLNESS_VOY_L04.lessons,
+      ...LIFEWELLNESS_VOY_L05.lessons,
+      ...LIFEWELLNESS_VOY_L06.lessons,
     ],
   },
 };
