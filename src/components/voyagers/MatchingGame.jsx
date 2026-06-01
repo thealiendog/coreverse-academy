@@ -23,11 +23,12 @@ function shuffleArr(arr) {
 
 export default function MatchingGame({ screen, accent, childName, guideAvatar, onComplete }) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
-  // Normalize: support 'concept'/'term' as aliases for 'left', 'definition'/'application' as aliases for 'right'
+  // Normalize: support object or string for concept/application/left/right fields
+  const str = v => (v && typeof v === 'object') ? (v.label || '') : (v || '');
   const pairs = (screen.pairs || []).map(p => ({
     ...p,
-    left:  p.left  || p.concept || p.term        || '',
-    right: p.right || p.definition || p.application || '',
+    left:  str(p.left  || p.concept || p.term),
+    right: str(p.right || p.application || p.definition),
   }));
 
   const [rightCol,    setRightCol]    = useState(() => shuffleArr(pairs.map(p => ({ id: p.id, text: p.right }))));

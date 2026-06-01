@@ -124,6 +124,9 @@ import SOCIALLEADERSHIP_VOY_L06 from '../../data/socialleadership_voyager_l06_sc
 import SOCIALLEADERSHIP_VOY_L07 from '../../data/socialleadership_voyager_l07_screens';
 import SOCIALLEADERSHIP_VOY_L08 from '../../data/socialleadership_voyager_l08_screens';
 import SOCIALLEADERSHIP_VOY_L09 from '../../data/socialleadership_voyager_l09_screens';
+import SOCIALLEADERSHIP_VOY_L10 from '../../data/socialleadership_voyager_l10_screens';
+import SOCIALLEADERSHIP_VOY_L11 from '../../data/socialleadership_voyager_l11_screens';
+import SOCIALLEADERSHIP_VOY_L12 from '../../data/socialleadership_voyager_l12_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -142,7 +145,8 @@ function getScreenText(screen, childName) {
     case 'source-evaluation':  return r(screen.intro       || screen.rankingPrompt || screen.topic || '');
     case 'annotate':           return r(screen.intro       || screen.headline || '');
     // ── Game screens (Cosmos band onwards) ──────────────────────────────────
-    case 'matching':           return r(screen.intro       || screen.headline || '');
+    case 'matching':
+    case 'matching-game':      return r(screen.intro       || screen.headline || '');
     case 'sequence':           return r(screen.intro       || screen.headline || '');
     case 'investigation':      return r(screen.intro       || screen.headline || '');
     case 'branching-decision': return r(screen.intro       || screen.headline || '');
@@ -658,6 +662,9 @@ const VOY_DATA = {
       ...SOCIALLEADERSHIP_VOY_L07.lessons,
       ...SOCIALLEADERSHIP_VOY_L08.lessons,
       ...SOCIALLEADERSHIP_VOY_L09.lessons,
+      ...SOCIALLEADERSHIP_VOY_L10.lessons,
+      ...SOCIALLEADERSHIP_VOY_L11.lessons,
+      ...SOCIALLEADERSHIP_VOY_L12.lessons,
     ],
   },
 };
@@ -1000,6 +1007,7 @@ export default function VoyagerLessonPlayer() {
       screen.type === 'source-evaluation'||
       screen.type === 'annotate'         ||
       screen.type === 'matching'         ||
+      screen.type === 'matching-game'    ||
       screen.type === 'sequence'         ||
       screen.type === 'investigation'    ||
       screen.type === 'branching-decision'
@@ -1124,6 +1132,7 @@ export default function VoyagerLessonPlayer() {
       case 'story-beat':
         return <StoryBeatScreen {...commonProps} />;
       case 'matching':
+      case 'matching-game':
         return (
           <MatchingGame
             screen={currentScreen} accent={accent}
