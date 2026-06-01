@@ -111,6 +111,10 @@ import FUTURESKILLS_VOY_L13 from '../../data/futureskills_voyager_l13_screens';
 import FUTURESKILLS_VOY_L14 from '../../data/futureskills_voyager_l14_screens';
 import FUTURESKILLS_VOY_L15 from '../../data/futureskills_voyager_l15_screens';
 import FUTURESKILLS_VOY_L16 from '../../data/futureskills_voyager_l16_screens';
+import FUTURESKILLS_VOY_L17 from '../../data/futureskills_voyager_l17_screens';
+import FUTURESKILLS_VOY_L18 from '../../data/futureskills_voyager_l18_screens';
+import FUTURESKILLS_VOY_L19 from '../../data/futureskills_voyager_l19_screens';
+import FUTURESKILLS_VOY_L20 from '../../data/futureskills_voyager_l20_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -625,6 +629,10 @@ const VOY_DATA = {
       ...FUTURESKILLS_VOY_L14.lessons,
       ...FUTURESKILLS_VOY_L15.lessons,
       ...FUTURESKILLS_VOY_L16.lessons,
+      ...FUTURESKILLS_VOY_L17.lessons,
+      ...FUTURESKILLS_VOY_L18.lessons,
+      ...FUTURESKILLS_VOY_L19.lessons,
+      ...FUTURESKILLS_VOY_L20.lessons,
     ],
   },
 };
