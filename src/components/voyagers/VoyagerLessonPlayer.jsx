@@ -27,6 +27,11 @@ import ArgumentBuilder    from './ArgumentBuilder';
 import CaseStudy          from './CaseStudy';
 import SourceEvaluation   from './SourceEvaluation';
 import Annotate           from './Annotate';
+// ── Voyager game components (Cosmos band onwards) ─────────────────────────
+import MatchingGame       from './MatchingGame';
+import SequenceGame       from './SequenceGame';
+import InvestigationGame  from './InvestigationGame';
+import BranchingDecision  from './BranchingDecision';
 import { buildSpacedQuiz } from './SpacedRetrievalEngine';
 
 // ── Voyager lesson data ────────────────────────────────────────────────────
@@ -85,6 +90,11 @@ function getScreenText(screen, childName) {
     case 'case-study':         return r(screen.intro       || screen.headline || '');
     case 'source-evaluation':  return r(screen.intro       || screen.rankingPrompt || screen.topic || '');
     case 'annotate':           return r(screen.intro       || screen.headline || '');
+    // ── Game screens (Cosmos band onwards) ──────────────────────────────────
+    case 'matching':           return r(screen.intro       || screen.headline || '');
+    case 'sequence':           return r(screen.intro       || screen.headline || '');
+    case 'investigation':      return r(screen.intro       || screen.headline || '');
+    case 'branching-decision': return r(screen.intro       || screen.headline || '');
     default:                   return '';
   }
 }
@@ -872,7 +882,11 @@ export default function VoyagerLessonPlayer() {
       screen.type === 'argument-builder' ||
       screen.type === 'case-study'       ||
       screen.type === 'source-evaluation'||
-      screen.type === 'annotate'
+      screen.type === 'annotate'         ||
+      screen.type === 'matching'         ||
+      screen.type === 'sequence'         ||
+      screen.type === 'investigation'    ||
+      screen.type === 'branching-decision'
     ) {
       const text = getScreenText(screen, childName);
       if (text) speak(text);
@@ -993,9 +1007,41 @@ export default function VoyagerLessonPlayer() {
       }
       case 'story-beat':
         return <StoryBeatScreen {...commonProps} />;
+      case 'matching':
+        return (
+          <MatchingGame
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
+      case 'sequence':
+        return (
+          <SequenceGame
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
+      case 'investigation':
+        return (
+          <InvestigationGame
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
+      case 'branching-decision':
+        return (
+          <BranchingDecision
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
       case 'interactive':
-        // Voyager game screens use the same formats as UE (investigation, sequence,
-        // branching-decision, matching). Full game components wired when content arrives.
+        // Legacy stub — kept in case old content specifies type:'interactive'.
+        // New Cosmos content uses top-level types: matching, sequence, investigation, branching-decision.
         return (
           <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 16, padding: 40 }}>
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1rem', textAlign: 'center' }}>
