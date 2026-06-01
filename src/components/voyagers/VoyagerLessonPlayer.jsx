@@ -74,6 +74,9 @@ import MONEYBUSINESS_VOY_L19 from '../../data/moneybusiness_voyager_l19_screens'
 import MONEYBUSINESS_VOY_L20 from '../../data/moneybusiness_voyager_l20_screens';
 import COSMOS_VOY_L01 from '../../data/cosmos_voyager_l01_screens';
 import COSMOS_VOY_L02 from '../../data/cosmos_voyager_l02_screens';
+import COSMOS_VOY_L03 from '../../data/cosmos_voyager_l03_screens';
+import COSMOS_VOY_L04 from '../../data/cosmos_voyager_l04_screens';
+import COSMOS_VOY_L05 from '../../data/cosmos_voyager_l05_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -544,6 +547,9 @@ const VOY_DATA = {
     lessons: [
       ...COSMOS_VOY_L01.lessons,
       ...COSMOS_VOY_L02.lessons,
+      ...COSMOS_VOY_L03.lessons,
+      ...COSMOS_VOY_L04.lessons,
+      ...COSMOS_VOY_L05.lessons,
     ],
   },
 };

@@ -24,7 +24,9 @@ export default function SequenceGame({ screen, accent, childName, guideAvatar, o
   const r = t => (t || '').replace(/\{name\}/g, childName);
   const items = screen.items || [];
 
-  const [order,    setOrder]    = useState(() => shuffleArr(items));
+  // Normalize: items may use 'text' or 'label' for display content
+  const normalize = item => ({ ...item, text: item.text || item.label || '' });
+  const [order,    setOrder]    = useState(() => shuffleArr(items.map(normalize)));
   const [checked,  setChecked]  = useState(false);
   const [attempts, setAttempts] = useState(0);
 
