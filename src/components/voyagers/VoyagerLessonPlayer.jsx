@@ -86,6 +86,9 @@ import COSMOS_VOY_L11 from '../../data/cosmos_voyager_l11_screens';
 import COSMOS_VOY_L12 from '../../data/cosmos_voyager_l12_screens';
 import COSMOS_VOY_L13 from '../../data/cosmos_voyager_l13_screens';
 import COSMOS_VOY_L14 from '../../data/cosmos_voyager_l14_screens';
+import COSMOS_VOY_L15 from '../../data/cosmos_voyager_l15_screens';
+import COSMOS_VOY_L16 from '../../data/cosmos_voyager_l16_screens';
+import COSMOS_VOY_L17 from '../../data/cosmos_voyager_l17_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -568,6 +571,9 @@ const VOY_DATA = {
       ...COSMOS_VOY_L12.lessons,
       ...COSMOS_VOY_L13.lessons,
       ...COSMOS_VOY_L14.lessons,
+      ...COSMOS_VOY_L15.lessons,
+      ...COSMOS_VOY_L16.lessons,
+      ...COSMOS_VOY_L17.lessons,
     ],
   },
 };
