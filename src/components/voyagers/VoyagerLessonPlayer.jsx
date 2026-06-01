@@ -118,6 +118,9 @@ import FUTURESKILLS_VOY_L20 from '../../data/futureskills_voyager_l20_screens';
 import SOCIALLEADERSHIP_VOY_L01 from '../../data/socialleadership_voyager_l01_screens';
 import SOCIALLEADERSHIP_VOY_L02 from '../../data/socialleadership_voyager_l02_screens';
 import SOCIALLEADERSHIP_VOY_L03 from '../../data/socialleadership_voyager_l03_screens';
+import SOCIALLEADERSHIP_VOY_L04 from '../../data/socialleadership_voyager_l04_screens';
+import SOCIALLEADERSHIP_VOY_L05 from '../../data/socialleadership_voyager_l05_screens';
+import SOCIALLEADERSHIP_VOY_L06 from '../../data/socialleadership_voyager_l06_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -646,6 +649,9 @@ const VOY_DATA = {
       ...SOCIALLEADERSHIP_VOY_L01.lessons,
       ...SOCIALLEADERSHIP_VOY_L02.lessons,
       ...SOCIALLEADERSHIP_VOY_L03.lessons,
+      ...SOCIALLEADERSHIP_VOY_L04.lessons,
+      ...SOCIALLEADERSHIP_VOY_L05.lessons,
+      ...SOCIALLEADERSHIP_VOY_L06.lessons,
     ],
   },
 };
