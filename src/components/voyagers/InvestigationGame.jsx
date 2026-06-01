@@ -14,8 +14,13 @@ import { useState } from 'react';
 
 export default function InvestigationGame({ screen, accent, childName, guideAvatar, onComplete }) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
-  const categories = screen.categories || [];
-  const items      = screen.items      || [];
+  // Normalize: support both 'categories'/'buckets' and 'categoryId'/'correctBucket'/'text'/'label'
+  const categories = (screen.categories || screen.buckets || []).map(c => ({ id: c.id, label: c.label }));
+  const items      = (screen.items || []).map(item => ({
+    ...item,
+    text:       item.text       || item.label      || '',
+    categoryId: item.categoryId || item.correctBucket || '',
+  }));
 
   const [assignments, setAssignments] = useState({});    // { itemId: categoryId }
   const [selected,    setSelected]    = useState(null);  // itemId currently tapped
