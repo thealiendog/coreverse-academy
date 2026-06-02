@@ -25,11 +25,17 @@ export default function MatchingGame({ screen, accent, childName, guideAvatar, o
   const r = t => (t || '').replace(/\{name\}/g, childName);
   // Normalize: support object or string for concept/application/left/right fields
   const str = v => (v && typeof v === 'object') ? (v.label || '') : (v || '');
-  const pairs = (screen.pairs || []).map(p => ({
-    ...p,
-    left:  str(p.left  || p.concept || p.term),
-    right: str(p.right || p.application || p.definition),
-  }));
+  // Support principles[]+applications[] schema in addition to pairs[] schema
+  const pairs = screen.principles
+    ? screen.principles.map(p => {
+        const app = (screen.applications || []).find(a => a.matchesPrincipleId === p.id) || {};
+        return { id: p.id, left: str(p), right: str(app) };
+      })
+    : (screen.pairs || []).map(p => ({
+        ...p,
+        left:  str(p.left  || p.concept || p.term),
+        right: str(p.right || p.application || p.definition),
+      }));
 
   const [rightCol,    setRightCol]    = useState(() => shuffleArr(pairs.map(p => ({ id: p.id, text: p.right }))));
   const [selectedLeft, setSelectedLeft] = useState(null);   // pair id
