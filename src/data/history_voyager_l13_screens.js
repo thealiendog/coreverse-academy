@@ -1,0 +1,438 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// HISTORY & WORLD VOYAGER  |  L13 — The Middle East: History of a Complex Region
+// Age band : voyagers (11-12)   Guide: lyra (Elephant)
+// Standards: Coreverse Original — Middle East History, Multiple Framings
+// CALIBRATED: Voyager spec v1.1 (May 2026)
+//
+// Interaction format: PERSPECTIVES (5 framings of regional history)
+// HIGH-SENSITIVITY CONTENT (Israel-Palestine especially); resources throughout
+// ─────────────────────────────────────────────────────────────────────────────
+
+const VERSION = "voyager-hw-l13-v1";
+
+const HISTORY_VOYAGER_L13 = {
+  ageBand: `voyagers`,
+  subjectId: `history`,
+  guide: `lyra`,
+
+  lessons: [
+    {
+      id: `hw-11-12-13`,
+      title: `The Middle East: History of a Complex Region`,
+      duration: 35,
+      xpReward: 75,
+      badge: `middle-east-literate`,
+      badgeName: `Middle East Literate`,
+
+      screens: [
+        {
+          id: `l13-welcome`,
+          type: `welcome`,
+          guideText: `{name}, the Middle East is one of the most contested and most misunderstood regions in popular Western discourse. The contestation isn't only about current events; it's about which framings of regional history best capture what the Middle East actually is. Today five interpretive framings: Ottoman legacy and mandate borders (the region's modern political structure is shaped by Ottoman collapse 1908-1922 and British/French mandate borders drawn 1916-1923); Israeli-Palestinian (the unresolved 1948 conflict and its century-long shadow); oil and political economy (the region's strategic significance since oil discoveries in Iran 1908 and Saudi Arabia 1938); external interventions (Cold War + post-Cold War US, Soviet, British, French interventions repeatedly reshaping politics); internal regional dynamics (the region's own actors with their own agency and history). This content is sensitive. Engaging multiple framings rather than committing to one is the work; the framings illuminate different dimensions of what the Middle East has been and is. Resources for support throughout if you need them.`,
+          headline: `The Middle East: History of a Complex Region`,
+          subtitle: `Five interpretive framings. The region's actual history under different lenses.`,
+          visual: `/voyager-assets/history/l13-welcome.webp`,
+        },
+
+        {
+          id: `l13-mag-1`,
+          type: `magazine`,
+          section: 1,
+          headline: `What The Middle East Is, Geographically And Historically`,
+          paragraphs: [
+            `The Middle East as a term is itself contested. The conventional definition includes Turkey, Iran, Iraq, Syria, Lebanon, Jordan, Palestine and Israel, Egypt, Saudi Arabia, Yemen, Oman, Qatar, Bahrain, the United Arab Emirates, and Kuwait; broader definitions include the rest of North Africa (Libya, Tunisia, Algeria, Morocco) and sometimes Sudan, Somalia, Afghanistan. The term "Middle East" was popularized by American naval strategist Alfred Thayer Mahan in 1902 to describe the region between the "Near East" (Ottoman Empire) and "Far East" (China and Japan); the term reflects a specifically Western geographic perspective. Regional self-naming varies: "the Arab world" emphasizes the Arabic-speaking population (Iran and Turkey are not Arab); "Southwest Asia and North Africa" or "MENA" is academic terminology; specific countries identify primarily as their own nation. The complexity of nomenclature reflects deeper complexity of identity in the region.`,
+            `Historical depth. The Middle East is the location of several of the oldest continuously inhabited regions in human history. Mesopotamia (in modern Iraq) is where some of the earliest cities, writing systems, legal codes (Hammurabi ~1750 BCE), and complex states emerged. The Levant (modern Israel, Palestine, Lebanon, Syria, Jordan) has continuous human habitation back to the Paleolithic. Egypt's continuous civilization extends back over 5,000 years. The region was the birthplace of Judaism (~1500 BCE-500 BCE), Christianity (1st century CE), and Islam (7th century CE), three religions that together count over half the world's population as adherents.`,
+            `Major historical transitions. The Persian Empire (~550-330 BCE) under the Achaemenid dynasty was the largest empire in human history to that point. Alexander the Great's conquests (336-323 BCE) brought Hellenistic culture across the region. The Roman Empire absorbed much of the region (~63 BCE-7th century CE) and Christianity became the imperial religion (4th century CE). The Arab conquest (632-732 CE) following Islam's emergence transformed the region linguistically, religiously, and politically. Various Islamic empires followed: Umayyad (~661-750), Abbasid (~750-1258), Fatimid (~909-1171), Seljuk, Mamluk, and ultimately Ottoman (~1299-1922). The Ottoman Empire at its height ruled most of the Middle East and substantial parts of Europe and North Africa.`,
+            `The modern political structure substantially emerged from the Ottoman collapse and post-WWI settlement. The Ottomans entered WWI on the side of Germany and Austria-Hungary (1914), lost the war, and were dismantled (1918-1922). British and French diplomats, particularly through the secret Sykes-Picot Agreement (May 1916), divided the Arab provinces of the Ottoman Empire into spheres of influence; the post-war settlement (San Remo Conference 1920, Treaty of Sèvres 1920, Treaty of Lausanne 1923) implemented this through League of Nations mandates: British mandates for Palestine and Iraq, French mandates for Syria and Lebanon. The Balfour Declaration (November 2, 1917) promised British support for "a national home for the Jewish people" in Palestine while preserving rights of "existing non-Jewish communities"; the contradictions in this commitment have shaped subsequent regional politics. The mandate borders, often drawn with limited reference to local political, ethnic, or sectarian realities, became the modern state borders that mostly persist today.`,
+            `The full region today. The Middle East today contains ~500 million people; major languages include Arabic (most countries), Persian/Farsi (Iran), Turkish (Turkey), Hebrew (Israel), Kurdish (across multiple countries with substantial Kurdish populations). Major religions: Sunni Islam (majority in most Arab countries, Turkey), Shia Islam (majority in Iran and Iraq, large populations in Lebanon, Bahrain, Yemen, Syria), Christianity (substantial populations across the Levant, Egypt, smaller in other countries), Judaism (Israel), various smaller religions (Druze, Yazidi, Baha'i, Zoroastrianism). The region has the largest oil and natural gas reserves in the world; Saudi Arabia, Iraq, Iran, the UAE, Kuwait, and Qatar are among the world's top oil producers.`,
+          ],
+          image: `/voyager-assets/history/l13-s1-geography.webp`,
+          imageCaption: `Middle East: term popularized by Alfred Thayer Mahan 1902 (Western geographic perspective); conventional definition Turkey, Iran, Iraq, Syria, Lebanon, Jordan, Palestine/Israel, Egypt, Saudi Arabia, Gulf states, Yemen + sometimes North Africa. Historical depth: Mesopotamia + Levant + Egypt continuous habitation; birthplace of Judaism, Christianity, Islam. Modern structure emerged from Ottoman collapse 1918-1922 + Sykes-Picot 1916 + British/French mandates + Balfour Declaration Nov 2 1917. ~500M people; major languages Arabic, Persian, Turkish, Hebrew, Kurdish.`,
+          vocab: [
+            {
+              word: `the Middle East geographically and historically`,
+              definition: `Term "Middle East" popularized by American naval strategist Alfred Thayer Mahan 1902 (Western geographic perspective). Conventional definition: Turkey, Iran, Iraq, Syria, Lebanon, Jordan, Palestine and Israel, Egypt, Saudi Arabia, Yemen, Oman, Qatar, Bahrain, UAE, Kuwait; broader includes rest of North Africa + sometimes Sudan, Somalia, Afghanistan. Regional self-naming varies: "Arab world" (Iran and Turkey not Arab); "Southwest Asia and North Africa" or "MENA" academic; specific countries identify primarily as own nation. Historical depth: Mesopotamia (modern Iraq) earliest cities + writing systems + legal codes (Hammurabi ~1750 BCE); Levant continuous Paleolithic habitation; Egypt continuous civilization 5,000+ years. Birthplace of Judaism (~1500-500 BCE), Christianity (1st century CE), Islam (7th century CE). Major transitions: Persian Empire ~550-330 BCE; Alexander 336-323 BCE; Roman Empire ~63 BCE-7th century CE; Arab conquest 632-732 CE; various Islamic empires (Umayyad, Abbasid, Fatimid, Seljuk, Mamluk, Ottoman); Ottoman ~1299-1922. Modern political structure from Ottoman collapse + post-WWI: Sykes-Picot Agreement May 1916 (secret British-French division of Arab Ottoman provinces); San Remo Conference 1920 + Treaty of Sèvres 1920 + Treaty of Lausanne 1923; League of Nations mandates (British for Palestine + Iraq, French for Syria + Lebanon); Balfour Declaration Nov 2 1917 (British support for "national home for the Jewish people" while preserving rights of "existing non-Jewish communities"). Today ~500M people; major languages Arabic, Persian/Farsi, Turkish, Hebrew, Kurdish; major religions Sunni and Shia Islam, Christianity, Judaism, various smaller (Druze, Yazidi, Baha'i, Zoroastrianism); largest oil and natural gas reserves in world.`,
+              audioPrompt: `The Middle East is one of the most contested and most misunderstood regions in popular Western discourse, {name}. The term "Middle East" was popularized by American naval strategist Alfred Thayer Mahan in 1902 to describe the region between the Near East and Far East; the term reflects a specifically Western geographic perspective. The Middle East is the location of several of the oldest continuously inhabited regions in human history. Mesopotamia, in modern Iraq, is where some of the earliest cities, writing systems, and complex states emerged. The region was the birthplace of Judaism around 1500 BCE, Christianity in the 1st century CE, and Islam in the 7th century CE. The modern political structure substantially emerged from the Ottoman collapse and post-World War One settlement. The Ottomans entered World War One on the side of Germany, lost the war, and were dismantled from 1918 to 1922. British and French diplomats, particularly through the secret Sykes-Picot Agreement of May 1916, divided the Arab provinces of the Ottoman Empire into spheres of influence. The Balfour Declaration of November 2, 1917 promised British support for a national home for the Jewish people in Palestine while preserving rights of existing non-Jewish communities. The Middle East today contains approximately 500 million people.`,
+            },
+          ],
+        },
+
+        {
+          id: `l13-mag-2`,
+          type: `magazine`,
+          section: 2,
+          headline: `The Israeli-Palestinian Conflict In Specific Detail`,
+          paragraphs: [
+            `The Israeli-Palestinian conflict has shaped Middle Eastern and global politics for over a century. Engaging it seriously requires factual specificity and recognition that multiple framings exist among scholars, advocates, and participants. The framings presented below are mainstream academic perspectives; deeper engagement requires reading multiple specialists rather than absorbing any single account.`,
+            `Origins and the British mandate period (1880s-1948). Jewish nationalist (Zionist) movement emerged in 1880s-1890s Europe in response to widespread antisemitism, with Theodor Herzl's "Der Judenstaat" (1896) articulating need for Jewish state and First Zionist Congress (Basel 1897) organizing movement. Jewish immigration to Ottoman Palestine increased substantially through subsequent decades; by 1914, Jewish population in Palestine was approximately 85,000 (out of ~700,000 total). The Balfour Declaration (Nov 2, 1917) committed Britain to supporting "national home for the Jewish people" in Palestine. British Mandate Palestine (1922-1948) saw substantial Jewish immigration especially from 1930s onward (fleeing Nazi persecution); by 1947, Jewish population was approximately 630,000 (out of ~1.85 million total). Arab Palestinian opposition grew throughout the mandate period, with major Arab Revolt 1936-1939 against British mandate and Jewish immigration; British response substantially weakened Palestinian Arab political organization.`,
+            `1948 and what happened. UN Partition Plan (Resolution 181, November 29, 1947) proposed dividing Palestine into Jewish and Arab states. Mainstream Zionist leadership accepted the plan; Palestinian Arab leadership and Arab states rejected it. War followed: civil war from late 1947, interstate war May 1948-1949 after Israeli declaration of independence May 14, 1948 and Arab state invasion. The war resulted in: Israeli state established with substantially expanded territory beyond UN partition plan; approximately 750,000 Palestinians displaced from areas that became Israel (this is the "Nakba" or "catastrophe" in Palestinian framing, well documented by Israeli historian Benny Morris in "The Birth of the Palestinian Refugee Problem" 1988, expanded 2004); approximately 530 Palestinian villages destroyed; Israeli mainstream historiography long denied systematic expulsion but Morris and other "new historians" (Ilan Pappé, Avi Shlaim, Tom Segev) substantially documented mixed pattern of flight and forced expulsion through declassified Israeli archives in the 1980s. The conflict's framing has been contested ever since: Israeli mainstream view emphasizes war as defensive in face of Arab rejection; Palestinian and increasingly mainstream academic view emphasizes Palestinian displacement as central event with deliberate components.`,
+            `Subsequent major events. 1967 Six-Day War: Israel decisively defeated Egypt, Jordan, Syria; captured West Bank (from Jordan), Gaza Strip (from Egypt), Sinai (from Egypt), Golan Heights (from Syria), East Jerusalem; substantial new Palestinian displacement (~300,000 additional Palestinians). 1973 Yom Kippur / October War: Egypt and Syria attacked Israel; Israel substantially victorious but war led to peace negotiations. Camp David Accords (1978) and Egypt-Israel peace treaty (1979) ended Egypt-Israel state of war. PLO under Yasser Arafat became Palestinian political organization; later split with Hamas (founded 1987). First Intifada 1987-1993 (Palestinian uprising in occupied territories). Oslo Accords (1993, 1995) created Palestinian Authority and proposed framework for two-state solution; subsequent process broke down. Second Intifada 2000-2005 produced major violence on both sides. Israeli withdrawal from Gaza 2005; Hamas victory in 2006 Palestinian elections and Hamas-Fatah split. Multiple Gaza wars (2008-2009, 2012, 2014, 2021, and 2023-present). October 7, 2023: Hamas attack on Israel killed approximately 1,200 Israelis and took approximately 250 hostages; subsequent Israeli military operation in Gaza has killed approximately 50,000+ Palestinians (estimates vary; Gaza Health Ministry counts as of mid-2024 indicate substantially higher with subsequent escalations; Lancet 2024 estimate suggested total deaths attributable to war effects substantially higher than direct count) and displaced approximately 1.9 million of Gaza's 2.3 million population.`,
+            `Current state of academic understanding. Mainstream academic scholarship on Israel-Palestine has substantially shifted toward recognition that 1948 involved systematic Palestinian displacement (Morris's documentation despite his own subsequent rightward political shift); Israeli settlement project in occupied West Bank since 1967 is illegal under international law (multiple ICJ advisory opinions, most recent July 2024 finding Israeli occupation unlawful); the "two-state solution" has substantially eroded as feasible option through Israeli settlement expansion and Palestinian political fragmentation; current Gaza war and West Bank dynamics represent acute crisis in the conflict. The framings of how to understand the conflict remain contested: framings range from "two peoples with legitimate claims to same land" to "settler-colonial conflict requiring decolonization" to "religious-civilizational conflict" to "specific result of specific decisions that can be reversed." Engaging the framings seriously rather than committing to one early is the work.`,
+            `Resources for engaging this content. Books: Rashid Khalidi "The Hundred Years' War on Palestine" (2020, Palestinian-American historian); Benny Morris "Righteous Victims" (1999, foundational Israeli new historian text); Avi Shlaim "The Iron Wall" (2000, Israeli new historian); Ilan Pappé "The Ethnic Cleansing of Palestine" (2006, contested Israeli new historian); Tom Segev "The Seventh Million" (1991) and other works. Documentary and journalism: Al Jazeera, Haaretz, +972 Magazine, Mondoweiss, multiple options. Crisis support if engaging this content surfaces difficult feelings: 988 Suicide and Crisis Lifeline; Crisis Text Line text HOME to 741741; school counselor; trusted adult. If you have family connection to either side of this conflict, the framings are not abstract; the cost is borne by specific people who deserve serious engagement.`,
+          ],
+          image: `/voyager-assets/history/l13-s2-israel-palestine.webp`,
+          imageCaption: `Israeli-Palestinian conflict timeline: Zionist movement emerges 1880s-1890s (Herzl "Der Judenstaat" 1896, First Zionist Congress Basel 1897); British Mandate Palestine 1922-1948; UN Partition Plan Nov 29 1947 (Resolution 181); 1948 war + Israeli state + Palestinian Nakba (~750,000 displaced, ~530 villages destroyed); 1967 Six-Day War (West Bank + Gaza + Sinai + Golan + East Jerusalem captured); 1973 War; Camp David 1978; PLO + Hamas; intifadas 1987-1993 + 2000-2005; Oslo 1993/1995; multiple Gaza wars; October 7 2023 attack (~1,200 Israelis killed, ~250 hostages) + ongoing Gaza war (~50,000+ Palestinians killed + ~1.9M displaced).`,
+          vocab: [
+            {
+              word: `Israeli-Palestinian conflict in specific detail`,
+              definition: `Origins 1880s-1948. Jewish nationalist (Zionist) movement emerged in response to widespread European antisemitism; Theodor Herzl "Der Judenstaat" 1896; First Zionist Congress Basel 1897. Jewish immigration to Ottoman Palestine: 1914 ~85,000 Jewish (~700,000 total); 1947 ~630,000 Jewish (~1.85M total). Balfour Declaration Nov 2, 1917. British Mandate Palestine 1922-1948; Arab Revolt 1936-1939. 1948: UN Partition Plan Resolution 181 Nov 29, 1947 (Zionist leadership accepted, Palestinian Arabs + Arab states rejected); civil war late 1947 + interstate war May 1948-1949 after Israeli declaration May 14, 1948 and Arab invasion. Results: Israeli state with substantially expanded territory; ~750,000 Palestinians displaced (Nakba: "catastrophe"); ~530 Palestinian villages destroyed (Benny Morris "Birth of the Palestinian Refugee Problem" 1988/2004 documented mixed pattern of flight and forced expulsion through declassified Israeli archives 1980s; Morris substantially shaped recognition despite later rightward political shift). New historians: Morris, Ilan Pappé, Avi Shlaim, Tom Segev. 1967 Six-Day War: West Bank (from Jordan) + Gaza (from Egypt) + Sinai + Golan Heights (from Syria) + East Jerusalem; ~300,000 additional Palestinians displaced. 1973 War; Camp David Accords 1978 + Egypt-Israel peace 1979. PLO + Yasser Arafat; Hamas founded 1987. First Intifada 1987-1993; Oslo Accords 1993, 1995; Second Intifada 2000-2005. Israeli Gaza withdrawal 2005; Hamas victory Palestinian elections 2006 + Hamas-Fatah split. Multiple Gaza wars 2008-2009, 2012, 2014, 2021, 2023-present. October 7, 2023: Hamas attack killed ~1,200 Israelis + ~250 hostages; subsequent Gaza war killed ~50,000+ Palestinians (mid-2024 counts, Lancet 2024 suggested substantially higher total) + ~1.9M displaced (of 2.3M Gaza population). Current academic understanding: 1948 involved systematic Palestinian displacement; Israeli settlement in West Bank illegal under international law (ICJ July 2024 found occupation unlawful); two-state solution substantially eroded. Resources: Rashid Khalidi "Hundred Years' War on Palestine" 2020; Morris "Righteous Victims" 1999; Shlaim "The Iron Wall" 2000; Pappé "The Ethnic Cleansing of Palestine" 2006 (contested); Segev "The Seventh Million" 1991. Crisis support: 988, Crisis Text Line text HOME to 741741, school counselor, trusted adult.`,
+              audioPrompt: `The Israeli-Palestinian conflict has shaped Middle Eastern and global politics for over a century, {name}. Engaging it seriously requires factual specificity and recognition that multiple framings exist among scholars. The Jewish nationalist movement, called Zionism, emerged in the 1880s and 1890s in response to widespread European antisemitism, with Theodor Herzl's "Der Judenstaat" in 1896. The Balfour Declaration of November 2, 1917 committed Britain to supporting a national home for the Jewish people in Palestine. The UN Partition Plan of November 29, 1947 proposed dividing Palestine into Jewish and Arab states. The 1948 war resulted in the Israeli state being established with substantially expanded territory beyond the UN partition plan; approximately 750,000 Palestinians were displaced from areas that became Israel; this is called the Nakba, meaning "catastrophe" in Palestinian framing. Israeli historian Benny Morris documented mixed pattern of flight and forced expulsion through declassified Israeli archives in the 1980s. The 1967 Six-Day War saw Israel decisively defeat Egypt, Jordan, and Syria. On October 7, 2023, a Hamas attack on Israel killed approximately 1,200 Israelis and took approximately 250 hostages; the subsequent Israeli military operation in Gaza has killed approximately 50,000+ Palestinians and displaced approximately 1.9 million of Gaza's 2.3 million population. If you have family connection to either side of this conflict, the framings are not abstract; serious engagement matters.`,
+            },
+          ],
+        },
+
+        {
+          id: `l13-mag-3`,
+          type: `magazine`,
+          section: 3,
+          headline: `External Interventions And The Cold War Middle East`,
+          paragraphs: [
+            `The Middle East has been substantially shaped by external interventions across the past century. British and French mandates after WWI established the modern state borders; subsequent US and Soviet involvement during the Cold War; post-Cold War US military interventions; ongoing involvement of multiple external powers. Engaging the region without engaging these interventions is incomplete.`,
+            `Iran 1953 (Mossadegh coup). Democratically elected Prime Minister Mohammad Mossadegh nationalized the Anglo-Iranian Oil Company (now BP) in 1951; British and US intelligence agencies organized a coup (Operation Ajax / TPAJAX, August 1953) that overthrew Mossadegh and reinstated Shah Mohammad Reza Pahlavi with expanded powers. The Shah's authoritarian rule continued until 1979 Iranian Revolution; the coup is widely cited in Iranian politics as foundational grievance against Western intervention. The 2013 declassification of CIA documents formally acknowledged the agency's role in the coup. The Iran-US relationship since 1979 has been substantially shaped by both 1953 and the 1979-1981 US Embassy hostage crisis.`,
+            `1956 Suez Crisis. Egyptian President Gamal Abdel Nasser nationalized the Suez Canal in July 1956; Israel, Britain, and France launched coordinated military intervention in October-November 1956 to retake the canal; the US (President Eisenhower) opposed the intervention and forced withdrawal through diplomatic and financial pressure. The crisis marked the substantial end of British and French imperial power in the region and the rise of US as primary external power. Nasser's prestige in the Arab world increased dramatically; pan-Arab nationalism intensified through the 1960s.`,
+            `Cold War period interventions. US support for the Shah's Iran (1953-1979), Egypt under Sadat (after 1972), Saudi Arabia (since 1945 Roosevelt-Saud meeting), Israel (substantial US military and financial support from 1967 onward, currently approximately $3.8 billion annually). Soviet support for Egypt under Nasser, Syria, Iraq under Baathist rule, PLO. Multiple Arab-Israeli wars saw external supply of weapons by both superpowers. Iran-Iraq War (1980-1988): killed approximately 1 million combined; US supported Iraq's Saddam Hussein with intelligence and weapons against Iran (US had supported the Shah's Iran a decade earlier (exemplifying realpolitik over consistent ideology)).`,
+            `Gulf War 1990-1991. Saddam Hussein's Iraq invaded Kuwait in August 1990; US-led coalition (with substantial Arab participation) liberated Kuwait in Operation Desert Storm (January-February 1991); Iraqi forces decisively defeated. The war established US as dominant external power in Gulf and led to permanent US military presence in Saudi Arabia (which Osama bin Laden cited as foundational grievance leading to al-Qaeda formation and 1990s and 2000s attacks). Subsequent US-led sanctions on Iraq (1990-2003) substantially damaged Iraqi society; UNICEF estimates suggested ~500,000 Iraqi children died from sanctions-related causes through 1999, though the figure has been contested.`,
+            `Post-9/11 interventions. Iraq War 2003-2011 (covered in L12) destabilized Iraq, Syria, and broader region; produced ISIS. Libya intervention 2011 (NATO operation supporting rebels against Gaddafi) ended Gaddafi's rule but produced state collapse and ongoing civil war (~30,000+ deaths, ongoing instability). Syrian civil war (2011-present): ~500,000 deaths, ~13 million displaced; multiple external actors including US, Russia, Turkey, Iran, Gulf states; Russia's intervention from 2015 saved Assad regime. US drone war across Yemen, Pakistan, Somalia, and elsewhere (under Bush, Obama, Trump, Biden administrations) killed thousands including substantial civilian casualties. Yemen civil war (2014-present): Saudi-led coalition intervention 2015+ with US support has produced humanitarian catastrophe (~150,000+ deaths, millions in famine conditions). Iran nuclear deal (JCPOA 2015): negotiated by Obama administration + UK + France + Germany + Russia + China + Iran; US withdrew under Trump 2018; partial revival under Biden; current status uncertain.`,
+            `What these interventions mean cumulatively. The pattern of external intervention has substantially shaped current Middle Eastern politics. Many current conflicts (Iraq-related instability, Syria, Yemen, broader regional dynamics) are direct or indirect consequences of specific external interventions. Local actors retain real agency; external interventions interact with local dynamics rather than determining them. But pretending external interventions are minor or marginal would be substantially wrong. Engaging the region honestly requires engaging the intervention pattern alongside the internal dynamics.`,
+          ],
+          image: `/voyager-assets/history/l13-s3-interventions.webp`,
+          imageCaption: `Major external interventions: Iran 1953 (Mossadegh coup via CIA Operation Ajax, declassified 2013); Suez 1956 (Israel/UK/France against Egypt's Nasser, US forced withdrawal); Cold War proxy support (US to Shah, Egypt after 1972, Saudi Arabia, Israel; Soviet to Egypt under Nasser, Syria, Iraq); Iran-Iraq War 1980-1988 ~1M dead; Gulf War 1990-1991; sanctions 1990-2003 + ~500K Iraqi children deaths estimate; Iraq War 2003-2011 + ISIS; Libya 2011 (NATO); Syrian civil war 2011-present ~500K deaths + 13M displaced; Yemen civil war 2014-present; JCPOA 2015 + US withdrawal 2018.`,
+          vocab: [
+            {
+              word: `external interventions in the Middle East`,
+              definition: `Region substantially shaped by external interventions across the past century. Iran 1953: democratically elected PM Mohammad Mossadegh nationalized Anglo-Iranian Oil Company (now BP) in 1951; CIA + UK MI6 organized Operation Ajax/TPAJAX coup Aug 1953 overthrowing Mossadegh and reinstating Shah Mohammad Reza Pahlavi with expanded powers; Shah ruled until 1979 Iranian Revolution; 2013 CIA declassification formally acknowledged role; foundational grievance in Iranian politics. Suez Crisis 1956: Nasser nationalized Suez Canal July 1956; Israel + Britain + France launched coordinated military intervention Oct-Nov 1956; US (Eisenhower) forced withdrawal through diplomatic + financial pressure; substantial end of British/French imperial power + rise of US as primary external power. Cold War: US supported Shah's Iran, Egypt under Sadat after 1972, Saudi Arabia since 1945 Roosevelt-Saud meeting, Israel (since 1967, ~$3.8B annually); Soviet support for Egypt under Nasser, Syria, Iraq Baathist rule, PLO. Iran-Iraq War 1980-1988 ~1M killed combined; US supported Iraq's Saddam Hussein (US had supported Shah's Iran a decade earlier: realpolitik). Gulf War 1990-1991: Saddam invaded Kuwait Aug 1990; US-led coalition + Arab participation liberated in Operation Desert Storm Jan-Feb 1991; permanent US military presence in Saudi Arabia (Osama bin Laden cited as foundational grievance). US-led sanctions on Iraq 1990-2003 (~500,000 Iraqi children deaths from sanctions-related causes through 1999 per UNICEF estimates; contested). Post-9/11: Iraq War 2003-2011 + ISIS; Libya 2011 NATO + state collapse; Syrian civil war 2011-present ~500K dead + 13M displaced; US drone war Yemen + Pakistan + Somalia; Yemen civil war 2014-present + Saudi-led coalition with US support (~150K+ deaths + famine); JCPOA 2015 + Trump withdrawal 2018.`,
+              audioPrompt: `The Middle East has been substantially shaped by external interventions across the past century, {name}. Iran 1953: democratically elected Prime Minister Mohammad Mossadegh nationalized the Anglo-Iranian Oil Company, now BP, in 1951; British and US intelligence agencies organized a coup called Operation Ajax in August 1953 that overthrew Mossadegh and reinstated Shah Mohammad Reza Pahlavi with expanded powers. The 2013 declassification of CIA documents formally acknowledged the agency's role. The Suez Crisis of 1956: Egyptian President Gamal Abdel Nasser nationalized the Suez Canal in July 1956; Israel, Britain, and France launched coordinated military intervention; the US under Eisenhower forced withdrawal. During the Cold War, the US supported the Shah's Iran, Egypt under Sadat after 1972, Saudi Arabia, and Israel. The Soviet Union supported Egypt under Nasser, Syria, Iraq under Baathist rule, and the PLO. The Iran-Iraq War from 1980 to 1988 killed approximately 1 million combined; the US supported Iraq's Saddam Hussein. The Gulf War of 1990 to 1991 established the US as dominant external power in the Gulf. Post-9/11 interventions include the Iraq War of 2003 to 2011, the Libya intervention of 2011, and ongoing involvement in the Syrian civil war from 2011.`,
+            },
+          ],
+        },
+
+        {
+          id: `l13-mag-4`,
+          type: `magazine`,
+          section: 4,
+          headline: `Internal Regional Dynamics And Recent History`,
+          paragraphs: [
+            `External interventions interact with internal regional dynamics that have their own logics and momentum. The framings that center external powers (orientalist, world-systems, etc.) capture important truth but can flatten the agency and complexity of regional actors. The framings ahead emphasize what the region itself is doing.`,
+            `Pan-Arabism vs Islamism. Gamal Abdel Nasser's leadership in Egypt (1956-1970) represented the high point of pan-Arabism: vision of unified Arab nation transcending colonial borders. The defeat in 1967 Six-Day War substantially discredited the framework; Sadat's pivot to peace with Israel (1973-1979) and economic liberalization further weakened pan-Arabism. Islamism emerged as alternative framework: the Iranian Revolution (1979) brought Shia clerical rule to Iran; Sunni Islamism developed across the region through Muslim Brotherhood (Egypt and elsewhere), Jamaat-e-Islami (Pakistan), and various other movements; Salafi-jihadism developed as militant variant including al-Qaeda (1988) and ISIS (2014). The framing of religion vs secular nationalism has shaped many internal conflicts, though both poles have been more complex than simple labels suggest.`,
+            `Sunni-Shia rivalry. Sunni-Shia split goes back to dispute over succession after Prophet Muhammad's death (632 CE). Modern political relevance intensified after 1979 Iranian Revolution: Shia Iran became regional power with significant Shia populations in Iraq, Lebanon (Hezbollah from 1982), Bahrain, Yemen (Houthi movement), and elsewhere; Sunni Saudi Arabia positioned as counter-Iran leader. The Iraq War's removal of Sunni-dominated Saddam Hussein regime and emergence of Shia-led Iraqi government dramatically shifted regional power balance toward Iran. Yemen war (Saudi-led coalition vs Houthi rebels) substantially framed as Sunni-Shia proxy conflict though local dynamics are more complex. The Saudi-Iran rivalry has shaped multiple conflicts including Syria, Yemen, Lebanon, Bahrain.`,
+            `The Arab Spring 2011 and after. Self-immolation of Tunisian fruit seller Mohamed Bouazizi (December 17, 2010) triggered Tunisian protests; Tunisian President Zine El Abidine Ben Ali fled January 14, 2011 after 23 years in power. Protests spread across the region: Egypt (Hosni Mubarak resigned February 11, 2011 after 30 years), Libya (Gaddafi killed October 20, 2011 after NATO intervention), Yemen (Saleh resigned February 27, 2012), Syria (civil war), Bahrain (uprising crushed by Saudi-led intervention March 2011), Tunisia (became only sustained democratic transition), Algeria (protests but regime survived). The Arab Spring's actual outcomes were varied: Tunisia briefly became democratic transition; Egypt returned to military rule under Sisi (2013 coup against elected Muslim Brotherhood President Morsi); Libya, Syria, Yemen entered prolonged civil wars; multiple Gulf states tightened internal repression. The "Arab Spring" framing turned out substantially optimistic; many observers now use "Arab Winter" or similar to describe the predominant aftermath, though the framing itself is contested.`,
+            `Specific countries' trajectories briefly. Turkey: democratic country with NATO membership; under Recep Tayyip Erdoğan (PM 2003-2014, President 2014-present) substantially shifted toward authoritarian Islamist governance; post-2016 coup attempt accelerated. Iran: Islamic Republic since 1979; supreme leader (Khamenei since 1989) holds ultimate authority; presidents vary (Khatami 1997-2005 reformist; Ahmadinejad 2005-2013 conservative; Rouhani 2013-2021 pragmatist; Raisi 2021-2024 hardliner; Pezeshkian 2024+ pragmatist); 2009 Green Movement and 2022-2023 Mahsa Amini protests showed substantial internal opposition; nuclear program ongoing concern. Saudi Arabia: monarchy; significant religious establishment role; substantial Vision 2030 modernization under Crown Prince Mohammed bin Salman (since 2017) alongside intensified repression (Jamal Khashoggi murder October 2018; Yemen war prosecution; multiple human rights concerns). Egypt: military rule under Sisi (since 2013); Muslim Brotherhood banned; multiple human rights concerns. Israel: democratic state with substantial democratic backsliding under Netanyahu coalitions (2009-2021, 2022+); judicial reform crisis 2023; ongoing Gaza war.`,
+            `Where this matters for engaging the region today. Internal regional dynamics include genuine agency, genuine conflicts among regional actors, genuine internal political contestation, and genuine cultural and intellectual life that doesn't reduce to either Western projection or simple religious-vs-secular framings. Engaging the region requires engaging this complexity rather than reducing it to single explanatory framework. The five framings in the Perspectives screen ahead are deliberately complementary; each captures dimensions the others underweight.`,
+          ],
+          image: `/voyager-assets/history/l13-s4-internal-dynamics.webp`,
+          imageCaption: `Internal dynamics: Pan-Arabism under Nasser (1956-1970) → defeat 1967 + Sadat pivot 1973-1979 → Islamism rise (Iranian Revolution 1979; Muslim Brotherhood; al-Qaeda 1988; ISIS 2014). Sunni-Shia rivalry (intensified after 1979; Saudi-Iran; Iraq War shifted balance). Arab Spring 2011: triggered by Bouazizi Dec 17 2010; Tunisia, Egypt, Libya, Yemen, Syria, Bahrain; varied outcomes (Tunisia democratic transition; Egypt Sisi 2013 coup; Libya/Syria/Yemen civil wars). Recent trajectories: Turkey Erdoğan authoritarian shift; Iran 2022-2023 Mahsa Amini protests; Saudi MBS modernization + repression (Khashoggi Oct 2018); Egypt Sisi; Israel Netanyahu + 2023 crisis.`,
+          vocab: [
+            {
+              word: `internal regional dynamics and recent history`,
+              definition: `External interventions interact with internal regional dynamics having own logics. Pan-Arabism vs Islamism: Nasser's leadership 1956-1970 = high point of pan-Arabism (unified Arab nation transcending colonial borders); 1967 Six-Day War defeat discredited; Sadat pivot to peace with Israel + economic liberalization weakened further. Islamism alternative: Iranian Revolution 1979 brought Shia clerical rule; Sunni Islamism via Muslim Brotherhood + Jamaat-e-Islami + various movements; Salafi-jihadism militant variant (al-Qaeda 1988, ISIS 2014). Sunni-Shia rivalry: split from dispute over succession after Prophet Muhammad's death 632 CE; modern political relevance intensified after 1979 Iranian Revolution; Shia Iran + significant Shia populations (Iraq, Lebanon's Hezbollah 1982, Bahrain, Yemen Houthi); Sunni Saudi Arabia counter-Iran leader; Iraq War shifted balance toward Iran; Yemen war framed as Sunni-Shia proxy though more complex. Arab Spring 2011: Mohamed Bouazizi self-immolation Dec 17, 2010 → Tunisia → Ben Ali fled Jan 14, 2011 (23 years in power); Egypt Mubarak resigned Feb 11, 2011 (30 years); Libya Gaddafi killed Oct 20, 2011; Yemen Saleh resigned Feb 27, 2012; Syria civil war; Bahrain crushed by Saudi-led intervention March 2011; Tunisia briefly democratic; Egypt returned to military rule under Sisi 2013 coup against elected Morsi. Specific countries briefly. Turkey: NATO member; Erdoğan PM 2003-2014, President 2014+ shifted authoritarian Islamist; post-2016 coup attempt accelerated. Iran: Islamic Republic since 1979; Khamenei supreme leader since 1989; presidents vary (Khatami, Ahmadinejad, Rouhani, Raisi, Pezeshkian); 2009 Green + 2022-2023 Mahsa Amini protests. Saudi: monarchy; MBS Vision 2030 + intensified repression (Jamal Khashoggi murder Oct 2018; Yemen war). Egypt: Sisi since 2013; Muslim Brotherhood banned. Israel: democratic + backsliding under Netanyahu coalitions; 2023 judicial reform crisis; Gaza war.`,
+              audioPrompt: `External interventions interact with internal regional dynamics that have their own logics and momentum, {name}. Pan-Arabism versus Islamism: Gamal Abdel Nasser's leadership in Egypt from 1956 to 1970 represented the high point of pan-Arabism. The vision of unified Arab nation transcending colonial borders. The defeat in the 1967 Six-Day War substantially discredited the framework. Islamism emerged as alternative framework: the Iranian Revolution of 1979 brought Shia clerical rule to Iran; Sunni Islamism developed across the region through the Muslim Brotherhood and various other movements; Salafi-jihadism developed as militant variant including al-Qaeda from 1988 and ISIS from 2014. The Arab Spring of 2011 was triggered by the self-immolation of Tunisian fruit seller Mohamed Bouazizi on December 17, 2010; Tunisian President Ben Ali fled in January 2011 after 23 years in power. Protests spread: Egypt's Mubarak resigned in February 2011 after 30 years; Libya's Gaddafi was killed in October 2011; Syria entered civil war. Tunisia briefly became democratic transition; Egypt returned to military rule under Sisi in 2013 coup. The Arab Spring's actual outcomes have been varied and substantially less optimistic than the initial framing suggested.`,
+            },
+          ],
+        },
+
+        {
+          id: `l13-mag-5`,
+          type: `magazine`,
+          section: 5,
+          headline: `Before The Perspectives`,
+          paragraphs: [
+            `Five voices ahead, each representing a different framing of Middle Eastern history. The framings don't fully exclude each other; many serious scholars work across multiple framings. Engaging each rather than committing to one is the work.`,
+            `One framing as you engage. Your prior knowledge shapes which framings feel natural. American readers often start from external-intervention or Israel-Palestine framings because those dominate US discourse. Readers with family connections to the region (Arab, Iranian, Israeli, Lebanese, Egyptian, Turkish, Kurdish, others) often have specific framings shaped by family experience. Readers from oil-importing economies have specific stakes in regional oil politics. Recognizing your priors isn't dismissing your view; it's recognizing that positions on the region are partly empirical, partly normative, partly biographical.`,
+            `Another framing. The framings ahead aren't about who's "right" or "wrong" on contested questions like the Israeli-Palestinian conflict; they're about which framework best captures dimensions of regional history. Multiple framings hold simultaneously. The Ottoman-legacy framing illuminates structural features that current politics inherits. The Israel-Palestine framing illuminates a conflict that has shaped regional politics for over a century. The oil framing illuminates strategic and economic dimensions. The external-intervention framing illuminates how the region has been reshaped from outside. The internal-dynamics framing illuminates regional actors' own agency and history. Each framing is real; the question is which captures the question you're asking.`,
+            `One specific framing for your reading ahead. Positions on the Middle East shape how you'll read L14 (China's Rise, which has deepened economic and diplomatic engagement with the region), L15 (Africa, which has parallel patterns of mandate borders, external interventions, internal dynamics), L16 (Latin America, different region but parallel dynamics of external intervention), L17 (Indigenous peoples, different regions but parallel questions of displacement and recognition). The Middle East isn't sui generis; it's specific case of broader patterns of how regions get shaped by global dynamics.`,
+            `One last framing. If you have family connection to any of these regional histories (Israeli or Palestinian, Lebanese, Syrian, Iraqi, Iranian, Egyptian, Turkish, Kurdish, or others), the content here has weight that purely academic engagement can't reach. The framings honor that weight without choosing among personal connections. If engaging this material surfaces feelings that need support, resources from earlier sections continue to apply: USHMM (for Holocaust connection); UNHCR for refugee resources; multiple regional human rights organizations; 988 Suicide and Crisis Lifeline; Crisis Text Line text HOME to 741741; school counselor; trusted adult. The serious engagement matters; so does the care for yourself in engaging it.`,
+          ],
+          image: `/voyager-assets/history/l13-s5-before.webp`,
+          imageCaption: `Five voices ahead; framings don't fully exclude each other; serious scholars work across multiple. Engaging each rather than committing to one is the work. Priors shape which feels natural (American discourse, family connections, oil-importing stakes). Framings shape readings of L14 China, L15 Africa, L16 Latin America, L17 Indigenous peoples; Middle East as specific case of broader patterns. Resources for difficult content: 988, Crisis Text Line, school counselor, trusted adult.`,
+          vocab: [
+            {
+              word: `engaging the five Middle East framings`,
+              definition: `Five voices ahead, each representing different framing. Framings don't fully exclude each other; many serious scholars work across multiple. Engaging each rather than committing to one is the work. Priors shape which framings feel natural: American readers often start from external-intervention or Israel-Palestine framings; readers with regional family connections (Arab, Iranian, Israeli, Lebanese, Egyptian, Turkish, Kurdish, others) have specific framings shaped by family experience; readers from oil-importing economies have specific stakes. Not about who's "right" or "wrong" on contested questions but which framework best captures dimensions of regional history. Multiple framings hold simultaneously: Ottoman-legacy framing illuminates structural features current politics inherits; Israel-Palestine framing illuminates century-shaping conflict; oil framing illuminates strategic and economic dimensions; external-intervention framing illuminates outside reshaping; internal-dynamics framing illuminates regional actors' own agency and history. Each framing real; question is which captures the question being asked. Middle East not sui generis; specific case of broader patterns of how regions get shaped by global dynamics; shapes readings of L14 China + L15 Africa + L16 Latin America + L17 Indigenous peoples. If family connection to regional histories, content has weight beyond academic engagement. Resources: 988, Crisis Text Line text HOME to 741741, school counselor, trusted adult.`,
+              audioPrompt: `Five voices ahead, each representing a different framing of Middle Eastern history, {name}. The framings don't fully exclude each other; many serious scholars work across multiple framings. Engaging each rather than committing to one is the work. Your prior knowledge shapes which framings feel natural. American readers often start from external-intervention or Israel-Palestine framings because those dominate US discourse. Readers with family connections to the region (Arab, Iranian, Israeli, Lebanese, Egyptian, Turkish, Kurdish, others) often have specific framings shaped by family experience. The framings ahead aren't about who's right or wrong on contested questions like the Israeli-Palestinian conflict; they're about which framework best captures dimensions of regional history. Multiple framings hold simultaneously. If you have family connection to any of these regional histories, the content here has weight that purely academic engagement can't reach. If engaging this material surfaces feelings that need support, resources include 988 Suicide and Crisis Lifeline, Crisis Text Line (text HOME to 741741), school counselor, trusted adult. The serious engagement matters; so does the care for yourself in engaging it.`,
+            },
+          ],
+        },
+
+        // ───── PERSPECTIVES ───────────────────────────────────────────────────
+        {
+          id: `l13-perspectives`,
+          type: `perspectives`,
+          headline: `Five Framings Of Middle Eastern History`,
+          intro: `{name}, five interpretive framings on the Middle East. Each captures real dimensions and has serious defenders. No forced commitment; engage each on its terms.`,
+          voices: [
+            {
+              id: `ottoman-mandate`,
+              speaker: `Ottoman legacy + mandate borders framing`,
+              era: `foundational since 1989; substantial recent scholarship`,
+              stance: `Modern Middle East political structure substantially shaped by Ottoman Empire (~1299-1922) and post-WWI mandate borders drawn by British and French diplomats with limited reference to local realities`,
+              quote: `"In 1922 the political configuration of the Middle East was being decided not in the region itself but in London and Paris, and was being designed primarily to serve British and French interests."`,
+              quoteSource: `David Fromkin, "A Peace to End All Peace: The Fall of the Ottoman Empire and the Creation of the Modern Middle East," 1989`,
+              argument: `The borders of Iraq, Syria, Lebanon, Jordan, Palestine, and others were drawn by British and French diplomats (Sykes-Picot May 1916; San Remo 1920; Sèvres 1920; Lausanne 1923) with priorities of imperial competition rather than local political coherence. The mandate borders cut across ethnic, religious, and tribal lines (Kurds split across Turkey, Iraq, Iran, Syria; Sunni-Shia distributions across Iraq; sectarian distributions across Lebanon and Syria; etc.); the borders persist as modern state borders. Subsequent instability has substantial structural origins in this initial drawing.`,
+              evidence: `Eugene Rogan "The Arabs: A History" 2009 + 2018 (comprehensive Ottoman through modern); David Fromkin "A Peace to End All Peace" 1989 (foundational on mandate period); James Gelvin "The Modern Middle East" 4th ed 2020 (textbook synthesis); declassified Sykes-Picot documents; ICJ rulings on mandate-era arrangements; recent scholarship on specific borders' arbitrariness and their consequences.`,
+              strengths_and_limits: `Strengths: explains structural features other framings can take for granted; centers external responsibility for current border problems; provides historical depth that present-tense framings can miss. Limits: can underweight regional actors' agency in subsequent decades (regional leaders have substantially shaped what mandate borders became); can flatten internal complexity by emphasizing external imposition.`,
+            },
+            {
+              id: `israel-palestine`,
+              speaker: `Israel-Palestine centered framing`,
+              era: `dominant in 1980s-2020s academic scholarship on the region`,
+              stance: `The unresolved 1948 conflict and its century-long shadow has substantially shaped regional and global politics; many other dynamics flow from or around the Israel-Palestine conflict`,
+              quote: `"The Hundred Years' War on Palestine [is] a series of declarations of colonial war, including the Balfour Declaration of 1917, that prepared, advanced, and ultimately led to the dispossession of the Palestinian people."`,
+              quoteSource: `Rashid Khalidi, "The Hundred Years' War on Palestine: A History of Settler Colonialism and Resistance, 1917-2017," 2020`,
+              argument: `Origins from Balfour Declaration (Nov 2, 1917); British mandate Palestine 1922-1948 with substantial Jewish immigration; UN Partition Plan Nov 29, 1947; 1948 war producing Israeli state with expanded territory + Palestinian Nakba (~750,000 displaced, ~530 villages destroyed; mainstream Israeli historian Benny Morris documented systematic component); 1967 Six-Day War producing occupation of West Bank, Gaza, Sinai, Golan, East Jerusalem; settlement project in occupied West Bank since 1967 illegal under international law (recent ICJ advisory opinion July 2024 found occupation unlawful); multiple subsequent wars including current Gaza war (~50,000+ Palestinian deaths + ~1.9M displaced of 2.3M population since October 7, 2023). Pan-Arab politics, US Middle East engagement, refugee crises, internal Lebanese and Syrian dynamics, Iranian-Saudi rivalry, all interact with Israel-Palestine in significant ways.`,
+              evidence: `Rashid Khalidi "Hundred Years' War on Palestine" 2020 (foundational Palestinian-American account); Benny Morris "Birth of the Palestinian Refugee Problem" 1988/2004 + "Righteous Victims" 1999 (Israeli new historian); Avi Shlaim "The Iron Wall" 2000; Ilan Pappé "The Ethnic Cleansing of Palestine" 2006 (contested but influential); Tom Segev "The Seventh Million" 1991; declassified Israeli, British, and US documents; ICJ advisory opinions including July 2024.`,
+              strengths_and_limits: `Strengths: centers a conflict that has substantially shaped regional and global politics over a century; integrates demographic, political, and historical evidence; mainstream in academic Middle East studies. Limits: can make Israel-Palestine the lens through which other dynamics get read, even where other framings illuminate more; the framing itself is contested in current politics (some accept "settler-colonial" framework, others reject it; political polarization around the conflict makes balanced engagement difficult).`,
+            },
+            {
+              id: `oil-economy`,
+              speaker: `Oil and political economy framing`,
+              era: `developing 1990s-present; foundational works`,
+              stance: `Regional history substantially shaped by oil discoveries (Iran 1908, Saudi Arabia 1938) and resulting oil-dependent economic and political structures; external strategic interest in oil drives many interventions`,
+              quote: `"Coal-fired industrial workers organized strikes that won them political concessions through the power to disrupt energy flows. The shift to oil substantially undermined this democratic leverage."`,
+              quoteSource: `Timothy Mitchell, "Carbon Democracy: Political Power in the Age of Oil," 2011 (paraphrasing key argument)`,
+              argument: `Oil discoveries in Iran (1908, Anglo-Persian Oil Company) and Saudi Arabia (1938, ARAMCO) transformed regional and global politics. The Middle East holds the world's largest oil reserves; Saudi Arabia, Iraq, Iran, UAE, Kuwait, Qatar are among top oil producers; oil revenues sustain monarchies and authoritarian states across the Gulf; oil-related external interventions have been substantial (Mossadegh coup 1953 substantially over oil nationalization; Gulf War 1990-1991 substantially over Iraqi threat to Saudi/Kuwaiti oil; Iraq War 2003 with oil dimensions among multiple motivations; ongoing US commitment to Gulf security substantially shaped by oil); rentier state framework (states funded by oil exports rather than taxation) shapes internal politics of oil-producing states (limited internal accountability; concentrated political power; specific class structures).`,
+              evidence: `Daniel Yergin "The Prize: The Epic Quest for Oil, Money, and Power" 1991 (comprehensive history of oil and politics, Pulitzer Prize); Timothy Mitchell "Carbon Democracy: Political Power in the Age of Oil" 2011 (theoretical framework); Roger Owen on rentier state framework; specific country studies (Toby Craig Jones on Saudi Arabia; Ervand Abrahamian on Iran); declassified documents on US-Saudi relationship since 1945 Roosevelt-Saud meeting.`,
+              strengths_and_limits: `Strengths: explains material basis of regional power dynamics; centers specific external strategic motivations; explains specific internal political structures of oil-producing states. Limits: can underweight non-oil regional dynamics (Israel-Palestine, religious politics, internal democratic movements); can become single-explanation for regional politics that flattens complexity; specific country dynamics often more than oil determines.`,
+            },
+            {
+              id: `external-intervention`,
+              speaker: `External intervention framing`,
+              era: `dominant in critical scholarship 1990s-present`,
+              stance: `Region substantially shaped by pattern of external interventions across past century; intervention pattern continues to produce specific consequences`,
+              quote: `"In Iran (1953), Egypt (1956), Lebanon (1958), Iraq (multiple), Libya (2011), Syria (ongoing): the pattern of external intervention has been substantial and substantially consequential."`,
+              quoteSource: `Patrick Tyler, "A World of Trouble: The White House and the Middle East from the Cold War to the War on Terror," 2009 (paraphrasing pattern)`,
+              argument: `British and French interventions during and after mandate period; US-led coup against Iran's Mossadegh 1953; Suez Crisis 1956 (Israel + Britain + France against Egypt); Cold War-era proxy support and weapons supply; Iran-Iraq War 1980-1988 (US support for Iraq's Saddam Hussein against Iran); Gulf War 1990-1991; Iraqi sanctions 1990-2003 (~500K Iraqi children deaths from sanctions-related causes per UNICEF estimates through 1999, contested); Iraq War 2003-2011; Libya 2011 NATO intervention; Syrian civil war 2011-present with multiple external actors (US, Russia, Turkey, Iran, Gulf states); US drone war across Yemen + Pakistan + Somalia; Yemen civil war 2014-present with Saudi-led coalition + US support (~150K+ deaths + famine). Many current conflicts trace directly or indirectly to specific external interventions.`,
+              evidence: `Patrick Tyler "A World of Trouble" 2009; Stephen Kinzer "All the Shah's Men" 2003 (on 1953 Iran coup); Ervand Abrahamian "The Coup" 2013 (on 1953 Iran); Andrew Bacevich on US Middle East policy across decades; Vali Nasr "The Dispensable Nation" 2013; declassified documents from US, UK, Israeli, Iranian archives; multiple investigative journalism.`,
+              strengths_and_limits: `Strengths: centers external responsibility that internal-dynamics framings can minimize; explains patterns of regional instability that purely internal accounts struggle with; mainstream in critical scholarship of Middle East. Limits: can underweight regional actors' own agency; can flatten internal political diversity by emphasizing external imposition; the "intervention" framing can become totalizing in ways that miss complexity.`,
+            },
+            {
+              id: `internal-dynamics`,
+              speaker: `Internal regional dynamics framing`,
+              era: `substantial scholarship across decades; particularly developed by regional scholars`,
+              stance: `Region has its own internal dynamics, actors with agency, intellectual and political traditions, religious and cultural movements; external interventions interact with internal dynamics rather than determining them`,
+              quote: `"The Arab uprisings of 2011 were neither inevitable nor entirely surprising; they emerged from specific Arab political dynamics and specific Arab political actors with their own histories and agendas."`,
+              quoteSource: `Marc Lynch, "The Arab Uprising: The Unfinished Revolutions of the New Middle East," 2012 (paraphrasing)`,
+              argument: `Pan-Arabism under Nasser; rise and fall of Arab nationalism; Iranian Revolution 1979 as Iranian event with Iranian agency; emergence of political Islam through Muslim Brotherhood + Islamic Salvation Front Algeria + multiple Islamist political projects; Sunni-Shia rivalry intensified by 1979 Iranian Revolution and 2003 Iraq War; Arab Spring 2011 emerging from Bouazizi self-immolation Dec 17 2010 with specific regional political dynamics; Iranian Green Movement 2009 + Mahsa Amini protests 2022-2023; Turkish AKP rise and Erdoğan consolidation; multiple internal political contestations + intellectual life + literary traditions + religious thought + civil society + women's movements + LGBTQ+ activism + labor movements. Regional actors have substantial agency that external-centered framings underweight.`,
+              evidence: `Marc Lynch "The Arab Uprising" 2012 + ongoing scholarship; Lisa Anderson on political science of Middle East; Eugene Rogan (history); Khaled Fahmy (Egypt and reform); Vali Nasr (Iran); Hamid Dabashi (Iran); ongoing scholarship from regional academic communities including Egyptian, Iranian, Israeli, Palestinian, Lebanese, Turkish, Iraqi scholars; substantial literary tradition (Naguib Mahfouz, Mahmoud Darwish, others) that engages regional politics; multiple think tanks and academic institutions in region producing scholarship.`,
+              strengths_and_limits: `Strengths: recovers regional agency that external-centered framings miss; centers regional intellectual and political traditions; respects regional actors as actors rather than objects. Limits: can underweight external interventions where they have been substantial and consequential; can risk being too forgiving of regional regimes by framing all dynamics as internal; specific causal claims sometimes contested in detail.`,
+            },
+          ],
+          reflectionPrompt: `Across the five framings: which felt most natural and which most foreign? What does engaging framings you'd otherwise dismiss change about how you read Middle Eastern history?`,
+        },
+
+        {
+          id: `l13-quiz`,
+          type: `quiz`,
+          headline: `Check your understanding`,
+          questions: [
+            {
+              id: `q1`,
+              type: `multiple-choice`,
+              question: `What does the term "Middle East" reflect, and what's contained in conventional definitions?`,
+              options: [
+                `Random`,
+                `Term popularized by American naval strategist Alfred Thayer Mahan 1902 (Western geographic perspective from Europe/US). Conventional definition: Turkey, Iran, Iraq, Syria, Lebanon, Jordan, Palestine/Israel, Egypt, Saudi Arabia, Yemen, Oman, Qatar, Bahrain, UAE, Kuwait; broader includes rest of North Africa + sometimes Sudan, Somalia, Afghanistan. Regional self-naming varies: "Arab world" (Iran and Turkey not Arab), "Southwest Asia and North Africa" or "MENA" academic, specific countries identify primarily as own nation. ~500M people; major languages Arabic, Persian/Farsi, Turkish, Hebrew, Kurdish. Birthplace of Judaism, Christianity, Islam.`,
+                `Just region`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The term reflects a specifically Western geographic perspective; the contestation of nomenclature reflects deeper contestation of how the region is framed. Recognizing this matters for engaging the region honestly.`,
+            },
+            {
+              id: `q2`,
+              type: `multiple-choice`,
+              question: `How did the modern Middle East political structure emerge after WWI?`,
+              options: [
+                `Random`,
+                `Ottoman Empire entered WWI on side of Germany 1914, lost, dismantled 1918-1922. British + French diplomats divided Arab provinces through secret Sykes-Picot Agreement May 1916. Post-war settlement: San Remo Conference 1920, Treaty of Sèvres 1920, Treaty of Lausanne 1923. League of Nations mandates: British for Palestine + Iraq, French for Syria + Lebanon. Balfour Declaration Nov 2, 1917: British support for "national home for the Jewish people" in Palestine while preserving rights of "existing non-Jewish communities"; contradictions shaped subsequent regional politics. Mandate borders drawn with limited reference to local political, ethnic, sectarian realities; became modern state borders.`,
+                `Just borders`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The mandate borders are foundational to current regional politics. Recognizing how they were drawn (in London and Paris, with imperial competition as priority) is essential for understanding subsequent regional instability.`,
+            },
+            {
+              id: `q3`,
+              type: `multiple-choice`,
+              question: `What happened in 1948 and how is it framed?`,
+              options: [
+                `Just war`,
+                `UN Partition Plan (Resolution 181, Nov 29 1947) proposed dividing Palestine into Jewish + Arab states. Mainstream Zionist leadership accepted; Palestinian Arab leadership + Arab states rejected. Civil war late 1947, interstate war May 1948-1949 after Israeli declaration May 14 1948 and Arab invasion. Results: Israeli state with substantially expanded territory beyond UN plan; ~750,000 Palestinians displaced from areas that became Israel (Nakba/"catastrophe" in Palestinian framing); ~530 Palestinian villages destroyed. Mainstream Israeli historian Benny Morris documented mixed pattern of flight + forced expulsion through declassified Israeli archives in 1980s ("Birth of the Palestinian Refugee Problem" 1988, expanded 2004). New historians: Morris, Pappé, Shlaim, Segev. Mainstream Israeli view long emphasized war as defensive in face of Arab rejection; Palestinian + increasingly mainstream academic view emphasizes displacement as central event with deliberate components.`,
+                `Random`,
+                `Just creation`,
+              ],
+              correctIndex: 1,
+              explanation: `Naming the scale of Palestinian displacement (~750,000 + ~530 villages) and recognizing the documentary base (Morris and other new historians' work in 1980s through declassified Israeli archives) is essential for serious engagement with the conflict.`,
+            },
+            {
+              id: `q4`,
+              type: `multiple-choice`,
+              question: `What was the 1953 Iran coup?`,
+              options: [
+                `Random`,
+                `Democratically elected Prime Minister Mohammad Mossadegh nationalized Anglo-Iranian Oil Company (now BP) in 1951. CIA + UK MI6 organized Operation Ajax / TPAJAX coup August 1953 overthrowing Mossadegh and reinstating Shah Mohammad Reza Pahlavi with expanded powers. Shah's authoritarian rule continued until 1979 Iranian Revolution. 2013 declassification of CIA documents formally acknowledged agency's role. Coup widely cited in Iranian politics as foundational grievance against Western intervention. Iran-US relationship since 1979 substantially shaped by both 1953 coup and 1979-1981 US Embassy hostage crisis.`,
+                `Random`,
+                `Just election`,
+              ],
+              correctIndex: 1,
+              explanation: `The 1953 coup is one of the most documented external interventions in modern Middle Eastern history. Naming what actually happened (CIA + UK MI6 organized; democratically elected leader overthrown; Shah reinstated with expanded powers) is foundation for understanding subsequent Iran-US relations.`,
+            },
+            {
+              id: `q5`,
+              type: `multiple-choice`,
+              question: `What's the "oil and political economy" framing for the Middle East?`,
+              options: [
+                `Random`,
+                `Regional history substantially shaped by oil discoveries (Iran 1908 Anglo-Persian Oil Company; Saudi Arabia 1938 ARAMCO). Middle East holds world's largest oil reserves; Saudi Arabia, Iraq, Iran, UAE, Kuwait, Qatar among top oil producers. Oil-related external interventions substantial: Mossadegh 1953 substantially over oil nationalization; Gulf War 1990-1991 substantially over Iraqi threat to Saudi/Kuwaiti oil; Iraq War 2003 with oil dimensions among multiple motivations; ongoing US commitment to Gulf security substantially shaped by oil. Rentier state framework (states funded by oil exports rather than taxation) shapes internal politics of oil-producing states (limited internal accountability; concentrated political power; specific class structures). Daniel Yergin "The Prize" 1991; Timothy Mitchell "Carbon Democracy" 2011.`,
+                `Just oil`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The oil framing explains material basis of regional power dynamics and specific external strategic motivations. Recognizing it as one of multiple framings (not the only one) avoids reducing complex regional politics to oil alone.`,
+            },
+            {
+              id: `q6`,
+              type: `multiple-choice`,
+              question: `What was the Arab Spring 2011 and what were its actual outcomes?`,
+              options: [
+                `Random`,
+                `Triggered by Tunisian fruit seller Mohamed Bouazizi self-immolation Dec 17, 2010. Tunisian protests → Ben Ali fled Jan 14 2011 (23 years in power). Spread across region: Egypt (Mubarak resigned Feb 11, 2011 after 30 years); Libya (Gaddafi killed Oct 20 2011 after NATO intervention); Yemen (Saleh resigned Feb 27, 2012); Syria (civil war); Bahrain (uprising crushed by Saudi-led intervention March 2011); Tunisia (became only sustained democratic transition); Algeria (protests but regime survived). Actual outcomes varied: Tunisia briefly democratic transition; Egypt returned to military rule under Sisi (2013 coup against elected Muslim Brotherhood President Morsi); Libya/Syria/Yemen entered prolonged civil wars; multiple Gulf states tightened internal repression. "Arab Spring" framing turned out substantially optimistic; many observers now use "Arab Winter" or similar to describe predominant aftermath.`,
+                `Just protests`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `Recognizing the gap between Arab Spring's optimistic framing and actual mixed outcomes is essential for serious engagement with regional politics. Tunisia's partial democratic transition exists; the broader trajectory has been substantially less democratic than the initial framing suggested.`,
+            },
+            {
+              id: `q7`,
+              type: `multiple-choice`,
+              question: `What happened on October 7, 2023 and after?`,
+              options: [
+                `Random`,
+                `Hamas attack on Israel killed approximately 1,200 Israelis and took approximately 250 hostages. Subsequent Israeli military operation in Gaza has killed approximately 50,000+ Palestinians (Gaza Health Ministry counts as of mid-2024; Lancet 2024 estimate suggested total deaths attributable to war effects substantially higher than direct count) and displaced approximately 1.9 million of Gaza's 2.3 million population. Most significant Gaza war and regional crisis since 1948; ongoing as of writing. ICJ advisory opinion July 2024 found Israeli occupation of Palestinian territories unlawful; multiple genocide allegations filed; ongoing humanitarian crisis; regional escalation including Hezbollah, Iran, Houthi involvement.`,
+                `Just attack`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `Naming the specific scale honestly matters. The October 7 attack and subsequent Gaza war represent one of the most acute moments in the Israeli-Palestinian conflict in decades. Engaging the actual numbers (1,200 Israelis killed + 250 hostages on Oct 7; 50,000+ Palestinians killed + 1.9M displaced subsequently) is essential.`,
+            },
+            {
+              id: `q8`,
+              type: `multiple-choice`,
+              question: `What are the five interpretive framings of the Middle East?`,
+              options: [
+                `Random`,
+                `(1) Ottoman legacy + mandate borders (David Fromkin "A Peace to End All Peace" 1989; Eugene Rogan "The Arabs" 2009 + 2018): modern political structure shaped by Ottoman Empire and post-WWI mandate borders. (2) Israel-Palestine centered (Rashid Khalidi "Hundred Years' War on Palestine" 2020; Benny Morris + Avi Shlaim + Ilan Pappé + Tom Segev): unresolved 1948 conflict and century-long shadow shape regional politics. (3) Oil and political economy (Daniel Yergin "The Prize" 1991; Timothy Mitchell "Carbon Democracy" 2011): oil discoveries and oil-dependent structures shape regional and external dynamics. (4) External intervention (Patrick Tyler "A World of Trouble" 2009; Stephen Kinzer "All the Shah's Men" 2003): pattern of external interventions repeatedly reshaped regional politics. (5) Internal regional dynamics (Marc Lynch "The Arab Uprising" 2012; Lisa Anderson; Khaled Fahmy; regional scholars): regional actors have own agency, traditions, intellectual life that external-centered framings miss.`,
+                `Just five`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `Each framing captures real dimensions and has serious defenders. The framings don't fully exclude each other; many serious scholars work across multiple. Engaging each rather than committing to one early is the work.`,
+            },
+            {
+              id: `q9`,
+              type: `true-false`,
+              question: `True or false: The Middle East is best understood through a single framework that captures everything important about the region.`,
+              correctAnswer: false,
+              explanation: `False. The Middle East is best understood through engagement with multiple complementary framings. Five major framings illuminate different dimensions: Ottoman legacy + mandate borders (foundational shaping of political structure); Israel-Palestine (century-shaping unresolved conflict); oil and political economy (material basis of regional power); external interventions (pattern of repeated outside reshaping); internal regional dynamics (regional actors' own agency and history). The framings don't fully exclude each other and many serious scholars work across multiple. Reducing the region to any single framework substantially distorts what's actually happening. The five framings in this lesson are deliberately complementary; engaging each rather than committing to one early is the work.`,
+            },
+            {
+              id: `q10`,
+              type: `inference`,
+              question: `Your friend says "The Middle East is just one of those places where there's always going to be conflict; it's something about that region or those religions." Based on this lesson, what should you point out?`,
+              options: [
+                `"You're right"`,
+                `"Several specific things. First, the framing is essentialist and substantially wrong. The Middle East isn't 'always conflict'; the region had long periods of relative stability under various political orders (Ottoman period saw substantial sectarian co-existence for centuries; Egyptian Mamluk era saw artistic and intellectual flowering; Iran's Safavid period saw cultural development; etc.). Naming current conflicts as inherent to 'that region' or 'those religions' ignores the specific historical causes of current conflicts. Second, current conflicts have specific causes that can be named. The 1916 Sykes-Picot Agreement and subsequent mandate borders drew states with limited reference to local political, ethnic, or sectarian realities; this is a specific external decision with specific subsequent consequences. The 1917 Balfour Declaration committed Britain to supporting a Jewish national home in Palestine while preserving rights of existing non-Jewish communities; the contradictions in this commitment shaped a century of subsequent conflict. The 1953 CIA + UK MI6 coup against Iran's democratically elected Mossadegh is a specific event with specific subsequent consequences for Iran-US relations. The 1948 war and Palestinian displacement (~750,000 + ~530 villages destroyed) is specific event with specific subsequent consequences. The 2003 Iraq War destabilized Iraq, produced ISIS, expanded Iranian regional influence, destabilized Syria; these are specific consequences of specific decisions. None of this is 'something about that region.' Third, religion isn't the cause of these conflicts; religion is one of multiple dimensions that get politicized in conflicts. The Sunni-Shia rivalry intensified after the 1979 Iranian Revolution and the 2003 Iraq War; it has specific political-economic-strategic dimensions, not just religious. Christian + Muslim + Jewish populations lived together in Ottoman period for centuries; conflicts among them have specific historical causes, not inherent religious incompatibility. Fourth, multiple historical periods saw Middle Eastern flourishing: the Abbasid Caliphate (~750-1258) produced Baghdad's House of Wisdom and substantial scientific and philosophical advancement; the Ottoman Empire ruled diverse populations for centuries; the early Islamic world translated and preserved Greek and Persian learning that later influenced European Renaissance. The 'always conflict' framing erases this. Fifth, what to do practically: read serious scholarship on the region (Eugene Rogan 'The Arabs' 2009; David Fromkin 'A Peace to End All Peace' 1989; Rashid Khalidi 'The Hundred Years' War on Palestine' 2020 for Palestinian perspective; multiple Israeli new historians for Israeli perspective; Stephen Kinzer 'All the Shah's Men' 2003 on Iran 1953). Recognize the framing 'inherent conflict' as itself a Western interpretive choice that obscures specific historical responsibility. Five complementary framings exist for engaging the region seriously; the 'inherent conflict' framing isn't one of them."`,
+                `"Random"`,
+                `"Just disagree"`,
+              ],
+              correctIndex: 1,
+              explanation: `Real applied Middle East literacy. The essentialist "always conflict" framing erases specific historical causes; specific events (Sykes-Picot, Balfour Declaration, 1948, 1953 Iran coup, 1967, Iraq War 2003) have specific consequences. Engaging the region through multiple complementary framings rather than essentialist generalizations is the work.`,
+            },
+          ],
+        },
+
+        {
+          id: `l13-reflection`,
+          type: `reflection`,
+          headline: `Sit with this`,
+          intro: `Pick the prompt that pulls at you most. Your answer is saved.`,
+          prompts: [
+            { id: `reflect-family`, category: `Family connection`, prompt: `Does your family have direct or indirect connection to the Middle East (Arab, Iranian, Israeli, Palestinian, Lebanese, Egyptian, Turkish, Kurdish, or other regional connection)? How does that connection shape what felt natural to engage with today?` },
+            { id: `reflect-framing`, category: `Your most natural framing`, prompt: `Which of the five framings (Ottoman legacy; Israel-Palestine; oil; external interventions; internal dynamics) felt most natural to you? Which felt most foreign or challenging? What does that tell you about how you've been taught Middle Eastern history?` },
+            { id: `reflect-israel-palestine`, category: `Israel-Palestine engagement`, prompt: `The Israeli-Palestinian conflict has been one of the most politically contested topics for over a century. What does engaging serious scholarship on the conflict (rather than absorbing partisan narratives) require of you?` },
+            { id: `reflect-interventions`, category: `External interventions`, prompt: `Multiple external interventions (1953 Iran, 1956 Suez, multiple subsequent) have substantially shaped the region. How does naming the specific interventions change your reading of current Middle East politics? What does the pattern suggest about external responsibility?` },
+            { id: `reflect-internal`, category: `Internal dynamics`, prompt: `The internal-dynamics framing recovers regional agency that external-centered framings underweight. What does engaging Middle Eastern intellectual life, political traditions, religious thought, women's movements, and civil society change about how you think about the region?` },
+            { id: `reflect-october-7`, category: `Current crisis`, prompt: `October 7, 2023 and the subsequent Gaza war (~50,000+ Palestinian deaths + ~1.9M displaced; 1,200 Israelis killed Oct 7 + 250 hostages) represent acute crisis in the conflict. How do you engage this material? What support do you need to engage it seriously?` },
+          ],
+        },
+
+        {
+          id: `l13-real-world`,
+          type: `real-world`,
+          headline: `Take it into your life`,
+          guideContext: `Middle East shapes global politics in your generation's lifetime. Two paths.`,
+          familyActivity: {
+            title: `Family Middle East Conversation`,
+            duration: `60-90 minutes`,
+            description: `Share the five framings with your family. Family members with regional connections may have specific framings shaped by family experience; family members without regional connections may absorb specific framings from media. The conversation often surfaces specific perspectives that family members hold without recognizing them as framings. Discussing current crisis (Gaza war, regional escalation) requires particular care; family members may have strong feelings shaped by family experience or by media consumption. Listening seriously to family experience while introducing the multi-framing approach can be valuable.`,
+          },
+          projectOption: {
+            title: `In-Depth Study, 6-8 weeks (optional)`,
+            duration: `6-8 weeks, ~45 minutes per session`,
+            description: `Pick one Middle East topic for deep study. Israel-Palestine: read Khalidi "The Hundred Years' War on Palestine" 2020 + Morris "Righteous Victims" 1999 + Shlaim "The Iron Wall" 2000 to engage multiple perspectives. Iran: read Kinzer "All the Shah's Men" 2003 + Abrahamian "The Coup" 2013 + Nasr "The Shia Revival" 2006. Iraq: read Ricks "Fiasco" 2006 + Chandrasekaran "Imperial Life in the Emerald City" 2006. Mandate period: read Fromkin "A Peace to End All Peace" 1989 + Rogan "The Arabs" 2009. Oil and Gulf: read Yergin "The Prize" 1991 + recent journalism. Across 6-8 weeks develop substantial knowledge; write 2,500 words integrating the readings, applying the framework from this lesson.`,
+            offerToParent: `Parent: opt your kid into this project. Sustained engagement with one Middle East topic at 12-13 builds foundation for engaging regional and global politics across decades.`,
+          },
+          identityQuestion: `If you become someone who engages Middle East history across five complementary framings, what does that change about how you read news about the region, how you engage US foreign policy debates, and how you understand the world your generation will navigate?`,
+        },
+
+        {
+          id: `l13-identity-hook`,
+          type: `identity-hook`,
+          headline: `Who is this lesson making you?`,
+          prompt: `One sentence. No wrong answer.`,
+          placeholder: `Someone who...`,
+          examples: [
+            `Someone who reads Middle East history through five complementary framings.`,
+            `A person who can engage Israeli-Palestinian conflict with both Khalidi and Morris in view.`,
+            `Someone who names external interventions (1953 Iran, 1956 Suez, Iraq War 2003) by date and actor.`,
+          ],
+          saveKey: `identity_responses_hw_11_12_13`,
+        },
+
+        {
+          id: `l13-celebration`,
+          type: `celebration`,
+          guideText: `{name}. Thirteenth History and World lesson done. Heavy content engaged seriously. You have framework for five interpretive framings of the Middle East: Ottoman legacy + mandate borders (Fromkin 1989, Rogan 2009/2018; Sykes-Picot May 1916, Balfour Declaration Nov 2 1917, mandate borders); Israel-Palestine centered (Khalidi 2020; Morris 1988/2004 + 1999, Shlaim, Pappé, Segev; 1948 Nakba ~750K displaced + ~530 villages destroyed; 1967 Six-Day War; current Gaza war post-Oct 7 2023); oil and political economy (Yergin 1991, Mitchell 2011; Iran 1908 + Saudi 1938 discoveries; rentier state framework); external interventions (Tyler 2009, Kinzer 2003; 1953 Iran coup CIA + MI6 declassified 2013, 1956 Suez, Cold War proxies, Gulf War 1990-1991, Iraq War 2003-2011, Libya 2011, Syria 2011+, Yemen 2014+); internal regional dynamics (Lynch 2012, regional scholars; Pan-Arabism under Nasser, Iranian Revolution 1979, Sunni-Shia rivalry, Arab Spring 2011 + actual mixed outcomes, current trajectories). You can name specific scale: October 7 2023 ~1,200 Israeli dead + ~250 hostages; subsequent Gaza war ~50,000+ Palestinian dead + ~1.9M displaced (of 2.3M Gaza population). Seven lessons to go. Next: China's rise. We engaged China as one of three post-Cold War cases in L12; now we go deeper. Argument Builder. Three positions on China's trajectory and what it means. Onward. — Lyra`,
+          badge: `middle-east-literate`,
+          badgeName: `Middle East Literate`,
+          xpEarned: 75,
+          competencies: [
+            `Engages five complementary framings of Middle Eastern history (Ottoman legacy + mandate borders; Israel-Palestine centered; oil + political economy; external interventions; internal regional dynamics)`,
+            `Names the post-WWI structural decisions (Sykes-Picot May 1916; Balfour Declaration Nov 2 1917; San Remo 1920; Sèvres 1920; Lausanne 1923; League of Nations mandates)`,
+            `Engages Israeli-Palestinian conflict with both Israeli new historian scholarship (Morris, Shlaim, Pappé, Segev) and Palestinian-American scholarship (Khalidi); names 1948 Nakba scale (~750K displaced + ~530 villages destroyed)`,
+            `Names major external interventions with dates and actors (1953 CIA + MI6 against Mossadegh; 1956 Suez; Iran-Iraq War 1980-1988 with US support for Iraq; Gulf War 1990-1991; Iraq War 2003-2011; Libya 2011; Syria 2011+; Yemen 2014+)`,
+            `Engages internal regional dynamics (Pan-Arabism + Nasser; Iranian Revolution 1979; Sunni-Shia rivalry; Arab Spring 2011 + actual mixed outcomes; current trajectories)`,
+            `Engages current crisis (October 7 2023 + ongoing Gaza war) with specific scale and multiple framings`,
+          ],
+          nextLessonPreview: {
+            title: `Lesson 14: China's Rise: History and Future`,
+            hook: `Argument Builder. Three positions on China's trajectory. Deeper than L12.`,
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export default HISTORY_VOYAGER_L13;
+
+if (import.meta.env?.DEV) {
+  const l = HISTORY_VOYAGER_L13.lessons[0];
+  const mags = l.screens.filter((s) => s.type === `magazine`).length;
+  const perspectives = l.screens.find((s) => s.type === `perspectives`);
+  const quiz = l.screens.find((s) => s.type === `quiz`)?.questions?.length ?? 0;
+  const reflect = l.screens.find((s) => s.type === `reflection`)?.prompts?.length ?? 0;
+  console.log(
+    `[LESSON-HW-VOYAGER-L13 ${VERSION}] "${l.title}" mags=${mags} voices=${perspectives?.voices?.length ?? 0} q=${quiz} r=${reflect}`
+  );
+}
