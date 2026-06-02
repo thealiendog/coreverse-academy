@@ -32,6 +32,7 @@ import MatchingGame       from './MatchingGame';
 import SequenceGame       from './SequenceGame';
 import InvestigationGame  from './InvestigationGame';
 import BranchingDecision  from './BranchingDecision';
+import Perspectives        from './Perspectives';
 import { buildSpacedQuiz } from './SpacedRetrievalEngine';
 
 // ── Voyager lesson data ────────────────────────────────────────────────────
@@ -155,6 +156,9 @@ import LIFEWELLNESS_VOY_L17 from '../../data/lifewellness_voyager_l17_screens';
 import LIFEWELLNESS_VOY_L18 from '../../data/lifewellness_voyager_l18_screens';
 import LIFEWELLNESS_VOY_L19 from '../../data/lifewellness_voyager_l19_screens';
 import LIFEWELLNESS_VOY_L20 from '../../data/lifewellness_voyager_l20_screens';
+import HISTORY_VOY_L01 from '../../data/history_voyager_l01_screens';
+import HISTORY_VOY_L02 from '../../data/history_voyager_l02_screens';
+import HISTORY_VOY_L03 from '../../data/history_voyager_l03_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -178,6 +182,7 @@ function getScreenText(screen, childName) {
     case 'sequence':           return r(screen.intro       || screen.headline || '');
     case 'investigation':      return r(screen.intro       || screen.headline || '');
     case 'branching-decision': return r(screen.intro       || screen.headline || '');
+    case 'perspectives':       return r(screen.intro       || screen.headline || '');
     default:                   return '';
   }
 }
@@ -730,6 +735,16 @@ const VOY_DATA = {
       ...LIFEWELLNESS_VOY_L20.lessons,
     ],
   },
+  'history': {
+    ageBand:   'voyagers',
+    subjectId: 'hw',
+    guide:     'lyra',
+    lessons: [
+      ...HISTORY_VOY_L01.lessons,
+      ...HISTORY_VOY_L02.lessons,
+      ...HISTORY_VOY_L03.lessons,
+    ],
+  },
 };
 
 // ── Audio session tracking (module-level) ─────────────────────────────────
@@ -1073,7 +1088,8 @@ export default function VoyagerLessonPlayer() {
       screen.type === 'matching-game'    ||
       screen.type === 'sequence'         ||
       screen.type === 'investigation'    ||
-      screen.type === 'branching-decision'
+      screen.type === 'branching-decision' ||
+      screen.type === 'perspectives'
     ) {
       const text = getScreenText(screen, childName);
       if (text) speak(text);
@@ -1222,6 +1238,14 @@ export default function VoyagerLessonPlayer() {
       case 'branching-decision':
         return (
           <BranchingDecision
+            screen={currentScreen} accent={accent}
+            childName={childName} guideAvatar={guideAvatar}
+            onComplete={goNext}
+          />
+        );
+      case 'perspectives':
+        return (
+          <Perspectives
             screen={currentScreen} accent={accent}
             childName={childName} guideAvatar={guideAvatar}
             onComplete={goNext}
