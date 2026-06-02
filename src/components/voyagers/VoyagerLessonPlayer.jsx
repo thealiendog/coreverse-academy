@@ -159,6 +159,9 @@ import LIFEWELLNESS_VOY_L20 from '../../data/lifewellness_voyager_l20_screens';
 import HISTORY_VOY_L01 from '../../data/history_voyager_l01_screens';
 import HISTORY_VOY_L02 from '../../data/history_voyager_l02_screens';
 import HISTORY_VOY_L03 from '../../data/history_voyager_l03_screens';
+import HISTORY_VOY_L04 from '../../data/history_voyager_l04_screens';
+import HISTORY_VOY_L05 from '../../data/history_voyager_l05_screens';
+import HISTORY_VOY_L06 from '../../data/history_voyager_l06_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -743,6 +746,9 @@ const VOY_DATA = {
       ...HISTORY_VOY_L01.lessons,
       ...HISTORY_VOY_L02.lessons,
       ...HISTORY_VOY_L03.lessons,
+      ...HISTORY_VOY_L04.lessons,
+      ...HISTORY_VOY_L05.lessons,
+      ...HISTORY_VOY_L06.lessons,
     ],
   },
 };
