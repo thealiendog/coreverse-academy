@@ -22,17 +22,40 @@ const RANK_SLOTS = [
 export default function SourceEvaluation({ screen, accent, childName, onComplete }) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
 
-  const sources         = screen.sources       || [];
-  const rankingPrompt   = screen.rankingPrompt  || 'Rank these sources by credibility.';
-  const reasoningPrompt = screen.reasoningPrompt || 'Explain your ranking in 2–3 sentences.';
+  // Normalize sources: support name/title, claim/content, evidence fields
+  const sources = (screen.sources || []).map(s => ({
+    ...s,
+    name:     s.name     || s.title   || '',
+    claim:    s.claim    || s.content || '',
+    evidence: s.evidence || '',
+  }));
+  const rankingPrompt   = screen.rankingPrompt   || 'Rank these sources by credibility.';
+  const reasoningPrompt = screen.reasoningPrompt  || 'Explain your ranking in 2–3 sentences.';
 
-  // Normalize reveal: accept plain string OR { title, content[] } object
+  // Normalize reveal: accept plain string, { title, content[] } object,
+  // or build from per-source evaluation objects + synthesisPrompt/reflectionPrompt
+  const buildRevealFromEvaluations = () => {
+    const parts = (screen.sources || []).map(s => {
+      const ev = s.evaluation || {};
+      const name = s.name || s.title || '';
+      return [
+        name ? `${name}` : '',
+        ev.tier       ? `Tier: ${ev.tier}`           : '',
+        ev.strengths  ? `Strengths: ${ev.strengths}` : '',
+        ev.concerns   ? `Concerns: ${ev.concerns}`   : '',
+        ev.weight     ? `Weight: ${ev.weight}`       : '',
+      ].filter(Boolean).join('\n');
+    }).filter(Boolean).join('\n\n');
+    const synthesis   = screen.synthesisPrompt   || '';
+    const reflection  = screen.reflectionPrompt  || '';
+    return [parts, synthesis && `Synthesis: ${synthesis}`, reflection && `Reflect: ${reflection}`].filter(Boolean).join('\n\n');
+  };
   const revealRaw   = screen.reveal || '';
   const revealIsObj = typeof revealRaw === 'object' && revealRaw !== null;
   const revealTitle = revealIsObj ? (revealRaw.title || '') : '';
-  const reveal      = revealIsObj
-    ? (revealRaw.content || []).join('\n')
-    : revealRaw;
+  const reveal      = revealRaw
+    ? (revealIsObj ? (revealRaw.content || []).join('\n') : revealRaw)
+    : buildRevealFromEvaluations();
 
   // ── State ──────────────────────────────────────────────────────────────────
   // rankings: { most: sourceIdx|null, somewhat: sourceIdx|null, least: sourceIdx|null }
@@ -140,7 +163,7 @@ export default function SourceEvaluation({ screen, accent, childName, onComplete
       {/* Topic */}
       <div>
         <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', margin: '0 0 4px' }}>Topic</p>
-        <p style={{ color: '#e2d9f3', fontSize: '1rem', fontWeight: 700, lineHeight: 1.45, margin: 0 }}>{r(screen.topic || '')}</p>
+        <p style={{ color: '#e2d9f3', fontSize: '1rem', fontWeight: 700, lineHeight: 1.45, margin: 0 }}>{r(screen.topic || screen.headline || '')}</p>
       </div>
 
       {/* Ranking prompt */}
