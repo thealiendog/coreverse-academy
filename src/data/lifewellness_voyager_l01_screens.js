@@ -15,7 +15,7 @@ const LIFEWELLNESS_VOYAGER_L01 = {
 
   lessons: [
     {
-      id: `lw-11-12-1`,
+      id: `lw-11-12-01`,
       title: `What "Wellness" Actually Is`,
       duration: 35,
       xpReward: 75,

@@ -15,7 +15,7 @@ const LIFEWELLNESS_VOYAGER_L08 = {
 
   lessons: [
     {
-      id: `lw-11-12-8`,
+      id: `lw-11-12-08`,
       title: `Attention and Focus`,
       duration: 35,
       xpReward: 75,

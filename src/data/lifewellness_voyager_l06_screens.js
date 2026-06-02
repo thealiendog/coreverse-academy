@@ -19,7 +19,7 @@ const LIFEWELLNESS_VOYAGER_L06 = {
 
   lessons: [
     {
-      id: `lw-11-12-6`,
+      id: `lw-11-12-06`,
       title: `Mental Health Basics`,
       duration: 35,
       xpReward: 75,

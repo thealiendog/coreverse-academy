@@ -18,7 +18,7 @@ const LIFEWELLNESS_VOYAGER_L05 = {
 
   lessons: [
     {
-      id: `lw-11-12-5`,
+      id: `lw-11-12-05`,
       title: `Movement and Physical Capability`,
       duration: 35,
       xpReward: 75,

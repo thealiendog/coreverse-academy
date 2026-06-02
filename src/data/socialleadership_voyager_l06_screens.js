@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L06 = {
 
   lessons: [
     {
-      id: `sl-11-12-6`,
+      id: `sl-11-12-06`,
       title: `Navigating Conflict`,
       duration: 35,
       xpReward: 75,

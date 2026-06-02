@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L03 = {
 
   lessons: [
     {
-      id: `sl-11-12-3`,
+      id: `sl-11-12-03`,
       title: `Building Trust`,
       duration: 35,
       xpReward: 75,

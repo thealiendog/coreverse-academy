@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L07 = {
 
   lessons: [
     {
-      id: `sl-11-12-7`,
+      id: `sl-11-12-07`,
       title: `Persuasion vs Manipulation`,
       duration: 35,
       xpReward: 75,

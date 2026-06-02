@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L04 = {
 
   lessons: [
     {
-      id: `sl-11-12-4`,
+      id: `sl-11-12-04`,
       title: `Listening as Leadership`,
       duration: 35,
       xpReward: 75,

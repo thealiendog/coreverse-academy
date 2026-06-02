@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L08 = {
 
   lessons: [
     {
-      id: `sl-11-12-8`,
+      id: `sl-11-12-08`,
       title: `Leading Through Change`,
       duration: 35,
       xpReward: 75,

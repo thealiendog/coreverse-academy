@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L02 = {
 
   lessons: [
     {
-      id: `sl-11-12-2`,
+      id: `sl-11-12-02`,
       title: `Power vs Authority vs Influence`,
       duration: 35,
       xpReward: 75,

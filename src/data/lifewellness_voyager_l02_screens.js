@@ -15,7 +15,7 @@ const LIFEWELLNESS_VOYAGER_L02 = {
 
   lessons: [
     {
-      id: `lw-11-12-2`,
+      id: `lw-11-12-02`,
       title: `Sleep`,
       duration: 35,
       xpReward: 75,

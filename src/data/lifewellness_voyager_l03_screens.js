@@ -15,7 +15,7 @@ const LIFEWELLNESS_VOYAGER_L03 = {
 
   lessons: [
     {
-      id: `lw-11-12-3`,
+      id: `lw-11-12-03`,
       title: `The Stress Response`,
       duration: 35,
       xpReward: 75,

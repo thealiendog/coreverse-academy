@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L05 = {
 
   lessons: [
     {
-      id: `sl-11-12-5`,
+      id: `sl-11-12-05`,
       title: `Making Decisions Under Uncertainty`,
       duration: 35,
       xpReward: 75,

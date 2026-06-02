@@ -15,7 +15,7 @@ const LIFEWELLNESS_VOYAGER_L07 = {
 
   lessons: [
     {
-      id: `lw-11-12-7`,
+      id: `lw-11-12-07`,
       title: `Habits and Behavior Change`,
       duration: 35,
       xpReward: 75,

@@ -17,7 +17,7 @@ const LIFEWELLNESS_VOYAGER_L04 = {
 
   lessons: [
     {
-      id: `lw-11-12-4`,
+      id: `lw-11-12-04`,
       title: `Food, Nutrition, And The Diet Culture Problem`,
       duration: 35,
       xpReward: 75,

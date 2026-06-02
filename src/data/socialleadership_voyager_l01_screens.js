@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L01 = {
 
   lessons: [
     {
-      id: `sl-11-12-1`,
+      id: `sl-11-12-01`,
       title: `What Leadership Actually Is`,
       duration: 35,
       xpReward: 75,

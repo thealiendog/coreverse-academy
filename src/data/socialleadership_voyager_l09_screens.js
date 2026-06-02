@@ -15,7 +15,7 @@ const SOCIALLEADERSHIP_VOYAGER_L09 = {
 
   lessons: [
     {
-      id: `sl-11-12-9`,
+      id: `sl-11-12-09`,
       title: `Status, Hierarchy, Belonging`,
       duration: 35,
       xpReward: 75,

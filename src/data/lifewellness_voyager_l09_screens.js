@@ -15,7 +15,7 @@ const LIFEWELLNESS_VOYAGER_L09 = {
 
   lessons: [
     {
-      id: `lw-11-12-9`,
+      id: `lw-11-12-09`,
       title: `Emotional Regulation`,
       duration: 35,
       xpReward: 75,
