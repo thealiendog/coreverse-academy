@@ -176,6 +176,9 @@ import HISTORY_VOY_L17 from '../../data/history_voyager_l17_screens';
 import HISTORY_VOY_L18 from '../../data/history_voyager_l18_screens';
 import HISTORY_VOY_L19 from '../../data/history_voyager_l19_screens';
 import HISTORY_VOY_L20 from '../../data/history_voyager_l20_screens';
+import CA_VOY_L01 from '../../data/creative_arts_voyager_l01_screens';
+import CA_VOY_L02 from '../../data/creative_arts_voyager_l02_screens';
+import CA_VOY_L03 from '../../data/creative_arts_voyager_l03_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -777,6 +780,16 @@ const VOY_DATA = {
       ...HISTORY_VOY_L18.lessons,
       ...HISTORY_VOY_L19.lessons,
       ...HISTORY_VOY_L20.lessons,
+    ],
+  },
+  'creative-arts': {
+    ageBand:   'voyagers',
+    subjectId: 'ca',
+    guide:     'muse',
+    lessons: [
+      ...CA_VOY_L01.lessons,
+      ...CA_VOY_L02.lessons,
+      ...CA_VOY_L03.lessons,
     ],
   },
 };
