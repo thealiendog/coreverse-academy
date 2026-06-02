@@ -162,6 +162,9 @@ import HISTORY_VOY_L03 from '../../data/history_voyager_l03_screens';
 import HISTORY_VOY_L04 from '../../data/history_voyager_l04_screens';
 import HISTORY_VOY_L05 from '../../data/history_voyager_l05_screens';
 import HISTORY_VOY_L06 from '../../data/history_voyager_l06_screens';
+import HISTORY_VOY_L07 from '../../data/history_voyager_l07_screens';
+import HISTORY_VOY_L08 from '../../data/history_voyager_l08_screens';
+import HISTORY_VOY_L09 from '../../data/history_voyager_l09_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -749,6 +752,9 @@ const VOY_DATA = {
       ...HISTORY_VOY_L04.lessons,
       ...HISTORY_VOY_L05.lessons,
       ...HISTORY_VOY_L06.lessons,
+      ...HISTORY_VOY_L07.lessons,
+      ...HISTORY_VOY_L08.lessons,
+      ...HISTORY_VOY_L09.lessons,
     ],
   },
 };
