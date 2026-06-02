@@ -1,0 +1,436 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// HISTORY & WORLD VOYAGER  |  L11 — The Cold War in Depth
+// Age band : voyagers (11-12)   Guide: lyra (Elephant)
+// Standards: Coreverse Original — Cold War Interpretive Traditions
+// CALIBRATED: Voyager spec v1.1 (May 2026)
+//
+// Interaction format: PERSPECTIVES (orthodox / revisionist / post-revisionist / global / from below)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const VERSION = "voyager-hw-l11-v1";
+
+const HISTORY_VOYAGER_L11 = {
+  ageBand: `voyagers`,
+  subjectId: `history`,
+  guide: `lyra`,
+
+  lessons: [
+    {
+      id: `hw-11-12-11`,
+      title: `The Cold War in Depth`,
+      duration: 35,
+      xpReward: 75,
+      badge: `cold-war-literate`,
+      badgeName: `Cold War Literate`,
+
+      screens: [
+        {
+          id: `l11-welcome`,
+          type: `welcome`,
+          guideText: `{name}, the Cold War (1945-1991) structured global politics for nearly five decades. The US-Soviet rivalry shaped: nuclear arsenals (L10), proxy wars across the decolonizing world, internal politics in both superpowers and in dozens of other states, economic development patterns, cultural production, scientific research, and ideological framings that persist today. Today five interpretive traditions on what the Cold War actually was: orthodox American Cold War (USSR aggressive, US defensive); revisionist (US economic expansionism drove conflict, Soviet behavior was reactive); post-revisionist synthesis (both powers had agency, combination of factors); global Cold War (the Third World wasn't backdrop; it was substantially where the Cold War happened); Cold War from below (domestic politics, civil rights, popular movements shaped what looked like elite decisions). Each tradition uses real evidence and produces different readings. You engage each rather than committing to one; the traditions complement more than they compete on specific questions.`,
+          headline: `The Cold War in Depth`,
+          subtitle: `Five interpretive traditions. Different framings produce different readings.`,
+          visual: `/voyager-assets/history/l11-welcome.webp`,
+        },
+
+        {
+          id: `l11-mag-1`,
+          type: `magazine`,
+          section: 1,
+          headline: `What Was The Cold War?`,
+          paragraphs: [
+            `The Cold War was the global rivalry between the United States and the Soviet Union (with their respective allies and client states) from roughly 1945 to 1991. The name "cold" refers to the absence of direct military conflict between the superpowers themselves; the rivalry produced proxy wars, arms races, espionage, ideological competition, economic confrontation, and the constant possibility of escalation to direct conflict that didn't happen. Calling it "cold" obscures how hot it was in many places: the Korean War, the Vietnam War, the Soviet invasion of Afghanistan, multiple Latin American conflicts, and ongoing violence in Africa and Asia were Cold War proxy wars that killed millions.`,
+            `The standard timeline. Origins 1945-1947: the wartime alliance broke down rapidly after Hitler's defeat over disagreements about Eastern European order, German question, Iranian sovereignty, atomic weapons, and ideological framings. The Truman Doctrine (March 1947) committed the US to "support free peoples who are resisting attempted subjugation by armed minorities or by outside pressures," explicitly globalizing the conflict. The Marshall Plan (June 1947) provided ~$13 billion in aid for European reconstruction, drawing a line between Western and Soviet spheres. The Berlin Blockade (June 1948-May 1949) saw the Soviets cut off Western Berlin; the US-British airlift kept the city supplied for nearly a year. NATO formed April 1949; the Warsaw Pact in 1955 in response.`,
+            `The mid-Cold War 1950-1969. The Korean War (1950-1953) killed approximately 3 million Koreans (north and south), 36,000 Americans, 180,000 Chinese, and ended in armistice rather than peace treaty. The Hungarian Revolution (1956) was crushed by Soviet tanks; ~3,000 Hungarians killed, ~200,000 fled. Sputnik (October 1957) shocked the US into the space race. Berlin Wall went up August 1961. Cuban Missile Crisis (October 1962) brought the world to brink of nuclear war (L10). Prague Spring (1968) and Soviet invasion of Czechoslovakia. Vietnam War escalated under Johnson (1965+) and continued under Nixon; ~3 million Vietnamese killed and ~58,000 Americans by 1975. The Civil Rights Movement and 1960s protest movements developed partly in dialogue with Cold War politics.`,
+            `Détente and late Cold War 1969-1985. Nixon's opening to China (February 1972) and arms control negotiations with USSR (SALT I 1972, SALT II 1979). Helsinki Accords (1975) committed both sides to human rights. Iran Revolution (1979) ended the US-backed Shah; Iran hostage crisis 1979-1981 damaged Carter administration. Soviet invasion of Afghanistan (December 1979) began nine-year war that killed ~1 million Afghans and ~15,000 Soviets. Reagan's early years (1981-1985) escalated rhetoric ("evil empire" speech 1983) and military buildup; Soviet leadership feared possible US first-strike. The Korean Airlines Flight 007 shootdown (September 1983) and Able Archer 83 exercise (November) marked particularly dangerous moments.`,
+            `Cold War end 1985-1991. Mikhail Gorbachev became Soviet General Secretary in 1985; introduced glasnost (openness) and perestroika (restructuring). Reagan-Gorbachev summits (Geneva 1985, Reykjavik 1986, Washington 1987 with INF Treaty, Moscow 1988) progressively reduced tensions. Berlin Wall fell November 9, 1989. The Velvet Revolutions across Eastern Europe followed (Poland, Hungary, Czechoslovakia, Romania, Bulgaria, East Germany). German reunification October 3, 1990. Soviet Union formally dissolved December 25, 1991 when Gorbachev resigned and the USSR was replaced by Russia and 14 other independent states. The Cold War didn't end through victory in war; it ended through the Soviet system's internal transformation and collapse.`,
+            `What the Cold War produced. Beyond the proxy wars: nuclear arsenals peaking at ~70,000 weapons globally; espionage and counter-espionage activities of unprecedented scale (CIA, KGB, MI6, Stasi, others); space program (Apollo, Sputnik); ideological frameworks that shaped media, education, science funding, immigration policy; economic structures (multinational corporations, IMF/World Bank/Bretton Woods, COMECON in Soviet sphere); cultural production (Cold War film, literature, music); patterns of inequality and intervention in the decolonizing world. The Cold War shaped institutional and ideological inheritance you live with today.`,
+          ],
+          image: `/voyager-assets/history/l11-s1-what-was.webp`,
+          imageCaption: `Cold War 1945-1991: US-Soviet global rivalry; "cold" because no direct superpower military conflict, but hot in many places (Korea ~3M dead, Vietnam ~3M, Afghanistan ~1M+). Origins 1945-1947 (Truman Doctrine + Marshall Plan + Berlin Blockade + NATO 1949). Mid-Cold War (Korea, Hungary 1956, Cuban Missile Crisis, Vietnam, Czechoslovakia 1968). Détente. Late Cold War + collapse (Gorbachev, Berlin Wall fall Nov 9 1989, USSR dissolved Dec 25 1991).`,
+          vocab: [
+            {
+              word: `the Cold War: definition, timeline, scale`,
+              definition: `Global rivalry between US and USSR (with allies and clients) ~1945-1991. "Cold" = no direct superpower military conflict; produced proxy wars, arms races, espionage, ideological competition, constant possibility of escalation. Hot in many places: Korean War 1950-1953 (~3M Koreans + 36K Americans + 180K Chinese, armistice not peace treaty); Hungarian Revolution 1956 (~3,000 killed, ~200K fled); Vietnam War (~3M Vietnamese + ~58K Americans by 1975); Soviet invasion of Afghanistan 1979-1989 (~1M Afghans + ~15K Soviets). Origins 1945-1947: Truman Doctrine March 1947, Marshall Plan June 1947 (~$13B European aid), Berlin Blockade June 1948-May 1949, NATO April 1949, Warsaw Pact 1955. Mid-Cold War: Sputnik Oct 1957, Bay of Pigs 1961, Berlin Wall Aug 1961, Cuban Missile Crisis Oct 1962, Prague Spring + Soviet invasion of Czechoslovakia 1968. Détente: Nixon-China Feb 1972, SALT, Helsinki Accords 1975. Late Cold War: Iran Revolution 1979, Reagan "evil empire" 1983, Able Archer Nov 1983, KAL 007 Sept 1983. End: Gorbachev 1985 (glasnost + perestroika), Reagan-Gorbachev summits (Geneva 1985, Reykjavik 1986, Washington 1987 INF, Moscow 1988), Berlin Wall fall Nov 9 1989, German reunification Oct 3 1990, USSR formally dissolved Dec 25 1991.`,
+              audioPrompt: `The Cold War was the global rivalry between the United States and the Soviet Union, with their respective allies and client states, from roughly 1945 to 1991, {name}. The name "cold" refers to the absence of direct military conflict between the superpowers themselves; the rivalry produced proxy wars, arms races, espionage, ideological competition, and the constant possibility of escalation. Calling it "cold" obscures how hot it was in many places. The Korean War from 1950 to 1953 killed approximately 3 million Koreans, 36,000 Americans, 180,000 Chinese, and ended in armistice rather than peace treaty. The Vietnam War killed approximately 3 million Vietnamese and approximately 58,000 Americans by 1975. The Soviet invasion of Afghanistan from 1979 to 1989 killed approximately 1 million Afghans. Origins from 1945 to 1947 included the Truman Doctrine in March 1947, the Marshall Plan in June 1947 providing approximately 13 billion dollars in European aid, the Berlin Blockade from June 1948 to May 1949, and NATO formation in April 1949. The Cold War ended with Gorbachev's reforms starting 1985, the Reagan-Gorbachev summits, the fall of the Berlin Wall on November 9 1989, and the formal dissolution of the Soviet Union on December 25 1991.`,
+            },
+          ],
+        },
+
+        {
+          id: `l11-mag-2`,
+          type: `magazine`,
+          section: 2,
+          headline: `The Latin American Cold War You Don't Always Hear About`,
+          paragraphs: [
+            `The Cold War in Latin America was particularly active and particularly violent. Understanding the Cold War without understanding Latin American Cold War is incomplete. The US considered Latin America its "backyard" through the Monroe Doctrine (1823) and various interventions across the 19th and 20th centuries; the Cold War intensified the pattern, with the US supporting authoritarian governments and overthrowing democratically elected ones perceived as threatening US interests or aligned with Soviet bloc.`,
+            `Major US-backed coups and authoritarian governments. Guatemala 1954: democratically elected President Jacobo Árbenz, whose agrarian reform threatened United Fruit Company interests, was overthrown in CIA-organized coup (PBSUCCESS operation); subsequent military rule produced civil war 1960-1996 with ~200,000 killed, of whom ~83% were Maya indigenous people (UN Commission for Historical Clarification 1999 classified as genocide). Brazil 1964: military coup against João Goulart with US support; military dictatorship 1964-1985 with thousands tortured and disappeared. Chile 1973: military coup against democratically elected Salvador Allende on September 11, 1973, with US-CIA involvement documented in declassified files; Augusto Pinochet's dictatorship 1973-1990 killed ~3,000+ and tortured tens of thousands. Argentina 1976: military coup against Isabel Perón; "Dirty War" 1976-1983 disappeared ~30,000 people (Madres de Plaza de Mayo continue to demand accountability). Uruguay 1973-1985 dictatorship; Bolivia 1971-1978, 1980 dictatorships; Paraguay under Alfredo Stroessner 1954-1989.`,
+            `Operation Condor (1975-1985): coordinated political repression and assassination operation by the right-wing military dictatorships of Argentina, Bolivia, Brazil, Chile, Paraguay, Uruguay (and later Ecuador, Peru). Operation Condor cooperated across borders to hunt dissidents, with US Central Intelligence Agency support and intelligence sharing. Documented assassinations included Chilean former minister Orlando Letelier in Washington DC (1976); attempted assassinations of various exiled dissidents in multiple countries. Operation Condor killed at least 50,000+ across the participating countries; total disappeared exceeded that.`,
+            `Central American conflicts of the 1980s. Nicaragua: the Sandinista Revolution (1979) overthrew the Somoza dictatorship; the Reagan administration funded the Contra insurgency (1981-1990) against the Sandinista government, including through illegal sales to Iran (Iran-Contra scandal 1985-1987). El Salvador: civil war (1980-1992) between US-backed government and FMLN guerrillas killed ~75,000; documented massacres included El Mozote (December 1981, ~800-1,200 killed by US-trained Atlacatl Battalion). Guatemala: civil war continued from earlier (1960-1996), with peak violence under Efraín Ríos Montt's dictatorship (1982-1983); Ríos Montt was convicted of genocide in 2013 (subsequently overturned but conviction widely accepted historically).`,
+            `The School of the Americas (founded 1946 in Panama, moved to Fort Benning Georgia 1984): US Army institution that trained ~60,000+ Latin American military officers in counterinsurgency, intelligence, and interrogation. Many graduates were implicated in subsequent human rights violations, including officers responsible for major massacres and assassinations. The school's training manuals (declassified in 1996) explicitly endorsed torture, blackmail, and assassination. The school was renamed Western Hemisphere Institute for Security Cooperation (WHINSEC) in 2001 with substantially revised curriculum but the legacy remains substantial.`,
+            `Why Latin American Cold War matters for the broader picture. The pattern of US-supported authoritarianism in Latin America substantially complicates orthodox American Cold War narratives that frame the US as defending freedom and democracy against authoritarian threat. The democratic governments that were overthrown (Árbenz, Allende, Goulart, others) were not Soviet puppets; they were independent governments pursuing land reform or social democratic policies that threatened specific US business interests or were ideologically incompatible with Cold War commitments. Recognizing this isn't dismissing the Soviet threat; it's recognizing that "defending freedom" was selective and that the actual US Cold War policy included substantial support for authoritarian and outright torture-using governments.`,
+          ],
+          image: `/voyager-assets/history/l11-s2-latin-america.webp`,
+          imageCaption: `Latin American Cold War: Guatemala 1954 coup (PBSUCCESS), civil war 1960-1996 ~200K killed ~83% Maya (UN classified genocide 1999); Brazil 1964 coup; Chile Sept 11 1973 Allende → Pinochet 1973-1990 ~3,000+ killed; Argentina 1976 "Dirty War" ~30,000 disappeared (Madres de Plaza de Mayo). Operation Condor 1975-1985 (Argentina/Bolivia/Brazil/Chile/Paraguay/Uruguay + US support, ~50K+ killed). Central American 1980s: Nicaragua Contras, El Salvador civil war ~75K + El Mozote massacre Dec 1981, Guatemala Ríos Montt genocide. School of the Americas ~60K+ trained.`,
+          vocab: [
+            {
+              word: `the Latin American Cold War`,
+              definition: `Cold War in Latin America particularly active and violent; understanding Cold War without this is incomplete. US "backyard" via Monroe Doctrine 1823 + multiple interventions; Cold War intensified pattern. Major US-backed coups and authoritarian governments: Guatemala 1954 (President Jacobo Árbenz, CIA PBSUCCESS coup; civil war 1960-1996 ~200K killed, ~83% Maya indigenous, UN Commission for Historical Clarification 1999 classified as genocide); Brazil 1964 (against João Goulart, military dictatorship 1964-1985); Chile Sept 11 1973 (against Salvador Allende, US-CIA involvement documented; Pinochet 1973-1990 ~3,000+ killed + tens of thousands tortured); Argentina 1976 (against Isabel Perón; "Dirty War" 1976-1983 ~30,000 disappeared; Madres de Plaza de Mayo); Uruguay 1973-1985; Bolivia multiple; Paraguay under Stroessner 1954-1989. Operation Condor 1975-1985: coordinated repression by right-wing dictatorships across Argentina/Bolivia/Brazil/Chile/Paraguay/Uruguay + US CIA support + intelligence sharing; Orlando Letelier assassination Washington DC 1976; ~50K+ killed across participating countries. Central American 1980s: Nicaragua Sandinistas (1979) + US Contras (1981-1990 + Iran-Contra 1985-1987); El Salvador civil war 1980-1992 ~75K killed + El Mozote massacre Dec 1981 ~800-1,200 by US-trained Atlacatl Battalion; Guatemala Ríos Montt dictatorship 1982-1983 + genocide conviction 2013. School of the Americas founded 1946 Panama, moved Fort Benning Georgia 1984, ~60K+ trained; manuals (declassified 1996) endorsed torture/blackmail/assassination; renamed WHINSEC 2001.`,
+              audioPrompt: `The Cold War in Latin America was particularly active and particularly violent, {name}. Understanding the Cold War without understanding Latin American Cold War is incomplete. The US considered Latin America its "backyard" through the Monroe Doctrine and various interventions; the Cold War intensified the pattern, with the US supporting authoritarian governments and overthrowing democratically elected ones. Major US-backed coups: Guatemala 1954, where democratically elected President Jacobo Árbenz was overthrown in CIA-organized coup called PBSUCCESS; subsequent civil war from 1960 to 1996 killed approximately 200,000, of whom approximately 83 percent were Maya indigenous people, classified as genocide by the UN Commission for Historical Clarification in 1999. Chile September 11, 1973: military coup against democratically elected Salvador Allende with US-CIA involvement documented in declassified files; Augusto Pinochet's dictatorship from 1973 to 1990 killed approximately 3,000 and tortured tens of thousands. Argentina 1976: military coup; the "Dirty War" from 1976 to 1983 disappeared approximately 30,000 people. Operation Condor from 1975 to 1985 was coordinated political repression by right-wing dictatorships with US CIA support. The School of the Americas trained approximately 60,000 Latin American military officers.`,
+            },
+          ],
+        },
+
+        {
+          id: `l11-mag-3`,
+          type: `magazine`,
+          section: 3,
+          headline: `Why The Interpretive Traditions Matter`,
+          paragraphs: [
+            `The Cold War has been interpreted in fundamentally different ways across different traditions. The interpretive disagreements aren't about whether specific events happened (the documentary record is large and substantially settled on facts) but about what the events mean: who started the Cold War, why it took the form it did, what the responsibilities and motivations of different actors were, what the costs were for various populations, what the legacy means today.`,
+            `Three foundational waves of Cold War historiography developed across the second half of the 20th century. Orthodox American Cold War history (dominant 1945-1965): the Soviet Union under Stalin pursued aggressive expansionism in Eastern Europe and beyond; the US response (containment) was defensive and reactive; the conflict was fundamentally about defending freedom against totalitarian communism. Major figures: George F. Kennan (the "long telegram" 1946 and "Mr. X" article 1947 articulating containment); Arthur Schlesinger Jr. (defending Cold War liberalism); the early John Lewis Gaddis ("The United States and the Origins of the Cold War, 1941-1947" 1972). Revisionist Cold War history (emerging 1959-1970s): the US, not the USSR, was the primary driver of Cold War tensions; US economic expansionism (the "open door" empire) and ideological commitments produced confrontation; Soviet behavior was substantially reactive to Western moves. Major figures: William Appleman Williams "The Tragedy of American Diplomacy" 1959 (foundational text); Gabriel Kolko; Walter LaFeber "America, Russia, and the Cold War" (1967, multiple editions); Bruce Cumings on Korean War origins.`,
+            `Post-revisionist synthesis (emerging late 1970s-1990s): both superpowers had agency; the Cold War resulted from combination of ideology, security concerns, and miscalculation; Soviet behavior was substantially driven by security concerns and ideological commitments rather than simple aggression; US behavior was substantially driven by anti-communism and economic interests rather than simple defensive containment. Major figures: the later John Lewis Gaddis "We Now Know: Rethinking Cold War History" 1997 (the move to post-revisionist position); Melvyn Leffler "A Preponderance of Power" 1992 (extensively documented US perspective); Vladislav Zubok "A Failed Empire" 2007 (Soviet perspective).`,
+            `Two newer interpretive traditions have substantially shaped recent scholarship. Global / Third World Cold War: Odd Arne Westad's "The Global Cold War: Third World Interventions and the Making of Our Times" (2005) made the foundational case that the Cold War wasn't only or even primarily about US-Soviet relations; it was substantially about how the superpowers intervened in the decolonizing world. The Korean War, the Vietnam War, the various Latin American coups (L11-2), the Soviet invasion of Afghanistan, the proxy conflicts in Angola, Mozambique, Ethiopia, and many others were where the Cold War actually happened in terms of death and damage. Adding Westad's framework substantially changes the picture: the Cold War killed millions, mostly in the Third World, and most of those killed were caught up in conflicts where the superpower rivalry intersected with decolonization and local politics.`,
+            `Cold War from below / cultural / domestic political: scholars including Mary Dudziak ("Cold War Civil Rights" 2000), Penny Von Eschen ("Race Against Empire" 1997), and many others have shown how domestic politics, race, gender, popular movements, and culture shaped what looked like elite Cold War decisions. The Civil Rights Movement and the Cold War were substantially entangled: Soviet propaganda used American racial segregation against the US in the global propaganda contest; US Cold War concerns substantially motivated Civil Rights gains; some Civil Rights leaders' international engagement was constrained by Cold War commitments (W. E. B. Du Bois passport revoked; Paul Robeson surveilled). The "Cold War from below" framework recognizes that elite decisions emerged from broader political contexts that shaped what was politically possible.`,
+            `One framing before the perspectives. The five traditions don't fully exclude each other; many contemporary historians work across multiple traditions, drawing on each for different questions. Orthodox traditions retain explanatory power for some aspects of Soviet behavior. Revisionist traditions illuminate specific US economic and political interests. Post-revisionist synthesis handles complexity. Global Cold War handles the Third World where most death occurred. Cold War from below handles the domestic-international interaction. Engaging each tradition seriously is different from picking one and dismissing the others.`,
+          ],
+          image: `/voyager-assets/history/l11-s3-traditions.webp`,
+          imageCaption: `Five interpretive traditions: orthodox American (Kennan, Schlesinger, early Gaddis); revisionist (William Appleman Williams 1959, Gabriel Kolko, Walter LaFeber, Bruce Cumings); post-revisionist synthesis (later Gaddis "We Now Know" 1997, Leffler "A Preponderance of Power" 1992, Zubok); global Cold War (Odd Arne Westad "The Global Cold War" 2005 (Third World interventions); Cold War from below (Mary Dudziak "Cold War Civil Rights" 2000, Penny Von Eschen).`,
+          vocab: [
+            {
+              word: `five Cold War interpretive traditions`,
+              definition: `Interpretive disagreements about what Cold War events mean, not whether they happened. Orthodox American (dominant 1945-1965): USSR under Stalin aggressive; US containment defensive; conflict fundamentally about defending freedom vs totalitarian communism. Figures: George F. Kennan ("long telegram" 1946 + "Mr. X" article 1947); Arthur Schlesinger Jr.; early John Lewis Gaddis ("United States and the Origins of the Cold War" 1972). Revisionist (1959-1970s): US, not USSR, primary driver; US economic expansionism + "open door" empire + ideological commitments produced confrontation; Soviet behavior substantially reactive. Figures: William Appleman Williams "The Tragedy of American Diplomacy" 1959 foundational; Gabriel Kolko; Walter LaFeber "America, Russia, and the Cold War" 1967; Bruce Cumings on Korean War origins. Post-revisionist synthesis (late 1970s-1990s): both superpowers had agency; combination of ideology + security + miscalculation. Figures: later Gaddis "We Now Know: Rethinking Cold War History" 1997; Melvyn Leffler "A Preponderance of Power" 1992; Vladislav Zubok "A Failed Empire" 2007. Global / Third World Cold War: Odd Arne Westad "The Global Cold War: Third World Interventions and the Making of Our Times" 2005. Cold War from below / cultural / domestic: Mary Dudziak "Cold War Civil Rights" 2000; Penny Von Eschen "Race Against Empire" 1997. Five traditions don't fully exclude each other; contemporary historians work across multiple.`,
+              audioPrompt: `The Cold War has been interpreted in fundamentally different ways across different traditions, {name}. The interpretive disagreements aren't about whether specific events happened (the documentary record is large and substantially settled on facts) but about what the events mean. Orthodox American Cold War history, dominant from 1945 to 1965, held that the Soviet Union under Stalin pursued aggressive expansionism and that the US response of containment was defensive. Major figures included George F. Kennan, whose "long telegram" from 1946 and "Mr. X" article from 1947 articulated containment. Revisionist Cold War history, emerging from 1959 onward, argued that the US, not the USSR, was the primary driver of Cold War tensions. William Appleman Williams's "The Tragedy of American Diplomacy" from 1959 was foundational. Post-revisionist synthesis emerged in the late 1970s through 1990s; the later John Lewis Gaddis's "We Now Know: Rethinking Cold War History" from 1997 represents this position. Global Cold War: Odd Arne Westad's "The Global Cold War: Third World Interventions and the Making of Our Times" from 2005 made the case that the Cold War was substantially about how superpowers intervened in the decolonizing world. Cold War from below: scholars including Mary Dudziak have shown how domestic politics, race, gender, and popular movements shaped what looked like elite Cold War decisions.`,
+            },
+          ],
+        },
+
+        {
+          id: `l11-mag-4`,
+          type: `magazine`,
+          section: 4,
+          headline: `How The Traditions Read Specific Events`,
+          paragraphs: [
+            `The five traditions produce different readings of specific events. Three test cases illustrate how the differences operate.`,
+            `Test case 1: the Korean War origins. Orthodox: North Korea (with Stalin's support) attacked South Korea on June 25, 1950; US-led UN response was defensive containment; this established the model of Soviet-sponsored aggression that required containment. Revisionist (Bruce Cumings's "The Origins of the Korean War" 2 volumes 1981, 1990): Korean War origins lie in unresolved conflicts from Japanese colonial period (1910-1945) and from the 1945 partition imposed by US-Soviet agreement; the war was substantially a Korean civil war that the superpowers internationalized. Post-revisionist synthesis: both readings capture part of the truth; North Korean attack happened with Soviet approval and weapons, but the situation came out of pre-1950 Korean political conflict that the superpowers had structured. Global Cold War: the Korean War was where Cold War actually became hot and killed ~3 million Koreans plus hundreds of thousands of others; the scale was largely invisible in US public memory until much later. Cold War from below: US domestic anti-communism shaped how the war was conducted and remembered; Korean American voices have only recently received substantial historical attention.`,
+            `Test case 2: the Cuban Revolution and missile crisis. Orthodox: Fidel Castro's communist revolution in 1959 produced a Soviet client state 90 miles from Florida; the missile crisis (October 1962) was Soviet aggression that nearly produced nuclear war; the US response was firm but ultimately successful. Revisionist: US economic interests (sugar, casinos, mafia connections) in pre-revolutionary Cuba shaped the revolution; Bay of Pigs (April 1961) US-organized invasion of Cuba directly preceded the missile crisis and substantially explains Soviet missile deployment as defense of ally; the missiles were a response to US Jupiter missiles in Turkey that were never publicly discussed. Post-revisionist: Soviet missile deployment was both genuinely defensive (responding to Bay of Pigs and US missiles in Turkey) and offensively useful (closing the missile gap); Khrushchev's behavior was driven by combination of motivations. Global Cold War: Cuba became the model for revolutionary movements across Latin America (Che Guevara's Bolivian campaign and death 1967, sandinista revolution 1979) and shaped US Latin American policy across decades. Cold War from below: African American civil rights leaders' engagement with Cuba (Robert F. Williams, Stokely Carmichael's later visits) shows how international Cold War shaped domestic civil rights organizing.`,
+            `Test case 3: the Soviet collapse 1989-1991. Orthodox / triumphalist: Reagan's military buildup forced Soviet economic collapse; "Reagan won the Cold War"; the West's economic and political model proved superior. Revisionist: Soviet internal contradictions (planned economy stagnation, demographic decline, ideological exhaustion) produced collapse substantially independent of US pressure; Gorbachev's reforms were attempt to save socialism that produced unintended collapse; US Reagan-era rhetoric and military buildup may have actually slowed collapse by hardening hard-liners. Post-revisionist: combination of factors, with internal Soviet problems primary but Reagan's policies and Gorbachev's specific choices interacted. Global Cold War: the Third World had substantially withdrawn from Soviet model by 1980s (China's pivot from 1978; many African and Latin American countries' shift); the collapse of the Soviet model in Europe was partly produced by the collapse of its appeal globally. Cold War from below: the Eastern European Velvet Revolutions came from below (Solidarity in Poland from 1980, Charter 77 in Czechoslovakia from 1977, Civic Forum 1989, others); elite Soviet decisions interacted with mass political mobilization that orthodox accounts underemphasize.`,
+            `What the test cases show. The traditions illuminate different dimensions; no single tradition captures everything. Orthodox traditions handle some Soviet behavior well; revisionist traditions handle some US behavior well; post-revisionist synthesis manages complexity; global Cold War handles where most death occurred; Cold War from below handles domestic-international interaction. Real scholarship today substantially integrates the traditions, drawing on each where it illuminates and recognizing each tradition's limits.`,
+          ],
+          image: `/voyager-assets/history/l11-s4-test-cases.webp`,
+          imageCaption: `Three test cases for how traditions read events: Korean War origins (orthodox: Soviet-sponsored aggression; revisionist Bruce Cumings: Korean civil war internationalized; global Cold War: ~3M Korean dead). Cuban Revolution + missile crisis (orthodox: Soviet aggression; revisionist: Bay of Pigs context + Turkey missiles trade). Soviet collapse 1989-1991 (orthodox/triumphalist: Reagan won; revisionist: internal contradictions; global: Third World withdrawal; from below: Solidarity, Charter 77, Civic Forum). Traditions complement.`,
+          vocab: [
+            {
+              word: `how interpretive traditions read events`,
+              definition: `Five Cold War traditions produce different readings of same events. Test cases. Korean War origins: orthodox (North Korea + Stalin attack June 25, 1950; US-led UN containment); revisionist (Bruce Cumings "Origins of the Korean War" 2 vols 1981, 1990 (Korean civil war from Japanese colonial period internationalized)); post-revisionist (both readings part of truth); global Cold War (~3M Korean dead, scale invisible in US memory until later); from below (US domestic anti-communism + Korean American voices). Cuban Revolution + missile crisis Oct 1962: orthodox (Castro communist revolution 1959 → Soviet client 90mi from Florida; US firm response); revisionist (pre-revolutionary US economic interests; Bay of Pigs April 1961 directly preceded missile crisis; US Jupiter missiles in Turkey traded); post-revisionist (combination); global (Cuba model for Latin American revolutionary movements including Che Guevara Bolivia 1967 + Sandinistas 1979); from below (African American civil rights leaders' Cuba engagement). Soviet collapse 1989-1991: orthodox/triumphalist (Reagan won, military buildup forced collapse); revisionist (internal contradictions primary; Reagan rhetoric may have slowed collapse); post-revisionist (combination, internal primary + Reagan/Gorbachev interaction); global (Third World withdrawal from Soviet model from 1980s); from below (Velvet Revolutions: Solidarity Poland from 1980, Charter 77 Czechoslovakia 1977, Civic Forum 1989). No single tradition captures everything; real scholarship integrates.`,
+              audioPrompt: `The five traditions produce different readings of specific events, {name}. Three test cases illustrate how the differences operate. Korean War origins: orthodox reading sees North Korea with Stalin's support attacking South Korea on June 25, 1950; US-led UN response was defensive containment. Revisionist reading, particularly Bruce Cumings's two-volume Origins of the Korean War from 1981 and 1990, sees Korean War origins in unresolved conflicts from Japanese colonial period from 1910 to 1945; the war was substantially a Korean civil war that the superpowers internationalized. Cuban Revolution and missile crisis: orthodox sees Castro's communist revolution producing a Soviet client state 90 miles from Florida; the missile crisis of October 1962 was Soviet aggression. Revisionist sees US economic interests in pre-revolutionary Cuba shaping the revolution; the Bay of Pigs in April 1961 directly preceded the missile crisis and substantially explains Soviet missile deployment as defense of ally; US Jupiter missiles in Turkey were traded as part of the resolution. Soviet collapse 1989-1991: orthodox sees Reagan's military buildup forcing Soviet economic collapse; revisionist sees Soviet internal contradictions producing collapse substantially independent of US pressure.`,
+            },
+          ],
+        },
+
+        {
+          id: `l11-mag-5`,
+          type: `magazine`,
+          section: 5,
+          headline: `Before The Perspectives`,
+          paragraphs: [
+            `Five voices ahead, each representing one of the interpretive traditions. You engage each rather than committing to one. These traditions don't reduce to a single answer; they illuminate different dimensions of what the Cold War was.`,
+            `One framing as you engage. The traditions don't agree on what mattered most or who was responsible for what. The disagreement is genuine. A serious account of the Cold War today substantially integrates multiple traditions: it takes orthodox readings seriously where they capture Soviet behavior; it takes revisionist readings seriously where they capture US behavior; it operates from post-revisionist synthesis where complexity matters; it adds global Cold War for the Third World where most death occurred; it adds Cold War from below for domestic-international interaction.`,
+            `Another framing. Your priors shape which tradition feels natural. American readers often start from some version of the orthodox tradition because that's what schools and popular culture teach. Latin American readers often start from versions of revisionist or global Cold War because of their countries' direct experience of US Cold War interventions. Russian readers post-1991 often hold different positions depending on political alignment (some triumphalist of Soviet survival, some critical of Soviet system, many ambivalent about both Soviet legacy and Western victory rhetoric). Recognizing your priors isn't dismissing your view; it's recognizing that positions on the Cold War are partly empirical, partly normative, and partly biographical.`,
+            `One specific framing for your reading ahead. The five traditions shape how you'll read L12 (Post-Cold War World Order). The interpretive framework you use for Cold War shapes what you make of NATO expansion, EU expansion, Russia's trajectory under Putin, China's rise, the wars on terror, the various transitions and conflicts of the past 35 years. Engaging the traditions seriously now builds foundation for the lesson ahead.`,
+            `One last framing. The Cold War is recent enough that its consequences are still unfolding. Russia's invasion of Ukraine (February 2022) draws on Cold War narratives, NATO expansion debates, and Russian grievances about post-1991 settlement. US-China strategic competition draws on Cold War framings. Multiple ongoing global politics (Korean peninsula, Cuban diplomacy, post-Soviet space, Middle East) sit downstream of Cold War decisions. The framework you build at 12 develops capacity to engage these continuing developments across decades.`,
+          ],
+          image: `/voyager-assets/history/l11-s5-before.webp`,
+          imageCaption: `Five voices ahead; engage each rather than committing to one. Traditions don't agree on what mattered most or who was responsible. Serious account today integrates multiple. Priors shape which tradition feels natural (American/Latin American/Russian/European readers start from different places). Traditions shape readings of L12 Post-Cold War.`,
+          vocab: [
+            {
+              word: `engaging the five Cold War traditions`,
+              definition: `Five voices ahead representing each interpretive tradition. Engage each rather than committing to one; traditions don't reduce to single answer. Serious account integrates multiple traditions: orthodox where capturing Soviet behavior; revisionist where capturing US behavior; post-revisionist synthesis for complexity; global Cold War for Third World where most death occurred; from below for domestic-international interaction. Priors shape which feels natural: American readers from orthodox via school/culture; Latin American readers from revisionist/global because of direct experience of US interventions; Russian readers post-1991 vary by political alignment. Framework shapes reading of L12 Post-Cold War World Order: NATO expansion, EU expansion, Russia trajectory under Putin, China rise, wars on terror, various transitions and conflicts. Cold War recent enough that consequences still unfolding: Russia's Ukraine invasion Feb 2022 draws on Cold War narratives + NATO expansion debates + Russian grievances; US-China strategic competition draws on Cold War framings.`,
+              audioPrompt: `Five voices ahead, each representing one of the interpretive traditions, {name}. You engage each rather than committing to one. These traditions don't reduce to a single answer; they illuminate different dimensions of what the Cold War was. A serious account of the Cold War today substantially integrates multiple traditions: it takes orthodox readings seriously where they capture Soviet behavior; it takes revisionist readings seriously where they capture US behavior; it operates from post-revisionist synthesis where complexity matters; it adds global Cold War for the Third World where most death occurred; it adds Cold War from below for domestic-international interaction. Your priors shape which tradition feels natural. American readers often start from some version of the orthodox tradition because that's what schools and popular culture teach. Latin American readers often start from versions of revisionist or global Cold War because of their countries' direct experience of US Cold War interventions. Russian readers post-1991 often hold different positions depending on political alignment. Recognizing your priors isn't dismissing your view; it's recognizing that positions on the Cold War are partly empirical, partly normative, and partly biographical.`,
+            },
+          ],
+        },
+
+        // ───── PERSPECTIVES ───────────────────────────────────────────────────
+        {
+          id: `l11-perspectives`,
+          type: `perspectives`,
+          headline: `Five Voices On The Cold War`,
+          intro: `{name}, five interpretive voices on the Cold War. Each engages real evidence and produces different reading. No forced commitment; engage each on its terms.`,
+          voices: [
+            {
+              id: `orthodox`,
+              speaker: `Orthodox American Cold War tradition`,
+              era: `dominant 1945-1965, with continued defenders`,
+              stance: `USSR under Stalin pursued aggressive expansionism; US response (containment) was defensive; conflict was about defending freedom against totalitarian communism`,
+              quote: `"At the bottom of the Kremlin's neurotic view of world affairs is the traditional and instinctive Russian sense of insecurity... [The Soviet] political action is a fluid stream which moves constantly, wherever it is permitted to move, toward a given goal."`,
+              quoteSource: `George F. Kennan, "The Sources of Soviet Conduct" (the "Mr. X" article), Foreign Affairs, July 1947`,
+              argument: `Soviet behavior in the immediate postwar period (consolidation of Eastern European satellite states, refusal to withdraw from Iran, support for communist movements in Greece and Turkey, blockade of Berlin) demonstrated aggressive intent that the US had to contain. The American response was reactive and largely defensive. The communist ideology committed Soviet leadership to expansionism beyond what realpolitik alone would explain. Containment was costly and imperfect but the alternative (appeasement) would have produced worse outcomes. The eventual Soviet collapse demonstrated containment's strategic correctness.`,
+              evidence: `Stalin's behavior at Yalta (Feb 1945) and Potsdam (July-Aug 1945) substantially betrayed wartime agreements about Eastern Europe; Soviet creation of satellite states (Poland, East Germany, Hungary, Romania, Bulgaria, Czechoslovakia) violated commitments to free elections; Soviet support for North Korean attack June 25, 1950 demonstrated willingness to back direct aggression; the Berlin Blockade (1948-1949) demonstrated Soviet willingness to use coercion in Europe; Hungarian Revolution 1956 crushed by Soviet tanks (~3,000 killed); Prague Spring 1968 crushed similarly; Cuban Missile Crisis 1962 represented Soviet attempt to alter strategic balance.`,
+              strengths_and_limits: `Strengths: Soviet aggressive behavior in immediate postwar (Eastern Europe, Iran, Berlin) is documented; the orthodox tradition was the dominant view among policymakers and produced the actual policy framework that shaped Cold War. Limits: minimizes US economic and ideological motivations; treats containment as defensive while ignoring offensive US interventions (Guatemala 1954, Iran 1953, multiple Latin American coups); treats "freedom" as US position while supporting authoritarian governments worldwide; underweights complexity of decolonization and Third World dynamics.`,
+            },
+            {
+              id: `revisionist`,
+              speaker: `Revisionist (left) Cold War tradition`,
+              era: `emerging 1959, dominant in academic history by 1970s, continuing influence`,
+              stance: `US, not USSR, was primary driver of Cold War tensions; US economic expansionism ("open door" empire) and ideological commitments produced confrontation; Soviet behavior was substantially reactive`,
+              quote: `"The tragedy of American diplomacy is aptly symbolized, and defined for analysis and reflection, by the relationship between America's humanitarian impulse to help other peoples and the way it goes about doing it."`,
+              quoteSource: `William Appleman Williams, "The Tragedy of American Diplomacy," 1959`,
+              argument: `The US emerged from WWII as the dominant economic power and pursued global economic expansion that required open markets, friendly governments, and dollar-denominated international order. Soviet behavior was substantially reactive to Western moves: Eastern European consolidation responded to perceived Western threat; missiles in Cuba responded to US missiles in Turkey and Bay of Pigs invasion; Afghanistan invasion responded to perceived loss of buffer. US-backed coups in Iran (1953), Guatemala (1954), Brazil (1964), Chile (1973), and many others overthrew democratically elected governments that threatened US interests, not communist puppets. The "freedom vs totalitarianism" framing obscures the actual content of US Cold War policy.`,
+              evidence: `Marshall Plan (1947) explicitly designed to integrate Europe into US-led economic system; Bretton Woods institutions (IMF, World Bank, dollar reserve currency) created a global economic order under US leadership; US-backed coups against democratically elected governments (Mosaddegh in Iran 1953; Árbenz in Guatemala 1954; Lumumba in Congo 1961; Goulart in Brazil 1964; Allende in Chile 1973); Vietnam War driven by domino-theory paranoia rather than realistic Soviet threat; School of the Americas trained Latin American officers in counterinsurgency; Latin American Operation Condor (1975-1985) operated with US support.`,
+              strengths_and_limits: `Strengths: documents US economic interests + ideological commitments in shaping Cold War policy; centers US-backed coups and authoritarianism that orthodox tradition minimizes; recovers Third World perspective. Limits: can underweight Soviet aggressive behavior and ideological commitments; can present Soviet behavior as merely reactive when documented record shows independent agency; can present US as more coordinated than it was; the "open door" framework, while powerful, doesn't capture everything.`,
+            },
+            {
+              id: `post-revisionist`,
+              speaker: `Post-revisionist synthesis`,
+              era: `emerging late 1970s-1990s, mainstream academic position`,
+              stance: `Both superpowers had agency; Cold War resulted from combination of ideology, security concerns, and miscalculation; Soviet behavior was substantially driven by security and ideology; US behavior was substantially driven by anti-communism and economic interests`,
+              quote: `"We now know much more about why and how the Cold War evolved as it did... [It] was less the product of any single cause than of the interaction of multiple causes, and that interaction varied across time and space."`,
+              quoteSource: `John Lewis Gaddis, "We Now Know: Rethinking Cold War History," 1997`,
+              argument: `The orthodox-revisionist dichotomy oversimplifies. Soviet leadership had genuine security concerns from invasion experience (Napoleon 1812, German invasions WWI and WWII) and genuine ideological commitments to international socialism; both produced expansive behavior. US leadership had genuine anti-communist commitments and genuine economic interests in expanded global market; both produced expansionist policy. The Cold War interaction patterns emerged from both sides' moves and miscalculations of the other. Specific events require specific explanations; no single framework captures everything. Mainstream academic Cold War history today substantially operates from this synthesis position.`,
+              evidence: `Multiple new sources from Soviet archives after 1991 substantially confirm Soviet leadership's genuine security concerns + genuine ideological commitments (Vladislav Zubok's "A Failed Empire" 2007 documents); US foreign policy decision-making in declassified records shows complex mix of anti-communist, economic, and strategic considerations (Melvyn Leffler "A Preponderance of Power" 1992 documents); specific events (Korean War, Cuban Missile Crisis, Vietnam War, Soviet-Afghan War) require specific analyses drawing on multiple causal frameworks.`,
+              strengths_and_limits: `Strengths: handles complexity that orthodox and revisionist traditions oversimplify; integrates documentary evidence from both Soviet and US archives; mainstream in current academic scholarship. Limits: can obscure judgments about responsibility by emphasizing mutual causation; can become "both sides" framing that fails to recognize asymmetries; sometimes seen as compromise position rather than independent stance.`,
+            },
+            {
+              id: `global-cold-war`,
+              speaker: `Global Cold War / Third World perspective`,
+              era: `emerging 1990s-2000s; foundational Westad 2005`,
+              stance: `Cold War wasn't only or primarily about US-Soviet relations; it was substantially about how superpowers intervened in decolonizing world; the local conflicts mattered as much as elite US-USSR dynamics`,
+              quote: `"The most important aspects of the Cold War were neither military nor strategic, nor Europe-centered, but connected to political and social development in the Third World."`,
+              quoteSource: `Odd Arne Westad, "The Global Cold War: Third World Interventions and the Making of Our Times," 2005`,
+              argument: `Most of the death and damage in the Cold War occurred in the Third World, not in Europe or in direct US-Soviet confrontation. The Korean War (~3M Korean dead), Vietnam War (~3M Vietnamese), Soviet-Afghan War (~1M Afghans + ~15K Soviets), Indonesian anti-communist purge 1965-1966 (~500K-1M killed with US support), Latin American Cold War (Guatemala genocide ~200K, Argentine "Dirty War" ~30K disappeared, Chilean repression, many others), African proxy wars (Angola, Mozambique, Ethiopia), Cambodia genocide 1975-1979 (~1.5-2M killed by Khmer Rouge in context of Cold War regional dynamics). The Cold War's actual consequences in human terms happened in the Third World; the US-Soviet European standoff was important but not the whole story.`,
+              evidence: `Westad documents Third World interventions across multiple regions and decades; Mahmood Mamdani "Good Muslim, Bad Muslim" 2004 documents Afghan war's role in producing later jihadist movements; multiple scholars on Indonesian 1965-1966 (Geoffrey Robinson "The Killing Season" 2018, Vincent Bevins "The Jakarta Method" 2020); Latin American Cold War scholarship; African decolonization scholarship; recent work on connections between Cold War interventions and contemporary conflicts.`,
+              strengths_and_limits: `Strengths: foregrounds where most Cold War death occurred; recovers Third World agency rather than treating Global South as backdrop; provides framework for understanding contemporary conflicts as Cold War legacies. Limits: can underweight the European-centered standoff and nuclear dynamics that shaped strategic decision-making; sometimes treated as add-on to traditional framework rather than fundamental reorientation; integration with other traditions still developing.`,
+            },
+            {
+              id: `from-below`,
+              speaker: `Cold War from below / cultural / domestic`,
+              era: `emerging 1990s-2000s; multiple foundational works`,
+              stance: `Domestic politics, race, gender, popular movements, and culture shaped what looked like elite Cold War decisions; the "from below" perspective recovers what top-down accounts miss`,
+              quote: `"The civil rights movement and Cold War policymaking were intertwined... US foreign policy makers saw discrimination at home as a Cold War liability, and Cold War tensions made racial reform more politically possible."`,
+              quoteSource: `Mary Dudziak, "Cold War Civil Rights: Race and the Image of American Democracy," 2000`,
+              argument: `Elite Cold War decisions emerged from broader political contexts that shaped what was politically possible. The Civil Rights Movement and Cold War were entangled: Soviet propaganda used American racial segregation against the US; US Cold War concerns substantially motivated Civil Rights gains (Brown v. Board 1954, Civil Rights Act 1964, Voting Rights Act 1965 all came in part because Cold War politics made racial reform strategically necessary); some Civil Rights leaders' international engagement was constrained by Cold War commitments (W. E. B. Du Bois passport revoked 1952; Paul Robeson similarly surveilled and constrained). Women's movement, anti-war movement, environmental movement, gay rights movement all developed in dialogue with Cold War framings. Recognizing the domestic-international interaction recovers what elite-centered accounts miss.`,
+              evidence: `Dudziak "Cold War Civil Rights" 2000; Penny Von Eschen "Race Against Empire: Black Americans and Anticolonialism" 1997; Carol Anderson "Eyes Off the Prize" 2003; Brenda Gayle Plummer "Rising Wind" 1996; documentation of Soviet propaganda using American racial issues; State Department concerns about international image during Civil Rights crises; Kennedy administration urgency on Civil Rights Act partly motivated by Cold War concerns; documentation of how anti-war movement, women's movement, and other movements developed in dialogue with Cold War politics.`,
+              strengths_and_limits: `Strengths: recovers domestic-international entanglement that elite accounts miss; centers race, gender, popular movements in ways traditional Cold War history doesn't; produces real insight on Civil Rights Movement and Cold War interaction. Limits: can underweight elite decisions and strategic dynamics; sometimes treated as supplement to traditional framework rather than fundamental reorientation; specific causal claims sometimes contested in detail.`,
+            },
+          ],
+          reflectionPrompt: `Across the five voices: which tradition felt most natural and which felt most challenging? What does engaging traditions you'd otherwise dismiss change about how you read Cold War history?`,
+        },
+
+        {
+          id: `l11-quiz`,
+          type: `quiz`,
+          headline: `Check your understanding`,
+          questions: [
+            {
+              id: `q1`,
+              type: `multiple-choice`,
+              question: `What were the basic dates and structure of the Cold War?`,
+              options: [
+                `Random`,
+                `Global rivalry between US and USSR (with allies and clients) ~1945-1991. "Cold" = no direct superpower military conflict; produced proxy wars, arms races, espionage, ideological competition, constant escalation possibility. Origins 1945-1947 (Truman Doctrine March 1947, Marshall Plan June 1947, Berlin Blockade June 1948-May 1949, NATO April 1949). Mid-Cold War (Korea, Hungary 1956, Sputnik Oct 1957, Berlin Wall Aug 1961, Cuban Missile Crisis Oct 1962, Vietnam, Czechoslovakia 1968). Late Cold War (Iran Revolution 1979, Afghanistan invasion Dec 1979, Reagan "evil empire" 1983, Able Archer Nov 1983). End: Gorbachev 1985 (glasnost + perestroika), Reagan-Gorbachev summits (Geneva, Reykjavik, Washington INF 1987, Moscow), Berlin Wall fall Nov 9 1989, German reunification Oct 3 1990, USSR formally dissolved Dec 25 1991.`,
+                `Just war`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `Naming specific dates and events matters for serious engagement. The Cold War wasn't a vague concept; it was a structured rivalry with documented events that have specific dates. Knowing the timeline is foundation for analyzing it.`,
+            },
+            {
+              id: `q2`,
+              type: `multiple-choice`,
+              question: `Why does it matter that the Cold War was "cold" only between the superpowers themselves?`,
+              options: [
+                `Random`,
+                `Calling it "cold" obscures how hot it was in many places. Korean War 1950-1953 killed ~3M Koreans + 36K Americans + 180K Chinese. Vietnam War killed ~3M Vietnamese + ~58K Americans by 1975. Soviet invasion of Afghanistan 1979-1989 killed ~1M Afghans + ~15K Soviets. Indonesian anti-communist purge 1965-1966 killed ~500K-1M with US support. Latin American Cold War: Guatemala genocide 1960-1996 ~200K (~83% Maya); Argentine "Dirty War" 1976-1983 ~30K disappeared; Pinochet Chile 1973-1990 ~3,000+; Operation Condor 1975-1985 ~50K+ across 6 countries. African proxy wars (Angola, Mozambique, Ethiopia). Cambodia 1975-1979 ~1.5-2M Khmer Rouge. The Cold War's actual consequences in human terms happened largely in the Third World.`,
+                `Just nicer`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `Recognizing how hot the Cold War was in the Third World matters for honest engagement. The European-centered standoff is one part of the story; the millions killed in proxy wars and US/Soviet-supported repression elsewhere is the other.`,
+            },
+            {
+              id: `q3`,
+              type: `multiple-choice`,
+              question: `What was the Latin American Cold War, briefly?`,
+              options: [
+                `Random`,
+                `US-backed coups against democratically elected governments and support for authoritarian regimes across decades. Guatemala 1954 (Árbenz overthrown by CIA PBSUCCESS; civil war 1960-1996 ~200K killed ~83% Maya, UN classified genocide 1999). Brazil 1964 (Goulart; dictatorship 1964-1985). Chile Sept 11, 1973 (Allende; Pinochet 1973-1990 ~3,000+ killed + tens of thousands tortured). Argentina 1976 ("Dirty War" 1976-1983 ~30,000 disappeared; Madres de Plaza de Mayo). Operation Condor 1975-1985 (coordinated repression across Argentina/Bolivia/Brazil/Chile/Paraguay/Uruguay + US CIA support; ~50K+ killed). Central American conflicts 1980s (Nicaragua Contras + Iran-Contra 1985-1987; El Salvador civil war ~75K + El Mozote massacre Dec 1981; Guatemala Ríos Montt). School of the Americas trained ~60K+ Latin American officers.`,
+                `Just coups`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The Latin American Cold War is essential for understanding US Cold War policy honestly. The pattern of US support for authoritarian governments substantially complicates orthodox "defending freedom" framings. L16 will deepen this directly.`,
+            },
+            {
+              id: `q4`,
+              type: `multiple-choice`,
+              question: `What's the orthodox American Cold War tradition?`,
+              options: [
+                `Random`,
+                `Dominant 1945-1965, continuing defenders. USSR under Stalin pursued aggressive expansionism in Eastern Europe and beyond; US response (containment) was defensive and reactive; conflict fundamentally about defending freedom against totalitarian communism. Figures: George F. Kennan ("long telegram" 1946 + "Mr. X" article Foreign Affairs July 1947 articulating containment); Arthur Schlesinger Jr. defending Cold War liberalism; early John Lewis Gaddis "The United States and the Origins of the Cold War, 1941-1947" 1972. Evidence: Soviet behavior at Yalta + Potsdam, Eastern European satellite creation, Berlin Blockade, Hungarian Revolution 1956 crushed, Prague Spring 1968 crushed, Cuban Missile Crisis 1962.`,
+                `Just communism`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The orthodox tradition was the dominant US public discourse position and produced the actual policy framework. It has continuing defenders even after revisionist and post-revisionist challenges. Recognizing it as one tradition among others doesn't dismiss it; it positions it.`,
+            },
+            {
+              id: `q5`,
+              type: `multiple-choice`,
+              question: `What's the revisionist Cold War tradition?`,
+              options: [
+                `Random`,
+                `Emerging 1959-1970s. US, not USSR, was primary driver of Cold War tensions; US economic expansionism ("open door" empire) and ideological commitments produced confrontation; Soviet behavior was substantially reactive. Foundational: William Appleman Williams "The Tragedy of American Diplomacy" 1959. Other figures: Gabriel Kolko; Walter LaFeber "America, Russia, and the Cold War" 1967; Bruce Cumings on Korean War origins. Evidence: Marshall Plan integration of Europe; Bretton Woods institutions; US-backed coups against democratically elected governments (Mosaddegh Iran 1953, Árbenz Guatemala 1954, Lumumba Congo 1961, Goulart Brazil 1964, Allende Chile 1973); Vietnam War driven by domino-theory paranoia; School of the Americas; Operation Condor with US support.`,
+                `Just blame US`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The revisionist tradition centers what orthodox tradition minimizes: US economic interests, support for authoritarianism, the coups against democratically elected governments. It has been particularly influential in scholarship on US foreign policy in the Third World.`,
+            },
+            {
+              id: `q6`,
+              type: `multiple-choice`,
+              question: `What's the post-revisionist synthesis?`,
+              options: [
+                `Random`,
+                `Emerging late 1970s-1990s, mainstream academic position. Both superpowers had agency; Cold War resulted from combination of ideology, security concerns, and miscalculation; Soviet behavior substantially driven by security and ideology; US behavior substantially driven by anti-communism and economic interests. Figures: later John Lewis Gaddis "We Now Know: Rethinking Cold War History" 1997 (move to post-revisionist); Melvyn Leffler "A Preponderance of Power" 1992; Vladislav Zubok "A Failed Empire" 2007 (Soviet archives after 1991). Evidence: Soviet archives confirm both genuine security concerns + ideological commitments; declassified US documents show mix of anti-communist, economic, strategic considerations; specific events require specific analyses.`,
+                `Just middle`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `Post-revisionist synthesis is the mainstream academic position today. It handles complexity that orthodox and revisionist traditions oversimplify. The opening of Soviet archives after 1991 substantially supported this synthesis position with documentation from both sides.`,
+            },
+            {
+              id: `q7`,
+              type: `multiple-choice`,
+              question: `What's the global / Third World Cold War tradition?`,
+              options: [
+                `Random`,
+                `Emerging 1990s-2000s, foundational Westad 2005. Cold War wasn't only/primarily about US-Soviet relations; substantially about how superpowers intervened in decolonizing world; local conflicts mattered as much as US-Soviet dynamics. Foundational: Odd Arne Westad "The Global Cold War: Third World Interventions and the Making of Our Times" 2005. Most death/damage in Cold War occurred in Third World: Korea ~3M, Vietnam ~3M, Soviet-Afghan War ~1M, Indonesian purge 1965-66 ~500K-1M with US support, Latin American (Guatemala genocide ~200K, Argentine "Dirty War" ~30K disappeared, Chilean repression, others), African proxy wars (Angola, Mozambique, Ethiopia), Cambodia 1975-1979 ~1.5-2M. Mahmood Mamdani "Good Muslim, Bad Muslim" 2004; Vincent Bevins "The Jakarta Method" 2020.`,
+                `Just world`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The global Cold War framework reorients the field. The European-centered standoff is one part of the Cold War; the millions killed in Third World proxy conflicts and superpower-supported repression are the other. The framework has shaped substantial recent scholarship.`,
+            },
+            {
+              id: `q8`,
+              type: `multiple-choice`,
+              question: `What's the Cold War from below / cultural / domestic tradition?`,
+              options: [
+                `Random`,
+                `Emerging 1990s-2000s. Domestic politics, race, gender, popular movements, culture shaped what looked like elite Cold War decisions; "from below" recovers what top-down accounts miss. Civil Rights Movement and Cold War entangled: Soviet propaganda used American racial segregation; US Cold War concerns motivated Civil Rights gains (Brown v. Board 1954, Civil Rights Act 1964, Voting Rights Act 1965 partly because Cold War politics made racial reform strategically necessary); some Civil Rights leaders' international engagement constrained by Cold War (W. E. B. Du Bois passport revoked 1952; Paul Robeson surveilled). Figures: Mary Dudziak "Cold War Civil Rights" 2000; Penny Von Eschen "Race Against Empire" 1997; Carol Anderson "Eyes Off the Prize" 2003; Brenda Gayle Plummer "Rising Wind" 1996.`,
+                `Just culture`,
+                `Random`,
+              ],
+              correctIndex: 1,
+              explanation: `The Cold War from below tradition recovers domestic-international entanglement that elite-centered accounts miss. The Civil Rights Movement and Cold War interaction is the most-developed case but the framework extends to women's, anti-war, environmental, and gay rights movements.`,
+            },
+            {
+              id: `q9`,
+              type: `true-false`,
+              question: `True or false: A single interpretive tradition captures everything important about the Cold War; engaging multiple traditions is academic luxury.`,
+              correctAnswer: false,
+              explanation: `False. The five interpretive traditions illuminate different dimensions; no single tradition captures everything. Orthodox traditions handle some Soviet behavior well (Eastern European consolidation, Berlin Blockade, Hungarian Revolution suppression). Revisionist traditions handle some US behavior well (US-backed coups, economic interests, support for authoritarianism). Post-revisionist synthesis manages complexity drawing on documentary evidence from both Soviet and US archives. Global Cold War handles where most death occurred (Third World proxy wars and superpower-supported repression). Cold War from below handles domestic-international interaction (Civil Rights Movement, women's movement, anti-war movement). Real scholarship today substantially integrates the traditions, drawing on each where it illuminates and recognizing each tradition's limits. The integration is not academic luxury; it's necessary for honest engagement.`,
+            },
+            {
+              id: `q10`,
+              type: `inference`,
+              question: `Your teacher tells the class "the US won the Cold War because we defended freedom against totalitarian communism, and Reagan's policies forced Soviet collapse." Based on this lesson, what should you point out (privately, respectfully)?`,
+              options: [
+                `"You're right teacher"`,
+                `"Several specific things, with respect. First, the framing is the orthodox American Cold War tradition, which is one of five major interpretive traditions in scholarship and was the dominant US public discourse position. It has serious defenders today (some of the later John Lewis Gaddis work, some Reagan-era policy intellectuals). But it's not the consensus academic position; the mainstream academic position today is post-revisionist synthesis (drawing on documents from both Soviet and US archives after 1991), with global Cold War and Cold War from below traditions also substantially influential. Second, 'defended freedom' is partly true and substantially complicated by what the US actually did in the Cold War. The US did support democratic institutions in Western Europe and Japan and resist Soviet expansion in many places. The US also backed coups against democratically elected governments: Mosaddegh in Iran 1953, Árbenz in Guatemala 1954, Goulart in Brazil 1964, Allende in Chile 1973, and others. The US-backed authoritarian governments in many countries: Pinochet's Chile, Argentine junta (Dirty War with ~30,000 disappeared), Operation Condor cooperation, Central American conflicts (Nicaragua Contras, El Salvador civil war ~75,000 dead, Guatemala genocide ~200,000 mostly Maya), Indonesia 1965-1966 anti-communist purge (~500,000-1,000,000 with US support). The 'defending freedom' framing requires substantial qualification when applied to these cases. Third, 'Reagan won the Cold War' is one of several explanations of Soviet collapse and is contested by serious historians. Alternative explanations include: Soviet internal contradictions (planned economy stagnation, demographic decline, ideological exhaustion); Gorbachev's specific choices (glasnost, perestroika, refusal to crack down on Eastern European reform movements); the Third World's withdrawal from Soviet model by 1980s (China's pivot from 1978; many African and Latin American countries' shift); the Velvet Revolutions emerging from below (Solidarity in Poland from 1980, Charter 77 in Czechoslovakia, Civic Forum 1989). Some historians argue Reagan's military buildup and rhetoric may have actually slowed Soviet collapse by hardening hard-liners (e.g., Beth Fischer's work). The honest position is 'multiple factors interacted; Soviet internal problems were primary; US policy and individual leaders' choices also mattered.' Fourth, what to do practically: don't argue with your teacher in class in a way that makes the teacher defensive. The teacher's framing is what the teacher learned and may be required to teach. After class or in writing, you can engage substantively. Ask: 'What about [Latin American coups; Indonesia 1965-66; the post-revisionist synthesis position; the Westad global Cold War framework]?' These are real scholarly questions that engaged teachers can engage with. Fifth, the framework you build at 12 by engaging multiple interpretive traditions seriously is more substantial than what most adults hold. Most adults absorbed one tradition (typically orthodox) through schools and popular culture without recognizing it as one tradition among others. Building deliberate multi-tradition framework is the work."`,
+                `"Random"`,
+                `"Just yes"`,
+              ],
+              correctIndex: 1,
+              explanation: `Real applied Cold War literacy. The orthodox tradition is one of five; recognizing it as one tradition among others, engaging the substantial scholarly challenges to it (revisionist, post-revisionist, global, from below), and naming the specific US-backed authoritarianism that complicates "defending freedom" framing is the work. Engaging respectfully with the teacher who's working from one tradition is also part of the work.`,
+            },
+          ],
+        },
+
+        {
+          id: `l11-reflection`,
+          type: `reflection`,
+          headline: `Sit with this`,
+          intro: `Pick the prompt that pulls at you most. Your answer is saved.`,
+          prompts: [
+            { id: `reflect-priors`, category: `Your priors`, prompt: `Which tradition felt most natural? Which felt most foreign or challenging? What does that say about how you've been taught Cold War history?` },
+            { id: `reflect-latin-america`, category: `Latin American Cold War`, prompt: `Did your family or schooling prepare you for what the Cold War in Latin America actually involved (US-backed coups, support for authoritarian governments, Operation Condor, School of the Americas, Central American conflicts)? How does this change your reading of US Cold War policy?` },
+            { id: `reflect-third-world`, category: `Where the dying happened`, prompt: `The global Cold War tradition emphasizes that most death and damage occurred in the Third World (Korea ~3M, Vietnam ~3M, Afghanistan ~1M+, Indonesia 1965-66 ~500K-1M, Latin American repression ~250K+, Cambodia ~1.5-2M). How does centering these numbers change your reading of the Cold War's legacy?` },
+            { id: `reflect-civil-rights`, category: `Civil Rights + Cold War`, prompt: `The Cold War from below tradition shows Civil Rights Movement and Cold War were entangled (Brown v. Board 1954, Civil Rights Act 1964, Voting Rights Act 1965 motivated partly by Cold War concerns about international image; W. E. B. Du Bois and Paul Robeson constrained by Cold War). What does this say about how domestic and international politics interact?` },
+            { id: `reflect-russia-ukraine`, category: `Russia today`, prompt: `Russia's invasion of Ukraine (February 2022) draws on Cold War narratives, NATO expansion debates, and Russian grievances about post-1991 settlement. Which Cold War interpretive tradition is most useful for understanding current Russian behavior? What does each tradition see?` },
+            { id: `reflect-china`, category: `China and the Cold War`, prompt: `Where does China fit in the Cold War? Initially Soviet ally, then split from USSR in early 1960s, then opening to US under Nixon 1972, then sustained reform from 1978. Apply different interpretive traditions to China's Cold War trajectory.` },
+          ],
+        },
+
+        {
+          id: `l11-real-world`,
+          type: `real-world`,
+          headline: `Take it into your life`,
+          guideContext: `Cold War shapes everything in current global politics. Two paths.`,
+          familyActivity: {
+            title: `Family Cold War Conversation`,
+            duration: `60 minutes`,
+            description: `Share the five interpretive traditions with your family. Cold War-era family members may have direct memories (American Civil Rights era, anti-war movement, Latin American immigration, Cold War refugees, military service, etc.). Different family members may hold different interpretive traditions without recognizing them as such. The conversation often surfaces specific family experiences with Cold War history: family members from Latin America, Eastern Europe, Vietnam, Korea, Cuba, the post-Soviet space all have direct relationships with specific Cold War events. Listening seriously to family experience can substantially shape your understanding.`,
+          },
+          projectOption: {
+            title: `Deep Dive Into One Cold War Conflict, 4 weeks (optional)`,
+            duration: `4 weeks, ~45 minutes per session`,
+            description: `Pick one Cold War conflict for deep study: Korean War, Vietnam War, Cuban Missile Crisis, Chilean coup 1973 and Pinochet, Iran-Contra and Central American conflicts, Indonesian 1965-1966, Soviet-Afghan War, fall of Berlin Wall, or others. Week 1: read substantial scholarly account from one tradition. Week 2: read from a different tradition. Week 3: read survivor or participant testimony or primary documents. Week 4: write 2,000 words integrating the readings, identifying where the traditions illuminate vs where they conflict, and committing to your synthesis. The project develops substantive historical judgment.`,
+            offerToParent: `Parent: opt your kid into this project. Sustained engagement with one Cold War conflict at 12-13 across multiple interpretive traditions builds foundation for serious engagement with international affairs across decades.`,
+          },
+          identityQuestion: `If you become someone who engages Cold War history across five interpretive traditions, what does that change about how you read foreign policy debates, current US-Russia and US-China tensions, ongoing global conflicts, and the structural framework of global politics?`,
+        },
+
+        {
+          id: `l11-identity-hook`,
+          type: `identity-hook`,
+          headline: `Who is this lesson making you?`,
+          prompt: `One sentence. No wrong answer.`,
+          placeholder: `Someone who...`,
+          examples: [
+            `Someone who reads Cold War history through five interpretive traditions, not one.`,
+            `A person who names the Latin American Cold War alongside the European one.`,
+            `Someone who recognizes US-backed coups and authoritarianism alongside Soviet repression.`,
+          ],
+          saveKey: `identity_responses_hw_11_12_11`,
+        },
+
+        {
+          id: `l11-celebration`,
+          type: `celebration`,
+          guideText: `{name}. Eleventh History and World lesson done. You have framework for five interpretive traditions on the Cold War: orthodox American (Kennan, Schlesinger, early Gaddis); revisionist (William Appleman Williams 1959, Gabriel Kolko, Walter LaFeber, Bruce Cumings); post-revisionist synthesis (later Gaddis "We Now Know" 1997, Melvyn Leffler 1992, Vladislav Zubok); global Cold War (Odd Arne Westad 2005); Cold War from below (Mary Dudziak 2000, Penny Von Eschen 1997). You know the timeline (Truman Doctrine + Marshall Plan + Berlin Blockade + NATO 1949 + Korean War + Hungary 1956 + Cuban Missile Crisis 1962 + Vietnam + Détente + Reagan-Gorbachev + Berlin Wall fall Nov 9 1989 + USSR dissolved Dec 25 1991). You know the Latin American Cold War honestly (Guatemala 1954 + civil war 1960-1996 ~200K killed UN-classified genocide; Chile Sept 11 1973 Allende + Pinochet; Argentina 1976 "Dirty War" ~30K disappeared; Operation Condor 1975-1985; School of the Americas ~60K+ trained; Central American 1980s + El Mozote massacre Dec 1981). You know the Third World where most death occurred (Korea ~3M, Vietnam ~3M, Afghanistan ~1M+, Indonesia 1965-66 ~500K-1M, Cambodia 1975-1979 ~1.5-2M). Nine lessons to go. Next: post-Cold War world order. Eastern Europe + Russia transition, Iraq War 2003, China's rise. Three cases. Case Study format. Onward. — Lyra`,
+          badge: `cold-war-literate`,
+          badgeName: `Cold War Literate`,
+          xpEarned: 75,
+          competencies: [
+            `Articulates Cold War timeline 1945-1991 with specific events and dates`,
+            `Names the five interpretive traditions and their major figures (Kennan; William Appleman Williams; later Gaddis + Leffler + Zubok; Westad; Dudziak + Von Eschen)`,
+            `Recognizes "cold" name as obscuring how hot Cold War was in Third World (~3M Korea, ~3M Vietnam, ~1M+ Afghanistan, ~500K-1M Indonesia 1965-66, ~1.5-2M Cambodia)`,
+            `Names the Latin American Cold War honestly (Guatemala 1954/1960-1996 genocide, Chile 1973, Argentina 1976 Dirty War, Operation Condor, School of the Americas, Central American 1980s)`,
+            `Recognizes Civil Rights Movement and Cold War as entangled (Brown 1954 + Civil Rights Act 1964 motivated partly by Cold War; Du Bois + Robeson constrained)`,
+            `Engages multiple traditions on specific events (Korean War origins, Cuban Missile Crisis, Soviet collapse) rather than committing to one`,
+          ],
+          nextLessonPreview: {
+            title: `Lesson 12: Post-Cold War World Order`,
+            hook: `Case Study. Three transitions: Eastern Europe/Russia, Iraq War, China's rise.`,
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export default HISTORY_VOYAGER_L11;
+
+if (import.meta.env?.DEV) {
+  const l = HISTORY_VOYAGER_L11.lessons[0];
+  const mags = l.screens.filter((s) => s.type === `magazine`).length;
+  const perspectives = l.screens.find((s) => s.type === `perspectives`);
+  const quiz = l.screens.find((s) => s.type === `quiz`)?.questions?.length ?? 0;
+  const reflect = l.screens.find((s) => s.type === `reflection`)?.prompts?.length ?? 0;
+  console.log(
+    `[LESSON-HW-VOYAGER-L11 ${VERSION}] "${l.title}" mags=${mags} voices=${perspectives?.voices?.length ?? 0} q=${quiz} r=${reflect}`
+  );
+}
