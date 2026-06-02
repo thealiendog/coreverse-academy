@@ -153,6 +153,8 @@ import LIFEWELLNESS_VOY_L15 from '../../data/lifewellness_voyager_l15_screens';
 import LIFEWELLNESS_VOY_L16 from '../../data/lifewellness_voyager_l16_screens';
 import LIFEWELLNESS_VOY_L17 from '../../data/lifewellness_voyager_l17_screens';
 import LIFEWELLNESS_VOY_L18 from '../../data/lifewellness_voyager_l18_screens';
+import LIFEWELLNESS_VOY_L19 from '../../data/lifewellness_voyager_l19_screens';
+import LIFEWELLNESS_VOY_L20 from '../../data/lifewellness_voyager_l20_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -724,6 +726,8 @@ const VOY_DATA = {
       ...LIFEWELLNESS_VOY_L16.lessons,
       ...LIFEWELLNESS_VOY_L17.lessons,
       ...LIFEWELLNESS_VOY_L18.lessons,
+      ...LIFEWELLNESS_VOY_L19.lessons,
+      ...LIFEWELLNESS_VOY_L20.lessons,
     ],
   },
 };
