@@ -186,6 +186,9 @@ import CA_VOY_L07 from '../../data/creative_arts_voyager_l07_screens';
 import CA_VOY_L08 from '../../data/creative_arts_voyager_l08_screens';
 import CA_VOY_L09 from '../../data/creative_arts_voyager_l09_screens';
 import CA_VOY_L10 from '../../data/creative_arts_voyager_l10_screens';
+import CA_VOY_L11 from '../../data/creative_arts_voyager_l11_screens';
+import CA_VOY_L12 from '../../data/creative_arts_voyager_l12_screens';
+import CA_VOY_L13 from '../../data/creative_arts_voyager_l13_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -804,6 +807,9 @@ const VOY_DATA = {
       ...CA_VOY_L08.lessons,
       ...CA_VOY_L09.lessons,
       ...CA_VOY_L10.lessons,
+      ...CA_VOY_L11.lessons,
+      ...CA_VOY_L12.lessons,
+      ...CA_VOY_L13.lessons,
     ],
   },
 };
