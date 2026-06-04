@@ -242,6 +242,30 @@ export const frontierVoyagers = [
       { question: "What does falsifiability mean?", answer: "A claim is scientific if there is some possible observation or experiment that could prove it wrong", options: ["A claim is scientific if it has been proven true by experiments", "A claim is scientific if there is some possible observation or experiment that could prove it wrong", "A claim is scientific if most experts agree with it", "A claim is scientific if it uses technical vocabulary"] },
       { question: "Why is 'science changed its mind' a strength rather than a weakness?", answer: "It shows the self-correction mechanism working — new evidence overturning old conclusions is the system doing its job", options: ["It proves that scientific knowledge is unreliable and should be distrusted", "It shows the self-correction mechanism working — new evidence overturning old conclusions is the system doing its job", "It means scientists were dishonest in their earlier research", "It demonstrates that scientific consensus is just a matter of opinion"] }
     ]
+  },
+  {
+    id: "fp-11-12-11",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 11,
+    title: "The Philosophy of Mind",
+    duration: "35 min",
+    hook: "How can three pounds of matter produce the felt experience of being you? There is something it is like to be you right now — and nobody on Earth knows why. Today you meet the hardest question in philosophy, five serious attempts to answer it, and why a genuine mystery is never a licence for confident nonsense.",
+    bigIdea: "Consciousness — the felt, first-person experience of being someone — is the deepest unsolved mystery in philosophy. The hard problem asks why any physical process should be accompanied by felt experience at all. Every serious answer either relocates the mystery or owes a debt it cannot yet pay.",
+    sections: [
+      { title: "The Hardest Question You'll Ever Notice", emoji: "🧠", content: "There is 'something it is like' to be you. You see colours, feel feelings, have an inner view. This is consciousness, and the hard problem asks why any physical brain activity is accompanied by felt experience at all — a question different in kind from every other puzzle." },
+      { title: "The Serious Attempts", emoji: "🔭", content: "Physicalism says mind is what the brain does; dualism says mind is a separate substance; functionalism says mind is about information patterns; panpsychism says consciousness is fundamental to reality; illusionism says the hard problem itself is confused. Every answer has serious defenders — and serious problems." },
+      { title: "Mystery Is Not A Licence", emoji: "🛡️", content: "A genuine mystery is never a free pass for any claim. 'Science can't explain consciousness yet' does not prove crystals work, that souls can be downloaded, or anything else. The deepest wonder and the clearest thinking belong together." },
+      { title: "Why This Mystery Touches Everything", emoji: "🌐", content: "Consciousness connects to ethics (what beings can suffer?), AI (could a machine be conscious?), and personal identity (are you the same person you were ten years ago?). How we answer shapes how we treat each other and the systems we build." }
+    ],
+    activity: { title: "Perspectives: Five Minds on the Mystery of Mind", instructions: "Consider the hard problem from five philosophical positions: a committed physicalist, a property dualist, a panpsychist, a functionalist, and an illusionist. For each: (1) What is their answer to why there is felt experience at all? (2) What is the deepest problem with their answer? (3) Which position do you find most intellectually honest — and why?" },
+    quiz: [
+      { question: "What is the 'hard problem' of consciousness?", answer: "Why any physical brain process should be accompanied by felt experience — why there is something it is like to be you", options: ["How the brain processes sensory information into coherent perception", "Why any physical brain process should be accompanied by felt experience — why there is something it is like to be you", "How consciousness evolved from simpler organisms", "Why humans have larger brains than other animals"] },
+      { question: "What does panpsychism claim?", answer: "Consciousness is a fundamental feature of reality, present in some form throughout nature", options: ["Only humans are conscious; animals process information without experience", "Consciousness is a fundamental feature of reality, present in some form throughout nature", "The mind is entirely separate from and independent of the physical brain", "Consciousness is an illusion produced by brain activity"] }
+    ]
   }
 ];
 
