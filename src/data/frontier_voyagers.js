@@ -218,6 +218,30 @@ export const frontierVoyagers = [
       { question: "What is the principle of autonomy in bioethics?", answer: "Competent individuals have the right to make decisions about their own bodies and medical care, including refusing treatment", options: ["Medical professionals have ultimate authority over treatment decisions", "Competent individuals have the right to make decisions about their own bodies and medical care", "Autonomy in medicine means patients can demand any treatment they want", "Respecting autonomy means always following the patient's family's wishes"] },
       { question: "What makes genetic ethics philosophically complex?", answer: "The line between treating disease and enhancing traits is hard to draw, and germline edits affect future people who cannot consent", options: ["Gene editing is prohibited by international law making ethical debate moot", "The line between treating disease and enhancing traits is hard to draw, and germline edits affect future people who cannot consent", "Genetic ethics only matters for people who can afford gene therapy", "All genetic intervention is ethically identical to natural selection"] }
     ]
+  },
+  {
+    id: "fp-11-12-10",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 10,
+    title: "The Philosophy of Science",
+    duration: "35 min",
+    hook: "What actually makes science trustworthy — and what separates it from a convincing impostor wearing its clothes? You've used science your whole life. Today you learn why it actually works, and get the single most protective idea in the philosophy of science: falsifiability.",
+    bigIdea: "The philosophy of science asks not 'what has science found?' but 'what makes science a trustworthy way of finding out?' — the answer is falsifiability, peer review, self-correction, and a method deliberately built to catch its own errors, making science the best knowledge-building tool humans have ever constructed.",
+    sections: [
+      { title: "Science as a Process, Not a Pile of Facts", emoji: "🔬", content: "Science is not mainly a collection of answers; it is a process for testing ideas against reality and weeding out the ones that fail. A scientific claim is trustworthy not because a smart person said it, but because it has survived honest testing designed to catch it if it is wrong." },
+      { title: "Falsifiability: The Most Protective Idea", emoji: "🗡️", content: "Karl Popper's answer to what separates science from pseudoscience: a claim is scientific if there is some possible observation that could prove it wrong. A claim compatible with every possible outcome tells you nothing, even if it feels deeply true." },
+      { title: "Self-Correction: Why 'Science Changed Its Mind' Is a Strength", emoji: "🔄", content: "Science earns trust through peer review (experts scrutinising before a finding is accepted), replication (a result becoming solid only when others repeat it), and the reward for overturning error. 'Science changed its mind' means the system is working, not failing." },
+      { title: "The Honest Limits", emoji: "⚖️", content: "Science answers 'what is,' not 'what ought to be.' It can be done badly, and it revises itself. The mature position: neither worship nor dismiss — understand why good science is trustworthy so you can tell the real thing from the impostor." }
+    ],
+    activity: { title: "The Life of a Scientific Idea", instructions: "Put the stages of a scientific idea into the correct sequence: (1) A researcher notices a puzzling observation, (2) A hypothesis is formed and a testable prediction made, (3) An experiment is designed and run, (4) Results are submitted for peer review, (5) The study is replicated by independent labs, (6) The finding becomes part of the scientific consensus, (7) New evidence challenges the consensus, (8) The field revises or overturns the previous view." },
+    quiz: [
+      { question: "What does falsifiability mean?", answer: "A claim is scientific if there is some possible observation or experiment that could prove it wrong", options: ["A claim is scientific if it has been proven true by experiments", "A claim is scientific if there is some possible observation or experiment that could prove it wrong", "A claim is scientific if most experts agree with it", "A claim is scientific if it uses technical vocabulary"] },
+      { question: "Why is 'science changed its mind' a strength rather than a weakness?", answer: "It shows the self-correction mechanism working — new evidence overturning old conclusions is the system doing its job", options: ["It proves that scientific knowledge is unreliable and should be distrusted", "It shows the self-correction mechanism working — new evidence overturning old conclusions is the system doing its job", "It means scientists were dishonest in their earlier research", "It demonstrates that scientific consensus is just a matter of opinion"] }
+    ]
   }
 ];
 
