@@ -1,4 +1,5 @@
-import { getLevel4Lessons } from './lessons_level4';
+import frontierVoyagersRaw from './frontier_voyagers';
+import { normalizeAll } from './normalizeExplorers';
 
-const FRONTIER_VOYAGERS = getLevel4Lessons('frontier');
+const FRONTIER_VOYAGERS = normalizeAll(frontierVoyagersRaw);
 export default FRONTIER_VOYAGERS;
