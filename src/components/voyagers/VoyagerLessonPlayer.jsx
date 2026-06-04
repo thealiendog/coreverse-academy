@@ -213,6 +213,9 @@ import FP_VOY_L14 from '../../data/frontier_voyager_l14_screens';
 import FP_VOY_L15 from '../../data/frontier_voyager_l15_screens';
 import FP_VOY_L16 from '../../data/frontier_voyager_l16_screens';
 import FP_VOY_L17 from '../../data/frontier_voyager_l17_screens';
+import FP_VOY_L18 from '../../data/frontier_voyager_l18_screens';
+import FP_VOY_L19 from '../../data/frontier_voyager_l19_screens';
+import FP_VOY_L20 from '../../data/frontier_voyager_l20_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -865,6 +868,9 @@ const VOY_DATA = {
       ...FP_VOY_L15.lessons,
       ...FP_VOY_L16.lessons,
       ...FP_VOY_L17.lessons,
+      ...FP_VOY_L18.lessons,
+      ...FP_VOY_L19.lessons,
+      ...FP_VOY_L20.lessons,
     ],
   },
 };

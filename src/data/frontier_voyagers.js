@@ -410,6 +410,78 @@ export const frontierVoyagers = [
       { question: "What is the core transhumanist claim?", answer: "Humans should use technology to enhance capacities beyond current biological limits, potentially including eliminating aging", options: ["Technology will inevitably replace human beings within this century", "Humans should use technology to enhance capacities beyond current biological limits, potentially including eliminating aging", "The human body is already optimally designed and should not be altered", "Artificial intelligence will soon surpass human intelligence in all domains"] },
       { question: "What is the strongest philosophical objection to unrestricted enhancement?", answer: "Enhancement may be available only to the wealthy, deepening inequality, and may optimise for measurable traits while destroying unmeasurable human values", options: ["Enhancement violates natural law and should be prohibited on religious grounds", "Enhancement may be available only to the wealthy, deepening inequality, and may optimise for measurable traits while destroying unmeasurable human values", "The technology for enhancement does not yet exist and is purely theoretical", "Enhancement would make humans too similar to each other, eliminating diversity"] }
     ]
+  },
+  {
+    id: "fp-11-12-18",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 18,
+    title: "The Simulation Hypothesis",
+    duration: "35 min",
+    hook: "What if reality is a computer simulation? It sounds like science fiction — but serious philosophers take the argument seriously. Today you learn why, build the argument yourself, and discover what the simulation hypothesis really teaches: a masterclass in unfalsifiability.",
+    bigIdea: "The simulation hypothesis — that we may be living in a computer simulation — is philosophically interesting not because it is likely true, but because it is a perfect case study in what makes a claim unfalsifiable. Its real value is as a lesson in epistemic humility and the limits of what we can test.",
+    sections: [
+      { title: "An Old Question In New Clothes", emoji: "💻", content: "The idea that reality might not be what it appears — Plato's cave, Descartes' evil demon, the brain in a vat — is ancient. The simulation hypothesis is the contemporary version: if computing power increases without limit, simulated universes become possible, even probable. Nick Bostrom formalised this as a trilemma." },
+      { title: "The Argument, Taken Seriously", emoji: "🔢", content: "Bostrom's trilemma: either civilisations almost always go extinct before reaching simulation capability; or advanced civilisations choose not to run simulations; or we are almost certainly in a simulation. If you reject the first two options, the third follows. The argument is logically valid — the question is whether its premises are true." },
+      { title: "The Real Treasure: Unfalsifiability", emoji: "🗡️", content: "The simulation hypothesis is unfalsifiable: no possible observation from inside the simulation could confirm or disconfirm it. This makes it fascinating philosophically and useless scientifically. It also makes it a perfect illustration of why unfalsifiability matters — and why 'you can't disprove it' is not the same as 'you should believe it'." },
+      { title: "Does It Matter? Speculation Versus A Trap", emoji: "⚖️", content: "Serious engagement: the hypothesis raises genuine questions about the nature of physical laws, mathematical reality, and what 'real' means. The trap: treating unfalsifiability as a feature rather than a limitation, and sliding from 'interesting speculation' to 'therefore my crystal healing works' via the same move. The simulation hypothesis is where philosophy meets intellectual hygiene." }
+    ],
+    activity: { title: "Build the Argument", instructions: "Construct Bostrom's simulation argument step by step: (1) State the three options of the trilemma. (2) Identify which premises you accept or reject and why. (3) If you reject option 3, explain what evidence would make you more or less confident. (4) Evaluate: is this a scientific hypothesis, a philosophical thought experiment, or something else — and does the distinction matter?" },
+    quiz: [
+      { question: "Why is the simulation hypothesis unfalsifiable?", answer: "No observation from inside the simulation could distinguish a simulated reality from a 'real' one — so no evidence can confirm or disconfirm it", options: ["Scientists have not yet built computers powerful enough to test it", "No observation from inside the simulation could distinguish a simulated reality from a 'real' one — so no evidence can confirm or disconfirm it", "The hypothesis requires mathematical tools that do not yet exist", "Philosophers have agreed not to test it because the results would be too disturbing"] },
+      { question: "What is Bostrom's trilemma?", answer: "Either civilisations go extinct before simulating; or they choose not to; or we are almost certainly in a simulation — one of the three must be true", options: ["Reality is either physical, mental, or simulated — no fourth option exists", "Either civilisations go extinct before simulating; or they choose not to; or we are almost certainly in a simulation — one of the three must be true", "The simulation hypothesis is either true, false, or unknowable — and only the third is defensible", "Either God exists, the universe is random, or it is simulated — the same trilemma in new form"] }
+    ]
+  },
+  {
+    id: "fp-11-12-19",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 19,
+    title: "Death and the Meaning of Life",
+    duration: "35 min",
+    hook: "How can the fact that life is finite make it richer, braver, and more precious? Today you face the question everyone usually avoids — with honesty, gentleness, and the full toolkit this band has built. This is the penultimate lesson before you write your own philosophy.",
+    bigIdea: "Philosophers across traditions have argued that mortality, far from making life meaningless, is what gives urgency, beauty, and depth to the finite time we have. Where meaning comes from — achievement, relationship, experience, or something transcendent — is the deepest question you can ask, and only you can answer it for yourself.",
+    sections: [
+      { title: "The Question We Usually Avoid", emoji: "🕯️", content: "Most of us manage not to think about death most of the time — which is a kind of cognitive mercy. But philosophy asks us to face it directly, not as morbid exercise, but because how you relate to your own mortality shapes how you live. The Stoics, Epicureans, Buddhists, and existentialists all built their ethics around this question." },
+      { title: "How Mortality Can Wake Us Up", emoji: "⏳", content: "Heidegger called authentic existence 'being-toward-death' — living with the awareness of finitude rather than fleeing from it. The Stoic memento mori, the Buddhist contemplation of impermanence, the existentialist confrontation with absurdity: different traditions, same insight. Awareness of death can make you present, intentional, and honest about what actually matters." },
+      { title: "Where Meaning Comes From", emoji: "✨", content: "Four sources philosophers have identified: achievement (leaving something that outlasts you), relationship (loving and being loved), experience (the felt quality of a life fully lived), and transcendence (connection to something larger — God, nature, humanity). These are not mutually exclusive. The question is which you actually live by — and whether you've chosen consciously." },
+      { title: "Gentleness, Honesty, And Holding Each Other", emoji: "🤝", content: "This topic matters not just philosophically but personally. If you are ever with someone who is grieving, or facing serious illness, the philosophical tools are not primarily for arguing — they are for listening, for sitting with uncertainty, and for not rushing toward false comfort. Honest compassion is harder than confident answers, and more valuable." }
+    ],
+    activity: { title: "Perspectives: Three Responses to Mortality", instructions: "Take three philosophical perspectives on the question 'how should we live, given that we will die?': (1) A Stoic: what does memento mori actually prescribe for daily life? (2) An existentialist (choose Camus, Sartre, or de Beauvoir): what is their answer to absurdity or meaninglessness? (3) A Buddhist: how does impermanence change the way we relate to what we love? Compare: where do they agree and where do they diverge?" },
+    quiz: [
+      { question: "What did Heidegger mean by 'being-toward-death'?", answer: "Living with genuine awareness of finitude, rather than fleeing from it, as the condition for authentic existence", options: ["The psychological process of accepting one's own mortality after terminal diagnosis", "Living with genuine awareness of finitude, rather than fleeing from it, as the condition for authentic existence", "The philosophical argument that death gives life objective meaning", "A Heideggerian meditation practice focused on contemplating death daily"] },
+      { question: "What is the Epicurean argument about death?", answer: "Death cannot harm us because when death is, we are not — the fear of death is therefore irrational", options: ["We should seek pleasure now because death makes all future plans pointless", "Death cannot harm us because when death is, we are not — the fear of death is therefore irrational", "Death is a transition to a better existence and should be welcomed rather than feared", "The wise person should neither fear death nor think about it, focusing only on the present"] }
+    ]
+  },
+  {
+    id: "fp-11-12-20",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 20,
+    title: "Writing Your Personal Philosophy",
+    duration: "35 min",
+    hook: "Everyone has a philosophy — a set of assumptions about what's real, what matters, and how to live. Most people never examine theirs. You are about to examine yours, and write it down. This is the capstone: twenty lessons of thinking tools, brought to bear on the most important question of all.",
+    bigIdea: "A personal philosophy is not a set of rigid rules — it is a living account of your best current thinking about what is real, what matters, how to know, and how to live. Writing it makes implicit assumptions explicit, subjects them to scrutiny, and gives you something to return to, revise, and grow from.",
+    sections: [
+      { title: "Everyone Has A Philosophy — Few Examine It", emoji: "🔍", content: "Your philosophy is already operating: in what you assume about fairness, what makes a good decision, what you owe others, what makes life worth living. The unexamined philosophy runs on autopilot, absorbing assumptions from culture, family, and whoever spoke most confidently. The examined one is yours." },
+      { title: "The Thinking Tools You Now Carry", emoji: "🧰", content: "Twenty lessons: metaphysics (what is real), epistemology (how we know), logic (how to reason), ethics (how to act), political philosophy (what we owe each other), philosophy of mind, philosophy of science, aesthetics, philosophy of religion. You have touched all of them. A personal philosophy draws on all of them." },
+      { title: "From Thinking Well To Living Well", emoji: "🌱", content: "Philosophy is not a spectator sport. The point is not to hold correct positions — it is to live differently because of how you think. Socrates said the unexamined life is not worth living. The examined life is harder but richer: you make choices consciously, revise them honestly, and take responsibility for what you actually believe." },
+      { title: "The Person This Band Has Been Building", emoji: "⭐", content: "Across twenty lessons, this band has tried to build one thing: a person who can think clearly about difficult questions, hold genuine uncertainty without panic, steelman positions they disagree with, spot manipulation, and still act with integrity. That is the person writing their philosophy now. Trust what you've learned." }
+    ],
+    activity: { title: "Build Your Personal Philosophy", instructions: "Write your personal philosophy in four sections: (1) METAPHYSICS — What do you believe about the nature of reality? Is there more to the world than the physical? (2) EPISTEMOLOGY — How do you know what you know? What are your standards for belief? (3) ETHICS — What do you owe other people? What makes an action right or wrong? (4) MEANING — What makes a life go well? What do you want yours to be for? Be honest. Be specific. This is for you." },
+    quiz: [
+      { question: "Why is writing a personal philosophy valuable?", answer: "It makes implicit assumptions explicit, subjects them to scrutiny, and gives you something to revise as you grow", options: ["It allows you to memorise the correct answers to philosophical questions", "It makes implicit assumptions explicit, subjects them to scrutiny, and gives you something to revise as you grow", "It demonstrates mastery of philosophical terminology to others", "It provides a fixed set of rules to follow in difficult situations"] },
+      { question: "What does it mean to say 'the unexamined life is not worth living'?", answer: "A life lived without reflection on one's values and assumptions runs on autopilot — genuine choice and responsibility require self-examination", options: ["Only philosophers and academics live lives that have genuine value", "A life lived without reflection on one's values and assumptions runs on autopilot — genuine choice and responsibility require self-examination", "Physical comfort and security are worthless without philosophical knowledge", "You must question every belief you hold before you are entitled to act on it"] }
+    ]
   }
 ];
 
