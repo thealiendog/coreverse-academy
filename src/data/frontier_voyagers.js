@@ -266,6 +266,78 @@ export const frontierVoyagers = [
       { question: "What is the 'hard problem' of consciousness?", answer: "Why any physical brain process should be accompanied by felt experience — why there is something it is like to be you", options: ["How the brain processes sensory information into coherent perception", "Why any physical brain process should be accompanied by felt experience — why there is something it is like to be you", "How consciousness evolved from simpler organisms", "Why humans have larger brains than other animals"] },
       { question: "What does panpsychism claim?", answer: "Consciousness is a fundamental feature of reality, present in some form throughout nature", options: ["Only humans are conscious; animals process information without experience", "Consciousness is a fundamental feature of reality, present in some form throughout nature", "The mind is entirely separate from and independent of the physical brain", "Consciousness is an illusion produced by brain activity"] }
     ]
+  },
+  {
+    id: "fp-11-12-12",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 12,
+    title: "Feminist Philosophy",
+    duration: "35 min",
+    hook: "Power, fairness, and whose experiences get counted — feminist philosophy asks questions sharp enough to have reshaped the modern world. Today you engage those arguments seriously, on their merits, with clear eyes and no team jersey.",
+    bigIdea: "Feminist philosophy examines how power, gender, and whose experiences are treated as universal shape knowledge, ethics, and politics. Its strongest arguments stand or fall on their merits — and taking them seriously means evaluating them philosophically, not politically.",
+    sections: [
+      { title: "Philosophy, Not A Slogan", emoji: "🔍", content: "Feminist philosophy is a body of rigorous argument, not a political brand. It asks: whose experiences have been treated as the default human experience, and what follows when that assumption is examined? The best way to engage it is the way you engage any philosophy: assess the arguments." },
+      { title: "Four Ideas That Changed How We Think", emoji: "💡", content: "The sex/gender distinction (biology vs. social construction), standpoint epistemology (your position shapes what you can know), intersectionality (multiple systems of power interact), and the ethics of care (relationships and context matter morally) — four contributions that have entered mainstream thought." },
+      { title: "Strong Arguments, Weak Arguments, And Bad Faith", emoji: "⚖️", content: "Like every tradition, feminist philosophy contains strong arguments, weak arguments, and bad-faith uses of its vocabulary. A clear thinker can steelman the best versions, identify where the arguments are overextended, and spot when the language is being used to shut down rather than open up thinking." },
+      { title: "Thinking Freely On A Topic Everyone Has Feelings About", emoji: "🧭", content: "This topic comes pre-loaded with strong feelings on all sides. The philosophical move is to notice that, bracket it, and ask: what does the argument actually say, and is it sound? That discipline — thinking clearly about things you have feelings about — is what this whole band has been building." }
+    ],
+    activity: { title: "Source Evaluation: Feminist Philosophy Claims", instructions: "Evaluate three claims that invoke feminist philosophy: (1) 'All gender differences are social constructions.' (2) 'Women and men have systematically different moral orientations.' (3) 'Standpoint epistemology shows that oppressed groups have better access to certain truths.' For each: Is it a strong or weak version of the argument? What evidence would confirm or disconfirm it? What would a careful critic say?" },
+    quiz: [
+      { question: "What does standpoint epistemology claim?", answer: "Your social position shapes what you can know — some standpoints give privileged access to certain truths", options: ["Only women can understand feminist philosophy", "Your social position shapes what you can know — some standpoints give privileged access to certain truths", "All knowledge claims are equally valid regardless of the knower's position", "Personal experience is always more reliable than scientific evidence"] },
+      { question: "What is intersectionality as a philosophical concept?", answer: "Multiple systems of power (race, gender, class, etc.) interact and cannot be understood in isolation from each other", options: ["The idea that feminism must include all political causes equally", "Multiple systems of power (race, gender, class, etc.) interact and cannot be understood in isolation from each other", "The view that all forms of discrimination are caused by the same underlying force", "A method of ranking different types of oppression by severity"] }
+    ]
+  },
+  {
+    id: "fp-11-12-13",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 13,
+    title: "Eastern Philosophy",
+    duration: "35 min",
+    hook: "Almost everything in this band has come from one stream of thought — the Western tradition. Today you cross into another: Buddhism and Zen, Vedanta and Taoism. These traditions ask somewhat different questions, reach for different insights, and deserve to be met with genuine respect and genuinely clear eyes.",
+    bigIdea: "Eastern philosophical traditions — Buddhism's teaching on impermanence and non-self, Vedanta's inquiry into the nature of consciousness, Taoism's concept of wu wei and alignment with the Tao — offer insights that complement and challenge Western philosophy, and deserve serious engagement on their own terms.",
+    sections: [
+      { title: "A Different Set Of Questions", emoji: "🌏", content: "Western philosophy tends to ask 'what is real?' and 'what can I know?' Eastern traditions often start elsewhere: 'why do I suffer?' and 'how should I live?' These different starting points produce different emphases, not contradictions — and cross-traditional dialogue makes both richer." },
+      { title: "Buddhism And Zen: Impermanence And The Self", emoji: "☸️", content: "The Buddha's core insight: suffering (dukkha) arises from clinging to things that are impermanent. The self itself, on careful examination, is a process rather than a fixed thing — anatta, non-self. Zen pushes this further: insight comes through direct experience, not just conceptual analysis." },
+      { title: "Vedanta And Taoism: The Self Behind The Self, And The Way", emoji: "🕉️", content: "Vedanta asks: what is the witness behind all experience? Its answer — Atman, the pure consciousness that is also Brahman (ultimate reality) — is one of philosophy's boldest identity claims. Taoism points instead to the Tao: the underlying pattern of reality, best aligned with through wu wei, effortless non-forcing action." },
+      { title: "Wisdom Yes — But Keep Your Clear Eyes", emoji: "🔭", content: "Every tradition contains insights alongside elements that don't survive scrutiny. Respecting Eastern philosophy means engaging its actual arguments, not romanticising it as mystical wisdom beyond criticism, and not dismissing it as merely religious. The same standards you apply to Plato apply here." }
+    ],
+    activity: { title: "Perspectives: Three Eastern Traditions", instructions: "Take three perspectives on the question 'what is the self?': a Buddhist, a Vedantin, and a Taoist. For each: (1) What is their answer? (2) What Western philosophical position does it most resemble or challenge? (3) What is the strongest objection a Western philosopher might raise — and how would they respond?" },
+    quiz: [
+      { question: "What is the Buddhist concept of anatta?", answer: "Non-self — the self, on careful examination, is a process rather than a fixed, permanent entity", options: ["The belief that the self is immortal and survives death", "Non-self — the self, on careful examination, is a process rather than a fixed, permanent entity", "The idea that individual identity is absorbed into a universal consciousness", "A meditation technique for achieving selfless compassion"] },
+      { question: "What does wu wei mean in Taoism?", answer: "Effortless non-forcing action — aligning with the natural flow of the Tao rather than straining against it", options: ["Complete inactivity and withdrawal from the world", "Effortless non-forcing action — aligning with the natural flow of the Tao rather than straining against it", "The Taoist equivalent of the Buddhist concept of karma", "A form of martial arts practice derived from Taoist principles"] }
+    ]
+  },
+  {
+    id: "fp-11-12-14",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 14,
+    title: "Indigenous & Curandero Ways of Knowing",
+    duration: "35 min",
+    hook: "Knowledge rooted in relationship, land, and community — honored on its own terms, with respect and clear eyes. Today you meet ways of knowing that were wrongly dismissed for centuries, learn what they actually claim, and develop the philosophical tools to engage them honestly.",
+    bigIdea: "Indigenous knowledge traditions and curanderismo are sophisticated epistemological systems that treat knowledge as relational, cumulative, and community-embedded. They were dismissed by colonialism; they deserve serious engagement — which means neither romanticising them uncritically nor applying a double standard that holds them to tests Western medicine often fails.",
+    sections: [
+      { title: "Knowledge That Lives In Relationship", emoji: "🌱", content: "Indigenous knowledge traditions typically understand knowledge as relational — arising through long-term relationship with a specific place, ecosystem, and community. This is an epistemological claim, not just a cultural preference: some knowledge genuinely requires relational context to be held accurately." },
+      { title: "Knowledge That Was Wrongly Dismissed", emoji: "📜", content: "Colonial science dismissed Indigenous knowledge as superstition. Modern research has repeatedly vindicated it: traditional ecological knowledge about local species, weather patterns, and land management has been confirmed by scientific study. The dismissal was a failure of epistemology, not just of respect." },
+      { title: "Curanderismo: Healing In Community", emoji: "🌿", content: "Curanderismo is a healing tradition practiced across Latin America integrating herbal medicine, spiritual care, and community support. Some of its practices have been confirmed pharmacologically; others have not. The key philosophical question: how do we evaluate a hybrid system that operates across multiple knowledge registers?" },
+      { title: "Respect, Romanticising, And The Counterfeit Trade", emoji: "⚖️", content: "Genuine respect means engaging Indigenous knowledge on its actual terms — not mining it for 'ancient wisdom' soundbites, not treating it as automatically correct, and not holding it to harsher standards than Western alternatives. Romanticising is its own form of disrespect; clear-eyed engagement is the real honor." }
+    ],
+    activity: { title: "Matching: Knowledge Systems and Their Claims", instructions: "Match each knowledge claim to the correct epistemological category: (A) Traditional ecological knowledge about salmon migration routes confirmed by contemporary biology. (B) A curanderismo practice using a plant later found to contain active medicinal compounds. (C) An Indigenous story about the origin of a landform that encodes accurate geological memory. (D) A healing ritual whose effects are best explained by social support and placebo mechanisms. Categories: (1) Empirically vindicated traditional knowledge. (2) Efficacious through known non-supernatural mechanisms. (3) Narrative encoding of accurate observational memory. (4) Requires further study — currently neither confirmed nor disconfirmed." },
+    quiz: [
+      { question: "Why was the colonial dismissal of Indigenous knowledge an epistemological failure?", answer: "It rejected knowledge based on its source rather than its content — the opposite of good epistemic practice", options: ["Indigenous peoples lacked written records to validate their claims", "It rejected knowledge based on its source rather than its content — the opposite of good epistemic practice", "Indigenous knowledge is primarily spiritual rather than empirical in nature", "Colonial scientists simply had access to better tools and methods"] },
+      { question: "What is the philosophical risk of romanticising Indigenous knowledge?", answer: "It replaces genuine engagement with a projection — treating traditions as mystical rather than as sophisticated systems with their own standards", options: ["It causes Indigenous communities to distrust outside researchers", "It replaces genuine engagement with a projection — treating traditions as mystical rather than as sophisticated systems with their own standards", "It leads to cultural appropriation of traditional practices", "It makes scientific validation of Indigenous knowledge impossible"] }
+    ]
   }
 ];
 
