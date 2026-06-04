@@ -338,6 +338,78 @@ export const frontierVoyagers = [
       { question: "Why was the colonial dismissal of Indigenous knowledge an epistemological failure?", answer: "It rejected knowledge based on its source rather than its content — the opposite of good epistemic practice", options: ["Indigenous peoples lacked written records to validate their claims", "It rejected knowledge based on its source rather than its content — the opposite of good epistemic practice", "Indigenous knowledge is primarily spiritual rather than empirical in nature", "Colonial scientists simply had access to better tools and methods"] },
       { question: "What is the philosophical risk of romanticising Indigenous knowledge?", answer: "It replaces genuine engagement with a projection — treating traditions as mystical rather than as sophisticated systems with their own standards", options: ["It causes Indigenous communities to distrust outside researchers", "It replaces genuine engagement with a projection — treating traditions as mystical rather than as sophisticated systems with their own standards", "It leads to cultural appropriation of traditional practices", "It makes scientific validation of Indigenous knowledge impossible"] }
     ]
+  },
+  {
+    id: "fp-11-12-15",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 15,
+    title: "The Philosophy of Art and Beauty",
+    duration: "35 min",
+    hook: "What is beauty — is it in the object or in you? Why does art move us so deeply, sometimes to tears? And who is manufacturing your taste? Aesthetics asks questions about experience that cut straight to what it means to be human.",
+    bigIdea: "Aesthetics — the philosophy of art and beauty — asks whether beauty is objective or subjective, what makes something art, what art is for, and how our tastes are shaped. The answers matter: they affect how you experience the world and how you reclaim your own judgement from those trying to manufacture it.",
+    sections: [
+      { title: "The Oldest Question About Beauty", emoji: "🎨", content: "Is beauty in the object (objective) or in the observer (subjective)? Both extremes have problems: pure subjectivism can't explain why some judgements seem better than others; pure objectivism struggles to account for genuine disagreement. Most aesthetic theories land somewhere between — beauty is response-dependent." },
+      { title: "What Is Art, And What Is It For?", emoji: "🖼️", content: "Defining art is harder than it sounds. Is it expression? Representation? Skilled craft? The ability to produce aesthetic experience? Institutional theory says art is whatever the 'art world' designates — which raises its own problems. As for its purpose: catharsis, truth-telling, community-building, play, and the expansion of what we can feel." },
+      { title: "Who Is Manufacturing Your Taste?", emoji: "📺", content: "Your aesthetic responses are not formed in a vacuum. Advertising, algorithms, and cultural industries work hard to shape what you find beautiful, desirable, or boring — because taste drives consumption. Philosophical aesthetics gives you tools to reclaim your own judgement: slow down, attend carefully, ask what you actually experience rather than what you're supposed to." },
+      { title: "Why Beauty Matters For A Life", emoji: "🌅", content: "Aesthetic experience — being moved by music, stopped by a view, absorbed in a story — is one of the few things people consistently report as making life feel meaningful. Philosophy can't manufacture that experience, but it can help you notice it, protect it, and take it seriously as a genuine form of knowing." }
+    ],
+    activity: { title: "Perspectives: Three Aesthetic Theories", instructions: "Examine a single artwork (your choice) from three perspectives: (1) An expressivist: what emotion or inner state does this work express, and how successfully? (2) A formalist: how do the formal elements (structure, composition, pattern) create the aesthetic effect? (3) An institutionalist: what does the 'art world' context tell us about why this counts as art — and does that context change your experience of it?" },
+    quiz: [
+      { question: "What does 'response-dependent' mean in aesthetics?", answer: "Beauty is neither purely in the object nor purely in the observer — it arises in the interaction between them", options: ["Beauty exists independently of any observer's reaction to it", "Beauty is neither purely in the object nor purely in the observer — it arises in the interaction between them", "Beauty is entirely determined by the viewer's cultural background", "Aesthetic judgements are always subjective and cannot be evaluated"] },
+      { question: "What is the institutional theory of art?", answer: "Something is art if the relevant institutional context (artists, curators, critics) designates it as such", options: ["Art must be created by trained artists with recognised credentials", "Something is art if the relevant institutional context (artists, curators, critics) designates it as such", "Art is defined by its ability to produce strong emotional responses", "Only objects made with skilled craft qualify as genuine art"] }
+    ]
+  },
+  {
+    id: "fp-11-12-16",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 16,
+    title: "The Philosophy of Religion",
+    duration: "35 min",
+    hook: "God, the sacred, faith, and doubt — the biggest questions there are, taken on with respect for all sincere views and genuine philosophical rigor. Today you learn to think clearly about religion without either dismissing it or exempting it from examination.",
+    bigIdea: "The philosophy of religion examines arguments for and against God's existence, the relationship between faith and reason, the nature of religious experience, and how to talk across deep disagreement. The goal is neither to win nor to convert — it is to think clearly about the most fundamental questions humans ask.",
+    sections: [
+      { title: "The Questions At The Center", emoji: "✨", content: "Does God exist? If so, what is God's nature? Why does evil exist in a world with a good creator? Can religious experience be evidence of anything? These questions have occupied the greatest philosophers of every tradition. They resist easy answers — which is a reason to take them more seriously, not less." },
+      { title: "Faith, Reason, And Doubt", emoji: "⚖️", content: "The relationship between faith and reason is more complex than culture-war caricatures suggest. Fideism holds that faith is independent of reason; natural theology tries to prove God's existence through reason; reformed epistemology argues that belief in God can be 'properly basic' — rational without requiring proof. All three positions have serious philosophical defenders." },
+      { title: "Sincere Faith Versus Manipulation In Disguise", emoji: "🛡️", content: "Sincere religious belief — held thoughtfully, open to question, integrated with honest living — is philosophically respectable even if you disagree with its conclusions. What is not respectable: using religious language to shut down questions, claim special exemption from scrutiny, or manipulate the vulnerable. The difference matters and can be detected." },
+      { title: "What Religion Does, And How To Talk Across Difference", emoji: "🤝", content: "Religion provides meaning, community, ethical orientation, and a relationship with the transcendent. Even someone who rejects its metaphysical claims can understand why it matters to billions of people. Talking across deep disagreement requires: genuine curiosity, accurate understanding of what the other actually believes, and the willingness to steelman before criticising." }
+    ],
+    activity: { title: "Perspectives: Faith, Doubt, and the Problem of Evil", instructions: "Examine the problem of evil from three perspectives: (1) A sincere theist who has thought carefully about why God might permit suffering — what is the most philosophically serious theodicy? (2) An atheist who finds the problem of evil compelling evidence against a good God — what is the strongest form of the argument? (3) An agnostic who thinks the evidence underdetermines the question — what would it take to shift the probability either way?" },
+    quiz: [
+      { question: "What is fideism in the philosophy of religion?", answer: "The view that religious faith is independent of and need not be justified by rational argument", options: ["The view that God's existence can be proven through logical argument alone", "The view that religious faith is independent of and need not be justified by rational argument", "The belief that faith and reason always point to the same conclusions", "The position that only scientific evidence can support religious claims"] },
+      { question: "What is the 'problem of evil' in philosophy of religion?", answer: "The challenge of explaining how a good, all-powerful God could permit the existence of suffering and evil", options: ["The philosophical argument that religious institutions have historically caused harm", "The challenge of explaining how a good, all-powerful God could permit the existence of suffering and evil", "The difficulty of defining what counts as morally evil across cultures", "The problem of how humans can know the difference between good and evil"] }
+    ]
+  },
+  {
+    id: "fp-11-12-17",
+    subject: "Frontier & Philosophy",
+    ageGroup: "11-12",
+    band: "Voyagers",
+    guide: "Orion",
+    guideAnimal: "Fox",
+    lessonNumber: 17,
+    title: "The Philosophy of Transhumanism",
+    duration: "35 min",
+    hook: "As technology lets us change humans themselves — bodies, minds, even death — what should we do? Transhumanism says: enhance, extend, transcend. Its critics say: be careful what you optimise for. Today you navigate the real decisions, not the science fiction.",
+    bigIdea: "Transhumanism is the philosophical position that humans should use technology to enhance cognitive and physical capacities beyond current limits, including potentially eliminating aging and death. The debate turns on deep questions: what makes us human, who decides what counts as enhancement, and what gets lost when we optimise ourselves.",
+    sections: [
+      { title: "Changing The Human Itself", emoji: "🧬", content: "Technology has always changed how humans live. Transhumanism asks: should we use it to change what humans are? Cognitive enhancement, genetic engineering, brain-computer interfaces, radical life extension — these are not science fiction. They are research programs. The philosophical question is whether and how far to go." },
+      { title: "The Case For, And The Case For Caution", emoji: "⚖️", content: "The transhumanist case: suffering is bad, capacity is good, longevity lets people contribute more — why wouldn't we enhance? The cautionary case: we don't fully understand what we'd be changing, enhancement may widen inequality, optimising for measurable traits may destroy what we value most but can't measure. Both positions deserve steelmanning." },
+      { title: "Hype, Reality, And The People Selling Immortality", emoji: "🔍", content: "The transhumanist space is thick with serious philosophical argument AND with people selling expensive supplements, dubious longevity clinics, and confident predictions about uploading consciousness within 20 years. Separating the genuine philosophical debate from the marketing requires the same tools you've been building all band: falsifiability, source evaluation, motivated reasoning detection." },
+      { title: "What Makes Us Human — And Who Decides?", emoji: "🌐", content: "Enhancement raises the question of what we're enhancing towards. Who defines the target? If cognitive enhancement is available only to the wealthy, what does that do to human equality? If we eliminate aging, what does that do to generational turnover and the freshness of human culture? The philosophy of transhumanism is really a debate about human values." }
+    ],
+    activity: { title: "Branching Decisions: The Enhancement Choices", instructions: "Work through three enhancement decisions: (1) A safe, affordable pill that improves working memory by 30% — take it or not, and why? (2) A genetic edit available for your future children that eliminates a hereditary disease but also selects for higher IQ — proceed or not, and why? (3) A brain-computer interface that makes you dramatically more productive but changes your personality — accept it or not, and why? For each: what values are in tension, and which wins?" },
+    quiz: [
+      { question: "What is the core transhumanist claim?", answer: "Humans should use technology to enhance capacities beyond current biological limits, potentially including eliminating aging", options: ["Technology will inevitably replace human beings within this century", "Humans should use technology to enhance capacities beyond current biological limits, potentially including eliminating aging", "The human body is already optimally designed and should not be altered", "Artificial intelligence will soon surpass human intelligence in all domains"] },
+      { question: "What is the strongest philosophical objection to unrestricted enhancement?", answer: "Enhancement may be available only to the wealthy, deepening inequality, and may optimise for measurable traits while destroying unmeasurable human values", options: ["Enhancement violates natural law and should be prohibited on religious grounds", "Enhancement may be available only to the wealthy, deepening inequality, and may optimise for measurable traits while destroying unmeasurable human values", "The technology for enhancement does not yet exist and is purely theoretical", "Enhancement would make humans too similar to each other, eliminating diversity"] }
+    ]
   }
 ];
 
