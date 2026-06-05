@@ -25,6 +25,7 @@ import VocabPopup            from '../explorers/VocabPopup';
 // ── Voyager interaction components ────────────────────────────────────────
 import ArgumentBuilder    from './ArgumentBuilder';
 import CaseStudy          from './CaseStudy';
+import CaseStudyExplorer  from './CaseStudyExplorer';
 import SourceEvaluation   from './SourceEvaluation';
 import Annotate           from './Annotate';
 // ── Voyager game components (Cosmos band onwards) ─────────────────────────
@@ -1459,13 +1460,19 @@ export default function VoyagerLessonPlayer() {
           />
         );
       case 'case-study':
-        return (
-          <CaseStudy
-            screen={currentScreen} accent={accent}
-            childName={childName} guideAvatar={guideAvatar}
-            onComplete={goNext}
-          />
-        );
+        return currentScreen.cases
+          ? (
+            <CaseStudyExplorer
+              screen={currentScreen} accent={accent}
+              childName={childName} onComplete={goNext}
+            />
+          ) : (
+            <CaseStudy
+              screen={currentScreen} accent={accent}
+              childName={childName} guideAvatar={guideAvatar}
+              onComplete={goNext}
+            />
+          );
       case 'source-evaluation':
         return (
           <SourceEvaluation
