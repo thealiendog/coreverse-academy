@@ -217,6 +217,9 @@ import FP_VOY_L18 from '../../data/frontier_voyager_l18_screens';
 import FP_VOY_L19 from '../../data/frontier_voyager_l19_screens';
 import FP_VOY_L20 from '../../data/frontier_voyager_l20_screens';
 import ELA_VOY_L01 from '../../data/ela_voyager_l01_screens';
+import ELA_VOY_L02 from '../../data/ela_voyager_l02_screens';
+import ELA_VOY_L03 from '../../data/ela_voyager_l03_screens';
+import ELA_VOY_L04 from '../../data/ela_voyager_l04_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -880,6 +883,9 @@ const VOY_DATA = {
     guide:     'quill',
     lessons: [
       ...ELA_VOY_L01.lessons,
+      ...ELA_VOY_L02.lessons,
+      ...ELA_VOY_L03.lessons,
+      ...ELA_VOY_L04.lessons,
     ],
   },
 };
