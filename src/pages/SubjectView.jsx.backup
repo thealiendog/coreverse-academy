@@ -31,7 +31,6 @@ import SOCIALLEADERSHIP_VOYAGERS from '../data/socialleadership_voyagers_adapter
 import LIFEWELLNESS_VOYAGERS from '../data/lifewellness_voyagers_adapter';
 import CREATIVEARTS_VOYAGERS from '../data/creativearts_voyagers_adapter';
 import HISTORYWORLD_VOYAGERS from '../data/historyworld_voyagers_adapter';
-import FRONTIER_VOYAGERS from '../data/frontier_voyagers_adapter';
 import INNERWORLD_VOYAGERS from '../data/innerworld_voyagers_adapter';
 import COSMOS_VOYAGERS from '../data/cosmos_voyagers_adapter';
 import MATH_VOYAGERS from '../data/math_voyagers_adapter';
@@ -198,15 +197,15 @@ const NEW_FORMAT_UE_LESSONS = {
   // Inner World UE — L01–L15, L17–L20
   'inner-world': ['iw-9-10-01', 'iw-9-10-02', 'iw-9-10-03', 'iw-9-10-04', 'iw-9-10-05', 'iw-9-10-06', 'iw-9-10-07', 'iw-9-10-08', 'iw-9-10-09', 'iw-9-10-10', 'iw-9-10-11', 'iw-9-10-12', 'iw-9-10-13', 'iw-9-10-14', 'iw-9-10-15', 'iw-9-10-17', 'iw-9-10-18', 'iw-9-10-19', 'iw-9-10-20'],
   // Social Leadership UE — L01–L09, L12–L20
-  'leadership': ['sl-9-10-01', 'sl-9-10-02', 'sl-9-10-03', 'sl-9-10-04', 'sl-9-10-05', 'sl-9-10-06', 'sl-9-10-07', 'sl-9-10-08', 'sl-9-10-09', 'sl-9-10-12', 'sl-9-10-13', 'sl-9-10-14', 'sl-9-10-15', 'sl-9-10-16', 'sl-9-10-17', 'sl-9-10-18', 'sl-9-10-19', 'sl-9-10-20'],
+  'sl': ['sl-9-10-01', 'sl-9-10-02', 'sl-9-10-03', 'sl-9-10-04', 'sl-9-10-05', 'sl-9-10-06', 'sl-9-10-07', 'sl-9-10-08', 'sl-9-10-09', 'sl-9-10-12', 'sl-9-10-13', 'sl-9-10-14', 'sl-9-10-15', 'sl-9-10-16', 'sl-9-10-17', 'sl-9-10-18', 'sl-9-10-19', 'sl-9-10-20'],
   // Life Wellness UE — L01–L20
-  'wellness': ['lw-9-10-01', 'lw-9-10-02', 'lw-9-10-03', 'lw-9-10-04', 'lw-9-10-05', 'lw-9-10-06', 'lw-9-10-07', 'lw-9-10-08', 'lw-9-10-09', 'lw-9-10-10', 'lw-9-10-11', 'lw-9-10-12', 'lw-9-10-13', 'lw-9-10-14', 'lw-9-10-15', 'lw-9-10-16', 'lw-9-10-17', 'lw-9-10-18', 'lw-9-10-19', 'lw-9-10-20'],
+  'lw': ['lw-9-10-01', 'lw-9-10-02', 'lw-9-10-03', 'lw-9-10-04', 'lw-9-10-05', 'lw-9-10-06', 'lw-9-10-07', 'lw-9-10-08', 'lw-9-10-09', 'lw-9-10-10', 'lw-9-10-11', 'lw-9-10-12', 'lw-9-10-13', 'lw-9-10-14', 'lw-9-10-15', 'lw-9-10-16', 'lw-9-10-17', 'lw-9-10-18', 'lw-9-10-19', 'lw-9-10-20'],
   // Future Skills UE — L01–L20
-  'future-skills': ['fs-9-10-01', 'fs-9-10-02', 'fs-9-10-03', 'fs-9-10-04', 'fs-9-10-05', 'fs-9-10-06', 'fs-9-10-07', 'fs-9-10-08', 'fs-9-10-09', 'fs-9-10-10', 'fs-9-10-11', 'fs-9-10-12', 'fs-9-10-13', 'fs-9-10-14', 'fs-9-10-15', 'fs-9-10-16', 'fs-9-10-17', 'fs-9-10-18', 'fs-9-10-19', 'fs-9-10-20'],
+  'fs': ['fs-9-10-01', 'fs-9-10-02', 'fs-9-10-03', 'fs-9-10-04', 'fs-9-10-05', 'fs-9-10-06', 'fs-9-10-07', 'fs-9-10-08', 'fs-9-10-09', 'fs-9-10-10', 'fs-9-10-11', 'fs-9-10-12', 'fs-9-10-13', 'fs-9-10-14', 'fs-9-10-15', 'fs-9-10-16', 'fs-9-10-17', 'fs-9-10-18', 'fs-9-10-19', 'fs-9-10-20'],
   // Creative Arts UE — L01–L20
-  'creative-arts': ['ca-9-10-01', 'ca-9-10-02', 'ca-9-10-03', 'ca-9-10-04', 'ca-9-10-05', 'ca-9-10-06', 'ca-9-10-07', 'ca-9-10-08', 'ca-9-10-09', 'ca-9-10-10', 'ca-9-10-11', 'ca-9-10-12', 'ca-9-10-13', 'ca-9-10-14', 'ca-9-10-15', 'ca-9-10-16', 'ca-9-10-17', 'ca-9-10-18', 'ca-9-10-19', 'ca-9-10-20'],
-  // Frontier UE — L01–L20
-  'frontier': ['fp-9-10-01', 'fp-9-10-02', 'fp-9-10-03', 'fp-9-10-04', 'fp-9-10-05', 'fp-9-10-06', 'fp-9-10-07', 'fp-9-10-08', 'fp-9-10-09', 'fp-9-10-10', 'fp-9-10-11', 'fp-9-10-12', 'fp-9-10-13', 'fp-9-10-14', 'fp-9-10-15', 'fp-9-10-16', 'fp-9-10-17', 'fp-9-10-18', 'fp-9-10-19', 'fp-9-10-20'],
+  'ca': ['ca-9-10-01', 'ca-9-10-02', 'ca-9-10-03', 'ca-9-10-04', 'ca-9-10-05', 'ca-9-10-06', 'ca-9-10-07', 'ca-9-10-08', 'ca-9-10-09', 'ca-9-10-10', 'ca-9-10-11', 'ca-9-10-12', 'ca-9-10-13', 'ca-9-10-14', 'ca-9-10-15', 'ca-9-10-16', 'ca-9-10-17', 'ca-9-10-18', 'ca-9-10-19', 'ca-9-10-20'],
+  // Frontier UE — L01–L18
+  'fp': ['fp-9-10-01', 'fp-9-10-02', 'fp-9-10-03', 'fp-9-10-04', 'fp-9-10-05', 'fp-9-10-06', 'fp-9-10-07', 'fp-9-10-08', 'fp-9-10-09', 'fp-9-10-10', 'fp-9-10-11', 'fp-9-10-12', 'fp-9-10-13', 'fp-9-10-14', 'fp-9-10-15', 'fp-9-10-16', 'fp-9-10-17', 'fp-9-10-18'],
 };
 
 function getUELessonId(subjectId, level, index) {
@@ -234,60 +233,8 @@ function getUELessonId(subjectId, level, index) {
   if (subjectId === 'inner-world' && level === 3) {
     return `iw-9-10-${String(index + 1).padStart(2, '0')}`;
   }
-  if (subjectId === 'leadership' && level === 3) {
-    return `sl-9-10-${String(index + 1).padStart(2, '0')}`;
-  }
-  if (subjectId === 'wellness' && level === 3) {
-    return `lw-9-10-${String(index + 1).padStart(2, '0')}`;
-  }
-  if (subjectId === 'future-skills' && level === 3) {
-    return `fs-9-10-${String(index + 1).padStart(2, '0')}`;
-  }
-  if (subjectId === 'creative-arts' && level === 3) {
-    return `ca-9-10-${String(index + 1).padStart(2, '0')}`;
-  }
-  if (subjectId === 'frontier' && level === 3) {
-    return `fp-9-10-${String(index + 1).padStart(2, '0')}`;
-  }
   return null;
 }
-
-// ── Voyager (ages 11-12) new-format lesson routing ────────────────────────
-function getVoyagerLessonId(subjectId, level, index) {
-  if (level !== 4) return null;
-  const n = String(index + 1).padStart(2, '0');
-  if (subjectId === 'inner-world')    return `iw-11-12-${n}`;
-  if (subjectId === 'cosmos')         return `cs-11-12-${n}`;
-  if (subjectId === 'money')          return `mb-11-12-${n}`;
-  if (subjectId === 'future-skills')  return `fs-11-12-${n}`;
-  if (subjectId === 'leadership')     return `sl-11-12-${n}`;
-  if (subjectId === 'wellness')       return `lw-11-12-${n}`;
-  if (subjectId === 'creative-arts')  return `ca-11-12-${n}`;
-  if (subjectId === 'frontier')       return `fp-11-12-${n}`;
-  if (subjectId === 'ela')            return `ela-11-12-${n}`;
-  if (subjectId === 'science')        return `sci-11-12-${n}`;
-  if (subjectId === 'social_studies') return `social-studies-11-12-${n}`;
-  if (subjectId === 'history')        return `hw-11-12-${n}`;
-  if (subjectId === 'math')           return `math-11-12-${n}`;
-  return null;
-}
-
-// Voyager lesson IDs registered here route to /voyager/:subjectId/:lessonId.
-// Add IDs as Voyager screen files are authored (one subject at a time).
-// Keys must match URL subjectId (canonical IDs from constants.js ORIGINALS).
-const NEW_FORMAT_VOYAGER_LESSONS = {
-  'inner-world': ['iw-11-12-01', 'iw-11-12-02', 'iw-11-12-03', 'iw-11-12-04', 'iw-11-12-05', 'iw-11-12-06', 'iw-11-12-07', 'iw-11-12-08', 'iw-11-12-09', 'iw-11-12-10', 'iw-11-12-11', 'iw-11-12-12', 'iw-11-12-13', 'iw-11-12-14', 'iw-11-12-15', 'iw-11-12-16', 'iw-11-12-17', 'iw-11-12-18', 'iw-11-12-19', 'iw-11-12-20'],
-  'money':       ['mb-11-12-01', 'mb-11-12-02', 'mb-11-12-03', 'mb-11-12-04', 'mb-11-12-05', 'mb-11-12-06', 'mb-11-12-07', 'mb-11-12-08', 'mb-11-12-09', 'mb-11-12-10', 'mb-11-12-11', 'mb-11-12-12', 'mb-11-12-13', 'mb-11-12-14', 'mb-11-12-15', 'mb-11-12-16', 'mb-11-12-17', 'mb-11-12-18', 'mb-11-12-19', 'mb-11-12-20'],
-  'cosmos':      ['cs-11-12-01', 'cs-11-12-02', 'cs-11-12-03', 'cs-11-12-04', 'cs-11-12-05', 'cs-11-12-06', 'cs-11-12-07', 'cs-11-12-08', 'cs-11-12-09', 'cs-11-12-10', 'cs-11-12-11', 'cs-11-12-12', 'cs-11-12-13', 'cs-11-12-14', 'cs-11-12-15', 'cs-11-12-16', 'cs-11-12-17', 'cs-11-12-18', 'cs-11-12-19', 'cs-11-12-20'],
-  'future-skills': ['fs-11-12-01', 'fs-11-12-02', 'fs-11-12-03', 'fs-11-12-04', 'fs-11-12-05', 'fs-11-12-06', 'fs-11-12-07', 'fs-11-12-08', 'fs-11-12-09', 'fs-11-12-10', 'fs-11-12-11', 'fs-11-12-12', 'fs-11-12-13', 'fs-11-12-14', 'fs-11-12-15', 'fs-11-12-16', 'fs-11-12-17', 'fs-11-12-18', 'fs-11-12-19', 'fs-11-12-20'],
-  'leadership':    ['sl-11-12-01', 'sl-11-12-02', 'sl-11-12-03', 'sl-11-12-04', 'sl-11-12-05', 'sl-11-12-06', 'sl-11-12-07', 'sl-11-12-08', 'sl-11-12-09', 'sl-11-12-10', 'sl-11-12-11', 'sl-11-12-12', 'sl-11-12-13', 'sl-11-12-14', 'sl-11-12-15', 'sl-11-12-16', 'sl-11-12-17', 'sl-11-12-18', 'sl-11-12-19', 'sl-11-12-20'],
-  'wellness':      ['lw-11-12-01', 'lw-11-12-02', 'lw-11-12-03', 'lw-11-12-04', 'lw-11-12-05', 'lw-11-12-06', 'lw-11-12-07', 'lw-11-12-08', 'lw-11-12-09', 'lw-11-12-10', 'lw-11-12-11', 'lw-11-12-12', 'lw-11-12-13', 'lw-11-12-14', 'lw-11-12-15', 'lw-11-12-16', 'lw-11-12-17', 'lw-11-12-18', 'lw-11-12-19', 'lw-11-12-20'],
-  'history':       ['hw-11-12-01', 'hw-11-12-02', 'hw-11-12-03', 'hw-11-12-04', 'hw-11-12-05', 'hw-11-12-06', 'hw-11-12-07', 'hw-11-12-08', 'hw-11-12-09', 'hw-11-12-10', 'hw-11-12-11', 'hw-11-12-12', 'hw-11-12-13', 'hw-11-12-14', 'hw-11-12-15', 'hw-11-12-16', 'hw-11-12-17', 'hw-11-12-18', 'hw-11-12-19', 'hw-11-12-20'],
-  'creative-arts': ['ca-11-12-01', 'ca-11-12-02', 'ca-11-12-03', 'ca-11-12-04', 'ca-11-12-05', 'ca-11-12-06', 'ca-11-12-07', 'ca-11-12-08', 'ca-11-12-09', 'ca-11-12-10', 'ca-11-12-11', 'ca-11-12-12', 'ca-11-12-13', 'ca-11-12-14', 'ca-11-12-15', 'ca-11-12-16', 'ca-11-12-17', 'ca-11-12-18', 'ca-11-12-19', 'ca-11-12-20'],
-  'frontier':      ['fp-11-12-01', 'fp-11-12-02', 'fp-11-12-03', 'fp-11-12-04', 'fp-11-12-05', 'fp-11-12-06', 'fp-11-12-07', 'fp-11-12-08', 'fp-11-12-09', 'fp-11-12-10', 'fp-11-12-11', 'fp-11-12-12', 'fp-11-12-13', 'fp-11-12-14', 'fp-11-12-15', 'fp-11-12-16', 'fp-11-12-17', 'fp-11-12-18', 'fp-11-12-19', 'fp-11-12-20'],
-  'ela':           ['ela-11-12-01', 'ela-11-12-02', 'ela-11-12-03', 'ela-11-12-04', 'ela-11-12-05', 'ela-11-12-06', 'ela-11-12-07', 'ela-11-12-08', 'ela-11-12-09', 'ela-11-12-10', 'ela-11-12-11', 'ela-11-12-12', 'ela-11-12-13', 'ela-11-12-14', 'ela-11-12-15', 'ela-11-12-16', 'ela-11-12-17', 'ela-11-12-18', 'ela-11-12-19', 'ela-11-12-20'],
-  'science':       ['sci-11-12-01', 'sci-11-12-02', 'sci-11-12-03', 'sci-11-12-04', 'sci-11-12-05', 'sci-11-12-06'],
-};
 
 // ── New-format lesson routing ─────────────────────────────────────────────────
 // Add a lesson ID here when it's been converted to the screen-based format.
@@ -439,7 +386,6 @@ export default function SubjectView() {
     : subjectId === 'wellness'                   ? LIFEWELLNESS_VOYAGERS
     : subjectId === 'creative-arts'              ? CREATIVEARTS_VOYAGERS
     : subjectId === 'history'                    ? HISTORYWORLD_VOYAGERS
-    : subjectId === 'frontier'                   ? FRONTIER_VOYAGERS
     : subjectId === 'ss'                         ? SS_VOYAGERS
     : getLevel4Lessons(subjectId);
 
@@ -458,14 +404,7 @@ export default function SubjectView() {
     if (!child) { navigate('/child/select'); return; }
     const canonicalId = resolveSubjectId(subjectId);
 
-    // Check Voyager screen-based format (level 4)
-    const voyagerId = getVoyagerLessonId(canonicalId, level, i);
-    if (voyagerId && NEW_FORMAT_VOYAGER_LESSONS[canonicalId]?.includes(voyagerId)) {
-      navigate(`/voyager/${canonicalId}/${voyagerId}`);
-      return;
-    }
-
-    // Check UE screen-based format (level 3)
+    // Check UE screen-based format first (level 3)
     const ueId = getUELessonId(canonicalId, level, i);
     if (ueId && NEW_FORMAT_UE_LESSONS[canonicalId]?.includes(ueId)) {
       // Math v2 override: route to MathLessonPlayer for rebuilt lessons

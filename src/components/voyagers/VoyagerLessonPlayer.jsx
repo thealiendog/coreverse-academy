@@ -240,6 +240,9 @@ import ELA_VOY_L20 from '../../data/ela_voyager_l20_screens';
 import SCI_VOY_L01 from '../../data/science_voyager_l01_screens';
 import SCI_VOY_L02 from '../../data/science_voyager_l02_screens';
 import SCI_VOY_L03 from '../../data/science_voyager_l03_screens';
+import SCI_VOY_L04 from '../../data/science_voyager_l04_screens';
+import SCI_VOY_L05 from '../../data/science_voyager_l05_screens';
+import SCI_VOY_L06 from '../../data/science_voyager_l06_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -932,6 +935,9 @@ const VOY_DATA = {
       ...SCI_VOY_L01.lessons,
       ...SCI_VOY_L02.lessons,
       ...SCI_VOY_L03.lessons,
+      ...SCI_VOY_L04.lessons,
+      ...SCI_VOY_L05.lessons,
+      ...SCI_VOY_L06.lessons,
     ],
   },
 };
