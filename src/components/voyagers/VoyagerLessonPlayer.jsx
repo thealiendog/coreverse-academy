@@ -233,6 +233,10 @@ import ELA_VOY_L13 from '../../data/ela_voyager_l13_screens';
 import ELA_VOY_L14 from '../../data/ela_voyager_l14_screens';
 import ELA_VOY_L15 from '../../data/ela_voyager_l15_screens';
 import ELA_VOY_L16 from '../../data/ela_voyager_l16_screens';
+import ELA_VOY_L17 from '../../data/ela_voyager_l17_screens';
+import ELA_VOY_L18 from '../../data/ela_voyager_l18_screens';
+import ELA_VOY_L19 from '../../data/ela_voyager_l19_screens';
+import ELA_VOY_L20 from '../../data/ela_voyager_l20_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -911,6 +915,10 @@ const VOY_DATA = {
       ...ELA_VOY_L14.lessons,
       ...ELA_VOY_L15.lessons,
       ...ELA_VOY_L16.lessons,
+      ...ELA_VOY_L17.lessons,
+      ...ELA_VOY_L18.lessons,
+      ...ELA_VOY_L19.lessons,
+      ...ELA_VOY_L20.lessons,
     ],
   },
 };
