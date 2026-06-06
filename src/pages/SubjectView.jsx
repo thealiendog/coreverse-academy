@@ -265,7 +265,7 @@ function getVoyagerLessonId(subjectId, level, index) {
   if (subjectId === 'creative-arts')  return `ca-11-12-${n}`;
   if (subjectId === 'frontier')       return `fp-11-12-${n}`;
   if (subjectId === 'ela')            return `ela-11-12-${n}`;
-  if (subjectId === 'science')        return `science-11-12-${n}`;
+  if (subjectId === 'science')        return `sci-11-12-${n}`;
   if (subjectId === 'social_studies') return `social-studies-11-12-${n}`;
   if (subjectId === 'history')        return `hw-11-12-${n}`;
   if (subjectId === 'math')           return `math-11-12-${n}`;
@@ -286,6 +286,7 @@ const NEW_FORMAT_VOYAGER_LESSONS = {
   'creative-arts': ['ca-11-12-01', 'ca-11-12-02', 'ca-11-12-03', 'ca-11-12-04', 'ca-11-12-05', 'ca-11-12-06', 'ca-11-12-07', 'ca-11-12-08', 'ca-11-12-09', 'ca-11-12-10', 'ca-11-12-11', 'ca-11-12-12', 'ca-11-12-13', 'ca-11-12-14', 'ca-11-12-15', 'ca-11-12-16', 'ca-11-12-17', 'ca-11-12-18', 'ca-11-12-19', 'ca-11-12-20'],
   'frontier':      ['fp-11-12-01', 'fp-11-12-02', 'fp-11-12-03', 'fp-11-12-04', 'fp-11-12-05', 'fp-11-12-06', 'fp-11-12-07', 'fp-11-12-08', 'fp-11-12-09', 'fp-11-12-10', 'fp-11-12-11', 'fp-11-12-12', 'fp-11-12-13', 'fp-11-12-14', 'fp-11-12-15', 'fp-11-12-16', 'fp-11-12-17', 'fp-11-12-18', 'fp-11-12-19', 'fp-11-12-20'],
   'ela':           ['ela-11-12-01', 'ela-11-12-02', 'ela-11-12-03', 'ela-11-12-04', 'ela-11-12-05', 'ela-11-12-06', 'ela-11-12-07', 'ela-11-12-08', 'ela-11-12-09', 'ela-11-12-10', 'ela-11-12-11', 'ela-11-12-12', 'ela-11-12-13', 'ela-11-12-14', 'ela-11-12-15', 'ela-11-12-16', 'ela-11-12-17', 'ela-11-12-18', 'ela-11-12-19', 'ela-11-12-20'],
+  'science':       ['sci-11-12-01', 'sci-11-12-02', 'sci-11-12-03'],
 };
 
 // ── New-format lesson routing ─────────────────────────────────────────────────
