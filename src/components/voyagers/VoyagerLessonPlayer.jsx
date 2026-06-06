@@ -249,6 +249,9 @@ import SCI_VOY_L09 from '../../data/science_voyager_l09_screens';
 import SCI_VOY_L10 from '../../data/science_voyager_l10_screens';
 import SCI_VOY_L11 from '../../data/science_voyager_l11_screens';
 import SCI_VOY_L12 from '../../data/science_voyager_l12_screens';
+import SCI_VOY_L13 from '../../data/science_voyager_l13_screens';
+import SCI_VOY_L14 from '../../data/science_voyager_l14_screens';
+import SCI_VOY_L15 from '../../data/science_voyager_l15_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -950,6 +953,9 @@ const VOY_DATA = {
       ...SCI_VOY_L10.lessons,
       ...SCI_VOY_L11.lessons,
       ...SCI_VOY_L12.lessons,
+      ...SCI_VOY_L13.lessons,
+      ...SCI_VOY_L14.lessons,
+      ...SCI_VOY_L15.lessons,
     ],
   },
 };
