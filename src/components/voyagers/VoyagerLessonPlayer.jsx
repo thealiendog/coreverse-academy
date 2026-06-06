@@ -260,6 +260,9 @@ import SCI_VOY_L20 from '../../data/science_voyager_l20_screens';
 import SS_VOY_L01 from '../../data/social_studies_voyager_l01_screens';
 import SS_VOY_L02 from '../../data/social_studies_voyager_l02_screens';
 import SS_VOY_L03 from '../../data/social_studies_voyager_l03_screens';
+import SS_VOY_L04 from '../../data/social_studies_voyager_l04_screens';
+import SS_VOY_L05 from '../../data/social_studies_voyager_l05_screens';
+import SS_VOY_L06 from '../../data/social_studies_voyager_l06_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -979,6 +982,9 @@ const VOY_DATA = {
       ...SS_VOY_L01.lessons,
       ...SS_VOY_L02.lessons,
       ...SS_VOY_L03.lessons,
+      ...SS_VOY_L04.lessons,
+      ...SS_VOY_L05.lessons,
+      ...SS_VOY_L06.lessons,
     ],
   },
 };
