@@ -272,6 +272,9 @@ import SS_VOY_L12 from '../../data/social_studies_voyager_l12_screens';
 import SS_VOY_L13 from '../../data/social_studies_voyager_l13_screens';
 import SS_VOY_L14 from '../../data/social_studies_voyager_l14_screens';
 import SS_VOY_L15 from '../../data/social_studies_voyager_l15_screens';
+import SS_VOY_L16 from '../../data/social_studies_voyager_l16_screens';
+import SS_VOY_L17 from '../../data/social_studies_voyager_l17_screens';
+import SS_VOY_L18 from '../../data/social_studies_voyager_l18_screens';
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 function getScreenText(screen, childName) {
@@ -1003,6 +1006,9 @@ const VOY_DATA = {
       ...SS_VOY_L13.lessons,
       ...SS_VOY_L14.lessons,
       ...SS_VOY_L15.lessons,
+      ...SS_VOY_L16.lessons,
+      ...SS_VOY_L17.lessons,
+      ...SS_VOY_L18.lessons,
     ],
   },
 };
