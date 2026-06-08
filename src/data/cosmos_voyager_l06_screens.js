@@ -50,6 +50,17 @@ const COSMOS_VOYAGER_L06 = {
               definition: `The critical radius below which a mass becomes a black hole. For the Sun, the Schwarzschild radius is about 3 km. For Earth, about 9 mm. If you could compress an object below its Schwarzschild radius, it would become a black hole.`,
               audioPrompt: `The Schwarzschild radius is the critical radius below which a mass becomes a black hole, {name}. Named after Karl Schwarzschild, who solved Einstein's general relativity equations in 1916. For the Sun, the Schwarzschild radius is about 3 kilometers. If you could somehow compress the Sun's entire mass into a sphere 3 km across, it would become a black hole. For Earth, the Schwarzschild radius is about 9 millimeters. The mass would have to be crushed into a sphere about the size of a marble. Nothing in nature compresses Earth-like objects this much, which is why neither the Sun nor Earth will ever become black holes. The masses that do become black holes (collapsing cores of massive stars) are heavy enough that gravity wins despite the resistance.`,
             },
+          ,
+            {
+              word: `event horizon`,
+              definition: `The boundary of a black hole region, beyond which nothing — not even light — can escape. Once anything crosses the event horizon, it is permanently inside. From outside, we can observe gravitational effects but not what happens within.`,
+              audioPrompt: `The event horizon is the boundary of a black hole, {name}. It marks the point of no return. Once anything crosses the event horizon, it is permanently inside. From outside, we can observe the gravitational effects of the black hole and the radiation from matter falling in, but we cannot directly observe what is happening inside. The term comes from the idea that events beyond this boundary are forever hidden from outside observers. The event horizon is not a physical surface you could touch; it is a region of spacetime defined by the geometry that general relativity describes. It was first imaged directly in 2019 by the Event Horizon Telescope, which photographed the shadow of the black hole at the center of galaxy M87.`,
+            },
+            {
+              word: `Karl Schwarzschild`,
+              definition: `German physicist who in 1916 found the first exact solution to Einstein's general relativity equations, describing spacetime around a non-rotating mass. His solution revealed what we now call black holes. He died of an illness contracted in World War I within months of publishing this work.`,
+              audioPrompt: `Karl Schwarzschild is the German physicist who made one of the most consequential discoveries in the history of physics, {name}. Within a year of Einstein publishing his general relativity equations in 1915, Schwarzschild found an exact solution: a precise description of the spacetime around a non-rotating mass. His solution showed that if a mass were compressed below a certain radius, the gravitational curvature would become so extreme that not even light could escape. That radius is now called the Schwarzschild radius in his honor. Schwarzschild died of an illness contracted while serving in World War I within months of publishing this foundational work. For decades, physicists treated his solution as a mathematical curiosity. It eventually became the foundation of black hole physics.`,
+            }
           ],
         },
 
@@ -72,6 +83,17 @@ const COSMOS_VOYAGER_L06 = {
               definition: `International collaboration of radio telescopes that combined observations from sites around the world to image black hole event horizons. Produced first direct image of a black hole (M87*) in 2019. Imaged the Milky Way's central black hole (Sagittarius A*) in 2022.`,
               audioPrompt: `The Event Horizon Telescope, called EHT, is an international collaboration of radio telescopes spanning Earth, {name}. By combining observations from sites in Chile, Hawaii, Antarctica, Spain, Mexico, the United States, and elsewhere, they effectively create a telescope the size of Earth itself. This is necessary because directly imaging a black hole requires extraordinary resolution. In April 2019, EHT released the first direct image of a black hole: the supermassive black hole at the center of galaxy M87, 6.5 billion times the Sun's mass. In 2022, they released the image of Sagittarius A*, the supermassive black hole at the center of our own Milky Way. Both images showed the predicted shadow against a bright ring of glowing gas, confirming general relativity at its most extreme.`,
             },
+          ,
+            {
+              word: `Cygnus X-1`,
+              definition: `An X-ray binary system discovered in 1964 whose compact invisible companion was identified as a likely black hole in the early 1970s. Stephen Hawking and Kip Thorne famously bet on whether it was actually a black hole. Hawking conceded the bet to Thorne in 1990.`,
+              audioPrompt: `Cygnus X-1 is an X-ray binary system discovered in 1964, {name}. It consists of a normal star orbiting an invisible compact companion that pulls in stellar gas and heats it to X-ray-emitting temperatures. In the early 1970s, that invisible companion was identified as a likely black hole. It became one of the first objects seriously proposed as a real black hole rather than a theoretical curiosity. Famously, Stephen Hawking and Kip Thorne bet on whether Cygnus X-1 was actually a black hole. Hawking, skeptical at the time, eventually conceded the bet to Thorne in 1990 as the evidence became overwhelming. Cygnus X-1 remains one of the most studied black hole candidates in the Milky Way.`,
+            },
+            {
+              word: `Sagittarius A*`,
+              definition: `The supermassive black hole at the center of our own Milky Way galaxy. Its existence was confirmed by tracking the motions of stars near the galactic center over decades. It was directly imaged by the Event Horizon Telescope collaboration in 2022.`,
+              audioPrompt: `Sagittarius A* is the supermassive black hole at the center of our own Milky Way galaxy, {name}. Beginning in the 1990s, two teams led by Andrea Ghez and Reinhard Genzel tracked individual stars orbiting the galactic center. The stars moved at velocities consistent with orbiting a compact object roughly 4 million times the mass of the Sun. The object had to be incredibly compact and incredibly dark. Ghez and Genzel won the 2020 Nobel Prize for this work. In 2022, the Event Horizon Telescope collaboration produced the first direct image of Sagittarius A*, showing the predicted bright ring of glowing gas with a dark shadow in the middle. Black holes at the center of galaxies are now photographed objects, not just inferred ones.`,
+            }
           ],
         },
 
@@ -94,6 +116,17 @@ const COSMOS_VOYAGER_L06 = {
               definition: `Faint thermal radiation predicted by Stephen Hawking in 1974 to be emitted by black holes through quantum effects near the event horizon. Implies black holes slowly evaporate over enormous timescales. Has not been directly detected, but is theoretically robust.`,
               audioPrompt: `Hawking radiation is faint thermal radiation predicted by Stephen Hawking in 1974 to be emitted by black holes, {name}. Through subtle quantum effects near the event horizon, particles can effectively appear to be emitted from a black hole. The radiation is incredibly weak. For a stellar-mass black hole, Hawking radiation is colder than the cosmic microwave background and far below anything we could detect. But it implies that, over enormous timescales, black holes slowly evaporate. A solar-mass black hole would take about 10 to the 67th power years to evaporate completely. The universe is only 13.8 billion years old. Hawking radiation is real physics but operates on timescales far beyond cosmic history. It has never been directly detected, but theoretical confidence is high.`,
             },
+          ,
+            {
+              word: `no-hair theorem`,
+              definition: `Result from theoretical work in the 1960s and 1970s showing that classical black holes can be completely described by just three numbers: mass, electric charge, and angular momentum. Everything else about whatever fell into the black hole is irretrievable from outside.`,
+              audioPrompt: `The no-hair theorem is a result from theoretical work in the 1960s and 1970s, {name}. It states that classical black holes can be completely described by just three numbers: mass, electric charge, and angular momentum, also called spin. Everything else about whatever fell in, including chemical composition, color, and what kind of object it was, is irretrievable from outside. The name is whimsical but the physics is real. A black hole has no distinguishing features beyond those three quantities; it has no hair, so to speak. This is one reason black holes are so simple to describe mathematically despite being so extreme. Two black holes with identical mass, charge, and spin are physically identical, regardless of what fell into them to create them.`,
+            },
+            {
+              word: `singularity`,
+              definition: `The point at the center of a black hole where general relativity predicts density becomes infinite and the equations break down. The singularity signals that our current theory is incomplete. A future theory of quantum gravity should describe what actually happens there.`,
+              audioPrompt: `A singularity is what general relativity predicts lies at the center of a black hole, {name}. According to the equations, all matter that crosses the event horizon must continue falling inward, eventually reaching a point where density becomes infinite and the mathematics of general relativity break down entirely. The singularity is not really a part of physics in the normal sense; it is a sign that our current theory is incomplete in this extreme regime. General relativity works extraordinarily well outside black holes and near the event horizon. But at and near the singularity, physicists expect that a future theory of quantum gravity will be needed to describe what actually happens. We do not have that theory yet. The singularity is where the known physics ends.`,
+            }
           ],
         },
 
@@ -117,6 +150,17 @@ const COSMOS_VOYAGER_L06 = {
               definition: `Theoretical tunnel through spacetime connecting two distant regions. Exists as a mathematical solution in general relativity. No observation has ever shown one exists. Stable, traversable wormholes likely require "exotic matter" with properties no real matter has been shown to have.`,
               audioPrompt: `A wormhole is a theoretical tunnel through spacetime connecting two distant regions, {name}. The idea exists as a mathematical solution in general relativity. The famous "Einstein-Rosen bridge" is one example, derived by Einstein and Nathan Rosen in 1935. But no observation has ever shown a wormhole exists. Theoretical work suggests that stable, traversable wormholes would require "exotic matter" with negative mass-energy density, which has never been observed in nature. Wormholes are common in science fiction and in viral physics content. They are real mathematical structures in general relativity. They have never been observed as real physical objects. The distinction between "mathematically possible" and "observed to exist" is crucial here.`,
             },
+          ,
+            {
+              word: `spaghettification`,
+              definition: `Real physical prediction that tidal forces near a black hole would stretch an infalling object into a long thin shape, like spaghetti. For stellar-mass black holes this occurs far outside the event horizon. For supermassive black holes, tidal forces at the event horizon are gentler and an object could cross without being torn apart.`,
+              audioPrompt: `Spaghettification is a real physical prediction about what happens near a black hole, {name}. The difference between the gravitational pull at your head and the pull at your feet would stretch you into a long thin shape, like spaghetti. For a stellar-mass black hole, this would happen far outside the event horizon, killing you before you even crossed in. For supermassive black holes, the tidal forces at the event horizon are much gentler. You could in principle fall through the event horizon of a supermassive black hole without being torn apart immediately. You still could not get back out. But you would not necessarily be stretched in the dramatic way popular descriptions suggest. The details of spaghettification depend on the mass of the black hole.`,
+            },
+            {
+              word: `tidal forces`,
+              definition: `Gravitational forces that differ in strength across the extent of an object, tending to stretch or compress it. Near black holes, tidal forces are what produce spaghettification. For supermassive black holes the tidal forces at the event horizon are gentler than for smaller stellar-mass black holes.`,
+              audioPrompt: `Tidal forces are gravitational forces that differ in strength across the extent of an object, {name}. On Earth, the Moon's tidal forces are what produce ocean tides: the near side of Earth is pulled more strongly than the far side. Near a black hole, tidal forces become extreme. The difference between the gravity at your head and the gravity at your feet would stretch you into a long thin shape. For a stellar-mass black hole, these tidal forces become lethal far outside the event horizon. For supermassive black holes, which have event horizons enormously larger than stellar-mass black holes, the tidal forces at the event horizon are actually gentler. An object could cross the event horizon of a supermassive black hole without being immediately torn apart, even though it still could not escape.`,
+            }
           ],
         },
 
@@ -138,6 +182,17 @@ const COSMOS_VOYAGER_L06 = {
               definition: `Ripples in the fabric of spacetime predicted by Einstein in 1916 and directly detected by LIGO in 2015. Produced by accelerating massive objects (especially merging black holes and neutron stars). Won the 2017 Nobel Prize.`,
               audioPrompt: `Gravitational waves are ripples in the fabric of spacetime, {name}. Predicted by Einstein in 1916 as a consequence of general relativity. They are produced when massive objects accelerate, especially in extreme situations like two black holes spiraling together and merging. The waves stretch and compress space itself as they pass through. They are incredibly faint by the time they reach Earth from typical sources. The LIGO collaboration directly detected gravitational waves for the first time in 2015, from two black holes colliding 1.3 billion light-years away. The discovery, called GW150914, won the 2017 Nobel Prize. Hundreds more detections have followed. Gravitational wave astronomy is now an established field that complements traditional light-based observations.`,
             },
+          ,
+            {
+              word: `Kip Thorne`,
+              definition: `American theoretical physicist, Nobel laureate (2017) for the gravitational wave detection by LIGO, and scientific consultant for the movie Interstellar. Author of the accessible book 'Black Holes & Time Warps.' Known for his famous bet with Stephen Hawking about Cygnus X-1.`,
+              audioPrompt: `Kip Thorne is an American theoretical physicist and one of the most prominent scientists in the field of black holes and gravitational waves, {name}. He won the 2017 Nobel Prize in Physics for the LIGO collaboration's first detection of gravitational waves. He also famously bet Stephen Hawking on whether Cygnus X-1 was actually a black hole; Hawking conceded the bet to Thorne in 1990. Thorne wrote an accessible book called Black Holes and Time Warps, widely praised by physicists for accuracy and careful distinction between what is established and what is speculative. He also served as the scientific consultant for the movie Interstellar in 2014, producing detailed peer-reviewed calculations of black hole appearance that fed back into actual research.`,
+            },
+            {
+              word: `GW150914`,
+              definition: `The first direct detection of gravitational waves, made by the LIGO collaboration in 2015. Produced by two black holes colliding 1.3 billion light-years away. The discovery won the 2017 Nobel Prize. It confirmed Einstein's 1916 prediction of gravitational waves and opened gravitational wave astronomy as a field.`,
+              audioPrompt: `GW150914 is the name of the first gravitational wave event ever directly detected, {name}. LIGO detected it in 2015. It was produced by two black holes, each roughly 30 times the Sun's mass, spiraling together and merging 1.3 billion light-years away. The two black holes merged in a fraction of a second, briefly radiating more power as gravitational waves than all the stars in the observable universe combined as light. The detection confirmed Einstein's 1916 prediction of gravitational waves. The discovery won the 2017 Nobel Prize in Physics. Hundreds more gravitational wave events have been detected since. GW150914 opened an entirely new field of astronomy based on detecting ripples in spacetime rather than light.`,
+            }
           ],
         },
 

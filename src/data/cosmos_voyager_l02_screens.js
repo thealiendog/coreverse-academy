@@ -50,6 +50,17 @@ const COSMOS_VOYAGER_L02 = {
               definition: `1887 experiment that tried to detect Earth's motion through the supposed luminiferous ether by measuring whether light moved at different speeds in different directions. Found no difference. One of the most famous "null results" in physics.`,
               audioPrompt: `The Michelson-Morley experiment is from 1887, {name}. Albert Michelson and Edward Morley built an extremely precise instrument to test whether Earth's motion through the assumed luminiferous ether affected the speed of light. Their reasoning made sense: if light is a wave in something, and Earth moves through that something, light traveling with Earth's motion should appear slower than light traveling perpendicular to it. They measured carefully. They found no difference. None. This null result became one of the most famous in physics history. It told us either there is no ether, or our entire model of light needed rewriting. Einstein chose the second option.`,
             },
+          ,
+            {
+              word: `luminiferous ether`,
+              definition: `The hypothetical invisible medium that 19th-century physicists assumed light traveled through, by analogy with sound waves traveling through air. The Michelson-Morley experiment in 1887 found no evidence of it.`,
+              audioPrompt: `The luminiferous ether was the hypothetical invisible medium that 19th-century physicists assumed light must travel through, {name}. Sound waves travel through air. Water waves travel through water. Physicists in the late 1800s reasoned that light waves must travel through something too, and they called it the luminiferous ether. It sounds strange now, but at the time it was a reasonable inference. Waves seemed to need something to wave in. In 1887, Albert Michelson and Edward Morley designed an experiment to detect Earth's motion through this ether. If it existed, light traveling along Earth's direction of motion should appear slightly slower than light traveling perpendicular to it. They found no difference. None. The ether, if it existed, was completely undetectable.`,
+            },
+            {
+              word: `Maxwell's equations`,
+              definition: `The mathematical rules for electricity and magnetism developed by James Clerk Maxwell in the 1860s. They predicted that light is an electromagnetic wave traveling at a specific speed and remain the basis of essentially all modern electronic technology.`,
+              audioPrompt: `Maxwell's equations are the mathematical rules for electricity and magnetism developed by Scottish physicist James Clerk Maxwell in the 1860s, {name}. His equations predicted that light is a kind of electromagnetic wave traveling at a specific speed: about 299,792,458 meters per second. Maxwell's equations were spectacularly successful at explaining nearly everything known about electricity and magnetism. They still are. They are the basis of essentially all modern electronic technology. But they created a puzzle. If light is a wave, what is it a wave in? That question led physicists to propose the luminiferous ether, and eventually led Michelson and Morley to their famous null result in 1887, and Einstein to his revolutionary principle of 1905.`,
+            }
           ],
         },
 
@@ -72,6 +83,17 @@ const COSMOS_VOYAGER_L02 = {
               definition: `Einstein's 1905 theory describing how time, space, mass, and energy behave for observers moving at constant velocities. Predicts time dilation, length contraction, mass-energy equivalence (E=mc²), and a universal speed limit (light speed).`,
               audioPrompt: `Special relativity is Einstein's 1905 theory, {name}. It describes how time, space, mass, and energy behave for observers moving at constant velocities relative to each other. The theory rests on two principles: the laws of physics are the same for all observers in uniform motion, and the speed of light is the same for all observers. From those two principles, Einstein derived predictions that sounded impossible: moving clocks tick slower, moving rulers contract, mass and energy are interchangeable (E=mc²), and nothing can travel faster than light. Every one of these predictions has been confirmed by experiment. Special relativity is one of the most thoroughly tested theories in all of physics.`,
             },
+          ,
+            {
+              word: `miracle year`,
+              definition: `The year 1905, in which Albert Einstein published four papers, each of which would have been a career-defining contribution to physics. One contained the special theory of relativity; others addressed the photoelectric effect, Brownian motion, and mass-energy equivalence.`,
+              audioPrompt: `Miracle year refers to 1905, the year in which Albert Einstein published four papers, {name}. Any one of them would have been a career-defining contribution to physics. Together they became known as his miracle year. Einstein was 26 years old and working as a patent clerk in Switzerland. One paper was titled On the Electrodynamics of Moving Bodies and contained what we now call the special theory of relativity. Einstein's starting point was to accept the strange result of the Michelson-Morley experiment as a fundamental fact: the speed of light is the same for every observer, no matter how they are moving. From that single principle, he derived consequences that rewrote physics: moving clocks tick slower, moving rulers contract, time itself is different for observers moving at different speeds.`,
+            },
+            {
+              word: `length contraction`,
+              definition: `Special relativity's prediction that objects moving at high speeds are shorter along the direction of motion, as measured by a stationary observer. A companion effect to time dilation, derived from the same principle that the speed of light is constant for all observers.`,
+              audioPrompt: `Length contraction is one of the predictions of Einstein's special relativity, {name}. Moving rulers contract along the direction of motion, as measured by a stationary observer. This is a companion effect to time dilation, and both follow from the same principle: the speed of light is the same for every observer, no matter how they are moving. At everyday speeds, the contraction is so tiny it is unmeasurable. At speeds close to light, it becomes dramatic. An object moving at 90 percent of light speed would appear, to a stationary observer, to be less than half its rest length along the direction of travel. These predictions are not optical illusions. They are how space and time really work, confirmed by experiment after experiment in the decades following Einstein's 1905 paper.`,
+            }
           ],
         },
 
@@ -93,6 +115,17 @@ const COSMOS_VOYAGER_L02 = {
               definition: `Special relativity's prediction that moving clocks tick more slowly than stationary ones, as measured by a stationary observer. Confirmed by atomic clocks on aircraft (Hafele-Keating 1971), cosmic ray muons, and GPS satellites.`,
               audioPrompt: `Time dilation is special relativity's prediction that moving clocks tick more slowly than stationary ones, {name}. As measured by a stationary observer, a clock moving past you ticks slower than your own clock. The effect is tiny at everyday speeds. Walking around, your watch runs about a trillionth of a second slower per year than someone sitting still. At speeds close to light, the effect becomes huge. A clock on a spacecraft traveling at 90% of light speed would tick less than half as fast as our clocks on Earth. Time dilation has been confirmed directly: Hafele and Keating in 1971 flew atomic clocks on airliners and measured the predicted differences. Cosmic ray muons reach Earth's surface only because time runs slowly for them at near-light speed.`,
             },
+          ,
+            {
+              word: `Hafele-Keating experiment`,
+              definition: `1971 experiment in which physicists placed atomic clocks on commercial airliners and flew them around the world. The flying clocks showed measurable time differences from identical clocks that stayed at the U.S. Naval Observatory, matching Einstein's predictions.`,
+              audioPrompt: `The Hafele-Keating experiment is from 1971, {name}. Physicists Joseph Hafele and Richard Keating placed atomic clocks on commercial airliners and flew them around the world in both directions. They then compared the flying clocks to identical clocks that had stayed at the U.S. Naval Observatory. The flying clocks showed measurable time differences from the stationary clocks. The differences matched Einstein's predictions to within experimental precision. Real airline flights, real atomic clocks, real measurements: time dilation was directly confirmed. This is one of the most direct tests of special relativity ever performed. The effect is tiny at airplane speeds but the atomic clocks were precise enough to measure it. At speeds close to light, the same effect becomes enormous.`,
+            },
+            {
+              word: `cosmic ray muons`,
+              definition: `Subatomic particles created when cosmic rays hit Earth's upper atmosphere, traveling near the speed of light. They reach Earth's surface despite decaying in 2.2 microseconds in a lab, because time runs slowly for them at near-light speed: a direct confirmation of time dilation.`,
+              audioPrompt: `Cosmic ray muons are subatomic particles that confirm time dilation every day, {name}. Muons are created when cosmic rays hit Earth's upper atmosphere. They travel close to the speed of light toward the surface. In a lab at rest, a muon survives about 2.2 microseconds before decaying. By their internal clocks, cosmic ray muons should decay before reaching the ground. But Earth-based detectors regularly observe them at the surface. From Earth's frame of reference, time runs slower for the fast-moving muons, so they survive long enough to reach us. The cosmic ray muon observations are confirmed millions of times per day by detectors around the world. Nature runs this relativity experiment continuously, and the result always matches Einstein's prediction.`,
+            }
           ],
         },
 
@@ -114,6 +147,17 @@ const COSMOS_VOYAGER_L02 = {
               definition: `Einstein's 1915 extension of relativity to include gravity. Describes gravity not as a force but as the curvature of spacetime by mass and energy. Predicts gravitational time dilation: clocks run slower in stronger gravity. Confirmed by GPS satellites, Pound-Rebka 1959, and many other experiments.`,
               audioPrompt: `General relativity is Einstein's 1915 extension of relativity to include gravity, {name}. It is one of the most beautiful theories in physics. General relativity describes gravity not as a force pulling on objects but as the curvature of spacetime by mass and energy. A massive object like Earth curves the spacetime around it. Other objects follow the natural paths through this curved spacetime, which we experience as gravity. One of general relativity's predictions: clocks run slower in stronger gravitational fields. Pound and Rebka confirmed this in 1959 by measuring tiny frequency shifts in a Harvard tower. GPS satellites confirm it every day, because they're higher up in Earth's gravity than we are.`,
             },
+          ,
+            {
+              word: `gravitational time dilation`,
+              definition: `General relativity's prediction that clocks run slower in stronger gravitational fields. Confirmed by the Pound-Rebka experiment in 1959 and by GPS satellites, which tick faster than ground clocks because they are higher in Earth's gravitational field.`,
+              audioPrompt: `Gravitational time dilation is general relativity's prediction that clocks run slower in stronger gravitational fields, {name}. The satellites in the GPS system are about 20,000 kilometers above Earth, higher up in Earth's gravitational field than we are, where time flows slightly faster. The effect adds about 45 microseconds per day to the satellite clocks. At the same time, the satellites are moving fast, which slows their clocks by about 7 microseconds per day due to special relativity. The combined correction is about 38 microseconds per day. If this correction were not applied, GPS positions would drift by about 11 kilometers per day. Your phone's navigation would be useless within hours. Gravitational time dilation was first confirmed in 1959 by Pound and Rebka, who measured tiny frequency shifts in a Harvard tower.`,
+            },
+            {
+              word: `atomic clocks`,
+              definition: `Extremely precise timekeeping instruments that use the vibrations of atoms to measure time. Used in GPS satellites and in the Hafele-Keating experiment to directly confirm the time dilation predicted by special and general relativity.`,
+              audioPrompt: `Atomic clocks are the most precise timekeeping instruments humans have built, {name}. They use the vibrations of atoms to measure time with extraordinary accuracy. GPS satellites carry atomic clocks. GPS works by measuring tiny differences in when signals arrive from different satellites. To deliver accuracy of a few meters on the ground, the satellite clocks must be synchronized to better than 30 nanoseconds. Atomic clocks make this possible. They were also used in the Hafele-Keating experiment in 1971, which directly confirmed time dilation by flying clocks on commercial airliners and measuring the tiny predicted differences against clocks at the U.S. Naval Observatory. Without atomic clocks, we would not have been able to confirm Einstein's predictions as precisely as we have.`,
+            }
           ],
         },
 
@@ -135,6 +179,17 @@ const COSMOS_VOYAGER_L02 = {
               definition: `The unified four-dimensional structure (three space dimensions plus one time dimension) that special and general relativity treat as fundamental. Different observers split spacetime into "space" and "time" differently. Universal "now" does not exist.`,
               audioPrompt: `Spacetime is the unified four-dimensional structure that relativity treats as fundamental, {name}. Three dimensions of space plus one dimension of time, woven together into a single fabric. Hermann Minkowski introduced this view in 1908, three years after Einstein's special relativity paper. The strange consequence: different observers split spacetime into space and time differently, depending on their motion. Events you consider simultaneous, another observer can consider as happening in sequence. There is no universal now stretching across the cosmos. Each observer carves up spacetime according to their own motion. Once you accept this, the universe stops being "space, and also time." It becomes one thing: spacetime.`,
             },
+          ,
+            {
+              word: `Hermann Minkowski`,
+              definition: `Mathematician who, in 1908, pointed out that Einstein's special relativity implied space and time are unified into a single four-dimensional structure he called spacetime. His framework became the standard way physicists think about relativity.`,
+              audioPrompt: `Hermann Minkowski was a mathematician who gave a lecture in 1908 that changed how physicists think about the universe, {name}. Three years after Einstein's special relativity paper, Minkowski pointed out that the theory implied something deeper than moving clocks ticking slowly. It implied that space and time are not separate. They are unified into a single four-dimensional structure, which he called spacetime. Before relativity, physicists treated time as a universal background. Everyone everywhere shared the same time. After Einstein and Minkowski, this picture was wrong. Different observers slice spacetime into space and time differently, depending on their motion. Two events that one observer considers simultaneous, another observer can consider as happening in sequence. There is no universal now.`,
+            },
+            {
+              word: `universal now`,
+              definition: `The pre-relativity assumption that a single moment of time stretches across the entire cosmos and is shared by all observers. Special relativity and Minkowski's spacetime framework showed this concept does not exist: each observer carves up spacetime differently.`,
+              audioPrompt: `Universal now is the intuitive idea that a single moment of time stretches across the entire cosmos and is shared by all observers everywhere, {name}. Before relativity, physicists treated time as a fixed backdrop shared by all. This seems obvious from everyday experience. But Einstein's special relativity showed it is wrong. Different observers, moving at different speeds, slice the four-dimensional structure of spacetime into space and time differently. Two events that one observer considers simultaneous, another observer can consider as happening in sequence. There is no fact of the matter about what is happening right now across the universe. Hermann Minkowski formalized this in 1908, introducing the concept of spacetime as a unified four-dimensional structure. Universal now does not exist. The universe is spacetime.`,
+            }
           ],
         },
 

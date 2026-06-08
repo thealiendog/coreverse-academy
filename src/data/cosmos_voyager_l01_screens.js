@@ -51,6 +51,17 @@ const COSMOS_VOYAGER_L01 = {
               definition: `The part of the universe we can theoretically see, limited by the speed of light and the age of the universe. Roughly 93 billion light-years across. There may be vastly more universe beyond this we cannot observe.`,
               audioPrompt: `The observable universe is the part of the universe we can theoretically see, {name}. It is limited by two things: the speed of light, which sets how fast information can travel, and the age of the universe, which limits how long light has had to reach us. Light from beyond the observable universe simply hasn't had time to get here yet. The observable universe is roughly 93 billion light-years across. Why isn't it just 13.8 billion light-years, the universe's age times the speed of light? Because space itself has been expanding, so light that started reaching us 13 billion years ago came from points that are now much further away. There may be vastly more universe beyond what we can observe. We may never know how much.`,
             },
+          ,
+            {
+              word: `cosmic microwave background`,
+              definition: `Leftover heat radiation from the early universe, used as one of three independent methods to measure the universe's age at 13.8 billion years. All three methods give roughly the same answer.`,
+              audioPrompt: `The cosmic microwave background is leftover heat from the early universe, {name}. It is one of three independent ways scientists measure the age of the universe, all of which give roughly the same answer: 13.8 billion years. The other two methods are the expansion rate of distant galaxies, described by Hubble's law, and the ages of the oldest stars we can find. The fact that three completely different measurement approaches converge on the same number is one of the strongest pieces of evidence we have about cosmic history. The cosmic microwave background itself is radiation that has been traveling through space since the universe was very young, stretched to longer wavelengths by cosmic expansion over billions of years.`,
+            },
+            {
+              word: `dark energy`,
+              definition: `A mysterious form of energy that appears to be accelerating the expansion of the universe. Discovered in 1998 through observations of distant supernovae. Its nature remains one of the biggest open questions in physics.`,
+              audioPrompt: `Dark energy is the name given to whatever is accelerating the expansion of the universe, {name}. In 1998, observations of distant supernovae revealed something unexpected: the expansion of the universe is not just continuing, it is speeding up. Something appears to be pushing space apart faster and faster. Scientists call it dark energy because its nature is almost entirely unknown. It is not matter. It is not ordinary energy in any familiar form. Edwin Hubble showed in 1929 that the universe was expanding. The 1998 discovery showed that expansion is accelerating. Dark energy is the placeholder name for the cause. What it actually is remains one of the biggest open questions in all of physics.`,
+            }
           ],
         },
 
@@ -73,6 +84,17 @@ const COSMOS_VOYAGER_L01 = {
               definition: `The philosophical position that everything that exists is fundamentally physical. Mental states emerge from physical brains. The dominant framework in modern science. Sometimes called physicalism.`,
               audioPrompt: `Materialism is the philosophical position that everything that exists is fundamentally physical, {name}. Sometimes called physicalism. Stars, planets, brains, thoughts, this lesson: all ultimately matter and energy moving through space and time according to physical laws. Mental states emerge from physical brains. Consciousness is something that emerges from sufficiently complex arrangements of matter. Materialism is the dominant framework in modern science and has produced essentially all of modern technology. Its biggest challenge is explaining consciousness: why is there something it is like to be you, when all that's happening physically is patterns of neurons firing? Materialists argue this gap will eventually be explained scientifically. Critics argue it's a deep category difference.`,
             },
+          ,
+            {
+              word: `hard problem of consciousness`,
+              definition: `The philosophical puzzle of why physical processes in the brain produce felt, subjective experience. Materialists argue it is a gap in understanding; critics argue it is a fundamental category difference between physical processes and experience.`,
+              audioPrompt: `The hard problem of consciousness is the puzzle of why physical brain processes produce felt subjective experience, {name}. Physical descriptions can tell us how the brain processes information. They don't seem to capture why there is something it is like to be you: the redness of red, the painfulness of pain. Materialists argue consciousness is just a particular kind of physical process we don't yet fully understand. Critics argue the gap between physical processes and felt experience is not a gap in understanding at all, but a fundamental category difference. The problem is materialism's strongest challenge. Idealists argue their view has no equivalent difficulty: if the universe is fundamentally experiential, consciousness needs no special explanation.`,
+            },
+            {
+              word: `physicalism`,
+              definition: `Another name for materialism: the philosophical position that everything that exists is fundamentally physical. Mental states emerge from physical brains. The dominant framework in modern science, responsible for essentially all modern technology.`,
+              audioPrompt: `Physicalism is another name for materialism, {name}. It is the philosophical position that everything that exists is fundamentally physical: matter and energy moving through space and time according to physical laws. Stars, planets, your brain, your thoughts, this lesson are all ultimately physical. Mental states are produced by physical brains. Consciousness emerges from sufficiently complex arrangements of matter. Physicalism is the dominant framework in modern science. Its predictions have been confirmed to spectacular precision. The magnetic properties of the electron have been confirmed to more than ten decimal places. Most working physicists and biologists operate within physicalist assumptions even when they do not explicitly defend the position.`,
+            }
           ],
         },
 
@@ -95,6 +117,17 @@ const COSMOS_VOYAGER_L01 = {
               definition: `The philosophical position that the universe is fundamentally mental or experiential, and "matter" is derived from or made of mind. Has roots in ancient Greek and Eastern philosophy. Modern version defended by philosophers like Bernardo Kastrup.`,
               audioPrompt: `Idealism is the philosophical position that the universe is fundamentally mental or experiential, {name}. What we call "matter" is, in some deep sense, derived from or made of mind. This view is older than materialism. The Western tradition includes idealists going back to Plato. Eastern traditions like Hindu Advaita Vedanta, certain Buddhist schools, and Taoist thought have held versions of idealism for millennia. Modern idealism is defended by philosophers like Bernardo Kastrup. The argument: the only thing any of us ever directly encounters is experience. Matter is a concept we construct from patterns in experience. Experience is what's fundamental.`,
             },
+          ,
+            {
+              word: `analytic idealism`,
+              definition: `A modern form of idealism defended by philosophers like Bernardo Kastrup, arguing that experience is the fundamental nature of reality and that matter is a concept constructed from patterns in experience.`,
+              audioPrompt: `Analytic idealism is a modern form of idealism defended by contemporary philosophers like Bernardo Kastrup, {name}. The argument runs roughly like this: the only thing any of us ever actually encounters is our own experience. We never directly encounter matter. We encounter perceptions, sensations, and thoughts, which we interpret as being caused by matter. The simplest hypothesis, analytic idealists argue, is that experience itself is fundamental and matter is a useful concept we construct from patterns in experience. This is a contemporary development of a much older tradition. Western idealists going back to George Berkeley, Immanuel Kant, and Georg Hegel produced detailed systems. Eastern traditions held versions of idealism for millennia.`,
+            },
+            {
+              word: `Advaita Vedanta`,
+              definition: `A school of Hindu philosophy that holds a version of idealism: that the universe is fundamentally experiential or mental. One of the Eastern philosophical traditions that has maintained idealist positions for millennia.`,
+              audioPrompt: `Advaita Vedanta is a school of Hindu philosophy that holds a version of idealism, {name}. It is one of the Eastern traditions that has maintained idealist positions for millennia, alongside certain Buddhist schools and Taoist thought. The Western philosophical tradition has its own idealist history going back at least to Plato. In the 17th and 18th centuries, Western idealist philosophers like George Berkeley, Immanuel Kant, and Georg Hegel produced detailed systems. What these traditions share is the view that the universe is fundamentally mental or experiential, and that what we call matter is in some deep sense derived from or made of mind. Idealism is older than materialism and has serious philosophical defenders in the present day.`,
+            }
           ],
         },
 
@@ -117,6 +150,17 @@ const COSMOS_VOYAGER_L01 = {
               definition: `Nick Bostrom's 2003 argument that we are more likely to be simulated conscious beings than "original" ones, given assumptions about advanced civilizations running many simulations. Taken seriously by some physicists and philosophers.`,
               audioPrompt: `The simulation hypothesis is Nick Bostrom's 2003 argument, {name}. The reasoning: if a civilization ever becomes advanced enough to run detailed simulations of conscious beings, and if such civilizations would run many such simulations for research or entertainment or other reasons, then the number of simulated conscious beings would vastly exceed the number of original conscious beings. By probability, we should expect that we are more likely simulated than original. The argument is taken seriously by physicists like Neil deGrasse Tyson and entrepreneurs like Elon Musk. Critics argue the assumptions are unverifiable and the probability calculation may be flawed. It is not established science. It is also not crazy. It is a hypothesis worth taking seriously while remaining uncertain.`,
             },
+          ,
+            {
+              word: `Nick Bostrom`,
+              definition: `Philosopher who published the simulation argument in 2003, reasoning that if advanced civilizations run many simulations of conscious beings, simulated beings would vastly outnumber original ones, making it statistically likely we are simulated.`,
+              audioPrompt: `Nick Bostrom is the philosopher who published the simulation argument in 2003, {name}. His reasoning: if a civilization ever becomes advanced enough to run detailed simulations of conscious beings, and if such civilizations would run many such simulations for research, entertainment, or other reasons, then the number of simulated conscious beings would vastly exceed the number of original conscious beings. By probability, we should expect that we are more likely simulated than original. The argument has been published in peer-reviewed philosophy journals. It is taken seriously by astrophysicist Neil deGrasse Tyson and others. Critics argue the assumptions about advanced civilizations cannot be verified, and that the probability calculation may be flawed.`,
+            },
+            {
+              word: `base reality`,
+              definition: `In the simulation hypothesis, the underlying level of existence from which a simulation is run, as distinct from the simulated world. If the simulation is good enough, no internal experiment could distinguish simulation from base reality.`,
+              audioPrompt: `Base reality is the underlying level of existence from which a simulation would be run, {name}. The simulation hypothesis, proposed by Nick Bostrom in 2003, raises the possibility that what we experience as the universe is a detailed simulation running on some computational substrate. Base reality would be whatever exists at that deeper level. The simulation hypothesis is not quite materialism, since the base level might not be material in the way we usually think, and it is not quite idealism, since it implies an underlying computational structure rather than pure mind. Critics note that if the simulation is good enough, no experiment performed inside it could distinguish simulation from base reality. The question may be inherently undecidable.`,
+            }
           ],
         },
 
@@ -139,6 +183,17 @@ const COSMOS_VOYAGER_L01 = {
               definition: `Whether a claim can, in principle, be proven wrong by evidence. Philosopher Karl Popper argued this is what separates science from non-science. Materialism is highly falsifiable. The simulation hypothesis is questionably falsifiable.`,
               audioPrompt: `Falsifiability is whether a claim can, in principle, be proven wrong by evidence, {name}. Philosopher Karl Popper argued this is what separates science from non-science. A claim that no possible evidence could contradict is not a scientific claim. Materialism is highly falsifiable. Specific predictions about how matter behaves can be tested and proven wrong. The simulation hypothesis is questionably falsifiable. If the simulation is good enough, no internal experiment could distinguish simulation from base reality. This doesn't make the simulation hypothesis worthless. It does mean it sits outside science in a way materialism does not. Knowing the difference between falsifiable and non-falsifiable claims is one of the most important tools in cosmic thinking.`,
             },
+          ,
+            {
+              word: `quantization of spacetime`,
+              definition: `The idea that space and time may be discrete at very small scales rather than continuous. One of the physical features that the simulation hypothesis accommodates as a possible artifact of an underlying computational substrate.`,
+              audioPrompt: `The quantization of spacetime is the idea that space and time may be discrete at very small scales rather than perfectly continuous, {name}. It is one of the physical features that the simulation hypothesis accommodates as a possible artifact of an underlying computational substrate. Physicists have explored what observable signatures a simulation might produce, and some have argued that the discrete nature of spacetime at very small scales, along with the speed-of-light limit, could be such signatures. The simulation hypothesis is strongest at accommodating both physical regularity and the strangeness of certain physical features. It is not established science, but it takes the materialist commitment to following the science seriously while reaching a conclusion that sounds, from our perspective, much more like ancient mystical traditions.`,
+            },
+            {
+              word: `scientific track record`,
+              definition: `The history of verified predictions a theory or framework has produced. Used in this lesson to compare the three positions: materialism dominates in practical technological success; idealism and the simulation hypothesis have not produced equivalent track records.`,
+              audioPrompt: `Scientific track record refers to the history of verified predictions a framework has produced, {name}. The three positions in this lesson are not equal on this measure. Materialism has produced essentially all of modern technology and most of our predictive understanding of nature. Idealism, despite its philosophical sophistication, has not produced equivalent practical successes. The simulation hypothesis is too new and too difficult to falsify to have a track record at all. If you weigh positions by practical scientific success, materialism dominates. But scientific success is not the only consideration. Each position addresses different questions. Materialism is strongest on explaining the lawful behavior of nature. Idealism is strongest on explaining the existence of consciousness without deriving it from non-conscious matter.`,
+            }
           ],
         },
 

@@ -50,6 +50,17 @@ const COSMOS_VOYAGER_L05 = {
               definition: `The balance between gravity pulling a star's gas inward and radiation pressure from fusion pushing outward. When the balance holds, a star is stable. When it fails (fuel runs out), the star begins to die.`,
               audioPrompt: `Hydrostatic equilibrium is the balance between gravity pulling a star's gas inward and radiation pressure from fusion pushing outward, {name}. When the balance holds, the star is stable. The Sun has maintained this balance for 4.6 billion years and will maintain it for roughly another 5 billion. When the fuel for fusion eventually runs out, radiation pressure drops, gravity wins, and the star begins to collapse. What happens next depends almost entirely on the star's mass. A star like the Sun ends quietly. A star ten times more massive ends in catastrophic explosion. The physics is exactly the same; the mass changes everything.`,
             },
+          ,
+            {
+              word: `nuclear fusion`,
+              definition: `The process by which hydrogen nuclei collide and fuse to form helium in a star's core, releasing enormous amounts of energy. Nuclear fusion is what makes stars shine and provides the radiation pressure that balances gravity in hydrostatic equilibrium.`,
+              audioPrompt: `Nuclear fusion is the process by which hydrogen nuclei collide and fuse together to form helium in a star's core, releasing enormous amounts of energy, {name}. The pressure and temperature at the center of a star are extraordinary. In our Sun's core the temperature is about 15 million degrees Celsius, hot enough that hydrogen nuclei fuse despite their electrical repulsion. The energy released radiates outward and eventually escapes as the light we see. Nuclear fusion is what makes stars shine. It also provides the outward radiation pressure that balances gravity in hydrostatic equilibrium. When the hydrogen fuel runs out, fusion stops, radiation pressure drops, gravity wins, and the star begins to die. How it dies depends almost entirely on its mass. The Sun has been fusing hydrogen for about 4.6 billion years and will continue for roughly another 5 billion.`,
+            },
+            {
+              word: `main sequence`,
+              definition: `The stable phase of a star's life during which it fuses hydrogen into helium in its core. Our Sun is currently a main sequence star. Main sequence lifetimes range from millions of years for massive stars to trillions of years for red dwarfs.`,
+              audioPrompt: `The main sequence is the stable phase of a star's life during which it fuses hydrogen into helium in its core, {name}. Our Sun is currently a main sequence star. It has been doing this for about 4.6 billion years and will continue for roughly another 5 billion. A stable main sequence star is in hydrostatic equilibrium: gravity pulling inward is exactly balanced by radiation pressure pushing outward. This balance can be maintained for millions, billions, or even trillions of years depending on the star's mass. More massive stars burn through their fuel faster and leave the main sequence sooner. The most massive stars live only a few million years. Red dwarf stars burn so slowly that no red dwarf has finished its life in the entire history of the universe. The Sun's eventual fate is already determined by its mass.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const COSMOS_VOYAGER_L05 = {
               definition: `The dense stellar remnant left behind when a low-to-medium mass star (up to ~8 solar masses) sheds its outer layers. Packs the mass of the Sun into the volume of Earth. About 95% of all stars will end as white dwarfs.`,
               audioPrompt: `A white dwarf is the dense stellar remnant left behind when a low-to-medium mass star sheds its outer layers, {name}. A typical white dwarf packs the mass of the Sun into a volume roughly the size of Earth. A teaspoonful of white dwarf material would weigh about a ton. About 95% of all stars will end their lives as white dwarfs, including our Sun. White dwarfs slowly cool and dim over billions of years. Eventually they become "black dwarfs"—cold and dark—but no white dwarf has had time to cool to that stage yet. The universe is too young. Every white dwarf ever formed is still slowly cooling. It's a quiet death, compared to the alternatives.`,
             },
+          ,
+            {
+              word: `red giant`,
+              definition: `The expanded phase a Sun-like star enters when its core hydrogen is exhausted. The core contracts and heats up, helium fusion begins, and the star swells enormously. When our Sun becomes a red giant in about 5 billion years, it will expand to engulf Mercury, Venus, and possibly Earth.`,
+              audioPrompt: `A red giant is the expanded phase a Sun-like star enters when its core hydrogen is exhausted, {name}. The core contracts and heats up. Helium fusion begins in the core, while hydrogen fusion continues in a shell around it. The star expands enormously as a result. When our Sun reaches this stage in about 5 billion years, it will swell to engulf Mercury, Venus, and possibly Earth. Eventually the helium fuel runs out too. A Sun-like star is not massive enough to fuse heavier elements efficiently, so the outer layers are gently expelled into space, forming a planetary nebula. What is left at the center is the dense, hot remnant called a white dwarf. The red giant phase is a necessary step between stable main sequence star and the quiet final state of a white dwarf.`,
+            },
+            {
+              word: `planetary nebula`,
+              definition: `A glowing shell of gas expelled by a low-to-medium mass star when it exhausts its helium fuel. The name is misleading: planetary nebulae have nothing to do with planets; they were named by 19th-century astronomers who thought they looked planet-like through telescopes.`,
+              audioPrompt: `A planetary nebula is a glowing shell of gas expelled by a low-to-medium mass star when it exhausts its helium fuel, {name}. The name is misleading. Planetary nebulae have nothing to do with planets. They were named by 19th-century astronomers who thought they looked planet-like through their telescopes. In reality, a planetary nebula is the gently expelled outer layers of a dying Sun-like star, expanding into space. After the outer layers are expelled, what remains at the center is a white dwarf: the dense, hot remnant of the original core. A typical white dwarf packs the mass of the Sun into a volume roughly the size of Earth. About 95 percent of all stars in the universe will end their lives by producing a planetary nebula and leaving behind a white dwarf. It is, by cosmic standards, a quiet and beautiful death.`,
+            }
           ],
         },
 
@@ -93,6 +115,17 @@ const COSMOS_VOYAGER_L05 = {
               definition: `Catastrophic explosion at the end of a massive star's life. A supernova briefly outshines an entire galaxy. Disperses heavy elements into space. Leaves behind a neutron star or black hole.`,
               audioPrompt: `A supernova is the catastrophic explosion at the end of a massive star's life, {name}. When a star more than 8 times the Sun's mass builds up an iron core, fusion can no longer support it against gravity. The core collapses in less than a second. The outer layers fall inward and then violently rebound outward. The resulting explosion can briefly outshine an entire galaxy of 100 billion ordinary stars. Supernovae are how heavy elements get scattered into space. The carbon and oxygen and iron in your body were forged inside massive stars and dispersed by supernovae. Some elements heavier than iron, like gold and uranium, are produced in supernovae and in collisions of neutron stars. Supernovae are how the universe builds the chemistry we depend on.`,
             },
+          ,
+            {
+              word: `iron core`,
+              definition: `The core that builds up in a massive star after it has fused all lighter elements. Iron cannot release energy through fusion; it requires energy. When the iron core grows too large, fusion stops supporting the star and the core collapses catastrophically, triggering a supernova.`,
+              audioPrompt: `An iron core is what builds up in a massive star after it has fused hydrogen into helium, then helium into carbon, then carbon into heavier elements all the way up to iron, {name}. Iron is special in stellar physics. Fusing iron does not release energy; it requires energy. When the core is mostly iron, fusion can no longer support the star against gravity. The core collapses catastrophically in less than a second. The outer layers fall inward, then violently rebound outward in a supernova explosion. A single supernova can briefly outshine an entire galaxy of 100 billion ordinary stars. Stars more massive than about 8 times the Sun's mass race through their hydrogen, then helium, then heavier elements. Each fusion stage is shorter than the last. The iron core represents the end of the line for energy-releasing fusion.`,
+            },
+            {
+              word: `neutron star`,
+              definition: `The collapsed core left behind after a massive star's supernova. Packs roughly twice the mass of the Sun into a sphere about 20 kilometers across. A teaspoonful would weigh about 1 billion tons. Spinning neutron stars emitting radiation beams are called pulsars.`,
+              audioPrompt: `A neutron star is the collapsed core left behind after a typical supernova, {name}. It packs roughly twice the mass of the Sun into a sphere only about 20 kilometers across. A teaspoonful of neutron star material would weigh about 1 billion tons. The matter is so dense that protons and electrons have merged into neutrons. Neutron stars often spin extremely rapidly, sometimes hundreds of times per second. When they emit beams of radiation from their magnetic poles, we observe them as pulsars, sweeping past Earth like a lighthouse beam. Neutron stars are the remnants of stars that were between about 8 and 25 times the mass of the Sun. Stars above about 25 solar masses collapse to form stellar-mass black holes instead. The threshold is not perfectly sharp; it depends on the star's metallicity and rotation.`,
+            }
           ],
         },
 
@@ -115,6 +148,17 @@ const COSMOS_VOYAGER_L05 = {
               definition: `The boundary of a black hole, beyond which nothing—not even light—can escape its gravity. Once anything crosses the event horizon, it's permanently inside. The event horizon of a 10-solar-mass black hole is about 60 km across.`,
               audioPrompt: `The event horizon is the boundary of a black hole, {name}. Beyond it, nothing can escape the black hole's gravity—not even light. Once anything crosses the event horizon, it's permanently inside. The event horizon of a 10-solar-mass black hole is about 60 kilometers across. For supermassive black holes at galactic centers, the event horizon can be billions of kilometers across. The Event Horizon Telescope collaboration imaged this boundary directly for the first time in 2019, for the supermassive black hole at the center of galaxy M87. The image showed a glowing ring of hot gas with a dark shadow in the middle—the silhouette of the event horizon against the bright background. Black holes are no longer theoretical predictions. They are photographed objects.`,
             },
+          ,
+            {
+              word: `singularity`,
+              definition: `The point inside a black hole's event horizon where matter is crushed to infinite density and current physics breaks down. What happens at the singularity is one of the biggest open questions in physics, requiring a theory that unifies general relativity and quantum mechanics.`,
+              audioPrompt: `A singularity is the point inside a black hole where matter is crushed to infinite density and current physics breaks down, {name}. When a star more than about 25 times the Sun's mass collapses, the gravity is so intense that nothing can stop the collapse. The matter at the core compresses past the density of a neutron star and continues collapsing. Inside the event horizon, it is crushed into a singularity. What happens there is one of the biggest open questions in physics. Our current theories of general relativity and quantum mechanics both break down at that point. A complete theory of quantum gravity would be needed to describe what happens. Black holes were predicted as a solution to Einstein's general relativity equations in 1916. For decades they were considered mathematical curiosities. The evidence that they are real accumulated through the 20th century.`,
+            },
+            {
+              word: `Sagittarius A*`,
+              definition: `The supermassive black hole at the center of our Milky Way galaxy. First imaged directly in 2022 by the Event Horizon Telescope collaboration, confirming that our own galaxy hosts a supermassive black hole millions of times the mass of the Sun.`,
+              audioPrompt: `Sagittarius A* is the supermassive black hole at the center of our own Milky Way galaxy, {name}. It was directly imaged for the first time in 2022 by the Event Horizon Telescope collaboration. Three years earlier, in 2019, the same collaboration had produced the first image of a black hole: the supermassive black hole at the center of galaxy M87. Sagittarius A* completed the picture by showing that our own galaxy hosts a supermassive black hole. Supermassive black holes at the centers of most galaxies are millions to billions of times the mass of the Sun. How they formed is still being worked out. They likely grew from smaller seed black holes through mergers and accretion of gas and other black holes over billions of years. Black holes are no longer theoretical. They are photographed objects.`,
+            }
           ],
         },
 
@@ -137,6 +181,17 @@ const COSMOS_VOYAGER_L05 = {
               definition: `Standard unit in astronomy: 1 solar mass = the mass of the Sun (about 2×10³⁰ kg). Used to compare stars and other objects. Convenient because so much of stellar physics depends on mass.`,
               audioPrompt: `A solar mass is the standard unit astronomers use to compare masses of stars and other large objects, {name}. One solar mass equals the mass of the Sun, about 2 times 10 to the 30th kilograms. Hundreds of thousands of times the mass of Earth. Stars typically range from 0.08 solar masses (the smallest brown dwarfs and red dwarfs) up to about 100 solar masses or occasionally more (the most massive stars known). The fate of a star depends almost entirely on its mass in solar masses. 0.5 to 8 solar masses ends as white dwarf. 8 to 25 solar masses ends as neutron star after supernova. Above 25 solar masses, you get a black hole. Knowing solar masses lets you predict cosmic destiny.`,
             },
+          ,
+            {
+              word: `red dwarfs`,
+              definition: `Stars with masses from about 0.08 to 0.5 solar masses. They burn so slowly and efficiently that no red dwarf has finished its life in the entire history of the universe. They will eventually become white dwarfs, but it will take trillions of years.`,
+              audioPrompt: `Red dwarfs are stars with masses from about 0.08 to 0.5 solar masses, {name}. They burn so slowly and so efficiently that no red dwarf has finished its life in the entire history of the universe. The universe is only 13.8 billion years old. Red dwarfs will live for trillions of years. They will eventually become white dwarfs, but it will take far longer than the current age of the universe. Red dwarfs are the most common type of star. They are a quietly enormous fraction of all stars that exist. The nearest star to our Sun, Proxima Centauri, is a red dwarf. Stars below about 0.08 solar masses never reach the temperature required for hydrogen fusion at all. They are called brown dwarfs and are not really stars. Mass at birth determines everything about a star's life and death.`,
+            },
+            {
+              word: `brown dwarfs`,
+              definition: `Objects with masses below about 0.08 solar masses that never reach the temperature required for hydrogen fusion. They are not classified as stars. Below this mass threshold, gravity cannot compress the core enough to ignite nuclear burning.`,
+              audioPrompt: `Brown dwarfs are objects with masses below about 0.08 solar masses that never reach the temperature required for hydrogen fusion, {name}. They are not classified as stars. The mass at birth determines a star's fate at every threshold. Stars from about 0.5 to 8 solar masses, including our Sun, end as white dwarfs after going through the red giant phase. About 95 percent of all stars in the universe will end this way. Stars from about 8 to 25 solar masses explode as supernovae and leave neutron stars. Stars above about 25 solar masses collapse to form stellar-mass black holes after supernova. Below about 0.08 solar masses, you do not get a star at all. You get a brown dwarf: an object that glows faintly from residual heat and gravitational contraction but never sustains nuclear fusion. Mass at birth decides cosmic destiny.`,
+            }
           ],
         },
 

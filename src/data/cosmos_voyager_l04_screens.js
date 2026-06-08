@@ -50,6 +50,17 @@ const COSMOS_VOYAGER_L04 = {
               definition: `The relationship discovered by Edwin Hubble in 1929: more distant galaxies recede from us faster, with velocity proportional to distance. Foundational evidence that the universe is expanding.`,
               audioPrompt: `Hubble's law is the relationship discovered by Edwin Hubble in 1929, {name}. More distant galaxies recede from us faster, with velocity proportional to distance. The relationship is foundational evidence that the universe is expanding. The expansion isn't galaxies flying through space; it's space itself stretching. Galaxies sit roughly still on the expanding fabric of spacetime, and as the fabric stretches, the distances between galaxies increase. Hubble's law has been refined and extended by astronomers over the decades, but the basic discovery has held. The constant of proportionality, called the Hubble constant, is one of the most actively measured numbers in modern cosmology.`,
             },
+          ,
+            {
+              word: `cosmic expansion`,
+              definition: `The ongoing increase in the distances between galaxies, not because galaxies are flying through space but because space itself is stretching. Discovered by Edwin Hubble in 1929 and foundational to the Big Bang theory.`,
+              audioPrompt: `Cosmic expansion is the ongoing increase in distances between galaxies, {name}. It does not mean galaxies are flying through space like shrapnel from an explosion. It means space itself is stretching. Imagine drawing dots on a balloon and then inflating the balloon. The dots do not move on the balloon's surface, but they get further apart because the surface expands. Similarly, galaxies are not moving through space; space between galaxies is increasing. Edwin Hubble showed this in 1929 by observing that more distant galaxies appear to be moving away faster than closer ones. His discovery had a startling implication: if everything is moving apart now, everything was closer together in the past. Rewind far enough, and all matter and energy were concentrated into an extraordinarily hot, dense state. That is the basis of the Big Bang theory.`,
+            },
+            {
+              word: `Fred Hoyle`,
+              definition: `Astronomer who coined the term 'Big Bang' in 1949, ironically as a way of mocking the theory he opposed. The name stuck despite his opposition and has become the standard name for the cosmological model.`,
+              audioPrompt: `Fred Hoyle was an astronomer who coined the name Big Bang in 1949, {name}. He actually opposed the theory. The name was intended as a somewhat dismissive label for an idea he disagreed with. It stuck anyway, and it is now the standard name for the cosmological model describing the universe's expansion from an extremely hot, dense state. The Big Bang theory itself did not originate with Hoyle; it grew from Edwin Hubble's 1929 discovery that distant galaxies are receding from us, combined with theoretical work showing that Einstein's general relativity equations predicted an expanding or contracting universe. Hubble's observational discovery that everything is moving apart implied that everything was once closer together. Rewind far enough, and you reach the early hot dense state the theory describes.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const COSMOS_VOYAGER_L04 = {
               definition: `Faint radiation filling the entire sky, leftover from when the early universe became transparent ~380,000 years after the Big Bang. Predicted by Alpher and Herman (1948), discovered by Penzias and Wilson (1965). Foundational evidence for the Big Bang.`,
               audioPrompt: `The cosmic microwave background is faint radiation filling the entire sky, {name}. It is leftover from when the early universe became transparent, about 380,000 years after the Big Bang. Before that, the universe was hot enough that electrons and protons couldn't combine into atoms; photons kept getting scattered. When the universe cooled enough for atoms to form, the photons could travel freely, and they've been traveling ever since, stretched to microwave wavelengths by cosmic expansion. The cosmic microwave background was predicted by Alpher and Herman in 1948 and accidentally discovered by Penzias and Wilson in 1965. It is one of the most foundational pieces of evidence for the Big Bang. Tiny variations in temperature across it encode the early universe's structure.`,
             },
+          ,
+            {
+              word: `Penzias and Wilson`,
+              definition: `Two radio astronomers at Bell Labs who accidentally discovered the cosmic microwave background in 1965 while troubleshooting background noise in their antenna. They won the 1978 Nobel Prize for the discovery.`,
+              audioPrompt: `Penzias and Wilson are the radio astronomers who accidentally discovered the cosmic microwave background in 1965, {name}. Arno Penzias and Robert Wilson were at Bell Labs in New Jersey, trying to use a sensitive radio antenna for satellite communications. They kept picking up a faint background hiss they could not get rid of. They checked everything, including cleaning pigeon droppings out of the antenna. The hiss persisted, and it came from every direction in the sky equally. It turned out they had accidentally discovered the cosmic microwave background, exactly as the Big Bang theory had predicted. Ralph Alpher and Robert Herman had predicted this leftover radiation in 1948. Penzias and Wilson's accidental discovery confirmed the prediction and won them the 1978 Nobel Prize in Physics.`,
+            },
+            {
+              word: `Planck satellite`,
+              definition: `European Space Agency satellite launched in 2009 to map the cosmic microwave background with high precision. Its maps encode information about the early universe's age, composition, geometry, and the seeds of galactic structure.`,
+              audioPrompt: `The Planck satellite was launched in 2009 to map the cosmic microwave background with extraordinary precision, {name}. It was the third major satellite mission to do so, following COBE in 1989 and WMAP in 2001. Each satellite revealed more precise structure in the radiation. The tiny variations in temperature across the sky, one part in 100,000, encode an enormous amount of information about the early universe. From the Planck maps, scientists can read the universe's age, its composition, its geometry, and the seeds of the galaxies that would later form. The cosmic microwave background was predicted by Alpher and Herman in 1948, accidentally discovered by Penzias and Wilson in 1965, and has been mapped in increasing detail ever since. It is one of the most information-rich observations in all of physics.`,
+            }
           ],
         },
 
@@ -93,6 +115,17 @@ const COSMOS_VOYAGER_L04 = {
               definition: `The fusion of the lightest atomic nuclei (hydrogen, helium, traces of lithium) in the first ~20 minutes of the universe. Predicted abundances match observations in the oldest stars to remarkable precision. Foundational evidence for the Big Bang.`,
               audioPrompt: `Big Bang nucleosynthesis is the fusion of the lightest atomic nuclei in the first 20 minutes of the universe, {name}. Between about 1 second and 20 minutes after the Big Bang, protons and neutrons fused to form mostly hydrogen and helium, with tiny traces of lithium. The relative amounts predicted by the equations are about 75% hydrogen and 25% helium by mass. When astronomers measure the composition of the oldest stars, the abundances match these predictions to remarkable precision. This is one of the strongest pieces of evidence that the Big Bang actually happened. The first elements were forged in the first few minutes of the universe, and we can verify the recipe.`,
             },
+          ,
+            {
+              word: `cosmic inflation`,
+              definition: `A brief period of exponential expansion in the very early universe, around 10⁻³⁵ seconds after the Big Bang, proposed to explain why the universe is so uniform on large scales and where the seeds of galactic structure came from.`,
+              audioPrompt: `Cosmic inflation is a brief period of exponential expansion in the very early universe, {name}. It occurred around 10 to the minus 35 seconds after the Big Bang. At that point, the entire observable universe was smaller than a proton and hotter than 10 to the 28 degrees. Inflation expanded the universe by a factor of at least 10 to the 26 in a fraction of a second. After inflation ended, the universe filled with a hot soup of quarks, gluons, electrons, photons, and other elementary particles. Inflation was proposed to explain several puzzling features of cosmology: why the universe is so uniform on large scales, where the seeds of galactic structure came from, and why space is so close to perfectly flat. The Big Bang combined with established physics lets us reconstruct the first few minutes of cosmic history with surprising confidence.`,
+            },
+            {
+              word: `recombination`,
+              definition: `The moment approximately 380,000 years after the Big Bang when the universe cooled enough for electrons to combine with nuclei to form neutral atoms. Before recombination the universe was opaque; after, photons could travel freely, producing the cosmic microwave background.`,
+              audioPrompt: `Recombination is the moment approximately 380,000 years after the Big Bang when the universe cooled enough for electrons to combine with nuclei to form neutral atoms, {name}. Before this moment, the universe was a hot ionized plasma, opaque to light. Photons kept getting scattered. When the universe cooled enough for atoms to form, photons could travel freely for the first time. The radiation from that moment has been traveling ever since, stretched to microwave wavelengths by cosmic expansion. That is the cosmic microwave background we observe today. Before recombination, between 1 second and about 20 minutes after the Big Bang, protons and neutrons had already fused to form the lightest atomic nuclei in a process called Big Bang nucleosynthesis. The predicted ratios of hydrogen, helium, and lithium match the abundances we measure in the oldest stars to remarkable precision.`,
+            }
           ],
         },
 
@@ -115,6 +148,17 @@ const COSMOS_VOYAGER_L04 = {
               definition: `The fusion of elements heavier than helium inside stars. Carbon, oxygen, iron, and other elements in your body were forged inside stars and scattered into space when those stars died.`,
               audioPrompt: `Stellar nucleosynthesis is the fusion of elements heavier than helium inside stars, {name}. The Big Bang made mostly hydrogen and helium. Everything heavier had to be made inside stars. Stars fuse hydrogen into helium in their cores, then helium into carbon, then carbon into oxygen, nitrogen, neon, magnesium, silicon, sulfur, iron. When massive stars die as supernovae, they scatter these elements across space. The next generation of stars and their planets are built from this enriched material. Every atom of carbon in your body, every atom of iron in your blood, every atom of oxygen in the air you breathe was forged inside a previous star. Carl Sagan's famous phrase: we are made of star stuff. It is literally true.`,
             },
+          ,
+            {
+              word: `supernovae`,
+              definition: `Enormous stellar explosions that scatter heavy elements forged inside massive stars across space. Every atom of carbon, oxygen, and iron in your body was created inside a star and dispersed by a supernova before our solar system existed.`,
+              audioPrompt: `Supernovae are enormous stellar explosions that scatter heavy elements across space, {name}. The first generation of stars were massive and short-lived. They fused hydrogen into helium, helium into carbon, carbon into heavier elements, all the way up to iron. When they died, many exploded as supernovae, scattering those heavier elements across the galaxy. These elements seeded the next generations of stars. Every atom of carbon in your body, every atom of iron in your blood, every atom of oxygen in the air you breathe was forged inside a star and scattered by an explosion before our solar system existed. Carl Sagan's phrase captures it precisely: we are made of star stuff. It is literally true. Galaxies began forming around 200 to 400 million years after the Big Bang, built from material enriched by these early supernovae.`,
+            },
+            {
+              word: `Homo sapiens`,
+              definition: `The species name for modern humans, who appeared roughly 300,000 years ago. Civilization began about 12,000 years ago. Modern humans exist 13.8 billion years downstream of the Big Bang, at the very end of the cosmic timeline.`,
+              audioPrompt: `Homo sapiens is the species name for modern humans, {name}. We appeared roughly 300,000 years ago. Civilization began about 12,000 years ago. On the cosmic timeline, this is extraordinarily recent. The Big Bang occurred 13.8 billion years ago. The first stars formed 100 to 200 million years after that. Our solar system formed about 4.6 billion years ago. Life on Earth began at least 3.5 billion years ago. Multicellular life became abundant only about 600 million years ago. Mammals diversified after the dinosaur extinction 66 million years ago. And then, after all of that: modern humans, 300,000 years ago. Civilization, 12,000 years ago. You, reading this lesson, are about 13.8 billion years downstream of the Big Bang. The cosmic timeline is enormous. Human history occupies a hair's width at its very end.`,
+            }
           ],
         },
 
@@ -137,6 +181,17 @@ const COSMOS_VOYAGER_L04 = {
               definition: `Proposed by Alan Guth in 1980. A brief period of exponential expansion in the very early universe (~10⁻³⁵ seconds after the Big Bang) that expanded the observable universe by a factor of at least 10²⁶ in a fraction of a second. Explains several puzzling features of cosmology.`,
               audioPrompt: `Cosmic inflation was proposed by physicist Alan Guth in 1980, {name}. It is a brief period of exponential expansion in the very early universe, about 10 to the minus 35 seconds after the Big Bang. Inflation expanded the observable universe by a factor of at least 10 to the 26th power in a tiny fraction of a second. Why propose this? Because it explains several puzzling features of cosmology that the basic Big Bang theory alone doesn't explain: why the universe is so uniform on large scales, why space is so close to perfectly flat, and where the seeds of galactic structure came from. Inflation has accumulated significant evidence over the decades but it's still being refined. Specific inflation models compete and observations test between them.`,
             },
+          ,
+            {
+              word: `cyclic universe`,
+              definition: `A cosmological model proposing that the universe undergoes repeated Big Bangs, cycling through expansions and contractions. Discussed seriously by physicists as one of the open questions beyond the current Big Bang framework, without empirical resolution.`,
+              audioPrompt: `The cyclic universe is a cosmological model proposing that our universe undergoes repeated Big Bangs, cycling through expansions and contractions over vast timescales, {name}. It is one of several seriously discussed alternatives to the standard Big Bang framework. Multiverse models, in which our Big Bang is just one of many, are another. Both are discussed by physicists without empirical resolution. Several specific questions about cosmic origins remain genuinely open. What caused inflation, and what physics happened before it? Was there a before the Big Bang, or is that question meaningless? Some questions might be inherently unanswerable from inside the universe. Others may eventually yield to better observations. The Big Bang as a general framework is thoroughly supported. What happened before it, or whether that question makes sense, remains open.`,
+            },
+            {
+              word: `large-scale structure`,
+              definition: `The web-like distribution of galaxies across the observable universe. Its patterns match simulations of how early density fluctuations grew under gravity over billions of years, providing independent confirmation of the Big Bang framework.`,
+              audioPrompt: `Large-scale structure refers to the web-like distribution of galaxies across the observable universe, {name}. Galaxies are not randomly scattered. They form filaments and clusters around vast empty voids, creating a cosmic web. The patterns of large-scale structure match simulations of how the early density fluctuations encoded in the cosmic microwave background grew under gravity over billions of years. This match is one of multiple independent lines of evidence supporting the Big Bang framework. Hubble's law shows expansion. The cosmic microwave background shows the early universe's temperature structure. Big Bang nucleosynthesis explains the abundances of light elements. Large-scale structure matches simulations. All converge on the same picture. This convergence of independent evidence is one of the strongest signs of a robust scientific theory.`,
+            }
           ],
         },
 
