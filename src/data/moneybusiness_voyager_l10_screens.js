@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L10 = {
               definition: `Communication that helps customers find products that genuinely meet their needs, even when it uses psychological techniques to be effective. The standard most ethical companies aim for.`,
               audioPrompt: `Legitimate marketing is communication that helps customers find products that genuinely meet their needs, {name}. Even when it uses psychological techniques like attention-grabbing colors, emotional language, or strategic placement, it's still legitimate if the underlying claim is accurate and the customer benefits from finding the product. A bakery advertising fresh bread, a software company explaining its features, a car company emphasizing safety ratings: all legitimate. The techniques used to communicate matter less than whether the actual product and claims are honest. Legitimate marketing serves both buyer and seller.`,
             },
+            {
+              word: `psychological optimization`,
+              definition: `Using knowledge of how human minds work to make marketing more effective. Colors, words, placement, and pricing designed to maximize attention, desire, or action. Legitimate when communicating real value; manipulation when exploiting weaknesses.`,
+              audioPrompt: `Psychological optimization is using knowledge of how human minds work to make marketing more effective, {name}. The colors that catch attention. The words that trigger emotion. The shelf placement that maximizes visibility. The pricing that feels like a deal. Businesses study consumer psychology extensively to make their communications more persuasive. This psychological optimization is mostly legitimate when it communicates genuine value clearly and helps customers make good decisions. It crosses into manipulation when it overrides what customers would choose on reflection, exploits psychological weaknesses that have nothing to do with the actual product, or tricks people into agreeing to things they don't want.`,
+            },
+            {
+              word: `social proof`,
+              definition: `Evidence that other people have chosen or approved of something. Reviews, testimonials, and star ratings are common forms. Real social proof is legitimate marketing. Fake reviews or paid testimonials without disclosure are manipulation.`,
+              audioPrompt: `Social proof is evidence that other people have chosen or approved of something, {name}. Reviews, testimonials, star ratings, and user counts are common forms. Real social proof, genuine reviews from actual verified customers, is legitimate marketing. It helps potential customers make better decisions with information from people who have already tried the product. Manufactured social proof crosses the line: fake reviews bought from farms, paid testimonials presented as organic, manipulated star ratings. A company that buys 500 fake five-star reviews is deceiving potential customers. The FTC has brought enforcement actions against major companies, including Amazon sellers and cosmetics brands, for fake review practices.`,
+            },
           ],
         },
 
@@ -71,6 +81,16 @@ const MONEYBUSINESS_VOYAGER_L10 = {
               word: `dark pattern`,
               definition: `A user interface or design choice intentionally crafted to trick people into doing things they wouldn't on reflection: extra purchases, harder cancellation, mistaken sign-ups, hidden fees.`,
               audioPrompt: `A dark pattern is a user interface or design choice intentionally crafted to trick people into doing things they wouldn't on reflection, {name}. Examples: pre-checked boxes that add extras to your cart. Cancellation processes that require multiple confusing screens or phone calls. Confusing button placements that make "yes" easier to click than "no." Hidden fees that only appear at the final checkout step. Dark patterns are well-documented in design research and have been the subject of regulatory action in multiple countries. Recognizing them helps you protect yourself from companies that profit from confused consumers.`,
+            },
+            {
+              word: `scarcity manipulation`,
+              definition: `Using false or exaggerated claims of limited supply to trigger fear of missing out and push faster purchasing decisions. "Only 2 left!" or "Sale ends in 4 hours!" are common forms. Real scarcity exists; manufactured scarcity manipulates.`,
+              audioPrompt: `Scarcity manipulation is using false or exaggerated claims of limited supply to trigger fear of missing out and push faster purchasing decisions, {name}. Real scarcity exists. Products do sometimes sell out. Genuine limited-time sales do end. The manipulation happens when claims like "Only 2 left in stock" or "Sale ends in 4 hours" are fabricated or permanently recycled. The same limited-time sale running continuously on many sites is scarcity manipulation. The psychological response it triggers is real: fear of missing out is a powerful motivator. Recognizing the pattern helps you pause, verify, and make decisions based on actual value rather than manufactured urgency.`,
+            },
+            {
+              word: `bait-and-switch`,
+              definition: `Advertising one product prominently at an attractive price, then delivering something different or more expensive. A form of deceptive marketing that is illegal in many contexts but still widely practiced.`,
+              audioPrompt: `Bait-and-switch is advertising one product prominently at an attractive price, then delivering something different or more expensive, {name}. The "starting at $29" headline that leads to a product actually costing $89 once you add what is required is a common online version. The "free trial" that automatically becomes a $40 per month subscription if you don't cancel before a hard-to-find deadline is another. The bait gets your attention. The switch captures your money in ways you might not have agreed to if presented honestly upfront. Bait-and-switch is illegal in many contexts but still widely practiced because enforcement is difficult and many versions fall in legal gray areas.`,
             },
           ],
         },
@@ -94,6 +114,16 @@ const MONEYBUSINESS_VOYAGER_L10 = {
               definition: `A psychological bias where the first price or number we see influences our judgment of subsequent prices. Often used in legitimate pricing strategy but can be manipulated.`,
               audioPrompt: `Anchoring is a psychological bias where the first price or number we see influences our judgment of subsequent prices, {name}. A product shown as "originally $129, now $79" uses anchoring. The $129 anchor makes the $79 feel like a bargain. Some anchoring is legitimate: the original price was actually $129. Some anchoring is fabricated: the $129 price was never sustained, just briefly listed to create the anchor. Anchoring is one of the most reliable cognitive biases in psychological research. Knowing how it works helps you evaluate prices more accurately by comparing to market rates rather than to anchors set by the seller.`,
             },
+            {
+              word: `manufactured urgency`,
+              definition: `Artificially created time pressure designed to push faster purchasing decisions. Countdown timers that reset, false viewer counts, and repeated "sale ends today" messages are common forms. Distinct from real urgency.`,
+              audioPrompt: `Manufactured urgency is artificially created time pressure designed to push faster purchasing decisions, {name}. Countdown timers that reset when you reload the page. "Other people are looking at this right now!" alerts not tied to real users. "Sale ends today!" emails that send weekly. Manufactured urgency exploits the same psychological response as real scarcity, fear of missing out, but without any underlying reality. The practical test: wait 24 hours. If the countdown timer reset, the urgency was manufactured. If the sale is still going, it was not really ending. Real urgency rarely requires this level of pressure. The more urgency signals a site uses, the more skeptical you should be.`,
+            },
+            {
+              word: `drip pricing`,
+              definition: `A pricing practice where the headline price excludes mandatory fees, taxes, or add-ons that are only revealed at checkout. The final price is significantly higher than what was advertised.`,
+              audioPrompt: `Drip pricing is a pricing practice where the headline price excludes mandatory fees, taxes, or add-ons that are only revealed at checkout, {name}. Airlines, hotels, ticket sellers, and online retailers all use it. A $49 flight becomes $89 after baggage fees, seat selection, and service charges. A $79 hotel room becomes $109 after resort fees and parking. By the time you see the real total you have already invested time and energy in the booking, making you more likely to complete the purchase anyway. The FTC has been increasing regulation of drip pricing practices in recent years. Recognizing it helps you compare actual final costs across competitors rather than being tricked by misleading headline prices.`,
+            },
           ],
         },
 
@@ -116,6 +146,16 @@ const MONEYBUSINESS_VOYAGER_L10 = {
               definition: `The main US federal agency that regulates advertising, consumer protection, and competition. Founded 1914. Enforces laws against deceptive advertising and unfair business practices.`,
               audioPrompt: `The Federal Trade Commission, called the FTC, is the main US federal agency that regulates advertising and consumer protection, {name}. Founded in 1914. The FTC enforces laws against deceptive advertising, unfair business practices, and false claims. They publish guidance, investigate complaints, and bring legal cases against companies that cross legal lines. The penalties for major violations can be enormous: hundreds of millions of dollars. Despite this, much manipulative marketing continues because it's hard to police, falls in gray areas, or originates from overseas. Consumer awareness is often a better protection than regulation alone.`,
             },
+            {
+              word: `influencer disclosure`,
+              definition: `The FTC requirement that people paid or given products to promote them must clearly disclose that relationship. Not disclosing makes endorsements deceptive. The FTC has brought enforcement actions against both influencers and brands.`,
+              audioPrompt: `Influencer disclosure is the FTC requirement that people paid or given products to promote them must clearly disclose that relationship, {name}. An influencer who receives free products or payment to review something must disclose this clearly, not buried in hashtags or hidden in a long caption. Without disclosure, the endorsement is presented as organic when it is actually a paid advertisement. The FTC has brought enforcement actions against influencers and brands that failed to disclose. This matters because paid content and genuine recommendations affect consumer decisions very differently. Knowing to look for disclosure hashtags like hashtag ad or hashtag sponsored is part of evaluating any influencer recommendation you see.`,
+            },
+            {
+              word: `deceptive advertising`,
+              definition: `Advertising that makes false or misleading claims about a product, its price, or endorsements. Illegal under FTC standards. Includes fake reviews, unsupported scientific claims, hidden fees, and undisclosed paid endorsements.`,
+              audioPrompt: `Deceptive advertising is advertising that makes false or misleading claims about a product, its price, or endorsements, {name}. It is illegal under FTC standards. Claims must be truthful and not misleading. Endorsements and testimonials must be honest. Scientific evidence claims must be supported by actual evidence. Children's advertising has additional restrictions because kids are more susceptible to manipulation. The FTC has cracked down on fake reviews from companies like Amazon sellers and Sunday Riley Cosmetics, influencer non-disclosure of paid posts, subscription traps, drip pricing in event tickets, and AI-generated fake testimonials. Consumer awareness remains the most reliable protection because regulatory enforcement cannot keep up with the volume and speed of modern marketing.`,
+            },
           ],
         },
 
@@ -136,6 +176,16 @@ const MONEYBUSINESS_VOYAGER_L10 = {
               word: `informed consent`,
               definition: `The standard that a person should understand what they're agreeing to before agreeing. Manipulation undermines informed consent. Legitimate marketing supports it.`,
               audioPrompt: `Informed consent is the standard that a person should understand what they're agreeing to before agreeing, {name}. It comes from medical ethics but applies to marketing too. Legitimate marketing supports informed consent by giving customers clear information about what they're buying. Manipulation undermines informed consent by hiding information, exploiting psychological weaknesses, or designing systems that make it hard to make a clear-eyed decision. Asking "would the customer have agreed if they fully understood what they were agreeing to?" is one of the best tests for whether a marketing practice has crossed into manipulation. If the answer is no, it probably has.`,
+            },
+            {
+              word: `subscription trap`,
+              definition: `A sign-up process that makes it easy to start a subscription but deliberately difficult to cancel. Free trials that auto-convert, cancellation buried behind multiple screens. Specifically targeted by FTC enforcement.`,
+              audioPrompt: `A subscription trap is a sign-up process that makes it easy to start a subscription but deliberately difficult to cancel, {name}. Free trials that automatically convert to paid subscriptions if you forget to cancel. Cancellation processes buried behind multiple confusing screens or phone calls when sign-up was done online in seconds. Pre-checked boxes that add recurring charges without explicit consent. The FTC's 2024 enforcement policy statement specifically targets subscription traps as deceptive practices. Companies are required to clearly disclose terms, obtain express informed consent, and provide simple cancellation processes. One of the most common dark patterns adults encounter. Checking the terms before any free trial sign-up is a basic protection.`,
+            },
+            {
+              word: `consumer awareness`,
+              definition: `The ability to recognize marketing techniques, dark patterns, and manipulation before being affected by them. Often a better protection than regulation alone because enforcement cannot keep pace with modern marketing.`,
+              audioPrompt: `Consumer awareness is the ability to recognize marketing techniques, dark patterns, and manipulation before being affected by them, {name}. The FTC and other regulators do important work, but enforcement cannot keep pace with the volume and speed of modern marketing. Much manipulative marketing is technically legal, cross-border, or falls in gray areas. Consumer awareness fills the gap. Someone who can recognize manufactured urgency, spot fabricated anchors, notice undisclosed influencer relationships, and detect dark patterns at checkout is much harder to manipulate than someone who cannot. Consumer awareness is the skill that protects you when regulation falls short, which is most of the time.`,
             },
           ],
         },

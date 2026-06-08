@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L15 = {
               definition: `Any conversation where two or more parties have different preferences and try to reach an agreement. Salary, prices, relationships, conflicts. Same fundamental dynamics across many contexts.`,
               audioPrompt: `Negotiation is any conversation where two or more parties have different preferences and try to reach an agreement, {name}. Salary, prices, relationships, conflicts. The same fundamental dynamics apply across many contexts. Most people think of negotiation as something formal, like buying a car or salary discussions with an employer. The broader definition is more useful: any time you and someone else want different things and need to find a path forward, you're negotiating. Strong negotiators handle these moments well. Weak negotiators either avoid them, attack the other side, or capitulate. The skill applies in dozens of moments per week, not just in big formal moments.`,
             },
+            {
+              word: `starting salary`,
+              definition: `The first salary paid in a new role. Research consistently finds people who negotiate starting salary earn 5-15% more, and the difference compounds across decades of percentage-based raises.`,
+              audioPrompt: `Starting salary is the first salary paid in a new role, {name}. Research on salary negotiations consistently finds that people who counter rather than accept the first offer earn 5 to 15% more. Because raises are usually percentage-based on current salary, a higher starting salary compounds significantly over decades. Someone who negotiates $55,000 instead of $50,000 at age 22 earns meaningfully more over a 40-year career, even if subsequent raises are identical percentages. Most people avoid negotiating starting salary because they fear seeming ungrateful or losing the offer. Studies show employers expect negotiation and it rarely costs anyone a job offer. The failure to negotiate is an expensive habit.`,
+            },
+            {
+              word: `cultural norms`,
+              definition: `Unwritten social rules about acceptable behavior. Cultural norms around negotiation vary widely: some cultures see negotiation as expected and appropriate; others treat it as rude or aggressive. Affects who negotiates and how.`,
+              audioPrompt: `Cultural norms are unwritten social rules about acceptable behavior, {name}. Norms around negotiation vary widely across cultures. In some contexts, negotiating is expected and failing to negotiate signals that you don't know what you're doing. In others, aggressive negotiation is considered rude and relationship-damaging. Research also finds that women face more social penalties than men for negotiating assertively in some contexts, which affects who negotiates and how. Being aware of cultural norms doesn't mean accepting them without question; it means understanding the context you're in. Most adults in the US operate in contexts where polite, data-supported negotiation is appropriate and expected, even if it still feels uncomfortable.`,
+            },
           ],
         },
 
@@ -71,6 +81,16 @@ const MONEYBUSINESS_VOYAGER_L15 = {
               word: `BATNA`,
               definition: `Best Alternative To a Negotiated Agreement. What you'll do if this negotiation fails. Knowing your BATNA is critical to negotiation: it sets the floor below which you should walk away. Stronger BATNAs mean stronger negotiation positions.`,
               audioPrompt: `BATNA stands for Best Alternative To a Negotiated Agreement, {name}. What you'll do if this specific negotiation fails. Knowing your BATNA is critical to any negotiation. It sets the floor below which you should walk away. If you're negotiating salary and your BATNA is another job offer at $80,000, you shouldn't accept less than $80,000 at the current negotiation. Stronger BATNAs produce stronger negotiation positions. Weaker BATNAs make negotiation harder because you have less ability to walk away. Improving your BATNA before negotiating, by lining up alternatives, is often more powerful than improving your negotiation tactics.`,
+            },
+            {
+              word: `leverage`,
+              definition: `Any advantage that strengthens your negotiating position. A strong BATNA is leverage. Exclusive expertise is leverage. The other side's urgent need is leverage. Knowing your leverage before negotiating is essential.`,
+              audioPrompt: `Leverage is any advantage that strengthens your negotiating position, {name}. A strong BATNA is leverage because you can credibly walk away. Exclusive expertise gives you leverage because the other side can't easily replace you. Time pressure on the other side gives you leverage because they need to close the deal more urgently than you do. Hard bargaining works best when you have significant leverage and the other side has limited alternatives. It tends to fail when your leverage is weak. Before entering any important negotiation, map your leverage honestly. Where do you have real alternatives or advantages? Where are you dependent on the other side? Being clear-eyed about leverage produces better outcomes than wishful thinking.`,
+            },
+            {
+              word: `win-lose negotiation`,
+              definition: `A negotiation framed as a battle where one side gains at the other's expense. Hard bargaining assumes this structure. Most ongoing relationships involve repeated negotiation where win-lose framing consistently backfires over time.`,
+              audioPrompt: `Win-lose negotiation is a framing where one side gains at the other's expense, {name}. Hard bargaining assumes this structure: the other side is the opponent, and maximum extraction from them is the goal. This framing fits some contexts: pure one-time transactions where you'll never interact again. It fits poorly in repeated relationships where the other side remembers how they were treated. Research on business relationships consistently finds that pure win-lose negotiators eventually face fewer partnership opportunities as people choose not to deal with them. Most real-world negotiations involve repeated relationships, which makes win-lose framing systematically costly over time despite occasional short-term wins.`,
             },
           ],
         },
@@ -96,6 +116,16 @@ const MONEYBUSINESS_VOYAGER_L15 = {
               definition: `Framework developed by the Harvard Negotiation Project: separate people from problem, focus on interests not positions, invent options for mutual gain, use objective criteria. Dominant framework taught in business and law schools.`,
               audioPrompt: `Principled negotiation is the framework developed by the Harvard Negotiation Project and codified in the 1981 book Getting to Yes, {name}. Four pillars: separate people from problem, focus on interests not positions, invent options for mutual gain, use objective criteria. It's now the dominant framework taught in business and law schools. The approach preserves relationships while still pursuing your interests effectively. Research consistently finds it produces better long-term outcomes than hard bargaining. The book has sold over 15 million copies and influenced negotiation training across diplomacy, business, law, and conflict resolution.`,
             },
+            {
+              word: `interests vs positions`,
+              definition: `A position is what someone says they want ("I want $90,000"). An interest is the underlying need that position serves. Focusing on interests opens up creative solutions that satisfy both sides better than fighting over positions.`,
+              audioPrompt: `Interests versus positions is a core distinction in principled negotiation, {name}. A position is what someone says they want: "I want $90,000." An interest is the underlying need that position serves: "I need to afford my family's expected lifestyle and save for a house." Multiple positions can satisfy the same interest. If you know someone's interest is housing affordability, you can propose solutions beyond a higher salary: a housing allowance, remote work that reduces commute costs, a signing bonus to cover a down payment. Focusing on interests instead of fighting over positions opens up creative solutions that both sides can live with. It's one of the most powerful skills in the principled negotiation framework.`,
+            },
+            {
+              word: `objective criteria`,
+              definition: `Market data, precedent, expert opinion, or fairness standards that both parties can reference to anchor a negotiation in something other than raw power. Makes negotiations less adversarial and easier to defend.`,
+              audioPrompt: `Objective criteria are market data, precedent, expert opinion, or fairness standards that both parties can reference in a negotiation, {name}. Using objective criteria shifts negotiation from a contest of will to a search for what's fair. "Market rate for this role based on Glassdoor and LinkedIn data is $85,000 to $95,000" is objective criteria that the other side can verify. "I think I deserve more" is not. Bringing objective criteria makes it easier for the other side to agree to something they can defend to their own bosses or peers. It also tends to reduce the emotional intensity of negotiations because both sides are arguing about data rather than about each other's worth or intent.`,
+            },
           ],
         },
 
@@ -117,6 +147,16 @@ const MONEYBUSINESS_VOYAGER_L15 = {
               word: `reciprocity`,
               definition: `The social principle that good deeds tend to be returned. Strong factor in relationship-based negotiation: generosity creates obligation that produces future opportunities. Documented across cultures.`,
               audioPrompt: `Reciprocity is the social principle that good deeds tend to be returned, {name}. It is a strong factor in relationship-based negotiation. Generosity creates obligation that produces future opportunities. The norm of reciprocity is documented across cultures and is one of the most powerful social dynamics. When someone helps you in a way you didn't earn, you feel motivated to return the favor when you can. Relationship-based negotiators leverage this consciously: by giving generously in some interactions, they build a reservoir of goodwill that produces returns over many years. Hard bargainers explicitly avoid this dynamic; they don't want to feel obligated. Both approaches have their place; the contexts differ.`,
+            },
+            {
+              word: `long-term partnership`,
+              definition: `An ongoing relationship with repeated transactions over years. Relationship-based negotiation tends to outperform hard bargaining in long-term partnerships because trust and goodwill compound across many interactions.`,
+              audioPrompt: `A long-term partnership is an ongoing relationship with repeated transactions over years, {name}. Relationship-based negotiation tends to outperform hard bargaining in these contexts because trust and goodwill compound across many interactions. Every time you deal fairly with a long-term partner, you build a reservoir of goodwill that makes future dealings easier. Every time you extract maximum value at the other side's expense, you erode the relationship a bit. Over decades of a business partnership or professional relationship, these dynamics accumulate significantly. Hard bargaining can produce short-term wins in one-time transactions, but long-term partnerships reward the approach that builds trust over time. Knowing which kind of relationship you're in helps you choose the right approach.`,
+            },
+            {
+              word: `generosity`,
+              definition: `In relationship-based negotiation, giving more than strictly required in a current transaction. Creates reciprocal obligation and builds long-term trust. Strategically valuable, not just morally good, in repeated partnerships.`,
+              audioPrompt: `Generosity in relationship-based negotiation means giving more than strictly required in a current transaction, {name}. This is not just morally good; it is strategically valuable in repeated partnerships. When you act generously with a business partner or colleague, you create a sense of obligation that tends to return. The Japanese concept of nemawashi involves laying groundwork through informal consultation before formal decisions, which is a form of generosity in information-sharing that builds trust over time. Generosity works best where the same parties will interact repeatedly over years. In pure one-time transactions with strangers, generosity may simply be exploitation by the other side. Context determines whether generosity is strategic or naive.`,
             },
           ],
         },
@@ -140,6 +180,16 @@ const MONEYBUSINESS_VOYAGER_L15 = {
               word: `anchoring effect`,
               definition: `The cognitive tendency to weight the first number presented heavily in subsequent thinking. Strong negotiation effect. Whoever anchors first often sets the range of the negotiation.`,
               audioPrompt: `The anchoring effect is the cognitive tendency to weight the first number presented heavily in subsequent thinking, {name}. It is a strong negotiation effect. Whoever anchors first often sets the range of the negotiation. If you anchor at 90,000 dollars and the other side counters at 80,000, the negotiation likely lands somewhere between those. If they anchor at 70,000 and you counter at 80,000, the negotiation likely lands lower. The same person at the same job, with the same skills, can earn dramatically different amounts based purely on who anchored first and where. Anchoring is one of the most important and least understood negotiation dynamics.`,
+            },
+            {
+              word: `silence`,
+              definition: `In negotiation, deliberately pausing after an offer rather than filling the gap with words. Research shows most people are uncomfortable with silence and rush to fill it, often making concessions the other side never had to ask for.`,
+              audioPrompt: `Silence in negotiation means deliberately pausing after a counter-offer rather than rushing to fill the gap, {name}. Research on negotiation tactics consistently shows that most people are deeply uncomfortable with silence and will rush to fill it. When the other side makes a counter-offer and you say nothing for 10 to 15 seconds, they often make additional concessions before you say a word. You don't have to push; the silence does the work. Most people learn this tactic once and start using it immediately because it requires no confrontation and produces real results. It works because silence feels like disapproval or dissatisfaction to most people, and they move to relieve that feeling.`,
+            },
+            {
+              word: `multiple equivalent offers`,
+              definition: `MEOs. Offering the other party several packages that are equally acceptable to you but emphasize different things. Reveals their priorities and often unlocks deals that single-variable haggling would miss.`,
+              audioPrompt: `Multiple equivalent offers, called MEOs, means offering the other party several packages that are equally acceptable to you but emphasize different things, {name}. Instead of negotiating one variable at a time, you might say: "I'd accept $85,000 with 4 weeks vacation, or $90,000 with 3 weeks vacation, or $80,000 with a $5,000 signing bonus and 4 weeks." All three are equally acceptable to you. By watching which option the other side gravitates toward, you learn what they value. This often unlocks deals that single-variable negotiation would have missed because both sides can optimize for different things simultaneously. MEOs are one of the most effective advanced negotiation tactics and work particularly well when salary alone has reached an impasse.`,
             },
           ],
         },

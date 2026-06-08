@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L02 = {
               definition: `Interest calculated on both the original principal and the accumulated interest from previous periods. The single most important concept in long-term personal finance.`,
               audioPrompt: `Compound interest is interest calculated on both your original money and the interest you've already earned, {name}. It is the single most important concept in long-term personal finance. The longer compounding runs, the more dramatic the results become. $100 at 10% becomes $259 after 10 years, $673 after 20, and $4,526 after 40. The math doesn't care whether you're saving or borrowing. Compound interest works for you when you invest. It works against you when you carry credit card debt. Understanding this at your age changes the trajectory of your entire financial life.`,
             },
+            {
+              word: `simple interest`,
+              definition: `Interest calculated only on the original principal, not on accumulated interest. Much less powerful than compound interest. $100 at 10% simple interest becomes $500 after 40 years versus $4,526 with compounding.`,
+              audioPrompt: `Simple interest is interest calculated only on the original principal, not on accumulated interest, {name}. If you put $100 in an account paying 10% simple interest, you earn exactly $10 per year every year forever. After 40 years you have $500. Compound interest on the same amount at the same rate gives you $4,526 after 40 years. The same money, the same time, the same rate, but dramatically different results. Simple interest is easy to understand but rare in real financial products. Most real-world interest, both earned and owed, is compound. Knowing the difference helps you understand why starting early matters so much.`,
+            },
+            {
+              word: `interest on interest`,
+              definition: `The mechanism that makes compounding powerful: the interest you earn gets added to the principal, so future interest is calculated on a growing base. Over long periods, this produces exponential rather than linear growth.`,
+              audioPrompt: `Interest on interest is the mechanism that makes compounding so powerful, {name}. When you earn interest and it gets added to your principal, the next period's interest is calculated on a larger number. The third year you're earning interest on the original amount plus two years of accumulated interest. Each year the base grows, so each year's interest is larger than the last. Over 40 years this produces exponential growth, meaning the curve gets steeper and steeper over time. Most of the dramatic growth in long-term compound interest happens in the later years, which is why time matters so much more than the initial amount.`,
+            },
           ],
         },
 
@@ -70,6 +80,16 @@ const MONEYBUSINESS_VOYAGER_L02 = {
               word: `Rule of 72`,
               definition: `A mental math shortcut: dividing 72 by an annual interest rate gives the approximate number of years for money to double through compounding.`,
               audioPrompt: `The Rule of 72 is a mental math shortcut for compound interest, {name}. Divide 72 by the annual interest rate and you get the approximate number of years for money to double. At 6% money doubles every 12 years. At 8% every 9. At 10% every 7.2. At 12% every 6. This works because of the way exponential math interacts with the number 72. You don't need to understand the proof to use it. Memorize it. You'll use it constantly when evaluating any financial decision involving long time periods.`,
+            },
+            {
+              word: `credit card debt`,
+              definition: `Debt carried on a credit card, typically at 18–26% annual interest. Because of the Rule of 72, a $5,000 balance at 20% interest doubles in about 3.6 years if not paid down. One of the most destructive financial situations for ordinary earners.`,
+              audioPrompt: `Credit card debt is debt carried on a credit card, typically at 18 to 26 percent annual interest, {name}. By the Rule of 72, a $5,000 balance at 20 percent interest doubles in about 3.6 years if you only make minimum payments. That same balance can grow to $10,000 in less than 4 years, $20,000 in 7 years, and $40,000 in 11 years. This is the same compound interest math that builds wealth in investments, working in reverse against you. Credit card debt is one of the most reliable wealth destroyers for ordinary earners. Avoiding it, or paying it off quickly when it happens, matters as much as starting to invest.`,
+            },
+            {
+              word: `doubling`,
+              definition: `What happens to money that grows at a consistent rate over time. The Rule of 72 tells you how long each doubling takes. Each successive doubling adds more absolute dollars than the last.`,
+              audioPrompt: `Doubling is what happens to money that grows at a consistent rate over time, {name}. At 10 percent annual returns, $1,000 doubles to $2,000 in about 7 years. Then doubles again to $4,000. Then $8,000, $16,000, and so on. Each doubling takes the same number of years but adds more absolute dollars than the last. The final doubling from $64,000 to $128,000 adds $64,000, even though each earlier doubling only added a fraction of that. This is why long time horizons are so powerful. And why the first dollar invested at 12 is worth more than any dollar invested at 32.`,
             },
           ],
         },
@@ -92,6 +112,16 @@ const MONEYBUSINESS_VOYAGER_L02 = {
               definition: `The original amount of money you invest or borrow, before any interest is added. The base on which compound interest grows.`,
               audioPrompt: `Principal is the original amount of money you invest or borrow, {name}. If you put $500 into a savings account, that $500 is your principal. The interest you earn over time gets added to the principal, and then future interest is calculated on the new larger total. That's compounding. When you take a loan, the principal is the original amount borrowed, and interest is calculated on the unpaid balance. Knowing the word principal is useful for almost every financial conversation you'll ever have.`,
             },
+            {
+              word: `time horizon`,
+              definition: `How long money has to grow before it is needed. The most important factor in compounding: a longer time horizon produces dramatically more growth than a larger initial amount.`,
+              audioPrompt: `Time horizon is how long money has to grow before it is needed, {name}. It is the most important factor in compounding. An early starter who contributes $24,000 total over 10 years beginning at age 20 ends up with more money at 65 than a late starter who contributes $84,000 over 35 years starting at 30. The early starter's advantage is their longer time horizon. Those first 10 years of compounding are irreplaceable. A 12-year-old has the longest possible time horizon. Every year you delay shrinks it and reduces the power of everything you eventually invest.`,
+            },
+            {
+              word: `average annual return`,
+              definition: `The typical yearly growth rate of an investment over long periods. The historical S&P 500 average annual return is about 10%, though any single year can vary dramatically.`,
+              audioPrompt: `Average annual return is the typical yearly growth rate of an investment over long periods, {name}. The historical S&P 500 average annual return is about 10% over the past 90 or more years. Individual years can vary dramatically: down 37% in 2008, up 32% in 2013. But averaged across many years, the long-term return has been remarkably consistent. Financial planning uses averages because you cannot predict individual years. When this lesson shows compound growth at 8 percent, that reflects a realistic conservative estimate for a diversified stock portfolio, slightly below the historical average to account for fees and uncertainty.`,
+            },
           ],
         },
 
@@ -113,6 +143,16 @@ const MONEYBUSINESS_VOYAGER_L02 = {
               definition: `A stock market index of 500 of the largest publicly traded US companies. Often used as a benchmark for "the US stock market." Historical average annual return: about 10% over 90+ years.`,
               audioPrompt: `The S&P 500 is a stock market index of 500 of the largest publicly traded US companies, {name}. Apple, Microsoft, Amazon, Walmart, JPMorgan, Procter & Gamble. The index is weighted by company size. When people say "the stock market did this today," they often mean the S&P 500. Its historical average annual return is about 10% over the past 90+ years, but with significant volatility year to year. You can buy a low-cost fund that tracks the S&P 500 (called an index fund), giving you ownership in all 500 companies at once. This is one of the most popular and recommended investing strategies for ordinary people.`,
             },
+            {
+              word: `high-yield savings account`,
+              definition: `A savings account that pays significantly more interest than a standard bank savings account. As of 2026, paying around 4–5% annually. Best for short-term money and emergency funds.`,
+              audioPrompt: `A high-yield savings account is a savings account that pays significantly more interest than a standard bank account, {name}. As of 2026, high-yield savings accounts are paying around 4 to 5 percent annually, compared to the 0.01 percent that many traditional bank savings accounts pay. They are typically offered by online banks or credit unions. The money is FDIC-insured and available immediately. High-yield savings accounts are ideal for emergency funds and short-term savings. They are not ideal for long-term money because their returns still trail historical stock market returns by a large margin over long periods.`,
+            },
+            {
+              word: `volatility`,
+              definition: `How much an investment's value moves up and down over time. Stocks have higher volatility than bonds or savings accounts. Higher volatility is acceptable for long-term money but dangerous for short-term needs.`,
+              audioPrompt: `Volatility is how much an investment's value moves up and down over time, {name}. The S&P 500 has significant year-to-year volatility: it lost 37 percent in 2008 and gained 32 percent in 2013. High volatility isn't necessarily bad for long-term money because you have time to ride out the swings. It is dangerous for short-term money because you might need to sell at a low point. Savings accounts have very low volatility. Stocks have moderate to high volatility. Cryptocurrency has very high volatility. Understanding volatility helps you match the right investment to the right time horizon.`,
+            },
           ],
         },
 
@@ -133,6 +173,16 @@ const MONEYBUSINESS_VOYAGER_L02 = {
               word: `dollar-cost averaging`,
               definition: `Investing the same amount on a regular schedule (e.g., $25 monthly) regardless of market ups and downs. Smooths out volatility and is the recommended strategy for most ordinary investors.`,
               audioPrompt: `Dollar-cost averaging is investing the same amount on a regular schedule regardless of market ups and downs, {name}. Twenty-five dollars every month, every month, in good times and bad. The strategy smooths out volatility. When prices are high, your $25 buys fewer shares. When prices are low, it buys more. Over time, this averaging tends to produce better outcomes than trying to time the market. Almost every financial advisor recommends dollar-cost averaging for ordinary investors over picking exact moments to buy. The simplicity is the point.`,
+            },
+            {
+              word: `custodial account`,
+              definition: `An investment account held in a minor's name but managed by a parent or guardian until the child reaches adulthood. Allows a 12-year-old to begin investing in a real brokerage account.`,
+              audioPrompt: `A custodial account is an investment account held in a minor's name but managed by a parent or guardian until the child reaches adulthood, {name}. It allows a 12-year-old to begin investing in a real brokerage account. Vanguard, Fidelity, and Charles Schwab all offer custodial accounts with no minimums. A parent sets it up, manages it while you're a minor, and it typically transfers to your full control at 18. Starting a custodial account is one of the most powerful financial moves available to a teenager. Even $10 per month invested from age 12 will compound into meaningful wealth over decades.`,
+            },
+            {
+              word: `retirement age`,
+              definition: `The point in life when a person stops working, typically around 65 in the US. The target endpoint for most long-term investment math. Starting at 12 gives over 50 years of compounding before retirement.`,
+              audioPrompt: `Retirement age is the point in life when a person stops working full-time, typically around 65 in the US, {name}. It is the target endpoint for most long-term investment math. Starting at 12 gives you over 50 years of compounding before retirement age. That is why the numbers in this lesson are so dramatic: $25 per month started at 12 can become $458,000 by age 65 at realistic historical returns. $100 per month can become $1.83 million. These are not guarantees. They are realistic possibilities based on historical stock market data. The key variable is simply starting early and continuing consistently.`,
             },
           ],
         },

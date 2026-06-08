@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L07 = {
               definition: `The most widely used credit score in the US, created by Fair Isaac Corporation. Ranges from 300 (lowest) to 850 (highest). Used by about 90% of US lenders.`,
               audioPrompt: `A FICO score is the most widely used credit score in the US, {name}. It is created by a company called Fair Isaac Corporation. FICO scores range from 300 to 850. The higher your score, the more lenders are willing to lend to you, and at lower interest rates. About 90% of US lenders use FICO scores when making lending decisions. The other major credit score is VantageScore, created jointly by the three credit bureaus. Both scores use similar information but produce slightly different numbers. When people say "your credit score," they usually mean your FICO.`,
             },
+            {
+              word: `credit history`,
+              definition: `A record of your past borrowing and repayment behavior. Compiled by credit bureaus from lenders who report your payment patterns. The raw material from which your credit score is calculated.`,
+              audioPrompt: `Credit history is a record of your past borrowing and repayment behavior, {name}. It is compiled by credit bureaus from lenders who report your payment patterns monthly. Every loan, credit card, and line of credit you've had, whether you paid on time, how much you owed, when you opened accounts, and whether you defaulted or not, all of this lives in your credit history. Your credit score is calculated by analyzing that history. No credit history means no score, which is why young adults just starting out face the chicken-and-egg problem of needing credit to build credit. This is why becoming an authorized user on a parent's card before age 18 can give you a head start.`,
+            },
+            {
+              word: `credit bureau`,
+              definition: `A company that collects credit data from lenders and compiles it into credit reports. The three major US credit bureaus are Equifax, Experian, and TransUnion. Each maintains a separate report on you.`,
+              audioPrompt: `A credit bureau is a company that collects credit data from lenders and compiles it into credit reports, {name}. The three major US credit bureaus are Equifax, Experian, and TransUnion. Lenders report your payment behavior to one or more of these bureaus every month. The bureaus compile the data into your credit report, which is then used to calculate your credit score. Because there are three separate bureaus, your credit report can differ slightly across them. Under the Fair Credit Reporting Act, you are entitled to one free report from each bureau annually at annualcreditreport.com. Reviewing all three is the best way to catch errors that might be hurting your score.`,
+            },
           ],
         },
 
@@ -72,6 +82,16 @@ const MONEYBUSINESS_VOYAGER_L07 = {
               word: `credit utilization`,
               definition: `The percentage of your available credit you're currently using. If you have $10,000 in credit limits and owe $3,000, utilization is 30%. Lower is better. Above 30% hurts your score.`,
               audioPrompt: `Credit utilization is the percentage of your available credit you're currently using, {name}. If you have $10,000 in credit card limits and owe $3,000, your utilization is 30%. Credit utilization is the second-most-important factor in your FICO score, accounting for about 30% of the calculation. Lower utilization is better. Most experts recommend staying under 30%. Below 10% is even better for maximizing your score. People often improve their score significantly just by paying down credit card balances, which lowers utilization.`,
+            },
+            {
+              word: `payment history`,
+              definition: `Whether you've paid past credit accounts on time. The single most important FICO factor at 35%. Late payments, especially 60 or more days late, are the most damaging thing that can happen to your credit score.`,
+              audioPrompt: `Payment history is whether you've paid past credit accounts on time, {name}. It is the single most important factor in your FICO score, making up about 35 percent of the calculation. Late payments, especially 60 or more days late, are the most damaging thing that can happen to your score. A single late payment can drop your score by 50 to 100 points or more. The only way to build strong payment history is through consistency over years. There is no shortcut. Each on-time payment adds to a track record that compounds over time. Each missed payment creates a negative mark that stays on your report for seven years. The single most important credit habit is paying every bill on time, every time.`,
+            },
+            {
+              word: `credit mix`,
+              definition: `The variety of credit types in your history. Having both revolving credit (credit cards) and installment loans (auto, mortgage, student) contributes about 10% to your FICO score.`,
+              audioPrompt: `Credit mix is the variety of credit types in your history, {name}. Having both revolving credit, like credit cards, and installment loans, like auto loans, mortgages, or student loans, contributes about 10 percent to your FICO score. Revolving credit has no fixed end date and a balance that fluctuates based on your spending. Installment loans have fixed payments over a defined term. Lenders like to see that you can manage both types responsibly. Credit mix is the least important FICO factor, so you should not open loans you don't need just to diversify. But if you naturally have both types through normal financial life, it modestly helps your score.`,
             },
           ],
         },
@@ -96,6 +116,16 @@ const MONEYBUSINESS_VOYAGER_L07 = {
               definition: `When a lender pulls your credit report as part of evaluating you for new credit. Each hard inquiry temporarily lowers your score slightly and stays on your report for 2 years.`,
               audioPrompt: `A hard inquiry is when a lender pulls your credit report as part of evaluating you for new credit, {name}. Applying for a credit card, mortgage, or auto loan triggers a hard inquiry. Each hard inquiry temporarily lowers your score by a few points and stays on your report for two years, though its impact fades quickly. Multiple hard inquiries in a short period look like financial distress and lower your score more significantly. There's a difference between hard inquiries (which affect your score) and soft inquiries (checking your own score, employer background checks, which don't affect your score).`,
             },
+            {
+              word: `soft inquiry`,
+              definition: `A credit check that does not affect your score. Checking your own credit, employer background checks, and pre-approval offers are soft inquiries. Safe to do as often as you want.`,
+              audioPrompt: `A soft inquiry is a credit check that does not affect your score, {name}. Checking your own credit report or score is a soft inquiry. Employer background checks are soft inquiries. When a credit card company pre-approves you for an offer, that check is also a soft inquiry. Soft inquiries are safe to do as often as you want without any impact on your FICO score. Many people avoid checking their own credit because they fear it will hurt their score. This is wrong. Checking your own credit is always a soft inquiry. Only formal applications for new credit, where a lender is considering extending you new credit, trigger the hard inquiry that temporarily affects your score.`,
+            },
+            {
+              word: `length of credit history`,
+              definition: `How long your credit accounts have been open, including average account age and the age of your oldest account. Contributes about 15% to your FICO score. Closing old accounts can hurt by shortening your average account age.`,
+              audioPrompt: `Length of credit history is how long your credit accounts have been open, {name}. It includes both average account age and the age of your oldest account. This factor contributes about 15 percent to your FICO score. A person with one perfect year of credit history will score lower than someone with ten perfect years, even with identical payment history and utilization. This is why closing old credit card accounts can hurt your score: it shortens your average account age and reduces your history. The time factor cannot be rushed. It's one of the reasons starting your credit history early, such as becoming an authorized user before 18, has real long-term value.`,
+            },
           ],
         },
 
@@ -118,6 +148,16 @@ const MONEYBUSINESS_VOYAGER_L07 = {
               definition: `Federal law (1970) that governs how credit information can be collected, shared, and disputed. Gives consumers the right to dispute inaccurate information for free.`,
               audioPrompt: `The Fair Credit Reporting Act is a federal law from 1970 that governs how credit information can be collected, shared, and disputed, {name}. It gives consumers important rights. You can request a free copy of your credit report annually from each of the three major bureaus through annualcreditreport.com. You can dispute inaccurate information for free. Credit bureaus must investigate disputes within 30 days. Inaccurate information must be corrected or removed. Knowing your rights under this law is one of the most useful financial literacy facts. You don't need to pay a credit repair company to exercise rights the federal government already gives you for free.`,
             },
+            {
+              word: `dispute`,
+              definition: `A formal challenge to inaccurate information on your credit report. Federal law requires credit bureaus to investigate disputes within 30 days. Free to do yourself. The legitimate core of credit repair that you don't need to pay for.`,
+              audioPrompt: `A dispute is a formal challenge to inaccurate information on your credit report, {name}. Federal law requires credit bureaus to investigate disputes within 30 days. If something on your report is genuinely wrong, such as a payment marked late when you actually paid on time, you can dispute it yourself for free by writing to the credit bureau. About 5 percent of consumers have errors serious enough to affect their score. Disputing those errors is real and worthwhile. What credit repair companies charge hundreds or thousands of dollars to do, you can do yourself for free. The dispute process is the legitimate core of credit repair. Paying someone to do it for you is paying for confusion, not expertise.`,
+            },
+            {
+              word: `7-year rule`,
+              definition: `Most negative credit information, including late payments and collections, must be removed from your credit report after 7 years. Bankruptcies stay for 10 years. Accurate negative information cannot be legally removed early.`,
+              audioPrompt: `The 7-year rule means most negative credit information must be removed from your credit report after 7 years from the date of first delinquency, {name}. Late payments, collections, and charge-offs all fall off after 7 years. Bankruptcies stay for 10 years. This is federal law. Accurate negative information cannot be legally removed early, regardless of what credit repair companies claim. If you genuinely missed payments or defaulted on debts, that record stays for the full period. This is one of the most important facts for evaluating credit repair pitches. Any company promising to remove accurate negative items before 7 years is either going to fail or commit fraud on your behalf.`,
+            },
           ],
         },
 
@@ -139,6 +179,16 @@ const MONEYBUSINESS_VOYAGER_L07 = {
               word: `authorized user`,
               definition: `Someone added to another person's credit card account with permission. The cardholder's credit history (good or bad) often shows up on the authorized user's credit report. A common "head start" tool for young people.`,
               audioPrompt: `An authorized user is someone added to another person's credit card account with permission, {name}. The primary cardholder's credit history, both good and bad, often shows up on the authorized user's credit report. This is one of the most powerful tools for giving a young person a head start on credit. A parent or other family member with a good credit history adds you as an authorized user. The card's payment history starts building your credit report before you turn 18. Just make sure the card has good standing. Bad history on the primary card hurts you too.`,
+            },
+            {
+              word: `co-signing`,
+              definition: `Agreeing to be legally responsible for someone else's debt if they don't pay. Co-signing can destroy your credit score and leave you liable for the full debt if the primary borrower defaults.`,
+              audioPrompt: `Co-signing is agreeing to be legally responsible for someone else's debt if they don't pay, {name}. If a friend asks you to co-sign their auto loan and they default, you are legally responsible for the full remaining balance and the default will appear on your credit report. Co-signing in your early 20s is one of the most common ways to destroy your credit for a favor to someone else. It is different from being an authorized user, where you benefit from someone else's good history. In co-signing, you absorb their potential failures. The lesson is clear: avoid co-signing loans for anyone whose financial reliability you cannot be completely certain of.`,
+            },
+            {
+              word: `pay in full`,
+              definition: `Paying the entire credit card balance each billing cycle. Avoids all interest charges. Builds credit just as effectively as carrying a balance. The correct habit from the first bill.`,
+              audioPrompt: `Paying in full means paying the entire credit card balance each billing cycle, {name}. Paying in full avoids all interest charges while still building your credit score. There is a widespread myth that carrying a balance helps build credit. It does not. You build credit by using the card and paying it off, not by paying interest. Paying in full from the first bill is the correct habit to establish. It also prevents the compounding debt trap that catches many first-time credit card holders who only pay minimums. Every dollar of credit card interest you pay is money that could have been saved or invested. The habit of paying in full is one of the highest-ROI financial habits you can build.`,
             },
           ],
         },

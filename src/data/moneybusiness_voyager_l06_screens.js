@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L06 = {
               definition: `The cost of borrowing money, expressed as a percentage per year. Determines how fast debt grows when not paid down. The single most important factor in evaluating any debt.`,
               audioPrompt: `An interest rate is the cost of borrowing money, expressed as a percentage per year, {name}. It is the single most important factor in evaluating any debt. A 6% mortgage and a 22% credit card are fundamentally different financial tools because of their rates, even though they're both debt. The interest rate determines how fast the debt grows when not paid down. The Rule of 72 from lesson 2 applies: divide 72 by the rate to estimate how fast the debt doubles. At 22%, debt doubles in about 3.3 years. At 6%, it doubles in 12 years. The math doesn't care about your intentions.`,
             },
+            {
+              word: `secured debt`,
+              definition: `Debt backed by an asset the lender can take if you default. Mortgages are secured by the house. Auto loans are secured by the car. Secured debt typically has lower interest rates because the lender has fewer remedies if you don't pay.`,
+              audioPrompt: `Secured debt is debt backed by an asset the lender can take if you default, {name}. Mortgages are secured by the house. Auto loans are secured by the car. If you stop paying a secured loan, the lender can repossess the collateral to recover what you owe. Because the lender has this protection, secured debt typically has lower interest rates. Unsecured debt, like credit cards and personal loans, has nothing backing it. The lender has fewer remedies if you don't pay, which is why unsecured debt usually carries higher interest rates. Understanding this distinction explains why the same person can get a 6% rate on a mortgage and a 22% rate on a credit card.`,
+            },
+            {
+              word: `collateral`,
+              definition: `An asset pledged to secure a loan. If the borrower defaults, the lender can seize the collateral. The presence of valuable collateral reduces a lender's risk and typically lowers the interest rate.`,
+              audioPrompt: `Collateral is an asset pledged to secure a loan, {name}. If the borrower defaults, the lender can seize the collateral to recover what they're owed. A house is the collateral on a mortgage. A car is the collateral on an auto loan. The presence of valuable collateral reduces the lender's risk, which is why collateralized loans typically have lower interest rates. Borrowers with strong credit histories, stable income, and valuable collateral get the lowest rates. Borrowers seen as risky, with poor credit, unstable income, and no collateral, pay the highest rates. The interest rate system is essentially a price based on the lender's predicted risk.`,
+            },
           ],
         },
 
@@ -70,6 +80,16 @@ const MONEYBUSINESS_VOYAGER_L06 = {
               word: `ROI`,
               definition: `Return on Investment. The ratio of gain or loss to cost. ROI of 100% means doubling your money. The fundamental metric for evaluating whether any investment, including debt, was worth it.`,
               audioPrompt: `ROI stands for Return on Investment, {name}. It is the ratio of gain or loss to cost. If you invest $100 and end up with $150, your ROI is 50%. If you invest $100 and end up with $80, your ROI is negative 20%. ROI is the fundamental metric for evaluating whether any investment was worth it, including educational investments and business investments funded by debt. A degree that costs $80,000 in loans and produces $900,000 of additional lifetime earnings has a stunning ROI. A degree that costs the same but produces no additional earnings has a terrible one.`,
+            },
+            {
+              word: `positive leverage`,
+              definition: `Borrowing money at a lower interest rate than the return on what you buy with it. If you borrow at 6% to buy an asset returning 10%, the debt is working in your favor.`,
+              audioPrompt: `Positive leverage is borrowing money at a lower interest rate than the return on what you buy with it, {name}. If you borrow at 6 percent to buy real estate that produces 10 percent returns, the debt is working in your favor. Every dollar borrowed earns 4 percent more than it costs. This is why real estate investors often use mortgages strategically. The same logic applies to a business loan at 8 percent funding a business that earns 20 percent on investment. Positive leverage amplifies your returns. Negative leverage, borrowing at 22 percent for something that produces zero return, destroys wealth at the same compounding rate. The interest rate on the debt versus the return on what it buys determines which you're experiencing.`,
+            },
+            {
+              word: `lifetime earnings`,
+              definition: `Total income earned over a working career. Used to evaluate whether an educational investment, like a degree, produces enough additional income to justify its cost.`,
+              audioPrompt: `Lifetime earnings is the total income earned over a working career, {name}. Economists and financial planners use it to evaluate whether an educational investment produces enough additional income to justify its cost. As of 2026, the Bureau of Labor Statistics tracks median earnings by education level. A median bachelor's degree holder earns about $65,000 per year versus $42,000 for someone with just a high school diploma. Over a 40-year career, that difference is roughly $900,000 before taxes. Against a $40,000 to $80,000 student loan, the ROI is dramatic. But this varies enormously by major, school, and career path. A degree that produces little or no incremental earnings versus not attending is not good debt regardless of how large the loan.`,
             },
           ],
         },
@@ -92,6 +112,16 @@ const MONEYBUSINESS_VOYAGER_L06 = {
               definition: `The loss of value over time. Cars, electronics, and most consumer goods depreciate. Real estate, stocks, and productive assets typically appreciate. Borrowing to buy depreciating assets is usually bad debt.`,
               audioPrompt: `Depreciation is the loss of value over time, {name}. Cars depreciate rapidly: a new car loses 20 to 30 percent of its value the moment you drive it off the lot. Electronics depreciate as new versions come out. Most consumer goods depreciate. The opposite is appreciation: gaining value over time. Real estate, stocks, and productive assets typically appreciate. Borrowing money to buy depreciating assets is usually bad debt because you're paying interest on top of an asset that's losing value. Borrowing to buy appreciating assets can be good debt when the appreciation exceeds the interest cost.`,
             },
+            {
+              word: `minimum payment`,
+              definition: `The smallest payment allowed on a credit card or loan each billing cycle. Paying only minimums on credit card debt keeps most of the balance intact and dramatically increases total cost over time.`,
+              audioPrompt: `A minimum payment is the smallest payment allowed on a credit card or loan each billing cycle, {name}. Credit card companies set minimum payments very low, typically around 1 to 2 percent of the balance, because keeping balances large earns them the most interest. A $5,000 credit card balance at 22 percent interest with only minimum payments takes about 27 years to pay off and costs over $11,000 in interest. You pay more than double the original balance just in interest charges. Minimum payments are not a neutral option. They are how credit card debt becomes one of the most reliable wealth destroyers in modern personal finance. Always pay the full balance when possible.`,
+            },
+            {
+              word: `buy now pay later`,
+              definition: `Short-term financing services that split purchases into installments, often with deferred interest or fees for missed payments. Can encourage spending beyond means and report defaults to credit agencies.`,
+              audioPrompt: `Buy now pay later, often abbreviated as BNPL, is a short-term financing service that splits purchases into installments, {name}. Services like Klarna, Afterpay, and Affirm allow you to buy something now and pay in four or more installments. They sound convenient, but they have hidden costs. Missed payments trigger significant fees. Some charge interest that was deferred from the start. They make it easy to spend beyond your means by reducing the immediate sticker price. Defaults get reported to credit agencies, damaging your credit score. BNPL is not inherently a scam, but it is a tool designed to make purchasing feel less expensive than it is. Using it for necessities you could not otherwise afford is a form of bad debt.`,
+            },
           ],
         },
 
@@ -113,6 +143,16 @@ const MONEYBUSINESS_VOYAGER_L06 = {
               definition: `Annual Percentage Rate. The yearly cost of borrowing, including interest and most fees. Required by federal law to be disclosed on loans. Payday loans often have APRs of 300-700%.`,
               audioPrompt: `APR stands for Annual Percentage Rate, {name}. It is the yearly cost of borrowing, including interest and most fees. APR is required by federal law to be disclosed on most loans. APR makes loans comparable: a payday loan with 15% interest in two weeks has an APR over 390% because of how the interest compounds annualized. A credit card with 1.83% monthly interest has an APR of about 22%. Always look at APR, not just monthly interest rate or total fees, when comparing loans. The disclosed APR is the most honest single number for evaluating any loan.`,
             },
+            {
+              word: `payday loan`,
+              definition: `A short-term, high-cost loan typically due on the borrower's next payday. Annual percentage rates often exceed 400%. About 80% of payday loans are rolled over or followed by another loan within two weeks, trapping borrowers in cycles of debt.`,
+              audioPrompt: `A payday loan is a short-term, high-cost loan typically due on the borrower's next payday, {name}. A typical payday loan works like this: you borrow $300 for two weeks and owe $345 at the end. That is 15 percent interest in two weeks, which annualizes to an APR of about 391 percent. About 80 percent of payday loans are rolled over or followed by another loan within two weeks because borrowers cannot afford the lump sum repayment. The cycle traps people in debt for months or years. Payday loans are legal in many states because they're profitable for lenders, not because they're good for borrowers. They exist at the extreme end of what this lesson calls ugly debt.`,
+            },
+            {
+              word: `predatory lending`,
+              definition: `Lending practices designed to trap borrowers in cycles of debt through high fees, complex terms, and deliberately confusing contracts. Targets financially vulnerable people who have fewer alternatives.`,
+              audioPrompt: `Predatory lending refers to practices designed to trap borrowers in cycles of debt, {name}. Payday lenders, subprime auto lenders, rent-to-own stores, and certain student loan programs share the pattern: complex contracts, hidden fees, terms most borrowers don't fully understand, and pricing designed to extract maximum revenue from financially vulnerable people. Predatory lenders often target people who have poor credit or limited options, knowing they have nowhere else to turn. These businesses are often legal, which is part of what makes them so harmful. Recognizing the patterns of predatory lending, high APR, complex fee structures, automatic rollovers, and deliberately confusing contracts, is one of the most valuable financial literacy skills you can develop.`,
+            },
           ],
         },
 
@@ -133,6 +173,16 @@ const MONEYBUSINESS_VOYAGER_L06 = {
               word: `principal balance`,
               definition: `The current amount owed on a loan, separate from interest. As you make payments, part goes to principal (reducing the balance) and part goes to interest.`,
               audioPrompt: `Principal balance is the current amount owed on a loan, separate from interest, {name}. As you make payments, part of each payment goes to principal, reducing the balance, and part goes to interest, paying for the use of borrowed money. Early in a long-term loan like a mortgage, most of each payment goes to interest. Late in the loan, most goes to principal. This is why the total cost of a 30-year mortgage is so high even at reasonable interest rates: the early years are mostly interest. Knowing this helps you decide whether paying extra toward principal makes sense.`,
+            },
+            {
+              word: `amortization`,
+              definition: `The process of gradually paying off a loan through regular payments. Early payments go mostly to interest; later payments go mostly to principal. A 30-year mortgage takes 30 years to fully amortize.`,
+              audioPrompt: `Amortization is the process of gradually paying off a loan through regular payments over time, {name}. Early payments go mostly to interest. Later payments go mostly to principal. On a 30-year mortgage, the first payment might be 85 percent interest and 15 percent principal. Ten years in, the split starts shifting. At the very end, payments are almost entirely principal. This is why total interest paid on a long mortgage is so high even at reasonable rates. Understanding amortization helps you see why paying extra toward principal early in a loan saves so much more interest than paying extra late in the loan. Every extra dollar toward principal eliminates all future interest on that dollar.`,
+            },
+            {
+              word: `cumulative effect`,
+              definition: `The total result of many small decisions building on each other over time. Bad debt decisions made repeatedly produce financial lives that become hard to escape. Good debt decisions compound into wealth.`,
+              audioPrompt: `Cumulative effect is the total result of many small decisions building on each other over time, {name}. Most adults end up in serious financial trouble not from one dramatic mistake but from small bad debt decisions made repeatedly. A car loan slightly too large. Credit card debt that built gradually. A second loan. Each individual decision seemed manageable. The cumulative effect over years was a financial life that became very hard to escape. The same principle works in reverse for good decisions. A mortgage that builds equity. A student loan that produces higher income. A small business loan that creates a thriving venture. Small good debt decisions made consistently compound into real wealth. The cumulative effect, in either direction, is what actually determines where you end up financially.`,
             },
           ],
         },

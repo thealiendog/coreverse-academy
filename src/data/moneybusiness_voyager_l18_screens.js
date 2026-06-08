@@ -51,6 +51,16 @@ const MONEYBUSINESS_VOYAGER_L18 = {
               definition: `A person's reflective evaluation of how good their life is overall. Different from day-to-day emotional well-being. Income tends to affect life satisfaction more than daily emotional experience, especially at higher levels.`,
               audioPrompt: `Life satisfaction is a person's reflective evaluation of how good their life is overall, {name}. Different from day-to-day emotional well-being. When you think about your life as a whole, how satisfied are you with it? That's life satisfaction. Income tends to affect life satisfaction more than daily emotional experience, especially at higher levels. Someone earning a lot can have a high life satisfaction (the reflective assessment) while still having a moderate day-to-day emotional experience. Both measures matter. Knowing the difference helps you understand research findings that initially seem contradictory.`,
             },
+            {
+              word: `emotional well-being`,
+              definition: `How often a person experiences pleasant versus unpleasant feelings in day-to-day life. The measure the Kahneman-Deaton study found plateauing around $75K. Different from life satisfaction, which reflects longer-term evaluation.`,
+              audioPrompt: `Emotional well-being is how often a person experiences pleasant versus unpleasant feelings in day-to-day life, {name}. It is the measure the 2010 Kahneman-Deaton study found plateauing around $75,000 per year. Daily experience surveys ask people to report their emotions at random moments, capturing real-time emotional well-being rather than reflective assessments. This is different from life satisfaction, which asks how good your life is overall when you think about it carefully. Income tends to produce a weaker plateau effect on life satisfaction than on day-to-day emotional well-being. Understanding the distinction explains why the research findings that seemed contradictory actually captured different aspects of the same complex picture.`,
+            },
+            {
+              word: `autonomy`,
+              definition: `The sense that your actions are self-directed. One of three universal psychological needs identified by self-determination theory. Consistently predicts happiness and life satisfaction, often as strongly as income.`,
+              audioPrompt: `Autonomy is the sense that your actions are self-directed, {name}. It is one of three universal psychological needs identified by self-determination theory research. The other two are competence, the sense of feeling effective, and relatedness, the sense of feeling connected to others. Decades of research find that meeting these three needs is at least as predictive of well-being as income. Autonomy explains why some people prefer lower-paying self-directed work over higher-paying constrained work. When people feel controlled rather than self-directed, their well-being suffers even when their income is high. Income can support autonomy by reducing financial stress, but money alone does not substitute for the experience of genuine self-direction.`,
+            },
           ],
         },
 
@@ -73,6 +83,16 @@ const MONEYBUSINESS_VOYAGER_L18 = {
               definition: `When the relationship between two variables flattens out beyond a certain point. The Kahneman-Deaton finding suggested emotional well-being plateaued around $75K of household income in 2010. Later research has complicated this.`,
               audioPrompt: `A plateau effect is when the relationship between two variables flattens out beyond a certain point, {name}. The Kahneman-Deaton finding from 2010 suggested emotional well-being plateaued around 75,000 dollars of household income in that era. Beyond that level, more money didn't seem to produce more daily emotional well-being on average. The finding was widely reported as proving "money stops mattering at 75K." Later research has complicated this picture. The plateau may have been partially a measurement artifact. The exact level varies by location and time. And the plateau effect for emotional well-being doesn't apply to life satisfaction in the same way.`,
             },
+            {
+              word: `cross-sectional design`,
+              definition: `A research approach that studies many people at one point in time rather than following the same people over time. Useful for identifying patterns but cannot fully separate correlation from causation or income from other correlated factors.`,
+              audioPrompt: `A cross-sectional design is a research approach that studies many people at one point in time rather than following the same people over time, {name}. The Kahneman-Deaton 2010 study analyzed 450,000 survey responses collected at a single point. This allowed them to find patterns across a large sample but couldn't fully separate income's effects from other factors that correlate with income, such as education, health, or job type. Cross-sectional research is valuable for identifying patterns at scale. Its limitation is that correlation does not establish causation. Longitudinal research, which follows the same people over years, is better at establishing causation but is harder to do at large scale.`,
+            },
+            {
+              word: `measurement artifact`,
+              definition: `A finding that appears in research data because of how the measurement was designed, not because of a real underlying pattern. The apparent $75K plateau may partly reflect measurement artifacts in survey design that limited variation at the top of the scale.`,
+              audioPrompt: `A measurement artifact is a finding that appears in research data because of how the measurement was designed, not because of a real underlying pattern, {name}. In the Kahneman-Deaton happiness study, the apparent plateau around $75,000 may partly reflect a measurement artifact. The original survey instrument only allowed limited variation at the top of the happiness scale. High-income respondents couldn't report being much happier than middle-income respondents because the survey didn't give them room to do so. When Killingsworth used a finer-grained real-time measurement approach with his Track Your Happiness app, the plateau disappeared. This is why measurement methodology matters in research evaluation.`,
+            },
           ],
         },
 
@@ -94,6 +114,16 @@ const MONEYBUSINESS_VOYAGER_L18 = {
               word: `diminishing returns`,
               definition: `When each additional unit of input produces less additional output than the previous unit. Income shows diminishing returns to happiness: going from $40K to $80K typically matters more than going from $140K to $180K.`,
               audioPrompt: `Diminishing returns is when each additional unit of input produces less additional output than the previous unit, {name}. Income shows diminishing returns to happiness. Going from 40,000 dollars to 80,000 dollars typically produces a noticeable improvement in well-being for most people. Going from 140,000 dollars to 180,000 dollars typically produces a smaller improvement, though still positive. The relationship is roughly logarithmic: each doubling of income produces roughly similar happiness gains. This means the same 40,000 dollar increase has different impact depending on starting point. Doubling from 30K to 60K matters more than adding 40K to 200K.`,
+            },
+            {
+              word: `logarithmic relationship`,
+              definition: `A pattern where each doubling of a variable produces roughly equal increases in an outcome, so large absolute increases matter less at higher levels. The wealth-happiness relationship is roughly logarithmic.`,
+              audioPrompt: `A logarithmic relationship is a pattern where each doubling of a variable produces roughly equal increases in an outcome, {name}. The wealth-happiness relationship follows this pattern. Going from $30,000 to $60,000 in income, a doubling, produces a certain happiness gain. Going from $100,000 to $200,000, also a doubling, produces roughly the same happiness gain. But in absolute dollar terms, the second doubling required $100,000 more while the first required only $30,000 more. This means happiness gets harder and harder to increase through income alone as income rises. The logarithmic pattern explains why money matters more at lower incomes, where each dollar gets you closer to doubling, than at higher incomes, where each doubling requires enormous sums.`,
+            },
+            {
+              word: `real-time happiness reports`,
+              definition: `Happiness ratings collected at random moments via smartphone app rather than recalled in surveys. Killingsworth's Track Your Happiness methodology used 1.7 million such reports, producing finer-grained data than traditional surveys.`,
+              audioPrompt: `Real-time happiness reports are happiness ratings collected at random moments via smartphone app rather than recalled in surveys, {name}. Matthew Killingsworth collected over 1.7 million such reports from more than 33,000 people using his Track Your Happiness app. The method is valuable because it captures actual momentary experience rather than people's recollections of how they felt, which can be biased by recent events or overall life narrative. The finer-grained measurement this method provides was one reason Killingsworth found no clear plateau in the relationship between income and happiness: the traditional survey's scale limitations may have flattened real variation that the real-time method captured.`,
             },
           ],
         },
@@ -118,6 +148,16 @@ const MONEYBUSINESS_VOYAGER_L18 = {
               definition: `The longest-running study of adult life (started 1938, ongoing). Has followed participants for 80+ years. Consistently finds that quality of relationships predicts late-life health and happiness better than wealth or cholesterol.`,
               audioPrompt: `The Harvard Study of Adult Development is the longest-running study of adult life ever conducted, {name}. Started in 1938 and still ongoing, it has followed original participants for over 80 years. Its findings are among the most robust in well-being research because of the unusual time scale. The study consistently finds that the quality of a person's relationships at age 50 predicts their physical and mental health at age 80 better than cholesterol levels, blood pressure, or wealth. Loneliness has been linked to mortality risk comparable to smoking. The study provides some of the strongest evidence available that relationships matter enormously for long-term well-being.`,
             },
+            {
+              word: `flow`,
+              definition: `States of deep engagement in challenging, meaningful work where time seems to disappear. Mihaly Csikszentmihalyi's research finds flow consistently produces well-being. Work that provides flow is more satisfying than higher-paying work that doesn't.`,
+              audioPrompt: `Flow is a state of deep engagement in challenging, meaningful work where time seems to disappear, {name}. Mihaly Csikszentmihalyi's research identifies these states as consistently producing well-being. Flow happens when work is challenging enough to require full attention but not so hard it produces anxiety. People in lower-paying work that provides regular flow often report higher life satisfaction than people in higher-paying work that lacks it. This has important implications: income isn't the only variable in career decisions. The engagement quality of work matters for long-term happiness alongside income. Designing work life to include regular flow may matter as much as maximizing income, especially at income levels above basic financial security.`,
+            },
+            {
+              word: `meaning`,
+              definition: `The sense that your life serves a purpose larger than yourself. Consistently predicts higher life satisfaction. Can come from family, religion, civic involvement, art, or other sources. Independent of income at most levels.`,
+              audioPrompt: `Meaning is the sense that your life serves a purpose larger than yourself, {name}. Research consistently finds that people who see their life this way report higher life satisfaction, especially at the reflective level. Meaning can come from family, religion, civic involvement, creative work, science, or many other sources. The specific source matters less than the sense that what you do matters beyond just your own comfort. Meaning is largely independent of income at most income levels: people with lower incomes can have strong meaning, and people with high incomes can feel meaningless. This is why financial success alone rarely produces full life satisfaction. Income is one input among several, and meaning is one of the most powerful factors research has identified.`,
+            },
           ],
         },
 
@@ -138,6 +178,16 @@ const MONEYBUSINESS_VOYAGER_L18 = {
               word: `adversarial collaboration`,
               definition: `When researchers with different findings work together to design studies that resolve their disagreements. Strong methodology because both sides agree to the design before seeing results. Kahneman & Killingsworth's 2023 paper is a notable example.`,
               audioPrompt: `Adversarial collaboration is when researchers with different findings work together to design studies that resolve their disagreements, {name}. Strong methodology because both sides agree to the study design before seeing the results. The 2023 paper by Kahneman and Killingsworth is a notable example. Kahneman had found a happiness plateau at 75,000 dollars. Killingsworth had found no plateau. Rather than continue to disagree in separate papers, they collaborated on a study that could resolve the difference. The result was a richer understanding than either had alone. Adversarial collaboration is increasingly seen as a model for how science can resolve disagreements productively.`,
+            },
+            {
+              word: `cherry-picking`,
+              definition: `Selecting only the evidence that supports your conclusion while ignoring contradicting evidence. A source claiming "money buys happiness, period" is cherry-picking by highlighting the income-happiness relationship while ignoring diminishing returns and other well-being factors.`,
+              audioPrompt: `Cherry-picking is selecting only the evidence that supports your conclusion while ignoring contradicting evidence, {name}. A source claiming "money buys happiness, period" is cherry-picking: it highlights the real finding that income correlates with happiness while ignoring the equally real findings about diminishing returns, the plateau debate, and the independent importance of relationships, autonomy, and meaning. In well-being research, cherry-picking is especially common because the full picture is complex and nuanced while simplified claims are more persuasive. Recognizing cherry-picking requires knowing enough about the full evidence base to notice what's being left out. This is one reason media literacy and source evaluation matter so much in financial and scientific contexts.`,
+            },
+            {
+              word: `well-being research`,
+              definition: `The scientific study of what makes people happy, satisfied, and flourishing. Uses survey instruments, longitudinal studies, and real-time measurement. Produces more nuanced findings than popular "money vs happiness" framings suggest.`,
+              audioPrompt: `Well-being research is the scientific study of what makes people happy, satisfied, and flourishing, {name}. It uses survey instruments, longitudinal studies like the Harvard Study of Adult Development, and newer real-time measurement methods like Killingsworth's smartphone app. The research consistently produces more nuanced findings than popular "money vs happiness" framings suggest. Income matters, relationships matter, autonomy and meaning matter, health matters. Different dimensions of well-being respond differently to different inputs. Understanding the actual research puts you in a better position to design a life that produces genuine satisfaction rather than chasing the simplistic framing that either "money is everything" or "money doesn't matter."`,
             },
           ],
         },

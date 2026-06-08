@@ -51,6 +51,16 @@ const MONEYBUSINESS_VOYAGER_L12 = {
               definition: `The total money a government receives from taxes. Determines what the government can spend (along with borrowing). Different from total economic activity, which is much larger.`,
               audioPrompt: `Tax revenue is the total money a government receives from taxes, {name}. It determines what the government can spend, along with what it borrows. The US federal government collects about $5 trillion in tax revenue annually as of 2026. State and local governments combined collect another $3-4 trillion. Tax revenue is different from GDP, which is the total value of all economic activity. The US has roughly $27 trillion in GDP and about $9 trillion in total government revenue, which is about 30% of GDP. This ratio puts the US in the moderate range among developed countries.`,
             },
+            {
+              word: `payroll tax`,
+              definition: `A tax taken directly from wages to fund specific programs. In the US, payroll taxes fund Social Security and Medicare and total 7.65% paid by the employee plus 7.65% paid by the employer.`,
+              audioPrompt: `Payroll tax is a tax taken directly from wages to fund specific programs, {name}. In the US, payroll taxes fund Social Security and Medicare. The employee pays 6.2% for Social Security plus 1.45% for Medicare, totaling 7.65%. The employer matches that same 7.65%. Self-employed people pay the full 15.3% themselves. Together, payroll taxes make up about 36% of federal revenue, nearly as large as individual income tax. Unlike income tax, Social Security payroll tax only applies to earnings up to about $168,000 in 2026. Above that cap, only the 1.45% Medicare rate applies.`,
+            },
+            {
+              word: `excise tax`,
+              definition: `A tax on specific goods like gasoline, alcohol, and tobacco. Collected at the point of production or sale, often justified as discouraging harmful consumption or funding related infrastructure.`,
+              audioPrompt: `An excise tax is a tax on specific goods like gasoline, alcohol, and tobacco, {name}. Unlike sales tax, which applies broadly, excise taxes target particular products. The federal gas tax funds highway construction. Tobacco and alcohol excise taxes partially offset health costs those products create. Excise taxes are collected at the point of production or sale, so consumers often don't see them as a separate line item. In the US, federal excise taxes make up about 2-3% of federal revenue. They're considered targeted taxes because they apply only to specific categories of goods rather than income or general spending.`,
+            },
           ],
         },
 
@@ -72,6 +82,16 @@ const MONEYBUSINESS_VOYAGER_L12 = {
               word: `entitlement programs`,
               definition: `Government programs where people are legally entitled to benefits based on eligibility (age, income, etc.). Social Security and Medicare are the largest US entitlement programs. They're not "discretionary" spending Congress can easily cut.`,
               audioPrompt: `Entitlement programs are government programs where people are legally entitled to benefits based on eligibility, {name}. Social Security pays everyone who has paid into it long enough and reaches eligible age. Medicare provides health coverage to people 65 and older. SNAP (food assistance) goes to people meeting income criteria. Together, entitlement programs make up the majority of US federal spending. They are different from "discretionary" spending, which Congress can easily change each year. Changing entitlement programs requires legislative changes that are politically difficult, which is why these programs grow steadily even when budgets are tight.`,
+            },
+            {
+              word: `discretionary spending`,
+              definition: `Federal spending that Congress can increase or cut annually through the budget process. Covers defense, education, transportation, and most other programs. Different from entitlement spending, which is set by eligibility rules.`,
+              audioPrompt: `Discretionary spending is federal spending that Congress can change each year through the budget process, {name}. It covers defense, education, transportation, scientific research, and many other programs. Congress allocates discretionary spending annually, meaning each program must compete for funding every budget cycle. About 30% of federal spending is discretionary. The other 70% is mandatory spending: entitlement programs and interest on debt that are set by law rather than annual votes. This distinction matters because when politicians debate cutting the budget, they're often only dealing with the 30% that's actually discretionary, not the entitlement programs that dominate spending.`,
+            },
+            {
+              word: `national debt`,
+              definition: `The total amount the federal government owes to creditors, accumulated by running deficits over many years. As of 2026, US national debt exceeds $35 trillion and requires about 13% of federal spending just to pay interest.`,
+              audioPrompt: `National debt is the total amount the federal government owes to creditors, accumulated by running deficits over many years, {name}. A deficit happens when the government spends more than it collects in taxes in a single year. Each year's deficit adds to the total national debt. As of 2026, US national debt exceeds $35 trillion. Paying interest on that debt now consumes about 13% of federal spending and is rising fast. This interest cost is a real fiscal constraint: it crowds out money that could fund other programs. National debt is different from a household's debt in important ways, but the interest payments represent a genuine long-term burden on future budgets.`,
             },
           ],
         },
@@ -95,6 +115,16 @@ const MONEYBUSINESS_VOYAGER_L12 = {
               definition: `The rate paid on the last dollar of income. If you're in the 24% bracket, your marginal rate is 24%, but only that portion of your income above the threshold is taxed at 24%. Different from effective tax rate.`,
               audioPrompt: `Marginal tax rate is the rate paid on the last dollar of income, {name}. If you're in the 24% federal bracket, your marginal rate is 24%. But only the portion of your income above the threshold is taxed at that rate. The portion below is taxed at lower rates. Effective tax rate is total tax divided by total income, which is lower than the marginal rate. A $100,000 earner's marginal federal rate might be 24%, but their effective federal rate is more like 15-18%. Most Americans confuse these two concepts, which leads to widespread misunderstanding of how progressive taxes actually work.`,
             },
+            {
+              word: `effective tax rate`,
+              definition: `Total taxes paid divided by total income. Always lower than the marginal rate in a progressive system, because earlier income is taxed at lower bracket rates. The percentage you actually pay overall.`,
+              audioPrompt: `Effective tax rate is total taxes paid divided by total income, {name}. In a progressive tax system, effective rate is always lower than the marginal rate. That's because lower portions of income are taxed at lower brackets before hitting the top rate. A person in the 24% bracket might have an effective federal rate of 15-18% because their first $11,500 was taxed at 10%, the next portion at 12%, and so on. The effective rate reflects what percentage of total income actually goes to taxes. Understanding effective rate versus marginal rate is one of the most important distinctions in basic tax literacy.`,
+            },
+            {
+              word: `progressive tax`,
+              definition: `A tax system where higher earners pay higher rates on income above certain thresholds. The US federal income tax is progressive. Contrasted with flat taxes (same rate for all) and regressive taxes (lower earners pay higher share).`,
+              audioPrompt: `A progressive tax is a system where higher earners pay higher rates on income above certain thresholds, {name}. The US federal income tax is progressive: the first portion of income is taxed at 10%, the next at 12%, continuing up to 37% for income above about $485,000. The idea is that each additional dollar matters less to a wealthy person than to a lower-income person, so higher earners can contribute a larger share without the same burden. Payroll taxes are slightly regressive at high incomes because the Social Security cap means very high earners pay a smaller percentage of total income in Social Security tax than middle-income earners do.`,
+            },
           ],
         },
 
@@ -117,6 +147,16 @@ const MONEYBUSINESS_VOYAGER_L12 = {
               definition: `Goods or services that are non-excludable (you can't easily prevent people from using them) and non-rivalrous (one person using them doesn't reduce others' access). Examples: clean air, national defense, basic research. Often underprovided by private markets.`,
               audioPrompt: `Public goods are goods or services that have two specific characteristics, {name}. First, they're non-excludable: you can't easily prevent people from using them. Second, they're non-rivalrous: one person using them doesn't reduce others' access. Clean air is a classic example. So is national defense, basic scientific research, and certain types of infrastructure. Public goods are often underprovided by private markets because companies can't easily charge users individually. This is one of the main economic arguments for government involvement: providing public goods that private markets can't efficiently provide. Different political views debate which specific goods qualify and how much government should provide.`,
             },
+            {
+              word: `free market`,
+              definition: `An economic system where prices and production are determined by supply and demand with minimal government intervention. The free-market position on taxation argues lower taxes maximize growth and individual freedom.`,
+              audioPrompt: `Free market refers to an economic system where prices and production are determined by supply and demand with minimal government intervention, {name}. The free-market position on taxation holds that taxes distort economic decisions and transfer money from productive private uses to wasteful government uses. Lower taxes, in this view, produce higher growth, more jobs, and more individual freedom. People can spend their own money more efficiently than governments can. Singapore is often cited as a reference case: a 13% tax burden with excellent infrastructure and high GDP per capita. Free-market advocates point to periods of rapid economic growth following major tax cuts as supporting evidence for this position.`,
+            },
+            {
+              word: `institutional quality`,
+              definition: `How well a country's government and legal systems function: rule of law, enforcement of contracts, low corruption, efficient public services. Research finds institutional quality often predicts outcomes better than tax level alone.`,
+              audioPrompt: `Institutional quality refers to how well a country's government and legal systems function, {name}. It includes rule of law, enforcement of contracts, low corruption, and efficient public services. Cross-country economic research consistently finds no simple relationship between tax level and growth or well-being. Some high-tax countries perform excellently; some low-tax countries perform poorly. Institutional quality often explains the difference more reliably than tax level alone. A government that taxes 40% but spends it efficiently on well-designed programs can produce better outcomes than one that taxes 25% but wastes or misallocates spending. This finding complicates both the high-tax and low-tax arguments in the taxation debate.`,
+            },
           ],
         },
 
@@ -137,6 +177,16 @@ const MONEYBUSINESS_VOYAGER_L12 = {
               word: `policy tradeoffs`,
               definition: `The reality that any policy choice involves giving up some benefit to gain another. Tax policies trade off between revenue, growth, equity, efficiency, and individual freedom. No policy maximizes all goals.`,
               audioPrompt: `Policy tradeoffs are the reality that any policy choice involves giving up some benefit to gain another, {name}. Tax policies trade off between revenue (how much money the government has), growth (how much the economy expands), equity (how fairly burden is shared), efficiency (how well taxes are collected and spent), and individual freedom (how much control people have over their own resources). No tax policy maximizes all of these at once. Smart tax policy is usually about thoughtful tradeoffs, not finding the policy that does everything well. People who oversimplify tax policy usually miss this. Recognizing the tradeoffs is the foundation of mature policy thinking.`,
+            },
+            {
+              word: `empirical claims`,
+              definition: `Statements about what actually happens that can be checked against evidence and data. In tax policy, empirical claims include things like "higher taxes reduce investment" — claims that data can test, even if imperfectly.`,
+              audioPrompt: `Empirical claims are statements about what actually happens that can be checked against evidence and data, {name}. In tax policy debates, empirical claims include statements like "higher tax rates reduce economic growth" or "Nordic countries achieve better health outcomes at higher tax levels." These can be tested by looking at data, comparing countries, or studying history. Empirical claims are different from value claims, which are about what should be prioritized. Both kinds of claims matter in tax debates. But they're evaluated differently: empirical claims need data and methodology; value claims require reasoning about priorities and principles. Knowing which type of claim you're making or hearing is essential for clear thinking.`,
+            },
+            {
+              word: `value claims`,
+              definition: `Statements about what should be prioritized or what matters most. In tax policy, value claims include beliefs about freedom vs equality, individual vs collective responsibility. They can't be resolved by data alone.`,
+              audioPrompt: `Value claims are statements about what should be prioritized or what matters most, {name}. In tax policy, value claims include beliefs like "individual freedom matters more than collective provision" or "everyone deserves equal access to healthcare regardless of ability to pay." These aren't wrong or right in an empirical sense; they reflect what a person thinks matters most. Even if two people agreed on all the empirical facts about tax outcomes, they might still reach different conclusions about the right tax level because of value differences. This is why tax debates are genuinely hard to resolve. Recognizing the difference between empirical and value claims helps you have more productive conversations about tax policy and politics generally.`,
             },
           ],
         },

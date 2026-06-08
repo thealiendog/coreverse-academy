@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L16 = {
               definition: `The internal rules a publication follows for accuracy, sourcing, conflict of interest disclosure, and corrections. Strong editorial standards distinguish journalism from commentary or marketing.`,
               audioPrompt: `Editorial standards are the internal rules a publication follows for accuracy, sourcing, conflict of interest disclosure, and corrections, {name}. Strong editorial standards distinguish real journalism from commentary or marketing. The Wall Street Journal, New York Times, Reuters, Associated Press, and Financial Times all maintain detailed editorial standards. They require multiple sources for major claims. They issue formal corrections when they get things wrong. They have clear policies about what relationships staff can have with companies they cover. Social media influencers and many digital outlets don't have these standards. Knowing whether the source you're reading has real editorial standards is one of the most useful signals for evaluating financial news.`,
             },
+            {
+              word: `paywall`,
+              definition: `A system requiring paid subscriptions to access content. Most quality financial journalism sits behind paywalls (WSJ ~$40/month, FT ~$80/month). The general pattern: paying for content correlates with quality, though not perfectly.`,
+              audioPrompt: `A paywall is a system requiring paid subscriptions to access content, {name}. Most quality financial journalism sits behind paywalls. The Wall Street Journal costs about $40 per month. The Financial Times runs around $80 per month. Bloomberg's professional terminal costs $24,000 per year. The free alternatives on social media and cable TV often have weaker editorial standards. The general pattern in journalism: paying for content correlates with quality, though not perfectly. This is because subscription-funded journalism creates incentives to be accurate and useful, while attention-funded content creates incentives to be dramatic and engaging. A $40 per month WSJ subscription that improves your financial decisions even slightly tends to pay for itself many times over.`,
+            },
+            {
+              word: `financial news`,
+              definition: `Information about money, markets, companies, and the broader economy including earnings reports, central bank decisions, economic data, market movements, and regulatory changes. Ranges from objectively important to daily noise dressed up as significant.`,
+              audioPrompt: `Financial news is information about money, markets, companies, and the broader economy, {name}. It includes corporate earnings reports, central bank decisions, economic data like jobs and inflation and GDP, market movements, regulatory changes, and geopolitical events affecting commerce. Some financial news is objectively important: a Federal Reserve decision that changes borrowing costs for the entire economy matters. Some is daily noise dressed up as significant: a single afternoon's stock movement typically changes nothing for long-term investors. Developing the ability to distinguish important financial news from noise is one of the most valuable skills in financial media literacy. Most cable financial TV is noise. Most quality newspaper financial journalism is signal.`,
+            },
           ],
         },
 
@@ -71,6 +81,16 @@ const MONEYBUSINESS_VOYAGER_L16 = {
               word: `conflict of interest`,
               definition: `When the financial or personal interests of the source could influence what they report. Real journalism discloses these. Many social media sources hide them. Always consider what the source gains if you believe them.`,
               audioPrompt: `A conflict of interest is when the financial or personal interests of the source could influence what they report, {name}. Real journalism discloses conflicts of interest. If a Wall Street Journal reporter owns shares in a company they're covering, the article will disclose this. If a financial advisor publishes research recommending a stock their firm has invested in, the report will disclose this. Many social media sources don't disclose conflicts. An influencer recommending a crypto coin may own a large position in that coin and benefit when followers buy. Always consider what the source gains if you believe them. Conflicts of interest don't make sources useless, but they should change how you weight the information.`,
+            },
+            {
+              word: `source verification`,
+              definition: `The process of checking claims with multiple independent sources before publishing. A core editorial standard for quality journalism. Without source verification, any claim can be published regardless of whether it is true.`,
+              audioPrompt: `Source verification is the process of checking claims with multiple independent sources before publishing, {name}. It is a core editorial standard for quality journalism. Major newspapers require reporters to have at least two independent sources for significant claims. This is why quality journalism often takes longer to publish breaking news: they're checking the story before running it. Social media content and cable TV hot takes have little or no source verification. The first report of a rumor can go viral before anyone checks whether it is true. Source verification is what separates information you can rely on from information that may simply be repeating a claim someone else made without checking it.`,
+            },
+            {
+              word: `subscription-funded`,
+              definition: `A business model where revenue comes from readers paying for content. Creates incentives for accuracy and usefulness. Contrasted with ad-funded and engagement-funded models that create incentives for drama and clicks.`,
+              audioPrompt: `Subscription-funded describes a business model where revenue comes from readers paying for content, {name}. This model creates incentives for accuracy and usefulness because paying subscribers who get bad information cancel. It is contrasted with ad-funded media, which depends on keeping eyeballs engaged, and engagement-funded social media, which rewards the most emotionally activating content. The Wall Street Journal and Financial Times are primarily subscription-funded. Cable financial TV is ad-funded. Social media influencers are engagement-funded. These different incentive structures help explain why the same event gets reported so differently across sources. The business model shapes the content, often more than the reporters' individual intentions do.`,
             },
           ],
         },
@@ -94,6 +114,16 @@ const MONEYBUSINESS_VOYAGER_L16 = {
               definition: `The proportion of useful information (signal) to useless information (noise) in a source. High signal-to-noise sources teach you things. Low signal-to-noise sources waste your time. Most cable financial TV has low signal-to-noise.`,
               audioPrompt: `Signal-to-noise ratio is the proportion of useful information to useless information in a source, {name}. High signal-to-noise sources teach you things you didn't know. Low signal-to-noise sources fill time without changing what you know or how you should act. Most cable financial TV has low signal-to-noise: hours of speculation and hot takes that don't lead to better decisions. Most quality newspaper financial journalism has higher signal-to-noise: each article typically delivers actual new information. Tracking signal-to-noise across your information sources helps you allocate attention more efficiently. The sources you check shouldn't be the sources you most enjoy; they should be the sources that most reliably inform you.`,
             },
+            {
+              word: `overtrading`,
+              definition: `Buying and selling investments too frequently, often driven by news-watching or emotion. Research consistently shows overtrading reduces returns due to transaction costs and poor timing. Buy-and-hold investors typically outperform active traders.`,
+              audioPrompt: `Overtrading is buying and selling investments too frequently, often driven by news-watching or emotional reactions to market movements, {name}. Research consistently shows overtrading reduces returns. Transaction costs pile up with every trade. Emotional reactions to short-term news tend to push people to sell low and buy high, the opposite of what builds wealth. Cable financial TV is one of the strongest drivers of overtrading: it creates the impression that constant market attention and trading responses are necessary. Buy-and-hold investors who never watch cable TV typically outperform daily viewers over long periods. The signal-to-noise problem is directly connected to the overtrading problem. More noise consumption leads to more emotional overreaction leads to worse outcomes.`,
+            },
+            {
+              word: `talking your book`,
+              definition: `When a money manager promotes investments they already own on media, hoping viewers buy and drive up the price before the manager sells. Well-documented pattern among cable financial TV guests.`,
+              audioPrompt: `Talking your book is when a money manager promotes investments they already own on media, hoping viewers buy and drive up the price before the manager sells, {name}. It is a well-documented pattern among cable financial TV guests. Hedge fund managers appearing on CNBC have a documented track record of selling their positions shortly after promoting them on air. The viewers who buy are providing liquidity the manager is selling into. This isn't necessarily illegal but it is a structural conflict of interest that makes the content unreliable. When you see a hedge fund manager enthusiastically recommending specific stocks on cable TV, the appropriate question is: what positions do they currently own? And are they selling into the buying their media appearance will generate?`,
+            },
           ],
         },
 
@@ -116,6 +146,16 @@ const MONEYBUSINESS_VOYAGER_L16 = {
               definition: `Expressing certainty in proportion to what you actually know. Calibrated experts say "I'm not sure" when uncertain. Uncalibrated influencers project confidence regardless. Calibrated confidence is one of the best signals of source quality.`,
               audioPrompt: `Calibrated confidence is expressing certainty in proportion to what you actually know, {name}. Calibrated experts say "I'm not sure" when uncertain. Uncalibrated influencers project confidence regardless of what they actually know. Strong calibration is one of the best signals of source quality. A real economist will say "the data is mixed on this question" because the data often is. A confident TikTok finance influencer claims certainty about market direction that no honest expert would claim. The more confident a source sounds about uncertain things, the more likely they are to be unreliable. Calibrated confidence is the opposite of charisma in many financial contexts.`,
             },
+            {
+              word: `engagement`,
+              definition: `Likes, shares, comments, and time spent on content. Social media platforms optimize for engagement. Dramatic financial claims drive more engagement than careful nuance, which pushes creators toward sensationalism regardless of accuracy.`,
+              audioPrompt: `Engagement refers to likes, shares, comments, and time spent on content, {name}. Social media platforms optimize for engagement because it drives advertising revenue. Dramatic claims drive more engagement than careful nuance. An influencer saying "this stock will 10x" drives more engagement than one saying "consistent index investing over 40 years builds wealth." Both might be allowed, but only one is accurate. The engagement incentive pushes creators toward the dramatic version even when they know better. This dynamic explains why social media financial content is structurally biased toward sensationalism. The platform's business model and the creator's revenue depend on engagement, not on the accuracy of the advice.`,
+            },
+            {
+              word: `affiliate link`,
+              definition: `A tracking link that pays the creator a commission when a viewer clicks and makes a purchase. A common hidden revenue source for financial social media creators who appear to be giving free advice.`,
+              audioPrompt: `An affiliate link is a tracking link that pays the creator a commission when a viewer clicks and makes a purchase, {name}. It is a common hidden revenue source for financial social media creators who appear to give free advice. A YouTube finance creator recommending a brokerage account may earn $50 or more for each viewer who opens an account through their link. A blogger reviewing financial products may earn commissions from every product they recommend positively. This creates a structural conflict of interest: the creator benefits financially from recommending the products they link to, regardless of whether those products are best for viewers. Good social media financial content discloses affiliate relationships. Content that doesn't disclose them is hiding a financial incentive.`,
+            },
           ],
         },
 
@@ -136,6 +176,16 @@ const MONEYBUSINESS_VOYAGER_L16 = {
               word: `media literacy`,
               definition: `The ability to evaluate information sources for reliability, bias, and conflicts of interest. Critical skill in any age but especially in financial contexts where billions of dollars flow toward content designed to influence you.`,
               audioPrompt: `Media literacy is the ability to evaluate information sources for reliability, bias, and conflicts of interest, {name}. It's a critical skill in any age but especially in financial contexts where billions of dollars flow toward content designed to influence you. Media-literate investors recognize when content is selling them something, when sources have conflicts of interest, when confidence is calibrated vs uncalibrated, and when information matches mainstream research vs deviates from it. Investors without media literacy get manipulated repeatedly throughout their lives, often without knowing it. Building media literacy is one of the most durable financial skills available.`,
+            },
+            {
+              word: `conspiracy framing`,
+              definition: `A rhetorical pattern claiming hidden information that authorities don't want you to know. A common manipulation tactic in financial social media: "Wall Street doesn't want you to know this." Positions the creator as insider and viewer as target of suppression.`,
+              audioPrompt: `Conspiracy framing is a rhetorical pattern claiming hidden information that authorities don't want you to know, {name}. In financial social media, the pattern sounds like "Wall Street doesn't want you to know this" or "banks are hiding this from you." It positions the creator as a brave insider sharing secrets and the viewer as the target of suppression. The framing is itself a manipulation tactic designed to lower critical thinking and increase emotional engagement. Real financial information isn't hidden by powerful forces and revealed by TikTok influencers. Mainstream financial journalism and research is public, accessible, and far more reliable than the conspiracy framing suggests. Recognizing this pattern is one of the fastest ways to identify low-quality financial content.`,
+            },
+            {
+              word: `source quality`,
+              definition: `The reliability of a source based on its editorial standards, conflict of interest disclosures, methodology, and track record. Source quality matters more than source charisma when evaluating financial information.`,
+              audioPrompt: `Source quality is the reliability of a source based on its editorial standards, conflict of interest disclosures, methodology, and track record, {name}. In financial media, source quality matters more than source charisma. A dry government regulatory report has high source quality: it uses rigorous methodology, discloses its data, and has no financial incentive to mislead you. A charismatic influencer with a compelling story and 2 million followers may have very low source quality: no editorial standards, undisclosed conflicts, unverifiable claims. The fundamental lesson of financial media literacy is to evaluate sources by their structure, not by how much you enjoy watching or reading them. Enjoyment and reliability are not the same thing, and in financial content they are often inversely related.`,
             },
           ],
         },

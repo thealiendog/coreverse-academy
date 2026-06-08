@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L09 = {
               definition: `Profit divided by revenue, expressed as a percentage. A coffee shop with $1,000 in revenue and $200 in profit has a 20% profit margin. Different industries have very different typical margins.`,
               audioPrompt: `Profit margin is profit divided by revenue, expressed as a percentage, {name}. A coffee shop with $1,000 in revenue and $200 in profit has a 20% profit margin. Different industries have very different typical margins. Grocery stores typically run 2-3% margins on huge revenue. Software companies often have 40-60% margins. Restaurants average 3-5%. Knowing typical margins for an industry helps you understand whether a business is healthy. A grocery store at 1% is in trouble. A software company at 1% is in even bigger trouble. The number means different things in different contexts.`,
             },
+            {
+              word: `revenue`,
+              definition: `The total money coming in from sales before any costs are deducted. Different from profit. A business can have high revenue and low profit, or low revenue and high profit.`,
+              audioPrompt: `Revenue is the total money coming in from sales before any costs are deducted, {name}. If a coffee shop sells 200 cups at $5 each, daily revenue is $1,000. Revenue is different from profit. Profit is what remains after subtracting all costs from revenue. A business with $50 million in revenue and $100,000 in profit is less valuable than a business with $10 million in revenue and $1 million in profit, because sustainable profitability matters more than raw sales size. Beginners often confuse revenue with profit. A business that announces high revenue is not necessarily a successful business. Always ask what the profit margin is.`,
+            },
+            {
+              word: `sustainable profit`,
+              definition: `Profit that can be maintained over time without burning out the business or its people. The real goal of any business, not just maximizing revenue or short-term gains.`,
+              audioPrompt: `Sustainable profit is profit that can be maintained over time without burning out the business or its people, {name}. The real goal of any business is to maximize sustainable profit, not just maximum revenue or one-time gains. A coffee shop that maximizes profit by overworking its staff will lose those employees and destroy quality. A business that discounts aggressively to boost sales might generate short-term revenue but erode the margins that make the business worth running. Sustainable means the economics work consistently for the long term. This is why knowing the difference between big revenue and sustainable profit is one of the most important business literacy concepts.`,
+            },
           ],
         },
 
@@ -71,6 +81,16 @@ const MONEYBUSINESS_VOYAGER_L09 = {
               word: `marginal cost`,
               definition: `The additional cost to produce one more unit of a product. Software has a marginal cost near zero (copying code is essentially free). Physical products have higher marginal costs.`,
               audioPrompt: `Marginal cost is the additional cost to produce one more unit of a product, {name}. Software has marginal cost near zero. Once Microsoft has built Word, making one more copy is essentially free. Physical products have higher marginal costs. Each iPhone Apple makes costs around $400-500 in materials and labor before shipping and marketing. Marginal cost matters because it determines the math of scaling. Low-marginal-cost businesses can scale enormously with high margins. High-marginal-cost businesses need volume and efficiency to make significant profit. The marginal cost difference is one of the most important features of any business model.`,
+            },
+            {
+              word: `scalability`,
+              definition: `The ability to grow revenue significantly without proportionally growing costs. Software and digital products are highly scalable. Service businesses are generally not, because each service requires similar effort regardless of volume.`,
+              audioPrompt: `Scalability is the ability to grow revenue significantly without proportionally growing costs, {name}. A software company that adds 1 million new users doesn't need to hire 1 million new employees to serve them. The product scales at near-zero marginal cost. A bakery that doubles its bread sales roughly needs to double its ingredients, staff, and oven time. Service businesses are especially hard to scale because each service requires similar effort regardless of volume. This is one of the fundamental economic differences between product and service businesses, and explains why software companies can become some of the world's most valuable companies while most service businesses stay relatively small.`,
+            },
+            {
+              word: `inventory risk`,
+              definition: `The financial risk of holding unsold products. If products don't sell, the money spent making them is lost. A major weakness of product businesses that service businesses don't face.`,
+              audioPrompt: `Inventory risk is the financial risk of holding unsold products, {name}. If you make 500 handmade candles and only sell 200, the materials and time invested in the other 300 are largely lost. Inventory risk is one of the main weaknesses of product businesses, especially for beginners. Service businesses don't have inventory risk. A lawn mowing business doesn't hold unsold lawns. A tutoring business doesn't stockpile unused tutoring hours. This is one reason service businesses are usually safer starting points for teen entrepreneurs than product businesses. You do the work, get paid, and have no unsold inventory sitting in your garage waiting to be written off.`,
             },
           ],
         },
@@ -94,6 +114,16 @@ const MONEYBUSINESS_VOYAGER_L09 = {
               definition: `An hour of work that a service business can charge a client for. Lawyers, consultants, and accountants typically structure their work around billable hours.`,
               audioPrompt: `A billable hour is an hour of work that a service business can charge a client for, {name}. Lawyers, consultants, accountants, freelance designers, and many other service businesses structure their work around billable hours. If a lawyer charges $300 per hour and works 40 billable hours per week, weekly revenue is $12,000 before expenses. Not all working hours are billable. Time spent on administration, marketing, or non-client work isn't billable. Typical professional service businesses have maybe 60 to 70 percent of working hours actually billable. The math of billable hours is the foundation of most service business economics.`,
             },
+            {
+              word: `revenue ceiling`,
+              definition: `The natural upper limit on how much a business can earn given its model and resources. Service businesses have a revenue ceiling tied to how many billable hours are available. Product businesses generally have higher or no ceilings.`,
+              audioPrompt: `A revenue ceiling is the natural upper limit on how much a business can earn given its model and resources, {name}. Service businesses have a revenue ceiling tied to how many billable hours are available. A consultant working 40 billable hours per week at $200 per hour earns a maximum of $8,000 per week regardless of how hard they work. Physical limits on time cap the business. Product businesses can break through this ceiling because each additional unit sold requires less proportional effort than a service requires. This is one of the main reasons entrepreneurs sometimes transition from service businesses to product businesses as they grow: to escape the revenue ceiling that comes with selling time.`,
+            },
+            {
+              word: `expertise`,
+              definition: `Deep skill or specialized knowledge in a specific area. The core asset of a service business. High-value expertise commands premium prices and is harder to replicate than products.`,
+              audioPrompt: `Expertise is deep skill or specialized knowledge in a specific area, {name}. It is the core asset of a service business. A skilled surgeon commands $5,000 per procedure. A skilled attorney charges $500 to $1,500 per hour. What they are selling is expertise, not materials or time on their own. High-value expertise is harder to replicate than products, which creates defensible pricing power. Service businesses that develop genuine expertise in high-demand areas can charge premium rates that product businesses rarely achieve per unit. The challenge is that expertise takes years to build and is tied to the individual who has it. If the expert stops working, the revenue stops.`,
+            },
           ],
         },
 
@@ -116,6 +146,16 @@ const MONEYBUSINESS_VOYAGER_L09 = {
               definition: `When a product or platform becomes more valuable as more people use it. Phones, social networks, and marketplaces have strong network effects. Often produces winner-take-all dynamics.`,
               audioPrompt: `Network effects happen when a product or platform becomes more valuable as more people use it, {name}. A phone is more valuable when more people have phones to call. A social network is more valuable when more friends are on it. A marketplace is more valuable when more buyers and sellers are using it. Network effects often produce winner-take-all dynamics. Once a platform reaches critical mass in a category, competitors struggle to gain ground because the established platform has more users, which makes it more valuable, which attracts more users. Facebook, Uber, Airbnb, and eBay all benefit from network effects in their categories.`,
             },
+            {
+              word: `transaction fee`,
+              definition: `A percentage of each transaction that a marketplace charges for facilitating the connection between buyers and sellers. Typically 5-30% of the transaction value. The primary revenue source for marketplace businesses.`,
+              audioPrompt: `A transaction fee is a percentage of each transaction that a marketplace charges for facilitating a connection between buyers and sellers, {name}. Airbnb charges roughly 3 percent from hosts and 14 percent from guests. Etsy charges around 6.5 percent per sale. eBay charges 8 to 15 percent depending on category. The fee is how the marketplace earns revenue without owning any of the products or performing any of the services. Because transaction fees on millions of transactions compound quickly, successful marketplaces can generate enormous revenue at very high profit margins. This is what makes marketplace businesses so appealing economically when they work, and why so many people try to build them.`,
+            },
+            {
+              word: `chicken-and-egg problem`,
+              definition: `The challenge marketplaces face when starting up: buyers won't come without sellers, and sellers won't come without buyers. The hardest barrier to entering marketplace businesses.`,
+              audioPrompt: `The chicken-and-egg problem is the challenge marketplaces face when starting up, {name}. Buyers won't use a marketplace without sellers to buy from. Sellers won't join a marketplace without buyers to sell to. Neither side wants to show up first. This is the hardest barrier to building a new marketplace business. Established marketplaces like Airbnb and Etsy spent years and enormous amounts of money solving this problem by subsidizing one side or both until a critical mass of users made the platform genuinely useful. For a 12-year-old thinking about starting a marketplace, this challenge is essentially insurmountable. It is one of the main reasons service businesses are usually the right starting model for teen entrepreneurs despite being less glamorous.`,
+            },
           ],
         },
 
@@ -137,6 +177,16 @@ const MONEYBUSINESS_VOYAGER_L09 = {
               word: `economies of scale`,
               definition: `When the cost per unit decreases as you produce more units. Manufacturing has strong economies of scale. Service businesses generally don't.`,
               audioPrompt: `Economies of scale happen when the cost per unit decreases as you produce more units, {name}. Manufacturing has strong economies of scale. The first iPhone Apple ever made was extremely expensive. The 100 millionth iPhone they made benefits from massive shared infrastructure, optimized supply chains, and learned efficiencies. The cost per unit is much lower at scale. Service businesses generally don't have economies of scale because each service requires similar effort regardless of how many you provide. A haircut takes about the same time and effort whether you're cutting your first hair or your ten-thousandth. This is one reason product businesses can grow much larger than most service businesses.`,
+            },
+            {
+              word: `service business`,
+              definition: `A business that sells someone's time or expertise. Requires low startup capital, teaches transferable skills, has low risk. Revenue tied to hours worked, making it hard to scale beyond personal time.`,
+              audioPrompt: `A service business sells someone's time or expertise, {name}. Babysitting, dog walking, lawn mowing, tutoring, plumbing, legal work, consulting: all service businesses. They are usually the easiest entry point for teen entrepreneurs because they require almost no capital to start. You need expertise and basic tools, not inventory or infrastructure. The skills a service business teaches, customer service, pricing, scheduling, managing client expectations, transfer to any future business or career. The limitation is that revenue is tied to hours available. A teen doing $25 per hour lawn mowing maxed out at 10 hours per week earns $250 per week. Real money for a 12-year-old, but the model has a ceiling.`,
+            },
+            {
+              word: `capital`,
+              definition: `Money or assets used to start and run a business. Service businesses require little capital. Product businesses require more. Marketplace businesses require substantial capital. Low capital requirements make service businesses accessible to teens.`,
+              audioPrompt: `Capital is money or assets used to start and run a business, {name}. Different business models require very different amounts of capital. Service businesses require little capital. A babysitter needs a phone and a recommendation. A lawn mower needs a lawn mower and maybe a few basic tools. Product businesses require more capital for materials, manufacturing, and inventory. Marketplace businesses require substantial capital to build and maintain technical infrastructure. Low capital requirements make service businesses the most accessible starting point for teen entrepreneurs. You do not need to save up or borrow to start. You need skill, time, and the willingness to find your first few customers.`,
             },
           ],
         },

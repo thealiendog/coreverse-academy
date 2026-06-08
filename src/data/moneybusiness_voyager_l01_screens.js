@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L01 = {
               definition: `The central bank of the United States. Controls money supply and interest rates. Independent from political branches, though appointed by the president and confirmed by the Senate.`,
               audioPrompt: `The Federal Reserve is the central bank of the United States, {name}. People call it the Fed. It controls the money supply and sets interest rates. It is technically independent from the political branches of government, though its leaders are appointed by the president and confirmed by the Senate. Almost every country has a central bank that does similar work. The Fed's decisions affect every loan, every mortgage, every credit card rate, and indirectly every job and price in the US. Understanding the Fed is one of the most useful pieces of financial literacy you can develop.`,
             },
+            {
+              word: `fractional reserve banking`,
+              definition: `The system by which banks create new money when they make loans, holding only a fraction of deposits as reserves. How most of the modern money supply actually grows.`,
+              audioPrompt: `Fractional reserve banking is the system by which banks create new money when they make loans, {name}. When a bank lends you $100,000 for a house, they don't take that money out of a vault. They create it in your account. Banks are required to hold only a fraction of deposits as reserves. This is how most of the modern money supply grows. It means that every loan a bank makes adds new money to the economy. It also means that if too many depositors try to withdraw at once, banks can face a crisis. The Federal Reserve manages this system through lending rules and interest rates.`,
+            },
+            {
+              word: `medium of exchange`,
+              definition: `One of money's three core functions: the ability to use it to buy goods and services instead of bartering directly. Along with store of value and unit of account, it defines what money is.`,
+              audioPrompt: `Medium of exchange is one of money's three core functions, {name}. It means you can use money to buy goods and services instead of trading directly, like bartering a chicken for a pair of shoes. Before money, economies relied on barter, which required both parties to want exactly what the other had. Money solved that problem. The other two functions are store of value, meaning you can save money and use it later, and unit of account, meaning prices and debts can all be measured in the same units. All three together define what makes something money.`,
+            },
           ],
         },
 
@@ -70,6 +80,16 @@ const MONEYBUSINESS_VOYAGER_L01 = {
               word: `GDP`,
               definition: `Gross Domestic Product. The total value of goods and services produced in a country in a year. The most common measure of how large or healthy an economy is.`,
               audioPrompt: `GDP stands for Gross Domestic Product, {name}. It is the total value of goods and services produced in a country in a year. It is the most common measure of how big and active an economy is. The US has the largest GDP of any country, around 27 trillion dollars in recent years. China is second. GDP isn't a perfect measure. It doesn't capture quality of life, environmental damage, or whether wealth is distributed fairly. But it gives you a useful starting picture of how an economy is doing. When you hear "the economy grew 2 percent," that usually means GDP grew 2 percent.`,
+            },
+            {
+              word: `recession`,
+              definition: `A period when GDP shrinks, unemployment rises, and economic activity contracts. Typically defined as two consecutive quarters of falling GDP. Calls for different policy responses than periods of growth.`,
+              audioPrompt: `A recession is a period when GDP shrinks, unemployment rises, and economic activity contracts, {name}. The standard definition is two consecutive quarters of falling GDP. During recessions, people lose jobs, so they spend less. Businesses sell less, so they cut further. The cycle can accelerate downward. This is exactly the scenario where the three government policy positions you will learn about, spending more, cutting spending, and targeted investment, disagree most sharply about what to do. Recessions are where economic theory meets real life.`,
+            },
+            {
+              word: `wealth distribution`,
+              definition: `How total economic output and assets are divided among people in an economy. A key dimension of economic health alongside GDP, employment, and prices.`,
+              audioPrompt: `Wealth distribution is how total economic output and assets are divided among people in an economy, {name}. An economy can have high GDP while most of the gains go to a small number of people. Or it can have moderate GDP with gains spread more broadly. Wealth distribution is one of the four key dimensions of economic health, alongside GDP, employment, and prices. They can all move in different directions at the same time, which is part of why economic news seems confusing. Understanding all four helps you interpret what is actually happening in the economy at any moment.`,
             },
           ],
         },
@@ -92,6 +112,16 @@ const MONEYBUSINESS_VOYAGER_L01 = {
               definition: `An economic school developed by John Maynard Keynes that argues governments should increase spending during recessions to stimulate the economy, even at the cost of running deficits.`,
               audioPrompt: `Keynesian economics is an economic school developed by John Maynard Keynes during the Great Depression, {name}. The core idea: when consumers and businesses stop spending in a recession, government should step in and spend, even if it has to borrow. This breaks the downward spiral and helps the economy recover. Once recovery is solid, government can pay back what it borrowed. Keynesianism dominated US and UK economic policy from the 1940s through the 1970s. It went out of fashion in the 1980s but came back during the 2008 crisis. It remains one of the most influential frameworks in modern macroeconomics.`,
             },
+            {
+              word: `stimulus package`,
+              definition: `Government spending designed to boost economic activity during a downturn. The 2008 American Recovery and Reinvestment Act was an $831 billion stimulus package.`,
+              audioPrompt: `A stimulus package is government spending designed to boost economic activity during a downturn, {name}. The 2008 American Recovery and Reinvestment Act was an $831 billion stimulus package. It funded infrastructure, extended unemployment benefits, and provided tax cuts. Unemployment peaked at 10 percent in October 2009 and gradually fell to 4 percent by 2018. Most economists credit the stimulus with shortening the recession. The COVID-19 stimulus packages in 2020 and 2021 were even larger and are generally credited with the unusually fast recovery from that economic crash. Stimulus packages are the Keynesian tool in action.`,
+            },
+            {
+              word: `Great Depression`,
+              definition: `The severe global economic crisis of the 1930s, triggered by the 1929 stock market crash. Led to widespread unemployment and poverty, and prompted the development of Keynesian economics.`,
+              audioPrompt: `The Great Depression was the severe global economic crisis of the 1930s, {name}. It was triggered by the 1929 stock market crash. Unemployment in the US reached 25 percent. Banks failed. International trade collapsed. It was the worst economic crisis in modern history. It also prompted the development of Keynesian economics, as John Maynard Keynes argued that only massive government spending could break the downward spiral. The New Deal programs of Franklin Roosevelt were largely Keynesian responses. The Great Depression shaped economic thinking and policy for generations.`,
+            },
           ],
         },
 
@@ -113,6 +143,16 @@ const MONEYBUSINESS_VOYAGER_L01 = {
               definition: `Economic policy of cutting government spending and often raising taxes, especially during recessions, to reduce deficits and let markets self-correct.`,
               audioPrompt: `Austerity is economic policy of cutting government spending and often raising taxes, {name}. The idea is to reduce government deficits and let markets correct themselves. Austerity policies were widely tried in Europe after the 2008 financial crisis. The results were mostly disappointing. Greece, Spain, and the UK all experienced longer and deeper economic problems than the US, which used more Keynesian stimulus. Most macroeconomists today are skeptical of pure austerity as a response to deep recessions, though debates continue about when and how much government spending makes sense.`,
             },
+            {
+              word: `government debt`,
+              definition: `The total amount a government owes to creditors from years of spending more than it collects in taxes. A core concern in austerity economics and a real constraint on government policy.`,
+              audioPrompt: `Government debt is the total amount a government owes to creditors from years of spending more than it collects in taxes, {name}. Austerity advocates argue this debt is a real problem that must be paid back eventually, and that excessive borrowing crowds out private investment and creates future tax burdens. The US national debt was around 34 trillion dollars as of 2024, and interest payments on it exceed the defense budget. Even Keynesian economists acknowledge the debt is real. They simply argue that the cost of letting recessions worsen is higher than the cost of borrowing to fight them.`,
+            },
+            {
+              word: `private investment`,
+              definition: `Money that businesses and individuals put into productive activities like new equipment, buildings, or companies. Austerity advocates argue heavy government borrowing crowds this out by pushing up interest rates.`,
+              audioPrompt: `Private investment is money that businesses and individuals put into productive activities, {name}. New equipment, factories, technology, or business expansion. Austerity advocates argue that when governments borrow heavily, they compete with private borrowers for available funds, pushing up interest rates and crowding out private investment. Less private investment means less economic growth in the long run. This is one of the core economic arguments for limiting government borrowing even during downturns. Keynesian economists counter that during recessions there is often insufficient private investment anyway, so government spending fills the gap.`,
+            },
           ],
         },
 
@@ -133,6 +173,16 @@ const MONEYBUSINESS_VOYAGER_L01 = {
               word: `targeted spending`,
               definition: `Government spending directed specifically toward investments with long-term returns: infrastructure, education, research, public health, clean energy. A middle position between general stimulus and general austerity.`,
               audioPrompt: `Targeted spending is government spending directed specifically toward investments with long-term returns, {name}. The idea is that not all government dollars produce equal value. A dollar spent on roads, bridges, schools, or scientific research can pay off for decades. A dollar spent on short-term consumption produces a brief bump and not much else. Targeted spending tries to combine the demand-supporting benefit of stimulus with the long-term-value benefit of careful investment. Critics note that "targeted" can become "politically connected," and that targeted programs are often slower to implement than general stimulus.`,
+            },
+            {
+              word: `infrastructure`,
+              definition: `The physical systems that support economic activity: roads, bridges, electrical grids, water systems, broadband. Often cited as high-return targeted government investment.`,
+              audioPrompt: `Infrastructure is the physical systems that support economic activity, {name}. Roads, bridges, electrical grids, water systems, broadband networks, public transit. Post-World War II infrastructure programs like the interstate highway system and rural electrification are classic examples of high-return targeted government investment. Infrastructure spending has a multiplier effect: a bridge that lasts 80 years and serves millions of people generates far more economic value than its construction cost. This is a central argument for targeted spending over either pure stimulus or pure austerity in responding to downturns.`,
+            },
+            {
+              word: `GI Bill`,
+              definition: `A 1944 US law that provided college tuition, low-interest home loans, and other benefits to returning World War II veterans. Often cited as one of the highest-return targeted government investments in history.`,
+              audioPrompt: `The GI Bill was a 1944 US law that provided college tuition, low-interest home loans, and other benefits to returning World War II veterans, {name}. It sent millions of veterans to college who otherwise wouldn't have gone. Economists estimate it produced returns many times its cost in the form of higher wages, tax revenue, and economic productivity over decades. It is one of the most frequently cited real-world examples of targeted government spending with high long-term returns. The GI Bill is often used to argue that well-designed targeted investments can produce outcomes that neither pure stimulus nor pure austerity can match.`,
             },
           ],
         },

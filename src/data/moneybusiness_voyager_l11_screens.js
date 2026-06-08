@@ -52,6 +52,16 @@ const MONEYBUSINESS_VOYAGER_L11 = {
               definition: `The total value of what someone receives for their work, including base salary or wages, plus benefits (health insurance, retirement contributions, paid time off), bonuses, and equity. "Total compensation" is usually much larger than headline salary.`,
               audioPrompt: `Compensation is the total value of what someone receives for their work, {name}. It includes base salary or wages, but also benefits like health insurance and retirement contributions, plus bonuses and any equity. Total compensation is usually much larger than the headline salary number. A $100,000 salary at a company with good benefits might be worth $130,000-150,000 in total compensation when you include health insurance value (often $15-25,000), 401(k) match ($3-6,000), paid time off, and other benefits. When evaluating job offers, always look at total compensation, not just salary.`,
             },
+            {
+              word: `hourly wage`,
+              definition: `Pay based on a specific amount per hour worked. Pay is directly tied to hours: more hours, more money; fewer hours, less money. Predictable but capped. Common in retail, restaurants, manufacturing, and service roles.`,
+              audioPrompt: `An hourly wage is pay based on a specific amount per hour worked, {name}. As of 2026, the US median hourly wage is around $26 per hour. Federal minimum wage is $7.25, though many states have set higher minimums of $15 to $20. Hourly work is predictable in structure: you know what each hour is worth. But it is also capped: income is directly limited by hours available. When business is slow, hours get cut and income falls. When you're sick, you don't get paid. The predictability and the ceiling are two sides of the same coin. Many people start with hourly work and transition to salary or self-employment as their careers develop.`,
+            },
+            {
+              word: `equity`,
+              definition: `Ownership in a business or asset. Equity can produce income through dividends or appreciate in value over time. The highest-variance income type: often worth nothing for years, then potentially worth millions for successful founders or early employees.`,
+              audioPrompt: `Equity is ownership in a business or asset, {name}. It is the fifth income type, alongside hourly, salary, tips and commission, and self-employment. Equity can produce income through dividends or appreciate in value over time. For founders, executives, and early employees in growing companies, equity can eventually be worth far more than any salary. Tech employees at successful companies have famously become millionaires through stock options. The tradeoff is that equity is the highest-variance income type: it is often worth nothing for years and can fail entirely. But for those who succeed, equity produces the kind of wealth that salary and wages rarely match over a lifetime.`,
+            },
           ],
         },
 
@@ -73,6 +83,16 @@ const MONEYBUSINESS_VOYAGER_L11 = {
               word: `gross income`,
               definition: `The total income before any deductions for taxes, insurance, retirement, etc. The headline number on your salary offer. Almost always significantly higher than what you actually receive.`,
               audioPrompt: `Gross income is the total income before any deductions, {name}. The headline number on your salary offer. If a job offers $80,000, that's gross. What you actually receive after taxes, health insurance, and retirement contributions is net income, usually 25-30% lower. Many people first encountering their paycheck are shocked at the gap. Knowing about the gap in advance helps you budget accurately and evaluate job offers more honestly. Always think in terms of net income when comparing financial impact of different jobs or careers.`,
+            },
+            {
+              word: `self-employment tax`,
+              definition: `The 15.3% tax on self-employment income that covers Social Security and Medicare. Unlike employees who split this with employers, self-employed people pay the full amount themselves, significantly reducing take-home income.`,
+              audioPrompt: `Self-employment tax is the 15.3 percent tax on self-employment income that covers Social Security and Medicare, {name}. Regular employees pay 7.65 percent through payroll withholding while their employer pays the other 7.65 percent. Self-employed people pay the full 15.3 percent themselves because they are effectively both the employee and the employer. This significantly affects the math of self-employment. A freelancer earning $80,000 gross pays about $12,000 more in self-employment tax than a salaried employee earning the same amount. This is why self-employed people should always set aside 25 to 30 percent of every paycheck to cover taxes, including self-employment tax, rather than spending freely as the money arrives.`,
+            },
+            {
+              word: `net income`,
+              definition: `The amount you actually receive after all deductions including taxes, health insurance, and retirement contributions. Typically 25-30% lower than gross income. The real number to use when budgeting.`,
+              audioPrompt: `Net income is the amount you actually receive after all deductions, {name}. Taxes, health insurance premiums, retirement contributions, and other withholdings all come out of your gross income before the rest reaches your bank account. For an $80,000 salary in a moderate-tax state with typical benefits contributions, take-home net income might be around $55,000 to $60,000. That is roughly 25 to 30 percent less than the headline number. Net income is the real number to use when budgeting and evaluating your financial situation. Many people budget based on gross and then wonder why they are consistently short. Always plan with net income.`,
             },
           ],
         },
@@ -97,6 +117,16 @@ const MONEYBUSINESS_VOYAGER_L11 = {
               definition: `The total income a person earns across their entire career. Differs dramatically by education level, occupation, and choices over decades. The Bureau of Labor Statistics tracks median lifetime earnings by occupation and education.`,
               audioPrompt: `Lifetime earnings is the total income a person earns across their entire career, {name}. It differs dramatically by education level, occupation, and choices. Median high school graduate: about $1.2 million across a career. Median bachelor's degree: about $2.5 million. Higher-earning professions like engineering, law, and medicine: $3-5 million. These are medians, individual variation is large. Lifetime earnings is a more useful number than annual salary for comparing careers, because it accounts for years of training, career progression, and total time spent earning at different levels.`,
             },
+            {
+              word: `Bureau of Labor Statistics`,
+              definition: `BLS. The US federal agency that tracks employment, wages, and career data. Publishes median earnings by occupation and education. The most reliable source for comparing career paths and income levels.`,
+              audioPrompt: `The Bureau of Labor Statistics, called the BLS, is the US federal agency that tracks employment, wages, and career data, {name}. It publishes median earnings by occupation and education level, making it the most reliable free source for comparing career paths and income levels. The BLS Occupational Outlook Handbook gives detailed information on hundreds of occupations: typical pay, required education, job outlook, and what the work involves. Using BLS data rather than anecdotes or exaggerated internet claims gives you a grounded picture of what various careers actually pay and require. It is free at bls.gov and should be your starting point for any serious career research.`,
+            },
+            {
+              word: `apprenticeship`,
+              definition: `A structured training program where you earn while learning a trade skill. Typically 4 years, paid throughout. An alternative path to high-earning trade careers without college debt.`,
+              audioPrompt: `An apprenticeship is a structured training program where you earn while learning a trade skill, {name}. Electricians, plumbers, HVAC technicians, carpenters, and many other trades train through apprenticeships typically lasting 4 years. You work and earn income throughout while learning under experienced tradespeople. Unlike college, you accumulate no tuition debt. You often earn $40,000 to $55,000 during the apprenticeship years and far more after qualifying. A skilled electrician who completes an apprenticeship can earn $60,000 to $80,000 per year, more if running their own business. Apprenticeships produce high-earning careers with strong job security and no student debt, a combination that is hard to match through many college paths.`,
+            },
           ],
         },
 
@@ -120,6 +150,16 @@ const MONEYBUSINESS_VOYAGER_L11 = {
               definition: `The conversation in which employees and employers discuss pay before formal hiring or during reviews. Most workers don't negotiate. Those who do often gain 5-15% over what was first offered.`,
               audioPrompt: `Compensation negotiation is the conversation in which employees and employers discuss pay before formal hiring or during performance reviews, {name}. Most workers don't negotiate. Those who do often gain 5 to 15 percent over what was first offered. The expected pattern in most professional jobs is that companies open with a first offer expecting some negotiation. Workers who accept the first offer without question leave money on the table. The skill of negotiating compensation is one of the highest-return skills you can develop, because the gains compound across raises throughout your career. Most schools don't teach this. It's worth learning.`,
             },
+            {
+              word: `job-stayer penalty`,
+              definition: `The career earnings gap between workers who stay in one job indefinitely versus those who switch jobs every 2-4 years. Job-switchers typically out-earn job-stayers by 30-50% over a career due to larger salary jumps at each transition.`,
+              audioPrompt: `The job-stayer penalty is the career earnings gap between workers who stay in one job indefinitely versus those who switch every 2 to 4 years, {name}. Bureau of Labor Statistics data shows that staying in the same job year after year typically produces 1 to 3 percent annual raises. Switching jobs every 2 to 4 years typically produces 10 to 20 percent salary jumps each time. Over a career, job-switchers typically out-earn job-stayers by 30 to 50 percent. There are real tradeoffs: stability, deep expertise in one context, long-term relationships. But the financial pattern is consistent. Loyalty to one employer is not financially rewarded the way it once was.`,
+            },
+            {
+              word: `geographic flexibility`,
+              definition: `Willingness to relocate for career opportunities. People willing to move often significantly out-earn those who stay in one place, because salary levels vary dramatically by location within the same field.`,
+              audioPrompt: `Geographic flexibility is willingness to relocate for career opportunities, {name}. It is one of the career decisions that compounds most significantly over time. Tech salaries in the San Francisco Bay Area are dramatically higher than tech salaries in most other US cities for the same work. Surgeons can command premium pay in underserved rural areas. A financial analyst in New York often earns 30 to 50 percent more than the same person in a smaller market. People willing to move for opportunities often out-earn those who stay in one location by very large margins over a career. The financial benefit of geographic flexibility must be weighed against quality of life, family, and personal preferences, but knowing the math helps you make the tradeoff consciously.`,
+            },
           ],
         },
 
@@ -140,6 +180,16 @@ const MONEYBUSINESS_VOYAGER_L11 = {
               word: `career trajectory`,
               definition: `The path of a person's career over time, including starting position, skill development, role changes, and earning growth. Trajectory matters more than any single year's income.`,
               audioPrompt: `Career trajectory is the path of a person's career over time, {name}. It includes starting position, skill development, role changes, and earning growth. Trajectory matters more than any single year's income. Two people who both earn $60,000 at age 25 can be in dramatically different positions ten years later: one on a fast trajectory might be earning $150,000 by 35, the other on a flat trajectory might still be at $70,000. The shape of trajectory often matters more than any single salary number. Building skills and reputation in your early career tends to produce steeper trajectories than chasing high pay alone.`,
+            },
+            {
+              word: `starting salary`,
+              definition: `The compensation at the beginning of a job or career. One of the most important financial decisions because future raises are often percentage-based, compounding any initial advantage or disadvantage over decades.`,
+              audioPrompt: `Starting salary is the compensation at the beginning of a job or career, {name}. It is one of the most financially important decisions because future raises are often percentage-based. A 10 percent better starting salary today compounds across 3 percent annual raises over a career into substantially more total lifetime earnings. Most workers accept the first offer without negotiating. Research consistently finds that politely negotiating with market data often produces gains of 5 to 15 percent without losing the offer. The habits and decisions you make before your first real job, what skills you build, what you learn about negotiation, directly affect what starting salary you can reasonably ask for and get.`,
+            },
+            {
+              word: `skill depth`,
+              definition: `Deep expertise in a specific area built over years of practice. Commands premium compensation in most fields. Often produces higher lifetime earnings than shallow expertise across many areas or title-chasing without real skill development.`,
+              audioPrompt: `Skill depth is deep expertise in a specific area built over years of focused practice, {name}. It commands premium compensation in most fields and career paths. An engineer who has deeply learned one technology stack for 10 years and can solve hard problems others cannot will out-earn someone who has jumped between technologies collecting impressive-sounding titles without building real depth. The same pattern applies across law, medicine, trades, finance, and most professions. Skill depth is hard to acquire and therefore rare, which is why it commands premium pay. Skill depth also tends to compound: deep expertise in one area often accelerates learning in related areas. Building real depth early in a career tends to produce the steepest long-term trajectories.`,
             },
           ],
         },

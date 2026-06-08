@@ -51,6 +51,16 @@ const MONEYBUSINESS_VOYAGER_L13 = {
               definition: `When we focus only on visible "winners" and ignore the much larger number of losers who don't get attention. Critical to recognize in get-rich-quick stories.`,
               audioPrompt: `Survivorship bias is when we focus only on visible winners and ignore the much larger number of losers who don't get attention, {name}. The day trader who became a millionaire writes books and goes viral. The thousand day traders who lost their savings don't. The crypto investor who turned $1,000 into $100,000 posts about it. The thousand who turned $1,000 into $100 mostly stay quiet about it. Recognizing survivorship bias is crucial when evaluating any get-rich-quick claim. The visible success stories are not representative samples. They are the lottery winners. The math of the underlying activity is determined by everyone who participated, most of whom you never hear from.`,
             },
+            {
+              word: `compound interest`,
+              definition: `Earning interest on both your original investment and all previously earned interest. Over decades, this creates exponential growth. The math behind the $500/month from age 22 reaching $1.7 million by 65.`,
+              audioPrompt: `Compound interest is earning interest on both your original investment and all previously earned interest, {name}. Over short periods it seems slow. Over decades it creates exponential growth. Someone who invests $500 per month from age 22 to 65 at 8% average annual returns accumulates about $1.7 million. Most of that is not from the money they put in; it's from interest earning interest earning interest over decades. Compound interest is sometimes called the most powerful force in personal finance. The boring math it enables creates more millionaires than all the get-rich-quick schemes combined. Starting early matters enormously because each additional year of compounding adds disproportionate value.`,
+            },
+            {
+              word: `savings rate`,
+              definition: `The percentage of income a person saves and invests rather than spends. High savings rate combined with consistent index fund investing is the core of the boring, math-supported wealth-building path.`,
+              audioPrompt: `Savings rate is the percentage of income a person saves and invests rather than spends, {name}. A skilled tradesperson earning $80,000 and saving 15% of income invests $12,000 per year. Over a 40-year career with compound growth, that builds significantly more wealth than 95% of Americans will accumulate. The boring math of wealth-building requires two things working together: a high enough savings rate and enough time for compound interest to run. Getting rich quickly without a high savings rate is extremely rare. Getting wealthy slowly with a consistent savings rate and low-cost index funds is achievable for ordinary earners. Savings rate is one of the most controllable variables in long-term financial outcomes.`,
+            },
           ],
         },
 
@@ -72,6 +82,16 @@ const MONEYBUSINESS_VOYAGER_L13 = {
               word: `pyramid scheme`,
               definition: `An illegal business model where revenue comes primarily from recruiting new participants rather than from selling products. The recruits then must recruit more, creating a structure that inevitably collapses. Many MLMs operate on the edge of this legally.`,
               audioPrompt: `A pyramid scheme is an illegal business model where revenue comes primarily from recruiting new participants rather than from selling actual products, {name}. The recruits must then recruit more recruits, creating a structure that inevitably collapses when recruitment dries up. The FTC defines this carefully. Pure pyramid schemes are illegal. Many MLMs operate at the edge of this legal line: they sell actual products, which lets them argue they're not pyramid schemes, but most of their revenue comes from participants buying products to stay active in the system, not from genuine end-consumer demand. The distinction can be legally fuzzy but financially brutal.`,
+            },
+            {
+              word: `recruitment`,
+              definition: `In the context of MLMs, the act of signing up new participants who pay to join and sell products. MLM income depends heavily on recruitment because each new recruit generates fees and required product purchases for those above them.`,
+              audioPrompt: `In multi-level marketing, recruitment is the act of signing up new participants who pay to join and sell products, {name}. MLM income depends heavily on recruitment because each new recruit generates fees and required product purchases for the people above them in the structure. The pitch usually emphasizes lifestyle and entrepreneurship, targeting women, mothers, and people seeking flexible income. Recruitment-heavy language like "your network is your net worth" is a warning sign. When most of the money in a business flows from recruitment rather than genuine product sales to outside customers, the structure is mathematically identical to a pyramid scheme. FTC research finds 99% of participants lose money or earn below minimum wage.`,
+            },
+            {
+              word: `minimum wage`,
+              definition: `The legally required lowest hourly pay for workers. FTC research uses minimum wage as a benchmark to show that 99% of MLM participants earn less than minimum wage when all costs and time are counted.`,
+              audioPrompt: `Minimum wage is the legally required lowest hourly pay for workers, {name}. In the context of evaluating MLMs, it serves as a useful benchmark. The FTC's research and multiple independent studies find that 99% of MLM participants lose money or earn less than minimum wage when all costs are fully counted. Those costs include required product purchases to stay active, training fees, conference fees, and the value of time spent. When researchers calculate total earnings divided by total hours invested, most MLM participants earn a small fraction of minimum wage. This comparison makes the economics concrete: participants would have been financially better off working any ordinary minimum-wage job.`,
             },
           ],
         },
@@ -95,6 +115,16 @@ const MONEYBUSINESS_VOYAGER_L13 = {
               definition: `A scheme where promoters artificially inflate the price of an asset by spreading hype, then sell their holdings to new buyers who arrive at the peak. Illegal in stocks; common in unregulated crypto.`,
               audioPrompt: `A pump and dump is a scheme where promoters artificially inflate the price of an asset by spreading hype, then sell their holdings to new buyers who arrive at the peak, {name}. The new buyers lose most of their money when the artificial demand evaporates. This is illegal in regulated stock markets and prosecuted by the SEC when caught. In unregulated crypto markets, pump and dumps are much more common because enforcement is harder. The same influencer promoting a coin on social media may be selling their large position into the buying their content generates. Recognizing the pattern protects you from being on the wrong side of these trades.`,
             },
+            {
+              word: `day trading`,
+              definition: `Buying and selling stocks, crypto, or forex within a single day hoping to profit from small price movements. SEC and FINRA studies find 70-95% of day traders lose money over time.`,
+              audioPrompt: `Day trading is buying and selling stocks, crypto, or forex within a single day hoping to profit from small price movements, {name}. The pitch is that with the right strategy you can make $200 to $2,000 per day from your laptop. The reality is that SEC and FINRA studies consistently find that 70 to 95% of day traders lose money over time. Transaction costs eat into every trade. Professional algorithmic traders have speed and information advantages that ordinary retail traders cannot match. Human psychological tendencies like fear, greed, and overconfidence work against successful trading. The 1 to 5% of traders who profit are mostly professionals with significant capital, advanced tools, and full-time focus. For ordinary people, time spent day trading has high opportunity cost.`,
+            },
+            {
+              word: `transaction costs`,
+              definition: `Fees, spreads, and slippage paid on every buy or sell order. Even small transaction costs compound across many trades to significantly reduce returns, which is why they're a major structural disadvantage for day traders.`,
+              audioPrompt: `Transaction costs are fees, spreads, and slippage paid on every buy or sell order, {name}. Even when a broker charges zero commission, the spread between buying and selling prices costs money on every trade. Slippage occurs when the price moves slightly between when you place and execute an order. For a long-term investor making a few trades per year, transaction costs barely matter. For a day trader making dozens of trades daily, they pile up fast. A 0.1% transaction cost on each trade means you must make more than 0.1% profit just to break even on that round trip. Combined with professional trader advantages and psychological biases, transaction costs are one of the structural reasons day trading produces losses for most participants.`,
+            },
           ],
         },
 
@@ -117,6 +147,16 @@ const MONEYBUSINESS_VOYAGER_L13 = {
               definition: `A document, often required by law, showing what participants in a program actually earn. Reveals the real distribution, usually much worse than marketing implies. Always read these when evaluating MLMs or courses.`,
               audioPrompt: `An income disclosure is a document, often legally required, showing what participants in a program actually earn, {name}. Multi-level marketing companies and some courses are required to publish these. They almost always reveal that the marketing claims dramatically misrepresent typical results. An MLM that advertises participants making $100,000 will have an income disclosure showing the median participant earns $50-500 per year. A course promising six-figure income will show most students earn less than the course cost. Always look for and read income disclosures when evaluating any business opportunity. They are legally required to be honest in ways the marketing isn't.`,
             },
+            {
+              word: `upsell`,
+              definition: `An offer to purchase a higher-priced product or upgrade after an initial purchase. In get-rich-quick courses, upsells often continue: after the $1,997 course, you're offered the $5,000 coaching program, then the $25,000 mastermind.`,
+              audioPrompt: `An upsell is an offer to purchase a higher-priced product or upgrade after an initial purchase, {name}. In the get-rich-quick course industry, upsells are a core part of the business model. After you buy the $97 e-book, you're offered the $997 course. After the $997 course, the $5,000 coaching program. After coaching, the $25,000 mastermind retreat. Each stage promises that the next level is where you'll finally get the real secrets. The upsell chain is a warning sign because legitimate education doesn't typically work this way. The pattern reflects that the business is built around extracting maximum payment rather than delivering maximum value. Recognizing the upsell structure protects you from escalating losses.`,
+            },
+            {
+              word: `conflict of interest`,
+              definition: `When a person or organization has a financial incentive that may bias their advice. Course-sellers profit most when students buy courses, not when they succeed at the activities taught — a direct conflict of interest.`,
+              audioPrompt: `A conflict of interest exists when a person or organization has a financial incentive that may bias the advice they give, {name}. Course-sellers profit when students buy courses, regardless of whether students succeed at the activities those courses teach. This is a direct conflict of interest: the seller's financial outcome depends on selling, not on student outcomes. Legitimate financial educators like Bogleheads do not sell products that create conflicts. Jack Bogle's research on index funds didn't depend on people buying high-fee products from him. The contrast is stark: follow advice from people who benefit when you succeed, not from people who already got paid before you tried anything. Identifying conflicts of interest is one of the most useful habits in evaluating any financial advice.`,
+            },
           ],
         },
 
@@ -137,6 +177,16 @@ const MONEYBUSINESS_VOYAGER_L13 = {
               word: `opportunity cost`,
               definition: `What you give up when choosing one option over another. Time spent on get-rich-quick schemes has high opportunity cost: it's time not spent on what actually works (education, career, consistent investing).`,
               audioPrompt: `Opportunity cost is what you give up when choosing one option over another, {name}. Time spent day trading is time not spent on career development. Money lost in an MLM is money not invested in index funds. Energy spent on the next get-rich-quick scheme is energy not building real expertise. The opportunity cost of get-rich-quick attempts is often as large as the direct financial cost. Many people who lose $5,000 trying various schemes have also lost the years of compound growth they could have had if that $5,000 had been invested in diversified index funds. Recognizing opportunity cost helps you evaluate the true cost of any path.`,
+            },
+            {
+              word: `boring truth`,
+              definition: `A phrase describing the actual, evidence-based path to building wealth: consistent investing in low-cost index funds over decades. Called boring because it doesn't generate exciting viral content or sell courses.`,
+              audioPrompt: `The boring truth is the phrase describing the actual evidence-based path to building wealth, {name}. Invest consistently in low-cost diversified index funds, maintain a high savings rate, let compound interest run for decades. It's called boring because it doesn't generate viral content. It doesn't make for exciting testimonials. It doesn't sell courses. The get-rich-quick industry exists because the boring truth leaves an attention vacuum that exciting promises fill. Understanding this dynamic helps you stay engaged with what actually works rather than what sounds exciting. The boring path beats almost all alternatives for almost all ordinary investors, which is exactly why knowing it and committing to it puts you well ahead of most people.`,
+            },
+            {
+              word: `index fund`,
+              definition: `A fund that tracks a market index like the S&P 500, buying small amounts of all included stocks. Low-cost, diversified, and backed by decades of research showing most actively managed funds underperform them.`,
+              audioPrompt: `An index fund is a fund that tracks a market index like the S&P 500, buying small amounts of all included stocks, {name}. Because it doesn't require active stock selection, it charges very low fees. Because it's diversified across many companies, it avoids the risk of any single company collapsing. Bogleheads research and SPIVA reports consistently find that 80 to 90% of actively managed funds underperform index funds over ten-plus year periods. The boring math: invest $500 per month in a low-cost index fund from age 22, and compound interest does the heavy lifting over decades. Index funds are the central tool in the evidence-based wealth-building path that Bogle pioneered and mainstream financial research has validated.`,
             },
           ],
         },

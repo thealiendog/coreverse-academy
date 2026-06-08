@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L03 = {
               definition: `CPI. The main US measure of inflation. Calculated monthly by the Bureau of Labor Statistics. Tracks prices of a basket of goods and services representative of household spending.`,
               audioPrompt: `The Consumer Price Index, called the CPI, is the main US measure of inflation, {name}. The Bureau of Labor Statistics calculates it monthly by tracking prices of a specific basket of goods and services that typical households buy. Each item is weighted by how much of household spending it represents. Housing gets a big weight because it's a large share of most budgets. The CPI is one of the most carefully constructed economic statistics in the US. It is also frequently misunderstood and politicized. Knowing how it actually works helps you evaluate claims about inflation.`,
             },
+            {
+              word: `demand-pull inflation`,
+              definition: `Inflation caused by too much money chasing too few goods. When consumer demand outpaces the economy's ability to supply, prices rise. One of several interacting causes of inflation.`,
+              audioPrompt: `Demand-pull inflation is inflation caused by too much money chasing too few goods, {name}. When consumers have more money to spend than the economy can supply in goods and services, sellers raise prices. Think of it as buyers competing for a limited number of items, pushing prices up. Demand-pull is one of several interacting causes of inflation. Cost-push inflation, which is rising production costs passed on to consumers, is another. Supply chain disruptions and government spending beyond productive capacity also contribute. Real inflation events usually involve multiple causes at once, which is why blaming a single factor oversimplifies what's actually happening.`,
+            },
+            {
+              word: `deflation`,
+              definition: `Falling prices across an economy. The opposite of inflation. Though it sounds beneficial, deflation is actually worse for an economy than mild inflation because it causes consumers to delay spending and businesses to cut jobs.`,
+              audioPrompt: `Deflation is falling prices across an economy, {name}. It is the opposite of inflation. Though falling prices might sound like a good thing, deflation is actually worse for an economy than mild inflation. When prices are falling, consumers delay purchases expecting lower prices tomorrow, businesses earn less revenue, companies cut jobs, and a downward spiral can accelerate. Most central banks target a small positive inflation rate, around 2 percent per year, specifically to avoid deflation. Hyperinflation, prices rising 50 percent or more per month, is catastrophic at the other extreme. The healthy zone is mild, stable, and predictable inflation right in the middle.`,
+            },
           ],
         },
 
@@ -71,6 +81,16 @@ const MONEYBUSINESS_VOYAGER_L03 = {
               definition: `What a given amount of money can actually buy. Inflation reduces purchasing power even when the nominal dollar amount stays the same.`,
               audioPrompt: `Purchasing power is what a given amount of money can actually buy, {name}. It is different from the nominal dollar amount. If you had $100 in 2000 and you still have $100 today, the nominal amount is the same. But the purchasing power has fallen by roughly half because of cumulative inflation over those 24 years. Understanding the difference between nominal dollars and purchasing power is one of the most important financial literacy concepts. Almost every financial decision involves it.`,
             },
+            {
+              word: `inflation hedge`,
+              definition: `An investment expected to maintain or grow in value when inflation rises, protecting purchasing power. Stocks have historically been a strong inflation hedge. Gold is a popular but inconsistent one.`,
+              audioPrompt: `An inflation hedge is an investment expected to maintain or grow in value when inflation rises, {name}. The idea is to protect your purchasing power from being eroded by rising prices. Stocks have averaged about 10 percent annual returns historically, well above typical inflation, making them a strong long-term inflation hedge. Real estate has roughly kept pace with or slightly exceeded inflation. Gold is widely seen as an inflation hedge but has actually been inconsistent in practice. Cryptocurrency has been wildly volatile and is sometimes pitched as an inflation hedge but more often behaves like a speculation. Not every popular inflation hedge actually works as advertised.`,
+            },
+            {
+              word: `real growth`,
+              definition: `Growth after adjusting for inflation. A savings account at 4 percent interest with 3 percent inflation gives you 1 percent real growth. The number that matters is always the inflation-adjusted one.`,
+              audioPrompt: `Real growth is growth after adjusting for inflation, {name}. The number that matters is always the inflation-adjusted one, not just the nominal return. If your savings account earns 4 percent interest but inflation is 3 percent, your real growth is only 1 percent. If your account earns 1 percent but inflation is 3 percent, your real growth is actually negative: you are losing purchasing power even as your balance goes up. Cash sitting in a checking account paying zero interest with 3 percent inflation loses 3 percent of purchasing power every year. This is why financial advisors consistently say not to keep large amounts of money in low-interest accounts long-term.`,
+            },
           ],
         },
 
@@ -91,6 +111,16 @@ const MONEYBUSINESS_VOYAGER_L03 = {
               word: `real wages`,
               definition: `Wages adjusted for inflation. Real wages reflect actual changes in purchasing power, unlike nominal wages which just track dollar amounts.`,
               audioPrompt: `Real wages are wages adjusted for inflation, {name}. They reflect actual changes in purchasing power. If your nominal wage went up 4% but inflation was 5%, your real wage actually fell 1%. Real wages are how economists determine whether workers are actually getting ahead. During the 2021-2022 inflation spike, real wages fell because prices rose faster than wages. By 2024-2025 they had largely recovered. The distinction between nominal and real wages is one of the most important financial concepts for understanding what's actually happening in an economy.`,
+            },
+            {
+              word: `rate hike`,
+              definition: `An increase in interest rates by a central bank. The Federal Reserve uses rate hikes to slow inflation by making borrowing more expensive, which reduces spending and cools demand across the economy.`,
+              audioPrompt: `A rate hike is an increase in interest rates by a central bank, {name}. The Federal Reserve uses rate hikes to slow inflation by making borrowing more expensive. When borrowing costs go up, consumers and businesses spend less, which reduces demand and cools prices. When US inflation hit 9.1 percent in June 2022, the Fed responded with the fastest rate-hiking cycle in modern history, raising rates aggressively through 2022 and 2023. By 2024, inflation had fallen back to around 3 percent. Rate hikes work but have side effects: they also slow economic growth and can increase unemployment. The Fed has to balance fighting inflation against not causing a recession.`,
+            },
+            {
+              word: `supply chain`,
+              definition: `The network of producers, suppliers, and distributors that move goods from raw materials to finished products in consumers' hands. Disruptions to supply chains can cause cost-push inflation.`,
+              audioPrompt: `A supply chain is the network of producers, suppliers, and distributors that move goods from raw materials to finished products in consumers' hands, {name}. When supply chains get disrupted, goods become scarcer and more expensive. COVID-19 caused massive supply chain disruptions: factory shutdowns, shipping delays, and shortages of everything from computer chips to furniture. These disruptions combined with massive COVID stimulus payments to produce the worst US inflation in 40 years. Cost-push inflation, rising production costs passed to consumers, is one of the main inflation causes, and supply chain breakdowns are a classic trigger. Once broken, supply chains take months or years to fully recover.`,
             },
           ],
         },
@@ -114,6 +144,16 @@ const MONEYBUSINESS_VOYAGER_L03 = {
               definition: `Selecting only the data points that support your argument while ignoring others that don't. A common form of statistical manipulation.`,
               audioPrompt: `Cherry-picking is selecting only the data points that support your argument while ignoring others that don't, {name}. It is a common form of statistical manipulation. In inflation reporting, cherry-picking might mean highlighting specific items that rose dramatically (eggs in 2022) without mentioning the broader picture. Or comparing peak months to low months to make changes look bigger than they were. Recognizing cherry-picking when you see it is one of the most useful statistical literacy skills. Real analysis uses consistent methodology and reports both the parts that support its conclusion and the parts that complicate it.`,
             },
+            {
+              word: `price level`,
+              definition: `The overall level of prices in an economy at a point in time. Different from the inflation rate, which measures how fast prices are changing. Prices don't fall when inflation slows; the price level just rises more slowly.`,
+              audioPrompt: `Price level is the overall level of prices in an economy at a point in time, {name}. It is different from the inflation rate, which measures how fast prices are changing. This distinction causes one of the most common inflation misunderstandings. When headlines say inflation is falling, they mean the rate of price increase is slowing down, not that prices are actually declining. Prices typically stay elevated even after inflation cools. If a basket of goods cost $100 in 2020 and rose 9 percent in 2022, those goods now cost $109. Inflation falling to 3 percent afterward means the basket rises to about $112 the next year, not back to $100. The high price level persists even when inflation is under control.`,
+            },
+            {
+              word: `year-over-year`,
+              definition: `A comparison of data from one period to the same period twelve months earlier. The standard method for measuring inflation. Comparing non-equivalent time periods produces misleading inflation claims.`,
+              audioPrompt: `Year-over-year is a comparison of data from one period to the same period twelve months earlier, {name}. It is the standard method for measuring inflation. The CPI inflation rate you hear reported, like 2.4 percent, is calculated by comparing this month's prices to prices exactly one year ago. Year-over-year comparisons are consistent and fair because they compare equivalent seasons and economic conditions. Cherry-pickers manipulate this by selecting the peak month of one period and comparing it to a low month in another, making changes look bigger than real consistent measurement shows. When evaluating any inflation claim, check whether the time comparison is year-over-year and consistent, or hand-picked to produce a dramatic headline.`,
+            },
           ],
         },
 
@@ -134,6 +174,16 @@ const MONEYBUSINESS_VOYAGER_L03 = {
               word: `methodology`,
               definition: `The specific process used to gather, measure, and analyze data. Strong methodology is what separates rigorous analysis from rhetorical claim-making.`,
               audioPrompt: `Methodology is the specific process used to gather, measure, and analyze data, {name}. Strong methodology is what separates rigorous analysis from rhetorical claim-making. The BLS uses a specific, documented methodology for calculating CPI: a defined basket of goods, weighted by household spending, with prices collected from many sources monthly. The methodology has been refined over decades. Viral content rarely has a methodology beyond "here's what looks dramatic." Asking "what's the methodology?" is one of the most clarifying questions in source evaluation.`,
+            },
+            {
+              word: `falsifiable`,
+              definition: `Capable of being proven wrong by evidence. A falsifiable claim specifies what evidence would disprove it. Vague or unfalsifiable claims are a warning sign of weak analysis or sales content.`,
+              audioPrompt: `Falsifiable means capable of being proven wrong by evidence, {name}. A falsifiable claim specifies what evidence would disprove it. The BLS inflation methodology produces falsifiable claims: if the methodology is wrong, you can show exactly which data or weights are incorrect, and the agency has to respond. Compare that to a viral account claiming real inflation is 15 percent. What evidence would prove that claim wrong? Usually none, because the claim is deliberately vague. Vague or unfalsifiable claims are a warning sign of weak analysis or sales content. The best sources make specific, testable predictions and update when evidence challenges them. Weak sources make dramatic, vague claims that can never be pinned down.`,
+            },
+            {
+              word: `source credibility`,
+              definition: `How much trust a source deserves based on its methodology, transparency, track record, and independence from financial conflicts of interest. Not based on how exciting or confident it sounds.`,
+              audioPrompt: `Source credibility is how much trust a source deserves based on its methodology, transparency, track record, and independence from financial conflicts of interest, {name}. It has nothing to do with how exciting, confident, or emotionally compelling the source sounds. The Bureau of Labor Statistics has high credibility because its methodology is public, its data is cross-checked, it has decades of track record, and it sells nothing. An anonymous social media account has low credibility because it discloses no methodology, makes cherry-picked claims, and promotes investment products. Rigorous analysis and boring presentation often go together. Dramatic presentation and weak analysis often go together. Assessing credibility by methodology rather than appeal is one of the most valuable habits you can build.`,
             },
           ],
         },

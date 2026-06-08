@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L05 = {
               definition: `A unit of stock ownership in a company. If a company has issued 1 million shares and you own 1,000, you own 0.1% of the company.`,
               audioPrompt: `A share is a unit of stock ownership in a company, {name}. If a company has issued 1 million shares and you own 1,000, you own 0.1% of the company. Larger companies have more shares outstanding. Apple has around 15 billion shares. Smaller companies might have only millions. The total value of a company is its share price times the total number of shares, called market capitalization or market cap. Knowing this helps you compare companies that have very different share prices but might be similar in total size.`,
             },
+            {
+              word: `secondary market`,
+              definition: `Where investors buy and sell stocks from each other, rather than directly from the company. The stock exchange (NYSE, Nasdaq) is the secondary market. When you buy Apple stock today, you buy it from another investor, not from Apple.`,
+              audioPrompt: `The secondary market is where investors buy and sell stocks from each other, rather than directly from the company, {name}. The New York Stock Exchange and Nasdaq are secondary markets. When Apple went public in 1980, the company sold shares directly to investors in the primary market and received that cash. Every trade since then has happened in the secondary market, between investors, and Apple receives nothing. The price in the secondary market is set by supply and demand: whatever buyers and sellers agree to at any moment. Prices move constantly based on news, earnings, expectations, and broader market conditions, though over long periods they track the underlying business performance.`,
+            },
+            {
+              word: `supply and demand`,
+              definition: `The mechanism that sets prices. When more people want to buy a stock than sell it, prices rise. When more want to sell than buy, prices fall. The constant force that moves stock prices in the short term.`,
+              audioPrompt: `Supply and demand is the mechanism that sets prices in a market, {name}. When more people want to buy a stock than sell it, prices rise. When more want to sell than buy, prices fall. This is why stock prices move constantly throughout each trading day. Over short periods, supply and demand can push prices away from any underlying business value based on news, emotions, or speculation. Over very long periods, supply and demand tends to track the actual performance of the underlying company. Understanding that short-term price changes are driven by supply and demand rather than intrinsic value helps you avoid the mistake of treating short-term price swings as meaningful signals about a company's actual worth.`,
+            },
           ],
         },
 
@@ -70,6 +80,16 @@ const MONEYBUSINESS_VOYAGER_L05 = {
               word: `dividend`,
               definition: `A payment that some companies make to shareholders, usually quarterly, out of their profits. Not all companies pay dividends; growing companies often reinvest profits instead.`,
               audioPrompt: `A dividend is a payment that some companies make to shareholders out of their profits, {name}. Usually paid quarterly. If you own 100 shares of a company that pays a $1 annual dividend, you receive $100 per year. Not all companies pay dividends. Growing companies often reinvest profits to fund growth instead of paying out. More mature companies typically pay regular dividends. The total return from a stock includes both price changes and dividends received. For the S&P 500 historically, dividends have contributed about 2% per year to total returns.`,
+            },
+            {
+              word: `price-to-earnings ratio`,
+              definition: `P/E ratio. How much investors pay per dollar of a company's earnings. A P/E of 20 means investors pay $20 for every $1 of annual earnings. Changes in P/E ratios move stock prices independently of earnings growth.`,
+              audioPrompt: `The price-to-earnings ratio, called the P/E ratio, measures how much investors pay per dollar of a company's earnings, {name}. If a company earns $5 per share and its stock costs $100, the P/E is 20. Investors are paying $20 for every $1 of annual earnings. P/E ratios change over time based on optimism, interest rates, and expectations about future growth. When investors become more optimistic, P/E ratios expand and stock prices rise even without earnings growth. When optimism fades, P/E ratios contract and prices fall even when earnings hold steady. Understanding P/E ratios explains why stock prices can move dramatically even when the underlying business hasn't changed at all.`,
+            },
+            {
+              word: `earnings growth`,
+              definition: `The increase in a company's profits over time. One of the two main components of long-term stock returns, along with dividends. Companies that consistently grow earnings tend to see their stock prices rise over time.`,
+              audioPrompt: `Earnings growth is the increase in a company's profits over time, {name}. It is one of the two main drivers of long-term stock returns, along with dividends. For the S&P 500 historically, earnings growth has contributed about 5 percent per year to total returns. Companies that consistently grow earnings tend to see their stock prices rise over time. Companies whose earnings stagnate or fall tend to see their stock prices fall. This is why stock investing over very long periods ultimately tracks real business performance rather than speculation. The math of total returns is straightforward: dividend yield plus earnings growth plus or minus changes in what investors are willing to pay for those earnings.`,
             },
           ],
         },
@@ -92,6 +112,16 @@ const MONEYBUSINESS_VOYAGER_L05 = {
               definition: `Trying to beat the overall market by picking specific stocks or timing the market. Has higher costs and usually underperforms passive index investing over time.`,
               audioPrompt: `Active investing is trying to beat the overall market by picking specific stocks or timing the market, {name}. Mutual fund managers, hedge funds, and most stock-picking influencers use active approaches. The promise: outperform the broader market. The reality: most active managers underperform their benchmark index over time. Multiple studies, including the SPIVA report, consistently find that 80 to 90 percent of actively managed mutual funds underperform over 10-year periods. The challenge isn't whether active investing CAN work. It's whether typical investors are likely to succeed at it.`,
             },
+            {
+              word: `SPIVA report`,
+              definition: `S&P Indices Versus Active. An annual report by S&P Dow Jones Indices that measures how many actively managed mutual funds underperform their benchmark index. Consistently finds 80-90% of active funds underperform over 10-year periods.`,
+              audioPrompt: `The SPIVA report stands for S&P Indices Versus Active, {name}. It is an annual report by S&P Dow Jones Indices that measures how many actively managed mutual funds underperform their benchmark index. The findings are consistent year after year: 80 to 90 percent of actively managed mutual funds underperform their benchmark index over 10-year periods. The SPIVA data is one of the strongest empirical arguments for index fund investing. It is not cherry-picked or one-time. It has replicated across decades, different markets, and different asset classes. If professional investors with full-time staff and research resources fail to beat the index this reliably, ordinary investors trying to pick stocks face even steeper odds.`,
+            },
+            {
+              word: `undervalued`,
+              definition: `A stock trading below its true or intrinsic value. Active investors try to find undervalued companies before others do. Finding them consistently and correctly is what makes active investing so difficult in practice.`,
+              audioPrompt: `An undervalued stock is one trading below its true or intrinsic value, {name}. Active investors try to find undervalued companies before others do. The logic: if you can identify a good company whose stock is temporarily cheap, you can buy it and profit when the market eventually recognizes its true value. The challenge is that millions of professional investors with full-time research teams are looking for the same undervalued companies at the same time. When everyone is searching for the same opportunities, they become very hard to find consistently. This is why most active investors fail to beat the index even though the theory of finding undervalued companies is perfectly sound in principle.`,
+            },
           ],
         },
 
@@ -113,6 +143,16 @@ const MONEYBUSINESS_VOYAGER_L05 = {
               definition: `A fund that tracks a market index (like the S&P 500) by holding the same stocks in the same proportions. Low fees, broad diversification, has outperformed most active funds historically.`,
               audioPrompt: `An index fund is a fund that tracks a market index by holding the same stocks in the same proportions, {name}. An S&P 500 index fund owns all 500 stocks in the S&P 500 in the same proportions as the index. Index funds are popular because they have very low fees (often under 0.1% per year), they provide broad diversification automatically, and they have historically outperformed most actively managed funds. Jack Bogle, who founded Vanguard, pioneered low-cost index funds in 1975. Today they are the dominant investment approach for ordinary investors.`,
             },
+            {
+              word: `expense ratio`,
+              definition: `The annual fee an investment fund charges, expressed as a percentage of assets. Index funds typically charge 0.03-0.1%. Actively managed funds typically charge 1-2%. The difference compounds dramatically over decades.`,
+              audioPrompt: `The expense ratio is the annual fee an investment fund charges, expressed as a percentage of assets, {name}. Index funds typically charge 0.03 to 0.1 percent per year. Actively managed mutual funds typically charge 1 to 2 percent per year. The difference seems small but compounds dramatically. If you invest $10,000 and it grows at 8 percent gross before fees, after 30 years a 0.1 percent fee leaves you with about $95,000. A 1.5 percent fee on the same investment leaves you with about $64,000. The fee difference costs you $31,000 on a $10,000 investment, even when the gross returns are identical. This is why fees are one of the most reliable predictors of long-term investment performance.`,
+            },
+            {
+              word: `benchmark index`,
+              definition: `A standard against which an investment's performance is measured. Active funds are typically compared to a benchmark like the S&P 500. The SPIVA report measures how many active funds beat their benchmark.`,
+              audioPrompt: `A benchmark index is a standard against which an investment's performance is measured, {name}. Active funds are typically compared to a benchmark that represents the type of investments they hold. A US large-cap active fund is compared to the S&P 500. A bond fund is compared to a bond index. When the SPIVA report says 80 to 90 percent of active funds underperform over 10-year periods, it means they returned less than their benchmark index. By owning the index fund directly, you guarantee yourself the benchmark return. Active fund investors are trying to do better than the benchmark, but most end up doing worse. This is the core mathematical argument for passive index investing.`,
+            },
           ],
         },
 
@@ -133,6 +173,16 @@ const MONEYBUSINESS_VOYAGER_L05 = {
               word: `opportunity cost`,
               definition: `The value of what you give up by choosing one option over another. Not investing in stocks has an opportunity cost: the returns you could have earned.`,
               audioPrompt: `Opportunity cost is the value of what you give up by choosing one option over another, {name}. Not investing in stocks has an opportunity cost: the returns you could have earned. But investing in stocks also has an opportunity cost: the debt you didn't pay off, the skill you didn't build, the emergency fund you didn't establish. Every financial decision has opportunity costs in both directions. Good financial thinking involves recognizing these tradeoffs and choosing based on which costs matter most in your specific situation.`,
+            },
+            {
+              word: `marketable skills`,
+              definition: `Abilities that employers or customers will pay for. Building marketable skills before investing is the "foundations first" argument: earning capacity compounds just like financial capital.`,
+              audioPrompt: `Marketable skills are abilities that employers or customers will pay for, {name}. The foundations-first argument says that for many young people, building marketable skills matters more than early stock market exposure. Earning capacity compounds just like financial capital. Someone who builds a high-value skill at 20 earns more from 25 to 65 than someone who skipped skill-building to chase investment returns. Coding, communication, trade skills, financial literacy itself: all of these are marketable skills that produce lifetime income. The counterargument is that every year out of the stock market is a year of lost compounding. Both sides have merit. Your specific situation, particularly whether you have high-interest debt or unstable income, determines which applies more strongly.`,
+            },
+            {
+              word: `behavior gap`,
+              definition: `The difference between investment returns and what ordinary investors actually earn due to buying high and selling low at emotional moments. Typical individual investors earn about half the market's return because of behavior.`,
+              audioPrompt: `The behavior gap is the difference between investment returns and what ordinary investors actually earn due to behavioral mistakes, {name}. Research consistently finds that ordinary investors who try to time the market earn about half the returns of investors who buy and hold. The reason is predictable: investors buy after markets have already gone up (buying high) and sell after markets drop (selling low), which is the opposite of what builds wealth. Professional research by DALBAR and Vanguard has documented this gap across decades. The behavior gap is why the "invest and ignore" approach of index fund investing often produces better outcomes than active trading, even when the underlying returns are the same. Boring, consistent, hands-off investing wins for most people because it eliminates the behavior gap.`,
             },
           ],
         },

@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L04 = {
               definition: `Money kept in safe, accessible accounts for unexpected expenses. Typically 3-6 months of essential expenses for adults. Should not be invested in stocks because you may need it during a market downturn.`,
               audioPrompt: `An emergency fund is money kept in safe, accessible accounts for unexpected expenses, {name}. Most financial advisors recommend that adults keep three to six months of essential expenses in their emergency fund. This money should not be invested in stocks because emergencies often happen during economic downturns, which is exactly when stocks are down. Having an emergency fund prevents you from selling investments at the worst time or going into credit card debt when something unexpected happens. For a teenager, even a small emergency fund of a few hundred dollars is useful.`,
             },
+            {
+              word: `short-term money`,
+              definition: `Money you will need within one to two years. Must be kept in safe, accessible accounts. Should not be invested in stocks where a market drop could reduce its value right when you need it.`,
+              audioPrompt: `Short-term money is money you will need within one to two years, {name}. Emergency fund cash, money for an upcoming purchase, and funds you expect to use soon all belong in this bucket. Short-term money must be safe and accessible. The right place is a savings account or money market fund. The interest rate matters less than the safety. If your emergency fund is invested in stocks and the market drops 30 percent right when you face an emergency, you lose money you cannot afford to lose. Safety and accessibility are the only requirements for short-term money, not growth.`,
+            },
+            {
+              word: `money market fund`,
+              definition: `A low-risk investment fund that holds short-term, high-quality instruments. Pays slightly higher interest than a standard savings account while remaining safe and accessible. Common home for short-term and emergency money.`,
+              audioPrompt: `A money market fund is a low-risk investment fund that holds short-term, high-quality instruments, {name}. It pays slightly higher interest than a standard savings account while remaining safe and accessible. Financial advisors commonly recommend money market funds as the home for short-term money and emergency funds. They are not the same as money market accounts at banks, though both are conservative. The slightly better interest rate compared to regular savings, combined with stability, makes them a strong option when you need your money to be safe but also want it doing something useful while it waits.`,
+            },
           ],
         },
 
@@ -76,6 +86,16 @@ const MONEYBUSINESS_VOYAGER_L04 = {
               definition: `Federal Deposit Insurance Corporation. Guarantees deposits up to $250,000 per account at member banks. If the bank fails, the government covers your insured deposits. Why savings accounts are considered safe.`,
               audioPrompt: `FDIC insurance is the Federal Deposit Insurance Corporation, {name}. It guarantees deposits up to $250,000 per account at member banks. If a bank fails, the government covers your insured deposits up to that limit. This is what makes savings accounts safe in a way that other investments are not. Even during major banking crises, FDIC-insured deposits have always been paid. Cryptocurrency exchanges and brokerage cash accounts are not FDIC-insured the same way. Knowing what's covered and what isn't helps you understand where the real safety actually is.`,
             },
+            {
+              word: `high-yield savings account`,
+              definition: `A savings account, typically at an online bank, that pays significantly more interest than a standard bank savings account. As of 2026 paying 4-5%. Still FDIC-insured and accessible. Best for short-term and emergency money.`,
+              audioPrompt: `A high-yield savings account is a savings account, typically at an online bank, that pays significantly more interest than a standard savings account, {name}. As of 2026, high-yield savings accounts are paying around 4 to 5 percent. They are still FDIC-insured and accessible, making them an excellent home for emergency funds and short-term money. Standard bank savings accounts often pay less than 1 percent. The difference compounds. On $5,000 of emergency savings, the gap between 0.5 percent and 4.5 percent is $200 per year in lost interest. Over many years, keeping short-term money in a high-yield rather than a standard savings account adds up significantly.`,
+            },
+            {
+              word: `certificate of deposit`,
+              definition: `CD. Money deposited at a bank for a fixed period in exchange for a guaranteed interest rate, usually slightly higher than savings accounts. Penalty for early withdrawal. Best for money you definitely won't need until a specific date.`,
+              audioPrompt: `A certificate of deposit, called a CD, is money deposited at a bank for a fixed period in exchange for a guaranteed interest rate, {name}. Terms run from three months to five years. CDs typically pay slightly higher rates than savings accounts because you're committing to leave the money in place. There is a penalty for early withdrawal, which is why they only make sense for money you definitely won't need until a specific date. If you know you'll need money for a trip in 12 months, a 12-month CD earning slightly more than your savings account is a reasonable choice. If there's any chance you'll need the money earlier, keep it in a regular savings account instead.`,
+            },
           ],
         },
 
@@ -96,6 +116,16 @@ const MONEYBUSINESS_VOYAGER_L04 = {
               word: `volatility`,
               definition: `How much an investment's price moves up and down over time. High volatility means big swings (both up and down). Lower volatility means more stable values.`,
               audioPrompt: `Volatility is how much an investment's price moves up and down over time, {name}. High volatility means big swings in both directions. Bitcoin is extremely volatile. The S&P 500 is moderately volatile. Government bonds are less volatile. Cash savings is barely volatile at all. Volatility isn't necessarily bad. For long-term money, volatility can be tolerated because you have time to wait through downturns. For short-term money, volatility is dangerous because you may need to sell at a bad moment. Understanding volatility helps you match the right asset to the right goal.`,
+            },
+            {
+              word: `risk-return tradeoff`,
+              definition: `The principle that higher potential returns always come with higher risk. There is no investment that is both safe and high-returning. "Safe high-return" pitches are almost always scams.`,
+              audioPrompt: `The risk-return tradeoff is the principle that higher potential returns always come with higher risk, {name}. This rule applies to every investment category. Cash savings is the lowest-return, lowest-risk option. Government bonds pay more with slightly more risk. Stock index funds have higher long-term returns but real short-term risk of losing 30 percent or more. Individual stocks have even higher potential return and risk. Cryptocurrency has the highest volatility of all. If there were a safe investment earning 20 percent per year, professional investors would already have bought it until prices rose and returns fell. Safe high-return pitches are almost always scams, and knowing this rule helps you spot them quickly.`,
+            },
+            {
+              word: `purchasing power`,
+              definition: `What a given amount of money can actually buy. Cash savings loses purchasing power when inflation outpaces interest earned. The "safe" choice of doing nothing has a real cost over time.`,
+              audioPrompt: `Purchasing power is what a given amount of money can actually buy, {name}. Cash in a savings account feels safe because the number stays the same. But if inflation is 3 percent and your savings account pays nothing, your purchasing power falls by 3 percent every year. Over 20 years at 3 percent inflation, $1,000 in a zero-interest account loses about 45 percent of its purchasing power. The mistake most people make is thinking cash is risk-free. It is low-volatility, but it carries real inflation risk for long-term money. Matching long-term money to growth investments is how you protect purchasing power across decades.`,
             },
           ],
         },
@@ -118,6 +148,16 @@ const MONEYBUSINESS_VOYAGER_L04 = {
               definition: `Spreading investments across many different assets to reduce risk. The closest thing to a "free lunch" in finance: reduces risk without proportionally reducing expected return.`,
               audioPrompt: `Diversification is spreading investments across many different assets to reduce risk, {name}. It is one of the most important concepts in investing. If you own one stock and the company fails, you lose everything. If you own 500 stocks and one fails, you barely notice. Index funds provide instant diversification across hundreds of companies. Diversification across asset classes (stocks, bonds, real estate, international) adds another layer. The math is clear: diversified portfolios outperform concentrated ones for ordinary investors over time, with less stress along the way.`,
             },
+            {
+              word: `asset class`,
+              definition: `A category of investment with similar characteristics and behavior. Stocks, bonds, real estate, and cash are the main asset classes. Different asset classes often move differently, which is why diversifying across them reduces risk.`,
+              audioPrompt: `An asset class is a category of investment with similar characteristics and behavior, {name}. Stocks, bonds, real estate, and cash are the four main asset classes. Cryptocurrency is sometimes considered a separate asset class. Different asset classes often move differently from each other. When stocks fall, bonds sometimes rise, though not always. A portfolio that holds both stocks and bonds typically has lower volatility than one holding stocks alone, with only slightly lower expected long-term returns. Diversifying across asset classes adds a layer of protection on top of diversifying within a single class, like owning many different stocks.`,
+            },
+            {
+              word: `broad market decline`,
+              definition: `A drop in prices across nearly all investment categories at once. Diversification cannot protect against broad market declines. In 2008, almost all asset classes fell together.`,
+              audioPrompt: `A broad market decline is a drop in prices across nearly all investment categories at once, {name}. Diversification protects against individual company and industry risk but cannot fully protect against broad market declines. In 2008, during the financial crisis, almost all asset classes fell together. Stocks lost 37 percent, real estate dropped, and even some bonds fell. Diversification reduced damage for investors who held bonds and cash alongside stocks, but it did not eliminate it. Understanding that diversification has limits helps set realistic expectations. It is still one of the most powerful tools in investing; it just cannot make risk disappear completely.`,
+            },
           ],
         },
 
@@ -138,6 +178,16 @@ const MONEYBUSINESS_VOYAGER_L04 = {
               word: `asset allocation`,
               definition: `How an investor divides their money across different asset types (stocks, bonds, cash, real estate, etc.). The most important investing decision after deciding to invest at all.`,
               audioPrompt: `Asset allocation is how an investor divides their money across different asset types, {name}. Stocks, bonds, cash, real estate, sometimes alternatives. Research consistently finds that asset allocation explains more of long-term portfolio returns than picking specific investments within each category. A 12-year-old with all their money in cash might have very different long-term outcomes than the same kid with most of their money in a diversified stock index fund. Asset allocation is the most important investing decision after deciding to invest at all.`,
+            },
+            {
+              word: `financial decisions compound`,
+              definition: `The principle that each financial choice creates conditions for the next. Tiny early advantages or disadvantages accumulate into enormous differences over decades. The decision at 12 affects what's possible at 40.`,
+              audioPrompt: `Financial decisions compound, {name}. Each financial choice creates conditions for the next. A teenager who invests $500 at 12 instead of spending it gets that money working for 53 years. A teenager who starts with $100 instead of $500 misses out on the compounding of that difference, which grows to about $24,000 by 65. Decisions about debt, skills, savings habits, and investment accounts made in your teens and twenties shape what's possible in your 30s, 40s, and 50s. This is not meant to create pressure. It is meant to show that starting even small and even now has real value that is easy to underestimate.`,
+            },
+            {
+              word: `custodial brokerage account`,
+              definition: `An investment account opened by a parent or guardian for a minor. The adult manages it legally until the minor turns 18. How teens can invest in index funds and stocks before reaching legal adulthood.`,
+              audioPrompt: `A custodial brokerage account is an investment account opened by a parent or guardian for a minor, {name}. The adult manages it legally, but the money belongs to the minor. When the minor turns 18 or 21 depending on the state, control transfers to them. Custodial accounts are how teens can invest in index funds, stocks, and other securities before reaching legal adulthood. Major brokerages like Vanguard, Fidelity, and Schwab all offer custodial accounts with no minimum balance. The $500 that Tara in the case study invested in a low-cost S&P 500 index fund would need a custodial account to do it. Opening one is the first real step in long-term investing for someone your age.`,
             },
           ],
         },

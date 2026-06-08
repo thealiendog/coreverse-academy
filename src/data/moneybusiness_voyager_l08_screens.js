@@ -50,6 +50,16 @@ const MONEYBUSINESS_VOYAGER_L08 = {
               definition: `Money left over after paying for needs (housing, food, transportation, utilities). What you can choose how to spend or save. The portion of income where real budgeting decisions get made.`,
               audioPrompt: `Discretionary income is the money you have left after paying for needs, {name}. Housing, basic food, transportation, utilities, insurance. What's left is discretionary. You can choose to spend it on wants, save it, invest it, or some mix. Most real budgeting decisions happen in this discretionary income zone. Two people with the same total income can have very different financial outcomes based on how they handle their discretionary spending. Understanding the difference between needs and wants is the first step in seeing your discretionary income clearly.`,
             },
+            {
+              word: `50-30-20 rule`,
+              definition: `A budget framework: roughly 50% of income for needs, 30% for wants, and 20% for saving and debt payoff. A useful starting structure that most people adapt based on their actual situation.`,
+              audioPrompt: `The 50-30-20 rule is a budget framework that divides income into three categories, {name}. Roughly 50 percent goes to needs: housing, food, transportation, utilities, and insurance. About 30 percent goes to wants: entertainment, dining out, hobbies, and non-essential subscriptions. The remaining 20 percent goes to saving and paying down debt. The exact percentages vary by person and situation. Someone with high rent might need 60 percent for needs and only 10 percent for wants. The structure matters more than the exact split. Thinking in terms of needs, wants, and savings helps you see your budget clearly and make deliberate tradeoffs.`,
+            },
+            {
+              word: `needs versus wants`,
+              definition: `Needs are expenses required for basic function: housing, food, transportation, utilities. Wants are optional spending: entertainment, dining out, hobbies. Distinguishing them is the foundation of any budget.`,
+              audioPrompt: `Needs versus wants is one of the foundational distinctions in budgeting, {name}. Needs are expenses required for basic function: housing, basic food, essential transportation, utilities, insurance. Wants are optional spending: entertainment, dining out, hobbies, non-essential subscriptions, and non-basic clothing or food. The boundary isn't always clear. A car might be a need to get to work but a new expensive car is a want. Basic groceries are a need but expensive restaurants are a want. Getting clear on this distinction is the first step in seeing your discretionary income clearly. Where the line falls is personal, but drawing it honestly is what makes the 50-30-20 framework work.`,
+            },
           ],
         },
 
@@ -71,6 +81,16 @@ const MONEYBUSINESS_VOYAGER_L08 = {
               word: `sinking fund`,
               definition: `Money set aside monthly for known future expenses (annual insurance, holidays, vacations, car maintenance). Prevents large irregular costs from blowing up a monthly budget.`,
               audioPrompt: `A sinking fund is money set aside monthly for known future expenses, {name}. Car insurance is $1,200 per year? Save $100 per month into a sinking fund for insurance. Holidays cost $600? Save $50 per month starting in January. Sinking funds are how you prevent large irregular expenses from blowing up your budget. The concept is simple but underused. Most people don't plan for the expenses they know are coming, so those expenses keep feeling like emergencies even though they're not. Sinking funds turn predictable expenses into manageable monthly amounts.`,
+            },
+            {
+              word: `irregular expenses`,
+              definition: `Costs that don't occur every month but are predictable over the year. Car insurance, holiday gifts, annual subscriptions, vacations. The most common reason budgets fail when not planned for.`,
+              audioPrompt: `Irregular expenses are costs that don't occur every month but are predictable over the year, {name}. Car insurance bills, holiday gifts, annual subscription fees, back-to-school shopping, vacations, vehicle maintenance. People fail budgets when they only plan for regular monthly expenses and then get blindsided when irregular expenses hit. The solution is to list all your known annual expenses, add them up, divide by 12, and set aside that amount monthly into a sinking fund. If you know December costs an extra $600 in gifts, saving $50 per month starting in January means December is not a crisis. Treating irregular expenses as part of the monthly plan is what separates people who sustain budgets from people who give up on them.`,
+            },
+            {
+              word: `living document`,
+              definition: `Something that gets updated regularly rather than set once and left unchanged. Effective budgets are living documents: adjusted monthly as income changes, expenses shift, and goals evolve.`,
+              audioPrompt: `A living document is something that gets updated regularly rather than set once and left unchanged, {name}. Effective budgets are living documents. Treating a budget as a rigid fixed contract is one of the most common reasons people quit. You overspent in dining out this month? Adjust next month's plan. A new expense appeared? Build it in. Got a raise? Update the savings amount. Real budgets change constantly because real life changes constantly. People who treat budgets as living documents adjust and sustain them. People who treat them as permanent rules they've already broken tend to give up entirely. The update process is part of the practice, not a sign of failure.`,
             },
           ],
         },
@@ -94,6 +114,16 @@ const MONEYBUSINESS_VOYAGER_L08 = {
               definition: `Recording where money actually goes. The first step in any budgeting practice. Can be done with apps, spreadsheets, or paper. The medium matters less than the consistency.`,
               audioPrompt: `Tracking is recording where money actually goes, {name}. It is the first and most important step in any budgeting practice. The medium matters less than the consistency. You can track in a notes app, a spreadsheet, on paper in a notebook, or using a fancy budgeting app. What matters is doing it consistently for at least a few months so you can see your real spending patterns. People who haven't tracked their spending consistently almost always estimate it wrong. Tracking reveals reality. Once you see reality, you can make informed decisions about it.`,
             },
+            {
+              word: `spending categories`,
+              definition: `The groupings used to organize expenses in a budget. Housing, food, transportation, entertainment, subscriptions. Fewer categories (5-8) are more sustainable than many (40+).`,
+              audioPrompt: `Spending categories are the groupings used to organize expenses in a budget, {name}. Common ones include housing, food and groceries, transportation, entertainment, subscriptions, dining out, clothing, and personal care. Budgeting apps sometimes default to 40 or more categories, splitting dining out from coffee shops from work lunches from snacks. The tracking overhead of 40 categories is often more work than the insight provides. Most people do better with 5 to 8 broader categories that capture the meaningful distinctions without requiring obsessive detail. The goal is enough granularity to see patterns, not enough to make tracking feel like a second job. Simplicity you sustain beats perfection you abandon.`,
+            },
+            {
+              word: `behavior change`,
+              definition: `Altering what you actually do, not just what you know or track. Budgeting apps reveal spending patterns, but only changing your behavior produces different outcomes. The hardest and most important part of budgeting.`,
+              audioPrompt: `Behavior change is altering what you actually do, not just what you know or track, {name}. The best budgeting app in the world can show you that you're spending $400 per month on food delivery. Whether you do anything about that information is entirely up to you. Most people who download budget apps stop using them within 60 days regardless of which app they chose. The app is not the problem. The willingness to act on what the app shows is the problem. Real budgeting success comes from seeing the numbers and actually doing something different: cooking more, canceling subscriptions you don't use, or consciously deciding that the spending is worth it. Awareness without action changes nothing.`,
+            },
           ],
         },
 
@@ -116,6 +146,16 @@ const MONEYBUSINESS_VOYAGER_L08 = {
               definition: `The movement of money in and out over a period of time. Positive cash flow means more coming in than going out. Negative cash flow means the opposite. The fundamental health indicator of any financial situation.`,
               audioPrompt: `Cash flow is the movement of money in and out over a period of time, {name}. Positive cash flow means more money is coming in than going out. Negative cash flow means the opposite. Cash flow is the fundamental health indicator of any financial situation: a household, a business, a teenager. You can have wealth on paper and still go bankrupt if your cash flow is negative for long enough. Understanding cash flow at a household level is one of the most useful financial skills. It is also the foundation of business analysis we'll get to in later lessons.`,
             },
+            {
+              word: `long-term saving`,
+              definition: `Money set aside for goals 10 or more years away, such as retirement or building wealth. Should be invested in growth assets rather than sitting in cash. Even small amounts started early compound dramatically.`,
+              audioPrompt: `Long-term saving is money set aside for goals 10 or more years away, {name}. Retirement, building wealth, and financial independence are the classic long-term saving goals. Long-term money should not sit in cash, where inflation eats its purchasing power. It should be invested in growth assets like stock index funds. Even small amounts started early compound dramatically. At $5 per month starting at age 12, invested at 8 percent average returns, you have about $25,000 by age 65. That $5 per month is barely noticeable. But 53 years of compounding makes it meaningful. Starting long-term saving before you have a formal job is not just possible; it may be the single highest-ROI financial decision available to a 12-year-old.`,
+            },
+            {
+              word: `allowance`,
+              definition: `A regular sum of money given by parents to children, often tied to chores or responsibilities. For many teens, the primary income source and natural starting point for budgeting practice.`,
+              audioPrompt: `An allowance is a regular sum of money given by parents to children, {name}. Often tied to chores, responsibilities, or simply provided as a financial education tool. For many 12-year-olds, allowance is the primary or only income source. This makes it the natural starting point for budgeting practice. A $20 monthly allowance is real money to plan with. Even at these small amounts, practicing the structure of spending, short-term saving, and long-term investing builds habits that compound over a lifetime. The specific dollar amounts matter far less than the practice of having a plan for each dollar before it arrives. Many adults wish someone had taught them to budget with small amounts before they started earning large ones.`,
+            },
           ],
         },
 
@@ -136,6 +176,16 @@ const MONEYBUSINESS_VOYAGER_L08 = {
               word: `spending priorities`,
               definition: `The categories where you choose to spend more vs less, based on what actually matters to you. Personal and varies. The basis for any sustainable budget.`,
               audioPrompt: `Spending priorities are the categories where you choose to spend more or less based on what actually matters to you, {name}. Two people with the same income can have completely different reasonable budgets. One person prioritizes travel and skimps on dining out. Another person prioritizes nice dinners and skimps on travel. Both are reasonable. The mistake is following someone else's priorities instead of yours. Your spending priorities are personal. Figuring out yours, being honest about what actually brings you joy, is the foundation of any sustainable budget. The "right" answer varies by person.`,
+            },
+            {
+              word: `sustainable budget`,
+              definition: `A budget that matches real life closely enough to actually stick with over months and years. Includes some enjoyment, accounts for irregular expenses, and gets adjusted as life changes. Sustainable beats perfect.`,
+              audioPrompt: `A sustainable budget is one that matches real life closely enough to actually stick with over months and years, {name}. It includes some enjoyment, accounts for irregular expenses, and gets adjusted as life changes. The lesson from every failed budget is that perfection does not sustain. A person who sets a budget with zero fun spending will have it fall apart by month two because human beings need some enjoyment built in. A slightly slower path to a savings goal with some fun along the way reliably beats a strict path that produces quitting and no savings at all. Sustainable beats perfect as the standard for every budget you ever design for yourself.`,
+            },
+            {
+              word: `awareness`,
+              definition: `Knowing where your money actually goes. The primary goal of tracking and budgeting. Most people who haven't tracked their spending significantly underestimate what they spend in key categories.`,
+              audioPrompt: `Awareness is knowing where your money actually goes, {name}. It is the primary goal of budgeting and tracking. Most people who haven't tracked their spending significantly underestimate what they spend in key categories. They estimate $200 per month eating out when the actual number is $600. They think they spend $50 on subscriptions when the actual is $180. The budget's first job is not to restrict. It is to reveal reality. Once you have accurate awareness of your actual spending patterns, you can make informed choices about whether those patterns match your priorities. Without awareness, you are guessing and usually wrong. With awareness, you have data to act on.`,
             },
           ],
         },

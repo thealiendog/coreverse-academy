@@ -51,6 +51,16 @@ const MONEYBUSINESS_VOYAGER_L14 = {
               definition: `When a product actually matches what real customers want and will pay for. Most failed businesses fail at this. Hardest part of starting a business is often validating that real demand exists.`,
               audioPrompt: `Product-market fit is when a product actually matches what real customers want and will pay for, {name}. Most failed businesses fail at this. They build something they think people will want, only to discover after building that demand was theoretical, not real. Hardest part of starting a business is often validating that real demand exists before investing significant time and money. The fastest way: try to sell the thing before fully building it. Get 5 actual customer commitments before you've spent more than 10 hours and 50 dollars. If you can't get 5 commitments, your assumed demand probably isn't real. This pre-validation saves enormous wasted effort.`,
             },
+            {
+              word: `real demand`,
+              definition: `Actual willingness by specific identified customers to pay specific prices — not theoretical interest. "People would like this" is not real demand. "These five people will pay $30 each" is real demand.`,
+              audioPrompt: `Real demand is actual willingness by specific identified customers to pay specific prices, {name}. It's different from theoretical interest. Someone saying they'd buy your product is not demand. Someone handing you money for your product is demand. Many business ideas fail because the founder assumed interest meant willingness to pay, and discovered after building that customers weren't actually ready to open their wallets. The test of real demand is simple: try to make actual sales before investing significant time and money. If five people pay you before you've built much, demand is real. If nobody pays even when directly offered, the assumed demand probably was never there.`,
+            },
+            {
+              word: `customer acquisition`,
+              definition: `The process of consistently finding people who will pay for your product or service. A great product with poor customer acquisition fails. For teens, this includes neighborhood networking, parent networks, social media, and online marketplaces.`,
+              audioPrompt: `Customer acquisition is the process of consistently finding people who will pay for your product or service, {name}. A great product with poor customer acquisition still fails: if nobody knows it exists, nobody buys it. Many teen businesses die because the founder tries once with friends and family, doesn't expand beyond that network, and revenue dries up. For teens, effective customer acquisition often means neighborhood networking, school and parent connections, social media presence, or established marketplaces like Etsy or eBay. Customer acquisition is a skill that must be learned separately from the skill of making the product or delivering the service. Both matter.`,
+            },
           ],
         },
 
@@ -72,6 +82,16 @@ const MONEYBUSINESS_VOYAGER_L14 = {
               word: `unit economics`,
               definition: `The revenue, costs, and profit calculated per unit sold (per sale, per customer, per project). The fundamental health check of any business idea. If unit economics don't work, the business can't work at scale.`,
               audioPrompt: `Unit economics is the revenue, costs, and profit calculated per unit sold, {name}. Per sale, per customer, per project. The fundamental health check of any business idea. If you can't make a profit on each individual sale after accounting for all costs, no amount of volume or scale will save the business. Many teens skip this analysis and discover after weeks of work that their idea was never going to pay enough per hour to be worth doing. Spending 30 minutes calculating unit economics before starting saves dozens of hours of wasted effort. Always do the math first.`,
+            },
+            {
+              word: `profit per sale`,
+              definition: `Revenue from one sale minus all direct costs for that sale. The core of unit economics. Lawn mowing: $30 revenue minus $1 cost equals $29 profit per lawn. Must also account for time to get a true hourly rate.`,
+              audioPrompt: `Profit per sale is revenue from one sale minus all direct costs for that sale, {name}. It is the core calculation in unit economics. For lawn mowing at $30 per lawn with $1 in materials, profit per sale is $29. If each lawn takes 45 minutes, the hourly rate is about $39. For handmade candles at $15 each with $4 in materials plus $5 in table fees, profit per candle is $6. At one hour per candle, that's a $6 hourly rate below babysitting. The comparison makes the decision obvious. Always calculate profit per sale and time per sale before deciding whether a business is worth pursuing. The math tells you what enthusiasm can't.`,
+            },
+            {
+              word: `overhead`,
+              definition: `Business costs that don't vary with individual sales, like a craft fair table fee, website costs, or equipment. Must be divided across sales when calculating unit economics. Easy to miss when estimating profit.`,
+              audioPrompt: `Overhead refers to business costs that don't vary with individual sales, {name}. A craft fair table fee is overhead: you pay $50 whether you sell 5 candles or 50. When calculating unit economics, overhead must be divided across the expected number of sales. Sell 10 candles and the $50 table fee adds $5 to each candle's cost. Sell 50 candles and it adds $1. Many first-time entrepreneurs miss overhead when estimating profit, which leads to surprises when actual profits come in lower than expected. List all overhead costs before launching. Divide them by realistic sales volume. Include them in your unit economics calculation.`,
             },
           ],
         },
@@ -95,6 +115,16 @@ const MONEYBUSINESS_VOYAGER_L14 = {
               definition: `What customers in a given area typically pay for a given product or service. Researching market rate before pricing is fundamental. Most underpricing comes from skipping this research.`,
               audioPrompt: `Market rate is what customers in a given area typically pay for a given product or service, {name}. Researching market rate before pricing is fundamental. Most underpricing comes from skipping this research. You can find market rates by checking competitor prices, asking adults what they pay for similar services, looking at online marketplaces, or simply calling competitors and asking their prices. Once you know market rate, you can position yourself: at market rate if you're as good as competitors, slightly below if you want fast growth, slightly above if your quality is genuinely better. The mistake is pricing without research, which almost always results in underpricing.`,
             },
+            {
+              word: `underpricing`,
+              definition: `Charging less than what customers would actually pay. The most common teen business mistake. Charging $5/hour for babysitting when market rate is $20 captures 1/4 the revenue for the same work.`,
+              audioPrompt: `Underpricing is charging less than what customers would actually pay, {name}. It is the most common teen business mistake. Most teens assume lower prices will attract more customers, but customers aren't typically comparing teen prices to adult prices. They're deciding whether to hire someone at all. A teen charging $10 for any lawn and an adult charging $35 aren't competing for the same decision; the teen is leaving $25 per lawn behind. The research suggests teens routinely charge 30 to 50% of what the market would bear. Charging 70 to 80% of adult market rate is both fair to the customer and economically worthwhile for the teen. Pricing below that is usually an expensive psychological mistake.`,
+            },
+            {
+              word: `perceived deal`,
+              definition: `When a customer feels they are getting a good value relative to alternatives. A teen charging 70-80% of adult market rate creates a perceived deal — customers feel good about paying — without sacrificing economic viability.`,
+              audioPrompt: `A perceived deal is when a customer feels they are getting good value relative to alternatives, {name}. For teen businesses, this is a useful concept. A teen charging 70 to 80% of what an adult competitor charges creates a perceived deal: the customer feels like they're saving money while still getting the service done. This is different from underpricing at 30 to 50% of market rate, which captures far less revenue without necessarily attracting proportionally more customers. Customers will not typically pay you more just because you charged less before. Getting the pricing right from the start means charging enough to make the work worthwhile while still giving customers a reason to choose you over adult competitors.`,
+            },
           ],
         },
 
@@ -117,6 +147,16 @@ const MONEYBUSINESS_VOYAGER_L14 = {
               definition: `Repeated cycles of trying, learning what works and what doesn't, and adjusting. Most successful businesses iterate many times before finding what works. Real entrepreneurial skill is more about iteration than initial brilliance.`,
               audioPrompt: `Iteration is repeated cycles of trying, learning what works and what doesn't, and adjusting, {name}. Most successful businesses iterate many times before finding what works. Real entrepreneurial skill is more about iteration than initial brilliance. The first version of almost everything is rough. The second version is better. The tenth version is good. Companies that iterate quickly and learn from each version outperform companies that try to get everything right the first time. For a teen starting any business, the right mindset is: launch a rough version quickly, learn from real customer feedback, improve, and continue. Patience plus iteration beats perfectionism every time.`,
             },
+            {
+              word: `scope creep`,
+              definition: `Gradually expanding the work you're trying to do beyond the original plan. A major cause of teen business failure: trying to do too many things at once results in doing all of them poorly.`,
+              audioPrompt: `Scope creep is gradually expanding the work you're trying to do beyond the original plan, {name}. It is a major cause of teen business failure. A teen who starts a lawn mowing service, then adds pet sitting, then starts selling candles, then offers social media help for local businesses ends up doing all four poorly. Each new area requires learning, focus, and customer acquisition work that divides attention from the original service. Successful small businesses almost always focus on one or two things and do them consistently well. Scope creep feels like growth but usually produces worse outcomes for everything involved. Adding scope should come after mastering the core offering, not before.`,
+            },
+            {
+              word: `validation`,
+              definition: `Confirming that real demand exists before investing significant time and money into building a business. Validation means getting actual commitments or sales from real customers, not just guessing they would pay.`,
+              audioPrompt: `Validation is confirming that real demand exists before investing significant time and money into building a business, {name}. It means getting actual commitments or sales from real customers. The cheapest validation is walking up to potential customers and seeing if any will pay you before you've built much. If you can't find one person willing to commit to paying, the idea probably has a demand problem. Many teen business failures happen because entrepreneurs skipped validation: they built or bought inventory, created marketing, and then discovered nobody wanted to pay the price. Spending a few hours on validation before spending serious time or money is one of the highest-return activities in any new business.`,
+            },
           ],
         },
 
@@ -137,6 +177,16 @@ const MONEYBUSINESS_VOYAGER_L14 = {
               word: `minimum viable product`,
               definition: `MVP. The simplest version of a product you can deliver that real customers might pay for. Launch the MVP fast, learn from real customers, then improve. Better than spending months perfecting before launching.`,
               audioPrompt: `Minimum viable product, called MVP, is the simplest version of a product you can deliver that real customers might pay for, {name}. The principle: launch the MVP fast, learn from real customers, then improve. This beats spending months perfecting before launching. Why? Because real customer behavior is the only reliable signal of whether your idea works. Theoretical perfection in a basement with no customers reveals nothing. Five paying customers who give you feedback on a rough first version teach you more than 100 hours of refinement before launch. The fastest learners in business launch MVPs early and iterate from there.`,
+            },
+            {
+              word: `niche`,
+              definition: `A specific, well-defined segment of customers with a particular need. Specializing in a niche (K-pop phone cases, Algebra 1 tutoring) beats trying to serve everyone. Specificity beats generality in both marketing and execution.`,
+              audioPrompt: `A niche is a specific, well-defined segment of customers with a particular need, {name}. Specializing in a niche beats trying to serve everyone. A tutor who says "Algebra 1 for 8th graders, I just got an A myself" converts more clients than one saying "any grade math help." A phone case seller who serves the K-pop fan community stands out more than one offering generic designs. Niches work because customers searching for help want someone who matches their specific situation, not a generalist. They also work because you can build a reputation within a niche faster than across a broad market. Most successful Etsy sellers and teen service businesses operate in specific niches.`,
+            },
+            {
+              word: `sustainable pace`,
+              definition: `A work rate that can be maintained over time without leading to burnout. Many teen businesses fail because initial enthusiasm leads to overcommitment, which leads to quitting. Consistent moderate effort beats unsustainable bursts.`,
+              audioPrompt: `Sustainable pace is a work rate that can be maintained over time without leading to burnout, {name}. Starting a business while also being a full-time student is hard. Many teens overcommit during the enthusiasm of launch, get tired or overwhelmed, and quit. A business that earns $50 per week consistently for two years produces more total income and more learning than a business that earns $200 in its first week and then dies. Before committing to a new business, estimate the realistic weekly time it requires. Add that to school, activities, and family obligations. Be honest about whether the pace is sustainable. A smaller, sustainable commitment beats a larger unsustainable one almost every time.`,
             },
           ],
         },
