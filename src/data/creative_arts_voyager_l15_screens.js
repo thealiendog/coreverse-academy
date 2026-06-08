@@ -320,7 +320,8 @@ const CREATIVE_ARTS_VOYAGER_L15 = {
                 id: `q9`,
                 type: `true-false`,
                 question: `True or false: Because some immersive "experiences" are shallow photo-traps built to sell tickets, all immersive and installation art is basically empty spectacle and not real art.`,
-                correctAnswer: false,
+                options: [`True`, `False`],
+              correctIndex: 1,
                 explanation: `False, and this is the core thinking move of the lesson. The existence of shallow, commercial photo-traps does not prove that all immersive art is empty, any more than the existence of bad paintings proves painting is not real art. Immersive and installation art is a genuine form with a serious decades-long history: James Turrell has worked with light and space for half a century, and Yayoi Kusama's infinity rooms grew from decades of real vision, producing embodied experiences of awe a flat picture cannot. At the same time, much heavily marketed "immersive experience" really is spectacle built mainly to be photographed and sold. The honest position holds both: the form contains genuine masterpieces, empty spectacle, and plenty that is beautiful and shallow at once, so you judge individual works rather than condemning or praising the whole category. Sliding into "it's all junk" is the cynic's error, just as "it's all profound" is the sucker's, and the lesson's whole point is to refuse both and evaluate the specific piece in front of you.`,
               },
               {

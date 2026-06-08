@@ -300,7 +300,8 @@ const FRONTIER_VOYAGER_L10 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: A claim that can explain any possible outcome — where no result could ever prove it wrong — is especially strong and scientific.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — this is backwards, and catching it is the heart of the lesson. A claim that's compatible with every possible outcome isn't strong, it's empty: it isn't actually saying anything testable about the world. Real scientific claims are falsifiable — they stick their necks out and make risky predictions that could fail. The fortune-teller who predicts "a call Tuesday from someone whose name starts with M" is behaving scientifically (checkable); the one who says "something significant will happen and a person will matter to you" can never be wrong because it fits any life — and that's exactly why it tells you nothing. A belief rigged so no evidence could ever count against it is the engine of pseudoscience and conspiracy thinking, not a sign of strength.`,
             },
             {

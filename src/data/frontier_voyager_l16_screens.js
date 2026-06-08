@@ -339,7 +339,8 @@ const FRONTIER_VOYAGER_L16 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because some people use religion to manipulate and control others, this shows that all religion is really just manipulation.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — and getting this wrong in either direction causes real harm. Sincere faith and religious communities are one thing; manipulation that wears religion as a costume is a completely different thing. Billions of people draw genuine meaning, comfort, community, and moral strength from sincere faith, and most religious communities are exactly what they appear to be. The fact that SOME people exploit religious authority to control and profit doesn't make all religion manipulation, any more than the existence of "plastic shamans" makes real Indigenous traditions fake, or scam wellness products make all health advice worthless. The existence of counterfeits makes discernment essential — it doesn't make the real thing worthless. A clear thinker holds both truths: respect for sincere faith AND clear eyes for the rare cases where the sacred is used as a weapon. The test is the fingerprints of control (isolation, fear, unquestionable authority, money), applied regardless of the religious wrapper.`,
             },
             {

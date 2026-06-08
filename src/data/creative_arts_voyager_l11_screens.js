@@ -341,7 +341,8 @@ const CREATIVE_ARTS_VOYAGER_L11 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: To be skeptical of a wellness company's claim that its "sacred energy disk" measurably heals your body, you have to believe that all sacred and religious traditions are fake or foolish.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and untangling this is the central skill of the lesson. Being skeptical of a company's specific, testable, unsupported claim — that a metal disk measurably heals your body and "raises your vibration" — does not require believing anything about whether religious or sacred traditions are true, because they're completely different kinds of things. A genuine tradition like Buddhist mandala practice makes claims about meaning, devotion, and the holy, not testable physics claims, so it's engaged with respect, not lab tests; the company's product, by contrast, makes a falsifiable physical-and-health claim with no evidence, dressed in borrowed sacred imagery, so it's rightly met with skepticism. You can hold deep respect for the sacred, refuse to judge anyone's faith, be genuinely moved standing inside a mosque or temple or cathedral, AND see clearly that a $50 "energy disk" with a fake science claim is pseudoscience using sacred decoration as marketing. In fact, the skepticism protects the tradition as much as the customer, because it refuses to let a profound, centuries-old practice be cheapened into a product with a marketing slogan. Reverence for genuine traditions and skepticism toward false commercial claims are not opposites; holding both at once is exactly the mature, respectful clarity this lesson is building.`,
             },
             {

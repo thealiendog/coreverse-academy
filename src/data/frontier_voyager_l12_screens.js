@@ -359,7 +359,8 @@ const FRONTIER_VOYAGER_L12 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If someone makes a weak, overgeneralized argument for a claim, that proves the claim itself must be false.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — and keeping this straight is essential for clear thinking. A weak argument for a claim does not make the claim false; it just means THIS particular argument doesn't establish it. Someone might overgeneralize wildly from one example to support a conclusion that, as it happens, broader evidence would actually support — their reasoning is bad even though the conclusion might be true. (The reverse is also true: a slick, well-delivered argument can support a false conclusion.) This is why a careful thinker evaluates the reasoning and the conclusion as separate questions: you note "this argument is weak and doesn't prove the point" without jumping to "therefore the opposite is true." To actually know whether the claim is true, you'd look for strong evidence — not just judge it by the quality of one person's argument for it.`,
             },
             {

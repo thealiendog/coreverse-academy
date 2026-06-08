@@ -340,7 +340,8 @@ const CREATIVE_ARTS_VOYAGER_L13 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If a creativity book is beautifully written, full of perfect tidy stories, and by a famous, charming expert, that's good reason to trust its scientific claims.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and this is the sharp lesson of the Jonah Lehrer case. Being beautifully written, full of perfect tidy stories, and by a famous, charming expert is not good reason to trust scientific claims — if anything, suspicious smoothness is a warning sign. Real science is messy and uncertain, so when every study lands as a flawless little parable with nothing ambiguous, the neatness suggests the messiness has been smoothed away or invented. Lehrer was celebrated and genuinely charming, and his 2012 bestseller "Imagine" was still pulled from shelves after a journalist found he had fabricated Bob Dylan quotes and stretched findings beyond the evidence. Fame and charm are not evidence; a beloved bestseller can be built on fabrication. And because fabrication can hide inside otherwise-real material — invented quotes sitting right beside genuine citations — you check specific claims rather than trusting an author's reputation. The honest signal of a trustworthy source is the opposite of seamless confidence: it names its limits, distinguishes solid findings from preliminary ones, and lets you verify. "It's a great story, beautifully told, by a famous expert" is simply not the same as "it's true."`,
             },
             {

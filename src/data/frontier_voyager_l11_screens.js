@@ -340,7 +340,8 @@ const FRONTIER_VOYAGER_L11 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because science hasn't explained consciousness yet, that gap is good evidence that claims like "crystals channel your consciousness" are probably true.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — this is exactly the trap the lesson is built to protect you from. "Science hasn't explained consciousness yet" and "therefore this specific magical claim is true" are completely disconnected statements. The first is an honest admission of a gap; the second is a smuggled conclusion that doesn't follow at all. A gap in our knowledge is a place where we honestly don't know — which is exactly NOT a place where any confident claim is automatically as good as any other. People exploit real mysteries by pouring unfalsifiable claims into them as if the gap itself were evidence. It isn't. The clear-thinking standards (Is it falsifiable? What would prove it wrong? Is there evidence or just confident assertion?) apply even here — in fact, especially here, because mysteries are exactly where confident sellers go fishing.`,
             },
             {

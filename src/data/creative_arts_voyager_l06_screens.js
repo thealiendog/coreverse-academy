@@ -338,7 +338,8 @@ const CREATIVE_ARTS_VOYAGER_L06 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because an AI tool company's marketing page is trying to sell you something, nothing on it can be true and you should ignore it entirely.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and the reasoning matters. A source having a motive to persuade doesn't make everything it says false; it makes the source a witness with an obvious interest, to be read carefully rather than ignored. A marketing page overstates with absolutes ("anyone," "instantly," "no talent needed," "the age of struggling is over forever") — reject that inflated frame — but buried inside the hype is usually a grain of real truth, here that the tools genuinely do let people who can't draw produce striking images quickly. The skill source evaluation teaches is not "trust everything" or "trust nothing" but extracting the checkable, true part while rejecting the spin. The same applies in reverse to the panic post: unreliable as a guide, yet the harm it points at — work used without consent — is genuine. Good evaluation weighs how much to trust which part of each source, rather than throwing whole sources away because of who made them. "Trust is not all-or-nothing" is the core of the whole skill.`,
             },
             {

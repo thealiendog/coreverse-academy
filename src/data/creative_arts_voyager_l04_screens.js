@@ -326,7 +326,8 @@ const CREATIVE_ARTS_VOYAGER_L04 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because a sound bath genuinely helps many people relax, the claim that the gong's specific frequency heals a specific organ must also be true.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False. The relaxation is real, but it does not follow that the specific frequency-heals-organ mechanism is true. Relaxation from a sound bath comes from intentional, quiet engagement and from the placebo effect — both real and measurable, and neither requiring any specific "healing frequency" claim to be true. This is the core reasoning move of the lesson: an experience can be genuinely beneficial while the scientific-sounding explanation attached to it is unsupported. Treating "it helped me relax" as proof of "this frequency repairs my cells" is exactly the error that lets pseudoscience pass itself off as established science. The honest position keeps the real benefit and rejects the unsupported mechanism — you can enjoy the sound bath and still refuse the cell-repair claim, with no contradiction.`,
             },
             {

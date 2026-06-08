@@ -327,7 +327,8 @@ const CREATIVE_ARTS_VOYAGER_L09 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If you are genuinely talented, you should be able to succeed in a creative field without needing to build relationships or persist through much rejection.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and believing it is one of the most common reasons talented people quit. Talent alone is not what builds a creative career; the career is built from deliberate practice, a real portfolio, generous relationships, and persistence through a great deal of rejection. Most real opportunities come through relationships, because people bring work to people they know, trust, and like, so a talented person who refuses to build genuine connections cuts themselves off from the main way opportunities actually travel. And rejection is not a sign of failure but the normal texture of the work — every successful creative has a hidden pile of it — so the people who make it are usually not the most talented but the ones who kept going through rejection that stopped others. A reputation as talented AND good to work with beats raw talent alone, because collaborators are chosen for trust and reliability as much as skill. The "pure talent should be enough" belief is dangerous precisely because it makes gifted people neglect the relationships and persistence that careers actually require, and then quit when talent alone doesn't magically open doors. The controllable, unglamorous things — practice, portfolio, relationships, persistence — are what turn talent into a career.`,
             },
             {

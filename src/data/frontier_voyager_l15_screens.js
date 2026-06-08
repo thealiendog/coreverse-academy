@@ -332,7 +332,8 @@ const FRONTIER_VOYAGER_L15 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If something is expensive and has a famous brand, that's good evidence it's genuinely more beautiful.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — this is exactly the confusion the lesson is built to expose. Price confused with beauty (assuming the expensive thing is the more beautiful thing) and brand confused with worth (feeling something is desirable because of the name on it) are NOT aesthetic responses at all — they're social and economic forces wearing the costume of taste. Often, with an expensive branded item, you're paying for a logo and a marketing story, not superior aesthetic quality. This doesn't mean nothing expensive is beautiful — some expensive things genuinely are. It means price and brand are simply not reliable evidence of beauty; they're separate questions. The clear-thinking move is to set aside the price, the brand, and the hype and ask honestly: do I actually find this beautiful? Reclaiming that question from the people who profit from manipulating your answer is what owning your own eye means.`,
             },
             {

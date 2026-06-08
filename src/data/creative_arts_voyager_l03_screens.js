@@ -357,7 +357,8 @@ const CREATIVE_ARTS_VOYAGER_L03 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If music helps you relax, focus, or feel better, you should accept the wellness-industry claims about specific frequencies (528 Hz, 432 Hz, chakra frequencies), because those claims are what makes the music work.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False. If music helps you, that benefit is real regardless of whether wellness-industry frequency claims are true. The placebo effect is real; intentional engagement with music does produce measurable benefits (Tier A research confirms this); your mood, focus, and relaxation genuinely improve. None of that requires the "528 Hz love frequency," "432 Hz natural tuning," or chakra-frequency claims to be true — you can listen to "528 Hz music" and benefit, but the benefit comes from your engagement and intentionality, not from a specific frequency producing a specific physical mechanism. Those frequency claims are Tier C-pseudoscience: empirical-sounding assertions without empirical basis. Why it matters practically: when claims direct you toward specific products, prices, or therapies promising specific outcomes — or steer someone away from evidence-based treatment for a serious condition — the empirical accuracy matters a lot. Engaging accurately: music genuinely helps when it helps; you don't need the pseudoscience to be true for music to genuinely improve your life.`,
             },
             {

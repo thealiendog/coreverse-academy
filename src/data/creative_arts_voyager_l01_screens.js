@@ -357,7 +357,8 @@ const CREATIVE_ARTS_VOYAGER_L01 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Conceptual art's claim that "the idea is the art" means that craft and material engagement no longer matter in contemporary art.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False. The conceptual move opened a question contemporary art keeps engaging in many directions. Most major contemporary artists work in some combination of substantial craft, conceptual investigation, and strategic institutional engagement; pure positions are unusual. Kehinde Wiley combines technical mastery of portraiture with conceptual engagement of representation politics. Marina Abramović's performance work requires extraordinary physical training. Even LeWitt's instructed wall drawings require skilled execution that affects the work. The "concept vs craft" opposition mostly fails when applied to real contemporary works — the conceptual move didn't eliminate craft, it opened the question of what relationships among craft, idea, material, and procedure are possible. Engaging contemporary art seriously means engaging that whole space rather than choosing one corner.`,
             },
             {

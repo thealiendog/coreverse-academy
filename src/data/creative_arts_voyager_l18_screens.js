@@ -326,7 +326,8 @@ const CREATIVE_ARTS_VOYAGER_L18 = {
                 id: `q9`,
                 type: `true-false`,
                 question: `True or false: Because music has always blended across cultures, every use of another culture's music is automatically fine, and appropriation concerns are just oversensitivity.`,
-                correctAnswer: false,
+                options: [`True`, `False`],
+              correctIndex: 1,
                 explanation: `False, and seeing why is the heart of the lesson, which asks you to hold two truths at once. It's true that music has always blended, that there's almost no "pure" tradition, and that most music we love (salsa, cumbia, and countless others) exists only because cultures met and mixed, so "never mix" is wrong. But that first truth does not make every use automatically fine, and using "music always blends" to wave away every concern is the lazy "anything goes" move. The second truth is just as real: extractive taking, where a powerful artist or industry profits from a less powerful culture's music while denying its people credit, payment, respect, and recognition, or treats something sacred as a throwaway "exotic" hook, is a genuine injustice. The difference between beautiful fusion and ugly theft is never the blending itself but the credit, respect, consent, and power around it. So the honest position holds both truths, celebrating respectful, credited collaboration while clearly naming extraction-under-power as wrong, and judges each case by real questions rather than collapsing into either comfortable slogan.`,
               },
               {

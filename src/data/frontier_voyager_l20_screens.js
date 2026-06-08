@@ -310,7 +310,8 @@ That's one coherent shape: think well → live well → stay humble and revisabl
               id: `q9`,
               type: `true-false`,
               question: `True or false: A good personal philosophy should never change once you've written it down.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — this misunderstands what a personal philosophy is. A good philosophy isn't a cage or a finished monument you lock in place; it's a living thing you tend and develop across your whole life. You should hold it with conviction (firm enough to actually live by) AND humility (open enough to grow). You're a developing human being who will keep learning, and the wisest people hold even their deepest commitments open to revision in the light of new evidence, new experience, and honest reflection. Changing your philosophy when you encounter good reasons to isn't a failure or a sign you got it "wrong" — it's exactly the system working as intended. In fact, refusing to ever revise your views no matter what evidence appears is closer to the unfalsifiable, manipulation-style thinking the whole band taught you to avoid. The goal at your age isn't to lock in final answers; it's to become someone who lives an examined, intentional life and keeps thinking clearly as you grow. Firm enough to live by, flexible enough to grow — that's the art of it.`,
             },
             {

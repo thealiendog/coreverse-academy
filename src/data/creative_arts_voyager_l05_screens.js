@@ -323,7 +323,8 @@ const CREATIVE_ARTS_VOYAGER_L05 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If meaning is partly made by the viewer, then every interpretation of an artwork is equally good and no reading can be called wrong.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and this is the key reasoning move of the lesson. Accepting that the viewer helps make meaning does not mean every reading is equally good. You can believe a poem speaks to you personally, in a way the poet never planned, and still recognize that a reading which ignores every actual word on the page is worse than one that honors them. The work itself sets real limits: an interpretation the words and images genuinely support is stronger than one they flatly contradict. Roland Barthes freed the reader to bring their own life to a work, but that freedom is the freedom to find real meaning the work can bear, not a license to claim a painting of a sunrise is "really about" something nowhere present in it. Freedom to interpret comes with responsibility to the actual work and, when facts are involved, to the actual record. That is exactly why "the viewer makes meaning" and "some readings are simply wrong" can both be true at once: meaning is co-made, but it is co-made with a real work that pushes back.`,
             },
             {

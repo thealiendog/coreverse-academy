@@ -340,7 +340,8 @@ const FRONTIER_VOYAGER_L13 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because Buddhism, Vedanta, and Taoism are all "Eastern," they're basically the same teaching and can be blended together into one philosophy.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — this is the "flattening" error the lesson specifically warns against. These traditions genuinely differ and even contradict each other on deep points: Buddhism leans toward "no fixed self," while Advaita Vedanta proposes one deep universal Self — close to opposite claims about the self. Taoism's focus on flowing with the natural Way is different again. Serious students argue about these differences as carefully as any Western philosophers. Treating them as one interchangeable "Eastern wisdom smoothie" both insults the traditions (by not engaging them seriously) and is just inaccurate. The honest approach studies each distinctly. (They do share a family resemblance — a suspicion of the grasping ego — but a shared theme is not the same as being one identical teaching.)`,
             },
             {

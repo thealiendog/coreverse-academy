@@ -340,7 +340,8 @@ const CREATIVE_ARTS_VOYAGER_L14 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Since synesthesia is real, an app that promises to train anyone into "full synesthesia superpowers" in 30 days must be legitimate too.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and this is the core source-evaluation move of the lesson. The fact that synesthesia is genuinely real does not make a product promising to install it legitimate — a real phenomenon can have a cloud of false claims around it, and the trick is to aim skepticism precisely at the claims, not at the phenomenon. Genuine synesthesia is involuntary, consistent, usually present from childhood, and likely genetic; you can't practice your way into automatically perceiving the letter A as red the way a real grapheme-color synesthete does. What you genuinely can do is learn deliberate color-sound associations as a creative exercise — but a chosen, learned association is not the automatic, involuntary, lifelong perception that defines real synesthesia, and the app sells the latter while at best delivering the former. It also bundles in the "synesthetes are geniuses" inflation by promising "genius-level creativity," and it has an obvious subscription motive. So you can fully accept that synesthesia is real and fascinating, honor people who genuinely have it, AND reject the app's specific promises as myth-for-sale — holding both at once is exactly the clear-eyed wonder this lesson builds.`,
             },
             {

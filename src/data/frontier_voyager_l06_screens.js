@@ -330,7 +330,8 @@ const FRONTIER_VOYAGER_L06 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: A truly smart, thoughtful person will end up with no political opinions, because every serious view has flaws.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and the distinction matters. The lesson does not say thoughtful people should have no political views; it says they should hold their views honestly. It is completely fine — even expected — to develop strong political convictions, including landing firmly on where you think the freedom-fairness balance should be struck or which vision of society you find most compelling. Having no opinions is not the mark of wisdom; it can even be a way of dodging the hard work of actually thinking a question through, or a lazy "both sides are the same" cynicism that is its own failure. What distinguishes a genuinely thoughtful person is not the absence of views but the quality of how they hold them: understanding the real arguments on more than one side, being able to state the opposing view in a form its defenders would actually recognize (steelmanning, not strawmanning), staying open to evidence that might revise their position, recognizing which genuine goods they are prioritizing and what they are trading off, and remembering that the people who disagree are overwhelmingly not evil but weighing real goods differently. So you can and probably should have political opinions, sometimes strong ones; the goal is to hold them with honesty, humility, and an accurate picture of the other side, rather than with the tribal certainty that your side is wholly good and the other wholly stupid or evil. That combination — real conviction plus genuine fairness to opposing views — is exactly what thinking clearly about politics looks like.`,
             },
             {

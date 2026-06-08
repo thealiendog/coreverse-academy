@@ -308,7 +308,8 @@ const CREATIVE_ARTS_VOYAGER_L02 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: The avant-garde is a single coherent position with a single logic for why rule-breaking matters.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False. The avant-garde tradition contains multiple distinct logics for why rule-breaking matters, each with serious defenders and real accomplishments. Five this lesson engages: (1) shock and diagnose (Dada, Cabaret Voltaire, Zurich, February 5, 1916; punk and Riot Grrrl inheritance); (2) access deeper unconscious truth (Surrealism, Breton's 1924 manifesto, Freud-influenced, automatic writing); (3) embrace new technology and speed (Futurism, Marinetti's 1909 Le Figaro manifesto, with its fascist trajectory worth naming; today's digital and AI avant-gardes); (4) break the art-object boundary entirely (Fluxus, Maciunas 1963, Ono's "Cut Piece" 1964, Paik's video art, Beuys's "social sculpture"); (5) politicize art for transformation (Situationist International 1957-1972, Debord's "Society of the Spectacle" 1967, détournement and dérive, May 1968, punk, Riot Grrrl from 1991, Pussy Riot, Tania Bruguera). Others exist too: Constructivist (Tatlin, Rodchenko, Popova, Stepanova, El Lissitzky), Afrofuturist, queer avant-garde, eco-art, Indigenous and decolonial. Treating the avant-garde as one position obscures this variation; serious engagement means recognizing which logic is operating and what's at stake in it.`,
             },
             {

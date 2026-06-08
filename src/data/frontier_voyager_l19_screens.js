@@ -339,7 +339,8 @@ const FRONTIER_VOYAGER_L19 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: This lesson teaches that thinking about life's finiteness should make us sad and frightened.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — the lesson teaches almost the opposite, and gently. While it's completely okay and natural to feel many things about this topic (sadness, fear, curiosity, peace, all of which are valid), the point of the lesson is not to make anyone sad or frightened. The surprising, beautiful idea at its heart is that gently and bravely facing the fact that life is finite can actually make life richer, more precious, and more meaningful — waking us up to treasure what we have, focus on what truly matters, and pour ourselves into the time we're given. Many of the wisest people across history found that facing mortality gently led not to despair but to gratitude, clarity, and a deepened love of life. The destination isn't darkness; it's a deeper appreciation for the astonishing fact that we get to be alive at all. And if the topic ever does bring up heavy feelings, the lesson's gentle guidance is to share them with people who love you — never to carry them alone.`,
             },
             {

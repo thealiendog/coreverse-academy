@@ -342,7 +342,8 @@ const CREATIVE_ARTS_VOYAGER_L17 = {
                 id: `q9`,
                 type: `true-false`,
                 question: `True or false: A skilled filmmaker can use a low-angle shot (which usually suggests power) on a weak or foolish character to create irony, flipping its usual meaning.`,
-                correctAnswer: true,
+                options: [`True`, `False`],
+              correctIndex: 0,
                 explanation: `True, and this is exactly why film is a flexible language with strong tendencies rather than a fixed codebook. A low angle looking up at a character does often suggest power, that tendency is real and worth knowing. But the meaning of any technique comes from how it works together with the story, the character, and every other choice, not from a fixed dictionary. So a skilled filmmaker who knows the tendency can deliberately break it: putting a heroic low angle on a weak, cowardly, or foolish character creates irony, the grand framing clashing with who the person actually is, which can be funny, sad, or pointed. The same move works elsewhere, like using warm, cozy golden light to make something feel sickly and false rather than safe. This is the heart of the lesson: great filmmakers learn the tendencies precisely so they can fulfill them or subvert them for effect, which is why "this shot ALWAYS means X" is wrong, and why reading film well means watching how each particular film uses or flips the usual meanings in context.`,
               },
               {

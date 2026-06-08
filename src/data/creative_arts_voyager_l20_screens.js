@@ -339,7 +339,8 @@ const CREATIVE_ARTS_VOYAGER_L20 = {
                 id: `q9`,
                 type: `true-false`,
                 question: `True or false: Your portfolio should only ever contain your most technically impressive, polished pieces, and you should wait to build one until your work is good enough to be worth gathering.`,
-                correctAnswer: false,
+                options: [`True`, `False`],
+              correctIndex: 1,
                 explanation: `False on both counts, and seeing why ties the whole lesson together. A portfolio isn't a trophy case of only your most impressive, polished pieces; it's more like a self-portrait made of your work, chosen to show who you are as a creator, so the guiding question for each piece is "does this help show who I am?" not "is this my most impressive thing?" That means a rough piece capturing a real risk, a genuine obsession, or a turning point can absolutely belong, sometimes telling a truer, more compelling story than flawless-but-empty polish, because people who matter often find honest growth more interesting than perfection. And you should not wait until your work is "good enough," because that moment never arrives, every creator can always imagine being better, so waiting to be impressive usually means waiting forever. A portfolio is a living thing, never finished, meant to change as you do, and you build it piece by piece over years by starting now with whatever you have. A real, modest, growing portfolio beats an imaginary perfect one every single time, which is why beginning today, with imperfect work, is not the lesser path but the only path anyone has ever walked.`,
               },
               {

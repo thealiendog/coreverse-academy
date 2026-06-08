@@ -341,7 +341,8 @@ const CREATIVE_ARTS_VOYAGER_L12 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: To be skeptical of a "sacred geometry energy pyramid" that claims to heal your body, you have to dismiss the real traditions and real mathematics that use geometry.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and this is the central skill of the lesson. Being skeptical of a product's specific, testable, unsupported claim — that a pyramid shape concentrates energy and heals your body — does not require dismissing anything real. Real mathematics genuinely shaped real architecture (Vitruvius, Palladio, Gothic vaults, Islamic pattern), and many genuine traditions treat geometry as sacred in a meaning sense that deserves respect, not lab tests. The energy-pyramid product is different in kind: it makes a falsifiable physical-and-health claim with no evidence, borrowing the prestige of real math and real faith to sell an object. You can hold deep respect for the geometry in a mosque, real wonder at the math of a Gothic cathedral, AND laugh off a website selling "sacred geometry energy pyramids," with no contradiction. In fact the skepticism protects both the real traditions (from being cheapened into a product) and the customer (from fake physics). Respect for genuine geometry and skepticism toward mystical marketing are not opposites; holding both at once is exactly the clear-eyed wonder this lesson builds.`,
             },
             {

@@ -318,7 +318,8 @@ const CREATIVE_ARTS_VOYAGER_L10 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: If a piece of political art is beautiful and moves you deeply, that is good evidence that its message is true and trustworthy.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and this is one of the most protective ideas in the whole lesson. Being moved by a work is not evidence that the work is true or its message trustworthy, because beauty and emotional power are exactly the tools the most dangerous propaganda uses. The most effective propaganda is gorgeous and emotionally overwhelming precisely because beauty lowers your guard: a clumsy, ugly lie is easy to reject, but a beautiful one slips past your thinking and goes straight to your feelings. Twentieth-century tyrannies produced technically brilliant, deeply moving films, posters, and music whose craft is exactly what made them dangerous. Protest art that opens minds and propaganda that closes them use identical mechanisms — emotion before argument, powerful symbols, the bonding force of shared experience — so the feeling a work produces in you cannot tell them apart. What can help tell them apart are questions about purpose and effect: does the work invite you to think or pressure you to stop, show opponents as full humans or as monsters, admit complexity or insist on pure good versus pure evil, ask you to feel so you understand or so you obey? The whole point of learning the mechanisms is to feel a work's power and still keep your own ability to judge it — to be moved with your eyes open rather than trusting a message just because it stirred you.`,
             },
             {

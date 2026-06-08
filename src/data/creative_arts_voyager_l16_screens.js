@@ -332,7 +332,8 @@ const CREATIVE_ARTS_VOYAGER_L16 = {
                 id: `q9`,
                 type: `true-false`,
                 question: `True or false: If you call something "performance art," that label by itself makes it genuine art, even if there's no real idea behind it and it exists only to shock people for attention.`,
-                correctAnswer: false,
+                options: [`True`, `False`],
+              correctIndex: 1,
                 explanation: `False, and this is one of the central points of the lesson. The label "performance art" does no work by itself, the meaning has to. Genuine performance art is usually about something (time, presence, the body, identity, oppression, human connection), and the dramatic or unusual action serves that idea, so the work would still mean something to a thoughtful person who understood its context. An empty stunt is shock for its own sake: it grabs attention, but when you ask "what is this actually about?" there is no real answer beyond "look at me," and it only works as a burst of shock that evaporates instantly. Calling a stunt "performance art" to seem deep is exactly the move the lesson warns against, because slapping an art label on attention-seeking does not turn it into art. The honest test is to look past the label and ask whether there is a real idea underneath and whether the difficulty serves meaning, the same depth-versus-spectacle question applied to actions rather than objects.`,
               },
               {

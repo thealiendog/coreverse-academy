@@ -374,7 +374,8 @@ const FRONTIER_VOYAGER_L17 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because some people sell fraudulent "anti-aging" products, all scientific research into aging is a scam.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — this is the "collapse all three buckets" error. The existence of grift (fraudulent supplements, fake immortality schemes) does NOT make real, careful, evidence-based aging research a scam, any more than "plastic shaman" grifters make real Indigenous traditions fake, or fake wellness cures make all medicine worthless. There are three distinct buckets: real evidence-based science (modest, peer-reviewed, honest about uncertainty), honest speculation about distant possibilities, and outright grift (big promises, thin evidence, borrowed prestige, fear, a price tag). The skill is sorting claims into the right bucket — not blanket cynicism that dismisses everything, and not gullible acceptance that believes everything. When you see a specific product with the grift tells, steer clear of THAT product — but keep the door open for genuine science, which is real and worth taking seriously. Discernment, not dismissal, is what protects both your wallet and your ability to welcome real progress.`,
             },
             {

@@ -303,7 +303,8 @@ The honest verdict: the argument is genuinely clever and worth following — it 
               id: `q9`,
               type: `true-false`,
               question: `True or false: Because the simulation hypothesis can't be proven wrong, that's actually a point in its favor as a strong, reliable claim.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — and this gets the entire lesson backwards, in a way that's worth understanding clearly. Being impossible to prove wrong is NOT a strength; it's exactly what makes a claim unable to be knowledge. A claim "sticks its neck out" by saying what evidence would count against it — "if I'm right you'll see X, and if you see Y instead, I'm wrong" — and that vulnerability to being disproven is precisely what lets us test it and trust it when it survives testing. An unfalsifiable claim refuses to stick its neck out: no possible evidence could ever count against it, so it can never be tested, confirmed, or trusted as knowledge, even if it happens to be true. This is the dangerous intuition that manipulators exploit: they present "you can never disprove it!" as if it made their claim MORE solid, when it actually places the claim forever outside the reach of evidence. The same move powers conspiracy theories ("the lack of proof proves the cover-up"), pseudoscience, and scams. Recognizing that unfalsifiability is a red flag, not a badge of strength, is one of the sharpest protective tools you can carry.`,
             },
             {

@@ -343,7 +343,8 @@ const FRONTIER_VOYAGER_L14 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: Treating respect for a tradition as requiring you to believe every claim it makes is the best way to honor it.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False — respect is not credulity, and treating it as such is actually a subtle form of disrespect. The lesson identifies TWO opposite errors that share a hidden disrespect: the colonizer's arrogant dismissal (sneering at it as superstition) and the tourist's gullible romanticization (accepting every claim uncritically). Both fail to engage the knowledge AS knowledge — neither bothers to take it seriously enough to examine it. Genuine respect means engaging a tradition seriously enough to tell its hard-won accurate knowledge from the claims that don't hold up — the same standard you'd apply to any body of knowledge, including Western science (which has held plenty of confident errors too). The people within these traditions, who stake real lives on them, generally understand this far better than an outsider who romanticizes from a distance. Honoring something real means seeing it clearly, not wrapping it in a flattering fantasy.`,
             },
             {

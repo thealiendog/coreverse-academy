@@ -338,7 +338,8 @@ const CREATIVE_ARTS_VOYAGER_L19 = {
                 id: `q9`,
                 type: `true-false`,
                 question: `True or false: Because a manifesto is "yours to write," it doesn't really matter what values you put in it — any set of values is just as good as any other.`,
-                correctAnswer: false,
+                options: [`True`, `False`],
+              correctIndex: 1,
                 explanation: `False, and untangling this is the heart of the lesson. It's true that your manifesto is genuinely yours to write, no one can hand you a finished one, and the lesson refuses to tell you what to value. But "yours to choose" does not mean "all choices are equally good," which would throw away a whole band of careful thinking. Some values genuinely hold up better than others when you reason them through honestly, just as some art claims survived scrutiny across the band while others collapsed. What makes a value worth keeping is testable: you can defend it with honest reasons, you'd be willing to have it done to you, it doesn't depend on hiding or lying, and you could still respect it after temptation passes. "I give credit because I'd want credit for my own work" holds up, it's fair, defensible, and reversible. "I take credit whenever I can get away with it" doesn't, not because a lesson forbids it but because you can't honestly defend it, you'd be furious if it were done to you, and it only works if you don't get caught. So you build a manifesto by honest reasoning, not whim, which is the grown-up version of freedom: chosen principles you can live by, not "anything goes, nothing matters."`,
               },
               {

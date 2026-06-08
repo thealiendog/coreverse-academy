@@ -337,7 +337,8 @@ const CREATIVE_ARTS_VOYAGER_L08 = {
               id: `q9`,
               type: `true-false`,
               question: `True or false: As long as you write "no copyright infringement intended" and credit the creator, you can legally use any song, image, or clip you want.`,
-              correctAnswer: false,
+              options: [`True`, `False`],
+              correctIndex: 1,
               explanation: `False, and this is one of the most widespread myths there is. Crediting the creator and writing "no copyright infringement intended" are common online, but neither gives you permission to use someone's work; using copyrighted work without permission is still using it without permission, credit or not, and that phrase has no legal power at all. The myth feels true because crediting is polite and respectful and people assume being fair automatically makes something legal — but, as this lesson stressed, legal and fair are different things. What actually lets you use someone else's work is one of a few real things: the work is in the public domain, the creator released it under a license like Creative Commons that permits your use, your use genuinely qualifies as fair use (transformative, limited, not harming their market), or you asked and got permission. Credit is something you should do as a matter of honesty and respect, and it matters, but it's not a magic key that turns unauthorized use into authorized use. Believing this myth is exactly how well-meaning people accidentally cross real lines.`,
             },
             {
