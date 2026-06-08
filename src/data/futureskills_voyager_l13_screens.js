@@ -115,7 +115,7 @@ const FUTURESKILLS_VOYAGER_L13 = {
           imageCaption: `Delays: cause and effect separated in time. Climate, childhood nutrition, education, habits. Most underestimated pattern.`,
           vocab: [
             {
-              word: `delay (in systems)`,
+              word: `delay`,
               definition: `Time lag between cause and effect in a system. Greenhouse gas emissions today produce climate effects decades later; childhood nutrition affects adult health; daily habits produce visible change only over years. Most underestimated systems pattern because human intuition expects immediate cause-and-effect. Creates oscillation when combined with feedback loops.`,
               audioPrompt: `A delay in a system is the time lag between cause and effect, {name}. Greenhouse gas emissions today produce climate effects decades later. Childhood nutrition affects adult health 40 years on. Daily exercise habits produce visible change only over months and years. Compound interest looks like nothing in the first decade and dominates in later decades. Delays are one of the most consistently underestimated patterns in systems. Human intuition strongly expects immediate cause-and-effect. When causes and effects are separated by months or years, we usually fail to connect them. This makes systems with delays hard to manage. By the time you observe the effect you want to change, the cause is far in the past. Delays also create instability when combined with feedback loops, producing oscillation in markets, populations, and other dynamic systems.`,
             },

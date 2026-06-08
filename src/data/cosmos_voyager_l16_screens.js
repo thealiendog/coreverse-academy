@@ -94,7 +94,7 @@ const COSMOS_VOYAGER_L16 = {
           imageCaption: `Astrology as empirical science fails standardized tests. Its cultural/personal value is a separate question.`,
           vocab: [
             {
-              word: `Carlson 1985 study`,
+              word: `Carlson`,
               definition: `Influential double-blind test of astrology published in Nature by physicist Shawn Carlson. Designed with input from astrologers to ensure fairness. Found astrologers could not match natal charts to personality profiles at better than chance rates. Among the most rigorous tests of astrology ever conducted.`,
               audioPrompt: `The Carlson 1985 study was an influential double-blind test of astrology published in the journal Nature, {name}. Conducted by physicist Shawn Carlson. He worked with prominent astrologers to design the test, ensuring the methodology was fair to astrology's claims. The astrologers themselves agreed in advance that this would be a fair evaluation. Subjects provided their birth data. Astrologers used the resulting natal charts to identify which of three California Psychological Inventory personality profiles belonged to each subject. The result: astrologers performed at chance level. They did not match charts to personalities better than random guessing would predict. The study is one of the most rigorous tests of astrology ever conducted, and similar results have been replicated many times since. It remains a foundational reference in the scientific evaluation of astrology.`,
             },
@@ -118,7 +118,7 @@ const COSMOS_VOYAGER_L16 = {
           imageCaption: `Why astrology persists: Barnum effect, confirmation bias, real cultural value, human pattern-seeking.`,
           vocab: [
             {
-              word: `Barnum (Forer) effect`,
+              word: `Barnum effect`,
               definition: `Tendency for people to accept vague, general descriptions as personally accurate when told the descriptions are specifically about them. Demonstrated by Bertram Forer in 1948. Foundation of horoscopes, cold readings, and many personality tests.`,
               audioPrompt: `The Barnum effect, also called the Forer effect, is the tendency for people to accept vague, general descriptions as personally accurate when told the descriptions are specifically about them, {name}. Psychologist Bertram Forer demonstrated this in 1948 with a famous experiment. He gave students "personalized" personality assessments and asked them to rate accuracy. Most rated the descriptions as highly accurate. But Forer had given every student the same generic description, cobbled together from astrological columns. The descriptions fit because they were vague enough to apply to nearly everyone. "You have unrealized potential you haven't fully expressed." This is true of most people. The Barnum effect is the foundation of how horoscopes, cold readings, and many "personality tests" produce strong feelings of accuracy. Recognizing it protects you from being convinced by content that's actually applicable to almost anyone.`,
             },

@@ -150,7 +150,7 @@ const SCIENCE_VOYAGER_L15 = {
             { word: `echo`,
               definition: `A reflected sound wave that returns to you after bouncing off a distant surface, like a canyon wall, arriving slightly later than the original sound.`,
               audioPrompt: `An echo, {name}, is a sound wave that bounces off a distant surface, like a canyon wall, and travels back to your ears. Because it takes time to make the round trip, you hear it slightly after your original shout, a reflection of sound.` },
-            { word: `light versus sound speed`,
+            { word: `sound speed`,
               definition: `Light travels vastly faster than sound, which is why you see lightning's flash almost instantly but hear its thunder seconds later.`,
               audioPrompt: `Light travels vastly faster than sound, {name}, almost instantly compared to sound's slower journey through air. That's why you see a lightning flash right away but hear the thunder seconds later, and why counting those seconds tells you how far the storm is.` },
           ],

@@ -114,7 +114,7 @@ const MONEYBUSINESS_VOYAGER_L18 = {
           imageCaption: `Income is one factor among several. Relationships, autonomy, engaging work, health, meaning.`,
           vocab: [
             {
-              word: `Harvard Study of Adult Development`,
+              word: `adult development`,
               definition: `The longest-running study of adult life (started 1938, ongoing). Has followed participants for 80+ years. Consistently finds that quality of relationships predicts late-life health and happiness better than wealth or cholesterol.`,
               audioPrompt: `The Harvard Study of Adult Development is the longest-running study of adult life ever conducted, {name}. Started in 1938 and still ongoing, it has followed original participants for over 80 years. Its findings are among the most robust in well-being research because of the unusual time scale. The study consistently finds that the quality of a person's relationships at age 50 predicts their physical and mental health at age 80 better than cholesterol levels, blood pressure, or wealth. Loneliness has been linked to mortality risk comparable to smoking. The study provides some of the strongest evidence available that relationships matter enormously for long-term well-being.`,
             },

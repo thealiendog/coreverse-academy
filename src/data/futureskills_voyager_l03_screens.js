@@ -47,7 +47,7 @@ const FUTURESKILLS_VOYAGER_L03 = {
           imageCaption: `Learning science: active recall, spaced repetition, interleaving. Solid research, frequently ignored.`,
           vocab: [
             {
-              word: `testing effect (active recall)`,
+              word: `testing effect`,
               definition: `Phenomenon established in cognitive psychology: actively retrieving information from memory produces much better long-term retention than passively re-reading it. Foundation of practices like flashcards, practice tests, and self-explanation. Documented in many studies including Roediger and Karpicke (2006).`,
               audioPrompt: `The testing effect, also known as active recall, is a phenomenon established in cognitive psychology, {name}. Actively retrieving information from memory produces much better long-term retention than passively re-reading it. The classic study by Henry Roediger and Jeffrey Karpicke in 2006 showed that students who studied material once and then took practice tests learned much more than students who studied the same material multiple times without testing. The testing effect is the foundation of practices like flashcards, practice tests, and explaining concepts in your own words. The intuitive student approach—re-reading notes and highlighting—feels productive but actually produces weak learning because the recognition of familiar material feels like understanding without actually being understanding. Active recall is harder and feels less productive in the moment. It produces dramatically better long-term results.`,
             },
@@ -116,7 +116,7 @@ const FUTURESKILLS_VOYAGER_L03 = {
           imageCaption: `Three real-pattern cases. Three different domains. Same underlying principles win.`,
           vocab: [
             {
-              word: `transfer (in learning)`,
+              word: `transfer`,
               definition: `Ability to apply learning from one context to a different context. Often the actual goal of education (you study math problems in school so you can solve problems in real situations). Transfer is hard; it requires understanding underlying principles rather than just procedures, and is supported by interleaving and elaboration.`,
               audioPrompt: `Transfer in learning is the ability to apply learning from one context to a different context, {name}. Often the actual goal of education. You study math problems in school so you can solve problems in real situations. You learn to read so you can read books that didn't exist when you learned. Transfer is genuinely hard. It requires understanding underlying principles rather than just memorizing procedures. Research has shown that transfer is supported by interleaving (mixing problem types during practice) because it forces you to recognize patterns across contexts. Elaboration (connecting new information to existing knowledge) also supports transfer. Blocking, by contrast, often produces "performance" within a single context that doesn't transfer outside. The hardest part of learning is usually not the initial acquisition; it's transfer to new situations.`,
             },

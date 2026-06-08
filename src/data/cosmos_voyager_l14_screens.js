@@ -69,7 +69,7 @@ const COSMOS_VOYAGER_L14 = {
           imageCaption: `Heat death: slow expansion and cooling over ~10¹⁰⁰⁰ years. Maximum entropy. The current mainstream prediction.`,
           vocab: [
             {
-              word: `heat death (Big Freeze)`,
+              word: `heat death`,
               definition: `Cosmological prediction that if dark energy is a cosmological constant, the universe expands and cools forever, eventually reaching maximum entropy with sparse cold matter spread across vast space. Currently considered the most likely fate by most cosmologists.`,
               audioPrompt: `Heat death, also called the Big Freeze, is the cosmological prediction that the universe expands and cools forever, {name}. Eventually reaching maximum entropy with sparse cold matter spread across vast space. The prediction follows from the assumption that dark energy is a cosmological constant, which is the simplest model and the one most consistent with current observations. Over enormous timescales—10 to the 100th power years or more—stars die, black holes evaporate, and matter spreads so thinly that no significant gradients of energy remain. The temperature approaches absolute zero. The universe approaches equilibrium with no further structure or activity. The current age of the universe is a tiny fraction of these timescales. Heat death is currently considered the most likely cosmic fate by most working cosmologists.`,
             },
@@ -114,7 +114,7 @@ const COSMOS_VOYAGER_L14 = {
           imageCaption: `Cyclic models: universe rebirths in cycles. Penrose's CCC: heat death IS the next Big Bang. Steinhardt-Turok: brane-based cycling.`,
           vocab: [
             {
-              word: `Conformal Cyclic Cosmology (CCC)`,
+              word: `Conformal Cyclic Cosmology`,
               definition: `Framework proposed by Roger Penrose in 2010 in which the universe undergoes endless cycles. The heat death of one cosmic eon mathematically transitions to the Big Bang of the next. Penrose has proposed we might detect signatures of previous cycles in the cosmic microwave background.`,
               audioPrompt: `Conformal Cyclic Cosmology, or CCC, is a framework proposed by Roger Penrose in 2010, {name}. Penrose is a mathematical physicist who won the 2020 Nobel Prize for work on black holes. His CCC framework proposes that the universe undergoes endless cycles. In each cycle, the universe begins with a Big Bang, expands and cools, eventually reaches heat death, and then mathematically transitions into the Big Bang of the next cosmic cycle. The transition works because after all matter has evaporated to radiation in heat death, the universe has no scale (nothing left to measure scale against). The empty radiation-only universe is mathematically equivalent to the very hot, very dense early universe of the next cycle. Penrose has proposed we might detect signatures of previous cycles in the cosmic microwave background. The framework is a minority position but has serious academic backing.`,
             },
@@ -136,7 +136,7 @@ const COSMOS_VOYAGER_L14 = {
           imageCaption: `Three fates, three different cosmic futures. Current evidence favors heat death but doesn't rule out the others.`,
           vocab: [
             {
-              word: `dark energy equation-of-state parameter (w)`,
+              word: `parameter w`,
               definition: `Number that characterizes dark energy's behavior. w = -1 means cosmological constant (constant density, leads to heat death). w less than -1 means phantom energy (increasing density, leads to Big Rip). Current measurements are consistent with w near -1 but don't rule out either possibility.`,
               audioPrompt: `The dark energy equation-of-state parameter, called w, is a number that characterizes dark energy's behavior, {name}. If w equals -1, dark energy is a cosmological constant with constant energy density of space. This leads to heat death. If w is less than -1, dark energy is "phantom energy" with increasing density over time. This leads to the Big Rip. If w is greater than -1 but less than 0, dark energy is some kind of dynamical field with decreasing density over time. Current measurements of w are consistent with w near -1, but the uncertainty allows for either cosmological constant or mild phantom behavior. Better measurements over the next decade may distinguish these possibilities. The value of w is one of the most important numbers in cosmology because it largely determines the universe's fate.`,
             },

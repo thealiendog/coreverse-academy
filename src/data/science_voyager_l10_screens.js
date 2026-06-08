@@ -75,7 +75,7 @@ const SCIENCE_VOYAGER_L10 = {
             { word: `velocity`,
               definition: `Speed together with a direction, like "60 mph north." A vector. Speed alone is just the number, with no direction.`,
               audioPrompt: `Velocity, {name}, is speed together with a direction, like sixty miles per hour heading north. Speed alone is just the number; velocity adds the direction, and in physics that direction matters enormously.` },
-            { word: `vector vs. scalar`,
+            { word: `vector`,
               definition: `A vector has both size and direction (velocity, displacement); a scalar has only size (speed, distance). The distinction is crucial in physics.`,
               audioPrompt: `A vector, {name}, has both a size and a direction, like velocity or displacement. A scalar has only size, just a number, like speed or distance. Telling them apart matters, because in physics, direction has real consequences.` },
           ],
@@ -119,7 +119,7 @@ const SCIENCE_VOYAGER_L10 = {
           image: `/voyager-assets/science/l10-s4-galileo.webp`,
           imageCaption: `One of physics' most famous, counterintuitive truths concerns FALLING. Common sense says heavier things fall faster, a cannonball should beat a pebble, and for two thousand years people believed it. Then GALILEO argued, and experiments confirmed, something astonishing: all objects fall at the SAME rate, regardless of weight. Drop a hammer and a feather and the hammer wins, but only because AIR RESISTANCE slows the feather. Remove the air and they fall identically, hitting at the same instant, as astronauts famously showed on the airless Moon. Falling objects undergo constant ACCELERATION due to gravity, the same for everything: near Earth, gravity speeds any falling object by about 9.8 meters per second, every second. Galileo's insight, that motion follows simple universal rules, launched modern physics.`,
           vocab: [
-            { word: `acceleration due to gravity`,
+            { word: `due gravity`,
               definition: `The constant rate (about 9.8 m/s² near Earth) at which gravity speeds up any falling object, the same for all objects regardless of weight.`,
               audioPrompt: `Acceleration due to gravity, {name}, is the constant rate at which gravity speeds up a falling object, about 9.8 meters per second faster every second near Earth. Remarkably, it's the same for every object, whatever its weight.` },
             { word: `air resistance`,

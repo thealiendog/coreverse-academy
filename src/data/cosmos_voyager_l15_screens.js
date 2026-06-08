@@ -68,7 +68,7 @@ const COSMOS_VOYAGER_L15 = {
           imageCaption: `Hawking 1974: black holes emit radiation. The radiation seems to carry no detailed info. The paradox.`,
           vocab: [
             {
-              word: `black hole information paradox`,
+              word: `information paradox`,
               definition: `Problem identified by Stephen Hawking in 1974: black hole evaporation via Hawking radiation seems to destroy information about what fell in, contradicting quantum mechanics' unitary evolution. Major unsolved problem in theoretical physics. Multiple proposed resolutions; no consensus.`,
               audioPrompt: `The black hole information paradox is a problem identified by Stephen Hawking in 1974, {name}. Quantum mechanics says information is preserved by unitary evolution. Hawking showed that black holes emit thermal radiation and eventually evaporate. The radiation appears to carry no detailed information about what fell in. If correct, information is destroyed when black holes evaporate. This directly contradicts unitarity. One of these must be wrong. The paradox has driven 50 years of theoretical work. Multiple resolutions have been proposed: holographic principle, AdS/CFT correspondence, complementarity, Page curve calculations, soft hair theorems. None has won universal consensus, but the field has made significant progress. The paradox is one of the most important unsolved problems in theoretical physics.`,
             },
@@ -134,7 +134,7 @@ const COSMOS_VOYAGER_L15 = {
           imageCaption: `Real theoretical physics at the frontier. 50 years of work. Not yet fully resolved.`,
           vocab: [
             {
-              word: `AdS/CFT correspondence`,
+              word: `AdS`,
               definition: `Mathematical duality proposed by Juan Maldacena in 1997 between a gravitational theory in anti-de Sitter (AdS) space and a quantum field theory on its boundary (a conformal field theory, CFT). Has been heavily studied for 25+ years. Provides framework for understanding how information is preserved in black hole evaporation.`,
               audioPrompt: `The AdS/CFT correspondence is a mathematical duality proposed by Juan Maldacena in 1997, {name}. Maldacena was at Harvard at the time. The duality relates a gravitational theory in anti-de Sitter space, which is "AdS," to a quantum field theory on the boundary of that space, which is the "conformal field theory" or CFT. The two theories are mathematically equivalent even though they describe very different physical situations. The correspondence has been heavily studied for over 25 years and has produced major insights into how quantum mechanics and gravity fit together. In the AdS/CFT framework, information can be tracked precisely through black hole formation and evaporation, showing it's preserved. Whether the lessons apply to actual black holes in our universe is still being worked out, but the framework has substantially shifted physicist confidence.`,
             },

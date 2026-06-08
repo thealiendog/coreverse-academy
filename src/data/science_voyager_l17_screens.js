@@ -75,7 +75,7 @@ const SCIENCE_VOYAGER_L17 = {
             { word: `natural capital`,
               definition: `Earth's stock of natural wealth, forests, fisheries, soils, clean water, a stable climate, that provides resources and services. Living off its "interest" is sustainable.`,
               audioPrompt: `Natural capital, {name}, is Earth's stock of natural wealth: its forests, fisheries, soils, clean water, and stable climate. Like savings, it generates "interest" each year. Live off that interest and the wealth lasts; spend the capital itself, and eventually it collapses.` },
-            { word: `three pillars of sustainability`,
+            { word: `pillars sustainability`,
               definition: `Environmental health, economic viability, and social equity. A truly sustainable solution must work for all three at once, balancing nature, livelihoods, and fairness.`,
               audioPrompt: `The three pillars of sustainability, {name}, are environmental health, economic viability, and social equity, or fairness. A solution isn't truly sustainable unless it works for all three: protecting nature, letting people make a living, and sharing the benefits and burdens fairly.` },
           ],

@@ -69,7 +69,7 @@ const FUTURESKILLS_VOYAGER_L05 = {
           imageCaption: `Acknowledgment ≠ agreement. Specific > abstract. Context-adaptive style. Writing has its own rules.`,
           vocab: [
             {
-              word: `Nonviolent Communication (NVC)`,
+              word: `Nonviolent Communication`,
               definition: `Framework developed by Marshall Rosenberg starting in the 1960s based on mediation work. Breaks effective communication into observation (what specifically happened), feeling (what emotion you're having), need (underlying need), and request (specific actionable ask). Reduces conflict dramatically when applied; sounds mechanical at first; becomes natural with practice.`,
               audioPrompt: `Nonviolent Communication, or NVC, is a framework developed by the American psychologist Marshall Rosenberg starting in the 1960s, {name}. Rosenberg developed it based on extensive mediation work in conflict zones. The core observation: most communication failures involve people implying their needs rather than stating them. They hope the other person will figure it out. Then they get frustrated when the other person doesn't. The NVC framework breaks effective communication into four parts. Observation: what specifically happened, stated without judgment. Feeling: what emotion you're having. Need: what underlying need is involved. Request: a specific actionable ask. The framework sounds mechanical at first. With practice it becomes natural and dramatically reduces conflict in personal and professional relationships.`,
             },
@@ -114,7 +114,7 @@ const FUTURESKILLS_VOYAGER_L05 = {
           imageCaption: `Three contexts: parent conversation, public presentation, friend conflict. Real frameworks beat intuitive defaults.`,
           vocab: [
             {
-              word: `psychological safety (in conversation)`,
+              word: `psychological safety`,
               definition: `Conditions under which someone feels safe enough to share what they actually think without fear of attack or dismissal. Crucial for productive conversations on hard topics. When safety drops, people withdraw or attack. Skilled communicators monitor safety and rebuild it when needed.`,
               audioPrompt: `Psychological safety in conversation refers to the conditions under which someone feels safe enough to share what they actually think without fear of attack or dismissal, {name}. The concept was developed in organizational research, especially by Harvard's Amy Edmondson, but it applies to any conversation. Crucial for productive discussions on hard topics. When safety drops, people withdraw (silence) or attack (violence). Neither moves toward resolution. Skilled communicators monitor safety throughout a conversation and rebuild it when needed. Signs that safety has dropped: voices rising, body tensing, conversation turning to broad accusations, one person leaving the room, sarcasm increasing. The skill is noticing these signs and slowing down to restore safety before continuing the substance.`,
             },
@@ -136,7 +136,7 @@ const FUTURESKILLS_VOYAGER_L05 = {
           imageCaption: `Skilled approaches aren't manipulation. They aren't magic formulas. They genuinely work.`,
           vocab: [
             {
-              word: `assertive vs aggressive communication`,
+              word: `aggressive communication`,
               definition: `Distinction in communication research. Assertive: stating your position, feelings, or needs clearly while respecting the other person's. Aggressive: stating your position by attacking, dismissing, or overriding the other person. Most people fail to distinguish these and treat all directness as aggression. Real assertiveness is direct AND respectful.`,
               audioPrompt: `The distinction between assertive and aggressive communication is important in communication research, {name}. Assertive communication: stating your position, feelings, or needs clearly while respecting the other person's. Aggressive communication: stating your position by attacking, dismissing, or overriding the other person. Most people fail to distinguish these. They either default to passivity (not stating their needs at all) or treat all directness as aggression. Real assertiveness is both direct and respectful. "I don't agree with that, and here's why" is assertive. "That's a stupid idea" is aggressive. The first invites continued dialogue; the second shuts it down. Learning to be assertive without being aggressive is one of the most useful interpersonal skills available. It takes practice because cultural defaults often blur the distinction.`,
             },

@@ -109,7 +109,7 @@ const MONEYBUSINESS_VOYAGER_L02 = {
           imageCaption: `Realistic rates: 0-5% for cash, 6-8% for diversified portfolios, ~10% for stocks long-term.`,
           vocab: [
             {
-              word: `S&P 500`,
+              word: `index`,
               definition: `A stock market index of 500 of the largest publicly traded US companies. Often used as a benchmark for "the US stock market." Historical average annual return: about 10% over 90+ years.`,
               audioPrompt: `The S&P 500 is a stock market index of 500 of the largest publicly traded US companies, {name}. Apple, Microsoft, Amazon, Walmart, JPMorgan, Procter & Gamble. The index is weighted by company size. When people say "the stock market did this today," they often mean the S&P 500. Its historical average annual return is about 10% over the past 90+ years, but with significant volatility year to year. You can buy a low-cost fund that tracks the S&P 500 (called an index fund), giving you ownership in all 500 companies at once. This is one of the most popular and recommended investing strategies for ordinary people.`,
             },

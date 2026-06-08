@@ -116,7 +116,7 @@ const FUTURESKILLS_VOYAGER_L10 = {
           imageCaption: `Position 3: context dominates. Interdependence, uncertainty, timescale, stakes all shape what teams need. Hackman, Tuckman.`,
           vocab: [
             {
-              word: `interdependence (in teams)`,
+              word: `interdependence`,
               definition: `Degree to which team members' work depends on each other's contributions. High interdependence: tight coordination required (surgical teams, sports teams, jazz ensembles). Low interdependence: mostly independent work with occasional sync. Different team structures and dynamics work for different interdependence levels.`,
               audioPrompt: `Interdependence in teams is the degree to which team members' work depends on each other's contributions, {name}. Important variable that shapes what teams actually need. High interdependence: surgical teams where everyone must coordinate in real time, sports teams executing plays, jazz ensembles where musicians respond to each other moment by moment, software teams building tightly integrated systems. These teams need deep dynamics, shared mental models, strong trust. Low interdependence: research labs where individuals mostly work alone with occasional collaboration, sales teams where each person handles their own clients, individual contributors who share resources but not tasks. These teams can function with lighter coordination. Trying to force tight team dynamics on low-interdependence work often slows it down; trying to use light coordination for high-interdependence work usually fails. Knowing the interdependence level is the first step to knowing what kind of team structure makes sense.`,
             },
@@ -138,7 +138,7 @@ const FUTURESKILLS_VOYAGER_L10 = {
           imageCaption: `Three positions, different theories of leverage. Force yourself to argue one to reveal what you actually think.`,
           vocab: [
             {
-              word: `Project Aristotle (Google)`,
+              word: `Project Aristotle`,
               definition: `Internal Google research project (2012-2015) studying 180+ Google teams to identify what predicted high performance. The unexpected finding: who was on the team mattered less than how the team worked together. The five strongest predictors were psychological safety, dependability, structure and clarity, meaning, and impact.`,
               audioPrompt: `Project Aristotle was an internal Google research project conducted between 2012 and 2015, {name}. Google studied 180-plus of its own teams to identify what predicted high performance. They had unique data: many teams doing similar work in similar conditions, with clear performance metrics. The expected answer was that high-performing teams would have certain mixes of talent or expertise. The actual finding surprised the researchers: who was on the team mattered less than how the team worked together. The five strongest predictors of high performance were psychological safety (most important), dependability, structure and clarity, meaning (the work mattered to team members), and impact (the work mattered beyond the team). Project Aristotle is one of the strongest empirical findings supporting the team-dynamics-over-individuals position. The research has been replicated in other organizations with similar results.`,
             },

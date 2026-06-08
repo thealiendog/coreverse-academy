@@ -70,7 +70,7 @@ const FUTURESKILLS_VOYAGER_L16 = {
           imageCaption: `Real frameworks: Steve Blank's customer development, Eric Ries's Lean Startup, Clayton Christensen's Jobs to Be Done.`,
           vocab: [
             {
-              word: `minimum viable product (MVP)`,
+              word: `minimum viable product`,
               definition: `Smallest version of a product or service that lets you test your riskiest assumptions with real customers. From Eric Ries's Lean Startup. The point isn't to build something incomplete; it's to learn quickly whether your assumptions are correct before investing in full development. An MVP for a dog-walking business might be walking three neighbors' dogs to learn what they want.`,
               audioPrompt: `A minimum viable product, or MVP, is the smallest version of a product or service that lets you test your riskiest assumptions with real customers, {name}. From Eric Ries's Lean Startup methodology. The point isn't to build something incomplete or low-quality. The point is to learn quickly whether your assumptions are correct before investing significant resources in full development. An MVP for a dog-walking business might be walking three neighbors' dogs to learn what they actually want, what they'll pay, and what's hard about delivery. An MVP for a software product might be a basic version with the core feature only, used by a handful of real users. Done well, MVPs save founders from building elaborate products nobody wants. Done badly, they become excuses for poor-quality work that fails for predictable reasons. The skill is identifying what the actual risk is and testing that, not testing whatever's easiest to test.`,
             },
@@ -119,7 +119,7 @@ const FUTURESKILLS_VOYAGER_L16 = {
           imageCaption: `Most teen entrepreneurship content: survivor bias, confused income claims, ignored downside, course revenue.`,
           vocab: [
             {
-              word: `meta-business (business about business)`,
+              word: `meta-business`,
               definition: `Pattern where someone's main income comes from teaching, coaching, or selling courses about how to make money in some area, rather than actually doing the activity successfully. Common in trading, dropshipping, social media monetization, and entrepreneurship content. Not always wrong but should be recognized as a distinct business model from actually doing the thing being taught.`,
               audioPrompt: `Meta-business or "business about business" is the pattern where someone's main income comes from teaching, coaching, or selling courses about how to make money in some area, rather than from actually doing the activity successfully, {name}. Common in trading content (most trading courses are sold by people who make their money selling courses, not from trading). Common in dropshipping (most dropshipping courses are sold by people who make their money selling courses). Common in social media monetization, entrepreneurship content, "passive income" strategies. Not always wrong. Some real practitioners also teach. But the structure should be recognized. The people best at teaching how to make money in some area often haven't made much money doing the activity themselves; they make it by teaching about the activity. Knowing this pattern protects you from confusing teaching success with practice success.`,
             },

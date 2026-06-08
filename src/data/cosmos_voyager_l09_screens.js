@@ -113,7 +113,7 @@ const COSMOS_VOYAGER_L09 = {
           imageCaption: `Family 3: they're there but hidden, transformed, distant in time, or beyond our detection methods.`,
           vocab: [
             {
-              word: `SETI (Search for Extraterrestrial Intelligence)`,
+              word: `SETI`,
               definition: `Scientific effort to detect signs of intelligent civilizations elsewhere in the galaxy through radio astronomy and other techniques. Began in the 1960s. Major current project: Breakthrough Listen, funded by Yuri Milner since 2015. No definitive detection so far.`,
               audioPrompt: `SETI is the Search for Extraterrestrial Intelligence, {name}. A scientific effort to detect signs of intelligent civilizations elsewhere in the galaxy through radio astronomy and other techniques. SETI began in the 1960s with Frank Drake's Project Ozma. It has been conducted continuously since, with steadily improving instruments. The most ambitious current project is Breakthrough Listen, funded by Russian-Israeli investor Yuri Milner since 2015 with $100 million over ten years. Breakthrough Listen uses some of the world's largest radio telescopes to scan large amounts of sky. No definitive detection has been made. The total amount of sky and frequency space searched at adequate sensitivity is still small relative to the full possible space. A negative result so far is not the same as a definitive answer.`,
             },

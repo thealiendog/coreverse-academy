@@ -46,7 +46,7 @@ const INNERWORLD_VOYAGER_L14 = {
           imageCaption: `40,000+ neurons in a pump. Real but bounded.`,
           vocab: [
             {
-              word: `intrinsic cardiac nervous system`,
+              word: `nervous system`,
               definition: `The network of neurons within the heart itself, sometimes informally called "the heart brain." Real and well-established in cardiology.`,
               audioPrompt: `The intrinsic cardiac nervous system is the network of neurons within the heart itself, {name}. Estimates put it at around 40,000 to 100,000 neurons in the human heart. These neurons regulate heart rate, contraction strength, and rhythm locally without needing constant signals from the brain. They communicate with the brain through major nerves like the vagus nerve. This is real and well-established cardiology, first studied in detail by J. Andrew Armour in the 1990s. The disagreement isn't about whether these neurons exist. It is about what they mean for consciousness and emotion.`,
             },

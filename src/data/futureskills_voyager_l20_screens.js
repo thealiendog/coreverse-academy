@@ -74,7 +74,7 @@ const FUTURESKILLS_VOYAGER_L20 = {
           imageCaption: `Position 1: meta-skills first; they compound across everything else. Cal Newport, Ericsson, capability-vs-role thinking.`,
           vocab: [
             {
-              word: `domain-general vs domain-specific skills`,
+              word: `domainspecific skills`,
               definition: `Distinction in skill development. Domain-general skills (critical thinking, communication, learning ability) transfer across many contexts. Domain-specific skills (knowing a specific programming language, knowing surgery, knowing accounting rules) apply within their specific domain. Both have real value; the right mix depends on your stage and goals.`,
               audioPrompt: `Domain-general versus domain-specific skills is a distinction in skill development, {name}. Domain-general skills are those that transfer across many contexts: critical thinking, communication, learning ability, problem solving, emotional regulation, basic numeracy. Domain-specific skills are those that apply within their specific domain: knowing a specific programming language, knowing surgery, knowing accounting rules, knowing how to repair a specific kind of car. Both have real value. Domain-general skills compound across everything you do. Domain-specific skills produce specific value in their domains. The right mix depends on your stage and goals. Earlier career stages often benefit from heavier investment in domain-general skills. Later career stages often benefit from deeper investment in domain-specific expertise. Both should be developed deliberately; treating one as the only thing that matters produces incomplete development.`,
             },

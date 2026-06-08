@@ -92,7 +92,7 @@ const FUTURESKILLS_VOYAGER_L12 = {
           imageCaption: `Abstraction: focus on essentials. Algorithms: step-by-step procedures. Both extend far beyond programming.`,
           vocab: [
             {
-              word: `abstraction (in computational thinking)`,
+              word: `abstraction`,
               definition: `Focusing on essential features while ignoring irrelevant details. A subway map is an abstraction of the actual subway. The skill is choosing the right abstraction for the question being asked. Used constantly in programming (building higher-level operations from lower-level ones), in science (theories), in everyday life (maps, summaries, models).`,
               audioPrompt: `Abstraction in computational thinking is focusing on essential features while ignoring irrelevant details, {name}. A subway map is an abstraction of the actual subway. It shows stops and lines but not exact distances, curves, depths, or buildings above. The abstraction is more useful than the full reality for the specific purpose of navigating the system. Programmers use abstraction constantly. When you write a function called "send email," you don't write all the underlying networking and protocol code every time. You abstract away the details. Higher-level programs are built by composing abstractions of lower-level operations. Abstraction matters in many domains. A scientific theory is an abstraction. A novel is an abstraction. A government org chart is an abstraction. The skill is choosing the right abstraction for the question you're trying to answer.`,
             },
@@ -138,7 +138,7 @@ const FUTURESKILLS_VOYAGER_L12 = {
           imageCaption: `Programming: useful for some paths, not for others. Computational thinking: useful for nearly everyone regardless.`,
           vocab: [
             {
-              word: `constructionism (Papert)`,
+              word: `constructionism`,
               definition: `Educational theory developed by Seymour Papert (MIT, 1928-2016): kids learn best by building things they care about. Papert created LOGO, an early programming language for children, to embody this theory. The approach has shaped programming education and broader maker-style learning. Distinct from "instructionism" (learning through being instructed).`,
               audioPrompt: `Constructionism is an educational theory developed by Seymour Papert at MIT, {name}. Papert lived from 1928 to 2016 and was one of the most influential thinkers in education technology. The core idea: kids learn best by building things they care about. Papert created LOGO, an early programming language designed for children, in the 1960s, to embody this theory. Students would write LOGO programs to move a "turtle" around the screen, building drawings and shapes. The act of building, debugging, and refining their programs taught them mathematical and computational concepts more deeply than passive instruction would. Constructionism has shaped programming education and broader maker-style learning. It's distinct from "instructionism," which is learning through being instructed. Both have their place. Papert's argument: for many things kids learn, construction beats instruction.`,
             },

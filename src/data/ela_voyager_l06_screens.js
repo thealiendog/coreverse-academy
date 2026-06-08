@@ -125,7 +125,7 @@ const ELA_VOYAGER_L06 = {
             { word: `humility`,
               definition: `The readiness to admit you don't understand everything yet, and to meet an unfamiliar work with curiosity rather than judgment.`,
               audioPrompt: `Humility, {name}, is the readiness to admit you do not understand everything yet. When reading another culture's literature, humility turns confusion into curiosity, and opens doors that quick judgment would slam shut.` },
-            { word: `on its own terms`,
+            { word: `own terms`,
               definition: `Meeting a work by its own culture's values and logic, rather than judging it only by your own.`,
               audioPrompt: `To meet a work on its own terms, {name}, means understanding it by its own culture's values and logic, not just judging it by your own rules. It avoids both dismissing the unfamiliar and pretending all differences vanish.` },
           ],

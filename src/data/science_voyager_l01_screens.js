@@ -147,7 +147,7 @@ const SCIENCE_VOYAGER_L01 = {
             { word: `producer`,
               definition: `An organism, like a plant, that makes its own food through photosynthesis, capturing energy that then flows to all other living things.`,
               audioPrompt: `A producer, {name}, is an organism like a plant that makes its own food through photosynthesis. Producers capture the Sun's energy first, and that energy then flows through every other living thing in an ecosystem.` },
-            { word: `aerobic vs. anaerobic`,
+            { word: `aerobic`,
               definition: `Aerobic respiration uses oxygen and yields lots of ATP; anaerobic (without oxygen) is a far less efficient backup that yields little.`,
               audioPrompt: `Aerobic versus anaerobic, {name}: aerobic respiration uses oxygen and produces lots of ATP, while anaerobic respiration runs without oxygen and produces very little. That's why hard exercise, which outpaces your oxygen, can't last long.` },
             { word: `by-product`,

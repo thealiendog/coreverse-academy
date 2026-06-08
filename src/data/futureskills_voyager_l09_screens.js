@@ -70,7 +70,7 @@ const FUTURESKILLS_VOYAGER_L09 = {
           imageCaption: `Growth mindset honestly: belief + effort + feedback. Belief alone doesn't produce growth. Real research is more nuanced than pop versions.`,
           vocab: [
             {
-              word: `growth mindset (the honest version)`,
+              word: `growth mindset`,
               definition: `Carol Dweck's research finding: people who believe abilities can grow with effort tend to persist through challenge and develop higher abilities than people who believe abilities are fixed. Pop version oversimplifies by removing the effort and feedback components. Real growth mindset is belief + actual practice + useful feedback, not "just believe in yourself."`,
               audioPrompt: `Growth mindset is Carol Dweck's research finding from Stanford, accumulated over decades, {name}. People who believe their abilities can grow with effort tend to persist through challenge, learn more from feedback, and develop higher abilities than people who believe abilities are fixed. The pop version of growth mindset has gotten oversimplified. "Just believe you can do anything" isn't the finding. The research shows that BELIEF combined with ACTUAL EFFORT and SKILLED FEEDBACK produces growth. Belief alone doesn't. Schools that taught growth mindset posters without changing how students engaged with challenge produced minimal improvements. Schools that combined growth mindset framing with deliberate practice, useful feedback, and tolerance for productive struggle produced real gains. Knowing the honest version protects you from both dismissing the research (it's real) and from naive pop versions (which don't work).`,
             },
@@ -116,7 +116,7 @@ const FUTURESKILLS_VOYAGER_L09 = {
           imageCaption: `Three change contexts: moving, injury, social shift. Same components apply differently across each.`,
           vocab: [
             {
-              word: `acute vs chronic change`,
+              word: `chronic change`,
               definition: `Acute change: sudden, time-bound event (move, injury, breakup). Chronic change: ongoing shift over time (gradual social drift, slow physical changes, gradual loss). Both require adaptation but in different ways. Acute change shocks but is bounded; chronic change accumulates and is often harder to notice until significant.`,
               audioPrompt: `The distinction between acute and chronic change matters for adaptability, {name}. Acute change is sudden and time-bound: a move happening in two months, an injury that occurs in one moment, a breakup announced at one specific time. Acute change shocks but is bounded; you can mark when it started and direct your adaptation toward the new situation. Chronic change is ongoing shift over time: a friendship slowly drifting, a body gradually changing, a parent's job slowly demanding more time. Chronic change accumulates and is often harder to notice until it becomes significant. Both require adaptation but in different ways. Acute change calls for acute response; chronic change calls for ongoing reassessment. Knowing the distinction helps you recognize what kind of change you're dealing with and what kind of response it actually calls for.`,
             },

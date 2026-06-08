@@ -50,7 +50,7 @@ const SOCIALLEADERSHIP_VOYAGER_L06 = {
           imageCaption: `Thomas-Kilmann's five conflict modes: competing, accommodating, avoiding, compromising, collaborating. Most people default to one or two.`,
           vocab: [
             {
-              word: `conflict modes (Thomas-Kilmann)`,
+              word: `conflict modes`,
               definition: `Framework developed by Kenneth Thomas and Ralph Kilmann in the 1970s identifying five distinct conflict modes based on assertiveness and cooperativeness: competing, accommodating, avoiding, compromising, collaborating. Foundational conflict resolution framework. Most people default to one or two modes; mature navigation involves having multiple modes available and matching them to situations.`,
               audioPrompt: `Conflict modes is a framework developed by Kenneth Thomas and Ralph Kilmann in the 1970s, {name}. Identifies five distinct conflict modes based on two dimensions: assertiveness (how much you advocate for your own concerns) and cooperativeness (how much you accommodate the other's concerns). The five modes are competing, accommodating, avoiding, compromising, and collaborating. Each has its uses and its limits; none is universally right. Foundational conflict resolution framework that's been widely used and replicated for nearly 50 years. Most people default to one or two modes (often competing or avoiding) without realizing other modes exist. Mature conflict navigation involves recognizing which mode you're defaulting to, considering whether it fits the situation, and being able to shift to a different mode when needed. The framework gives you vocabulary and options that most adults operate without explicitly.`,
             },
@@ -74,7 +74,7 @@ const SOCIALLEADERSHIP_VOYAGER_L06 = {
           imageCaption: `Getting to Yes (1981): interests vs positions. Never Split the Difference (2016): tactical empathy, calibrated questions, mirroring.`,
           vocab: [
             {
-              word: `positions vs interests (Fisher and Ury)`,
+              word: `positions vs interests`,
               definition: `Distinction from "Getting to Yes" (1981, Harvard Negotiation Project). Position: what people say they want. Interest: what they actually need underneath. Most conflict gets stuck on positions; finding solutions usually requires understanding interests. The classic example: two children fighting over an orange — both positions are "I want the orange" but interests might be juice vs peel.`,
               audioPrompt: `Positions versus interests is a distinction from Roger Fisher and William Ury's 1981 book "Getting to Yes," based on the Harvard Negotiation Project, {name}. Position is what people say they want. Interest is what they actually need underneath. Most conflict negotiation gets stuck on positions because people defend stated positions even when they could meet their actual interests through different solutions. The framework's core move: focus on interests, not positions. Ask what people actually need underneath what they're saying they want. Often you can find solutions that meet both sides' real interests even when their stated positions seem incompatible. The classic example: two children fight over an orange. Their positions are both "I want the orange." A compromise cuts it in half. But asking about interests might reveal one wanted juice and the other wanted peel for baking. Both could get what they need if anyone had asked. Real conflict often has this structure.`,
             },
@@ -126,7 +126,7 @@ const SOCIALLEADERSHIP_VOYAGER_L06 = {
           imageCaption: `In the middle: don't take sides reflexively, refuse triangulation, protect your boundaries, mediate explicitly if at all, accept your limits.`,
           vocab: [
             {
-              word: `triangulation (in conflict)`,
+              word: `triangulation`,
               definition: `Pattern where someone uses a third party to communicate something to a fourth party rather than communicating directly. Common in friend groups, families, and workplaces. Examples: "Tell her I'm mad at her," "Make sure he knows what I think." Triangulation puts the middle person in an unfair position and prevents the direct communication that would actually resolve the issue. Healthy response: redirect toward direct communication.`,
               audioPrompt: `Triangulation in conflict is the pattern where someone uses a third party to communicate something to a fourth party rather than communicating directly, {name}. Common in friend groups, families, and workplaces. Examples include "Tell her I'm mad at her" or "Make sure he knows what I think" or "Can you let them know they were wrong?" Triangulation puts the middle person in an unfair position and prevents the direct communication that would actually resolve the issue. The person being triangulated through gets the emotional weight of the conflict without the agency to do anything productive about it. The healthy response: redirect toward direct communication. "I think this is something you should talk to her about directly. Do you want help thinking about how to do that?" This protects you from being triangulated AND helps the original conflict get addressed where it actually needs to be addressed. Many family and friend group dysfunctions involve chronic triangulation; learning to refuse it is a leadership skill.`,
             },
@@ -148,7 +148,7 @@ const SOCIALLEADERSHIP_VOYAGER_L06 = {
           imageCaption: `Three conflict types, research-informed responses. Format change often more powerful than content change.`,
           vocab: [
             {
-              word: `format change in conflict`,
+              word: `change conflict`,
               definition: `Practice of changing the structure of conflict (private vs public, conversation vs argument, structured vs ad hoc, written vs spoken) rather than just behaving differently within the same structure. Often more powerful than content change because format shapes what's possible. Public conflicts can't be resolved as honestly as private ones; structured conversations surface what unstructured ones miss.`,
               audioPrompt: `Format change in conflict is the practice of changing the structure of how the conflict is happening rather than just changing your behavior within the existing structure, {name}. Private versus public. Conversation versus argument. Structured versus ad hoc. Written versus spoken. Same room versus separate rooms. Often more powerful than content change because format shapes what's possible. Public conflicts can't be resolved as honestly as private ones because both sides face additional pressure not to lose face. Structured conversations with explicit agreements about how to engage surface what unstructured ones miss. Written communication has different affordances than spoken. Same room intensifies; separate rooms allows perspective. Knowing format change as a tool gives you a move available when behavior change within the existing format isn't working. Many conflicts that seem stuck become solvable when the format changes.`,
             },

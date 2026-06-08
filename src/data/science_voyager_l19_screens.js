@@ -94,7 +94,7 @@ const SCIENCE_VOYAGER_L19 = {
           image: `/voyager-assets/science/l19-s3-evidence.webp`,
           imageCaption: `In a world flooded with claims, the key scientific skill is EVALUATING EVIDENCE: telling strong from weak. Not all evidence is equal, a single anecdote ("it worked for me") is weak; a large, controlled, repeated study confirmed by independent lines is STRONG. Watch for classic traps. The biggest: confusing CORRELATION with CAUSATION, two things happening together doesn't mean one causes the other. Ice cream sales and drownings both rise in summer, but a third factor, hot weather, drives both. Also watch for BIAS (a slant, especially when someone has a stake) and claims merely DRESSED UP to look scientific, sciencey words but untestable or unsupported. The scientist's habit: How was this known? How strong is the evidence? Who checked it? Could it be wrong?`,
           vocab: [
-            { word: `correlation vs. causation`,
+            { word: `causation`,
               definition: `Two things happening together (correlation) does not prove one causes the other (causation). A hidden third factor may drive both. A classic reasoning trap.`,
               audioPrompt: `Correlation versus causation, {name}, is a crucial trap. Two things happening together doesn't mean one causes the other. Ice cream sales and drownings both rise in summer, but ice cream doesn't cause drowning, hot weather drives both. Always ask if a hidden factor is at work.` },
             { word: `bias`,
@@ -119,7 +119,7 @@ const SCIENCE_VOYAGER_L19 = {
           image: `/voyager-assets/science/l19-s4-ethics.webp`,
           imageCaption: `Science gives tremendous POWER, and power demands RESPONSIBILITY. A central truth of scientific ethics: "can we?" is NOT the same as "should we?" Science can tell us HOW to do something, split the atom, edit genes, build a weapon, but whether we OUGHT to is a separate question, about values and consequences, that science alone can't answer. So scientists bear real responsibility for their work and its use. The same knowledge can HEAL or HARM: nuclear physics gives medicine and bombs; biology gives cures and dangers. There's also ethics WITHIN science: HONESTY. Report what you actually find, never fake or hide data, give fair credit, treat people and animals ethically. The whole enterprise rests on trust, which is why faking results is among the gravest things a scientist can do.`,
           vocab: [
-            { word: `"can we" vs. "should we"`,
+            { word: `should we`,
               definition: `Science can tell us whether something is possible and how to do it, but not whether we ought to. That ethical question depends on values, not facts alone.`,
               audioPrompt: `"Can we" versus "should we", {name}, is the heart of scientific ethics. Science can tell us how to do something, but whether we ought to is a different question, about values, consequences, and right and wrong, that science alone can never answer for us.` },
             { word: `scientific responsibility`,

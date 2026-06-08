@@ -47,7 +47,7 @@ const ELA_VOYAGER_L20 = {
             { word: `lifelong reading`,
               definition: `The habit of reading by choice, for pleasure and growth, across your whole life, not just for school. The skill that keeps all others alive.`,
               audioPrompt: `Lifelong reading, {name}, is the habit of reading by choice, for pleasure and growth, across your whole life, not just for school assignments. It's the single habit that keeps every other skill you've built alive and growing.` },
-            { word: `reading as a muscle`,
+            { word: `as muscle`,
               definition: `The idea that reading skills grow with use and fade without it, like a muscle, so the habit matters more than any single technique.`,
               audioPrompt: `Reading is like a muscle, {name}: your vocabulary, focus, and skill grow when you use them and quietly fade when you don't. That's why the lifelong habit matters more than any single technique you could learn.` },
             { word: `reading for pleasure`,
@@ -94,7 +94,7 @@ const ELA_VOYAGER_L20 = {
           image: `/voyager-assets/ela/l20-s3-yours.webp`,
           imageCaption: `A lifelong reading life is BUILT with a few simple, forgiving practices. First, ALWAYS HAVE A BOOK GOING, kept physically near you, by your bed, in your bag. Readers read in the cracks of the day, ten minutes before sleep, a chapter while waiting, and those pockets add up to dozens of books a year. Second, give yourself PERMISSION TO QUIT books, forcing yourself through one you hate is one of the fastest ways to kill the habit; abandoning it isn't failure, it's what real readers do. Third, FOLLOW YOUR CURIOSITY and FIND YOUR PEOPLE: read whatever pulls you, chase the thread to the next book, and talk about what you read with a friend, family, or a book club. Reading is solitary, but a reading life is social.`,
           vocab: [
-            { word: `reading in the cracks`,
+            { word: `reading cracks`,
               definition: `Using the small pockets of the day, before sleep, while waiting, to read. Always having a book near you turns scraps of time into dozens of books a year.`,
               audioPrompt: `Reading in the cracks, {name}, means using the small pockets of the day, ten minutes before sleep, a chapter while waiting, to read. Keep a book near you, and those little scraps of time add up to dozens of books a year.` },
             { word: `permission to quit`,

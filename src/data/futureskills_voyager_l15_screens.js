@@ -47,7 +47,7 @@ const FUTURESKILLS_VOYAGER_L15 = {
           imageCaption: `Failure: decision quality vs outcome quality. Trauma vs normal variation. Different things require different responses.`,
           vocab: [
             {
-              word: `decision quality vs outcome quality`,
+              word: `outcome quality`,
               definition: `Annie Duke's distinction (from her book "Thinking in Bets," 2018). Decision quality: how good your decision was given what you knew at the time. Outcome quality: what actually happened. The two can diverge: good decisions can produce bad outcomes (unlucky), bad decisions can produce good outcomes (lucky). Confusing them is a major source of bad learning.`,
               audioPrompt: `Decision quality versus outcome quality is a distinction from Annie Duke, a former professional poker player turned decision researcher, in her 2018 book "Thinking in Bets," {name}. Decision quality is how good your decision was given what you knew at the time. Outcome quality is what actually happened. These can diverge. A good decision can produce a bad outcome: you made the right call, but the dice rolled the wrong way. A bad decision can produce a good outcome: you got lucky despite making a mistake. Confusing the two is one of the biggest sources of bad learning from experience. When most people say "I failed," they're usually evaluating outcome quality. The result wasn't what they wanted. But that doesn't necessarily mean their decision was wrong. Knowing this distinction changes how you respond to bad outcomes.`,
             },
@@ -91,7 +91,7 @@ const FUTURESKILLS_VOYAGER_L15 = {
           imageCaption: `Position 2: failure is essential to growth; take risks, iterate, learn. Works when failure is cheap and recoverable.`,
           vocab: [
             {
-              word: `fail fast (Silicon Valley framing)`,
+              word: `fail fast`,
               definition: `Cultural strategy of running many small experiments quickly, accepting most will fail, and learning from each. Originated in software development and Lean Startup methodology. Works well when iteration is cheap and failures are bounded. Can be misleading when applied to domains where individual failures are expensive, slow to recover from, or compound badly.`,
               audioPrompt: `Fail fast is a cultural strategy of running many small experiments quickly, accepting most will fail, and learning from each, {name}. The framing originated in software development and Lean Startup methodology and spread through Silicon Valley to broader business and education contexts. Works well when iteration is cheap and failures are bounded. A failed software prototype costs hours; you build the next version. A failed marketing experiment costs a small budget; you try the next variation. In these contexts, fail fast is genuinely good strategy. The framing can be misleading when applied to domains where individual failures are expensive, slow to recover from, or compound badly. Failed medical surgery isn't bounded the way failed software is. Failed financial decisions in retirement can be unrecoverable. Knowing where fail fast works and where it doesn't is part of the skill of relating to failure.`,
             },
@@ -114,7 +114,7 @@ const FUTURESKILLS_VOYAGER_L15 = {
           imageCaption: `Position 3: match strategy to context. Reversibility, information value, portfolio thinking. Universal rules usually fail.`,
           vocab: [
             {
-              word: `portfolio thinking (in decisions)`,
+              word: `portfolio thinking`,
               definition: `Approach where you analyze decisions not individually but as part of a portfolio over time. Some safer choices (mostly succeed, modest gains), some riskier choices (mostly fail, but successes produce larger gains). The right portfolio mix depends on stage of life, resources, and goals. From investing theory but applies broadly to career, education, relationships.`,
               audioPrompt: `Portfolio thinking in decisions means analyzing your decisions not individually but as part of a portfolio over time, {name}. Concept from investing theory but applies broadly. Investors don't expect every individual stock to succeed; they expect the portfolio as a whole to perform well, with some losses balanced by larger gains. Applied to life decisions: some safer choices (which mostly succeed but produce modest gains), some riskier choices (most of which fail but the successes produce large gains). The right portfolio mix depends on your stage of life, resources, and what you're trying to accomplish. Young people typically can afford more risky bets because they have time to recover from failures. Older people typically need more secure choices because the time to recover is shorter. The mix should shift over a lifetime.`,
             },

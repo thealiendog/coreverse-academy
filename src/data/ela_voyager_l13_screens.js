@@ -50,7 +50,7 @@ const ELA_VOYAGER_L13 = {
             { word: `voice`,
               definition: `The personality that emerges from a writer's style, the sense that a particular human is speaking to you on the page.`,
               audioPrompt: `Voice, {name}, is the personality that emerges from your style, the sense that a particular human with a particular way of seeing is speaking to you. Style is the how; voice is the who that comes through.` },
-            { word: `built, not born`,
+            { word: `built`,
               definition: `The key truth about voice: it isn't an inborn gift but something deliberately built from choices you can learn to control.`,
               audioPrompt: `Voice is built, not born, {name}. It isn't a gift you either have or don't, it's made from thousands of small choices you can learn to hear and control. That means anyone can develop a real voice, including you.` },
           ],

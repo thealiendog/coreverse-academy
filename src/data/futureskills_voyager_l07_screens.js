@@ -139,7 +139,7 @@ const FUTURESKILLS_VOYAGER_L07 = {
           imageCaption: `Make your default explicit. Real expert problem solvers know the alternatives even when they prefer one approach.`,
           vocab: [
             {
-              word: `meta-cognition (in problem solving)`,
+              word: `meta-cognition`,
               definition: `Awareness of your own problem-solving process: knowing which approach you're using, when it's working, when to switch, when to back up. Expert problem solvers spend significant cognitive effort on meta-cognition; novices typically don't. The skill is learnable and pays compounding returns across problem domains.`,
               audioPrompt: `Meta-cognition in problem solving is awareness of your own problem-solving process, {name}. Knowing which approach you're using. Knowing when it's working. Knowing when to switch to a different approach. Knowing when to back up and reconsider your framing of the problem itself. Expert problem solvers spend significant cognitive effort on meta-cognition. Novices typically don't; they execute one approach and either get an answer or get stuck. The meta-cognition skill is learnable and pays compounding returns across problem domains. Pólya's heuristics in "How to Solve It" are partly heuristics about heuristics: when to use which technique. Schön's reflection-in-action is largely meta-cognitive. The kids who develop meta-cognitive awareness at 12 will outperform peers who never develop it.`,
             },

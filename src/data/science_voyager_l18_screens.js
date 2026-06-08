@@ -122,7 +122,7 @@ const SCIENCE_VOYAGER_L18 = {
             { word: `light-year`,
               definition: `The distance light travels in one year, used to measure the vast distances in space. Because even light takes time to cross space, it is a measure of distance, not time.`,
               audioPrompt: `A light-year, {name}, is the distance light travels in a single year, an enormous distance, since light is the fastest thing there is. Astronomers use it because space is so vast that miles become useless. Despite the name, a light-year measures distance, not time.` },
-            { word: `looking back in time`,
+            { word: `back time`,
               definition: `Because light takes time to reach us, we see distant objects as they were when their light left, not as they are now. The farther away, the further back in time we see.`,
               audioPrompt: `Looking back in time, {name}, is the astonishing fact that gazing into space is gazing into the past. Light takes time to reach you, so you see distant stars and galaxies as they were when their light left, sometimes millions or billions of years ago, not as they are now.` },
             { word: `galaxy`,

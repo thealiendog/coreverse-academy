@@ -68,7 +68,7 @@ const COSMOS_VOYAGER_L11 = {
           imageCaption: `Block universe: all moments equally real. The present has no special status. Time as a fourth dimension.`,
           vocab: [
             {
-              word: `block universe (eternalism)`,
+              word: `block universe`,
               definition: `Philosophical position that all moments of time are equally real. Past, present, and future all exist; the present has no special metaphysical status. Time is more like another dimension than like a flowing river. Supported by relativity's loss of universal simultaneity.`,
               audioPrompt: `The block universe view, also called eternalism, holds that all moments of time are equally real, {name}. Past, present, and future all exist. The present moment has no special metaphysical status. Time is more like another dimension than like a flowing river. The "feeling" of flowing time is something brains generate, not a feature of fundamental reality. The universe is a four-dimensional "block" containing all events past, present, and future. The case for this view rests heavily on Einstein's relativity, which showed that simultaneity is not universal. Hermann Minkowski, Albert Einstein, and modern philosophers like Bradford Skow have endorsed versions of eternalism. It has the powerful implication that past moments and people are still real, just not in our part of spacetime.`,
             },

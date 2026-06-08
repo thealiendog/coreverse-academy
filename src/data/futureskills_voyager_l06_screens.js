@@ -47,7 +47,7 @@ const FUTURESKILLS_VOYAGER_L06 = {
           imageCaption: `What AI does well: drafting, summarizing, brainstorming, explaining. What it does poorly: novel reasoning, precise facts, anything where wrong is costly.`,
           vocab: [
             {
-              word: `hallucination (in AI)`,
+              word: `hallucination`,
               definition: `Tendency of large language models to produce plausible-sounding but factually wrong information. The model generates text statistically similar to its training data without distinguishing what it actually knows from what just sounds right. Major reason AI cannot be trusted for factual claims without verification.`,
               audioPrompt: `Hallucination in AI is the tendency of large language models to produce plausible-sounding but factually wrong information, {name}. The term is borrowed from human psychology but it's misleading. The AI isn't perceiving things that aren't there. It's generating text statistically similar to its training data without distinguishing what it actually knows from what just sounds right. The model can produce a confidently stated date, name, or fact that is completely fabricated. This is the major reason AI cannot be trusted for factual claims without verification. The hallucination rate has improved with newer models but it has not been eliminated. Researchers expect it to keep improving over time but it will probably never reach zero. Knowing AI hallucinates is one of the most important things to internalize before relying on its outputs.`,
             },
@@ -119,7 +119,7 @@ const FUTURESKILLS_VOYAGER_L06 = {
           imageCaption: `Viral AI productivity content: drama, dating advice, monetization, unmeasured claims, manifestation crossover.`,
           vocab: [
             {
-              word: `survivor bias (in productivity content)`,
+              word: `survivor bias`,
               definition: `Tendency to focus on visible successes while ignoring invisible failures. Viral AI productivity content typically features dramatic wins ("AI helped me 10x my output") while ignoring people who got similar advice and didn't see those results. The sample is filtered by visibility, not by representativeness. Makes the techniques look more reliable than they are.`,
               audioPrompt: `Survivor bias is the tendency to focus on visible successes while ignoring invisible failures, {name}. The classic example: studying surviving WWII planes returned with bullet holes in certain locations, military analysts initially wanted to reinforce those locations. The statistician Abraham Wald pointed out the error: planes hit in OTHER locations didn't come back at all. The bullet holes on returning planes showed where planes could survive being hit. Survivor bias is everywhere in productivity content. Viral AI advice features people who got dramatic results. People who tried the same advice and got nothing rarely make videos. The sample is filtered by visibility, not by representativeness. This makes techniques look more reliable than they are. Recognizing survivor bias is one of the most useful patterns for media literacy.`,
             },

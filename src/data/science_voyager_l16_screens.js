@@ -125,7 +125,7 @@ const SCIENCE_VOYAGER_L16 = {
             { word: `coupled systems`,
               definition: `The principle that Earth's spheres are linked, so a change in one (like a volcano) produces effects in the others (like a cooler climate). Nothing happens in isolation.`,
               audioPrompt: `Coupled systems, {name}, is the core idea of Earth science: the spheres are all linked, so a change in one ripples into the others. A volcano in the geosphere can cool the climate in the atmosphere for years. On Earth, nothing ever happens in isolation.` },
-            { word: `Earth's two energy sources`,
+            { word: `energy sources`,
               definition: `Earth uniquely runs on two energies: sunlight from above (driving weather, water, and life) and internal heat from below (driving tectonics and volcanoes).`,
               audioPrompt: `Earth runs on two energy sources at once, {name}. Sunlight from above powers the water cycle, the weather, and nearly all life through photosynthesis. And heat from Earth's own interior, rising from below, drives the drifting plates and the volcanoes. Two engines, working together.` },
           ],

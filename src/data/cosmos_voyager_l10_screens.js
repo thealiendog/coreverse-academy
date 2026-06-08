@@ -46,7 +46,7 @@ const COSMOS_VOYAGER_L10 = {
           imageCaption: `Real consciousness research is dense, contested, and making genuine progress on specific questions.`,
           vocab: [
             {
-              word: `neural correlates of consciousness`,
+              word: `neural correlates`,
               definition: `Specific patterns of brain activity that consistently correspond to specific conscious experiences. Identifying them is a major focus of empirical consciousness research. Tells us how consciousness relates to brain processes; does not yet fully explain what consciousness IS.`,
               audioPrompt: `Neural correlates of consciousness are specific patterns of brain activity that consistently correspond to specific conscious experiences, {name}. When you see red, certain neurons fire. When you hear a melody, others fire. When you fall asleep, the pattern shifts. When you wake up, it shifts back. Identifying these correlates with increasing precision is a major focus of empirical consciousness research over the last several decades. Tools include fMRI scans, EEG recordings, and studies of brain damage. The work has produced real progress. It tells us a lot about how consciousness relates to brain processes. It does not yet fully explain what consciousness IS, only how it correlates with what brains do. That distinction matters.`,
             },
@@ -68,7 +68,7 @@ const COSMOS_VOYAGER_L10 = {
           imageCaption: `Chalmers 1995: the hard problem of consciousness remains genuinely contested.`,
           vocab: [
             {
-              word: `hard problem of consciousness`,
+              word: `hard problem`,
               definition: `David Chalmers's 1995 framing of why explaining the felt qualities of experience (qualia) seems to require more than explaining brain processes. Even perfect neural correlates may not explain why there's something it is like to be conscious. One of the most contested problems in philosophy of mind.`,
               audioPrompt: `The hard problem of consciousness was framed by philosopher David Chalmers in 1995, {name}. The problem: even if neuroscience perfectly maps every neural correlate of every conscious experience, we may still not have explained why there is something it is like to be conscious. The redness of red, the painfulness of pain, the felt qualities of experience. Philosophers call these qualia. Qualia don't seem to follow logically from any physical description of brain processes. Different camps respond differently. Some argue the hard problem dissolves once we solve enough "easy problems." Others argue it requires fundamentally new physics, or panpsychism, or a non-materialist framework. The disagreement has lasted nearly 30 years and is genuinely contested by serious working scholars.`,
             },

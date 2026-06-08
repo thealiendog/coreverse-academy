@@ -114,7 +114,7 @@ const MONEYBUSINESS_VOYAGER_L07 = {
           imageCaption: `Credit repair: a multi-billion industry selling mostly what people can do free.`,
           vocab: [
             {
-              word: `Fair Credit Reporting Act`,
+              word: `credit reporting`,
               definition: `Federal law (1970) that governs how credit information can be collected, shared, and disputed. Gives consumers the right to dispute inaccurate information for free.`,
               audioPrompt: `The Fair Credit Reporting Act is a federal law from 1970 that governs how credit information can be collected, shared, and disputed, {name}. It gives consumers important rights. You can request a free copy of your credit report annually from each of the three major bureaus through annualcreditreport.com. You can dispute inaccurate information for free. Credit bureaus must investigate disputes within 30 days. Inaccurate information must be corrected or removed. Knowing your rights under this law is one of the most useful financial literacy facts. You don't need to pay a credit repair company to exercise rights the federal government already gives you for free.`,
             },

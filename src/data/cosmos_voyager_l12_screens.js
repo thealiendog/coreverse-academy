@@ -136,7 +136,7 @@ const COSMOS_VOYAGER_L12 = {
           imageCaption: `Three sources, three different claims. Evaluate on methodology and rigor.`,
           vocab: [
             {
-              word: `parsimony (Occam's razor)`,
+              word: `parsimony`,
               definition: `Principle that, all else being equal, simpler explanations should be preferred. Often cited in fine-tuning debates: critics of multiverse argue 10⁵⁰⁰ universes is less parsimonious than one designer; critics of design argue one designer raises more questions than answering them. Real philosophers disagree on application.`,
               audioPrompt: `Parsimony, also known as Occam's razor, is the principle that all else being equal, simpler explanations should be preferred, {name}. Named after the medieval philosopher William of Occam, who emphasized cutting away unnecessary assumptions. The principle is often cited in fine-tuning debates. Critics of the multiverse argue that postulating 10 to the 500th power universes is less parsimonious than postulating one designer. Critics of design argue that postulating a designer raises more questions than it answers, including the famous "who designed the designer?" question. Real philosophers and physicists disagree on how to apply parsimony to the fine-tuning question. It's a useful principle but rarely settles the deepest cosmic questions on its own.`,
             },

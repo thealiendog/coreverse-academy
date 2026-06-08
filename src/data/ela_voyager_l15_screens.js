@@ -75,7 +75,7 @@ const ELA_VOYAGER_L15 = {
             { word: `revision`,
               definition: `Literally "to see again": the deep work of rethinking ideas, structure, argument, and clarity, not just fixing errors.`,
               audioPrompt: `Revision, {name}, literally means "to see again." It's the deep work of rethinking your ideas, structure, and argument, cutting, moving, rewriting, not just fixing small errors. Revision can rebuild the whole house.` },
-            { word: `polish the windows vs rebuild the house`,
+            { word: `rebuild house`,
               definition: `The image for the difference: editing is a surface polish, while revision can restructure the entire piece.`,
               audioPrompt: `Editing polishes the windows; revision rebuilds the house, {name}. You'd never polish windows on a house with a cracked foundation, which is why you revise the big things first and edit the small things last.` },
           ],

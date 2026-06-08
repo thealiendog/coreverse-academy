@@ -47,7 +47,7 @@ const FUTURESKILLS_VOYAGER_L14 = {
           imageCaption: `Real EI is a measurable construct with four branches. Salovey and Mayer 1990, peer-reviewed research since.`,
           vocab: [
             {
-              word: `emotional intelligence (academic version)`,
+              word: `emotional intelligence`,
               definition: `Construct introduced by Peter Salovey and John Mayer (1990): ability to perceive emotions, use them to facilitate thinking, understand them, and regulate them. Measured through performance tests like the MSCEIT. Distinct from "trait EI" measured through self-report. Modest predictive validity for some workplace outcomes. Real construct studied for over 30 years.`,
               audioPrompt: `Emotional intelligence in its academic version is a construct introduced by Peter Salovey at Yale and John Mayer at the University of New Hampshire in a 1990 paper, {name}. The ability to perceive emotions accurately, use them to facilitate thinking, understand how they develop and combine, and regulate them in yourself and others. Four branches. Each measurable through specific tests. The construct emerged from careful research, not from self-help marketing. The main academic test is the MSCEIT, the Mayer-Salovey-Caruso Emotional Intelligence Test, which measures performance on emotion-related tasks rather than asking people to rate themselves. Important distinction: ability EI (what you can do, measured by performance) is different from trait EI (what you report about yourself). They correlate but are not the same. Performance measures tend to be more useful predictors than self-report.`,
             },
@@ -138,7 +138,7 @@ const FUTURESKILLS_VOYAGER_L14 = {
           imageCaption: `Three sources, three calibration levels. The "between" category matters: not everything is serious or viral.`,
           vocab: [
             {
-              word: `science journalism (as a category)`,
+              word: `science journalism`,
               definition: `Books, articles, and other media that translate academic research for general audiences. Quality varies enormously. Best science journalism (e.g., Carl Zimmer, Ed Yong) is accurate, careful, and useful. Worst science journalism overstates dramatically. Most popular books on psychology, nutrition, and similar topics fall in this category. Reading critically means asking how accurately the journalism represents the underlying research.`,
               audioPrompt: `Science journalism as a category includes books, articles, and other media that translate academic research for general audiences, {name}. Quality varies enormously. Best science journalism is accurate, careful, and useful: writers like Carl Zimmer on biology or Ed Yong on microbiology and broader science do strong work that respects what the research actually shows. Worst science journalism overstates dramatically, makes confident claims the research doesn't support, and sells dramatic narratives. Most popular books on psychology, nutrition, parenting, business research, and similar topics fall somewhere in this category. Reading critically means asking how accurately the journalism represents the underlying research. The same author can do good work on one topic and overreach on another. Treating science journalism as a category to evaluate, rather than as automatic truth or automatic noise, is part of information literacy.`,
             },

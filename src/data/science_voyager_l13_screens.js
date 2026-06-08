@@ -44,7 +44,7 @@ const SCIENCE_VOYAGER_L13 = {
           image: `/voyager-assets/science/l13-s1-work.webp`,
           imageCaption: `Energy is the most important idea in physics, but we start with a related word physicists define exactly: WORK. In everyday speech work means effort; in physics it's precise: work is done when a FORCE moves an object through a DISTANCE. Push a box across the floor and you do work on it. Work is force times distance. A surprising consequence: if nothing MOVES, no work is done, no matter how hard you strain. Hold a heavy weight still and your muscles burn, but you do zero work on it, because it doesn't move. Work needs both a force and movement in that force's direction. Why does work matter? Because work is exactly how ENERGY is TRANSFERRED from one place or form to another. Do work on an object, you give it energy. Work is the bridge by which energy flows.`,
           vocab: [
-            { word: `work (physics)`,
+            { word: `work`,
               definition: `Done when a force moves an object through a distance. Work equals force times distance, and it transfers energy. No movement means no work.`,
               audioPrompt: `Work, {name}, has an exact meaning in physics: it's done when a force moves an object through a distance, and it equals force times distance. The surprise is that if nothing moves, you do no work at all, no matter how hard you push or strain.` },
             { word: `force times distance`,

@@ -132,7 +132,7 @@ const COSMOS_VOYAGER_L03 = {
           imageCaption: `The real quantum world is stranger than any pseudoscientific version. No reason to settle.`,
           vocab: [
             {
-              word: `interpretation of quantum mechanics`,
+              word: `quantum mechanics`,
               definition: `Different views on what quantum mechanics' mathematical formalism is actually describing about reality. Copenhagen, many-worlds, pilot wave theory, QBism, and others. All agree on the math and predictions. They disagree on what the math means. Active debate for nearly a century.`,
               audioPrompt: `An interpretation of quantum mechanics is a view on what the mathematical formalism is actually describing about reality, {name}. Copenhagen interpretation, many-worlds, pilot wave theory, QBism, and others. All interpretations agree on the math of quantum mechanics. All agree on the experimental predictions. They disagree on what the math is describing. Does superposition mean the particle is really in two places at once? Are there really parallel universes? Is the wave function physically real or just a calculation tool? Physicists have debated these questions for nearly a century without resolution. This active disagreement is a healthy feature of the field, not a flaw. Knowing that the math is settled but the interpretation isn't helps you evaluate claims that mix the two.`,
             },

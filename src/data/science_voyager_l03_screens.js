@@ -50,7 +50,7 @@ const SCIENCE_VOYAGER_L03 = {
             { word: `genetic engineering`,
               definition: `Deliberately changing an organism's DNA, adding, removing, or altering specific genes, rather than waiting for natural evolution.`,
               audioPrompt: `Genetic engineering, {name}, is deliberately changing an organism's DNA, adding, removing, or altering specific genes on purpose, instead of waiting for slow, blind evolution to do it by chance.` },
-            { word: `mutation vs. editing`,
+            { word: `mutation`,
               definition: `A mutation is a random, natural change in DNA; gene editing is a deliberate, targeted change made by humans at a chosen spot.`,
               audioPrompt: `Mutation versus editing, {name}: a mutation is a random, natural change in DNA that just happens, while gene editing is a deliberate, targeted change humans make at a chosen spot. One is chance; the other is choice.` },
           ],
@@ -119,7 +119,7 @@ const SCIENCE_VOYAGER_L03 = {
           image: `/voyager-assets/science/l03-s4-questions.webp`,
           imageCaption: `The heart of why this lesson holds many views: science can tell us what we CAN do, but not what we SHOULD do. Whether to edit a human embryo, release an engineered species, or limit this power are questions of ETHICS and VALUES, not just facts. Some lines feel sharper: most agree curing a child's deadly disease with gene therapy is good. But editing an EMBRYO, changes passed to all future generations, is far more contested, as is "ENHANCEMENT," choosing traits like height or intelligence, which many fear deepens inequality. There are questions of SAFETY (unintended edits, ecological effects), FAIRNESS (will cures reach everyone or only the wealthy?), and CONSENT (future generations can't agree). Reasonable people disagree, a sign these are decisions for all of society, including you.`,
           vocab: [
-            { word: `is vs. ought`,
+            { word: `ought`,
               definition: `The key distinction: science establishes what is true and what is possible (the "is"), but values and ethics decide what we ought to do.`,
               audioPrompt: `Is versus ought, {name}, is a key distinction: science can tell us what is true and what's possible, but it can't tell us what we ought to do. Deciding whether we should use a power is a question of values and ethics.` },
             { word: `germline editing`,

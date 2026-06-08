@@ -111,7 +111,7 @@ const COSMOS_VOYAGER_L07 = {
           imageCaption: `Three serious positions: WIMP/axion particles, MOND gravity, or genuinely new physics.`,
           vocab: [
             {
-              word: `MOND (Modified Newtonian Dynamics)`,
+              word: `MOND`,
               definition: `Theory proposed by Mordehai Milgrom in 1983 that modifies Newton's laws of gravity at very low accelerations. Predicts galaxy rotation curves without needing dark matter. Successful at galactic scales but struggles at cluster scales and with the Bullet Cluster.`,
               audioPrompt: `MOND stands for Modified Newtonian Dynamics, {name}. Proposed by Israeli physicist Mordehai Milgrom in 1983. The idea: instead of inventing new invisible particles to explain galaxy rotation curves, modify Newton's laws of gravity at very low accelerations. MOND predicts the rotation curves of individual galaxies remarkably well, often with no free parameters. This has impressed even some scientists who don't think MOND is the final answer. MOND has serious problems at cluster scales. The Bullet Cluster is particularly hard for MOND to explain. Relativistic extensions of MOND, called TeVeS and others, exist but haven't solved the cluster problems convincingly. MOND remains a minority position in modern cosmology, but a serious one with real successes.`,
             },

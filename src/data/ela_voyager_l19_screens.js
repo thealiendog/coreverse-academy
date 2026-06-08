@@ -144,7 +144,7 @@ const ELA_VOYAGER_L19 = {
           image: `/voyager-assets/ela/l19-s5-before.webp`,
           imageCaption: `Threads together. You live in an ocean of media messages, thousands a day, almost none neutral: each has a maker and an INTENTION. MEDIA LITERACY is reading them as carefully as text, so you control them rather than being steered. The foundational truth: ALL MEDIA IS CONSTRUCTED, built from choices, framing, angle, lighting, color, word choice, never raw reality. ADVERTISING weaponizes this to sell a feeling or identity through bandwagon, endorsement, emotional appeals, and aspirational imagery. Even NEWS shapes your view through selection, framing, and what's LEFT OUT. The source-evaluation screen gives five real media messages. Decode each: who made it and why, what techniques, what feeling it hands you, and what's missing.`,
           vocab: [
-            { word: `persuasion vs. information`,
+            { word: `persuasion`,
               definition: `The line between media that aims to inform and media that aims to persuade, often deliberately blurred, as in ads disguised as content.`,
               audioPrompt: `Persuasion versus information, {name}, is the line between media meant to inform you and media meant to persuade you. That line is often blurred on purpose, like ads dressed up to look like neutral articles.` },
             { word: `native advertising`,

@@ -95,7 +95,7 @@ const FUTURESKILLS_VOYAGER_L19 = {
           imageCaption: `AI does well: pattern recognition with training data, routine cognitive work, scaled personalization. Less well: novel reasoning, embodiment, relationships, costly-mistake domains.`,
           vocab: [
             {
-              word: `tasks AI handles well`,
+              word: `handles well`,
               definition: `Current pattern in AI capability: pattern recognition with abundant training data, routine cognitive work with clear structure, scaled personalization of standard outputs, translation and summarization, drafting of common document types. These tasks are increasingly being automated where they appear in jobs. The list shifts as AI improves; the meta-pattern (some kinds of tasks are more automatable than others) persists.`,
               audioPrompt: `Tasks AI handles well in 2026 form a recognizable pattern, {name}. Pattern recognition where training data is abundant: detecting common cancers in imaging, identifying defects in manufacturing inspection, recognizing speech, faces, common objects. Routine cognitive work with clear structure: drafting standard documents, summarizing materials, basic data analysis, routine coding of common patterns, customer service for common questions. Scaled personalization: producing many variants for different audiences, adapting communication for different recipients. Translation and summarization between major languages and styles. These tasks are increasingly being automated where they appear within jobs. The specific list shifts as AI improves; tasks that are uncertain today may become routine in 5 years. The meta-pattern that some kinds of tasks are more automatable than others persists across the changes.`,
             },
@@ -119,7 +119,7 @@ const FUTURESKILLS_VOYAGER_L19 = {
           imageCaption: `Practical implications: integrated skills, physical fields, relational work, AI-adaptation meta-skill, capabilities over specific roles.`,
           vocab: [
             {
-              word: `capability vs role thinking`,
+              word: `role thinking`,
               definition: `Distinction in career planning. Role thinking: choose a specific job (doctor, lawyer, engineer) and prepare for it. Capability thinking: build durable capabilities (judgment, integrated skills, real relationships, adaptability) that let you take whatever roles exist in the future. Role thinking works when the future looks like the past; capability thinking works better when the future is uncertain.`,
               audioPrompt: `Capability versus role thinking is a useful distinction in career planning, {name}. Role thinking: choose a specific job like doctor, lawyer, or software engineer and prepare specifically for that role. Capability thinking: build durable capabilities (judgment under uncertainty, integrated skills across multiple domains, real relationships, adaptability, ability to learn quickly) that let you take whatever roles exist in the future. Role thinking works well when the future looks like the past, when specific occupations remain stable, and when paths to those occupations are clear. Capability thinking works better when the future is uncertain, when occupations are shifting, and when you don't yet know exactly what you'll be doing in 10-20 years. For your generation, capability thinking probably matters more than role thinking because the specific roles that will exist when you're 30 are genuinely hard to predict.`,
             },

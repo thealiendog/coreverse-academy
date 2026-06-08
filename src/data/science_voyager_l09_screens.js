@@ -69,7 +69,7 @@ const SCIENCE_VOYAGER_L09 = {
           image: `/voyager-assets/science/l09-s2-dials.webp`,
           imageCaption: `Four main DIALS control reaction rate, each working through collisions. First, TEMPERATURE: heating makes particles move faster, so they collide more often and harder, clearing the activation barrier, which is why food cooks faster on high heat and spoils slower in a cold fridge. Second, CONCENTRATION (how crowded the reactants are): more particles in the same space means more frequent collisions, so higher concentration speeds things up. Third, SURFACE AREA: a solid reacts faster broken into small pieces, more is exposed, which is why powdered sugar burns far faster than a cube. Fourth, CATALYSTS: they lower activation energy so more collisions succeed, without being used up, like the ENZYMES that run life's reactions fast at gentle body temperature.`,
           vocab: [
-            { word: `temperature (as a dial)`,
+            { word: `temperature`,
               definition: `Raising temperature speeds reactions by making particles move faster, so they collide more often and more energetically.`,
               audioPrompt: `Temperature, {name}, is a powerful dial on reaction rate: heating makes particles move faster, so they collide more often and harder, speeding the reaction. It's why food cooks fast when hot and keeps longer when cold.` },
             { word: `concentration`,
@@ -147,7 +147,7 @@ const SCIENCE_VOYAGER_L09 = {
             { word: `inhibitor`,
               definition: `A substance that slows a reaction down, the opposite of a catalyst. Preservatives act as inhibitors to slow food spoilage.`,
               audioPrompt: `An inhibitor, {name}, is a substance that slows a reaction down, the opposite of a catalyst. Food preservatives are inhibitors, slowing the reactions that cause spoilage so food lasts longer.` },
-            { word: `yield (revisited)`,
+            { word: `yield`,
               definition: `The amount of product a reaction makes. With reversible reactions, shifting the equilibrium is a key way to increase yield.`,
               audioPrompt: `Yield, {name}, is the amount of product a reaction makes. For reversible reactions, chemists boost yield by shifting the equilibrium, removing product or adding reactant, to push the reaction toward making more.` },
             { word: `steady state`,

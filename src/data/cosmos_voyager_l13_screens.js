@@ -89,7 +89,7 @@ const COSMOS_VOYAGER_L13 = {
           imageCaption: `From cells (10⁻⁵ m) through human (10⁰) up to Earth (10⁷ m). The "human range" we evolved to navigate.`,
           vocab: [
             {
-              word: `nanometer / micrometer / millimeter`,
+              word: `nanometer`,
               definition: `Standard sub-millimeter scales. A nanometer is 10⁻⁹ meters (typical scale of proteins and DNA). A micrometer is 10⁻⁶ meters (typical scale of bacteria and human cells). A millimeter is 10⁻³ meters (typical scale of small insects, sand grains).`,
               audioPrompt: `Three scales are particularly important for understanding life at small scales, {name}. A nanometer is 10 to the minus 9 meters, the typical scale of proteins and DNA strands. A micrometer is 10 to the minus 6 meters, the typical scale of bacteria and most human cells. A millimeter is 10 to the minus 3 meters, the typical scale of small insects and sand grains. These three scales bridge between the atomic world and the everyday world we experience directly. Biological complexity happens primarily in the nanometer to micrometer range. Each scale up is a factor of 1000, which is huge. The total range from atom to human is roughly 10 orders of magnitude, which is why biology is so structurally rich.`,
             },

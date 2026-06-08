@@ -51,7 +51,7 @@ const ELA_VOYAGER_L03 = {
             { word: `self-evident`,
               definition: `Something treated as obviously true, needing no proof. The Declaration calls human equality and rights self-evident.`,
               audioPrompt: `Self-evident means treated as obviously true, needing no proof, {name}. When Jefferson wrote we hold these truths to be self-evident, he turned a political argument into a moral one, asking readers to accept human equality as a starting point too obvious to argue.` },
-            { word: `consent of the governed`,
+            { word: `consent`,
               definition: `The idea that a government's authority comes from the agreement of the people it governs, not from force or birthright.`,
               audioPrompt: `Consent of the governed means a government's power comes from the people agreeing to it, {name}, not from force or royal birth. It is the heart of the Declaration's reasoning: if rulers govern only by consent, a people may withdraw that consent.` },
           ],

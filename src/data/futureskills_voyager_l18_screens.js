@@ -70,7 +70,7 @@ const FUTURESKILLS_VOYAGER_L18 = {
           imageCaption: `Newport: build career capital first, passion follows. Epstein: stay generalist, late specialization. Real disagreement between serious thinkers.`,
           vocab: [
             {
-              word: `career capital (Newport)`,
+              word: `career capital`,
               definition: `Term from Cal Newport's "So Good They Can't Ignore You" (2012). The accumulation of rare and valuable skills that give you leverage to shape your work over time. Newport's argument: build career capital first, then use it to negotiate the kind of work and lifestyle you want. Reverses the "follow your passion" framing by making passion downstream of skill rather than upstream.`,
               audioPrompt: `Career capital is a term from Cal Newport's 2012 book "So Good They Can't Ignore You," {name}. The accumulation of rare and valuable skills that give you leverage to shape your work over time. Newport's argument: build career capital first, then use it to negotiate the kind of work and lifestyle you want. This reverses the "follow your passion" framing. Instead of treating passion as the starting point that career planning should align with, Newport treats passion as something that follows from doing meaningful work well. The skills come first; the passion-shaped career follows from having the skills. The framework is grounded in research on how people actually develop satisfying careers. It's been influential but contested; David Epstein's "Range" argues for more generalist paths than Newport's framework typically suggests.`,
             },

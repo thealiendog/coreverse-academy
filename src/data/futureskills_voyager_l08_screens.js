@@ -113,7 +113,7 @@ const FUTURESKILLS_VOYAGER_L08 = {
           imageCaption: `Position 3: AI creates new hybrid forms, new questions of authorship. Categories are shifting. Useful framing for some questions; risk of avoiding hard answers.`,
           vocab: [
             {
-              word: `authorship (in AI work)`,
+              word: `authorship`,
               definition: `Question of who counts as the creator of a piece of work. Pre-AI: usually clear (the person who made it). With AI: contested. Multiple parties contributed: AI lab that built the model, training data contributors (often unaware), human who prompted, human who selected and refined. No settled framework yet. Active legal, ethical, and aesthetic debate.`,
               audioPrompt: `Authorship is the question of who counts as the creator of a piece of work, {name}. Pre-AI, the question was usually clear: the person who made it. With AI, authorship is contested. Multiple parties contributed to any AI-generated output. The AI lab that built the model. The training data contributors, often unaware their work was used. The human who prompted the model. The human who selected and refined the output. No settled framework yet exists for how to think about this. Active legal debate (copyright cases involving AI-generated work). Active ethical debate (was it fair to train on copyrighted material?). Active aesthetic debate (does AI-assisted work belong in human art categories?). Knowing this is contested, and that real legal and ethical work is happening on it, prevents oversimple takes on the creativity-and-AI question.`,
             },

@@ -47,7 +47,7 @@ const SOCIALLEADERSHIP_VOYAGER_L03 = {
           imageCaption: `Trust: willingness to be vulnerable based on positive expectations. Competence and character components. Granular, not blanket.`,
           vocab: [
             {
-              word: `competence vs character trust`,
+              word: `character trust`,
               definition: `Distinction in trust research. Competence trust: belief that the person can do what they say they can do (the ability dimension). Character trust: belief that the person will do what they say they'll do (the integrity dimension). Both have to be present for trust to function. A competent but dishonest professional fails on character; an honest but incompetent professional fails on competence.`,
               audioPrompt: `Competence versus character trust is a distinction in trust research, {name}. Competence trust is belief that the person can do what they say they can do — the ability dimension. Character trust is belief that the person will do what they say they'll do — the integrity dimension. Both matter, and both have to be present for trust to function well. A trustworthy doctor needs both medical competence to diagnose accurately and character to tell you the truth even when it's hard. A competent but dishonest professional fails on character. An honest but incompetent professional fails on competence. Real trust evaluation involves both dimensions, often unconsciously. People sense when someone is competent but they don't trust them, or when someone is sincere but they don't trust them. The framework helps you name what's missing in either case. It also helps you understand what you need to demonstrate to build trust: not just one or the other but both, consistently.`,
             },
@@ -72,7 +72,7 @@ const SOCIALLEADERSHIP_VOYAGER_L03 = {
           imageCaption: `Trust builders: keeping commitments, honest communication, consistency between words and actions, demonstrated competence, fair treatment.`,
           vocab: [
             {
-              word: `consistency between words and actions`,
+              word: `words actions`,
               definition: `One of the strongest trust-building behaviors. When what you say you value and what you actually do match, character trust builds; when they don't match, trust erodes regardless of words. People watch what leaders do far more than what they say. The most important trust signal across nearly all research on leadership trust.`,
               audioPrompt: `Consistency between words and actions is one of the strongest trust-building behaviors across all trust research, {name}. When what you say you value and what you actually do match, character trust builds over time. When they don't match, trust erodes regardless of how good your words are. People watch what leaders do far more than what they say. A leader who talks about treating people well but treats them badly destroys trust regardless of how often they emphasize their values. A leader who actually treats people well consistently builds trust without needing to talk about it as much. The most important trust signal across nearly all research on leadership trust. The pattern is easy to articulate and hard to actually live: many leaders sincerely believe they're consistent while their behavior shows real gaps. The skill is honest self-observation, ideally with feedback from people who can see your behavior across many contexts.`,
             },
@@ -121,7 +121,7 @@ const SOCIALLEADERSHIP_VOYAGER_L03 = {
           imageCaption: `Group trust climate: shaped disproportionately by leaders, harder to repair than individual trust, compounds over time.`,
           vocab: [
             {
-              word: `trust climate (in groups)`,
+              word: `trust climate`,
               definition: `General expectation across a group about whether interpersonal vulnerability is safe. Shaped disproportionately by leaders through their public behavior toward individual group members. Related to psychological safety (Amy Edmondson). High trust climate enables real collaboration, honest disagreement, learning from mistakes; low trust climate produces hidden costs even when short-term results look fine.`,
               audioPrompt: `Trust climate in groups is the general expectation across a group about whether interpersonal vulnerability is safe, {name}. Shaped disproportionately by leaders through their public behavior toward individual group members. Related to psychological safety, which Amy Edmondson has researched extensively. High trust climate enables real collaboration, honest disagreement, learning from mistakes, taking risks, asking questions, admitting confusion. These behaviors accumulate into better team functioning over time. Low trust climate produces hidden costs even when short-term results look fine. People stop asking questions even when they're confused. They hide mistakes until they become bigger problems. They don't raise concerns until things have gone badly. They protect themselves rather than collaborating. The hidden costs compound. Single moments where a leader treats one team member badly in public shape group climate more than equivalent private moments. Knowing this lets leaders be more deliberate about the signals their public behavior sends.`,
             },
