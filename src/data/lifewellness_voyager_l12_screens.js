@@ -96,6 +96,13 @@ const LIFEWELLNESS_VOYAGER_L12 = {
           ],
           image: `/voyager-assets/life-wellness/l12-s3-applications.webp`,
           imageCaption: `Five applications to match to five principles. Each principle has a most-direct application; some applications could fit multiple but the strongest match is what the game tests.`,
+          vocab: [
+            {
+              word: `environmental design`,
+              definition: `Removing friction from desired behaviors and adding friction to undesired ones so the right choice is structurally easier than the wrong one — more reliable than relying on willpower.`,
+              audioPrompt: `Environmental design is one of the most actionable principles you'll encounter, {name}. Instead of relying on willpower to make good choices every time, you engineer your environment so the desired behavior is easier than the undesired one. Remove friction from what you want to do: put your phone in another room, keep books visible, have healthy food accessible, have focus tools ready. Add friction to what you're trying to avoid: delete distracting apps, unfollow accounts that pull you off track, use website blockers during focus time. The key insight is that willpower is a limited resource that depletes across a day — environmental design removes the need for it by making the default choice the right one.`,
+            },
+          ],
         },
 
         {
