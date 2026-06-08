@@ -320,7 +320,26 @@ function renderKaraokeSpans(text, karaokeIdx, accent, wordOffset = 0) {
 }
 
 function renderParagraphs(paragraphs, vocab, karaokeIdx, accent, onVocabTap, showVocabHint, headlineWordCount = 0) {
-  const vocabMap = new Map((vocab || []).map(v => [v.word.toLowerCase(), v]));
+  // Build vocabMap that handles multi-word phrases by indexing every component word.
+  // "cellular respiration" → both "cellular" and "respiration" point to the full entry.
+  // Longer/more specific words win ties (last-write wins in iteration order, so sort
+  // single-word entries after multi-word to give multi-word entries priority).
+  const vocabMap = new Map();
+  const sortedVocab = [...(vocab || [])].sort((a, b) => {
+    const wa = a.word.trim().split(/\s+/).length;
+    const wb = b.word.trim().split(/\s+/).length;
+    return wb - wa; // multi-word first so single-word entries don't clobber them
+  });
+  for (const v of sortedVocab) {
+    const words = v.word.toLowerCase().replace(/[^a-z\s]/g, '').trim().split(/\s+/);
+    // Warn about phrases that are too long to anchor reliably
+    if (words.length > 3) {
+      console.warn(`[vocab] phrase too long to highlight reliably (${words.length} words): "${v.word}"`);
+    }
+    for (const w of words) {
+      if (w && !vocabMap.has(w)) vocabMap.set(w, v);
+    }
+  }
   let wordCount = headlineWordCount; // offset so paragraph indices follow headline
   let firstVocabPulsed = false; // only the very first vocab word gets the tutorial pulse
 
