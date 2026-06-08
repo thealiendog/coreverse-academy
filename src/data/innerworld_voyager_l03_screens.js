@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `The parts of the mind operating below conscious awareness. Includes memories you've forgotten, feelings you've suppressed, and patterns running automatically.`,
               audioPrompt: `The unconscious is the part of the mind operating below conscious awareness, {name}. Most of what your brain does is unconscious. You don't decide to recognize a face, to feel afraid in a dark room, or to suddenly remember a song from years ago. These happen on their own. Jung argued the unconscious is much bigger and stranger than Freud had described. It contains forgotten memories, repressed feelings, automatic patterns, and according to Jung, even shared structures we inherit from being human. Most of who you are, in Jung's view, is hidden from you. The shadow lives there.`,
             },
+          ,
+            {
+              word: `collective unconscious`,
+              definition: `Jung's term for the deepest layer of the unconscious mind, shared across all of humanity. It contains inherited patterns called archetypes, distinct from the personal unconscious of an individual.`,
+              audioPrompt: `The collective unconscious is Jung's term for the deepest layer of the unconscious mind, {name}. It is not personal. It is shared across humanity. Jung argued that beneath your personal unconscious, your forgotten memories and repressed feelings, lies this deeper layer, full of patterns he called archetypes. These are inherited structures of being human that show up across every culture. Jung spent his life mapping this territory. His claim was that the collective unconscious is not something each person builds individually. It is something we are all born into, a shared inheritance from thousands of generations of human life.`,
+            },
+            {
+              word: `persona`,
+              definition: `Jung's term for the social mask a person wears in public, distinct from the ego, the Self, and the shadow. The persona is what you present to the world, not all of who you are.`,
+              audioPrompt: `The persona is Jung's term for the social mask you wear in public, {name}. It is distinct from your ego, your conscious sense of self, and from your deeper Self with a capital S, the wholeness you are slowly becoming. The persona is the face you show in different situations. You have a school persona, a family persona, a persona with close friends. None of these is fake exactly, but none of them is the whole of you either. Jung mapped the persona as one of several major structures within the psyche, alongside the shadow, the ego, and the Self. Understanding the difference between persona and the fuller self is the beginning of real self-knowledge.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `Jung's term for everything you've rejected, denied, or hidden about yourself. Holds both 'bad' traits and unlived strengths.`,
               audioPrompt: `The shadow is Jung's term for everything you've rejected, denied, or hidden about yourself, {name}. It is not the same as evil. It is the part of you that did not fit who you decided to be. If anger felt unsafe in your family, your anger is in your shadow. If softness felt unsafe, softness is there. If wanting things openly felt unsafe, your wanting is there. The shadow is not your enemy. It is the parts of you that went into hiding to keep you safe. Jung's claim is that learning to see and integrate the shadow is one of the most important psychological tasks a person can do.`,
             },
+          ,
+            {
+              word: `unlived potential`,
+              definition: `The strengths and capacities that have been buried in the shadow because circumstances made expressing them feel unsafe. Assertiveness, boldness, and gentleness can all end up as unlived potential.`,
+              audioPrompt: `Unlived potential is what Jung called the strengths buried in your shadow, {name}. The shadow is not only dark material. It holds the parts of you that went into hiding because expressing them felt risky. If you grew up where being assertive was punished, your assertiveness is in your shadow. If standing out was risky, your boldness is there. If soft feelings were mocked, your gentleness is there. These are not weaknesses. They are capacities you learned to hide. The shadow holds your unlived potential alongside the traits you rejected. That is one of the most important things Jung discovered. Shadow work is partly a recovery mission.`,
+            },
+            {
+              word: `self-sabotage`,
+              definition: `When a person acts against their own goals or interests in ways they cannot fully explain. Jung linked this to shadow material that has not been seen or integrated.`,
+              audioPrompt: `Self-sabotage is when you act against your own goals or interests in ways you cannot fully explain, {name}. Jung's claim is that the shadow is often behind it. The parts of you that you have rejected and buried do not disappear. They run you from below. They come out as sudden anger in moments you wish they hadn't, as patterns you keep repeating even though you know better, and as self-sabotage when you are on the verge of something important. The hidden material interferes precisely because it is hidden. You cannot correct for what you cannot see. That is why integration, bringing shadow material into awareness, is Jung's core answer.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `Seeing in someone else the rejected parts of yourself. The disproportionate reaction is the clue.`,
               audioPrompt: `Projection is when you see in someone else the parts of yourself you've rejected, {name}. The disproportionate reaction is the clue. If a classmate's behavior makes you twice as angry as the situation warrants, the extra anger is probably about you. Maybe they're showing you something you've buried in yourself. Maybe their boldness mirrors your buried boldness. Maybe their vulnerability mirrors your buried vulnerability. Notice this is not a way to excuse other people's bad behavior. It is a way to use your own reactions as information about yourself.`,
             },
+          ,
+            {
+              word: `disproportionate reaction`,
+              definition: `A response to someone that is much stronger than the situation warrants. Jung identified this intensity as a reliable clue that shadow material is being activated.`,
+              audioPrompt: `A disproportionate reaction is a response much bigger than the situation warrants, {name}. Jung saw this intensity as the primary clue that your shadow is involved. If a classmate's behavior makes you twice as angry as it should, the extra anger is probably about you, not just them. Maybe they are showing you something you have buried in yourself. Maybe their boldness mirrors your buried boldness. Maybe their vulnerability mirrors your buried vulnerability. The gap between what the situation deserves and what you actually feel is the signal. Jung did not say to ignore how others behave. He said to use your own reactions as honest information about what is living in your shadow.`,
+            },
+            {
+              word: `mirror`,
+              definition: `Jung's metaphor for how other people can reflect your own shadow back to you without either party realizing it. The qualities you most dislike in others often point to rejected material in yourself.`,
+              audioPrompt: `The mirror is Jung's metaphor for what other people do to your shadow, {name}. The person who triggers a disproportionate reaction in you is often holding up a mirror to your own hidden material. You don't recognize the image, so you blame them for what you're seeing. Think of the classmate who's always seeking attention. If they bother you intensely, Jung would ask: do you also want attention and have you told yourself you shouldn't? Their behavior is showing you something. The discomfort is real. But according to Jung, it's pointing inward, not just outward. That is an uncomfortable insight. It's also a useful one.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `The process of becoming consciously aware of shadow material and choosing how to relate to it, instead of being run by it unconsciously.`,
               audioPrompt: `Integration is the process of becoming consciously aware of shadow material and choosing what to do with it, {name}. The word is important. Integration is not getting rid of the shadow. It is not letting the shadow take over either. It is bringing what was hidden into the light of awareness so you can choose. The angry part of you that you've buried doesn't disappear once you notice it. It just stops running you from below. You can decide how and when to use it. Integration is slow. Real shadow work takes years, not minutes. But it can start now.`,
             },
+          ,
+            {
+              word: `shadow journaling`,
+              definition: `A structured writing practice for shadow work, in which a person records their strongest emotional reactions and asks honestly what each reaction might reveal about themselves.`,
+              audioPrompt: `Shadow journaling is a structured writing practice for shadow work, {name}. You write about your strongest reactions and patterns and ask what they might be showing you about yourself. Jung described several practical methods for becoming aware of the shadow. Pay attention to your strongest reactions to other people, especially the negative ones. Pay attention to what you criticize in others. Make a list of three things you most dislike in people, then ask honestly where each one shows up in you. Shadow journaling puts this practice into writing, which makes the patterns harder to dismiss. It is slow, sometimes uncomfortable, and according to modern clinical psychologists, it works.`,
+            },
+            {
+              word: `Internal Family Systems`,
+              definition: `A therapy approach developed by Richard Schwartz in the 1980s, building on Jungian shadow work. It treats different parts of a person as having their own voices and works to bring those parts into conscious relationship.`,
+              audioPrompt: `Internal Family Systems is a therapy approach developed by Richard Schwartz in the 1980s, {name}. It builds directly on Jung's shadow work. Rather than treating inner conflict as something to suppress, it treats different parts of a person as having their own voices and perspectives. The practice involves talking to different parts of yourself as if they are real presences with things to say. This is what Jung called parts work, brought into a structured clinical form. Internal Family Systems is now widely used by clinical psychologists today. It is not a fringe practice. It is real therapeutic work with documented outcomes. It begins with the same move Jung described: becoming aware of what you have hidden.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `The willingness to see yourself, including the parts you'd prefer not to. The foundation of shadow work.`,
               audioPrompt: `Self-honesty is the willingness to see yourself, including the parts you'd prefer not to see, {name}. It is harder than it sounds. Most people protect their self-image automatically, without realizing they're doing it. We rewrite memories to make ourselves look better. We blame others for what was partly our fault. We tell ourselves stories about why we did what we did. Self-honesty is the practice of catching these moves and choosing accuracy over self-protection. It is uncomfortable. It is also the prerequisite for any real growth. You cannot integrate what you refuse to see.`,
             },
+          ,
+            {
+              word: `making the darkness conscious`,
+              definition: `Jung's phrase for the core task of shadow work: bringing what is hidden and rejected into conscious awareness so it can be seen and chosen from, rather than running you invisibly.`,
+              audioPrompt: `Making the darkness conscious is Jung's phrase for the core of shadow work, {name}. He wrote that one does not become enlightened by imagining figures of light, but by making the darkness conscious. The point is that real growth does not come from focusing only on ideals and positive qualities. It comes from seeing clearly what has been hidden. The darkness, the shadow material, is not the enemy. It is information. It is parts of you that went underground for reasons that made sense at the time. Making them conscious means seeing them honestly, naming them, and choosing how to relate to them. That is shadow work. It is slow. It starts now.`,
+            },
+            {
+              word: `hardened patterns`,
+              definition: `The deeply ingrained habits of thought and behavior that develop over time as shadow material becomes invisible background. Patterns are easier to question early, before they become automatic.`,
+              audioPrompt: `Hardened patterns are deeply ingrained habits of thought and behavior that develop as shadow material becomes invisible background, {name}. The voice that tells you not to be too much, or not to show anger, or not to want attention starts as a rule you learned. Over time, if you never question it, it stops feeling like a rule and starts feeling like reality. Starting shadow work early has a real advantage. At 11 or 12, your patterns are not yet deeply hardened. You can still hear the rules that shaped your shadow relatively clearly. You can notice the rule and ask whether it actually applies to who you are now. The earlier you begin, the more room you have.`,
+            }
           ],
         },
 

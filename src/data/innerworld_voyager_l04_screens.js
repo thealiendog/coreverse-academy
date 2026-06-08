@@ -55,6 +55,12 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `The most common epigenetic tag. Tiny chemical molecules attach to genes and silence them.`,
               audioPrompt: `Methylation is the most studied epigenetic tag, {name}. Tiny chemical molecules called methyl groups attach to specific spots on your DNA and quiet those genes down. When a gene gets methylated, it's like someone put a 'do not read' sticker on that part of the script. Your body adds methyl tags and removes them constantly based on what's happening to you. Stress, diet, sleep, and exercise all influence methylation patterns. This is a real biological process you can measure in a lab.`,
             },
+          ,
+            {
+              word: `acetylation`,
+              definition: `An epigenetic tag that opens genes up to be read and used by a cell, as opposed to methylation, which silences genes.`,
+              audioPrompt: `Acetylation is an epigenetic tag that opens genes up, {name}. Your body adds and removes chemical tags to your DNA constantly, all day, based on what is happening inside you and around you. Methylation is the tag that silences genes, putting a do-not-read signal on part of the script. Acetylation does the opposite. It opens the gene, making it available to be read. Your cells use both processes all the time to decide which genetic instructions to follow at any given moment. The underlying letters of your DNA do not change. The tags that determine which letters get used are being adjusted continuously in real time.`,
+            }
           ],
         },
 
@@ -76,6 +82,17 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `Before birth, while still developing in the womb.`,
               audioPrompt: `Prenatal means before birth, {name}. The Dutch Hunger Winter babies were affected prenatally, meaning the famine happened while they were still in the womb. This matters because the womb is when many epigenetic patterns are first set up. What a mother experiences during pregnancy, including stress, nutrition, and trauma, can influence which genes get methylated in her developing baby. That influence can last a lifetime. Scientists now study prenatal effects as one of the most important windows for setting up long-term health.`,
             },
+          ,
+            {
+              word: `IGF2`,
+              definition: `A specific gene that affects growth and metabolism. Dutch Hunger Winter research found measurably less methylation at this gene in famine-exposed individuals 60 years after the event, providing the first solid evidence of a lifetime epigenetic mark from a prenatal environmental event.`,
+              audioPrompt: `IGF2 is a gene that affects growth and metabolism, {name}. It became significant in epigenetics research through the Dutch Hunger Winter study. In 2008, geneticists published a study in the Proceedings of the National Academy of Sciences. They found that people who had been in the womb during the 1944 famine had less methylation at the IGF2 gene than their siblings who were born just before or just after. This difference was measurable 60 years after the famine ended. The siblings had nearly identical DNA. Their prenatal environments were different. And that difference left a specific molecular signature at a named gene for an entire lifetime.`,
+            },
+            {
+              word: `molecular signature`,
+              definition: `A measurable biological mark at the molecular level, left by an environmental event. The Dutch Hunger Winter study found epigenetic molecular signatures in famine-exposed individuals that persisted for 60 years.`,
+              audioPrompt: `A molecular signature is a measurable biological mark left at the molecular level by an environmental event, {name}. The Dutch Hunger Winter study, published in 2008 in the Proceedings of the National Academy of Sciences, found exactly this. People who had been in the womb during the 1944 famine showed specific differences in DNA methylation at the IGF2 gene compared to their unexposed siblings. Those differences were still measurable six decades later. The famine had literally edited which genes were used, and the edit persisted. This was the first solid evidence that an environmental event in the womb could leave a lasting molecular signature in a human being.`,
+            }
           ],
         },
 
@@ -97,6 +114,17 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `Across generations. Effects that pass from parents or grandparents to children.`,
               audioPrompt: `Transgenerational means across generations, {name}. Some epigenetic researchers have found evidence that intense experiences in one generation can leave biological marks in their children or grandchildren. Rachel Yehuda's research on Holocaust survivors and their children is the most famous example. This is still being actively debated by scientists. The effects in animals are well-established. The effects in humans are real but more subtle than pop science often claims. Be careful: transgenerational effects don't mean you're cursed by what your grandparents went through. They mean your biology has memory.`,
             },
+          ,
+            {
+              word: `cortisol`,
+              definition: `A hormone the body produces under stress. High cortisol levels change methylation patterns at genes involved in inflammation, mood regulation, and immune function.`,
+              audioPrompt: `Cortisol is a hormone your body produces under stress, {name}. When you are under constant stress, your body produces high levels of cortisol. Cortisol changes methylation patterns at genes involved in inflammation, mood regulation, and immune function. Long-term stress can leave epigenetic fingerprints that affect your biology for years. This is one of the most studied pathways connecting environment to gene expression. Chronic stress is not just a feeling. It is a biological process that reshapes which genes are active. This is why the distinction between temporary stress and chronic stress matters so much for your health.`,
+            },
+            {
+              word: `epigenome`,
+              definition: `The full set of chemical tags across your DNA that determine which genes are active at any given time. Your behavior, diet, stress levels, and sleep all write onto your epigenome.`,
+              audioPrompt: `The epigenome is the full set of chemical tags across your DNA that determine which genes are active, {name}. Your environment writes onto your epigenome constantly. Chronic stress changes methylation patterns. Foods rich in folate and B vitamins provide raw material for the epigenetic machinery. Exercise affects gene expression in muscle tissue, mitochondria, and the brain. Sleep deprivation alters epigenetic markers within just a few nights. Even intensive meditation has been shown by researchers at the University of Wisconsin to shift inflammation-related gene expression. Your epigenome is not fixed. It is a living record of what you have been through and what you keep doing.`,
+            }
           ],
         },
 
@@ -118,6 +146,17 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `When someone takes a real scientific finding and extends it far beyond what the evidence actually supports.`,
               audioPrompt: `Overreach is when someone takes a real scientific finding and stretches it way beyond what the evidence shows, {name}. Epigenetics has real findings: yes, environment affects gene expression. The overreach version: 'you can rewrite your DNA with affirmations and cure your trauma in 30 days.' The real finding is exciting and important. The overreach version is misleading because it gives people false hope and overpromises. Learning to notice overreach is one of the most useful scientific literacy skills. It will protect you for the rest of your life.`,
             },
+          ,
+            {
+              word: `scientific literacy`,
+              definition: `The ability to read, evaluate, and critically assess scientific claims. Recognizing the gap between what evidence actually shows and what popularizers claim is one of its most practical skills.`,
+              audioPrompt: `Scientific literacy is the ability to critically evaluate scientific claims, {name}. Learning to tell the difference between what research actually shows and what is being sold in its name is one of the most useful skills you can develop. Epigenetics has become a favorite topic for wellness influencers and self-help books. Some of what they say is true. Some of it is wildly oversold. This same pattern, real science followed by pop-science overreach followed by viral hype, shows up in dozens of fields. Recognizing it is a protective skill. It will serve you everywhere in modern life, not just in biology class.`,
+            },
+            {
+              word: `viral hype`,
+              definition: `When a claim spreads widely online because it is appealing, not because it is accurate. Viral spread is not evidence of truth.`,
+              audioPrompt: `Viral hype is when a claim spreads widely because it is appealing, not because it is accurate, {name}. The pattern in epigenetics follows a recognizable sequence: real science, then pop-science overreach, then viral hype. Someone finds a real finding, like the fact that environment can influence gene expression. Then the claim becomes 'you can rewrite your DNA with your thoughts.' Then it spreads across social media as if it were settled fact. The viral spread itself means nothing. Millions of people sharing a claim does not make it true. What makes a claim true is specific measurement, peer review, and replication. Those things are much harder to package for a viral post.`,
+            }
           ],
         },
 
@@ -139,6 +178,17 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `Which of your genes are actively being read and used by your cells at any given moment.`,
               audioPrompt: `Gene expression is which of your genes are actively being read and used by your cells right now, {name}. You have around 20,000 genes, but only some are 'expressed' in each cell at any moment. Epigenetics is what controls expression. A gene can be present in your DNA but completely silenced epigenetically. Another gene can be turned way up. When scientists talk about lifestyle affecting your genes, they almost always mean gene expression, not the underlying code. Knowing this distinction is what separates real science from pop overreach.`,
             },
+          ,
+            {
+              word: `nature versus nurture`,
+              definition: `The old debate over whether a person is shaped more by their genes or by their environment. Epigenetics shows this framing is too simple: genes and environment are in constant conversation.`,
+              audioPrompt: `Nature versus nurture is the old debate over whether a person is shaped more by their genes or their environment, {name}. Epigenetics shows that framing is too simple. Your genes and your environment are in constant conversation. Your behavior is part of that conversation. So is what your parents and grandparents went through, in subtle ways. You are not predetermined by your genes. You are not a blank slate shaped entirely by experience. You are, as the lesson puts it, a dance between what you started with and what you keep doing. Both matter. Both are still in play. The old debate set up a false opposition that epigenetics has dissolved.`,
+            },
+            {
+              word: `genetic risk`,
+              definition: `An inherited tendency toward certain biological outcomes. Epigenetics shows that genetic risks do not determine outcomes: gene expression can shift, and hard starts do not lock you in.`,
+              audioPrompt: `A genetic risk is an inherited tendency toward certain biological outcomes, {name}. People sometimes treat genetic risk as destiny. Epigenetics complicates this in an honest and empowering way. The Dutch Hunger Winter individuals showed methylation differences 60 years later, but they were not doomed. Many lived long healthy lives. Their biology had echoes, not chains. A genetic risk means you are more likely to express something under certain conditions, not that you will inevitably express it. Your behavior and environment influence which of your genes get used. That is real. It is not magic, but it means a hard start does not lock you in.`,
+            }
           ],
         },
 

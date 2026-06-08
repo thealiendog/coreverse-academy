@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `A network of brain regions including the medial prefrontal cortex and posterior cingulate cortex that activates during rest, mind-wandering, and self-referential thought. Identified by Marcus Raichle in 2001.`,
               audioPrompt: `The Default Mode Network is a set of brain regions that activates during rest and self-referential thought, {name}. The key regions include the medial prefrontal cortex and the posterior cingulate cortex. When you're not focused on a specific task, when your mind wanders, when you imagine your future or remember your past or think about who you are, the DMN is active. It generates the constant inner narrative most people experience as "being themselves." Marcus Raichle discovered it accidentally in 2001 while looking for the brain's resting baseline. It is one of the most important findings in modern neuroscience.`,
             },
+          ,
+            {
+              word: `mind-wandering`,
+              definition: `The mental state in which attention drifts from a current task to internally generated thoughts. A primary activity of the Default Mode Network.`,
+              audioPrompt: `Mind-wandering is the mental state in which attention drifts away from a current task to internally generated thoughts, {name}. When Marcus Raichle studied brain activity during cognitive tasks, he found specific brain regions activated during rest and deactivated during tasks. Subsequent research mapped what those regions do: they activate during mind-wandering, daydreaming, autobiographical memory, and self-reflection. Mind-wandering is not random noise. It is the Default Mode Network doing its characteristic work, a window into one of the brain's primary modes of operation.`,
+            },
+            {
+              word: `autobiographical memory`,
+              definition: `Memory for the events and experiences of one's own life, forming the sense of personal history and continuous identity. A core function of the Default Mode Network.`,
+              audioPrompt: `Autobiographical memory is memory for the events and experiences of your own life, {name}. It forms your sense of personal history and continuity, the feeling that you are the same person who had a sixth birthday, who learned to ride a bike, who had the conversations and experiences that make you you. Research mapping the Default Mode Network found that autobiographical memory is one of its core functions. When you remember your own past, DMN regions are active. This is why understanding the DMN matters for understanding identity: the network that stores your personal story is the same one that meditation and psychedelics suppress.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `The mental processes involved in understanding other people's thoughts, feelings, and intentions. Largely DMN-mediated.`,
               audioPrompt: `Social cognition is the mental processes involved in understanding other people, {name}. When you figure out what your friend is feeling, when you guess why your parent reacted a certain way, when you imagine what someone meant by a comment, you are doing social cognition. Much of this work happens in DMN regions. This matters for the lesson's central question. If you quiet the DMN too much, you may reduce some negative aspects (rumination, self-criticism) but you also reduce social cognition itself. The tradeoffs are real.`,
             },
+          ,
+            {
+              word: `future-oriented thinking`,
+              definition: `Mental activity directed toward imagining, planning, or preparing for events that have not yet happened. A key function of the Default Mode Network.`,
+              audioPrompt: `Future-oriented thinking is mental activity directed toward imagining or planning for events that have not yet happened, {name}. Figuring out what you want to do this weekend, planning what to say in a hard conversation, deciding what high school you might attend, all involve DMN regions. Without this network, sustained future-oriented thinking would be impossible. This is one of the real costs critics of blanket DMN suppression point to. Quieting the DMN dramatically is not just reducing rumination. It also reduces the capacity for planning that allows a person to build a life with intention.`,
+            },
+            {
+              word: `continuous identity`,
+              definition: `The sense of being the same person across time, connecting who you were in the past with who you are now and who you will be in the future. Maintained by the Default Mode Network.`,
+              audioPrompt: `Continuous identity is the sense of being the same person across time, {name}. It connects who you were last year with who you are now and who you imagine yourself becoming. Holding that continuity, integrating memories, values, and a personal story into a coherent self, is Default Mode Network work. This is why the question of how much to suppress the DMN is not simple. The network that produces rumination is also the network that produces the feeling of being a continuous person with a story. What you gain and what you lose by quieting it depends on which functions you affect most.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `The repeated chewing-over of negative thoughts, regrets, or worries. A DMN-related pattern strongly associated with depression and anxiety.`,
               audioPrompt: `Rumination is the repeated chewing-over of negative thoughts, {name}. It's when your mind goes around the same painful loop over and over: replaying an embarrassing moment, worrying about the same upcoming event, criticizing yourself for the same flaw. Rumination is a DMN activity. People with depression often have higher DMN activity, and that hyperactivity is linked to more rumination. Reducing rumination is one of the genuine benefits people report from meditation. Quieting the rumination loop is real. The question is whether all DMN activity should be quieted, or just this particular pattern.`,
             },
+          ,
+            {
+              word: `psilocybin`,
+              definition: `The active compound in psychedelic mushrooms. Currently being researched in clinical trials for treatment-resistant depression, with DMN suppression identified as part of its mechanism.`,
+              audioPrompt: `Psilocybin is the active compound in psychedelic mushrooms, {name}. fMRI studies of people on psilocybin show pronounced DMN suppression. Many users report a temporary loss of self experience. This is being researched seriously at Johns Hopkins and Imperial College London as a possible treatment for treatment-resistant depression, cases where standard antidepressants have not worked. Early results suggest psychedelic-assisted therapy can produce lasting reductions in depression for some patients. The mechanism appears to involve, at least partly, DMN suppression. This is live, serious research, not fringe science.`,
+            },
+            {
+              word: `hyperactive DMN`,
+              definition: `A pattern of Default Mode Network activity elevated beyond typical levels, associated with depression, rumination, and excessive self-referential thought.`,
+              audioPrompt: `Hyperactive DMN refers to Default Mode Network activity elevated beyond typical levels, {name}. Studies of patients with depression consistently show this pattern. The DMN, stuck in a loop, generates repeated self-critical thought, replaying of regrets, and worry spirals that characterize depressive rumination. This is why reducing DMN activity became appealing. If hyperactive DMN correlates with suffering, quieting it might reduce that suffering. The nuance is that not all DMN activity is hyperactive, and not all of it should be reduced along with the problematic patterns.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `A psychological state of feeling disconnected from yourself or your own experience, as if you aren't fully real or fully present. A documented adverse effect of intense contemplative practice or psychedelics in some people.`,
               audioPrompt: `Depersonalization is a state of feeling disconnected from yourself, {name}. People experiencing it describe feeling unreal, watching themselves from outside, or not quite present in their own life. Mild depersonalization is common after intense stress. More serious cases can be lasting and distressing. Some long-term meditators and some psychedelic users develop depersonalization symptoms. The research community is increasingly honest about this. Quieting the network that builds the self isn't always purely positive. For some people, it produces these specific costs. The full picture includes both the benefits and these effects.`,
             },
+          ,
+            {
+              word: `dark night`,
+              definition: `A term used in contemplative research to describe extended periods of psychological difficulty in serious meditators, including feelings of disconnection, loss of motivation, or emotional hollowness.`,
+              audioPrompt: `Dark night is a term used in contemplative research to describe extended periods of psychological difficulty in serious meditators, {name}. Willoughby Britton's research at Brown documents adverse effects including feelings of disconnection, loss of motivation, or hollowness lasting months or years. The term comes from Saint John of the Cross, but Britton applies it across meditation traditions. These effects are not rare in serious practitioners. They are rarely discussed in popular wellness culture because they complicate the simple narrative that more meditation is always better.`,
+            },
+            {
+              word: `dissolution of self`,
+              definition: `An experience in which the usual sense of being a separate, bounded individual temporarily breaks down, reported by some meditators and psychedelic users.`,
+              audioPrompt: `Dissolution of self is an experience in which the usual sense of being a separate bounded individual temporarily breaks down, {name}. It is reported by some meditators during deep practice and by some people using psychedelics like psilocybin. Research from psychedelic-assisted therapy notes that the same experience feels profoundly freeing to some participants and terrifying to others. This range of responses is part of what makes blanket recommendations about DMN suppression complicated. The same experience that helps one person find relief from depression can be deeply disorienting for another.`,
+            }
           ],
         },
 
@@ -135,6 +179,17 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `The study of how the brain develops during adolescence. A field where careful researchers note that interventions safe for adults may have different effects on developing brains.`,
               audioPrompt: `Adolescent neuroscience is the study of how the brain develops during adolescence, {name}. One of the field's recurring findings is that adolescent brains are different from adult brains in measurable ways. The prefrontal cortex is still developing. Reward sensitivity is heightened. Network connections are being pruned and strengthened. This matters when adults consider what practices to recommend to kids. Some practices well-studied in adults have not been studied in teens. Caution is warranted not because adolescents are fragile but because their brains are uniquely in flux.`,
             },
+          ,
+            {
+              word: `monastic settings`,
+              definition: `Residential contemplative communities, such as monasteries, where intensive spiritual practice is conducted in a structured, supported, full-time environment very different from everyday life.`,
+              audioPrompt: `Monastic settings are residential contemplative communities where intensive spiritual practice is conducted full-time in a structured and supported environment, {name}. The most intensive DMN-quieting practices were developed for people in these settings, not for casual practitioners living ordinary lives. The careful adolescent psychology position notes this explicitly: practices developed for advanced contemplatives in monastic contexts may be inappropriate for casual use, especially in still-developing adolescent brains. Context matters. A practice appropriate in one setting and life stage may carry different risks in another.`,
+            },
+            {
+              word: `prefrontal cortex`,
+              definition: `The front region of the brain involved in planning, decision-making, impulse control, and social reasoning. Still developing through adolescence.`,
+              audioPrompt: `The prefrontal cortex is the front region of the brain involved in planning, decision-making, and impulse control, {name}. It is one of the last brain regions to fully develop, with maturation continuing into early adulthood. This is one reason adolescent neuroscience researchers advise caution when applying practices well-studied in adults to younger populations. The adolescent brain is uniquely in flux. Prefrontal development is ongoing. Network connections are being pruned and strengthened. Practices with predictable effects in adult brains may have different effects in brains still undergoing this development.`,
+            }
           ],
         },
 

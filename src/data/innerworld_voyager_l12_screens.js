@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L12 = {
               definition: `From Latin meaning "I." In modern usage refers to the self that experiences itself as a separate individual; the specific meaning depends entirely on which framework is being used.`,
               audioPrompt: `Ego comes from the Latin word for I, {name}. In modern usage it refers to the self that experiences itself as a separate individual. But what's claimed about this ego varies dramatically depending on which framework you're using. Freud meant one thing. Jung meant something different. Buddhists mean something else again. Advaita Vedanta means something different still. Pop spirituality has muddied everything by using the word without specifying. The first step in thinking clearly about ego is asking: which definition are we using?`,
             },
+          ,
+            {
+              word: `pop spirituality`,
+              definition: `A loose, popularized blend of spiritual and wellness ideas, often drawing from multiple traditions without distinguishing them. Frequently uses terms like ego without specifying a precise framework.`,
+              audioPrompt: `Pop spirituality is a loose, popularized blend of spiritual and wellness ideas, {name}. It arrived and started using ego as a general bad guy: the part of you that is selfish, defensive, jealous, anxious, or proud. People began saying let go of your ego without specifying which version of ego they meant. Spiritual influencers built careers around defeating the ego without naming what the ego actually is in any specific framework. The word got hollow. The lesson clears this up by examining three serious frameworks, each with a clear definition of ego rather than the pop blend.`,
+            },
+            {
+              word: `conscious center`,
+              definition: `In Jungian psychology, the ego understood as the part of the psyche that organizes everyday experience, manages social roles, and holds the sense of being a particular person.`,
+              audioPrompt: `The conscious center is what Jung meant by the ego, {name}. For Jung, the ego is the conscious center of personality, the part that says I and organizes everyday experience. It manages social roles, conscious memories, and the sense of being a particular person in the world. The ego, in this Jungian sense, is not bad. It is necessary. Without a conscious center you could not function as an individual person. Jung distinguished this from the larger Self with a capital S. The work in Jungian psychology is not to destroy the conscious center but to bring it into right relationship with the larger whole.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L12 = {
               definition: `Jung's term for the lifelong psychological process of integrating conscious and unconscious aspects of the personality, bringing the ego into right relationship with the larger Self.`,
               audioPrompt: `Individuation is Jung's term for the lifelong psychological process of becoming who you fully are, {name}. It involves bringing the ego into right relationship with the larger Self, which includes unconscious material like the shadow, archetypes, and parts of personality you don't yet know. Individuation isn't about destroying the ego or becoming someone different. It's about growing into the fullness of who you already are, including the parts you've ignored. Jung thought of this as the central task of adult life. It is slow work, not a flash of enlightenment.`,
             },
+          ,
+            {
+              word: `unconscious material`,
+              definition: `In Jungian psychology, the contents of the psyche that are not currently in conscious awareness, including the shadow, archetypes, and aspects of personality not yet known to the ego.`,
+              audioPrompt: `Unconscious material, in Jungian psychology, is the content of your psyche that is not in conscious awareness, {name}. This includes the shadow, archetypes, and parts of personality not yet integrated. Jung believed the Self with a capital S includes both the conscious ego and the totality of unconscious material. People with weak or rigid egos either get swept away by unconscious material, overwhelmed by emotions and archetypes, or wall themselves off from it, becoming brittle and narrow. The goal of individuation is for the ego to come into right relationship with this larger territory.`,
+            },
+            {
+              word: `inflated ego`,
+              definition: `In Jungian psychology, an ego that has overidentified with itself and become rigid or grandiose. Contrasted with a collapsed ego. Neither state is psychologically healthy.`,
+              audioPrompt: `An inflated ego, in Jungian psychology, is an ego that has overidentified with itself and become rigid or grandiose, {name}. Jung said the right ego is neither inflated nor collapsed. An inflated ego walls itself off from the unconscious and becomes brittle, defensive, and narrow. A collapsed ego gets swept away by unconscious material. The goal is a strong, flexible ego that can stand in relationship to the larger Self without being overwhelmed. A healthy ego is confident enough to engage with everything you are, including what lies beyond awareness. Growing the ego up rather than destroying it is individuation.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L12 = {
               definition: `In Buddhist-influenced psychology, the moment-by-moment process by which the mind builds a sense of solid separate self from thoughts, sensations, and memories.`,
               audioPrompt: `The self-construct is the moment-by-moment process by which the mind builds a sense of solid separate self, {name}. Buddhist analysis claims this happens continuously and mostly unconsciously. Thoughts arise, sensations register, memories activate, and the mind weaves them together into the assumption that there's a stable I behind it all. The self-construct isn't bad. It serves functions. But when it's invisible to you, it generates suffering because you spend enormous energy defending a self that isn't quite as substantial as you assume. Seeing the construct happen, in real time, is the Buddhist practice.`,
             },
+          ,
+            {
+              word: `anatta`,
+              definition: `A Pali Buddhist term meaning not-self. The teaching that there is no fixed, solid, independent self underlying experience. Foundational to Buddhist analysis of the self-construct.`,
+              audioPrompt: `Anatta is a Pali Buddhist term meaning not-self, {name}. Pali is the early Buddhist language. Anatta is the teaching that there is no fixed, solid, independent self underlying experience. It is the foundation of the Buddhist analysis of ego. Buddhists generally do not use the Western word ego. They talk about the self-construct, the assumed solid separate self that is built moment by moment from thoughts, sensations, and memories. The problem is not a thing called ego that must be destroyed. The problem is the constant unconscious process of constructing selfhood more solid than it actually is.`,
+            },
+            {
+              word: `holding selfhood lightly`,
+              definition: `The Buddhist-influenced practice of seeing clearly how the self is constructed moment by moment without over-investing in any particular version of it. A person can still function fully while doing this.`,
+              audioPrompt: `Holding selfhood lightly is the Buddhist-influenced practice of seeing how the self is constructed without over-investing in any particular version of it, {name}. A person who has done this work still has a name, preferences, and functions in the world. They just hold selfhood more lightly. This is what Buddhist teachers across two and a half millennia have claimed is possible and beneficial. It does not mean having no personality. It means that the constant effort to protect and improve a self that may not be quite as solid as it seems loosens its grip. Less suffering. More flexibility.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L12 = {
               definition: `Sanskrit term meaning "the I-maker." In Advaita Vedanta and Hindu philosophy, the mental function that generates the sense of separate individual selfhood.`,
               audioPrompt: `Ahamkara is a Sanskrit term meaning the I-maker, {name}. In Advaita Vedanta and Hindu philosophy, ahamkara is the mental function that takes basic awareness and adds the conviction "this is mine, I am separate." Without ahamkara, awareness would simply be aware, without dividing the field into me and not-me. Advaita teaches that ahamkara, while functional, creates the illusion of separation from the underlying reality. The deeper self, atman, is not separate. Atman, in their view, is identical with Brahman, the underlying reality of everything.`,
             },
+          ,
+            {
+              word: `atman`,
+              definition: `In Advaita Vedanta, the deepest true self, distinct from the personal sense of self generated by ahamkara. Claimed to be ultimately identical with Brahman, the underlying reality of everything.`,
+              audioPrompt: `Atman is the deepest true self in Advaita Vedanta, {name}. It is distinct from the personal sense of self generated by ahamkara, the I-maker. The personal self is real but limited. Atman is claimed to be unlimited. The Upanishadic statement tat tvam asi, meaning you are that, makes the central Advaita claim directly: atman is ultimately identical with Brahman, the underlying reality of everything. Through self-inquiry and practice the ahamkara loosens and the recognition that the true self was always Brahman is said to become direct experience.`,
+            },
+            {
+              word: `self-inquiry`,
+              definition: `In Advaita Vedanta, a meditative practice of directly investigating the source of the sense of I. The primary method by which the ahamkara is said to loosen and recognition of atman becomes possible.`,
+              audioPrompt: `Self-inquiry is a meditative practice central to Advaita Vedanta, {name}. It involves directly investigating the source of the sense of I. Rather than looking outward or engaging in complicated ritual, the practitioner turns attention inward: who or what is the one that says I? Through this practice the ahamkara, the I-maker, is said to loosen its grip. The recognition that the true self, atman, is not separate from the underlying reality of everything becomes more direct. This is described as recognition rather than achievement, because atman is said to have always already been what it is.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L12 = {
               definition: `A claim about the fundamental nature of reality, often beyond what can be tested empirically. Different from psychological or scientific claims about how something works.`,
               audioPrompt: `A metaphysical claim is a claim about the fundamental nature of reality, {name}. It is typically beyond what can be directly tested with empirical evidence. When Advaita Vedanta claims that atman is Brahman, that the deepest self is identical with the underlying reality of everything, that is a metaphysical claim. When Jung claims that integrating shadow material improves psychological health, that is a more empirical claim that can be tested clinically. The difference matters because metaphysical claims and empirical claims need different kinds of evaluation. Mixing them is a common source of confusion.`,
             },
+          ,
+            {
+              word: `contemplative investigation`,
+              definition: `The sustained, disciplined study of the mind through direct first-person inquiry, as in meditation traditions. Distinguished from empirical scientific investigation, though both are treated as sources of evidence.`,
+              audioPrompt: `Contemplative investigation is the sustained, disciplined study of the mind through direct first-person inquiry, {name}. Meditation traditions represent thousands of years of this kind of work. The lesson notes that Buddhist analysis is supported by two thousand five hundred years of contemplative investigation across cultures, alongside growing neuroscience research on meditators. This differs from clinical psychology, which relies on controlled studies and measurable outcomes. Both count as evidence but they are different kinds and need to be evaluated accordingly. Knowing the kind of evidence behind a claim is part of evaluating it.`,
+            },
+            {
+              word: `clinical evidence`,
+              definition: `Evidence gathered through therapeutic practice and controlled research with real patients. The kind of evidence that backs the Jungian psychological framework, as distinct from contemplative or metaphysical support.`,
+              audioPrompt: `Clinical evidence is evidence gathered through therapeutic practice and controlled research with real patients, {name}. The lesson distinguishes three kinds of evidence across the three frameworks. The Jungian framework is largely psychological and clinical, supported by decades of practitioner experience and measurable therapeutic effects. Buddhist analysis is supported by contemplative investigation and modern neuroscience. Advaita Vedanta is supported primarily by the testimony of its tradition and practitioner experiences. The kind of evidence varies and knowing that is part of evaluating any claim about the nature of the self.`,
+            }
           ],
         },
 

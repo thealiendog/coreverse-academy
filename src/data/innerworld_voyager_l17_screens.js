@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `Jung's term (1952) for meaningful coincidence between events where the connection is felt to be deeper than mere chance. The concept is unfalsifiable in its strong form, which is part of what makes it contested.`,
               audioPrompt: `Synchronicity is Jung's term for meaningful coincidence, {name}. He introduced it in 1952. The claim: some coincidences feel too meaningful, too personally relevant, to be explained by chance alone. Jung proposed an acausal connecting principle, a way events could be related by meaning rather than by ordinary cause and effect. The famous example was a patient describing a scarab beetle dream as a real scarab tapped on the window. Whether synchronicity is a real principle or whether all such moments are explainable by ordinary statistics is the question of today's lesson.`,
             },
+          ,
+            {
+              word: `acausal connecting principle`,
+              definition: `Jung's proposed mechanism for synchronicity: a way events can be related by shared meaning rather than by ordinary cause and effect. The concept operates alongside, not instead of, physical causation.`,
+              audioPrompt: `Acausal connecting principle is Jung's proposed explanation for synchronicity, {name}. He introduced the term in 1952 in a paper co-authored with physicist Wolfgang Pauli. The claim: some events are connected not because one caused the other but because they share meaning in a particular consciousness. This principle would operate alongside ordinary cause and effect, not replacing it. Jung distinguished this carefully from coincidence in general. He was not saying all coincidences are meaningful, only specific ones where the meaning seemed too precise to be plausibly explained by chance. The concept is what makes synchronicity scientifically difficult to evaluate — it is not falsifiable in the standard sense.`,
+            },
+            {
+              word: `therapeutic impasse`,
+              definition: `A point in psychological therapy where progress has stalled and neither the therapist nor the patient can find a way forward. Jung's famous scarab example involved a synchronicity breaking through such a stalemate.`,
+              audioPrompt: `A therapeutic impasse is a point in psychological treatment where progress has stalled, {name}. Jung's most famous synchronicity example involves one. A patient was describing a dream about a golden scarab beetle when a real scarab — rare in his region — tapped on his window. Jung caught it and handed it to the patient. He claimed the synchronicity broke through the impasse and allowed the patient to progress. Whether the coincidence itself caused the breakthrough or whether something about the moment shifted the emotional atmosphere between them is exactly the kind of question that makes synchronicity difficult to evaluate cleanly. The report is real. The interpretation is contested.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The well-documented tendency to notice, remember, and weight information that confirms existing beliefs while overlooking information that contradicts them.`,
               audioPrompt: `Confirmation bias is the tendency to notice, remember, and weight information that confirms what you already believe, {name}. It is one of the most documented and powerful cognitive biases in psychology. We notice the hits and miss the misses. We remember when our hunch was right and forget when it was wrong. In the context of synchronicity, we remember the times "I thought of someone and they texted" and forget the hundreds of times we thought of someone and nothing happened. The bias isn't a flaw to fix; it's a feature of how brains work. Knowing it helps you correct for it.`,
             },
+          ,
+            {
+              word: `Law of Large Numbers`,
+              definition: `The mathematical principle that with enough events, even highly unlikely combinations become near-certain to occur somewhere. A central statistical explanation for why striking coincidences are expected, not surprising.`,
+              audioPrompt: `The Law of Large Numbers states that with enough events, even unlikely combinations become near-certain to occur somewhere, {name}. The lesson applies this directly to coincidences. There are roughly eight billion people on earth, each having dozens of meaningful events per year. Across all those people and events, millions of striking coincidences are statistically guaranteed to occur annually. The Birthday Problem demonstrates the same principle on a small scale: in a room of just 23 people, the probability that two share a birthday exceeds fifty percent. Our intuition about coincidence probability is consistently wrong. Knowing the Law of Large Numbers corrects that intuition.`,
+            },
+            {
+              word: `Birthday Problem`,
+              definition: `A mathematical demonstration that in a group of just 23 people, two sharing a birthday is more likely than not — far surprising most people's intuition. Used to illustrate how our sense of coincidence probability is systematically unreliable.`,
+              audioPrompt: `The Birthday Problem is a mathematical demonstration that our intuitions about coincidence are systematically unreliable, {name}. In a room of just 23 people, the probability that two share a birthday is over fifty percent. Most people guess the group would need to be fifty or a hundred. The intuition is wrong by a large margin. The lesson uses this to make a concrete point: if we miscalculate birthday coincidences this badly, we almost certainly miscalculate the probability of all the other striking coincidences that feel meaningful in our lives. The math of large numbers, not supernatural connection, is why stunning coincidences happen regularly.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The study of subjective experience. Phenomenology takes seriously what something feels like, even when the underlying mechanism is debated.`,
               audioPrompt: `Phenomenology is the study of subjective experience, {name}. It takes seriously what something feels like, regardless of the underlying mechanism. The phenomenology of synchronicity is the felt experience of meaningful coincidence: the sense of connection, of being seen, of something pointing to you specifically. That experience is real even when the underlying cause is statistics plus pattern-finding. Phenomenology and mechanism are different questions. Both are legitimate. Mixing them up is a common source of error. Synchronicity may have ordinary causes and extraordinary phenomenology at the same time.`,
             },
+          ,
+            {
+              word: `unconscious pattern recognition`,
+              definition: `The process by which the mind tracks and integrates information below the level of conscious awareness. Robert Hopcke's framework proposes that synchronicity moments can bring unconsciously processed patterns to conscious attention.`,
+              audioPrompt: `Unconscious pattern recognition is the process by which the mind tracks information below the level of conscious awareness, {name}. The lesson presents this as the most bounded version of the synchronicity claim, described by Jungian analyst Robert Hopcke. Under this view, meaningful coincidences function as moments when something your unconscious mind has been working on is suddenly brought to consciousness. The coincidence does not violate physics. It surfaces something already being processed internally. This framing is compatible with mainstream cognitive science, unlike Jung's original acausal connecting principle. It treats synchronicity as a psychological phenomenon rather than a metaphysical one.`,
+            },
+            {
+              word: `metaphysical overreach`,
+              definition: `Making claims that go beyond what evidence or experience actually supports, particularly claims about the fundamental nature of reality derived from subjective experiences.`,
+              audioPrompt: `Metaphysical overreach is making claims about the fundamental nature of reality that go beyond what the evidence actually supports, {name}. The lesson uses this term in its middle view on synchronicity. The phenomenology of meaningful coincidence is interesting — the felt experience is real and often psychologically significant. But concluding from that experience that an acausal principle governs reality, or that the universe is sending personal messages, is overreach. The experience and the mechanism are different questions. Keeping them separate is a core intellectual discipline. The middle view holds that the phenomenology is real and worth paying attention to, while the metaphysics is where careful thinkers stop short.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The tendency to perceive meaningful patterns or connections in random data. Related to confirmation bias. A well-documented cognitive pattern, sometimes adaptive, sometimes misleading.`,
               audioPrompt: `Apophenia is the tendency to perceive meaningful patterns or connections in random data, {name}. We see faces in clouds and electrical outlets. We hear words in random noise. We feel that random events have personal significance. Apophenia is a well-documented cognitive pattern. Sometimes it serves us: spotting a predator in patterns of grass was useful for survival. Sometimes it misleads us: seeing the universe sending personal signs in random coincidences. Knowing apophenia exists helps you check your own pattern-finding. The patterns might be real. Or they might be apophenia doing what brains do.`,
             },
+          ,
+            {
+              word: `spiritual self-importance`,
+              definition: `A form of self-centeredness disguised as openness, in which a person interprets random coincidences as personal cosmic communications directed specifically at them.`,
+              audioPrompt: `Spiritual self-importance is a form of self-centeredness disguised as openness, {name}. The lesson names it specifically in the section on how synchronicity gets hijacked. The pattern: treating every coincidence as a personal message from the universe, as proof of cosmic alignment or communication directed specifically at you. The lesson is clear that pattern-finding brains plus large numbers of events plus confirmation bias produce the experience of being singled out. But that experience is not evidence that the universe is actually attending to you specifically. Real humility about this is healthier than the spiritual ego that builds an identity around being cosmically seen.`,
+            },
+            {
+              word: `Law of Attraction`,
+              definition: `A pop spiritual concept claiming that positive or negative thoughts attract corresponding experiences into a person's life. Often combined with synchronicity in online wellness content despite not being part of Jung's original work.`,
+              audioPrompt: `The Law of Attraction is a pop spiritual concept claiming that thoughts attract corresponding experiences, {name}. The lesson brings it up in the context of how synchronicity gets hijacked in modern wellness culture. Pop spiritual content often combines Jung's careful 1952 concept with the Law of Attraction, manifestation, vibration, and numerology — freely mixing concepts that were never connected in Jung's original work. These extensions make claims that go far beyond what synchronicity, even in the strong Jungian sense, actually supports. Recognizing when concepts are being mixed together to amplify their apparent power is one of the key pattern-recognition skills this lesson builds.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The willingness to acknowledge what you don't know and to hold beliefs proportional to the actual evidence. A cardinal virtue in good thinking.`,
               audioPrompt: `Epistemic humility is the willingness to acknowledge what you don't know, {name}. It is one of the most important features of good thinking. Most contested questions don't have clean answers. Most strong evidence supports moderate conclusions, not extreme ones. Epistemic humility lets you say "I don't know if synchronicity is a real principle or just statistics plus pattern-finding. Both views have something to them. I'm not going to commit to either until I have better evidence." That stance is harder than picking a side. It is also usually more accurate.`,
             },
+          ,
+            {
+              word: `markers of attention`,
+              definition: `A reframe of synchronicity moments as indicators of where a person's inner attention is most alive, rather than as supernatural signals. A psychologically grounded use of meaningful coincidence without metaphysical claims.`,
+              audioPrompt: `Markers of attention is a reframe for synchronicity moments that the lesson offers as a mature approach, {name}. Rather than treating coincidences as signals from the universe, you treat them as indicators of where your attention is currently alive. You are most likely to experience what feels like meaningful coincidence when you are psychologically engaged with a real question. The coincidence may not be a cosmic message. It may be a marker of something you are genuinely working on inwardly. This reframe lets you take the moments seriously and use them productively without overclaiming what they mean or building a spiritual identity around them.`,
+            },
+            {
+              word: `manufactured doubt`,
+              definition: `Artificially creating the impression that a question is uncertain when it is not, often for commercial or ideological purposes. Distinct from genuine uncertainty, where evidence genuinely does not favor one answer.`,
+              audioPrompt: `Manufactured doubt is the artificial creation of uncertainty about something where evidence is actually clear, {name}. The lesson introduces this concept in contrast to epistemic humility. Epistemic humility is appropriate when evidence genuinely does not settle a question. Manufactured doubt is something different: pretending a question is open when it isn't, usually to avoid acknowledging inconvenient evidence. The lesson applies this distinction to synchronicity. Whether meaningful coincidences are real metaphysical events is genuinely uncertain. Whether the universe sends personal messages through number patterns to millions of people simultaneously is not equally uncertain. Knowing the difference between the two is itself a real thinking skill.`,
+            }
           ],
         },
 

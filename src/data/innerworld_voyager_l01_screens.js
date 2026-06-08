@@ -52,6 +52,17 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `The subjective experience of being aware. The 'what it is like' to be you from the inside.`,
               audioPrompt: `Consciousness is the subjective experience of being aware, {name}. It is the 'what it is like' to be you from the inside, right now, reading these words. The strange thing about consciousness is that it cannot be measured from the outside. A scientist can watch your brain activity, but they cannot directly see your experience of seeing red, or your feeling of hearing your favorite song. That gap between what brains do and what experience feels like is the puzzle people have been trying to crack for thousands of years. What do you think is happening inside you right now that makes this reading feel like something?`,
             },
+          ,
+            {
+              word: `hard problem`,
+              definition: `David Chalmers' term for the question of why brain processes feel like something from the inside, as distinct from easier questions about how the brain processes information.`,
+              audioPrompt: `The hard problem is David Chalmers' name for the deepest question in consciousness science, {name}. Easy problems are things like how the brain stores memories or controls movement. Hard, but solvable. The hard problem is different. It asks: why does any of it feel like something from the inside? Two thousand years of philosophy and a century of neuroscience have not answered it. In 1998, Chalmers even wagered neuroscientist Christof Koch a case of wine that the problem would be solved within 25 years. The deadline came and went in 2023. Koch won. The feeling of being you, from the inside, remains unexplained.`,
+            },
+            {
+              word: `neuroscientist`,
+              definition: `A scientist who studies the brain and nervous system. Neuroscientists can map neural activity in precise detail but still cannot fully explain why it generates conscious experience.`,
+              audioPrompt: `A neuroscientist is a scientist who studies the brain and nervous system, {name}. Neuroscientists can watch which regions light up when you see red, feel afraid, or recall a memory. They can map every neuron firing in extreme detail. And yet even with all of that, they cannot say why any of it feels like something from the inside. That is the gap at the center of this lesson. The best brain science in the world can describe what the brain does. It cannot yet describe why what the brain does produces experience. That gap is what makes consciousness the deepest unsolved question in science.`,
+            }
           ],
         },
 
@@ -74,6 +85,17 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `The raw felt qualities of conscious experience: the 'what it is like' aspect of redness, pain, taste.`,
               audioPrompt: `Qualia are the raw felt qualities of experience, {name}. The redness of red. The painfulness of pain. The bitter taste of coffee. The feeling of being homesick. Each one is what experience is made of from the inside. You can describe a quale, you can compare it to others, but you cannot reduce it to a number or an equation. That is what makes the science of consciousness so hard. The whole point of being conscious is the qualia, and the qualia are exactly what we cannot measure. Imagine trying to explain the taste of chocolate to someone who has never eaten it. What words could possibly cross that gap?`,
             },
+          ,
+            {
+              word: `thought experiment`,
+              definition: `A carefully constructed imaginary scenario used by philosophers and scientists to test an idea. Mary's Room is one of the most famous thought experiments in philosophy of mind.`,
+              audioPrompt: `A thought experiment is a carefully constructed imaginary scenario used to test an idea, {name}. In 1982, Australian philosopher Frank Jackson designed one of the most famous. He asked us to imagine a brilliant neuroscientist named Mary who has lived her entire life in a black-and-white room. She knows everything science can teach about color vision. Every wavelength, every neuron, every brain pathway. Then she walks out and sees red for the first time. Does she learn something new? If the answer is yes, then something about experience escapes physical description. That something is what philosophers call qualia. The thought experiment makes the point sharper than any argument could.`,
+            },
+            {
+              word: `Mary's Room`,
+              definition: `Frank Jackson's 1982 thought experiment. A neuroscientist who has only ever seen black and white learns everything about color vision, then sees red for the first time. If she learns something new, qualia cannot be captured by physical science.`,
+              audioPrompt: `Mary's Room is Frank Jackson's 1982 thought experiment about qualia, {name}. Mary is a neuroscientist who has lived in a black-and-white room her whole life. She knows every physical fact about color vision: every wavelength, every neuron, every brain pathway. The day she walks out and sees red for the first time, does she learn something new? Most people instinctively say yes. If yes, then the redness of red is something science cannot capture in equations. Jackson designed this scenario to show that physical knowledge, no matter how complete, cannot fully describe conscious experience. It is one of the most discussed arguments in all of philosophy.`,
+            }
           ],
         },
 
@@ -96,6 +118,17 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `A scientific proposal explaining how brain activity generates conscious experience. None is fully proven; each has critics.`,
               audioPrompt: `A theory of consciousness is a scientific proposal explaining how brain activity generates conscious experience, {name}. The three biggest theories right now are Integrated Information Theory, Global Workspace Theory, and Higher-Order Thought Theory. Each gives a different answer about what makes something conscious. Each has experiments backing it up and experiments that challenge it. Notice that we are not waiting for one obviously-correct answer. We are at a stage in science where smart, careful people genuinely disagree about something this fundamental. That disagreement is normal at the edge of knowledge. What would it take to convince you one theory was right? What experiment would you want to see?`,
             },
+          ,
+            {
+              word: `Integrated Information Theory`,
+              definition: `A theory of consciousness proposed by Giulio Tononi, holding that consciousness arises whenever information is integrated in a specific mathematical way. On this view, any system that integrates information may have some degree of consciousness.`,
+              audioPrompt: `Integrated Information Theory is a theory of consciousness proposed by neuroscientist Giulio Tononi, {name}. It says consciousness arises whenever information is integrated in a specific mathematical way. If this theory is right, any system that integrates information, including some computers and possibly even thermostats, has some tiny amount of consciousness. This is a striking claim. It means consciousness might be far more widespread than we assume. It also means consciousness has a precise mathematical signature you could in principle measure. Whether that signature is real is exactly what scientists are now debating.`,
+            },
+            {
+              word: `Global Workspace Theory`,
+              definition: `A theory championed by Stanislas Dehaene and Bernard Baars, holding that consciousness happens when information is broadcast across many brain regions simultaneously, like a spotlight making something available to many systems at once.`,
+              audioPrompt: `Global Workspace Theory is a theory of consciousness championed by Stanislas Dehaene and Bernard Baars, {name}. It says most brain processing is unconscious, like driving a familiar route without thinking. Consciousness, in this view, is what happens when the brain spotlights one thing and broadcasts it across many brain regions simultaneously, making it available to many systems at once. You become conscious of something when it enters this shared workspace. This theory has strong support from brain imaging studies. It gives a concrete answer to why some information makes it into awareness while most does not.`,
+            }
           ],
         },
 
@@ -118,6 +151,17 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `Awareness from the inside: the first-person 'what it is like' aspect of being conscious. Cannot be directly observed from outside.`,
               audioPrompt: `Subjective experience is awareness from the inside, {name}. It is the first-person view, the 'what it is like' aspect of being you. Right now, you have subjective experience of these words. A neuroscientist could scan your brain and describe every neural event, but they could not directly access your experience of reading. That is why subjective experience is sometimes called the 'first-person' point of view, as opposed to the 'third-person' view science usually works in. Notice that everything you have ever experienced has come through subjective experience. It is the most familiar thing in the world and also the most mysterious.`,
             },
+          ,
+            {
+              word: `animal welfare`,
+              definition: `The question of how much morally relevant experience animals have. Consciousness science directly shapes animal welfare debates by asking whether creatures like fish, octopuses, and bees experience pain in ways that matter.`,
+              audioPrompt: `Animal welfare is one of the real-world stakes of consciousness science, {name}. Whether a chicken, a fish, an octopus, or a bee experiences pain in a way we should care about is not a settled question. It depends entirely on what consciousness is and which creatures have it. These are active debates happening right now, not abstract philosophy. The science of consciousness we develop will determine how we answer them. If you believe consciousness requires a certain kind of brain structure, that gives one answer. If you believe any information-integrating system has some awareness, that gives a very different one. The stakes are real.`,
+            },
+            {
+              word: `medium`,
+              definition: `The channel or substance through which something is experienced or transmitted. Consciousness is the medium through which every experience in your life comes to you.`,
+              audioPrompt: `A medium is the channel through which something is experienced or transmitted, {name}. Consciousness is the medium through which you experience everything in your life. The room you are in, the people you love, this lesson, all of it comes to you through consciousness. If you do not understand what consciousness is, you do not fully understand the medium through which you experience everything. This is one of the reasons the question matters. It is not abstract. Consciousness is not one topic among many. It is the lens through which every other topic reaches you. Investigating it is investigating the conditions of all experience.`,
+            }
           ],
         },
 
@@ -140,6 +184,17 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `The aspect of awareness that observes thoughts and feelings without being identical to them. A concept found across many contemplative traditions.`,
               audioPrompt: `Witness consciousness is the aspect of awareness that observes thoughts and feelings without being the same as them, {name}. When you notice that you are thinking, the noticing happens from somewhere. That somewhere is what many traditions call witness consciousness. You can test this yourself. Right now, try to notice your next thought as it arises. The thought is one thing. The noticing of the thought is something slightly different. This is one of the strangest features of being conscious. There seems to be a layer of awareness that watches your own mind. Different traditions describe it differently, but they keep pointing at the same thing.`,
             },
+          ,
+            {
+              word: `Default Mode Network`,
+              definition: `The brain network active when you are lost in thought. Studies of meditators show it quiets down with practice, suggesting the constant inner mental chatter has a measurable physical basis.`,
+              audioPrompt: `The Default Mode Network is the brain network active when you are lost in thought, {name}. It is the network that generates the constant chatter of mental activity, the stream of thoughts, plans, memories, and worries that runs almost all the time. Modern neuroscientists studying meditators with brain scanners have found that in people with years of meditation practice, the Default Mode Network quiets down. Other networks become more integrated. What traditions across cultures have described as settling beneath the noise of the mind now has a measurable neural signature. The investigation people have done for thousands of years is showing up in brain scans.`,
+            },
+            {
+              word: `contemplative traditions`,
+              definition: `Practices across cultures, including Buddhist, Hindu Vedanta, and Christian mysticism, that investigate awareness through sustained inner attention. They have independently described similar findings about consciousness for thousands of years.`,
+              audioPrompt: `Contemplative traditions are practices across cultures that investigate awareness through sustained inner attention, {name}. Buddhist traditions call what they find 'awareness itself.' Hindu Vedanta calls it 'witness consciousness.' Some Christian mystics call it 'the soul.' These traditions arrived independently at remarkably similar descriptions. Modern neuroscientists studying meditators with brain scanners have now begun finding measurable differences in how experienced practitioners' brains work. The convergence between ancient inner investigation and modern brain science is one of the most striking developments in consciousness research. You do not have to adopt any tradition to notice what they are all pointing at.`,
+            }
           ],
         },
 

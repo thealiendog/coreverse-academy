@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `Reports made by people who were clinically dead or near death and were then revived, often with consistent features across cultures (out-of-body sensation, tunnel, light, life review).`,
               audioPrompt: `A near-death experience, often called an NDE, is a report made by someone who was clinically dead or near death and was then revived, {name}. The reports are remarkably consistent across cultures and individuals: an out-of-body sensation, movement through a tunnel toward light, encounters with figures, a life review, and a return decision. Researchers have collected thousands of cases over decades. The reports themselves are real. People are not making them up. What's contested is what causes them and what they mean.`,
             },
+          ,
+            {
+              word: `life review`,
+              definition: `A commonly reported feature of near-death experiences in which a person perceives significant moments of their life and often feels them from the perspective of others. Consistent across cultures and belief backgrounds.`,
+              audioPrompt: `Life review is one of the most consistently reported features of near-death experiences, {name}. It involves perceiving significant moments of one's life — often described as seeing them and feeling them from the perspective of others involved. The lesson notes that this feature appears across thousands of accounts, across different cultures, ages, and religious backgrounds, including among people whose religious traditions contain no such imagery. The consistency of the life review across such diverse reporters is part of what makes the NDE phenomenon scientifically interesting. What causes it — brain mechanisms under dying conditions, or something else — is part of what remains contested.`,
+            },
+            {
+              word: `cross-cultural consistency`,
+              definition: `The quality of a phenomenon appearing with similar features across different cultures, ages, and belief backgrounds. The cross-cultural consistency of NDE reports is part of what makes them scientifically significant.`,
+              audioPrompt: `Cross-cultural consistency is the quality of a phenomenon appearing with similar features across different cultures, ages, and belief backgrounds, {name}. In near-death experience research, it is one of the most striking aspects of the data. Children too young to have absorbed cultural ideas about death report similar experiences. People from religious backgrounds that include no such imagery still report it. Skeptics and atheists sometimes report the same features as devout believers. This consistency suggests a shared underlying cause — whether that is shared brain physiology under dying conditions or something the current scientific model does not fully account for. The consistency is real; its interpretation is contested.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `Insufficient oxygen reaching brain tissue. Known to produce visual phenomena including tunnel vision and altered states of consciousness. A leading proposed mechanism for some NDE features.`,
               audioPrompt: `Hypoxia is insufficient oxygen reaching brain tissue, {name}. It is known to produce specific visual and conscious effects, including tunnel vision and bright light experiences. During cardiac arrest, the brain becomes severely hypoxic within seconds. Many of the visual features of NDEs map onto hypoxia effects studied in laboratory conditions. Hypoxia is a well-documented physiological mechanism. The question is whether it fully explains the more elaborate features of NDEs (life review, encounters with figures, sense of being more conscious than usual) or whether something else is also involved.`,
             },
+          ,
+            {
+              word: `temporoparietal junction`,
+              definition: `A brain region that, when stimulated or disrupted, can produce out-of-body sensations. Its disruption during near-death events is one of the proposed neuroscience mechanisms for the out-of-body feature of NDEs.`,
+              audioPrompt: `The temporoparietal junction is a specific brain region that, when stimulated or disrupted, can produce out-of-body sensations, {name}. This has been demonstrated in laboratory settings. The lesson presents it as one of the neuroscience mechanisms proposed to explain a common NDE feature. The mapping goes: temporoparietal junction disruption during cardiac arrest or severe stress produces the sensation of leaving the body and observing from above. This is a real brain mechanism with real documented effects. The question is whether this mechanism fully explains the out-of-body feature of NDEs, or whether some cases involve something the laboratory stimulation model does not capture.`,
+            },
+            {
+              word: `endogenous opioids`,
+              definition: `Naturally occurring brain chemicals released during severe stress that can produce feelings of peace, euphoria, and reduced pain. Proposed as a neuroscience mechanism for the sense of peace commonly reported in NDEs.`,
+              audioPrompt: `Endogenous opioids are naturally occurring brain chemicals released during severe stress, {name}. The body produces them. They can produce feelings of peace, euphoria, and reduced pain. The lesson names them as one of the specific mechanisms mainstream neuroscience proposes to explain NDE features — specifically the sense of unconditional peace and love that is so commonly reported. The mapping: severe physiological stress triggers opioid release, which produces the subjective quality of calm and euphoria. Critics of the pure neuroscience model note that this mapping, while plausible, is post-hoc. The mechanism exists. Whether it fully accounts for the specific quality of the NDE peace is part of the ongoing dispute.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `Perception of real events or information that is later verified to be accurate. In NDE research, claims of veridical perception during clinical death are contested but actively studied.`,
               audioPrompt: `Veridical perception is perception of real events or information that is later verified to be accurate, {name}. In NDE research, the claim is that some patients report seeing or hearing things during clinical death that they could not have known by ordinary means, and which turn out to be accurate. The most rigorous study of this is Sam Parnia's AWARE study at Southampton. The findings are real but their interpretation is contested. Critics argue the perceptions might have been reconstructed from information acquired at other times. Defenders argue the methodology controls for this. The debate is unresolved.`,
             },
+          ,
+            {
+              word: `AWARE study`,
+              definition: `A multi-year prospective study led by Sam Parnia at the University of Southampton investigating whether cardiac arrest survivors report verifiable observations during periods of clinical death. One of the most methodologically careful NDE studies conducted.`,
+              audioPrompt: `The AWARE study is a multi-year prospective investigation led by Sam Parnia at the University of Southampton, {name}. It tracked cardiac arrest survivors and examined whether any reported verifiable observations of events that occurred during the period when their brain showed no measurable activity. The lesson describes it as the most studied case in the veridical perception debate. A small percentage of survivors reported potentially verifiable observations. Critics argue the timing of those perceptions is difficult to establish with certainty. Defenders argue the methodology controls for confounds and that genuine cases remain. The AWARE findings are real and the debate around them is unresolved.`,
+            },
+            {
+              word: `long-term life changes`,
+              definition: `Documented alterations in values, fear of death, and relationships that NDE reporters consistently show following their experience. These changes are recorded across thousands of cases regardless of the cause of the NDE.`,
+              audioPrompt: `Long-term life changes are documented alterations that consistently follow near-death experiences, {name}. The lesson names three: reduced fear of death, changed values toward relationships and meaning, and increased spirituality regardless of prior belief. These changes are recorded across thousands of cases. They do not prove anything specific about what caused the experience. But they suggest the NDE is unusual in ways that pure brain malfunction explanations do not fully capture. Ordinary hallucinations and dreams do not typically produce lasting value shifts of this kind. The lesson presents long-term life changes as one of the features of NDEs that is harder to fit cleanly into the standard neuroscience model.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `The willingness to acknowledge what you don't know and to hold beliefs proportional to actual evidence. Particularly important for contested questions.`,
               audioPrompt: `Intellectual humility is the willingness to acknowledge what you don't know, {name}. It is one of the most important features of careful thinking. Most contested questions don't have clean answers. The most accurate position is often the most uncertain one. Intellectual humility lets you say "I don't know if NDEs are fully explained by brain chemistry or whether they point to something else. Both views have something to them. I'm not going to commit to either until the evidence is stronger." That position is harder than picking a side. It is also usually more accurate when the evidence genuinely doesn't settle the question.`,
             },
+          ,
+            {
+              word: `taking reporters seriously`,
+              definition: `The intellectual practice of treating NDE reporters as genuine witnesses to their own experience while recognizing that their interpretation of what it means is not automatically correct.`,
+              audioPrompt: `Taking reporters seriously is an intellectual practice the lesson identifies as essential for engaging with contested evidence honestly, {name}. Someone who had a near-death experience is the world's expert on what they experienced. Their testimony deserves genuine attention. But their interpretation of what it means is one possible framework, not automatically the correct one. People interpret experiences through frameworks they already hold. A devout Christian and a committed atheist who report similar experiences will explain them very differently. Taking the report seriously and taking the interpretation as final are two different moves. Only the first is required for honest engagement with the evidence.`,
+            },
+            {
+              word: `cosmic certainty`,
+              definition: `The posture of claiming definitive answers to questions at the edges of what current evidence can settle. The lesson identifies this as the position to avoid on genuinely contested questions like NDEs.`,
+              audioPrompt: `Cosmic certainty is the posture of claiming definitive answers to questions where current evidence does not actually settle the matter, {name}. The lesson names it specifically as the position to avoid on near-death experiences. Claiming NDEs are proof of an afterlife is cosmic certainty. Claiming NDEs are fully explained by brain chemistry is also cosmic certainty. Both go beyond what the evidence supports. The mature stance is different: hold the question open, be honest about what is currently known and what isn't, continue engaging carefully as new evidence accumulates. Cosmic certainty in either direction is the mistake the lesson warns against, regardless of which direction feels more comfortable to you.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `An open question where current evidence does not clearly favor one answer. Different from manufactured doubt and from refusing to engage; intellectual honesty about what is actually known.`,
               audioPrompt: `Genuine uncertainty is an open question where current evidence does not clearly favor one answer, {name}. It is different from manufactured doubt, where people pretend something is uncertain to avoid acknowledging clear evidence. It is also different from refusing to engage, where people throw up their hands instead of trying to think carefully. Genuine uncertainty is intellectual honesty about what is actually known and not yet known. NDEs are a good example. Climate change is not, because the evidence there is clear. Knowing which questions have genuine uncertainty and which have clear answers is itself a real skill.`,
             },
+          ,
+            {
+              word: `hard problem of consciousness`,
+              definition: `The unresolved philosophical and scientific question of why there is subjective experience at all — why physical brain processes give rise to the felt quality of inner life. Named as one of the genuinely contested open questions in this band.`,
+              audioPrompt: `The hard problem of consciousness is the question of why there is subjective experience at all, {name}. Physical brain processes can be studied and mapped. But why does any of that activity feel like something from the inside? Why is there a felt quality to seeing red, or being in pain, or recognizing a friend? This question has not been answered. The lesson names it as one of the genuinely contested open questions — alongside near-death experiences and the nature of free will — that illustrate what it means to hold open questions open. Intellectual honesty about the hard problem means acknowledging that current science has no satisfying answer. That acknowledgment is not weakness. It is accuracy.`,
+            },
+            {
+              word: `evaluate on methodology`,
+              definition: `The practice of judging the credibility of a source based on how it produces and tests its claims, rather than on whether its conclusions match your preferred worldview.`,
+              audioPrompt: `Evaluating on methodology is the practice of judging a source's credibility based on how it produces and tests its claims, {name}. The lesson names it as one of the hardest cognitive skills there is. The most careful source may reach conclusions you find unappealing. The most exciting source may have the weakest evidence. Real intellectual work means tracking methodology, openness about limitations, and the relationship between claims and evidence — not whether a source tells you what you hoped to hear. This skill, applied to near-death experience research, is what separates the AWARE study and the Mobbs and Watt paper from the YouTube testimonial channel, even when readers might prefer the latter's conclusions.`,
+            }
           ],
         },
 

@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L05 = {
               definition: `A treatment with no active medical ingredient (like a sugar pill or saline injection) that nonetheless produces real measurable improvement in some patients.`,
               audioPrompt: `A placebo is a treatment with no active ingredient that still produces real improvement in some patients, {name}. The word comes from Latin, meaning 'I shall please.' Originally it was a kind of medical white lie. Now it is one of the most studied phenomena in medicine. A sugar pill, a saline injection, even a fake surgery can produce measurable physiological changes. The patient is not faking. Brain scans show real activity changes. Something biological happens. Understanding what is and isn't a placebo effect is one of the most important scientific literacy skills you can develop.`,
             },
+          ,
+            {
+              word: `saline solution`,
+              definition: `A liquid made of salt and water with no active medical ingredient. Henry Beecher observed that wounded soldiers given saline solution instead of morphine often reported significant pain relief, an early observation of the placebo effect.`,
+              audioPrompt: `A saline solution is just salt and water, {name}. It has no active medical ingredient. During World War II, when morphine ran low on the battlefield, Harvard anesthesiologist Henry Beecher injected wounded soldiers with saline and told them it was morphine. Many soldiers reported significant pain relief. Their pain actually decreased. This was not imagination. Something real was happening in their bodies. Beecher went on to review 15 clinical studies and found that, on average, about 35 percent of patients improved on placebo treatments alone. That observation sparked seven decades of scientific research into one of the strangest phenomena in medicine.`,
+            },
+            {
+              word: `sham surgery`,
+              definition: `A fake surgical procedure in which doctors make incisions but do not perform the actual medical intervention. Sham surgeries have been used in research and have produced real measurable improvement in some patients.`,
+              audioPrompt: `A sham surgery is a fake surgical procedure, {name}. Doctors make real incisions, but they do not actually perform the medical intervention being studied. What is remarkable is that sham surgeries have produced real, measurable improvement in some patients. Not just in how patients feel, but in measurable outcomes. This is one of the most striking demonstrations that the placebo effect is a genuine biological phenomenon, not simply patients convincing themselves they feel better. The body responds to the ritual, the expectation, and the context of treatment, even when the treatment itself contains no active element.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L05 = {
               definition: `What you anticipate will happen. In placebo science, expectation activates real brain chemistry and shapes how the body responds.`,
               audioPrompt: `Expectation is what you anticipate will happen, {name}. In placebo research, expectation has been measured changing real brain chemistry. If you expect a pill to reduce your pain, your brain often releases endorphins, your body's natural painkillers, before any active ingredient hits. The expectation itself triggers the response. This is why doctors take bedside manner seriously. It's not just kindness. The way information is delivered shapes how the patient's body reacts. Expectation isn't imagination. It is biology.`,
             },
+          ,
+            {
+              word: `endorphins`,
+              definition: `The body's natural painkillers, released in the brain during placebo pain relief. When endorphins are blocked by a drug, placebo pain relief disappears, proving the body's own chemistry is doing the work.`,
+              audioPrompt: `Endorphins are your body's natural painkillers, {name}. They are released in the brain during placebo pain relief. Researchers have proven this with a precise experiment. When they give patients a drug that blocks endorphins and then give them a placebo, the placebo pain relief disappears. This tells us something important. The body's own chemistry is doing the work, not imagination or wishful thinking. Your brain releases endorphins when you expect relief. The expectation triggers a real biological response. This is why placebo effects are not dismissed by serious scientists. They are real phenomena with real measurable mechanisms. Endorphin release is one of the most studied of those mechanisms.`,
+            },
+            {
+              word: `bedside manner`,
+              definition: `How a doctor communicates and relates to a patient. Research shows bedside manner directly shapes placebo responses, because the brain reads contextual cues about how serious a treatment is and adjusts the body's response accordingly.`,
+              audioPrompt: `Bedside manner is how a doctor communicates and relates to a patient, {name}. Research has shown that it directly shapes how the body responds to treatment. A pill given by a confident doctor in a white coat works better than the same pill given without ceremony. The brain reads every signal about how serious the treatment is and adjusts the body's response accordingly. This is why doctors take bedside manner seriously. It is not just kindness. It is biology. The context, the ritual, the relationship between patient and practitioner, all of these are information that the brain processes and translates into real physiological response.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L05 = {
               definition: `Relating to what you experience or perceive, rather than what is measured externally.`,
               audioPrompt: `Subjective means relating to what you experience or perceive, {name}. Pain is subjective. Mood is subjective. Fatigue is subjective. These are real experiences, but they live in your perception. This is exactly where placebo effects work best. Placebos can change subjective experience because subjective experience is generated by your brain, and your brain responds to expectation. Objective things like a broken bone or a bacterial infection are not subjective. They exist whether you believe in them or not. Placebos can change how you feel about an objective problem, but they cannot fix the problem itself.`,
             },
+          ,
+            {
+              word: `meta-analysis`,
+              definition: `A study that combines results from many individual studies to find the overall pattern. Meta-analyses on placebo effects suggest real but moderate effects, stronger for some conditions than others.`,
+              audioPrompt: `A meta-analysis is a study of studies, {name}. Instead of running one experiment, researchers gather every reliable study on a topic and combine the results to find the overall pattern. Modern meta-analyses on the placebo effect suggest the effects are real but moderate. They are stronger for some conditions, like pain, depression, and irritable bowel syndrome, than for others. Beecher's original 35 percent figure has been criticized as too high in some studies and too low in others. Meta-analyses give a more honest and comprehensive picture than any single study can. When you see a meta-analysis referenced, you are seeing the whole field's findings, not just one researcher's results.`,
+            },
+            {
+              word: `regulatory systems`,
+              definition: `Body systems that manage internal balance, such as pain signaling, inflammation, and mood. Placebo effects can influence these systems but cannot fix structural problems like broken bones or bacterial infections.`,
+              audioPrompt: `Regulatory systems are the body's systems that manage internal balance, {name}. They include pain signaling, inflammation, mood, and immune response. Placebo effects work on perception and on certain regulatory systems. They can reduce pain, lower anxiety, ease depression symptoms, and influence bowel discomfort. What they cannot do is cure structural disease. They cannot regrow tissue, kill bacteria, fix a broken bone, or lower blood sugar in diabetes, though they may make a person feel better while the actual glucose stays high. This distinction, between what placebos can affect and what they cannot, is the one the wellness industry most often blurs. Knowing it protects you.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L05 = {
               definition: `A study that combines results from many individual studies to find the overall pattern. Stronger evidence than any single study.`,
               audioPrompt: `A meta-analysis is a study of studies, {name}. Instead of running one experiment, researchers gather every reliable study that has been done on a topic and combine the results to see the overall pattern. Meta-analyses are some of the strongest evidence in science because they correct for the limitations of any single study. When you see a meta-analysis on placebo effects, you're seeing what the entire scientific field has found, not just one researcher's view. If a wellness claim contradicts a meta-analysis, that's a serious red flag.`,
             },
+          ,
+            {
+              word: `spontaneous remission`,
+              definition: `When a disease resolves on its own without treatment. This can be mistakenly credited to a concurrent alternative treatment, making it appear that the treatment caused the recovery.`,
+              audioPrompt: `Spontaneous remission is when a disease resolves on its own without treatment, {name}. It is one of the reasons wellness claims are so hard to evaluate. If someone believes their crystals cured their cancer, they may have felt better. But the cancer either went into spontaneous remission, was misdiagnosed, or progressed undetected while they felt better. Real improvement happened at the same time as the alternative treatment, but that does not mean the treatment caused it. Correlation is not causation. The danger is that this logic, applied to serious conditions, can lead people to skip medicine that actually works. That is the real cost of mistaking placebo for cure.`,
+            },
+            {
+              word: `ritual`,
+              definition: `A structured, meaningful set of actions. In placebo research, ritual is one of the key contextual cues the brain reads to determine how seriously to respond to a treatment.`,
+              audioPrompt: `Ritual is a structured, meaningful set of actions, {name}. In placebo science, ritual is one of the most powerful contextual factors shaping how the body responds. Injections work better than pills. Capsules work better than tablets. A pill given with ceremony in a clinical setting works better than the same pill handed over informally. The brain reads the ritual as information about how serious the treatment is. Real placebo researchers say the right response to this is not to abandon ritual. It is to use the placebo effect as a bonus layer on top of treatments that actually work. Take the evidence-based medicine. Also get a kind doctor. The layers stack.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L05 = {
               definition: `Medical treatments tested through controlled studies, peer review, and replication, with measured effects on real biological outcomes.`,
               audioPrompt: `Evidence-based medicine is medical treatment that has been tested through controlled studies and proven to work, {name}. The key word is evidence. Anyone can claim a treatment works. Evidence-based means someone actually tested it, controlled for placebo effects, had other scientists check the work, and replicated the results in other studies. Evidence-based medicine is what separates real treatments from things that just feel like treatments. When a wellness claim opposes evidence-based medicine without good reason, that's a major warning sign.`,
             },
+          ,
+            {
+              word: `health literacy`,
+              definition: `The ability to find, evaluate, and apply health information accurately. It includes knowing which conditions respond to placebo and which require structural treatment, and recognizing overreach in wellness claims.`,
+              audioPrompt: `Health literacy is the ability to find, evaluate, and apply health information accurately, {name}. It includes knowing the difference between a subjective experience like pain or anxiety, where placebo effects are real, and a structural problem like a tumor or infection, where they are not. It means asking: what is the actual condition? What does evidence-based medicine say? Is this claim a layered addition to real treatment or a substitute for it? These questions do not make you cynical. They make you informed. Real wisdom about the mind-body connection includes knowing where it works and where it does not. That is health literacy. It is one of the most useful skills you can have.`,
+            },
+            {
+              word: `mind-body connection`,
+              definition: `The relationship between mental states and physical biology. It is real and measurable, but bounded: expectation and belief influence subjective experience and certain regulatory systems, not all biological conditions.`,
+              audioPrompt: `The mind-body connection is the relationship between mental states and physical biology, {name}. It is real. Expectation, belief, ritual, and context shape your real physical experience. This is what placebo research has measured carefully across seven decades. But the connection is bounded, not unlimited. Your beliefs do not override structural disease. Your meditation practice does not cure infections. Your positive thinking does not regrow severed nerves. The wellness industry sells the unlimited version because it sells well. The actual evidence sells the bounded version. Knowing the difference, honoring what the connection genuinely does while staying clear-eyed about what it does not, is the real sophistication this lesson is building in you.`,
+            }
           ],
         },
 

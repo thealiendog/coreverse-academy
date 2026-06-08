@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `The act of pushing down or hiding emotions, especially "negative" ones. Strongly associated in research with worse mental health over time.`,
               audioPrompt: `Emotional suppression is the act of pushing down or hiding emotions, {name}. Especially the emotions you've been taught are "bad." Suppression doesn't make emotions go away. Research consistently shows that suppressed emotions still affect your body, behavior, and stress levels, often more than acknowledged emotions. Long-term suppression is associated with worse physical and mental health. The standard emotional model trains people to suppress. The alternative we're going to explore today says: don't suppress. Listen.`,
             },
+          ,
+            {
+              word: `standard emotional model`,
+              definition: `The widespread belief that some emotions are good and should be maximized while others are bad and should be minimized or fixed. Treats the emotion itself as the problem.`,
+              audioPrompt: `The standard emotional model is the widespread framework for emotions most people grow up with, {name}. Under it, happiness, calm, gratitude, and love are good emotions. Anger, sadness, fear, envy, and shame are bad emotions that need to be fixed. The job is to maximize the good ones and minimize the bad ones. This model is everywhere in family conversations, at school, in pop psychology, and in social media. It sounds reasonable until you see what it produces: people who suppress half their emotional life and become emotionally narrower over time.`,
+            },
+            {
+              word: `projection`,
+              definition: `Attributing suppressed emotions or unwanted inner qualities to other people rather than recognizing them in oneself. A pattern associated with emotional suppression going underground.`,
+              audioPrompt: `Projection is attributing suppressed emotions or unwanted inner qualities to other people rather than recognizing them in yourself, {name}. When emotions are pushed underground they do not disappear. They come out sideways in bursts, in self-sabotage, and in projection onto others. You might experience suppressed anger as other people seeming hostile, or unacknowledged envy as perceiving others as arrogant. The standard emotional model, which trains people to suppress half their emotional life, creates the conditions for projection. Recognizing it in yourself is what IFS makes possible.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `A therapy approach developed by Richard Schwartz in the 1980s. Treats the psyche as a system of inner "parts," each with valid intentions, organized around a core "Self" with natural qualities of curiosity and compassion.`,
               audioPrompt: `Internal Family Systems, often called IFS, is a therapy approach developed by Richard Schwartz in the 1980s, {name}. It is one of the most respected and widely used modern psychotherapies. The core idea is that you aren't one unified self. You are a system of inner parts, each with its own perspective and intention. None of them is bad. Some are wounded. Some are protective. Underneath them is what Schwartz calls Self, your core awareness, which has qualities like curiosity, compassion, and calm. IFS has been adopted by therapists worldwide and has strong clinical evidence for treating trauma, anxiety, and depression.`,
             },
+          ,
+            {
+              word: `inner parts`,
+              definition: `In Internal Family Systems, the multiple sub-personalities within a person. Each part has its own feelings, intentions, and ways of influencing behavior.`,
+              audioPrompt: `Inner parts, in Internal Family Systems, are the multiple sub-personalities that make up a person, {name}. Richard Schwartz noticed that patients often described experiencing themselves as multiple inner parts. Part of me wants to go, part of me wants to stay. Schwartz took this seriously instead of dismissing it as metaphor. He found that each part has its own perspective, feelings, and intentions. Some parts are protective. Some are wounded. Some are protective of wounded parts. None of them is the whole of who you are. Understanding the parts system is the foundation of the IFS approach.`,
+            },
+            {
+              word: `Self`,
+              definition: `In Internal Family Systems, the core awareness underneath all inner parts. Has natural qualities like curiosity, compassion, and calm. Distinguished from any particular part.`,
+              audioPrompt: `Self, in Internal Family Systems, is the core awareness underneath all your inner parts, {name}. Schwartz writes it with a capital S to distinguish it from any particular part or role. It is not a part among other parts. It is the natural ground of your awareness beneath all the activity of protectors and wounded parts. Schwartz says the Self has natural qualities: curiosity, compassion, and calm. You do not have to manufacture these. When you can access the Self even partially, you can engage effectively with even the most difficult inner parts. This is one of the central practical insights of IFS.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `In IFS, an inner part whose job is to keep you safe by reacting to threats or vulnerabilities. Anger, anxiety, and perfectionism are often protector parts.`,
               audioPrompt: `A protector part, in Internal Family Systems, is an inner part whose job is to keep you safe, {name}. Anger is often a protector. So is anxiety. So is perfectionism. So is the part that pushes people away when you feel vulnerable. Protector parts are not bad. They developed because they served a purpose at some point. The work isn't to fight them. The work is to thank them for their service and ask what they're protecting underneath. Often the answer is a younger wounded part that needs different care. Treating protectors as enemies misses what they're actually doing for you.`,
             },
+          ,
+            {
+              word: `overcalibrated`,
+              definition: `Set to a level of sensitivity that is too high for the actual environment. Used in the lesson to describe how the nervous system responds to modern threats as if they were physical dangers.`,
+              audioPrompt: `Overcalibrated means set to a sensitivity level that is too high for the actual environment, {name}. The lesson uses this word to describe fear. The vast majority of fear is overcalibrated for the modern environment because your nervous system was built for predators, not for social anxiety. Your brain cannot always distinguish a physical threat from social embarrassment and responds to both with the same alarm. This does not mean fear is useless. It is still pointing at something real. Understanding that your fear may be holding old data from earlier in life helps you investigate it with curiosity.`,
+            },
+            {
+              word: `boundary`,
+              definition: `In IFS, a limit around something you value. Anger is understood as a signal that a boundary is being crossed or a value is being violated.`,
+              audioPrompt: `A boundary, in the IFS model, is a limit around something you value, {name}. Anger is almost always a protector, alerting you to a boundary being crossed or a value being violated. The job of anger is not to be acted on directly. Its job is to bring information to your attention: something I care about is at stake here. Without anger, you would not notice. The mature move is not to suppress anger or act on it impulsively. The mature move is to ask: what is this anger protecting? What boundary or value is it signaling? That question is what makes anger informative rather than destructive.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `In IFS, the quality of awareness that's curious, compassionate, calm, and courageous. The state from which you can effectively engage with your inner parts.`,
               audioPrompt: `Self-energy, in Internal Family Systems, is the quality of awareness that's curious, compassionate, calm, and courageous, {name}. Schwartz claims this isn't a state you have to manufacture. It is your natural core, underneath the activity of all your parts. When you can access it, even partially, you can engage with even your most difficult inner parts effectively. They feel heard. They calm down. This is one of the most striking claims of IFS: you don't have to fight your inner critic or your anxiety. You have to access the part of you that's underneath them and meet them from there.`,
             },
+          ,
+            {
+              word: `turning toward`,
+              definition: `The IFS practice of facing a difficult inner part with curiosity rather than suppressing or fighting it. Asking what the part is protecting, what it needs, and what it is trying to say.`,
+              audioPrompt: `Turning toward, in Internal Family Systems, is the practice of facing a difficult inner part with curiosity rather than suppressing or fighting it, {name}. Instead of pushing the angry part down or arguing with the anxious part, you turn toward them. You ask: what are you protecting? What are you trying to tell me? What do you need? Many therapists were skeptical when they first encountered this, until they tried it with their patients and saw what happened. Parts respond. They become less intense once they feel heard. Turning toward is the central practical move of the IFS approach.`,
+            },
+            {
+              word: `wounded part`,
+              definition: `In IFS, an inner part that has been carrying difficult feelings, often since childhood, usually without having been acknowledged or listened to.`,
+              audioPrompt: `A wounded part, in Internal Family Systems, is an inner part that has been carrying difficult feelings alone, often since childhood, {name}. Most of what people experience as bad emotions are caused by parts that have never been listened to. They are not bad emotions. They are parts of you that have been carrying something difficult, sometimes for years, without acknowledgment. When you turn toward them with Self-energy, curiosity, compassion, calm, and courage, they often shift dramatically. Not by being argued with. By being met. The wounded part does not need to keep carrying its burden once genuinely heard.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `Presenting a familiar situation or concept from a different angle that changes its meaning. A central technique in many therapy approaches including IFS.`,
               audioPrompt: `A reframe is presenting a familiar situation from a different angle that changes its meaning, {name}. When you've been treating anger as a bad thing to suppress, and someone reframes it as a protector part with information, that's a reframe. The facts haven't changed. The meaning has. Reframes are powerful because they don't require new information. They require seeing existing information differently. Good therapists are skilled reframers. Good thinking in any area often involves recognizing when a useful reframe is available.`,
             },
+          ,
+            {
+              word: `primary text`,
+              definition: `An original work written by a thinker in their own words, as opposed to a summary or secondary account. Reading primary texts requires close attention to what the author actually claims.`,
+              audioPrompt: `A primary text is an original work written by a thinker in their own words, {name}. In this lesson you will read a passage directly from Richard Schwartz, founder of Internal Family Systems, from his book No Bad Parts published in 2021. Reading a primary therapy text is different from reading a pop summary. The popular versions often flatten the thought. The real author is usually more careful, more conditional, and more interesting. Reading primary texts closely is a skill you can carry your whole life. It lets you know what a thinker actually claimed, not just what others said about them.`,
+            },
+            {
+              word: `close reading`,
+              definition: `Analyzing a text at the sentence level, attending to what each sentence claims, how it is worded, and what moves the author is making. A core academic and intellectual skill.`,
+              audioPrompt: `Close reading is analyzing a text at the sentence level, {name}. It means attending to what each sentence claims, how it is worded, and what moves the author is making. When you annotate the Schwartz passage, you are close reading. You are not just asking what the text says in general. You are asking what each sentence is doing: is it a reframe, a core claim, a practical implication, a challenge to standard thinking, or a compassionate stance? The tone is part of the message. Close reading is the same skill practiced with Hume and the Brewer paper. It transfers across every subject you will ever study.`,
+            }
           ],
         },
 

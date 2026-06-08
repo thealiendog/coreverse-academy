@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `Jung's term for a layer of mind he proposed is shared across all humans, beneath personal experience, containing universal patterns called archetypes.`,
               audioPrompt: `The collective unconscious is Jung's term for a layer of mind he proposed is shared across all humans, {name}. It lies beneath personal experience. It contains universal patterns called archetypes that show up in dreams, myths, art, and inner experience across cultures. Whether the collective unconscious literally exists as Jung described it, or whether the patterns are explained by shared brain architecture and cultural transmission, is still debated. But the observation that certain patterns recur across very different cultures is real. The question is what to make of it.`,
             },
+          ,
+            {
+              word: `personal unconscious`,
+              definition: `In Jungian psychology, the layer of the psyche containing forgotten or repressed material from personal experience. Distinguished from the collective unconscious, which is not individually acquired.`,
+              audioPrompt: `The personal unconscious, in Jungian psychology, is the layer of the psyche containing forgotten or repressed material from personal experience, {name}. Jung distinguished this from his more ambitious concept of the collective unconscious. The personal unconscious is filled with contents that have at some point been in consciousness but disappeared through forgetting or repression. It is specific to each individual. The collective unconscious, by contrast, was never in consciousness at all and is not individually acquired. It is claimed to be shared across all humans. This distinction is essential for reading Jung accurately.`,
+            },
+            {
+              word: `cross-cultural pattern`,
+              definition: `A symbolic, narrative, or psychological pattern that recurs across multiple unconnected cultures. The observation is well-documented; the explanation for why it recurs is what is debated.`,
+              audioPrompt: `A cross-cultural pattern is a symbolic, narrative, or psychological pattern that recurs across multiple unconnected cultures, {name}. Jung spent decades reading mythology, religious texts, and folklore. He noticed that patients who had never encountered this material kept producing dream images and symbols nearly identical to figures from cultures they had no contact with. A patient from rural Switzerland would dream a symbol matching one found in ancient Egyptian texts. Jung argued this could not be coincidence. The patterns were too specific, too widespread, and too consistent. His proposed explanation was the collective unconscious.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `In Jungian psychology, a universal organizing pattern that shows up in myths, dreams, art, and inner experience across cultures. Not a specific image but a template that takes many forms.`,
               audioPrompt: `An archetype, in Jungian psychology, is a universal organizing pattern, {name}. Not a specific image or character, but a template. The hero archetype isn't a particular hero. It's the pattern of someone who leaves the familiar, faces a trial, and returns transformed. This pattern shows up in Greek mythology, Hindu epics, Christian narrative, modern movies, and personal dreams. Same template, different specific expressions. Jung claimed these archetypes are part of a shared layer of mind across humans. Whether you accept that specific claim or not, the patterns themselves are real and recurring.`,
             },
+          ,
+            {
+              word: `anima and animus`,
+              definition: `In Jungian psychology, the inner figures of the opposite gender that everyone carries in the unconscious. Associated with projection in relationships and with inner experience during major life transitions.`,
+              audioPrompt: `The anima and animus are inner figures of the opposite gender that Jungians say everyone carries in the unconscious, {name}. They appear in dreams and inner experience. When you fall in love, Jungians propose you may be projecting an anima or animus figure onto the other person. This helps explain why romantic love can feel so charged and why it sometimes involves seeing qualities in the other person that they themselves do not recognize. Recognizing when an anima or animus projection is active can add information about what is happening psychologically that the personal level alone does not reveal.`,
+            },
+            {
+              word: `trickster`,
+              definition: `A Jungian archetype characterized by chaos, boundary-breaking, and the delivery of wisdom through disruption. Appears across cultures as figures like Loki, Coyote, and Hermes.`,
+              audioPrompt: `The trickster is a Jungian archetype characterized by chaos, boundary-breaking, and the delivery of wisdom through disruption, {name}. It appears across cultures as Loki in Norse mythology, Coyote in Native American traditions, and Hermes in Greek mythology. The trickster does not follow rules. It upends established order and reveals truths that more respectable figures cannot. Jungians say the trickster archetype activates in people and situations where established patterns need to be disrupted. Recognizing the trickster in a situation or in yourself is one way archetypal thinking adds information the personal level alone does not provide.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `Joseph Campbell's mapped pattern (departure, trial, return) found in mythology across cultures. Famous example of an archetypal pattern with strong cross-cultural evidence.`,
               audioPrompt: `The hero's journey is a pattern mapped by Joseph Campbell in his 1949 book The Hero with a Thousand Faces, {name}. The pattern: someone leaves the familiar, crosses a threshold into the unknown, faces trials, encounters helpers and obstacles, has a transformative experience, and returns to the original world changed. Campbell traced this pattern through hundreds of myths from cultures around the world. It is one of the strongest cases for genuine cross-cultural pattern recurrence. George Lucas famously based the structure of Star Wars on Campbell's work. The pattern is well-documented; the deeper question of WHY it recurs is what's debated.`,
             },
+          ,
+            {
+              word: `cultural transmission`,
+              definition: `The spread and adaptation of stories, symbols, and patterns between people and across generations. One of the mainstream cognitive-science alternatives to the literal Jungian collective unconscious for explaining cross-cultural patterns.`,
+              audioPrompt: `Cultural transmission is the spread and adaptation of stories, symbols, and patterns between people and across generations, {name}. It is one of the mainstream cognitive science alternatives to the literal Jungian collective unconscious for explaining why patterns recur across cultures. Stories spread across trade routes, migrations, and modern media. They adapt to local contexts while maintaining recognizable underlying structures. Modern cognitive science generally favors cultural transmission combined with shared brain architecture over a literal shared mind layer. The patterns are real. The debate is about the mechanism.`,
+            },
+            {
+              word: `shared brain architecture`,
+              definition: `The common neurological and developmental structures humans have by virtue of being the same species. Proposed as an alternative explanation for cross-cultural pattern recurrence without requiring a literal collective unconscious.`,
+              audioPrompt: `Shared brain architecture refers to the common neurological and developmental structures humans have by virtue of being the same species, {name}. It is one of the mainstream cognitive science alternatives to the Jungian collective unconscious. Humans everywhere develop similar minds with similar developmental challenges. Every human goes through being a child, separating from parents, forming identity, and facing mortality. These shared challenges produce similar psychological patterns across cultures without requiring a separate shared mind layer. Whether this fully accounts for everything Jung observed remains genuinely debated.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `A method of interpretation. Different hermeneutics emphasize different patterns and explanations. Useful when applied carefully, problematic when forced.`,
               audioPrompt: `A hermeneutic is a method of interpretation, {name}. Different hermeneutics emphasize different patterns and explanations. Archetypal psychology is one hermeneutic. Behavioral psychology is another. Family systems theory is another. Each illuminates certain things and misses others. Good thinkers know which hermeneutic they're using and when it's appropriate. They use multiple hermeneutics to look at the same situation from different angles. The mistake is forcing all experience into a single hermeneutic until it stops adding information and starts distorting reality.`,
             },
+          ,
+            {
+              word: `projection (archetypal)`,
+              definition: `In Jungian psychology, attributing an inner archetype or quality to another person rather than recognizing it in oneself. Can occur with the shadow, the anima or animus, the wise old one, and other archetypes.`,
+              audioPrompt: `Projection, in Jungian psychology, is attributing an inner archetype or quality to another person rather than recognizing it in yourself, {name}. When you idealize a teacher, you may be projecting the wise old one archetype. When you feel intense charm or repulsion toward someone, the shadow may be projecting. When you fall in love, an anima or animus figure may be projecting. Jungians do not say the other person has no real qualities. They say your reaction tells you as much about what is active in you as about the person themselves. Recognizing projection adds a layer of self-understanding the personal level alone does not provide.`,
+            },
+            {
+              word: `totalizing answer`,
+              definition: `Using a single framework to explain all experience, forcing every situation into its terms. The point at which any thinking tool stops adding information and starts distorting reality.`,
+              audioPrompt: `A totalizing answer is the result of using a single framework to explain everything, {name}. Archetypal psychology is a useful hermeneutic. It can illuminate patterns the personal level alone does not reveal. But it can be overdone. Not every infatuation is anima projection. Not every difficult parent is a great mother archetype gone wrong. When you force every experience into an archetypal explanation, the framework stops adding information and starts distorting reality. This applies to all thinking tools, not only archetypal psychology. They work when used carefully and stop working when turned into a totalizing answer for everything you encounter.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `A statement proposing an explanation for observations. Different from a description of what was observed; a claim about why.`,
               audioPrompt: `A theoretical claim is a statement proposing an explanation for what was observed, {name}. There's a difference between observing that patients with no exposure to mythology produced mythological symbols, and claiming this proves a collective unconscious exists. The first is an observation. The second is a theoretical claim that goes beyond the observation. Both can appear in the same sentence in scholarly writing. Spotting the difference is part of careful reading. Theoretical claims need different evaluation than observations: they need to be assessed against other possible explanations.`,
             },
+          ,
+            {
+              word: `scholarly writing`,
+              definition: `Academic writing produced for an expert audience. Characterized by precise terminology, qualifications, and denser sentence structure than popular writing. Reading it closely requires more careful attention.`,
+              audioPrompt: `Scholarly writing is academic writing produced for an expert audience, {name}. Reading Jung is its own challenge because he writes in a particular style: scholarly, sometimes mystical, sometimes psychological, often weaving together observations from clinical practice, mythology, and personal interpretation. His sentences are denser than typical scientific writing. This is characteristic of scholarly writing generally. It requires more careful attention than popular writing. The density often signals precision and careful qualification. Reading scholarly writing closely is a skill that transfers across every discipline.`,
+            },
+            {
+              word: `negative definition`,
+              definition: `Defining a concept by specifying what it is not rather than what it is. A common strategy in philosophical and scholarly writing when introducing a contested or unfamiliar concept.`,
+              audioPrompt: `A negative definition defines a concept by specifying what it is not rather than what it is, {name}. Jung defines the collective unconscious this way. He says it can be negatively distinguished from the personal unconscious by the fact that it does not owe its existence to personal experience. He defines it by contrast with something the reader already knows. This is a common strategy in philosophical and scholarly writing when introducing a contested or unfamiliar concept. Understanding negative definitions helps you read scholarly writing more accurately and notice when an author is positioning a new idea against an existing one.`,
+            }
           ],
         },
 

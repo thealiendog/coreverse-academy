@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `A public person whose work or claims sincere, intelligent people disagree strongly about. Not the same as a fraud or a hero, but someone whose actual value is genuinely debated.`,
               audioPrompt: `A contested figure is a public person whose work sincere intelligent people disagree about, {name}. The disagreement isn't between believers and idiots. It's between people who genuinely interpret the same evidence differently, or who weight different kinds of evidence differently. Joe Dispenza is contested. So is Jordan Peterson. So is Deepak Chopra. So are many figures who blend real science with personal interpretation. Learning to hold three or more views of a contested figure in your mind at once, without rushing to pick a side, is a real cognitive skill.`,
             },
+          ,
+            {
+              word: `placebo effect`,
+              definition: `The measurable phenomenon in which a person's belief or expectation that a treatment will work produces real physiological change, independent of the treatment itself.`,
+              audioPrompt: `The placebo effect is the measurable phenomenon in which a person's belief that a treatment will work produces real physiological change, {name}. It is not a trick or a sign that someone was fooled. It is a genuine biological mechanism. Dispenza cites the placebo effect as part of the evidence for his claims about mental states healing the body. Researchers take the placebo effect seriously. It is real. The debate is whether Dispenza's interpretation of it, extending it to heal serious illness through belief alone, is supported by the evidence or goes far beyond it.`,
+            },
+            {
+              word: `mind-body healing`,
+              definition: `The field of practice and research concerned with how mental states, beliefs, and practices can influence physical health.`,
+              audioPrompt: `Mind-body healing refers to the field concerned with how mental states and practices can influence physical health, {name}. Dispenza has built one of the largest mind-body healing brands in the world, drawing on neuroscience and the placebo effect to support his claims. The field itself is real and actively researched. Meditation reducing stress, visualization improving performance, expectation affecting pain pathways, all of these are established findings. What gets contested is how far those real findings can be extended, whether they support the most dramatic healing claims being made.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `Someone who actively practices a method. In Dispenza's world, practitioners are people doing his meditations, attending workshops, and reporting results.`,
               audioPrompt: `A practitioner is someone who actively does a practice, {name}. Dispenza's practitioners are people who do his meditations regularly, attend his workshops, and report results. When considering a contested figure, you have to take practitioner experience seriously without taking it as final proof. Real things often happen to practitioners. The question is what's actually causing those things. The same workshop attendee who reports a healing might be experiencing the placebo effect, the benefits of meditation generally, regression to the mean, spontaneous recovery, or any combination. Honoring their experience without confusing it with the mechanism Dispenza claims is the move.`,
             },
+          ,
+            {
+              word: `elevated states`,
+              definition: `In Dispenza's method, the specific emotional states of deep gratitude and joy that practitioners are guided to cultivate during meditation, believed to send a healing signal to the body.`,
+              audioPrompt: `Elevated states is the term Dispenza uses for the specific emotional states, deep gratitude and joy, that practitioners cultivate during his meditations, {name}. His method combines a clear mental image of a healed self with these elevated states, based on the idea that the combination sends a signal to the body that creates physical change. Researchers who are skeptical of his framework still acknowledge that visualization and positive emotional regulation are practices with real documented benefits. The debate is about the specific mechanism he claims, not about whether emotional cultivation does anything at all.`,
+            },
+            {
+              word: `emotional cultivation`,
+              definition: `The deliberate practice of generating and sustaining specific emotional states, such as gratitude or joy, as part of a meditative or healing method.`,
+              audioPrompt: `Emotional cultivation is the deliberate practice of generating and sustaining specific emotional states as part of a meditative method, {name}. In Dispenza's workshops, practitioners viscerally feel deep gratitude and joy while visualizing their healed self. Even researchers who dispute his mechanism acknowledge that sustained positive emotion correlates with better health outcomes. The question his critics raise is whether those effects work through the channel Dispenza claims, or through well-understood mechanisms of stress reduction and emotional regulation.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `Taking a real finding and extending it beyond what the evidence supports.`,
               audioPrompt: `Extrapolation is taking a real finding and extending it beyond what the evidence supports, {name}. A real finding might be "meditation reduces stress measurably in 8 weeks." Extrapolation turns that into "meditation can cure any disease." Both contain the word meditation. Both sound related. But the second goes far beyond what the first actually shows. Spotting extrapolation is one of the most useful scientific literacy moves. When a claim sounds bigger than what the underlying research supports, the extra is extrapolation, not evidence.`,
             },
+          ,
+            {
+              word: `quantum physics`,
+              definition: `The branch of physics describing the behavior of matter and energy at subatomic scales. Its technical concepts, such as observer effects and wave function collapse, have specific meanings that do not apply at human scale.`,
+              audioPrompt: `Quantum physics describes behavior at subatomic scales, {name}. Concepts like observer effects, superposition, and wave function collapse have precise technical meanings that apply only at subatomic scales. Working physicists have stated that Dispenza's use of quantum language is not consistent with how quantum mechanics works. Applying these concepts to human-scale events like healing a tumor is, in physicist Sean Carroll's words, not physics. Quantum language is one of the most common ways wellness writing sounds scientific without being so. Recognizing the difference is a genuine scientific literacy skill.`,
+            },
+            {
+              word: `evidence-based treatment`,
+              definition: `Medical or psychological treatment that has been tested in controlled studies and shown to produce reliable results. The standard of care in medicine and regulated health professions.`,
+              audioPrompt: `Evidence-based treatment refers to medical or psychological interventions tested in controlled studies and shown to produce reliable results, {name}. Working neuroscientists and skeptics share one core concern about Dispenza's framework: people in serious medical situations who follow his methods instead of evidence-based treatment can be harmed. The debate about mechanisms and quantum language would matter less if the stakes were lower. They are not lower when someone with a serious illness skips rigorously tested treatment in favor of an untested framework.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `An approach to claims that requires strong evidence before acceptance. Not the same as cynicism; honest skepticism is open to being convinced by good evidence.`,
               audioPrompt: `Skepticism is an approach to claims that requires strong evidence before acceptance, {name}. Honest skepticism is not cynicism or closed-mindedness. A real skeptic says "show me the evidence" and then actually updates their view when evidence comes. The closed-minded version refuses to update no matter what. Real skeptics can be convinced. They just have a high standard, especially when the cost of being wrong is high. When evaluating contested figures, ask whether the skeptics making the case have the open-to-evidence kind or the closed kind. Both exist.`,
             },
+          ,
+            {
+              word: `peer-reviewed research`,
+              definition: `Scientific research that has been evaluated by other experts in the field before publication. The standard quality-control mechanism for scientific claims.`,
+              audioPrompt: `Peer-reviewed research is scientific work evaluated by other experts in the field before it is published, {name}. It is the standard quality-control mechanism for scientific claims. Skeptics note that Dispenza has not published peer-reviewed research supporting his own claims in the time he has been making them, despite running a large operation with substantial resources. This is a specific, pointed critique. If a teacher claims to have discovered how the mind heals the body, and has the resources to study it, but does not submit that claim to the scrutiny of other experts, that is itself a signal worth weighing.`,
+            },
+            {
+              word: `testimonial`,
+              definition: `A personal account of a result or experience. Sincere and potentially real, but not controlled for placebo, spontaneous recovery, or selection bias, making it weaker evidence than a study.`,
+              audioPrompt: `A testimonial is a personal account of a result or experience, {name}. Testimonials can be completely sincere and describe real changes. Skeptics argue they are insufficient evidence because they don't account for placebo effect, regression to the mean, spontaneous recovery, or the fact that people who tried the method and did not improve rarely speak publicly. The skeptic critique is not that testimonials are lies. It is that testimonials alone cannot distinguish what actually caused the improvement. Controlled studies exist precisely to answer the causal question that testimonials cannot.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `Holding multiple partial views of a complicated situation at once, instead of collapsing it into a simple yes/no verdict.`,
               audioPrompt: `Nuanced thinking is holding multiple partial views of a complicated situation at once, {name}. Most contested topics aren't 100% right or 100% wrong. They have multiple sides each seeing something real and missing something real. The mature thinker doesn't rush to a verdict. They identify what each view is seeing accurately, what each view is missing, and where the actual truth lies in the combination. Nuanced thinking is a real skill that takes practice. It is the opposite of social media debate where everyone has to pick a team. Practice it on small things first. It will protect you from a lot of bad thinking.`,
             },
+          ,
+            {
+              word: `partial views`,
+              definition: `Perspectives that each see something real and accurate while also missing something. Most contested situations are better understood as a combination of partial views than as one completely right answer.`,
+              audioPrompt: `Partial views are perspectives that each see something real and also miss something, {name}. Practitioners see real benefits from long meditation. Scientists see the explanatory framework overstating the evidence. Skeptics see harm risk for vulnerable people. Each is accurate about something and misses something the others catch. The mature move is not to pick the one right view and discard the rest. It is to identify what each view sees accurately and build a more complete picture from the combination. Most complicated situations are better understood through partial views than through a single verdict.`,
+            },
+            {
+              word: `placebo`,
+              definition: `A treatment with no active ingredient that produces real measurable effects through expectation and belief. A genuine biological mechanism, not just imagination.`,
+              audioPrompt: `A placebo is a treatment with no active ingredient that nonetheless produces real measurable effects, {name}. It works through expectation and belief activating genuine biological mechanisms. When thinking through contested figures like Dispenza, placebo is one of the real mechanisms that might explain why practitioners experience genuine improvement even if the specific framework they are given is not accurate. Honoring placebo as a real explanation, rather than treating it as a dismissal, is an important nuanced move. Real improvement from real mechanisms matters, even when the mechanism isn't the one being claimed.`,
+            }
           ],
         },
 

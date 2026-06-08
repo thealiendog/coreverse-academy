@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `The experienced split between self and not-self, observer and observed, subject and object. The basic two-ness of ordinary human perception.`,
               audioPrompt: `Duality means two-ness, {name}. In contemplative contexts, it refers to the basic experienced split between you and everything else. There's a 'me' having experiences. There's a 'world' the experiences are about. This feels so basic it seems impossible to question. Non-dual traditions question it anyway. They claim that when you look very carefully at the moment of experience, the line between self and world is harder to locate than it seems. This isn't the same as saying there's no difference between you and a tree. It is saying the separation feels more solid than it actually is on close inspection.`,
             },
+          ,
+            {
+              word: `observer and observed`,
+              definition: `One of the basic dualities of ordinary human experience: the sense that there is a self doing the perceiving and a world being perceived, distinct from each other.`,
+              audioPrompt: `Observer and observed is one of the basic dualities of ordinary human experience, {name}. There is an 'I' in here doing the looking, and a world out there being looked at. This separation feels so basic that it seems impossible to question. Non-dual traditions ask you to question it anyway. Look carefully at the moment of perception itself. Where exactly does the observer end and the observed begin? When you examine the structure of experience closely, the line between them gets harder to locate than it first appears. This investigation is the common thread running through Hindu, Buddhist, and Christian contemplative teachings.`,
+            },
+            {
+              word: `construction of perception`,
+              definition: `The process by which the mind actively organizes and shapes raw sensory input into the experienced world, including the sense of being a separate self.`,
+              audioPrompt: `Construction of perception is the process by which the mind actively organizes sensory input into the experienced world, {name}. Non-dual traditions across cultures converge on a specific claim: the experience of being a separate self looking out at a separate world is partly a construction. This is not saying nothing exists. The physical tree and your physical body are real. The claim is that the felt separation between self and world is partly built by the mind rather than simply given. Contemplative practices across traditions were designed to investigate this construction directly.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `In Advaita Vedanta, the ultimate underlying reality of everything. Not a god in the personal sense, more like the deepest layer of what exists.`,
               audioPrompt: `Brahman is the ultimate underlying reality in Advaita Vedanta, {name}. It is not a god in the personal Western sense. It is more like the deepest layer of what is. Advaita teachers say everything you see, hear, think, and feel is ultimately Brahman appearing in different forms. The separate self you experience is also Brahman, temporarily mistaking itself for separate. This idea is strange to Western ears but has been a serious philosophical position in India for over 1,000 years. You don't have to believe it. You should be able to articulate it as a real position serious thinkers have held.`,
             },
+          ,
+            {
+              word: `maya`,
+              definition: `In Advaita Vedanta, the term for the cosmic misperception through which the individual self experiences itself as separate from the underlying reality (Brahman). Often translated as illusion.`,
+              audioPrompt: `Maya is the Advaita Vedanta term for the misperception that generates the experience of being a separate individual, {name}. In Advaita teaching, the individual self is ultimately identical with Brahman, the underlying reality of everything. But this is not experienced directly in ordinary life. Instead, a kind of cosmic mistake of perception makes the self seem separate. That mistaken perception is what Advaita calls maya. The work of contemplative practice in this tradition is to see through maya directly, through sustained self-inquiry of the kind Adi Shankara and later Ramana Maharshi taught.`,
+            },
+            {
+              word: `self-inquiry`,
+              definition: `The contemplative practice developed by Adi Shankara and taught by Ramana Maharshi in which the practitioner directly investigates the question 'Who am I?' not as intellectual exercise but as direct looking.`,
+              audioPrompt: `Self-inquiry is the core practice of Advaita Vedanta, {name}. It was formalized by Adi Shankara and taught to thousands of visitors by the 20th-century teacher Ramana Maharshi. The practice asks the practitioner to repeatedly investigate the question 'Who am I?' not as a thought exercise but as direct looking. When you turn attention back on what is doing the experiencing, what do you find? Advaita teachers across centuries have reported finding awareness without an owner. Whether or not you accept their interpretation, actually looking is one of the oldest and most seriously developed contemplative methods in the world.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `Sanskrit/Pali term often translated as "emptiness." In Buddhism, the teaching that nothing has independent inherent existence; everything is interdependent.`,
               audioPrompt: `Sunyata is usually translated as emptiness, {name}. The translation can be misleading. Sunyata doesn't mean nothingness. It means emptiness of independent existence. Everything is interdependent. Nothing exists separately, on its own, without reference to other things. The cup needs the clay, the potter, the table. The 'you' needs a body, brain, memories, language, family, culture. Buddhists claim that when you really see this, the assumed solid separate self loosens. Not because you don't exist, but because the way you assumed you existed isn't quite right.`,
             },
+          ,
+            {
+              word: `interdependent`,
+              definition: `The Buddhist insight that all things exist in dependence on other things, with nothing possessing independent, stand-alone existence. The basis of the teaching of sunyata.`,
+              audioPrompt: `Interdependent means that all things exist in dependence on other things, {name}. Buddhism's central non-dual claim is built on this insight. The chair depends on the trees, the workers, the floor, your perception. The self depends on a body, brain, memories, language, culture, other people. Remove the dependencies and what remains is not a solid separate thing. This is what sunyata, often translated as emptiness, actually means: not nothingness, but emptiness of independent existence. Buddhist practice is largely about seeing this interdependence directly, not just as an idea but as a lived recognition.`,
+            },
+            {
+              word: `koan`,
+              definition: `In Zen Buddhism, a puzzle or question that cannot be resolved by ordinary logical thinking, designed to break the practitioner's reliance on conceptual thought and point directly at the nature of experience.`,
+              audioPrompt: `A koan is a puzzle in Zen Buddhist practice that cannot be solved by ordinary logical thinking, {name}. Famous example: show me your original face before your parents were born. The point of a koan is not to arrive at a clever answer. The point is to use the puzzle to break the mind's habitual reliance on concepts and force a more direct investigation of experience. Zen teachers across centuries have used koans to point practitioners toward the same recognition that Advaita's self-inquiry aims at: that the separate self you assumed you were, when looked at directly, does not hold up in the way you assumed.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `In Christian context, the contemplative branch focused on direct experience of God beyond doctrine, often involving practices of union or non-separation.`,
               audioPrompt: `Mysticism in Christianity refers to the contemplative branch focused on direct experience of God beyond doctrine, {name}. Christian mystics like Meister Eckhart, the author of the Cloud of Unknowing, and Saint John of the Cross described practices and experiences that look remarkably like Buddhist and Hindu non-dual teachings, even though these traditions developed largely independently. Mysticism has often been treated with suspicion by mainstream church authorities because it deemphasizes doctrine and institution in favor of direct experience. But it has survived as a serious thread of Christian thought for two thousand years.`,
             },
+          ,
+            {
+              word: `Meister Eckhart`,
+              definition: `A German theologian and mystic (c. 1260–1328) whose writings expressed non-dual Christian teachings so strongly that he was put on trial for heresy. His work has influenced Christian contemplative thought for centuries.`,
+              audioPrompt: `Meister Eckhart was a German theologian and mystic who lived from about 1260 to 1328, {name}. His writings expressed a strikingly non-dual vision: the eye through which I see God is the same eye through which God sees me, one eye, one seeing. This language was dangerous enough that he was put on trial. He died before the verdict, and the Catholic Church partially condemned his teachings in 1329. Yet his writings survived and have continued to influence Christian contemplative thought for centuries. Eckhart is evidence that non-dual teachings arose independently in medieval European Christianity.`,
+            },
+            {
+              word: `Cloud of Unknowing`,
+              definition: `A 14th-century anonymous Christian contemplative text that teaches letting go of all concepts, including concepts about God, as a path toward direct encounter with what the author calls 'naked being.'`,
+              audioPrompt: `The Cloud of Unknowing is a 14th-century text written by an anonymous English monk, {name}. It teaches a contemplative practice of letting go of all concepts, including concepts about God, in order to encounter what the author calls naked being. This stripping away of conceptual knowledge in favor of direct experience is strikingly similar to Buddhist and Hindu non-dual practices, though these traditions developed largely independently. The Cloud of Unknowing is part of the contemplative core of Christian history, and one of the pieces of evidence that non-dual inquiry arose independently across multiple cultures.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `When separate sources or traditions arrive at similar conclusions independently. In philosophy and science, convergence is often treated as suggestive but not conclusive evidence.`,
               audioPrompt: `Convergence is when separate sources arrive at similar conclusions independently, {name}. In science, when multiple labs running different experiments find similar results, convergence is taken seriously as evidence. In contemplative philosophy, the fact that Hindu, Buddhist, and Christian traditions independently developed similar non-dual teachings is a striking convergence. It demands explanation. The convergence itself doesn't prove the teachings are correct, but it makes it harder to dismiss them as one culture's local quirk. Convergence is suggestive evidence that there's something real being described, even if interpretations vary.`,
             },
+          ,
+            {
+              word: `phenomenological reports`,
+              definition: `First-person accounts of subjective experience, especially from practitioners describing what they observe during contemplative practice. The primary data of contemplative inquiry.`,
+              audioPrompt: `Phenomenological reports are first-person accounts of subjective experience, {name}. In non-dual traditions, they are what practitioners report observing during and after contemplative practice. The convergence across traditions is partly a convergence of these reports: practitioners in India, Tibet, China, Japan, and medieval Europe, across many centuries, describing similar features of experience. These reports are real data. The question is what they mean: are they pointing to a real feature of reality, a real feature of brains under practice, or something else? That interpretive question remains genuinely open.`,
+            },
+            {
+              word: `cautious agnosticism`,
+              definition: `The intellectual stance of holding data seriously and acknowledging its significance while refraining from claiming more certainty about its meaning than current evidence supports.`,
+              audioPrompt: `Cautious agnosticism is the stance of holding data seriously without claiming more certainty about its meaning than the evidence supports, {name}. In the context of cross-cultural non-dual convergence, it means taking the practitioner reports seriously, acknowledging the convergence is striking, and refusing to force it into either a simple 'they were right about reality' or a simple 'they were just having brain states' interpretation. Cautious scholars hold the data while staying honest about the limits of what is currently knowable. This is not fence-sitting. It is intellectual precision about genuine uncertainty.`,
+            }
           ],
         },
 

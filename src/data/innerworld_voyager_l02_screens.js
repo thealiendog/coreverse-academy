@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `Latin for 'I think, therefore I am.' Descartes' argument that the act of thinking proves the existence of a self doing the thinking.`,
               audioPrompt: `Cogito ergo sum is Latin for 'I think, therefore I am,' {name}. It is Descartes' attempt to find the one thing he could not doubt. He noticed that even doubting required a doubter. Even being deceived required someone to be deceived. So the existence of a thinking self seemed undeniable. This idea is so deep in Western culture that most people assume it without ever questioning it. You feel like a steady 'I' watching your life happen. But notice that Descartes was making an argument, not reporting an observation. He inferred a self from the act of thinking. What if the inference is wrong?`,
             },
+          ,
+            {
+              word: `substance self`,
+              definition: `Descartes' view that the self is a real, solid thing, separate from the body, that persists steadily across time as the seat of thought and identity.`,
+              audioPrompt: `The substance self is Descartes' view that the self is a real, solid, and separate thing, {name}. For Descartes, the mind is not the same as the body. Your body changes, your thoughts come and go, but the I that has them is steady. It is the captain of the ship. It is you. For three hundred years, this was the dominant Western view of the self. Most people today, without ever reading Descartes, still operate as if this is true. They feel like a continuous, stable I watching their lives happen. Descartes thought this feeling was not an illusion. He thought it was the most certain thing we could know.`,
+            },
+            {
+              word: `introspection`,
+              definition: `The practice of looking inward to examine one's own thoughts, feelings, and mental states. Both Descartes and Hume used introspection as their primary philosophical method.`,
+              audioPrompt: `Introspection is the practice of looking inward to examine your own thoughts and mental states, {name}. Descartes used introspection when he tried to doubt everything and discovered he could not doubt the doubter. Then in 1739, Hume did the same thing: he tried to look inside and find the self Descartes had described. What Hume reported finding was not a steady I. It was sensations, thoughts, and feelings, but no separate self behind them. Both philosophers used the same method and reached opposite conclusions. That tells you something important. Introspection is a powerful tool. It also has limits. What you find depends partly on how carefully you look.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `Hume's view that the self is not a unified thing but a collection of perceptions, thoughts, and feelings flowing together.`,
               audioPrompt: `Bundle theory is Hume's view that the self is not one unified thing, {name}. It is a collection of perceptions, thoughts, and feelings flowing together so smoothly that we mistake them for a single 'I.' Try Hume's experiment right now. Close your eyes for a moment. Try to find the self that is supposedly having your experiences. Can you locate it directly? Most people, when they actually try, find what Hume found. Thoughts. Sensations. Feelings. But no separate observer of those things. The observer seems to be made of the same stuff as the things observed. That is bundle theory.`,
             },
+          ,
+            {
+              word: `bundle of perceptions`,
+              definition: `Hume's description of what the self actually is: not a unified entity but a rapidly flowing collection of sensations, thoughts, emotions, and memories.`,
+              audioPrompt: `A bundle of perceptions is how David Hume described the self after looking inside and failing to find it, {name}. He could find sensations: warmth, sounds, the pressure of his chair. He could find emotions: curiosity, boredom, hunger. He could find thoughts arising one after another. But he could not find any underlying self that all these things belonged to. He concluded that the self is not a thing. It is a bundle. A collection of perceptions, memories, emotions, and thoughts rapidly succeeding each other. The feeling of being a continuous I is a kind of illusion that arises when these experiences flow together smoothly. There is no captain of the ship. There is just the stream.`,
+            },
+            {
+              word: `perpetual flux`,
+              definition: `Constant change and movement. Hume's phrase for the nature of the stream of experience, which he argued is all that the self actually is.`,
+              audioPrompt: `Perpetual flux means constant change and movement, {name}. It is the phrase David Hume used in 1739 to describe what the self is actually made of. In his famous passage, he wrote that people are nothing but a bundle of different perceptions which succeed each other with inconceivable rapidity and are in a perpetual flux and movement. There is no still point. There is no fixed observer. The self is more like a river than a stone. The water is always different. The movement never stops. What feels like a stable I is, on Hume's account, a kind of smoothness in the flow, not a separate thing riding above it.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `Pali word usually translated 'no-self' or 'non-self.' The Buddhist insight that no fixed, separate self can be found through direct investigation.`,
               audioPrompt: `Anatta is a Pali word usually translated as 'no-self' or 'non-self,' {name}. It comes from the Buddha's investigation of his own experience over many years of meditation. Anatta does not claim you do not exist. It claims that what you call 'you' is not the fixed, separate thing you assume it is. It is more like a river. The water is real, the flow is real, but you cannot point at one specific water-thing and call it the river. You are real, but the I you imagine doing the experiencing is more like a process than an object. Notice how strange this idea feels at first.`,
             },
+          ,
+            {
+              word: `five aggregates`,
+              definition: `Buddhist teaching's framework for what makes up a person: form (body), feelings, perceptions, mental formations (thoughts and intentions), and consciousness. No separate self is found behind these five.`,
+              audioPrompt: `The five aggregates are what Buddhist teaching says a person is actually made of, {name}. Form, meaning the body. Feelings. Perceptions. Mental formations, which include thoughts and intentions. And consciousness. The Buddhist claim is that if you investigate carefully, you cannot find a separate self behind these five. The self is made of these five and only these five. This is not a depressing idea. Buddhist teachers for 2,300 years have argued that the belief in a fixed, separate self is what causes most suffering. When you investigate and find the I is more flexible than you thought, the grip loosens. You are real. But what you call you is more like a river than a stone.`,
+            },
+            {
+              word: `clinging`,
+              definition: `The Buddhist term for holding tightly to a fixed idea of the self. Buddhist teaching argues that clinging to the I as solid and separate generates most human suffering.`,
+              audioPrompt: `Clinging is the Buddhist term for holding tightly to a fixed idea of the self, {name}. When you believe in a fixed, separate I, you have something to defend, something to protect, something to lose. Buddhist teaching, developed over 2,300 years, argues that this clinging is what generates most suffering. When you investigate and find the I is more flexible than you thought, the grip loosens. The teaching is not that you don't exist. It is that what you call you is more like a river than a stone. The river is real. The flow is real. But no single piece of water is permanently the river. The same is true, according to Buddhism, of the self.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `A brain network active when you are not focused on a task. Generates the inner narrative of self. Identified by Marcus Raichle in 2001.`,
               audioPrompt: `The Default Mode Network is a network of brain regions active when you are not focused on a task, {name}. It is what fires when your mind wanders, when you remember your childhood, when you imagine your future, when you think about yourself. Neuroscientists call it the Default Mode because it is what your brain defaults to in the absence of demands. Here is what is interesting. Meditation can quiet the Default Mode Network. The feeling of being a separate, defended self seems to be partly something the brain does, and it can be done less. What might change if your DMN was a little quieter than it is right now?`,
             },
+          ,
+            {
+              word: `inner narrative`,
+              definition: `The ongoing internal story of being you. Neuroscience associates this with Default Mode Network activity, which generates the continuous sense of self and personal identity.`,
+              audioPrompt: `The inner narrative is the ongoing internal story of being you, {name}. It is the voice in your head that connects your past self to your present self to your future self, that comments on what you are doing, that reminds you who you are. Neuroscience has found that this narrative is generated by a specific brain network, the Default Mode Network, discovered by Marcus Raichle in 2001. The DMN activates when you are not focused on a task, when your mind wanders, when you imagine your future, when you think about yourself. It is what your brain defaults to in the absence of demands. And remarkably, it can quiet down through practice.`,
+            },
+            {
+              word: `experienced meditators`,
+              definition: `People who have practiced meditation over many years. Brain studies show their Default Mode Network activity is measurably reduced, corresponding to a quieter, less defended sense of self.`,
+              audioPrompt: `Experienced meditators are people with years of sustained meditation practice, {name}. Studies, including research by Judson Brewer at Yale, show their brains work measurably differently. Their Default Mode Network, the network that generates the constant inner narrative of self, shows less activity than in non-meditators. They still know their name. They can still find their car. But the sense of being a fixed, defended I quiets down. What multiple philosophical traditions have described for centuries, that the boundary of the self is softer than we assume, now shows up in brain scans. The ancient investigation and the modern measurement are beginning to converge.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `The capacity to hold your sense of self loosely enough to grow, learn from criticism, and change without feeling threatened.`,
               audioPrompt: `Identity flexibility is the capacity to hold your sense of self loosely enough to grow, {name}. People with high identity flexibility can take in criticism without falling apart. They can change their mind without feeling like they betrayed themselves. They can be different in different contexts (more playful with friends, more focused at school) without feeling fragmented. The opposite is identity rigidity, where every challenge feels like an existential threat. Research is starting to show identity flexibility is associated with better mental health and learning outcomes. It is also a skill you can practice. What would shift if you took your self less seriously, not as a joke, but as a possibility?`,
             },
+          ,
+            {
+              word: `fixed self`,
+              definition: `The view that you have a stable, unchanging core identity that must be protected. When held rigidly, this view makes criticism feel threatening and change feel like betrayal.`,
+              audioPrompt: `The fixed self is the view that you have a stable, unchanging core identity that must be protected, {name}. If you believe in a fixed self, every challenge to it feels like an attack. If someone disagrees with you, you defend. If you fail at something, you take it as evidence about who you are. If you change, you feel like you have betrayed your real self. The fixed-self view is fragile. It cracks under pressure. Philosophy, Buddhist teaching, and modern neuroscience all suggest this view of the self is more rigid than reality warrants. The I that feels so solid may be more like a process than a permanent object.`,
+            },
+            {
+              word: `self-shaping`,
+              definition: `The idea that the self is something you actively participate in forming, rather than something fixed that must be protected. A flexible view of self makes growth and change possible without threat.`,
+              audioPrompt: `Self-shaping is the idea that the self is something you participate in forming, rather than a fixed thing you must protect, {name}. If you take the more flexible view supported by Hume, Buddhism, and modern neuroscience, you have more room. You can be different in different contexts. You can change without panic. You can hold criticism without falling apart. You can grow. The self becomes something you shape rather than something you defend. That does not mean you become a different person every day. It means you stop needing the I to be more solid than it actually is. Identity becomes a practice, not a fortress.`,
+            }
           ],
         },
 

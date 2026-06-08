@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `The asymmetry between past and future in human experience, despite the laws of physics being mostly time-symmetric. A still-unresolved puzzle in physics.`,
               audioPrompt: `The arrow of time is the asymmetry between past and future in our experience, {name}. Most of the laws of physics work the same forward and backward. But we clearly experience time flowing one way. This is called the arrow of time problem. Physicists are still debating it. One leading explanation involves entropy, the tendency of systems to become more disordered. The universe started ordered and is moving toward disorder, and that asymmetry may be what gives our experience of past flowing into future. The question itself is one of the deepest in physics.`,
             },
+          ,
+            {
+              word: `entropy`,
+              definition: `The tendency of systems to become more disordered over time. One leading explanation for why time appears to flow in one direction rather than being symmetric.`,
+              audioPrompt: `Entropy is the tendency of systems to become more disordered over time, {name}. It is one of the leading explanations physicists offer for the arrow of time. The universe started in a low-entropy, highly ordered state and is moving toward higher entropy and greater disorder. That asymmetry may be what gives us our experience of past flowing into future, rather than time being reversible in both directions. The laws of physics work the same forward and backward, but entropy only increases in one direction. This asymmetry is not just a fact about thermodynamics. It may be the deep reason time feels like it flows.`,
+            },
+            {
+              word: `time orientation`,
+              definition: `A habitual pattern of where attention and mental energy tend to flow: toward the past, the present, or the future. Shaped by practice and philosophical commitment.`,
+              audioPrompt: `Time orientation is the habitual direction in which your attention and mental energy tend to flow, {name}. Some people live mostly in their past, replaying memories and regrets. Some live mostly in their future, planning and worrying. Some, with practice, live mostly in their present. Cognitive science has found that this is not a fixed feature of being human. It is shaped by what you cultivate. The philosophical traditions in this lesson take strong positions on which orientation produces a good life. Your time orientation shapes the texture of your daily experience and, over years, the shape of your life.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `An ancient philosophical school emphasizing virtue, present-moment focus, and acceptance of what cannot be controlled. Lived rather than just thought.`,
               audioPrompt: `Stoicism is an ancient philosophical school emphasizing present-moment focus and acceptance of what cannot be controlled, {name}. It started in Athens around 300 BCE and reached its mature form in Roman thinkers like Marcus Aurelius. The core insight is that your real power exists only in the present. The past is gone. The future hasn't happened yet. What you can do, you can only do now. Stoicism is one of the few ancient philosophical schools that has been continuously practiced and read for over 2,000 years. Many modern therapy approaches descend partly from Stoic ideas.`,
             },
+          ,
+            {
+              word: `Marcus Aurelius`,
+              definition: `Roman emperor and Stoic philosopher (121–180 CE) who wrote the Meditations, a collection of personal Stoic reflections written during military campaigns. One of the best-known exemplars of applied Stoic philosophy.`,
+              audioPrompt: `Marcus Aurelius was a Roman emperor and Stoic philosopher who lived from 121 to 180 CE, {name}. He wrote his Meditations while serving as emperor, often during military campaigns under enormous stress. The Meditations is a personal record of Stoic practice applied to a real and demanding life. Confine yourself to the present. The present is the only thing of which a man can be deprived. These are not abstract principles. They are what Aurelius told himself under real pressure. The fact that he wrote lasting philosophy while running an empire is itself evidence that present-focus is compatible with major responsibility.`,
+            },
+            {
+              word: `acceptance`,
+              definition: `In Stoic philosophy, the practice of acknowledging what cannot be controlled without resistance or distress, freeing attention and energy for what actually can be influenced.`,
+              audioPrompt: `Acceptance in Stoic philosophy is the practice of acknowledging what cannot be controlled without inner resistance or distress, {name}. The past is gone and cannot be changed. The future hasn't happened and cannot be fully controlled. Accepting these facts is not resignation. It is the freeing of attention for the only place action is actually possible: the present. Modern clinical psychology, including mindfulness-based therapy, has substantially confirmed this Stoic insight. Acceptance of what cannot be changed is one of the evidence-based mechanisms by which present-focused practice reduces anxiety and depression.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `In Buddhist philosophy, the teaching that all things constantly arise and pass away. Translated from Pali "anicca," one of the three marks of existence.`,
               audioPrompt: `Impermanence is the Buddhist teaching that all things constantly arise and pass away, {name}. The Pali word is anicca. It's one of the three marks of existence in Buddhist philosophy. The teaching isn't depressing, even though it sometimes sounds that way. Impermanence is what makes change possible, makes growth possible, makes the present moment fresh. Buddhists argue that suffering comes from trying to hold onto things, including pleasant moments, that are by their nature passing. Releasing the grip on transience is the practice.`,
             },
+          ,
+            {
+              word: `vipassana`,
+              definition: `An insight meditation practice in which the practitioner trains the mind to observe the arising and passing of experience without grasping or aversion. One of the core formal practices in Theravada Buddhism.`,
+              audioPrompt: `Vipassana is an insight meditation practice training the mind to observe the arising and passing of experience without grasping or aversion, {name}. The Pali word means insight or clear seeing. The practice is largely about training direct observation of impermanence: watching each sensation and thought arise, have its moment, and pass, without clinging or pushing away. Buddhist contemplatives describe this as loosening the grip of clinging on experience. Practitioners report reduced suffering even in the face of major life changes, which several contemplative psychology studies have now examined.`,
+            },
+            {
+              word: `anicca`,
+              definition: `The Pali word for impermanence, one of the three marks of existence in Buddhist philosophy. The teaching that all things constantly arise and pass away.`,
+              audioPrompt: `Anicca is the Pali word for impermanence, {name}. It is one of the three central marks of existence in Buddhist thought. The teaching is that all things constantly arise and pass away, with nothing remaining fixed. Buddhist time philosophy is built on anicca: yes, focus on the present, but notice that the present itself is constantly changing. Grasping at any moment creates suffering because you are trying to hold something that is by nature passing. Releasing the grip on what is transient is what the practice cultivates. This step beyond Stoic present-focus is what makes Buddhist time philosophy distinct.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `A 20th-century philosophical movement emphasizing radical freedom, responsibility, and the creation of one's identity through future-oriented choices.`,
               audioPrompt: `Existentialism is a 20th-century philosophical movement emphasizing radical freedom and the creation of identity through choice, {name}. Existentialists like Sartre, Beauvoir, and Kierkegaard argue that you don't have a fixed nature. You become someone through your choices, which are always about the future. Every action is a kind of commitment about who you are becoming. This makes existentialism a future-oriented philosophy, even though existentialists are clear that the choosing happens in the present. The future you're creating shapes what the present action means.`,
             },
+          ,
+            {
+              word: `bad faith`,
+              definition: `In existentialist philosophy, the refusal to acknowledge one's own freedom and responsibility for choosing who to become. Living as if your identity is fixed rather than created through choice.`,
+              audioPrompt: `Bad faith is the existentialist concept for the refusal to acknowledge your own freedom and responsibility for who you become, {name}. Sartre argued that humans have no fixed inner nature. You become someone through what you choose to do. To live without that future-oriented sense of becoming, to act as if your identity is simply given rather than built through choice, is to live in bad faith. It is a specific kind of self-deception about what you actually are. Bad faith is not a moral failure in the ordinary sense. It is a denial of the freedom that existentialists see as the defining feature of human existence.`,
+            },
+            {
+              word: `Viktor Frankl`,
+              definition: `An Austrian psychiatrist, Holocaust survivor, and author of Man's Search for Meaning (1946), who argued that having a sense of future meaning was one of the strongest predictors of psychological survival in extreme conditions.`,
+              audioPrompt: `Viktor Frankl was an Austrian psychiatrist who survived the Nazi concentration camps and wrote Man's Search for Meaning in 1946, {name}. His central observation was that having a sense of future meaning was one of the strongest predictors of who survived psychologically. Pure present-focus without future purpose was associated with despair. This finding has become one of the strongest psychological arguments for the existentialist emphasis on future-creation. Goal-setting research since Frankl has found consistent support: people with specific meaningful long-term goals report higher well-being than people without them.`,
+            }
           ],
         },
 
@@ -135,6 +179,17 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `A general way of approaching life shaped by a philosophical commitment. Not just an idea but a habitual stance that affects how you act.`,
               audioPrompt: `A philosophical orientation is a general way of approaching life shaped by a philosophical commitment, {name}. It's not just an idea you hold. It's a habitual stance that affects how you act, what you notice, what you prioritize. A present-focused Stoic and a future-focused existentialist will live very differently even if they agree on most facts. The philosophical orientation you cultivate shapes the texture of your daily experience over years and decades. Choosing one consciously is a real act, not just an intellectual exercise.`,
             },
+          ,
+            {
+              word: `non-attachment`,
+              definition: `In Buddhist philosophy, the practice of engaging fully with life without clinging to outcomes or grasping at pleasant experiences. Often misunderstood as emotional detachment or indifference.`,
+              audioPrompt: `Non-attachment in Buddhist philosophy means engaging fully with life without clinging to outcomes or grasping at pleasant experiences, {name}. It is often misunderstood as emotional detachment or cold disengagement. The Dalai Lama himself has noted that some Western Buddhists make this mistake. Real Buddhist practice is supposed to produce deeper engagement with life, not less. Non-attachment is not indifference. It is the ability to care without requiring things to be permanent. When the impermanence position is misused, the practice becomes a justification for disconnection rather than training in clear-eyed presence.`,
+            },
+            {
+              word: `short-term thinking`,
+              definition: `A pattern of decision-making focused on immediate outcomes without adequate consideration of long-term consequences or commitments.`,
+              audioPrompt: `Short-term thinking is a pattern of decision-making focused on immediate outcomes without adequate consideration of long-term consequences, {name}. The lesson identifies this as a risk of Stoic present-focus taken to extremes. If only the present is real, why save for college? Why invest in long-term relationships? The strongest Stoics did not actually live this way. Marcus Aurelius made long-term plans as emperor. But in its pure form, extreme present-focus has this potential blind spot. Recognizing this limit is a reason to hold the philosophy thoughtfully rather than apply it without seeing what the extreme version misses.`,
+            }
           ],
         },
 

@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `Believing that internal mental events (thoughts, wishes, intentions) directly cause external outcomes through some unspecified mechanism, without ordinary causal pathways like action, planning, or skill.`,
               audioPrompt: `Magical thinking is believing that your inner mental events directly cause external outcomes, {name}. Without action. Without ordinary cause-and-effect. Just the thought or wish itself reaching out and changing reality. Children develop magical thinking around ages 3 to 6 and most grow out of it as their understanding of causation matures. Adult magical thinking shows up in things like superstition, certain forms of manifestation belief, and conspiracy theories. The clinical sense of the term is not insulting; it is a specific cognitive pattern. Spotting it in your own thinking is one of the most useful skills.`,
             },
+          ,
+            {
+              word: `quantum mysticism`,
+              definition: `The use of quantum physics terminology to give scientific-sounding credibility to metaphysical or spiritual claims that are not actually supported by quantum physics research.`,
+              audioPrompt: `Quantum mysticism is the use of quantum physics terminology to give scientific-sounding credibility to metaphysical claims that are not supported by quantum physics research, {name}. The lesson notes that manifestation claims about vibration and attracting outcomes draw on quantum mysticism and New Thought philosophy from the early 1900s. The word vibration sounds scientific but is not being used in any technical physics sense. This is a red flag for distinguishing real science from claims that borrow scientific-sounding language. The gap between how quantum mechanics is actually studied and how it appears in wellness culture is enormous.`,
+            },
+            {
+              word: `peer-reviewed evidence`,
+              definition: `Research findings that have been evaluated by independent experts before publication. The standard for credible scientific and psychological claims.`,
+              audioPrompt: `Peer-reviewed evidence is research that has been evaluated by independent experts before publication, {name}. It is the standard for credible scientific and psychological claims. The lesson draws a sharp distinction between manifestation claims with decades of peer-reviewed evidence, like goal-setting and visualization research, and claims like the Law of Attraction that have no peer-reviewed support. Not having peer-reviewed support does not make a claim automatically false. But it means the claim is not established science. Knowing whether something has been peer-reviewed is one of the most useful filters when evaluating behavior claims.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `Wish, Outcome, Obstacle, Plan. A research-backed goal-setting technique developed by Gabriele Oettingen that combines visualization with realistic obstacle-thinking and concrete planning.`,
               audioPrompt: `WOOP stands for Wish, Outcome, Obstacle, Plan, {name}. It is a goal-setting technique developed by psychologist Gabriele Oettingen at NYU, supported by multiple controlled studies. The four steps. First, name what you want clearly. Second, vividly imagine the positive outcome. Third, identify the most likely internal obstacle that could block you. Fourth, make a specific if-then plan for handling that obstacle. WOOP works because it pairs the motivating power of visualization with the realism of obstacle-thinking and concrete planning. Pure positive visualization alone, without these other steps, often backfires by making your brain feel like you already succeeded.`,
             },
+          ,
+            {
+              word: `Goal Setting Theory`,
+              definition: `The framework developed by Edwin Locke and Gary Latham establishing that specific, measurable, difficult-but-achievable, written goals produce better outcomes than vague intentions.`,
+              audioPrompt: `Goal Setting Theory is the framework developed by Edwin Locke and Gary Latham beginning in the 1960s, {name}. Over decades across hundreds of studies they established robust, replicable findings. Specific, measurable goals lead to better performance than vague intentions. Difficult but achievable goals produce better outcomes than easy ones. Written goals have higher achievement rates than unwritten ones. Goals reviewed regularly outperform goals set once and forgotten. These effects work through ordinary cognitive mechanisms: clear goals direct attention, difficult goals increase effort, and written goals get reviewed.`,
+            },
+            {
+              word: `obstacle-thinking`,
+              definition: `Deliberately identifying the most likely internal obstacles that could block goal achievement. A critical step in the WOOP framework that prevents the backfire effect of pure positive visualization.`,
+              audioPrompt: `Obstacle-thinking is the practice of deliberately identifying the most likely internal obstacles that could block you from achieving a goal, {name}. It is a critical step in the WOOP framework developed by Gabriele Oettingen at NYU. Her research showed that visualizing positive outcomes without considering obstacles actually reduces motivation. People who only visualize success have less energy because the brain partly experiences the success as already achieved. Pairing visualization with obstacle-thinking prevents this backfire. The obstacle step is what makes positive visualization effective rather than counterproductive.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `In psychology, when exposure to one stimulus influences your response to a later stimulus. Visualization primes attention toward goal-relevant information.`,
               audioPrompt: `Priming is when exposure to one stimulus influences your response to a later stimulus, {name}. In the context of visualization, when you vividly imagine yourself doing something, your brain becomes more sensitive to information related to it. You notice opportunities you'd otherwise miss. You remember relevant advice. You recognize moments where you can apply what you've learned. Priming is a well-documented psychological mechanism. It is part of how visualization works without requiring any mystical claim about the universe responding to your mental states.`,
             },
+          ,
+            {
+              word: `mental rehearsal`,
+              definition: `The practice of vividly imagining performing an action before doing it. Brain imaging shows it activates many of the same motor regions as actual physical practice, improving performance on skills.`,
+              audioPrompt: `Mental rehearsal is the practice of vividly imagining performing an action before doing it, {name}. Athletes have used mental rehearsal for decades. Brain imaging shows that visualizing a physical movement activates many of the same motor regions as actually performing it. This is why mental practice improves performance on physical skills, sometimes nearly as much as physical practice. The mechanism is not magic. The brain is partly rehearsing the actual neural patterns of the action. For non-physical goals, visualization also works through priming attention toward goal-relevant information. Nothing mystical is required.`,
+            },
+            {
+              word: `cumulative effect`,
+              definition: `The result of small improvements in attention, motivation, and behavior compounding over time. The actual mechanism behind real-world goal achievement, as distinguished from magical thinking.`,
+              audioPrompt: `The cumulative effect is the result of small improvements compounding over time, {name}. What visualization does is change you, which changes what you notice, what you do, and what you persist at. Those changes produce real outcomes. The magic is just the cumulative effect of slightly better attention, motivation, and behavior over time. This is the honest explanation for why visualization-based practices genuinely work without any claim that the universe is responding to your inner states. Small improvements stack. Over months and years the difference between careful planning and wishful thinking becomes substantial.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `A New Thought belief, popularized by The Secret, that the universe gives you what you focus on; you "attract" outcomes that match your inner state. Not a scientific law. No peer-reviewed evidence supports the metaphysical version.`,
               audioPrompt: `The Law of Attraction is a New Thought belief that the universe gives you what you focus on, {name}. It claims you attract outcomes that match your inner state and "vibration." Despite the word "law," it is not a scientific law and has no peer-reviewed evidence supporting the metaphysical version. The Secret, a 2006 book by Rhonda Byrne, popularized this belief for tens of millions of readers. Many of the specific manifestation techniques you see on social media trace back to Law of Attraction thinking. Knowing the historical lineage helps you see what's being claimed.`,
             },
+          ,
+            {
+              word: `unfalsifiable`,
+              definition: `A claim for which no possible observation could count as disproof. A classic feature of pseudoscience, because a claim immune to disproof cannot be properly tested or supported.`,
+              audioPrompt: `An unfalsifiable claim is one for which no possible observation could count as disproof, {name}. The lesson identifies this as a classic feature of pseudoscience. The Law of Attraction is structured this way: if you manifest what you wanted, the law worked; if you did not, you did not believe hard enough. This makes the claim immune to disproof. But a claim immune to disproof also cannot be properly supported by evidence. Real psychology produces falsifiable claims: if WOOP does not improve goal achievement in controlled studies, the theory must be revised. Unfalsifiability is one of the clearest red flags when evaluating any belief system.`,
+            },
+            {
+              word: `testimonial`,
+              definition: `A personal account of an experience with a product or practice. Not equivalent to controlled scientific evidence and cannot establish whether the product or practice caused the reported outcome.`,
+              audioPrompt: `A testimonial is a personal account of an experience with a product or practice, {name}. The Secret relied on testimonials and anecdotes from individuals featured in the book and film, with no controlled studies. A testimonial cannot establish whether the practice caused the reported outcome. The person might have improved for unrelated reasons or might be describing a placebo effect. They might be one of many who tried the same thing and got nothing but never shared. The lesson notes that researchers attribute improvements reported after reading The Secret to placebo effects and practices that overlap with real goal psychology, not to the Law of Attraction.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `The specific process by which a cause produces an effect. When evaluating any health or behavior claim, asking "what's the mechanism?" is one of the most clarifying questions.`,
               audioPrompt: `A mechanism is the specific process by which a cause produces an effect, {name}. When you hear any claim about influencing reality, asking "what's the mechanism?" is one of the most clarifying questions. If the answer is "specific goals direct attention and behavior," you have a real mechanism with evidence. If the answer is vague like "the universe responds," you have a metaphysical claim without a tested mechanism. The question separates real psychology from magical thinking. Train yourself to ask it about every claim involving how your mind affects outcomes.`,
             },
+          ,
+            {
+              word: `vision board`,
+              definition: `A collage of images representing goals or desired outcomes, used in manifestation culture as a visualization tool. Overlaps with real goal psychology in some ways but cannot substitute for evidence-based help.`,
+              audioPrompt: `A vision board is a collage of images representing goals or desired outcomes, used in manifestation culture as a visualization tool, {name}. Vision boards share some overlap with real goal psychology: they make goals concrete and visible, which can focus attention. But the lesson warns against replacing evidence-based help for serious problems with vision boards, and against expecting outcomes to arrive without action and planning. The visualization component can have real priming effects. The metaphysical claim that the images attract outcomes through the Law of Attraction is not supported. Use what works. Do not rely on what does not.`,
+            },
+            {
+              word: `if-then plan`,
+              definition: `A concrete implementation intention specifying what action to take when a specific obstacle arises. The Plan step in WOOP. Research shows if-then plans significantly increase follow-through on goals.`,
+              audioPrompt: `An if-then plan is a concrete implementation intention specifying what action to take when a specific obstacle arises, {name}. It is the Plan step in the WOOP framework. Instead of just intending to pursue a goal, you make a specific commitment: if this obstacle occurs, then I will do this. Research shows if-then plans significantly increase follow-through because they remove in-the-moment deliberation. You have already decided what to do when the hard moment comes. This is real, practical psychology. The lesson recommends pairing visualization with obstacle-thinking and if-then planning as the evidence-based alternative to pure manifestation thinking.`,
+            }
           ],
         },
 

@@ -51,6 +51,17 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `Combining separate elements into a coherent whole. The capstone skill of integrating diverse learning into something usable in your actual life.`,
               audioPrompt: `Synthesis is combining separate elements into a coherent whole, {name}. Each of the past 19 lessons was its own piece. The capstone work is putting them together. You don't have to integrate everything perfectly. You do have to begin the work of asking: given all of this, what do I actually want to do? Synthesis isn't just summarizing. It's deciding what to keep, what to question, what to build into your life, and what to leave aside. That's the work of designing a life rather than just inheriting one.`,
             },
+          ,
+            {
+              word: `Default Mode Network`,
+              definition: `A network of brain regions active during mind-wandering, self-referential thought, and rumination. Mentioned in the band's earlier lessons as having both costs and benefits when quieted through contemplative practice.`,
+              audioPrompt: `The Default Mode Network is a network of brain regions active during mind-wandering, self-referential thought, and rumination, {name}. The lesson inventories it as one of the things you now know from the band. You can articulate the Default Mode Network and the costs as well as the benefits of quieting it. Certain contemplative practices reduce Default Mode Network activity, which produces benefits like reduced rumination. But the lesson noted earlier that pure inner focus without grounding in action can carry its own costs. The Default Mode Network entry in your inventory represents not just a fact but a nuanced understanding of trade-offs that most people who discuss meditation never consider.`,
+            },
+            {
+              word: `pop-science overreach`,
+              definition: `The pattern in which popularized versions of scientific findings claim more than the original research actually supports, often by omitting qualifications, magnifying effect sizes, or extrapolating beyond the evidence.`,
+              audioPrompt: `Pop-science overreach is the pattern in which popularized versions of scientific findings claim more than the original research supports, {name}. The lesson names recognizing it as one of the things that deserves to stay with you for life from this band. Epigenetics actually works in specific ways — and gets oversold in specific ways. The placebo effect is real and bounded — and gets hijacked in specific ways. Meditation neuroscience shows real benefits — and gets overstated in specific ways. In each case, the pattern is the same: a real finding, a real mechanism, and then a popular version that strips out the qualifications and extends the claim beyond what the evidence shows. Recognizing this pattern is a daily intellectual skill.`,
+            }
           ],
         },
 
@@ -72,6 +83,17 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `A central commitment or framework that organizes your other choices. Different people organize their lives around different principles, and the choice matters.`,
               audioPrompt: `An organizing principle is a central commitment or framework that organizes your other choices, {name}. Most people have one whether they realize it or not. Some people's organizing principle is success. Others is family. Others is creative expression. Others is freedom. Others is service. The principle isn't always conscious, but it shapes everything. Choosing an organizing principle consciously is one of the most important things you can do. You don't have to pick forever. You do have to know what you're currently organizing your life around. The most honest answer might also be "I haven't chosen yet, I'm currently drifting." That answer is also useful.`,
             },
+          ,
+            {
+              word: `inner explorer`,
+              definition: `One of three organizing principles for a conscious life: the view that self-knowledge is the prerequisite for right action, pursued through investigation, reading, meditation, and honest reflection.`,
+              audioPrompt: `The inner explorer is one of three organizing principles for designing a conscious life, {name}. The deepest project in this path is understanding yourself: your shadow, your patterns, your unconscious material. Investigate. Read. Meditate. Look honestly at what you find. The inner explorer believes that without self-knowledge, action is just reaction. With it, you can act from depth. The lesson notes both the strength — a foundation few peers will have — and the risk: the inner explorer may become more comfortable understanding their life than actually living it. Self-knowledge without action can become a refined form of avoidance. The path is real; the limit is real too.`,
+            },
+            {
+              word: `engaged practitioner`,
+              definition: `One of three organizing principles for a conscious life: the view that the deepest work happens through daily practice, real relationships, kept commitments, and habitual alignment of time with values.`,
+              audioPrompt: `The engaged practitioner is one of three organizing principles for designing a conscious life, {name}. The deepest project in this path is actually living what you value every day. Practice. Habit. Showing up. The engaged practitioner believes that self-understanding without practice produces only paralysis or self-absorption. The work is in how you treat the person in front of you, how you respond when something is hard, what you actually invest your time in. The lesson names both the strength — living the kind of life most adults are still trying to construct in midlife — and the risk: less depth of self-understanding when crisis hits, because the inner examination work has been de-emphasized.`,
+            }
           ],
         },
 
@@ -94,6 +116,17 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `The capacity to distinguish what is real, useful, and important from what merely appears so. A capstone intellectual skill cultivated through practice.`,
               audioPrompt: `Discernment is the capacity to distinguish what is real, useful, and important from what merely appears so, {name}. It is one of the most valuable intellectual and spiritual skills. Discernment is what lets you hear a wellness influencer and immediately notice the pattern of overreach. It is what lets you read a research paper and identify what it actually claims versus what its popular interpretations claim. Discernment is cultivated, not given. The 20 lessons of this band have been a discernment training. Continue cultivating it the rest of your life. It will be among your most valuable possessions.`,
             },
+          ,
+            {
+              word: `source evaluation`,
+              definition: `The habit of carefully examining who is making a claim, what evidence supports it, whether the claim is falsifiable, and what the gap is between the actual research and what is being asserted. Named as one of the things that deserves to stay for life from this band.`,
+              audioPrompt: `Source evaluation is the habit of carefully examining who is making a claim, what evidence supports it, and what the gap is between actual research and what is asserted, {name}. The lesson names it first among the things that deserve to stay with you for life. It applies to health claims, contested figures, viral spiritual content, research papers, and everything in between. The skill cuts across every lesson in this band. Recognizing pop-science overreach. Holding contested questions open. Caring more about methodology than about preferred conclusions. All of these are expressions of source evaluation applied to different domains. The lesson frames it as a daily habit, not a specialized technique.`,
+            },
+            {
+              word: `testimony vs. evidence`,
+              definition: `The distinction between personal accounts of experience (testimony) and empirically supported findings (evidence). Treating testimony as proof of metaphysical claims is one of the patterns the lesson identifies as worth setting aside.`,
+              audioPrompt: `The distinction between testimony and evidence is one of the most important things the lesson places in the set-aside category, {name}. Testimony — a person's account of what they experienced — is real information. People are not making up their near-death experiences, their synchronicity moments, their responses to wellness practices. But testimony is not the same as evidence that a specific metaphysical claim is true. Believing testimonials over evidence is named explicitly as something to set aside. The lesson is precise: the experience is real, the experience does not automatically confirm the interpretation. Keeping these two things separate is a discipline that takes practice. It is also one of the most valuable ones in this band.`,
+            }
           ],
         },
 
@@ -116,6 +149,17 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `The capacity to apply understanding to actual situations with discernment. Not the same as intelligence, knowledge, or self-awareness, though it draws on all of these.`,
               audioPrompt: `Wisdom is the capacity to apply understanding to actual situations with discernment, {name}. It is different from intelligence (raw cognitive ability), knowledge (what you know), or self-awareness (how you see yourself). Wisdom is the practical capacity to act well, in a real moment, given everything you understand. It includes knowing when to act and when to wait. When to speak and when to listen. When to investigate and when to commit. Wisdom takes decades to develop. Starting at 12 is much better than starting at 40. You've been training it through this whole band.`,
             },
+          ,
+            {
+              word: `wise integrator`,
+              definition: `One of three organizing principles for a conscious life: the view that the deepest work is developing the judgment to know when investigation, action, or waiting is called for, drawing on multiple frameworks with discernment.`,
+              audioPrompt: `The wise integrator is one of three organizing principles for designing a conscious life, {name}. The deepest project in this path is developing judgment: the capacity to know when each approach — investigation, action, waiting, commitment — is called for. The integrator draws on multiple frameworks with discernment rather than committing purely to one. The lesson names it as the closest path to actual wisdom. It also names it as the hardest: many who attempt integration end up doing neither reading nor practice well, spreading effort across both without depth in either. The strength is genuine. The demand is also genuine. Starting with a primary path before integrating is what the capstone argument builder asks you to examine.`,
+            },
+            {
+              word: `shadow patterns`,
+              definition: `Unconscious tendencies and traits — often unwanted or unexamined — that shape behavior without conscious awareness. Knowing them through self-investigation is what the inner explorer path prioritizes.`,
+              audioPrompt: `Shadow patterns are the unconscious tendencies and traits that shape behavior without conscious awareness, {name}. The lesson describes the inner explorer at 17 as someone who knows their shadow patterns well and can articulate what each emotion in them is usually saying. The concept of shadow comes from Jung, encountered earlier in the band. Knowing your shadow patterns does not mean eliminating them. It means seeing them clearly enough that they drive you less automatically. The inner explorer path prioritizes this investigation as the foundation for everything else. The risk is that deep familiarity with one's patterns can become a substitute for acting differently. Self-knowledge is the beginning of the work, not the end.`,
+            }
           ],
         },
 
@@ -137,6 +181,17 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `A life designed and lived with awareness of one's organizing principles, values, and practices, rather than drifting on inherited defaults.`,
               audioPrompt: `A conscious life is a life designed and lived with awareness of one's organizing principles, values, and practices, {name}. The opposite is the drifting life, where you do what's expected, defaults take over, years pass, and you wake up at 40 wondering how you got so far from who you meant to be. Most people live drifting lives. The few who don't are usually noticeable: they have a certain quality of intentionality, integrity, and inner direction. Designing a conscious life is one of the most important projects you can undertake. Starting at 12, even imperfectly, puts you years ahead of starting at 30.`,
             },
+          ,
+            {
+              word: `starting place`,
+              definition: `The initial organizing principle or practice a person commits to, acknowledged as appropriate for this moment in their life rather than as a permanent or final choice. What the capstone argument builder asks you to identify and defend.`,
+              audioPrompt: `A starting place is the initial organizing principle or practice you commit to, understood as appropriate for this moment rather than permanent, {name}. The lesson frames the capstone argument around this concept deliberately. You are not choosing forever. Most thoughtful people shift their organizing principle as they age. What matters is starting consciously rather than drifting. The lesson also makes the stakes clear: the argument you make in the capstone is also a real commitment about what you will actually do next. If you defend the practitioner path, you are committing to start a daily practice this month. Calling it a starting place does not reduce the seriousness of the commitment. It grounds it in honest acknowledgment of how people actually develop over time.`,
+            },
+            {
+              word: `drifting life`,
+              definition: `A life lived by inherited defaults rather than conscious design — doing what is expected, following social momentum, and arriving at middle age without having chosen the direction. The opposite of a conscious life.`,
+              audioPrompt: `A drifting life is a life lived by inherited defaults rather than conscious design, {name}. The lesson defines it as the opposite of a conscious life. In a drifting life, you do what is expected. Defaults take over. Years pass. You arrive at forty wondering how you got so far from who you meant to be. Most people live drifting lives, not because they are lazy or bad, but because designing a life consciously is harder than it sounds and requires ongoing effort. The lesson argues that starting at twelve — even imperfectly — puts you years ahead of starting at thirty. The gap between a drifting life and a conscious one is not one grand decision. It is thousands of small ones, made with increasing awareness over time.`,
+            }
           ],
         },
 

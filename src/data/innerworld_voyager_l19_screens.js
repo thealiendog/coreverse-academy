@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `The practice of consciously matching how you spend time, money, attention, and energy to what you say you value. Hard in practice, well-documented to increase well-being and life satisfaction.`,
               audioPrompt: `Values alignment is the practice of consciously matching how you live to what you say you value, {name}. It is harder than it sounds. Daily life has its own momentum. Schedules, expectations, social pressure, and exhaustion push you toward defaults. Real values get displaced. The work of alignment is noticing this displacement and choosing differently, again and again, until your life actually reflects your values. Research consistently shows that people whose lives align with their values report higher meaning and well-being than people who live by default. Starting early is much easier than fixing it later.`,
             },
+          ,
+            {
+              word: `daily defaults`,
+              definition: `The patterns of behavior that take over when life's momentum — schedules, social pressure, exhaustion, distraction — replaces deliberate choice. The main mechanism by which stated values get displaced in everyday life.`,
+              audioPrompt: `Daily defaults are the patterns of behavior that take over when momentum replaces deliberate choice, {name}. The lesson names them as the main reason people fail to live in alignment with their values. It is not that the person who says family matters most but works seventy hours a week is lying. It is that daily life has its own pull. Schedules fill. Exhaustion sets in. Social pressure shapes what gets done. Real values get displaced by easier patterns. Years pass. The gap widens. Defaults are not the enemy; they are what happens without conscious effort. The whole project of values alignment is the practice of interrupting defaults and choosing again.`,
+            },
+            {
+              word: `inherited defaults`,
+              definition: `Patterns of spending time, attention, and energy that are absorbed from family, culture, and environment rather than consciously chosen. A core reason why the gap between stated values and actual life persists.`,
+              audioPrompt: `Inherited defaults are patterns absorbed from family, culture, and environment rather than consciously chosen, {name}. The lesson uses the term in the context of why alignment is genuinely difficult. Most people repeat values they have taken in without examining. Most people also live by time and energy patterns they inherited without choosing. The result is a life that reflects what surrounded you, not necessarily what you actually value. The lesson argues that starting the practice of noticing and interrupting these defaults at twelve — before they harden — is one of the most valuable things a young person can do. The patterns can be changed, but it is much easier early than at forty.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Ancient Greek and Roman philosophy emphasizing virtue, present-moment focus, and the discipline of caring about only what you can control. Still practiced and influential.`,
               audioPrompt: `Stoicism is an ancient Greek and Roman philosophy still actively practiced today, {name}. The central insight is from Epictetus: some things are in our control, others are not. What you control: your thoughts, responses, character, choices. What you don't: outcomes, other people, events. Stoic alignment is disciplined practice in caring about what you can shape while accepting what you can't. Modern Cognitive Behavioral Therapy and Acceptance and Commitment Therapy descend partly from Stoic ideas. The discipline produces measurable reductions in anxiety and increases in well-being when applied consistently.`,
             },
+          ,
+            {
+              word: `Acceptance and Commitment Therapy`,
+              definition: `A modern psychological treatment that descends partly from Stoic ideas, emphasizing acceptance of what cannot be controlled and committed action toward what can be. Has strong clinical evidence for reducing anxiety and improving well-being.`,
+              audioPrompt: `Acceptance and Commitment Therapy is a modern psychological treatment that descends partly from Stoic ideas, {name}. The lesson names it alongside Cognitive Behavioral Therapy as evidence that the Stoic discipline of focusing on what you can control while accepting what you cannot has been validated by modern psychology. The therapy has strong clinical evidence for reducing anxiety and improving well-being. What is striking is that the core Stoic insight — distinguish what is in your control from what is not, and care about only the first — was articulated by Epictetus nearly two thousand years before the clinical research confirmed its usefulness. The ancient and the contemporary point to the same practical discipline.`,
+            },
+            {
+              word: `Enchiridion`,
+              definition: `The foundational text of Stoic practice written by Epictetus, a Greek philosopher who was born a slave. Opens with the central Stoic distinction between what is and is not in our control.`,
+              audioPrompt: `The Enchiridion is the foundational text of Stoic practice written by Epictetus, {name}. Epictetus was a Greek philosopher who was born a slave. The lesson quotes the opening of the Enchiridion directly: some things are in our control, and others are not. What you control — your thoughts, responses, character, choices. What you do not — other people's actions, external events, outcomes, what happens to your body and possessions. The Enchiridion is a short text. Its central insight is one of the most practically useful in any philosophical tradition. Modern Cognitive Behavioral Therapy and Acceptance and Commitment Therapy both draw from it, even when they do not name it.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Sartre's term for acknowledging that your actions are real choices, not products of fixed nature. Living as if you are responsible for who you are becoming.`,
               audioPrompt: `Good faith is Sartre's term for acknowledging that your actions are real choices, {name}. Its opposite is bad faith, which is acting as if your nature determined your choices, as if you "had no choice" or "couldn't help it." Bad faith denies responsibility. Good faith accepts it. Every action, in Sartre's view, is a commitment about the kind of person you're becoming. Living in good faith means making those commitments consciously rather than drifting into them. This is harder than it sounds. Most of our choices feel automatic. Recognizing them as choices is the existentialist discipline.`,
             },
+          ,
+            {
+              word: `bad faith`,
+              definition: `Sartre's term for acting as though your nature or circumstances determined your choices, denying that you are genuinely free and responsible for who you are becoming. The opposite of good faith.`,
+              audioPrompt: `Bad faith is Sartre's term for acting as though your nature or circumstances determined your choices, {name}. It is the existentialist failure mode. Bad faith says: I had no choice. This is just who I am. The situation made me do it. In Sartre's view, these statements deny genuine freedom and genuine responsibility. Every action is a real choice. Every choice contributes to who you are becoming. Pretending otherwise is bad faith. The lesson pairs this with Viktor Frankl's observation from concentration camps: even under extreme circumstances, the freedom to choose your response remained. Bad faith is a refusal of that freedom. Recognizing it in yourself is the beginning of the existentialist practice.`,
+            },
+            {
+              word: `Viktor Frankl`,
+              definition: `Psychiatrist and existentialist thinker whose research in concentration camps demonstrated that even under extreme deprivation, humans retain the freedom to choose their response to circumstances. Author of Man's Search for Meaning.`,
+              audioPrompt: `Viktor Frankl was a psychiatrist and existentialist thinker whose research was conducted in concentration camps, {name}. The lesson names him alongside Sartre, de Beauvoir, and Kierkegaard as sharing the basic existentialist claim that humans become who they are through their choices. What distinguishes Frankl is where he observed this. Under conditions of extreme deprivation and violence, he documented that people retained the freedom to choose how they responded. Meaning came from that freedom, even when nothing else could be changed. His book Man's Search for Meaning is one of the most widely read accounts of existentialist insight applied to the most difficult circumstances imaginable.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Aristotle's process by which repeated practice of a virtue makes the virtue become part of who you are. Supported by modern habit formation research.`,
               audioPrompt: `Habituation, in Aristotle's framework, is the process by which repeated practice of a virtue makes the virtue become part of who you are, {name}. You don't become courageous by reading about courage. You become courageous by repeatedly choosing to face fear well, especially in small situations, until courage becomes your habit. Modern habit formation research substantially supports this. Character is shaped over time by repeated small actions in stable contexts, not by single grand decisions. The implication is hopeful: you can intentionally cultivate the character you want, slowly, through practice. The implication is also demanding: there are no shortcuts.`,
             },
+          ,
+            {
+              word: `virtue`,
+              definition: `In Aristotle's framework, an excellence in some dimension of character — courage, kindness, honesty — that lies between two failure modes (vices) of excess and deficiency. Developed through repeated practice, not through single decisions.`,
+              audioPrompt: `A virtue, in Aristotle's framework, is an excellence in some dimension of character, {name}. The lesson describes the structure clearly. Every virtue lies between two failures called vices. Courage lies between cowardice, too little, and recklessness, too much. Generosity lies between stinginess and wastefulness. Kindness is the excellence of treating others with care. Honesty is the excellence of relating to truth accurately. Virtues are not dispositions you are born with. They are developed through repeated practice — through habituation. The lesson draws on modern habit formation research to confirm Aristotle's basic claim: character is shaped by what you repeatedly do, especially in small consistent situations.`,
+            },
+            {
+              word: `practical wisdom`,
+              definition: `Aristotle's term for the capacity to know what each virtue requires in a specific situation. The ability to apply general principles to particular real circumstances with sound judgment.`,
+              audioPrompt: `Practical wisdom is Aristotle's term for the capacity to know what each virtue requires in a specific situation, {name}. It is the meta-virtue in his framework: the skill of applying all the other virtues appropriately. Knowing that courage is the relevant virtue in a given moment, and knowing how much of it is called for, requires judgment that goes beyond following rules. The lesson notes that Virtue Ethics does not primarily ask what you should do in this situation. It asks what kind of person you should become. Practical wisdom is what makes that character useful in real situations. It is cultivated through experience, reflection, and repeated small choices over time.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Drawing on multiple ethical traditions rather than committing dogmatically to one. The mature practice most thoughtful people arrive at over time.`,
               audioPrompt: `Integrated ethics is drawing on multiple ethical traditions rather than committing dogmatically to one, {name}. Most thoughtful people, over decades of practice, end up integrating Stoic acceptance of what they can't control, Existentialist responsibility for their choices, and Virtue Ethics' patient cultivation of character. The traditions aren't really competitors. They emphasize different aspects of the same underlying work. Starting with one tradition that fits your current life is reasonable. Over time, you'll likely add elements of others. The mature position is rarely pure allegiance to a single school.`,
             },
+          ,
+            {
+              word: `decision paralysis`,
+              definition: `A state in which the weight of choice becomes so heavy that deciding becomes difficult. Named as a potential limit of Existentialism when taken to extremes, because every choice feels weighted by its identity implications.`,
+              audioPrompt: `Decision paralysis is the state in which the weight attached to choices makes deciding feel difficult or impossible, {name}. The lesson names it as a potential limit of Existentialism when taken to extremes. Sartre's insight that every choice creates who you are is both powerful and demanding. If every action is a commitment about the kind of person you're becoming, every decision can feel overwhelming. Mature existentialists balance this with practice and habit. The extreme form, where every choice feels like an identity referendum, can produce the very paralysis that makes alignment harder. Knowing this limit is part of understanding why many thoughtful people eventually integrate elements of more than one tradition.`,
+            },
+            {
+              word: `traditionalism`,
+              definition: `The tendency to follow inherited virtues and practices without examining whether they fit your actual life and values. Named as a potential limit of Virtue Ethics when taken to extremes.`,
+              audioPrompt: `Traditionalism is the tendency to follow inherited virtues and practices without examining whether they actually fit your life, {name}. The lesson names it as a potential limit of Virtue Ethics when taken to extremes. Virtue Ethics focuses attention on character development through repeated practice. But which virtues? The tradition may name virtues that reflect a particular culture or historical moment. Without examination, practicing inherited virtues uncritically may shape you into someone you didn't actually choose to become. The lesson pairs this with the Existentialist corrective: consciously examining what you value before you commit to habituating it. Each tradition can protect against the failure mode of the others.`,
+            }
           ],
         },
 

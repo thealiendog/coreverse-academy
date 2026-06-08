@@ -50,6 +50,17 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `Functional Magnetic Resonance Imaging. A brain scanning technology that measures activity by tracking blood flow to active regions in real time.`,
               audioPrompt: `fMRI stands for functional Magnetic Resonance Imaging, {name}. It is a brain scanning technology that doesn't just take a picture of your brain's structure. It measures activity by tracking where blood is flowing while the brain works. Active brain regions need more oxygen, so blood flow increases there. fMRI can detect this in real time. This is what transformed meditation research. Before fMRI, you could only ask meditators what they experienced. With fMRI, you can watch what's happening in their brain during meditation. The technology is what made the modern field possible.`,
             },
+          ,
+            {
+              word: `Mindfulness-Based Stress Reduction`,
+              definition: `An 8-week meditation program developed by Jon Kabat-Zinn at the University of Massachusetts that brought mindfulness practice into mainstream medicine and clinical research.`,
+              audioPrompt: `Mindfulness-Based Stress Reduction, or MBSR, is an 8-week program developed by Jon Kabat-Zinn at the University of Massachusetts, {name}. It was one of the key developments that brought meditation into mainstream medicine. Kabat-Zinn designed it to be tested in clinical trials, which is how meditation made the transition from contemplative practice to medical research. MBSR has been studied in hundreds of controlled trials. It is one of the best-studied mind-body interventions in the medical literature, and its development in the 1980s and 1990s helped make the modern meditation neuroscience field possible.`,
+            },
+            {
+              word: `brain imaging`,
+              definition: `Technologies such as fMRI that allow researchers to observe brain structure and activity in living people. The arrival of brain imaging transformed meditation research by making it possible to observe what happens in the brain during practice.`,
+              audioPrompt: `Brain imaging refers to technologies that allow researchers to observe brain activity in living people, {name}. The real explosion in meditation research came when brain imaging arrived. By the 2000s, functional MRI let researchers watch what happens in the brain during meditation. Before this, scientists could only ask meditators what they experienced. Richard Davidson at the University of Wisconsin used brain imaging to study long-term Buddhist meditators and found their brains looked measurably different from non-meditators. Brain imaging made the modern neuroscience of meditation possible.`,
+            }
           ],
         },
 
@@ -71,6 +82,17 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `The parts of the brain made up mostly of neuron cell bodies. Often used as a rough measure of brain region size and activity capacity.`,
               audioPrompt: `Grey matter refers to the parts of the brain made up mostly of neuron cell bodies, {name}. Different brain regions have different amounts of grey matter. When neuroscientists talk about meditation increasing grey matter density in a certain region, they mean structural changes in how many neurons or how much neural tissue is concentrated there. These changes are subtle. They are measured with statistical comparisons between groups. They don't mean a meditator's brain looks dramatically different from anyone else's. They mean a measurable, statistically significant difference shows up when you compare hundreds of brains carefully.`,
             },
+          ,
+            {
+              word: `interoception`,
+              definition: `Awareness of internal body signals, such as heartbeat, breath, and physical sensations. A function associated with specific brain regions studied in meditation research.`,
+              audioPrompt: `Interoception is awareness of internal body signals, {name}. It includes your sense of heartbeat, breath, temperature, and physical sensations arising from inside the body. Sara Lazar's lab at Harvard found increased grey matter density in brain regions involved in attention and interoception in long-term meditators. This is one of the structural brain changes that meditation research has found. The changes are small but consistent across studies. Interoception is considered a real and trainable capacity, and meditation practices that involve sustained attention to internal body sensations appear to be one way to develop it.`,
+            },
+            {
+              word: `attention regulation`,
+              definition: `The ability to direct and sustain attention intentionally, notice when attention has wandered, and return it to a chosen focus. A cognitive skill measurably improved by consistent mindfulness practice.`,
+              audioPrompt: `Attention regulation is the ability to direct and sustain attention intentionally, notice when your mind has wandered, and return to a chosen focus, {name}. It is one of the most clearly established benefits of consistent mindfulness meditation. Studies show that practitioners get measurably better at this after 8 weeks of daily practice. The improvement shows up in standardized attention tests, not just self-report. This is a real, modest cognitive gain from a real practice. Attention regulation is one of the bounded, replicated findings in meditation neuroscience that does not need to be oversold to be genuinely impressive.`,
+            }
           ],
         },
 
@@ -92,6 +114,17 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `The standard structure of scientific papers: Introduction, Methods, Results, and Discussion.`,
               audioPrompt: `IMRaD is the standard structure of scientific papers, {name}. It stands for Introduction, Methods, Results, and Discussion. Every section has a specific job. The Introduction explains why the study matters. Methods explain exactly what was done, in enough detail that another scientist could replicate. Results report what was measured. Discussion interprets the findings and discusses limitations. When you read a real paper, you can usually identify each section. This structure is one of science's quality controls. It forces researchers to make their methods transparent and their conclusions accountable.`,
             },
+          ,
+            {
+              word: `replicable`,
+              definition: `A finding or method that other researchers, following the same procedure, can reproduce with consistent results. A core requirement of trustworthy science.`,
+              audioPrompt: `Replicable means that other researchers, following the same procedure, can reproduce the finding with consistent results, {name}. It is a core quality standard in science. The methods section of a scientific paper exists precisely to make replication possible. When findings replicate across multiple independent labs, confidence in them increases dramatically. When they do not replicate, the original finding is called into question. The established meditation neuroscience findings, like those on attention regulation and Default Mode Network activity, have replicated across labs. That is what makes them trustworthy.`,
+            },
+            {
+              word: `primary source`,
+              definition: `The original research paper or document written by the people who did the work. Distinguished from summaries, popularizations, or news articles written about the work.`,
+              audioPrompt: `A primary source is the original paper or document written by the people who did the actual work, {name}. Reading primary sources means reading what scientists actually said in their own words, not what a journalist or blogger summarized. The lesson you are in is built around reading a primary source: a real paper published in PNAS in 2011. Once you have read a real paper, you can feel the difference between the careful, hedged language of a primary source and the confident, dramatic language of a popular article written about that source. That ability to feel the difference is one of the most durable skills this lesson offers.`,
+            }
           ],
         },
 
@@ -113,6 +146,17 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `Using cautious qualifying language ("may," "suggests," "appears to") rather than absolute claims. A hallmark of careful scientific writing.`,
               audioPrompt: `Hedging is using cautious qualifying language rather than absolute claims, {name}. Scientific writers hedge constantly. They say "the data suggest" rather than "the data prove." They say "appears to be associated with" rather than "causes." Hedging isn't weakness. It is honesty about uncertainty. A single study rarely proves anything definitively. It provides evidence that adds to other evidence. Strong hedging is one of the clearest signals you are reading careful scientific work. Confident absolute claims, by contrast, are a warning sign in any health-related writing.`,
             },
+          ,
+            {
+              word: `claim statement`,
+              definition: `A sentence in a scientific paper that makes a specific factual assertion about what the study found, typically naming a precise measurement, brain region, or comparison group.`,
+              audioPrompt: `A claim statement is a sentence in a scientific paper that makes a specific factual assertion about what the study found, {name}. It typically names precise elements: a specific brain region, a specific measurement, a particular comparison group. When you read 'experienced meditators showed significantly less activity in the default mode network during three different meditation practices, compared to non-meditators,' every word is doing specific work. Population, brain network, condition, comparison. That density of precision is what a real claim statement looks like.`,
+            },
+            {
+              word: `limitation acknowledgment`,
+              definition: `A sentence in a scientific paper where researchers openly state what their study did not show or where the findings have boundaries. A hallmark of honest scientific writing.`,
+              audioPrompt: `A limitation acknowledgment is a sentence where researchers openly state what their study did not show, {name}. It is one of the clearest markers of honest scientific writing. Real scientists know their study is one data point in a larger body of evidence. They know their methods have boundaries. They say so. A wellness blog or popular article would hide the limitations or not mention them at all. A real paper puts them in plainly. Learning to spot limitation acknowledgments helps you instantly distinguish careful research writing from promotional writing, regardless of what field you are reading in.`,
+            }
           ],
         },
 
@@ -134,6 +178,17 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `A free public database run by the US National Library of Medicine. Hosts abstracts of millions of peer-reviewed biomedical studies. Anyone can search it.`,
               audioPrompt: `PubMed is a free public database of biomedical research, {name}. It is run by the US National Library of Medicine. Anyone can search it. Most published medical and neuroscience studies have their abstract available on PubMed. An abstract is a one-paragraph summary of what the study did and found. Reading abstracts is a real skill anyone can develop. Next time someone tells you "studies show" something dramatic, try searching PubMed for what the studies actually say. You'll be surprised how often the actual research is more measured than the popular claim.`,
             },
+          ,
+            {
+              word: `abstract`,
+              definition: `A one-paragraph summary of a scientific study, written by the researchers, describing what was done and what was found. Freely available for most published studies on PubMed.`,
+              audioPrompt: `An abstract is a one-paragraph summary of a scientific study, written by the researchers who did the work, {name}. Most published medical and neuroscience studies have their abstract freely available on PubMed, the National Library of Medicine's database. Reading an abstract takes a few minutes. It tells you what the study did and what it found, in the researchers' own words. For most people and most purposes, reading the abstract is enough to check whether a popular claim accurately reflects what the actual study concluded. Learning to read abstracts is a real skill that takes practice but pays back for the rest of your life.`,
+            },
+            {
+              word: `selection bias`,
+              definition: `A distortion in evidence that occurs when the group studied is not representative of the broader population, producing results that do not generalize correctly.`,
+              audioPrompt: `Selection bias is a distortion in evidence that occurs when the group studied is not representative of the broader population, {name}. In the context of wellness testimonials, the people you hear from are self-selected: those who improved and chose to speak publicly. The people who tried the same method and did not improve are rarely heard. That is a form of selection bias. Asking who was selected and who was not is one of the most powerful questions for evaluating any claim that references research or personal accounts as evidence. It is a move that immediately improves how you read health-related information.`,
+            }
           ],
         },
 
