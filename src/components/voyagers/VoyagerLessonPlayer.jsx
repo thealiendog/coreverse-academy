@@ -283,7 +283,7 @@ function getScreenText(screen, childName) {
   const r = t => (t || '').replace(/\{name\}/g, childName);
   switch (screen.type) {
     case 'welcome':            return r(screen.audioPrompt || screen.guideText || screen.bodyText || screen.heading || '');
-    case 'magazine':           return r(screen.audioPrompt || (screen.paragraphs?.join(' ')) || '');
+    case 'magazine':           return r(screen.audioPrompt || [screen.headline, ...(screen.paragraphs ?? [])].filter(Boolean).join(' '));
     case 'story-beat':         return r(screen.audioPrompt || screen.paragraph || '');
     case 'reflection':         return r(screen.guideText   || screen.intro || screen.headline || '');
     case 'real-world':         return r(screen.guideText   || screen.guideContext || '');
