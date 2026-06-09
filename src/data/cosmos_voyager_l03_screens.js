@@ -50,7 +50,6 @@ const COSMOS_VOYAGER_L03 = {
               definition: `The branch of physics describing matter and energy at the smallest scales (atoms, subatomic particles, photons). Developed in the early 20th century. One of the most experimentally confirmed theories ever. Underlies essentially all modern electronics.`,
               audioPrompt: `Quantum mechanics is the branch of physics describing matter and energy at the smallest scales, {name}. Atoms, subatomic particles, photons of light. It was developed by physicists like Max Planck, Albert Einstein, Niels Bohr, Werner Heisenberg, and Erwin Schrödinger in the early 20th century. Quantum mechanics is one of the most experimentally confirmed theories in all of science. Its predictions for the magnetic moment of the electron agree with experiment to more than ten decimal places. It underlies essentially all modern electronics: lasers, LEDs, transistors, computer chips, MRI machines, solar panels, GPS, fiber optics. Every time you use your phone, you are testing quantum mechanics. It passes.`,
             },
-          ,
             {
               word: `quantum electrodynamics`,
               definition: `The quantum-mechanical theory of how light and matter interact. Its predictions for the magnetic moment of the electron agree with experiment to more than ten decimal places, making it one of the most precisely tested theories in all of science.`,
@@ -82,7 +81,6 @@ const COSMOS_VOYAGER_L03 = {
               definition: `Foundational quantum experiment: particles fired one at a time through a barrier with two slits produce interference patterns as if each went through both slits, but only when you don't measure which slit. The "weirdness" of quantum mechanics in concrete form.`,
               audioPrompt: `The double-slit experiment is foundational to quantum mechanics, {name}. Fire single particles—electrons, photons, even larger molecules—at a barrier with two slits in it. On a detector behind the barrier, the particles produce an interference pattern. It looks as if each particle went through both slits and interfered with itself. But if you measure which slit each particle actually went through, the interference pattern vanishes and the particles behave classically. This experiment has been performed thousands of times. The strangeness is real. Physicists still actively disagree about what it means for reality. The math agrees. The interpretations disagree.`,
             },
-          ,
             {
               word: `quantum entanglement`,
               definition: `A quantum phenomenon in which two particles become correlated so that measuring one instantly determines the state of the other, even across large distances. Confirmed by thousands of experiments, including Bell test experiments across hundreds of kilometers.`,
@@ -115,7 +113,6 @@ const COSMOS_VOYAGER_L03 = {
               definition: `Term coined by Nobel laureate physicist Murray Gell-Mann to describe pseudoscientific misuse of quantum terminology. Real quantum phenomena get borrowed, stripped of their mathematical content, and applied to human-scale claims they don't support.`,
               audioPrompt: `Quantum flapdoodle is a term coined by Murray Gell-Mann, {name}. He was a Nobel Prize-winning physicist and one of the architects of modern particle physics. He used the term to describe pseudoscientific misuse of quantum terminology. The pattern: real quantum phenomena like superposition or entanglement get borrowed, stripped of their mathematical content, and applied to human-scale claims they don't actually support. "Quantum healing," "quantum manifestation," "quantum energy water" are all examples. None of them connect to actual quantum mechanics at the appropriate scale, with citations to peer-reviewed physics. Recognizing this pattern is one of the most useful skills in modern media literacy.`,
             },
-          ,
             {
               word: `quantum healing`,
               definition: `A pseudoscientific claim that quantum mechanics allows healing through directed intention at cells. Named as a prime example of quantum flapdoodle by critics: it borrows quantum terminology without connecting to any actual quantum phenomenon at the appropriate scale.`,
@@ -148,7 +145,6 @@ const COSMOS_VOYAGER_L03 = {
               definition: `The process by which quantum superposition is destroyed when a quantum system interacts with its environment. Explains why quantum effects don't appear at everyday scales. The central challenge in building quantum computers.`,
               audioPrompt: `Decoherence is the process by which quantum superposition is destroyed when a quantum system interacts with its environment, {name}. The moment a quantum system interacts with anything—light, air molecules, a measurement device—the superposition collapses into one definite state. Large objects like cells and people constantly interact with their environments. Trillions of air molecules and photons bombard your body every second. Any quantum superposition you could be in would decohere instantly. This is why classical physics works at human scales even though quantum mechanics is the underlying theory. It is also why building quantum computers is so hard. The whole technical challenge is preventing decoherence long enough to compute.`,
             },
-          ,
             {
               word: `quantum computers`,
               definition: `Computing devices that exploit quantum-mechanical effects like superposition and entanglement to perform certain calculations. They must be isolated to near-absolute-zero temperatures to prevent decoherence, making building them one of the hardest engineering challenges of our time.`,
@@ -180,7 +176,6 @@ const COSMOS_VOYAGER_L03 = {
               definition: `Different views on what quantum mechanics' mathematical formalism is actually describing about reality. Copenhagen, many-worlds, pilot wave theory, QBism, and others. All agree on the math and predictions. They disagree on what the math means. Active debate for nearly a century.`,
               audioPrompt: `An interpretation of quantum mechanics is a view on what the mathematical formalism is actually describing about reality, {name}. Copenhagen interpretation, many-worlds, pilot wave theory, QBism, and others. All interpretations agree on the math of quantum mechanics. All agree on the experimental predictions. They disagree on what the math is describing. Does superposition mean the particle is really in two places at once? Are there really parallel universes? Is the wave function physically real or just a calculation tool? Physicists have debated these questions for nearly a century without resolution. This active disagreement is a healthy feature of the field, not a flaw. Knowing that the math is settled but the interpretation isn't helps you evaluate claims that mix the two.`,
             },
-          ,
             {
               word: `Copenhagen interpretation`,
               definition: `The oldest and most widely taught interpretation of quantum mechanics, holding that quantum systems exist in superposition until measured, at which point the wave function collapses to a definite state. All interpretations agree on the math; they disagree on what the math means.`,

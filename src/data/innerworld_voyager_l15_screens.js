@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `Jung's term for a layer of mind he proposed is shared across all humans, beneath personal experience, containing universal patterns called archetypes.`,
               audioPrompt: `The collective unconscious is Jung's term for a layer of mind he proposed is shared across all humans, {name}. It lies beneath personal experience. It contains universal patterns called archetypes that show up in dreams, myths, art, and inner experience across cultures. Whether the collective unconscious literally exists as Jung described it, or whether the patterns are explained by shared brain architecture and cultural transmission, is still debated. But the observation that certain patterns recur across very different cultures is real. The question is what to make of it.`,
             },
-          ,
             {
               word: `personal unconscious`,
               definition: `In Jungian psychology, the layer of the psyche containing forgotten or repressed material from personal experience. Distinguished from the collective unconscious, which is not individually acquired.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `In Jungian psychology, a universal organizing pattern that shows up in myths, dreams, art, and inner experience across cultures. Not a specific image but a template that takes many forms.`,
               audioPrompt: `An archetype, in Jungian psychology, is a universal organizing pattern, {name}. Not a specific image or character, but a template. The hero archetype isn't a particular hero. It's the pattern of someone who leaves the familiar, faces a trial, and returns transformed. This pattern shows up in Greek mythology, Hindu epics, Christian narrative, modern movies, and personal dreams. Same template, different specific expressions. Jung claimed these archetypes are part of a shared layer of mind across humans. Whether you accept that specific claim or not, the patterns themselves are real and recurring.`,
             },
-          ,
             {
               word: `anima and animus`,
               definition: `In Jungian psychology, the inner figures of the opposite gender that everyone carries in the unconscious. Associated with projection in relationships and with inner experience during major life transitions.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `Joseph Campbell's mapped pattern (departure, trial, return) found in mythology across cultures. Famous example of an archetypal pattern with strong cross-cultural evidence.`,
               audioPrompt: `The hero's journey is a pattern mapped by Joseph Campbell in his 1949 book The Hero with a Thousand Faces, {name}. The pattern: someone leaves the familiar, crosses a threshold into the unknown, faces trials, encounters helpers and obstacles, has a transformative experience, and returns to the original world changed. Campbell traced this pattern through hundreds of myths from cultures around the world. It is one of the strongest cases for genuine cross-cultural pattern recurrence. George Lucas famously based the structure of Star Wars on Campbell's work. The pattern is well-documented; the deeper question of WHY it recurs is what's debated.`,
             },
-          ,
             {
               word: `cultural transmission`,
               definition: `The spread and adaptation of stories, symbols, and patterns between people and across generations. One of the mainstream cognitive-science alternatives to the literal Jungian collective unconscious for explaining cross-cultural patterns.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `A method of interpretation. Different hermeneutics emphasize different patterns and explanations. Useful when applied carefully, problematic when forced.`,
               audioPrompt: `A hermeneutic is a method of interpretation, {name}. Different hermeneutics emphasize different patterns and explanations. Archetypal psychology is one hermeneutic. Behavioral psychology is another. Family systems theory is another. Each illuminates certain things and misses others. Good thinkers know which hermeneutic they're using and when it's appropriate. They use multiple hermeneutics to look at the same situation from different angles. The mistake is forcing all experience into a single hermeneutic until it stops adding information and starts distorting reality.`,
             },
-          ,
             {
               word: `projection (archetypal)`,
               definition: `In Jungian psychology, attributing an inner archetype or quality to another person rather than recognizing it in oneself. Can occur with the shadow, the anima or animus, the wise old one, and other archetypes.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L15 = {
               definition: `A statement proposing an explanation for observations. Different from a description of what was observed; a claim about why.`,
               audioPrompt: `A theoretical claim is a statement proposing an explanation for what was observed, {name}. There's a difference between observing that patients with no exposure to mythology produced mythological symbols, and claiming this proves a collective unconscious exists. The first is an observation. The second is a theoretical claim that goes beyond the observation. Both can appear in the same sentence in scholarly writing. Spotting the difference is part of careful reading. Theoretical claims need different evaluation than observations: they need to be assessed against other possible explanations.`,
             },
-          ,
             {
               word: `scholarly writing`,
               definition: `Academic writing produced for an expert audience. Characterized by precise terminology, qualifications, and denser sentence structure than popular writing. Reading it closely requires more careful attention.`,

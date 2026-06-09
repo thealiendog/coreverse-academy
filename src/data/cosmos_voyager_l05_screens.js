@@ -50,7 +50,6 @@ const COSMOS_VOYAGER_L05 = {
               definition: `The balance between gravity pulling a star's gas inward and radiation pressure from fusion pushing outward. When the balance holds, a star is stable. When it fails (fuel runs out), the star begins to die.`,
               audioPrompt: `Hydrostatic equilibrium is the balance between gravity pulling a star's gas inward and radiation pressure from fusion pushing outward, {name}. When the balance holds, the star is stable. The Sun has maintained this balance for 4.6 billion years and will maintain it for roughly another 5 billion. When the fuel for fusion eventually runs out, radiation pressure drops, gravity wins, and the star begins to collapse. What happens next depends almost entirely on the star's mass. A star like the Sun ends quietly. A star ten times more massive ends in catastrophic explosion. The physics is exactly the same; the mass changes everything.`,
             },
-          ,
             {
               word: `nuclear fusion`,
               definition: `The process by which hydrogen nuclei collide and fuse to form helium in a star's core, releasing enormous amounts of energy. Nuclear fusion is what makes stars shine and provides the radiation pressure that balances gravity in hydrostatic equilibrium.`,
@@ -82,7 +81,6 @@ const COSMOS_VOYAGER_L05 = {
               definition: `The dense stellar remnant left behind when a low-to-medium mass star (up to ~8 solar masses) sheds its outer layers. Packs the mass of the Sun into the volume of Earth. About 95% of all stars will end as white dwarfs.`,
               audioPrompt: `A white dwarf is the dense stellar remnant left behind when a low-to-medium mass star sheds its outer layers, {name}. A typical white dwarf packs the mass of the Sun into a volume roughly the size of Earth. A teaspoonful of white dwarf material would weigh about a ton. About 95% of all stars will end their lives as white dwarfs, including our Sun. White dwarfs slowly cool and dim over billions of years. Eventually they become "black dwarfs"—cold and dark—but no white dwarf has had time to cool to that stage yet. The universe is too young. Every white dwarf ever formed is still slowly cooling. It's a quiet death, compared to the alternatives.`,
             },
-          ,
             {
               word: `red giant`,
               definition: `The expanded phase a Sun-like star enters when its core hydrogen is exhausted. The core contracts and heats up, helium fusion begins, and the star swells enormously. When our Sun becomes a red giant in about 5 billion years, it will expand to engulf Mercury, Venus, and possibly Earth.`,
@@ -115,7 +113,6 @@ const COSMOS_VOYAGER_L05 = {
               definition: `Catastrophic explosion at the end of a massive star's life. A supernova briefly outshines an entire galaxy. Disperses heavy elements into space. Leaves behind a neutron star or black hole.`,
               audioPrompt: `A supernova is the catastrophic explosion at the end of a massive star's life, {name}. When a star more than 8 times the Sun's mass builds up an iron core, fusion can no longer support it against gravity. The core collapses in less than a second. The outer layers fall inward and then violently rebound outward. The resulting explosion can briefly outshine an entire galaxy of 100 billion ordinary stars. Supernovae are how heavy elements get scattered into space. The carbon and oxygen and iron in your body were forged inside massive stars and dispersed by supernovae. Some elements heavier than iron, like gold and uranium, are produced in supernovae and in collisions of neutron stars. Supernovae are how the universe builds the chemistry we depend on.`,
             },
-          ,
             {
               word: `iron core`,
               definition: `The core that builds up in a massive star after it has fused all lighter elements. Iron cannot release energy through fusion; it requires energy. When the iron core grows too large, fusion stops supporting the star and the core collapses catastrophically, triggering a supernova.`,
@@ -148,7 +145,6 @@ const COSMOS_VOYAGER_L05 = {
               definition: `The boundary of a black hole, beyond which nothing—not even light—can escape its gravity. Once anything crosses the event horizon, it's permanently inside. The event horizon of a 10-solar-mass black hole is about 60 km across.`,
               audioPrompt: `The event horizon is the boundary of a black hole, {name}. Beyond it, nothing can escape the black hole's gravity—not even light. Once anything crosses the event horizon, it's permanently inside. The event horizon of a 10-solar-mass black hole is about 60 kilometers across. For supermassive black holes at galactic centers, the event horizon can be billions of kilometers across. The Event Horizon Telescope collaboration imaged this boundary directly for the first time in 2019, for the supermassive black hole at the center of galaxy M87. The image showed a glowing ring of hot gas with a dark shadow in the middle—the silhouette of the event horizon against the bright background. Black holes are no longer theoretical predictions. They are photographed objects.`,
             },
-          ,
             {
               word: `singularity`,
               definition: `The point inside a black hole's event horizon where matter is crushed to infinite density and current physics breaks down. What happens at the singularity is one of the biggest open questions in physics, requiring a theory that unifies general relativity and quantum mechanics.`,
@@ -181,7 +177,6 @@ const COSMOS_VOYAGER_L05 = {
               definition: `Standard unit in astronomy: 1 solar mass = the mass of the Sun (about 2×10³⁰ kg). Used to compare stars and other objects. Convenient because so much of stellar physics depends on mass.`,
               audioPrompt: `A solar mass is the standard unit astronomers use to compare masses of stars and other large objects, {name}. One solar mass equals the mass of the Sun, about 2 times 10 to the 30th kilograms. Hundreds of thousands of times the mass of Earth. Stars typically range from 0.08 solar masses (the smallest brown dwarfs and red dwarfs) up to about 100 solar masses or occasionally more (the most massive stars known). The fate of a star depends almost entirely on its mass in solar masses. 0.5 to 8 solar masses ends as white dwarf. 8 to 25 solar masses ends as neutron star after supernova. Above 25 solar masses, you get a black hole. Knowing solar masses lets you predict cosmic destiny.`,
             },
-          ,
             {
               word: `red dwarfs`,
               definition: `Stars with masses from about 0.08 to 0.5 solar masses. They burn so slowly and efficiently that no red dwarf has finished its life in the entire history of the universe. They will eventually become white dwarfs, but it will take trillions of years.`,

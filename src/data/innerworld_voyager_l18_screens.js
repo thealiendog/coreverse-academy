@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `Reports made by people who were clinically dead or near death and were then revived, often with consistent features across cultures (out-of-body sensation, tunnel, light, life review).`,
               audioPrompt: `A near-death experience, often called an NDE, is a report made by someone who was clinically dead or near death and was then revived, {name}. The reports are remarkably consistent across cultures and individuals: an out-of-body sensation, movement through a tunnel toward light, encounters with figures, a life review, and a return decision. Researchers have collected thousands of cases over decades. The reports themselves are real. People are not making them up. What's contested is what causes them and what they mean.`,
             },
-          ,
             {
               word: `life review`,
               definition: `A commonly reported feature of near-death experiences in which a person perceives significant moments of their life and often feels them from the perspective of others. Consistent across cultures and belief backgrounds.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `Insufficient oxygen reaching brain tissue. Known to produce visual phenomena including tunnel vision and altered states of consciousness. A leading proposed mechanism for some NDE features.`,
               audioPrompt: `Hypoxia is insufficient oxygen reaching brain tissue, {name}. It is known to produce specific visual and conscious effects, including tunnel vision and bright light experiences. During cardiac arrest, the brain becomes severely hypoxic within seconds. Many of the visual features of NDEs map onto hypoxia effects studied in laboratory conditions. Hypoxia is a well-documented physiological mechanism. The question is whether it fully explains the more elaborate features of NDEs (life review, encounters with figures, sense of being more conscious than usual) or whether something else is also involved.`,
             },
-          ,
             {
               word: `temporoparietal junction`,
               definition: `A brain region that, when stimulated or disrupted, can produce out-of-body sensations. Its disruption during near-death events is one of the proposed neuroscience mechanisms for the out-of-body feature of NDEs.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `Perception of real events or information that is later verified to be accurate. In NDE research, claims of veridical perception during clinical death are contested but actively studied.`,
               audioPrompt: `Veridical perception is perception of real events or information that is later verified to be accurate, {name}. In NDE research, the claim is that some patients report seeing or hearing things during clinical death that they could not have known by ordinary means, and which turn out to be accurate. The most rigorous study of this is Sam Parnia's AWARE study at Southampton. The findings are real but their interpretation is contested. Critics argue the perceptions might have been reconstructed from information acquired at other times. Defenders argue the methodology controls for this. The debate is unresolved.`,
             },
-          ,
             {
               word: `AWARE study`,
               definition: `A multi-year prospective study led by Sam Parnia at the University of Southampton investigating whether cardiac arrest survivors report verifiable observations during periods of clinical death. One of the most methodologically careful NDE studies conducted.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `The willingness to acknowledge what you don't know and to hold beliefs proportional to actual evidence. Particularly important for contested questions.`,
               audioPrompt: `Intellectual humility is the willingness to acknowledge what you don't know, {name}. It is one of the most important features of careful thinking. Most contested questions don't have clean answers. The most accurate position is often the most uncertain one. Intellectual humility lets you say "I don't know if NDEs are fully explained by brain chemistry or whether they point to something else. Both views have something to them. I'm not going to commit to either until the evidence is stronger." That position is harder than picking a side. It is also usually more accurate when the evidence genuinely doesn't settle the question.`,
             },
-          ,
             {
               word: `taking reporters seriously`,
               definition: `The intellectual practice of treating NDE reporters as genuine witnesses to their own experience while recognizing that their interpretation of what it means is not automatically correct.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L18 = {
               definition: `An open question where current evidence does not clearly favor one answer. Different from manufactured doubt and from refusing to engage; intellectual honesty about what is actually known.`,
               audioPrompt: `Genuine uncertainty is an open question where current evidence does not clearly favor one answer, {name}. It is different from manufactured doubt, where people pretend something is uncertain to avoid acknowledging clear evidence. It is also different from refusing to engage, where people throw up their hands instead of trying to think carefully. Genuine uncertainty is intellectual honesty about what is actually known and not yet known. NDEs are a good example. Climate change is not, because the evidence there is clear. Knowing which questions have genuine uncertainty and which have clear answers is itself a real skill.`,
             },
-          ,
             {
               word: `hard problem of consciousness`,
               definition: `The unresolved philosophical and scientific question of why there is subjective experience at all — why physical brain processes give rise to the felt quality of inner life. Named as one of the genuinely contested open questions in this band.`,

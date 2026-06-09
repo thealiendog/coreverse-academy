@@ -51,7 +51,6 @@ const COSMOS_VOYAGER_L01 = {
               definition: `The part of the universe we can theoretically see, limited by the speed of light and the age of the universe. Roughly 93 billion light-years across. There may be vastly more universe beyond this we cannot observe.`,
               audioPrompt: `The observable universe is the part of the universe we can theoretically see, {name}. It is limited by two things: the speed of light, which sets how fast information can travel, and the age of the universe, which limits how long light has had to reach us. Light from beyond the observable universe simply hasn't had time to get here yet. The observable universe is roughly 93 billion light-years across. Why isn't it just 13.8 billion light-years, the universe's age times the speed of light? Because space itself has been expanding, so light that started reaching us 13 billion years ago came from points that are now much further away. There may be vastly more universe beyond what we can observe. We may never know how much.`,
             },
-          ,
             {
               word: `cosmic microwave background`,
               definition: `Leftover heat radiation from the early universe, used as one of three independent methods to measure the universe's age at 13.8 billion years. All three methods give roughly the same answer.`,
@@ -84,7 +83,6 @@ const COSMOS_VOYAGER_L01 = {
               definition: `The philosophical position that everything that exists is fundamentally physical. Mental states emerge from physical brains. The dominant framework in modern science. Sometimes called physicalism.`,
               audioPrompt: `Materialism is the philosophical position that everything that exists is fundamentally physical, {name}. Sometimes called physicalism. Stars, planets, brains, thoughts, this lesson: all ultimately matter and energy moving through space and time according to physical laws. Mental states emerge from physical brains. Consciousness is something that emerges from sufficiently complex arrangements of matter. Materialism is the dominant framework in modern science and has produced essentially all of modern technology. Its biggest challenge is explaining consciousness: why is there something it is like to be you, when all that's happening physically is patterns of neurons firing? Materialists argue this gap will eventually be explained scientifically. Critics argue it's a deep category difference.`,
             },
-          ,
             {
               word: `hard problem of consciousness`,
               definition: `The philosophical puzzle of why physical processes in the brain produce felt, subjective experience. Materialists argue it is a gap in understanding; critics argue it is a fundamental category difference between physical processes and experience.`,
@@ -117,7 +115,6 @@ const COSMOS_VOYAGER_L01 = {
               definition: `The philosophical position that the universe is fundamentally mental or experiential, and "matter" is derived from or made of mind. Has roots in ancient Greek and Eastern philosophy. Modern version defended by philosophers like Bernardo Kastrup.`,
               audioPrompt: `Idealism is the philosophical position that the universe is fundamentally mental or experiential, {name}. What we call "matter" is, in some deep sense, derived from or made of mind. This view is older than materialism. The Western tradition includes idealists going back to Plato. Eastern traditions like Hindu Advaita Vedanta, certain Buddhist schools, and Taoist thought have held versions of idealism for millennia. Modern idealism is defended by philosophers like Bernardo Kastrup. The argument: the only thing any of us ever directly encounters is experience. Matter is a concept we construct from patterns in experience. Experience is what's fundamental.`,
             },
-          ,
             {
               word: `analytic idealism`,
               definition: `A modern form of idealism defended by philosophers like Bernardo Kastrup, arguing that experience is the fundamental nature of reality and that matter is a concept constructed from patterns in experience.`,
@@ -150,7 +147,6 @@ const COSMOS_VOYAGER_L01 = {
               definition: `Nick Bostrom's 2003 argument that we are more likely to be simulated conscious beings than "original" ones, given assumptions about advanced civilizations running many simulations. Taken seriously by some physicists and philosophers.`,
               audioPrompt: `The simulation hypothesis is Nick Bostrom's 2003 argument, {name}. The reasoning: if a civilization ever becomes advanced enough to run detailed simulations of conscious beings, and if such civilizations would run many such simulations for research or entertainment or other reasons, then the number of simulated conscious beings would vastly exceed the number of original conscious beings. By probability, we should expect that we are more likely simulated than original. The argument is taken seriously by physicists like Neil deGrasse Tyson and entrepreneurs like Elon Musk. Critics argue the assumptions are unverifiable and the probability calculation may be flawed. It is not established science. It is also not crazy. It is a hypothesis worth taking seriously while remaining uncertain.`,
             },
-          ,
             {
               word: `Nick Bostrom`,
               definition: `Philosopher who published the simulation argument in 2003, reasoning that if advanced civilizations run many simulations of conscious beings, simulated beings would vastly outnumber original ones, making it statistically likely we are simulated.`,
@@ -183,7 +179,6 @@ const COSMOS_VOYAGER_L01 = {
               definition: `Whether a claim can, in principle, be proven wrong by evidence. Philosopher Karl Popper argued this is what separates science from non-science. Materialism is highly falsifiable. The simulation hypothesis is questionably falsifiable.`,
               audioPrompt: `Falsifiability is whether a claim can, in principle, be proven wrong by evidence, {name}. Philosopher Karl Popper argued this is what separates science from non-science. A claim that no possible evidence could contradict is not a scientific claim. Materialism is highly falsifiable. Specific predictions about how matter behaves can be tested and proven wrong. The simulation hypothesis is questionably falsifiable. If the simulation is good enough, no internal experiment could distinguish simulation from base reality. This doesn't make the simulation hypothesis worthless. It does mean it sits outside science in a way materialism does not. Knowing the difference between falsifiable and non-falsifiable claims is one of the most important tools in cosmic thinking.`,
             },
-          ,
             {
               word: `quantization of spacetime`,
               definition: `The idea that space and time may be discrete at very small scales rather than continuous. One of the physical features that the simulation hypothesis accommodates as a possible artifact of an underlying computational substrate.`,

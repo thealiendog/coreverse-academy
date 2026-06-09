@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `Functional Magnetic Resonance Imaging. A brain scanning technology that measures activity by tracking blood flow to active regions in real time.`,
               audioPrompt: `fMRI stands for functional Magnetic Resonance Imaging, {name}. It is a brain scanning technology that doesn't just take a picture of your brain's structure. It measures activity by tracking where blood is flowing while the brain works. Active brain regions need more oxygen, so blood flow increases there. fMRI can detect this in real time. This is what transformed meditation research. Before fMRI, you could only ask meditators what they experienced. With fMRI, you can watch what's happening in their brain during meditation. The technology is what made the modern field possible.`,
             },
-          ,
             {
               word: `Mindfulness-Based Stress Reduction`,
               definition: `An 8-week meditation program developed by Jon Kabat-Zinn at the University of Massachusetts that brought mindfulness practice into mainstream medicine and clinical research.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `The parts of the brain made up mostly of neuron cell bodies. Often used as a rough measure of brain region size and activity capacity.`,
               audioPrompt: `Grey matter refers to the parts of the brain made up mostly of neuron cell bodies, {name}. Different brain regions have different amounts of grey matter. When neuroscientists talk about meditation increasing grey matter density in a certain region, they mean structural changes in how many neurons or how much neural tissue is concentrated there. These changes are subtle. They are measured with statistical comparisons between groups. They don't mean a meditator's brain looks dramatically different from anyone else's. They mean a measurable, statistically significant difference shows up when you compare hundreds of brains carefully.`,
             },
-          ,
             {
               word: `interoception`,
               definition: `Awareness of internal body signals, such as heartbeat, breath, and physical sensations. A function associated with specific brain regions studied in meditation research.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `The standard structure of scientific papers: Introduction, Methods, Results, and Discussion.`,
               audioPrompt: `IMRaD is the standard structure of scientific papers, {name}. It stands for Introduction, Methods, Results, and Discussion. Every section has a specific job. The Introduction explains why the study matters. Methods explain exactly what was done, in enough detail that another scientist could replicate. Results report what was measured. Discussion interprets the findings and discusses limitations. When you read a real paper, you can usually identify each section. This structure is one of science's quality controls. It forces researchers to make their methods transparent and their conclusions accountable.`,
             },
-          ,
             {
               word: `replicable`,
               definition: `A finding or method that other researchers, following the same procedure, can reproduce with consistent results. A core requirement of trustworthy science.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `Using cautious qualifying language ("may," "suggests," "appears to") rather than absolute claims. A hallmark of careful scientific writing.`,
               audioPrompt: `Hedging is using cautious qualifying language rather than absolute claims, {name}. Scientific writers hedge constantly. They say "the data suggest" rather than "the data prove." They say "appears to be associated with" rather than "causes." Hedging isn't weakness. It is honesty about uncertainty. A single study rarely proves anything definitively. It provides evidence that adds to other evidence. Strong hedging is one of the clearest signals you are reading careful scientific work. Confident absolute claims, by contrast, are a warning sign in any health-related writing.`,
             },
-          ,
             {
               word: `claim statement`,
               definition: `A sentence in a scientific paper that makes a specific factual assertion about what the study found, typically naming a precise measurement, brain region, or comparison group.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L07 = {
               definition: `A free public database run by the US National Library of Medicine. Hosts abstracts of millions of peer-reviewed biomedical studies. Anyone can search it.`,
               audioPrompt: `PubMed is a free public database of biomedical research, {name}. It is run by the US National Library of Medicine. Anyone can search it. Most published medical and neuroscience studies have their abstract available on PubMed. An abstract is a one-paragraph summary of what the study did and found. Reading abstracts is a real skill anyone can develop. Next time someone tells you "studies show" something dramatic, try searching PubMed for what the studies actually say. You'll be surprised how often the actual research is more measured than the popular claim.`,
             },
-          ,
             {
               word: `abstract`,
               definition: `A one-paragraph summary of a scientific study, written by the researchers, describing what was done and what was found. Freely available for most published studies on PubMed.`,

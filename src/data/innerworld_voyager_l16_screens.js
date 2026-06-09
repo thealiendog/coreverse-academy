@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L16 = {
               definition: `Any disciplined practice aimed at cultivating awareness, presence, or connection to something larger than the everyday self. Includes religious and secular forms.`,
               audioPrompt: `Spiritual practice in this lesson means any disciplined practice aimed at cultivating awareness, presence, emotional regulation, or connection to something larger than the everyday self, {name}. The word "spiritual" makes some people uncomfortable. If it does, you can substitute "contemplative practice" or "inner work." The label matters less than the substance. The substance: regular practices that have measurable effects on attention, emotion, and well-being. You don't need to believe anything specific to do them. You just need consistency and a real fit with your life.`,
             },
-          ,
             {
               word: `contemplative prayer`,
               definition: `A form of disciplined inner practice rooted in religious tradition, particularly Christian, aimed at cultivating presence and connection to something larger than the everyday self.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L16 = {
               definition: `An effect that builds up over time through repeated small actions. Most contemplative benefits are cumulative rather than immediate.`,
               audioPrompt: `Cumulative effect is when an effect builds up over time through repeated small actions, {name}. Most of what makes contemplative practice work is cumulative. A single 15-minute meditation does little. 15 minutes daily for six months produces measurable changes in attention, emotional regulation, and even brain structure. Daily ritual leverages cumulative effects. The trick is consistency, not intensity. This is also why occasional weekend intensives don't produce the benefits of regular practice. Cumulative beats intensive in most contemplative work.`,
             },
-          ,
             {
               word: `morning pages`,
               definition: `A daily ritual practice of writing three pages of stream-of-consciousness text each morning, described by Julia Cameron in The Artist's Way. One version of the daily ritual approach to contemplative practice.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L16 = {
               definition: `Contemplative practice woven into ordinary daily activities (walking, eating, showering) rather than performed at a designated practice time.`,
               audioPrompt: `Embedded practice is contemplative practice woven into ordinary daily activities, {name}. Walking to school as walking meditation. Eating breakfast with full attention. Showering as a presence practice. Embedded practice doesn't require finding extra time. It transforms time you're already spending. The strength is realism. The challenge is remembering. Without a fixed time, the practice depends on you noticing the opportunities. Some people pair embedded with a small daily ritual to anchor the day; that combination often works better than either alone.`,
             },
-          ,
             {
               word: `walking meditation`,
               definition: `A form of embedded mindfulness in which walking becomes a contemplative practice by bringing deliberate attention to the breath, the feet, the surroundings, and the changing thoughts.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L16 = {
               definition: `An intensive period of contemplative practice set apart from ordinary life. Ranges from a single day to weeks. For adolescents, age-appropriate versions are essential.`,
               audioPrompt: `A retreat is an intensive period of contemplative practice set apart from ordinary life, {name}. Retreats range from a single day to weeks or months. The pattern: you stop doing your normal activities and spend extended time in formal practice, often in silence, often with a teacher. Retreats can produce experiences that ordinary daily practice cannot. For adolescents, age-appropriate retreats are essential. Adult-style intensive retreats are generally not recommended for developing brains. Shorter, structured, well-supervised versions are appropriate. The principle is the same: depth comes from concentrated time set apart.`,
             },
-          ,
             {
               word: `adolescent neuroscience`,
               definition: `The scientific study of how developing brains in adolescence differ from adult brains in structure, function, and response to experiences. Relevant to which contemplative practices are appropriate for teens.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L16 = {
               definition: `A spiritual practice that combines daily ritual, embedded mindfulness, and periodic retreat over time. The mature long-term form most sustained practitioners arrive at.`,
               audioPrompt: `Integrated practice combines daily ritual, embedded mindfulness, and periodic retreat over time, {name}. Most adults who have sustained a contemplative practice for many years end up here. The daily ritual anchors the day. The embedded mindfulness saturates ordinary life. The periodic retreats produce depth that ordinary practice can't reach. The integration is more powerful than any single approach. But this is the mature long-term version. Most people start with one approach, sustain it, and add others gradually. Starting with the wrong approach for your life can derail the whole project. Choose carefully.`,
             },
-          ,
             {
               word: `life transitions`,
               definition: `Major changes in circumstances — school shifts, family changes, moves — that can disrupt daily ritual practices. A key challenge to the sustainability of the daily ritual approach.`,

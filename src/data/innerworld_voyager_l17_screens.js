@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `Jung's term (1952) for meaningful coincidence between events where the connection is felt to be deeper than mere chance. The concept is unfalsifiable in its strong form, which is part of what makes it contested.`,
               audioPrompt: `Synchronicity is Jung's term for meaningful coincidence, {name}. He introduced it in 1952. The claim: some coincidences feel too meaningful, too personally relevant, to be explained by chance alone. Jung proposed an acausal connecting principle, a way events could be related by meaning rather than by ordinary cause and effect. The famous example was a patient describing a scarab beetle dream as a real scarab tapped on the window. Whether synchronicity is a real principle or whether all such moments are explainable by ordinary statistics is the question of today's lesson.`,
             },
-          ,
             {
               word: `acausal connecting principle`,
               definition: `Jung's proposed mechanism for synchronicity: a way events can be related by shared meaning rather than by ordinary cause and effect. The concept operates alongside, not instead of, physical causation.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The well-documented tendency to notice, remember, and weight information that confirms existing beliefs while overlooking information that contradicts them.`,
               audioPrompt: `Confirmation bias is the tendency to notice, remember, and weight information that confirms what you already believe, {name}. It is one of the most documented and powerful cognitive biases in psychology. We notice the hits and miss the misses. We remember when our hunch was right and forget when it was wrong. In the context of synchronicity, we remember the times "I thought of someone and they texted" and forget the hundreds of times we thought of someone and nothing happened. The bias isn't a flaw to fix; it's a feature of how brains work. Knowing it helps you correct for it.`,
             },
-          ,
             {
               word: `Law of Large Numbers`,
               definition: `The mathematical principle that with enough events, even highly unlikely combinations become near-certain to occur somewhere. A central statistical explanation for why striking coincidences are expected, not surprising.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The study of subjective experience. Phenomenology takes seriously what something feels like, even when the underlying mechanism is debated.`,
               audioPrompt: `Phenomenology is the study of subjective experience, {name}. It takes seriously what something feels like, regardless of the underlying mechanism. The phenomenology of synchronicity is the felt experience of meaningful coincidence: the sense of connection, of being seen, of something pointing to you specifically. That experience is real even when the underlying cause is statistics plus pattern-finding. Phenomenology and mechanism are different questions. Both are legitimate. Mixing them up is a common source of error. Synchronicity may have ordinary causes and extraordinary phenomenology at the same time.`,
             },
-          ,
             {
               word: `unconscious pattern recognition`,
               definition: `The process by which the mind tracks and integrates information below the level of conscious awareness. Robert Hopcke's framework proposes that synchronicity moments can bring unconsciously processed patterns to conscious attention.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The tendency to perceive meaningful patterns or connections in random data. Related to confirmation bias. A well-documented cognitive pattern, sometimes adaptive, sometimes misleading.`,
               audioPrompt: `Apophenia is the tendency to perceive meaningful patterns or connections in random data, {name}. We see faces in clouds and electrical outlets. We hear words in random noise. We feel that random events have personal significance. Apophenia is a well-documented cognitive pattern. Sometimes it serves us: spotting a predator in patterns of grass was useful for survival. Sometimes it misleads us: seeing the universe sending personal signs in random coincidences. Knowing apophenia exists helps you check your own pattern-finding. The patterns might be real. Or they might be apophenia doing what brains do.`,
             },
-          ,
             {
               word: `spiritual self-importance`,
               definition: `A form of self-centeredness disguised as openness, in which a person interprets random coincidences as personal cosmic communications directed specifically at them.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L17 = {
               definition: `The willingness to acknowledge what you don't know and to hold beliefs proportional to the actual evidence. A cardinal virtue in good thinking.`,
               audioPrompt: `Epistemic humility is the willingness to acknowledge what you don't know, {name}. It is one of the most important features of good thinking. Most contested questions don't have clean answers. Most strong evidence supports moderate conclusions, not extreme ones. Epistemic humility lets you say "I don't know if synchronicity is a real principle or just statistics plus pattern-finding. Both views have something to them. I'm not going to commit to either until I have better evidence." That stance is harder than picking a side. It is also usually more accurate.`,
             },
-          ,
             {
               word: `markers of attention`,
               definition: `A reframe of synchronicity moments as indicators of where a person's inner attention is most alive, rather than as supernatural signals. A psychologically grounded use of meaningful coincidence without metaphysical claims.`,

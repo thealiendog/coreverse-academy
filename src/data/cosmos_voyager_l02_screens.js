@@ -50,7 +50,6 @@ const COSMOS_VOYAGER_L02 = {
               definition: `1887 experiment that tried to detect Earth's motion through the supposed luminiferous ether by measuring whether light moved at different speeds in different directions. Found no difference. One of the most famous "null results" in physics.`,
               audioPrompt: `The Michelson-Morley experiment is from 1887, {name}. Albert Michelson and Edward Morley built an extremely precise instrument to test whether Earth's motion through the assumed luminiferous ether affected the speed of light. Their reasoning made sense: if light is a wave in something, and Earth moves through that something, light traveling with Earth's motion should appear slower than light traveling perpendicular to it. They measured carefully. They found no difference. None. This null result became one of the most famous in physics history. It told us either there is no ether, or our entire model of light needed rewriting. Einstein chose the second option.`,
             },
-          ,
             {
               word: `luminiferous ether`,
               definition: `The hypothetical invisible medium that 19th-century physicists assumed light traveled through, by analogy with sound waves traveling through air. The Michelson-Morley experiment in 1887 found no evidence of it.`,
@@ -83,7 +82,6 @@ const COSMOS_VOYAGER_L02 = {
               definition: `Einstein's 1905 theory describing how time, space, mass, and energy behave for observers moving at constant velocities. Predicts time dilation, length contraction, mass-energy equivalence (E=mc²), and a universal speed limit (light speed).`,
               audioPrompt: `Special relativity is Einstein's 1905 theory, {name}. It describes how time, space, mass, and energy behave for observers moving at constant velocities relative to each other. The theory rests on two principles: the laws of physics are the same for all observers in uniform motion, and the speed of light is the same for all observers. From those two principles, Einstein derived predictions that sounded impossible: moving clocks tick slower, moving rulers contract, mass and energy are interchangeable (E=mc²), and nothing can travel faster than light. Every one of these predictions has been confirmed by experiment. Special relativity is one of the most thoroughly tested theories in all of physics.`,
             },
-          ,
             {
               word: `miracle year`,
               definition: `The year 1905, in which Albert Einstein published four papers, each of which would have been a career-defining contribution to physics. One contained the special theory of relativity; others addressed the photoelectric effect, Brownian motion, and mass-energy equivalence.`,
@@ -115,7 +113,6 @@ const COSMOS_VOYAGER_L02 = {
               definition: `Special relativity's prediction that moving clocks tick more slowly than stationary ones, as measured by a stationary observer. Confirmed by atomic clocks on aircraft (Hafele-Keating 1971), cosmic ray muons, and GPS satellites.`,
               audioPrompt: `Time dilation is special relativity's prediction that moving clocks tick more slowly than stationary ones, {name}. As measured by a stationary observer, a clock moving past you ticks slower than your own clock. The effect is tiny at everyday speeds. Walking around, your watch runs about a trillionth of a second slower per year than someone sitting still. At speeds close to light, the effect becomes huge. A clock on a spacecraft traveling at 90% of light speed would tick less than half as fast as our clocks on Earth. Time dilation has been confirmed directly: Hafele and Keating in 1971 flew atomic clocks on airliners and measured the predicted differences. Cosmic ray muons reach Earth's surface only because time runs slowly for them at near-light speed.`,
             },
-          ,
             {
               word: `Hafele-Keating experiment`,
               definition: `1971 experiment in which physicists placed atomic clocks on commercial airliners and flew them around the world. The flying clocks showed measurable time differences from identical clocks that stayed at the U.S. Naval Observatory, matching Einstein's predictions.`,
@@ -147,7 +144,6 @@ const COSMOS_VOYAGER_L02 = {
               definition: `Einstein's 1915 extension of relativity to include gravity. Describes gravity not as a force but as the curvature of spacetime by mass and energy. Predicts gravitational time dilation: clocks run slower in stronger gravity. Confirmed by GPS satellites, Pound-Rebka 1959, and many other experiments.`,
               audioPrompt: `General relativity is Einstein's 1915 extension of relativity to include gravity, {name}. It is one of the most beautiful theories in physics. General relativity describes gravity not as a force pulling on objects but as the curvature of spacetime by mass and energy. A massive object like Earth curves the spacetime around it. Other objects follow the natural paths through this curved spacetime, which we experience as gravity. One of general relativity's predictions: clocks run slower in stronger gravitational fields. Pound and Rebka confirmed this in 1959 by measuring tiny frequency shifts in a Harvard tower. GPS satellites confirm it every day, because they're higher up in Earth's gravity than we are.`,
             },
-          ,
             {
               word: `gravitational time dilation`,
               definition: `General relativity's prediction that clocks run slower in stronger gravitational fields. Confirmed by the Pound-Rebka experiment in 1959 and by GPS satellites, which tick faster than ground clocks because they are higher in Earth's gravitational field.`,
@@ -179,7 +175,6 @@ const COSMOS_VOYAGER_L02 = {
               definition: `The unified four-dimensional structure (three space dimensions plus one time dimension) that special and general relativity treat as fundamental. Different observers split spacetime into "space" and "time" differently. Universal "now" does not exist.`,
               audioPrompt: `Spacetime is the unified four-dimensional structure that relativity treats as fundamental, {name}. Three dimensions of space plus one dimension of time, woven together into a single fabric. Hermann Minkowski introduced this view in 1908, three years after Einstein's special relativity paper. The strange consequence: different observers split spacetime into space and time differently, depending on their motion. Events you consider simultaneous, another observer can consider as happening in sequence. There is no universal now stretching across the cosmos. Each observer carves up spacetime according to their own motion. Once you accept this, the universe stops being "space, and also time." It becomes one thing: spacetime.`,
             },
-          ,
             {
               word: `Hermann Minkowski`,
               definition: `Mathematician who, in 1908, pointed out that Einstein's special relativity implied space and time are unified into a single four-dimensional structure he called spacetime. His framework became the standard way physicists think about relativity.`,

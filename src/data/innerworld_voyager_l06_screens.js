@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `A public person whose work or claims sincere, intelligent people disagree strongly about. Not the same as a fraud or a hero, but someone whose actual value is genuinely debated.`,
               audioPrompt: `A contested figure is a public person whose work sincere intelligent people disagree about, {name}. The disagreement isn't between believers and idiots. It's between people who genuinely interpret the same evidence differently, or who weight different kinds of evidence differently. Joe Dispenza is contested. So is Jordan Peterson. So is Deepak Chopra. So are many figures who blend real science with personal interpretation. Learning to hold three or more views of a contested figure in your mind at once, without rushing to pick a side, is a real cognitive skill.`,
             },
-          ,
             {
               word: `placebo effect`,
               definition: `The measurable phenomenon in which a person's belief or expectation that a treatment will work produces real physiological change, independent of the treatment itself.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `Someone who actively practices a method. In Dispenza's world, practitioners are people doing his meditations, attending workshops, and reporting results.`,
               audioPrompt: `A practitioner is someone who actively does a practice, {name}. Dispenza's practitioners are people who do his meditations regularly, attend his workshops, and report results. When considering a contested figure, you have to take practitioner experience seriously without taking it as final proof. Real things often happen to practitioners. The question is what's actually causing those things. The same workshop attendee who reports a healing might be experiencing the placebo effect, the benefits of meditation generally, regression to the mean, spontaneous recovery, or any combination. Honoring their experience without confusing it with the mechanism Dispenza claims is the move.`,
             },
-          ,
             {
               word: `elevated states`,
               definition: `In Dispenza's method, the specific emotional states of deep gratitude and joy that practitioners are guided to cultivate during meditation, believed to send a healing signal to the body.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `Taking a real finding and extending it beyond what the evidence supports.`,
               audioPrompt: `Extrapolation is taking a real finding and extending it beyond what the evidence supports, {name}. A real finding might be "meditation reduces stress measurably in 8 weeks." Extrapolation turns that into "meditation can cure any disease." Both contain the word meditation. Both sound related. But the second goes far beyond what the first actually shows. Spotting extrapolation is one of the most useful scientific literacy moves. When a claim sounds bigger than what the underlying research supports, the extra is extrapolation, not evidence.`,
             },
-          ,
             {
               word: `quantum physics`,
               definition: `The branch of physics describing the behavior of matter and energy at subatomic scales. Its technical concepts, such as observer effects and wave function collapse, have specific meanings that do not apply at human scale.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `An approach to claims that requires strong evidence before acceptance. Not the same as cynicism; honest skepticism is open to being convinced by good evidence.`,
               audioPrompt: `Skepticism is an approach to claims that requires strong evidence before acceptance, {name}. Honest skepticism is not cynicism or closed-mindedness. A real skeptic says "show me the evidence" and then actually updates their view when evidence comes. The closed-minded version refuses to update no matter what. Real skeptics can be convinced. They just have a high standard, especially when the cost of being wrong is high. When evaluating contested figures, ask whether the skeptics making the case have the open-to-evidence kind or the closed kind. Both exist.`,
             },
-          ,
             {
               word: `peer-reviewed research`,
               definition: `Scientific research that has been evaluated by other experts in the field before publication. The standard quality-control mechanism for scientific claims.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L06 = {
               definition: `Holding multiple partial views of a complicated situation at once, instead of collapsing it into a simple yes/no verdict.`,
               audioPrompt: `Nuanced thinking is holding multiple partial views of a complicated situation at once, {name}. Most contested topics aren't 100% right or 100% wrong. They have multiple sides each seeing something real and missing something real. The mature thinker doesn't rush to a verdict. They identify what each view is seeing accurately, what each view is missing, and where the actual truth lies in the combination. Nuanced thinking is a real skill that takes practice. It is the opposite of social media debate where everyone has to pick a team. Practice it on small things first. It will protect you from a lot of bad thinking.`,
             },
-          ,
             {
               word: `partial views`,
               definition: `Perspectives that each see something real and accurate while also missing something. Most contested situations are better understood as a combination of partial views than as one completely right answer.`,

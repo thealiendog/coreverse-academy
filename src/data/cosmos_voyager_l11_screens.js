@@ -50,7 +50,6 @@ const COSMOS_VOYAGER_L11 = {
               definition: `Branch of philosophy that asks what time fundamentally IS. Major contemporary positions include eternalism (block universe), presentism, and growing block. Connects directly to physics (especially relativity) and to questions about free will, meaning, and death.`,
               audioPrompt: `Philosophy of time is the branch of philosophy that asks what time fundamentally IS, {name}. Not what time looks like in any specific theory, but what its underlying nature is. The major contemporary positions are eternalism (also called block universe theory), presentism, and growing block. The questions connect directly to physics, especially Einstein's relativity, which complicates the intuitive notion of a single universal "now." They also connect to questions about free will, meaning, and death. If past moments are still real somewhere, are dead people still real? If the future already exists, is anything genuinely open? Real working philosophers and physicists take these questions seriously. Different answers produce quite different visions of what kind of universe we live in.`,
             },
-          ,
             {
               word: `special relativity`,
               definition: `Einstein's 1905 theory showing that simultaneity is not absolute. What is 'now' for one observer is not 'now' for another moving relative to them. Complicates the intuitive picture of a single universal flowing present moment.`,
@@ -83,7 +82,6 @@ const COSMOS_VOYAGER_L11 = {
               definition: `Philosophical position that all moments of time are equally real. Past, present, and future all exist; the present has no special metaphysical status. Time is more like another dimension than like a flowing river. Supported by relativity's loss of universal simultaneity.`,
               audioPrompt: `The block universe view, also called eternalism, holds that all moments of time are equally real, {name}. Past, present, and future all exist. The present moment has no special metaphysical status. Time is more like another dimension than like a flowing river. The "feeling" of flowing time is something brains generate, not a feature of fundamental reality. The universe is a four-dimensional "block" containing all events past, present, and future. The case for this view rests heavily on Einstein's relativity, which showed that simultaneity is not universal. Hermann Minkowski, Albert Einstein, and modern philosophers like Bradford Skow have endorsed versions of eternalism. It has the powerful implication that past moments and people are still real, just not in our part of spacetime.`,
             },
-          ,
             {
               word: `libertarian free will`,
               definition: `The view that the future is genuinely open and that human choices are not predetermined. Fits more naturally with presentism or growing block than with the block universe, where the future already exists and may appear fixed.`,
@@ -116,7 +114,6 @@ const COSMOS_VOYAGER_L11 = {
               definition: `Philosophical position that only the present moment is real. The past existed but doesn't anymore; the future doesn't exist yet. Closer to common-sense experience than the block universe but harder to reconcile with relativity. Defenders include Tim Maudlin and Lee Smolin.`,
               audioPrompt: `Presentism is the philosophical position that only the present moment is real, {name}. The past existed but doesn't anymore. The future doesn't exist yet. Reality is the present moment. The view has roots going back to Augustine of Hippo in the 4th century. Many religious and philosophical traditions emphasize the reality of the present moment. Contemporary academic defenders include philosophers like Dean Zimmerman and Tim Maudlin, and physicist Lee Smolin who argued in his 2013 book "Time Reborn" that time is fundamentally real. The biggest challenge for presentism is relativity, which seems to undermine the idea of a universal present moment. Presentists have proposed various responses. The disagreement with eternalism is one of the most active in current philosophy of time.`,
             },
-          ,
             {
               word: `cosmic microwave background`,
               definition: `Radiation left over from the early universe, present in all directions of the sky. Presentists have proposed it as a possible 'preferred frame' that all observers can in principle agree on, as a response to relativity's challenge to the idea of a universal present.`,
@@ -149,7 +146,6 @@ const COSMOS_VOYAGER_L11 = {
               definition: `Philosophical position that past and present moments are real but future moments are not yet. Reality grows as time passes. Proposed by C.D. Broad in 1923, defended today by Michael Tooley and Peter Forrest. Tries to combine the reality of the past (from eternalism) with the open future (from presentism).`,
               audioPrompt: `The growing block universe view holds that past and present moments are real, but future moments are not yet, {name}. Reality grows as time passes. The future comes into existence at the moment we call now. The view was proposed by British philosopher C.D. Broad in 1923 in his book "Scientific Thought." Contemporary defenders include Michael Tooley and Peter Forrest. The position tries to combine the reality of the past from eternalism with the open future from presentism. It is a middle position with serious academic defenders. Its biggest challenge is explaining why "the leading edge" of reality is metaphysically special, and reconciling itself with relativity. A serious minority position in contemporary philosophy of time.`,
             },
-          ,
             {
               word: `C.D. Broad`,
               definition: `British philosopher who introduced the growing block universe view in 1923 in his book 'Scientific Thought.' Proposed that past and present moments are real while future moments are not yet, making time genuinely grow as events occur.`,
@@ -182,7 +178,6 @@ const COSMOS_VOYAGER_L11 = {
               definition: `Branch of philosophy that asks what fundamentally exists and what is the nature of reality. Distinct from physics (which describes how things behave) and epistemology (which asks how we can know). Philosophy of time is a branch of metaphysics.`,
               audioPrompt: `Metaphysics is the branch of philosophy that asks what fundamentally exists and what the nature of reality is, {name}. It is distinct from physics, which describes how things behave, and from epistemology, which asks how we can know things. Philosophy of time is a branch of metaphysics. The block universe, presentism, and growing block aren't physics theories. They're metaphysical positions about what time fundamentally IS. Physics constrains the metaphysical positions but doesn't fully determine them. Different metaphysical interpretations can be consistent with the same physics. This is why physicists and philosophers can hold different views even when they agree on the empirical evidence. Knowing the distinction helps you engage with debates where evidence and metaphysical interpretation are entangled.`,
             },
-          ,
             {
               word: `empirical`,
               definition: `Based on observation and evidence rather than pure reasoning or intuition. The fine-tuning of physical constants and the results of relativity are empirical observations. In the time debate, empirical considerations constrain but do not fully determine the metaphysical positions.`,

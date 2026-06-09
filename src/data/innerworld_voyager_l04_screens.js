@@ -55,7 +55,6 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `The most common epigenetic tag. Tiny chemical molecules attach to genes and silence them.`,
               audioPrompt: `Methylation is the most studied epigenetic tag, {name}. Tiny chemical molecules called methyl groups attach to specific spots on your DNA and quiet those genes down. When a gene gets methylated, it's like someone put a 'do not read' sticker on that part of the script. Your body adds methyl tags and removes them constantly based on what's happening to you. Stress, diet, sleep, and exercise all influence methylation patterns. This is a real biological process you can measure in a lab.`,
             },
-          ,
             {
               word: `acetylation`,
               definition: `An epigenetic tag that opens genes up to be read and used by a cell, as opposed to methylation, which silences genes.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `Before birth, while still developing in the womb.`,
               audioPrompt: `Prenatal means before birth, {name}. The Dutch Hunger Winter babies were affected prenatally, meaning the famine happened while they were still in the womb. This matters because the womb is when many epigenetic patterns are first set up. What a mother experiences during pregnancy, including stress, nutrition, and trauma, can influence which genes get methylated in her developing baby. That influence can last a lifetime. Scientists now study prenatal effects as one of the most important windows for setting up long-term health.`,
             },
-          ,
             {
               word: `IGF2`,
               definition: `A specific gene that affects growth and metabolism. Dutch Hunger Winter research found measurably less methylation at this gene in famine-exposed individuals 60 years after the event, providing the first solid evidence of a lifetime epigenetic mark from a prenatal environmental event.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `Across generations. Effects that pass from parents or grandparents to children.`,
               audioPrompt: `Transgenerational means across generations, {name}. Some epigenetic researchers have found evidence that intense experiences in one generation can leave biological marks in their children or grandchildren. Rachel Yehuda's research on Holocaust survivors and their children is the most famous example. This is still being actively debated by scientists. The effects in animals are well-established. The effects in humans are real but more subtle than pop science often claims. Be careful: transgenerational effects don't mean you're cursed by what your grandparents went through. They mean your biology has memory.`,
             },
-          ,
             {
               word: `cortisol`,
               definition: `A hormone the body produces under stress. High cortisol levels change methylation patterns at genes involved in inflammation, mood regulation, and immune function.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `When someone takes a real scientific finding and extends it far beyond what the evidence actually supports.`,
               audioPrompt: `Overreach is when someone takes a real scientific finding and stretches it way beyond what the evidence shows, {name}. Epigenetics has real findings: yes, environment affects gene expression. The overreach version: 'you can rewrite your DNA with affirmations and cure your trauma in 30 days.' The real finding is exciting and important. The overreach version is misleading because it gives people false hope and overpromises. Learning to notice overreach is one of the most useful scientific literacy skills. It will protect you for the rest of your life.`,
             },
-          ,
             {
               word: `scientific literacy`,
               definition: `The ability to read, evaluate, and critically assess scientific claims. Recognizing the gap between what evidence actually shows and what popularizers claim is one of its most practical skills.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L04 = {
               definition: `Which of your genes are actively being read and used by your cells at any given moment.`,
               audioPrompt: `Gene expression is which of your genes are actively being read and used by your cells right now, {name}. You have around 20,000 genes, but only some are 'expressed' in each cell at any moment. Epigenetics is what controls expression. A gene can be present in your DNA but completely silenced epigenetically. Another gene can be turned way up. When scientists talk about lifestyle affecting your genes, they almost always mean gene expression, not the underlying code. Knowing this distinction is what separates real science from pop overreach.`,
             },
-          ,
             {
               word: `nature versus nurture`,
               definition: `The old debate over whether a person is shaped more by their genes or by their environment. Epigenetics shows this framing is too simple: genes and environment are in constant conversation.`,

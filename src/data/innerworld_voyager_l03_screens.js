@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `The parts of the mind operating below conscious awareness. Includes memories you've forgotten, feelings you've suppressed, and patterns running automatically.`,
               audioPrompt: `The unconscious is the part of the mind operating below conscious awareness, {name}. Most of what your brain does is unconscious. You don't decide to recognize a face, to feel afraid in a dark room, or to suddenly remember a song from years ago. These happen on their own. Jung argued the unconscious is much bigger and stranger than Freud had described. It contains forgotten memories, repressed feelings, automatic patterns, and according to Jung, even shared structures we inherit from being human. Most of who you are, in Jung's view, is hidden from you. The shadow lives there.`,
             },
-          ,
             {
               word: `collective unconscious`,
               definition: `Jung's term for the deepest layer of the unconscious mind, shared across all of humanity. It contains inherited patterns called archetypes, distinct from the personal unconscious of an individual.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `Jung's term for everything you've rejected, denied, or hidden about yourself. Holds both 'bad' traits and unlived strengths.`,
               audioPrompt: `The shadow is Jung's term for everything you've rejected, denied, or hidden about yourself, {name}. It is not the same as evil. It is the part of you that did not fit who you decided to be. If anger felt unsafe in your family, your anger is in your shadow. If softness felt unsafe, softness is there. If wanting things openly felt unsafe, your wanting is there. The shadow is not your enemy. It is the parts of you that went into hiding to keep you safe. Jung's claim is that learning to see and integrate the shadow is one of the most important psychological tasks a person can do.`,
             },
-          ,
             {
               word: `unlived potential`,
               definition: `The strengths and capacities that have been buried in the shadow because circumstances made expressing them feel unsafe. Assertiveness, boldness, and gentleness can all end up as unlived potential.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `Seeing in someone else the rejected parts of yourself. The disproportionate reaction is the clue.`,
               audioPrompt: `Projection is when you see in someone else the parts of yourself you've rejected, {name}. The disproportionate reaction is the clue. If a classmate's behavior makes you twice as angry as the situation warrants, the extra anger is probably about you. Maybe they're showing you something you've buried in yourself. Maybe their boldness mirrors your buried boldness. Maybe their vulnerability mirrors your buried vulnerability. Notice this is not a way to excuse other people's bad behavior. It is a way to use your own reactions as information about yourself.`,
             },
-          ,
             {
               word: `disproportionate reaction`,
               definition: `A response to someone that is much stronger than the situation warrants. Jung identified this intensity as a reliable clue that shadow material is being activated.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `The process of becoming consciously aware of shadow material and choosing how to relate to it, instead of being run by it unconsciously.`,
               audioPrompt: `Integration is the process of becoming consciously aware of shadow material and choosing what to do with it, {name}. The word is important. Integration is not getting rid of the shadow. It is not letting the shadow take over either. It is bringing what was hidden into the light of awareness so you can choose. The angry part of you that you've buried doesn't disappear once you notice it. It just stops running you from below. You can decide how and when to use it. Integration is slow. Real shadow work takes years, not minutes. But it can start now.`,
             },
-          ,
             {
               word: `shadow journaling`,
               definition: `A structured writing practice for shadow work, in which a person records their strongest emotional reactions and asks honestly what each reaction might reveal about themselves.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L03 = {
               definition: `The willingness to see yourself, including the parts you'd prefer not to. The foundation of shadow work.`,
               audioPrompt: `Self-honesty is the willingness to see yourself, including the parts you'd prefer not to see, {name}. It is harder than it sounds. Most people protect their self-image automatically, without realizing they're doing it. We rewrite memories to make ourselves look better. We blame others for what was partly our fault. We tell ourselves stories about why we did what we did. Self-honesty is the practice of catching these moves and choosing accuracy over self-protection. It is uncomfortable. It is also the prerequisite for any real growth. You cannot integrate what you refuse to see.`,
             },
-          ,
             {
               word: `making the darkness conscious`,
               definition: `Jung's phrase for the core task of shadow work: bringing what is hidden and rejected into conscious awareness so it can be seen and chosen from, rather than running you invisibly.`,

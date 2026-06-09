@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L14 = {
               definition: `The network of neurons within the heart itself, sometimes informally called "the heart brain." Real and well-established in cardiology.`,
               audioPrompt: `The intrinsic cardiac nervous system is the network of neurons within the heart itself, {name}. Estimates put it at around 40,000 to 100,000 neurons in the human heart. These neurons regulate heart rate, contraction strength, and rhythm locally without needing constant signals from the brain. They communicate with the brain through major nerves like the vagus nerve. This is real and well-established cardiology, first studied in detail by J. Andrew Armour in the 1990s. The disagreement isn't about whether these neurons exist. It is about what they mean for consciousness and emotion.`,
             },
-          ,
             {
               word: `intrinsic cardiac nervous system`,
               definition: `The network of approximately 40,000 to 100,000 neurons within the heart itself, first studied in detail by cardiologist J. Andrew Armour in the 1990s. Locally regulates heart rate, contraction strength, and rhythm.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L14 = {
               definition: `HRV. The small variations in time between heartbeats. A real, measurable phenomenon associated with emotional regulation, stress, autonomic balance, and overall health. Studied seriously in mainstream cardiology.`,
               audioPrompt: `Heart rate variability is the small variations in time between heartbeats, {name}. Often called HRV. It is a real, measurable phenomenon. Higher HRV is generally associated with better cardiovascular health, better stress regulation, and better emotional flexibility. HRV can be influenced by breathing, by emotional state, by sleep quality, and by exercise. This is mainstream cardiology, not pseudoscience. HeartMath's research on HRV is built on real foundations, even if some of their broader claims extrapolate beyond what the evidence clearly supports.`,
             },
-          ,
             {
               word: `heart coherence`,
               definition: `A physiological state, measurable in heart rate variability patterns, associated with calm emotional focus. HeartMath teaches breathing-based practices intended to produce this state with real measurable effects.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L14 = {
               definition: `The brain's perception of internal body signals like heartbeat, breathing, hunger, and visceral sensations. A real, well-studied function of the brain that shapes emotion.`,
               audioPrompt: `Interoception is the brain's perception of internal body signals, {name}. Your heartbeat, your breathing, hunger, the sensations in your gut, all of this information is constantly being sent to the brain, which builds a moment-by-moment picture of your internal state. Interoception is fundamental to emotion. When you feel anxious, much of what you're feeling is the brain perceiving and interpreting elevated heart rate, shallow breathing, tense muscles. The body provides the raw signals. The brain generates the experience. Antonio Damasio's research on this is among the most influential in modern neuroscience.`,
             },
-          ,
             {
               word: `somatic marker`,
               definition: `In the research of Antonio Damasio, a body-based signal that the brain uses to inform emotional experience and decision-making. Supports the brain-centric view that the brain integrates body signals into felt emotion.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L14 = {
               definition: `Techniques that give you real-time information about a physiological function (like heart rate or muscle tension) so you can learn to influence it. HRV biofeedback is a research-supported practice.`,
               audioPrompt: `Biofeedback is a technique that gives you real-time information about a physiological function so you can learn to influence it, {name}. HRV biofeedback shows you your heart rate variability in real time, often through a simple device that displays it on your phone. With practice, people can learn to shift their HRV through breathing, posture, and emotional regulation. HRV biofeedback is a research-supported practice for stress and anxiety. It is also one of the practices HeartMath teaches. The technique works without requiring any of HeartMath's more metaphysical claims.`,
             },
-          ,
             {
               word: `paced breathing`,
               definition: `A breathing practice involving inhaling and exhaling at a deliberate, even rhythm, typically five seconds in and five seconds out. Produces measurable shifts in heart rate variability and emotional state.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L14 = {
               definition: `A scientific area where the basic findings are established but the interpretation is still debated by competent researchers. Not pseudoscience, but science whose meaning is genuinely uncertain.`,
               audioPrompt: `Contested science is a scientific area where the basic findings are established but the interpretation is still debated, {name}. The heart-brain question is a good example. Everyone agrees the heart has neurons. Everyone agrees they communicate with the brain. The disagreement is about what to make of this: does it justify language like "heart intelligence," or is that overreach? Contested science is different from pseudoscience. In pseudoscience, the claims are unfalsifiable or contradict established evidence. In contested science, real researchers are still working out the right interpretation. Holding this distinction protects you from two errors: treating contested science as settled, and dismissing genuinely interesting research as fake.`,
             },
-          ,
             {
               word: `overreach`,
               definition: `Extending a claim beyond what the available evidence actually supports. A common pattern in wellness and science communication where real findings are used to justify much stronger claims.`,

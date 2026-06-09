@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `A network of brain regions including the medial prefrontal cortex and posterior cingulate cortex that activates during rest, mind-wandering, and self-referential thought. Identified by Marcus Raichle in 2001.`,
               audioPrompt: `The Default Mode Network is a set of brain regions that activates during rest and self-referential thought, {name}. The key regions include the medial prefrontal cortex and the posterior cingulate cortex. When you're not focused on a specific task, when your mind wanders, when you imagine your future or remember your past or think about who you are, the DMN is active. It generates the constant inner narrative most people experience as "being themselves." Marcus Raichle discovered it accidentally in 2001 while looking for the brain's resting baseline. It is one of the most important findings in modern neuroscience.`,
             },
-          ,
             {
               word: `mind-wandering`,
               definition: `The mental state in which attention drifts from a current task to internally generated thoughts. A primary activity of the Default Mode Network.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `The mental processes involved in understanding other people's thoughts, feelings, and intentions. Largely DMN-mediated.`,
               audioPrompt: `Social cognition is the mental processes involved in understanding other people, {name}. When you figure out what your friend is feeling, when you guess why your parent reacted a certain way, when you imagine what someone meant by a comment, you are doing social cognition. Much of this work happens in DMN regions. This matters for the lesson's central question. If you quiet the DMN too much, you may reduce some negative aspects (rumination, self-criticism) but you also reduce social cognition itself. The tradeoffs are real.`,
             },
-          ,
             {
               word: `future-oriented thinking`,
               definition: `Mental activity directed toward imagining, planning, or preparing for events that have not yet happened. A key function of the Default Mode Network.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `The repeated chewing-over of negative thoughts, regrets, or worries. A DMN-related pattern strongly associated with depression and anxiety.`,
               audioPrompt: `Rumination is the repeated chewing-over of negative thoughts, {name}. It's when your mind goes around the same painful loop over and over: replaying an embarrassing moment, worrying about the same upcoming event, criticizing yourself for the same flaw. Rumination is a DMN activity. People with depression often have higher DMN activity, and that hyperactivity is linked to more rumination. Reducing rumination is one of the genuine benefits people report from meditation. Quieting the rumination loop is real. The question is whether all DMN activity should be quieted, or just this particular pattern.`,
             },
-          ,
             {
               word: `psilocybin`,
               definition: `The active compound in psychedelic mushrooms. Currently being researched in clinical trials for treatment-resistant depression, with DMN suppression identified as part of its mechanism.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `A psychological state of feeling disconnected from yourself or your own experience, as if you aren't fully real or fully present. A documented adverse effect of intense contemplative practice or psychedelics in some people.`,
               audioPrompt: `Depersonalization is a state of feeling disconnected from yourself, {name}. People experiencing it describe feeling unreal, watching themselves from outside, or not quite present in their own life. Mild depersonalization is common after intense stress. More serious cases can be lasting and distressing. Some long-term meditators and some psychedelic users develop depersonalization symptoms. The research community is increasingly honest about this. Quieting the network that builds the self isn't always purely positive. For some people, it produces these specific costs. The full picture includes both the benefits and these effects.`,
             },
-          ,
             {
               word: `dark night`,
               definition: `A term used in contemplative research to describe extended periods of psychological difficulty in serious meditators, including feelings of disconnection, loss of motivation, or emotional hollowness.`,
@@ -179,7 +175,6 @@ const INNERWORLD_VOYAGER_L08 = {
               definition: `The study of how the brain develops during adolescence. A field where careful researchers note that interventions safe for adults may have different effects on developing brains.`,
               audioPrompt: `Adolescent neuroscience is the study of how the brain develops during adolescence, {name}. One of the field's recurring findings is that adolescent brains are different from adult brains in measurable ways. The prefrontal cortex is still developing. Reward sensitivity is heightened. Network connections are being pruned and strengthened. This matters when adults consider what practices to recommend to kids. Some practices well-studied in adults have not been studied in teens. Caution is warranted not because adolescents are fragile but because their brains are uniquely in flux.`,
             },
-          ,
             {
               word: `monastic settings`,
               definition: `Residential contemplative communities, such as monasteries, where intensive spiritual practice is conducted in a structured, supported, full-time environment very different from everyday life.`,

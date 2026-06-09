@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `Believing that internal mental events (thoughts, wishes, intentions) directly cause external outcomes through some unspecified mechanism, without ordinary causal pathways like action, planning, or skill.`,
               audioPrompt: `Magical thinking is believing that your inner mental events directly cause external outcomes, {name}. Without action. Without ordinary cause-and-effect. Just the thought or wish itself reaching out and changing reality. Children develop magical thinking around ages 3 to 6 and most grow out of it as their understanding of causation matures. Adult magical thinking shows up in things like superstition, certain forms of manifestation belief, and conspiracy theories. The clinical sense of the term is not insulting; it is a specific cognitive pattern. Spotting it in your own thinking is one of the most useful skills.`,
             },
-          ,
             {
               word: `quantum mysticism`,
               definition: `The use of quantum physics terminology to give scientific-sounding credibility to metaphysical or spiritual claims that are not actually supported by quantum physics research.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `Wish, Outcome, Obstacle, Plan. A research-backed goal-setting technique developed by Gabriele Oettingen that combines visualization with realistic obstacle-thinking and concrete planning.`,
               audioPrompt: `WOOP stands for Wish, Outcome, Obstacle, Plan, {name}. It is a goal-setting technique developed by psychologist Gabriele Oettingen at NYU, supported by multiple controlled studies. The four steps. First, name what you want clearly. Second, vividly imagine the positive outcome. Third, identify the most likely internal obstacle that could block you. Fourth, make a specific if-then plan for handling that obstacle. WOOP works because it pairs the motivating power of visualization with the realism of obstacle-thinking and concrete planning. Pure positive visualization alone, without these other steps, often backfires by making your brain feel like you already succeeded.`,
             },
-          ,
             {
               word: `Goal Setting Theory`,
               definition: `The framework developed by Edwin Locke and Gary Latham establishing that specific, measurable, difficult-but-achievable, written goals produce better outcomes than vague intentions.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `In psychology, when exposure to one stimulus influences your response to a later stimulus. Visualization primes attention toward goal-relevant information.`,
               audioPrompt: `Priming is when exposure to one stimulus influences your response to a later stimulus, {name}. In the context of visualization, when you vividly imagine yourself doing something, your brain becomes more sensitive to information related to it. You notice opportunities you'd otherwise miss. You remember relevant advice. You recognize moments where you can apply what you've learned. Priming is a well-documented psychological mechanism. It is part of how visualization works without requiring any mystical claim about the universe responding to your mental states.`,
             },
-          ,
             {
               word: `mental rehearsal`,
               definition: `The practice of vividly imagining performing an action before doing it. Brain imaging shows it activates many of the same motor regions as actual physical practice, improving performance on skills.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `A New Thought belief, popularized by The Secret, that the universe gives you what you focus on; you "attract" outcomes that match your inner state. Not a scientific law. No peer-reviewed evidence supports the metaphysical version.`,
               audioPrompt: `The Law of Attraction is a New Thought belief that the universe gives you what you focus on, {name}. It claims you attract outcomes that match your inner state and "vibration." Despite the word "law," it is not a scientific law and has no peer-reviewed evidence supporting the metaphysical version. The Secret, a 2006 book by Rhonda Byrne, popularized this belief for tens of millions of readers. Many of the specific manifestation techniques you see on social media trace back to Law of Attraction thinking. Knowing the historical lineage helps you see what's being claimed.`,
             },
-          ,
             {
               word: `unfalsifiable`,
               definition: `A claim for which no possible observation could count as disproof. A classic feature of pseudoscience, because a claim immune to disproof cannot be properly tested or supported.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L13 = {
               definition: `The specific process by which a cause produces an effect. When evaluating any health or behavior claim, asking "what's the mechanism?" is one of the most clarifying questions.`,
               audioPrompt: `A mechanism is the specific process by which a cause produces an effect, {name}. When you hear any claim about influencing reality, asking "what's the mechanism?" is one of the most clarifying questions. If the answer is "specific goals direct attention and behavior," you have a real mechanism with evidence. If the answer is vague like "the universe responds," you have a metaphysical claim without a tested mechanism. The question separates real psychology from magical thinking. Train yourself to ask it about every claim involving how your mind affects outcomes.`,
             },
-          ,
             {
               word: `vision board`,
               definition: `A collage of images representing goals or desired outcomes, used in manifestation culture as a visualization tool. Overlaps with real goal psychology in some ways but cannot substitute for evidence-based help.`,

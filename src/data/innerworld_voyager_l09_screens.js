@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `The experienced split between self and not-self, observer and observed, subject and object. The basic two-ness of ordinary human perception.`,
               audioPrompt: `Duality means two-ness, {name}. In contemplative contexts, it refers to the basic experienced split between you and everything else. There's a 'me' having experiences. There's a 'world' the experiences are about. This feels so basic it seems impossible to question. Non-dual traditions question it anyway. They claim that when you look very carefully at the moment of experience, the line between self and world is harder to locate than it seems. This isn't the same as saying there's no difference between you and a tree. It is saying the separation feels more solid than it actually is on close inspection.`,
             },
-          ,
             {
               word: `observer and observed`,
               definition: `One of the basic dualities of ordinary human experience: the sense that there is a self doing the perceiving and a world being perceived, distinct from each other.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `In Advaita Vedanta, the ultimate underlying reality of everything. Not a god in the personal sense, more like the deepest layer of what exists.`,
               audioPrompt: `Brahman is the ultimate underlying reality in Advaita Vedanta, {name}. It is not a god in the personal Western sense. It is more like the deepest layer of what is. Advaita teachers say everything you see, hear, think, and feel is ultimately Brahman appearing in different forms. The separate self you experience is also Brahman, temporarily mistaking itself for separate. This idea is strange to Western ears but has been a serious philosophical position in India for over 1,000 years. You don't have to believe it. You should be able to articulate it as a real position serious thinkers have held.`,
             },
-          ,
             {
               word: `maya`,
               definition: `In Advaita Vedanta, the term for the cosmic misperception through which the individual self experiences itself as separate from the underlying reality (Brahman). Often translated as illusion.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `Sanskrit/Pali term often translated as "emptiness." In Buddhism, the teaching that nothing has independent inherent existence; everything is interdependent.`,
               audioPrompt: `Sunyata is usually translated as emptiness, {name}. The translation can be misleading. Sunyata doesn't mean nothingness. It means emptiness of independent existence. Everything is interdependent. Nothing exists separately, on its own, without reference to other things. The cup needs the clay, the potter, the table. The 'you' needs a body, brain, memories, language, family, culture. Buddhists claim that when you really see this, the assumed solid separate self loosens. Not because you don't exist, but because the way you assumed you existed isn't quite right.`,
             },
-          ,
             {
               word: `interdependent`,
               definition: `The Buddhist insight that all things exist in dependence on other things, with nothing possessing independent, stand-alone existence. The basis of the teaching of sunyata.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `In Christian context, the contemplative branch focused on direct experience of God beyond doctrine, often involving practices of union or non-separation.`,
               audioPrompt: `Mysticism in Christianity refers to the contemplative branch focused on direct experience of God beyond doctrine, {name}. Christian mystics like Meister Eckhart, the author of the Cloud of Unknowing, and Saint John of the Cross described practices and experiences that look remarkably like Buddhist and Hindu non-dual teachings, even though these traditions developed largely independently. Mysticism has often been treated with suspicion by mainstream church authorities because it deemphasizes doctrine and institution in favor of direct experience. But it has survived as a serious thread of Christian thought for two thousand years.`,
             },
-          ,
             {
               word: `Meister Eckhart`,
               definition: `A German theologian and mystic (c. 1260–1328) whose writings expressed non-dual Christian teachings so strongly that he was put on trial for heresy. His work has influenced Christian contemplative thought for centuries.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L09 = {
               definition: `When separate sources or traditions arrive at similar conclusions independently. In philosophy and science, convergence is often treated as suggestive but not conclusive evidence.`,
               audioPrompt: `Convergence is when separate sources arrive at similar conclusions independently, {name}. In science, when multiple labs running different experiments find similar results, convergence is taken seriously as evidence. In contemplative philosophy, the fact that Hindu, Buddhist, and Christian traditions independently developed similar non-dual teachings is a striking convergence. It demands explanation. The convergence itself doesn't prove the teachings are correct, but it makes it harder to dismiss them as one culture's local quirk. Convergence is suggestive evidence that there's something real being described, even if interpretations vary.`,
             },
-          ,
             {
               word: `phenomenological reports`,
               definition: `First-person accounts of subjective experience, especially from practitioners describing what they observe during contemplative practice. The primary data of contemplative inquiry.`,

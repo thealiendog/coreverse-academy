@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `The asymmetry between past and future in human experience, despite the laws of physics being mostly time-symmetric. A still-unresolved puzzle in physics.`,
               audioPrompt: `The arrow of time is the asymmetry between past and future in our experience, {name}. Most of the laws of physics work the same forward and backward. But we clearly experience time flowing one way. This is called the arrow of time problem. Physicists are still debating it. One leading explanation involves entropy, the tendency of systems to become more disordered. The universe started ordered and is moving toward disorder, and that asymmetry may be what gives our experience of past flowing into future. The question itself is one of the deepest in physics.`,
             },
-          ,
             {
               word: `entropy`,
               definition: `The tendency of systems to become more disordered over time. One leading explanation for why time appears to flow in one direction rather than being symmetric.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `An ancient philosophical school emphasizing virtue, present-moment focus, and acceptance of what cannot be controlled. Lived rather than just thought.`,
               audioPrompt: `Stoicism is an ancient philosophical school emphasizing present-moment focus and acceptance of what cannot be controlled, {name}. It started in Athens around 300 BCE and reached its mature form in Roman thinkers like Marcus Aurelius. The core insight is that your real power exists only in the present. The past is gone. The future hasn't happened yet. What you can do, you can only do now. Stoicism is one of the few ancient philosophical schools that has been continuously practiced and read for over 2,000 years. Many modern therapy approaches descend partly from Stoic ideas.`,
             },
-          ,
             {
               word: `Marcus Aurelius`,
               definition: `Roman emperor and Stoic philosopher (121–180 CE) who wrote the Meditations, a collection of personal Stoic reflections written during military campaigns. One of the best-known exemplars of applied Stoic philosophy.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `In Buddhist philosophy, the teaching that all things constantly arise and pass away. Translated from Pali "anicca," one of the three marks of existence.`,
               audioPrompt: `Impermanence is the Buddhist teaching that all things constantly arise and pass away, {name}. The Pali word is anicca. It's one of the three marks of existence in Buddhist philosophy. The teaching isn't depressing, even though it sometimes sounds that way. Impermanence is what makes change possible, makes growth possible, makes the present moment fresh. Buddhists argue that suffering comes from trying to hold onto things, including pleasant moments, that are by their nature passing. Releasing the grip on transience is the practice.`,
             },
-          ,
             {
               word: `vipassana`,
               definition: `An insight meditation practice in which the practitioner trains the mind to observe the arising and passing of experience without grasping or aversion. One of the core formal practices in Theravada Buddhism.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `A 20th-century philosophical movement emphasizing radical freedom, responsibility, and the creation of one's identity through future-oriented choices.`,
               audioPrompt: `Existentialism is a 20th-century philosophical movement emphasizing radical freedom and the creation of identity through choice, {name}. Existentialists like Sartre, Beauvoir, and Kierkegaard argue that you don't have a fixed nature. You become someone through your choices, which are always about the future. Every action is a kind of commitment about who you are becoming. This makes existentialism a future-oriented philosophy, even though existentialists are clear that the choosing happens in the present. The future you're creating shapes what the present action means.`,
             },
-          ,
             {
               word: `bad faith`,
               definition: `In existentialist philosophy, the refusal to acknowledge one's own freedom and responsibility for choosing who to become. Living as if your identity is fixed rather than created through choice.`,
@@ -179,7 +175,6 @@ const INNERWORLD_VOYAGER_L10 = {
               definition: `A general way of approaching life shaped by a philosophical commitment. Not just an idea but a habitual stance that affects how you act.`,
               audioPrompt: `A philosophical orientation is a general way of approaching life shaped by a philosophical commitment, {name}. It's not just an idea you hold. It's a habitual stance that affects how you act, what you notice, what you prioritize. A present-focused Stoic and a future-focused existentialist will live very differently even if they agree on most facts. The philosophical orientation you cultivate shapes the texture of your daily experience over years and decades. Choosing one consciously is a real act, not just an intellectual exercise.`,
             },
-          ,
             {
               word: `non-attachment`,
               definition: `In Buddhist philosophy, the practice of engaging fully with life without clinging to outcomes or grasping at pleasant experiences. Often misunderstood as emotional detachment or indifference.`,

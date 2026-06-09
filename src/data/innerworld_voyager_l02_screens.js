@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `Latin for 'I think, therefore I am.' Descartes' argument that the act of thinking proves the existence of a self doing the thinking.`,
               audioPrompt: `Cogito ergo sum is Latin for 'I think, therefore I am,' {name}. It is Descartes' attempt to find the one thing he could not doubt. He noticed that even doubting required a doubter. Even being deceived required someone to be deceived. So the existence of a thinking self seemed undeniable. This idea is so deep in Western culture that most people assume it without ever questioning it. You feel like a steady 'I' watching your life happen. But notice that Descartes was making an argument, not reporting an observation. He inferred a self from the act of thinking. What if the inference is wrong?`,
             },
-          ,
             {
               word: `substance self`,
               definition: `Descartes' view that the self is a real, solid thing, separate from the body, that persists steadily across time as the seat of thought and identity.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `Hume's view that the self is not a unified thing but a collection of perceptions, thoughts, and feelings flowing together.`,
               audioPrompt: `Bundle theory is Hume's view that the self is not one unified thing, {name}. It is a collection of perceptions, thoughts, and feelings flowing together so smoothly that we mistake them for a single 'I.' Try Hume's experiment right now. Close your eyes for a moment. Try to find the self that is supposedly having your experiences. Can you locate it directly? Most people, when they actually try, find what Hume found. Thoughts. Sensations. Feelings. But no separate observer of those things. The observer seems to be made of the same stuff as the things observed. That is bundle theory.`,
             },
-          ,
             {
               word: `bundle of perceptions`,
               definition: `Hume's description of what the self actually is: not a unified entity but a rapidly flowing collection of sensations, thoughts, emotions, and memories.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `Pali word usually translated 'no-self' or 'non-self.' The Buddhist insight that no fixed, separate self can be found through direct investigation.`,
               audioPrompt: `Anatta is a Pali word usually translated as 'no-self' or 'non-self,' {name}. It comes from the Buddha's investigation of his own experience over many years of meditation. Anatta does not claim you do not exist. It claims that what you call 'you' is not the fixed, separate thing you assume it is. It is more like a river. The water is real, the flow is real, but you cannot point at one specific water-thing and call it the river. You are real, but the I you imagine doing the experiencing is more like a process than an object. Notice how strange this idea feels at first.`,
             },
-          ,
             {
               word: `five aggregates`,
               definition: `Buddhist teaching's framework for what makes up a person: form (body), feelings, perceptions, mental formations (thoughts and intentions), and consciousness. No separate self is found behind these five.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `A brain network active when you are not focused on a task. Generates the inner narrative of self. Identified by Marcus Raichle in 2001.`,
               audioPrompt: `The Default Mode Network is a network of brain regions active when you are not focused on a task, {name}. It is what fires when your mind wanders, when you remember your childhood, when you imagine your future, when you think about yourself. Neuroscientists call it the Default Mode because it is what your brain defaults to in the absence of demands. Here is what is interesting. Meditation can quiet the Default Mode Network. The feeling of being a separate, defended self seems to be partly something the brain does, and it can be done less. What might change if your DMN was a little quieter than it is right now?`,
             },
-          ,
             {
               word: `inner narrative`,
               definition: `The ongoing internal story of being you. Neuroscience associates this with Default Mode Network activity, which generates the continuous sense of self and personal identity.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L02 = {
               definition: `The capacity to hold your sense of self loosely enough to grow, learn from criticism, and change without feeling threatened.`,
               audioPrompt: `Identity flexibility is the capacity to hold your sense of self loosely enough to grow, {name}. People with high identity flexibility can take in criticism without falling apart. They can change their mind without feeling like they betrayed themselves. They can be different in different contexts (more playful with friends, more focused at school) without feeling fragmented. The opposite is identity rigidity, where every challenge feels like an existential threat. Research is starting to show identity flexibility is associated with better mental health and learning outcomes. It is also a skill you can practice. What would shift if you took your self less seriously, not as a joke, but as a possibility?`,
             },
-          ,
             {
               word: `fixed self`,
               definition: `The view that you have a stable, unchanging core identity that must be protected. When held rigidly, this view makes criticism feel threatening and change feel like betrayal.`,

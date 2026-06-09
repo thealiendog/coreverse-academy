@@ -51,7 +51,6 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `Combining separate elements into a coherent whole. The capstone skill of integrating diverse learning into something usable in your actual life.`,
               audioPrompt: `Synthesis is combining separate elements into a coherent whole, {name}. Each of the past 19 lessons was its own piece. The capstone work is putting them together. You don't have to integrate everything perfectly. You do have to begin the work of asking: given all of this, what do I actually want to do? Synthesis isn't just summarizing. It's deciding what to keep, what to question, what to build into your life, and what to leave aside. That's the work of designing a life rather than just inheriting one.`,
             },
-          ,
             {
               word: `Default Mode Network`,
               definition: `A network of brain regions active during mind-wandering, self-referential thought, and rumination. Mentioned in the band's earlier lessons as having both costs and benefits when quieted through contemplative practice.`,
@@ -83,7 +82,6 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `A central commitment or framework that organizes your other choices. Different people organize their lives around different principles, and the choice matters.`,
               audioPrompt: `An organizing principle is a central commitment or framework that organizes your other choices, {name}. Most people have one whether they realize it or not. Some people's organizing principle is success. Others is family. Others is creative expression. Others is freedom. Others is service. The principle isn't always conscious, but it shapes everything. Choosing an organizing principle consciously is one of the most important things you can do. You don't have to pick forever. You do have to know what you're currently organizing your life around. The most honest answer might also be "I haven't chosen yet, I'm currently drifting." That answer is also useful.`,
             },
-          ,
             {
               word: `inner explorer`,
               definition: `One of three organizing principles for a conscious life: the view that self-knowledge is the prerequisite for right action, pursued through investigation, reading, meditation, and honest reflection.`,
@@ -116,7 +114,6 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `The capacity to distinguish what is real, useful, and important from what merely appears so. A capstone intellectual skill cultivated through practice.`,
               audioPrompt: `Discernment is the capacity to distinguish what is real, useful, and important from what merely appears so, {name}. It is one of the most valuable intellectual and spiritual skills. Discernment is what lets you hear a wellness influencer and immediately notice the pattern of overreach. It is what lets you read a research paper and identify what it actually claims versus what its popular interpretations claim. Discernment is cultivated, not given. The 20 lessons of this band have been a discernment training. Continue cultivating it the rest of your life. It will be among your most valuable possessions.`,
             },
-          ,
             {
               word: `source evaluation`,
               definition: `The habit of carefully examining who is making a claim, what evidence supports it, whether the claim is falsifiable, and what the gap is between the actual research and what is being asserted. Named as one of the things that deserves to stay for life from this band.`,
@@ -149,7 +146,6 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `The capacity to apply understanding to actual situations with discernment. Not the same as intelligence, knowledge, or self-awareness, though it draws on all of these.`,
               audioPrompt: `Wisdom is the capacity to apply understanding to actual situations with discernment, {name}. It is different from intelligence (raw cognitive ability), knowledge (what you know), or self-awareness (how you see yourself). Wisdom is the practical capacity to act well, in a real moment, given everything you understand. It includes knowing when to act and when to wait. When to speak and when to listen. When to investigate and when to commit. Wisdom takes decades to develop. Starting at 12 is much better than starting at 40. You've been training it through this whole band.`,
             },
-          ,
             {
               word: `wise integrator`,
               definition: `One of three organizing principles for a conscious life: the view that the deepest work is developing the judgment to know when investigation, action, or waiting is called for, drawing on multiple frameworks with discernment.`,
@@ -181,7 +177,6 @@ const INNERWORLD_VOYAGER_L20 = {
               definition: `A life designed and lived with awareness of one's organizing principles, values, and practices, rather than drifting on inherited defaults.`,
               audioPrompt: `A conscious life is a life designed and lived with awareness of one's organizing principles, values, and practices, {name}. The opposite is the drifting life, where you do what's expected, defaults take over, years pass, and you wake up at 40 wondering how you got so far from who you meant to be. Most people live drifting lives. The few who don't are usually noticeable: they have a certain quality of intentionality, integrity, and inner direction. Designing a conscious life is one of the most important projects you can undertake. Starting at 12, even imperfectly, puts you years ahead of starting at 30.`,
             },
-          ,
             {
               word: `starting place`,
               definition: `The initial organizing principle or practice a person commits to, acknowledged as appropriate for this moment in their life rather than as a permanent or final choice. What the capstone argument builder asks you to identify and defend.`,

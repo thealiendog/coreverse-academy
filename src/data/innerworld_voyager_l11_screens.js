@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `The act of pushing down or hiding emotions, especially "negative" ones. Strongly associated in research with worse mental health over time.`,
               audioPrompt: `Emotional suppression is the act of pushing down or hiding emotions, {name}. Especially the emotions you've been taught are "bad." Suppression doesn't make emotions go away. Research consistently shows that suppressed emotions still affect your body, behavior, and stress levels, often more than acknowledged emotions. Long-term suppression is associated with worse physical and mental health. The standard emotional model trains people to suppress. The alternative we're going to explore today says: don't suppress. Listen.`,
             },
-          ,
             {
               word: `standard emotional model`,
               definition: `The widespread belief that some emotions are good and should be maximized while others are bad and should be minimized or fixed. Treats the emotion itself as the problem.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `A therapy approach developed by Richard Schwartz in the 1980s. Treats the psyche as a system of inner "parts," each with valid intentions, organized around a core "Self" with natural qualities of curiosity and compassion.`,
               audioPrompt: `Internal Family Systems, often called IFS, is a therapy approach developed by Richard Schwartz in the 1980s, {name}. It is one of the most respected and widely used modern psychotherapies. The core idea is that you aren't one unified self. You are a system of inner parts, each with its own perspective and intention. None of them is bad. Some are wounded. Some are protective. Underneath them is what Schwartz calls Self, your core awareness, which has qualities like curiosity, compassion, and calm. IFS has been adopted by therapists worldwide and has strong clinical evidence for treating trauma, anxiety, and depression.`,
             },
-          ,
             {
               word: `inner parts`,
               definition: `In Internal Family Systems, the multiple sub-personalities within a person. Each part has its own feelings, intentions, and ways of influencing behavior.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `In IFS, an inner part whose job is to keep you safe by reacting to threats or vulnerabilities. Anger, anxiety, and perfectionism are often protector parts.`,
               audioPrompt: `A protector part, in Internal Family Systems, is an inner part whose job is to keep you safe, {name}. Anger is often a protector. So is anxiety. So is perfectionism. So is the part that pushes people away when you feel vulnerable. Protector parts are not bad. They developed because they served a purpose at some point. The work isn't to fight them. The work is to thank them for their service and ask what they're protecting underneath. Often the answer is a younger wounded part that needs different care. Treating protectors as enemies misses what they're actually doing for you.`,
             },
-          ,
             {
               word: `overcalibrated`,
               definition: `Set to a level of sensitivity that is too high for the actual environment. Used in the lesson to describe how the nervous system responds to modern threats as if they were physical dangers.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `In IFS, the quality of awareness that's curious, compassionate, calm, and courageous. The state from which you can effectively engage with your inner parts.`,
               audioPrompt: `Self-energy, in Internal Family Systems, is the quality of awareness that's curious, compassionate, calm, and courageous, {name}. Schwartz claims this isn't a state you have to manufacture. It is your natural core, underneath the activity of all your parts. When you can access it, even partially, you can engage with even your most difficult inner parts effectively. They feel heard. They calm down. This is one of the most striking claims of IFS: you don't have to fight your inner critic or your anxiety. You have to access the part of you that's underneath them and meet them from there.`,
             },
-          ,
             {
               word: `turning toward`,
               definition: `The IFS practice of facing a difficult inner part with curiosity rather than suppressing or fighting it. Asking what the part is protecting, what it needs, and what it is trying to say.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L11 = {
               definition: `Presenting a familiar situation or concept from a different angle that changes its meaning. A central technique in many therapy approaches including IFS.`,
               audioPrompt: `A reframe is presenting a familiar situation from a different angle that changes its meaning, {name}. When you've been treating anger as a bad thing to suppress, and someone reframes it as a protector part with information, that's a reframe. The facts haven't changed. The meaning has. Reframes are powerful because they don't require new information. They require seeing existing information differently. Good therapists are skilled reframers. Good thinking in any area often involves recognizing when a useful reframe is available.`,
             },
-          ,
             {
               word: `primary text`,
               definition: `An original work written by a thinker in their own words, as opposed to a summary or secondary account. Reading primary texts requires close attention to what the author actually claims.`,

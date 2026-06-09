@@ -50,7 +50,6 @@ const COSMOS_VOYAGER_L13 = {
               definition: `Factor of 10 in size, mass, or other quantity. Used by scientists to compare scales that differ by many factors. Each order of magnitude is a "step" up or down the cosmic ladder. From atom to human is ~10 orders of magnitude. From human to observable universe is ~26 orders of magnitude.`,
               audioPrompt: `An order of magnitude is a factor of 10 in size, mass, or other quantity, {name}. Used by scientists to compare scales that differ by many factors. Each order of magnitude is a step up or down the cosmic ladder. If something is 10 times larger than something else, it is one order of magnitude larger. From an atom to a human is about 10 orders of magnitude. From a human to the observable universe is about 26 orders of magnitude. Working in orders of magnitude lets us see structure that gets lost when we just write out giant numbers. The total cosmic ladder, from quarks at the bottom to the observable universe at the top, spans roughly 44 orders of magnitude. Human evolved intuition covers only a few orders of magnitude near our own size.`,
             },
-          ,
             {
               word: `logarithmic`,
               definition: `Scale based on powers of ten rather than equal linear steps. Scientists use logarithmic scales to compare sizes that differ by enormous factors. On a logarithmic ruler, each step represents a factor of 10, making cosmic scales comprehensible where raw numbers fail.`,
@@ -82,7 +81,6 @@ const COSMOS_VOYAGER_L13 = {
               definition: `Roughly 10⁻³⁵ meters. The smallest meaningful scale in current physics. Below it, quantum gravity effects would dominate, and we don't have a theory for that regime. Whether the concept of "length" applies below the Planck length is an open question.`,
               audioPrompt: `The Planck length is approximately 10 to the minus 35 meters, {name}. It is the smallest meaningful scale in current physics. Named after the German physicist Max Planck, who introduced quantum theory in 1900. Below the Planck length, quantum gravity effects would dominate. We don't have a theory of quantum gravity that combines general relativity with quantum mechanics. So we don't really know what happens at scales below the Planck length. Some theoretical frameworks suggest the concept of "length" itself breaks down at that scale. Some suggest space is not continuous but discrete at that level. The Planck length is roughly 10 to the 17th power times smaller than a proton. It is a frontier of current physics.`,
             },
-          ,
             {
               word: `atomic nucleus`,
               definition: `The dense core of an atom containing protons and neutrons. Roughly 10⁻¹⁴ meters across — tens of thousands of times smaller than the atom itself. Contains essentially all of an atom's mass in a tiny fraction of its volume. Surrounded by electrons that orbit at specific energies.`,
@@ -115,7 +113,6 @@ const COSMOS_VOYAGER_L13 = {
               definition: `Standard sub-millimeter scales. A nanometer is 10⁻⁹ meters (typical scale of proteins and DNA). A micrometer is 10⁻⁶ meters (typical scale of bacteria and human cells). A millimeter is 10⁻³ meters (typical scale of small insects, sand grains).`,
               audioPrompt: `Three scales are particularly important for understanding life at small scales, {name}. A nanometer is 10 to the minus 9 meters, the typical scale of proteins and DNA strands. A micrometer is 10 to the minus 6 meters, the typical scale of bacteria and most human cells. A millimeter is 10 to the minus 3 meters, the typical scale of small insects and sand grains. These three scales bridge between the atomic world and the everyday world we experience directly. Biological complexity happens primarily in the nanometer to micrometer range. Each scale up is a factor of 1000, which is huge. The total range from atom to human is roughly 10 orders of magnitude, which is why biology is so structurally rich.`,
             },
-          ,
             {
               word: `red blood cells`,
               definition: `Human blood cells approximately 10⁻⁵ meters across. A concrete example of a biological structure at the micrometer scale, smaller than a typical human cell. Mentioned to illustrate how widely cell sizes range within the category of human cells.`,
@@ -149,7 +146,6 @@ const COSMOS_VOYAGER_L13 = {
               definition: `Standard astronomical distance unit: the distance light travels in one year, about 9.5 × 10¹⁵ meters. Useful because distances in astronomy are vast; light-years provide intuitive scale. The nearest star is 4.2 light-years away. The Milky Way is ~100,000 light-years across.`,
               audioPrompt: `A light-year is the standard astronomical distance unit, {name}. It is the distance light travels in one year, which is about 9.5 times 10 to the 15th power meters. Useful because distances in astronomy are vast and need a unit that fits cosmic scales. Some quick comparisons. The nearest star, Proxima Centauri, is 4.2 light-years away. The Milky Way galaxy is about 100,000 light-years across. The Andromeda galaxy is 2.5 million light-years away. The observable universe is 93 billion light-years in diameter. One important point: a light-year is a unit of distance, not time, despite "year" being in the name. The "year" refers to how long it takes light to travel that distance, not to the distance itself.`,
             },
-          ,
             {
               word: `astronomical unit`,
               definition: `Standard unit of distance in the solar system, equal to Earth's average orbital radius around the Sun — roughly 10¹¹ meters. Used to describe distances within the solar system. The orbit of Neptune is about 30 AU; the outer edge of the heliosphere is about 100 AU.`,
@@ -182,7 +178,6 @@ const COSMOS_VOYAGER_L13 = {
               definition: `The portion of the universe we can in principle observe. About 93 billion light-years across (10²⁶ meters in diameter). Bounded by the distance light has had time to travel to us since the Big Bang. The actual universe may be vastly larger.`,
               audioPrompt: `The observable universe is the portion of the universe we can in principle observe, {name}. About 93 billion light-years across, which is 10 to the 26th power meters in diameter. Bounded by the distance light has had time to travel to us since the Big Bang 13.8 billion years ago. Why isn't it just 13.8 billion light-years across (twice the age times the speed of light, for diameter)? Because space itself has been expanding, so light that started reaching us 13 billion years ago came from points that are now much further away. The actual universe may be vastly larger than the observable universe; the rest just hasn't had time to send us light yet. What exists beyond the observable universe is one of the great open questions in cosmology.`,
             },
-          ,
             {
               word: `Goldilocks zone`,
               definition: `Range of conditions — here, of physical size — that permits complex life. Not too small (insufficient complexity for intelligence) and not too large (gravity overwhelming, communication times too long). Complex life requiring intelligence exists roughly in the size range from insects through whales.`,

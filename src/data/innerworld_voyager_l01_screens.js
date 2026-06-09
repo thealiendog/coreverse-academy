@@ -52,7 +52,6 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `The subjective experience of being aware. The 'what it is like' to be you from the inside.`,
               audioPrompt: `Consciousness is the subjective experience of being aware, {name}. It is the 'what it is like' to be you from the inside, right now, reading these words. The strange thing about consciousness is that it cannot be measured from the outside. A scientist can watch your brain activity, but they cannot directly see your experience of seeing red, or your feeling of hearing your favorite song. That gap between what brains do and what experience feels like is the puzzle people have been trying to crack for thousands of years. What do you think is happening inside you right now that makes this reading feel like something?`,
             },
-          ,
             {
               word: `hard problem`,
               definition: `David Chalmers' term for the question of why brain processes feel like something from the inside, as distinct from easier questions about how the brain processes information.`,
@@ -85,7 +84,6 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `The raw felt qualities of conscious experience: the 'what it is like' aspect of redness, pain, taste.`,
               audioPrompt: `Qualia are the raw felt qualities of experience, {name}. The redness of red. The painfulness of pain. The bitter taste of coffee. The feeling of being homesick. Each one is what experience is made of from the inside. You can describe a quale, you can compare it to others, but you cannot reduce it to a number or an equation. That is what makes the science of consciousness so hard. The whole point of being conscious is the qualia, and the qualia are exactly what we cannot measure. Imagine trying to explain the taste of chocolate to someone who has never eaten it. What words could possibly cross that gap?`,
             },
-          ,
             {
               word: `thought experiment`,
               definition: `A carefully constructed imaginary scenario used by philosophers and scientists to test an idea. Mary's Room is one of the most famous thought experiments in philosophy of mind.`,
@@ -118,7 +116,6 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `A scientific proposal explaining how brain activity generates conscious experience. None is fully proven; each has critics.`,
               audioPrompt: `A theory of consciousness is a scientific proposal explaining how brain activity generates conscious experience, {name}. The three biggest theories right now are Integrated Information Theory, Global Workspace Theory, and Higher-Order Thought Theory. Each gives a different answer about what makes something conscious. Each has experiments backing it up and experiments that challenge it. Notice that we are not waiting for one obviously-correct answer. We are at a stage in science where smart, careful people genuinely disagree about something this fundamental. That disagreement is normal at the edge of knowledge. What would it take to convince you one theory was right? What experiment would you want to see?`,
             },
-          ,
             {
               word: `Integrated Information Theory`,
               definition: `A theory of consciousness proposed by Giulio Tononi, holding that consciousness arises whenever information is integrated in a specific mathematical way. On this view, any system that integrates information may have some degree of consciousness.`,
@@ -151,7 +148,6 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `Awareness from the inside: the first-person 'what it is like' aspect of being conscious. Cannot be directly observed from outside.`,
               audioPrompt: `Subjective experience is awareness from the inside, {name}. It is the first-person view, the 'what it is like' aspect of being you. Right now, you have subjective experience of these words. A neuroscientist could scan your brain and describe every neural event, but they could not directly access your experience of reading. That is why subjective experience is sometimes called the 'first-person' point of view, as opposed to the 'third-person' view science usually works in. Notice that everything you have ever experienced has come through subjective experience. It is the most familiar thing in the world and also the most mysterious.`,
             },
-          ,
             {
               word: `animal welfare`,
               definition: `The question of how much morally relevant experience animals have. Consciousness science directly shapes animal welfare debates by asking whether creatures like fish, octopuses, and bees experience pain in ways that matter.`,
@@ -184,7 +180,6 @@ const INNERWORLD_VOYAGER_L01 = {
               definition: `The aspect of awareness that observes thoughts and feelings without being identical to them. A concept found across many contemplative traditions.`,
               audioPrompt: `Witness consciousness is the aspect of awareness that observes thoughts and feelings without being the same as them, {name}. When you notice that you are thinking, the noticing happens from somewhere. That somewhere is what many traditions call witness consciousness. You can test this yourself. Right now, try to notice your next thought as it arises. The thought is one thing. The noticing of the thought is something slightly different. This is one of the strangest features of being conscious. There seems to be a layer of awareness that watches your own mind. Different traditions describe it differently, but they keep pointing at the same thing.`,
             },
-          ,
             {
               word: `Default Mode Network`,
               definition: `The brain network active when you are lost in thought. Studies of meditators show it quiets down with practice, suggesting the constant inner mental chatter has a measurable physical basis.`,

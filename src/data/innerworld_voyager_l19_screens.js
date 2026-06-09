@@ -50,7 +50,6 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `The practice of consciously matching how you spend time, money, attention, and energy to what you say you value. Hard in practice, well-documented to increase well-being and life satisfaction.`,
               audioPrompt: `Values alignment is the practice of consciously matching how you live to what you say you value, {name}. It is harder than it sounds. Daily life has its own momentum. Schedules, expectations, social pressure, and exhaustion push you toward defaults. Real values get displaced. The work of alignment is noticing this displacement and choosing differently, again and again, until your life actually reflects your values. Research consistently shows that people whose lives align with their values report higher meaning and well-being than people who live by default. Starting early is much easier than fixing it later.`,
             },
-          ,
             {
               word: `daily defaults`,
               definition: `The patterns of behavior that take over when life's momentum — schedules, social pressure, exhaustion, distraction — replaces deliberate choice. The main mechanism by which stated values get displaced in everyday life.`,
@@ -82,7 +81,6 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Ancient Greek and Roman philosophy emphasizing virtue, present-moment focus, and the discipline of caring about only what you can control. Still practiced and influential.`,
               audioPrompt: `Stoicism is an ancient Greek and Roman philosophy still actively practiced today, {name}. The central insight is from Epictetus: some things are in our control, others are not. What you control: your thoughts, responses, character, choices. What you don't: outcomes, other people, events. Stoic alignment is disciplined practice in caring about what you can shape while accepting what you can't. Modern Cognitive Behavioral Therapy and Acceptance and Commitment Therapy descend partly from Stoic ideas. The discipline produces measurable reductions in anxiety and increases in well-being when applied consistently.`,
             },
-          ,
             {
               word: `Acceptance and Commitment Therapy`,
               definition: `A modern psychological treatment that descends partly from Stoic ideas, emphasizing acceptance of what cannot be controlled and committed action toward what can be. Has strong clinical evidence for reducing anxiety and improving well-being.`,
@@ -114,7 +112,6 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Sartre's term for acknowledging that your actions are real choices, not products of fixed nature. Living as if you are responsible for who you are becoming.`,
               audioPrompt: `Good faith is Sartre's term for acknowledging that your actions are real choices, {name}. Its opposite is bad faith, which is acting as if your nature determined your choices, as if you "had no choice" or "couldn't help it." Bad faith denies responsibility. Good faith accepts it. Every action, in Sartre's view, is a commitment about the kind of person you're becoming. Living in good faith means making those commitments consciously rather than drifting into them. This is harder than it sounds. Most of our choices feel automatic. Recognizing them as choices is the existentialist discipline.`,
             },
-          ,
             {
               word: `bad faith`,
               definition: `Sartre's term for acting as though your nature or circumstances determined your choices, denying that you are genuinely free and responsible for who you are becoming. The opposite of good faith.`,
@@ -146,7 +143,6 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Aristotle's process by which repeated practice of a virtue makes the virtue become part of who you are. Supported by modern habit formation research.`,
               audioPrompt: `Habituation, in Aristotle's framework, is the process by which repeated practice of a virtue makes the virtue become part of who you are, {name}. You don't become courageous by reading about courage. You become courageous by repeatedly choosing to face fear well, especially in small situations, until courage becomes your habit. Modern habit formation research substantially supports this. Character is shaped over time by repeated small actions in stable contexts, not by single grand decisions. The implication is hopeful: you can intentionally cultivate the character you want, slowly, through practice. The implication is also demanding: there are no shortcuts.`,
             },
-          ,
             {
               word: `virtue`,
               definition: `In Aristotle's framework, an excellence in some dimension of character — courage, kindness, honesty — that lies between two failure modes (vices) of excess and deficiency. Developed through repeated practice, not through single decisions.`,
@@ -178,7 +174,6 @@ const INNERWORLD_VOYAGER_L19 = {
               definition: `Drawing on multiple ethical traditions rather than committing dogmatically to one. The mature practice most thoughtful people arrive at over time.`,
               audioPrompt: `Integrated ethics is drawing on multiple ethical traditions rather than committing dogmatically to one, {name}. Most thoughtful people, over decades of practice, end up integrating Stoic acceptance of what they can't control, Existentialist responsibility for their choices, and Virtue Ethics' patient cultivation of character. The traditions aren't really competitors. They emphasize different aspects of the same underlying work. Starting with one tradition that fits your current life is reasonable. Over time, you'll likely add elements of others. The mature position is rarely pure allegiance to a single school.`,
             },
-          ,
             {
               word: `decision paralysis`,
               definition: `A state in which the weight of choice becomes so heavy that deciding becomes difficult. Named as a potential limit of Existentialism when taken to extremes, because every choice feels weighted by its identity implications.`,
