@@ -288,6 +288,8 @@ export default function ExplorerWelcomeScreen({
           lineHeight:   1.7,
           position:     'relative',
           animation:    'wc-fade-in 0.4s ease both',
+          maxHeight:    '45vh',
+          overflowY:    'auto',
         }}>
           {/* Bubble arrow pointing up toward avatar */}
           <div style={{
