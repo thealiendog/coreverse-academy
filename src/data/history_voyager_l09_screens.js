@@ -29,7 +29,7 @@ const HISTORY_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, the Holocaust is the case that drove the development of the genocide concept (Lemkin's word, the UN Convention) and remains the most extensively documented mass atrocity in human history. Today we engage it through source evaluation: what kinds of sources exist on the Holocaust, how to read each kind well, and why source literacy specifically matters for engaging this history because Holocaust denial exists as an active phenomenon you'll encounter online. Three tiers of sources: peer-reviewed academic scholarship and primary documents with established provenance; serious memoir and journalistic work from survivors and witnesses; and Holocaust denial / minimization that you need to be able to recognize. This is heavy content. If you have family connection to the Holocaust or to other genocides, or if engaging this material feels heavy in ways you weren't expecting, that's appropriate to the material. Resources at the end and throughout. Let's begin with care.`,
+          guideText: `{name}, the Holocaust is the most documented genocide in history — and also one of the most contested, because denial is a live political force, not just a historical mistake. Understanding how to evaluate sources on the Holocaust is one of the most important source literacy skills this band can teach. Three tiers of sources exist. This lesson maps them before you work with them.`,
           headline: `The Holocaust in Depth`,
           subtitle: `Source evaluation: academic / memoir / denial. The case that drove the genocide concept.`,
           visual: `/voyager-assets/history/l09-welcome.webp`,

@@ -27,7 +27,7 @@ const HISTORY_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, the Cold War ended (L11) with the Berlin Wall's fall November 9, 1989 and the Soviet Union's formal dissolution December 25, 1991. What came next? Three decades and counting of "post-Cold War world order" that turned out very different from what most observers expected in 1991. The early-1990s consensus was triumphalist (Francis Fukuyama's "End of History" 1992 argued liberal democracy and market capitalism had won as the endpoint of political-economic evolution). The actual trajectory has been messier: Eastern Europe and Russia took different paths after 1991; the US-led "unipolar moment" was tested by 9/11 (September 11, 2001) and squandered in the Iraq War (March 2003); China rose under one-party rule, becoming the world's second-largest economy by ~2010 while explicitly rejecting Western political models. Today three cases that show three different patterns of post-Cold War order: institutional spread (Eastern Europe / Russia), unilateral overreach (Iraq), alternative model emergence (China). Engaging each builds framework for the world you're growing up into.`,
+          guideText: `{name}, in 1991 the Soviet Union collapsed and commentators declared the end of history — liberal democracy had won and would spread everywhere. They were wrong. This lesson examines what 1991 actually started: not a new world order but a new set of conflicts. What happened matters for understanding the world your generation inherited.`,
           headline: `Post-Cold War World Order`,
           subtitle: `Three cases. Three different patterns of what came after 1991.`,
           visual: `/voyager-assets/history/l12-welcome.webp`,

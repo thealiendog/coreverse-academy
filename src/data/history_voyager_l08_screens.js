@@ -28,7 +28,7 @@ const HISTORY_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, today we engage genocide as a category, with three case studies of how it has happened and how it might be prevented. This is heavy content. The framework for engaging it seriously matters: the term "genocide" is precise (defined by Raphael Lemkin in 1944 and the UN Convention in 1948), the cases have specific patterns that researchers have identified (Gregory Stanton's "Ten Stages of Genocide"), and the question of prevention is among the most urgent in global politics. Three cases: the Armenian Genocide (1915-1923), the Rwandan Genocide (1994), the Bosnian War and Srebrenica (1992-1995). Each shows a different pattern of organization, international response, and aftermath. If you have personal connection to any of these histories or if engaging this material feels heavy for you, that's appropriate; this content has weight for good reasons. Resources at the end of the lesson if you need to talk to someone. Let's begin with care.`,
+          guideText: `{name}, genocide is the deliberate destruction of a people — and it has happened repeatedly across history, not just once. Understanding the pattern of how genocides unfold, why memory matters, and how prevention works requires frameworks that most people never get. This lesson builds those frameworks before we examine specific cases in depth.`,
           headline: `Genocide: Prevention and Memory`,
           subtitle: `Three cases. Definitions, prevention frameworks, memory.`,
           visual: `/voyager-assets/history/l08-welcome.webp`,

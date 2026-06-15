@@ -26,7 +26,7 @@ const HISTORY_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson you committed to a position on economic systems. Today we map the political ideologies that organize how societies think about government, freedom, equality, and order. The everyday vocabulary (left, right, liberal, conservative, socialist, libertarian) gets used loosely, often to mark tribal belonging more than to describe coherent positions. Behind these labels are serious intellectual traditions with real philosophers, real arguments, and real disagreements. Today five voices speak from five traditions: conservative (Burke), classical liberal (Mill), social democratic (Rawls applied politically, FDR), socialist (Debs, contemporary democratic socialists), anarchist (Kropotkin, Goldman, contemporary anarchists). You engage with each rather than committing to one; these traditions don't reduce to a single committed answer at 12 because the questions they argue about will be your questions to navigate across decades.`,
+          guideText: `{name}, political ideologies are the lenses through which people read the world — which problems they see, which solutions seem natural, which values they prioritize. Conservative, liberal, libertarian, socialist: these traditions have genuine insights and genuine blind spots. This lesson maps them seriously so you can engage with them critically rather than dismissing them as tribal labels.`,
           headline: `Political Ideologies: Left, Right, and Beyond`,
           subtitle: `Five voices from five serious traditions. Perspectives format, no forced commitment.`,
           visual: `/voyager-assets/history/l05-welcome.webp`,

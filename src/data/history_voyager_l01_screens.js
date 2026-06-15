@@ -26,7 +26,7 @@ const HISTORY_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, before we work through any specific history across this band, we have to confront the question most history education skips: how do we know what we know about the past? You're going to spend 20 lessons examining genocides, revolutions, imperialism, the Cold War, contested regions, indigenous histories, and where history is going. Every single lesson rests on a foundation that's worth examining first: what counts as evidence, who gets to write history, how confident can we be in claims about events centuries old, and what's the difference between history and the past. Three serious positions on these questions will be presented, each with substantial defenders going back to the 19th century. By the end you'll have framework for everything that follows. I'm Lyra. I'm an elephant who remembers and tells; my role in this band is to make sure you can see the past as it actually was, as far as that's possible, and recognize when you can't.`,
+          guideText: `{name}, history is not the same thing as the past. The past is what actually happened. History is the stories we tell about it — and those stories are always shaped by who's telling them, what sources survived, and what questions we're asking. Three serious positions exist on how much we can know about the past. This lesson gives you the tools to think about history itself before we dive into any of it.`,
           headline: `How Do We Know the Past?`,
           subtitle: `Three serious positions on historical knowledge. The foundation everything else rests on.`,
           visual: `/voyager-assets/history/l01-welcome.webp`,

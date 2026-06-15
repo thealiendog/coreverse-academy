@@ -26,7 +26,7 @@ const HISTORY_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson we built framework on power. Today we apply it to economic systems: capitalism, socialism, communism. These words get used loosely in everyday political talk, often as insults more than analyses. The serious traditions behind them disagree about deep questions: how should goods and services be produced and distributed, what role should governments play in markets, what produces prosperity, and what produces freedom? Three serious positions exist among economists, philosophers, and political theorists. Each has real evidence on its side; each has real failures in its record. Most adults around you absorbed one position from their political tradition and never seriously engaged the others. Today you build framework that lets you read economic debates with depth most readers never develop. The arguments matter; the stakes are how billions of people live.`,
+          guideText: `{name}, every society answers the same basic questions: what gets produced, how, and who gets it. Economic systems are the different answers humans have tried. Capitalism, social democracy, socialism, communism — these aren't just theories. They're arrangements that have been tried, with real consequences for real people. This lesson gives you the frameworks to evaluate them honestly.`,
           headline: `Economic Systems: Capitalism, Socialism, Communism`,
           subtitle: `Three serious positions. Real evidence, real failures, real stakes.`,
           visual: `/voyager-assets/history/l04-welcome.webp`,

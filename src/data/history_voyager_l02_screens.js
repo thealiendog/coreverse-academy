@@ -26,7 +26,7 @@ const HISTORY_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson we worked through how we know the past in principle. Today we examine who actually writes history in practice. The slogan "history is written by the victors" gets at something real but misses what's also true: history is also written by women, by colonized peoples, by ordinary workers, by indigenous communities, by everyone with reasons to record and means to preserve. The question isn't just "who has been heard?" but "who's heard now, who's still excluded, and what does paying attention to whose voice it is do to what we know?" Three serious tiers of historical sources will be evaluated. The skill builds directly from L14 in Life Wellness on source evaluation, applied to history specifically.`,
+          guideText: `{name}, who writes history determines what history says. Great men, nameless masses, victorious nations, colonized peoples — the same events look completely different depending on whose perspective organizes the account. Historiography is the study of how history gets written and why it looks the way it does. This lesson builds the critical lens you'll need for everything that follows.`,
           headline: `Who Writes History?`,
           subtitle: `Three tiers of historical sources and voices. Source evaluation applied to history.`,
           visual: `/voyager-assets/history/l02-welcome.webp`,
