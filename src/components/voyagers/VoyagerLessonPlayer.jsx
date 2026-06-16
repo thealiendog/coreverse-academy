@@ -316,11 +316,16 @@ function normalizeForTTS(text) {
   let t = text;
 
   // Units (do first so km² isn't caught by bare km)
-  t = t.replace(/km²/g,  'square kilometers');
-  t = t.replace(/m²/g,   'square meters');
-  t = t.replace(/km\/s/g,'kilometers per second');
-  t = t.replace(/m\/s/g, 'meters per second');
-  t = t.replace(/ly\b/g, 'light-years');
+  // (?<![a-zA-Z]) guards prevent matching inside words (e.g. "exam²" or "okm/s")
+  // while still matching units that immediately follow digits ("5km²", "3m/s").
+  // \b guards are wrong for these because digits are \w, so digit→letter has no \b.
+  t = t.replace(/(?<![a-zA-Z])km²/g,  'square kilometers');
+  t = t.replace(/(?<![a-zA-Z])m²/g,   'square meters');
+  t = t.replace(/(?<![a-zA-Z])km\/s/g,'kilometers per second');
+  t = t.replace(/(?<![a-zA-Z])m\/s/g, 'meters per second');
+  // \bly\b: word boundaries on BOTH sides prevent partial matches in "clearly", "only", "fly"
+  t = t.replace(/\bly\b/g, 'light-years');
+  // °C / °F: ° is non-word so embedding impossible; trailing \b correctly blocks "°Celsius"
   t = t.replace(/°C\b/g, 'degrees Celsius');
   t = t.replace(/°F\b/g, 'degrees Fahrenheit');
   t = t.replace(/%/g,    ' percent');
