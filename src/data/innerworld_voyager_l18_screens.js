@@ -368,7 +368,7 @@ const INNERWORLD_VOYAGER_L18 = {
           headline: `Sit with this`,
           intro: `Pick the prompt that pulls at you most. Your answer is saved.`,
           prompts: [
-            { id: `reflect-cognitive`, category: `Cognitive`, prompt: `What's harder about evaluating NDE evidence than evaluating the manifestation claims in L13 or the placebo claims in L5? Why?` },
+            { id: `reflect-cognitive`, category: `Cognitive`, prompt: `What's harder about evaluating NDE evidence than evaluating the manifestation claims in Lesson 13 or the placebo claims in L5? Why?` },
             { id: `reflect-meta`, category: `Metacognitive`, prompt: `When you ranked the three sources, were you tempted to rank them by which conclusion you preferred rather than by their methodology? Be honest.` },
             { id: `reflect-identity`, category: `Identity`, prompt: `Most people pick a team on NDEs (believer or dismisser). What kind of person are you trying to be when you choose to hold the question open instead?` },
             { id: `reflect-application`, category: `Application`, prompt: `Think of another contested question in your life (a science topic, a historical event, a political question). Could you apply the same intellectual humility framework?` },

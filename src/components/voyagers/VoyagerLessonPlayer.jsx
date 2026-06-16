@@ -1372,7 +1372,7 @@ export default function VoyagerLessonPlayer() {
       if (countdownIntervalRef.current) { clearInterval(countdownIntervalRef.current); countdownIntervalRef.current = null; countdownPausedRef.current = true; setCountdown(null); }
     } else if (countdownPausedRef.current) {
       countdownPausedRef.current = false;
-      startCountdownFnRef.current?.();
+      // Do NOT resume countdown here — closing vocab should not auto-advance the screen
     }
   }, [vocabOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -1404,7 +1404,18 @@ export default function VoyagerLessonPlayer() {
     }
     startCountdownFnRef.current = startCountdownForScreen;
 
-    if (screen.type === 'magazine' || screen.type === 'story-beat') {
+    if (screen.type === 'magazine') {
+      const fullText = getScreenText(screen, childName);
+      const next = screens[screenIdx + 1];
+      if (next?.type === 'magazine' || next?.type === 'story-beat') { const nt = getScreenText(next, childName); if (nt) prewarmAudio(nt); }
+      speakStartTimeRef.current = Date.now();
+      // No onDone callback — magazine sections only advance on user tap (› button)
+      speak(fullText, () => {
+        if (cancelled) return;
+        const dur = Date.now() - speakStartTimeRef.current;
+        if (audioEnabledRef.current && dur < 1000) { setAudioMissing(true); }
+      });
+    } else if (screen.type === 'story-beat') {
       const fullText = getScreenText(screen, childName);
       const next = screens[screenIdx + 1];
       if (next?.type === 'magazine' || next?.type === 'story-beat') { const nt = getScreenText(next, childName); if (nt) prewarmAudio(nt); }

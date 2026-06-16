@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L20 = {
         {
           id: `l20-welcome`,
           type: `welcome`,
-          guideText: `{name}, you made it. Twenty lessons. From the macro mechanics of money in L01 to the ethics of financial decisions in L19, you've covered more applied financial literacy than most adults will ever encounter. The point of all of it has never been the individual facts. The point is the integrated framework you can now use to design a financial life that actually makes sense for you. Today is the capstone. We pull together every prior lesson and ask: what kind of financial life are you building? Three serious philosophies emerge from the research and the ethics. You build your final argument. This is 100 XP. Make it count. — Ace`,
+          guideText: `{name}, you made it. Twenty lessons. From the macro mechanics of money in Lesson 1 to the ethics of financial decisions in Lesson 19, you've covered more applied financial literacy than most adults will ever encounter. The point of all of it has never been the individual facts. The point is the integrated framework you can now use to design a financial life that actually makes sense for you. Today is the capstone. We pull together every prior lesson and ask: what kind of financial life are you building? Three serious philosophies emerge from the research and the ethics. You build your final argument. This is 100 XP. Make it count. — Ace`,
           headline: `Designing Your Financial Life`,
           subtitle: `The capstone. Synthesize everything. Build the framework you'll use for 60+ years.`,
           visual: `/voyager-assets/money-business/l20-welcome.webp`,
@@ -38,11 +38,11 @@ const MONEYBUSINESS_VOYAGER_L20 = {
           section: 1,
           headline: `What The 19 Lessons Together Actually Teach`,
           paragraphs: [
-            `Stepping back from the individual lessons, several integrated patterns emerge. First: the math of compound interest is the single most important financial concept. From L02 through every subsequent lesson, compounding has appeared again and again. Five dollars a month at 14 becomes $25,000 by 65. Twenty-two percent credit card debt doubles in 3.6 years. Skill depth compounds. Habits compound. The financial life you build is the result of small consistent decisions over decades, not heroic single moments.`,
-            `Second: the boring path beats the exciting path for almost everyone. L05 (stocks), L13 (get rich quick), and L16 (financial news) all converge on the same finding. Index funds beat active stock picking for most investors. Get-rich-quick schemes lose for almost everyone. Boring journalism beats cable speculation. The fact that mainstream advice is unexciting doesn't mean it's wrong. The exciting alternatives almost always have something to sell.`,
-            `Third: most financial mistakes are pattern mistakes, not isolated errors. The same psychological tendencies (impatience, social comparison, fear of missing out, susceptibility to confident narratives) drive bad decisions across many financial categories. Building pattern recognition (dark patterns in L10, scam schemes in L13, get-rich-quick recognition, insurance product evaluation) protects you across dozens of decision contexts at once.`,
-            `Fourth: financial decisions affect, but don't determine, well-being. L18 made this explicit, but it ran through the whole band. Money matters for happiness throughout the income range with diminishing returns; it doesn't replace relationships, autonomy, engaging work, health, and meaning. A financial life designed without these other dimensions isn't actually a good life, no matter how much money it accumulates.`,
-            `Fifth: ethical and practical considerations interact. L19 made this explicit. The kind of financial life that's right for you depends on your values about responsibility, harm, autonomy, and what you owe to others. Different people with the same financial knowledge can build very different lives because their values differ. This isn't a problem; it's the point.`,
+            `Stepping back from the individual lessons, several integrated patterns emerge. First: the math of compound interest is the single most important financial concept. From Lesson 2 through every subsequent lesson, compounding has appeared again and again. Five dollars a month at 14 becomes $25,000 by 65. Twenty-two percent credit card debt doubles in 3.6 years. Skill depth compounds. Habits compound. The financial life you build is the result of small consistent decisions over decades, not heroic single moments.`,
+            `Second: the boring path beats the exciting path for almost everyone. Lesson 5 (stocks), Lesson 13 (get rich quick), and Lesson 16 (financial news) all converge on the same finding. Index funds beat active stock picking for most investors. Get-rich-quick schemes lose for almost everyone. Boring journalism beats cable speculation. The fact that mainstream advice is unexciting doesn't mean it's wrong. The exciting alternatives almost always have something to sell.`,
+            `Third: most financial mistakes are pattern mistakes, not isolated errors. The same psychological tendencies (impatience, social comparison, fear of missing out, susceptibility to confident narratives) drive bad decisions across many financial categories. Building pattern recognition (dark patterns in Lesson 10, scam schemes in Lesson 13, get-rich-quick recognition, insurance product evaluation) protects you across dozens of decision contexts at once.`,
+            `Fourth: financial decisions affect, but don't determine, well-being. Lesson 18 made this explicit, but it ran through the whole band. Money matters for happiness throughout the income range with diminishing returns; it doesn't replace relationships, autonomy, engaging work, health, and meaning. A financial life designed without these other dimensions isn't actually a good life, no matter how much money it accumulates.`,
+            `Fifth: ethical and practical considerations interact. Lesson 19 made this explicit. The kind of financial life that's right for you depends on your values about responsibility, harm, autonomy, and what you owe to others. Different people with the same financial knowledge can build very different lives because their values differ. This isn't a problem; it's the point.`,
           ],
           image: `/voyager-assets/money-business/l20-s1-synthesis.webp`,
           imageCaption: `Five integrating patterns across all twenty lessons.`,
@@ -55,7 +55,7 @@ const MONEYBUSINESS_VOYAGER_L20 = {
             {
               word: `pattern recognition`,
               definition: `The ability to spot recurring structures across different situations. Financial pattern recognition allows you to identify scams, dark patterns, predatory insurance, and bad debt across many decision contexts at once, without needing to analyze each fresh.`,
-              audioPrompt: `Pattern recognition is the ability to spot recurring structures across different situations, {name}. Financial pattern recognition allows you to identify scams, dark patterns, predatory insurance, and bad debt across many contexts at once. When you can recognize the pump-and-dump pattern from L13, you see it in crypto, in MLMs, and in real estate schemes even when the specific product is new. When you recognize the extended warranty pattern from L17, you see it in every checkout offer across every product category. The investment in learning patterns pays dividends across decades of decisions. This is one of the most important things the 20 lessons are designed to build: not just knowledge of specific cases, but the pattern recognition that transfers to every new case you encounter.`,
+              audioPrompt: `Pattern recognition is the ability to spot recurring structures across different situations, {name}. Financial pattern recognition allows you to identify scams, dark patterns, predatory insurance, and bad debt across many contexts at once. When you can recognize the pump-and-dump pattern from Lesson 13, you see it in crypto, in MLMs, and in real estate schemes even when the specific product is new. When you recognize the extended warranty pattern from Lesson 17, you see it in every checkout offer across every product category. The investment in learning patterns pays dividends across decades of decisions. This is one of the most important things the 20 lessons are designed to build: not just knowledge of specific cases, but the pattern recognition that transfers to every new case you encounter.`,
             },
             {
               word: `lifestyle inflation`,
@@ -220,42 +220,42 @@ const MONEYBUSINESS_VOYAGER_L20 = {
           evidence: [
             {
               id: `e1`,
-              text: `Compound interest math (L02): $500/month invested at 8% over 40 years produces about $1.5M. The compounding advantage of early saving is mathematically enormous. Aggressive savers in their 20s build wealth fast.`,
+              text: `Compound interest math (Lesson 2): $500/month invested at 8% over 40 years produces about $1.5M. The compounding advantage of early saving is mathematically enormous. Aggressive savers in their 20s build wealth fast.`,
               source: `Lesson 02: Compound interest fundamentals`,
             },
             {
               id: `e2`,
-              text: `Index funds outperform 80-90% of active managers over 10-year periods (L05). Boring consistent index investing produces strong long-term returns without requiring sophisticated investment skill.`,
+              text: `Index funds outperform 80-90% of active managers over 10-year periods (Lesson 5). Boring consistent index investing produces strong long-term returns without requiring sophisticated investment skill.`,
               source: `Lesson 05: SPIVA reports`,
             },
             {
               id: `e3`,
-              text: `Career trajectory research (L11): job-switchers earn 30-50% more over careers than job-stayers. Geographic and field choices compound enormously. Real income gains require active career management, not passive employment.`,
+              text: `Career trajectory research (Lesson 11): job-switchers earn 30-50% more over careers than job-stayers. Geographic and field choices compound enormously. Real income gains require active career management, not passive employment.`,
               source: `Lesson 11: BLS career data`,
             },
             {
               id: `e4`,
-              text: `Get-rich-quick schemes consistently fail (L13): 99% of MLM participants lose money or earn less than minimum wage; 70-95% of day traders lose; survivorship bias hides the losses. The boring path beats the exciting one for almost everyone.`,
+              text: `Get-rich-quick schemes consistently fail (Lesson 13): 99% of MLM participants lose money or earn less than minimum wage; 70-95% of day traders lose; survivorship bias hides the losses. The boring path beats the exciting one for almost everyone.`,
               source: `Lesson 13: FTC research; SEC/FINRA data`,
             },
             {
               id: `e5`,
-              text: `Wealth-happiness research (L18): income matters throughout the range with diminishing returns; relationships, autonomy, engaging work, health, and meaning matter as much or more above adequacy. Money alone doesn't produce happiness.`,
+              text: `Wealth-happiness research (Lesson 18): income matters throughout the range with diminishing returns; relationships, autonomy, engaging work, health, and meaning matter as much or more above adequacy. Money alone doesn't produce happiness.`,
               source: `Lesson 18: Kahneman-Killingsworth; Harvard Study of Adult Development`,
             },
             {
               id: `e6`,
-              text: `Most financial mistakes are pattern mistakes (L06, L10, L13, L17): bad debt, dark patterns, schemes, predatory insurance share predictable structures. Pattern recognition protects across many decision contexts at once.`,
+              text: `Most financial mistakes are pattern mistakes (Lesson 6, Lesson 10, Lesson 13, Lesson 17): bad debt, dark patterns, schemes, predatory insurance share predictable structures. Pattern recognition protects across many decision contexts at once.`,
               source: `Multiple lessons on pattern recognition`,
             },
             {
               id: `e7`,
-              text: `Insurance and tax literacy (L12, L17): most adults overpay on both due to poor framework knowledge. Conscious decisions in these areas typically save thousands per year, which compounds across decades.`,
+              text: `Insurance and tax literacy (Lesson 12, Lesson 17): most adults overpay on both due to poor framework knowledge. Conscious decisions in these areas typically save thousands per year, which compounds across decades.`,
               source: `Lessons 12 and 17`,
             },
             {
               id: `e8`,
-              text: `Ethical frameworks (L19): different philosophies (maximize returns, ESG, minimum harm) lead to different financial lives. Choosing a framework explicitly produces better alignment between money and values than drifting.`,
+              text: `Ethical frameworks (Lesson 19): different philosophies (maximize returns, ESG, minimum harm) lead to different financial lives. Choosing a framework explicitly produces better alignment between money and values than drifting.`,
               source: `Lesson 19: Ethics of money`,
             },
           ],

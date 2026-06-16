@@ -469,6 +469,10 @@ export default function MagazineScreen({
           0%, 100% { transform: translateY(0); }
           50%       { transform: translateY(6px); }
         }
+        @keyframes mag-load-pulse {
+          0%, 100% { opacity: 1;   transform: scale(1); }
+          50%       { opacity: 0.6; transform: scale(0.88); }
+        }
         /* Only show scroll hint on short viewports (iPhone portrait).
            Hidden on iPad/tablet where vocab usually fits without scrolling. */
         .mag-scroll-hint { display: flex; }
@@ -508,6 +512,7 @@ export default function MagazineScreen({
             fontSize: '1rem', cursor: 'pointer', display: 'flex',
             alignItems: 'center', justifyContent: 'center',
             touchAction: 'manipulation', transition: 'background 0.2s',
+            animation: loadingAudio ? 'mag-load-pulse 0.8s ease-in-out infinite' : 'none',
           }}
         >
           {audioPaused ? '▶' : (speaking || loadingAudio) ? '⏸' : '▶'}

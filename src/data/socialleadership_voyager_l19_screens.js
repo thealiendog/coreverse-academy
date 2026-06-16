@@ -77,7 +77,7 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
             `Signal 3: stakes you can address. The situation involves real consequences and you're positioned to do something about them. You see a problem developing that others may not have noticed. You see a path forward that others may not have considered. Stepping up because you see something that needs doing is different from inserting yourself unnecessarily; the test is whether your action addresses real stakes.`,
             `Signal 4: position someone has to take. Sometimes situations require someone to make a call when consensus isn't going to emerge. If you have enough information to make the call and someone has to make it, taking responsibility for the decision is leadership. The decision might be wrong; taking responsibility for it lets the group move forward instead of staying stuck.`,
             `Signal 5: protecting people who can't protect themselves. Younger kids, newer members, people being unfairly treated. Even if you don't have formal authority, your presence and willingness to act provides protection that wouldn't exist otherwise. This signal often combines with vacuum (no formal authority is intervening) and stakes (real harm is happening).`,
-            `Important caveat. These signals indicate that leadership is appropriate; they don't dictate HOW to lead. Even when these signals are clear, good leadership involves invitation, consultation, and proposal more than pure direction. Leading without authority (covered in L16) is the relevant framework: relationships, modeling, proposal pairing, building coalition. The signals say "lead here"; the L16 framework says "lead like this."`,
+            `Important caveat. These signals indicate that leadership is appropriate; they don't dictate HOW to lead. Even when these signals are clear, good leadership involves invitation, consultation, and proposal more than pure direction. Leading without authority (covered in Lesson 16) is the relevant framework: relationships, modeling, proposal pairing, building coalition. The signals say "lead here"; the Lesson 16 framework says "lead like this."`,
           ],
           image: `/voyager-assets/social-leadership/l19-s2-lead.webp`,
           imageCaption: `Five signals to lead: vacuum, specific expertise, stakes you can address, position requiring a call, protecting vulnerable people.`,
@@ -112,14 +112,14 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
             `Signal 3: you're new to the context. New members of any team, organization, or community usually benefit from learning the existing patterns before trying to change them. Your fresh perspective may eventually contribute useful insights, but only after you've understood why things are done the way they are. New people who immediately try to lead often miss context they don't realize they're missing.`,
             `Signal 4: your role is execution. Some situations require coordinated execution where individual leadership initiative would actually undermine the coordination. Military units in operations, surgical teams during procedures, sports teams executing plays, orchestras performing pieces. In these contexts, doing your specific role well is leadership; trying to expand your role usually damages the whole.`,
             `Signal 5: someone else stepping up needs support. When someone else is stepping into leadership (especially when they're new at it), your support often serves better than competing for the same role. Effective followership of new leaders helps them develop while strengthening the team. Competing leadership claims often damage the new leader without producing better outcomes.`,
-            `Important caveat. Following doesn't mean blind compliance (covered in L11). Effective followership includes raising concerns, asking questions, offering input, and refusing complicity in genuinely wrong actions. The signals say "follow here"; the L11 framework says "follow like this" — engaged critical followership rather than passive compliance.`,
+            `Important caveat. Following doesn't mean blind compliance (covered in Lesson 11). Effective followership includes raising concerns, asking questions, offering input, and refusing complicity in genuinely wrong actions. The signals say "follow here"; the Lesson 11 framework says "follow like this" — engaged critical followership rather than passive compliance.`,
           ],
           image: `/voyager-assets/social-leadership/l19-s3-follow.webp`,
           imageCaption: `Five signals to follow: someone with better expertise leads, formal authority operating well, you're new to context, execution role, supporting someone else stepping up.`,
           vocab: [
             {
               word: `following well`,
-              definition: `Effective followership when situational signals indicate following is appropriate. Different from blind compliance: includes raising concerns through appropriate channels, asking questions, offering input, refusing complicity in genuinely wrong actions, supporting leader's success while maintaining your own judgment. The Chaleff framework (from L11) describes what this looks like. Following well is its own skill, distinct from leadership skill and from passive obedience.`,
+              definition: `Effective followership when situational signals indicate following is appropriate. Different from blind compliance: includes raising concerns through appropriate channels, asking questions, offering input, refusing complicity in genuinely wrong actions, supporting leader's success while maintaining your own judgment. The Chaleff framework (from Lesson 11) describes what this looks like. Following well is its own skill, distinct from leadership skill and from passive obedience.`,
               audioPrompt: `Following well, as distinct from blind compliance, is effective followership when situational signals indicate following is appropriate, {name}. Different from blind compliance in several specific ways. Includes raising concerns through appropriate channels when you see problems. Includes asking questions when you don't understand something or when you have different information. Includes offering input on decisions where your perspective could improve them. Includes refusing complicity in genuinely wrong actions even when the leader is directing them. Includes supporting the leader's success while maintaining your own judgment. The Chaleff framework from lesson 11 describes what this looks like specifically: courage to assume responsibility, courage to serve, courage to challenge, courage to participate in transformation, courage to take moral action. Following well is its own skill, distinct from leadership skill and from passive obedience. People who develop both leadership and followership skills explicitly are unusually effective compared to people who develop only one.`,
             },
             {
@@ -248,7 +248,7 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
               id: `item-4`,
               label: `Your robotics team is preparing for a competition. The team captain, Anika, has been doing competitive robotics for four years. She has a specific competition strategy based on what she's learned from past events. You think there might be a different approach, but you're in your first year and you've never been to a competition.`,
               correctBucket: `follow`,
-              explanation: `Better expertise + new to context. Anika has four years of specific competition experience; you have zero. Even if your idea is interesting in theory, the chance that she's missing something obvious that you noticed in your first year is low. Better to follow her strategy this competition, observe carefully, and contribute your perspective AFTER you've experienced what she's seen. The "engaged critical followership" framing from L11 still applies: you can ask questions, offer input, raise concerns. But the primary role is following her lead, learning from her experience, and building your own competition knowledge before challenging her strategic direction.`,
+              explanation: `Better expertise + new to context. Anika has four years of specific competition experience; you have zero. Even if your idea is interesting in theory, the chance that she's missing something obvious that you noticed in your first year is low. Better to follow her strategy this competition, observe carefully, and contribute your perspective AFTER you've experienced what she's seen. The "engaged critical followership" framing from Lesson 11 still applies: you can ask questions, offer input, raise concerns. But the primary role is following her lead, learning from her experience, and building your own competition knowledge before challenging her strategic direction.`,
             },
             {
               id: `item-5`,
@@ -326,7 +326,7 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
                 `Random signals`,
               ],
               correctIndex: 1,
-              explanation: `These signals indicate leadership is appropriate; they don't dictate HOW to lead. Even when signals are clear, good leadership involves invitation, consultation, proposal (from L16 leading-without-authority framework) more than pure direction.`,
+              explanation: `These signals indicate leadership is appropriate; they don't dictate HOW to lead. Even when signals are clear, good leadership involves invitation, consultation, proposal (from Lesson 16 leading-without-authority framework) more than pure direction.`,
             },
             {
               id: `q4`,
@@ -339,7 +339,7 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
                 `Just defer`,
               ],
               correctIndex: 1,
-              explanation: `Following doesn't mean blind compliance. Effective followership (from L11 Chaleff framework) includes raising concerns, asking questions, offering input, and refusing complicity in genuinely wrong actions. The signals say "follow here"; L11 says "follow like this."`,
+              explanation: `Following doesn't mean blind compliance. Effective followership (from Lesson 11 Chaleff framework) includes raising concerns, asking questions, offering input, and refusing complicity in genuinely wrong actions. The signals say "follow here"; Lesson 11 says "follow like this."`,
             },
             {
               id: `q5`,
@@ -373,7 +373,7 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
               question: `What's "following well" versus "blind compliance"?`,
               options: [
                 `Same thing`,
-                `Following well: includes raising concerns through appropriate channels, asking questions, offering input, refusing complicity in wrong actions, supporting leader's success while maintaining own judgment; from Chaleff framework (L11); blind compliance: doing what authority directs without independent judgment; following well is distinct skill from leadership and from passive obedience`,
+                `Following well: includes raising concerns through appropriate channels, asking questions, offering input, refusing complicity in wrong actions, supporting leader's success while maintaining own judgment; from Chaleff framework (Lesson 11); blind compliance: doing what authority directs without independent judgment; following well is distinct skill from leadership and from passive obedience`,
                 `Just listening`,
                 `Random distinction`,
               ],

@@ -216,12 +216,12 @@ const INNERWORLD_VOYAGER_L20 = {
           evidence: [
             {
               id: `e1`,
-              text: `Jung's framework (L03, L12, L15) and IFS (L11) establish that significant parts of mind operate unconsciously and shape behavior. Without self-investigation, you remain driven by patterns you cannot see.`,
+              text: `Jung's framework (Lesson 3, Lesson 12, Lesson 15) and IFS (Lesson 11) establish that significant parts of mind operate unconsciously and shape behavior. Without self-investigation, you remain driven by patterns you cannot see.`,
               source: `Lessons 3, 11, 12, 15 of this band`,
             },
             {
               id: `e2`,
-              text: `Aristotle's habituation (L19) and modern habit research show that character is shaped by repeated small actions in stable contexts, not by single grand decisions. Practice is what builds who you are.`,
+              text: `Aristotle's habituation (Lesson 19) and modern habit research show that character is shaped by repeated small actions in stable contexts, not by single grand decisions. Practice is what builds who you are.`,
               source: `Lesson 19; Wood, Lally habit research`,
             },
             {
@@ -231,22 +231,22 @@ const INNERWORLD_VOYAGER_L20 = {
             },
             {
               id: `e4`,
-              text: `Source evaluation skills (L04, L05, L13, L17, L18) only work when you actively practice them in real situations. Reading about them once isn't enough. They become useful through daily application.`,
+              text: `Source evaluation skills (Lesson 4, Lesson 5, Lesson 13, Lesson 17, Lesson 18) only work when you actively practice them in real situations. Reading about them once isn't enough. They become useful through daily application.`,
               source: `Multiple lessons across this band`,
             },
             {
               id: `e5`,
-              text: `Stoicism (L19) emphasizes the discipline of acting on what you can control. Existentialism emphasizes conscious choice. Virtue Ethics emphasizes habituation. The integrator path argues all three are necessary; pure commitment to one alone misses what the others see.`,
+              text: `Stoicism (Lesson 19) emphasizes the discipline of acting on what you can control. Existentialism emphasizes conscious choice. Virtue Ethics emphasizes habituation. The integrator path argues all three are necessary; pure commitment to one alone misses what the others see.`,
               source: `Lesson 19`,
             },
             {
               id: `e6`,
-              text: `Adolescent identity formation (L02, L11) is the central developmental task of this age. Engaging it consciously through reflection and reading has lasting effects on adult identity, supporting the explorer path's emphasis on self-investigation now.`,
+              text: `Adolescent identity formation (Lesson 2, Lesson 11) is the central developmental task of this age. Engaging it consciously through reflection and reading has lasting effects on adult identity, supporting the explorer path's emphasis on self-investigation now.`,
               source: `Lessons 2, 11; Erikson developmental psychology`,
             },
             {
               id: `e7`,
-              text: `The DMN lesson (L08) showed that pure inner focus can produce real costs (depersonalization, dissociation) without grounding in action. The practitioner path's emphasis on real-world engagement protects against these risks.`,
+              text: `The DMN lesson (Lesson 8) showed that pure inner focus can produce real costs (depersonalization, dissociation) without grounding in action. The practitioner path's emphasis on real-world engagement protects against these risks.`,
               source: `Lesson 8`,
             },
           ],

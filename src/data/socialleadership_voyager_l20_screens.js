@@ -62,7 +62,7 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             },
             {
               word: `foundations across the band`,
-              definition: `The integrated set of frameworks built across 20 lessons covering: what leadership is (L1-L3), core leadership skills (L4-L7), systems and groups (L8-L12), advanced skills (L13-L15), and harder situations (L16-L19). Together these frameworks constitute what the text calls a "whole landscape of leadership" coverage that most adults lack. The capstone draws on all 19 prior lessons rather than any single one.`,
+              definition: `The integrated set of frameworks built across 20 lessons covering: what leadership is (L1-L3), core leadership skills (L4-L7), systems and groups (L8-L12), advanced skills (Lessons 13-15), and harder situations (Lessons 16-19). Together these frameworks constitute what the text calls a "whole landscape of leadership" coverage that most adults lack. The capstone draws on all 19 prior lessons rather than any single one.`,
               audioPrompt: `Foundations across the band refers to the integrated set of frameworks built across all twenty lessons, now available for synthesis in the capstone, {name}. The text's review section maps the structure explicitly. Lessons 1 through 3 built foundations: what leadership is, power versus authority versus influence, trust as the base everything builds on. Lessons 4 through 7 added core skills: listening, decisions under uncertainty, conflict navigation, persuasion versus manipulation. Lessons 8 through 12 expanded into systems and groups: leading through change, status and hierarchy, civic engagement, followership, building effective teams. Lessons 13 through 15 added advanced skills: difficult conversations, power dynamics in groups, charisma versus substance. Lessons 16 through 19 deepened into harder situations: leading without authority, ethics of leadership, leading yourself first, when to lead versus follow. The capstone draws on all of this rather than any single lesson. The strength of the capstone argument comes from how well you've integrated the band: picking 3-4 lessons that most support your chosen philosophy and connecting them to the thinkers and research they cited. That integration — frameworks from different lessons coalescing into a coherent philosophy — is the synthesis the capstone requires.`,
             },
           ],
@@ -76,7 +76,7 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
           paragraphs: [
             `The first position: the foundation of all leadership is substance: competence, integrity, judgment, character. Without these, communication skills and influence techniques produce manipulation or performance rather than real leadership. With these, even imperfect communication can produce real outcomes. Substance is primary; everything else is secondary.`,
             `What "substance" specifically means in this framing. Competence: real capability in domains relevant to your leadership. Integrity: alignment between what you say, what you believe, and what you do; trustworthiness even under pressure. Judgment: ability to read situations accurately and make decisions that serve people affected. Character: virtues developed over time that produce good action across many situations (courage, justice, temperance, wisdom). Together these constitute the underlying substance that everything else builds on.`,
-            `Lessons across the band support this framing. Collins's Level 5 finding (L15) showed that sustained great companies were led by humility-plus-will, not by charisma. The "trust is the foundation" framing (L3) emphasizes that everything depends on whether people can rely on what you say and do. The ethics work (L17) treats character as the underlying source of good action across situations. The self-leadership work (L18) frames substance-development as foundational to leading others.`,
+            `Lessons across the band support this framing. Collins's Level 5 finding (Lesson 15) showed that sustained great companies were led by humility-plus-will, not by charisma. The "trust is the foundation" framing (L3) emphasizes that everything depends on whether people can rely on what you say and do. The ethics work (Lesson 17) treats character as the underlying source of good action across situations. The self-leadership work (Lesson 18) frames substance-development as foundational to leading others.`,
             `What this position implies practically. Develop real capability in your specific domain. Build integrity through consistent alignment over years. Develop judgment through deliberate practice with real decisions and feedback. Cultivate character through sustained practice of virtues. These take time. Communication skills, charisma development, influence techniques all matter but are secondary; without substance underneath, they produce hollow leadership that fails when reality tests it.`,
             `The position's strength. Addresses the failure modes visible across leadership history: charismatic leaders without substance who damaged organizations, communication-skilled leaders who lacked integrity, influence-trained leaders who lacked judgment. Substance-first treats these as predictable consequences of inverting the priority. Build substance first; communication serves the substance; everything aligns.`,
             `The position's limit. Pure substance without enough communication doesn't reach people. The brilliant scientist who can't explain her work has limited impact regardless of her substance. The competent leader who can't articulate vision can't mobilize. The position works best when it doesn't dismiss communication entirely but treats it as serving the substance rather than substituting for it. The pure version of substance-first sometimes produces leaders with real capability but limited reach.`,
@@ -109,8 +109,8 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
           headline: `Position 2: Relational Leadership`,
           paragraphs: [
             `The second position: leadership is fundamentally about relationships. Real leadership emerges from sustained relationships, earned trust, deep listening, and the willingness to engage with people as people rather than as means to outcomes. Substance matters, situational skills matter, but the underlying medium of leadership is relationship. Without relational depth, even strong substance produces limited impact; with relational depth, even imperfect leaders can mobilize people to extraordinary things.`,
-            `What "relational" specifically means in this framing. Building real relationships before you need them (Ganz's relational meetings from L16). Listening deeply enough that people feel heard (Rogers and Scharmer from L4). Building trust through consistent action over years (Lewicki from L3). Having difficult conversations skillfully when needed (Stone/Patton/Heen from L13). Engaging with conflict productively rather than avoiding it (Thomas-Kilmann from L6). Reading and respecting the relational dynamics in any group (Pfeffer and the three layers from L14).`,
-            `Lessons across the band support this framing. The trust work (L3) and listening work (L4) place relational quality at the center of effective leadership. The leading-without-authority framework (L16) is built explicitly on relationship as the foundation of influence without title. The teams work (L12) shows psychological safety (a relational quality) as the foundational element of effective teams. The difficult conversations work (L13) treats relational skill as central to handling hard situations.`,
+            `What "relational" specifically means in this framing. Building real relationships before you need them (Ganz's relational meetings from Lesson 16). Listening deeply enough that people feel heard (Rogers and Scharmer from L4). Building trust through consistent action over years (Lewicki from L3). Having difficult conversations skillfully when needed (Stone/Patton/Heen from Lesson 13). Engaging with conflict productively rather than avoiding it (Thomas-Kilmann from L6). Reading and respecting the relational dynamics in any group (Pfeffer and the three layers from Lesson 14).`,
+            `Lessons across the band support this framing. The trust work (L3) and listening work (L4) place relational quality at the center of effective leadership. The leading-without-authority framework (Lesson 16) is built explicitly on relationship as the foundation of influence without title. The teams work (Lesson 12) shows psychological safety (a relational quality) as the foundational element of effective teams. The difficult conversations work (Lesson 13) treats relational skill as central to handling hard situations.`,
             `What this position implies practically. Invest in relationships over years, not just transactionally. Listen more than you talk. Build trust through consistent alignment between what you say and what you do. Develop the skills of difficult conversation. Engage with conflict directly rather than avoiding. Read group dynamics carefully. The substance you develop matters, but its reach depends entirely on the relational depth you've built around it.`,
             `The position's strength. Addresses why some highly capable people have limited impact (they haven't built the relational depth that allows their substance to reach others) and why some less obviously capable people have outsized impact (they've built deep relationships that amplify whatever capability they have). Real leadership is exercised through relationship with specific people, not in abstract; the position takes that seriously.`,
             `The position's limit. Pure relational focus without substance can produce leaders who are well-liked but ineffective. Some leadership situations require capability that no amount of relational skill can substitute for: technical decisions, crisis response, strategic judgment under pressure. The position works best when relational depth combines with substance, not when relational skill substitutes for it. Pure relational without substance produces popular failure rather than effective leadership.`,
@@ -143,8 +143,8 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
           headline: `Position 3: Adaptive Leadership`,
           paragraphs: [
             `The third position: the most important leadership skill is reading situations accurately and responding to what each one requires. There's no single right approach to leadership; different situations require different combinations of substance, relationship, communication, decisiveness, listening, leading, following, shifting. The leader who masters one approach but can't shift to others produces predictable failures in situations that call for different approaches. The leader who can read situations and adapt outperforms both pure-substance and pure-relational approaches.`,
-            `What "adaptive" specifically means in this framing. Reading each situation for its specific characteristics: who has expertise, where authority operates well, what's the actual problem, what's the time horizon, what's the political dynamic, what's the cultural context. Choosing approach based on signals rather than defaults. Holding multiple frameworks (substance, relational, communication-focused) and deploying the right one for the situation. Comfort with role-switching (L19) as the meta-skill that determines which other skills you use.`,
-            `Lessons across the band support this framing. The decisions-under-uncertainty work (L5) emphasizes that different decisions need different approaches. The change leadership work (L8) covers adaptive leadership directly (Heifetz). The followership work (L11) frames dynamic role-switching as a serious position. The team-building work (L12) emphasizes diagnosing which specific element is weak before applying interventions. The when-to-lead-vs-follow work (L19) is explicitly about situational judgment as meta-skill. The ethics work (L17) recognizes ethical pluralism as how mature ethical reasoning actually works.`,
+            `What "adaptive" specifically means in this framing. Reading each situation for its specific characteristics: who has expertise, where authority operates well, what's the actual problem, what's the time horizon, what's the political dynamic, what's the cultural context. Choosing approach based on signals rather than defaults. Holding multiple frameworks (substance, relational, communication-focused) and deploying the right one for the situation. Comfort with role-switching (Lesson 19) as the meta-skill that determines which other skills you use.`,
+            `Lessons across the band support this framing. The decisions-under-uncertainty work (L5) emphasizes that different decisions need different approaches. The change leadership work (L8) covers adaptive leadership directly (Heifetz). The followership work (Lesson 11) frames dynamic role-switching as a serious position. The team-building work (Lesson 12) emphasizes diagnosing which specific element is weak before applying interventions. The when-to-lead-vs-follow work (Lesson 19) is explicitly about situational judgment as meta-skill. The ethics work (Lesson 17) recognizes ethical pluralism as how mature ethical reasoning actually works.`,
             `What this position implies practically. Develop multiple frameworks rather than committing fully to one. Practice reading situations: who has expertise, what's the actual problem, where's authority operating well, what's the time horizon. Develop the meta-skill of choosing approach based on signals. Be comfortable shifting between roles, frameworks, and approaches as situations require. Resist the temptation to commit fully to any single framing because situations vary too much.`,
             `The position's strength. Addresses the failure mode of leaders who mastered one approach but can't adapt: the substance-focused leader who can't navigate political situations, the relationally-focused leader who can't make hard calls, the communication-focused leader without substance, the decisive leader who can't listen. Adaptive leadership treats these as failures of meta-skill (situational judgment) rather than failures of any specific framework.`,
             `The position's limit. Pure adaptiveness without commitment can produce leaders who never develop deep capability in anything because they're always adapting. Some excellence requires sustained focus on one approach over years. The position works best when adaptive judgment combines with substantial development in core areas (substance, relationship, communication), not when it substitutes for development in any of them. Pure meta-skill without underlying capability produces sophisticated reading of situations without ability to actually do what each situation requires.`,
@@ -213,24 +213,24 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             {
               id: `substance-first`,
               label: `Substance-first leadership: competence, integrity, judgment, character as foundation; everything else serves substance`,
-              summary: `The foundation of all leadership is substance: real capability in relevant domains, integrity (alignment between what you say, believe, do), judgment (reading situations and making decisions that serve people), and character (virtues developed over time). Communication skills, charisma, influence techniques are secondary, serving substance rather than substituting for it. Draws on Collins's Level 5 research, trust-as-foundation work (L3), virtue ethics (L17), self-leadership traditions (L18). Strength: addresses failure modes of charismatic-without-substance leaders, communication-skilled without integrity, influence-trained without judgment. Limit: pure substance without enough communication doesn't reach people.`,
+              summary: `The foundation of all leadership is substance: real capability in relevant domains, integrity (alignment between what you say, believe, do), judgment (reading situations and making decisions that serve people), and character (virtues developed over time). Communication skills, charisma, influence techniques are secondary, serving substance rather than substituting for it. Draws on Collins's Level 5 research, trust-as-foundation work (L3), virtue ethics (Lesson 17), self-leadership traditions (Lesson 18). Strength: addresses failure modes of charismatic-without-substance leaders, communication-skilled without integrity, influence-trained without judgment. Limit: pure substance without enough communication doesn't reach people.`,
             },
             {
               id: `relational`,
               label: `Relational leadership: relationships are the medium of leadership; trust, listening, dialogue central`,
-              summary: `Leadership is fundamentally about relationships. Real leadership emerges from sustained relationships, earned trust, deep listening, engaging with people as people rather than as means to outcomes. Substance matters but its reach depends entirely on relational depth. Draws on trust work (L3, Lewicki and Edmondson), listening traditions (L4, Rogers and Scharmer), Ganz's organizing (L16), teams research on psychological safety (L12), difficult conversations work (L13). Strength: addresses why capable people often have limited impact (no relational depth) and why some less obviously capable people have outsized impact (deep relationships amplify whatever capability they have). Limit: pure relational without substance produces popularity without effectiveness.`,
+              summary: `Leadership is fundamentally about relationships. Real leadership emerges from sustained relationships, earned trust, deep listening, engaging with people as people rather than as means to outcomes. Substance matters but its reach depends entirely on relational depth. Draws on trust work (L3, Lewicki and Edmondson), listening traditions (L4, Rogers and Scharmer), Ganz's organizing (Lesson 16), teams research on psychological safety (Lesson 12), difficult conversations work (Lesson 13). Strength: addresses why capable people often have limited impact (no relational depth) and why some less obviously capable people have outsized impact (deep relationships amplify whatever capability they have). Limit: pure relational without substance produces popularity without effectiveness.`,
             },
             {
               id: `adaptive`,
               label: `Adaptive leadership: situational judgment as meta-skill; read each situation and adapt approach`,
-              summary: `The most important leadership skill is reading situations accurately and responding to what each requires. No single approach works for all situations. Different situations need different combinations of substance, relationship, communication, decisiveness, listening, leading, following, shifting. Draws on Heifetz's adaptive leadership (L8, L16), decisions-under-uncertainty work (L5), followership (L11), team diagnosis (L12), when-to-lead-vs-follow (L19), ethical pluralism (L17). Strength: addresses failure modes of leaders who mastered one approach but produce predictable failures in situations calling for different approaches. Limit: pure adaptiveness without commitment to deep development produces sophisticated reading without ability to actually do what situations require.`,
+              summary: `The most important leadership skill is reading situations accurately and responding to what each requires. No single approach works for all situations. Different situations need different combinations of substance, relationship, communication, decisiveness, listening, leading, following, shifting. Draws on Heifetz's adaptive leadership (L8, Lesson 16), decisions-under-uncertainty work (L5), followership (Lesson 11), team diagnosis (Lesson 12), when-to-lead-vs-follow (Lesson 19), ethical pluralism (Lesson 17). Strength: addresses failure modes of leaders who mastered one approach but produce predictable failures in situations calling for different approaches. Limit: pure adaptiveness without commitment to deep development produces sophisticated reading without ability to actually do what situations require.`,
             },
           ],
           evidence: [
             {
               id: `e1`,
-              text: `Jim Collins's "Good to Great" research (L15) found that companies sustaining great performance over 15 years disproportionately had "Level 5" leaders characterized by humility + will, not charisma. The empirical finding has held up in subsequent research. Distinguishes substance from surface skills.`,
-              source: `Collins 2001 (covered in L15)`,
+              text: `Jim Collins's "Good to Great" research (Lesson 15) found that companies sustaining great performance over 15 years disproportionately had "Level 5" leaders characterized by humility + will, not charisma. The empirical finding has held up in subsequent research. Distinguishes substance from surface skills.`,
+              source: `Collins 2001 (covered in Lesson 15)`,
             },
             {
               id: `e2`,
@@ -239,18 +239,18 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             },
             {
               id: `e3`,
-              text: `Project Aristotle's findings on teams (L12) showed that psychological safety — a relational quality — was the foundational element of effective teams. The other four elements all depend on the interpersonal risk-taking that psychological safety enables.`,
-              source: `Google Project Aristotle research (covered in L12)`,
+              text: `Project Aristotle's findings on teams (Lesson 12) showed that psychological safety — a relational quality — was the foundational element of effective teams. The other four elements all depend on the interpersonal risk-taking that psychological safety enables.`,
+              source: `Google Project Aristotle research (covered in Lesson 12)`,
             },
             {
               id: `e4`,
-              text: `Marshall Ganz's organizing work (L16) emphasized "relational meetings" — building real relationships before any specific need — as the foundation of authority-independent leadership. The pattern scaled across many movements that built durable change.`,
-              source: `Ganz on organizing (covered in L16)`,
+              text: `Marshall Ganz's organizing work (Lesson 16) emphasized "relational meetings" — building real relationships before any specific need — as the foundation of authority-independent leadership. The pattern scaled across many movements that built durable change.`,
+              source: `Ganz on organizing (covered in Lesson 16)`,
             },
             {
               id: `e5`,
               text: `Adaptive leadership work (L8) from Ronald Heifetz showed that complex situations require leadership that reads what each situation actually needs rather than applying default approaches. Heifetz's "adaptive vs technical" distinction emphasizes that different problems need different responses.`,
-              source: `Heifetz adaptive leadership (covered in L8 and L16)`,
+              source: `Heifetz adaptive leadership (covered in L8 and Lesson 16)`,
             },
             {
               id: `e6`,
@@ -259,23 +259,23 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             },
             {
               id: `e7`,
-              text: `When-to-lead-vs-follow framing (L19) identified situational judgment as the meta-skill that determines which other leadership and followership skills you use. Five signals to lead, five to follow, five dynamic patterns requiring shifting. People who default rather than read signals produce predictable failures.`,
-              source: `Situational judgment framework (covered in L19)`,
+              text: `When-to-lead-vs-follow framing (Lesson 19) identified situational judgment as the meta-skill that determines which other leadership and followership skills you use. Five signals to lead, five to follow, five dynamic patterns requiring shifting. People who default rather than read signals produce predictable failures.`,
+              source: `Situational judgment framework (covered in Lesson 19)`,
             },
             {
               id: `e8`,
-              text: `Self-leadership work (L18) showed that substance development happens over years through deliberate cultivation. Stoic, Confucian, religious, and contemporary traditions converge on substance-building as foundational. Without underlying substance, external leadership amplifies whatever's inside; if what's inside is thin, the amplification doesn't help.`,
-              source: `Self-leadership across traditions (covered in L18)`,
+              text: `Self-leadership work (Lesson 18) showed that substance development happens over years through deliberate cultivation. Stoic, Confucian, religious, and contemporary traditions converge on substance-building as foundational. Without underlying substance, external leadership amplifies whatever's inside; if what's inside is thin, the amplification doesn't help.`,
+              source: `Self-leadership across traditions (covered in Lesson 18)`,
             },
             {
               id: `e9`,
-              text: `Difficult conversations research (L13) showed that handling hard conversations skillfully is foundational to sustained relationships and effective leadership. The three conversations framework (Stone/Patton/Heen) addresses what most people get wrong in these critical relational moments.`,
-              source: `Stone, Patton, Heen; Patterson et al (covered in L13)`,
+              text: `Difficult conversations research (Lesson 13) showed that handling hard conversations skillfully is foundational to sustained relationships and effective leadership. The three conversations framework (Stone/Patton/Heen) addresses what most people get wrong in these critical relational moments.`,
+              source: `Stone, Patton, Heen; Patterson et al (covered in Lesson 13)`,
             },
             {
               id: `e10`,
-              text: `Power dynamics work (L14) showed that real influence operates through three layers (formal, informal, coalition). Skilled operators read all three and adapt their approach based on which is primary in specific situations. Single-layer focus produces predictable mistakes.`,
-              source: `Pfeffer and power literacy (covered in L14)`,
+              text: `Power dynamics work (Lesson 14) showed that real influence operates through three layers (formal, informal, coalition). Skilled operators read all three and adapt their approach based on which is primary in specific situations. Single-layer focus produces predictable mistakes.`,
+              source: `Pfeffer and power literacy (covered in Lesson 14)`,
             },
           ],
           counterargument: {
@@ -333,7 +333,7 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             {
               id: `q4`,
               type: `multiple-choice`,
-              question: `Why does Collins's Level 5 finding (L15) support substance-first framing?`,
+              question: `Why does Collins's Level 5 finding (Lesson 15) support substance-first framing?`,
               options: [
                 `Random support`,
                 `Collins's empirical research found that companies sustaining great performance over 15 years had Level 5 leaders (humility + will), NOT charismatic CEOs; the finding directly contradicts the charisma-is-everything framing; supports the substance-first claim that underlying qualities matter more than surface skills for sustained outcomes`,
@@ -346,7 +346,7 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             {
               id: `q5`,
               type: `multiple-choice`,
-              question: `Why does Project Aristotle (L12) support relational framing?`,
+              question: `Why does Project Aristotle (Lesson 12) support relational framing?`,
               options: [
                 `Random support`,
                 `Project Aristotle found that psychological safety — a relational quality — was the foundational element of effective teams; the other four elements all depend on the interpersonal risk-taking that psychological safety enables; supports relational claim that the underlying medium of effective work is relational quality`,
@@ -359,10 +359,10 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
             {
               id: `q6`,
               type: `multiple-choice`,
-              question: `Why does when-to-lead-vs-follow framing (L19) support adaptive philosophy?`,
+              question: `Why does when-to-lead-vs-follow framing (Lesson 19) support adaptive philosophy?`,
               options: [
                 `Random support`,
-                `L19 identified situational judgment as the meta-skill that determines which other leadership and followership skills you use; five signals to lead, five to follow, five dynamic patterns; people who default rather than read signals produce predictable failures; directly supports adaptive claim that situational reading is foundational`,
+                `Lesson 19 identified situational judgment as the meta-skill that determines which other leadership and followership skills you use; five signals to lead, five to follow, five dynamic patterns; people who default rather than read signals produce predictable failures; directly supports adaptive claim that situational reading is foundational`,
                 `It's recent`,
                 `Random framework`,
               ],

@@ -290,7 +290,7 @@ const HISTORY_VOYAGER_L06 = {
                 },
               ],
               correctOptions: [`haitian-colonial`],
-              synthesis: `The Haitian Revolution shows why the European theoretical traditions need supplementing for colonial revolutions. Marxist analysis captures economic structure (slavery as labor system); Skocpolian analysis captures military openings (French imperial weakness during Revolutionary wars); but neither addresses what was specific to Haiti: the racial structure of colonial slavery, the question of personhood denied by European Enlightenment categories, and the international refusal to accept a Black republic that produced the 1825 indemnity (150 million francs, paid over 100+ years, structurally producing Haitian poverty). C.L.R. James's The Black Jacobins (1938), Fanon's broader theory (1961), and contemporary scholarship (Carolyn Fick, Laurent Dubois, Marlene Daut) integrate the frameworks while centering what was specific. The Trouillot point from L01 applies: the Haitian Revolution was systematically silenced from Western historical narratives because it didn't fit European categories of what enslaved people could accomplish.`,
+              synthesis: `The Haitian Revolution shows why the European theoretical traditions need supplementing for colonial revolutions. Marxist analysis captures economic structure (slavery as labor system); Skocpolian analysis captures military openings (French imperial weakness during Revolutionary wars); but neither addresses what was specific to Haiti: the racial structure of colonial slavery, the question of personhood denied by European Enlightenment categories, and the international refusal to accept a Black republic that produced the 1825 indemnity (150 million francs, paid over 100+ years, structurally producing Haitian poverty). C.L.R. James's The Black Jacobins (1938), Fanon's broader theory (1961), and contemporary scholarship (Carolyn Fick, Laurent Dubois, Marlene Daut) integrate the frameworks while centering what was specific. The Trouillot point from Lesson 1 applies: the Haitian Revolution was systematically silenced from Western historical narratives because it didn't fit European categories of what enslaved people could accomplish.`,
             },
           ],
           reflectionPrompt: `Across the three cases: which framework did you find most surprising in what it illuminated? Which framework's limits became clearest? How will you approach analyzing the next revolution you encounter?`,
@@ -492,7 +492,7 @@ const HISTORY_VOYAGER_L06 = {
           ],
           nextLessonPreview: {
             title: `Lesson 7: Imperialism and Its Long Shadow`,
-            hook: `Argument Builder. The structural framework underlying many revolutions of L06.`,
+            hook: `Argument Builder. The structural framework underlying many revolutions of Lesson 6.`,
           },
         },
       ],

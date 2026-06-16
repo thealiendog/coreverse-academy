@@ -324,7 +324,7 @@ const INNERWORLD_VOYAGER_L17 = {
                 `Because the math is too hard`,
               ],
               correctIndex: 1,
-              explanation: `Unfalsifiability is the deep methodological issue. The same problem appeared with the Law of Attraction in L13. Claims that can't be tested can't be scientifically evaluated.`,
+              explanation: `Unfalsifiability is the deep methodological issue. The same problem appeared with the Law of Attraction in Lesson 13. Claims that can't be tested can't be scientifically evaluated.`,
             },
             {
               id: `q8`,
