@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/validate-explorer-screens.mjs && node scripts/validate-routing-integrity.mjs && vite build",
-    "validate": "node scripts/validate-explorer-screens.mjs && node scripts/validate-routing-integrity.mjs && node scripts/explorer_routing_smoke_test.mjs",
+    "build": "node scripts/validate-explorer-screens.mjs && node scripts/validate-routing-integrity.mjs && node --test src/utils/normalizeForTTS.test.js && vite build",
+    "validate": "node scripts/validate-explorer-screens.mjs && node scripts/validate-routing-integrity.mjs && node scripts/explorer_routing_smoke_test.mjs && node --test src/utils/normalizeForTTS.test.js",
     "validate:routing": "node scripts/explorer_routing_smoke_test.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
