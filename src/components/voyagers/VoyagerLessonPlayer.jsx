@@ -1871,7 +1871,7 @@ export default function VoyagerLessonPlayer() {
       {vocabOpen && (
         <VocabPopup
           vocab={vocabOpen} accent={accent} guideAvatar={guideAvatar}
-          childName={childName} onClose={() => setVocabOpen(null)} onSpeak={speak}
+          childName={childName} onClose={() => setVocabOpen(null)} speak={speak}
         />
       )}
     </div>
