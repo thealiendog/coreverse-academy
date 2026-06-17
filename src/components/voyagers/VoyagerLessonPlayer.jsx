@@ -1389,7 +1389,12 @@ export default function VoyagerLessonPlayer() {
             if (cancelled) return;
             const dur = Date.now() - speakStartTimeRef.current;
             if (audioEnabledRef.current && dur < 1000) { setAudioMissing(true); return; }
-            const t = setTimeout(() => { if (!cancelled) startCountdownForScreen(); }, 1000);
+            const t = setTimeout(() => {
+              if (!cancelled) {
+                if (screenIdxRef.current < total - 1) setScreenIdx(prev => prev + 1);
+                else navigate(`/child/subject/${subjectId}`);
+              }
+            }, 1500);
             timers.push(t);
           });
         };

@@ -37,7 +37,7 @@ function renderKaraokeText(text, karaokeWords, karaokeIdx, accent) {
 
 export default function ExplorerWelcomeScreen({
   screen, guideAvatar, speaking, loadingAudio, karaokeWords, karaokeIdx, accent, onReplay, childName,
-  welcomeReady, onWelcomeTap,
+  welcomeReady, onWelcomeTap, onComplete,
 }) {
   const displayText = (screen.guideText || '').replace(/\{name\}/g, childName || 'friend');
 
@@ -55,7 +55,8 @@ export default function ExplorerWelcomeScreen({
   }, []);
 
   const handleTap = () => {
-    if (hasPlayed || showParentCard) return;
+    if (showParentCard) return;
+    if (hasPlayed) { onComplete?.(); return; }
     setHasPlayed(true);
     console.log('[WELCOME] Tap registered, Sage audio starting');
     onWelcomeTap?.();
