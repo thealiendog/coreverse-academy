@@ -57,6 +57,7 @@ export default function ExplorerWelcomeScreen({
   const handleTap = () => {
     if (showParentCard) return;
     if (hasPlayed) { onComplete?.(); return; }
+    if (!welcomeReady) return; // prewarm still in-flight — don't consume the tap
     setHasPlayed(true);
     console.log('[WELCOME] Tap registered, Sage audio starting');
     onWelcomeTap?.();
