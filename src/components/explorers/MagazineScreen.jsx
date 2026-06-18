@@ -517,18 +517,7 @@ export default function MagazineScreen({
         >
           {audioPaused ? '▶' : (speaking || loadingAudio) ? '⏸' : '▶'}
         </button>
-        {/* Caption (legacy image path only) */}
-        {!visual && imageCaption && !imageError && (
-          <div style={{
-            position: 'absolute', bottom: 0, left: 0, right: 0,
-            padding: '6px 14px', fontSize: '0.75rem',
-            color: 'rgba(255,255,255,0.6)', fontStyle: 'italic',
-            textAlign: 'center',
-            background: 'linear-gradient(transparent, rgba(0,0,0,0.55))',
-          }}>
-            {imageCaption}
-          </div>
-        )}
+        {/* imageCaption is an internal image description — intentionally not rendered */}
       </div>
 
       {/* Text column — below image on mobile/tablet (scrollable), right-side on iPad landscape */}

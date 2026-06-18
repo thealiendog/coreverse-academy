@@ -1232,7 +1232,9 @@ export default function VoyagerLessonPlayer() {
         el.setAttribute('webkit-playsinline', 'true'); el.setAttribute('playsinline', 'true');
         persistentAudioRef.current = el;
       }
-      el.src = blobUrl; el.load();
+      el.src = blobUrl;
+      // Do NOT call el.load() — on iOS it resets the element's play-permission granted
+      // by the user gesture, causing the next programmatic play() to be blocked.
       const cleanup = () => { el.onended = null; el.onerror = null; el.ontimeupdate = null; el.onplay = null; };
       audioListenersCleanupRef.current = cleanup;
       el.onplay  = () => { if (gen !== speakGenRef.current) return; setLoadingAudio(false); setSpeaking(true); markAudioSessionUnlocked(); };
