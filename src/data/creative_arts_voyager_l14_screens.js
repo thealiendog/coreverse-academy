@@ -34,7 +34,7 @@ const CREATIVE_ARTS_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, imagine that every time you heard a trumpet, you saw a burst of gold, or that the letter A was always, unmistakably red to you, not as a poetic comparison but as something you genuinely perceived. For a real minority of people, that is simply how the world works. It is called synesthesia, a real, well-documented difference in how some brains process the senses, where one sense automatically triggers another. It has inspired painters and composers, and it is genuinely fascinating. But like everything real and amazing, it has collected a cloud of myth around it: that anyone can train it into a superpower, that a drug trip is the same thing, that synesthetes are secret geniuses. Today you will learn what synesthesia actually is, meet artists who have it, and sharpen the skill you have built all band: telling the real, careful science from the hype that grows around anything wondrous. Onward.`,
+          guideText: `{name}, for some people, letters have colors, numbers have personalities, and music produces physical sensations. This isn't metaphor — it's synesthesia, a genuine neurological phenomenon where senses cross. A small number of artists have it, and it has influenced important work. But it's also one of the most romanticized and mythologized conditions in creativity discourse. This lesson reads it honestly.`,
           headline: `Synesthesia: Seeing Sound, Hearing Color`,
           subtitle: `A real blending of the senses — and its myths. Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l14-welcome.webp`,

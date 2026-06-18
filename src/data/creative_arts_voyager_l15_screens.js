@@ -34,7 +34,7 @@ const CREATIVE_ARTS_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, for most of history, art was something you looked AT, a painting on a wall, a sculpture on a stand, with you standing outside it. Then artists started making art you step INTO, rooms and environments that surround you, that you walk through and become part of. This is installation art, and its dramatic, spectacular cousin, immersive art, mirrored rooms that seem infinite, halls of projected light, environments built to flood every sense. Some of it is breathtaking. And it has sparked a genuinely good fight that you will hear all around you: is this stuff profound, important art, or is it just expensive spectacle, pretty backdrops for photos with nothing real underneath? Serious people disagree, and they have good reasons on both sides. Today you will not be told the answer. You will hear the strongest versions of the competing views, and build your own, which is exactly the kind of thinking a question this open deserves. Onward.`,
+          guideText: `{name}, installation art doesn't hang on a wall. It fills a room, a building, a city block. You walk into it, move through it, become part of it. Some of it is profound. Some of it is spectacle dressed as depth. The Instagram era has made it harder to tell which is which. This lesson gives you the frameworks to make that distinction.`,
           headline: `Installation and Immersive Art`,
           subtitle: `Art you step inside, and the debate: profound, or just spectacle? Perspectives.`,
           visual: `/voyager-assets/creative-arts/l15-welcome.webp`,

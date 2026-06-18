@@ -35,7 +35,7 @@ const CREATIVE_ARTS_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, across every culture on Earth, for as long as there have been humans, people have made art to reach toward the sacred, toward whatever they hold as holy, ultimate, or beyond ordinary life. Cathedrals reaching toward the sky, Islamic patterns spiraling into infinity, Buddhist mandalas, Hindu temple carvings, Indigenous ceremonies, the soaring music of a hundred faiths. This is one of the oldest and deepest uses of human creativity, and it deserves real respect and real understanding. Today you will explore how different cultures make the sacred visible, and you will do it with two commitments at once: deep respect for traditions that are precious to billions of people, and clear thinking about the difference between genuine sacred traditions and modern claims that borrow sacred imagery to sell things. Holding both, reverence and clear sight, is the grown-up way to engage the holy in art. Onward.`,
+          guideText: `{name}, every human culture has made sacred art. The impulse is universal — making visible what is felt to be most real and most important. But sacred art from other traditions is also some of the most appropriated and commodified art on the market. This lesson teaches you to engage sacred traditions with genuine respect and critical awareness.`,
           headline: `Sacred Art Across Cultures`,
           subtitle: `How cultures make the holy visible. Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l11-welcome.webp`,

@@ -30,7 +30,7 @@ const CREATIVE_ARTS_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, here is a question with no obvious answer. Can sound be sculpture? Not sound that describes a sculpture, but sound itself, shaped in space, that you walk through the way you walk around a statue. In 1971 the Austrian artist Bernhard Leitner started building what he called "Sound Spaces": rooms wired so that a tone physically moves around your body, so you feel it travel from your left ankle to your right shoulder. He argued that sound has a shape, that your skin hears as much as your ears do. Around the same time, the composer Pauline Oliveros was developing "Deep Listening," a practice of attention to sound so complete it changes the listener. And in the wider culture, a whole industry was forming around "sound healing," promising specific frequencies cure specific ailments. Three different things, often confused. Today you learn to tell them apart, and to take the real art seriously. Onward.`,
+          guideText: `{name}, sound has a shape. Vibration creates visible geometric patterns — a real physical phenomenon that artists and healers have built entire practices around. Some of those practices are grounded in genuine acoustics. Others make claims the evidence doesn't support. This lesson gives you the tools to tell them apart, and introduces the artists who took sound seriously as a medium.`,
           headline: `Sound Healing and Vibrational Art`,
           subtitle: `Sound as a sculptural medium. And the case studies that test your framework.`,
           visual: `/voyager-assets/creative-arts/l04-welcome.webp`,

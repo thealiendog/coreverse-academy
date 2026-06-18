@@ -32,7 +32,7 @@ const CREATIVE_ARTS_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, you are growing up at the exact moment a brand-new question arrived, one your grandparents never had to answer. If you type a sentence and a computer makes a picture in ten seconds, who is the artist? You? The computer? The thousands of people whose paintings the computer learned from without asking? This is not science fiction; it is happening right now, and the people arguing about it include artists, lawyers, judges, and engineers who genuinely disagree. The same questions you wrestled with in Lesson 5, where meaning lives and who counts as a maker, come roaring back, except now there is real money, real jobs, and real fairness on the line. Today you will not be told the "right" answer, because the honest truth is that the world has not settled it yet. Instead you will learn to sort good information from hype, hold the hardest questions clearly, and form a view you can actually defend. Onward.`,
+          guideText: `{name}, AI can now generate images, music, and text that looks and sounds like art. That raises a question nobody has fully answered: who is the artist? The tool? The person who wrote the prompt? The artists whose work trained the model? This lesson examines what these tools actually do, where the hype is, and what's genuinely at stake for creative work.`,
           headline: `AI and Creative Arts`,
           subtitle: `If a machine makes the picture, who is the artist? Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l06-welcome.webp`,

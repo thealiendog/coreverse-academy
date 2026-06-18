@@ -38,7 +38,7 @@ const CREATIVE_ARTS_VOYAGER_L20 = {
         {
           id: `l20-welcome`,
           type: `welcome`,
-          guideText: `{name}, here we are. The last lesson of the whole band. For nineteen lessons you have studied art and made your own, sharpened how you think, and decided what you stand for. Now you gather it. A portfolio is a body of work, a collection of the things you have made, chosen and arranged to show who you are as a creator. It is how artists, designers, musicians, writers, and makers of every kind show the world, and themselves, what they can do and what they care about. It is also where everything in this band comes together: your skills, the values from your manifesto, and your own emerging voice, all in one place. This is not really an ending; it is a beginning. Today you learn how to build a portfolio that is honest, that shows who you actually are, and that grows with you for the rest of your creative life. And when we finish, you will not just be someone who knows about art. You will be a creator with a body of work, a set of values, and a voice. Let's gather it all. Onward.`,
+          guideText: `{name}, a portfolio is not everything you've made. It's a curated argument about who you are as a creative practitioner. What you include, what you leave out, how you present it, how honest you are about your role in collaborative work — all of it communicates something. This lesson is about building that argument deliberately, and understanding it as a beginning, not an end.`,
           headline: `Building Your Portfolio`,
           subtitle: `Gathering everything you are into the work that shows the world. The finale. Case Study.`,
           visual: `/voyager-assets/creative-arts/l20-welcome.webp`,

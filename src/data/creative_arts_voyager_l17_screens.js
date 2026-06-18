@@ -34,7 +34,7 @@ const CREATIVE_ARTS_VOYAGER_L17 = {
         {
           id: `l17-welcome`,
           type: `welcome`,
-          guideText: `{name}, you have watched thousands of hours of film and video, and almost all of it worked on you without you seeing how. Every time a movie made you tense, teary, thrilled, or uneasy, someone made dozens of deliberate choices, where to put the camera, how to cut, what light to use, what you hear, to produce exactly that feeling. Film has a kind of language, a set of techniques for shaping what an audience feels, and most people never learn to read it, so it works on them invisibly their whole lives. Today you learn to read it. You will see the real grammar of film, and you will also learn to spot the overstated version, the "this shot ALWAYS means X, it's a secret rule" claims that flatten a rich craft into fake formulas. Learning film's real language does not ruin movies; it lets you both enjoy them more and stop being moved without knowing why. This is media literacy for the form you consume most. Onward.`,
+          guideText: `{name}, film isn't a window on the world. It's a constructed experience — every shot, cut, angle, and sound choice is a decision that shapes what you feel. You've been watching movies your whole life without realizing you were being fluent in a language you never formally learned. This lesson makes that language conscious, which changes how you watch everything.`,
           headline: `Film Theory and Visual Language`,
           subtitle: `The hidden grammar behind everything you watch. Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l17-welcome.webp`,

@@ -29,7 +29,7 @@ const CREATIVE_ARTS_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, here is the question this lesson hands you, and it is a strange one. Does a painting have one real meaning, the one the artist intended, or does it mean whatever each viewer makes of it? For most of history, people assumed art carried a message the artist put there, and a good viewer's job was to find it. Then, in the second half of the 20th century, a wave of artists and thinkers said: not so fast. Maybe meaning is not hidden inside the artwork like a prize in a box. Maybe meaning is made fresh every time someone looks, by that person, in that moment. This idea is part of what people call "postmodernism," and it changed art, design, music, and how a whole generation thought. It can feel slippery, and that is the point: today you learn to hold a slippery idea without dropping it, and to decide for yourself how far it goes. Onward.`,
+          guideText: `{name}, postmodern art looks strange if you don't know what it's reacting against. It's reacting against modernism's confidence — the belief in progress, originality, and universal truth. When those beliefs collapsed under the weight of the 20th century, artists responded by questioning everything: authorship, originality, the boundary between high and low culture. This lesson maps what they did and why it mattered.`,
           headline: `Postmodern Art and the Deconstruction of Meaning`,
           subtitle: `Does art have one real meaning, or many? Perspectives.`,
           visual: `/voyager-assets/creative-arts/l05-welcome.webp`,

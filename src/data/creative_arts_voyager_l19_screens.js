@@ -37,7 +37,7 @@ const CREATIVE_ARTS_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, for eighteen lessons you have studied other people's art, their ideas, their fights, their triumphs and failures. Now the camera turns around to face you. This lesson is not about anyone else; it is about who YOU want to be as a creative person. A manifesto is a clear statement of what you stand for and how you intend to work, the values you choose to carry. Real artists write them, because the creative life is full of moments that quietly test you, do you give credit, or take it; chase money, or meaning; respect a culture, or grab from it; keep going, or quit; sound like yourself, or copy what is winning? You will not face those choices in a vacuum; you will face them tired, tempted, and under pressure. A manifesto is what you decide now, in calm, so that future-you has something to stand on. Today you will work through the real dilemmas of a creative life and harvest the values underneath them, building, in your own words, the beginnings of your own creative manifesto. There are no wrong answers here, only honest ones. Onward.`,
+          guideText: `{name}, every serious artist eventually has to figure out what they actually believe about their work — what it's for, what they refuse to do, what they're committed to. A manifesto is how you make that explicit. Across nineteen lessons you've been building the values that will go into yours. This lesson helps you find them and write them down.`,
           headline: `Your Creative Manifesto`,
           subtitle: `Everything you learned, gathered into what YOU stand for. Case Study.`,
           visual: `/voyager-assets/creative-arts/l19-welcome.webp`,

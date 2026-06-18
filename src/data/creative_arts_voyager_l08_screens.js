@@ -31,7 +31,7 @@ const CREATIVE_ARTS_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson you learned that the contract is where the money lives. This lesson goes one level deeper, to the rules that decide who owns an idea in the first place. They are called intellectual property laws, and they answer a question that turns out to be surprisingly hard: when you make something out of your own mind, a song, a drawing, a story, a logo, what exactly do you own, and what can other people do with it? You meet these rules every single day already, every time you use a meme, quote a song, copy an image, or wonder if you can use a clip in a video. Most people guess at the rules and guess wrong, in both directions: some think they can use anything, others are scared to use anything. Today you learn the real shape of it, enough to protect your own work and to use other people's fairly. One honest note up front: laws differ by country and change over time, so this is how to think about it, not legal advice. Onward.`,
+          guideText: `{name}, the moment you make something original, copyright law attaches to it automatically. You own it. But what you can do with that ownership — and what others can do with your work — is more complicated than most people know. This lesson covers copyright, fair use, and the other forms of intellectual property that matter for anyone making creative work.`,
           headline: `Intellectual Property and Copyright`,
           subtitle: `Who owns an idea, a song, a logo, a style? Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l08-welcome.webp`,

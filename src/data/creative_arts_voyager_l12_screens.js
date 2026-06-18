@@ -35,7 +35,7 @@ const CREATIVE_ARTS_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson you saw humans reaching for the sacred through art. Today we follow that reaching into stone and number, into architecture and the famous idea of "sacred geometry." Here is the question that will pull at you the whole way through: when a building feels deeply right, when a temple or cathedral or mosque seems to hum with order, is that because of real mathematics the builders genuinely used, or because of a mystical story someone told about it later? The honest answer is some of both, and telling them apart is the whole skill. Real geometry has shaped real buildings for thousands of years, and that is genuinely amazing. But a whole industry now claims the "golden ratio" is secretly everywhere and that certain shapes heal your body, and most of that is not true. Today you will hold both: real wonder at the mathematics builders actually used, and clear eyes about the myths bolted on afterward. Onward.`,
+          guideText: `{name}, the great cathedrals, mosques, and temples of the world weren't built by inspiration alone. They were built with mathematics — specific geometric relationships that create specific experiences of space, light, and proportion. Some of those relationships are genuinely sacred within their traditions. Others have been mythologized beyond what the evidence supports. This lesson separates the real from the tall tale.`,
           headline: `Architecture and Sacred Geometry`,
           subtitle: `Where real math meets mystical claims. Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l12-welcome.webp`,

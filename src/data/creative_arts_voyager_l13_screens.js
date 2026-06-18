@@ -34,7 +34,7 @@ const CREATIVE_ARTS_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, what actually happens in a brain when it creates? It is one of the most fascinating questions in science, and also one of the most lied about. Walk into any bookstore or scroll any feed and you will find confident claims: "creativity lives in the right brain," "unlock your hidden 90 percent," "this one trick rewires your creative mind." Most of that is myth, and some of it was outright fabricated by a famous writer who got caught. But underneath the myths there is real, careful, genuinely amazing science about how creative thinking works in the brain, and it is more interesting than the fairy tales. Today you will learn what neuroscience actually knows, what it does not yet know, and how to tell a careful researcher from a confident myth-seller, including a real scandal where a celebrated science writer invented quotes to make his story better. Holding real curiosity and clear judgment at once, again. Onward.`,
+          guideText: `{name}, creativity isn't magic — it's neuroscience. The creative brain is doing specific, identifiable things: making remote associations, shifting between focused and diffuse thinking, incubating problems below conscious awareness. The pop science version of this is riddled with myths. One prominent science writer even fabricated his research. This lesson gives you the real findings and the skills to spot the fake ones.`,
           headline: `The Neuroscience of Creativity`,
           subtitle: `Real brain science versus pop-science myth. Source Evaluation.`,
           visual: `/voyager-assets/creative-arts/l13-welcome.webp`,

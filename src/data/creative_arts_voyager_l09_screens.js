@@ -31,7 +31,7 @@ const CREATIVE_ARTS_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, you have learned the money (Lesson 7) and the rights (Lesson 8). Now the question that ties them together: how does a person actually build a creative life on purpose, instead of just hoping? There is a myth that creative careers happen by being "discovered," that you make beautiful work in your room and one day someone famous knocks on your door. That almost never happens. Real creative careers are built, deliberately, through skill, a body of work, real relationships, and stubborn persistence through a lot of rejection. The good news is that "built" means buildable: it is a set of habits and choices, not a magic gift you either have or do not. Today you learn the actual building blocks, how skill really grows, what a portfolio is for, why relationships beat luck, and how to survive rejection without quitting. This is the lesson that turns "I love making things" into "I could actually do this." Onward.`,
+          guideText: `{name}, creative careers are built — not discovered, not lucked into. Skill comes from deliberate practice, not talent. Opportunities come from relationships, not waiting. Resilience comes from reframing rejection as data, not verdict. None of this is glamorous, but all of it is real. This lesson is about what actually builds a creative life over time.`,
           headline: `Building a Creative Career`,
           subtitle: `How a creative life is built, not discovered. Case Study.`,
           visual: `/voyager-assets/creative-arts/l09-welcome.webp`,

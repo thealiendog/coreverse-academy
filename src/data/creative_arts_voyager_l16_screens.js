@@ -36,7 +36,7 @@ const CREATIVE_ARTS_VOYAGER_L16 = {
         {
           id: `l16-welcome`,
           type: `welcome`,
-          guideText: `{name}, every art form we have looked at involved something the artist made, a painting, a building, a song, an immersive room. Now meet a form where the artwork is the artist, where the medium is a living person's own body, presence, and actions, unfolding in real time in front of you. It is called performance art, and it is one of the most debated, most misunderstood, and most powerful forms there is. A person sits silently across from strangers for hours. An artist uses their own body to make a point about endurance, identity, or pain. Some of it is genuinely profound, and some of it really is just shock for attention, and a huge, interesting argument lives in between. One honest note before we start: some performance art involves real physical risk, and we will talk about why artists have done that and how to think about it, but understanding challenging art is not the same as copying it, and this lesson is about the first, never the second. Onward.`,
+          guideText: `{name}, performance art uses the artist's own body as the medium. That's it. No object, no canvas, just a live human being doing something in front of an audience — sometimes for hours, sometimes in pain, sometimes once and never again. At its best it's unlike anything else. At its worst it's self-indulgent shock. This lesson teaches you to tell them apart.`,
           headline: `Performance and the Body`,
           subtitle: `When the artist's body is the artwork: profound, or a stunt? Case Study.`,
           visual: `/voyager-assets/creative-arts/l16-welcome.webp`,

@@ -32,7 +32,7 @@ const CREATIVE_ARTS_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, this whole band has treated art as expression, as meaning, as a career. Now meet art as a force, something that can move crowds, topple ideas, and change history, or be used to control and deceive. A single image can become the symbol of a movement; a song can carry a struggle across borders; a poster can make millions feel something all at once. That power is real, and it cuts both ways. The same tools that fueled movements for freedom and justice have also fueled propaganda for tyranny and war. So this lesson holds two questions at once: can art actually change the world, or does it just make us feel like it does? And how do you tell the difference between art that opens minds and art that manipulates them? You will not be handed a political side today; you will be handed a way of seeing clearly. Onward.`,
+          guideText: `{name}, art and social movements have always found each other. Protest posters, freedom songs, murals, theatre — art has carried movements in ways that political organizing alone couldn't. But the same tools that amplify liberation can amplify oppression. Propaganda uses identical mechanisms. This lesson examines how art actually moves people, and whether it actually changes anything.`,
           headline: `The Role of Art in Social Movements`,
           subtitle: `Can art change the world, or just make us feel it does? Perspectives.`,
           visual: `/voyager-assets/creative-arts/l10-welcome.webp`,

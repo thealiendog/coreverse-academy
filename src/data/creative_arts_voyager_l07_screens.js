@@ -29,7 +29,7 @@ const CREATIVE_ARTS_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, here is a question that sounds simple and is not: how does an artist actually pay rent? You can love music, drawing, writing, or film with your whole heart, and you still have to eat, and most people who make a living from creative work do it in ways that would surprise you. The famous millionaire musician is real but rare, like a lottery winner; the working creative who pieces together income from five different sources is the normal case. This lesson pulls back the curtain on the money, not because money is the point of art, but because understanding it is how you protect yourself, make smart choices, and avoid being taken advantage of. By the end you will understand royalties, rights, the long tail, and why "exposure" is sometimes a trap. This is the practical lesson the romantic stories leave out. Onward.`,
+          guideText: `{name}, most creative people drastically underestimate how the money works — and that ignorance costs them. Where does revenue actually come from? Who owns what? What does the long tail mean for your chances? Why does working for exposure usually not work? This lesson is the financial literacy course the art world doesn't teach you. Pay attention.`,
           headline: `The Economics of the Creative Industry`,
           subtitle: `How do artists actually make a living? Case Study.`,
           visual: `/voyager-assets/creative-arts/l07-welcome.webp`,
