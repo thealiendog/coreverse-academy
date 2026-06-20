@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L17 = {
         {
           id: `l17-welcome`,
           type: `welcome`,
-          guideText: `{name}, meaning and purpose are among the most important wellness topics that pop content largely doesn't address. The research is striking: meaning in life predicts wellbeing more strongly than almost any other factor, including happiness itself; people with strong sense of meaning have better mental health, physical health, longevity, and resilience through difficulty. Yet most adolescents grow up with little explicit framework for thinking about meaning. Today we work through three serious positions on what produces meaning: meaning through contribution to something larger than yourself, meaning through deep relationships, and meaning through self-development and authentic expression. Each has substantial defenders, philosophical pedigree, and research support. By the end you'll have framework for one of the most consequential wellness questions across a life.`,
+          guideText: `{name}, meaning is not a luxury. People with high sense of purpose show better health outcomes, greater resilience, and longer lives — independent of happiness. But where does meaning come from? Three serious positions: through contribution, through deep relationships, through self-development. This lesson maps the research and the debate.`,
           headline: `Meaning and Purpose`,
           subtitle: `Three serious positions. Research-grounded. Among the most consequential wellness topics.`,
           visual: `/voyager-assets/life-wellness/l17-welcome.webp`,

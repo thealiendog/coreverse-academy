@@ -28,7 +28,7 @@ const LIFEWELLNESS_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, family relationships are one of the most consequential wellness topics. Your family is the relational environment in which most of your emotional patterns formed and is likely to remain an important part of your life across decades. Adolescence specifically involves dramatic renegotiation of family relationships as your autonomy develops; this can be one of the most difficult relational periods, and how it's navigated shapes things for years afterward. Today we work through three real family situations: a high-conflict relationship with a parent, a controlling parent's effects, and a family going through difficulty. Real research on family systems (Bowen, Baumrind), adolescent autonomy development, and family conflict will inform the responses. The lesson will also name when family situations are beyond what you can navigate alone and require outside help.`,
+          guideText: `{name}, adolescence is biologically designed to create friction with your family. The push for autonomy is not a bug — it's a feature of healthy development. But that doesn't make it easy to navigate. This lesson gives you the frameworks: parenting styles, family systems, and when a situation has moved beyond skill-building into something that needs outside help.`,
           headline: `Family Relationships`,
           subtitle: `Three real family situations. Family systems, adolescent autonomy, when to seek outside help.`,
           visual: `/voyager-assets/life-wellness/l11-welcome.webp`,

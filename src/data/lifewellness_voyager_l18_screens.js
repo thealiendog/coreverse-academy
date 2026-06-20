@@ -27,7 +27,7 @@ const LIFEWELLNESS_VOYAGER_L18 = {
         {
           id: `l18-welcome`,
           type: `welcome`,
-          guideText: `{name}, this lesson is about integration: taking the frameworks built across this band and turning them into practices that actually last across years and decades. Most people learn what's good for them but fail to build it into sustainable practice. The failure modes are predictable and research-supported responses exist. Today we work through three cases of common patterns that derail wellness practice: trying to overhaul everything at once and burning out, getting stuck in all-or-nothing thinking, and trying to build practice solo without community or accountability. Real research on habit formation (Wood, Clear, Fogg), identity-based change, and behavioral support will inform the responses. By the end you'll have framework for turning the wellness literacy you've built into practice that compounds across decades.`,
+          guideText: `{name}, most wellness practices fail — not because people lack willpower but because the approach is wrong. This lesson is about what actually works for building practices that last: the identity shift, starting smaller than you think, stacking onto existing routines, and what to do when you inevitably fall off. Real behavior change science, not motivation content.`,
           headline: `Building Wellness Practices That Last`,
           subtitle: `Three cases on common failure modes. Integration of band frameworks. Sustainable practice.`,
           visual: `/voyager-assets/life-wellness/l18-welcome.webp`,

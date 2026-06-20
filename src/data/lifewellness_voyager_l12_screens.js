@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, this lesson reframes one of the most common framings most adults absorb: that "time management" is what produces good outcomes. Real research and serious productivity thinkers point in a different direction: energy management beats time management for sustainable performance across decades. The same 24 hours produces dramatically different outcomes depending on your energy state — sleep, recovery, focus blocks, environmental conditions, sustainable patterns. Today we work through 5 research-supported principles and match them to specific applications. The matching game format helps you connect abstract principles to concrete practice. By the end you'll have framework that protects against the burnout and exhaustion patterns most adults absorb during their own adolescence.`,
+          guideText: `{name}, time management is the wrong frame. Everyone has the same 24 hours; what varies is energy — physical, emotional, and cognitive. The research on sustainable high performance points to energy management as the real skill. This lesson maps five principles and asks what they look like in practice for someone your age.`,
           headline: `Time and Energy Management`,
           subtitle: `Energy beats time. Five principles, five applications. Matching Game.`,
           visual: `/voyager-assets/life-wellness/l12-welcome.webp`,

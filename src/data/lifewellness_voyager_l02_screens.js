@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, sleep is the single most important wellness lever you have. Real research shows sleep affects learning, memory, mood, immune function, metabolic health, mental health, and physical performance more than almost anything else under your direct control. Your generation has worse sleep than any previous generation in recorded history, mostly because of screens, social media, and schedules that fight your biology. Adolescent sleep biology is also genuinely different from adult biology, which most adults around you don't realize. Today we work through three real sleep situations using actual sleep science. By the end you'll have a working framework for the most leveraged wellness practice in your life, one that costs nothing and produces dramatically more benefit than $5.6 trillion of wellness products combined.`,
+          guideText: `{name}, you already know sleep matters. What you probably don't know is why — specifically what your brain is doing during each stage, why adolescent sleep biology is genuinely different from adults, and what the research actually says works versus what's just advice people repeat. This lesson is the real sleep science.`,
           headline: `Sleep`,
           subtitle: `The single most important wellness lever you have. Three real sleep situations.`,
           visual: `/voyager-assets/life-wellness/l02-welcome.webp`,

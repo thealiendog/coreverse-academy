@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, friendship is one of the most important wellness topics that pop content treats as if it doesn't need attention. The research is striking: loneliness has health effects comparable to smoking 15 cigarettes a day (Holt-Lunstad's meta-analyses). The US Surgeon General has declared a loneliness epidemic. Adolescent loneliness has risen dramatically across the past decade. At the same time, friendship is genuinely one of the deepest sources of meaning in human life across philosophical traditions going back thousands of years. Today we work through three serious positions on what friendship actually is: friendship as instrumental (what it provides), friendship as intrinsic (what it is in itself), and friendship as structural/cultural (shaped by conditions). By the end you'll have framework that protects across decades of friendship across many forms and contexts.`,
+          guideText: `{name}, loneliness is a public health crisis — its effects on mortality are comparable to smoking 15 cigarettes a day. Friendship isn't optional for wellbeing; it's foundational. But what is friendship actually for? Three positions exist: instrumental, intrinsic, and structural. This lesson maps the research and the debate.`,
           headline: `Friendship as Wellness`,
           subtitle: `Three serious positions. Loneliness research, philosophical tradition, structural conditions.`,
           visual: `/voyager-assets/life-wellness/l10-welcome.webp`,

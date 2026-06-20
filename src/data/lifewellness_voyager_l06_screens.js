@@ -30,7 +30,7 @@ const LIFEWELLNESS_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, mental health is one of the most important topics in this band. Real mental health conditions (depression, anxiety disorders, ADHD, OCD, eating disorders, trauma-related conditions) are medical conditions, not character flaws or weaknesses. They affect millions of people including many of your peers right now. At the same time, ordinary difficult emotions and struggles are part of being human and don't always indicate clinical conditions. Mental health literacy is about knowing the difference, knowing when to seek help, and knowing how to support yourself and others without either over-medicalizing ordinary struggles or dismissing real conditions. Today we work through three real situations that show the distinction. By the end you'll know warning signs that suggest seeking professional help, you'll know what professional help actually looks like, and you'll know who to reach out to. This lesson will save lives over the decades you'll use it.`,
+          guideText: `{name}, mental health conditions are real medical conditions — not character flaws, not weakness, not something you can think your way out of. This lesson covers the basics: what clinical conditions actually are, how to distinguish ordinary emotional difficulty from something that needs professional attention, and what warning signs are worth acting on.`,
           headline: `Mental Health Basics`,
           subtitle: `Distinguishing ordinary struggles from clinical conditions. Three case studies. When and how to seek help.`,
           visual: `/voyager-assets/life-wellness/l06-welcome.webp`,

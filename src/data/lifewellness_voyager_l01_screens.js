@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, welcome to Life Wellness. I'm Terra. Before we go into any specific topic (sleep, stress, food, movement, mental health, relationships, meaning) we have to settle a more basic question. What does "wellness" actually mean? You'd think this would be obvious. It isn't. The word gets used in three very different ways, and which definition you adopt shapes everything else. There's also a $5.6 trillion wellness industry that has its own answer (one that mostly serves selling things to you). Real research on what wellness is gives us three serious positions that have been developed and defended by significant thinkers. Today you build your argument for which fits your understanding. The position you commit to here shapes how you'll think about every other lesson in this band, and how you'll relate to your own wellbeing for the rest of your life.`,
+          guideText: `{name}, wellness is one of those words that sounds obvious until you try to define it precisely. Is it the absence of disease? The presence of flourishing? The ability to live the life you want? The answer shapes which health practices count, which people get care, and what you're actually trying to build. This lesson maps three serious definitions and asks you to pick one.`,
           headline: `What "Wellness" Actually Is`,
           subtitle: `Three serious positions. The choice shapes how you think about your own wellbeing.`,
           visual: `/voyager-assets/life-wellness/l01-welcome.webp`,

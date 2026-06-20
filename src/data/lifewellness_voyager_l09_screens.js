@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, emotional regulation is one of the most useful wellness skills you can build. Real research on emotions has dramatically changed across the last 30 years. The old framing treated emotions as fixed biological responses to be controlled or suppressed; recent research treats emotions as constructed experiences that can be reappraised, named, and worked with in much more sophisticated ways. Today we work through three real situations involving emotional regulation: a kid who suppresses emotions and pays a cost, a kid who ruminates and spirals, and a kid dealing with social-emotional contagion in a friend group. By the end you'll have specific research-backed strategies (from James Gross, Marc Brackett, and the broader emotion regulation literature) that are dramatically more useful than the pop framings most adults absorbed.`,
+          guideText: `{name}, emotions aren't things that happen to you — they're things your brain constructs, and understanding that changes everything about how to work with them. This lesson covers what emotions actually are according to current neuroscience, which regulation strategies work and which backfire, and how to tell when a feeling is useful information versus noise.`,
           headline: `Emotional Regulation`,
           subtitle: `Three real situations. Research from Gross, Brackett, emotion regulation literature.`,
           visual: `/voyager-assets/life-wellness/l09-welcome.webp`,

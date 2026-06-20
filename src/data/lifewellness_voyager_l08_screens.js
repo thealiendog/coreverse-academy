@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, attention is one of the most consequential wellness topics for your generation specifically. Your generation has grown up with attention being actively competed for by the most sophisticated technology ever built. Real research treats attention seriously and disagrees about what attention is and what produces real focus. Today we work through three serious positions: attention as cognitive resource (Kahneman, cognitive science), attention as captured by environment (attention economy critics, Tristan Harris), and attention as embodied state (sleep, exercise, nutrition, stress shaping focus capacity). Each position has real evidence. The framework you build today shapes how you'll think about focus, distraction, and your relationship with technology across decades. Most adults have absorbed shallow framings; choosing yours deliberately puts you ahead.`,
+          guideText: `{name}, attention is the wellness topic for your generation in a way it wasn't for any generation before you. You are the first cohort to grow up entirely inside an attention economy designed by engineers to maximize time-on-platform. Three serious frameworks exist for understanding what attention actually is and why it's so hard to protect. This lesson maps them.`,
           headline: `Attention and Focus`,
           subtitle: `Three serious positions on what attention is. Real research, real disagreement.`,
           visual: `/voyager-assets/life-wellness/l08-welcome.webp`,

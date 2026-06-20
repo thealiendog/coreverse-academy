@@ -39,7 +39,7 @@ const LIFEWELLNESS_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, body image is one of the most consequential wellness topics, especially for your generation. The research is clear: constant exposure to beauty-evaluation content (social media, advertising, entertainment) produces measurable harm; what researcher Renee Engeln calls "beauty sickness." This lesson works through three serious positions on body image: body neutrality (focusing on function rather than appearance), body positivity (loving the body as it is), and critical/structural (recognizing beauty standards as constructed by industries with profit motives, requiring media literacy). The framing throughout is media literacy, not body prescription. This lesson does not include specific advice about how your body should look, measurements, or appearance goals because that's not what produces wellbeing. What does produce wellbeing is recognition of how the industries work, frameworks for thinking about your body, and skills to navigate the constant evaluation environment.`,
+          guideText: `{name}, body image is shaped before you have the vocabulary to question it. The beauty industry, media algorithms, and peer culture all work on your self-perception constantly. Three positions exist for how to respond: body neutrality, body positivity, and the structural critique that says individual attitude change isn't enough. This lesson maps them.`,
           headline: `Body Image and Self-Perception`,
           subtitle: `Three serious positions. Media literacy framework. Research-grounded.`,
           visual: `/voyager-assets/life-wellness/l15-welcome.webp`,

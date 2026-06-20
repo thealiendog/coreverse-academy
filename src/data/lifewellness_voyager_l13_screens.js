@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, money affects wellbeing in ways most pop content gets wrong. The truth is more interesting than "more money = more happiness" or "money doesn't buy happiness." Real research shows money has real effects on wellbeing up to a point (financial security matters enormously for health), substantially diminishing effects above that point (more money produces smaller wellbeing gains), and complicated effects from money-related comparison and materialism (which can actively reduce wellbeing). Today we work through three cases: a family experiencing financial stress, a person noticing wealth doesn't produce expected happiness, and a person caught in money-related comparison. Real research from Kahneman, Killingsworth, Kasser, and others will inform the responses.`,
+          guideText: `{name}, money affects wellbeing, but not the way most people think. Above basic security, the relationship between income and happiness flattens significantly. What matters more — and what the research is clear on — is materialism, financial stress, and social comparison. This lesson examines the actual evidence on money and wellness.`,
           headline: `Money and Wellness`,
           subtitle: `Three real cases on money's effect on wellbeing. Research-grounded, not pop framings.`,
           visual: `/voyager-assets/life-wellness/l13-welcome.webp`,

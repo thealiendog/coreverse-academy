@@ -28,7 +28,7 @@ const LIFEWELLNESS_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, tech and screen use is one of the most contested topics in current research on adolescent wellbeing. Different serious researchers reach different conclusions from largely the same data. Some argue smartphones and social media have caused dramatic mental health harms in your generation; others argue the effects are small and the moral panic is overstated. Today you'll work through three tiers of sources on this topic and learn to navigate contested research rather than just taking one position at face value. This skill (evaluating contested scientific claims) generalizes far beyond tech and screens. By the end you'll have framework for thinking critically when serious researchers disagree, which is the actual state of much research that matters.`,
+          guideText: `{name}, screen use and youth wellbeing is one of the most contested topics in current psychology — not because we lack data, but because the data is genuinely mixed. This lesson teaches you to evaluate sources on a contested topic: what peer-reviewed research actually shows, what serious popular books add, and what viral content gets wrong.`,
           headline: `Tech and Screen Use`,
           subtitle: `Three tiers of sources on a genuinely contested topic. Source evaluation under disagreement.`,
           visual: `/voyager-assets/life-wellness/l14-welcome.webp`,

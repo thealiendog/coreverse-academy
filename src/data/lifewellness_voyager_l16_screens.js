@@ -38,7 +38,7 @@ const LIFEWELLNESS_VOYAGER_L16 = {
         {
           id: `l16-welcome`,
           type: `welcome`,
-          guideText: `{name}, grief is one of the most consequential human experiences and one of the most misunderstood in pop content. Most people grow up with framings of grief that don't match research and that often make grief harder rather than easier. Today we work through what grief research actually shows, multiple frameworks for understanding loss, and three cases of difficult experiences adolescents commonly encounter. The framing throughout is that grief is a normal human response to loss, not a pathology to be fixed. The lesson also names when grief becomes complicated enough to warrant professional support. By the end you'll have framework most adults navigating loss have never explicitly built.`,
+          guideText: `{name}, grief is not a problem to be solved or a stage to get through. It's the experience of love without its object — and every person's version is different. This lesson covers what grief actually is, why the stages model is mostly wrong, when grief becomes complicated, and how culture shapes what healing is supposed to look like.`,
           headline: `Grief and Difficult Experiences`,
           subtitle: `Three real situations. Research-grounded. Grief as normal human response.`,
           visual: `/voyager-assets/life-wellness/l16-welcome.webp`,

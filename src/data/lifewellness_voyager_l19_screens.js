@@ -35,7 +35,7 @@ const LIFEWELLNESS_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, knowing when and where to get help is one of the most consequential life skills. Most people don't get help they could benefit from because they don't know what's available, don't recognize when they need it, or get caught in unhelpful versions of help. Today we apply the source evaluation skill you built in Lesson 14 specifically to mental health and wellness support: three tiers of resources, from credentialed evidence-based therapy through serious popular resources to viral monetized "wellness coaches." This isn't theoretical for your generation. Mental health support needs are real and growing; access to good help varies enormously; the difference between helpful and harmful support can be substantial. By the end you'll have framework for getting actual help when you or someone you care about needs it.`,
+          guideText: `{name}, knowing when to seek help — and from whom — is one of the most important wellness skills there is. Most people wait too long, then reach for the wrong tier of support. This lesson maps three tiers of mental health and wellness resources: credentialed evidence-based care, serious popular resources, and the viral wellness coaching ecosystem you should approach carefully.`,
           headline: `When To Seek Help`,
           subtitle: `Three tiers of wellness/mental health resources. Source evaluation applied to getting help.`,
           visual: `/voyager-assets/life-wellness/l19-welcome.webp`,

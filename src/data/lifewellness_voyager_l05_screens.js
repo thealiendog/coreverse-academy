@@ -29,7 +29,7 @@ const LIFEWELLNESS_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, movement is one of the most well-researched things in wellness. Real evidence shows it helps cognition, mood, sleep, cardiovascular function, and longevity. Movement also gets weaponized by diet culture in ways that produce serious harm. The pop framing treats movement as "exercise": something you do to control your body's appearance or earn food. Real research frames movement around capability: what your body can do, what you enjoy, what builds the life you want. Today we work through three real situations involving movement: a kid who hates exercise because of how it was framed, a kid showing signs of exercise compulsion, and a kid feeling social pressure to perform athletically. I won't give you numbers, programs, or prescriptions. The lesson is about your relationship with movement and how to build one that serves you across decades.`,
+          guideText: `{name}, movement is one of the most evidence-backed interventions for physical and mental health that exists. But the fitness industry has wrapped it in appearance obsession, compulsion risk, and unsustainable extremes. This lesson separates what the research actually shows from the noise, and asks: what does a healthy relationship with movement actually look like?`,
           headline: `Movement and Physical Capability`,
           subtitle: `Framed around capability, not appearance. Three real situations. No programs, no numbers.`,
           visual: `/voyager-assets/life-wellness/l05-welcome.webp`,

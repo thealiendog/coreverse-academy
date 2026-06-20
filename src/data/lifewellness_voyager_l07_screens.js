@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, behavior change is one of the most studied wellness topics and also one of the most misrepresented. The "21 days to form a habit" thing you've heard? That's a myth, not research. The "morning routine that will transform your life" videos? Mostly marketing. Real research on how behavior actually changes is more interesting and more useful. Today you evaluate three sources on habits and behavior change. One is rigorous peer-reviewed research. One is serious popular synthesis with both real strengths and real limitations. One is viral monetized content built more on engagement metrics than on evidence. The skill you build today applies far beyond habits: distinguishing serious research from popular synthesis from monetized content protects you from being sold things across every wellness topic for the rest of your life.`,
+          guideText: `{name}, the habits industry is enormous and largely untested. Atomic Habits sold 15 million copies. James Clear is not a psychologist. This lesson teaches you to evaluate the claims — what the actual behavioral science says about habit formation, and how to read the three types of sources you'll encounter on this topic: peer-reviewed research, serious popular books, and viral self-help content.`,
           headline: `Habits and Behavior Change`,
           subtitle: `Three sources. Distinguishing real research from popular synthesis from viral content.`,
           visual: `/voyager-assets/life-wellness/l07-welcome.webp`,

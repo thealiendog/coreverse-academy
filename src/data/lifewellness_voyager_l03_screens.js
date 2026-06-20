@@ -26,7 +26,7 @@ const LIFEWELLNESS_VOYAGER_L03 = {
         {
           id: `l03-welcome`,
           type: `welcome`,
-          guideText: `{name}, stress is one of the most misunderstood concepts in wellness. Pop content treats stress as a single thing: bad, to be reduced. Real research is more interesting. Acute stress and chronic stress do different things in the body. The fight-or-flight model that most people know is incomplete; recent research from Stephen Porges has added a third response (freeze/shutdown) that explains a lot of what fight-or-flight doesn't. Today we work through three serious positions on what stress actually is: acute physiological response (Selye, Cannon), chronic allostatic load (McEwen), and polyvagal state regulation (Porges). Each has real evidence and real implications. By the end you'll have a working framework that's actually accurate to what's happening in your body, not the pop-content version.`,
+          guideText: `{name}, most people think stress is bad and the goal is to eliminate it. That's wrong. Stress is a survival system — the problem is chronic activation without recovery, not stress itself. Three serious frameworks exist for understanding what stress actually is and what it does to your body. This lesson maps them.`,
           headline: `The Stress Response`,
           subtitle: `Three serious positions on what stress actually is. The pop-content version is incomplete.`,
           visual: `/voyager-assets/life-wellness/l03-welcome.webp`,

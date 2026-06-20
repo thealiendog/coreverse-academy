@@ -28,7 +28,7 @@ const LIFEWELLNESS_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, food is one of the most contested wellness topics. Pop content gives you contradictory advice constantly. The wellness industry markets diet culture to kids your age aggressively, and a lot of what gets sold as "healthy eating" is actually diet culture in nicer packaging. Today we work through three serious research positions on what eating well actually means: traditional nutritional science, anti-diet (also called weight-inclusive), and sociocultural. This lesson is about understanding the landscape and seeing through diet culture manipulation, not getting prescribed what to eat. I won't give you numbers, targets, or food rules. By the end you'll have media literacy about how diet culture operates, you'll know warning signs that suggest someone should talk to a professional, and you'll know who to reach out to if you're struggling. Your body needs food, and deserves to be fed without shame. That's the starting point I won't argue with.`,
+          guideText: `{name}, diet culture is the water you swim in — the assumption that thinness equals health, that food is good or bad, that your body needs fixing. It's everywhere and mostly invisible. This lesson names it, examines what nutrition science actually says, and introduces the frameworks that push back against it. You'll never read a health headline the same way again.`,
           headline: `Food, Nutrition, And The Diet Culture Problem`,
           subtitle: `Three serious positions. Media literacy, not prescription. No numbers, no targets, no rules.`,
           visual: `/voyager-assets/life-wellness/l04-welcome.webp`,
