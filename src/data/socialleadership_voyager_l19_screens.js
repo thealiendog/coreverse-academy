@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, the most important leadership skill isn't always leading. It's knowing when to lead, when to follow, and when to shift between the two based on what the situation actually requires. People who try to lead everything fail at most of it. People who never lead miss the situations where they were the right person to step up. People who can read situations accurately and adapt their role accordingly outperform both. Today we work through nine specific scenarios and sort them into three buckets: lead this situation, follow here, or shift between depending on what's needed. By the end you'll have a working framework for reading any situation you find yourself in.`,
+          guideText: `{name}, the most important leadership skill may be situational judgment — knowing when to step forward, when to step back, and when to shift roles mid-stream. This lesson covers specific signals that call for leading, specific signals that call for following, and the dynamic situations where the right role changes.`,
           headline: `When To Lead and When To Follow`,
           subtitle: `The most important leadership skill: reading situations accurately and adapting your role.`,
           visual: `/voyager-assets/social-leadership/l19-welcome.webp`,

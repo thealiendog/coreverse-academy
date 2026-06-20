@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, how engaged should citizens be with civic and political life? The question isn't about WHICH political positions are right — that's a separate question we're not addressing today. The question is about HOW MUCH and HOW citizens should engage with civic life regardless of their political views. Three serious positions exist, defended by thoughtful people across the political spectrum. Active engagement: citizens should be involved in civic life. Local and targeted: engagement is most useful at local levels and on specific issues. Selective with private excellence: basic civic duties plus personal/professional contribution. Today you build your argument for which fits your view. The question matters because how you engage shapes both your impact and your relationship to the broader community you're part of.`,
+          guideText: `{name}, civic engagement is where leadership meets collective life. But how much engagement is appropriate, and in what form? Active political participation, targeted local focus, or contributing through private excellence? Three positions, each with serious defenders. This lesson maps the debate and asks you to take a position.`,
           headline: `Civic Engagement`,
           subtitle: `How engaged should citizens be? Three serious positions across the political spectrum.`,
           visual: `/voyager-assets/social-leadership/l10-welcome.webp`,

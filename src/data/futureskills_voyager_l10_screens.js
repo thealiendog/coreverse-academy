@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, almost everything significant you'll ever do will involve other people. Group projects, sports teams, jobs, startups, families, communities. Even "solo" work usually depends on collaboration somewhere upstream or downstream. So a real question: what actually makes teams work? You've probably been told "find great people," "build psychological safety," "communicate clearly." These are real ideas from real research, but they're often presented as if they were obviously true. They aren't all equally true, and they aren't all true in the same situations. Three serious positions compete for what actually drives team performance. Today we work through them and you build your argument for what really matters.`,
+          guideText: `{name}, teamwork is harder than it sounds — coordination costs, social loafing, and group dynamics mean that teams often underperform their individual members. Three positions on what actually drives team performance: individual excellence, team dynamics, or context. This lesson maps the evidence and the debate.`,
           headline: `Collaboration & Teamwork`,
           subtitle: `Three real positions on what makes teams work. Pop framings oversimplify.`,
           visual: `/voyager-assets/future-skills/l10-welcome.webp`,

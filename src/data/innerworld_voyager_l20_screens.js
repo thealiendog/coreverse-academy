@@ -27,7 +27,7 @@ const INNERWORLD_VOYAGER_L20 = {
         {
           id: `l20-welcome`,
           type: `welcome`,
-          guideText: `{name}, this is the final lesson of the Inner World Voyager band. Twenty lessons ago we started with consciousness itself. We looked at the philosophy of self, Jung's shadow, the science of meditation, the placebo effect, contested figures, non-duality, time orientations, emotional alchemy, archetypes, manifestation, the heart in consciousness, near-death experiences, and values alignment. You have done real intellectual and contemplative work. Today is synthesis. The question for this capstone is the most important one in the whole band. Given everything you now know about how mind, brain, emotion, and meaning actually work, what kind of conscious life do you want to design for yourself? What practices? What commitments? What kind of attention? You'll build a real argument for your own life philosophy.`,
+          guideText: `{name}, twenty lessons of Inner World — consciousness, self, shadow, epigenetics, placebo, meditation, default mode, non-duality, time, emotions, ego, manifestation, heart, archetypes, practice, synchronicity, near-death, values. This final lesson asks you to do something with all of it: design a conscious life. Not the one wellness culture prescribes. Yours.`,
           headline: `Designing a Conscious Life`,
           subtitle: `Twenty lessons. One synthesis. Your turn.`,
           visual: `/voyager-assets/inner-world/l20-welcome.webp`,

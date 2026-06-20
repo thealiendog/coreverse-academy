@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, two lessons ago we mentioned the Default Mode Network. Last lesson we read a real paper about it. Today we go deeper into a strange and important question. The DMN is what generates the feeling of being you. Your inner narrator. Your sense of past and future. Your mind-wandering. Meditation reduces DMN activity. Psychedelics dramatically reduce it. Wellness culture has decided the DMN is bad and quieting it is always good. But the DMN does real and necessary work. Quieting it isn't free. Today's question, which we will let you build an argument about: is quieting the DMN actually good? You will have to pick a position and defend it with real evidence.`,
+          guideText: `{name}, the default mode network is the brain system active when you're not focused on a task — daydreaming, mind-wandering, thinking about others. It does genuinely valuable things. It's also associated with rumination and unhappiness. Is quieting it always better? This lesson examines the actual tradeoffs.`,
           headline: `The Default Mode Network`,
           subtitle: `Less ego sounds good. But what are you giving up?`,
           visual: `/voyager-assets/inner-world/l08-welcome.webp`,

@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L18 = {
         {
           id: `l18-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a question that gets harder every year: how should you think about your career in a world where the rules keep changing? AI is reshaping which jobs exist. The "follow your passion" advice that boomers and millennials grew up with has been seriously critiqued. The expected trajectory of "pick a major, get a degree, get a job, climb a ladder" is less reliable than it was for previous generations. Different serious thinkers give very different advice. Today we look at three sources: Cal Newport's research-grounded "build career capital" framework, David Epstein's "stay generalist" argument, and a viral career influencer selling the dream. By the end you'll have working frameworks for thinking about your own path without locking yourself into outdated assumptions.`,
+          guideText: `{name}, career planning is different now than it was for your parents — AI, automation, and the pace of change have disrupted the stable career ladder. This lesson covers what has actually changed, the follow-your-passion debate, and how to evaluate the career advice you'll receive from sources with very different incentives.`,
           headline: `Career Paths in a Changing World`,
           subtitle: `Real disagreements between credible thinkers about how to plan a career.`,
           visual: `/voyager-assets/future-skills/l18-welcome.webp`,

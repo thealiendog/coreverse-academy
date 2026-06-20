@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, every group has power dynamics. The formal structure (who has the title, who chairs the meeting, who signs off on decisions) is only part of what's happening. Often the more important question is where actual influence flows, which coalitions are forming, and what's getting decided outside the official process. The skill of reading these dynamics accurately is what political scientists call "power literacy" — and it's one of the most useful skills for any leadership role. Today you'll sort nine real scenarios into three categories: formal power dynamics, informal influence, and coalition power. By the end you'll have a working framework for reading any group you're part of.`,
+          guideText: `{name}, every group has a power structure — formal and informal. Reading it accurately is a leadership skill. Layer one: formal authority. Layer two: informal influence. Layer three: coalition power. Most people only see layer one. This lesson teaches you to see all three.`,
           headline: `Power Dynamics in Groups`,
           subtitle: `Formal structure is only part of what's happening. Real influence often flows elsewhere.`,
           visual: `/voyager-assets/social-leadership/l14-welcome.webp`,

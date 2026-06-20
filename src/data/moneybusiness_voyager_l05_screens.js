@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, when you buy a stock, you become a partial owner of a real company. Apple, Walmart, Microsoft, Coca-Cola: these are owned, in tiny fractions, by anyone who holds their stock. This is one of the most powerful wealth-building tools in modern history. It's also one of the most misunderstood. Some people think stock-picking is a path to riches. Some think it's gambling. The honest answer is more interesting than either. Most professional stock-pickers fail to beat simple index funds over time. Yet the entire active-investing industry continues to exist and grow. Today we look at three serious positions on what you should actually do with stock market investing. Then you build your argument.`,
+          guideText: `{name}, a stock is a fractional ownership stake in a real business — not a number that goes up and down for mysterious reasons. Returns come from dividends, earnings growth, and valuation changes. Three serious positions on how to invest: active management, index funds, or don't invest yet. This lesson maps all three honestly.`,
           headline: `How Stocks Actually Work`,
           subtitle: `Ownership, returns, and the active-vs-passive debate.`,
           visual: `/voyager-assets/money-business/l05-welcome.webp`,

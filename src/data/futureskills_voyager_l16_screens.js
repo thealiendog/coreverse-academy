@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L16 = {
         {
           id: `l16-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've probably seen the "teen millionaire entrepreneur" content. The kid who started a dropshipping store and now drives a Lamborghini. The 14-year-old whose Instagram course made six figures. Most of this content is misleading. Real entrepreneurship is mostly grinding, customer service, unit economics, and slow accumulation, not fast wealth. But the underlying skills are genuinely useful, and starting young is genuinely valuable. Today we work through three real-pattern entrepreneurial situations: a teen with a service idea, someone making and selling a product, and someone trying to scale a working small business. Each case shows the difference between hype-driven thinking and what actually works. By the end you'll know what entrepreneurship really involves.`,
+          guideText: `{name}, entrepreneurship is a set of learnable skills — customer discovery, lean experimentation, unit economics, pricing — not a personality type or a mindset. Most teen entrepreneurship content is either inspirational or shallow. This lesson covers the real frameworks: what makes a business actually work.`,
           headline: `Entrepreneurship`,
           subtitle: `Three real cases. Pop framings oversell. The real skill is unsexy and useful.`,
           visual: `/voyager-assets/future-skills/l16-welcome.webp`,

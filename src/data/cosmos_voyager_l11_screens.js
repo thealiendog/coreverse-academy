@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've been experiencing time your entire life. Every moment of your existence has been "now." The past feels like it happened, and the future feels like it hasn't yet. This seems so obvious that you've probably never seriously questioned it. But what IS time, fundamentally? Is the past still real somewhere? Does the future already exist, waiting for us? Is only this present moment actually real, with everything else being either memory or anticipation? Real philosophers and physicists hold radically different positions on this. The answer matters: it shapes what we think about free will, meaning, and how to live. Today we work through three serious positions on what time is. Then you build an argument.`,
+          guideText: `{name}, what is time? Not what does a clock measure — what is time actually? Physics has revealed that time is stranger than common sense suggests: it flows differently at different speeds, may not have a fundamental direction, and might not be fundamental at all. Three serious positions exist. This lesson maps them.`,
           headline: `Time: What Is It?`,
           subtitle: `Three serious positions on what time fundamentally IS. Real philosophers disagree.`,
           visual: `/voyager-assets/cosmos/l11-welcome.webp`,

@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's something nobody tells you clearly. Almost every other skill you'll ever develop is mediated through communication. You can be the smartest person in the room, but if you can't make people understand what you're thinking, your ideas don't go anywhere. You can be the kindest person in the world, but if you can't repair a misunderstanding, you lose friendships. You can have the best solution to a problem, but if you can't get buy-in, the problem doesn't get solved. Communication is the meta-skill that makes other skills count. Most people develop their communication style by accident. Today we work through three real cases where the difference between intuitive and skilled communication produces very different outcomes. Let's get into it.`,
+          guideText: `{name}, communication research has produced clear findings about what makes people feel heard, what makes messages land, and why communication fails even when both parties are trying. This lesson covers what actually works, what doesn't, and three real scenarios where the skill matters.`,
           headline: `Communication Skills`,
           subtitle: `Three real cases. The meta-skill that mediates every other skill.`,
           visual: `/voyager-assets/future-skills/l05-welcome.webp`,

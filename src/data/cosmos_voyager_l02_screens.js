@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a fact that nobody on Earth fully understood until 1905, and that almost no adult today can really explain: the speed of light is the same for every observer in the universe. It doesn't matter how fast you're moving when you measure it. A light beam from a star, measured by you standing still, gives you the same speed as the same light beam measured by someone in a spacecraft moving at half the speed of light. That sounds impossible. It isn't. The consequences of this single fact rewrote physics, gave us GPS, and revealed that time and space are not what they seem. Today we follow the trail from Einstein's strange 1905 idea to the experiments that proved it.`,
+          guideText: `{name}, Einstein figured out in 1905 that the speed of light is constant for all observers — and that meant time couldn't be. Time dilation, length contraction, the relativity of simultaneity: these are real, measured, and built into every GPS device. This lesson is the actual physics, not the popular mythology.`,
           headline: `The Speed of Light & Spacetime`,
           subtitle: `One strange fact rewrote physics. Today we follow the evidence.`,
           visual: `/voyager-assets/cosmos/l02-welcome.webp`,

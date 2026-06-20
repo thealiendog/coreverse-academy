@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, after 18 lessons about how mind, brain, emotion, and meaning work, today we ask the most practical question of all. How do you actually live a life that matches what you say you value? Most people fail at this. Most adults you know say they value family, integrity, growth, kindness, and meaning. Most of them also live in ways that don't fully match those words. The gap between stated values and actual life is one of the most common sources of suffering. Three serious philosophical traditions have addressed this directly: Stoicism, Existentialism, and Virtue Ethics. Each offers a different practical approach to alignment. Today you'll build an argument for the strongest approach for someone your age starting now.`,
+          guideText: `{name}, most people live a gap between the values they say they hold and how they actually spend their time and attention. Stoicism, existentialism, and virtue ethics each offer a different approach to closing that gap. This lesson maps all three and asks: which one fits how you actually want to live?`,
           headline: `Living in Alignment with Values`,
           subtitle: `Three serious approaches to closing the gap.`,
           visual: `/voyager-assets/inner-world/l19-welcome.webp`,

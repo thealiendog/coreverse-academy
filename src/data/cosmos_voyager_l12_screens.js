@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's an unsettling fact about the universe. Many of the fundamental constants of physics (the masses of particles, the strengths of forces, the cosmological constant) fall in surprisingly narrow ranges. If they were slightly different, no stars, no planets, no chemistry, no life. The universe seems "fine-tuned" for existence as we know it. Three serious explanations compete for why. The first is that we live in a multiverse where most universes don't allow life, and we observe one of the few that does. The second is that a designer or intelligence set the constants. The third is that we genuinely don't yet know. Today we look at the actual physics, then evaluate three sources making radically different claims about the fine-tuning.`,
+          guideText: `{name}, the fundamental constants of physics are fine-tuned for life with extraordinary precision. Change any of them slightly and stars don't form, atoms don't exist, life is impossible. This is a real phenomenon called fine-tuning. Three explanations exist: multiverse, design, or we don't know yet. This lesson maps the debate honestly.`,
           headline: `The Anthropic Principle`,
           subtitle: `The universe seems fine-tuned for existence. Three serious explanations compete.`,
           visual: `/voyager-assets/cosmos/l12-welcome.webp`,

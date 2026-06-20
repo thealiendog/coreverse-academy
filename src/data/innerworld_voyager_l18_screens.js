@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L18 = {
         {
           id: `l18-welcome`,
           type: `welcome`,
-          guideText: `{name}, today's lesson is uncomfortable for a different reason than the others. We're going to look at evidence at the edges of what science can investigate: near-death experiences, the reports millions of people have made of consciousness continuing during cardiac arrest, surgical anesthesia, or moments of clinical death. Some of these reports have features that current neuroscience cannot easily explain. Other features look exactly like what dying brains might produce. Three different sources interpret the same evidence in three very different ways. There is no easy answer here. This is what genuinely contested evidence looks like. Your job today is to evaluate sources carefully on a question where even careful researchers disagree.`,
+          guideText: `{name}, near-death experiences are reported across cultures, follow consistent patterns, and in some cases include verifiable perceptions during cardiac arrest. The standard neuroscience explanation handles most of it. A few cases are harder to explain. This lesson teaches you to hold contested evidence honestly — neither dismissing nor overclaiming.`,
           headline: `Near-Death Experiences`,
           subtitle: `What happens when the line between science and mystery gets thin.`,
           visual: `/voyager-assets/inner-world/l18-welcome.webp`,

@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, "everyone should learn to code" is common advice. Sometimes it's good advice. Sometimes it's not. Whether to learn programming specifically depends on what you want to do. But there's a deeper skill underneath programming that's useful regardless of whether you'll ever write code professionally: computational thinking. It's a specific mental framework for breaking down problems, finding patterns, abstracting essential features, building step-by-step procedures, and systematically debugging when things don't work. The framework was named by Jeannette Wing in a 2006 paper and has shaped how computer science is taught around the world. Today we work through the five core concepts and match them to real applications. By the end you'll have a mental framework that's useful for far more than programming.`,
+          guideText: `{name}, computational thinking is a set of problem-solving approaches — decomposition, pattern recognition, abstraction, algorithmic thinking — that transfer beyond coding into almost any domain. Whether you learn to program is a separate question. This lesson covers the thinking framework first.`,
           headline: `Coding & Computational Thinking`,
           subtitle: `The mental framework underneath programming. Useful for far more than code.`,
           visual: `/voyager-assets/future-skills/l12-welcome.webp`,

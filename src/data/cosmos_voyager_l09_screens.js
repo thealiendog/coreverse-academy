@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, in 1950, the physicist Enrico Fermi was having lunch at Los Alamos with three colleagues. They were talking about the possibility of alien civilizations. Fermi suddenly asked: "Where is everybody?" His question has haunted scientists ever since. The Milky Way contains hundreds of billions of stars. Many have planets. The galaxy is 13 billion years old. If even a tiny fraction of stars produce intelligent civilizations, the galaxy should be teeming with them by now. Some should have noticed Earth long ago. Some should be sending obvious signals. Some should have colonized the galaxy in technological time. They haven't. Or we can't see them. Or something else is going on. Today we explore the most serious proposed answers, and you sort them by what each one tells us.`,
+          guideText: `{name}, Fermi asked a simple question over lunch: if the galaxy is 10 billion years old and full of stars, where is everyone? The silence is the paradox. Several families of answers exist — life is rare, civilizations don't last, they exist but we can't detect them. This lesson examines each seriously.`,
           headline: `Are We Alone?`,
           subtitle: `Fermi's question still has no answer. The proposed explanations are themselves revealing.`,
           visual: `/voyager-assets/cosmos/l09-welcome.webp`,

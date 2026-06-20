@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, time is the most ordinary thing in your life and also one of the strangest. The past has already happened and you can't change it, but you spend a lot of mental energy on it. The future hasn't happened yet, and you can't fully predict it, but it shapes how you live right now. The present is the only place anything actually happens, but it's also the part most people miss. Different philosophical traditions take strong positions on which of these three you should focus on to live well. Today we look at three positions seriously. Then you pick one and defend it with real evidence.`,
+          guideText: `{name}, Stoics say focus on the present. Buddhists say even the present is constructed. Existentialists say the future self you project creates you. These aren't just philosophies — they're different relationships with time that produce different lives. This lesson maps the three positions and asks which one you'll try.`,
           headline: `Past, Present, Future`,
           subtitle: `Which time relationship produces the best life?`,
           visual: `/voyager-assets/inner-world/l10-welcome.webp`,

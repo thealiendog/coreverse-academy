@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, change is one of the hardest things leaders face. Most people resist change. Most organizational change efforts fail. Even when change is clearly necessary, getting people through it well is genuinely difficult. Real change leadership researchers have approached the problem differently and reached different conclusions about what works. Today you look at three serious positions: leading change through vision and inspiration, leading change through careful systematic process, and leading change through adaptive responses to genuinely complex situations. Each has serious defenders. Pick the position that fits your thinking, build your case, then engage with the strongest counterargument. The skill matters because you'll lead through change many times across your lifetime.`,
+          guideText: `{name}, change is hard not because people are irrational but because change threatens competence, relationships, identity, and predictability that people have good reasons to value. Three frameworks for leading change: vision-driven, process-driven, and adaptive-emergent. This lesson maps them and their tradeoffs.`,
           headline: `Leading Through Change`,
           subtitle: `Three serious positions. Change is hard; how you approach it matters.`,
           visual: `/voyager-assets/social-leadership/l08-welcome.webp`,

@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, "how much do you make?" is one of the most common questions about adult work, but it's also one of the most poorly understood. Two people can both say they "make $80,000 a year" and have wildly different actual financial lives. One might be a salaried employee with health insurance and a 401(k) match. The other might be a freelancer with no benefits, irregular cash flow, and self-employment taxes that take 15% off the top. Same headline number, very different reality. Today we look at how people actually earn: hourly wages, salaries, tips, commission, self-employment income, equity. Then we walk through three real career paths over time. By the end you'll understand income better than most adults navigating their own careers.`,
+          guideText: `{name}, salary, hourly wage, tips, commission, equity — five different ways people earn money with very different implications for stability, upside, and lifestyle. And then there's the gap between gross and net pay. This lesson covers the real math of earning, including the career decisions that compound over decades.`,
           headline: `Salary, Wage, Tips`,
           subtitle: `How people actually earn — and why the headline number lies.`,
           visual: `/voyager-assets/money-business/l11-welcome.webp`,

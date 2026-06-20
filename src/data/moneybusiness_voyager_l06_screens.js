@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, debt is one of the most powerful and dangerous tools in personal finance. Used wisely, it can build wealth: a mortgage lets you buy a home that appreciates, a student loan lets you earn higher wages, a small business loan lets you start a company. Used badly, it can destroy a life: credit card debt at 22% interest compounds against you, payday loans trap people in cycles, car loans on depreciating assets drain wealth. The difference between "good debt" and "bad debt" isn't just the interest rate. It's whether the thing you're borrowing for produces more value than it costs. Today we walk through real debt scenarios with real numbers. By the end you'll understand the math that quietly shapes most adults' financial lives.`,
+          guideText: `{name}, debt is a tool. Like most tools, it can build things or cause damage depending on how you use it. Good debt produces returns that exceed its cost. Bad debt drains wealth. Ugly debt is designed to trap people who have no other options. This lesson maps all three with real examples.`,
           headline: `Debt: Good, Bad, and Ugly`,
           subtitle: `Same word, completely different consequences.`,
           visual: `/voyager-assets/money-business/l06-welcome.webp`,

@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L16 = {
         {
           id: `l16-welcome`,
           type: `welcome`,
-          guideText: `{name}, most of the leadership you'll do in your life will be without formal authority. You won't have the title that lets you give orders. You won't have the position that requires others to listen. You won't have the rank that grants automatic respect. You'll have to lead through influence, example, and earned credibility. This is harder than leading from position in some ways and more durable in others. The skills are specific and learnable. Today we work through three situations where you'd need to lead without title: seeing a problem at school that needs addressing, influencing a team you're not the leader of, and helping someone (sibling, friend, younger peer) who needs guidance. Real leaders have built movements, changed institutions, and shaped cultures without formal authority. The patterns of how they did it are knowable.`,
+          guideText: `{name}, most leadership happens without formal authority — on teams, in projects, in communities, in families. Leading without a title requires a different toolkit than positional leadership. This lesson covers what works, what doesn't, and the long arc of how authority-independent leadership builds toward formal authority over time.`,
           headline: `Leading Without Authority`,
           subtitle: `Most leadership you'll do is without title. The patterns of how it actually works are knowable.`,
           visual: `/voyager-assets/social-leadership/l16-welcome.webp`,

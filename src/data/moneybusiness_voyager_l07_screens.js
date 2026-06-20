@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, there's a three-digit number quietly running most of your adult life that almost no one understands. Your credit score determines whether you get approved for an apartment, what interest rate you pay on a car loan, whether you can buy a house, and sometimes whether you get hired for certain jobs. The score is calculated by private companies using formulas that are partly secret. Most adults don't know how the score actually works. This gap in knowledge is so large that an entire industry of "credit repair" scammers has built businesses preying on people's confusion. Today we look at three very different sources telling you how to think about credit scores. By the end you'll understand the actual mechanics better than most adults running on autopilot.`,
+          guideText: `{name}, your credit score is a three-digit number that determines whether you can rent an apartment, get a car loan, or qualify for a mortgage — and at what rate. It's calculated from five factors. This lesson explains exactly how it works and what you can do about it starting now.`,
           headline: `Credit Scores`,
           subtitle: `The invisible number quietly running your adult life.`,
           visual: `/voyager-assets/money-business/l07-welcome.webp`,

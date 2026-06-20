@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, black holes used to be theoretical. Predicted by Einstein's general relativity in 1916, debated for decades, considered "interesting mathematical solutions" that might not actually exist. That changed. By the 1970s, indirect evidence was overwhelming. In 2015, gravitational wave detectors caught two black holes colliding. In 2019, the Event Horizon Telescope produced the first direct image of one. In 2022, they imaged the supermassive black hole at the center of our own galaxy. Black holes are no longer theoretical. They are photographed objects. Today we look at what we actually know about them, what's still open, and how to tell real black hole science from the viral "black holes are portals to other dimensions" content that fills the internet.`,
+          guideText: `{name}, black holes are real, observed, and photographed. They're also one of the most mythologized objects in science. This lesson covers what a black hole actually is, how we detect them, what's known about their interiors, and how to recognize the gap between what physics says and what science fiction claims.`,
           headline: `Black Holes`,
           subtitle: `Predicted in 1916. Photographed in 2019. What we actually know.`,
           visual: `/voyager-assets/cosmos/l06-welcome.webp`,

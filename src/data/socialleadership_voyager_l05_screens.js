@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, leadership requires deciding under uncertainty. You usually won't have all the information you'd want. You'll often have to decide before things become clear. Whether you decide quickly or take time to gather more information shapes which kinds of mistakes you make. Both errors are real: deciding too fast on bad information vs. waiting so long that the moment passes. There are three serious positions on how to handle this defended by working decision researchers and practitioners. Today you build your argument for which framing fits your thinking. The skill matters because you'll make thousands of consequential decisions under uncertainty over your lifetime; your approach shapes how well most of them go.`,
+          guideText: `{name}, uncertainty is the normal condition of leadership — not a special case. Three positions on how to handle it: gather more information, act with what you have, or match your approach to the context. This lesson maps the tradeoffs honestly and asks you to take a position you can defend.`,
           headline: `Making Decisions Under Uncertainty`,
           subtitle: `Three positions. The skill shapes thousands of decisions over a lifetime.`,
           visual: `/voyager-assets/social-leadership/l05-welcome.webp`,

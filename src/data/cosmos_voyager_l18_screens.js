@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L18 = {
         {
           id: `l18-welcome`,
           type: `welcome`,
-          guideText: `{name}, after seventeen lessons of cosmology, we arrive at the personal question this whole subject leads to. What does it mean to be a person inside this universe? You are made of atoms forged in dead stars. You sit in a galaxy among hundreds of billions of galaxies. You exist for an instant on cosmic timescales. The universe doesn't seem to need you. And yet here you are, conscious, reading these words. How should that feel? What should it mean? Three radically different traditions have answered this question seriously, and they remain in active conversation today. Today we look at all three and you evaluate them as sources of meaning.`,
+          guideText: `{name}, what does it mean that you exist in a universe 13.8 billion years old, made of atoms forged in dying stars, on a pale blue dot orbiting an ordinary star in one of 2 trillion galaxies? Three traditions answer differently: scientific naturalism, religious cosmology, and philosophical nihilism. This lesson maps all three.`,
           headline: `Cosmology & Meaning`,
           subtitle: `What does it mean to be a person inside this universe? Three serious traditions disagree.`,
           visual: `/voyager-assets/cosmos/l18-welcome.webp`,

@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's something that explains a lot about why the world is so confusing. Almost everything important is a system: an interconnected set of parts where the parts affect each other and the behavior of the whole isn't just the sum of the parts. Your body. Your school. Your friend group. The climate. The economy. Your own habits. Systems behave in patterns that surprise people who don't think systemically. Small changes have huge effects. Big efforts produce nothing. Solutions create new problems. Effects show up years after causes. Once you can see these patterns, much of the world becomes more legible. Today we work through the three most useful patterns (reinforcing feedback, balancing feedback, delays) and you sort nine real-world scenarios into the right buckets. By the end you'll see systems where most people see chaos.`,
+          guideText: `{name}, systems thinking is the ability to see feedback loops, delays, and emergent behaviors that linear thinking misses. Most complex problems — in organizations, economies, ecosystems — have systems structure. This lesson covers the core concepts: reinforcing feedback, balancing feedback, and time delays.`,
           headline: `Systems Thinking`,
           subtitle: `Three patterns. Nine scenarios. See systems where most people see chaos.`,
           visual: `/voyager-assets/future-skills/l13-welcome.webp`,

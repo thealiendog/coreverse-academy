@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L18 = {
         {
           id: `l18-welcome`,
           type: `welcome`,
-          guideText: `{name}, you can't lead others well without leading yourself. The question is what that means. Three serious positions exist on the relationship between self-leadership and leading others. Self-mastery as foundation: you have to develop discipline, values clarity, and self-knowledge BEFORE you can lead others well. Lead through being: leading yourself isn't separate from leading others; who you ARE is what you lead, regardless of position. Service-oriented self-development: you develop yourself BECAUSE you need to serve others well — the self-development is means, not end. Each has serious defenders across traditions. Today you build your argument for which fits your understanding. The position shapes how you'll approach your own development for the next 70 years.`,
+          guideText: `{name}, you cannot lead others effectively over time without being able to lead yourself — managing your attention, regulating your emotions, developing your capacities. Three positions on what self-leadership actually means: self-mastery as foundation, leading through being, or service-oriented self-development. This lesson maps them.`,
           headline: `Leading Yourself First`,
           subtitle: `Three positions on the relationship between self-leadership and leading others.`,
           visual: `/voyager-assets/social-leadership/l18-welcome.webp`,

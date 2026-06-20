@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, I'm Byte. Welcome to Future Skills. We're going to spend twenty lessons figuring out what skills you actually need for the world you're growing into, and how to start building them. The first puzzle is the one almost nobody solves cleanly: what does "future skills" even mean? Some people answer "skills that will get you a job in 2035." Others answer "skills that help you live a meaningful life regardless of how work evolves." Still others answer "we don't know what 2040 will need, so the only real future skill is being able to learn fast." All three are defended by serious thinkers. They lead to very different choices about what to do with your time. Today we work through them, then you build your own argument.`,
+          guideText: `{name}, future skills sounds obvious until you try to define it: skills for employment, for human flourishing, or for an unknowable future that might require something entirely different? Three serious positions exist on what we're actually trying to build. This lesson maps them and asks which one you find most compelling.`,
           headline: `What Future Skills Even Mean`,
           subtitle: `Three serious answers. Each leads to different choices about what to do with your time.`,
           visual: `/voyager-assets/future-skills/l01-welcome.webp`,

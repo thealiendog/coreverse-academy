@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a question your generation is going to answer that mine couldn't: what is AI doing to creativity? You can already type "make me a painting in the style of Van Gogh of a dragon eating pizza" and get something visually interesting in 30 seconds. You can ask AI to write a poem about your dog. You can generate music, code, video. The pop conversation has two loud camps: "AI is killing creativity" (panic) and "AI is democratizing creativity for everyone" (utopia). Neither is quite right. Today we work through three more serious positions defended by working artists, philosophers, and theorists. Build your argument for what you think is actually happening. The answer matters because how you think about this shapes how you'll create over your lifetime.`,
+          guideText: `{name}, AI can generate images, music, writing, and code. Does that mean AI is creative? Three positions: creativity is fundamentally human, AI is a tool that expands creative possibility, or AI creates a genuinely new category. This lesson maps the debate and asks you to argue a position with evidence.`,
           headline: `Creativity in the AI Era`,
           subtitle: `Three serious positions. Pop framings are mostly wrong on both sides.`,
           visual: `/voyager-assets/future-skills/l08-welcome.webp`,

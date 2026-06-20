@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a fact that should be more famous than it is. Everything you can see in the universe—every star, every planet, every galaxy, every cloud of gas, every atom in your body—makes up only about 5% of the universe's energy content. The other 95% is divided between two completely mysterious things called dark matter and dark energy. We have strong indirect evidence both exist. We have essentially no idea what either of them actually is. Today we look at the evidence that pointed astronomers toward these conclusions, and then build an argument about what's most likely going on. Three serious positions. Real disagreement among working physicists. Your call.`,
+          guideText: `{name}, 95% of the universe is stuff we can't see, detect directly, or explain. Dark matter and dark energy aren't placeholders for ignorance — they're inferences from precise observations that the standard model can't account for. This lesson covers the evidence, the competing explanations, and what genuine scientific uncertainty looks like.`,
           headline: `Dark Matter & Dark Energy`,
           subtitle: `95% of the universe is something we don't understand. Three competing positions.`,
           visual: `/voyager-assets/cosmos/l07-welcome.webp`,

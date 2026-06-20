@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, every ad you see is trying to influence your behavior. So is every product description, every email subject line, every store layout. Most of this is legitimate marketing. Companies have things to sell, customers have problems to solve, and good marketing helps the right people find the right products. But some marketing crosses a line into manipulation: tricks that exploit psychological weaknesses, deceptive claims, dark patterns designed to make you spend or share what you wouldn't on reflection. Today we look at three sources describing how marketing actually works. By the end you'll spot the patterns most adults miss every day.`,
+          guideText: `{name}, marketing at its best is honest communication between a product and a customer. At its worst it's manipulation — exploiting cognitive biases, creating false urgency, targeting children. This lesson covers both: what marketing actually does, where it crosses into manipulation, and how to recognize the specific patterns you'll see constantly.`,
           headline: `Marketing vs Manipulation`,
           subtitle: `Where persuasion ends and exploitation begins.`,
           visual: `/voyager-assets/money-business/l10-welcome.webp`,

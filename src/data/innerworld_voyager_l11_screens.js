@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've been told your whole life that some emotions are good and some are bad. Happy is good. Sad is bad. Calm is good. Angry is bad. We push the bad ones down or try to talk ourselves out of them. Today we look at a different model. What if your "bad" emotions aren't problems? What if they're messages, each carrying specific information about something that matters to you? This is the central claim of Internal Family Systems, a modern therapy approach developed by Richard Schwartz that has become one of the most respected emotion frameworks in psychology. Today we will read directly from one of his foundational texts. We will analyze it closely. By the end you will think differently about every "bad" emotion you have.`,
+          guideText: `{name}, most approaches to difficult emotions treat them as problems to eliminate. This lesson takes a different position: emotions are messengers carrying information. Fear tells you something matters. Anger tells you a boundary was crossed. Shame tells you something about belonging. What happens when you actually listen?`,
           headline: `Emotional Alchemy`,
           subtitle: `What if "bad" emotions are information you need?`,
           visual: `/voyager-assets/inner-world/l11-welcome.webp`,

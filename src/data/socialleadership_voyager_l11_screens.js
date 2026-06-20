@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, almost everything about leadership focuses on leaders. But for every leader, there are many followers, and the quality of followership shapes outcomes as much as the quality of leadership. Real research on followership has been developing since the 1990s and identifies specific patterns of what makes followers effective. Today we work through three positions: loyal effective followership (execute well, support the leader), engaged critical followership (think for yourself, challenge bad leadership), and dynamic role-switching (move between leading and following situationally). The question matters because you'll spend much of your life as a follower in some contexts even as you lead in others. The skills are distinct and equally important.`,
+          guideText: `{name}, followership is as important as leadership — organizations succeed or fail based on how people follow, not just how leaders lead. Three positions: loyal effective followership, engaged critical followership, or dynamic role-switching. This lesson maps the debate and asks what good followership actually requires.`,
           headline: `Followership`,
           subtitle: `The other half of leadership. Distinct skills, equally important.`,
           visual: `/voyager-assets/social-leadership/l11-welcome.webp`,

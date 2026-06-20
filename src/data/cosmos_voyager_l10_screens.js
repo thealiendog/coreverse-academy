@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L10 = {
         {
           id: `l10-welcome`,
           type: `welcome`,
-          guideText: `{name}, something is reading these words right now. Something is having a small reaction to them. That something is what philosophers and neuroscientists call consciousness. It's the strangest thing in the universe, in some ways, because we're so familiar with it from the inside and so unable to fully explain it from the outside. Today we look at three radically different ways of thinking about consciousness: mainstream empirical research, analytic idealism, and the "consciousness creates reality" content that fills wellness culture. Real working scholars defend the first two with serious arguments. The third often borrows their vocabulary without their substance. By the end, you'll be able to tell them apart.`,
+          guideText: `{name}, consciousness is the hard problem of physics and philosophy. We can map every neuron in your brain and still can't explain why any of it feels like something from the inside. This lesson looks at what consciousness research has established, where analytic idealism fits, and where the consciousness-creates-reality industry gets the physics wrong.`,
           headline: `Consciousness & Cosmos`,
           subtitle: `Three radically different ways of thinking about consciousness. Real scholars disagree.`,
           visual: `/voyager-assets/cosmos/l10-welcome.webp`,

@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L16 = {
         {
           id: `l16-welcome`,
           type: `welcome`,
-          guideText: `{name}, throughout this entire band we've practiced telling real science from pseudoscience. Quantum mechanics from "quantum manifestation." Black holes from "portals to other dimensions." Consciousness research from "consciousness creates reality." Today we go meta. We look directly at what makes something science vs pseudoscience, and we use one of the most common battlegrounds as our case study: astrology. Astrology has cultural and personal value for many people, which is real. But as a predictive empirical science, it consistently fails standard tests. Both of those statements are true. The distinction matters. Today's source evaluation teaches you the framework for telling them apart for the rest of your life.`,
+          guideText: `{name}, what makes something science? Not just white coats and labs — a specific method of generating and testing knowledge. Pseudoscience mimics the surface features without the substance. Astrology is the canonical case study: it makes predictions, it has a history, it's taken seriously by millions. This lesson uses it to teach the real distinction.`,
           headline: `Science vs Pseudoscience`,
           subtitle: `The meta-lesson. The framework that applies to every claim you'll evaluate.`,
           visual: `/voyager-assets/cosmos/l16-welcome.webp`,

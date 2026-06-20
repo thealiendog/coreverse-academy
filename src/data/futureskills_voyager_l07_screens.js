@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, you face problems every day. Most are small ("how do I get this done before dinner"). Some are bigger ("how do I deal with this conflict with my friend"). Eventually you'll face larger ones ("what should I do with my career", "how should we approach this engineering challenge", "how should we structure this business"). Here's the thing nobody tells you: there are real frameworks for problem solving, with real tradeoffs, used by real high-performers. Most people just default to whatever feels natural and never realize there are other approaches that would work better for certain problems. Today we work through three real approaches: top-down first-principles thinking, bottom-up empirical thinking, and the hybrid approach that combines both. Build your argument for which framework you'd commit to as your default. By the end you'll be thinking about problems more deliberately than most adults.`,
+          guideText: `{name}, problem solving is not a single skill — it's a family of approaches, and which one works depends on the type of problem. Top-down first principles, bottom-up empirical, hybrid iterative: three frameworks for different situations. This lesson maps them and asks you to take a position on which matters most.`,
           headline: `Problem Solving`,
           subtitle: `Three real approaches. Real tradeoffs. Most people use one without knowing the others exist.`,
           visual: `/voyager-assets/future-skills/l07-welcome.webp`,

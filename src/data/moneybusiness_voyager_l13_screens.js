@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, the get-rich-quick industry is massive. Multi-level marketing companies (MLMs) like Herbalife, LuLaRoe, and Amway. Day trading courses promising "$10K a month from your laptop." Crypto pumps that turn $500 into $5,000 in a week (and then $50 the week after). Real estate "no money down" gurus. Forex trading. Dropshipping courses. Passive income courses. AI-powered side hustles. The specific products change every year. The patterns stay identical. Today we look at three sources with very different framings of how people actually build wealth. By the end you'll spot the schemes that quietly drain billions from people who didn't see the patterns.`,
+          guideText: `{name}, most get-rich-quick schemes are mathematically impossible for most participants — that's not a cynical take, it's the math. MLMs, day trading, crypto pumps, online courses: this lesson examines each, explains the actual numbers, and teaches you to evaluate any financial opportunity you'll encounter using the same framework.`,
           headline: `Get Rich Quick`,
           subtitle: `Different products, same patterns. Recognize once, see forever.`,
           visual: `/voyager-assets/money-business/l13-welcome.webp`,

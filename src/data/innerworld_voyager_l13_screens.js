@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, "manifestation" is one of the most viral concepts in modern culture. Tens of millions of people post about it. Influencers sell courses on it. People claim they manifested money, jobs, partners, healing, and luxury cars by visualizing them and believing hard. Some of what's said about manifestation lines up with real psychology research. Some of it is fantasy thinking that often makes people's lives worse. The same word covers both, and the gap matters enormously. Today we separate the real psychology of how visualization, intention, and goal-setting actually affect outcomes from the viral magic version that promises the universe will deliver if you just believe enough. By the end you will be able to use what works without falling for what doesn't.`,
+          guideText: `{name}, manifestation culture claims that visualizing outcomes makes them happen through quantum fields or the law of attraction. Real goal psychology is more interesting and more useful: implementation intentions, mental contrasting, process visualization. This lesson separates what works from what doesn't — and why people believe the stuff that doesn't.`,
           headline: `Manifestation`,
           subtitle: `The real psychology vs the viral magic.`,
           visual: `/voyager-assets/inner-world/l13-welcome.webp`,

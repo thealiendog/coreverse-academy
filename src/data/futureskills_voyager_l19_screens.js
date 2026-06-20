@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, after spending this band thinking carefully about AI, labor, careers, and the changing world, we get to the practical question: what kinds of work are most and least likely to be automated over the next 10-20 years? Nobody can predict this perfectly, but real researchers have identified patterns that make some work more AI-resistant than others. Today you sort nine specific kinds of work into three buckets: high automation likelihood, partial automation (AI augments but doesn't replace), and low automation likelihood. The skill isn't memorizing which job is which. The skill is the underlying framework that lets you evaluate any job, any time, against what AI actually does well and poorly.`,
+          guideText: `{name}, some work resists automation. Five patterns predict which: physical dexterity in unpredictable environments, genuine human connection, complex contextual judgment, creative synthesis, ethical accountability. This lesson maps those patterns and asks you to apply them to career planning in a way that's honest about both risks and opportunities.`,
           headline: `What Won't Be Automated`,
           subtitle: `Nine work types, three buckets. The framework that lets you evaluate any job against real automation patterns.`,
           visual: `/voyager-assets/future-skills/l19-welcome.webp`,

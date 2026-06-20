@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's something the future will deliver to you whether you ask for it or not: change. Some of it will be small (new teacher, new school year). Some will be bigger (moving, family transitions, friendship shifts). Some will be very big (career disruptions, technology shifts, life events nobody planned for). How you handle change is one of the biggest determinants of how your life actually goes. The good news is adaptability is a real skill that researchers have studied carefully. It's not a personality trait you're born with or without. It's specific learnable patterns of thinking and responding. Today we work through three real cases of significant change, and you analyze what made adaptation work or fail. By the end you'll have a working framework for the changes you'll face for the rest of your life.`,
+          guideText: `{name}, adaptability is not just resilience — it's a specific set of capacities: cognitive flexibility, emotional regulation, learning agility, tolerance for uncertainty. The growth mindset research is real but often overstated. This lesson covers what actually helps people navigate significant change.`,
           headline: `Adaptability and Change`,
           subtitle: `Three real cases. Adaptability is a learnable skill, not a personality trait.`,
           visual: `/voyager-assets/future-skills/l09-welcome.webp`,

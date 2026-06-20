@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, three words get used interchangeably that shouldn't be: power, authority, and influence. They're related but distinct. Confusing them produces real practical errors in leadership situations. Today we work through what each one actually is, where each comes from, and how they interact. Three sources guide us: a foundational social psychology framework from John French and Bertram Raven on the bases of social power, Robert Cialdini's research on influence techniques, and a viral "alpha mindset" account selling a pop version that gets the underlying concepts badly wrong. By the end you'll be able to analyze any leadership situation in terms of where power, authority, and influence are actually operating.`,
+          guideText: `{name}, power, authority, and influence are three different things that most people use interchangeably. French and Raven identified six bases of social power in 1959. Cialdini identified six principles of influence. The alpha mindset content ecosystem conflates all of it. This lesson untangles them.`,
           headline: `Power vs Authority vs Influence`,
           subtitle: `Three related forces. Confusing them produces real practical errors.`,
           visual: `/voyager-assets/social-leadership/l02-welcome.webp`,

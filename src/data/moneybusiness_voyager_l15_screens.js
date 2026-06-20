@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, negotiation is one of the most underrated skills in adult life. Most people are bad at it because schools don't teach it and most adults haven't deliberately practiced it. Every salary you'll ever negotiate, every house you'll ever buy or rent, every business deal you'll ever make, every significant disagreement with another person involves negotiation. Strong negotiation skills can be worth hundreds of thousands of dollars over a career and dramatically better relationships throughout your life. Today we look at three different negotiation philosophies, examine real research, and have you build an argument for which approach works best. By the end you'll know more about negotiation than most adults functioning entirely on instinct.`,
+          guideText: `{name}, negotiation is not a personality trait — it's a set of learnable skills. Hard bargaining, principled negotiation, relationship-based approaches: three frameworks with different assumptions and different use cases. This lesson maps them and covers the specific tactics that work across all three.`,
           headline: `Negotiation`,
           subtitle: `Real skill. Lifelong value. Almost never taught.`,
           visual: `/voyager-assets/money-business/l15-welcome.webp`,

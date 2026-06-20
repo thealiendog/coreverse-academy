@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, the idea that there might be other universes besides our own is taken seriously by some of the most serious physicists alive. It's also actively dismissed by other equally serious physicists, who argue that "multiverse" claims aren't really science at all. The disagreement isn't a fringe debate. It's about what counts as a scientific theory and what doesn't. Today we look at three serious positions on the multiverse: many-worlds quantum mechanics, eternal inflation, and the position that the multiverse concept fails the falsifiability test that defines science. Real working physicists hold each of these. By the end you build your own argument.`,
+          guideText: `{name}, the multiverse is not science fiction — it's a prediction of several serious physical theories. But it may also be untestable, which raises the question of whether it's science at all. Three positions: many-worlds quantum mechanics, eternal inflation, and the anti-multiverse argument. This lesson maps them honestly.`,
           headline: `The Multiverse`,
           subtitle: `Three serious positions. Real physicists disagree about all of it.`,
           visual: `/voyager-assets/cosmos/l08-welcome.webp`,

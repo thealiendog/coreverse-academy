@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've spent eight lessons learning about personal money. Now we turn the lens around. How do the businesses you buy from actually make money? Apple, Walmart, Airbnb, your local coffee shop, Netflix, the lemonade stand down the street: each of these uses different business models with different economics. Understanding how businesses actually work changes how you see almost every transaction in your life. It also changes how you think about your own career and any business you might ever start. Today we look at three fundamental business models. Then you build an argument for which one is strongest for someone your age who might one day want to start something.`,
+          guideText: `{name}, a business is a system for creating value and capturing some of it as revenue. Product businesses, service businesses, marketplace businesses — each has different economics, different scaling potential, different tradeoffs between your time and your income. This lesson maps the models so you can evaluate opportunities clearly.`,
           headline: `How Businesses Actually Make Money`,
           subtitle: `Three fundamental models. Different economics. Different risks.`,
           visual: `/voyager-assets/money-business/l09-welcome.webp`,

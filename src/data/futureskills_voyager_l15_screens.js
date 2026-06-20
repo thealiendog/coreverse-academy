@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, how should you actually relate to failure? You'll hear two loud answers. First: "Failure is to be minimized; play it safe, plan carefully, don't make mistakes." Second: "Failure is essential; fail fast, fail often, embrace it." Both are oversimplified. Real high-performers across many domains have more nuanced relationships with failure that match the strategy to the situation. Today we look at three positions defended by serious people. Build your argument for how you want to relate to failure across the next 50 years of decisions. The answer matters because how you treat failure shapes which risks you take, which growth you allow yourself, and how quickly you recover when things go wrong.`,
+          guideText: `{name}, the right relationship to failure depends entirely on context. Minimizing failure is correct for surgeons and pilots. Embracing failure is correct for innovation and learning. The interesting question is how to match your approach to your situation. Three positions, honest tradeoffs, a real argument to make.`,
           headline: `Resilience & Failure`,
           subtitle: `Three positions on how to relate to failure. Pop framings oversimplify both sides.`,
           visual: `/voyager-assets/future-skills/l15-welcome.webp`,

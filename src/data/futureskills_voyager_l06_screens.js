@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, in Lesson 2 we looked at AI and the labor market. Today we go more practical: how do you actually USE AI as a tool? You're going to be working alongside AI for the rest of your life. The kids who learn to use it well will have a real advantage; the kids who either avoid it entirely or rely on it badly will not. The catch is there's an enormous amount of bad advice out there. Viral "10 prompts that 10x your life" content. Outdated tactics. Overhyped claims. We're going to evaluate three sources: a real researcher studying how people use AI effectively, official AI lab documentation, and viral productivity content. By the end you'll have a working framework for using AI well that most adults don't have.`,
+          guideText: `{name}, AI tools are genuinely useful and genuinely unreliable. The failure modes — hallucination, sycophancy, context loss — are predictable once you understand how the tools work. This lesson covers what AI does well, what it doesn't, and how to build workflows that use AI for the right things.`,
           headline: `Working With AI as a Tool`,
           subtitle: `How to actually use AI well, and how to tell rigorous advice from viral hype.`,
           visual: `/voyager-assets/future-skills/l06-welcome.webp`,

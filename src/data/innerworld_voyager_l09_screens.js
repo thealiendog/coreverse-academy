@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, today we look at one of the strangest and oldest claims in contemplative philosophy. The claim is roughly this: the separation between you and everything else isn't as solid as it seems. The line between self and world, between you and the air, between your awareness and the things you're aware of, is partly something your mind constructs. Different traditions, in different parts of the world, completely independently of each other, arrived at this same observation. They called it different things. Today we look at three: Advaita Vedanta from India, Buddhist non-dualism from across Asia, and Christian mystical contemplation from medieval Europe. Three different cultures, three different vocabularies, one strange shared finding. Your job is to think clearly about whether they were onto something or fooling themselves.`,
+          guideText: `{name}, non-duality is the claim that the boundary between self and world is not as fixed as it appears. Three traditions arrive at versions of this independently: Advaita Vedanta, Buddhist non-dualism, and Christian mysticism. This lesson examines what each means, where they converge, and what to make of that convergence.`,
           headline: `Non-Duality`,
           subtitle: `Three traditions, one strange convergence.`,
           visual: `/voyager-assets/inner-world/l09-welcome.webp`,

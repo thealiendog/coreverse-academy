@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L03 = {
         {
           id: `l03-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a fact most kids don't know. A movie ticket in 1980 cost about $2.69. Today it costs about $13. That's not because movies got 5 times better. That's inflation. The same $20 bill that bought a week of groceries for your grandparents barely buys a single lunch today. Inflation is the slow shrinking of what your money can buy. It affects every dollar you save, earn, and spend. It also gets used as a weapon in financial media. Real economists discuss it carefully. Viral accounts panic about it to drive engagement. Crypto influencers use it to sell you their solution. Today we evaluate three sources making different claims about the same inflation data. By the end you'll be able to spot which is which and protect yourself from the worst takes.`,
+          guideText: `{name}, inflation erodes purchasing power — that's the simple version. The real version involves supply chains, monetary policy, political incentives to misrepresent the data, and the differential impact on people who hold cash versus assets. This lesson covers what inflation actually is and how to evaluate claims about it.`,
           headline: `Inflation`,
           subtitle: `Why the same money buys less every year.`,
           visual: `/voyager-assets/money-business/l03-welcome.webp`,

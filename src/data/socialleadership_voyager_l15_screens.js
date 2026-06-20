@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, charisma is one of the most contested concepts in leadership. Pop content treats charisma as the key thing that distinguishes great leaders from mediocre ones. Real research is more complicated: charisma matters in specific ways but isn't what most pop content claims, and pure charisma without substance often produces worse leadership outcomes than the reverse. Today we look at three sources: Jim Collins's research on Level 5 leadership (which found that humility plus will, NOT charisma, distinguished sustained great companies), Olivia Fox Cabane's research-grounded book on learnable charisma as warmth + presence + power signals, and viral "charisma coaching" content selling charisma as the master leadership skill. Rank them. By the end you'll have a working framework for what charisma actually is and how it relates to real leadership effectiveness.`,
+          guideText: `{name}, charisma is not a personality type — it's a cluster of learnable behaviors that create the experience of presence, power, and warmth. The research on charisma and leadership performance is more complicated than the coaching industry suggests. This lesson covers what the evidence actually shows.`,
           headline: `Charisma vs Substance`,
           subtitle: `Three sources on what charisma actually is and whether it's the key leadership trait.`,
           visual: `/voyager-assets/social-leadership/l15-welcome.webp`,

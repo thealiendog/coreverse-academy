@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've probably been told something like 'you have your dad's eyes' or 'your grandma had the same temper.' We tend to think of genes as a destiny we inherit and can't change. Recent science says it's more complicated than that. Your genes are real, but they're not the whole story. There's another layer, called epigenetics, that decides which of your genes are turned on and which are turned off at any moment. And your environment, your behavior, even what your grandparents went through, can change that layer. Today we look at one of the most misunderstood and most exciting fields in modern biology. We also learn how to tell real science from the people selling you nonsense in its name.`,
+          guideText: `{name}, your genes are not your destiny — but they're not irrelevant either. Epigenetics is the study of how your environment talks to your genes: which ones get expressed, which get silenced, how experience leaves marks that can even be inherited. Real science with important limits. This lesson covers both.`,
           headline: `Epigenetics`,
           subtitle: `Your genes aren't your destiny. They're your possibility.`,
           visual: `/voyager-assets/inner-world/l04-welcome.webp`,

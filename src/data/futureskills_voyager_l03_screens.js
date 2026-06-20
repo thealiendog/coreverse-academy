@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L03 = {
         {
           id: `l03-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a strange thing about school. You spend twelve-plus years learning stuff, but almost nobody teaches you the meta-skill underneath it all: how to actually learn. Most kids develop their learning approach by accident, copying whatever their friends do, and never realize that different approaches produce wildly different results. The science on this is solid. Researchers have spent decades figuring out which study methods actually work, and the answers are sometimes counterintuitive. Today we look at three real learners working on three different challenges, and we extract the principles that actually move the needle. By the end, you'll have a working framework for how to learn anything for the rest of your life. This is genuinely one of the highest-leverage skills available.`,
+          guideText: `{name}, learning science has produced clear findings about what actually works for long-term retention: spaced repetition, retrieval practice, interleaving. Most students use strategies that feel productive but produce weak results. This lesson teaches you the real findings and how to recognize which study techniques are backed by evidence.`,
           headline: `Learning How to Learn`,
           subtitle: `Three real learners. Real learning science. The meta-skill almost nobody teaches.`,
           visual: `/voyager-assets/future-skills/l03-welcome.webp`,

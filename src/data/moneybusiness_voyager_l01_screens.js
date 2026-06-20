@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, I'm Ace. We're starting one of the most useful subjects in your whole education: how money and business actually work. Most of what you've been told about money is either oversimplified ("just save your money") or oversold ("this is how the rich think"). The truth is more interesting and more useful. By the time we finish this band, you'll know more about economics, business, money management, and financial literacy than most adults. We're starting at the top. How does money actually work in a country? When the economy is struggling, what should governments actually do? This is debated by serious economists. Today you'll engage with the real arguments and build your own position.`,
+          guideText: `{name}, money is a social technology — not a fixed thing but a shared agreement. And the economy is not one machine you can tune; it's billions of simultaneous decisions. Understanding both of those things changes how you read every news story about interest rates, inflation, and stimulus. This lesson builds the foundation.`,
           headline: `How Money Actually Works`,
           subtitle: `Economic basics most adults never learned.`,
           visual: `/voyager-assets/money-business/l01-welcome.webp`,

@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}. Welcome to Cosmos. I'm Nova. I'll be your guide through what is probably the strangest, deepest, most awe-producing subject in your entire education. We're going to spend twenty lessons together exploring the universe—what it is, how it works, where it came from, and where it's going. We'll cover real physics. Einstein's relativity. Quantum mechanics. The Big Bang. Black holes. Dark matter. The fate of everything. We'll also touch questions where physics meets philosophy: what is consciousness, what is time, what does it mean that we exist in this universe at all. Today we start with the most basic question: what IS the universe? You'd think this would be settled. It isn't. Three serious answers compete, and the people who hold them include some of the smartest physicists and philosophers alive. By the end of this lesson you'll build your first cosmic argument.`,
+          guideText: `{name}, what is the universe? Not just physically — philosophically. Is it purely matter and energy, or is consciousness somehow fundamental? Could it be a simulation? These aren't fringe questions; serious physicists and philosophers argue all three positions. This lesson maps the debate and asks you to engage it honestly.`,
           headline: `What Is The Universe?`,
           subtitle: `The most basic question. Three serious, competing answers.`,
           visual: `/voyager-assets/cosmos/l01-welcome.webp`,

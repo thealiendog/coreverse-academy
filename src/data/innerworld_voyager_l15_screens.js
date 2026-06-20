@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, we've met Jung twice already in this band: when we looked at the shadow self in Lesson 3, and when we looked at the ego in Lesson 12. Today we go deeper into Jung's most ambitious claim. He didn't just say you have a personal unconscious full of forgotten memories. He said beneath that lies something shared across all humans: a collective unconscious full of patterns called archetypes. The hero. The wise old one. The trickster. The great mother. These show up in myths, dreams, stories, and inner life across every culture. Whether you accept Jung's framework or not, his claim is one of the most influential ideas in modern psychology. Today you'll read Jung directly, in his own words, and analyze them closely.`,
+          guideText: `{name}, Jung argued that humans share a collective unconscious populated by universal archetypes — the Hero, the Shadow, the Trickster. The evidence is mixed. But archetypes are useful as psychological maps whether or not the theory is literally true. This lesson examines both the evidence and the practical value.`,
           headline: `Archetypes and the Collective Unconscious`,
           subtitle: `Jung's most ambitious claim, in his own words.`,
           visual: `/voyager-assets/inner-world/l15-welcome.webp`,

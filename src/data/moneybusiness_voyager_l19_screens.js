@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson asked what the money is for. Today we ask a harder question: how should the money be made and spent, ethically? When you invest in an index fund, you become a partial owner of every company in that fund—including some doing things you might not approve of. When you spend money, you're voting for the products, companies, and practices you fund. When you choose a career, you're contributing your talent and time to some part of the economy and not others. These are ethical decisions even when they don't feel like it. Today we look at three serious positions on ethical investing and spending. Real philosophers and economists disagree about this. You build your argument.`,
+          guideText: `{name}, every financial decision has an ethical dimension: what companies your money supports, what labor conditions it funds, what environmental damage it enables. Three positions exist: maximize returns, ESG investing, minimum harm. This lesson maps the debate and asks you to take a position.`,
           headline: `The Ethics of Money`,
           subtitle: `Three serious positions on the morality of how money flows.`,
           visual: `/voyager-assets/money-business/l19-welcome.webp`,

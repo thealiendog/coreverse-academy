@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, every day you encounter dozens of claims. Some are well-supported by strong evidence. Some are plausible but uncertain—they could turn out to be true or false. Some are outright pseudoscience that has failed every serious test. Most adults treat these categories as the same, which means they accept claims they shouldn't and reject claims they should accept. The skill of telling them apart is called critical thinking, and it's not the same as "being skeptical of everything." Real critical thinking is calibrated: high confidence in well-supported claims, low confidence in unsupported ones, genuine uncertainty for the middle. Today we cover the framework, then you sort nine real-world claims into the three buckets. This is one of the highest-leverage skills you'll learn in this entire band.`,
+          guideText: `{name}, critical thinking is a skill, not a personality trait — and it has specific components: identifying claims, evaluating evidence, recognizing assumptions, checking for logical errors. This lesson teaches you to categorize claims as well-supported, plausible but uncertain, or unsupported. A skill you'll use every day.`,
           headline: `Critical Thinking`,
           subtitle: `Three buckets. Nine claims. The skill that protects you for life.`,
           visual: `/voyager-assets/future-skills/l04-welcome.webp`,

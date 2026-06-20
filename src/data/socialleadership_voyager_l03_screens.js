@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L03 = {
         {
           id: `l03-welcome`,
           type: `welcome`,
-          guideText: `{name}, trust is the foundation that durable leadership rests on. Without it, the other tools (influence, authority, even formal power) work badly or not at all. People will follow a leader they trust into difficult work; they'll resist a leader they don't trust even on easy work. The good news: trust is buildable. Real researchers have studied what produces trust and what destroys it. The patterns are clearer than most people realize. Today we work through three trust-building situations: a new team you're leading, a recovery from a broken promise, and a difficult conversation where trust is at stake. By the end you'll have a working framework for trust building you can apply in any leadership role across your lifetime.`,
+          guideText: `{name}, trust is a specific thing — a vulnerability accepted based on the belief that someone will act in your interest. It's built through specific behaviors and destroyed by specific behaviors. This lesson covers what actually builds trust, what destroys it fastest, and how you rebuild it after it breaks.`,
           headline: `Building Trust`,
           subtitle: `The foundation durable leadership rests on. Buildable through specific patterns.`,
           visual: `/voyager-assets/social-leadership/l03-welcome.webp`,

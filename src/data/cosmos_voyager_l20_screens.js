@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L20 = {
         {
           id: `l20-welcome`,
           type: `welcome`,
-          guideText: `{name}, you made it. Twenty lessons. From "what is the universe" in Lesson 1 to "what we don't know" in Lesson 19, you've covered more cosmology and philosophy than most adults will encounter in their entire lives. The point of all of this has never been the individual facts. The point is the integrated framework you can now use to engage with cosmic questions for the rest of your life. Today is the capstone. We pull together every prior lesson and ask: what kind of cosmic life are you living? Three serious integrating worldviews emerge from the band. You build your final argument. This is 100 XP. Make it count. — Nova`,
+          guideText: `{name}, nineteen lessons of cosmology — from the Big Bang to black holes to the nature of time to the hard problem of consciousness. This final lesson asks: what does living in this universe mean? Three worldviews: scientific naturalism, religious meaning-making, and the philosophical response to cosmic indifference. Your capstone argument.`,
           headline: `Living in This Universe`,
           subtitle: `The capstone. Synthesize all 19 lessons. Build your integrating cosmic worldview.`,
           visual: `/voyager-assets/cosmos/l20-welcome.webp`,

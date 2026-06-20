@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, I'm Valor. I'll be your guide through this band on social leadership. Twenty lessons on what it actually takes to lead well — not the pop version, not the listicle version, the real thing. You're already in leadership situations whether you realize it or not. Team captain. Project lead. Older sibling. Friend group dynamics. Younger kids who watch what you do. School club roles. The question isn't whether you'll lead; it's whether you'll lead deliberately and well. Today we start with the foundational question: what is leadership actually? You'll see three serious answers defended by working thinkers and practitioners. Pick the one that fits your understanding, build your case, then engage with the strongest challenge. By the end you'll have a working definition that shapes how you approach every leadership moment from here on.`,
+          guideText: `{name}, leadership is one of those words that means something different to almost everyone who uses it. Results? Influence? Service? The definition you choose determines who counts as a leader, what gets rewarded, and what you're trying to become. This lesson maps three serious positions and asks you to commit to one.`,
           headline: `What Leadership Actually Is`,
           subtitle: `Three serious answers. Your working definition shapes everything that follows.`,
           visual: `/voyager-assets/social-leadership/l01-welcome.webp`,

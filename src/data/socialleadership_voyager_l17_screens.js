@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L17 = {
         {
           id: `l17-welcome`,
           type: `welcome`,
-          guideText: `{name}, every leadership role involves ethical questions. How you make decisions affects people. The choices that look right in the moment may have consequences you didn't intend. Different ethical frameworks give different answers to the same hard situations. Today we work through three serious positions on what makes leadership ethical: consequences-focused (judge by outcomes), principle-focused (judge by adherence to ethical principles regardless of outcomes), and virtue-focused (judge by whether the leader is genuinely virtuous in character). Each has been defended by major moral philosophers across centuries. The position you take shapes how you'll approach hard ethical situations across a lifetime of leadership.`,
+          guideText: `{name}, every leadership decision is an ethical decision — who gets protected, what gets sacrificed, what lines don't get crossed. Three ethical frameworks: consequences-focused, principle-focused, virtue-focused. They often agree; when they don't is when the framework matters most. This lesson maps them.`,
           headline: `Ethics of Leadership`,
           subtitle: `Three positions defended by major moral philosophers. The choice shapes how you handle hard ethical situations.`,
           visual: `/voyager-assets/social-leadership/l17-welcome.webp`,

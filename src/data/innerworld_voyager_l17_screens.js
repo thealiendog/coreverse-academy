@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L17 = {
         {
           id: `l17-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've probably had moments where something happened that felt too perfectly timed to be coincidence. You were just thinking about someone and they texted. You were stuck on a problem and a stranger said exactly what you needed to hear. You were having a hard week and a bird landed on your windowsill at the exact moment something shifted inside. These moments feel meaningful. Carl Jung had a name for them: synchronicity. He claimed they point to a deeper order in events that mainstream science misses. Statisticians and skeptics say something else: that humans are pattern-finding machines who see meaning everywhere, and so-called meaningful coincidences are exactly what statistics predicts. Today we look at three sources making different claims about the same phenomenon. Then you evaluate them carefully.`,
+          guideText: `{name}, Jung called meaningful coincidence synchronicity — events connected by meaning rather than cause. Statistics says coincidences at that rate are mathematically expected. The middle view says both can be true. This lesson examines the debate and asks what a mature relationship with meaningful coincidence looks like.`,
           headline: `Synchronicity`,
           subtitle: `Meaningful coincidence or your brain doing what brains do?`,
           visual: `/voyager-assets/inner-world/l17-welcome.webp`,

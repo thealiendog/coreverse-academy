@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've been doing source evaluation throughout this band and in Cosmos before that. Today is the focused meta-skill lesson. The framework you build here is the one you'll use to evaluate information for the rest of your life. There's a twist: most lessons have one obviously credible source and one obvious pseudoscience source. Real life is messier. Often multiple credible sources disagree with each other, and the skill is calibrating between them rather than dismissing viral content. Today we look at exactly that situation. The topic happens to be social media and adolescent mental health, which is directly relevant to your generation. Build your evaluation. By the end you'll have a working framework for the hardest information cases: when serious experts disagree.`,
+          guideText: `{name}, information literacy is the meta-skill — without it, every other skill rests on potentially false premises. This lesson goes beyond 'check your sources' to the harder question: what do you do when credible sources disagree? And how do you build an information diet that actually keeps you informed?`,
           headline: `Information Literacy`,
           subtitle: `The meta-skill lesson. The hardest case: when credible experts disagree.`,
           visual: `/voyager-assets/future-skills/l11-welcome.webp`,

@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a fact most adults haven't fully internalized. The version of AI you're growing up with is genuinely different from anything previous generations had. ChatGPT launched in late 2022. By 2024, AI was writing code, drafting emails, summarizing documents, and doing tasks that used to require entry-level workers. By 2026, AI is everywhere in white-collar work. The question isn't whether AI will change the labor market; it already has. The question is what's actually happening and what to do about it. Today we look at three radically different sources making claims about AI and work: a serious labor economist, a research team at a major AI lab, and the viral TikTok content telling you which jobs are doomed. You evaluate them.`,
+          guideText: `{name}, AI has already changed the labor market — and the evidence is more nuanced than either 'AI will take all jobs' or 'AI creates more jobs than it destroys.' This lesson covers what has actually happened as of 2026, what economists are finding, what AI labs are claiming, and how to evaluate all of it.`,
           headline: `AI and the Changing Workplace`,
           subtitle: `Three sources, three very different stories. Your evaluation.`,
           visual: `/voyager-assets/future-skills/l02-welcome.webp`,

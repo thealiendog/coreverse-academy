@@ -27,7 +27,7 @@ const SOCIALLEADERSHIP_VOYAGER_L20 = {
         {
           id: `l20-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've made it. Twenty lessons. Real research from over thirty serious thinkers. Frameworks for what leadership is, how authority and power work, how to build trust, listen, make decisions, navigate conflict, distinguish persuasion from manipulation, lead through change, read status and hierarchy, engage civically, follow well, build teams, have difficult conversations, read power dynamics, weigh charisma against substance, lead without title, reason ethically, lead yourself, and read when to lead vs follow. Today's capstone forces synthesis. Which working philosophy will you take into the next 70 years of leadership? Three serious positions exist, drawing on different traditions across the band. Substance-first leadership. Relational leadership. Adaptive leadership. Each commits you to different defaults in hard situations. Build your argument. Respond to the strongest counterargument. By the end you'll have committed to a working philosophy that most working adults never explicitly articulate.`,
+          guideText: `{name}, nineteen lessons — what leadership is, power, trust, listening, decisions, conflict, persuasion, change, status, civic engagement, followership, teams, difficult conversations, power dynamics, charisma, authority, ethics, self-leadership, situational judgment. Your capstone: what is your leadership practice? Not the generic version. Yours.`,
           headline: `CAPSTONE: Your Leadership Practice`,
           subtitle: `Synthesize the band. Commit to your working philosophy. Three serious positions.`,
           visual: `/voyager-assets/social-leadership/l20-welcome.webp`,

@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, conflict is unavoidable in any leadership situation. The question isn't whether you'll face it; it's whether you'll navigate it skillfully or badly. Real conflict research has identified specific patterns: most people use only one or two of the available conflict approaches and miss the others entirely. The skill is having multiple approaches available and matching them to specific situations. Today we work through three different conflict types you'll face: between friends pulling you to take sides, with an authority figure (teacher, coach, parent) you think is wrong, and within a group you're part of. Each case shows what conflict navigation looks like done well vs done badly. By the end you'll have a working framework for any conflict situation across your lifetime.`,
+          guideText: `{name}, conflict is inevitable in any group doing anything meaningful. The question is not whether conflict will occur but how it gets handled. Thomas-Kilmann identified five conflict modes. Fisher and Ury built Getting to Yes. Voss built tactical empathy from hostage negotiation. This lesson covers all three.`,
           headline: `Navigating Conflict`,
           subtitle: `Conflict is unavoidable. The skill is having multiple approaches and matching them to situations.`,
           visual: `/voyager-assets/social-leadership/l06-welcome.webp`,

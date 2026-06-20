@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, today we look at a single figure who has shaped how millions of people think about mind, body, and healing: Dr. Joe Dispenza. He has sold millions of books. His workshops fill stadium-sized halls at thousands of dollars per ticket. Some people credit his work with profound transformation. Other people, including respected scientists, say he overreaches dramatically and his claims do not match the evidence. Both groups include smart, sincere people. So how do you think clearly about a figure when sincere people disagree? Today we will look at him through three different lenses. Not to tell you what to believe. To show you how to actually think about contested public figures, which is a skill you will need your whole life.`,
+          guideText: `{name}, Joe Dispenza has millions of followers and makes extraordinary claims about healing through meditation. The evidence is contested. This lesson doesn't tell you what to think about him — it teaches you to hold three different perspectives simultaneously: his practitioners, working neuroscientists, and direct skeptics. That skill is more valuable than any verdict.`,
           headline: `Dr. Joe Dispenza`,
           subtitle: `How to think clearly about a contested figure.`,
           visual: `/voyager-assets/inner-world/l06-welcome.webp`,

@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, where's the line between persuasion and manipulation? Both involve trying to influence what someone else does or believes. Both use techniques that work on human psychology. Both can be done well or badly. But there's a real difference, and missing it produces both bad ethics (you become manipulative without realizing) and bad protection (you get manipulated without realizing). Today we work through three sources: Robert Cialdini's research on ethical influence, Maria Konnikova's journalism on how con artists operate, and viral "dark psychology" content selling manipulation as a life skill. The first two are serious work approaching the question from different angles; the third represents what's actually being marketed to your generation. By the end you'll be able to distinguish ethical persuasion from manipulation in any situation.`,
+          guideText: `{name}, persuasion and manipulation both try to change behavior — the distinction is whether they respect or exploit your rational agency. The line is real but genuinely hard to draw. Cialdini built an ethical framework. Konnikova studied con artists. The dark psychology content ecosystem blurs everything. This lesson maps the territory.`,
           headline: `Persuasion vs Manipulation`,
           subtitle: `Real line, real distinction. Both ethics and protection depend on seeing it.`,
           visual: `/voyager-assets/social-leadership/l07-welcome.webp`,

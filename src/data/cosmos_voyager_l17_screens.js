@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L17 = {
         {
           id: `l17-welcome`,
           type: `welcome`,
-          guideText: `{name}, in Lesson 3 we touched on the strangeness of quantum mechanics. Today we go directly at the strangest question in quantum physics: what does it mean for an "observer" to "measure" a quantum system, and why does measurement seem to change reality? This is the question of quantum measurement, and it has produced multiple serious interpretations of quantum mechanics that all agree on the math but disagree on what's happening. Importantly, the actual physics has nothing to do with "consciousness creating reality" or "the universe responding to your intention," even though pop versions claim otherwise. Today we work through three real interpretations and build an argument for which one makes most sense.`,
+          guideText: `{name}, quantum mechanics requires an 'observer' to collapse the wave function — but what counts as an observer? Does it have to be conscious? Is measurement a physical process or something else? Three interpretations of quantum mechanics exist: Copenhagen, many-worlds, and decoherence-based. They agree on the math but disagree on what it means.`,
           headline: `The Observer in Physics`,
           subtitle: `Three serious interpretations of quantum measurement. Real physicists disagree.`,
           visual: `/voyager-assets/cosmos/l17-welcome.webp`,

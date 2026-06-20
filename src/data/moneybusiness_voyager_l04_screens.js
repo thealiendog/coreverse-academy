@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, you have $500. What do you do with it? This question seems simple. It's not. The choice you make depends on what you need the money for, when you need it, and your tolerance for short-term loss. Last lesson we covered compound interest in general. Today we get specific. Cash in a savings account, government bonds, individual stocks, index funds, cryptocurrency, paying down debt, education spending. Each has tradeoffs. Most adults make this decision badly because they were never taught how to think about it. Today three teenagers each get $500 and have to decide. Their choices play out in detail. By the end you'll have a real framework for the money decisions you'll make for the rest of your life.`,
+          guideText: `{name}, saving and investing are different activities serving different purposes. Savings accounts, index funds, bonds, stocks — each has different risk, return, and time horizon characteristics. Risk and return are always linked. Diversification is the only free lunch. This lesson covers the basics before you make any real decisions.`,
           headline: `Saving vs Investing`,
           subtitle: `Where each dollar belongs depends on what it's for.`,
           visual: `/voyager-assets/money-business/l04-welcome.webp`,

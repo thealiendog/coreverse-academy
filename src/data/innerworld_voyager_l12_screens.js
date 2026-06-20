@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, you have probably heard someone say "that's just your ego talking" or "you need to let go of your ego" or "the true self is underneath the ego." These phrases are everywhere in wellness, self-help, and spiritual culture. They're also wildly inconsistent. The word "ego" means completely different things in Freud, in Jung, in Buddhism, in Advaita Vedanta, and in modern pop spirituality. People use the word without knowing they're confusing four or five different concepts. Today we clear that up. We look at three serious traditions of what "ego" actually means and what's underneath it. By the end you will be the only person in most rooms who can tell which "ego" anyone is talking about.`,
+          guideText: `{name}, ego is one of the most confused words in the wellness vocabulary. Jung, Buddhism, and Advaita Vedanta all use it — and mean different things. This lesson maps exactly what each tradition means by ego and self, so you can engage with any of them without getting lost in the conceptual fog.`,
           headline: `Ego vs True Self`,
           subtitle: `One word, several completely different meanings.`,
           visual: `/voyager-assets/inner-world/l12-welcome.webp`,

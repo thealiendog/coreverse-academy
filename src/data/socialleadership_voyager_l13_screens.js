@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, difficult conversations are the conversations most people avoid. Telling someone their behavior is hurting you. Giving honest feedback to a friend who's doing something self-destructive. Having to raise a hard issue with a parent, teacher, or coach. Most people either avoid these conversations entirely (which lets the underlying issues fester) or do them badly (which often makes things worse). Real research on difficult conversations has been developing for decades, and the patterns of what works are clearer than most people realize. Today we work through three different types of difficult conversation you'll face throughout your life. By the end you'll have a working framework for any hard conversation you need to have.`,
+          guideText: `{name}, difficult conversations are hard not because people are irrational but because identity, relationship, and factual disagreement are tangled together. Most go wrong in predictable ways. The pattern that works is learnable. This lesson covers the research and the specific setup and structure that makes difficult conversations productive.`,
           headline: `Difficult Conversations`,
           subtitle: `The conversations most people avoid. The patterns of what works are knowable.`,
           visual: `/voyager-assets/social-leadership/l13-welcome.webp`,

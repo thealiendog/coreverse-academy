@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, here is something strange and real. If a doctor gives you a pill with nothing active in it, just sugar and chalk, and tells you it will reduce your pain, your pain often goes down. Not a little. Sometimes a lot. This is not your imagination. Brain scans show real changes. Pain measurements drop. This is called the placebo effect. It has been studied for over 70 years. It is real. And it is also one of the most misunderstood and oversold ideas in modern wellness. Today we look at what the placebo effect actually is, what it can and cannot do, and how to tell real placebo science from the people using the word to sell you things that don't work.`,
+          guideText: `{name}, a sugar pill can reduce real pain, accelerate healing, and trigger measurable neurochemical responses. The placebo effect is not imaginary — it's a window into how belief and expectation shape physiology. It's also one of the most misused concepts in wellness culture. This lesson covers what it actually is and isn't.`,
           headline: `The Placebo Effect`,
           subtitle: `Real, measurable, and constantly oversold.`,
           visual: `/voyager-assets/inner-world/l05-welcome.webp`,

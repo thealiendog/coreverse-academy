@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, in the 1920s, an astronomer named Edwin Hubble noticed something strange. The further away a galaxy was, the faster it appeared to be moving away from us. He had stumbled onto the most important cosmological observation of the 20th century. If everything is moving apart now, then everything was closer together in the past. Rewind far enough, and you reach a moment when all of space and matter and energy were concentrated into a tiny, hot, dense state. That's the Big Bang. Today we follow the evidence that led there, walk through what happened after, and then sequence the cosmic timeline yourself. 13.8 billion years of history. Let's go.`,
+          guideText: `{name}, the Big Bang is not a theory about where the universe came from — it's a theory about how it evolved from an early hot dense state. The evidence is overwhelming and comes from three independent sources. This lesson covers what we actually know, what remains genuinely open, and how to read cosmology claims accurately.`,
           headline: `The Big Bang & Cosmic Origins`,
           subtitle: `13.8 billion years of cosmic history. The evidence, the events, the sequence.`,
           visual: `/voyager-assets/cosmos/l04-welcome.webp`,

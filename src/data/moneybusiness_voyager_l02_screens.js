@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, today's lesson contains the single most useful piece of financial information you can learn at your age. The concept is compound interest. Albert Einstein supposedly called it "the eighth wonder of the world." Whether he actually said that is debated, but the math is real and the consequences are enormous. Compound interest is what makes some people end up wealthy and others end up financially stressed despite earning the same amounts over their lives. The difference is usually time, not income. Today we look at three teenagers with the same starting amount who make different choices about when to start saving. The math we walk through is honest, not exaggerated. By the end you will understand why starting early at 12 is one of the highest-return financial decisions you can ever make.`,
+          guideText: `{name}, compound interest is the most important mathematical concept in personal finance. A dollar invested at 12 earns more than a dollar invested at 22, even if the 22-year-old invests far more. The math is simple. The implications are significant. This lesson makes sure you actually understand them.`,
           headline: `Compound Interest`,
           subtitle: `Why when you start matters more than how much.`,
           visual: `/voyager-assets/money-business/l02-welcome.webp`,

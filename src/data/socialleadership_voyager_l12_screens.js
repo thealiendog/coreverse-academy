@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, teams matter. Almost everything significant gets done by teams. The question of what makes teams work has been studied seriously, and one of the largest empirical studies on the question came from Google. Between 2012 and 2015, Google's "Project Aristotle" studied hundreds of their own teams to identify what distinguished high-performing teams from underperforming ones. The findings were surprising — what mattered most wasn't who was on the team but how the team worked together. Five elements emerged as critical. Today you'll match each element to specific applications that demonstrate it. By the end you'll have a working framework for evaluating and building any team you're part of across your lifetime.`,
+          guideText: `{name}, Google's Project Aristotle studied hundreds of teams to find out what made some consistently outperform others. The answer surprised them: it wasn't who was on the team but how the team worked together. Psychological safety was the foundation. This lesson covers all five elements they identified.`,
           headline: `Building Teams`,
           subtitle: `Google's Project Aristotle: five elements that distinguish effective teams. Match them to applications.`,
           visual: `/voyager-assets/social-leadership/l12-welcome.webp`,

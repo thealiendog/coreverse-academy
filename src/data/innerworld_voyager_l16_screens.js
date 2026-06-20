@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L16 = {
         {
           id: `l16-welcome`,
           type: `welcome`,
-          guideText: `{name}, after 15 lessons on consciousness, philosophy of self, neuroscience of meditation, archetypes, and contemplative traditions, today we get practical. What does it actually look like to build a spiritual or contemplative practice that fits a real 12-year-old's life? You have school. You have homework. You have family. You have friends. You have screens. You don't have hours of free time a day to sit in silence. Three serious approaches exist for building a practice within a real life. Daily ritual, embedded mindfulness, and periodic deep retreat. Today we look at each, then you pick one and defend it as the strongest approach for someone your age in your circumstances. There is no universally right answer, but some answers fit better than others.`,
+          guideText: `{name}, daily ritual, embedded mindfulness, or periodic deep retreat: three approaches to building a spiritual practice, each with real evidence for its effects and real tradeoffs. This lesson doesn't tell you which one to choose — it gives you the honest considerations so you can choose for yourself.`,
           headline: `Building a Spiritual Practice`,
           subtitle: `Three approaches, your circumstances, your call.`,
           visual: `/voyager-assets/inner-world/l16-welcome.webp`,

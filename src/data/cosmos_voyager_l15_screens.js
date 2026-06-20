@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L15 = {
         {
           id: `l15-welcome`,
           type: `welcome`,
-          guideText: `{name}, here's a problem that has obsessed theoretical physicists for over 50 years. Quantum mechanics says information can't be destroyed. Whatever the state of a quantum system is, that state evolves but never vanishes entirely. But Stephen Hawking showed in 1974 that black holes slowly evaporate via Hawking radiation, and the radiation appears to be purely thermal—random heat, with no memory of what fell in. If you throw a book into a black hole and wait for it to evaporate, where does the information in the book go? This is called the black hole information paradox. It is one of the most important unsolved problems in theoretical physics. Today we look at the paradox and the major proposed resolutions, then you match each idea to its meaning.`,
+          guideText: `{name}, information is a fundamental quantity in physics — as real as energy or mass. And black holes appear to destroy it, which would violate the most basic laws of quantum mechanics. The information paradox has driven theoretical physics for 50 years. This lesson covers Hawking radiation, the holographic principle, and where the debate stands.`,
           headline: `Information & Physics`,
           subtitle: `The black hole information paradox. 50 years of theoretical work. Still unresolved.`,
           visual: `/voyager-assets/cosmos/l15-welcome.webp`,

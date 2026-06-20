@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've heard people talk about "thinking with your heart" or "trusting your gut." Wellness culture is full of claims about the heart having its own intelligence, emotions originating in the heart, and the heart sending signals up to the brain that shape consciousness. Some of these claims are based on real science. Some are dramatic overreach. The actual picture, what neuroscience and cardiology have established about the heart-brain connection, is more interesting and more bounded than either the wellness version or the dismissive scientific version. Today we look at three positions on the heart's role in consciousness. Then you build an argument for the one you find most defensible.`,
+          guideText: `{name}, the heart has its own nervous system, sends more signals to the brain than it receives, and generates an electromagnetic field detectable outside the body. HeartMath builds a whole framework on this. Mainstream neuroscience reads it differently. This lesson maps both positions and asks you to evaluate the evidence.`,
           headline: `The Heart in Consciousness`,
           subtitle: `What the heart actually does, and what it doesn't.`,
           visual: `/voyager-assets/inner-world/l14-welcome.webp`,

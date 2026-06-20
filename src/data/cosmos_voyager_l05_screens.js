@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, every star you've ever seen is dying. Slowly. The Sun is currently halfway through its 10-billion-year life. The brightest stars in the night sky have already used most of their fuel. The most massive stars die fast, sometimes in spectacular explosions visible across the galaxy. The smallest stars die so slowly that no red dwarf star has finished its life yet in the history of the universe. How a star dies depends almost entirely on one thing: its mass at birth. Today we follow stars from their stable nuclear-burning lives into their three very different fates. Then you match each star to its destiny.`,
+          guideText: `{name}, every atom heavier than hydrogen in your body was forged in a star that exploded. Stellar evolution — how stars live and die — is one of the most beautiful stories in science. This lesson covers the full arc: from hydrogen gas to main sequence star to white dwarf, neutron star, or black hole, depending on mass.`,
           headline: `Stars & Stellar Death`,
           subtitle: `Mass at birth determines fate. Three very different cosmic deaths.`,
           visual: `/voyager-assets/cosmos/l05-welcome.webp`,

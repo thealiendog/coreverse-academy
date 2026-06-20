@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, every group has status dynamics. Some people get listened to more than others. Some have informal power beyond their formal role. Some feel they belong while others feel marginal. These dynamics shape who can lead, who gets heard, and who can affect outcomes. Status, hierarchy, and belonging are related but distinct, and they operate differently across groups. Today we work through the three main types of status (earned, positional, borrowed), and you sort nine specific scenarios into the right bucket. The skill isn't memorizing which is which. The skill is the underlying framework that lets you analyze any group, any time, and see what's actually producing the status dynamics in it.`,
+          guideText: `{name}, status, hierarchy, and belonging are three different social phenomena that produce different effects and require different responses. Earned status versus positional status versus borrowed status. Formal hierarchies versus informal influence maps. Belonging as something different from status entirely. This lesson maps all three.`,
           headline: `Status, Hierarchy, Belonging`,
           subtitle: `Three forces that shape every group. The framework for analyzing any group dynamic.`,
           visual: `/voyager-assets/social-leadership/l09-welcome.webp`,

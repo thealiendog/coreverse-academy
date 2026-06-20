@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L03 = {
         {
           id: `l03-welcome`,
           type: `welcome`,
-          guideText: `{name}, the word "quantum" has been doing a lot of work in the last few decades. It shows up in real physics papers about subatomic particles. It also shows up in TikTok videos about manifesting your dream life, on bottles of "quantum healing water," and in self-help books claiming science proves you create your own reality. Some of these uses are accurate. Most are not. Quantum mechanics is one of the most successful theories in physics, but it's also one of the most abused in pseudoscience. Today we look at what quantum mechanics actually says, then evaluate three sources that all claim to be about "quantum" topics. By the end you'll be able to tell real quantum physics from quantum-flavored nonsense.`,
+          guideText: `{name}, quantum mechanics is the most successful scientific theory ever developed — and the most misunderstood. Quantum doesn't mean mystical. This lesson covers what quantum mechanics actually says, what's genuinely strange about it, and how to recognize when someone is using quantum language to justify claims the physics doesn't support.`,
           headline: `Quantum Weirdness`,
           subtitle: `Real quantum physics. Real abuse of the word. Learn to tell them apart.`,
           visual: `/voyager-assets/cosmos/l03-welcome.webp`,

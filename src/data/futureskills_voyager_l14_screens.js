@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, you've probably heard "EQ matters more than IQ." It's one of the most repeated lines in popular psychology. It's also more wrong than the popular version suggests. Emotional intelligence is a real construct that real researchers have studied for over three decades, and the actual findings are useful but more modest than the pop version claims. Today we look at three sources: the peer-reviewed academic research that started the field, Daniel Goleman's 1995 popular book that made EQ a household concept, and viral self-help content that overstates everything. By the end you'll have a calibrated view of what emotional intelligence really is, what it actually predicts, and how to develop it without falling for either dismissal or hype.`,
+          guideText: `{name}, emotional intelligence is real — specific capacities for recognizing and regulating emotions predict outcomes in relationships and leadership. The pop version is heavily inflated. This lesson covers what the research actually finds, where Goleman's framework holds up and where it doesn't, and how to evaluate EI claims.`,
           headline: `Emotional Intelligence`,
           subtitle: `Real EI research vs pop framings vs viral self-help. The honest picture.`,
           visual: `/voyager-assets/future-skills/l14-welcome.webp`,

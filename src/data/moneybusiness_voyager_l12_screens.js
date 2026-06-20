@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L12 = {
         {
           id: `l12-welcome`,
           type: `welcome`,
-          guideText: `{name}, taxes are one of the most politically charged topics in any country. Everyone has an opinion. Most opinions are missing key facts. Today we look at what taxes actually fund, how the US tax system actually works, and three serious positions thoughtful people hold about whether the system should be different. You probably won't pay significant taxes for many years. But the policy questions around taxation will affect your entire life, and the decisions you'll make as a voter, business owner, or worker will be better if you actually understand the math and the arguments. This lesson tries to be honest about what's empirical and what's value-based in the tax debate.`,
+          guideText: `{name}, taxes are how societies fund the things markets don't produce: roads, courts, public health, national defense. How much taxation is appropriate, who should pay what, and what the money should fund — these are genuinely contested political questions. This lesson covers how the system works before you engage the debate.`,
           headline: `Taxes`,
           subtitle: `What they actually fund. Three serious positions on whether they should be different.`,
           visual: `/voyager-assets/money-business/l12-welcome.webp`,

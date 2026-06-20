@@ -26,7 +26,7 @@ const SOCIALLEADERSHIP_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, listening sounds passive. It isn't. Real listening is one of the highest-leverage leadership skills available, and most people do it badly without realizing. The default mode for most conversations is waiting to talk rather than actually listening. The leader who can listen genuinely gets access to information, perspectives, and relationships that non-listeners miss entirely. They also build trust faster because being truly heard is rare in most people's lives. Today we work through three situations where listening matters most: a friend confiding something hard, a group disagreement, and receiving feedback you don't want to hear. The case studies show what listening actually looks like and what it produces. By the end you'll have a working framework you can apply in any leadership situation across your lifetime.`,
+          guideText: `{name}, listening is a leadership skill — possibly the most underrated one. Real listening is not waiting to speak. It's genuinely trying to understand what the other person means, feels, and needs. Leaders are especially bad at it for specific reasons. This lesson covers the research, the barriers, and the techniques.`,
           headline: `Listening as Leadership`,
           subtitle: `Sounds passive. Isn't. One of the highest-leverage leadership skills.`,
           visual: `/voyager-assets/social-leadership/l04-welcome.webp`,

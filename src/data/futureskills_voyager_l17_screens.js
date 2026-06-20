@@ -26,7 +26,7 @@ const FUTURESKILLS_VOYAGER_L17 = {
         {
           id: `l17-welcome`,
           type: `welcome`,
-          guideText: `{name}, technology shapes nearly every part of modern life. The decisions tech companies make about products, algorithms, data, and platforms affect billions of people. So who's responsible for the consequences? The engineers who built it? The companies who deployed it? The regulators who set the rules? The users who use it? The honest answer is "all of them, but in contested proportions." Today we work through three serious positions on tech ethics defended by working philosophers, engineers, and policy researchers. Build your argument for how to think about responsibility. The question matters because your generation will spend 50+ years either building this stuff, working alongside it, or being affected by it. Knowing how to think about the ethics is one of the highest-leverage skills available.`,
+          guideText: `{name}, technology ethics is genuinely hard — not because people don't care but because the tradeoffs are real. Individual engineers making ethical choices, structural forces shaping outcomes, domain-specific applied frameworks: three positions on where ethical leverage actually lives. This lesson maps the debate.`,
           headline: `Ethics & Responsibility in Tech`,
           subtitle: `Three positions defended by serious thinkers. The question shapes your relationship to tech for life.`,
           visual: `/voyager-assets/future-skills/l17-welcome.webp`,

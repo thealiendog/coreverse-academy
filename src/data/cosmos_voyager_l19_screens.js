@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L19 = {
         {
           id: `l19-welcome`,
           type: `welcome`,
-          guideText: `{name}, we've spent eighteen lessons looking at what we know about the cosmos. Today we look directly at what we don't know. The list is long. We don't know what dark matter is. We don't know what dark energy is. We don't know what happens at the singularity inside a black hole. We don't know what the universe was like before inflation, or whether "before" is even meaningful. We don't know whether there are other universes. We don't know whether time has a fundamental existence. We don't know what consciousness is, fundamentally. We don't know if we're alone. How should we feel about all this ignorance? Three serious positions compete. Each one is defended by working scientists and philosophers. By the end, you'll build your own argument for how to hold cosmic ignorance.`,
+          guideText: `{name}, we don't know what dark matter is. We don't know why there's more matter than antimatter. We don't know what happened before the Big Bang or if that question even makes sense. This lesson maps what we genuinely don't know — and asks you to take a position on what that uncertainty means.`,
           headline: `What We Don't Know`,
           subtitle: `The cosmic ignorance question. Three serious positions on how to hold it.`,
           visual: `/voyager-assets/cosmos/l19-welcome.webp`,

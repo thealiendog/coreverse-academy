@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L20 = {
         {
           id: `l20-welcome`,
           type: `welcome`,
-          guideText: `{name}, you made it. Twenty lessons. From the macro mechanics of money in Lesson 1 to the ethics of financial decisions in Lesson 19, you've covered more applied financial literacy than most adults will ever encounter. The point of all of it has never been the individual facts. The point is the integrated framework you can now use to design a financial life that actually makes sense for you. Today is the capstone. We pull together every prior lesson and ask: what kind of financial life are you building? Three serious philosophies emerge from the research and the ethics. You build your final argument. This is 100 XP. Make it count. — Ace`,
+          guideText: `{name}, nineteen lessons — money, compound interest, inflation, investing, stocks, debt, credit, budgeting, business models, marketing, taxes, wealth psychology, negotiation, ethics. This final lesson asks: what is your financial philosophy? Not what you're supposed to want. What you actually want to build, and why.`,
           headline: `Designing Your Financial Life`,
           subtitle: `The capstone. Synthesize everything. Build the framework you'll use for 60+ years.`,
           visual: `/voyager-assets/money-business/l20-welcome.webp`,

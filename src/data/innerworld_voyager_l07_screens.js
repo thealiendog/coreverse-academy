@@ -26,7 +26,7 @@ const INNERWORLD_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, after the last lesson on contested figures, today we go in the opposite direction. Meditation has been studied seriously in neuroscience for about 30 years. The findings are real, modest, and clearly bounded. They don't sound as dramatic as the wellness industry's version, but they are stronger evidence. Today you will do something very few people your age get to do. You will read directly from one of the foundational papers in the neuroscience of meditation. Not a summary. Not a popularization. The actual researcher's words. Then you will annotate it the way a scientist would. By the end you will know more about meditation research than 99 percent of adults.`,
+          guideText: `{name}, meditation research is real and growing. It's also riddled with small samples, poor controls, and overclaiming. This lesson teaches you to read a scientific paper — hypothesis, methodology, results, limitations — using meditation neuroscience as the domain. A skill that will serve you for life.`,
           headline: `Meditation Neuroscience`,
           subtitle: `Reading what the actual researchers actually said.`,
           visual: `/voyager-assets/inner-world/l07-welcome.webp`,

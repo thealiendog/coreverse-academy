@@ -26,7 +26,7 @@ const MONEYBUSINESS_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, last lesson we covered why most get-rich-quick schemes don't work. Today we cover what does: starting something real, even if small. The world's most successful businesses almost all started small. Apple in a garage. Amazon as an online bookstore. Mrs. Fields cookies as one shop. Even local businesses you know started as someone's idea backed by real work. At your age, starting something doesn't mean building the next Apple. It means trying to make something people actually want to pay for, learning what works and what doesn't, and building skills you'll use the rest of your life. Today we walk through three real teen business ideas with real cost and revenue numbers. By the end you'll have a framework for evaluating any business idea, including your own.`,
+          guideText: `{name}, most teen businesses fail for predictable reasons: no real customer research, underpricing, no marketing plan, unclear unit economics. This lesson is not about being negative — it's about giving you the frameworks that separate viable ideas from wishful thinking before you spend your time and money.`,
           headline: `Starting Something That Actually Sells`,
           subtitle: `Real teen ideas. Real numbers. Real trade-offs.`,
           visual: `/voyager-assets/money-business/l14-welcome.webp`,

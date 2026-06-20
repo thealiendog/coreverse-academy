@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L14 = {
         {
           id: `l14-welcome`,
           type: `welcome`,
-          guideText: `{name}, we've spent the last few lessons looking at where the universe came from and what fills it. Today we look forward. Far forward. The universe is 13.8 billion years old. It has trillions to googol-power years of future ahead of it, depending on which fate awaits. Three serious cosmological positions compete for what actually happens at the end. The first says the universe expands and cools forever into heat death. The second says dark energy eventually rips everything apart, including atoms. The third says the universe will collapse, or cycle through repeated Big Bangs and crunches, never truly ending. Real physicists actively defend each of these. By the end you'll build your own argument about cosmic destiny.`,
+          guideText: `{name}, the universe will end. The only uncertainty is how: heat death, Big Rip, or cyclic rebirth. These aren't speculations — they're predictions from current physics with different probabilities depending on which cosmological parameters turn out to be correct. This lesson covers all three scenarios and what each implies.`,
           headline: `The Fate of the Universe`,
           subtitle: `Three serious cosmological positions on what happens at the end.`,
           visual: `/voyager-assets/cosmos/l14-welcome.webp`,

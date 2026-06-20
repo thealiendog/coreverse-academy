@@ -26,7 +26,7 @@ const COSMOS_VOYAGER_L13 = {
         {
           id: `l13-welcome`,
           type: `welcome`,
-          guideText: `{name}, you are a specific size. About 1.5 to 1.8 meters tall, give or take. That size doesn't sound particularly notable, but consider: the smallest things in the universe (quarks, the building blocks of protons and neutrons) are roughly 10⁻¹⁸ meters across, a billion-billion-billion times smaller than you. The largest thing we can observe (the observable universe) is roughly 10²⁶ meters across, a hundred-billion-trillion times larger than you. You sit, roughly speaking, in the middle of the cosmic scale on a logarithmic ruler. Today we walk through the scales of nature, then you order ten cosmic objects by size yourself. By the end you'll feel where you actually sit in cosmic geometry.`,
+          guideText: `{name}, the universe spans 46 billion light-years and contains 2 trillion galaxies. A single galaxy contains 200 billion stars. You are made of atoms that have existed since 3 minutes after the Big Bang. Scale is one of the most powerful concepts in science, and one of the hardest to actually feel. This lesson tries.`,
           headline: `Cosmic Scale`,
           subtitle: `From quarks to the observable universe. You sit roughly in the middle.`,
           visual: `/voyager-assets/cosmos/l13-welcome.webp`,
