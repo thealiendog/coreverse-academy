@@ -33,7 +33,7 @@ const ELA_VOYAGER_L01 = {
         {
           id: `l01-welcome`,
           type: `welcome`,
-          guideText: `{name}, every single day, dozens of people are trying to persuade you. Advertisers want your money, politicians want your support, friends want you to agree, apps want your attention, and writers of every kind want you to believe what they believe. Most of the time, you feel the pull without seeing how it works, which means the persuasion is operating on you invisibly. Rhetoric is the ancient art of persuasion, studied seriously since the Greeks more than two thousand years ago, and learning to read it is one of the most powerful and protective skills you can own. When you can name the moves an author is making, two things happen at once: you can be persuaded on purpose, by good arguments you actually choose to accept, and you can spot manipulation that would otherwise slip past you. Today you will learn the core techniques of persuasion, see them at work in real, famous texts, and practice telling honest persuasion from manipulation. This is not about becoming cynical and trusting nothing. It is about reading with your eyes open. Onward.`,
+          guideText: `{name}, rhetoric is the ancient art of persuasion — studied seriously since the Greeks, still operating on you every day. Advertisers, politicians, friends, apps: all of them are making moves to change what you believe or do. This lesson names those moves. Once you can see them, you can choose which ones to accept and which to resist.`,
           headline: `Rhetorical Analysis: How Authors Persuade`,
           subtitle: `The ancient art of persuasion, and how to read it. Source Evaluation.`,
           visual: `/voyager-assets/ela/l01-welcome.webp`,

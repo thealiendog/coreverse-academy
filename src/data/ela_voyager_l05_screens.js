@@ -25,7 +25,7 @@ const ELA_VOYAGER_L05 = {
         {
           id: `l05-welcome`,
           type: `welcome`,
-          guideText: `{name}, in the early 1800s, American writers began asking a new and thrilling question: what does it mean to be a free individual soul? The colonial writers had looked to God and community; now a generation looked inward, to nature, intuition, and the self. This movement was Romanticism, and its boldest American branch was Transcendentalism. The Romantics trusted feeling over cold reason, found the sublime in wild nature, and prized the imagination. The Transcendentalists, led by Ralph Waldo Emerson and Henry David Thoreau, went further: they believed each person could know truth directly, through their own intuition, without needing church or state to hand it down. Self-reliance, they argued, was almost sacred. But there was also a darker branch, writers like Edgar Allan Poe and Nathaniel Hawthorne, who explored the shadows the optimists ignored: guilt, death, the hidden corners of the human heart. Today you will meet these voices and learn to read a literary movement, not just a single text. Onward.`,
+          guideText: `{name}, the Declaration of Independence is one of the most influential documents in human history — and one of the most carefully constructed rhetorical arguments ever written. This lesson reads it as both a historical text and a rhetorical artifact: what moves did Jefferson make, why did they work, and where are the tensions between the argument and the reality?`,
           headline: `American Literature: Romanticism and Transcendentalism`,
           subtitle: `The writers who asked what it means to be a free soul. Multiple Perspectives.`,
           visual: `/voyager-assets/ela/l05-welcome.webp`,

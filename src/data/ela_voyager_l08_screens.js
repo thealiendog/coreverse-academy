@@ -25,7 +25,7 @@ const ELA_VOYAGER_L08 = {
         {
           id: `l08-welcome`,
           type: `welcome`,
-          guideText: `{name}, today we step onto the stage. Drama is unlike the novel or the poem in one huge way: a play is not finished on the page. It is a blueprint, written to be performed, to be spoken aloud by living actors in front of a breathing audience. A novel happens in your head; a play happens in a room full of people, in real time, never exactly the same way twice. To read drama well, you must learn to do something special: hear the lines, imagine the stage, and see the silent action between the words. We will start with William Shakespeare, who wrote four hundred years ago and yet still fills theaters across the whole planet, and ask why his plays refuse to die. Then we will look at modern drama, which often strips away the grand poetry to put ordinary people and raw, real life under the stage lights. Along the way you will learn the tools of the form, dialogue, soliloquy, stage directions, dramatic irony, and the strange, wonderful fact that a play only fully exists when it is performed. Onward.`,
+          guideText: `{name}, George Orwell was obsessed with the relationship between language and power. His essay 'Politics and the English Language' argues that bad writing and bad thinking reinforce each other — and that clear language is a political act. This lesson reads that argument and applies it to writing you'll encounter and produce.`,
           headline: `Drama: Shakespeare and Modern Plays`,
           subtitle: `Stories built to be performed, from Shakespeare's stage to the modern theater. Multiple Perspectives.`,
           visual: `/voyager-assets/ela/l08-welcome.webp`,

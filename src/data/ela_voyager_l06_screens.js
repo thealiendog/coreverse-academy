@@ -25,7 +25,7 @@ const ELA_VOYAGER_L06 = {
         {
           id: `l06-welcome`,
           type: `welcome`,
-          guideText: `{name}, until now we have read mostly American voices. Today we throw the windows wide open to the whole world. Literature is not the property of one country or one language; every human culture has told stories, sung poems, and wrestled with the deepest questions of being alive. World literature is the vast, magnificent conversation among all of them. Reading it does two things. First, it shows you the astonishing variety of human experience: a poem from ancient Persia, a novel from Colombia, a story from Nigeria, a play from Japan, each carrying a world inside it. Second, and just as powerful, it shows you what is universal, the love, grief, courage, and longing that connect a reader in Los Angeles to a writer who lived centuries ago on the other side of the planet. To read the world's literature well, you must do two things at once: honor what makes each culture's voice distinct, and recognize the shared humanity underneath. Onward.`,
+          guideText: `{name}, Martin Luther King Jr. was one of the greatest rhetoricians of the 20th century. 'Letter from Birmingham Jail' is a masterclass — written in the margins of a newspaper, responding to eight clergymen who called his protests unwise and untimely. This lesson reads it closely: what did he do, and why does it still work?`,
           headline: `World Literature: Voices from Diverse Cultures`,
           subtitle: `The magnificent conversation among all the world's cultures. Multiple Perspectives.`,
           visual: `/voyager-assets/ela/l06-welcome.webp`,

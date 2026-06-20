@@ -26,7 +26,7 @@ const ELA_VOYAGER_L02 = {
         {
           id: `l02-welcome`,
           type: `welcome`,
-          guideText: `{name}, last time you learned to spot the three appeals as you read. Today we go deeper and learn to take an argument apart with precision. Every real argument has working parts: a claim it wants you to accept, evidence it offers as support, and reasoning that connects the two. When you can name those parts, you can test them. Is the claim clear? Is the evidence real and relevant? Does the reasoning actually hold, or is there a gap where the "because" should be? You will also sharpen your eye for how ethos, pathos, and logos do their jobs inside a working argument, and where each can quietly break down. By the end, you will be able to read a powerful argument and say exactly why it works, and read a weak one and put your finger on precisely where it fails. That is the difference between feeling convinced and knowing why. Onward.`,
+          guideText: `{name}, argument isn't fighting — it's the most powerful thinking tool humans have. A real argument is a claim supported by reasons supported by evidence. Most of what passes for argument in public life doesn't meet that standard. This lesson teaches you to construct arguments that do, and to recognize the ones that don't.`,
           headline: `Analyzing Argument: Logos, Ethos, and Pathos`,
           subtitle: `Taking an argument apart with precision. Source Evaluation.`,
           visual: `/voyager-assets/ela/l02-welcome.webp`,

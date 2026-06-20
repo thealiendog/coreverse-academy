@@ -26,7 +26,7 @@ const ELA_VOYAGER_L03 = {
         {
           id: `l03-welcome`,
           type: `welcome`,
-          guideText: `{name}, you have learned to read persuasion and to take an argument apart. Now we turn those tools on two of the most consequential documents ever written in America: the Declaration of Independence (1776) and the Constitution (1787). These are not dusty relics. They are arguments, carefully built, fiercely debated, and still shaping your life today. The Declaration is an argument for why a people may break away from a government. The Constitution is an argument about how power should be arranged so that it serves people without crushing them. Both were written by real people who disagreed sharply with each other, and both contain soaring ideals alongside painful contradictions, especially around slavery and who counted as "all men." Reading them well means honoring their genius and being honest about their failures at the same time. That double vision, admiration and honesty held together, is exactly what a strong reader of seminal texts must learn. Onward.`,
+          guideText: `{name}, logical fallacies are errors in reasoning that sound convincing. Ad hominem, straw man, false dichotomy, slippery slope — these patterns are everywhere once you know the names. This lesson maps the most common ones, shows you how to spot them in the wild, and explains why knowing them makes you harder to manipulate.`,
           headline: `Seminal American Texts: Declaration and Constitution`,
           subtitle: `Two arguments that still shape your life. Multiple Perspectives.`,
           visual: `/voyager-assets/ela/l03-welcome.webp`,

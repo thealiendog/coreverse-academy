@@ -25,7 +25,7 @@ const ELA_VOYAGER_L07 = {
         {
           id: `l07-welcome`,
           type: `welcome`,
-          guideText: `{name}, the novel is one of the most powerful inventions in all of human art, a machine made of words that can put you inside another mind for hours, days, a whole imagined life. But a great novel is not magic; it is built, carefully, out of parts that work together. Today you become an engineer of stories, learning to see the machinery. We will focus on three of the most important parts. Structure is how a novel is arranged: where it starts, how it builds tension, how the pieces are ordered to create their effect. Character is the people who live inside it, and especially how the best ones change, growing or breaking across the story. And theme is the deeper meaning, the ideas about life the whole novel is quietly exploring beneath the plot. When you can see structure, character, and theme working together, you stop just being swept along by a story and start understanding how it does what it does to you, which, strangely, makes the magic more powerful, not less. Onward.`,
+          guideText: `{name}, Toni Morrison won the Nobel Prize in Literature. Understanding why requires understanding what literary fiction does that other writing doesn't — how it creates meaning through image, symbol, structure, and voice rather than just plot. This lesson introduces the tools for reading serious fiction, using Morrison as the primary example.`,
           headline: `The Novel: Structure, Theme, and Character`,
           subtitle: `How a great novel is actually built. A Case Study.`,
           visual: `/voyager-assets/ela/l07-welcome.webp`,

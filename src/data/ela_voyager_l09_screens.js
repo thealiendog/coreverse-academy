@@ -26,7 +26,7 @@ const ELA_VOYAGER_L09 = {
         {
           id: `l09-welcome`,
           type: `welcome`,
-          guideText: `{name}, poetry is the most concentrated language there is. A novel might take four hundred pages to move you; a poem can do it in fourteen lines, or four, or sometimes one. Every word in a real poem is doing work, often several jobs at once, which is why poetry rewards slow, careful reading more than any other form. You cannot skim a poem the way you skim a text message; you have to slow down, listen, and read it more than once. Many people are a little afraid of poetry. They think it's a locked box with one secret "right answer" the teacher already knows, and that they're too dumb to find it. That is completely false, and today I want to free you from it. A poem is not a riddle with one answer; it's an experience built out of sound, image, and feeling, and your honest response to it matters. We will learn the tools, imagery, metaphor, sound, line, form, and a simple, powerful method for reading any poem deeply. By the end, you'll be able to walk up to a poem you've never seen, slow down, and actually hear what it's doing. Onward.`,
+          guideText: `{name}, advertising is the most pervasive form of rhetoric in your life — and the least examined. This lesson takes advertising seriously as a rhetorical form: what techniques does it use, how does it work on you below the level of conscious thought, and what does media literacy look like when applied to commercial persuasion?`,
           headline: `Poetry: Deep Analysis`,
           subtitle: `The most concentrated language there is, read line by careful line. Multiple Perspectives.`,
           visual: `/voyager-assets/ela/l09-welcome.webp`,

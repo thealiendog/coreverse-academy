@@ -25,7 +25,7 @@ const ELA_VOYAGER_L11 = {
         {
           id: `l11-welcome`,
           type: `welcome`,
-          guideText: `{name}, back in an earlier lesson you learned to analyze other people's arguments, to spot logos, ethos, and pathos at work. Today you flip to the other side of the table: you become the one building the argument, and you learn to build one that can withstand the scrutiny of a smart, skeptical reader. A weak argument just shouts an opinion. A strong one is engineered, with a clear and arguable claim at its center, real evidence holding it up, and explicit reasoning connecting the two so the reader sees exactly why the evidence proves the point. But the move that separates a good arguer from a great one is something most people avoid entirely: the counterargument. A great writer seeks out the strongest objection to their own position, states it fairly, and then answers it. Far from weakening your case, this makes it almost unbreakable, because you've shown you considered the other side and still hold your ground. Today you'll learn to architect arguments that don't just express what you believe, but actually have the power to change a thoughtful reader's mind. Onward.`,
+          guideText: `{name}, creative nonfiction — memoir, personal essay, literary journalism — is the form that asks writers to be both accurate and artful. Joan Didion, James Baldwin, Ta-Nehisi Coates: writers who use personal experience to illuminate larger truths. This lesson introduces the form and the craft decisions it requires.`,
           headline: `Argumentative Writing: Advanced`,
           subtitle: `Building an argument strong enough to change a skeptical mind. A Case Study.`,
           visual: `/voyager-assets/ela/l11-welcome.webp`,

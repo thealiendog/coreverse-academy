@@ -26,7 +26,7 @@ const ELA_VOYAGER_L04 = {
         {
           id: `l04-welcome`,
           type: `welcome`,
-          guideText: `{name}, before America was a country, it was a collection of voices, and those voices created a literature. Today we travel to the colonial and revolutionary period, roughly the 1600s through the 1780s, to meet the writers who gave a new nation its first words. This was a time before novels and movies, when the most powerful writing was often a sermon, a diary, a pamphlet, or a speech. We will read across very different voices: Puritans wrestling with God and sin, an enslaved poet claiming her own genius, a printer turning common sense into revolution, and orators whose words helped start a war. As we go, you will keep using your analyst's tools, finding the argument, the purpose, the appeals, but you will also meet a new question that literature asks: not just is this true, but what does this writing reveal about the people who made it, and the world they were trying to build or escape? Onward.`,
+          guideText: `{name}, evidence is not all equal. Anecdote, correlation, peer-reviewed study, expert consensus — these carry different weight and should. This lesson teaches you to evaluate evidence quality, understand what different study designs can and can't prove, and recognize when someone is using weak evidence to support a strong claim.`,
           headline: `American Literature: Colonial and Revolutionary Period`,
           subtitle: `The voices that gave a new nation its words. A Case Study.`,
           visual: `/voyager-assets/ela/l04-welcome.webp`,
