@@ -32,7 +32,7 @@ const INNERWORLD_UE_L05 = {
           guideText: `Welcome back, {name}. Sage here. Today we explore the voice inside your head, the one that talks to you all day long. You might not always notice it, but you have an inner voice constantly commenting: "I did well," "I look silly," "I can't do this," "I've got this." This is your SELF-TALK, and it has an enormous effect on how you feel and what you do. The wonderful news is that you can learn to change it, to turn a harsh inner critic into a kind, encouraging coach. Take a gentle breath, and let's begin this important practice.`,
           headline: `Reprogramming Negative Self-Talk`,
           subtitle: `Turning the harsh voice in your head into a kind, encouraging coach`,
-          visual: `/ue-assets/iw/l05-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l05-welcome.webp`,
         },
 
         {
@@ -44,7 +44,7 @@ const INNERWORLD_UE_L05 = {
             `Right now, and almost all day long, there's a voice in your mind talking to you. This is SELF-TALK: the inner conversation you have with yourself. Some of it you notice; much of it runs quietly in the background (remember the subconscious from last lesson?). Your self-talk comments on everything: how you're doing, what others think, what might happen, who you are. We all have it. It's a completely normal part of being human.`,
             `Here's why self-talk matters so much: it powerfully shapes your FEELINGS and your ACTIONS. Remember from our earliest lesson how naming a feeling can calm it? Self-talk works similarly, but in both directions. Kind, encouraging self-talk ("I can handle this, I'll take it one step at a time") helps you feel calmer and braver, and helps you keep trying. Harsh, critical self-talk ("I'm so stupid, I always fail") makes you feel worse and more likely to give up. The voice you use with yourself becomes the emotional weather you live in. And just like any pattern in your brain, your self-talk can be noticed, questioned, and gradually changed.`,
           ],
-          image: `/ue-assets/iw/l05-s1-the-voice.webp`,
+          image: `/ue-assets/iw/exp-iw-l05-s1-the-voice.webp`,
           imageCaption: `Self-talk is your inner conversation. It shapes how you feel and what you do.`,
           vocab: [
             {
@@ -69,7 +69,7 @@ const INNERWORLD_UE_L05 = {
             `Many people have a part of their self-talk that's harsh and critical, often called the INNER CRITIC. It's the voice that says things like "you're not good enough," "everyone's better than you," "you always mess up," "don't even try, you'll fail." Here's something important and kind to understand: almost everyone has an inner critic, and it usually isn't trying to hurt you on purpose. Often it formed early (remember limiting beliefs?), sometimes even trying to "protect" you by warning you away from risk or embarrassment. But its harsh methods usually do far more harm than good.`,
             `The inner critic is sneaky in two ways. First, it often speaks in EXTREMES: "always," "never," "everyone," "nothing." ("I ALWAYS fail." "NOBODY likes me.") These absolute words are almost never accurate. Second, it presents opinions as if they were FACTS. ("I'm stupid" feels like a fact, but it's actually a harsh opinion.) Here's a powerful test you can use: would you EVER talk to a good friend the way your inner critic talks to you? Almost certainly not. You'd be far kinder. Noticing this gap is the first step. You deserve at least the same kindness from yourself that you'd offer a friend, and learning to give it is a skill you can build.`,
           ],
-          image: `/ue-assets/iw/l05-s2-inner-critic.webp`,
+          image: `/ue-assets/iw/exp-iw-l05-s2-inner-critic.webp`,
           imageCaption: `The inner critic speaks in extremes and disguises opinions as facts. Notice it gently.`,
           vocab: [
             {
@@ -94,7 +94,7 @@ const INNERWORLD_UE_L05 = {
             `Now for the practical skill: REFRAMING. To reframe means to take a harsh, unhelpful thought and gently rewrite it into one that's more accurate AND more helpful. This isn't about fake positivity or lying to yourself, your wise mind would reject that. It's about finding a truer, kinder way to see the same situation. Here's the process: First, NOTICE the harsh thought ("I'm terrible at this"). Second, QUESTION it (is that really true? always? is it a fact or an opinion?). Third, REFRAME it into something true and kind.`,
             `Watch how it works. "I'm terrible at this" becomes "This is hard for me right now, and I'm still learning." "I always mess everything up" becomes "I made a mistake this time, and mistakes help me grow." "Nobody likes me" becomes "Making friends takes time, and I'm worth knowing." Notice the reframes aren't fantasy, they're often MORE accurate than the harsh version, while also being kind. A great reframe usually removes the extreme words ("always," "never"), turns opinions back into honest facts, and adds the hope of growth (often with that powerful word "yet"). With practice, reframing becomes a skill you can use anytime your inner critic speaks up.`,
           ],
-          image: `/ue-assets/iw/l05-s3-reframe.webp`,
+          image: `/ue-assets/iw/exp-iw-l05-s3-reframe.webp`,
           imageCaption: `Reframe: notice the harsh thought, question it, rewrite it true AND kind.`,
           vocab: [
             {
@@ -119,7 +119,7 @@ const INNERWORLD_UE_L05 = {
             `The goal isn't to silence your inner voice, it's to transform it from a harsh critic into a KIND COACH. Think about a great coach or a wonderful teacher. They don't ignore your mistakes or pretend everything's perfect. But they're encouraging, patient, and believe in you. They say things like "Good effort, let's try that part again," and "You're improving, keep going." That's exactly the voice you can learn to use with yourself. A kind coach is honest AND supportive at the same time. This is also called SELF-COMPASSION: treating yourself with the same kindness you'd offer a good friend.`,
             `And here's why this truly works, not just feels nice: remember neuroplasticity and the subconscious? Every time you practice reframing a harsh thought into a kind one, you strengthen that new pathway in your brain. At first you'll have to do it consciously and on purpose. But with repetition, kinder self-talk gradually becomes more automatic, your new default voice. You are literally re-programming your inner voice through practice. Sage's gentle teaching: you talk to yourself more than anyone else ever will, all day, every day, for your whole life. Learning to make that voice kind, honest, and encouraging may be one of the greatest gifts you ever give yourself. Be patient. Be gentle. You are learning to become your own best coach.`,
           ],
-          image: `/ue-assets/iw/l05-s4-kind-coach.webp`,
+          image: `/ue-assets/iw/exp-iw-l05-s4-kind-coach.webp`,
           imageCaption: `Become your own kind coach: honest AND supportive. Practice rewires the voice.`,
           vocab: [
             {

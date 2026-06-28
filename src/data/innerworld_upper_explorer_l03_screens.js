@@ -31,7 +31,7 @@ const INNERWORLD_UE_L03 = {
           guideText: `Welcome back, {name}. Sage here. You've learned that your brain creates your emotions, and that you can shape your brain through practice. Today we explore something quieter but very powerful: your BELIEFS. The things you believe about yourself, deep down, shape what you try, what you avoid, and even what you think is possible for you. Some beliefs lift you up. Others, called limiting beliefs, can quietly hold you back, often without you even noticing. The good news? Once you can SEE a belief, you can question it. Take a gentle breath, and let's begin.`,
           headline: `Limiting Beliefs and Where They Come From`,
           subtitle: `The quiet stories you believe about yourself, and how to question them`,
-          visual: `/ue-assets/iw/l03-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l03-welcome.webp`,
         },
 
         {
@@ -43,7 +43,7 @@ const INNERWORLD_UE_L03 = {
             `A BELIEF is something you accept as true about yourself, other people, or the world, often without even questioning it. You have thousands of beliefs, and most of them run quietly in the background of your mind. Some are about facts ("the sky is blue"). But the most powerful beliefs are the ones about YOU: "I'm good at art," "I'm not a math person," "people like me," "I always mess things up." These self-beliefs shape your whole life, because you tend to act in ways that match what you believe about yourself.`,
             `Here's the important thing to understand: many of your beliefs about yourself are not actually FACTS. They're more like stories you've come to accept, often without realizing it. A belief can feel completely true and still be inaccurate. For example, a kid who believes "I'm bad at sports" will feel like that's just a fact about them. But it's really a story, one that might have formed from a single bad experience, and one that (thanks to neuroplasticity, which you learned about) can actually change. Learning to tell the difference between a real fact and a believed story is one of the most freeing skills you can develop.`,
           ],
-          image: `/ue-assets/iw/l03-s1-what-is-belief.webp`,
+          image: `/ue-assets/iw/exp-iw-l03-s1-what-is-belief.webp`,
           imageCaption: `A belief is a story you accept as true, often without questioning it. Many aren't facts.`,
           vocab: [
             {
@@ -68,7 +68,7 @@ const INNERWORLD_UE_L03 = {
             `Beliefs about yourself come in two main kinds. An EMPOWERING belief lifts you up and opens doors: "I can learn hard things," "I'm a kind friend," "mistakes help me grow." These beliefs give you courage to try, to keep going, and to bounce back. A LIMITING belief does the opposite, it quietly holds you back and closes doors: "I'm just not smart," "I'll never be good at this," "people always leave," "I'm too shy to make friends." Limiting beliefs act like invisible fences, keeping you from even attempting things you might actually be able to do.`,
             `Here's why limiting beliefs are so sneaky and powerful: they tend to come TRUE, not because they're accurate, but because of how they make you act. If you believe "I'm bad at math," you might avoid practicing math, give up quickly, or get too anxious to think clearly, and then you do poorly, which seems to "prove" the belief. It becomes a self-fulfilling cycle. The belief shapes your actions, and your actions seem to confirm the belief. The encouraging flip side is just as real: empowering beliefs also tend to come true, because they lead you to try, practice, and persist. Your beliefs don't just describe your life; they help create it.`,
           ],
-          image: `/ue-assets/iw/l03-s2-limiting-vs-empowering.webp`,
+          image: `/ue-assets/iw/exp-iw-l03-s2-limiting-vs-empowering.webp`,
           imageCaption: `Limiting beliefs are invisible fences. Empowering beliefs open doors. Both tend to come true.`,
           vocab: [
             {
@@ -93,7 +93,7 @@ const INNERWORLD_UE_L03 = {
             `Here's something important and kind to understand: your limiting beliefs are usually NOT your fault. They're learned, often when you were very young, from experiences and from the people and world around you. Sometimes a single difficult moment plants one: you stumbled during a school presentation once, and a belief formed: "I'm bad at speaking." Sometimes they come from words others said, even people who loved you and didn't mean harm. Sometimes they come from comparing yourself to others, or from messages in the world about who you "should" be. Your young brain absorbed these like a sponge, before you had the thinking skills to question them.`,
             `This matters because it changes how you treat yourself. A limiting belief isn't a true fact carved in stone, and it isn't evidence that something is wrong with you. It's simply an old story your brain picked up, usually trying (in its own way) to protect you or make sense of an experience. Understanding this lets you be GENTLE with yourself. You're not broken for having limiting beliefs; everyone has them. And because beliefs are learned, and your brain can change (remember neuroplasticity?), they can also be UN-learned and replaced. The first step is simply noticing them, with curiosity instead of judgment. That's what makes you a belief detective.`,
           ],
-          image: `/ue-assets/iw/l03-s3-where-from.webp`,
+          image: `/ue-assets/iw/exp-iw-l03-s3-where-from.webp`,
           imageCaption: `Limiting beliefs are learned young, often not your fault. They can be unlearned.`,
           vocab: [
             {
@@ -118,7 +118,7 @@ const INNERWORLD_UE_L03 = {
             `Here's the freeing truth: because beliefs are learned stories, not permanent facts, you can QUESTION them and choose new ones. When you notice a limiting belief, you can gently put it on trial, like a detective examining evidence. Ask yourself: "Is this actually TRUE? Is it true ALL the time? What's the evidence FOR it? What's the evidence AGAINST it? Where did this belief even come from? Is it helping me or holding me back?" Often, when you really examine a limiting belief, you discover it's not nearly as solid or true as it felt.`,
             `Then comes the powerful part: you can begin to REPLACE a limiting belief with a more accurate, empowering one. "I'm bad at math" can become "I'm still learning math, and my brain grows with practice." "Nobody likes me" can become "I'm building friendships, and I'm worth knowing." This isn't about lying to yourself or pretending. It's about choosing beliefs that are MORE accurate and more helpful, and then (remember neuroplasticity) strengthening them with practice until they feel natural. We'll go deeper into how to do this in lessons ahead. Sage's gentle teaching: you are not your limiting beliefs. They are old stories, not the truth of who you are. With awareness and kindness, you can become the author of your own beliefs, and that changes everything about what feels possible for you.`,
           ],
-          image: `/ue-assets/iw/l03-s4-question-change.webp`,
+          image: `/ue-assets/iw/exp-iw-l03-s4-question-change.webp`,
           imageCaption: `Put limiting beliefs on trial. Then choose more accurate, empowering ones.`,
           vocab: [
             {

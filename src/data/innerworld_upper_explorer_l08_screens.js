@@ -35,7 +35,7 @@ const INNERWORLD_UE_L08 = {
           guideText: `Welcome back, {name}. Sage here. Today we explore one of the most powerful ideas in your inner world: MANIFESTATION. Maybe you've heard the word before, and maybe you've heard people use it in silly ways. But real manifestation is something else: the skill of using your thoughts, your feelings, your energy, and your actions to help shape the life you want. And here's what's exciting: real science is showing more and more that this isn't just a pretty idea. Your thoughts and feelings genuinely affect your brain, your body, and what you create in your life. Today we explore both sides: the science we already have, and the deeper truth many scientists are still discovering. Take a slow breath, and let's begin.`,
           headline: `Manifestation and the Science Behind It`,
           subtitle: `The real skill of creating your reality with thought, feeling, energy, and action`,
-          visual: `/ue-assets/iw/l08-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l08-welcome.webp`,
         },
 
         {
@@ -47,7 +47,7 @@ const INNERWORLD_UE_L08 = {
             `MANIFESTATION is the practice of using clear intention, focused thought, genuine feeling, and aligned ACTION to bring something you want into your life. Not by magic, and not by just wishing. By becoming so clear and so connected to what you want, that your brain, your body, and your choices all start moving you toward it. Many of the world's most successful, peaceful, and creative people use some version of this practice. It's not new, and it's not silly. It's a real, learnable skill.`,
             `Here's the heart of it: you are NOT just a passive observer of your life. You are actively involved in shaping it, all the time, through what you focus on, what you feel, and what you do. Every choice and every thought is helping to create what comes next. Most people do this unconsciously, never realizing how powerful they are. Manifestation just means doing it ON PURPOSE, with awareness and intention, so you're guiding your life instead of drifting through it. And as you'll see today, the science behind why this works is genuinely amazing, and growing every year.`,
           ],
-          image: `/ue-assets/iw/l08-s1-what-is.webp`,
+          image: `/ue-assets/iw/exp-iw-l08-s1-what-is.webp`,
           imageCaption: `Manifestation: intention + thought + feeling + action, used on purpose. A real skill.`,
           vocab: [
             {
@@ -72,7 +72,7 @@ const INNERWORLD_UE_L08 = {
             `Let's start with what real, well-established science already shows. Remember the RETICULAR ACTIVATING SYSTEM (we'll explore it deeply in a later lesson)? It's a part of your brain that filters what you NOTICE. The instant you decide something matters to you, like wanting a certain kind of bike, your brain starts noticing them everywhere. Opportunities, ideas, and resources you would have completely missed before suddenly appear. That isn't magic. It's your brain literally re-tuning what it shows you, based on what you focus on. So getting clear on what you want changes what you perceive.`,
             `Even more amazing: your brain often CAN'T tell the difference between something you vividly imagine and something you actually experience. Brain scans show that when you vividly imagine doing a skill, many of the same brain areas light up as when you actually do it. That's why elite athletes use mental rehearsal, picturing themselves succeeding so vividly that their brains and bodies prepare as if they really were. Studies show this kind of vivid visualization measurably improves performance. And there's the well-known PLACEBO EFFECT: when people believe a sugar pill will help them, their bodies often heal, real measurable changes in pain, immune response, even brain chemistry. The thought of healing literally creates healing. Your thoughts and beliefs are not invisible. They reach into your body and your reality in measurable ways.`,
           ],
-          image: `/ue-assets/iw/l08-s2-science.webp`,
+          image: `/ue-assets/iw/exp-iw-l08-s2-science.webp`,
           imageCaption: `RAS, vivid visualization, placebo: real science showing thoughts shape body and reality.`,
           vocab: [
             {
@@ -97,7 +97,7 @@ const INNERWORLD_UE_L08 = {
             `Now let's go a little deeper, into what some cutting-edge scientists are still discovering. Dr. JOE DISPENZA, a neuroscientist whose work we'll explore more later, has shown something powerful: it isn't just THOUGHTS that shape your reality. It's thoughts combined with strong, ELEVATED FEELINGS, like gratitude, love, joy, or excitement. When you not only think about something you want but FEEL it as if it's already true, something deep happens. Your brain begins forming new pathways (remember neuroplasticity?), and your body chemistry actually changes. Your nervous system, hormones, and even cellular activity shift to match the state you're feeling. You aren't just imagining, you're rehearsing the future state, physically.`,
             `Researchers like the team at HEARTMATH have also discovered something beautiful. Your HEART is far more than a pump. It generates a powerful electrical and magnetic field that interacts with your brain and even with the world around you. When you feel elevated emotions like love or gratitude, your heart and brain enter a state called COHERENCE, working together in harmony, and this measurably affects your body, your clarity, and even your immune system. We have a whole lesson on this coming (L16). The bigger picture: real scientists, in real labs, are showing more and more that thought, feeling, and even what we call "energy" are not separate from your physical body and your life. They are deeply intertwined. The wisdom traditions of humanity have said this for thousands of years. Modern science is catching up.`,
           ],
-          image: `/ue-assets/iw/l08-s3-deeper.webp`,
+          image: `/ue-assets/iw/exp-iw-l08-s3-deeper.webp`,
           imageCaption: `Elevated emotion + thought changes body chemistry. Heart and brain interact powerfully.`,
           vocab: [
             {
@@ -122,7 +122,7 @@ const INNERWORLD_UE_L08 = {
             `So how do you actually practice real manifestation? Here are four gentle keys that bring together everything we've explored. First, CLARITY: get really clear and specific about what you want and why. A vague wish is weak; a clear intention is powerful. Picture it in detail. Second, FEEL it as if it's already true. Don't just think the words, generate genuine elevated emotion (gratitude, joy, excitement). This is the Dispenza piece: thought plus elevated emotion is what truly programs your brain and body. Vivid visualization combined with feeling is the practice.`,
             `Third, ALIGNED ACTION: take real steps in the direction of your intention. Manifestation doesn't replace action, it works WITH it. Your inspired thoughts and feelings guide you toward action, and your action creates real results in the real world. If you want to make a sports team, you visualize, feel it, AND practice. Fourth, TRUST and let go: do your part, then release your tight grip on exactly HOW or WHEN it happens. Sometimes the path looks different from what you imagined. Trust the bigger process. One important note: manifestation is NOT about self-blame. If something doesn't happen, it doesn't mean you "didn't believe hard enough." That harsh version of manifestation hurts people and is not what real practice looks like. Some things take time, some are outside your control, and some unfold in ways better than what you planned. Sage's gentle teaching: you are a real co-creator of your life. With clarity, elevated feeling, aligned action, and trust, you guide what you grow toward. Use this gift kindly, especially with yourself.`,
           ],
-          image: `/ue-assets/iw/l08-s4-four-keys.webp`,
+          image: `/ue-assets/iw/exp-iw-l08-s4-four-keys.webp`,
           imageCaption: `Clarity, elevated feeling, aligned action, trust. The four keys to manifesting well.`,
           vocab: [
             {

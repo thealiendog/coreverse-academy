@@ -36,7 +36,7 @@ const INNERWORLD_UE_L13 = {
           guideText: `Welcome back, {name}. Sage here. We've explored so much together: how your brain works, how to handle big feelings, the Observer, manifestation, Dispenza's work, brain waves. Today we turn all of that into something you can actually DO every day. A real, simple, daily mindfulness practice. Not a long, intense thing only monks do, a gentle, doable routine that fits a kid's life and quietly transforms it over time. Today you'll learn how to build YOUR practice. Take a slow breath, and let's begin.`,
           headline: `Building a Daily Mindfulness Practice`,
           subtitle: `A simple, real, kid-sized routine that quietly transforms everything`,
-          visual: `/ue-assets/iw/l13-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l13-welcome.webp`,
         },
 
         {
@@ -48,7 +48,7 @@ const INNERWORLD_UE_L13 = {
             `Here's a simple truth: nothing in your inner world changes much from doing something once. Meditating once, reframing one thought, breathing slowly one time, those are good moments, but they don't transform you. What truly grows new pathways in your brain (neuroplasticity, L02) and reprograms your subconscious (L04) is DAILY repetition over time. Just like brushing your teeth keeps them healthy through daily care, not one big effort, your inner world grows through small, gentle, daily attention.`,
             `Here's the encouraging part: it doesn't take much. Research shows that even 5 to 10 minutes a day of real mindfulness practice, done consistently, measurably changes the brain and body over weeks. The kids and adults with the most peaceful, focused, kind inner lives aren't the ones who meditate for hours once a year. They're the ones who do something small every single day. Small + consistent beats big + occasional, every single time. So our goal today isn't a huge ambitious plan. It's a real, gentle, doable practice you can actually keep.`,
           ],
-          image: `/ue-assets/iw/l13-s1-why-daily.webp`,
+          image: `/ue-assets/iw/exp-iw-l13-s1-why-daily.webp`,
           imageCaption: `Small + consistent beats big + occasional. Daily care is how the inner world grows.`,
           vocab: [
             {
@@ -73,7 +73,7 @@ const INNERWORLD_UE_L13 = {
             `A great mindfulness practice doesn't have to be complicated. There are five simple building blocks you can mix and match to design your own routine. First, MORNING INTENTION: a quiet moment at the start of the day to set how you want to BE today (calm, curious, kind). Just 30 seconds of focus is enough. Second, MEDITATION: 5 to 10 minutes of sitting quietly, breathing slowly, gently returning when your mind wanders (L12). Add elevated emotion (L08, L11) once you're calm. Third, MINDFUL MOMENTS during the day: brief pauses to take a slow breath and notice how you feel before tests, after lunch, between activities. Even 60 seconds counts.`,
             `Fourth, GRATITUDE: pausing once a day to truly feel grateful for a few things, big or small. Research shows daily gratitude actually changes the brain over time, strengthening pathways for positivity and resilience. Fifth, EVENING REFLECTION: a few minutes before bed to notice the day, what you felt, what you handled well, what you'd do differently. Maybe one thing you're proud of. These five blocks, used in any combination, create a real practice. Some kids do all five briefly. Others do just two or three. The point isn't doing every block, it's gently doing SOMETHING every day. You design what fits your life.`,
           ],
-          image: `/ue-assets/iw/l13-s2-building-blocks.webp`,
+          image: `/ue-assets/iw/exp-iw-l13-s2-building-blocks.webp`,
           imageCaption: `Five building blocks: intention, meditation, mindful moments, gratitude, evening reflection.`,
           vocab: [
             {
@@ -98,7 +98,7 @@ const INNERWORLD_UE_L13 = {
             `Now let's get practical. There's no ONE right way to do a daily practice. The best routine is one that fits YOUR life and that you can actually keep. Here's a simple template that works for many kids. MORNING (3 minutes): take a few slow breaths, set an intention for the day ("today I'll be calm and curious"), feel a brief moment of gratitude for one thing. THAT'S IT for the morning. Don't make it bigger. AFTER SCHOOL (5-10 minutes): a real sit-down meditation. Eyes closed, breath, gently return when you wander. Add elevated emotion if you want to go deeper (L11). EVENING (3 minutes): reflect on the day. Notice one thing you handled well, one feeling you had, and one thing you're grateful for. End by setting an intention for tomorrow.`,
             `That whole routine totals about 15 minutes a day, and you'll feel the difference in just a few weeks. You can also use MINDFUL MOMENTS scattered through the day (60 seconds of slow breath at random moments), which actually takes no extra time at all. Real life kid version: when you're new, start TINY. Even 3 minutes a day is enough. As it becomes natural, you can grow it. The hardest part isn't doing the practice, it's REMEMBERING to start. So link your practice to something you already do every day. After brushing your teeth in the morning. Right when you come home from school. Right before getting into bed. Tying a new habit to an old one is one of the most science-backed ways to make it stick.`,
           ],
-          image: `/ue-assets/iw/l13-s3-design.webp`,
+          image: `/ue-assets/iw/exp-iw-l13-s3-design.webp`,
           imageCaption: `Design a real routine: morning, after school, evening. Link it to what you already do.`,
           vocab: [
             {
@@ -123,7 +123,7 @@ const INNERWORLD_UE_L13 = {
             `Now the most honest part. You WILL miss days. Everyone does. Some days you'll forget, some you'll be too busy, some you simply won't feel like it. Here's the most important rule of daily practice: when you miss a day, DON'T beat yourself up. Don't decide "I failed" or "I'm not the kind of person who can do this." Don't quit. Just gently start again the next day. Missing one day means nothing. QUITTING because you missed a day is what actually breaks the practice. Be kind. Begin again. That's the whole skill.`,
             `Some days your practice will feel deep and beautiful. Other days it'll feel boring or like nothing's happening. Both are normal. The benefits build quietly underneath whether you "feel them" each session or not. Trust the process and the science (neuroplasticity is happening either way). Also, your practice will GROW with you. What you do at age 10 will look different at 14, 18, 30. Start where you are, with what fits today, and let it evolve naturally. Sage's gentle teaching: a real daily practice is one of the greatest gifts you can give yourself, not because it's hard or impressive, but because it's KIND. You're giving yourself a few minutes a day to come home to yourself. With consistency and patience, those few minutes slowly transform everything. Start small. Be kind when you miss. Just keep beginning again.`,
           ],
-          image: `/ue-assets/iw/l13-s4-staying.webp`,
+          image: `/ue-assets/iw/exp-iw-l13-s4-staying.webp`,
           imageCaption: `Be kind when you miss. Quitting breaks practice, not missing one day. Just begin again.`,
           vocab: [
             {

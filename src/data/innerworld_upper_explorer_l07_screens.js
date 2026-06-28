@@ -33,7 +33,7 @@ const INNERWORLD_UE_L07 = {
           guideText: `Welcome back, {name}. Sage here. Have you ever been so absorbed in something, drawing, building, playing, reading, that you completely lost track of time? An hour passed and felt like minutes. You forgot to be hungry or self-conscious. You were just fully THERE, doing the thing. That magical, focused state has a name: FLOW. It's one of the most enjoyable and productive states a human mind can enter, and the wonderful news is you can learn to find it more often. Take a breath, and let's explore this joyful corner of your inner world.`,
           headline: `Flow States`,
           subtitle: `Those magical times when you're so absorbed you lose track of time`,
-          visual: `/ue-assets/iw/l07-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l07-welcome.webp`,
         },
 
         {
@@ -45,7 +45,7 @@ const INNERWORLD_UE_L07 = {
             `FLOW is a state of complete absorption in what you're doing, where you feel focused, energized, and fully present. A scientist named Mihaly Csikszentmihalyi (you say it "cheek-sent-me-hi") spent his life studying it. He interviewed athletes, artists, musicians, scientists, and everyday people about their best, most joyful moments, and discovered they all described the same special state. People sometimes call it being "in the zone." In flow, you're so engaged in an activity that everything else seems to fade away.`,
             `Flow isn't just pleasant, it's one of the states where people do their BEST work and feel their happiest. When you're in flow, your full attention is gathered on one thing, your skills are being used well, and you often produce wonderful results almost effortlessly. Csikszentmihalyi found that people report some of the most meaningful, satisfying moments of their lives happening during flow. So learning about flow isn't just interesting, it's a key to doing great work AND feeling deeply content. And as you'll see, flow doesn't just happen by luck. There are real conditions that invite it, conditions you can learn to create.`,
           ],
-          image: `/ue-assets/iw/l07-s1-what-is-flow.webp`,
+          image: `/ue-assets/iw/exp-iw-l07-s1-what-is-flow.webp`,
           imageCaption: `Flow: complete absorption, focused and present, where we do our best and happiest work.`,
           vocab: [
             {
@@ -70,7 +70,7 @@ const INNERWORLD_UE_L07 = {
             `How do you know when you're in flow? Researchers found it has clear signs. Time feels strange, usually it seems to fly by, though sometimes a single moment can feel stretched and rich. Your focus becomes complete; distractions melt away and you're not thinking about anything else. Your self-consciousness disappears, you stop worrying about how you look or what others think, because you're absorbed in the doing. The activity feels rewarding all by itself, you're doing it because you love doing it, not for a prize. And often, things feel almost effortless, even when you're working hard, your skills flow out smoothly.`,
             `You've almost certainly experienced flow already, even if you didn't have a name for it. Maybe while drawing or painting, playing a sport or an instrument, building with blocks or building in a video game, reading a gripping book, solving a puzzle, dancing, or making up a story. Flow can happen in almost any activity. The key isn't WHICH activity it is, it's the special relationship between you and the task in that moment. And that relationship comes down to one beautiful balance, which we'll explore next.`,
           ],
-          image: `/ue-assets/iw/l07-s2-signs.webp`,
+          image: `/ue-assets/iw/exp-iw-l07-s2-signs.webp`,
           imageCaption: `Signs of flow: time distorts, focus is total, self-consciousness fades, it feels rewarding.`,
           vocab: [
             {
@@ -95,7 +95,7 @@ const INNERWORLD_UE_L07 = {
             `Here's the heart of flow, and it's wonderfully simple. Flow happens when the CHALLENGE of an activity is well-matched to your SKILL level. The task has to be hard enough to fully engage you, but not so hard that you feel overwhelmed. It's a "just right" balance, like the Goldilocks zone for your attention. When challenge and skill meet at the right point, you slip into flow.`,
             `Think about what happens when they DON'T match. If a task is too EASY for your skill level (challenge too low), you get BORED. Your mind wanders, you lose interest, and flow can't happen. If a task is too HARD for your current skill (challenge too high), you feel ANXIOUS or overwhelmed. You get frustrated or want to give up, and flow can't happen either. But right in between, where the challenge stretches your skills just enough, lies the "flow channel." Here's the really cool part: as your skills GROW (remember neuroplasticity?), you need bigger challenges to stay in flow. That's why a game or skill that once thrilled you can later feel boring, you outgrew that challenge level and need a harder one. Flow gently pulls you to keep growing.`,
           ],
-          image: `/ue-assets/iw/l07-s3-challenge-skill.webp`,
+          image: `/ue-assets/iw/exp-iw-l07-s3-challenge-skill.webp`,
           imageCaption: `Flow lives where challenge meets skill. Too easy = boredom. Too hard = anxiety.`,
           vocab: [
             {
@@ -120,7 +120,7 @@ const INNERWORLD_UE_L07 = {
             `Since flow feels wonderful AND helps you do your best, how can you find it more often? A few gentle keys. First, choose activities you genuinely enjoy and care about, flow comes easiest when you actually want to do the thing. Second, adjust the challenge to match your skill: if you're bored, make it a bit harder (add a goal, a time limit, a tricky variation); if you're overwhelmed, make it a bit easier (break it into smaller steps, slow down). Third, remove distractions, flow needs your full attention, so put away the things that pull your focus away. Fourth, give it time, flow usually takes a little while to settle into, so be patient at the start.`,
             `Understanding flow also helps you understand yourself. When you feel bored, it might mean you're ready for a bigger challenge. When you feel overwhelmed, it might mean you need to build up your skills step by step first. Neither is a problem with YOU, they're just signals about the challenge-skill balance. Sage's gentle teaching: flow is one of life's quiet treasures, those moments of joyful, absorbed focus where you're fully alive and doing what you love. The more you understand it, the more you can invite it into your days. And here's something beautiful: the path to more flow is also the path of growth, because staying in flow means continually stretching your skills. Doing what you love, growing a little each time, and losing yourself happily in the doing. That's a wonderful way to live.`,
           ],
-          image: `/ue-assets/iw/l07-s4-find-flow.webp`,
+          image: `/ue-assets/iw/exp-iw-l07-s4-find-flow.webp`,
           imageCaption: `Find flow: do what you love, match the challenge, remove distractions, be patient.`,
           vocab: [
             {

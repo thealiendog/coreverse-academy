@@ -27,7 +27,7 @@ const INNERWORLD_UE_L19 = {
           guideText: `Welcome back, {name}. Sage here. Today we explore one of the most fascinating and honestly strange areas of all science: QUANTUM PHYSICS, the study of how the tiniest pieces of reality actually behave. What scientists have discovered down there will sound impossible at first, but it's all measured, proven, real. And there's a deeper question that scientists and philosophers are still actively exploring: how does CONSCIOUSNESS (your awareness, your mind) connect to this strange quantum world? Today we'll look at what's settled science, what's still being explored, and how to think critically about it all. Take a slow, curious breath, and let's begin.`,
           headline: `Quantum Consciousness: An Introduction`,
           subtitle: `Real quantum science, the observer effect, and what's still being explored`,
-          visual: `/ue-assets/iw/l19-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l19-welcome.webp`,
         },
 
         {
@@ -39,7 +39,7 @@ const INNERWORLD_UE_L19 = {
             `QUANTUM PHYSICS is the science of how the TINIEST pieces of reality behave, the particles inside atoms, like electrons and photons (particles of light). And here's the wild truth: the quantum world doesn't follow the rules of our everyday experience. Two of its strangest, fully proven findings: SUPERPOSITION (a particle can exist in multiple states or "possibilities" at once until something interacts with it, like being in two places at the same time), and ENTANGLEMENT (two particles can become connected so that measuring one INSTANTLY affects the other, no matter how far apart they are, across a room or across galaxies).`,
             `These aren't science fiction. They're measured every day in laboratories around the world, and they form the foundation of modern technology, lasers, MRI machines, computer chips, GPS, all rely on quantum physics being TRUE. Even Einstein found entanglement so strange he called it "spooky action at a distance," but the science is settled. The quantum world really is this weird. Reality, at its deepest measured level, doesn't behave the way our common sense expects. That alone is one of the most amazing scientific discoveries of the last hundred years, and it raises huge questions about what reality actually IS.`,
           ],
-          image: `/ue-assets/iw/l19-s1-quantum.webp`,
+          image: `/ue-assets/iw/exp-iw-l19-s1-quantum.webp`,
           imageCaption: `Quantum physics: superposition and entanglement. Real, measured, foundation of modern tech.`,
           vocab: [
             {
@@ -64,7 +64,7 @@ const INNERWORLD_UE_L19 = {
             `Now here's one of the strangest, most-discussed findings in all of science: the OBSERVER EFFECT. In quantum experiments, scientists have found that the act of OBSERVING or MEASURING a quantum particle actually CHANGES its behavior. When no one is looking, an electron can exist in superposition (multiple possibilities at once). The moment it's observed or measured, it "collapses" into one specific state. This is real. It's been demonstrated in countless experiments, and it's a settled part of quantum mechanics. The famous "double-slit experiment" is the classic example, and physics students study it in every university.`,
             `Here's where it gets genuinely interesting: scientists still don't fully agree on WHY this happens. What does "observation" mean? Does it require a conscious mind, or just any physical interaction? Some physicists think observation is purely mechanical, the measuring instrument bumps the particle. Others have wondered whether CONSCIOUSNESS itself plays some role. This is one of the biggest unresolved questions in physics, and it has fascinated scientists, philosophers, and curious minds for nearly a century. What we know for sure is this: at the deepest measured level of reality, the act of observing seems to interact with what's observed. The line between mind and matter is far less clear than people once thought.`,
           ],
-          image: `/ue-assets/iw/l19-s2-observer.webp`,
+          image: `/ue-assets/iw/exp-iw-l19-s2-observer.webp`,
           imageCaption: `The observer effect: observing a quantum particle changes its behavior. Real, settled, still mysterious.`,
           vocab: [
             {
@@ -89,7 +89,7 @@ const INNERWORLD_UE_L19 = {
             `Now, an important honest moment. Mainstream physics doesn't currently say "your thoughts directly shape reality at the quantum level." That's a leap beyond what's settled, and any time you see someone claim that with certainty, they're going beyond the evidence. BUT, and this is the exciting part, serious scientists are actively exploring deeper questions about how consciousness and physics might connect. Sir ROGER PENROSE (a famous physicist who won the Nobel Prize) and Dr. STUART HAMEROFF have proposed a theory that consciousness might involve quantum processes inside the brain. Physicist HENRY STAPP has written extensively about how observation and mind might be more deeply linked to physical reality than mainstream physics currently accounts for.`,
             `These ideas are at the FRONTIER of science. They're not pseudoscience, and they're not settled either. They're real scientists, doing real research, asking real questions that haven't been resolved yet. The honest answer is: we don't know yet how deep the consciousness-reality connection goes. Some scientists think it's profound; others think the observer effect has nothing to do with conscious minds. Both are taking the science seriously. What's exciting is that this is one of the most active questions in physics, neuroscience, and philosophy right now. You're growing up in an era where one of humanity's biggest questions, "what is the relationship between mind and matter?", is being actively explored with the most powerful tools we've ever had. Stay curious. Stay honest. Real frontier science is more amazing than any oversimplified version.`,
           ],
-          image: `/ue-assets/iw/l19-s3-frontier.webp`,
+          image: `/ue-assets/iw/exp-iw-l19-s3-frontier.webp`,
           imageCaption: `Frontier: serious scientists exploring how mind and quantum reality might connect. Not settled.`,
           vocab: [
             {
@@ -114,7 +114,7 @@ const INNERWORLD_UE_L19 = {
             `So how does any of this connect to the practices you've been learning? Beautifully, and honestly. Even without resolving the deepest quantum-consciousness questions, here's what we DO know. Real, settled science (epigenetics, neuroplasticity, the RAS, heart-brain coherence, placebo research) already shows that mind and body and reality are far more deeply connected than people thought a generation ago. The DIRECTION the science is pointing is consistent with what wisdom traditions have taught for thousands of years: consciousness matters, inner state shapes experience, the line between "inner" and "outer" is fuzzier than we thought.`,
             `Whatever the deepest layer turns out to be (quantum, classical, something we haven't discovered yet), the practices work. Manifestation, meditation, heart coherence, identity work, gratitude, all backed by science we have today. And there may be more to it than science can yet measure. That possibility is exciting, not scary. Sage's gentle teaching: in a world full of bold claims about "quantum manifestation" and "quantum healing," your job is to stay both OPEN and CRITICAL. Open, because reality at its deepest level is genuinely strange, and consciousness genuinely matters, real scientists are studying it. Critical, because lots of people misuse quantum words to sell ideas that have nothing to do with quantum physics. Believe the science we have. Be curious about the frontier. Don't accept claims just because they sound fancy. That's how a clear, honest, science-loving conscious person walks through the world. And that person is the version of you we're growing toward.`,
           ],
-          image: `/ue-assets/iw/l19-s4-meaning.webp`,
+          image: `/ue-assets/iw/exp-iw-l19-s4-meaning.webp`,
           imageCaption: `Stay open AND critical. Believe the science, be curious about the frontier, question fancy claims.`,
           vocab: [
             {

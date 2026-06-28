@@ -32,7 +32,7 @@ const INNERWORLD_UE_L02 = {
           guideText: `Welcome back, {name}. Sage here. Last time, you learned that your emotions come from your remarkable brain. Today I want to share one of the most hopeful, empowering truths in all of science: your brain is NOT fixed. You can actually change it, shape it, and strengthen it, throughout your entire life. This means you are never "stuck" being who you are today. The way you think, feel, and respond can all grow and improve. This amazing ability has a name: NEUROPLASTICITY. By the end of today, you'll understand how you can shape your own mind. Take a breath, and let's begin.`,
           headline: `Neuroplasticity`,
           subtitle: `The hopeful science: you can shape your own brain`,
-          visual: `/ue-assets/iw/l02-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l02-welcome.webp`,
         },
 
         {
@@ -44,7 +44,7 @@ const INNERWORLD_UE_L02 = {
             `For a long time, people believed the brain stopped changing after childhood, that you were simply born with a certain brain and stuck with it. We now know this is WRONG. Your brain has a remarkable ability called NEUROPLASTICITY: the power to change, grow, and rewire itself throughout your entire life. The word comes from "neuro" (brain) and "plastic" (able to be shaped). Your brain is a bit like soft clay that's always being gently molded by everything you do, think, and experience.`,
             `This happens through your brain's billions of cells, called NEURONS, and the connections between them. Every time you learn something, practice a skill, or even think a thought, the connections between your neurons physically change. Connections you use a lot grow STRONGER and faster. Connections you rarely use grow weaker and may fade away. In a very real, physical sense, your brain is constantly being reshaped by how you use it. You are, quite literally, building your own brain through what you do and think each day. That's not a metaphor. It's biology.`,
           ],
-          image: `/ue-assets/iw/l02-s1-always-changing.webp`,
+          image: `/ue-assets/iw/exp-iw-l02-s1-always-changing.webp`,
           imageCaption: `Neuroplasticity: your brain is like clay, reshaped by what you do and think.`,
           vocab: [
             {
@@ -69,7 +69,7 @@ const INNERWORLD_UE_L02 = {
             `Here's how the rewiring actually works, in a simple phrase scientists love: "neurons that fire together, wire together." When two neurons activate at the same time, again and again, the connection between them gets stronger, like a path being worn between them. The more often they fire together, the easier and faster it becomes for the signal to travel that path. This is how learning physically happens in your brain. A new skill that feels hard at first (because the path is faint) becomes easier with practice (because the path grows strong).`,
             `Think of it like a trail through a forest. The first time you walk a new route, it's slow and difficult, pushing through thick brush. But each time you walk it, the path becomes clearer and easier. Walk it enough, and it becomes a smooth, well-worn trail you can travel almost without thinking. Your brain works the same way: repeated practice turns a difficult new skill into an easy, automatic one by strengthening the neural pathway. This is why practice works, and why "I can't do it yet" is so much truer than "I can't do it." The pathway is simply still being built.`,
           ],
-          image: `/ue-assets/iw/l02-s2-fire-together.webp`,
+          image: `/ue-assets/iw/exp-iw-l02-s2-fire-together.webp`,
           imageCaption: `Neurons that fire together wire together: practice wears a smooth trail in your brain.`,
           vocab: [
             {
@@ -94,7 +94,7 @@ const INNERWORLD_UE_L02 = {
             `Neuroplasticity isn't only about learning school skills like math or music. It shapes your HABITS, your moods, and even your personality. Whatever you practice, you get better at, because you're strengthening those brain pathways. If you practice worrying, your brain gets better at worrying. If you practice gratitude, your brain gets better at noticing good things. If you practice a calming breath when upset, that calming response grows stronger over time. This is incredibly important: you are training your brain all the time, whether you mean to or not, through what you repeatedly do and think.`,
             `This gives you real power. It means you can deliberately shape your own brain in the directions you want. Want to become calmer? Practice calming. Want to be more confident? Practice the thoughts and actions of confidence. Want to be kinder, braver, or more focused? Practice those things, and your brain will gradually rewire to make them more natural. It takes repetition and patience (pathways don't form overnight), but it absolutely works. The habits you build today are quite literally shaping the brain (and the person) you'll have tomorrow. You're not just living your life; you're designing your own mind.`,
           ],
-          image: `/ue-assets/iw/l02-s3-habits.webp`,
+          image: `/ue-assets/iw/exp-iw-l02-s3-habits.webp`,
           imageCaption: `Whatever you practice, you strengthen. Your habits shape the brain you'll have tomorrow.`,
           vocab: [
             {
@@ -119,7 +119,7 @@ const INNERWORLD_UE_L02 = {
             `Understanding neuroplasticity leads to one of the most important attitudes you can have: a GROWTH MINDSET. This means believing that your abilities can GROW with effort and practice, because (as you now know) they literally can. The opposite is a "fixed mindset," believing you're simply born good or bad at things and can't change. Science is clear: the growth mindset is closer to the truth, because your brain really does change with practice. The way you THINK about your own abilities actually affects how much you grow.`,
             `One tiny word captures the whole idea: "YET." Instead of "I can't do this," you can say "I can't do this YET." That little word changes everything, because it's TRUE. You can't do it yet, because the brain pathway is still being built. With practice, you will. So when something feels hard, remember: that struggle is the feeling of your brain LITERALLY rewiring itself and growing stronger. Difficulty isn't a sign you can't; it's a sign you're building something new. Sage's gentle teaching: be patient and kind with yourself as you grow. You are not fixed. You are a work in progress, with the remarkable power to shape your own mind, one thought, one practice, one day at a time. That is a beautiful and hopeful truth to carry with you.`,
           ],
-          image: `/ue-assets/iw/l02-s4-yet.webp`,
+          image: `/ue-assets/iw/exp-iw-l02-s4-yet.webp`,
           imageCaption: `The power of "yet": struggle is the feeling of your brain rewiring and growing.`,
           vocab: [
             {

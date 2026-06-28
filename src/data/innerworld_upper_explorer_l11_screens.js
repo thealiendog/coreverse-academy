@@ -37,7 +37,7 @@ const INNERWORLD_UE_L11 = {
           guideText: `Welcome back, {name}. Sage here. Today we go deeper into one of the most exciting areas of modern science: how your thoughts and feelings actually CHANGE your brain, your body, and even which parts of your genes turn on. We met Dr. JOE DISPENZA briefly in our manifestation lesson. Today he becomes our teacher. Along with him, we'll meet another remarkable scientist named Dr. BRUCE LIPTON. The picture they paint together is extraordinary: you have far more influence over who you become than people once believed. Take a slow, calm breath, and let's explore together.`,
           headline: `Dr. Joe Dispenza for Kids`,
           subtitle: `How thoughts truly become things, with real science to back it up`,
-          visual: `/ue-assets/iw/l11-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l11-welcome.webp`,
         },
 
         {
@@ -49,7 +49,7 @@ const INNERWORLD_UE_L11 = {
             `Dr. JOE DISPENZA is a neuroscientist and researcher who has spent decades studying something fascinating: how MEDITATION combined with ELEVATED EMOTION measurably changes the brain and body. His team uses brain scans, heart monitors, and other scientific tools to study what happens in real people doing real practice. They've documented results that surprise scientists, people creating real changes in their health, their wellbeing, and even their lives. Some of these results science is still working to fully explain. That's exciting, that's how cutting-edge science always works.`,
             `Dispenza isn't alone. He's part of a GROWING field with thousands of studies and many researchers exploring how mind, body, and reality connect. His big message is hopeful and practical: you're not a fixed person with a fixed brain and a fixed body. You can become a NEW version of yourself, on purpose, by deliberately changing what you think, feel, and pay attention to. The methods he teaches are based on real neuroscience, and they're being practiced by people all over the world with remarkable results. Today we'll learn the core of what he teaches, in a way you can actually use.`,
           ],
-          image: `/ue-assets/iw/l11-s1-who-is.webp`,
+          image: `/ue-assets/iw/exp-iw-l11-s1-who-is.webp`,
           imageCaption: `Dr. Joe Dispenza: neuroscientist studying how meditation + emotion change brain and body.`,
           vocab: [
             {
@@ -74,7 +74,7 @@ const INNERWORLD_UE_L11 = {
             `Here's the heart of Dispenza's discovery, and it's beautiful. Remember from our manifestation lesson that your brain often can't tell the difference between something you vividly imagine and something you actually experience? Dispenza's work shows what to DO with this. If you spend time each day vividly imagining yourself as the FUTURE version of you, the kinder, calmer, more confident, more capable you, AND if you generate genuine elevated emotion (gratitude, joy, love) while you imagine it, your brain begins forming new pathways for THAT person. Your body chemistry shifts. Cells respond. You begin BECOMING that version before anything outside has changed.`,
             `Dispenza emphasizes something important: this works best when you combine your BRAIN and your HEART. Real research (which we'll explore deeply in L16) shows that the heart isn't just a pump. It's a powerful organ that, when in a state called COHERENCE with the brain, profoundly affects the whole body. Elevated emotion connects them. When you genuinely feel love, gratitude, or joy while you visualize, your heart and brain start working together in coherence, and the rehearsal lands more deeply. So real Dispenza practice isn't cold mental imagining. It's warm, full-bodied, feeling-rich rehearsal of the future you. The thinking AND the feeling, together.`,
           ],
-          image: `/ue-assets/iw/l11-s2-rehearse.webp`,
+          image: `/ue-assets/iw/exp-iw-l11-s2-rehearse.webp`,
           imageCaption: `Rehearse the future you, with vivid imagining + elevated emotion. Brain + heart together.`,
           vocab: [
             {
@@ -99,7 +99,7 @@ const INNERWORLD_UE_L11 = {
             `Dispenza's most famous book is called "Breaking the Habit of Being Yourself," and that phrase is the key to his whole framework. Here's what he means. Most people, without realizing it, wake up each morning and repeat the SAME thoughts, the SAME feelings, and the SAME reactions they had yesterday. Because of neuroplasticity (L02) and the subconscious (L04), repeating the same patterns daily keeps producing the same brain, the same body chemistry, and the same kind of life. We become a HABIT of who we've always been. And then we wonder why nothing changes.`,
             `Real change requires deliberately INTERRUPTING that loop. Through meditation and rehearsal, you spend time each day NOT as your familiar old self, but as the new self you're growing toward. You feel the new emotions, hold the new thoughts, picture the new behaviors. Over time, the old default fades and the new self becomes who you actually ARE. This applies to limiting beliefs (L03), harsh self-talk (L05), reactive patterns, even physical habits. You're not stuck. The brain you have, the moods you have, the reactions you have, were practiced into existence. You can practice new ones in. That's not wishful thinking. It's how the brain actually works, applied on purpose.`,
           ],
-          image: `/ue-assets/iw/l11-s3-breaking-habit.webp`,
+          image: `/ue-assets/iw/exp-iw-l11-s3-breaking-habit.webp`,
           imageCaption: `We become a habit of who we've always been. Real change interrupts that loop.`,
           vocab: [
             {
@@ -124,7 +124,7 @@ const INNERWORLD_UE_L11 = {
             `Now meet another remarkable scientist: Dr. BRUCE LIPTON, a cell biologist who spent his career studying CELLS. Here's what he and many other scientists have shown, and it's revolutionary: your genes are NOT a fixed destiny. The field that studies this is called EPIGENETICS, and it shows that which genes are TURNED ON or OFF depends on signals from your environment, your nutrition, your stress, your relationships, AND your thoughts and feelings. Cells respond to your perception of life. So your inner state isn't just changing your mood, it's signaling your body which biological possibilities to activate.`,
             `Think about what this means. The genes you inherited give you possibilities, like a piano with many keys. Which "songs" get played depends on what gets pressed, and what gets pressed depends partly on the messages your body receives from your mind. Chronic stress, fear, and limiting beliefs send one set of signals (often activating genes connected to inflammation, illness, and stuck patterns). Calm, gratitude, love, and elevated emotion send a very different set of signals (often activating genes connected to health, healing, and growth). This isn't fringe science. Epigenetics is a major, well-established field with thousands of studies, taught in medical schools around the world. It's one of the deepest places where consciousness and biology meet. Sage's teaching: your thoughts and feelings reach into your cells. Your inner world is shaping your biology, every day. That's both an enormous gift and a real responsibility. Use it kindly, especially with yourself.`,
           ],
-          image: `/ue-assets/iw/l11-s4-epigenetics.webp`,
+          image: `/ue-assets/iw/exp-iw-l11-s4-epigenetics.webp`,
           imageCaption: `Epigenetics: which genes turn on depends on environment, stress, and thoughts and feelings.`,
           vocab: [
             {

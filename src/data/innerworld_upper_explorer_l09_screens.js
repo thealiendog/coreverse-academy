@@ -32,7 +32,7 @@ const INNERWORLD_UE_L09 = {
           guideText: `Welcome back, {name}. Sage here. Last time we explored manifestation, and at the end I said the foundation of all of this is your FOCUS. Today we explore that foundation directly. Your attention, where you point your mind, is one of the most powerful forces you have. It shapes your brain, your feelings, your skills, and what you create. And here's the surprising thing: most people use their attention without even realizing how precious it is. Today we change that. Take a calm, focused breath, and let's begin.`,
           headline: `The Power of Focus and Attention`,
           subtitle: `Where you point your mind shapes your whole life`,
-          visual: `/ue-assets/iw/l09-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l09-welcome.webp`,
         },
 
         {
@@ -44,7 +44,7 @@ const INNERWORLD_UE_L09 = {
             `ATTENTION is your mind's ability to choose what to focus on, out of the millions of things happening around you and inside you, right now. Notice this: as you read these words, your eyes are sending information to your brain, but your ears are also picking up sounds, your skin is feeling temperature and texture, your body is feeling itself sitting, and a hundred other inputs are coming in all the time. Yet you can read this sentence because your attention has gathered itself HERE, on these words, while the rest fades into the background. That gathering is attention.`,
             `Your attention is like a SPOTLIGHT in a dark room. Wherever you point it, that part of your world lights up vividly, while everything outside the beam falls into darkness. The thing you focus on becomes your reality in that moment, because it's the thing you're actually experiencing. This is huge: you can't experience everything happening at once, you can only experience what you focus on. So what you choose to focus on, moment by moment, day by day, IS your life. Where attention goes, life goes.`,
           ],
-          image: `/ue-assets/iw/l09-s1-spotlight.webp`,
+          image: `/ue-assets/iw/exp-iw-l09-s1-spotlight.webp`,
           imageCaption: `Attention is a spotlight. What you focus on lights up; everything else fades.`,
           vocab: [
             {
@@ -69,7 +69,7 @@ const INNERWORLD_UE_L09 = {
             `Here's why attention is so powerful: where you focus shapes your BRAIN, your FEELINGS, your SKILLS, and the OPPORTUNITIES you notice. Remember neuroplasticity? Whatever you give your attention to, the connections for that grow stronger. Focus on something hard, and the skill pathway strengthens. Focus on a worry, and the worry pathway strengthens. Focus on gratitude, and the gratitude pathway strengthens. You are quite literally BUILDING your brain through what you repeatedly pay attention to. Attention is the tool that shapes who you become.`,
             `Your attention also activates the RETICULAR ACTIVATING SYSTEM (we'll explore it deeply in L15). The instant something becomes important to you, your RAS begins filtering the world to show you that thing everywhere: opportunities, ideas, resources, even other people who might help. So what you focus on doesn't just shape you on the inside, it changes what you NOTICE on the outside. This is one of the real engines behind manifestation. Because attention is this powerful, it's also incredibly precious. Every moment, you're choosing where to spend it. Spend it wisely.`,
           ],
-          image: `/ue-assets/iw/l09-s2-precious.webp`,
+          image: `/ue-assets/iw/exp-iw-l09-s2-precious.webp`,
           imageCaption: `Attention shapes brain, feelings, skills, and what you notice. Spend it wisely.`,
           vocab: [
             {
@@ -94,7 +94,7 @@ const INNERWORLD_UE_L09 = {
             `Now, the modern world is designed to STEAL your attention. Notifications, ads, short videos, endless feeds, all engineered to grab your spotlight and keep flicking it around. This isn't an accident, it's literally how those products make money. And here's the cost most people don't realize: every time your attention is yanked away, even for a few seconds, it takes real effort and time to gather it back. Scientists call this an ATTENTION RESIDUE: your mind doesn't switch cleanly. A piece of it stays on the old thing while you try to focus on the new one. Constant switching makes you feel scattered, tired, and like you're "busy" without ever doing your best work.`,
             `This matters because a scattered spotlight can't light anything brightly. Skill building, real learning, deep enjoyment of an activity, and the powerful state of FLOW (last lesson's topic, remember?) all require sustained, gathered attention. Many people today have lost the experience of deep, undivided focus, and with it they've lost much of their power to create, to think clearly, and to fully enjoy what they're doing. Becoming aware of how distractible the modern world wants you to be, and choosing to defend your attention, is one of the most important skills of your generation. Your attention is genuinely worth protecting.`,
           ],
-          image: `/ue-assets/iw/l09-s3-distraction.webp`,
+          image: `/ue-assets/iw/exp-iw-l09-s3-distraction.webp`,
           imageCaption: `Distraction costs more than you think. Switching scatters your spotlight.`,
           vocab: [
             {
@@ -119,7 +119,7 @@ const INNERWORLD_UE_L09 = {
             `The wonderful news: focus is a SKILL, and like any skill, it gets stronger with practice (neuroplasticity, again). A few gentle keys to building it. First, choose ONE thing at a time and give it your full spotlight. Multitasking is usually fast switching, and it makes you worse at everything. Second, REMOVE distractions before you start, put devices in another room, close extra tabs, ask for quiet time. You can't out-willpower a constantly buzzing phone, but you can outsmart it by setting up your space well. Third, when your mind wanders (and it will, that's normal), GENTLY bring it back. Each gentle return is like a rep at the gym for your focus muscle.`,
             `Fourth, practice MINDFULNESS and meditation, which we'll explore deeply. These are direct training for attention. Even five minutes a day of quietly focusing on your breath grows your focus muscle measurably. Fifth, get curious about what you're focusing ON. Boredom often means you haven't looked closely enough; almost anything becomes interesting under sustained attention. Sage's gentle teaching: in a world trying to scatter you, choosing where to point your spotlight is a kind of quiet power. Strong focus lets you learn faster, do your best work, enjoy your life more deeply, and create what you intend. Protect your attention. Direct it on purpose. Where you focus, your whole life follows.`,
           ],
-          image: `/ue-assets/iw/l09-s4-strengthen.webp`,
+          image: `/ue-assets/iw/exp-iw-l09-s4-strengthen.webp`,
           imageCaption: `Focus is a skill: one thing at a time, remove distractions, gently return, practice, get curious.`,
           vocab: [
             {

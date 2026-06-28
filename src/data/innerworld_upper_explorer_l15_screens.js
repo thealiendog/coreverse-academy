@@ -28,7 +28,7 @@ const INNERWORLD_UE_L15 = {
           guideText: `Welcome back, {name}. Sage here. Today we go deep on something we've been hinting at all subject. A real part of your brain that quietly decides what you NOTICE in the world, out of all the millions of things around you. It's called the RETICULAR ACTIVATING SYSTEM, or RAS for short. And once you understand how it works, you'll see why "you see what you look for" isn't just a saying. It's real neuroscience. Even better, you can DELIBERATELY program your RAS to start noticing what helps you. Take a slow, curious breath, and let's begin.`,
           headline: `The Reticular Activating System`,
           subtitle: `Your brain's filter, and how to deliberately program it`,
-          visual: `/ue-assets/iw/l15-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l15-welcome.webp`,
         },
 
         {
@@ -40,7 +40,7 @@ const INNERWORLD_UE_L15 = {
             `Right now, your brain is being flooded with information. Roughly ELEVEN MILLION pieces of information are hitting your senses every second, sights, sounds, smells, body sensations, all at once. But your conscious mind can only handle about FORTY of those pieces at a time. Everything else gets filtered OUT before you ever notice it. That filtering is done by a real part of your brain called the RETICULAR ACTIVATING SYSTEM (RAS). It's a small bundle of neurons near the base of your brain that decides, moment by moment, what gets through to your awareness and what gets ignored.`,
             `Without your RAS, you'd be totally overwhelmed in seconds. With it, you can actually function. The RAS is one of the most important and least-known parts of your brain, and it shapes your experience of EVERYTHING. The big question is: how does it decide what to let through? It doesn't randomly pick. It uses a smart filter based on what matters to YOU. And here's the wild part: you can change what it considers important. That's what this whole lesson is about. The most powerful filter in your brain is yours to direct.`,
           ],
-          image: `/ue-assets/iw/l15-s1-filter.webp`,
+          image: `/ue-assets/iw/exp-iw-l15-s1-filter.webp`,
           imageCaption: `11 million bits per second hitting your senses. Your RAS decides what reaches you.`,
           vocab: [
             {
@@ -65,7 +65,7 @@ const INNERWORLD_UE_L15 = {
             `Here's the most famous example of the RAS in action, and you've probably experienced it. Imagine your family is thinking about buying a certain kind of car, say a blue minivan. As soon as you start focusing on it, you SUDDENLY see blue minivans everywhere on the road. Every drive, you spot them. It feels like the world has filled with blue minivans overnight! But here's the truth: those minivans were ALWAYS there. You just didn't notice them before. The moment your RAS got the message that "blue minivans matter to us now," it started letting them through your filter. Same world, completely different experience.`,
             `This is how the RAS works. It pays close attention to whatever you've signaled is IMPORTANT, your goals, your interests, your fears, and yes, your beliefs. Then it starts showing you that thing everywhere. Decide you want a certain shoe brand? You start spotting that logo everywhere. Worried about getting sick? You start noticing every cough and sniffle around you. Excited about a new hobby? You start hearing about it constantly. The world didn't change. Your filter did. This is why two people walking the same street can have completely different experiences of it. Their RAS is letting through different things.`,
           ],
-          image: `/ue-assets/iw/l15-s2-new-car.webp`,
+          image: `/ue-assets/iw/exp-iw-l15-s2-new-car.webp`,
           imageCaption: `The "new car" effect: focus on something, and your RAS starts spotting it everywhere.`,
           vocab: [
             {
@@ -90,7 +90,7 @@ const INNERWORLD_UE_L15 = {
             `Now here's where it gets really powerful, and connects to so much of what we've explored. Your BELIEFS about yourself and the world are some of the strongest signals your RAS uses. If you believe "people don't like me" (limiting belief, L03), your RAS will quietly filter the world to show you EVIDENCE that supports it. Someone didn't say hi this morning? You notice. Someone gave a quick look? You notice. Meanwhile, the friend who actually smiled at you, the kid who waved, the teacher who asked how you were doing, all that gets filtered out. Same school day, but your RAS made it look like the limiting belief was true.`,
             `The opposite is just as real. A kid with the empowering belief "I'm growing and improving" will have a RAS that filters for EVIDENCE of growth, the small wins, the moments of getting better, the kind people who help. Same day at school, completely different filter, completely different reality experienced. This is one of the biggest reasons limiting beliefs feel so "true" and empowering beliefs feel so possible. They both program your RAS, and your RAS then SHOWS you a world that matches. This isn't your imagination. It's literal neuroscience. Your beliefs shape your filter, and your filter shapes your experience.`,
           ],
-          image: `/ue-assets/iw/l15-s3-beliefs.webp`,
+          image: `/ue-assets/iw/exp-iw-l15-s3-beliefs.webp`,
           imageCaption: `Beliefs program your RAS. Your RAS then shows you a world that matches.`,
           vocab: [
             {
@@ -115,7 +115,7 @@ const INNERWORLD_UE_L15 = {
             `Now the practical part. Since your RAS responds to what you signal as IMPORTANT, you can deliberately program it. Three real ways. First, GET CLEAR. Decide what you want to start noticing more in your life (opportunities to grow, evidence of kindness, your own progress, signs of safety). Vague signals don't program the RAS, clarity does. Second, FOCUS on it daily. Visualize what you want, journal about it, talk about it. Each focused moment is a vote to your RAS for "this matters, show me this."`,
             `Third, ASK BETTER QUESTIONS. Your RAS works like a search engine: it gives you answers to whatever you keep asking. If you keep asking "why does this always happen to me?" your RAS will dutifully filter for evidence of that. If you start asking "what's working today?" or "where is kindness showing up?" your RAS will start filtering for THOSE answers. The questions you ask, especially the ones you repeat, are some of the strongest RAS programming there is. Sage's gentle teaching: in many ways, you don't experience the world as it IS. You experience the world as your RAS shows it to you. And your RAS shows you what you've trained it to look for. Train it gently, with empowering beliefs, clear focus, and better questions. You will literally start to live in a different-feeling world, with the same outside circumstances. That is real, science-backed power.`,
           ],
-          image: `/ue-assets/iw/l15-s4-reprogram.webp`,
+          image: `/ue-assets/iw/exp-iw-l15-s4-reprogram.webp`,
           imageCaption: `Re-program your RAS: get clear, focus daily, ask better questions.`,
           vocab: [
             {

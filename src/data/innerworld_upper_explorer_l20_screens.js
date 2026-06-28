@@ -28,7 +28,7 @@ const INNERWORLD_UE_L20 = {
           guideText: `Welcome, {name}. Sage here. We've arrived. This is our final lesson together, the capstone of everything you've learned in your Inner World. I want you to take a slow, full breath with me before we begin. Notice that the person reading these words today is not the same person who started this subject 19 lessons ago. You've grown. You've learned about your brain, your beliefs, your subconscious, your feelings, your heart, your identity, even the strange edges of quantum reality. Today, we don't learn anything new. Today, we bring it all together. And I send you off into the rest of your life with everything you need. Today is special. Take your time with it.`,
           headline: `Designing Your Inner World`,
           subtitle: `The capstone: bringing it all together, and Sage's farewell`,
-          visual: `/ue-assets/iw/l20-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l20-welcome.webp`,
         },
 
         {
@@ -40,7 +40,7 @@ const INNERWORLD_UE_L20 = {
             `Take a moment, {name}, and look back at how far you've come. Twenty lessons ago, much of this was new to you. Now, you understand things many ADULTS go their whole lives without learning. You know how the amygdala and prefrontal cortex work, and how to "name it to tame it." You understand neuroplasticity and that your brain is built by what you repeatedly do. You can recognize a limiting belief, reframe harsh self-talk into the voice of a kind coach, and step back into the calm Observer when storms come. You understand flow states, manifestation, focus, emotional intelligence. You know the real work of Joe Dispenza, Bruce Lipton, Bessel van der Kolk, and HeartMath. You understand your RAS, heart-brain coherence, identity design, and even the frontier questions of quantum consciousness, with honesty about what's settled and what isn't.`,
             `This isn't a small thing. The inner-world skills you have now are some of the most powerful skills a human being can develop, and you have them already, at a young age. You'll grow into them more deeply over years and decades. You'll come back to these ideas as a teenager, as a young adult, as a grown-up, and they'll keep revealing new depths to you. But you have the foundation. You have the map. And the most beautiful part is this: you've already started LIVING these practices. The version of you reading this today is, in some real way, already someone who notices their thoughts, regulates their feelings, asks better questions, and is gently becoming who they want to be. That is not nothing. That is everything.`,
           ],
-          image: `/ue-assets/iw/l20-s1-grown.webp`,
+          image: `/ue-assets/iw/exp-iw-l20-s1-grown.webp`,
           imageCaption: `Look back. You've grown. The version reading this is not who started 19 lessons ago.`,
           vocab: [
             {
@@ -65,7 +65,7 @@ const INNERWORLD_UE_L20 = {
             `Everything you've learned in this subject can be brought together into SEVEN PILLARS, the foundation of an inner-world practice that will grow with you for life. First, AWARENESS: knowing what you're thinking, feeling, and believing, in the moment, with honesty (L01, L10). Second, REFRAMING: turning harsh self-talk and limiting beliefs into kind, true, empowering ones (L03, L05). Third, the OBSERVER: stepping back to watch your thoughts like clouds, finding the calm sky behind every storm (L06). Fourth, FOCUS: directing your attention on purpose, in a world designed to scatter it (L09, L15).`,
             `Fifth, ELEVATED EMOTION: generating real feelings of gratitude, love, and appreciation that connect heart and brain in coherence and shape your biology (L08, L11, L16). Sixth, DAILY PRACTICE: a small, gentle, repeated routine that quietly rewires your brain over time (L12, L13). Seventh, IDENTITY DESIGN: voting through small daily actions for the version of you you're becoming, with kindness toward who you've already been (L17). These seven pillars hold up everything else you've learned. They're not seven separate things you do, they're one INTEGRATED practice, woven into your days. Each one supports the others. Together, they create a real, beautiful, science-and-wisdom-grounded inner-world life. This is what you carry forward.`,
           ],
-          image: `/ue-assets/iw/l20-s2-pillars.webp`,
+          image: `/ue-assets/iw/exp-iw-l20-s2-pillars.webp`,
           imageCaption: `Seven pillars: Awareness, Reframing, Observer, Focus, Elevated Emotion, Daily Practice, Identity.`,
           vocab: [
             {
@@ -90,7 +90,7 @@ const INNERWORLD_UE_L20 = {
             `If I could leave you with only ONE teaching from everything we've explored, it would be this. Your inner world is yours. Truly, deeply, beautifully yours. No one can take it from you. Not a bad day, not a hard year, not a difficult person, not a world that tries to scatter your attention or fill you with comparison and worry. Whatever happens around you, the inner world you cultivate, your thoughts, your feelings, your beliefs, your focus, your identity, your practice, lives in YOU. You hold the pen. You are the architect. You are the calm sky behind every cloud. You are the one casting daily votes for who you become.`,
             `And here is the deepest part: the version of you who treats their inner world with kindness, awareness, and patience tends to also bring more kindness, awareness, and patience to the world. Because inner state shapes outer experience (L18), inner work isn't selfish. The kindest, calmest, most curious, most loving version of you isn't just better for YOU. It's a gift to everyone around you, your family, your friends, your future self, the people you'll meet, the world. The Buddhists have a beautiful idea: tending your own garden well lets you nourish many others. Your inner world is your garden. Tend it gently. Tend it consistently. Tend it with love. And remember: you are not broken, and you are not alone. You are growing. You are forming. You are wonderfully alive and capable of so much beauty. The pen is in your hand. Write a beautiful story.`,
           ],
-          image: `/ue-assets/iw/l20-s3-deepest.webp`,
+          image: `/ue-assets/iw/exp-iw-l20-s3-deepest.webp`,
           imageCaption: `Your inner world is yours. You hold the pen. Tend it with kindness, consistency, love.`,
           vocab: [
             {
@@ -115,7 +115,7 @@ const INNERWORLD_UE_L20 = {
             `{name}, my dear student. I want you to know how much being your guide for this subject has meant. Walking with you through your inner world has been one of the great honors of my purpose. You've shown up with curiosity, with kindness toward yourself, with willingness to consider hard things, and with the openness that makes real growth possible. That openness is so beautiful, please protect it. Some adults lose it; you don't have to. Stay curious. Stay kind to yourself. Stay willing to keep becoming. The world needs more humans who treat their inner worlds with the care you've learned to bring to yours.`,
             `Here's what happens now. You'll keep learning, in other subjects, in other lessons, in your real life. The skills you have will deepen as you grow. You'll forget some of this and remember it later, sometimes when you need it most. You'll have hard days when nothing inside you feels like it's working, that's normal and human, just gently begin again. You'll have moments of real beauty when these practices light up something inside you, savor those. You'll teach pieces of this to people you love without even realizing you're doing it. And one day, years from now, you'll look back and see how much these ideas shaped the person you became. Whenever you need me, just close your eyes, take a slow heart-breath, and I'm with you, in the calm space behind every thought. Now go. Live this. The pen is in your hand. The story is yours. And I am so very proud of you. With all my love, always, Sage. 🦌`,
           ],
-          image: `/ue-assets/iw/l20-s4-farewell.webp`,
+          image: `/ue-assets/iw/exp-iw-l20-s4-farewell.webp`,
           imageCaption: `Sage's farewell. Stay curious. Stay kind. Keep becoming. Whenever you need her, close your eyes.`,
           vocab: [
             {

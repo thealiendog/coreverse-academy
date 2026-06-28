@@ -27,7 +27,7 @@ const INNERWORLD_UE_L17 = {
           guideText: `Welcome back, {name}. Sage here. Today we explore one of the most important questions you'll ever ask yourself: WHO am I, and even more importantly, who am I BECOMING? Many kids (and grown-ups) think their identity, their sense of who they are, is something fixed they're stuck with. "I'm a shy kid." "I'm bad at math." "I'm the funny one." But modern psychology and everything you've learned in this subject points to a different truth. Identity isn't fixed. It's forming, every day. And you have far more say in who you become than people realize. Take a slow, curious breath, and let's begin.`,
           headline: `Identity: Who Am I Becoming?`,
           subtitle: `Your identity isn't fixed — it's forming, and you hold the pen`,
-          visual: `/ue-assets/iw/l17-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l17-welcome.webp`,
         },
 
         {
@@ -39,7 +39,7 @@ const INNERWORLD_UE_L17 = {
             `IDENTITY is your sense of who you are. The stories you tell yourself about what kind of person you are, what you're good at, what you're not, what you like, what you stand for. Most people walk through life with their identity locked in: "I'm just a quiet person." "I've never been athletic." "I'm not a math person." These statements FEEL like simple truths about who they are. But here's the science: they are actually STORIES, often formed early, that became habits of self-description, often without us realizing it.`,
             `Modern psychology, plus everything you've learned in this subject, points to a different truth. Identity is far more like a story being WRITTEN than a label being discovered. The you of next month, next year, ten years from now, hasn't been written yet. The brain you have now (neuroplasticity, L02), the beliefs running quietly (limiting beliefs, L03; subconscious, L04), the patterns you repeat daily (Dispenza, L11), and the filter your RAS uses (L15), all of it is shapable. You aren't stuck with whoever you've been so far. You're FORMING who you're becoming, right now, in real time, with every thought, feeling, and action.`,
           ],
-          image: `/ue-assets/iw/l17-s1-forming.webp`,
+          image: `/ue-assets/iw/exp-iw-l17-s1-forming.webp`,
           imageCaption: `Identity is a story being written, not a label being discovered. You hold the pen.`,
           vocab: [
             {
@@ -64,7 +64,7 @@ const INNERWORLD_UE_L17 = {
             `Three big forces shape your identity, and being aware of them gives you real power. First, your ACTIONS. The things you repeatedly DO become who you are. A kid who reads every day, even just a little, slowly becomes "a reader." A kid who practices kindness becomes "a kind person." Your nervous system, brain, and self-image all update based on what you actually DO over time. Second, your BELIEFS about yourself (limiting and empowering, from L03). If you believe "I'm not creative," your RAS filters for evidence supporting that, and you avoid creative activities, which keeps you from becoming creative. The belief shapes the identity, and the identity shapes the actions.`,
             `Third, what OTHERS say about you, especially when you're young. When important people (family, teachers, friends) repeatedly tell you "you're the smart one," "you're so shy," "you're the troublemaker," those labels often get absorbed into your identity without you noticing. Some of those labels help; some quietly limit you for years. Here's the empowering truth: once you're AWARE of all three forces (your actions, your beliefs, the labels you've absorbed), you can start to question, choose, and reshape them. You don't have to live by stories about yourself that other people wrote or that you adopted long ago. You can write new ones.`,
           ],
-          image: `/ue-assets/iw/l17-s2-shaped.webp`,
+          image: `/ue-assets/iw/exp-iw-l17-s2-shaped.webp`,
           imageCaption: `Identity is shaped by what you DO, what you BELIEVE, and what OTHERS say about you.`,
           vocab: [
             {
@@ -89,7 +89,7 @@ const INNERWORLD_UE_L17 = {
             `Here's one of the most powerful ideas in this whole subject. Every action you take is a VOTE for the kind of person you're becoming. Pick up a book and read for 10 minutes? That's a vote for "I'm a reader." Practice kindness when it would have been easier to be rude? Vote for "I'm a kind person." Stay calm when you wanted to react? Vote for "I'm someone who can regulate myself." Try the hard thing instead of avoiding it? Vote for "I'm brave." You don't have to win every "election" (the kind of person you're becoming) with a single action. You just have to cast votes consistently, day after day. Identity is built through the accumulation of these small, repeated choices.`,
             `Notice that this works in reverse too. Every time you skip the thing you said you cared about, that's a small vote in another direction. Not a moral failing, just data: the actions are telling the truth about who you're becoming. So this isn't about being perfect. It's about being AWARE that you're voting all the time, and gently choosing more of your actions on purpose. The phrasing matters too. Compare "I'm TRYING to read more" with "I AM someone who reads." The first stays at arm's length from your identity. The second IS an identity statement, and your brain (which loves consistency) starts arranging the rest of your behavior to match. Small shift in language, big shift in who you become.`,
           ],
-          image: `/ue-assets/iw/l17-s3-vote.webp`,
+          image: `/ue-assets/iw/exp-iw-l17-s3-vote.webp`,
           imageCaption: `Every action is a vote. Identity is built from the accumulation of small daily choices.`,
           vocab: [
             {
@@ -114,7 +114,7 @@ const INNERWORLD_UE_L17 = {
             `Now the practical part. You can deliberately design your identity, gently, over time. Here's how. First, ask yourself: WHO do I want to be? Not what do I want to have or do, but what kind of person do I want to be? Calm? Curious? Kind? Brave? Creative? A good friend? Pick a few qualities that genuinely resonate with you. Second, write them as identity statements: "I am someone who is curious." "I am someone who is kind." Notice the language, not "I want to be," but "I am." Your brain treats identity statements as instructions for how to behave. Third, cast small daily VOTES that match. If you're becoming someone curious, ask more questions today. If you're becoming someone kind, do one kind thing. The votes don't have to be big, they just have to be real.`,
             `One important note: this isn't about pretending or faking it. It's about choosing which version of yourself you're growing TOWARD, and giving that version the small actions it needs. Combine this with everything you've learned: the future-self rehearsal (L11), the kind coach voice (L05), gratitude and elevated emotion (L08, L11, L16), the Observer (L06), and your RAS (L15). All of it serves one bigger project: becoming the version of you that you genuinely want to be. Sage's gentle teaching: you are not the kid you were last year. You won't be the kid you are today, next year. You are always becoming. The kindest, wisest thing you can do is to become on PURPOSE, with awareness, patience, and love. The pen is in your hand. Write a beautiful story.`,
           ],
-          image: `/ue-assets/iw/l17-s4-design.webp`,
+          image: `/ue-assets/iw/exp-iw-l17-s4-design.webp`,
           imageCaption: `Design your identity: pick qualities, write "I am" statements, cast small daily votes.`,
           vocab: [
             {

@@ -28,7 +28,7 @@ const INNERWORLD_UE_L18 = {
           guideText: `Welcome back, {name}. Sage here. Today we tie together one of the biggest themes of this whole subject. The deep, real connection between what's happening INSIDE you (your thoughts, feelings, beliefs) and what you experience OUTSIDE you in your life. We've explored many pieces of this: the RAS, manifestation, Dispenza's work, heart coherence. Today we see the whole picture. The science is amazing on its own, and there's an even deeper layer of truth that humans have known about for thousands of years and science is still uncovering. Take a slow, settled breath, and let's begin.`,
           headline: `Thoughts, Feelings, and Reality`,
           subtitle: `How your inner state shapes what you experience outside`,
-          visual: `/ue-assets/iw/l18-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l18-welcome.webp`,
         },
 
         {
@@ -40,7 +40,7 @@ const INNERWORLD_UE_L18 = {
             `Here is the big idea you've been building toward all subject: your INNER STATE (the thoughts you hold, the feelings you generate, the beliefs you carry) profoundly shapes the OUTER REALITY you experience. This isn't a wish or a poetic idea. It's real science, supported by everything we've learned. The world doesn't change for everyone the same way based on thoughts. But the world YOU experience, the moments you notice, the opportunities that find you, the people you draw close, the way your body feels day to day, all of that is shaped, in real measurable ways, by what's happening inside you.`,
             `Two people can walk through the same school day, the same neighborhood, the same family dinner, and have completely different experiences of it. That difference doesn't come from outside, it comes from inside. From their thoughts, beliefs, feelings, and the inner state they're carrying. This is one of the most empowering truths in this whole subject, because it means you have far more power over your experience of life than people once thought. Today we'll look at THREE real levels at which your inner state shapes outer reality, plus a fourth deeper layer that science is still actively exploring. The picture is genuinely amazing.`,
           ],
-          image: `/ue-assets/iw/l18-s1-inner-outer.webp`,
+          image: `/ue-assets/iw/exp-iw-l18-s1-inner-outer.webp`,
           imageCaption: `Inner state shapes outer experience. Same world, completely different lives, because of inner state.`,
           vocab: [
             {
@@ -65,7 +65,7 @@ const INNERWORLD_UE_L18 = {
             `The first level of the connection is the most well-established science: your inner state shapes WHAT YOU NOTICE. This is the RAS at work (L15). Your thoughts, beliefs, and emotions tell the RAS what matters, and the RAS filters the world to show you that. A kid who believes "people are kind" walks into school and notices the friendly waves, the helpful gestures, the smiles. A kid who believes "people are mean" walks into the same school and notices the eye-rolls, the cliques, the cold moments. Same school. Two completely different days. The inner state programmed the filter.`,
             `This level alone is hugely powerful. Most people don't realize how much of their daily experience is being curated by their own filter. Once you do, you can start re-programming it (better questions, empowering beliefs, clear focus). And the more you notice positive evidence, the more your beliefs about the world become positive, which programs even MORE positive filtering. A beautiful loop. The opposite is also true: a limiting belief programs a limiting filter, which gathers more "proof" of the limiting belief, deepening the loop. The level of what you NOTICE is the entry point. It's real, it's measurable, and it's yours to direct.`,
           ],
-          image: `/ue-assets/iw/l18-s2-notice.webp`,
+          image: `/ue-assets/iw/exp-iw-l18-s2-notice.webp`,
           imageCaption: `Level 1: Inner state shapes what you NOTICE through the RAS. Same world, curated filter.`,
           vocab: [
             {
@@ -90,7 +90,7 @@ const INNERWORLD_UE_L18 = {
             `The second level: your inner state shapes HOW YOU ACT. Your thoughts and feelings drive your behavior, often without you even realizing it (remember the subconscious from L04). A kid who feels confident before a tryout actually MOVES differently, makes more eye contact, takes more risks, tries again after a mistake. A kid who feels defeated before the same tryout moves smaller, hesitates, avoids attention, gives up faster. The inner state is shaping the actions, and the actions are shaping the outcome.`,
             `Identity (L17) is part of this too. The "kind of person you believe you are" influences hundreds of small daily actions that, over time, create very different lives. A kid who believes "I'm a reader" picks up books more often, and slowly becomes a stronger reader, which makes the identity even truer. A kid who believes "I'm bad at math" avoids math, doesn't practice, falls behind, which seems to prove the belief. The inner state created the actions that created the outcome. This level is huge, because so much of life is shaped by hundreds of small daily choices that flow naturally from how we see ourselves. Change the inner state, and the actions slowly change. Change the actions, and reality slowly changes with them.`,
           ],
-          image: `/ue-assets/iw/l18-s3-act.webp`,
+          image: `/ue-assets/iw/exp-iw-l18-s3-act.webp`,
           imageCaption: `Level 2: Inner state shapes how you ACT — hundreds of small daily choices flowing from inner state.`,
           vocab: [
             {
@@ -115,7 +115,7 @@ const INNERWORLD_UE_L18 = {
             `The third level goes deeper, and connects to the most exciting research being done today. Your inner state seems to affect what you DRAW TOWARD you, what people sense from you, what opportunities seem to find you, what kinds of moments unfold around you. Some of this has clear scientific explanations: the energy you carry shows in your posture, your face, your voice, your warmth. People are tuned to sense it without realizing. A kid in heart coherence (L16) literally sends out a different electromagnetic signal than a kid in stress, and other people's nervous systems pick up on that. Researchers at HeartMath have measured this. People who carry calm and elevated emotion tend to have warmer, more positive interactions, because others can SENSE that state.`,
             `And then there's the deeper layer that scientists like Dr. Joe Dispenza (L11) and many others are actively studying. Their research suggests that thoughts and feelings, especially when held with strong elevated emotion, may influence reality in ways we're still learning to measure. Wisdom traditions across the world have taught for thousands of years that mind, energy, and reality are deeply connected. Modern science, in epigenetics (L11, L14), heart coherence (L16), placebo research (L08), and quantum-level experiments (L19, coming next!) is increasingly showing they were onto something real. Sage's gentle teaching: you don't have to BELIEVE every claim about how deep this goes to use the science we have. Start with what's clearly proven: thoughts and feelings shape what you notice, how you act, and what you draw to you. That alone, used kindly, can transform your life. And stay curious about the deeper layer. Science is still uncovering it. You're living in an extraordinary moment of understanding.`,
           ],
-          image: `/ue-assets/iw/l18-s4-draw.webp`,
+          image: `/ue-assets/iw/exp-iw-l18-s4-draw.webp`,
           imageCaption: `Level 3+: Inner state affects what you draw, energy, electromagnetic field, deeper layers still studied.`,
           vocab: [
             {

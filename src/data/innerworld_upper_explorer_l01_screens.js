@@ -32,7 +32,7 @@ const INNERWORLD_UE_L01 = {
           guideText: `Hello, {name}. I'm Sage, and I'm so glad you're here. Welcome to Inner World, where we explore something just as fascinating as any galaxy or ocean: the world INSIDE you. Your thoughts, your feelings, your mind. Today we begin gently, with a question you feel every single day but may have never truly understood: what ARE emotions, really? Where do feelings come from? The answer lives in your remarkable brain, and understanding it is the first step to becoming the calm, wise captain of your own inner world. Take a slow breath with me, and let's begin.`,
           headline: `The Science of the Brain and Emotions`,
           subtitle: `Where feelings really come from, and why it matters`,
-          visual: `/ue-assets/iw/l01-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l01-welcome.webp`,
         },
 
         {
@@ -44,7 +44,7 @@ const INNERWORLD_UE_L01 = {
             `Here is something powerful to understand: your emotions are not random, and they are not weaknesses. They are real, physical events happening in your BRAIN and body. When you feel happy, scared, angry, or calm, specific things are happening inside you: chemicals are released, signals fire between brain cells, and your body responds. An emotion is your brain and body's way of reacting to what's happening around you and inside you. Feelings are information, not flaws.`,
             `Emotions exist for a REASON. Over millions of years, they evolved to help keep us safe and connected. Fear helps you avoid danger. Anger can signal that something feels unfair. Happiness draws you toward what's good for you. Sadness can tell you something matters, and helps others know you need support. Even uncomfortable emotions are trying to help you in some way. So the goal of this whole subject isn't to get rid of feelings, that would be impossible and unwise. The goal is to UNDERSTAND them, so they can guide you instead of overwhelm you. That begins with understanding the brain that creates them.`,
           ],
-          image: `/ue-assets/iw/l01-s1-real-events.webp`,
+          image: `/ue-assets/iw/exp-iw-l01-s1-real-events.webp`,
           imageCaption: `Emotions are real brain and body events, evolved to help and inform you.`,
           vocab: [
             {
@@ -69,7 +69,7 @@ const INNERWORLD_UE_L01 = {
             `Your brain has many parts, but for understanding emotions, two are especially important. Deep in the center is a small almond-shaped region called the AMYGDALA. Think of it as your brain's alarm system or emotional guard. It reacts FAST, especially to anything that seems threatening or exciting, triggering emotions like fear or anger in an instant, often before you've even had time to think. It's ancient, quick, and powerful.`,
             `Behind your forehead is a very different part: the PREFRONTAL CORTEX. This is your brain's wise thinker and decision-maker. It handles planning, reasoning, self-control, and calming yourself down. It works more SLOWLY and carefully than the amygdala. Here's the key relationship: the fast amygdala can fire off a big emotion instantly, while the thoughtful prefrontal cortex helps you understand and manage that emotion. Learning to strengthen the connection between these two (letting your wise thinker work WITH your emotional alarm) is one of the most important skills in all of life. And here's encouraging news: your prefrontal cortex is still growing and strengthening all the way into your twenties, which means you can absolutely get better at this.`,
           ],
-          image: `/ue-assets/iw/l01-s2-two-parts.webp`,
+          image: `/ue-assets/iw/exp-iw-l01-s2-two-parts.webp`,
           imageCaption: `The amygdala (fast alarm) and prefrontal cortex (wise thinker) work as a team.`,
           vocab: [
             {
@@ -94,7 +94,7 @@ const INNERWORLD_UE_L01 = {
             `Have you ever been SO angry or scared that you couldn't think clearly, said something you regretted, or felt completely swept away? There's a real brain reason for that. When the amygdala senses a big threat, it can essentially "take over," flooding your body with stress chemicals and temporarily turning DOWN the thinking power of your prefrontal cortex. Some scientists call this "flipping your lid." In that moment, your fast emotional alarm is in charge, and your wise thinker is offline. That's why it's genuinely hard to think clearly when you're extremely upset. It's not a personal failure. It's biology.`,
             `Understanding this changes everything. When you feel a huge wave of emotion, you can recognize: "My amygdala is firing. My thinking brain is having trouble right now." This understanding is the first step to calming down. It also explains why trying to "just think logically" in the heat of a big emotion rarely works. First, the storm in the amygdala needs to settle a little, THEN your prefrontal cortex can come back online. The good news, which we'll explore all through this subject, is that there are real, science-backed ways to help calm your amygdala and bring your wise thinker back. You are not at the mercy of your big feelings. You can learn to work with them.`,
           ],
-          image: `/ue-assets/iw/l01-s3-overwhelming.webp`,
+          image: `/ue-assets/iw/exp-iw-l01-s3-overwhelming.webp`,
           imageCaption: `Big emotions can "flip your lid": the alarm takes over and the thinker goes quiet.`,
           vocab: [
             {
@@ -119,7 +119,7 @@ const INNERWORLD_UE_L01 = {
             `Here's one of the most useful discoveries in brain science, and you can start using it today. When you NAME an emotion you're feeling, you actually help calm it down. Researchers have found that simply putting a feeling into words ("I'm feeling anxious," "I notice I'm frustrated") gently activates your prefrontal cortex and helps quiet the amygdala's alarm. Scientists call this "name it to tame it." Just by accurately labeling what you feel, you shift a little power back to your wise thinker.`,
             `This is why the very first skill in understanding your inner world is building an emotional vocabulary, learning the names of many feelings, not just "good" and "bad." The more precisely you can name what you feel ("disappointed" rather than just "bad," "nervous" rather than just "weird"), the more your thinking brain engages, and the more manageable the feeling becomes. Sage's gentle teaching: your emotions are not your enemies, and they are not in charge of you. They are messengers from your remarkable brain. When you learn to notice them, name them, and understand where they come from, you take the first powerful step toward becoming the calm, wise captain of your own inner world. And that journey starts simply, with a breath and a name.`,
           ],
-          image: `/ue-assets/iw/l01-s4-name-it.webp`,
+          image: `/ue-assets/iw/exp-iw-l01-s4-name-it.webp`,
           imageCaption: `Name it to tame it: putting a feeling into words helps your brain calm it.`,
           vocab: [
             {

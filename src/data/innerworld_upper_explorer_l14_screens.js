@@ -38,7 +38,7 @@ const INNERWORLD_UE_L14 = {
           guideText: `Welcome back, {name}. Sage here. Today's lesson is a little quieter and very important. We're going to talk gently about TRAUMA, what it really is, what it does inside our bodies, and how we HEAL and grow stronger. Almost everyone, at some point, goes through hard things. You may have. Someone you love may have. Today is about understanding all of that with kindness and real science, so it makes sense and so you know there is real hope. Please be especially gentle with yourself in this lesson. Take a slow, soft breath, and let's begin.`,
           headline: `Trauma and Resilience`,
           subtitle: `What hard things do to our bodies, and how we heal and grow`,
-          visual: `/ue-assets/iw/l14-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l14-welcome.webp`,
         },
 
         {
@@ -50,7 +50,7 @@ const INNERWORLD_UE_L14 = {
             `TRAUMA is what happens INSIDE us when something hard overwhelms our nervous system, faster than we can handle it. People often think trauma only means huge events like accidents, loss of someone we love, or being hurt. Those count, absolutely. But trauma can also come from ongoing things, like being bullied, feeling unsafe at home, losing connection with someone important, or living through long stress. There's no contest about which kind "counts." If something overwhelmed your nervous system, it's real, and it deserves care.`,
             `Here's the most important thing to understand: a trauma response is your nervous system trying to PROTECT you. When something hard happens, your body activates ancient survival systems (remember the amygdala from L01?) to keep you safe. That's not weakness, that's a wise body doing its job. Sometimes, after the danger passes, the nervous system stays "switched on," still in protect-mode even when there's no current threat. That's the part that needs gentle help. None of this is your fault. None of this means something is wrong with you. It means your body is human, and it cares so much about keeping you alive that it remembers.`,
           ],
-          image: `/ue-assets/iw/l14-s1-what-is.webp`,
+          image: `/ue-assets/iw/exp-iw-l14-s1-what-is.webp`,
           imageCaption: `Trauma is what happens INSIDE us when something overwhelms the nervous system. Not weakness.`,
           vocab: [
             {
@@ -75,7 +75,7 @@ const INNERWORLD_UE_L14 = {
             `A psychiatrist named Dr. BESSEL VAN DER KOLK wrote a famous book called "The Body Keeps the Score," and the title tells the truth in five words. After hard experiences, the MIND often tries to move on (forget, push it away, "be fine"), but the BODY remembers. The nervous system can stay in survival mode long after the danger is gone. This is why "just thinking your way out of it" usually doesn't work. Trauma isn't only a thought, it's a pattern stored in the body and the nervous system.`,
             `Your nervous system has three main protect-modes. FIGHT (your body gets activated, hot, angry, ready to push back). FLIGHT (your body wants to escape, run, hide, avoid). FREEZE (your body goes still, numb, quiet, far away). All three are wise responses to overwhelming things, your body picks whichever might keep you safe. The trouble is when the nervous system gets "stuck" in one of these even when you're safe now. Stuck-fight can look like big anger and reactivity. Stuck-flight can look like constant anxiety and busyness. Stuck-freeze can look like feeling numb, far away, or like you can't move. Recognizing these is the first step in becoming free of them. None of these are character flaws. They are nervous system patterns, and patterns can be changed (remember neuroplasticity?).`,
           ],
-          image: `/ue-assets/iw/l14-s2-body.webp`,
+          image: `/ue-assets/iw/exp-iw-l14-s2-body.webp`,
           imageCaption: `The body keeps the score. Fight, flight, freeze: protective patterns that can get stuck.`,
           vocab: [
             {
@@ -100,7 +100,7 @@ const INNERWORLD_UE_L14 = {
             `Remember EPIGENETICS from our Dispenza lesson? Dr. Bruce Lipton and many other scientists have shown that signals from our environment, our experiences, and our emotional states reach all the way down to our cells, switching certain genes ON or OFF. Trauma is one of the most powerful of these signals. CHRONIC stress (long-lasting feelings of unsafety, fear, or overwhelm) sends signals that switch on genes linked to inflammation, immune trouble, and stuck patterns. Calm, safety, and connection do the opposite, they switch on genes linked to healing, balance, and growth. Trauma isn't just "in your head." It's in the cells. And gentle healing reaches the cells too.`,
             `Here's an extra layer that science is still understanding: studies suggest that some effects of trauma can be passed down through the generations, through epigenetic changes. Children of people who lived through hard things sometimes carry biological echoes of those experiences. This is NOT a curse or a destiny, it's just biology being honest. The wonderful flip side is just as true: the SAME mechanism means HEALING can also be passed forward. When someone works gently to heal their trauma, that healing affects how they show up for their family, the signals they send to their kids' nervous systems, and yes, even potentially their own epigenetic patterns. Healing is generational, in both directions. That's a real, hopeful insight from cutting-edge science.`,
           ],
-          image: `/ue-assets/iw/l14-s3-cells.webp`,
+          image: `/ue-assets/iw/exp-iw-l14-s3-cells.webp`,
           imageCaption: `Stress switches genes on. Calm switches different ones. Healing reaches the cells too.`,
           vocab: [
             {
@@ -125,7 +125,7 @@ const INNERWORLD_UE_L14 = {
             `Here is the hopeful heart of this lesson. RESILIENCE doesn't mean being unbreakable, never feeling hurt, or "getting over" things quickly. Real resilience is the ability to REPAIR and GROW after hard things, with kindness toward yourself. Trauma can absolutely heal. Nervous systems can settle. Stuck patterns can soften. People who have been through enormous hardship can build deeply meaningful lives. The brain and body have remarkable powers to heal, especially when we support them gently. Things that help: safe relationships, breath and body practices (since trauma lives in the body, healing has to reach the body, not just the mind), meditation, mindful movement, time in nature, creative expression, and the inner-world skills you've been building all subject.`,
             `Now the most important paragraph in this whole lesson. Some things are TOO BIG for a kid (or anyone) to handle alone. Big trauma needs MORE than self-practice. It needs trusted adults, sometimes a therapist or counselor who is trained to help nervous systems heal safely. Asking for that help is one of the BRAVEST and WISEST things a person can do. It is never weak. It is the same courage as setting a broken bone or seeing a doctor when sick. Your nervous system deserves the right kind of care. If something hard is living inside you, or if you don't feel safe, please tell a trusted adult, a parent, teacher, school counselor, family friend. If you don't know who to ask, ask any adult you do trust. Sage's gentle promise: there is real, science-backed help in this world for what hurts. You are not alone. You are not broken. And asking for help is part of the practice.`,
           ],
-          image: `/ue-assets/iw/l14-s4-resilience.webp`,
+          image: `/ue-assets/iw/exp-iw-l14-s4-resilience.webp`,
           imageCaption: `Resilience = repair and grow, with kindness. Asking for help is one of the bravest things.`,
           vocab: [
             {

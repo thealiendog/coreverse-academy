@@ -33,7 +33,7 @@ const INNERWORLD_UE_L10 = {
           guideText: `Welcome back, {name}. Sage here. Today we explore one of the most studied and celebrated ideas in modern psychology: EMOTIONAL INTELLIGENCE, or EQ. Dr. Daniel Goleman identified five core components that together shape how well we understand ourselves, manage our feelings, stay motivated, and connect with other people. Research shows these five skills powerfully shape friendships, wellbeing, leadership, and long-term success. And here's what makes EQ remarkable: unlike IQ, EQ is genuinely learnable. Every lesson in this Inner World series has been building your EQ. Today you'll finally have the whole map.`,
           headline: `Emotional Intelligence: The 5 Components`,
           subtitle: `The five inner skills that shape your friendships, wellbeing, and success`,
-          visual: `/ue-assets/iw/l10-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l10-welcome.webp`,
         },
 
         {
@@ -45,7 +45,7 @@ const INNERWORLD_UE_L10 = {
             `EMOTIONAL INTELLIGENCE (EQ) is the ability to understand and manage emotions — your own and other people's. Dr. Daniel Goleman identified five components that together make up EQ: self-awareness, self-regulation, motivation, empathy, and social skills. These aren't personality traits you're born with. They're skills, built through practice and attention. Decades of research show that people with strong EQ tend to have better friendships, handle stress more effectively, succeed in school and work, and report higher wellbeing. EQ is just as important as academic intelligence — and unlike IQ, it can grow significantly throughout your life.`,
             `Here's what makes EQ special: it works INSIDE and BETWEEN people. Inner EQ (self-awareness, self-regulation, motivation) helps you understand and guide yourself. Outer EQ (empathy and social skills) helps you understand and connect with others. Together, all five components create a powerful inner toolkit. You've already been building EQ in this course. Name it to tame it? That was self-awareness. The Observer lesson? Self-awareness and self-regulation together. Flow states and manifestation? EQ motivation. Today you get the whole picture — the five-part map of emotional intelligence.`,
           ],
-          image: `/ue-assets/iw/l10-s1-what-is-eq.webp`,
+          image: `/ue-assets/iw/exp-iw-l10-s1-what-is-eq.webp`,
           imageCaption: `EQ: five learnable skills that shape how you feel, connect, and grow.`,
           vocab: [
             {
@@ -70,7 +70,7 @@ const INNERWORLD_UE_L10 = {
             `SELF-AWARENESS is the first and most foundational component: knowing what you're feeling, right now, with honesty. It seems simple, but it's a real skill. Many people walk through their days upset, anxious, or frustrated without really knowing what they're feeling — so the feelings just sort of run them. Self-aware people pause and notice. "I'm feeling jealous right now." "I'm feeling anxious about this test." Naming a feeling actually calms the brain (remember "name it to tame it"?). Self-awareness is the foundation every other EQ skill builds on. You can't manage what you don't notice.`,
             `SELF-REGULATION is what you do with the feelings you notice. Not pushing them away, but not letting them sweep you off. Self-regulating doesn't mean having no emotions — it means not letting emotions make all your decisions. A self-regulating kid feels angry when their turn is skipped, but pauses, breathes, and chooses to say "I think it was my turn" instead of yelling. Your prefrontal cortex (the calm, planning part of your brain) can stay in charge even when your amygdala is fired up. Every time you pause between feeling and reacting, you're building the brain circuitry for self-regulation.`,
           ],
-          image: `/ue-assets/iw/l10-s2-awareness-regulation.webp`,
+          image: `/ue-assets/iw/exp-iw-l10-s2-awareness-regulation.webp`,
           imageCaption: `Self-awareness: noticing what you feel. Self-regulation: choosing what you do with it.`,
           vocab: [
             {
@@ -95,7 +95,7 @@ const INNERWORLD_UE_L10 = {
             `MOTIVATION in EQ isn't about being pumped up by prizes. It's about being driven by something that comes from inside you — what scientists call INTRINSIC MOTIVATION. Real interest in what you're doing. A sense of purpose. A value you care about. People with high EQ motivation keep going through setbacks not because they have to, but because their "why" is built into them. Research shows that intrinsic motivation is far more powerful and lasting than chasing external rewards alone. And RESILIENCE is closely linked: resilient people feel setbacks but find a way to keep going. Every challenge you work through actually grows your resilience.`,
             `What does EQ motivation look like from the inside? It's choosing to keep working on a painting because you love how it feels to create. It's doing the extra reading because the topic genuinely fascinates you. It's practicing a skill past the easy part because you care about getting better. Optimism and commitment are key parts of EQ motivation — and you can train them. Growth mindset (believing you can improve), reframing setbacks (seeing what you learned), and self-compassion (being kind to yourself when you fail) all build intrinsic motivation and resilience. Together, these inner drives are what keep EQ working even when things get hard.`,
           ],
-          image: `/ue-assets/iw/l10-s3-motivation-resilience.webp`,
+          image: `/ue-assets/iw/exp-iw-l10-s3-motivation-resilience.webp`,
           imageCaption: `Intrinsic motivation drives you from within. Resilience lets you bounce back and keep going.`,
           vocab: [
             {
@@ -120,7 +120,7 @@ const INNERWORLD_UE_L10 = {
             `EMPATHY is the ability to sense and understand what someone else is feeling — almost like you can feel it with them. Empathy doesn't mean agreeing with everyone or losing yourself in their feelings. It means recognizing what another person is going through and genuinely caring about it. Empathic people make others feel truly seen and understood, which is one of the most powerful things one person can do for another. Research shows empathy is linked to stronger friendships, better leadership, and higher wellbeing — for the empathic person AND the people they connect with. Empathy is trainable. It grows when you slow down, listen carefully, notice facial expressions and tone of voice, and remind yourself that other people have whole inner worlds, just like you do.`,
             `SOCIAL SKILLS are the fifth component: handling relationships, communication, and groups with care and effectiveness. This includes listening carefully, expressing yourself kindly, working through disagreements, reading a room, and helping others feel comfortable. Social skills are where all the other four components come together in action. You need self-awareness to notice your own emotional state. Self-regulation to keep it under control. Motivation to keep showing up in relationships even when it's hard. Empathy to understand what others are feeling. And social skills to actually act on all of that — kindly, confidently, and clearly. Together, these five skills are the intelligence of being a connected, caring, effective human being.`,
           ],
-          image: `/ue-assets/iw/l10-s4-empathy-social.webp`,
+          image: `/ue-assets/iw/exp-iw-l10-s4-empathy-social.webp`,
           imageCaption: `Empathy: sensing others' worlds. Social skills: all five EQ components meeting the world.`,
           vocab: [
             {

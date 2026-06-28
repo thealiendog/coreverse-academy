@@ -27,7 +27,7 @@ const INNERWORLD_UE_L16 = {
           guideText: `Welcome back, {name}. Sage here. Last lesson you learned about the RAS, the filter in your brain that decides what you notice. Today we build on that with something beautifully simple: SETTING INTENTIONS. An intention is a quiet decision about how you want to show up, made BEFORE the day sweeps you along. Most people let the morning happen to them. But a few quiet moments of intention can change what your RAS filters for, how you act, and over time, who you become. This is the bridge between what you NOTICE and who you ARE. Take a slow, curious breath, and let's begin.`,
           headline: `Setting Intentions for My Day`,
           subtitle: `How a few quiet morning moments can shape your whole day`,
-          visual: `/ue-assets/iw/l16-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l16-welcome.webp`,
         },
 
         {
@@ -39,7 +39,7 @@ const INNERWORLD_UE_L16 = {
             `An intention is a quiet, clear statement about how you want to BE, not just what you want to GET. That's the key difference. "I want to get an A on my test" is a goal. "I intend to be focused and calm during my test" is an intention. See the difference? A goal is about the RESULT. An intention is about who you are WHILE you're doing the thing. You can't always control results. But you can almost always choose how you show up. That's why intentions are so powerful. They put the power back where it belongs: with you.`,
             `Here's another way to think about it. An intention is like setting the direction of your compass before you start walking. You might not know exactly where you'll end up, but you know which direction you're heading. "Today I intend to be kind, even when things are hard." "Today I intend to notice one thing I'm grateful for." "Today I intend to speak up when I have something to share." These aren't wishes. They're quiet decisions made before the day starts. And because they're about YOUR choices rather than other people's behavior, they're always within your power.`,
           ],
-          image: `/ue-assets/iw/l16-s1-what-intention.webp`,
+          image: `/ue-assets/iw/exp-iw-l16-s1-what-intention.webp`,
           imageCaption: `An intention is a quiet decision about how you want to show up, made before the day begins.`,
           vocab: [
             {
@@ -64,7 +64,7 @@ const INNERWORLD_UE_L16 = {
             `Why set intentions in the MORNING? Because the first few minutes after you wake up are special. Your brain is shifting from sleep mode into daytime mode. Your brain waves are moving from the slow, dreamy rhythms of sleep (theta waves, remember from L12?) into the faster rhythms of being awake. During that transition, your mind is more open and receptive than it will be for the rest of the day. It's like the soil is soft and ready for planting. Whatever you plant in those first minutes tends to take root.`,
             `Most kids (and most adults) fill those first moments with whatever grabs them. A phone screen. A rush to get dressed. Worry about the day ahead. And their RAS starts filtering accordingly, filtering for stress, for screens, for rushing. But if you take even TWO MINUTES to sit quietly and set a clear intention, something different happens. You're giving your RAS a clear signal FIRST, before the noise of the day starts. "Show me kindness today." "Help me notice my own courage." "Let me spot moments where I'm growing." Your RAS hears that. And it starts filtering the whole day through that lens.`,
           ],
-          image: `/ue-assets/iw/l16-s2-morning.webp`,
+          image: `/ue-assets/iw/exp-iw-l16-s2-morning.webp`,
           imageCaption: `The first minutes of your day are when your mind is most open to intention.`,
           vocab: [
             {
@@ -89,7 +89,7 @@ const INNERWORLD_UE_L16 = {
             `Here's where L15 and L16 connect beautifully. Remember, your RAS filters the world based on what you've signaled is IMPORTANT. An intention is one of the clearest, most direct signals you can send. When you sit quietly in the morning and say to yourself, "Today I intend to notice moments of kindness," you are literally programming your RAS. You're telling the filter: kindness matters today. Let it through. And your RAS will obey. Throughout the day, you'll start spotting kind moments you would have completely missed without the intention.`,
             `But it goes even deeper than noticing. When your RAS is filtering for kindness, you don't just SEE more kindness. You also start ACTING more kindly yourself. This is because what you pay attention to shapes how you feel, and how you feel shapes how you behave. Intention → RAS filter → what you notice → how you feel → how you act. It's a chain reaction that starts with one quiet moment in the morning. The same principle works for courage, patience, creativity, gratitude, anything you set your intention toward. You're not just changing what you see. You're changing what you DO. And that changes who you become.`,
           ],
-          image: `/ue-assets/iw/l16-s3-ras-bridge.webp`,
+          image: `/ue-assets/iw/exp-iw-l16-s3-ras-bridge.webp`,
           imageCaption: `Intention programs your RAS. Your RAS shapes what you notice. What you notice shapes how you act.`,
           vocab: [
             {
@@ -114,7 +114,7 @@ const INNERWORLD_UE_L16 = {
             `Here's the deepest part, and it connects forward to L17. When you set an intention once, you shape one day. When you set intentions regularly, day after day, you shape something much bigger: your IDENTITY. Remember from neuroplasticity (L02): neurons that fire together, wire together. Every time you set the intention "I show up with kindness," and then your RAS helps you notice and act on kindness throughout the day, you're strengthening a neural pathway. After weeks and months, "being kind" stops being something you TRY to do. It becomes something you ARE. The intention became a habit. The habit became a trait. The trait became part of your identity.`,
             `This is how the Inner World lessons connect. Your beliefs program your RAS (L15). Your intentions direct your RAS each morning (L16). And your repeated actions, guided by those intentions, shape your identity over time (L17). It's one beautiful system. And the entry point, the place where YOU get to take the wheel, is that quiet moment each morning. Sage's gentle teaching: you don't become who you want to be by thinking about it once. You become who you want to be by showing up as that person, one day at a time, one intention at a time. The morning practice is small. The results, over time, are enormous.`,
           ],
-          image: `/ue-assets/iw/l16-s4-identity-bridge.webp`,
+          image: `/ue-assets/iw/exp-iw-l16-s4-identity-bridge.webp`,
           imageCaption: `Daily intentions become habits. Habits become traits. Traits become identity.`,
           vocab: [
             {

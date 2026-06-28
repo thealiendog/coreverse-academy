@@ -32,7 +32,7 @@ const INNERWORLD_UE_L06 = {
           guideText: `Welcome back, {name}. Sage here. Today's lesson is quiet but quite profound, so let's slow down together. Here is the big idea: you are not your thoughts. You are the one who NOTICES your thoughts. There's a calm, watching part of you, sometimes called the Observer, that can step back and simply witness your thinking, like watching clouds drift across the sky. Learning to find this peaceful inner observer is one of the most freeing skills there is. Take a slow, gentle breath with me, and let's explore.`,
           headline: `The Observer`,
           subtitle: `The calm, watching part of you that notices your thoughts`,
-          visual: `/ue-assets/iw/l06-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l06-welcome.webp`,
         },
 
         {
@@ -44,7 +44,7 @@ const INNERWORLD_UE_L06 = {
             `Here's a question worth sitting with: if you can NOTICE a thought, then who is doing the noticing? Think about it. Right now, you can watch a thought appear in your mind, like "I wonder what's for dinner." But there's a YOU that noticed that thought happening. This means you are not the same thing as your thoughts. You are the one who experiences and observes them. This calm, aware part of you is sometimes called the OBSERVER, or the witnessing self.`,
             `This might sound like a small idea, but it's genuinely powerful. Most of the time, people are completely "fused" with their thoughts, they believe every thought is true and important simply because they thought it. When an angry thought comes, they become angry. When a worried thought comes, they're swept into worry. But the moment you realize "I am the one NOTICING this thought," something shifts. You create a little space between yourself and the thought. And in that space lives your freedom. You don't have to believe, obey, or get swept away by every thought that passes through your mind. You can simply watch it, the way you'd watch a cloud.`,
           ],
-          image: `/ue-assets/iw/l06-s1-not-your-thoughts.webp`,
+          image: `/ue-assets/iw/exp-iw-l06-s1-not-your-thoughts.webp`,
           imageCaption: `If you can notice a thought, you are not the thought. You are the Observer.`,
           vocab: [
             {
@@ -69,7 +69,7 @@ const INNERWORLD_UE_L06 = {
             `Here's a gentle way to picture it. Imagine the sky. Clouds drift across it, all kinds: fluffy white ones, dark stormy ones, thin wispy ones. The clouds come and go, change shape, and pass by. But the SKY itself stays. The sky is vast, calm, and unchanged by whatever clouds float through it. The clouds are like your thoughts and feelings, always passing through. And the sky is like the Observer, the calm awareness in which all your thoughts appear and disappear. You are far more like the sky than the clouds.`,
             `This picture helps with hard moments. When a stormy thought rolls in ("I'm going to fail," "everyone's mad at me"), you can remember: this is a cloud passing through my sky. It feels big right now, but like all clouds, it will move on. I don't have to grab it, fight it, or believe it. I can let it drift by while I rest as the calm sky watching. This doesn't mean ignoring or pushing away your thoughts, that often makes them stronger. It means letting them come and go naturally, without clinging to them, while you stay steady as the watching awareness behind them.`,
           ],
-          image: `/ue-assets/iw/l06-s2-clouds.webp`,
+          image: `/ue-assets/iw/exp-iw-l06-s2-clouds.webp`,
           imageCaption: `Thoughts are clouds passing through. You are the vast, calm sky that stays.`,
           vocab: [
             {
@@ -94,7 +94,7 @@ const INNERWORLD_UE_L06 = {
             `So how do you actually DO this? There's a simple practice you can use anytime, especially when a difficult thought or feeling arises. First, NOTICE the thought ("Ah, there's a worried thought"). Just spotting it is the key first step. Second, STEP BACK by labeling it as a thought, not a fact. Instead of "I'm going to fail" (which your mind treats as truth), try "I'm having the thought that I might fail." Feel the difference? That tiny shift in words creates real space. The thought becomes something you're HAVING, not something you ARE.`,
             `Third, LET IT PASS. You don't have to do anything with the thought, argue with it, obey it, or push it away. Just let it drift by like a cloud while you rest as the calm Observer. Then, you can CHOOSE your response from that calm, clear place, instead of reacting automatically. This connects to everything you've learned: the Observer is your prefrontal cortex creating space from your amygdala's alarm; it lets you catch limiting beliefs and harsh self-talk before they sweep you away. The Observer is the calm watchtower from which you can see your whole inner world clearly, and choose wisely.`,
           ],
-          image: `/ue-assets/iw/l06-s3-observer-move.webp`,
+          image: `/ue-assets/iw/exp-iw-l06-s3-observer-move.webp`,
           imageCaption: `Notice it, step back ("I'm having the thought that..."), let it pass, then choose.`,
           vocab: [
             {
@@ -119,7 +119,7 @@ const INNERWORLD_UE_L06 = {
             `Why does this matter so much? Because finding your Observer gives you a kind of inner freedom that nothing outside you can take away. When you can step back and watch your thoughts instead of being swept away by them, difficult emotions lose much of their grip. You stop being tossed around by every passing thought and feeling. You become more steady, more calm, and more able to choose how you respond. This is the foundation of mindfulness and meditation, which we'll explore soon, and it's a skill that grows stronger with practice (yes, neuroplasticity again).`,
             `Here's something beautiful to notice: the Observer in you is always calm, always steady, always there, underneath every storm. Even in your most upset moments, that quiet watching awareness is present, like the sky behind the darkest clouds. You can return to it anytime, simply by remembering to notice. Sage's gentle teaching: you are not your fleeting thoughts, your passing moods, or your temporary feelings. You are the calm, spacious awareness in which all of these come and go. When life feels stormy, you can always find your way back to that steady inner sky. It is the most peaceful place you will ever know, and it has been within you all along. Just breathe, and notice. There you are.`,
           ],
-          image: `/ue-assets/iw/l06-s4-freedom.webp`,
+          image: `/ue-assets/iw/exp-iw-l06-s4-freedom.webp`,
           imageCaption: `The Observer is always calm, always there, like the sky behind every storm.`,
           vocab: [
             {

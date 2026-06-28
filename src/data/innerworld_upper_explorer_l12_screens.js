@@ -34,7 +34,7 @@ const INNERWORLD_UE_L12 = {
           guideText: `Welcome back, {name}. Sage here. Last lesson, we learned about meditation as a tool for becoming a new version of yourself. Today we look inside the meditating brain itself, with real science. Your brain is electric, billions of cells firing tiny signals all day and night. Those signals form patterns called BRAIN WAVES, and different waves match different states of mind. Some are for focused work, some for calm, some for deep meditation, some for sleep. The amazing thing? Meditation can deliberately shift you between these states. Today you'll meet your brain at every level. Take a slow breath, and let's begin.`,
           headline: `Meditation and Brain Waves`,
           subtitle: `The real neuroscience of the meditating mind`,
-          visual: `/ue-assets/iw/l12-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l12-welcome.webp`,
         },
 
         {
@@ -46,7 +46,7 @@ const INNERWORLD_UE_L12 = {
             `Right now, your brain is alive with electricity. Billions of brain cells (neurons) are firing tiny electrical signals to each other, every second of every day, even when you're asleep. When many neurons fire together in rhythm, they create patterns scientists call BRAIN WAVES. These waves can be MEASURED with a machine called an EEG (electroencephalogram), which detects the electricity through small sensors placed gently on the head. Researchers like Dr. Joe Dispenza use EEGs to study what happens in the brain during meditation, with real, measurable data.`,
             `Brain waves come in different SPEEDS or FREQUENCIES. Some are fast (when your mind is active and busy), some are slower (when you're calm), and some are very slow (when you're in deep sleep). Each speed matches a different state of mind. Scientists give each speed a Greek-letter name: BETA, ALPHA, THETA, DELTA, and GAMMA. You move between these states constantly throughout your day, often without realizing it. Understanding them is like getting a map of your own mind, and a key to using meditation on purpose.`,
           ],
-          image: `/ue-assets/iw/l12-s1-electric.webp`,
+          image: `/ue-assets/iw/exp-iw-l12-s1-electric.webp`,
           imageCaption: `Your brain is electric. Neurons firing in rhythm create measurable brain waves.`,
           vocab: [
             {
@@ -71,7 +71,7 @@ const INNERWORLD_UE_L12 = {
             `Here are the main waves, from FASTEST to SLOWEST. BETA is your everyday awake-and-thinking state. Solving a math problem, talking to a friend, paying attention in class, that's beta. It's useful and important, but in too much beta you can feel anxious, stressed, or scattered. ALPHA is the relaxed, calm-but-awake state. It happens when you close your eyes and breathe slowly, or when you're daydreaming peacefully. Alpha is the doorway to meditation, where the chatter quiets but you're still aware.`,
             `THETA is the deep meditation state, also where vivid imagination and creativity often happen. It's the state right before falling asleep, and the state experienced meditators learn to enter on purpose. Theta is where Dr. Joe Dispenza's "rehearsing the future self" work goes deepest. DELTA is the slowest, the state of deep, dreamless sleep when your body deeply restores itself. Then there's GAMMA, which is actually the FASTEST of all, faster even than beta. Gamma is linked to deep focus, insight, and "aha!" moments, and researchers have measured high gamma waves in advanced meditators during peak states. Each wave has its own gift, and a healthy mind moves smoothly between them.`,
           ],
-          image: `/ue-assets/iw/l12-s2-states.webp`,
+          image: `/ue-assets/iw/exp-iw-l12-s2-states.webp`,
           imageCaption: `Beta (busy), alpha (relaxed), theta (deep meditation), delta (deep sleep), gamma (insight).`,
           vocab: [
             {
@@ -96,7 +96,7 @@ const INNERWORLD_UE_L12 = {
             `MEDITATION is a practice of training your attention and gently quieting the busy thinking mind. There are many kinds (focusing on the breath, repeating a phrase, scanning the body, picturing a place), but they all do something similar: they shift your brain from busy BETA into calmer ALPHA, and with practice, into deeper THETA. EEG studies show this clearly. When experienced meditators settle into practice, their brain waves measurably slow. The effects aren't imaginary. They're literally a different state of brain activity, and the body responds with lower stress, calmer heart rate, and changed chemistry.`,
             `This is why meditation feels so different from regular life. In beta, your prefrontal cortex (L01) is working hard, your amygdala can fire easily, your subconscious is running familiar patterns (L04), and the inner critic (L05) is often chattering. In alpha and theta, the chatter quiets, the body relaxes, and the subconscious mind becomes more OPEN to new patterns. That's why this is the ideal state for rehearsing a new self (L11), reframing self-talk, healing, and creating real change. Meditation isn't just "calming down." It's a deliberate shift into a brain state where deep work becomes possible.`,
           ],
-          image: `/ue-assets/iw/l12-s3-what-it-does.webp`,
+          image: `/ue-assets/iw/exp-iw-l12-s3-what-it-does.webp`,
           imageCaption: `Meditation shifts you from busy beta into calmer alpha and deeper theta, measurably.`,
           vocab: [
             {
@@ -121,7 +121,7 @@ const INNERWORLD_UE_L12 = {
             `Many people think meditation is supposed to be EMPTY MIND, no thoughts, total stillness. That isn't quite right, and trying to force it usually backfires. Real meditation is more like noticing. Your mind WILL wander, that's not a failure, it's normal. The actual practice is: when you notice your mind has drifted, GENTLY bring it back. That gentle return, over and over, is the whole exercise (remember L09 on attention?). Every gentle return strengthens your focus and quiets the chatter a little more. You don't have to be "good at meditation" to benefit. Just doing the practice trains your brain.`,
             `A simple starting practice: sit comfortably. Close your eyes. Breathe slowly. Place your attention on the feeling of breath entering and leaving. When thoughts come (and they will), don't fight them, just gently return to the breath. Start with just 5 minutes a day. With practice, you'll find yourself dropping into alpha (calm, aware) and eventually theta (deep) more easily. To go deeper, add ELEVATED EMOTION (L08, L11): once you're calm, vividly feel gratitude, joy, or love. That's where real Dispenza-style transformation happens, in the deeper waves AND in elevated feeling, together. Sage's gentle teaching: meditation isn't a performance. It's a way of coming home to yourself, again and again, with kindness. Start small, be patient, and the science of your own brain will quietly do the rest.`,
           ],
-          image: `/ue-assets/iw/l12-s4-how-to.webp`,
+          image: `/ue-assets/iw/exp-iw-l12-s4-how-to.webp`,
           imageCaption: `Real practice: notice the wander, gently return. 5 minutes a day, gently.`,
           vocab: [
             {

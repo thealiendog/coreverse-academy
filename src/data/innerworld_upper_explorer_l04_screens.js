@@ -32,7 +32,7 @@ const INNERWORLD_UE_L04 = {
           guideText: `Welcome back, {name}. Sage here. Here's a surprising idea to sit with: most of what your mind does happens WITHOUT you noticing it. Below the thoughts you're aware of, there's a vast, quiet part of your mind working all the time, shaping your habits, reactions, and even your beliefs. It's called the SUBCONSCIOUS MIND, and it's a bit like the hidden driver of much of your life. Understanding it helps you understand why you do what you do, and how to gently guide yourself toward who you want to be. Take a calm breath, and let's explore.`,
           headline: `The Subconscious Mind`,
           subtitle: `The quiet, powerful part of your mind working behind the scenes`,
-          visual: `/ue-assets/iw/l04-welcome.webp`,
+          visual: `/ue-assets/iw/exp-iw-l04-welcome.webp`,
         },
 
         {
@@ -44,7 +44,7 @@ const INNERWORLD_UE_L04 = {
             `Your mind works on two main levels. The CONSCIOUS mind is the part you're aware of right now: the thoughts you're thinking, the choices you're actively making, the things you're paying attention to. It's like the captain on the deck of a ship, making deliberate decisions. But the conscious mind can only focus on a few things at a time, and it actually handles a surprisingly small part of everything your mind does.`,
             `Below it is the SUBCONSCIOUS mind, the enormous part working quietly in the background, outside your direct awareness. It runs your habits, your automatic reactions, your deeply-stored memories, and many of your beliefs (including the limiting ones from our last lesson). If the conscious mind is the captain, the subconscious is the vast crew below deck, keeping the whole ship running, much of it automatically. Scientists who study the mind agree that a huge portion of what we do each day is driven by these automatic, subconscious processes, not by conscious choice. You're guided by your hidden driver far more than you might think.`,
           ],
-          image: `/ue-assets/iw/l04-s1-two-levels.webp`,
+          image: `/ue-assets/iw/exp-iw-l04-s1-two-levels.webp`,
           imageCaption: `Conscious mind: the captain on deck. Subconscious: the vast crew below, running the ship.`,
           vocab: [
             {
@@ -69,7 +69,7 @@ const INNERWORLD_UE_L04 = {
             `Your subconscious mind is incredibly helpful, even essential. Imagine if you had to consciously think about every single thing: how to walk, how to form each letter as you write, how to balance on a bike, how to understand each word as you read. You'd be completely overwhelmed in seconds. The subconscious takes over all these learned skills so they become AUTOMATIC, freeing your conscious mind to focus on new and important things. When you first learned to tie your shoes, it took total concentration. Now your subconscious does it while you think about something else entirely.`,
             `This is actually neuroplasticity in action (remember?). When you practice something enough, the brain pathway becomes so strong that the skill moves from effortful conscious control down into smooth subconscious automaticity. This is wonderful for helpful skills. But here's the catch: the subconscious doesn't judge whether a pattern is GOOD for you. It simply automates whatever gets repeated. So unhelpful habits and limiting beliefs can also become automatic and run on their own, quietly, below your awareness. Your subconscious is a powerful, loyal servant, but it will faithfully automate whatever you feed it, helpful or not.`,
           ],
-          image: `/ue-assets/iw/l04-s2-what-it-does.webp`,
+          image: `/ue-assets/iw/exp-iw-l04-s2-what-it-does.webp`,
           imageCaption: `Your subconscious automates learned skills, freeing your conscious mind. But it doesn't judge.`,
           vocab: [
             {
@@ -94,7 +94,7 @@ const INNERWORLD_UE_L04 = {
             `How does something get stored in your subconscious? Mainly through REPETITION and through strong EMOTION. Anything you do or think over and over gradually becomes a subconscious pattern, that's how habits form. And anything connected to a powerful feeling can get stored quickly and deeply, which is why emotional experiences (good or hard) can shape us so strongly, sometimes from a single moment. Your subconscious was being "programmed" all through your early childhood, absorbing patterns, beliefs, and reactions from your experiences and surroundings, long before you could consciously choose them.`,
             `This explains so much. It explains why habits are hard to break with willpower alone (they're running automatically from the subconscious). It explains why a limiting belief can feel so stubborn (it's stored deep below conscious awareness). And it explains why simply DECIDING to change, once, with your conscious mind, often isn't enough, because the old subconscious pattern keeps running. But here's the hopeful part: the same things that program the subconscious (repetition and emotion) are the tools you can use to RE-program it. By repeating new thoughts and actions, especially with genuine feeling, you can gradually replace old subconscious patterns with new ones. It takes patience and practice, but it absolutely works, because your brain can change.`,
           ],
-          image: `/ue-assets/iw/l04-s3-programmed.webp`,
+          image: `/ue-assets/iw/exp-iw-l04-s3-programmed.webp`,
           imageCaption: `Repetition and emotion program the subconscious. The same tools can re-program it.`,
           vocab: [
             {
@@ -119,7 +119,7 @@ const INNERWORLD_UE_L04 = {
             `So how do you guide a part of your mind you can't directly control? You don't fight your subconscious; you work WITH it, gently and patiently. First, AWARENESS: simply noticing your automatic patterns (your habits, reactions, and beliefs) brings them into the light of your conscious mind, where you can examine them. You can't change what you can't see. Second, REPETITION: deliberately practicing the new thought, habit, or response you want, over and over, so it gradually becomes the new automatic pattern. Third, EMOTION: connecting your new patterns to genuine positive feeling helps them take root faster and deeper.`,
             `This is the foundation for nearly everything ahead in Inner World: reprogramming negative self-talk, building helpful habits, and practices like meditation and visualization all work partly by gently guiding the subconscious. Sage's gentle teaching: your subconscious mind isn't your enemy, and it isn't out to get you. It's a faithful, powerful helper that simply automates whatever you give it. When you understand this, you stop fighting yourself and start partnering with yourself. You become the captain who patiently and kindly trains the crew. With awareness, repetition, and feeling, you can guide your hidden driver toward the life and the self you truly want. That is real, gentle power.`,
           ],
-          image: `/ue-assets/iw/l04-s4-working-with.webp`,
+          image: `/ue-assets/iw/exp-iw-l04-s4-working-with.webp`,
           imageCaption: `Awareness, repetition, emotion: the three keys to gently guiding your subconscious.`,
           vocab: [
             {
