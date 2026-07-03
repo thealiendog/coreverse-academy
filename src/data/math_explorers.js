@@ -100,8 +100,388 @@ export const mathExplorers = [
   { id: "math-6-8-19", subject: "Mathematics", ageGroup: "6-8", band: "Explorers", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 19, title: "Patterns and Introduction to Variables", duration: "15-20 min", hook: "Look at this sequence: 2, 5, 8, 11, 14, ___. What comes next? 17! (Add 3 each time.) Now look at this: __ + 5 = 12. What number goes in the blank? 7! That blank is a variable — a symbol that stands for an unknown number. Variables are the gateway to algebra, and they make math powerful enough to describe the entire universe.", bigIdea: "Mathematical patterns follow rules that can be described with expressions, and variables (letters that represent unknown numbers) allow us to write equations and solve for unknowns — this is the beginning of algebra.", sections: [ { title: "Number Patterns", emoji: "🔢", content: "A number pattern follows a rule. In 3, 6, 9, 12, the rule is add 3. In 2, 4, 8, 16, the rule is double (multiply by 2). In 100, 90, 80, 70, the rule is subtract 10. Finding the rule lets you predict any number in the sequence. Patterns are the foundation of algebra — they show that numbers follow predictable rules." }, { title: "What Is a Variable?", emoji: "📝", content: "A variable is a letter (usually x, n, or any letter) that represents an unknown number. In x + 3 = 10, the variable x represents 7 (because 7+3=10). Variables are not scary — they are just blanks waiting to be filled in. Every time you have seen __ + 5 = 12, you were already using variables. Now we just give the blank a name." }, { title: "Simple Equations", emoji: "⚖️", content: "An equation says two things are equal. x + 4 = 9 means something plus 4 equals 9. To find x, ask: what number plus 4 gives me 9? The answer is 5. You can also solve by doing the opposite operation: 9 - 4 = 5, so x = 5. This is called solving the equation. Equations are the language of math." }, { title: "Expressions and Rules", emoji: "📋", content: "An expression uses numbers and variables together: 2n means 2 times n. If n=5, then 2n=10. If n=7, then 2n=14. A pattern rule can be written as an expression: the pattern 5, 10, 15, 20 follows the rule 5n (5 times the position number). This is the beginning of algebra — describing patterns with symbols instead of words." } ], activity: { title: "Pattern Detective", instructions: "Find the rule and continue each pattern: (1) 4, 8, 12, 16, ___, ___. (2) 1, 3, 9, 27, ___, ___. (3) 100, 95, 90, 85, ___, ___. Then solve these equations: (1) x + 6 = 14, (2) n - 5 = 8, (3) 3 × m = 21, (4) y ÷ 4 = 5. Then write the rule for this pattern as an expression: position 1=3, position 2=6, position 3=9, position 4=12. (Rule: 3n, where n is the position.)" }, quiz: [ { question: "What comes next: 7, 14, 21, 28, ___?", answer: "35 — the rule is add 7 (or multiply position by 7)", options: ["29", "35 — the rule is add 7 (or multiply position by 7)", "32", "42"] }, { question: "What is a variable?", answer: "A letter that represents an unknown number — like x in x + 3 = 10", options: ["A number that changes randomly", "A letter that represents an unknown number — like x in x + 3 = 10", "Only the letter x", "A type of fraction"] }, { question: "If x + 8 = 15, what is x?", answer: "7 — because 7 + 8 = 15", options: ["8", "7 — because 7 + 8 = 15", "23", "6"] }, { question: "What does the expression 4n mean?", answer: "4 times n — multiply whatever n is by 4", options: ["4 + n", "4 times n — multiply whatever n is by 4", "The number 4n", "4 divided by n"] }, { question: "If 3 × m = 18, what is m?", answer: "6 — because 3 × 6 = 18", options: ["3", "6 — because 3 × 6 = 18", "15", "54"] } ], familyAdventure: "Play Guess My Rule. One person creates a number pattern and says the first four numbers. Everyone else guesses the rule. Then play Guess My Number: I am thinking of a number. When I add 9, I get 22. What is my number? (13.) Take turns creating riddles. Then introduce variables at home: if we need n apples and we already have 5, and n = 8, how many more do we need? (8-5=3.) Variables are just a way of saying I do not know this number yet — let's figure it out.", badge: "Algebra Beginner", nextLesson: "math-6-8-20"
   },
 
-  { id: "math-6-8-20", subject: "Mathematics", ageGroup: "6-8", band: "Explorers", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 20, title: "Word Problems: Applying Math to Real Life", duration: "15-20 min", hook: "All the math you have learned — addition, subtraction, multiplication, division, fractions, decimals, measurement, geometry, patterns — comes together in word problems. Word problems are real-life situations that need math to solve. They are not just school exercises — they are how you use math every single day. Remi the Raccoon solves word problems constantly: if I eat 3 acorns per day and have 45, how many days will they last?", bigIdea: "Word problems connect math skills to real-life situations — solving them requires reading carefully, identifying what operation to use, setting up the problem correctly, solving it, and checking that the answer makes sense.", sections: [ { title: "The Problem-Solving Process", emoji: "🧠", content: "Read the problem carefully — what is it asking? Identify the important numbers and what operation to use (keywords help: total and altogether suggest addition; left and remaining suggest subtraction; each and per suggest multiplication or division). Set up the math. Solve it. Check: does your answer make sense in context?" }, { title: "Multi-Step Problems", emoji: "🪜", content: "Some problems require more than one step. Example: you buy 3 notebooks at $2.50 each and a pen for $1.75. How much total? Step 1: 3 × $2.50 = $7.50 (notebooks). Step 2: $7.50 + $1.75 = $9.25 (total). Multi-step problems require planning: figure out what you need to find first, then work toward the final answer." }, { title: "Drawing Helps", emoji: "✏️", content: "When a problem is confusing, draw it. Draw the objects, draw a number line, draw a diagram. Visual representation often reveals the solution. For a problem about sharing 24 cookies among 6 friends, draw 6 circles and distribute dots into them. For a distance problem, draw a map. Pictures turn abstract problems into concrete ones." }, { title: "Math Is for Life", emoji: "🌟", content: "Every math skill you have learned has real-world applications. Cooking uses fractions and multiplication. Shopping uses decimals and subtraction. Building uses measurement and geometry. Planning uses time and division. Data analysis uses graphs and statistics. You are not just learning math for school — you are building a toolkit for life. Remi says: the best mathematicians are the ones who see math in everything." } ], activity: { title: "Real-World Problem Set", instructions: "Solve these real-world problems: (1) You have $20. You buy a book for $8.75 and a snack for $3.50. How much money is left? (2) Your family drives 55 miles per hour for 3 hours. How far do you travel? (3) A recipe makes 24 cookies. You want to make 3 batches. How many cookies total? (4) A room is 12 feet long and 9 feet wide. What is the area? What is the perimeter? (5) You practice piano 25 minutes per day. How many minutes per week? How many hours is that? Then create 2 of your own word problems from your real life." }, quiz: [ { question: "You buy 4 items at $3.25 each. How much total?", answer: "$13.00 — because 4 × $3.25 = $13.00", options: ["$7.25", "$13.00 — because 4 × $3.25 = $13.00", "$12.00", "$16.25"] }, { question: "A rectangle is 15 feet long and 8 feet wide. What is the area?", answer: "120 square feet — 15 × 8 = 120", options: ["46 square feet", "120 square feet — 15 × 8 = 120", "23 square feet", "158 square feet"] }, { question: "You have 200 stickers. You give 15 to each of 8 friends. How many do you have left?", answer: "80 — you gave away 15×8=120, and 200-120=80", options: ["185", "80 — you gave away 15×8=120, and 200-120=80", "120", "72"] }, { question: "What should you do first when solving a word problem?", answer: "Read carefully and identify what the problem is asking — then find the important numbers and choose the right operation", options: ["Start multiplying numbers immediately", "Read carefully and identify what the problem is asking — then find the important numbers and choose the right operation", "Ask someone for the answer", "Guess and check"] }, { question: "Why are word problems important?", answer: "They connect math to real life — every real situation that requires math is essentially a word problem", options: ["They are just for tests", "They connect math to real life — every real situation that requires math is essentially a word problem", "They are harder versions of regular problems with no real use", "Only for advanced students"] } ], familyAdventure: "Turn today into a Word Problem Day. Every situation becomes a math problem: At the grocery store: if bananas are $0.59 per pound and you buy 3 pounds, how much? While driving: if we are 45 miles from our destination and driving 60 mph, about how long until we arrive? At dinner: if the pizza has 8 slices and 5 people, how many per person and how many left over? The family who sees math in everyday life raises children who are confident, capable, and mathematically powerful. Remi the Raccoon is immensely proud of every young mathematician who completed the Explorers math journey. You can add, subtract, multiply, divide, work with fractions and decimals, measure, find patterns, and solve real-world problems. These skills are the foundation for everything that comes next. Keep building.", badge: "Math Problem Solver", nextLesson: null
+  { id: "math-6-8-20", subject: "Mathematics", ageGroup: "6-8", band: "Explorers", guide: "Remi", guideAnimal: "Raccoon", lessonNumber: 20, title: "Word Problems: Applying Math to Real Life", duration: "15-20 min", hook: "All the math you have learned — addition, subtraction, multiplication, division, fractions, decimals, measurement, geometry, patterns — comes together in word problems. Word problems are real-life situations that need math to solve. They are not just school exercises — they are how you use math every single day. Remi the Raccoon solves word problems constantly: if I eat 3 acorns per day and have 45, how many days will they last?", bigIdea: "Word problems connect math skills to real-life situations — solving them requires reading carefully, identifying what operation to use, setting up the problem correctly, solving it, and checking that the answer makes sense.", sections: [ { title: "The Problem-Solving Process", emoji: "🧠", content: "Read the problem carefully — what is it asking? Identify the important numbers and what operation to use (keywords help: total and altogether suggest addition; left and remaining suggest subtraction; each and per suggest multiplication or division). Set up the math. Solve it. Check: does your answer make sense in context?" }, { title: "Multi-Step Problems", emoji: "🪜", content: "Some problems require more than one step. Example: you buy 3 notebooks at $2.50 each and a pen for $1.75. How much total? Step 1: 3 × $2.50 = $7.50 (notebooks). Step 2: $7.50 + $1.75 = $9.25 (total). Multi-step problems require planning: figure out what you need to find first, then work toward the final answer." }, { title: "Drawing Helps", emoji: "✏️", content: "When a problem is confusing, draw it. Draw the objects, draw a number line, draw a diagram. Visual representation often reveals the solution. For a problem about sharing 24 cookies among 6 friends, draw 6 circles and distribute dots into them. For a distance problem, draw a map. Pictures turn abstract problems into concrete ones." }, { title: "Math Is for Life", emoji: "🌟", content: "Every math skill you have learned has real-world applications. Cooking uses fractions and multiplication. Shopping uses decimals and subtraction. Building uses measurement and geometry. Planning uses time and division. Data analysis uses graphs and statistics. You are not just learning math for school — you are building a toolkit for life. Remi says: the best mathematicians are the ones who see math in everything." } ], activity: { title: "Real-World Problem Set", instructions: "Solve these real-world problems: (1) You have $20. You buy a book for $8.75 and a snack for $3.50. How much money is left? (2) Your family drives 55 miles per hour for 3 hours. How far do you travel? (3) A recipe makes 24 cookies. You want to make 3 batches. How many cookies total? (4) A room is 12 feet long and 9 feet wide. What is the area? What is the perimeter? (5) You practice piano 25 minutes per day. How many minutes per week? How many hours is that? Then create 2 of your own word problems from your real life." }, quiz: [ { question: "You buy 4 items at $3.25 each. How much total?", answer: "$13.00 — because 4 × $3.25 = $13.00", options: ["$7.25", "$13.00 — because 4 × $3.25 = $13.00", "$12.00", "$16.25"] }, { question: "A rectangle is 15 feet long and 8 feet wide. What is the area?", answer: "120 square feet — 15 × 8 = 120", options: ["46 square feet", "120 square feet — 15 × 8 = 120", "23 square feet", "158 square feet"] }, { question: "You have 200 stickers. You give 15 to each of 8 friends. How many do you have left?", answer: "80 — you gave away 15×8=120, and 200-120=80", options: ["185", "80 — you gave away 15×8=120, and 200-120=80", "120", "72"] }, { question: "What should you do first when solving a word problem?", answer: "Read carefully and identify what the problem is asking — then find the important numbers and choose the right operation", options: ["Start multiplying numbers immediately", "Read carefully and identify what the problem is asking — then find the important numbers and choose the right operation", "Ask someone for the answer", "Guess and check"] }, { question: "Why are word problems important?", answer: "They connect math to real life — every real situation that requires math is essentially a word problem", options: ["They are just for tests", "They connect math to real life — every real situation that requires math is essentially a word problem", "They are harder versions of regular problems with no real use", "Only for advanced students"] } ], familyAdventure: "Turn today into a Word Problem Day. Every situation becomes a math problem: At the grocery store: if bananas are $0.59 per pound and you buy 3 pounds, how much? While driving: if we are 45 miles from our destination and driving 60 mph, about how long until we arrive? At dinner: if the pizza has 8 slices and 5 people, how many per person and how many left over? The family who sees math in everyday life raises children who are confident, capable, and mathematically powerful. Remi the Raccoon is immensely proud of every young mathematician who completed the Explorers math journey. You can add, subtract, multiply, divide, work with fractions and decimals, measure, find patterns, and solve real-world problems. These skills are the foundation for everything that comes next. Keep building.", badge: "Math Problem Solver", nextLesson: "math-6-8-21"
   },
+
+{
+    id: "math-6-8-21",
+    subject: "Mathematics",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Remi",
+    guideAnimal: "Raccoon",
+    lessonNumber: 21,
+    title: "Multiplication Fluency: Knowing Your Facts",
+    duration: "15-20 min",
+    hook: "You already know what multiplication means — it is adding equal groups together. Now it is time to know your facts so fast you do not have to think about them. When 7 × 8 becomes instant, your brain has room for harder math. Athletes practice until skills become automatic — mathematicians do the same thing with facts. Remi the Raccoon has memorized every shortcut in the forest — today you will memorize the shortcuts of multiplication.",
+    bigIdea: "Multiplication facts are tools — the faster you can use them without thinking, the more energy your brain has for solving bigger problems.",
+    sections: [
+      {
+        title: "Why Facts Need to Be Fast",
+        emoji: "⚡",
+        content: "When you read a word, you do not sound out every letter — your brain recognizes the whole word instantly. Multiplication facts work the same way. When 6 × 7 becomes instant, you can focus on what the problem is actually asking instead of counting on your fingers. Mathematicians call this fluency — knowing facts so well they feel automatic. Fluency is not about being a robot. It is about freeing your brain for real thinking."
+      },
+      {
+        title: "Patterns That Help You Remember",
+        emoji: "🔍",
+        content: "Every multiplication table has patterns that make it easier. The 2s are always even. The 5s always end in 0 or 5. The 9s have a trick: the digits of the answer always add up to 9 (9 × 4 = 36, and 3 + 6 = 9). The 10s just add a zero. When you notice these patterns, facts stop feeling random and start feeling logical. Remi notices patterns in every part of the forest — patterns are how smart creatures find shortcuts."
+      },
+      {
+        title: "The Tricky Ones: 6s, 7s, and 8s",
+        emoji: "🎯",
+        content: "Most students find the 6s, 7s, and 8s the hardest. For 7 × 8, remember 56 = 7 × 8 because 5, 6, 7, 8 are four numbers in a row. For 6 × 8, the digits of 48 appear in order: 6 and 8 are the factors, 48 is the product. These memory tricks are called mnemonics — tools to help your brain hold onto slippery facts. Every fact you lock in is one less thing your brain has to figure out from scratch."
+      },
+      {
+        title: "Practice Makes Permanent",
+        emoji: "🔁",
+        content: "There is a difference between practicing until you get something right and practicing until you cannot get it wrong. Short, daily practice works better than one long session. Five minutes every day beats thirty minutes on the weekend. The goal is to reach automaticity — where the answer appears in your mind before you even finish reading the problem. Once you have all your facts to 10 × 10, you can multiply any numbers using those building blocks."
+      }
+    ],
+    activity: {
+      title: "Fact Sprint Challenge",
+      instructions: "Write the numbers 1 through 10 down a piece of paper. Pick one multiplication table — start with one you almost know, like the 7s. Set a timer for one minute and write the answers to 7 × 1 through 7 × 10 as fast as you can. Check your answers. Circle the ones you missed or hesitated on. Practice just those facts for two minutes. Then do the sprint again. Track your time each day for one week. You will see the improvement in real numbers — that is math measuring your own brain getting faster."
+    },
+    quiz: [
+      {
+        question: "What does it mean to have multiplication fluency?",
+        answer: "Knowing multiplication facts so automatically that you do not have to think about them — they come instantly",
+        options: [
+          "Being able to multiply numbers using a calculator quickly",
+          "Knowing multiplication facts so automatically that you do not have to think about them — they come instantly",
+          "Understanding what multiplication means and why it works",
+          "Being able to count up by any number without making mistakes"
+        ]
+      },
+      {
+        question: "What pattern do all multiples of 9 share?",
+        answer: "The digits of the answer always add up to 9",
+        options: [
+          "They always end in 9",
+          "They are always odd numbers",
+          "The digits of the answer always add up to 9",
+          "They always end in 0 or 5"
+        ]
+      },
+      {
+        question: "Why does short daily practice work better than one long session for learning facts?",
+        answer: "Spaced repetition over time builds stronger memory than cramming everything at once",
+        options: [
+          "Because long practice sessions are boring and harder to focus on",
+          "Because your brain can only hold a small number of facts at a time",
+          "Spaced repetition over time builds stronger memory than cramming everything at once",
+          "Because short practice sessions are easier to fit into a busy schedule"
+        ]
+      },
+      {
+        question: "What is a mnemonic?",
+        answer: "A memory trick or device that helps your brain hold onto something that is hard to remember",
+        options: [
+          "A type of math problem that uses patterns",
+          "A memory trick or device that helps your brain hold onto something that is hard to remember",
+          "A way of checking your multiplication answers",
+          "The name for the hardest multiplication facts"
+        ]
+      },
+      {
+        question: "What is 7 × 8, and what trick helps you remember it?",
+        answer: "56 — because 5, 6, 7, 8 are four numbers in a row",
+        options: [
+          "54 — because 7 and 8 are close together on the number line",
+          "56 — because 5, 6, 7, 8 are four numbers in a row",
+          "48 — because the digits of 7 and 8 appear in the answer",
+          "63 — because 9 × 7 and 9 × 8 average out to 63"
+        ]
+      }
+    ],
+    familyAdventure: "Play Multiplication War tonight. Use a regular deck of cards with face cards removed (aces = 1). Each player flips two cards and multiplies them together. Whoever gets the higher product wins all four cards. If there is a tie, each player flips two more cards — highest product wins everything. Play for ten minutes. If someone gets stuck on a fact, everyone works it out together. Talk about which facts felt automatic and which needed thinking — notice which ones get faster the more you play.",
+    badge: "Fact Sprinter",
+    nextLesson: "math-6-8-22"
+  },
+
+  {
+    id: "math-6-8-22",
+    subject: "Mathematics",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Remi",
+    guideAnimal: "Raccoon",
+    lessonNumber: 22,
+    title: "Introduction to Division: Sharing and Grouping",
+    duration: "15-20 min",
+    hook: "If you have 24 acorns and want to share them equally among 4 raccoons, how many does each one get? That is division. Division is one of the most useful skills in everyday life — splitting a pizza, figuring out how many teams fit in a gym, calculating how long a road trip will take. Remi the Raccoon divides food, territory, and time every single day. Today you will learn the two ways division works and why they both give the same answer.",
+    bigIdea: "Division means splitting a total into equal groups — and there are always two ways to think about it: sharing equally and grouping by size.",
+    sections: [
+      {
+        title: "Two Ways to Divide",
+        emoji: "✂️",
+        content: "Division has two meanings and they both produce the same result. Sharing equally means: I have 24 things and 6 people — how many does each person get? Grouping means: I have 24 things and want to make groups of 6 — how many groups can I make? Both questions are written as 24 ÷ 6 and both equal 4. Understanding both meanings helps you figure out which type of problem you are looking at in real life. Remi uses sharing division when splitting a find between friends and grouping division when sorting objects into containers."
+      },
+      {
+        title: "Division Vocabulary",
+        emoji: "📖",
+        content: "In 24 ÷ 6 = 4, each part has a name. The dividend is 24 — the total being divided. The divisor is 6 — the number you are dividing by. The quotient is 4 — the answer. Knowing these words matters because math problems and teachers use them, and understanding them helps you follow instructions. There is also the remainder — what is left over when things do not divide evenly. 25 ÷ 6 = 4 remainder 1, because 6 goes into 25 four times with 1 left over."
+      },
+      {
+        title: "Division and Multiplication Are Opposites",
+        emoji: "🔄",
+        content: "Multiplication and division are inverse operations — they undo each other. If 4 × 6 = 24, then 24 ÷ 6 = 4 and 24 ÷ 4 = 6. This means you already know a lot of division facts from your multiplication work. To solve 42 ÷ 7, ask yourself: what number times 7 equals 42? If you know 6 × 7 = 42, then 42 ÷ 7 = 6. Division is multiplication in reverse. This connection is one of the most important ideas in elementary math."
+      },
+      {
+        title: "When Division Appears in Real Life",
+        emoji: "🌍",
+        content: "Division shows up everywhere. How many weeks until a birthday 63 days away? (63 ÷ 7 = 9 weeks.) How many cars are needed if 32 kids need rides and each car holds 4? (32 ÷ 4 = 8 cars.) How much does each person owe if the bill is $36 for 3 friends? ($36 ÷ 3 = $12 each.) Any time you have a total and want to split it into equal parts or equal groups, division is the tool. The better your multiplication fluency, the faster your division becomes."
+      }
+    ],
+    activity: {
+      title: "Real-Life Division Hunt",
+      instructions: "Walk through your home or neighborhood and find five real-life division situations. Write each one as a division equation. Examples: if there are 18 eggs in a box arranged in 3 rows, that is 18 ÷ 3 = 6 eggs per row. If there are 4 shelves with an equal number of books and 28 books total, that is 28 ÷ 4 = 7 per shelf. For each situation you find, also write the two multiplication facts that go with it. Share your five examples with someone and explain which type of division it is: sharing equally or grouping."
+    },
+    quiz: [
+      {
+        question: "What are the two ways to think about division?",
+        answer: "Sharing equally (splitting a total among a number of people) and grouping (making equal-sized groups from a total)",
+        options: [
+          "Adding repeatedly and subtracting repeatedly",
+          "Sharing equally (splitting a total among a number of people) and grouping (making equal-sized groups from a total)",
+          "Dividing by small numbers and dividing by large numbers",
+          "Short division and long division"
+        ]
+      },
+      {
+        question: "In the equation 30 ÷ 5 = 6, what is the quotient?",
+        answer: "6",
+        options: [
+          "30",
+          "5",
+          "6",
+          "The quotient is not shown in this equation"
+        ]
+      },
+      {
+        question: "Why does knowing multiplication facts help with division?",
+        answer: "Because division and multiplication are inverse operations — division is multiplication in reverse",
+        options: [
+          "Because multiplication facts are always larger numbers than division facts",
+          "Because you need to multiply first before you can divide",
+          "Because division and multiplication are inverse operations — division is multiplication in reverse",
+          "Because division facts use the same numbers as multiplication but in a different order"
+        ]
+      },
+      {
+        question: "What is a remainder in division?",
+        answer: "The amount left over when a number does not divide evenly",
+        options: [
+          "The answer to a division problem",
+          "The number being divided",
+          "The amount left over when a number does not divide evenly",
+          "The number you are dividing by"
+        ]
+      },
+      {
+        question: "32 kids need rides and each car holds 4 kids. Which equation solves this?",
+        answer: "32 ÷ 4 = 8 cars needed",
+        options: [
+          "32 × 4 = 128 total seats available",
+          "32 ÷ 4 = 8 cars needed",
+          "4 + 32 = 36 kids and seats combined",
+          "32 − 4 = 28 kids still without rides"
+        ]
+      }
+    ],
+    familyAdventure: "Cook or bake something together that requires dividing equally — even just cutting a sandwich or splitting fruit. Before you divide it, write the math equation. After, check that each portion is equal. Then ask: what if one more person joined — how would the equation change? What if one person left? Watch how division shifts when the divisor changes. Connect what you did in the kitchen to the math: you just solved a real division problem with your hands.",
+    badge: "Division Detective",
+    nextLesson: "math-6-8-23"
+  },
+
+  {
+    id: "math-6-8-23",
+    subject: "Mathematics",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Remi",
+    guideAnimal: "Raccoon",
+    lessonNumber: 23,
+    title: "Fact Families: Multiplication and Division Together",
+    duration: "15-20 min",
+    hook: "Three numbers can tell four different math stories. The numbers 3, 7, and 21 are a fact family — and from them you get 3 × 7 = 21, 7 × 3 = 21, 21 ÷ 3 = 7, and 21 ÷ 7 = 3. Knowing one fact means knowing three more for free. Remi the Raccoon knows that in the forest, everything is connected — and in math, multiplication and division are always connected too. Today you will see how mastering fact families multiplies what you already know.",
+    bigIdea: "Every multiplication fact is part of a family of four related equations — master one and you get three more facts for free.",
+    sections: [
+      {
+        title: "What Is a Fact Family?",
+        emoji: "👨‍👩‍👧‍👦",
+        content: "A fact family is a group of three numbers that are related through multiplication and division. The numbers 4, 6, and 24 form a fact family: 4 × 6 = 24, 6 × 4 = 24, 24 ÷ 4 = 6, and 24 ÷ 6 = 4. These four equations are all the same relationship expressed four different ways. When you learn one, you know all four. Fact families show that multiplication and division are not separate skills — they are two views of the same mathematical relationship."
+      },
+      {
+        title: "Using Fact Families to Solve Problems",
+        emoji: "🔑",
+        content: "Fact families give you a strategy for any division problem you are not sure about. If you need to solve 56 ÷ 8, ask: what multiplication fact has 8 and 56 in it? You know 7 × 8 = 56, so 56 ÷ 8 = 7. This think-multiplication strategy works for every division problem. It means that instead of memorizing division facts separately, you are using what you already know about multiplication to unlock division instantly."
+      },
+      {
+        title: "Special Cases: Squares and Ones",
+        emoji: "⭐",
+        content: "Some fact families have only two equations instead of four. The number 49 = 7 × 7 forms a family where both multiplication equations are the same: 7 × 7 = 49 and 49 ÷ 7 = 7. These are called perfect squares. Similarly, any number times 1: 1 × 9 = 9, 9 × 1 = 9, 9 ÷ 1 = 9, 9 ÷ 9 = 1. Recognizing these special cases helps you work faster because you do not need to search for two different division facts."
+      },
+      {
+        title: "Fact Families in Word Problems",
+        emoji: "📝",
+        content: "Word problems often hide which operation to use. Fact families help you figure it out. If a problem gives you the total and one group size, you divide. If it gives you the number of groups and the size of each group, you multiply. Before computing anything, identify the three numbers in the fact family and decide which one is missing. That missing number is your answer — and the equation that finds it is the operation to use."
+      }
+    ],
+    activity: {
+      title: "Fact Family Triangle Cards",
+      instructions: "Make eight fact family triangle cards from index cards or cut paper. On each triangle, write one number in each corner — two factors and their product. For example: 6 in one corner, 8 in another, 48 in the third. Cover one number with your thumb and say the missing number aloud. Then write all four equations for that triangle. Make triangles for these families: (6, 8, 48), (7, 9, 63), (4, 7, 28), (5, 9, 45), (6, 7, 42), (8, 9, 72), (7, 7, 49), (6, 6, 36). Practice each triangle until you can write all four equations in under ten seconds without looking."
+    },
+    quiz: [
+      {
+        question: "Which four equations make up the fact family for 5, 8, and 40?",
+        answer: "5 × 8 = 40, 8 × 5 = 40, 40 ÷ 5 = 8, and 40 ÷ 8 = 5",
+        options: [
+          "5 + 8 = 13, 8 + 5 = 13, 40 − 5 = 35, and 40 − 8 = 32",
+          "5 × 8 = 40, 8 × 5 = 40, 40 ÷ 5 = 8, and 40 ÷ 8 = 5",
+          "5 × 8 = 40, 40 × 5 = 200, 40 ÷ 8 = 5, and 8 ÷ 5 = 1 remainder 3",
+          "5 × 8 = 40, 8 × 5 = 40, 5 ÷ 40 = 8, and 8 ÷ 40 = 5"
+        ]
+      },
+      {
+        question: "How do you use a fact family to solve 63 ÷ 9?",
+        answer: "Think: what times 9 equals 63? Since 7 × 9 = 63, the answer is 7",
+        options: [
+          "Count up from 9 until you reach 63 and keep track of how many steps",
+          "Subtract 9 from 63 repeatedly and count how many times",
+          "Think: what times 9 equals 63? Since 7 × 9 = 63, the answer is 7",
+          "Divide 63 by 3 first, then divide by 3 again to get the answer"
+        ]
+      },
+      {
+        question: "Why do perfect squares like 49 have only two fact family equations instead of four?",
+        answer: "Because both factors are the same number, so the two multiplication equations are identical",
+        options: [
+          "Because perfect squares are too large to have four equations",
+          "Because division does not work on perfect squares",
+          "Because both factors are the same number, so the two multiplication equations are identical",
+          "Because perfect squares only appear in the 7 times table"
+        ]
+      },
+      {
+        question: "A word problem gives you a total of 54 and tells you there are 6 equal groups. What are you solving for?",
+        answer: "The size of each group — using 54 ÷ 6 = 9",
+        options: [
+          "The total — using 54 × 6 = 324",
+          "The number of groups — using 54 ÷ 9 = 6",
+          "The size of each group — using 54 ÷ 6 = 9",
+          "The missing factor — using 6 × 54 = 324"
+        ]
+      },
+      {
+        question: "What is the main advantage of learning through fact families instead of multiplication and division separately?",
+        answer: "You learn four related facts at once and see the connection between multiplication and division",
+        options: [
+          "Fact families are easier to memorize than individual facts",
+          "You learn four related facts at once and see the connection between multiplication and division",
+          "Fact families only use small numbers so they are less confusing",
+          "Division facts are automatically correct if your multiplication is correct"
+        ]
+      }
+    ],
+    familyAdventure: "Play a fact family guessing game at dinner or in the car. One person thinks of a fact family and says two of the four equations out loud. Everyone else has to name the other two equations and identify the three numbers in the family. Take turns being the person who picks the fact family. Try to stump each other with larger numbers like 8 × 9 = 72 or 6 × 7 = 42. If someone gets stuck, work it out together by starting with what you know.",
+    badge: "Family Connector",
+    nextLesson: "math-6-8-24"
+  },
+
+  {
+    id: "math-6-8-24",
+    subject: "Mathematics",
+    ageGroup: "6-8",
+    band: "Explorers",
+    guide: "Remi",
+    guideAnimal: "Raccoon",
+    lessonNumber: 24,
+    title: "Fractions: Halves, Thirds, and Fourths",
+    duration: "15-20 min",
+    hook: "What do a pizza slice, a quarter of an hour, and half a cup of sugar have in common? They are all fractions — parts of a whole. Fractions are everywhere: recipes, clocks, maps, music, money. A quarter is literally one fourth of a dollar. Half-time is the middle of a game. Remi the Raccoon always knows exactly what fraction of the day is left before sunset. Today you will learn what fractions really mean and how to read, compare, and use the most common ones.",
+    bigIdea: "A fraction describes equal parts of a whole — the bottom number tells how many equal parts the whole is divided into, and the top number tells how many of those parts you have.",
+    sections: [
+      {
+        title: "What a Fraction Really Means",
+        emoji: "🍕",
+        content: "A fraction has two parts. The denominator — the bottom number — tells you how many equal parts the whole has been divided into. The numerator — the top number — tells you how many of those parts you are talking about. In 3/4, the whole is cut into 4 equal pieces and you have 3 of them. The denominator names the size of each piece; the numerator counts how many you have. Both numbers matter — 3/4 and 3/8 both have 3 on top, but they describe completely different amounts because the pieces are different sizes."
+      },
+      {
+        title: "Halves, Thirds, and Fourths in Real Life",
+        emoji: "🕐",
+        content: "Halves, thirds, and fourths are the fractions you will use most often. A half (1/2) cuts something into 2 equal pieces. A third (1/3) cuts into 3 equal pieces — a third of an hour is 20 minutes. A fourth (1/4) cuts into 4 equal pieces — a quarter of a dollar is 25 cents. When you eat half a sandwich, you eat 1 of 2 equal parts. When a recipe calls for 2/3 cup of flour, it wants 2 of the 3 equal thirds that make up a whole cup. Recognizing these fractions in daily life is more useful than any worksheet."
+      },
+      {
+        title: "Comparing Fractions",
+        emoji: "⚖️",
+        content: "When two fractions have the same numerator, the one with the larger denominator is actually smaller. This surprises most people. 1/8 is smaller than 1/4 because when you cut something into 8 pieces, each piece is tinier than when you cut it into 4. More cuts means smaller pieces. When two fractions have the same denominator, the one with the larger numerator is bigger — 3/8 is bigger than 2/8 because you have more of the same-sized pieces. These two rules help you compare fractions without needing to calculate."
+      },
+      {
+        title: "Fractions and the Number Line",
+        emoji: "📏",
+        content: "Fractions are numbers — they live on the number line between whole numbers. 1/2 is exactly halfway between 0 and 1. 1/4 is one quarter of the way from 0 to 1. 3/4 is three quarters of the way. A whole number like 1 can also be written as a fraction: 2/2, 3/3, or 4/4 — any fraction where the numerator equals the denominator equals 1. Fractions greater than 1 are possible too: 5/4 means you have more than one whole. Seeing fractions on a number line makes their size feel real instead of abstract."
+      }
+    ],
+    activity: {
+      title: "Fraction Kitchen",
+      instructions: "Find measuring cups in your kitchen — ideally a 1/4 cup, 1/3 cup, and 1/2 cup. Fill each one with water and pour them into a clear glass one at a time so you can watch the level rise. Before you pour, predict: which cup will fill the glass fastest if you pour it four times? Which holds the most water per scoop? After experimenting, draw a number line from 0 to 1 on paper and mark where each fraction falls. Then write one real-life sentence for each: a sentence where you would use 1/4, a sentence for 1/3, and a sentence for 1/2."
+    },
+    quiz: [
+      {
+        question: "In the fraction 3/8, what does the 8 (denominator) tell you?",
+        answer: "The whole has been divided into 8 equal parts",
+        options: [
+          "You have 8 of something",
+          "The whole has been divided into 8 equal parts",
+          "The fraction is worth 8 times as much as a whole",
+          "There are 8 fractions in this problem"
+        ]
+      },
+      {
+        question: "Which fraction is larger: 1/3 or 1/6? Why?",
+        answer: "1/3 is larger because when a whole is cut into fewer pieces, each piece is bigger",
+        options: [
+          "1/6 is larger because 6 is a bigger number than 3",
+          "They are equal because both have 1 on top",
+          "1/3 is larger because when a whole is cut into fewer pieces, each piece is bigger",
+          "1/6 is larger because more cuts means more pieces to share"
+        ]
+      },
+      {
+        question: "A recipe needs 2/3 cup of oats. What does this mean?",
+        answer: "A cup is divided into 3 equal parts and you need 2 of those parts",
+        options: [
+          "You need 2 full cups and then a third of another cup",
+          "A cup is divided into 3 equal parts and you need 2 of those parts",
+          "You need to measure oats twice and divide by 3",
+          "The recipe needs two thirds of a tablespoon, not a cup"
+        ]
+      },
+      {
+        question: "What does it mean when a fraction has the same number on top and bottom, like 4/4?",
+        answer: "It equals 1 whole — all the parts together make a complete whole",
+        options: [
+          "The fraction is undefined and cannot be used",
+          "It means the numerator and denominator cancelled each other out to make 0",
+          "It equals 1 whole — all the parts together make a complete whole",
+          "It equals 2 because you add the top and bottom"
+        ]
+      },
+      {
+        question: "Which is greater: 5/8 or 3/8? How do you know?",
+        answer: "5/8 is greater because when denominators are the same, more pieces means a larger amount",
+        options: [
+          "3/8 is greater because smaller numerators mean bigger fractions",
+          "They are equal because both fractions have 8 as the denominator",
+          "5/8 is greater because when denominators are the same, more pieces means a larger amount",
+          "You cannot compare them without converting to decimals first"
+        ]
+      }
+    ],
+    familyAdventure: "Make a fraction snack together. Take any food that can be divided equally — a quesadilla, a brownie, a piece of fruit, crackers on a plate. Before eating, divide it into equal parts and name the fraction each piece represents. If you cut it into 4 pieces, each is 1/4. If one person takes 3 pieces, they have 3/4. Eat your fractions and talk: what fraction did each person eat? What fraction is left? If you started with 8 crackers and ate 3, what fraction remains? Connecting fractions to food makes the math stick because your brain remembers experiences more than worksheets.",
+    badge: "Fraction Pioneer",
+    nextLesson: null
+  }
 
 ];
 
