@@ -1,1710 +1,730 @@
-// MathLessonPlayer — dedicated player for Math v2 manipulative-first lessons.
-// Wave A: block auto-arrange, teaching moments, concept visual, quiz rewrite,
-//         Remi animation, counter narration, feedback timing fixes.
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { getCurrentChild } from '../../lib/storage';
-import { MATH_L01_V2 } from '../../data/math_upper_explorer_l01_v2_screens';
-import BaseTenBlocksWorkspace from './BaseTenBlocksWorkspace';
+// ============================================================
+// MathLessonPlayer.jsx — Coreverse Academy
+// Manipulative-first math player. 8-screen flow:
+// welcome → explore → guided-task → concept-name →
+// applied-problems → quick-check → real-world → celebration
+//
+// Props:
+//   lessonData      — lesson object (see math_ue_l01_v2.js)
+//   complexityLevel — "littlestars" | "explorers" | "upperexplorers"
+//   onComplete      — ({ xp, badge, score, total }) => void
+//
+// Rules enforced here:
+//   • Back button navigates WITHIN the lesson, never exits.
+//   • No silent advancement — kid taps Check / Continue explicitly.
+//   • console.log complexity level + screen on every screen change.
+//   • Audio speed 1.0 (server default — playbackRate never touched).
+// ============================================================
 
-// ── Design tokens ─────────────────────────────────────────────────────────────
-const REMI_IMG   = '/avatars/remi.png';
-const ACCENT     = '#C4B5FD';
-const ACCENT_DIM = 'rgba(196,181,253,0.18)';
-const BG         = '#080618';
-const FONT       = "'Inter', system-ui, -apple-system, sans-serif";
-const VOICE_ID   = 'ShhDvxS4N0arXxn6PD5o'; // Remi
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import BaseTenBlocksWorkspace from "./BaseTenBlocksWorkspace";
+import * as guideVoicesModule from "../../data/guideVoices";
 
-// ── Lesson registry ───────────────────────────────────────────────────────────
-const LESSON_REGISTRY = {
-  'math-9-10-01': MATH_L01_V2,
+// ── Lesson data registry (add new v2 lessons here) ──
+import { mathUeL01V2 } from "../../data/math_ue_l01_v2";
+const MATH_V2_DATA = {
+  "math-9-10-01": mathUeL01V2,
 };
 
-// ── Global keyframes (injected once at root) ──────────────────────────────────
-const GLOBAL_STYLES = `
-  @keyframes feedbackIn {
-    0%   { transform: scale(0.9) translateY(4px); opacity: 0; }
-    100% { transform: scale(1) translateY(0); opacity: 1; }
-  }
-  @keyframes remiPulse {
-    0%,100% { transform: scale(1);    box-shadow: 0 0 12px rgba(196,181,253,0.33); }
-    50%      { transform: scale(1.07); box-shadow: 0 0 24px rgba(196,181,253,0.60); }
-  }
-  @keyframes blockGlow {
-    0%,100% { transform: scale(1); }
-    50%      { transform: scale(1.06); }
-  }
-  @keyframes badgePop {
-    0%   { transform: scale(0.2) rotate(-15deg); opacity: 0; }
-    60%  { transform: scale(1.15) rotate(5deg);  opacity: 1; }
-    100% { transform: scale(1) rotate(0deg); }
-  }
-  @keyframes slideUp {
-    0%   { transform: translateY(100%); opacity: 0; }
-    100% { transform: translateY(0);    opacity: 1; }
-  }
-`;
+// ── Resolve Remi's ElevenLabs voice ID from guideVoices.js ──
+// Defensive against export shape; single place to adjust if needed.
+const VOICES =
+  guideVoicesModule.GUIDE_VOICES ||
+  guideVoicesModule.guideVoices ||
+  guideVoicesModule.default ||
+  {};
+const REMI_VOICE_ID =
+  VOICES.Remi || VOICES.remi || VOICES["Remi"] || "";
 
-// ── Sound effects (Web Audio API — no file deps, respects silent mode) ────────
-function playChime() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const notes = [523.25, 659.25, 783.99]; // C5, E5, G5
-    notes.forEach((freq, i) => {
-      const osc  = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      const t = ctx.currentTime + i * 0.12;
-      gain.gain.setValueAtTime(0, t);
-      gain.gain.linearRampToValueAtTime(0.18, t + 0.04);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.45);
-      osc.start(t);
-      osc.stop(t + 0.45);
-    });
-    setTimeout(() => ctx.close(), 1500);
-  } catch { /* silent mode / unsupported — no-op */ }
+// ============================================================
+// Audio — safeSpeak pattern: one utterance at a time, superseded
+// requests dropped, no double-speech.
+// ============================================================
+function useRemiSpeech() {
+  const audioRef = useRef(null);
+  const seqRef = useRef(0);
+  const [speaking, setSpeaking] = useState(false);
+
+  const speak = useCallback(async (text) => {
+    if (!text) return;
+    const seq = ++seqRef.current;
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    } catch (_) { /* noop */ }
+    setSpeaking(false);
+    try {
+      const res = await fetch("/.netlify/functions/nova-speak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text,
+          voiceId: REMI_VOICE_ID,
+          speed: 1.0,
+        }),
+      });
+      if (!res.ok) throw new Error(`TTS ${res.status}`);
+      const ct = res.headers.get("content-type") || "";
+      let url;
+      if (ct.includes("audio")) {
+        url = URL.createObjectURL(await res.blob());
+      } else {
+        const j = await res.json();
+        const b64 = j.audio || j.audioContent || j.data;
+        if (!b64) throw new Error("TTS: empty payload");
+        url = `data:audio/mpeg;base64,${b64}`;
+      }
+      if (seq !== seqRef.current) return; // superseded — drop it
+      const a = new Audio(url);
+      audioRef.current = a;
+      a.onplay = () => seq === seqRef.current && setSpeaking(true);
+      a.onended = () => seq === seqRef.current && setSpeaking(false);
+      a.onerror = () => seq === seqRef.current && setSpeaking(false);
+      a.play().catch(() => setSpeaking(false));
+    } catch (err) {
+      console.warn("[MathLessonPlayer] speak failed:", err.message);
+      setSpeaking(false);
+    }
+  }, []);
+
+  const stop = useCallback(() => {
+    seqRef.current++;
+    try {
+      if (audioRef.current) audioRef.current.pause();
+    } catch (_) { /* noop */ }
+    audioRef.current = null;
+    setSpeaking(false);
+  }, []);
+
+  useEffect(() => stop, [stop]); // cleanup on unmount
+  return { speak, stop, speaking };
 }
 
-function playFanfare() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
-    notes.forEach((freq, i) => {
-      const osc  = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      const t = ctx.currentTime + i * 0.16;
-      gain.gain.setValueAtTime(0, t);
-      gain.gain.linearRampToValueAtTime(0.22, t + 0.05);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.55);
-      osc.start(t);
-      osc.stop(t + 0.55);
-    });
-    setTimeout(() => ctx.close(), 1800);
-  } catch { /* silent mode / unsupported — no-op */ }
-}
-
-// ── Shared UI atoms ───────────────────────────────────────────────────────────
-function ProgressBar({ current, total }) {
-  const pct = total > 1 ? (current / (total - 1)) * 100 : 100;
+// ── Remi avatar with speaking glow ──
+function RemiAvatar({ speaking, size = 72 }) {
   return (
-    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'rgba(255,255,255,0.06)', zIndex: 10 }}>
-      <div style={{ height: '100%', width: `${pct}%`, background: ACCENT, transition: 'width 0.5s ease' }} />
-    </div>
+    <img
+      src="/avatars/remi.png"
+      alt="Remi the Raccoon"
+      width={size}
+      height={size}
+      className={`rounded-full object-cover border-2 border-amber-300/60 ${
+        speaking ? "animate-pulse" : ""
+      }`}
+      style={{
+        filter: speaking
+          ? "drop-shadow(0 0 14px rgba(252,211,77,0.85))"
+          : "drop-shadow(0 0 4px rgba(252,211,77,0.3))",
+      }}
+    />
   );
 }
 
-function RemiAvatar({ size = 64, speaking = false }) {
-  return (
-    <div style={{ position: 'relative', flexShrink: 0 }}>
-      <img
-        src={REMI_IMG}
-        alt="Remi"
-        style={{
-          width: size, height: size, borderRadius: '50%', objectFit: 'cover',
-          border: `2px solid ${speaking ? ACCENT : 'rgba(196,181,253,0.25)'}`,
-          transition: 'border-color 0.3s',
-          animation: speaking ? 'remiPulse 1.2s ease-in-out infinite' : 'none',
-        }}
-      />
-    </div>
-  );
-}
-
-function PrimaryBtn({ children, onClick, disabled = false, color = ACCENT }) {
+// ── Big touch-friendly button ──
+function BigButton({ children, onClick, disabled, variant = "primary" }) {
+  const base =
+    "px-8 py-4 rounded-2xl text-lg font-bold transition-all active:scale-95 disabled:opacity-40 disabled:active:scale-100";
+  const styles =
+    variant === "primary"
+      ? "bg-amber-400 text-indigo-950 shadow-lg shadow-amber-400/30"
+      : "bg-indigo-800/80 text-indigo-100 border border-indigo-400/40";
   return (
     <button
+      className={`${base} ${styles}`}
       onClick={onClick}
       disabled={disabled}
-      style={{
-        width: '100%', padding: '16px', borderRadius: 16, border: 'none',
-        background: disabled ? 'rgba(255,255,255,0.08)' : color,
-        color: disabled ? 'rgba(255,255,255,0.3)' : '#000',
-        fontWeight: 800, fontSize: '1rem', cursor: disabled ? 'not-allowed' : 'pointer',
-        transition: 'background 0.2s, color 0.2s', touchAction: 'manipulation',
-        fontFamily: FONT,
-      }}
+      style={{ touchAction: "manipulation" }}
     >
       {children}
     </button>
   );
 }
 
-// Back chevron — used inside each screen's header row so it can handle
-// sub-state back (prev task / prev problem / prev question) before calling
-// the player-level onBack that decrements screenIdx.
-function BackChevron({ onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      style={{
-        width: 44, height: 44, borderRadius: '50%', border: 'none', flexShrink: 0,
-        background: 'rgba(255,255,255,0.12)',
-        color: 'rgba(255,255,255,0.8)', fontSize: '1.6rem', lineHeight: 1,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        cursor: 'pointer', touchAction: 'manipulation', padding: 0,
-      }}
-      aria-label="Go back"
-    >
-      ‹
-    </button>
-  );
-}
+// ============================================================
+// Screen components
+// ============================================================
 
-function SpeakerBtn({ onClick, speaking, loading }) {
-  return (
-    <button
-      onClick={onClick}
-      style={{
-        width: 36, height: 36, borderRadius: '50%', border: 'none', flexShrink: 0,
-        background: (speaking || loading) ? ACCENT_DIM : 'rgba(255,255,255,0.07)',
-        color: (speaking || loading) ? ACCENT : 'rgba(255,255,255,0.45)',
-        fontSize: '1rem', cursor: 'pointer', touchAction: 'manipulation',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        transition: 'background 0.2s',
-      }}
-      aria-label="Replay audio"
-    >
-      {loading ? '⏳' : speaking ? '🔊' : '🔈'}
-    </button>
-  );
-}
-
-function FeedbackBanner({ type, message }) {
-  if (!type) return null;
-  const isCorrect = type === 'correct';
-  return (
-    <div style={{
-      margin: '8px 0',
-      padding: '12px 16px',
-      borderRadius: 12,
-      background: isCorrect ? 'rgba(52,211,153,0.15)' : 'rgba(239,68,68,0.12)',
-      border: `1.5px solid ${isCorrect ? 'rgba(52,211,153,0.4)' : 'rgba(239,68,68,0.35)'}`,
-      color: isCorrect ? '#34D399' : '#FCA5A5',
-      fontWeight: 600, fontSize: '0.9rem', lineHeight: 1.45,
-      animation: 'feedbackIn 0.25s cubic-bezier(0.34,1.56,0.64,1)',
-    }}>
-      {isCorrect ? '✓ ' : '✗ '}{message}
-    </div>
-  );
-}
-
-// ── Audio hook ────────────────────────────────────────────────────────────────
-function useAudio(childName) {
-  const [speaking,     setSpeaking]     = useState(false);
-  const [loadingAudio, setLoadingAudio] = useState(false);
-  const audioRef    = useRef(null);
-  const blobUrlRef  = useRef(null);
-  const speakGenRef = useRef(0);
-  const abortRef    = useRef(null);
-
-  const stopAudio = useCallback(() => {
-    speakGenRef.current++;
-    abortRef.current?.abort();
-    if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
-    setSpeaking(false);
-    setLoadingAudio(false);
+function WelcomeScreen({ screen, speak, speaking, onNext }) {
+  useEffect(() => {
+    speak(screen.audio);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  return (
+    <div className="flex flex-col items-center justify-center flex-1 gap-8 px-6 text-center">
+      <RemiAvatar speaking={speaking} size={140} />
+      <p className="text-xl text-indigo-100 max-w-md leading-relaxed">
+        {screen.audio}
+      </p>
+      <BigButton onClick={onNext}>{screen.buttonLabel || "Start"}</BigButton>
+    </div>
+  );
+}
 
-  const speak = useCallback(async (rawText, onDone) => {
-    if (!rawText) { onDone?.(); return; }
-    const text = rawText.replace(/\{name\}/g, childName || 'there');
-
-    speakGenRef.current++;
-    const gen = speakGenRef.current;
-    abortRef.current?.abort();
-    const ctrl = new AbortController();
-    abortRef.current = ctrl;
-
-    if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
-    setSpeaking(true);
-    setLoadingAudio(true);
-
-    let done = false;
-    const finish = () => {
-      if (done) return; done = true;
-      setSpeaking(false);
-      setLoadingAudio(false);
-      onDone?.();
-    };
-    const wordCount = text.split(/\s+/).filter(Boolean).length;
-    const deadman = setTimeout(finish, Math.max(30000, wordCount * 750));
-
-    try {
-      const res = await fetch('/.netlify/functions/nova-speak', {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ text, voiceId: VOICE_ID }),
-        signal:  ctrl.signal,
-      });
-      if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
-      if (!res.ok) throw new Error('tts-unavailable');
-
-      const blob = await res.blob();
-      if (gen !== speakGenRef.current) { clearTimeout(deadman); return; }
-
-      if (blobUrlRef.current) URL.revokeObjectURL(blobUrlRef.current);
-      const blobUrl = URL.createObjectURL(blob);
-      blobUrlRef.current = blobUrl;
-
-      if (!audioRef.current) {
-        const el = new Audio();
-        el.playsInline = true;
-        el.setAttribute('webkit-playsinline', 'true');
-        el.setAttribute('playsinline', 'true');
-        audioRef.current = el;
-      }
-      const el = audioRef.current;
-      el.src = blobUrl;
-      setLoadingAudio(false);
-      el.onended = () => { clearTimeout(deadman); finish(); };
-      el.onerror = () => { clearTimeout(deadman); finish(); };
-      await el.play().catch(() => { clearTimeout(deadman); finish(); });
-    } catch (e) {
-      clearTimeout(deadman);
-      if (e.name !== 'AbortError') finish();
-    }
-  }, [childName]);
-
-  useEffect(() => () => {
-    speakGenRef.current++;
-    abortRef.current?.abort();
-    if (audioRef.current) { audioRef.current.pause(); audioRef.current.src = ''; }
-    if (blobUrlRef.current) URL.revokeObjectURL(blobUrlRef.current);
+function ExploreScreen({ screen, complexityLevel, speak, speaking, onNext }) {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    speak(screen.audio);
+    const t = setTimeout(() => setReady(true), (screen.minSeconds || 30) * 1000);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  return { speak, stopAudio, speaking, loadingAudio };
+  const handleContinue = () => {
+    speak(screen.continueAudio || "");
+    onNext();
+  };
+  return (
+    <div className="flex flex-col flex-1 min-h-0">
+      <div className="flex items-center gap-3 px-4 py-2">
+        <RemiAvatar speaking={speaking} size={48} />
+        <p className="text-sm text-indigo-200 leading-snug">{screen.audio}</p>
+      </div>
+      <div className="flex-1 min-h-0">
+        <BaseTenBlocksWorkspace complexityLevel={complexityLevel} />
+      </div>
+      <div className="flex justify-center py-3">
+        <BigButton onClick={handleContinue} disabled={!ready}>
+          {ready ? "Continue" : "Keep exploring…"}
+        </BigButton>
+      </div>
+    </div>
+  );
 }
 
-// ── Counter narration hook ────────────────────────────────────────────────────
-// Debounces count changes 600ms, speaks total aloud, skips initial mount value.
-function useCounterNarration(speak) {
-  const prevTotalRef = useRef(null); // null = not yet received first onChange
-  const timerRef     = useRef(null);
-  const mountedRef   = useRef(true);
+function GuidedTaskScreen({ screen, complexityLevel, speak, speaking, onNext }) {
+  const [taskIndex, setTaskIndex] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [status, setStatus] = useState("building"); // building | correct | wrong
+  const [resetKey, setResetKey] = useState(0);
+  const hintTimer = useRef(null);
+  const task = screen.tasks[taskIndex];
+
+  const armHint = useCallback(() => {
+    clearTimeout(hintTimer.current);
+    hintTimer.current = setTimeout(() => {
+      if (task?.hint) speak(task.hint);
+    }, 20000);
+  }, [task, speak]);
 
   useEffect(() => {
-    mountedRef.current = true;
-    return () => {
-      mountedRef.current = false;
-      clearTimeout(timerRef.current);
-    };
-  }, []);
+    speak(task.audio || task.prompt);
+    setStatus("building");
+    armHint();
+    return () => clearTimeout(hintTimer.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [taskIndex]);
 
-  const reset = useCallback(() => {
-    prevTotalRef.current = null;
-    clearTimeout(timerRef.current);
-  }, []);
-
-  const narrate = useCallback((total) => {
-    console.log('[narration] narrate() called — total:', total, '| prev:', prevTotalRef.current, '| mounted:', mountedRef.current);
-    if (!mountedRef.current) return;
-    if (prevTotalRef.current === null) {
-      // First call is the initial workspace state — record it, don't speak.
-      prevTotalRef.current = total;
-      console.log('[narration] first call — recorded initial total, skipping audio');
-      return;
-    }
-    // Guard: don't restart the debounce timer when the total hasn't changed.
-    // Without this guard, frequent re-renders (e.g. every-second elapsed timer
-    // in ExploreScreen) would continuously reset the 600ms timer via a stale
-    // inline onChange closure in the workspace's useEffect([blocks, onChange]).
-    if (total === prevTotalRef.current) {
-      console.log('[narration] total unchanged — debounce skipped');
-      return;
-    }
-    clearTimeout(timerRef.current);
-    console.log('[narration] scheduling debounce (1000ms) for total:', total);
-    timerRef.current = setTimeout(() => {
-      if (!mountedRef.current) return;
-      prevTotalRef.current = total;
-      console.log('[narration] debounce fired — speaking:', total);
-      speak(String(total));
-    }, 1000);
-  }, [speak]);
-
-  return { narrate, reset };
-}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// Teaching card block icons — large, visually dominant.
-// Used in TeachingMomentPanel and TripleRepVisual so kids clearly see what
-// each digit value looks like as physical blocks.
-// ══════════════════════════════════════════════════════════════════════════════
-function CardBlockIcon({ blockType, count, color }) {
-  if (count === 0) {
-    return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 0' }}>
-        <div style={{ fontSize: '0.75rem', color, opacity: 0.4, fontWeight: 700 }}>(none)</div>
-      </div>
-    );
-  }
-
-  if (blockType === 'flat') {
-    const n = Math.min(count, 2);
-    return (
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, alignItems: 'center', justifyContent: 'center' }}>
-        {Array.from({ length: n }).map((_, i) => (
-          <svg key={i} width={60} height={60} viewBox="0 0 60 60">
-            <rect x={1} y={1} width={58} height={58} fill={color} stroke={color} strokeWidth={1.5} rx={5} opacity={0.9} />
-            {[1,2,3,4,5,6,7,8,9].map(j => (
-              <line key={`h${j}`} x1={1} y1={j * 6} x2={59} y2={j * 6} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
-            ))}
-            {[1,2,3,4,5,6,7,8,9].map(j => (
-              <line key={`v${j}`} x1={j * 6} y1={1} x2={j * 6} y2={59} stroke="rgba(0,0,0,0.2)" strokeWidth={0.6} />
-            ))}
-          </svg>
-        ))}
-        {count > 2 && <span style={{ fontSize: '0.85rem', color, fontWeight: 800, marginLeft: 2 }}>×{count}</span>}
-      </div>
-    );
-  }
-
-  if (blockType === 'rod') {
-    const n = Math.min(count, 9);
-    return (
-      <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'center', gap: 3, flexWrap: 'wrap' }}>
-        {Array.from({ length: n }).map((_, i) => (
-          <svg key={i} width={10} height={62} viewBox="0 0 10 62">
-            <rect x={0.5} y={0.5} width={9} height={61} fill={color} stroke={color} strokeWidth={1} rx={2} opacity={0.9} />
-            {[1,2,3,4,5,6,7,8,9].map(j => (
-              <line key={j} x1={1} y1={j * 6.1} x2={9} y2={j * 6.1} stroke="rgba(0,0,0,0.2)" strokeWidth={0.5} />
-            ))}
-          </svg>
-        ))}
-        {count > 9 && <span style={{ fontSize: '0.85rem', color, fontWeight: 800, alignSelf: 'center' }}>×{count}</span>}
-      </div>
-    );
-  }
-
-  // unit
-  const n = Math.min(count, 9);
-  return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, justifyContent: 'center', maxWidth: 84 }}>
-      {Array.from({ length: n }).map((_, i) => (
-        <svg key={i} width={18} height={18}>
-          <rect x={0.5} y={0.5} width={17} height={17} fill={color} stroke={color} strokeWidth={1} rx={3} opacity={0.9} />
-        </svg>
-      ))}
-      {count > 9 && <span style={{ fontSize: '0.85rem', color, fontWeight: 800 }}>×{count}</span>}
-    </div>
-  );
-}
-
-// What the kid built — shown instead of full workspace during teaching mode.
-// Renders actual colored mini-block SVGs so the kid can see what they built.
-// (Replaces the text-only BuildSnapshot from Wave A.1.)
-function FrozenBlockDisplay({ wsState }) {
-  const { flats = 0, rods = 0, units = 0, total = 0 } = wsState || {};
-
-  return (
-    <div style={{
-      flexShrink: 0, margin: '6px 16px 10px', padding: '12px 14px',
-      borderRadius: 14, background: 'rgba(255,255,255,0.04)',
-      border: `1.5px solid ${ACCENT}22`,
-      display: 'flex', flexDirection: 'column', gap: 10,
-    }}>
-      {/* Total */}
-      <div style={{ fontSize: '2.6rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em', lineHeight: 1 }}>
-        {total}
-      </div>
-
-      {/* Flat row */}
-      {flats > 0 && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 5, flexWrap: 'wrap' }}>
-          {Array.from({ length: flats }, (_, i) => (
-            <svg key={i} width={40} height={40}>
-              <rect x={1} y={1} width={38} height={38} fill="#FBBF24" stroke="#D97706" strokeWidth={1.5} rx={4} />
-              {[1,2,3].map(j => <line key={`h${j}`} x1={1} y1={j*9.5} x2={39} y2={j*9.5} stroke="#B45309" strokeWidth={0.6} />)}
-              {[1,2,3].map(j => <line key={`v${j}`} x1={j*9.5} y1={1} x2={j*9.5} y2={39} stroke="#B45309" strokeWidth={0.6} />)}
-            </svg>
-          ))}
-          <span style={{ color: '#FBBF24', fontSize: '0.75rem', fontWeight: 700, marginLeft: 2 }}>
-            ×{flats} flat{flats > 1 ? 's' : ''}
-          </span>
-        </div>
-      )}
-
-      {/* Rod row */}
-      {rods > 0 && (
-        <div style={{ display: 'flex', alignItems: 'flex-end', gap: 4, flexWrap: 'wrap' }}>
-          {Array.from({ length: rods }, (_, i) => (
-            <svg key={i} width={12} height={56}>
-              <rect x={1} y={1} width={10} height={54} fill="#34D399" stroke="#10B981" strokeWidth={1.5} rx={2} />
-              {[1,2,3,4].map(j => <line key={j} x1={1} y1={j*10.8} x2={11} y2={j*10.8} stroke="#059669" strokeWidth={0.8} />)}
-            </svg>
-          ))}
-          <span style={{ color: '#34D399', fontSize: '0.75rem', fontWeight: 700, paddingBottom: 2, marginLeft: 2 }}>
-            ×{rods} rod{rods > 1 ? 's' : ''}
-          </span>
-        </div>
-      )}
-
-      {/* Unit row */}
-      {units > 0 && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 3, flexWrap: 'wrap' }}>
-          {Array.from({ length: units }, (_, i) => (
-            <svg key={i} width={16} height={16}>
-              <rect x={1} y={1} width={14} height={14} fill="#60A5FA" stroke="#2563EB" strokeWidth={1.5} rx={3} />
-            </svg>
-          ))}
-          <span style={{ color: '#60A5FA', fontSize: '0.75rem', fontWeight: 700, marginLeft: 2 }}>
-            ×{units} unit{units > 1 ? 's' : ''}
-          </span>
-        </div>
-      )}
-
-      {flats === 0 && rods === 0 && units === 0 && (
-        <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.8rem' }}>(empty)</div>
-      )}
-    </div>
-  );
-}
-
-// Teaching moment panel — slides up from bottom after correct answer.
-// Layout: scrollable content area above a pinned Next button so the
-// button is always visible regardless of card icon height.
-function TeachingMomentPanel({ task, onNext }) {
-  const tm = task.teachingMoment;
-  if (!tm) return null;
-
-  return (
-    <div style={{
-      flex: 1, minHeight: 0,
-      display: 'flex', flexDirection: 'column',
-      background: 'rgba(8,6,24,0.97)',
-      borderTop: `1.5px solid ${ACCENT}33`,
-      animation: 'slideUp 0.35s cubic-bezier(0.34,1,0.64,1)',
-    }}>
-      {/* Scrollable content — cards can be taller than the available space */}
-      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '14px 16px 8px' }}>
-        {/* Equation headline */}
-        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: ACCENT, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, textAlign: 'center' }}>
-          Place Value
-        </div>
-        <div style={{ fontSize: 'clamp(0.95rem,3.5vw,1.15rem)', fontWeight: 900, color: '#fff', textAlign: 'center', marginBottom: 12, letterSpacing: '-0.01em' }}>
-          {tm.equation}
-        </div>
-
-        {/* Color-coded cards: digit top, big block icon middle, place label bottom */}
-        <div style={{ display: 'flex', gap: 6 }}>
-          {tm.rows.map((row, i) => (
-            <div key={i} style={{
-              flex: 1,
-              background: `${row.color}12`,
-              border: `1.5px solid ${row.color}40`,
-              borderRadius: 12,
-              padding: '10px 6px 8px',
-              display: 'flex', flexDirection: 'column', alignItems: 'center',
-            }}>
-              {/* Digit — top anchor */}
-              <div style={{ fontSize: '1.8rem', fontWeight: 900, color: row.color, lineHeight: 1, marginBottom: 8 }}>
-                {row.digit}
-              </div>
-              {/* Block icon — dominant visual */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', padding: '4px 0 8px' }}>
-                <CardBlockIcon blockType={row.blockType} count={row.count} color={row.color} />
-              </div>
-              {/* Place label — bottom anchor */}
-              <div style={{ fontSize: '0.58rem', fontWeight: 800, color: row.color, letterSpacing: '0.1em', textTransform: 'uppercase', textAlign: 'center' }}>
-                {row.placeLabel}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Next button — always pinned at the bottom, never scrolls away */}
-      <div style={{ padding: '8px 16px 18px', flexShrink: 0 }}>
-        <PrimaryBtn onClick={onNext} color="#34D399">
-          Next task →
-        </PrimaryBtn>
-      </div>
-    </div>
-  );
-}
-
-// Triple-representation visual for 247 (ConceptNameScreen)
-function TripleRepVisual() {
-  const cols = [
-    { digit: '2', place: 'HUNDREDS', blockType: 'flat', count: 2, color: '#FBBF24' },
-    { digit: '4', place: 'TENS',     blockType: 'rod',  count: 4, color: '#34D399' },
-    { digit: '7', place: 'ONES',     blockType: 'unit', count: 7, color: '#60A5FA' },
-  ];
-
-  return (
-    <div style={{ margin: '16px 0' }}>
-      {/* Number label */}
-      <div style={{ textAlign: 'center', marginBottom: 10 }}>
-        <span style={{ fontSize: '2rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.04em' }}>
-          2
-        </span>
-        <span style={{ fontSize: '2rem', fontWeight: 900, color: '#34D399', letterSpacing: '-0.04em' }}>
-          4
-        </span>
-        <span style={{ fontSize: '2rem', fontWeight: 900, color: '#60A5FA', letterSpacing: '-0.04em' }}>
-          7
-        </span>
-      </div>
-
-      {/* Three columns — digit top, big icon middle, label bottom */}
-      <div style={{ display: 'flex', gap: 8 }}>
-        {cols.map(({ digit, place, blockType, count, color }) => (
-          <div key={place} style={{
-            flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
-            background: `${color}12`, border: `1.5px solid ${color}40`,
-            borderRadius: 14, padding: '12px 6px 10px', minHeight: 140,
-          }}>
-            {/* Digit */}
-            <div style={{ fontSize: '1.8rem', fontWeight: 900, color, lineHeight: 1, flexShrink: 0 }}>
-              {digit}
-            </div>
-
-            {/* Block icons — dominant visual in the middle */}
-            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 0', width: '100%', overflow: 'hidden' }}>
-              <CardBlockIcon blockType={blockType} count={count} color={color} />
-            </div>
-
-            {/* Place label */}
-            <div style={{ fontSize: '0.57rem', fontWeight: 800, color, textTransform: 'uppercase', letterSpacing: '0.08em', textAlign: 'center', flexShrink: 0 }}>
-              {place}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// Screen sub-components
-// ══════════════════════════════════════════════════════════════════════════════
-
-// ── 1. WelcomeScreen ──────────────────────────────────────────────────────────
-function WelcomeScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  useEffect(() => {
-    speak(screen.audioPrompt);
-    return stopAudio;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', textAlign: 'center', gap: 20 }}>
-      {/* Back exits the lesson from Welcome screen */}
-      <div style={{ position: 'absolute', top: 14, left: 12 }}>
-        <BackChevron onClick={onBack} />
-      </div>
-      <RemiAvatar size={88} speaking={speaking} />
-
-      {/* Remi self-intro — prominent on-screen text so it's visible even before audio plays */}
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '1.2rem', fontWeight: 800, color: ACCENT, marginBottom: 10, lineHeight: 1.3 }}>
-          Hi! I'm Remi the Raccoon
-        </div>
-        <h1 style={{ fontSize: 'clamp(1.6rem,6.5vw,2.4rem)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.03em', lineHeight: 1.15 }}>
-          {screen.headline}
-        </h1>
-        <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.5)', fontWeight: 500, marginTop: 8, marginBottom: 0 }}>
-          {screen.subtitle}
-        </p>
-      </div>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'rgba(255,255,255,0.35)', fontSize: '0.82rem', maxWidth: 300 }}>
-        <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-        <span>Tap to replay my intro</span>
-      </div>
-
-      <div style={{ width: '100%', maxWidth: 340, marginTop: 8 }}>
-        <PrimaryBtn onClick={onAdvance}>Let's go →</PrimaryBtn>
-      </div>
-    </div>
-  );
-}
-
-// ── 2. BlockIntroScreen ───────────────────────────────────────────────────────
-function BlockIntroScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  const [highlighted, setHighlighted] = useState(null);
-
-  useEffect(() => {
-    speak(screen.audioPrompt);
-    const timings = screen.highlightTimings || { unit: 4400, rod: 9800, flat: 17200, none: 24000 };
-    const t1 = setTimeout(() => setHighlighted('unit'), timings.unit);
-    const t2 = setTimeout(() => setHighlighted('rod'),  timings.rod);
-    const t3 = setTimeout(() => setHighlighted('flat'), timings.flat);
-    const t4 = setTimeout(() => setHighlighted(null),   timings.none);
-    return () => { stopAudio(); [t1,t2,t3,t4].forEach(clearTimeout); };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const blocks = [
-    { type: 'unit', label: 'Unit', value: '1',   fill: '#60A5FA', stroke: '#2563EB' },
-    { type: 'rod',  label: 'Rod',  value: '10',  fill: '#34D399', stroke: '#10B981' },
-    { type: 'flat', label: 'Flat', value: '100', fill: '#FBBF24', stroke: '#D97706' },
-  ];
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '24px 20px', gap: 20 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <BackChevron onClick={onBack} />
-        <RemiAvatar size={44} speaking={speaking} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff' }}>Meet your blocks</div>
-          <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>Each one represents a different value</div>
-        </div>
-        <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-      </div>
-
-      <div style={{ display: 'flex', gap: 10, flex: 1, alignItems: 'stretch' }}>
-        {blocks.map(({ type, label, value, fill, stroke }) => {
-          const isLit = highlighted === type;
-          return (
-            <div
-              key={type}
-              style={{
-                flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',
-                justifyContent: 'center', gap: 10, padding: '18px 8px', borderRadius: 18,
-                background: isLit ? `${fill}1a` : 'rgba(255,255,255,0.04)',
-                border: `2px solid ${isLit ? fill : 'rgba(255,255,255,0.09)'}`,
-                boxShadow: isLit ? `0 0 24px ${fill}55` : 'none',
-                transition: 'all 0.35s ease',
-                animation: isLit ? 'blockGlow 0.9s ease-in-out infinite' : undefined,
-              }}
-            >
-              {type === 'unit' && (
-                <svg width={40} height={40}>
-                  <rect x={1} y={1} width={38} height={38} fill={fill} stroke={stroke} strokeWidth={2} rx={6} />
-                </svg>
-              )}
-              {type === 'rod' && (
-                <svg width={22} height={80}>
-                  <rect x={1} y={1} width={20} height={78} fill={fill} stroke={stroke} strokeWidth={2} rx={4} />
-                  {[1,2,3,4,5,6,7].map(i => (
-                    <line key={i} x1={2} y1={i*10} x2={20} y2={i*10} stroke={stroke} strokeWidth={1} />
-                  ))}
-                </svg>
-              )}
-              {type === 'flat' && (
-                <svg width={68} height={68}>
-                  <rect x={1} y={1} width={66} height={66} fill={fill} stroke={stroke} strokeWidth={2} rx={5} />
-                  {[1,2,3].map(i => (
-                    <line key={`h${i}`} x1={2} y1={i*16.5} x2={66} y2={i*16.5} stroke={stroke} strokeWidth={0.8} />
-                  ))}
-                  {[1,2,3].map(i => (
-                    <line key={`v${i}`} x1={i*16.5} y1={2} x2={i*16.5} y2={66} stroke={stroke} strokeWidth={0.8} />
-                  ))}
-                </svg>
-              )}
-
-              <div style={{ fontWeight: 800, fontSize: '0.9rem', color: isLit ? fill : '#fff', transition: 'color 0.3s' }}>
-                {label}
-              </div>
-              <div style={{ fontWeight: 900, fontSize: '1.4rem', color: fill, background: `${fill}18`, borderRadius: 8, padding: '3px 12px' }}>
-                {value}
-              </div>
-              {isLit && (
-                <div style={{ fontSize: '0.72rem', color: fill, fontWeight: 600, textAlign: 'center', lineHeight: 1.4, opacity: 0.85 }}>
-                  {type === 'unit' && 'means ONE'}
-                  {type === 'rod'  && '= 10 units'}
-                  {type === 'flat' && '= 100 units'}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-
-      <PrimaryBtn onClick={onAdvance}>Got it, let's build →</PrimaryBtn>
-    </div>
-  );
-}
-
-// ── 3. ExploreScreen ──────────────────────────────────────────────────────────
-function ExploreScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  const [elapsed,     setElapsed]     = useState(0);
-  const [canContinue, setCanContinue] = useState(false);
-  const [wsState,     setWsState]     = useState({ total: 0 });
-  const minSec = screen.minDurationSec || 60;
-  const { narrate } = useCounterNarration(speak);
-
-  // Memoized so BaseTenBlocksWorkspace's useEffect([blocks, onChange]) doesn't
-  // re-fire every second from the setElapsed tick → avoids resetting the
-  // narration debounce timer on every render.
-  const handleWsChange = useCallback(ws => {
-    console.log('[workspace/explore] onChange — total:', ws.total);
-    setWsState(ws);
-    narrate(ws.total);
-  }, [narrate]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    speak(screen.audioPrompt);
-    return stopAudio;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setElapsed(t => {
-        const next = t + 1;
-        if (next >= minSec) setCanContinue(true);
-        return next;
-      });
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [minSec]);
-
-  const remaining = Math.max(0, minSec - elapsed);
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <div style={{ padding: '14px 16px 8px', display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
-        <BackChevron onClick={onBack} />
-        <RemiAvatar size={36} speaking={speaking} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: '0.82rem', fontWeight: 700, color: ACCENT }}>Free Explore</div>
-          <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
-            {canContinue ? 'Ready when you are!' : 'Try each block — unit, rod, flat!'}
-          </div>
-        </div>
-        <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-      </div>
-
-      <div style={{ flex: 1, minHeight: 0 }}>
-        <BaseTenBlocksWorkspace onChange={handleWsChange} />
-      </div>
-
-      <div style={{ padding: '12px 16px 20px', flexShrink: 0 }}>
-        <PrimaryBtn onClick={onAdvance} disabled={!canContinue}>
-          {canContinue ? 'Continue →' : `Explore for ${remaining}s…`}
-        </PrimaryBtn>
-      </div>
-    </div>
-  );
-}
-
-// ── 4. GuidedTasksScreen ──────────────────────────────────────────────────────
-function GuidedTasksScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  const [taskIdx,      setTaskIdx]      = useState(0);
-  const [wsState,      setWsState]      = useState({ total: 0 });
-  const [feedback,     setFeedback]     = useState(null);
-  const [feedbackMsg,  setFeedbackMsg]  = useState('');
-  const [wrongCount,   setWrongCount]   = useState(0);
-  const [showDemo,     setShowDemo]     = useState(false);
-  const [showTeaching, setShowTeaching] = useState(false);
-
-  const tasks = screen.tasks || [];
-  const task  = tasks[taskIdx];
-
-  const { narrate: narrateCount, reset: resetNarrate } = useCounterNarration(speak);
-
-  // ── Stable taskIdx ref — lets advanceTask (useCallback) always read current taskIdx
-  //    without needing it in its dependency array (which would make it unstable).
-  const taskIdxRef = useRef(taskIdx);
-  useEffect(() => { taskIdxRef.current = taskIdx; }, [taskIdx]);
-
-  // ── Auto-advance timer ref — shared across renders, cleared on manual advance or back.
-  const autoAdvanceRef = useRef(null);
-
-  // ── Callback generation counter — incremented on every advanceTask / handleBack call.
-  //    speak() onDone callbacks capture the gen at the time they're created and guard
-  //    with `if (myGen !== callbackGenRef.current) return;`
-  //    This prevents stale callbacks (e.g. from audio onerror firing after stopAudio())
-  //    from silently advancing the task mid-build.
-  const callbackGenRef = useRef(0);
-
-  // ── Stable advanceTask — same function object across all renders.
-  //    Reads taskIdx from taskIdxRef.current so it's never stale.
-  //    Both the Next button and the auto-advance timer call this same function.
-  const advanceTask = useCallback(() => {
-    callbackGenRef.current++;        // invalidate all in-flight speak callbacks
-    clearTimeout(autoAdvanceRef.current);
-    autoAdvanceRef.current = null;
-    stopAudio();
-    setFeedback(null);
-    setFeedbackMsg('');
-    setWrongCount(0);
-    setShowDemo(false);
-    setShowTeaching(false);
-    const idx = taskIdxRef.current;
-    if (idx < tasks.length - 1) {
-      setTaskIdx(idx + 1);
-      setWsState({ total: 0 });
+  const check = () => {
+    clearTimeout(hintTimer.current);
+    if (total === task.target) {
+      setStatus("correct");
+      speak(task.successAudio || `Yes! That's ${task.target}. Great build.`);
     } else {
-      onAdvance();
+      setStatus("wrong");
+      speak(
+        task.hint ||
+          `Not quite — the counter shows ${total}, and we want ${task.target}. Adjust your blocks and check again.`
+      );
+      armHint();
     }
-  }, [stopAudio, onAdvance]); // eslint-disable-line react-hooks/exhaustive-deps
+  };
 
-  // ── Teaching panel effect — fires when showTeaching becomes true.
-  //    Speaks teaching audio and sets up auto-advance timer.
-  //    Moving this OUT of the speak callback chain makes it immune to
-  //    narration-timer race conditions that could abort "Perfect!..." audio.
-  useEffect(() => {
-    if (!showTeaching || !task) return;
-    clearTimeout(autoAdvanceRef.current);
-
-    if (task.teachingMoment?.audioPrompt) {
-      // Capture gen at effect-run time. If advanceTask or handleBack fires before
-      // this callback completes (e.g. user taps Next, or stopAudio triggers onerror),
-      // the gen will have incremented and the callback becomes a no-op.
-      const myGen = callbackGenRef.current;
-      speak(task.teachingMoment.audioPrompt, () => {
-        if (myGen !== callbackGenRef.current) return; // stale — already advanced or backed
-        autoAdvanceRef.current = setTimeout(advanceTask, 1500);
-      });
+  const nextTask = () => {
+    if (taskIndex < screen.tasks.length - 1) {
+      setTaskIndex((i) => i + 1);
+      setResetKey((k) => k + 1);
+      setTotal(0);
     } else {
-      autoAdvanceRef.current = setTimeout(advanceTask, 1500);
+      onNext();
     }
-
-    return () => { clearTimeout(autoAdvanceRef.current); };
-  }, [showTeaching]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Track speaking state via ref so handleWsChange (a stable useCallback) can
-  // check it without adding speaking to its dep array.
-  const speakingRef = useRef(speaking);
-  useEffect(() => { speakingRef.current = speaking; }, [speaking]);
-
-  // Memoized onChange — stable so workspace's onChange effect only fires on block changes.
-  const handleWsChange = useCallback(ws => {
-    console.log('[workspace/guided] onChange — total:', ws.total, '| task target:', task?.target);
-    setWsState(ws);
-    if (!speakingRef.current) narrateCount(ws.total);
-  }, [narrateCount]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Speak task audio on mount and on task change
-  useEffect(() => {
-    if (!task) return;
-    const t = setTimeout(() => speak(task.audioPrompt), 300);
-    return () => { clearTimeout(t); stopAudio(); };
-  }, [taskIdx]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Reset counter narration when task changes
-  useEffect(() => {
-    resetNarrate();
-  }, [taskIdx]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  function handleBack() {
-    callbackGenRef.current++;        // invalidate all in-flight speak callbacks
-    clearTimeout(autoAdvanceRef.current);
-    autoAdvanceRef.current = null;
-    stopAudio();
-    if (showTeaching) {
-      setShowTeaching(false);
-      setFeedback(null);
-      setFeedbackMsg('');
-      return;
-    }
-    if (taskIdx > 0) {
-      setTaskIdx(i => i - 1);
-      setWsState({ total: 0 });
-      setFeedback(null);
-      setFeedbackMsg('');
-      setWrongCount(0);
-      setShowDemo(false);
-    } else {
-      onBack();
-    }
-  }
-
-  function handleCheck() {
-    if (!task || showTeaching) return;
-    setFeedback(null);
-    setFeedbackMsg('');
-
-    if (wsState.total === task.target) {
-      playChime();
-      resetNarrate(); // cancel any pending narration so it can't abort "Perfect!..."
-      setFeedback('correct');
-      setFeedbackMsg('Perfect! That is exactly right.');
-      // speak "Perfect!" → callback only needs to flip showTeaching.
-      // Teaching audio + auto-advance are wired up in useEffect([showTeaching]).
-      // Gen guard: if handleBack fires while "Perfect!" is loading (e.g. user rage-backs),
-      // the callback is invalidated and showTeaching is never set.
-      const myGen = callbackGenRef.current;
-      speak("Perfect! That's exactly right.", () => {
-        if (myGen !== callbackGenRef.current) return; // stale — user already backed out
-        setFeedback(null);
-        setFeedbackMsg('');
-        setShowTeaching(true);
-      });
-    } else {
-      const newWrong = wrongCount + 1;
-      setWrongCount(newWrong);
-      setFeedback('wrong');
-      const hint = task.wrongHint || `We want ${task.target}. You have ${wsState.total}. Try again.`;
-      setFeedbackMsg(hint);
-      speak(hint);
-      if (newWrong >= 2) setShowDemo(true);
-    }
-  }
-
-  if (!task) return null;
-
-  const replayAudio = showTeaching && task.teachingMoment?.audioPrompt
-    ? task.teachingMoment.audioPrompt
-    : task.audioPrompt;
+  };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Header */}
-      <div style={{ padding: '12px 16px 8px', flexShrink: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-          <BackChevron onClick={handleBack} />
-          <RemiAvatar size={36} speaking={speaking} />
-          <div style={{ flex: 1 }}>
-            <div style={{ fontSize: '0.73rem', color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              Task {taskIdx + 1} of {tasks.length}
-            </div>
-          </div>
-          <SpeakerBtn onClick={() => speak(replayAudio)} speaking={speaking} loading={loadingAudio} />
-        </div>
-
-        {/* Progress dots */}
-        <div style={{ display: 'flex', gap: 6 }}>
-          {tasks.map((_, i) => (
-            <div key={i} style={{
-              height: 4, flex: 1, borderRadius: 2,
-              background: i < taskIdx ? ACCENT : i === taskIdx ? `${ACCENT}88` : 'rgba(255,255,255,0.1)',
-              transition: 'background 0.3s',
-            }} />
-          ))}
-        </div>
-
-        {/* Task prompt */}
-        {!showTeaching && (
-          <div style={{ marginTop: 14, fontSize: 'clamp(1.1rem,4.5vw,1.4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.02em' }}>
+    <div className="flex flex-col flex-1 min-h-0">
+      <div className="flex items-center gap-3 px-4 py-2">
+        <RemiAvatar speaking={speaking} size={48} />
+        <div>
+          <p className="text-xs text-indigo-400 font-semibold">
+            Task {taskIndex + 1} of {screen.tasks.length}
+          </p>
+          <p className="text-base text-indigo-100 font-semibold">
             {task.prompt}
-          </div>
-        )}
-
-        {/* Feedback (only while not in teaching mode) */}
-        {!showTeaching && (
-          <div style={{ marginTop: 8 }}>
-            <FeedbackBanner type={feedback} message={feedbackMsg} />
-          </div>
-        )}
-
-        {/* "Show me how" button after 2 wrong attempts */}
-        {showDemo && !feedback && !showTeaching && (
-          <button
-            onClick={() => {
-              setShowDemo(false);
-              const msg = `Here's how: ${task.wrongHint}`;
-              speak(msg);
-            }}
-            style={{
-              marginTop: 6, padding: '8px 16px', borderRadius: 10, border: `1.5px solid ${ACCENT}44`,
-              background: ACCENT_DIM, color: ACCENT, fontSize: '0.83rem', fontWeight: 600,
-              cursor: 'pointer', touchAction: 'manipulation', width: '100%',
-            }}
-          >
-            Show me how →
-          </button>
+          </p>
+        </div>
+      </div>
+      <div className="flex-1 min-h-0">
+        <BaseTenBlocksWorkspace
+          complexityLevel={complexityLevel}
+          resetKey={resetKey}
+          onTotalChange={setTotal}
+          onChange={() => {
+            if (status !== "correct") armHint();
+          }}
+        />
+      </div>
+      <div className="flex justify-center gap-4 py-3">
+        {status !== "correct" ? (
+          <BigButton onClick={check}>Check ✓</BigButton>
+        ) : (
+          <BigButton onClick={nextTask}>
+            {taskIndex < screen.tasks.length - 1 ? "Next task →" : "Continue →"}
+          </BigButton>
         )}
       </div>
-
-      {/* Workspace — during teaching mode, compact frozen snapshot at fixed height
-           so teaching panel can flex to fill the rest of the screen.
-           In build mode, workspace fills all remaining space. */}
-      {showTeaching ? (
-        <div style={{ height: 200, flexShrink: 0 }}>
-          <BaseTenBlocksWorkspace
-            key={`task-${taskIdx}-frozen`}
-            initialState={{ flats: wsState.flats || 0, rods: wsState.rods || 0, units: wsState.units || 0 }}
-            readOnly
-            compact
-            hideCounter
-          />
-        </div>
-      ) : (
-        <div style={{ flex: 1, minHeight: 0 }}>
-          <BaseTenBlocksWorkspace
-            key={`task-${taskIdx}`}
-            onChange={handleWsChange}
-          />
-        </div>
-      )}
-
-      {/* Footer: teaching moment OR check button */}
-      {showTeaching ? (
-        <TeachingMomentPanel task={task} onNext={advanceTask} />
-      ) : (
-        <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
-          <PrimaryBtn
-            onClick={handleCheck}
-            disabled={feedback === 'correct' || wsState.total === 0}
-          >
-            Check My Answer
-          </PrimaryBtn>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── 5. ConceptNameScreen ──────────────────────────────────────────────────────
-function ConceptNameScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  useEffect(() => {
-    speak(screen.audioPrompt);
-    return stopAudio;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '20px 20px 24px', overflow: 'auto' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-        <BackChevron onClick={onBack} />
-        <RemiAvatar size={44} speaking={speaking} />
-        <div style={{ flex: 1 }}>
-          <h2 style={{ fontSize: 'clamp(1.1rem,4.5vw,1.5rem)', fontWeight: 900, color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>
-            {screen.headline}
-          </h2>
-        </div>
-        <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-      </div>
-
-      {/* Triple representation visual for 247 */}
-      <TripleRepVisual />
-
-      {/* Body text */}
-      <div style={{
-        background: 'rgba(255,255,255,0.04)', border: `1.5px solid ${ACCENT}33`,
-        borderRadius: 14, padding: '16px 18px',
-        color: 'rgba(255,255,255,0.82)', fontSize: '0.95rem', lineHeight: 1.7,
-      }}>
-        {screen.body}
-      </div>
-
-      <div style={{ flex: 1 }} />
-      <div style={{ marginTop: 20 }}>
-        <PrimaryBtn onClick={onAdvance}>Got it →</PrimaryBtn>
-      </div>
-    </div>
-  );
-}
-
-// ── 6. AppliedProblemsScreen ──────────────────────────────────────────────────
-function AppliedProblemsScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  const [probIdx,     setProbIdx]     = useState(0);
-  const [wsState,     setWsState]     = useState({ total: 0, blocks: [] });
-  const [feedback,    setFeedback]    = useState(null);
-  const [feedbackMsg, setFeedbackMsg] = useState('');
-  const [tensInput,   setTensInput]   = useState('');
-  const [onesInput,   setOnesInput]   = useState('');
-  const [tapFeedback,    setTapFeedback]    = useState(null);
-  const [highlightBlanks, setHighlightBlanks] = useState(false);
-
-  const problems = screen.problems || [];
-  const prob = problems[probIdx];
-
-  useEffect(() => {
-    if (!prob) return;
-    setFeedback(null);
-    setFeedbackMsg('');
-    setTapFeedback(null);
-    setHighlightBlanks(false);
-    setTensInput('');
-    setOnesInput('');
-    const t = setTimeout(() => speak(prob.audioPrompt), 300);
-    return () => { clearTimeout(t); stopAudio(); };
-  }, [probIdx]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  function advance() {
-    setFeedback(null);
-    setFeedbackMsg('');
-    setHighlightBlanks(false);
-    if (probIdx < problems.length - 1) {
-      setProbIdx(i => i + 1);
-      setWsState({ total: 0, blocks: [] });
-    } else {
-      stopAudio();
-      onAdvance();
-    }
-  }
-
-  // FIX 3: back within sub-problems goes to previous problem; at first goes to previous screen
-  function handleBack() {
-    stopAudio();
-    if (probIdx > 0) {
-      setProbIdx(i => i - 1);
-      setWsState({ total: 0, blocks: [] });
-      setFeedback(null);
-      setFeedbackMsg('');
-      setTapFeedback(null);
-      setHighlightBlanks(false);
-      setTensInput('');
-      setOnesInput('');
-    } else {
-      onBack();
-    }
-  }
-
-  function handleTapIdentify(block) {
-    if (!prob) return;
-    if (block.type === prob.correctBlockType) {
-      setTapFeedback('correct');
-      setFeedback('correct');
-      const msg = prob.correctFeedback || 'Correct!';
-      setFeedbackMsg(msg);
-      speak(msg, () => setTimeout(advance, 500));
-    } else {
-      setTapFeedback('wrong');
-      setFeedback('wrong');
-      setFeedbackMsg(prob.wrongFeedback || 'Not quite. Try a different block.');
-      speak(prob.wrongFeedback || 'Not quite. Try a different block.');
-      // Wrong stays until they tap again (no auto-dismiss)
-      setTimeout(() => { setTapFeedback(null); }, 600);
-    }
-  }
-
-  function handleBuildCheck() {
-    if (!prob) return;
-    setFeedback(null);
-    setFeedbackMsg('');
-    if (wsState.total === prob.target) {
-      setFeedback('correct');
-      const msg = prob.correctFeedback || 'Correct!';
-      setFeedbackMsg(msg);
-      speak(msg, () => setTimeout(advance, 500));
-    } else {
-      setFeedback('wrong');
-      setFeedbackMsg(prob.wrongHint || `We want ${prob.target}. Keep trying.`);
-      speak(prob.wrongHint || `We want ${prob.target}. Keep trying.`);
-      // Wrong stays until next check attempt
-    }
-  }
-
-  function handleBuildWriteCheck() {
-    if (!prob) return;
-    setFeedback(null);
-    setFeedbackMsg('');
-    setHighlightBlanks(false);
-
-    const tensOk  = tensInput.trim() === String(prob.correctTens);
-    const onesOk  = onesInput.trim() === String(prob.correctOnes);
-    const buildOk = wsState.total === prob.target;
-    const blanksOk = tensOk && onesOk;
-
-    if (buildOk && blanksOk) {
-      // Case D: both correct
-      const msg = `You got it! ${prob.target} = ${prob.correctTens} tens + ${prob.correctOnes} ones.`;
-      setFeedback('correct');
-      setFeedbackMsg(msg);
-      speak(`You got it! ${prob.target} equals ${prob.correctTens} tens plus ${prob.correctOnes} ones.`, () => setTimeout(advance, 500));
-    } else if (buildOk && !blanksOk) {
-      // Case A: blocks right, blanks wrong/empty
-      const msg = "Your blocks look perfect! Now fill in the blanks below — how many rods did you use? How many units?";
-      setFeedback('wrong');
-      setFeedbackMsg(msg);
-      speak(msg);
-      setHighlightBlanks(true);
-    } else if (!buildOk && blanksOk) {
-      // Case B: blanks right, blocks wrong
-      const msg = `Your blanks are right! But check your blocks — you built ${wsState.total}. We want ${prob.target}.`;
-      setFeedback('wrong');
-      setFeedbackMsg(msg);
-      speak(msg);
-    } else {
-      // Case C: both wrong
-      const msg = `Let's check both. We're building ${prob.target} — that's ${prob.correctTens} tens (rods) and ${prob.correctOnes} ones (units). Try again.`;
-      setFeedback('wrong');
-      setFeedbackMsg(msg);
-      speak(msg);
-    }
-  }
-
-  if (!prob) return null;
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Header */}
-      <div style={{ padding: '12px 16px 6px', flexShrink: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-          <BackChevron onClick={handleBack} />
-          <RemiAvatar size={32} speaking={speaking} />
-          <div style={{ flex: 1 }}>
-            <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.3)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-              Problem {probIdx + 1} of {problems.length}
-            </span>
-          </div>
-          <SpeakerBtn onClick={() => speak(prob.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-        </div>
-
-        {prob.displayNumber && (
-          <div style={{ fontSize: '2.2rem', fontWeight: 900, color: ACCENT, letterSpacing: '-0.03em', marginBottom: 4 }}>
-            {prob.displayNumber}
-          </div>
-        )}
-
-        <div style={{ fontSize: 'clamp(0.9rem,3.8vw,1.15rem)', fontWeight: 700, color: '#fff', lineHeight: 1.3, marginBottom: 8 }}>
-          {prob.prompt}
-        </div>
-
-        <FeedbackBanner type={feedback} message={feedbackMsg} />
-      </div>
-
-      {/* Workspace area:
-           – tap-identify: full-scale, fills remaining height
-           – build / build-write: compact 300 px, vertically centered; footer pinned below */}
-      {prob.subtype === 'tap-identify' ? (
-        <div style={{ flex: 1, minHeight: 0 }}>
-          <BaseTenBlocksWorkspace
-            key={`prob-${probIdx}`}
-            initialState={prob.preload || null}
-            readOnly
-            hideCounter
-            onBlockTap={handleTapIdentify}
-            onChange={setWsState}
-          />
-        </div>
-      ) : (
-        <>
-          {/* Scrollable centered section — workspace + blanks sit in vertical center;
-               minHeight:100% + justifyContent:center = centered when short, scrollable when tall */}
-          <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '100%', boxSizing: 'border-box' }}>
-              <div style={{ height: 300, flexShrink: 0 }}>
-                <BaseTenBlocksWorkspace
-                  key={`prob-${probIdx}`}
-                  initialState={prob.preload || null}
-                  compact
-                  onChange={setWsState}
-                />
-              </div>
-              {prob.subtype === 'build-write' && (
-                <div style={{ padding: '8px 16px', flexShrink: 0 }}>
-                  <div style={{ background: 'rgba(255,255,255,0.05)', border: '1.5px solid rgba(255,255,255,0.1)', borderRadius: 14, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', fontSize: '1rem', color: 'rgba(255,255,255,0.8)' }}>
-                    <span>{prob.target} =</span>
-                    <input
-                      type="number" inputMode="numeric" pattern="[0-9]*"
-                      value={tensInput} onChange={e => { setTensInput(e.target.value); setHighlightBlanks(false); }}
-                      placeholder="?"
-                      style={{
-                        width: 48, height: 38, textAlign: 'center', borderRadius: 8,
-                        border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
-                        background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
-                        color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
-                        boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
-                        transition: 'border-color 0.3s, box-shadow 0.3s',
-                      }}
-                    />
-                    <span>tens +</span>
-                    <input
-                      type="number" inputMode="numeric" pattern="[0-9]*"
-                      value={onesInput} onChange={e => { setOnesInput(e.target.value); setHighlightBlanks(false); }}
-                      placeholder="?"
-                      style={{
-                        width: 48, height: 38, textAlign: 'center', borderRadius: 8,
-                        border: `2px solid ${highlightBlanks ? '#FBBF24' : `${ACCENT}44`}`,
-                        background: highlightBlanks ? 'rgba(251,191,36,0.12)' : ACCENT_DIM,
-                        color: '#fff', fontWeight: 700, fontSize: '1rem', fontFamily: FONT,
-                        boxShadow: highlightBlanks ? '0 0 10px rgba(251,191,36,0.4)' : 'none',
-                        transition: 'border-color 0.3s, box-shadow 0.3s',
-                      }}
-                    />
-                    <span>ones</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-          {/* Footer — always pinned at bottom for build/build-write */}
-          {feedback === 'correct' ? (
-            <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
-              <PrimaryBtn onClick={advance} color="#34D399">Next →</PrimaryBtn>
-            </div>
-          ) : (
-            <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
-              <PrimaryBtn
-                onClick={prob.subtype === 'build-write' ? handleBuildWriteCheck : handleBuildCheck}
-                disabled={wsState.total === 0}
-              >
-                Check My Answer
-              </PrimaryBtn>
-            </div>
-          )}
-        </>
-      )}
-
-      {/* Tap-identify: Next button only appears after a correct tap */}
-      {prob.subtype === 'tap-identify' && feedback === 'correct' && (
-        <div style={{ padding: '8px 16px 16px', flexShrink: 0 }}>
-          <PrimaryBtn onClick={advance} color="#34D399">Next →</PrimaryBtn>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── 7. QuickCheckScreen ───────────────────────────────────────────────────────
-function QuickCheckScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack, childName }) {
-  const [qIdx,       setQIdx]      = useState(0);
-  const [selected,   setSelected]  = useState(null);
-  const [fillAnswer, setFillAnswer] = useState('');
-  const [feedback,   setFeedback]  = useState(null);   // null | 'correct' | 'wrong'
-  const [scored,     setScored]    = useState(false);  // prevent double-scoring
-  const [score,      setScore]     = useState(0);
-
-  const questions = screen.questions || [];
-  const q = questions[qIdx];
-
-  // Speak quiz intro (first q) or per-question audio on q change
-  useEffect(() => {
-    if (!q) return;
-    if (qIdx === 0) {
-      const intro = (screen.quizIntroAudio || 'Quick check time! Four short questions.')
-        .replace(/\{name\}/g, childName || 'there');
-      speak(intro, () => {
-        if (q.audioPrompt) speak(q.audioPrompt);
-      });
-    } else {
-      if (q.audioPrompt) speak(q.audioPrompt);
-    }
-  }, [qIdx]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Reset per-question state when question changes
-  useEffect(() => {
-    setSelected(null);
-    setFillAnswer('');
-    setFeedback(null);
-    setScored(false);
-  }, [qIdx]);
-
-  function advanceQuestion() {
-    stopAudio();
-    if (qIdx < questions.length - 1) {
-      setQIdx(i => i + 1);
-    } else {
-      onAdvance();
-    }
-  }
-
-  // FIX 3: back within questions or exit to previous screen
-  function handleBack() {
-    stopAudio();
-    if (qIdx > 0) {
-      setQIdx(i => i - 1);
-    } else {
-      onBack();
-    }
-  }
-
-  function checkAnswer(answer) {
-    if (!q || feedback === 'correct') return;
-    const isCorrect = answer.trim() === q.correct;
-    setFeedback(isCorrect ? 'correct' : 'wrong');
-
-    if (isCorrect) {
-      if (!scored) { setScore(s => s + 1); setScored(true); }
-      const explanation = q.explanation || 'Correct!';
-      speak(explanation); // Next → button handles advancing — no stale callback
-    } else {
-      speak('Not quite — try again!');
-      // Wrong stays until they answer again (no auto-advance)
-    }
-  }
-
-  function handleOptionTap(opt) {
-    if (feedback === 'correct') return; // locked after correct
-    setSelected(opt);
-    setFeedback(null); // clear previous wrong before re-checking
-    // Small tick so state clears before the new check renders
-    setTimeout(() => checkAnswer(opt), 10);
-  }
-
-  function handleFillSubmit() {
-    if (feedback === 'correct') return;
-    checkAnswer(fillAnswer);
-  }
-
-  if (!q) return null;
-
-  const wsSubtype = q.subtype === 'workspace-read' || q.subtype === 'workspace-fill';
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      {/* Header */}
-      <div style={{ padding: '12px 16px 8px', flexShrink: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-          <BackChevron onClick={handleBack} />
-          <RemiAvatar size={32} speaking={speaking} />
-          <span style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.3)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-            Q{qIdx + 1} of {questions.length}
-          </span>
-          <div style={{ flex: 1 }} />
-          <SpeakerBtn onClick={() => speak(q.audioPrompt || q.prompt)} speaking={speaking} loading={loadingAudio} />
-        </div>
-        <div style={{ display: 'flex', gap: 5 }}>
-          {questions.map((_, i) => (
-            <div key={i} style={{ height: 4, flex: 1, borderRadius: 2, background: i < qIdx ? '#34D399' : i === qIdx ? `${ACCENT}88` : 'rgba(255,255,255,0.1)', transition: 'background 0.3s' }} />
-          ))}
-        </div>
-      </div>
-
-      {/* Scrollable centered area — workspace + prompt + answers center vertically
-           when content is short (iPad), scroll when tall (many options on small phone).
-           minHeight:100% + justifyContent:center = the standard CSS centering trick
-           that also handles overflow correctly. */}
-      <div style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', minHeight: '100%', boxSizing: 'border-box', padding: '4px 0 8px' }}>
-          {/* Workspace compact — hideCounter prevents giving away answer */}
-          {wsSubtype && (
-            <div style={{ height: 210, flexShrink: 0, margin: '0 12px 4px' }}>
-              <BaseTenBlocksWorkspace
-                key={`q-${qIdx}`}
-                initialState={q.preload}
-                readOnly
-                compact
-                hideCounter
-              />
-            </div>
-          )}
-
-          {/* Question prompt + feedback */}
-          <div style={{ padding: '8px 16px 8px', flexShrink: 0 }}>
-            <div style={{ fontSize: 'clamp(1rem,4vw,1.2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.35 }}>
-              {q.prompt}
-            </div>
-            {feedback && (
-              <FeedbackBanner
-                type={feedback}
-                message={feedback === 'correct'
-                  ? (q.explanation || 'Correct!')
-                  : 'Not quite — try again!'}
-              />
-            )}
-          </div>
-
-          {/* Answer options / fill-in — natural height, no flex:1 flex-growth */}
-          <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {/* Multiple choice */}
-            {(q.subtype === 'text-choice' || q.subtype === 'workspace-read') && (q.options || []).map(opt => {
-              const isSelected   = selected === opt;
-              const isCorrectOpt = opt === q.correct;
-              let bg = 'rgba(255,255,255,0.05)';
-              let border = 'rgba(255,255,255,0.1)';
-              let color = '#fff';
-              if (feedback === 'correct' && isSelected && isCorrectOpt)  { bg = 'rgba(52,211,153,0.18)'; border = '#34D399'; color = '#34D399'; }
-              if (feedback === 'wrong'   && isSelected && !isCorrectOpt) { bg = 'rgba(239,68,68,0.14)';  border = '#EF4444'; color = '#FCA5A5'; }
-              // Don't highlight correct option on wrong — preserves challenge for retry
-
-              return (
-                <button
-                  key={opt}
-                  onClick={() => handleOptionTap(opt)}
-                  disabled={feedback === 'correct'}
-                  style={{
-                    width: '100%', padding: '14px 18px', borderRadius: 13,
-                    border: `1.5px solid ${border}`, background: bg, color,
-                    fontWeight: 700, fontSize: '0.95rem',
-                    cursor: feedback === 'correct' ? 'default' : 'pointer',
-                    textAlign: 'left', transition: 'background 0.15s, border-color 0.15s',
-                    touchAction: 'manipulation', fontFamily: FONT,
-                  }}
-                >
-                  {opt}
-                </button>
-              );
-            })}
-
-            {/* Fill-in (standalone or workspace-fill) */}
-            {(q.subtype === 'fill-in' || q.subtype === 'workspace-fill') && (
-              <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-                <input
-                  type="number" inputMode="numeric" pattern="[0-9]*"
-                  value={fillAnswer}
-                  onChange={e => { setFillAnswer(e.target.value); if (feedback === 'wrong') setFeedback(null); }}
-                  onKeyDown={e => e.key === 'Enter' && feedback !== 'correct' && handleFillSubmit()}
-                  placeholder="Type your answer"
-                  disabled={feedback === 'correct'}
-                  autoFocus
-                  style={{
-                    flex: 1, height: 52, padding: '0 16px', borderRadius: 13,
-                    border: `1.5px solid ${ACCENT}44`, background: ACCENT_DIM,
-                    color: '#fff', fontWeight: 700, fontSize: '1.1rem', fontFamily: FONT,
-                  }}
-                />
-                <div style={{ width: 60 }}>
-                  <PrimaryBtn onClick={handleFillSubmit} disabled={feedback === 'correct' || !fillAnswer}>
-                    →
-                  </PrimaryBtn>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Next button — pinned at bottom, visible immediately when correct */}
-      {feedback === 'correct' && (
-        <div style={{ padding: '8px 16px 20px', flexShrink: 0 }}>
-          <PrimaryBtn onClick={advanceQuestion} color="#34D399">Next →</PrimaryBtn>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── 8. RealWorldScreen ────────────────────────────────────────────────────────
-function RealWorldScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance, onBack }) {
-  useEffect(() => {
-    speak(screen.audioPrompt);
-    return stopAudio;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '24px 24px' }}>
-      {/* Header — pinned at top */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexShrink: 0 }}>
-        <BackChevron onClick={onBack} />
-        <RemiAvatar size={52} speaking={speaking} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 'clamp(1.2rem,5vw,1.6rem)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>
-            {screen.headline}
-          </div>
-        </div>
-        <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-      </div>
-
-      {/* Content — vertically centered in remaining space so no void accumulates */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 20 }}>
-        <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, margin: 0 }}>
-          {screen.body}
+      {status === "wrong" && (
+        <p className="text-center text-rose-300 text-sm pb-2">
+          Almost — adjust your blocks and check again.
         </p>
-        <div style={{ background: `${ACCENT}12`, border: `1.5px solid ${ACCENT}33`, borderRadius: 16, padding: '18px 20px' }}>
-          <div style={{ fontSize: '0.72rem', fontWeight: 700, color: ACCENT, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>
-            Family Adventure
-          </div>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.8)', lineHeight: 1.65, margin: 0 }}>
-            {screen.familyAdventure}
+      )}
+    </div>
+  );
+}
+
+function ConceptNameScreen({ screen, speak, speaking, onNext }) {
+  useEffect(() => {
+    speak(screen.audio);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <div className="flex flex-col items-center justify-center flex-1 gap-6 px-6 text-center">
+      <RemiAvatar speaking={speaking} size={100} />
+      <div className="rounded-3xl bg-indigo-900/70 border border-amber-300/40 px-8 py-6 max-w-lg">
+        <h2 className="text-3xl font-extrabold text-amber-300 tracking-wide mb-3">
+          {screen.cardTitle}
+        </h2>
+        <p className="text-indigo-100 text-lg leading-relaxed">
+          {screen.cardText}
+        </p>
+      </div>
+      <BigButton onClick={onNext}>Got it →</BigButton>
+    </div>
+  );
+}
+
+function AppliedProblemsScreen({
+  screen,
+  complexityLevel,
+  speak,
+  speaking,
+  onNext,
+}) {
+  const [probIndex, setProbIndex] = useState(0);
+  const [phase, setPhase] = useState("working"); // working | insight | done
+  const [total, setTotal] = useState(0);
+  const [highlight, setHighlight] = useState(null);
+  const [blanks, setBlanks] = useState({});
+  const [resetKey, setResetKey] = useState(0);
+  const problem = screen.problems[probIndex];
+
+  useEffect(() => {
+    speak(problem.audio || problem.question || problem.prompt);
+    setPhase("working");
+    setHighlight(null);
+    setBlanks({});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [probIndex]);
+
+  const advance = () => {
+    if (probIndex < screen.problems.length - 1) {
+      setProbIndex((i) => i + 1);
+      setResetKey((k) => k + 1);
+      setTotal(0);
+    } else {
+      onNext();
+    }
+  };
+
+  // ── kind: tap-part ──
+  const handleInspectTap = (type) => {
+    if (phase === "done") return;
+    if (type === problem.answerType) {
+      setHighlight(type);
+      setPhase("done");
+      speak(problem.successAudio || "That's it! You found it.");
+    } else {
+      speak(problem.hint || "Not that one — look again.");
+    }
+  };
+
+  // ── kind: build-notice ──
+  const checkBuild = () => {
+    if (total === problem.target) {
+      setPhase("insight");
+      speak(problem.insightAudio || problem.insightText || "Look at that!");
+    } else {
+      speak(
+        `The counter shows ${total} — we want ${problem.target}. Keep going.`
+      );
+    }
+  };
+
+  // ── kind: expanded-form ──
+  const checkBlanks = () => {
+    const allCorrect = problem.blanks.every(
+      (b, i) => parseInt(blanks[i], 10) === b.answer
+    );
+    if (total !== problem.target) {
+      speak(
+        `First build ${problem.target} with the blocks — the counter shows ${total}.`
+      );
+      return;
+    }
+    if (allCorrect) {
+      setPhase("done");
+      speak(problem.successAudio || "Perfect. You wrote it in expanded form.");
+    } else {
+      speak(problem.hint || "Check your numbers — count your blocks again.");
+    }
+  };
+
+  return (
+    <div className="flex flex-col flex-1 min-h-0">
+      <div className="flex items-center gap-3 px-4 py-2">
+        <RemiAvatar speaking={speaking} size={48} />
+        <div>
+          <p className="text-xs text-indigo-400 font-semibold">
+            Problem {probIndex + 1} of {screen.problems.length}
+          </p>
+          <p className="text-base text-indigo-100 font-semibold">
+            {problem.question || problem.prompt}
           </p>
         </div>
       </div>
 
-      {/* Button — pinned at bottom */}
-      <div style={{ paddingTop: 16, flexShrink: 0 }}>
-        <PrimaryBtn onClick={onAdvance}>I'm done →</PrimaryBtn>
+      <div className="flex-1 min-h-0">
+        <BaseTenBlocksWorkspace
+          complexityLevel={complexityLevel}
+          resetKey={resetKey}
+          mode={problem.kind === "tap-part" ? "inspect" : "build"}
+          initialBlocks={problem.preload || null}
+          highlightType={highlight}
+          onTotalChange={setTotal}
+          onBlockTap={handleInspectTap}
+        />
+      </div>
+
+      {/* expanded-form blanks */}
+      {problem.kind === "expanded-form" && phase !== "done" && (
+        <div className="flex items-center justify-center gap-2 py-2 text-indigo-100 text-lg font-semibold">
+          <span>{problem.target} =</span>
+          {problem.blanks.map((b, i) => (
+            <React.Fragment key={i}>
+              <input
+                type="number"
+                inputMode="numeric"
+                value={blanks[i] ?? ""}
+                onChange={(e) =>
+                  setBlanks((prev) => ({ ...prev, [i]: e.target.value }))
+                }
+                className="w-14 h-12 text-center rounded-xl bg-indigo-900 border border-indigo-400/50 text-amber-300 text-xl font-bold"
+              />
+              <span>
+                {b.label}
+                {i < problem.blanks.length - 1 ? " +" : ""}
+              </span>
+            </React.Fragment>
+          ))}
+        </div>
+      )}
+
+      {/* insight card for build-notice */}
+      {phase === "insight" && (
+        <div className="mx-6 mb-2 rounded-2xl bg-indigo-900/80 border border-amber-300/40 px-5 py-3">
+          <p className="text-indigo-100 text-sm leading-relaxed">
+            {problem.insightText}
+          </p>
+        </div>
+      )}
+
+      <div className="flex justify-center py-3">
+        {problem.kind === "tap-part" &&
+          (phase === "done" ? (
+            <BigButton onClick={advance}>Next →</BigButton>
+          ) : (
+            <p className="text-indigo-300 text-sm">
+              Tap the blocks that answer the question
+            </p>
+          ))}
+        {problem.kind === "build-notice" &&
+          (phase === "working" ? (
+            <BigButton onClick={checkBuild}>Check ✓</BigButton>
+          ) : (
+            <BigButton onClick={advance}>Next →</BigButton>
+          ))}
+        {problem.kind === "expanded-form" &&
+          (phase === "done" ? (
+            <BigButton onClick={advance}>Next →</BigButton>
+          ) : (
+            <BigButton onClick={checkBlanks}>Check ✓</BigButton>
+          ))}
       </div>
     </div>
   );
 }
 
-// ── 9. CelebrationScreen ──────────────────────────────────────────────────────
-function CelebrationScreen({ screen, speak, stopAudio, speaking, loadingAudio, onAdvance }) {
+function QuickCheckScreen({ screen, speak, speaking, onNext, onScore }) {
+  const [qIndex, setQIndex] = useState(0);
+  const [selected, setSelected] = useState(null);
+  const [revealed, setRevealed] = useState(false);
+  const [score, setScore] = useState(0);
+  const q = screen.questions[qIndex];
+
   useEffect(() => {
-    playFanfare();
-    speak(screen.audioPrompt);
-    return stopAudio;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    if (qIndex === 0 && screen.intro) speak(screen.intro);
+    setSelected(null);
+    setRevealed(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [qIndex]);
+
+  const submit = () => {
+    if (selected == null) return;
+    const correct = q.options[selected] === q.answer;
+    if (correct) setScore((s) => s + 1);
+    setRevealed(true);
+    speak(correct ? "Correct!" : `Not quite. The answer is: ${q.answer}`);
+  };
+
+  const next = () => {
+    if (qIndex < screen.questions.length - 1) {
+      setQIndex((i) => i + 1);
+    } else {
+      onScore(score, screen.questions.length);
+      onNext();
+    }
+  };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '32px 24px', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: 20 }}>
-      <div>
-        <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>
-          {screen.badge}
-        </div>
-        <div style={{ fontSize: '0.85rem', color: ACCENT, fontWeight: 700, marginTop: 4 }}>
-          Badge Earned
-        </div>
+    <div className="flex flex-col flex-1 px-5 py-3 gap-4 overflow-y-auto">
+      <div className="flex items-center gap-3">
+        <RemiAvatar speaking={speaking} size={48} />
+        <p className="text-xs text-indigo-400 font-semibold">
+          Question {qIndex + 1} of {screen.questions.length}
+        </p>
       </div>
-
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(250,204,21,0.12)', border: '1.5px solid rgba(250,204,21,0.3)', borderRadius: 20, padding: '8px 20px' }}>
-        <span style={{ fontSize: '1.4rem', lineHeight: 1 }}>⚡</span>
-        <span style={{ fontWeight: 800, fontSize: '1.1rem', color: '#FCD34D' }}>+{screen.xp} XP</span>
+      <h3 className="text-xl text-indigo-100 font-bold leading-snug">
+        {q.question}
+      </h3>
+      <div className="flex flex-col gap-3">
+        {q.options.map((opt, i) => {
+          const isAnswer = opt === q.answer;
+          const isSelected = selected === i;
+          let cls =
+            "text-left px-5 py-4 rounded-2xl border text-base font-medium transition-all active:scale-[0.98] ";
+          if (!revealed) {
+            cls += isSelected
+              ? "bg-amber-400/20 border-amber-300 text-amber-100"
+              : "bg-indigo-900/60 border-indigo-400/30 text-indigo-100";
+          } else if (isAnswer) {
+            cls += "bg-emerald-500/25 border-emerald-400 text-emerald-100";
+          } else if (isSelected) {
+            cls += "bg-rose-500/20 border-rose-400 text-rose-100";
+          } else {
+            cls += "bg-indigo-900/40 border-indigo-400/20 text-indigo-300/60";
+          }
+          return (
+            <button
+              key={i}
+              className={cls}
+              onClick={() => !revealed && setSelected(i)}
+              style={{ touchAction: "manipulation" }}
+            >
+              {opt}
+            </button>
+          );
+        })}
       </div>
-
-      <RemiAvatar size={56} speaking={speaking} />
-      <SpeakerBtn onClick={() => speak(screen.audioPrompt)} speaking={speaking} loading={loadingAudio} />
-
-      <div style={{ width: '100%', maxWidth: 340 }}>
-        <PrimaryBtn onClick={onAdvance}>Back to lessons</PrimaryBtn>
+      <div className="flex justify-center pt-2 pb-4">
+        {!revealed ? (
+          <BigButton onClick={submit} disabled={selected == null}>
+            Check ✓
+          </BigButton>
+        ) : (
+          <BigButton onClick={next}>
+            {qIndex < screen.questions.length - 1 ? "Next →" : "Continue →"}
+          </BigButton>
+        )}
       </div>
     </div>
   );
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Main Player
-// ══════════════════════════════════════════════════════════════════════════════
-export default function MathLessonPlayer() {
-  const { lessonId } = useParams();
+function RealWorldScreen({ screen, speak, speaking, onNext }) {
+  useEffect(() => {
+    speak(screen.audio);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <div className="flex flex-col items-center justify-center flex-1 gap-6 px-6 text-center">
+      <RemiAvatar speaking={speaking} size={100} />
+      <p className="text-lg text-indigo-100 max-w-md leading-relaxed">
+        {screen.audio}
+      </p>
+      <div className="rounded-2xl bg-indigo-900/70 border border-indigo-400/40 px-6 py-4 max-w-md">
+        <p className="text-amber-300 font-bold text-sm mb-1">
+          🌟 Family Adventure
+        </p>
+        <p className="text-indigo-100 text-base">{screen.familyAdventure}</p>
+      </div>
+      <BigButton onClick={onNext}>Continue →</BigButton>
+    </div>
+  );
+}
+
+function CelebrationScreen({ screen, speak, speaking, score, onFinish }) {
+  useEffect(() => {
+    speak(screen.audio);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <div className="flex flex-col items-center justify-center flex-1 gap-6 px-6 text-center">
+      <RemiAvatar speaking={speaking} size={110} />
+      <div className="text-6xl">🏅</div>
+      <h2 className="text-3xl font-extrabold text-amber-300">{screen.badge}</h2>
+      <p className="text-indigo-100 text-lg">+{screen.xp} XP</p>
+      {score != null && (
+        <p className="text-indigo-300 text-sm">
+          Quick check: {score.correct} / {score.total}
+        </p>
+      )}
+      <BigButton onClick={onFinish}>Finish 🎉</BigButton>
+    </div>
+  );
+}
+
+// ============================================================
+// Player shell
+// ============================================================
+export default function MathLessonPlayer({
+  lessonData: lessonDataProp,
+  complexityLevel: complexityProp = "upperexplorers",
+  onComplete: onCompleteProp,
+}) {
+  // When rendered from a route (no props), resolve data from URL param.
+  const params = useParams();
   const navigate = useNavigate();
+  const lessonData = lessonDataProp || (params.lessonId && MATH_V2_DATA[params.lessonId]) || null;
+  const complexityLevel = complexityProp;
+  const onComplete = onCompleteProp || (() => navigate(-1));
 
-  const child     = getCurrentChild();
-  const childName = child?.name || 'there';
+  const [screenIndex, setScreenIndex] = useState(0);
+  const [score, setScore] = useState(null);
+  const { speak, stop, speaking } = useRemiSpeech();
+  const screens = lessonData?.screens || [];
+  const screen = screens[screenIndex];
 
-  const lesson = LESSON_REGISTRY[lessonId];
-  const [screenIdx, setScreenIdx] = useState(0);
-  const { speak, stopAudio, speaking, loadingAudio } = useAudio(childName);
+  // Screen-change logging — every transition traceable.
+  useEffect(() => {
+    console.log("[MathLessonPlayer] screen change", {
+      complexityLevel,
+      screenIndex,
+      screenType: screen?.type,
+      lessonId: lessonData?.id,
+    });
+  }, [screenIndex, complexityLevel, screen, lessonData]);
 
-  if (!lesson) {
+  const goNext = () => {
+    stop();
+    setScreenIndex((i) => Math.min(i + 1, screens.length - 1));
+  };
+
+  // Back navigates WITHIN the lesson only. On screen 0 the button
+  // is hidden entirely — it can never exit the lesson.
+  const goBack = () => {
+    stop();
+    setScreenIndex((i) => Math.max(i - 1, 0));
+  };
+
+  const finish = () => {
+    stop();
+    if (onComplete) {
+      onComplete({
+        xp: screen?.xp || 100,
+        badge: screen?.badge || lessonData?.badge,
+        score: score?.correct ?? null,
+        total: score?.total ?? null,
+      });
+    }
+  };
+
+  if (!screen) {
     return (
-      <div style={{ position: 'fixed', inset: 0, background: BG, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: FONT }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '2rem', marginBottom: 12 }}>🔍</div>
-          <p>Lesson not found: {lessonId}</p>
-          <button onClick={() => navigate(-1)} style={{ marginTop: 16, padding: '10px 24px', borderRadius: 10, border: 'none', background: ACCENT, color: '#000', fontWeight: 700, cursor: 'pointer' }}>
-            Go back
-          </button>
-        </div>
+      <div className="flex items-center justify-center h-full text-indigo-200">
+        Lesson data missing.
       </div>
     );
   }
 
-  const screens = lesson.screens;
-  const screen  = screens[screenIdx];
-
-  function advance() {
-    if (screenIdx < screens.length - 1) {
-      setScreenIdx(i => i + 1);
-    } else {
-      if (child) {
-        try {
-          const saved = JSON.parse(localStorage.getItem('coreverse_progress') || '{}');
-          const key   = `math__3`;
-          saved[key]  = Math.max((saved[key] || 0), 1);
-          localStorage.setItem('coreverse_progress', JSON.stringify(saved));
-        } catch { /* ok */ }
-      }
-      navigate('/child/subject/math');
-    }
-  }
-
-  // Back navigation: decrement screen, or exit lesson on Welcome screen (FIX 6)
-  function goBack() {
-    stopAudio();
-    if (screenIdx > 0) {
-      setScreenIdx(i => i - 1);
-    } else {
-      navigate('/child/subject/math');
-    }
-  }
-
-  // Each screen handles its own back button with sub-state awareness.
-  // Back buttons in screens call onBack (this goBack) when they've exhausted internal state.
-  const sharedProps = { screen, speak, stopAudio, speaking, loadingAudio, onAdvance: advance, onBack: goBack, childName };
+  const common = { speak, speaking, complexityLevel };
 
   return (
-    <div style={{ position: 'fixed', inset: 0, background: BG, color: '#fff', fontFamily: FONT, display: 'flex', flexDirection: 'column' }}>
-      <style>{GLOBAL_STYLES}</style>
-
-      <ProgressBar current={screenIdx} total={screens.length} />
-
-      {/* maxWidth: 600 centres content on iPad/tablet; alignItems:stretch
-           preserves full height so every screen's height:100% still works */}
-      <div style={{ flex: 1, minHeight: 0, marginTop: 3, display: 'flex', justifyContent: 'center', alignItems: 'stretch' }}>
-        <div style={{ flex: '1 1 0', maxWidth: 600, minWidth: 0, overflow: 'hidden' }}>
-          {screen.type === 'welcome'          && <WelcomeScreen         {...sharedProps} />}
-          {screen.type === 'block-intro'      && <BlockIntroScreen      {...sharedProps} />}
-          {screen.type === 'explore'          && <ExploreScreen         {...sharedProps} />}
-          {screen.type === 'guided-tasks'     && <GuidedTasksScreen     {...sharedProps} />}
-          {screen.type === 'concept-name'     && <ConceptNameScreen     {...sharedProps} />}
-          {screen.type === 'applied-problems' && <AppliedProblemsScreen {...sharedProps} />}
-          {screen.type === 'quick-check'      && <QuickCheckScreen      {...sharedProps} />}
-          {screen.type === 'real-world'       && <RealWorldScreen       {...sharedProps} />}
-          {screen.type === 'celebration'      && <CelebrationScreen     {...sharedProps} />}
+    <div
+      className="flex flex-col h-full w-full"
+      style={{ background: "#080618", minHeight: "100dvh" }}
+    >
+      {/* ── Header: back (in-lesson only) + progress ── */}
+      <div className="flex items-center gap-3 px-4 py-3">
+        {screenIndex > 0 ? (
+          <button
+            onClick={goBack}
+            className="w-10 h-10 rounded-full bg-indigo-900/70 border border-indigo-400/40 text-indigo-100 text-xl flex items-center justify-center active:scale-90"
+            style={{ touchAction: "manipulation" }}
+            aria-label="Previous screen"
+          >
+            ‹
+          </button>
+        ) : (
+          <div className="w-10 h-10" />
+        )}
+        <div className="flex-1 h-2 rounded-full bg-indigo-900/70 overflow-hidden">
+          <div
+            className="h-full bg-amber-400 rounded-full transition-all duration-500"
+            style={{
+              width: `${((screenIndex + 1) / screens.length) * 100}%`,
+            }}
+          />
         </div>
+        <span className="text-xs text-indigo-400 font-semibold tabular-nums">
+          {screenIndex + 1}/{screens.length}
+        </span>
       </div>
+
+      {/* ── Active screen ── */}
+      {screen.type === "welcome" && (
+        <WelcomeScreen screen={screen} {...common} onNext={goNext} />
+      )}
+      {screen.type === "explore" && (
+        <ExploreScreen screen={screen} {...common} onNext={goNext} />
+      )}
+      {screen.type === "guided-task" && (
+        <GuidedTaskScreen screen={screen} {...common} onNext={goNext} />
+      )}
+      {screen.type === "concept-name" && (
+        <ConceptNameScreen screen={screen} {...common} onNext={goNext} />
+      )}
+      {screen.type === "applied-problems" && (
+        <AppliedProblemsScreen screen={screen} {...common} onNext={goNext} />
+      )}
+      {screen.type === "quick-check" && (
+        <QuickCheckScreen
+          screen={screen}
+          {...common}
+          onNext={goNext}
+          onScore={(correct, total) => setScore({ correct, total })}
+        />
+      )}
+      {screen.type === "real-world" && (
+        <RealWorldScreen screen={screen} {...common} onNext={goNext} />
+      )}
+      {screen.type === "celebration" && (
+        <CelebrationScreen
+          screen={screen}
+          {...common}
+          score={score}
+          onFinish={finish}
+        />
+      )}
     </div>
   );
 }
